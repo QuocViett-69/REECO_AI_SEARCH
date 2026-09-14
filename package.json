@@ -1,0 +1,25 @@
+{
+  "name": "reeco-ai-search",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=@reeco/web",
+    "dev:api": "npm run start:dev --workspace=@reeco/api",
+    "build:shared": "npm run build --workspace=@reeco/shared",
+    "build:web": "npm run build --workspace=@reeco/web",
+    "build:api": "npm run build --workspace=@reeco/api",
+    "build": "npm run build:shared && npm run build:web && npm run build:api",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.20.0"
+  }
+}
