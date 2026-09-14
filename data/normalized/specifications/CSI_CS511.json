@@ -1,0 +1,287 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CS511",
+  "model": "CS511",
+  "raw_record_ref": {
+    "file": "data/raw/CS511_Specifications_SplitCells.json",
+    "product_index": 0,
+    "raw_record_key": "CS511_Specifications_SplitCells.json#0",
+    "raw_product_id": "CSI_CS511",
+    "raw_model": "CS511"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "0° to 50°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Range",
+      "value_raw": "0.5 to 50 ppm (for O₂)",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0.5,
+        "max_value": 50,
+        "unit": "ppm",
+        "qualifier": null,
+        "condition": "for O₂"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "measurement_range"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Accuracy",
+      "value_raw": "±2%",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2,
+        "unit": "%",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "accuracy"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Output",
+      "value_raw": "33 mV ± 9 mV (100% saturation) | < 2 mV (0% saturation)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          6,
+          7
+        ]
+      },
+      "canonical_key": "output"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Response Time",
+      "value_raw": "5 min from 100% to 0% oxygen",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "response_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Minimum Water Velocity",
+      "value_raw": "5 cm s⁻¹ (2 in. s⁻¹) across membrane",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "minimum_water_velocity",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Minimum Submersion Depth",
+      "value_raw": "6.35 cm (2.5 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 6.35,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.5,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "minimum_submersion_depth",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pressure",
+      "value_raw": "0 to 100 psig",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "psig",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "pressure",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Temperature Compensation",
+      "value_raw": "Automatic from 4° to 40°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "temperature_compensation",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Probe Electrolyte",
+      "value_raw": "NaCl + glycerol (prevents freezing)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "probe_electrolyte"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Diameter",
+      "value_raw": "5.72 cm (2.25 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 5.72,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.25,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Height",
+      "value_raw": "17.78 cm (7 in.) from bottom of sensor to end of cable strain relief",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Shipping Weight",
+      "value_raw": "0.8 kg (1.75 lb) including sensor and shipping kit",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "shipping_weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

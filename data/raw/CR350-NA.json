@@ -1,0 +1,316 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CR350_Master_Specifications.xlsx",
+    "sheet": "CR350_Master_Spec"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CR350_NA",
+      "manufacturer": "Campbell Scientific",
+      "model": "CR350-NA",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "name_vi": "Hậu tố mã cấu hình",
+          "value_raw": "NA",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "name_vi": "Nhóm truyền thông",
+          "value_raw": "NA",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "No Additional Coms",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Model",
+          "name_vi": "Model",
+          "value_raw": "CR350",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Measurement and Control Datalogger",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "Environment: Non-condensing | Range: -40° to +70°C",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Maximum Scan Rate",
+          "name_vi": "Tốc độ quét tối đa",
+          "value_raw": "10 Hz",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Case Material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "High-impact-resistant polycarbonate, recycle code 7",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Analog Inputs",
+          "name_vi": "Đầu vào analog",
+          "value_raw": "4 single-ended or 2 differential (individually configured)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Pulse Counters",
+          "name_vi": "Bộ đếm xung",
+          "value_raw": "8 (P_SW, P_LL, C1, C2, and SE1 to SE4)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Voltage Excitation Terminals",
+          "name_vi": "Đầu cực kích thích điện áp",
+          "value_raw": "2 (VX1, VX2)",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Communications Ports",
+          "name_vi": "Cổng giao tiếp",
+          "value_raw": "RS-232 | RS-485 | USB Type C 2.0",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Switched 12 Volt",
+          "name_vi": "Nguồn 12 V chuyển mạch",
+          "value_raw": "2 terminals",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Digital I/O",
+          "name_vi": "I/O số",
+          "value_raw": "7 terminals (C1, C2, P_SW, and SE1 to SE4) configurable for digital input and output | Includes status high/low, pulse width modulation, external interrupt, and communications functions | Exception: C2 and P_SW do not do pulse-width modulation",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Analog Input Limits",
+          "name_vi": "Giới hạn đầu vào analog",
+          "value_raw": "-100 to +2500 mV",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Analog Voltage Accuracy",
+          "name_vi": "Độ chính xác điện áp analog",
+          "value_raw": "0° to 40°C: ±(0.04% of measurement + offset) | -40° to +70°C: ±(0.1% of measurement + offset) | Note: Accuracy specifications do not include sensor or measurement noise",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "ADC",
+          "name_vi": "Bộ chuyển đổi ADC",
+          "value_raw": "24-bit",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "POWER / CLOCK / MEMORY",
+          "name_en": "Charge Terminal Characteristics (CHG+ and CHG-)",
+          "name_vi": "Đặc tính đầu cực sạc (CHG+ và CHG-)",
+          "value_raw": "Input: Power converter or solar panel, typical | Energy source: ES1 PS2 only | Hold current limit: 1.1 A @ 20°C | Voltage: 16 to 32 Vdc",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "POWER / CLOCK / MEMORY",
+          "name_en": "Battery Terminal Characteristics (BAT+ and BAT-)",
+          "name_vi": "Đặc tính đầu cực pin (BAT+ và BAT-)",
+          "value_raw": "Hold current limit: 3.7 A @ 20°C | Input: External battery, 7 Ah lead-acid, typical | Voltage input: 12 Vdc only",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "POWER / CLOCK / MEMORY",
+          "name_en": "Internal Lithium Battery",
+          "name_vi": "Pin lithium bên trong",
+          "value_raw": "Battery: 3 V coin cell CR2032X for battery-backed clock | Life: 6 years with no external power source",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "POWER / CLOCK / MEMORY",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "POWER / CLOCK / MEMORY",
+          "name_en": "CPU Drive/Programs",
+          "name_vi": "Bộ nhớ CPU/Chương trình",
+          "value_raw": "50 MB serial flash",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "POWER / CLOCK / MEMORY",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "50 MB serial flash",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "POWER / CLOCK / MEMORY",
+          "name_en": "Idle Current Drain, Average",
+          "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+          "value_raw": "0.5 mA (@ 12 Vdc)",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "POWER / CLOCK / MEMORY",
+          "name_en": "Active Current Drain, Average",
+          "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+          "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Internet Protocols",
+          "name_vi": "Giao thức Internet",
+          "value_raw": "Ethernet | PPP | RNDIS | ICMP/Ping | Auto-IP (APIPA) | IPv4 | IPv6 | UDP | TCP | TLS (v1.2) | DNS | DHCP | SLAAC | NTP | Telnet | HTTP(S) | FTP(S) | SMTP/TLS | POP3/TLS | MQTT(S)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Communications Protocols",
+          "name_vi": "Giao thức truyền thông",
+          "value_raw": "PakBus | PakBus Encryption | Modbus RTU/ASCII/TCP | DNP3 | SDI-12 | and others",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "PHYSICAL",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "16.3 x 8.4 x 5.6 cm (6.4 x 3.3 x 2.2 in.) | Additional clearance required for cables and leads",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "PHYSICAL",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "PHYSICAL",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "3 years",
+          "source_rows": [
+            36
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cr350.pdf",
+        "user_manual": "cr350man.pdf",
+        "order_form": "https://www.campbellsci.com/products/cr350"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13645",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

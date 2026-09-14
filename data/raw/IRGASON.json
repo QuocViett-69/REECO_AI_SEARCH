@@ -1,0 +1,873 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "IRGASON_Basic_Enhanced_Barometer_Specifications (1).xlsx",
+    "sheet": "IRGASON_Specifications"
+  },
+  "products": [
+    {
+      "product_id": "CSI_IRGASON_BASIC_BAROMETER",
+      "manufacturer": "Campbell Scientific",
+      "model": "IRGASON - Basic Barometer",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Barometer Option",
+          "name_vi": "Tùy chọn khí áp kế",
+          "value_raw": "Basic Barometer (option -BB)",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Mounting Option",
+          "name_vi": "Tùy chọn lắp đặt",
+          "value_raw": "w/CR6-NA Mounted | No CR6 or CR6 Mounting",
+          "source_rows": [
+            4,
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Carrying Case",
+          "name_vi": "Hộp đựng",
+          "value_raw": "w/IRGASON Carrying Case | No Carrying Case",
+          "source_rows": [
+            6,
+            7
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Anemometer Temperature Configuration",
+          "name_vi": "Cấu hình nhiệt độ máy đo gió",
+          "value_raw": "Anemometer (-30 to +50°C)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Patent",
+          "name_vi": "Bằng sáng chế",
+          "value_raw": "U.S. Patent No. D680455",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30° to +50°C",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibrated Pressure Range",
+          "name_vi": "Dải áp suất hiệu chuẩn",
+          "value_raw": "70 to 106 kPa",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "10 to 16 Vdc",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power",
+          "name_vi": "Công suất",
+          "value_raw": "5 W (steady state and power up) at 25°C",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Rate",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "60 Hz",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output Bandwidth",
+          "name_vi": "Băng thông đầu ra",
+          "value_raw": "5, 10, 12.5, or 20 Hz (user-programmable)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output Options",
+          "name_vi": "Tùy chọn đầu ra",
+          "value_raw": "SDM | RS-485 | USB | analog (CO₂ and H₂O only)",
+          "source_rows": [
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Auxiliary Inputs",
+          "name_vi": "Đầu vào phụ",
+          "value_raw": "Air temperature | pressure",
+          "source_rows": [
+            21,
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "3 years or 17,500 hours of operation (whichever comes first)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Cable Length",
+          "name_vi": "Chiều dài cáp",
+          "value_raw": "3 m (10 ft) from IRGASON to EC100",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "2.8 kg (6.1 lb) for IRGASON head and cables | 3.2 kg (7.1 lb) for EC100 electronics",
+          "source_rows": [
+            25,
+            26
+          ]
+        },
+        {
+          "section": "Gas Analyzer",
+          "name_en": "Path Length",
+          "name_vi": "Chiều dài đường quang",
+          "value_raw": "15.37 cm (6.05 in.) | A temperature of 20°C and pressure of 101.325 kPa was used to convert mass density to concentration.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "-NOTE-",
+          "name_vi": "Ghi chú",
+          "value_raw": "A temperature of 20°C and pressure of 101.325 kPa was used to convert mass density to concentration.",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "1% (standard deviation of calibration residuals) | Assumes the following: gas analyzer was properly zero and spanned using appropriate standards; CO₂ span concentration was 400 ppm; H₂O span dewpoint was at 12°C (16.7 ppt); zero/span temperature was 25°C; zero/span pressure was 84 kPa; subsequent measurements made at or near span concentration; temperature is not more than ±6°C from zero/span temperature; and ambient temperature is within gas analyzer operating temperature range",
+          "source_rows": [
+            32,
+            33
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Precision RMS (maximum)",
+          "name_vi": "Độ chính xác RMS (tối đa)",
+          "value_raw": "0.2 mg/m³ (0.15 μmol/mol) | Nominal conditions for precision verification test: 25°C, 86 kPa, 400 μmol/mol CO₂, 12°C dewpoint, and 20 Hz bandwidth",
+          "source_rows": [
+            34,
+            35
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Calibrated Range",
+          "name_vi": "Dải hiệu chuẩn",
+          "value_raw": "0 to 1,000 μmol/mol | 0 to 3,000 μmol/mol available upon request",
+          "source_rows": [
+            36,
+            37
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Zero Drift with Temperature (maximum)",
+          "name_vi": "Độ trôi zero theo nhiệt độ (tối đa)",
+          "value_raw": "±0.55 mg/m³/°C (±0.3 μmol/mol/°C)",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Gain Drift with Temperature (maximum)",
+          "name_vi": "Độ trôi hệ số khuếch đại theo nhiệt độ (tối đa)",
+          "value_raw": "±0.1% of reading/°C",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Cross Sensitivity (maximum)",
+          "name_vi": "Độ nhạy chéo (tối đa)",
+          "value_raw": "±1.1 x 10⁻⁴ mol CO₂/mol H₂O",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "-NOTE-",
+          "name_vi": "Ghi chú",
+          "value_raw": "A temperature of 20°C and pressure of 101.325 kPa was used to convert mass density to concentration.",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "2% (standard deviation of calibration residuals) | Assumes the following: gas analyzer was properly zero and spanned using appropriate standards; CO₂ span concentration was 400 ppm; H₂O span dewpoint was at 12°C (16.7 ppt); zero/span temperature was 25°C; zero/span pressure was 84 kPa; subsequent measurements made at or near span concentration; temperature is not more than ±6°C from zero/span temperature; and ambient temperature is within gas analyzer operating temperature range",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Precision RMS (maximum)",
+          "name_vi": "Độ chính xác RMS (tối đa)",
+          "value_raw": "0.004 g/m³ (0.006 mmol/mol) | Nominal conditions for precision verification test: 25°C, 86 kPa, 400 μmol/mol CO₂, 12°C dewpoint, and 20 Hz bandwidth",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Calibrated Range",
+          "name_vi": "Dải hiệu chuẩn",
+          "value_raw": "0 to 72 mmol/mol (38°C dewpoint)",
+          "source_rows": [
+            47
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Zero Drift with Temperature (maximum)",
+          "name_vi": "Độ trôi zero theo nhiệt độ (tối đa)",
+          "value_raw": "±0.037 g/m³/°C (±0.05 mmol/mol/°C)",
+          "source_rows": [
+            48
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Gain Drift with Temperature (maximum)",
+          "name_vi": "Độ trôi hệ số khuếch đại theo nhiệt độ (tối đa)",
+          "value_raw": "±0.3% of reading/°C",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Cross Sensitivity (maximum)",
+          "name_vi": "Độ nhạy chéo (tối đa)",
+          "value_raw": "±0.1 mol H₂O/mol CO₂",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "-NOTE-",
+          "name_vi": "Ghi chú",
+          "value_raw": "The accuracy specification for the sonic anemometer is for wind speeds < 30 m s⁻¹ and wind angles between ±170°.",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Offset Error",
+          "name_vi": "Sai số lệch",
+          "value_raw": "< ±8.0 cm s⁻¹ (for ux, uy) | < ±4.0 cm s⁻¹ (for uz) | ±0.7° while horizontal wind at 1 m s⁻¹ (for wind direction)",
+          "source_rows": [
+            53,
+            54,
+            55
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Gain Error",
+          "name_vi": "Sai số hệ số khuếch đại",
+          "value_raw": "< ±2% of reading (for wind vector within ±5° of horizontal) | < ±6% of reading (for wind vector within ±20° of horizontal) | < ±3% of reading (for wind vector within ±10° of horizontal)",
+          "source_rows": [
+            56,
+            57,
+            58
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Measurement Precision RMS",
+          "name_vi": "Độ chính xác phép đo RMS",
+          "value_raw": "0.025°C (for sonic temperature) | 0.6° (for wind direction) | 1 mm s⁻¹ (for ux, uy) | 0.5 mm s⁻¹ (for uz)",
+          "source_rows": [
+            59,
+            60,
+            61,
+            62
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Speed of Sound",
+          "name_vi": "Tốc độ âm thanh",
+          "value_raw": "Determined from three acoustic paths | corrected for crosswind effects",
+          "source_rows": [
+            63,
+            64
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Rain",
+          "name_vi": "Mưa",
+          "value_raw": "Innovative signal processing and transducer wicks considerably improve performance of anemometer during precipitation events",
+          "source_rows": [
+            65
+          ]
+        },
+        {
+          "section": "Basic Barometer (option -BB)",
+          "name_en": "Total Accuracy",
+          "name_vi": "Độ chính xác tổng",
+          "value_raw": "±3.7 kPa at -30°C, falling linearly to ±1.5 kPa at 0°C (-30° to 0°C) | ±1.5 kPa (0° to 50°C)",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "Basic Barometer (option -BB)",
+          "name_en": "Measurement Rate",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "10 Hz",
+          "source_rows": [
+            69
+          ]
+        },
+        {
+          "section": "Ambient Temperature",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "BetaTherm 100K6A1IA",
+          "source_rows": [
+            75
+          ]
+        },
+        {
+          "section": "Ambient Temperature",
+          "name_en": "Total Accuracy",
+          "name_vi": "Độ chính xác tổng",
+          "value_raw": "±0.15°C (-30° to +50°C)",
+          "source_rows": [
+            76
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_irgason_datasheet.pdf",
+        "user_manual": "irgason_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/irgason"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/1223",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_IRGASON_ENHANCED_BAROMETER",
+      "manufacturer": "Campbell Scientific",
+      "model": "IRGASON - Enhanced Barometer",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Barometer Option",
+          "name_vi": "Tùy chọn khí áp kế",
+          "value_raw": "Enhanced Barometer (option -EB)",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Mounting Option",
+          "name_vi": "Tùy chọn lắp đặt",
+          "value_raw": "w/CR6-NA Mounted | No CR6 or CR6 Mounting",
+          "source_rows": [
+            4,
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Carrying Case",
+          "name_vi": "Hộp đựng",
+          "value_raw": "w/IRGASON Carrying Case | No Carrying Case",
+          "source_rows": [
+            6,
+            7
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Anemometer Temperature Configuration",
+          "name_vi": "Cấu hình nhiệt độ máy đo gió",
+          "value_raw": "Anemometer (-30 to +50°C)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Patent",
+          "name_vi": "Bằng sáng chế",
+          "value_raw": "U.S. Patent No. D680455",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30° to +50°C",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibrated Pressure Range",
+          "name_vi": "Dải áp suất hiệu chuẩn",
+          "value_raw": "70 to 106 kPa",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "10 to 16 Vdc",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power",
+          "name_vi": "Công suất",
+          "value_raw": "5 W (steady state and power up) at 25°C",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Rate",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "60 Hz",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output Bandwidth",
+          "name_vi": "Băng thông đầu ra",
+          "value_raw": "5, 10, 12.5, or 20 Hz (user-programmable)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output Options",
+          "name_vi": "Tùy chọn đầu ra",
+          "value_raw": "SDM | RS-485 | USB | analog (CO₂ and H₂O only)",
+          "source_rows": [
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Auxiliary Inputs",
+          "name_vi": "Đầu vào phụ",
+          "value_raw": "Air temperature | pressure",
+          "source_rows": [
+            21,
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "3 years or 17,500 hours of operation (whichever comes first)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Cable Length",
+          "name_vi": "Chiều dài cáp",
+          "value_raw": "3 m (10 ft) from IRGASON to EC100",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "2.8 kg (6.1 lb) for IRGASON head and cables | 3.2 kg (7.1 lb) for EC100 electronics",
+          "source_rows": [
+            25,
+            26
+          ]
+        },
+        {
+          "section": "Gas Analyzer",
+          "name_en": "Path Length",
+          "name_vi": "Chiều dài đường quang",
+          "value_raw": "15.37 cm (6.05 in.) | A temperature of 20°C and pressure of 101.325 kPa was used to convert mass density to concentration.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "-NOTE-",
+          "name_vi": "Ghi chú",
+          "value_raw": "A temperature of 20°C and pressure of 101.325 kPa was used to convert mass density to concentration.",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "1% (standard deviation of calibration residuals) | Assumes the following: gas analyzer was properly zero and spanned using appropriate standards; CO₂ span concentration was 400 ppm; H₂O span dewpoint was at 12°C (16.7 ppt); zero/span temperature was 25°C; zero/span pressure was 84 kPa; subsequent measurements made at or near span concentration; temperature is not more than ±6°C from zero/span temperature; and ambient temperature is within gas analyzer operating temperature range",
+          "source_rows": [
+            32,
+            33
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Precision RMS (maximum)",
+          "name_vi": "Độ chính xác RMS (tối đa)",
+          "value_raw": "0.2 mg/m³ (0.15 μmol/mol) | Nominal conditions for precision verification test: 25°C, 86 kPa, 400 μmol/mol CO₂, 12°C dewpoint, and 20 Hz bandwidth",
+          "source_rows": [
+            34,
+            35
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Calibrated Range",
+          "name_vi": "Dải hiệu chuẩn",
+          "value_raw": "0 to 1,000 μmol/mol | 0 to 3,000 μmol/mol available upon request",
+          "source_rows": [
+            36,
+            37
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Zero Drift with Temperature (maximum)",
+          "name_vi": "Độ trôi zero theo nhiệt độ (tối đa)",
+          "value_raw": "±0.55 mg/m³/°C (±0.3 μmol/mol/°C)",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Gain Drift with Temperature (maximum)",
+          "name_vi": "Độ trôi hệ số khuếch đại theo nhiệt độ (tối đa)",
+          "value_raw": "±0.1% of reading/°C",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "Gas Analyzer - CO₂ Performance",
+          "name_en": "Cross Sensitivity (maximum)",
+          "name_vi": "Độ nhạy chéo (tối đa)",
+          "value_raw": "±1.1 x 10⁻⁴ mol CO₂/mol H₂O",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "-NOTE-",
+          "name_vi": "Ghi chú",
+          "value_raw": "A temperature of 20°C and pressure of 101.325 kPa was used to convert mass density to concentration.",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "2% (standard deviation of calibration residuals) | Assumes the following: gas analyzer was properly zero and spanned using appropriate standards; CO₂ span concentration was 400 ppm; H₂O span dewpoint was at 12°C (16.7 ppt); zero/span temperature was 25°C; zero/span pressure was 84 kPa; subsequent measurements made at or near span concentration; temperature is not more than ±6°C from zero/span temperature; and ambient temperature is within gas analyzer operating temperature range",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Precision RMS (maximum)",
+          "name_vi": "Độ chính xác RMS (tối đa)",
+          "value_raw": "0.004 g/m³ (0.006 mmol/mol) | Nominal conditions for precision verification test: 25°C, 86 kPa, 400 μmol/mol CO₂, 12°C dewpoint, and 20 Hz bandwidth",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Calibrated Range",
+          "name_vi": "Dải hiệu chuẩn",
+          "value_raw": "0 to 72 mmol/mol (38°C dewpoint)",
+          "source_rows": [
+            47
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Zero Drift with Temperature (maximum)",
+          "name_vi": "Độ trôi zero theo nhiệt độ (tối đa)",
+          "value_raw": "±0.037 g/m³/°C (±0.05 mmol/mol/°C)",
+          "source_rows": [
+            48
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Gain Drift with Temperature (maximum)",
+          "name_vi": "Độ trôi hệ số khuếch đại theo nhiệt độ (tối đa)",
+          "value_raw": "±0.3% of reading/°C",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "Gas Analyzer - H₂O Performance",
+          "name_en": "Cross Sensitivity (maximum)",
+          "name_vi": "Độ nhạy chéo (tối đa)",
+          "value_raw": "±0.1 mol H₂O/mol CO₂",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "-NOTE-",
+          "name_vi": "Ghi chú",
+          "value_raw": "The accuracy specification for the sonic anemometer is for wind speeds < 30 m s⁻¹ and wind angles between ±170°.",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Offset Error",
+          "name_vi": "Sai số lệch",
+          "value_raw": "< ±8.0 cm s⁻¹ (for ux, uy) | < ±4.0 cm s⁻¹ (for uz) | ±0.7° while horizontal wind at 1 m s⁻¹ (for wind direction)",
+          "source_rows": [
+            53,
+            54,
+            55
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Gain Error",
+          "name_vi": "Sai số hệ số khuếch đại",
+          "value_raw": "< ±2% of reading (for wind vector within ±5° of horizontal) | < ±6% of reading (for wind vector within ±20° of horizontal) | < ±3% of reading (for wind vector within ±10° of horizontal)",
+          "source_rows": [
+            56,
+            57,
+            58
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Measurement Precision RMS",
+          "name_vi": "Độ chính xác phép đo RMS",
+          "value_raw": "0.025°C (for sonic temperature) | 0.6° (for wind direction) | 1 mm s⁻¹ (for ux, uy) | 0.5 mm s⁻¹ (for uz)",
+          "source_rows": [
+            59,
+            60,
+            61,
+            62
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Speed of Sound",
+          "name_vi": "Tốc độ âm thanh",
+          "value_raw": "Determined from three acoustic paths | corrected for crosswind effects",
+          "source_rows": [
+            63,
+            64
+          ]
+        },
+        {
+          "section": "Sonic Anemometer - Accuracy",
+          "name_en": "Rain",
+          "name_vi": "Mưa",
+          "value_raw": "Innovative signal processing and transducer wicks considerably improve performance of anemometer during precipitation events",
+          "source_rows": [
+            65
+          ]
+        },
+        {
+          "section": "Enhanced Barometer (option -EB)",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Vaisala PTB110",
+          "source_rows": [
+            71
+          ]
+        },
+        {
+          "section": "Enhanced Barometer (option -EB)",
+          "name_en": "Total Accuracy",
+          "name_vi": "Độ chính xác tổng",
+          "value_raw": "±0.15 kPa (-30° to +50°C)",
+          "source_rows": [
+            72
+          ]
+        },
+        {
+          "section": "Enhanced Barometer (option -EB)",
+          "name_en": "Measurement Rate",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 Hz",
+          "source_rows": [
+            73
+          ]
+        },
+        {
+          "section": "Ambient Temperature",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "BetaTherm 100K6A1IA",
+          "source_rows": [
+            75
+          ]
+        },
+        {
+          "section": "Ambient Temperature",
+          "name_en": "Total Accuracy",
+          "name_vi": "Độ chính xác tổng",
+          "value_raw": "±0.15°C (-30° to +50°C)",
+          "source_rows": [
+            76
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_irgason_datasheet.pdf",
+        "user_manual": "irgason_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/irgason"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/1223",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

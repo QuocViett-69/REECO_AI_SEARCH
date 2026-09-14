@@ -1,0 +1,834 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_TX325",
+  "model": "TX325",
+  "raw_record_ref": {
+    "file": "data/raw/TX325.json",
+    "product_index": 0,
+    "raw_record_key": "TX325.json#0",
+    "raw_product_id": "CSI_TX325",
+    "raw_model": "TX325"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Product Type",
+      "value_raw": "Satellite Transmitter for GOES CS2/v2.0",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Satellite System",
+      "value_raw": "GOES DCS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "satellite_system"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Successor To",
+      "value_raw": "TX321",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "successor_to"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Communication Direction",
+      "value_raw": "One-way satellite data transmission",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "communication_direction"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Transmissions Supported",
+      "value_raw": "Random; Timed (Scheduled)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "transmissions_supported"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Supported Transmission Rates",
+      "value_raw": "300 and 1200 bps",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "supported_transmission_rates"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Data Formats",
+      "value_raw": "ASCII (SHEF); Pseudo Binary",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "ASCII"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "data_formats"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Radio Module",
+      "value_raw": "OmniSat-3",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "radio_module"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Certification",
+      "value_raw": "NOAA/NESDIS GOES High Data Rate Certification Standard V2, Certification #12142012",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "certification"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-40 to +60 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Storage Temperature Range",
+      "value_raw": "-55 to +75 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 75,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "storage_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Case Dimensions – Without Connectors",
+      "value_raw": "15.88 × 12.7 × 4.57 cm (6.25 × 5 × 1.8 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "case_dimensions_without_connectors"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Maximum Dimensions – With Connectors",
+      "value_raw": "15.88 × 14.99 × 4.57 cm (6.25 × 5.9 × 1.8 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "maximum_dimensions_with_connectors"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Weight",
+      "value_raw": "0.77 kg (1.7 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.77,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.7,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Supply Voltage Range",
+      "value_raw": "10.5 to 16 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 10.5,
+        "max_value": 16,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "supply_voltage_range",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Current Drain – Standby",
+      "value_raw": "<5 mA (2.8 mA typical at 12 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "current_drain_standby",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Current Drain – GPS Acquisition",
+      "value_raw": "<50 mA (25 mA typical at 12 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "current_drain_gps_acquisition",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Current Drain – Transmitting",
+      "value_raw": "<2.5 A (1.8 A typical at 12 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "current_drain_transmitting",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Power Connector",
+      "value_raw": "2-pin screw terminal, 0.2 in. pitch",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "power_connector",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Power Protection",
+      "value_raw": "Up to 23.1 V (reverse polarity and overvoltage); total system current fused at 5 A with replaceable fuse",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "power_protection",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Baud Rates",
+      "value_raw": "300 and 1200 bps",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "baud_rates",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Transmit Power – 300 baud",
+      "value_raw": "31 dBm maximum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "transmit_power_300_baud",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Typical EIRP – 300 baud",
+      "value_raw": "37 to 41 dBm",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 37,
+        "max_value": 41,
+        "unit": "dBm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "typical_eirp_300_baud",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Maximum EIRP – 300 baud",
+      "value_raw": "41 dBm",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 41,
+        "unit": "dBm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "maximum_eirp_300_baud",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Transmit Power – 1200 baud",
+      "value_raw": "37 dBm maximum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "transmit_power_1200_baud",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Typical EIRP – 1200 baud",
+      "value_raw": "43 to 47 dBm",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 43,
+        "max_value": 47,
+        "unit": "dBm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "typical_eirp_1200_baud",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Maximum EIRP – 1200 baud",
+      "value_raw": "47 dBm",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 47,
+        "unit": "dBm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "maximum_eirp_1200_baud",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Frequency Range",
+      "value_raw": "401.701 to 402.09925 MHz",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 401.701,
+        "max_value": 402.09925,
+        "unit": "MHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "frequency_range",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Initial Frequency Stability",
+      "value_raw": "±20 Hz disciplined to GPS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "initial_frequency_stability",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Integrated GPS Receiver",
+      "value_raw": "Yes",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "integrated_gps_receiver"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "GPS Initial Time Accuracy",
+      "value_raw": "±100 μs (synchronized to GPS)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "gps_initial_time_accuracy",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Clock Drift Without GPS",
+      "value_raw": "±40 ms/day",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 40,
+        "unit": "ms/day",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "clock_drift_without_gps"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "GPS Schedule",
+      "value_raw": "1 fix at power up; updated roughly every 11 hours",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "gps_schedule"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Maximum RF Input Gain",
+      "value_raw": "25 dB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 25,
+        "unit": "dB",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "maximum_rf_input_gain"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "GPS Receiver Type",
+      "value_raw": "3.3 V active",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "gps_receiver_type"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "GPS Connector Type",
+      "value_raw": "SMA jack",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 35,
+        "source_rows": [
+          41
+        ]
+      },
+      "canonical_key": "gps_connector_type"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "External GPS Antenna Supply",
+      "value_raw": "Up to 19 mA at 2.7 V",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 36,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "external_gps_antenna_supply"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Recommended Maximum GPS Antenna LNA",
+      "value_raw": "1.5 dB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.5,
+        "unit": "dB",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 37,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "recommended_maximum_gps_antenna_lna"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "RS-232 Interface",
+      "value_raw": "DB9 F, DCE, 3-wire RS-232",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 38,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "rs_232_interface"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Satellite RF Transmit Out",
+      "value_raw": "Type N jack",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 39,
+        "source_rows": [
+          45
+        ]
+      },
+      "canonical_key": "satellite_rf_transmit_out"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Compatible Data Loggers – Fully Compatible",
+      "value_raw": "GRANITE series, CR6, CR1000X series, CR350, CR300 series",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 40,
+        "source_rows": [
+          46
+        ]
+      },
+      "canonical_key": "compatible_data_loggers_fully_compatible"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "section": "General Specifications",
+      "name_raw": "Compatible Data Loggers – Limited Compatibility",
+      "value_raw": "CR3000, CR800 series, CR1000",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 41,
+        "source_rows": [
+          47
+        ]
+      },
+      "canonical_key": "compatible_data_loggers_limited_compatibility"
+    }
+  ]
+}

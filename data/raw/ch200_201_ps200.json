@@ -1,0 +1,768 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "ch200,201&ps200.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CH200",
+      "manufacturer": "Campbell Scientific",
+      "model": "CH200",
+      "product_name_en": "CH200",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "GENERAL",
+          "name_en": "Operational Temperature",
+          "name_vi": "Nhiệt độ hoạt động",
+          "value_raw": "-40°C to +60°C; VRLA battery manufacturers state that “heat kills batteries” and recommend operating batteries at ≤50°C",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "GENERAL",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "7.5 × 3.7 × 10.0 cm (3 × 1.5 × 3.9 in.)",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CHARGE – CHARGE TERMINALS (AC OR DC SOURCE)",
+          "name_en": "AC",
+          "name_vi": "Nguồn AC",
+          "value_raw": "18 to 24 VRMS, internally limited to 1.2 ARMS maximum",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "CHARGE – CHARGE TERMINALS (AC OR DC SOURCE)",
+          "name_en": "DC",
+          "name_vi": "Nguồn DC",
+          "value_raw": "16 to 40 Vdc, internally limited to 1.1 Adc maximum",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "Battery voltages below 8.7 V may result in less than 3.0 A current limit because of fold-back current limit",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "15 to 40 Vdc",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Maximum Charging Current",
+          "name_vi": "Dòng sạc tối đa",
+          "value_raw": "4.0 Adc typical (3.2 to 4.9 Adc depending upon individual charger)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Charge Source Present",
+          "name_vi": "Không có nguồn sạc",
+          "value_raw": "300 µA maximum",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Battery Connected",
+          "name_vi": "Không kết nối pin",
+          "value_raw": "2 mA maximum",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Battery Charging Note",
+          "name_vi": "Ghi chú sạc pin",
+          "value_raw": "Two-step temperature-compensated constant-voltage charging for valve-regulated lead-acid batteries; cycle and float charging voltage parameters are programmable with default values listed",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "CYCLE Charging",
+          "name_vi": "Điện áp sạc chu kỳ",
+          "value_raw": "Vbatt(T) = 14.70 V − (24 mV) × (T − 25°C)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "FLOAT Charging",
+          "name_vi": "Điện áp sạc duy trì",
+          "value_raw": "Vbatt(T) = 13.65 V − (18 mV) × (T − 25°C)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Charging Voltage Accuracy",
+          "name_vi": "Độ chính xác điện áp sạc",
+          "value_raw": "±1% on charging voltage over -40°C to +60°C",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Voltage",
+          "name_vi": "Điện áp đầu ra",
+          "value_raw": "Unregulated 12 V from battery",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Output Protection",
+          "name_vi": "Bảo vệ đầu ra",
+          "value_raw": "4 A self-resettable thermal fuse",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Fuse Hold Current Limit",
+          "name_vi": "Giới hạn dòng giữ cầu chì",
+          "value_raw": ">4 A (<20°C); 2.7 A (60°C); 3.1 A (50°C); 4.0 A (20°C)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Measurement Temperature Note",
+          "name_vi": "Điều kiện nhiệt độ phép đo",
+          "value_raw": "At -40°C to +60°C",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Average Battery Voltage",
+          "name_vi": "Điện áp pin trung bình",
+          "value_raw": "±(1% of reading + 15 mV)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Average Battery/Load Current",
+          "name_vi": "Dòng pin/tải trung bình",
+          "value_raw": "±(2% of reading + 2 mA)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Solar",
+          "name_vi": "Chế độ Solar",
+          "value_raw": "±(1% of reading − 0.25 V) / −(1% of reading + 1 V)",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Solar Negative Offset Note",
+          "name_vi": "Ghi chú độ lệch âm Solar",
+          "value_raw": "1.0 V negative offset is worst-case due to reversal protection diode on input; typical diode drop is 0.35 V",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Continuous",
+          "name_vi": "Chế độ Continuous",
+          "value_raw": "±(1% of reading − 0.5 V) / −(1% of reading + 2 V)",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Continuous Negative Offset Note",
+          "name_vi": "Ghi chú độ lệch âm Continuous",
+          "value_raw": "2.0 V negative offset is worst-case due to two series diodes in AC full-bridge; typical diode drops are 0.35 each for 0.7 V total",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Charger Temperature",
+          "name_vi": "Nhiệt độ bộ sạc",
+          "value_raw": "±2°C",
+          "source_rows": [
+            44
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_ch200data.pdf",
+        "user_manual": "ps200&ch200man.pdf",
+        "order_form": "https://www.campbellsci.com/products/ch200"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3806",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_PS200",
+      "manufacturer": "Campbell Scientific",
+      "model": "PS200",
+      "product_name_en": "PS200",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "GENERAL",
+          "name_en": "Operational Temperature",
+          "name_vi": "Nhiệt độ hoạt động",
+          "value_raw": "-40°C to +60°C; VRLA battery manufacturers state that “heat kills batteries” and recommend operating batteries at ≤50°C",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "GENERAL",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "376.48 g (0.83 lb)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CHARGE – CHARGE TERMINALS (AC OR DC SOURCE)",
+          "name_en": "AC",
+          "name_vi": "Nguồn AC",
+          "value_raw": "18 to 24 VRMS, with 1.2 ARMS maximum",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "CHARGE – CHARGE TERMINALS (AC OR DC SOURCE)",
+          "name_en": "DC",
+          "name_vi": "Nguồn DC",
+          "value_raw": "16 to 40 Vdc, with 1.1 A DC maximum",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "Battery voltages below 8.7 V may result in less than 3.0 A current limit because of fold-back current limit",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "15 to 40 Vdc",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Maximum Charging Current",
+          "name_vi": "Dòng sạc tối đa",
+          "value_raw": "4.0 Adc typical (3.2 to 4.9 Adc depending upon individual charger)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Charge Source Present",
+          "name_vi": "Không có nguồn sạc",
+          "value_raw": "300 µA maximum",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Battery Connected",
+          "name_vi": "Không kết nối pin",
+          "value_raw": "2 mA maximum",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Battery Charging Note",
+          "name_vi": "Ghi chú sạc pin",
+          "value_raw": "Two-step temperature-compensated constant-voltage charging for valve-regulated lead-acid batteries; cycle and float charging voltage parameters are programmable with default values listed",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "CYCLE Charging",
+          "name_vi": "Điện áp sạc chu kỳ",
+          "value_raw": "Vbatt(T) = 14.70 V − (24 mV) × (T − 25°C)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "FLOAT Charging",
+          "name_vi": "Điện áp sạc duy trì",
+          "value_raw": "Vbatt(T) = 13.65 V − (18 mV) × (T − 25°C)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Charging Voltage Accuracy",
+          "name_vi": "Độ chính xác điện áp sạc",
+          "value_raw": "±1% on charging voltage over -40°C to +60°C",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Voltage",
+          "name_vi": "Điện áp đầu ra",
+          "value_raw": "Unregulated 12 V from battery",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Output Protection",
+          "name_vi": "Bảo vệ đầu ra",
+          "value_raw": "4 A self-resettable thermal fuse",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Fuse Hold Current Limit",
+          "name_vi": "Giới hạn dòng giữ cầu chì",
+          "value_raw": ">4 A (<20°C); 2.7 A (60°C); 3.1 A (50°C); 4.0 A (20°C)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Measurement Temperature Note",
+          "name_vi": "Điều kiện nhiệt độ phép đo",
+          "value_raw": "Over -40°C to +60°C range",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Average Battery Voltage",
+          "name_vi": "Điện áp pin trung bình",
+          "value_raw": "±(1% of reading + 15 mV)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Average Battery/Load Current",
+          "name_vi": "Dòng pin/tải trung bình",
+          "value_raw": "±(2% of reading + 2 mA)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Solar",
+          "name_vi": "Chế độ Solar",
+          "value_raw": "±(1% of reading − 0.25 V) / −(1% of reading + 1 V)",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Solar Negative Offset Note",
+          "name_vi": "Ghi chú độ lệch âm Solar",
+          "value_raw": "1.0 V negative offset is worst-case due to reversal protection diode on input; typical diode drop is 0.35 V",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Continuous",
+          "name_vi": "Chế độ Continuous",
+          "value_raw": "±(1% of reading − 0.5 V) / −(1% of reading + 2 V)",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Continuous Negative Offset Note",
+          "name_vi": "Ghi chú độ lệch âm Continuous",
+          "value_raw": "2.0 V negative offset is worst-case due to two series diodes in AC full-bridge; typical diode drops are 0.35 each for 0.7 V total",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Charger Temperature",
+          "name_vi": "Nhiệt độ bộ sạc",
+          "value_raw": "±2°C",
+          "source_rows": [
+            44
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_ch201data.pdf",
+        "user_manual": "ps200&ch200man.pdf",
+        "order_form": "https://www.campbellsci.com/products/ps200"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3815",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CH201",
+      "manufacturer": "Campbell Scientific",
+      "model": "CH201",
+      "product_name_en": "CH201",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "GENERAL",
+          "name_en": "Operational Temperature",
+          "name_vi": "Nhiệt độ hoạt động",
+          "value_raw": "-40°C to +60°C; VRLA battery manufacturers state that “heat kills batteries” and recommend operating batteries at <50°C",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "GENERAL",
+          "name_en": "IP Rating",
+          "name_vi": "Cấp bảo vệ IP",
+          "value_raw": "IP51",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "11.4 × 10.08 × 3.38 cm (4.49 × 3.97 × 1.33 in.)",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "GENERAL",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "226.8 g (0.5 lb)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "Battery voltages below 8.7 V may result in less than 3.0 A current limit because of fold-back current limit",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "15 to 50 Vdc",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Maximum Charging Current",
+          "name_vi": "Dòng sạc tối đa",
+          "value_raw": "10A",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Maximum Output Current",
+          "name_vi": "Dòng đầu ra tối đa",
+          "value_raw": "12A",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Rated Input Current",
+          "name_vi": "Dòng đầu vào định mức",
+          "value_raw": "12A",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Charge Source Present",
+          "name_vi": "Không có nguồn sạc",
+          "value_raw": "300 µA maximum",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Battery Connected",
+          "name_vi": "Không kết nối pin",
+          "value_raw": "Typical 5 mA at 40 Vdc",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Battery Charging Note",
+          "name_vi": "Ghi chú sạc pin",
+          "value_raw": "Two-step temperature-compensated constant-voltage charging for valve-regulated lead-acid batteries; cycle and float charging voltage parameters are programmable with default values listed",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "CYCLE Charging",
+          "name_vi": "Điện áp sạc chu kỳ",
+          "value_raw": "Vbatt(T) = 14.70 V − (24 mV) × (T − 25°C)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "FLOAT Charging",
+          "name_vi": "Điện áp sạc duy trì",
+          "value_raw": "Vbatt(T) = 13.65 V − (18 mV) × (T − 25°C)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Voltage",
+          "name_vi": "Điện áp đầu ra",
+          "value_raw": "Unregulated 12 V from battery",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Output Protection",
+          "name_vi": "Bảo vệ đầu ra",
+          "value_raw": "4.6 A solid-state circuit breaker; self-resettable thermal",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "LVD (Low-Voltage Disconnect)",
+          "name_vi": "Ngắt điện áp thấp",
+          "value_raw": "6 Vdc (default)",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Input Voltage",
+          "name_vi": "Điện áp đầu vào",
+          "value_raw": "±(1% of reading + 15 mV)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Battery Voltage",
+          "name_vi": "Điện áp pin",
+          "value_raw": "±(2% of reading + 15 mV)",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Load Current",
+          "name_vi": "Dòng tải",
+          "value_raw": "±(2% of reading + 2 mA)",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Load Current Impulse Error",
+          "name_vi": "Sai số dòng tải khi có xung",
+          "value_raw": "Impulse-type changes in current may have an average current error of ±(10% of reading + 2 mA)",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Battery Current",
+          "name_vi": "Dòng pin",
+          "value_raw": "±(2% of reading + 10 mA)",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Battery Current Impulse Error",
+          "name_vi": "Sai số dòng pin khi có xung",
+          "value_raw": "Impulse-type changes in current may have an average current error of ±(10% of reading + 2 mA)",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "REGULATOR INPUT VOLTAGE",
+          "name_en": "Charger Temperature",
+          "name_vi": "Nhiệt độ bộ sạc",
+          "value_raw": "±2°C",
+          "source_rows": [
+            44
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_ch201data.pdf",
+        "user_manual": "ps200&ch200man.pdf",
+        "order_form": "https://www.campbellsci.com/products/ch201"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13050",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

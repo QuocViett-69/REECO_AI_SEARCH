@@ -1,0 +1,943 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_AVW200_ST",
+  "model": "AVW200-ST",
+  "raw_record_ref": {
+    "file": "data/raw/AVW200_ST_XT.json",
+    "product_index": 0,
+    "raw_record_key": "AVW200_ST_XT.json#0",
+    "raw_product_id": "CSI_AVW200_ST",
+    "raw_model": "AVW200-ST"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Measurement Speed",
+      "value_raw": "AVW200 vibrating-wire measurement and half-bridge thermistor measurement combined take less than 2 s per measurement",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "measurement_speed",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "DF Measurement Time",
+      "value_raw": "Selectable frequency range: 1.4 to 1.6 s",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "df_measurement_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Half-Bridge Thermistor Measurement Time",
+      "value_raw": "60 ms or 70 ms depending on integration time selected",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "half_bridge_thermistor_measurement_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Thermistor Integration Time",
+      "value_raw": "20 ms (50 Hz) or 16.66 ms (60 Hz) with positive excitation, followed by 20 ms or 16.66 ms with negative excitation",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "thermistor_integration_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "VIBRATING-WIRE INPUTS",
+      "name_raw": "Description",
+      "value_raw": "Differential Coil+ (V+) and Coil− (V−) outputs/inputs for direct connection, excitation, and resonant-frequency measurement of vibrating-wire transducers",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "description_5049c6c4"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "VIBRATING-WIRE INPUTS",
+      "name_raw": "Excitation Voltage",
+      "value_raw": "±2.5 V (5 V peak-to-peak) or ±6 V (12 V peak-to-peak), logarithmic sine wave",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "excitation_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "VIBRATING-WIRE INPUTS",
+      "name_raw": "Excitation Frequency Range",
+      "value_raw": "100 Hz to 6.5 kHz",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min": {
+          "value": 100,
+          "unit": "Hz"
+        },
+        "max": {
+          "value": 6.5,
+          "unit": "kHz"
+        },
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "excitation_frequency_range",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "VIBRATING-WIRE INPUTS",
+      "name_raw": "Basic Resolution",
+      "value_raw": "24-bit",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "basic_resolution_c8c0fa2f"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "VIBRATING-WIRE INPUTS",
+      "name_raw": "Input Voltage Range",
+      "value_raw": "±250 mV differential",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "input_voltage_range_b7dd4474",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "VIBRATING-WIRE INPUTS",
+      "name_raw": "Measurement Resolution",
+      "value_raw": "0.001 Hz RMS, from -55°C to +85°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "measurement_resolution_2869a731"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "VIBRATING-WIRE INPUTS",
+      "name_raw": "Accuracy",
+      "value_raw": "±0.13% of reading, from -55°C to +85°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "vibrating_wire_inputs_accuracy"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "VIBRATING-WIRE INPUTS",
+      "name_raw": "Input Resistance",
+      "value_raw": "4.75 kΩ",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 4.75,
+        "unit": "kΩ",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "input_resistance_57908ab3"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "THERMISTOR INPUTS",
+      "name_raw": "Description",
+      "value_raw": "Half-bridge ratiometric measurement; returned value is in ohms and can be used for temperature correction of the vibrating-wire measurement",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "description_64ba034b"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "THERMISTOR INPUTS",
+      "name_raw": "Basic Resolution",
+      "value_raw": "24-bit",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "basic_resolution_43fab16e"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "THERMISTOR INPUTS",
+      "name_raw": "Input Voltage Range",
+      "value_raw": "±2500 mV single-ended",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "input_voltage_range_f9265962",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "THERMISTOR INPUTS",
+      "name_raw": "Measurement Resolution",
+      "value_raw": "0.001 Ω RMS, from -55°C to +85°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "measurement_resolution_cc92d858"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "THERMISTOR INPUTS",
+      "name_raw": "Accuracy",
+      "value_raw": "±0.25% of reading, from -55°C to +85°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "thermistor_inputs_accuracy"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "THERMISTOR INPUTS",
+      "name_raw": "Input Resistance",
+      "value_raw": "5 kΩ for thermistor input T−; 5 kΩ, 0.1% completion resistor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "input_resistance_011dea1b"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "Description",
+      "value_raw": "Three digital control ports, C1 to C3",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "description_0543bbed"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "C1 Function",
+      "value_raw": "SDI-12 I/O communication port",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "c1_function"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "C2 Function",
+      "value_raw": "Clock output for multiplexer control",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "c2_function"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "C3 Function",
+      "value_raw": "Reset output for multiplexer control",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "c3_function"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "Input State High",
+      "value_raw": "2.5 to 5.3 V",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 2.5,
+        "max_value": 5.3,
+        "unit": "V",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "input_state_high"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "Input State Low",
+      "value_raw": "-0.3 to 1.0 V",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -0.3,
+        "max_value": 1,
+        "unit": "V",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "input_state_low"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "Input Hysteresis",
+      "value_raw": "1.32 V",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.32,
+        "unit": "V",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "input_hysteresis"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "Input Resistance",
+      "value_raw": "100 kΩ",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 100,
+        "unit": "kΩ",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "input_resistance_f3d2d255"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "Output Voltage High",
+      "value_raw": "5.0 V ±0.1 V, no load",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "output_voltage_high",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "Output Voltage Low",
+      "value_raw": "<0.1 V, no load",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "output_voltage_low",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "DIGITAL CONTROL PORTS",
+      "name_raw": "Output Resistance",
+      "value_raw": "330 Ω",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 330,
+        "unit": "Ω",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "output_resistance"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "COMMUNICATION",
+      "name_raw": "RS-232",
+      "value_raw": "Non-isolated",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "rs_232"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "COMMUNICATION",
+      "name_raw": "Baud Rates",
+      "value_raw": "Selectable from 1200 to 38.4 kbps",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "baud_rates",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "COMMUNICATION",
+      "name_raw": "RS-232 Protocol",
+      "value_raw": "ASCII; one start bit, one stop bit, eight data bits, no parity",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "ASCII"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "ASCII"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "rs_232_protocol"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "COMMUNICATION",
+      "name_raw": "SDI-12",
+      "value_raw": "Control Port 1 configured for SDI-12 sensor asynchronous communication; meets SDI-12 Standard version 1.3",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "sdi_12"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "SYSTEM",
+      "name_raw": "Program Execution Interval",
+      "value_raw": "1 s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          41
+        ]
+      },
+      "canonical_key": "program_execution_interval",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "SYSTEM",
+      "name_raw": "Processor",
+      "value_raw": "Hitachi H8S 2334, 16-bit CPU with 32-bit internal core",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "processor"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "SYSTEM",
+      "name_raw": "Memory",
+      "value_raw": "128 or 512 kB SRAM; 2 MB OS Flash",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 35,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "memory"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "SYSTEM",
+      "name_raw": "Clock Accuracy",
+      "value_raw": "±10 minutes per month; synchronized with data logger clock every execution interval",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 36,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "clock_accuracy"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "CE COMPLIANCE",
+      "name_raw": "Standard",
+      "value_raw": "IEC 61326:2002",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 37,
+        "source_rows": [
+          46
+        ]
+      },
+      "canonical_key": "standard"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Voltage",
+      "value_raw": "9.6 to 32 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 9.6,
+        "max_value": 32,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 38,
+        "source_rows": [
+          48
+        ]
+      },
+      "canonical_key": "voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Typical Current Drain — Quiescent, Radio Off",
+      "value_raw": "Approximately 0.3 mA at 12 Vdc",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 39,
+        "source_rows": [
+          49
+        ]
+      },
+      "canonical_key": "typical_current_drain_quiescent_radio_off",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Typical Current Drain — Radio Duty Cycling",
+      "value_raw": "Approximately 3 mA at 12 Vdc, 1 s duty cycle including quiescent current",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 40,
+        "source_rows": [
+          50
+        ]
+      },
+      "canonical_key": "typical_current_drain_radio_duty_cycling",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Typical Current Drain — Radio Always On",
+      "value_raw": "Approximately 26 mA at 12 Vdc; radio transmit current 100 mA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 41,
+        "source_rows": [
+          51
+        ]
+      },
+      "canonical_key": "typical_current_drain_radio_always_on",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Typical Current Drain — Active RS-232 Communication",
+      "value_raw": "Approximately 6 mA at 12 Vdc; approximately 3 s after communication stops, current drops to quiescent level",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 42,
+        "source_rows": [
+          52
+        ]
+      },
+      "canonical_key": "typical_current_drain_active_rs_232_communication",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Typical Current Drain — Measurement",
+      "value_raw": "Approximately 25 mA averaged over 2 s",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 43,
+        "source_rows": [
+          53
+        ]
+      },
+      "canonical_key": "typical_current_drain_measurement",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "OPERATING TEMPERATURE RANGE",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-25°C to +50°C, standard",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null,
+        "note": "standard"
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 44,
+        "source_rows": [
+          55
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "PHYSICAL",
+      "name_raw": "Dimensions",
+      "value_raw": "21.6 × 11.18 × 3.18 cm (8.5 × 4.5 × 1.2 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 45,
+        "source_rows": [
+          57
+        ]
+      },
+      "canonical_key": "physical_dimensions"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "PHYSICAL",
+      "name_raw": "Weight",
+      "value_raw": "0.43 kg (0.95 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.43,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.95,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 46,
+        "source_rows": [
+          58
+        ]
+      },
+      "canonical_key": "physical_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "section": "WARRANTY",
+      "name_raw": "Warranty",
+      "value_raw": "One year against defects in materials and workmanship",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 47,
+        "source_rows": [
+          60
+        ]
+      },
+      "canonical_key": "warranty"
+    }
+  ]
+}

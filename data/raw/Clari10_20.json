@@ -1,0 +1,524 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "Clari10&20.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CLARIVUE20",
+      "manufacturer": "Campbell Scientific",
+      "model": "ClariVUE20",
+      "product_name_en": "ClariVUE™ 20",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Standards",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "Meets ISO 7027-1:2016 (side scatter) standard for turbidity measurements",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal type",
+          "name_vi": "Loại tín hiệu",
+          "value_raw": "SDI-12 v1.4",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal type",
+          "name_vi": "Loại tín hiệu",
+          "value_raw": "Modbus through RS-485",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal type",
+          "name_vi": "Loại tín hiệu",
+          "value_raw": "Analog",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating temperature range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "−2 to 40 °C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Analog signal output",
+          "name_vi": "Đầu ra tín hiệu analog",
+          "value_raw": "0 to 1 VDC",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power requirements",
+          "name_vi": "Yêu cầu nguồn điện",
+          "value_raw": "9.6 to 18 VDC",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power consumption – Power up",
+          "name_vi": "Công suất tiêu thụ – Khởi động",
+          "value_raw": "71 mA (5 s)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power consumption – Initial measurement",
+          "name_vi": "Công suất tiêu thụ – Đo lường ban đầu",
+          "value_raw": "32 mA (24 s)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power consumption – Idle",
+          "name_vi": "Công suất tiêu thụ – Chờ",
+          "value_raw": "0.75 mA",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power consumption – Measurement",
+          "name_vi": "Công suất tiêu thụ – Đo lường",
+          "value_raw": "32 mA",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement range",
+          "name_vi": "Phạm vi đo",
+          "value_raw": "0 to 4000 FNU",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "SDI-12 measurement response time",
+          "name_vi": "Thời gian đáp ứng đo SDI-12",
+          "value_raw": "12 to 28 s depending on the SDI-12 command",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.2 FNU",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Particle size",
+          "name_vi": "Kích thước hạt",
+          "value_raw": "0.1 to 0.5 µm",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±2% or 0.5 FNU, whichever is greater",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Housing material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "Titanium",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Head material",
+          "name_vi": "Vật liệu đầu cảm biến",
+          "value_raw": "Titanium",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Optics",
+          "name_vi": "Quang học",
+          "value_raw": "Sapphire lens",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Connector description",
+          "name_vi": "Mô tả đầu nối",
+          "value_raw": "MCBH-5-FS, titanium, 6 gold-plated pins, wet-mateable",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable type",
+          "name_vi": "Loại cáp",
+          "value_raw": "6-conductor, polyurethane jacket with water block",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Optical assembly",
+          "name_vi": "Cụm quang học",
+          "value_raw": "Sealed with double O-rings",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Internal temperature measurement",
+          "name_vi": "Đo nhiệt độ bên trong",
+          "value_raw": "±0.2 °C accuracy",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum depth",
+          "name_vi": "Độ sâu tối đa",
+          "value_raw": "500 m (1640 ft)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "3.0 cm (1.2 in)",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Length",
+          "name_vi": "Chiều dài",
+          "value_raw": "16.6 cm (6.5 in)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "158.76 g (0.35 lb)",
+          "source_rows": [
+            28
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "SpecificationClari10.png",
+        "user_manual": "clarivue10man.pdf",
+        "order_form": "https://www.campbellsci.com/products/clarivue10"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/15179",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Document fields in the ClariVUE™ 20 column contain ClariVUE10 references and were preserved exactly as provided in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "manufacturer": "Campbell Scientific",
+      "model": "ClariVUE10",
+      "product_name_en": "ClariVUE™ 10",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Standards",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "Meets ISO 7027-1:2016 (side scatter) standard for turbidity measurements",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal type",
+          "name_vi": "Loại tín hiệu",
+          "value_raw": "SDI-12 v1.4",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating temperature range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "−2 to 40 °C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power requirements",
+          "name_vi": "Yêu cầu nguồn điện",
+          "value_raw": "9.6 to 18 VDC",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power consumption – Idle",
+          "name_vi": "Công suất tiêu thụ – Chờ",
+          "value_raw": "<300 µA",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power consumption – Measurement",
+          "name_vi": "Công suất tiêu thụ – Đo lường",
+          "value_raw": "<35 mA",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement range",
+          "name_vi": "Phạm vi đo",
+          "value_raw": "0 to 4000 FNU",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "SDI-12 measurement response time",
+          "name_vi": "Thời gian đáp ứng đo SDI-12",
+          "value_raw": "9 to 22 s depending on the SDI-12 command",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.2 FNU",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Particle size",
+          "name_vi": "Kích thước hạt",
+          "value_raw": "0.1 to 0.5 µm",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±2% or 0.5 FNU, whichever is greater",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Housing material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "Delrin® plastic",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Head material",
+          "name_vi": "Vật liệu đầu cảm biến",
+          "value_raw": "Marine-grade bronze",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Optics",
+          "name_vi": "Quang học",
+          "value_raw": "Sapphire lens",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Connector description",
+          "name_vi": "Mô tả đầu nối",
+          "value_raw": "MCBH-5-FS, marine-grade bronze, 3 gold-plated pins, wet-mateable",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable type",
+          "name_vi": "Loại cáp",
+          "value_raw": "3-conductor, polyurethane jacket with water block",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Optical assembly",
+          "name_vi": "Cụm quang học",
+          "value_raw": "Sealed with double O-rings",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Internal temperature measurement",
+          "name_vi": "Đo nhiệt độ bên trong",
+          "value_raw": "±0.2 °C accuracy",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum depth",
+          "name_vi": "Độ sâu tối đa",
+          "value_raw": "30 m (100 ft)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "3.0 cm (1.2 in)",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Length",
+          "name_vi": "Chiều dài",
+          "value_raw": "16.6 cm (6.5 in)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "158.76 g (0.35 lb)",
+          "source_rows": [
+            28
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_clarivue20data.pdf",
+        "user_manual": "clarivue20man.pdf",
+        "order_form": "https://www.campbellsci.com/products/clarivue20"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13165",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Document fields in the ClariVUE™ 10 column contain ClariVUE20 references and were preserved exactly as provided in the worksheet."
+        ]
+      }
+    }
+  ]
+}

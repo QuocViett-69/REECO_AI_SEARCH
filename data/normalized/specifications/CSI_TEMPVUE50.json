@@ -1,0 +1,615 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_TEMPVUE50",
+  "model": "TempVue50",
+  "raw_record_ref": {
+    "file": "data/raw/TempVue50.json",
+    "product_index": 0,
+    "raw_record_key": "TempVue50.json#0",
+    "raw_product_id": "CSI_TEMPVUE50",
+    "raw_model": "TempVue50"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Product Type",
+      "value_raw": "Precision Digital Water Temperature Sensor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Sensor Description",
+      "value_raw": "Band gap sensor mounted to a circuit board",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "sensor_description"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Measurement Parameter",
+      "value_raw": "Water temperature",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "measurement_parameter"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Communication Protocol",
+      "value_raw": "SDI-12 version 1.4",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "communication_protocol"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Default SDI-12 Address",
+      "value_raw": "0",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "default_sdi_12_address"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Measurement Uncertainty",
+      "value_raw": "0.1 °C (-0.5 to +40 °C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "measurement_uncertainty"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Temperature Measurement Range",
+      "value_raw": "-40 to +60 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "temperature_measurement_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Time Constant",
+      "value_raw": "<35 seconds",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 35,
+        "unit": "s",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "time_constant",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Resolution",
+      "value_raw": "0.01 °C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "resolution"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Voltage Range",
+      "value_raw": "6 to 16 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 6,
+        "max_value": 16,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "voltage_range",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Average Current",
+      "value_raw": "150 µA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 150,
+        "unit": "µA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "average_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Signal Type / Output",
+      "value_raw": "Digital output, SDI-12 version 1.4",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "signal_type_per_output"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Maximum Depth",
+      "value_raw": "100 m (328 ft)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 100,
+        "unit": "m",
+        "qualifier": null,
+        "alternate": {
+          "value": 328,
+          "unit": "ft"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "maximum_depth",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Probe Diameter",
+      "value_raw": "1.7 cm (0.67 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.7,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.67,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "probe_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Probe Length",
+      "value_raw": "9.5 cm (3.75 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 9.5,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 3.75,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "probe_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Housing",
+      "value_raw": "Water-tight housing",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "housing"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Compatible Data Loggers / Controllers",
+      "value_raw": "Any SDI-12 data logger/controller including Campbell Scientific GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, and CR1000",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "compatible_data_loggers_per_controllers"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Aspen 10 Compatibility",
+      "value_raw": "SDI-12 version directly connects to Campbell Scientific Aspen 10 Edge Device",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "aspen_10_compatibility"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "A151 Compatibility",
+      "value_raw": "Compatible with A151 vented junction box",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "a151_compatibility"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Measurement Memory",
+      "value_raw": "Most recent 5760 measurements (one day worth)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "measurement_memory"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Recommended Measurement Scan Interval",
+      "value_raw": "15 seconds or more",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "recommended_measurement_scan_interval",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Temperature Output Units",
+      "value_raw": "°C or °F",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "temperature_output_units",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "White Wire Function",
+      "value_raw": "SDI-12 signal",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "white_wire_function"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Brown Wire Function",
+      "value_raw": "Power (12V connection)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "brown_wire_function"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Black Wire Function",
+      "value_raw": "Power ground",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "black_wire_function"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Clear Wire Function",
+      "value_raw": "Shield",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "clear_wire_function"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Valid SDI-12 Addresses",
+      "value_raw": "0–9, a–z, A–Z",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "valid_sdi_12_addresses"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "CRBasic Measurement Instruction",
+      "value_raw": "SDI12Recorder()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "crbasic_measurement_instruction"
+    },
+    {
+      "product_id": "CSI_TEMPVUE50",
+      "section": "General Specifications",
+      "name_raw": "Compliance",
+      "value_raw": "UKCA and EU declarations of conformity",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "compliance"
+    }
+  ]
+}

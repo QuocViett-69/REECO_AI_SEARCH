@@ -1,0 +1,517 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_PS84_CR",
+  "model": "PS84-CR",
+  "raw_record_ref": {
+    "file": "data/raw/PS84.json",
+    "product_index": 2,
+    "raw_record_key": "PS84.json#2",
+    "raw_product_id": "CSI_PS84_CR",
+    "raw_model": "PS84-CR"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Product Type",
+      "value_raw": "84 Ah Power Supply with 14 × 16 in. Enclosure",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary power-supply assembly",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Configuration / Regulator",
+      "value_raw": "CH200 Regulator",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "configuration_per_regulator"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Primary Application",
+      "value_raw": "Power supply for systems with larger power requirements, housed in a separate enclosure",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "primary_application"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Included Main Components",
+      "value_raw": "84 Ah battery; mounting bracket; 14 × 16 in. environmental enclosure; CH200 Regulator",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "included_main_components"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Charging Source",
+      "value_raw": "Typically an unregulated solar panel through CH200 Regulator",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "charging_source"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Cable-Entry Conduits",
+      "value_raw": "One or two cable-entry conduits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "cable_entry_conduits"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Power Out (+12 Terminals) Voltage",
+      "value_raw": "Unregulated 12 V from battery",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "power_out_plus_12_terminals_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Battery Nominal Rating",
+      "value_raw": "84 Ah (when battery discharged at a 24 hr rate)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "battery_nominal_rating"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Enclosure Rating",
+      "value_raw": "NEMA 4X (modified for cable entry)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "enclosure_rating"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Temperature Range",
+      "value_raw": "-40 to +71 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 71,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Enclosure External Dimensions",
+      "value_raw": "39.4 × 44.5 × 15.7 cm (15.5 × 17.5 × 6.2 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "enclosure_external_dimensions"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Enclosure Internal Dimensions",
+      "value_raw": "35.6 × 40.6 × 15 cm (14 × 16 × 5.9 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "enclosure_internal_dimensions"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Battery Shipping Box Dimensions",
+      "value_raw": "20.3 × 33 × 35.6 cm (8 × 13 × 14 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "battery_shipping_box_dimensions"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Bracket Dimensions",
+      "value_raw": "30.5 × 14.5 × 33 cm (4 × 6 × 13 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "bracket_dimensions"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Backplate Dimensions",
+      "value_raw": "3.18 × 10.16 × 33.02 cm (1.25 × 4 × 13 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "backplate_dimensions"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Sideplate Dimensions",
+      "value_raw": "3.8 × 12.7 × 38.1 cm (1.5 × 5 × 15 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 16,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "sideplate_dimensions"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Bridgeplate Dimensions",
+      "value_raw": "3 × 10 × 32 cm (1.25 × 4 × 13 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "bridgeplate_dimensions"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Backplate Weight",
+      "value_raw": "0.5 kg (1 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.5,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 18,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "backplate_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Sideplate 1 Weight",
+      "value_raw": "0.5 kg (1 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.5,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 19,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "sideplate_1_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Sideplate 2 Weight",
+      "value_raw": "0.5 kg (1 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.5,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 20,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "sideplate_2_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Bridgeplate Weight",
+      "value_raw": "0.25 kg (0.5 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.25,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.5,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 21,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "bridgeplate_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Battery Shipping Weight",
+      "value_raw": "25.9 kg (57 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 25.9,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 57,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 22,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "battery_shipping_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Bracket Weight",
+      "value_raw": "0.9 kg (2 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.9,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 2,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 23,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "bracket_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "section": "General Specifications",
+      "name_raw": "Battery Weight",
+      "value_raw": "25 kg (55 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 25,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 55,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/PS84.json",
+        "product_index": 2,
+        "spec_index": 24,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "battery_weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

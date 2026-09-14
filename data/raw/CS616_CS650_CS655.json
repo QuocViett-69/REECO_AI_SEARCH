@@ -1,0 +1,1001 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CS616_CS650_CS655_Water_Content_Reflectometers_Specifications.xlsx",
+    "sheet": "WCR_Specifications"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS616",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS616",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurements Made",
+          "name_vi": "Đại lượng đo",
+          "value_raw": "Volumetric water content (VWC) of porous media (such as soil)",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "name_vi": "Dải đo",
+          "value_raw": "0% to saturation",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Water Content Accuracy",
+          "name_vi": "Độ chính xác hàm lượng nước",
+          "value_raw": "±2.5% VWC (using standard calibration with bulk EC of ≤ 0.5 dS m⁻¹, bulk density of ≤ 1.55 g cm⁻³, and measurement range of 0% to 50% VWC)",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Required Equipment",
+          "name_vi": "Thiết bị yêu cầu",
+          "value_raw": "Measurement system",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Soil Suitability",
+          "name_vi": "Độ phù hợp với đất",
+          "value_raw": "Long rods and lower frequency are well-suited for soft soil with low electrical conductivity (< 2 dS/m).",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rods",
+          "name_vi": "Thanh dò",
+          "value_raw": "Not replaceable",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensors",
+          "name_vi": "Cảm biến",
+          "value_raw": "Not interchangeable",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Electromagnetic",
+          "name_vi": "Điện từ",
+          "value_raw": "CE compliant (Meets EN61326 requirements for protection against electrostatic discharge.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "0° to +70°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Probe-to-Probe Variability",
+          "name_vi": "Độ biến thiên giữa các đầu dò",
+          "value_raw": "±0.5% VWC in dry soil, ±1.5% VWC in typical saturated soil",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "Better than 0.1% VWC",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.1% VWC",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output",
+          "name_vi": "Đầu ra",
+          "value_raw": "±0.7 V square wave (with frequency dependent on water content)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power Supply Voltage",
+          "name_vi": "Điện áp nguồn cấp",
+          "value_raw": "5 Vdc minimum | 18 Vdc maximum",
+          "source_rows": [
+            24,
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Enable Voltage",
+          "name_vi": "Điện áp kích hoạt",
+          "value_raw": "4 Vdc minimum | 18 Vdc maximum",
+          "source_rows": [
+            26,
+            27
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Spacing",
+          "name_vi": "Khoảng cách thanh dò",
+          "value_raw": "32 mm (1.3 in.)",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Diameter",
+          "name_vi": "Đường kính thanh dò",
+          "value_raw": "3.2 mm (0.13 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Length",
+          "name_vi": "Chiều dài thanh dò",
+          "value_raw": "300 mm (11.8 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Probe Head Dimensions",
+          "name_vi": "Kích thước đầu dò",
+          "value_raw": "85 x 63 x 18 mm (3.3 x 2.5 x 0.7 in.)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Cable Weight",
+          "name_vi": "Khối lượng cáp",
+          "value_raw": "35 g per m (0.38 oz per ft)",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight / Probe Weight",
+          "name_vi": "Khối lượng / Khối lượng đầu dò",
+          "value_raw": "280 g (9.9 oz) without cable",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "Current Drain",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "65 mA @ 12 Vdc (when enabled) | 45 μA (quiescent typical)",
+          "source_rows": [
+            40,
+            41
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs616_datasheet.pdf",
+        "user_manual": "cs616_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs616-reflectometer"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4885",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CS650",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS650",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurements Made",
+          "name_vi": "Đại lượng đo",
+          "value_raw": "Soil electrical conductivity (EC), relative dielectric permittivity, volumetric water content (VWC), soil temperature",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Required Equipment",
+          "name_vi": "Thiết bị yêu cầu",
+          "value_raw": "Measurement system",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Soil Suitability",
+          "name_vi": "Độ phù hợp với đất",
+          "value_raw": "Long rods with large sensing volume (> 6 L) are suitable for soils with low to moderate electrical conductivity.",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rods",
+          "name_vi": "Thanh dò",
+          "value_raw": "Not replaceable",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensors",
+          "name_vi": "Cảm biến",
+          "value_raw": "Not interchangeable",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensing Volume",
+          "name_vi": "Thể tích cảm biến",
+          "value_raw": "7800 cm³ (~7.5 cm radius around each probe rod and 4.5 cm beyond the end of the rods)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Electromagnetic",
+          "name_vi": "Điện từ",
+          "value_raw": "CE compliant; Meets EN61326 requirements for protection against electrostatic discharge and surge.",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-50° to +70°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Output",
+          "name_vi": "Đầu ra cảm biến",
+          "value_raw": "SDI-12 | serial RS-232",
+          "source_rows": [
+            17,
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warm-up Time",
+          "name_vi": "Thời gian khởi động",
+          "value_raw": "3 s",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Time",
+          "name_vi": "Thời gian đo",
+          "value_raw": "3 ms to measure | 600 ms to complete SDI-12 command",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power Supply Requirements",
+          "name_vi": "Yêu cầu nguồn cấp",
+          "value_raw": "6 to 18 Vdc | Must be able to supply 45 mA @ 12 Vdc.",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "610 m (2000 ft) combined length for up to 25 sensors connected to the same data logger control port",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Spacing",
+          "name_vi": "Khoảng cách thanh dò",
+          "value_raw": "32 mm (1.3 in.)",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Ingress Protection Rating",
+          "name_vi": "Cấp bảo vệ xâm nhập",
+          "value_raw": "IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Diameter",
+          "name_vi": "Đường kính thanh dò",
+          "value_raw": "3.2 mm (0.13 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Length",
+          "name_vi": "Chiều dài thanh dò",
+          "value_raw": "300 mm (11.8 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Probe Head Dimensions",
+          "name_vi": "Kích thước đầu dò",
+          "value_raw": "85 x 63 x 18 mm (3.3 x 2.5 x 0.7 in.)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Cable Weight",
+          "name_vi": "Khối lượng cáp",
+          "value_raw": "35 g per m (0.38 oz per ft)",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight / Probe Weight",
+          "name_vi": "Khối lượng / Khối lượng đầu dò",
+          "value_raw": "280 g (9.9 oz) without cable",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "Current Drain",
+          "name_en": "Active (3 ms)",
+          "name_vi": "Hoạt động (3 ms)",
+          "value_raw": "80 mA (@ 6 Vdc) | 45 mA typical (@ 12 Vdc) | 35 mA (@ 18 Vdc)",
+          "source_rows": [
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "section": "Current Drain",
+          "name_en": "Quiescent",
+          "name_vi": "Trạng thái tĩnh",
+          "value_raw": "135 µA typical (@ 12 Vdc)",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "Electrical Conductivity",
+          "name_en": "Range for Solution EC",
+          "name_vi": "Dải EC dung dịch",
+          "value_raw": "0 to 3 dS/m",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "Electrical Conductivity",
+          "name_en": "Range for Bulk EC",
+          "name_vi": "Dải EC khối",
+          "value_raw": "0 to 3 dS/m",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": "Electrical Conductivity",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±(5% of reading + 0.05 dS/m)",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "Electrical Conductivity",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "0.5% of BEC",
+          "source_rows": [
+            47
+          ]
+        },
+        {
+          "section": "Relative Dielectric Permittivity",
+          "name_en": "Range",
+          "name_vi": "Dải",
+          "value_raw": "1 to 81",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "Relative Dielectric Permittivity",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±(2% of reading + 0.6) from 1 to 40 for solution EC ≤ 3 dS/m | ±1.4 (from 40 to 81 for solution EC ≤ 1 dS/m)",
+          "source_rows": [
+            50,
+            51
+          ]
+        },
+        {
+          "section": "Relative Dielectric Permittivity",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "< 0.02",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "Volumetric Water Content",
+          "name_en": "Range",
+          "name_vi": "Dải",
+          "value_raw": "0 to 100% (with M4 command)",
+          "source_rows": [
+            54
+          ]
+        },
+        {
+          "section": "Volumetric Water Content",
+          "name_en": "Water Content Accuracy",
+          "name_vi": "Độ chính xác hàm lượng nước",
+          "value_raw": "±3% (typical with factory VWC model) where solution EC < 3 dS/m | ±1% (with soil-specific calibration)",
+          "source_rows": [
+            55,
+            56
+          ]
+        },
+        {
+          "section": "Volumetric Water Content",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "< 0.05%",
+          "source_rows": [
+            57
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Range",
+          "name_vi": "Dải",
+          "value_raw": "-50° to +70°C",
+          "source_rows": [
+            59
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.001°C",
+          "source_rows": [
+            60
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.1°C (for typical soil temperatures [0 to 40°C] when probe body is buried in soil)",
+          "source_rows": [
+            61
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Precision",
+          "name_vi": null,
+          "value_raw": "±0.5°C (for full temperature range)",
+          "source_rows": [
+            62
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "±0.02°C",
+          "source_rows": [
+            63
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs650_datasheet.pdf",
+        "user_manual": "cs650_cs655_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs650"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CS655",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS655",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurements Made",
+          "name_vi": "Đại lượng đo",
+          "value_raw": "Soil electrical conductivity (EC), relative dielectric permittivity, volumetric water content (VWC), soil temperature",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Required Equipment",
+          "name_vi": "Thiết bị yêu cầu",
+          "value_raw": "Measurement system",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Soil Suitability",
+          "name_vi": "Độ phù hợp với đất",
+          "value_raw": "Short rods are easy to install in hard soil. Suitable for soils with higher electrical conductivity.",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rods",
+          "name_vi": "Thanh dò",
+          "value_raw": "Not replaceable",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensors",
+          "name_vi": "Cảm biến",
+          "value_raw": "Not interchangeable",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensing Volume",
+          "name_vi": "Thể tích cảm biến",
+          "value_raw": "3600 cm³ (~7.5 cm radius around each probe rod and 4.5 cm beyond the end of the rods)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Electromagnetic",
+          "name_vi": "Điện từ",
+          "value_raw": "CE compliant (Meets EN61326 requirements for protection against electrostatic discharge and surge.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-50° to +70°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Output",
+          "name_vi": "Đầu ra cảm biến",
+          "value_raw": "SDI-12 | serial RS-232",
+          "source_rows": [
+            17,
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warm-up Time",
+          "name_vi": "Thời gian khởi động",
+          "value_raw": "3 s",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Time",
+          "name_vi": "Thời gian đo",
+          "value_raw": "3 ms to measure | 600 ms to complete SDI-12 command",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power Supply Requirements",
+          "name_vi": "Yêu cầu nguồn cấp",
+          "value_raw": "6 to 18 Vdc | Must be able to supply 45 mA @ 12 Vdc.",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "610 m (2000 ft) combined length for up to 25 sensors connected to the same data logger control port",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Spacing",
+          "name_vi": "Khoảng cách thanh dò",
+          "value_raw": "32 mm (1.3 in.)",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Ingress Protection Rating",
+          "name_vi": "Cấp bảo vệ xâm nhập",
+          "value_raw": "IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Diameter",
+          "name_vi": "Đường kính thanh dò",
+          "value_raw": "3.2 mm (0.13 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Rod Length",
+          "name_vi": "Chiều dài thanh dò",
+          "value_raw": "120 mm (4.7 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Probe Head Dimensions",
+          "name_vi": "Kích thước đầu dò",
+          "value_raw": "85 x 63 x 18 mm (3.3 x 2.5 x 0.7 in.)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Cable Weight",
+          "name_vi": "Khối lượng cáp",
+          "value_raw": "35 g per m (0.38 oz per ft)",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight / Probe Weight",
+          "name_vi": "Khối lượng / Khối lượng đầu dò",
+          "value_raw": "240 g (8.5 oz) without cable",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "Current Drain",
+          "name_en": "Active (3 ms)",
+          "name_vi": "Hoạt động (3 ms)",
+          "value_raw": "80 mA (@ 6 Vdc) | 45 mA typical (@ 12 Vdc) | 35 mA (@ 18 Vdc)",
+          "source_rows": [
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "section": "Current Drain",
+          "name_en": "Quiescent",
+          "name_vi": "Trạng thái tĩnh",
+          "value_raw": "135 µA typical (@ 12 Vdc)",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "Electrical Conductivity",
+          "name_en": "Range for Solution EC",
+          "name_vi": "Dải EC dung dịch",
+          "value_raw": "0 to 8 dS/m",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "Electrical Conductivity",
+          "name_en": "Range for Bulk EC",
+          "name_vi": "Dải EC khối",
+          "value_raw": "0 to 8 dS/m",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": "Electrical Conductivity",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±(5% of reading + 0.05 dS/m)",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "Electrical Conductivity",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "0.5% of BEC",
+          "source_rows": [
+            47
+          ]
+        },
+        {
+          "section": "Relative Dielectric Permittivity",
+          "name_en": "Range",
+          "name_vi": "Dải",
+          "value_raw": "1 to 81",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "Relative Dielectric Permittivity",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±(3% of reading + 0.8) from 1 to 40 for solution EC ≤ 8 dS/m | ±2 (from 40 to 81 for solution EC ≤ 2.8 dS/m)",
+          "source_rows": [
+            50,
+            51
+          ]
+        },
+        {
+          "section": "Relative Dielectric Permittivity",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "< 0.02",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "Volumetric Water Content",
+          "name_en": "Range",
+          "name_vi": "Dải",
+          "value_raw": "0 to 100% (with M4 command)",
+          "source_rows": [
+            54
+          ]
+        },
+        {
+          "section": "Volumetric Water Content",
+          "name_en": "Water Content Accuracy",
+          "name_vi": "Độ chính xác hàm lượng nước",
+          "value_raw": "±3% (typical with factory VWC model) where solution EC < 10 dS/m | ±1% (with soil-specific calibration) where solution EC < 3 dS/m",
+          "source_rows": [
+            55,
+            56
+          ]
+        },
+        {
+          "section": "Volumetric Water Content",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "< 0.05%",
+          "source_rows": [
+            57
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Range",
+          "name_vi": "Dải",
+          "value_raw": "-50° to +70°C",
+          "source_rows": [
+            59
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.001°C",
+          "source_rows": [
+            60
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.1°C (for typical soil temperatures [0 to 40°C] when probe body is buried in soil)",
+          "source_rows": [
+            61
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Precision",
+          "name_vi": null,
+          "value_raw": "±0.5°C (for full temperature range)",
+          "source_rows": [
+            62
+          ]
+        },
+        {
+          "section": "Soil Temperature",
+          "name_en": "Precision",
+          "name_vi": "Độ chính xác lặp",
+          "value_raw": "±0.02°C",
+          "source_rows": [
+            63
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs655_datasheet.pdf",
+        "user_manual": "cs650_cs655_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs655"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

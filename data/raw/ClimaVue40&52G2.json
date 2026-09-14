@@ -1,0 +1,1028 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "ClimaVue40&52G2.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CLIMAVUE_40",
+      "manufacturer": "Campbell Scientific",
+      "model": "ClimaVue 40",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurements Made",
+          "name_vi": "Các phép đo thực hiện",
+          "value_raw": "Air temperature, precipitation, relative humidity, and wind direction and speed",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Scan Rate",
+          "name_vi": "Tốc độ quét phép đo",
+          "value_raw": "1 s",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Input Supply Voltage",
+          "name_vi": "Điện áp nguồn đầu vào",
+          "value_raw": "9 to 15 Vdc",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-50° to +60°C",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Average Current Drain @ 12 Vdc",
+          "name_vi": "Dòng tiêu thụ trung bình @ 12 Vdc",
+          "value_raw": "6 mA",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Communications",
+          "name_vi": "Giao tiếp",
+          "value_raw": "RS-485 Modbus",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Connector",
+          "name_vi": "Đầu nối",
+          "value_raw": "M12 five pin",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "10 cm (4 in.) including rain gage funnel",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Height",
+          "name_vi": "Chiều cao",
+          "value_raw": "34 cm (13.4 in.) including rain gage funnel",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Ingress Protection",
+          "name_vi": "Cấp bảo vệ",
+          "value_raw": "The ClimaVue 40 is intended for year-round, unattended outdoor use in meteorological and environmental monitoring applications. It tolerates continuous exposure to wind, heavy rain, dust, and solar radiation. When installed properly, the instrument housing provides environmental protection functionally equivalent to an IP65 rating, though no official certification is claimed. This device should not be subjected to high-pressure water streams, submersion in liquid, or corrosive gases.",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Application of Council Directive(s)",
+          "name_vi": "Chỉ thị của Hội đồng áp dụng",
+          "value_raw": "2014/30/EU: Electromagnetic Compatibility Directive (EMC)2015/863/EU: Amending Annex II of RoHS Directive 2011/65/EU: Phthalates Restrictions (EU)2011/65/EU: Restrictions of Hazardous Substances Directive (RoHS2)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Standards to Which Conformity Is Declared",
+          "name_vi": "Tiêu chuẩn công bố sự phù hợp",
+          "value_raw": "EN 61326-1:2013: Electrical equipment for measurement, control, and laboratory use—EMC requirements—for use in industrial locationsEN 63000:2018: Technical documentation for the assessment of electrical and electronic products with respect to the restriction of hazardous substances",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "PRECIPITATION",
+          "name_en": "Precipitation Range",
+          "name_vi": "Dải đo lượng mưa",
+          "value_raw": "0 to 1,500 mm/h",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "PRECIPITATION",
+          "name_en": "Precipitation Resolution",
+          "name_vi": "Độ phân giải lượng mưa",
+          "value_raw": "0.017 mm",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "PRECIPITATION",
+          "name_en": "Precipitation Uncertainty",
+          "name_vi": "Độ không đảm bảo lượng mưa",
+          "value_raw": "±5% of measurement (from 0 to 1,000 mm/h)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "VAPOR PRESSURE",
+          "name_en": "Vapor Pressure Range",
+          "name_vi": "Dải đo áp suất hơi nước",
+          "value_raw": "0 to 47 kPa",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "VAPOR PRESSURE",
+          "name_en": "Vapor Pressure Resolution",
+          "name_vi": "Độ phân giải áp suất hơi nước",
+          "value_raw": "0.01 kPa",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "VAPOR PRESSURE",
+          "name_en": "Vapor Pressure Uncertainty",
+          "name_vi": "Độ không đảm bảo áp suất hơi nước",
+          "value_raw": "Varies with temperature and humidity",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Air Temperature Range",
+          "name_vi": "Dải đo nhiệt độ không khí",
+          "value_raw": "-50° to +60°C",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Air Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ không khí",
+          "value_raw": "0.1°C",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Air Temperature Sensor Uncertainty",
+          "name_vi": "Độ không đảm bảo của cảm biến nhiệt độ",
+          "value_raw": "±0.2°C at 25°C",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Air Temperature Measurement Uncertainty",
+          "name_vi": "Độ không đảm bảo phép đo nhiệt độ",
+          "value_raw": "±0.6°C from -20° to +50°C",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Relative Humidity Measurement Range",
+          "name_vi": "Dải đo độ ẩm tương đối",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Relative Humidity Resolution",
+          "name_vi": "Độ phân giải độ ẩm tương đối",
+          "value_raw": "0.1",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Relative Humidity Uncertainty",
+          "name_vi": "Độ không đảm bảo độ ẩm tương đối",
+          "value_raw": "±3% RH typical (varies with temperature and humidity)",
+          "source_rows": [
+            51
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Range",
+          "name_vi": "Dải đo áp suất khí quyển",
+          "value_raw": "1 to 120 kPa",
+          "source_rows": [
+            55
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Resolution",
+          "name_vi": "Độ phân giải áp suất khí quyển",
+          "value_raw": "0.01 kPa",
+          "source_rows": [
+            57
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Uncertainty",
+          "name_vi": "Độ không đảm bảo áp suất khí quyển",
+          "value_raw": "±0.05 kPa at 25°C",
+          "source_rows": [
+            58
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Equilibration",
+          "name_vi": "Thời gian cân bằng áp suất khí quyển",
+          "value_raw": "< 10 ms",
+          "source_rows": [
+            60
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Long-Term Drift",
+          "name_vi": "Độ trôi dài hạn áp suất khí quyển",
+          "value_raw": "< 0.1 kPa/year, typical",
+          "source_rows": [
+            61
+          ]
+        },
+        {
+          "section": "HORIZONTAL WIND SPEED",
+          "name_en": "Horizontal Wind Speed Range",
+          "name_vi": "Dải đo tốc độ gió ngang",
+          "value_raw": "0 to 60 m/s",
+          "source_rows": [
+            63
+          ]
+        },
+        {
+          "section": "HORIZONTAL WIND SPEED",
+          "name_en": "Horizontal Wind Speed Resolution",
+          "name_vi": "Độ phân giải tốc độ gió ngang",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            64
+          ]
+        },
+        {
+          "section": "HORIZONTAL WIND SPEED",
+          "name_en": "Horizontal Wind Speed Uncertainty",
+          "name_vi": "Độ không đảm bảo tốc độ gió ngang",
+          "value_raw": "0.3 m/s or 6% of measurement, whichever is greater",
+          "source_rows": [
+            65
+          ]
+        },
+        {
+          "section": "WIND GUST",
+          "name_en": "Wind Gust Range",
+          "name_vi": "Dải đo gió giật",
+          "value_raw": "0 to 60 m/s",
+          "source_rows": [
+            72
+          ]
+        },
+        {
+          "section": "WIND GUST",
+          "name_en": "Wind Gust Resolution",
+          "name_vi": "Độ phân giải gió giật",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            73
+          ]
+        },
+        {
+          "section": "WIND GUST",
+          "name_en": "Wind Gust Uncertainty",
+          "name_vi": "Độ không đảm bảo gió giật",
+          "value_raw": "0.3 m/s or 6% of measurement, whichever is greater",
+          "source_rows": [
+            74
+          ]
+        },
+        {
+          "section": "WIND DIRECTION",
+          "name_en": "Wind Direction Range",
+          "name_vi": "Dải đo hướng gió",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            76
+          ]
+        },
+        {
+          "section": "WIND DIRECTION",
+          "name_en": "Wind Direction Resolution",
+          "name_vi": "Độ phân giải hướng gió",
+          "value_raw": "1°",
+          "source_rows": [
+            78
+          ]
+        },
+        {
+          "section": "WIND DIRECTION",
+          "name_en": "Wind Direction Uncertainty",
+          "name_vi": "Độ không đảm bảo hướng gió",
+          "value_raw": "±5°",
+          "source_rows": [
+            79
+          ]
+        },
+        {
+          "section": "TILT",
+          "name_en": "Tilt Range",
+          "name_vi": "Dải đo độ nghiêng",
+          "value_raw": "0° to 180°",
+          "source_rows": [
+            87
+          ]
+        },
+        {
+          "section": "TILT",
+          "name_en": "Tilt Resolution",
+          "name_vi": "Độ phân giải độ nghiêng",
+          "value_raw": "0.1°",
+          "source_rows": [
+            89
+          ]
+        },
+        {
+          "section": "TILT",
+          "name_en": "Tilt Uncertainty",
+          "name_vi": "Độ không đảm bảo độ nghiêng",
+          "value_raw": "±1°",
+          "source_rows": [
+            90
+          ]
+        },
+        {
+          "section": "LIGHTNING STRIKE COUNT",
+          "name_en": "Lightning Strike Count Range",
+          "name_vi": "Dải đếm số lần sét đánh",
+          "value_raw": "0 to 65,535 strikes",
+          "source_rows": [
+            93
+          ]
+        },
+        {
+          "section": "LIGHTNING STRIKE COUNT",
+          "name_en": "Lightning Strike Count Resolution",
+          "name_vi": "Độ phân giải đếm sét",
+          "value_raw": "1 strike",
+          "source_rows": [
+            95
+          ]
+        },
+        {
+          "section": "LIGHTNING STRIKE COUNT",
+          "name_en": "Lightning Strike Count Uncertainty",
+          "name_vi": "Độ không đảm bảo phát hiện sét",
+          "value_raw": ">25% detection at <10 km typical (variable with distance)",
+          "source_rows": [
+            96
+          ]
+        },
+        {
+          "section": "LIGHTNING AVERAGE DISTANCE",
+          "name_en": "Lightning Average Distance Range",
+          "name_vi": "Dải khoảng cách trung bình đến sét",
+          "value_raw": "0 to 40 km",
+          "source_rows": [
+            99
+          ]
+        },
+        {
+          "section": "LIGHTNING AVERAGE DISTANCE",
+          "name_en": "Lightning Average Distance Resolution",
+          "name_vi": "Độ phân giải khoảng cách đến sét",
+          "value_raw": "3 km",
+          "source_rows": [
+            101
+          ]
+        },
+        {
+          "section": "LIGHTNING AVERAGE DISTANCE",
+          "name_en": "Lightning Average Distance Uncertainty",
+          "name_vi": "Độ không đảm bảo khoảng cách đến sét",
+          "value_raw": "Variable",
+          "source_rows": [
+            102
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_climavue40.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/climavue40"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CLIMAVUE_50_G2",
+      "manufacturer": "Campbell Scientific",
+      "model": "ClimaVue 50 G2",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurements Made",
+          "name_vi": "Các phép đo thực hiện",
+          "value_raw": "Air temperature, barometric pressure, lightning average distance, lightning strike count, precipitation, precipitation electrical conductivity (EC), relative humidity, solar radiation, tilt, wind direction, and wind speed",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Output",
+          "name_vi": "Đầu ra",
+          "value_raw": "SDI-12",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Minimum Supply Voltage",
+          "name_vi": "Điện áp nguồn tối thiểu",
+          "value_raw": "3.6 Vdc continuous",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Maximum Supply Voltage",
+          "name_vi": "Điện áp nguồn tối đa",
+          "value_raw": "15.0 Vdc continuous",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-50° to +60°C (generally)0° to +60°C (precipitation sensor, but will not measure solid precipitation)-40° to +60°C (barometer and RH sensors)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Typical Current Drain @ 12 Vdc",
+          "name_vi": "Dòng tiêu thụ điển hình @ 12 Vdc",
+          "value_raw": "< 1 mA (average)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Typical Measurement Duration",
+          "name_vi": "Thời gian đo điển hình",
+          "value_raw": "110 ms",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Maximum Measurement Duration",
+          "name_vi": "Thời gian đo tối đa",
+          "value_raw": "3,000 ms",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Maximum Polling Frequency",
+          "name_vi": "Tần suất truy vấn tối đa",
+          "value_raw": "10 s",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Connection Description",
+          "name_vi": "Mô tả kết nối",
+          "value_raw": "1.25 m (4 ft) pigtail with 8-pin M12 (male) connectorMarine-grade 316 stainless-steel knurl",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "10 cm (4 in.) including rain gauge funnel",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Height",
+          "name_vi": "Chiều cao",
+          "value_raw": "28 cm (11 in.) including rain gauge funnel",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "850 g (1.87 lb)",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Ingress Protection",
+          "name_vi": "Cấp bảo vệ",
+          "value_raw": "The ClimaVue 50 G2 is intended for year-round, unattended outdoor use in meteorological and environmental monitoring applications. It tolerates continuous exposure to wind, heavy rain, dust, and solar radiation. When installed properly, the instrument housing provides environmental protection functionally equivalent to an IP65 rating, though no official certification is claimed. This device should not be subjected to high-pressure water streams, submersion in liquid, or corrosive gases.",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Application of Council Directive(s)",
+          "name_vi": "Chỉ thị của Hội đồng áp dụng",
+          "value_raw": "2014/30/EU: Electromagnetic Compatibility Directive (EMC)2011/65/EU: Restrictions of Hazardous Substances Directive (RoHS2)2015/863/EU: Amending Annex II of RoHS Directive 2011/65/EU: Phthalates Restrictions (EU)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Standards to Which Conformity Is Declared",
+          "name_vi": "Tiêu chuẩn công bố sự phù hợp",
+          "value_raw": "EN 61326-1:2013: Electrical equipment for measurement, control, and laboratory use—EMC requirements—for use in industrial locationsEN 63000:2018: Technical documentation for the assessment of electrical and electronic products with respect to the restriction of hazardous substances",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "POWER CONSUMPTION",
+          "name_en": "Quiescent",
+          "name_vi": "Dòng tĩnh",
+          "value_raw": "0.3 mA",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "POWER CONSUMPTION",
+          "name_en": "Maximum Peak Current",
+          "name_vi": "Dòng đỉnh tối đa",
+          "value_raw": "33 mA",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "POWER CONSUMPTION",
+          "name_en": "Average Using the R7! Command every 10 s",
+          "name_vi": "Dòng trung bình khi sử dụng lệnh R7! mỗi 10 giây",
+          "value_raw": "1.0 mA",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "POWER CONSUMPTION",
+          "name_en": "Average Using the R7! Command every 60 s (or slower)",
+          "name_vi": "Dòng trung bình khi sử dụng lệnh R7! mỗi 60 giây hoặc lâu hơn",
+          "value_raw": "0.4 mA",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "PRECIPITATION",
+          "name_en": "Precipitation Measurement Range",
+          "name_vi": "Dải đo lượng mưa",
+          "value_raw": "0 to 1,500 mm/h (60 in./h)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "PRECIPITATION",
+          "name_en": "Precipitation Resolution",
+          "name_vi": "Độ phân giải lượng mưa",
+          "value_raw": "0.017 mm",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "PRECIPITATION",
+          "name_en": "Precipitation Accuracy",
+          "name_vi": "Độ chính xác lượng mưa",
+          "value_raw": "±5% of measurement (from 0 to 1,000 mm/h or 0 to 40 in./h)",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "VAPOR PRESSURE",
+          "name_en": "Vapor Pressure Measurement Range",
+          "name_vi": "Dải đo áp suất hơi nước",
+          "value_raw": "0 to 47 kPa",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "VAPOR PRESSURE",
+          "name_en": "Vapor Pressure Resolution",
+          "name_vi": "Độ phân giải áp suất hơi nước",
+          "value_raw": "0.01 kPa",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "VAPOR PRESSURE",
+          "name_en": "Vapor Pressure Accuracy or Repeatability",
+          "name_vi": "Độ chính xác hoặc độ lặp lại áp suất hơi nước",
+          "value_raw": "Varies with temperature and humidity±0.2 kPa typical below 40°C",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Air Temperature Measurement Range",
+          "name_vi": "Dải đo nhiệt độ không khí",
+          "value_raw": "-50° to +60°C",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Air Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ không khí",
+          "value_raw": "0.1°C",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Air Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ không khí",
+          "value_raw": "±0.6°C",
+          "source_rows": [
+            47
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Relative Humidity Measurement Range",
+          "name_vi": "Dải đo độ ẩm tương đối",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Relative Humidity Resolution",
+          "name_vi": "Độ phân giải độ ẩm tương đối",
+          "value_raw": "0.001",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Relative Humidity Accuracy",
+          "name_vi": "Độ chính xác độ ẩm tương đối",
+          "value_raw": "±2.5% RH typical (varies with temperature and humidity)",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometer Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động của cảm biến áp suất",
+          "value_raw": "-40° to +60°C",
+          "source_rows": [
+            54
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Measurement Range",
+          "name_vi": "Dải đo áp suất khí quyển",
+          "value_raw": "10 to 1200 hPa",
+          "source_rows": [
+            56
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Resolution",
+          "name_vi": "Độ phân giải áp suất khí quyển",
+          "value_raw": "0.1 hPa",
+          "source_rows": [
+            57
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Accuracy",
+          "name_vi": "Độ chính xác áp suất khí quyển",
+          "value_raw": "±0.5 hPa (over the range of -40° to +60°C)±0.1 hPa (over the range of -10° to +50°C)",
+          "source_rows": [
+            59
+          ]
+        },
+        {
+          "section": "BAROMETRIC PRESSURE",
+          "name_en": "Barometric Pressure Long-Term Drift",
+          "name_vi": "Độ trôi dài hạn áp suất khí quyển",
+          "value_raw": "< 1 hPa/year",
+          "source_rows": [
+            61
+          ]
+        },
+        {
+          "section": "WIND SPEED",
+          "name_en": "Wind Speed Maximum",
+          "name_vi": "Cực đại tốc độ gió",
+          "value_raw": "3 s gust",
+          "source_rows": [
+            67
+          ]
+        },
+        {
+          "section": "WIND SPEED",
+          "name_en": "Wind Speed Measurement Range",
+          "name_vi": "Dải đo tốc độ gió",
+          "value_raw": "0 to 60 m/s (0 to 135 mph)",
+          "source_rows": [
+            68
+          ]
+        },
+        {
+          "section": "WIND SPEED",
+          "name_en": "Wind Speed Resolution",
+          "name_vi": "Độ phân giải tốc độ gió",
+          "value_raw": "0.01 m/s (0.02 mph)",
+          "source_rows": [
+            69
+          ]
+        },
+        {
+          "section": "WIND SPEED",
+          "name_en": "Wind Speed Accuracy or Repeatability",
+          "name_vi": "Độ chính xác hoặc độ lặp lại tốc độ gió",
+          "value_raw": "0.3 m/s (0.67 mph) or 6%, whichever is greater",
+          "source_rows": [
+            70
+          ]
+        },
+        {
+          "section": "WIND DIRECTION",
+          "name_en": "Wind Direction Measurement Range",
+          "name_vi": "Dải đo hướng gió",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            77
+          ]
+        },
+        {
+          "section": "WIND DIRECTION",
+          "name_en": "Wind Direction Resolution",
+          "name_vi": "Độ phân giải hướng gió",
+          "value_raw": "1°",
+          "source_rows": [
+            78
+          ]
+        },
+        {
+          "section": "WIND DIRECTION",
+          "name_en": "Wind Direction Accuracy",
+          "name_vi": "Độ chính xác hướng gió",
+          "value_raw": "±5°",
+          "source_rows": [
+            80
+          ]
+        },
+        {
+          "section": "SOLAR RADIATION",
+          "name_en": "Solar Radiation Measurement Range",
+          "name_vi": "Dải đo bức xạ mặt trời",
+          "value_raw": "0 to 1750 W m⁻²",
+          "source_rows": [
+            82
+          ]
+        },
+        {
+          "section": "SOLAR RADIATION",
+          "name_en": "Solar Radiation Resolution",
+          "name_vi": "Độ phân giải bức xạ mặt trời",
+          "value_raw": "1 W m⁻²",
+          "source_rows": [
+            83
+          ]
+        },
+        {
+          "section": "SOLAR RADIATION",
+          "name_en": "Solar Radiation Accuracy",
+          "name_vi": "Độ chính xác bức xạ mặt trời",
+          "value_raw": "±5% of measurement (typical)",
+          "source_rows": [
+            84
+          ]
+        },
+        {
+          "section": "SOLAR RADIATION",
+          "name_en": "Solar Radiation Spectral Range",
+          "name_vi": "Dải phổ bức xạ mặt trời",
+          "value_raw": "300 to 1150 nm",
+          "source_rows": [
+            85
+          ]
+        },
+        {
+          "section": "TILT",
+          "name_en": "Tilt Measurement Range",
+          "name_vi": "Dải đo độ nghiêng",
+          "value_raw": "0° to 180°",
+          "source_rows": [
+            88
+          ]
+        },
+        {
+          "section": "TILT",
+          "name_en": "Tilt Resolution",
+          "name_vi": "Độ phân giải độ nghiêng",
+          "value_raw": "0.1°",
+          "source_rows": [
+            89
+          ]
+        },
+        {
+          "section": "TILT",
+          "name_en": "Tilt Accuracy",
+          "name_vi": "Độ chính xác độ nghiêng",
+          "value_raw": "±1°",
+          "source_rows": [
+            91
+          ]
+        },
+        {
+          "section": "LIGHTNING STRIKE COUNT",
+          "name_en": "Lightning Strike Count Measurement Range",
+          "name_vi": "Dải đếm số lần sét đánh",
+          "value_raw": "0 to 65,535 strikes",
+          "source_rows": [
+            94
+          ]
+        },
+        {
+          "section": "LIGHTNING STRIKE COUNT",
+          "name_en": "Lightning Strike Count Resolution",
+          "name_vi": "Độ phân giải đếm sét",
+          "value_raw": "1 strike",
+          "source_rows": [
+            95
+          ]
+        },
+        {
+          "section": "LIGHTNING STRIKE COUNT",
+          "name_en": "Lightning Strike Count Accuracy",
+          "name_vi": "Độ chính xác phát hiện sét",
+          "value_raw": ">25% detection at <10 km typical (variable with distance)",
+          "source_rows": [
+            97
+          ]
+        },
+        {
+          "section": "LIGHTNING AVERAGE DISTANCE",
+          "name_en": "Lightning Average Distance Measurement Range",
+          "name_vi": "Dải khoảng cách trung bình đến sét",
+          "value_raw": "0 to 40 km (0 to 24.9 mi)",
+          "source_rows": [
+            100
+          ]
+        },
+        {
+          "section": "LIGHTNING AVERAGE DISTANCE",
+          "name_en": "Lightning Average Distance Resolution",
+          "name_vi": "Độ phân giải khoảng cách đến sét",
+          "value_raw": "3 km (1.86 mi)",
+          "source_rows": [
+            101
+          ]
+        },
+        {
+          "section": "LIGHTNING AVERAGE DISTANCE",
+          "name_en": "Lightning Average Distance Accuracy",
+          "name_vi": "Độ chính xác khoảng cách đến sét",
+          "value_raw": "Variable",
+          "source_rows": [
+            103
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_climavue50-g2.pdf",
+        "user_manual": "climavue50g2man.pdf",
+        "order_form": "https://www.campbellsci.com/products/climavue50-g2"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

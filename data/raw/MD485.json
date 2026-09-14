@@ -1,0 +1,386 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "MD485.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_MD485",
+      "manufacturer": "Campbell Scientific",
+      "model": "MD485",
+      "product_name_en": "MD485",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "RS-485 Multidrop Interface",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary communications device / RS-485 interface",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Long-distance multidrop communications between PCs, Campbell Scientific data loggers, and other compatible devices",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Core Function",
+          "name_vi": "Chức năng chính",
+          "value_raw": "Provides RS-485 network connectivity using CS I/O or RS-232 and can also provide RS-232-to-CS I/O conversion",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Network Types",
+          "name_vi": "Các kiểu mạng hỗ trợ",
+          "value_raw": "Point-to-point; point-to-multipoint; PakBus networking; transparent communications",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Communications Modes",
+          "name_vi": "Các chế độ truyền thông hỗ trợ",
+          "value_raw": "Transparent communications; PakBus networking; MD9 emulation",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ports",
+          "name_vi": "Các cổng",
+          "value_raw": "RS-485, RS-232, and CS I/O; any two ports can be active at one time",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-485 Terminals",
+          "name_vi": "Đầu nối RS-485",
+          "value_raw": "Two RS-485 terminal blocks connected internally to the same port for convenient network input/output",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "1219 m (4000 ft)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Practical Network Load",
+          "name_vi": "Số node thực tế tối đa",
+          "value_raw": "1/8-unit-load receiver allows up to 256 transceivers electrically; practical network design may impose lower limits",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Baud Rates",
+          "name_vi": "Tốc độ baud",
+          "value_raw": "1200, 9600, 19.2k, 38.4k, 57.6k, 115.2k bps",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Baud Rate",
+          "name_vi": "Tốc độ baud mặc định",
+          "value_raw": "9600 bps",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Transparent Buffer",
+          "name_vi": "Bộ đệm ở chế độ transparent",
+          "value_raw": "Up to 1000 bytes when interface communication rates differ",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-485 Cable",
+          "name_vi": "Cáp RS-485",
+          "value_raw": "CABLE2TP-L two-twisted-pair cable with shield and Santoprene jacket",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-485 Wiring Convention",
+          "name_vi": "Quy ước đấu dây RS-485",
+          "value_raw": "MD485 A connects to A / negative (-); MD485 B connects to B / positive (+)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Supply Voltage",
+          "name_vi": "Điện áp cấp nguồn",
+          "value_raw": "12 VDC from data logger or wall transformer",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Inputs",
+          "name_vi": "Ngõ vào nguồn",
+          "value_raw": "DC power jack and/or CS I/O pin 8; diode isolated and reverse-polarity protected",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wall Transformer",
+          "name_vi": "Biến áp treo tường",
+          "value_raw": "Optional transformer: 90 to 260 VAC, 47 to 63 Hz input; 12 VDC, 880 mA output",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Standby",
+          "name_vi": "Dòng tiêu thụ – chờ",
+          "value_raw": "1.2 mA",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Communicating",
+          "name_vi": "Dòng tiêu thụ – truyền thông",
+          "value_raw": "2 to 7 mA",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power – Standby",
+          "name_vi": "Công suất – chờ",
+          "value_raw": "14.4 mW",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power – Communicating",
+          "name_vi": "Công suất – truyền thông",
+          "value_raw": "24 to 84 mW",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Range – Standard",
+          "name_vi": "Dải nhiệt độ – tiêu chuẩn",
+          "value_raw": "-25 to +50 °C",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Range – Extended",
+          "name_vi": "Dải nhiệt độ – mở rộng",
+          "value_raw": "-55 to +85 °C",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Extended Temperature Note",
+          "name_vi": "Ghi chú nhiệt độ mở rộng",
+          "value_raw": "Setup push button may not operate below -25 °C",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "15.88 × 6.35 × 1.91 cm (6.25 × 2.5 × 0.75 in.)",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "127.6 g (4.5 oz)",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Surge Protection",
+          "name_vi": "Bảo vệ surge",
+          "value_raw": "IEC 61000-4-5, test level 3 (±2 kV, 2 Ω coupling impedance)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "ESD – Air Discharge",
+          "name_vi": "ESD – phóng điện qua không khí",
+          "value_raw": "IEC 61000-4-2, test level 4 (±15 kV)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "ESD – Contact Discharge",
+          "name_vi": "ESD – phóng điện tiếp xúc",
+          "value_raw": "IEC 61000-4-2, test level 4 (±8 kV)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ground Lug",
+          "name_vi": "Cọc nối đất",
+          "value_raw": "Earth-ground lug; recommended connection with short 8 AWG wire",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Indicator LEDs",
+          "name_vi": "Đèn chỉ thị",
+          "value_raw": "Two red LEDs indicating power, port traffic, and RS-485 receive errors",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Configuration Tool",
+          "name_vi": "Công cụ cấu hình",
+          "value_raw": "Campbell Scientific Device Configuration Utility; Setup Menu via RS-232 also supported",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Configuration Storage",
+          "name_vi": "Lưu cấu hình",
+          "value_raw": "Changed settings are stored in Flash memory",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Software",
+          "name_vi": "Phần mềm tương thích",
+          "value_raw": "LoggerNet; PC400; Device Configuration Utility",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Campbell Scientific Data Loggers",
+          "name_vi": "Data logger Campbell Scientific tương thích",
+          "value_raw": "Compatible with most Campbell Scientific data loggers",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Other Supported Devices",
+          "name_vi": "Thiết bị khác hỗ trợ",
+          "value_raw": "AVW200-series interfaces, digital cameras, phone modems, spread-spectrum radios",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Included Accessories",
+          "name_vi": "Phụ kiện đi kèm",
+          "value_raw": "RS-232 cable; SC12 cable; two 3-pin terminal blocks",
+          "source_rows": [
+            41
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "md485_datasheet.pdf",
+        "user_manual": "md485_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/43",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    }
+  ]
+}

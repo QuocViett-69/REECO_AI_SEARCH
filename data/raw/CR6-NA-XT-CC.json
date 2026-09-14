@@ -1,0 +1,2260 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CR6_Master_Specifications.xlsx",
+    "sheet": "CR6_Master_Spec"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CR6_NA_XT_CC",
+      "manufacturer": "Campbell Scientific",
+      "model": "CR6-NA-XT-CC",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "No Additional Coms | Temperature: -55° to +85°C | Calibration: Campbell Calibration",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "NA",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Temperature Version",
+          "name_vi": "Phiên bản nhiệt độ",
+          "value_raw": "Extended",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Temperature Code",
+          "name_vi": "Mã nhiệt độ",
+          "value_raw": "XT",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Calibration Type",
+          "name_vi": "Loại hiệu chuẩn",
+          "value_raw": "Campbell Calibration",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Calibration Code",
+          "name_vi": "Mã hiệu chuẩn",
+          "value_raw": "CC",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-55° to +85°C",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Primary Specification Source",
+          "name_vi": "Nguồn Specification chính",
+          "value_raw": "CR6 Specifications, Revision 05/2026",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Electrical Specification Validity",
+          "name_vi": "Điều kiện áp dụng thông số điện",
+          "value_raw": "-55° to +85°C, non-condensing environment",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Recalibration Recommendation",
+          "name_vi": "Khuyến nghị hiệu chuẩn lại",
+          "value_raw": "Every three years",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "Renesas RX63N (32-bit with hardware FPU, running at 100 MHz)",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Memory - Total Onboard",
+          "name_vi": "Bộ nhớ - Tổng bộ nhớ tích hợp",
+          "value_raw": "128 MB flash + 4 MB battery-backed SRAM",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Memory - Data Storage",
+          "name_vi": "Bộ nhớ - Lưu trữ dữ liệu",
+          "value_raw": "4 MB SRAM + 72 MB flash | Extended data storage automatically used for auto-allocated Data Tables not being written to a card",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Memory - CPU Drive",
+          "name_vi": "Bộ nhớ - CPU Drive",
+          "value_raw": "30 MB flash",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Memory - OS Load",
+          "name_vi": "Bộ nhớ - Hệ điều hành",
+          "value_raw": "8 MB flash",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Memory - Settings",
+          "name_vi": "Bộ nhớ - Cài đặt",
+          "value_raw": "1 MB flash",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Memory - Reserved",
+          "name_vi": "Bộ nhớ - Dự trữ",
+          "value_raw": "10 MB flash (not accessible)",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Data Storage Expansion",
+          "name_vi": "Mở rộng lưu trữ dữ liệu",
+          "value_raw": "Removable microSD flash memory, up to 16 GB",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Legacy Memory Note",
+          "name_vi": "Ghi chú bộ nhớ phiên bản cũ",
+          "value_raw": "CR6 serial numbers less than 7502: CPU Drive / Programs: 1 MB flash | USR Drive / Data: 4 MB SRAM (battery backed)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Program Execution Period",
+          "name_vi": "Chu kỳ thực thi chương trình",
+          "value_raw": "1 ms to 1 day",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Real-Time Clock - Backup",
+          "name_vi": "Đồng hồ thời gian thực - Dự phòng",
+          "value_raw": "Battery backed while external power is disconnected",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Real-Time Clock - Resolution",
+          "name_vi": "Đồng hồ thời gian thực - Độ phân giải",
+          "value_raw": "1 ms",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Real-Time Clock - Accuracy",
+          "name_vi": "Đồng hồ thời gian thực - Độ chính xác",
+          "value_raw": "±3 min. per year | Optional GPS correction: ±10 µs | 5.7 ppm",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "SOURCE / SYSTEM SPECIFICATIONS",
+          "name_en": "Wiring Panel Temperature",
+          "name_vi": "Nhiệt độ bảng đấu dây",
+          "value_raw": "Measured using a thermistor located on the analog board",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "PHYSICAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "21.0 x 10.2 x 5.6 cm (8.3 x 4.0 x 2.2 in.) | Additional clearance required for cables, wires, and antennas",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "PHYSICAL SPECIFICATIONS",
+          "name_en": "Weight / Mass",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.42 kg (0.92 lb)",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "PHYSICAL SPECIFICATIONS",
+          "name_en": "Case Material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "High-impact-resistant polycarbonate and UV-resistant TPE, recycle code 7",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "PHYSICAL SPECIFICATIONS",
+          "name_en": "Dust Plug Material",
+          "name_vi": "Vật liệu nút chống bụi",
+          "value_raw": "UV-resistant TPE",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Power Input Protection",
+          "name_vi": "Bảo vệ nguồn đầu vào",
+          "value_raw": "Protected against surge, over-voltage, over-current, and reverse power | IEC 61000-4 Class 4 level",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "CHG Terminal - Input",
+          "name_vi": "Đầu cực CHG - Đầu vào",
+          "value_raw": "Power converter or solar panel | ES1 PS2 energy sources only",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "CHG Terminal - Voltage",
+          "name_vi": "Đầu cực CHG - Điện áp",
+          "value_raw": "16 to 32 VDC",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "CHG Terminal - Input Current Hold Limit",
+          "name_vi": "Đầu cực CHG - Giới hạn dòng giữ",
+          "value_raw": "1.2 A @ 20°C (at 12 VDC)",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Battery Terminal - Voltage Input",
+          "name_vi": "Đầu cực pin - Điện áp đầu vào",
+          "value_raw": "12 VDC only",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Battery Terminal - Hold Current Limit",
+          "name_vi": "Đầu cực pin - Giới hạn dòng giữ",
+          "value_raw": "2.5 A @ 20°C",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "External Batteries",
+          "name_vi": "Pin ngoài",
+          "value_raw": "Float charge on BAT terminal | 12 VDC | Valve-regulated lead-acid (VRLA) | 2 to 24 Ah battery typical",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Vehicle Power Connection",
+          "name_vi": "Kết nối nguồn xe",
+          "value_raw": "A second power supply or charge regulator may be required to overcome voltage drop at vehicle start-up",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "USB Power",
+          "name_vi": "Nguồn USB",
+          "value_raw": "USB 5 VDC supports sending programs, adjusting data logger settings, and some measurements | If USB is the only power source: CS I/O, 12V, and SW12 terminals are not operational",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Internal Lithium Battery",
+          "name_vi": "Pin lithium bên trong",
+          "value_raw": "AA, 2.4 Ah, 3.6 VDC (Tadiran TL 5903/S) for battery-backed SRAM and clock | Life: 3 years with no external power source",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Average Current Drain - Idle",
+          "name_vi": "Dòng tiêu thụ trung bình - Nghỉ",
+          "value_raw": "<1 mA @ 12 VDC",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Average Current Drain - Active 1 Hz Scan",
+          "name_vi": "Dòng tiêu thụ trung bình - Quét 1 Hz",
+          "value_raw": "3 mA @ 12 VDC",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Average Current Drain - Active 20 Hz Scan",
+          "name_vi": "Dòng tiêu thụ trung bình - Quét 20 Hz",
+          "value_raw": "67 mA @ 12 VDC",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Serial Additional Current",
+          "name_vi": "Dòng tăng thêm Serial",
+          "value_raw": "RS-232/RS-485: Active + 25 mA",
+          "source_rows": [
+            47
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Ethernet Additional Current",
+          "name_vi": "Dòng tăng thêm Ethernet",
+          "value_raw": "1 Minute: Active + 1 mA | Idle: Active + 4 mA | Link: Active + 47 mA",
+          "source_rows": [
+            48
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "System Power Out Current Limit @ -40°C",
+          "name_vi": "Giới hạn dòng đầu ra hệ thống @ -40°C",
+          "value_raw": "3.88 A",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "System Power Out Current Limit @ 0°C",
+          "name_vi": "Giới hạn dòng đầu ra hệ thống @ 0°C",
+          "value_raw": "2.98 A",
+          "source_rows": [
+            51
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "System Power Out Current Limit @ 20°C",
+          "name_vi": "Giới hạn dòng đầu ra hệ thống @ 20°C",
+          "value_raw": "2.50 A",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "System Power Out Current Limit @ 50°C",
+          "name_vi": "Giới hạn dòng đầu ra hệ thống @ 50°C",
+          "value_raw": "1.80 A",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "System Power Out Current Limit @ 70°C",
+          "name_vi": "Giới hạn dòng đầu ra hệ thống @ 70°C",
+          "value_raw": "1.35 A",
+          "source_rows": [
+            54
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "System Power Out Current Limit @ 85°C",
+          "name_vi": "Giới hạn dòng đầu ra hệ thống @ 85°C",
+          "value_raw": "1.00 A",
+          "source_rows": [
+            55
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "12 V / SW12 V Output",
+          "name_vi": "Đầu ra 12 V / SW12 V",
+          "value_raw": "12V, SW12-1, and SW12-2 provide unregulated 12 VDC power with voltage equal to the Power Input supply voltage | Disabled when operating on USB power only",
+          "source_rows": [
+            56
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "SW12 Current Limit @ -40°C",
+          "name_vi": "Giới hạn dòng SW12 @ -40°C",
+          "value_raw": "1600 mA",
+          "source_rows": [
+            57
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "SW12 Current Limit @ 0°C",
+          "name_vi": "Giới hạn dòng SW12 @ 0°C",
+          "value_raw": "1290 mA",
+          "source_rows": [
+            58
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "SW12 Current Limit @ 20°C",
+          "name_vi": "Giới hạn dòng SW12 @ 20°C",
+          "value_raw": "1100 mA",
+          "source_rows": [
+            59
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "SW12 Current Limit @ 50°C",
+          "name_vi": "Giới hạn dòng SW12 @ 50°C",
+          "value_raw": "830 mA",
+          "source_rows": [
+            60
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "SW12 Current Limit @ 70°C",
+          "name_vi": "Giới hạn dòng SW12 @ 70°C",
+          "value_raw": "640 mA",
+          "source_rows": [
+            61
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "SW12 Current Limit @ 85°C",
+          "name_vi": "Giới hạn dòng SW12 @ 85°C",
+          "value_raw": "500 mA",
+          "source_rows": [
+            62
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "C Terminals - Output Resistance",
+          "name_vi": "Đầu cực C - Điện trở đầu ra",
+          "value_raw": "150 Ω",
+          "source_rows": [
+            63
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "C Terminals - 5 V Logic Level Drive Capacity",
+          "name_vi": "Đầu cực C - Khả năng tải mức logic 5 V",
+          "value_raw": "10 mA @ 3.5 VDC",
+          "source_rows": [
+            64
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "C Terminals - 3.3 V Logic Level Drive Capacity",
+          "name_vi": "Đầu cực C - Khả năng tải mức logic 3.3 V",
+          "value_raw": "10 mA @ 1.8 VDC",
+          "source_rows": [
+            65
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Odd Terminals - Voltage Excitation Max Current",
+          "name_vi": "Đầu cực U lẻ - Dòng kích thích điện áp tối đa",
+          "value_raw": "±25 mA @ ±2500 mV",
+          "source_rows": [
+            66
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Even Terminals - Voltage Excitation Max Current",
+          "name_vi": "Đầu cực U chẵn - Dòng kích thích điện áp tối đa",
+          "value_raw": "±25 mA @ ±2500 mV",
+          "source_rows": [
+            67
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Odd Terminals - Current Excitation Max Current",
+          "name_vi": "Đầu cực U lẻ - Dòng kích thích dòng tối đa",
+          "value_raw": "±2500 µA",
+          "source_rows": [
+            68
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Even Terminals - Current Excitation Max Current",
+          "name_vi": "Đầu cực U chẵn - Dòng kích thích dòng tối đa",
+          "value_raw": "±2500 µA",
+          "source_rows": [
+            69
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Odd Terminals - 5 V Logic Output Resistance",
+          "name_vi": "Đầu cực U lẻ - Điện trở đầu ra logic 5 V",
+          "value_raw": "75 Ω",
+          "source_rows": [
+            70
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Even Terminals - 5 V Logic Output Resistance",
+          "name_vi": "Đầu cực U chẵn - Điện trở đầu ra logic 5 V",
+          "value_raw": "150 Ω",
+          "source_rows": [
+            71
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Odd Terminals - 5 V Logic Max Current",
+          "name_vi": "Đầu cực U lẻ - Dòng logic 5 V tối đa",
+          "value_raw": "20 mA @ 3.5 V",
+          "source_rows": [
+            72
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Even Terminals - 5 V Logic Max Current",
+          "name_vi": "Đầu cực U chẵn - Dòng logic 5 V tối đa",
+          "value_raw": "10 mA @ 3.5 V",
+          "source_rows": [
+            73
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Odd Terminals - 3.3 V Logic Output Resistance",
+          "name_vi": "Đầu cực U lẻ - Điện trở đầu ra logic 3.3 V",
+          "value_raw": "73 Ω",
+          "source_rows": [
+            74
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Even Terminals - 3.3 V Logic Output Resistance",
+          "name_vi": "Đầu cực U chẵn - Điện trở đầu ra logic 3.3 V",
+          "value_raw": "145 Ω",
+          "source_rows": [
+            75
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Odd Terminals - 3.3 V Logic Max Current",
+          "name_vi": "Đầu cực U lẻ - Dòng logic 3.3 V tối đa",
+          "value_raw": "20 mA @ 1.85 V",
+          "source_rows": [
+            76
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "U Even Terminals - 3.3 V Logic Max Current",
+          "name_vi": "Đầu cực U chẵn - Dòng logic 3.3 V tối đa",
+          "value_raw": "10 mA @ 1.85 V",
+          "source_rows": [
+            77
+          ]
+        },
+        {
+          "section": "POWER OUTPUT SPECIFICATIONS",
+          "name_en": "CS I/O Pin 1 - 5 V Logic Max Current",
+          "name_vi": "CS I/O chân 1 - Dòng logic 5 V tối đa",
+          "value_raw": "200 mA",
+          "source_rows": [
+            78
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Excitation DAC",
+          "name_vi": "DAC kích thích",
+          "value_raw": "12-bit DAC",
+          "source_rows": [
+            80
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Voltage Excitation Terminals",
+          "name_vi": "Đầu cực kích thích điện áp",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            81
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Voltage Excitation Range",
+          "name_vi": "Dải kích thích điện áp",
+          "value_raw": "±2500 mV",
+          "source_rows": [
+            82
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Voltage Excitation Resolution",
+          "name_vi": "Độ phân giải kích thích điện áp",
+          "value_raw": "0.6 mV",
+          "source_rows": [
+            83
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Voltage Excitation Accuracy @ 0 to 40°C",
+          "name_vi": "Độ chính xác kích thích điện áp @ 0 đến 40°C",
+          "value_raw": "±(0.1% of setting + 1.2 mV)",
+          "source_rows": [
+            84
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Voltage Excitation Accuracy @ Operating Temperature",
+          "name_vi": "Độ chính xác kích thích điện áp @ dải nhiệt độ hoạt động",
+          "value_raw": "-55° to +85°C: ±(0.1% of setting + 1.6 mV)",
+          "source_rows": [
+            85
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Voltage Excitation Maximum Source/Sink Current",
+          "name_vi": "Dòng source/sink tối đa kích thích điện áp",
+          "value_raw": "±25 mA",
+          "source_rows": [
+            86
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Current Excitation Terminals",
+          "name_vi": "Đầu cực kích thích dòng",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            87
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Current Excitation Range",
+          "name_vi": "Dải kích thích dòng",
+          "value_raw": "±2.5 mA",
+          "source_rows": [
+            88
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Current Excitation Resolution",
+          "name_vi": "Độ phân giải kích thích dòng",
+          "value_raw": "0.6 µA",
+          "source_rows": [
+            89
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Current Excitation Accuracy @ 0 to 40°C",
+          "name_vi": "Độ chính xác kích thích dòng @ 0 đến 40°C",
+          "value_raw": "±(0.11% of setting + 2.0 µA)",
+          "source_rows": [
+            90
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Current Excitation Accuracy @ Operating Temperature",
+          "name_vi": "Độ chính xác kích thích dòng @ dải nhiệt độ hoạt động",
+          "value_raw": "-55° to +85°C: ±(0.13% of setting + 3.0 µA)",
+          "source_rows": [
+            91
+          ]
+        },
+        {
+          "section": "VOLTAGE AND CURRENT EXCITATION SPECIFICATIONS",
+          "name_en": "Current Excitation Compliance Voltage",
+          "name_vi": "Điện áp tuân thủ kích thích dòng",
+          "value_raw": "±5 V",
+          "source_rows": [
+            92
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Measurement Terminals",
+          "name_vi": "Đầu cực đo analog",
+          "value_raw": "12 universal (U) terminals individually configurable for voltage, thermocouple, thermistor, current loop, ratiometric, static vibrating wire, and period average measurements | 24-bit ADC | One channel at a time",
+          "source_rows": [
+            94
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Differential Voltage Terminals",
+          "name_vi": "Đầu cực điện áp vi sai",
+          "value_raw": "U1/U2 to U11/U12",
+          "source_rows": [
+            95
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Single-Ended Voltage Terminals",
+          "name_vi": "Đầu cực điện áp single-ended",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            96
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Input Resistance",
+          "name_vi": "Điện trở đầu vào",
+          "value_raw": "20 GΩ typical",
+          "source_rows": [
+            97
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Input Voltage Limits",
+          "name_vi": "Giới hạn điện áp đầu vào",
+          "value_raw": "±5 V",
+          "source_rows": [
+            98
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Sustained Input Voltage without Damage",
+          "name_vi": "Điện áp duy trì không gây hỏng",
+          "value_raw": "±20 VDC",
+          "source_rows": [
+            99
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "DC Common Mode Rejection",
+          "name_vi": "Khử mode chung DC",
+          "value_raw": "With input reversal: >120 dB | Without input reversal: ≥86 dB",
+          "source_rows": [
+            100
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Normal Mode Rejection",
+          "name_vi": "Khử mode thường",
+          "value_raw": ">70 dB @ 60 Hz",
+          "source_rows": [
+            101
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Input Current @ 25°C",
+          "name_vi": "Dòng đầu vào @ 25°C",
+          "value_raw": "±2 nA typical",
+          "source_rows": [
+            102
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Filter First Notch Frequency (fN1) Range",
+          "name_vi": "Dải tần notch đầu tiên (fN1)",
+          "value_raw": "5 Hz to 93 kHz (user specified)",
+          "source_rows": [
+            103
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 15000 Hz | ±5000 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 15000 Hz | ±5000 mV | Differential with reversal",
+          "value_raw": "20.0 µV RMS | 19 bits",
+          "source_rows": [
+            104
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 15000 Hz | ±1000 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 15000 Hz | ±1000 mV | Differential with reversal",
+          "value_raw": "4.0 µV RMS | 19 bits",
+          "source_rows": [
+            105
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 15000 Hz | ±200 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 15000 Hz | ±200 mV | Differential with reversal",
+          "value_raw": "1.6 µV RMS | 18 bits",
+          "source_rows": [
+            106
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 15000 Hz | ±5000 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 15000 Hz | ±5000 mV | No reversal",
+          "value_raw": "30.0 µV RMS | 18 bits",
+          "source_rows": [
+            107
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 15000 Hz | ±1000 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 15000 Hz | ±1000 mV | No reversal",
+          "value_raw": "5.5 µV RMS | 18 bits",
+          "source_rows": [
+            108
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 15000 Hz | ±200 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 15000 Hz | ±200 mV | No reversal",
+          "value_raw": "1.8 µV RMS | 17 bits",
+          "source_rows": [
+            109
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 50/60 Hz | ±5000 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 50/60 Hz | ±5000 mV | Differential with reversal",
+          "value_raw": "1.2 µV RMS | 23 bits",
+          "source_rows": [
+            110
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 50/60 Hz | ±1000 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 50/60 Hz | ±1000 mV | Differential with reversal",
+          "value_raw": "0.24 µV RMS | 23 bits",
+          "source_rows": [
+            111
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 50/60 Hz | ±200 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 50/60 Hz | ±200 mV | Differential with reversal",
+          "value_raw": "0.10 µV RMS | 22 bits",
+          "source_rows": [
+            112
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 50/60 Hz | ±5000 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 50/60 Hz | ±5000 mV | No reversal",
+          "value_raw": "5.0 µV RMS | 20 bits",
+          "source_rows": [
+            113
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 50/60 Hz | ±1000 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 50/60 Hz | ±1000 mV | No reversal",
+          "value_raw": "1.1 µV RMS | 20 bits",
+          "source_rows": [
+            114
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 50/60 Hz | ±200 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 50/60 Hz | ±200 mV | No reversal",
+          "value_raw": "0.24 µV RMS | 20 bits",
+          "source_rows": [
+            115
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 5 Hz | ±5000 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 5 Hz | ±5000 mV | Differential with reversal",
+          "value_raw": "0.60 µV RMS | 24 bits",
+          "source_rows": [
+            116
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 5 Hz | ±1000 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 5 Hz | ±1000 mV | Differential with reversal",
+          "value_raw": "0.12 µV RMS | 24 bits",
+          "source_rows": [
+            117
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 5 Hz | ±200 mV | Differential with reversal",
+          "name_vi": "Dải và độ phân giải analog - 5 Hz | ±200 mV | Differential with reversal",
+          "value_raw": "0.05 µV RMS | 23 bits",
+          "source_rows": [
+            118
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 5 Hz | ±5000 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 5 Hz | ±5000 mV | No reversal",
+          "value_raw": "4.9 µV RMS | 20 bits",
+          "source_rows": [
+            119
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 5 Hz | ±1000 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 5 Hz | ±1000 mV | No reversal",
+          "value_raw": "1.0 µV RMS | 20 bits",
+          "source_rows": [
+            120
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Range and Resolution - 5 Hz | ±200 mV | No reversal",
+          "name_vi": "Dải và độ phân giải analog - 5 Hz | ±200 mV | No reversal",
+          "value_raw": "0.22 µV RMS | 20 bits",
+          "source_rows": [
+            121
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Voltage Accuracy @ 0 to 40°C",
+          "name_vi": "Độ chính xác điện áp analog @ 0 đến 40°C",
+          "value_raw": "±(0.04% of measurement + offset)",
+          "source_rows": [
+            122
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Voltage Accuracy @ Operating Temperature",
+          "name_vi": "Độ chính xác điện áp analog @ dải nhiệt độ hoạt động",
+          "value_raw": "-55° to +85°C: ±(0.08% of measurement + offset)",
+          "source_rows": [
+            123
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Voltage Measurement Accuracy Offset - ±5000 mV",
+          "name_vi": "Offset độ chính xác đo điện áp - ±5000 mV",
+          "value_raw": "Differential with input reversal: ±10 µV RMS | Single-ended or differential without input reversal: ±40 µV RMS",
+          "source_rows": [
+            124
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Voltage Measurement Accuracy Offset - ±1000 mV",
+          "name_vi": "Offset độ chính xác đo điện áp - ±1000 mV",
+          "value_raw": "Differential with input reversal: ±5 µV RMS | Single-ended or differential without input reversal: ±12 µV RMS",
+          "source_rows": [
+            125
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Voltage Measurement Accuracy Offset - ±200 mV",
+          "name_vi": "Offset độ chính xác đo điện áp - ±200 mV",
+          "value_raw": "Differential with input reversal: ±2 µV RMS | Single-ended or differential without input reversal: ±6 µV RMS",
+          "source_rows": [
+            126
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Measurement Settling Time",
+          "name_vi": "Thời gian ổn định phép đo",
+          "value_raw": "20 µs to 600 ms | Default: 500 µs",
+          "source_rows": [
+            127
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Multiplexed Measurement Time - 15000 Hz",
+          "name_vi": "Thời gian đo multiplex - 15000 Hz",
+          "value_raw": "Differential with input reversal: 2.8 ms | Single-ended/differential without reversal: 1.4 ms",
+          "source_rows": [
+            128
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Multiplexed Measurement Time - 60 Hz",
+          "name_vi": "Thời gian đo multiplex - 60 Hz",
+          "value_raw": "Differential with input reversal: 36 ms | Single-ended/differential without reversal: 18.1 ms",
+          "source_rows": [
+            129
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Multiplexed Measurement Time - 50 Hz",
+          "name_vi": "Thời gian đo multiplex - 50 Hz",
+          "value_raw": "Differential with input reversal: 42.07 ms | Single-ended/differential without reversal: 21.3 ms",
+          "source_rows": [
+            130
+          ]
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Multiplexed Measurement Time - 5 Hz",
+          "name_vi": "Thời gian đo multiplex - 5 Hz",
+          "value_raw": "Differential with input reversal: 402.7 ms | Single-ended/differential without reversal: 201.4 ms",
+          "source_rows": [
+            131
+          ]
+        },
+        {
+          "section": "RESISTANCE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Resistance Measurement Description",
+          "name_vi": "Mô tả phép đo điện trở",
+          "value_raw": "Ratiometric-resistance measurements for four- and six-wire full-bridge circuits and two-, three-, and four-wire half-bridge circuits using voltage excitation | Direct resistance measurements using current excitation | Excitation polarity reversal available",
+          "source_rows": [
+            133
+          ]
+        },
+        {
+          "section": "RESISTANCE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Resistance Accuracy @ 0 to 40°C",
+          "name_vi": "Độ chính xác điện trở @ 0 đến 40°C",
+          "value_raw": "±(0.02% of voltage measurement + offset)",
+          "source_rows": [
+            134
+          ]
+        },
+        {
+          "section": "RESISTANCE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Resistance Accuracy @ Operating Temperature",
+          "name_vi": "Độ chính xác điện trở @ dải nhiệt độ hoạt động",
+          "value_raw": "-55° to +85°C: ±(0.03% of voltage measurement + offset)",
+          "source_rows": [
+            135
+          ]
+        },
+        {
+          "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+          "name_en": "Period-Averaging Terminals",
+          "name_vi": "Đầu cực đo trung bình chu kỳ",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            137
+          ]
+        },
+        {
+          "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+          "name_en": "Period-Averaging Accuracy",
+          "name_vi": "Độ chính xác đo trung bình chu kỳ",
+          "value_raw": "±(0.01% of measurement + resolution) | Resolution: 0.13 µs divided by number of cycles measured",
+          "source_rows": [
+            138
+          ]
+        },
+        {
+          "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+          "name_en": "Period-Averaging Range - Gain Code 0",
+          "name_vi": "Dải đo trung bình chu kỳ - Gain Code 0",
+          "value_raw": "Voltage gain: 1 | Minimum peak-to-peak signal: 500 mV | Maximum peak-to-peak signal: 10 V | Minimum pulse width: 2.5 µs | Maximum frequency: 200 kHz",
+          "source_rows": [
+            139
+          ]
+        },
+        {
+          "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+          "name_en": "Period-Averaging Range - Gain Code 1",
+          "name_vi": "Dải đo trung bình chu kỳ - Gain Code 1",
+          "value_raw": "Voltage gain: 2.5 | Minimum peak-to-peak signal: 50 mV | Maximum peak-to-peak signal: 2 V | Minimum pulse width: 10 µs | Maximum frequency: 50 kHz",
+          "source_rows": [
+            140
+          ]
+        },
+        {
+          "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+          "name_en": "Period-Averaging Range - Gain Code 2",
+          "name_vi": "Dải đo trung bình chu kỳ - Gain Code 2",
+          "value_raw": "Voltage gain: 12.5 | Minimum peak-to-peak signal: 10 mV | Maximum peak-to-peak signal: 2 V | Minimum pulse width: 62 µs | Maximum frequency: 8 kHz",
+          "source_rows": [
+            141
+          ]
+        },
+        {
+          "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+          "name_en": "Period-Averaging Range - Gain Code 3",
+          "name_vi": "Dải đo trung bình chu kỳ - Gain Code 3",
+          "value_raw": "Voltage gain: 64 | Minimum peak-to-peak signal: 2 mV | Maximum peak-to-peak signal: 2 V | Minimum pulse width: 100 µs | Maximum frequency: 5 kHz",
+          "source_rows": [
+            142
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Capacity",
+          "name_vi": "Khả năng đo dây rung tĩnh",
+          "value_raw": "Up to 6 measurements without thermistor measurements | Up to 3 measurements with thermistor measurements",
+          "source_rows": [
+            144
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Terminals",
+          "name_vi": "Đầu cực dây rung tĩnh",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            145
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Input Resistance",
+          "name_vi": "Điện trở đầu vào dây rung tĩnh",
+          "value_raw": "4.75 kΩ",
+          "source_rows": [
+            146
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurement Type",
+          "name_vi": "Loại phép đo dây rung tĩnh",
+          "value_raw": "Differential voltage",
+          "source_rows": [
+            147
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Range",
+          "name_vi": "Dải đo dây rung tĩnh",
+          "value_raw": "±200 mV",
+          "source_rows": [
+            148
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Accuracy",
+          "name_vi": "Độ chính xác dây rung tĩnh",
+          "value_raw": "±0.013% of reading",
+          "source_rows": [
+            149
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Resolution",
+          "name_vi": "Độ phân giải dây rung tĩnh",
+          "value_raw": "0.001 Hz RMS",
+          "source_rows": [
+            150
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurement Speed",
+          "name_vi": "Tốc độ đo dây rung tĩnh",
+          "value_raw": "<1 s (vibrating wire and thermistor combined)",
+          "source_rows": [
+            151
+          ]
+        },
+        {
+          "section": "STATIC VIBRATING WIRE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Excitation",
+          "name_vi": "Kích thích dây rung tĩnh",
+          "value_raw": "Logarithmic sine-wave-frequency excitation adjustable up to ±6 V (12 V peak-to-peak) | Programmable from 100 Hz to 6.5 kHz",
+          "source_rows": [
+            152
+          ]
+        },
+        {
+          "section": "THERMISTOR MEASUREMENT SPECIFICATIONS",
+          "name_en": "Thermistor Capacity",
+          "name_vi": "Khả năng đo thermistor",
+          "value_raw": "6 U terminal pairs for direct two-wire thermistor measurement",
+          "source_rows": [
+            154
+          ]
+        },
+        {
+          "section": "THERMISTOR MEASUREMENT SPECIFICATIONS",
+          "name_en": "Thermistor Terminals",
+          "name_vi": "Đầu cực thermistor",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            155
+          ]
+        },
+        {
+          "section": "THERMISTOR MEASUREMENT SPECIFICATIONS",
+          "name_en": "Thermistor Input Resistance",
+          "name_vi": "Điện trở đầu vào thermistor",
+          "value_raw": "5 kΩ ±0.1%, 10 ppm/°C completion resistor",
+          "source_rows": [
+            156
+          ]
+        },
+        {
+          "section": "THERMISTOR MEASUREMENT SPECIFICATIONS",
+          "name_en": "Thermistor Measurement Type",
+          "name_vi": "Loại phép đo thermistor",
+          "value_raw": "Single-ended voltage",
+          "source_rows": [
+            157
+          ]
+        },
+        {
+          "section": "THERMISTOR MEASUREMENT SPECIFICATIONS",
+          "name_en": "Thermistor Range",
+          "name_vi": "Dải đo thermistor",
+          "value_raw": "±5000 mV",
+          "source_rows": [
+            158
+          ]
+        },
+        {
+          "section": "THERMISTOR MEASUREMENT SPECIFICATIONS",
+          "name_en": "Thermistor Resolution",
+          "name_vi": "Độ phân giải thermistor",
+          "value_raw": "0.001 Ω RMS",
+          "source_rows": [
+            159
+          ]
+        },
+        {
+          "section": "THERMISTOR MEASUREMENT SPECIFICATIONS",
+          "name_en": "Thermistor Accuracy",
+          "name_vi": "Độ chính xác thermistor",
+          "value_raw": "±0.25% of reading",
+          "source_rows": [
+            160
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Current-Loop Availability Note",
+          "name_vi": "Ghi chú khả dụng vòng dòng",
+          "value_raw": "Resistance-to-ground input for non-isolated 0-20 mA and 4-20 mA current loop measurements is available in CR6 dataloggers with serial numbers 7502 and greater",
+          "source_rows": [
+            162
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Current-Loop Terminal",
+          "name_vi": "Đầu cực vòng dòng",
+          "value_raw": "RG",
+          "source_rows": [
+            163
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Current-Loop Maximum Input Voltage",
+          "name_vi": "Điện áp đầu vào tối đa vòng dòng",
+          "value_raw": "±16 V",
+          "source_rows": [
+            164
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Current-Loop Resistance to Ground",
+          "name_vi": "Điện trở xuống mass vòng dòng",
+          "value_raw": "101 Ω",
+          "source_rows": [
+            165
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Current Measurement Shunt Resistance",
+          "name_vi": "Điện trở shunt đo dòng",
+          "value_raw": "10 Ω",
+          "source_rows": [
+            166
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Maximum Current Measurement Range",
+          "name_vi": "Dải đo dòng tối đa",
+          "value_raw": "±80 mA",
+          "source_rows": [
+            167
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Absolute Maximum Current",
+          "name_vi": "Dòng cực đại tuyệt đối",
+          "value_raw": "±160 mA",
+          "source_rows": [
+            168
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Current-Loop Resolution",
+          "name_vi": "Độ phân giải vòng dòng",
+          "value_raw": "≤20 nA",
+          "source_rows": [
+            169
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Current-Loop Accuracy @ 0 to 40°C",
+          "name_vi": "Độ chính xác vòng dòng @ 0 đến 40°C",
+          "value_raw": "±0.14% of reading",
+          "source_rows": [
+            170
+          ]
+        },
+        {
+          "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+          "name_en": "Current-Loop Accuracy @ -40 to 70°C",
+          "name_vi": "Độ chính xác vòng dòng @ -40 đến 70°C",
+          "value_raw": "±0.26% of reading",
+          "source_rows": [
+            171
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Pulse Event",
+          "name_vi": "Sự kiện xung",
+          "value_raw": "Transition from logic low to logic high",
+          "source_rows": [
+            173
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Pulse Logic Levels - 5 V Pair",
+          "name_vi": "Mức logic xung - Cặp 5 V",
+          "value_raw": "Logic low: ≤1.5 V | Logic high: ≥3.5 V",
+          "source_rows": [
+            174
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Pulse Logic Levels - 3.3 V Pair",
+          "name_vi": "Mức logic xung - Cặp 3.3 V",
+          "value_raw": "Logic low: ≤0.8 V | Logic high: ≥2.0 V",
+          "source_rows": [
+            175
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Pulse Sustained Input Voltage without Damage",
+          "name_vi": "Điện áp đầu vào xung duy trì không gây hỏng",
+          "value_raw": "±20 VDC",
+          "source_rows": [
+            176
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Pulse Maximum Counts Per Scan",
+          "name_vi": "Số đếm xung tối đa mỗi lần quét",
+          "value_raw": "2^24",
+          "source_rows": [
+            177
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Pulse Input Resistance",
+          "name_vi": "Điện trở đầu vào xung",
+          "value_raw": "5 kΩ",
+          "source_rows": [
+            178
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Pulse Accuracy",
+          "name_vi": "Độ chính xác xung",
+          "value_raw": "±(0.02% of reading + 1/scan)",
+          "source_rows": [
+            179
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Low-Level AC Terminals",
+          "name_vi": "Đầu cực AC mức thấp",
+          "value_raw": "U2 | U4 | U6 | U8 | U10 | U12",
+          "source_rows": [
+            180
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Low-Level AC DC-Offset Rejection",
+          "name_vi": "Khử DC-offset AC mức thấp",
+          "value_raw": "Internal AC coupling eliminates DC-offset voltages up to ±0.05 VDC",
+          "source_rows": [
+            181
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Low-Level AC Input Hysteresis",
+          "name_vi": "Hysteresis đầu vào AC mức thấp",
+          "value_raw": "12 mV at 1 Hz",
+          "source_rows": [
+            182
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Low-Level AC Range - 20 mV RMS",
+          "name_vi": "Dải AC mức thấp - 20 mV RMS",
+          "value_raw": "1.0 to 20 Hz",
+          "source_rows": [
+            183
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Low-Level AC Range - 200 mV RMS",
+          "name_vi": "Dải AC mức thấp - 200 mV RMS",
+          "value_raw": "0.5 to 200 Hz",
+          "source_rows": [
+            184
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Low-Level AC Range - 2000 mV RMS",
+          "name_vi": "Dải AC mức thấp - 2000 mV RMS",
+          "value_raw": "0.3 to 10,000 Hz",
+          "source_rows": [
+            185
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Low-Level AC Range - 5000 mV RMS",
+          "name_vi": "Dải AC mức thấp - 5000 mV RMS",
+          "value_raw": "0.3 to 20,000 Hz",
+          "source_rows": [
+            186
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Switch Closure Terminals",
+          "name_vi": "Đầu cực switch closure",
+          "value_raw": "C1-C4 | U1-U12",
+          "source_rows": [
+            187
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Switch Closure Resistance",
+          "name_vi": "Điện trở switch closure",
+          "value_raw": "Configurable in terminal pairs with 100 kΩ pull-up or pull-down",
+          "source_rows": [
+            188
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Switch Closure Maximum Input Frequency",
+          "name_vi": "Tần số đầu vào tối đa switch closure",
+          "value_raw": "150 Hz",
+          "source_rows": [
+            189
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Switch Closure Minimum Closed Time",
+          "name_vi": "Thời gian đóng tối thiểu switch closure",
+          "value_raw": "5 ms",
+          "source_rows": [
+            190
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Switch Closure Minimum Open Time",
+          "name_vi": "Thời gian mở tối thiểu switch closure",
+          "value_raw": "6 ms",
+          "source_rows": [
+            191
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Switch Closure Maximum Bounce Time",
+          "name_vi": "Thời gian bounce tối đa switch closure",
+          "value_raw": "1 ms open without being counted",
+          "source_rows": [
+            192
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "Switch Closure Software Debounce Time",
+          "name_vi": "Thời gian debounce phần mềm switch closure",
+          "value_raw": "3.3 ms",
+          "source_rows": [
+            193
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "High-Frequency Input Terminals",
+          "name_vi": "Đầu cực đầu vào tần số cao",
+          "value_raw": "C1-C4 | U1-U12",
+          "source_rows": [
+            194
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "High-Frequency Input Resistance",
+          "name_vi": "Điện trở đầu vào tần số cao",
+          "value_raw": "Configurable in terminal pairs with 100 kΩ pull-up or pull-down",
+          "source_rows": [
+            195
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "High-Frequency Typical Waveform",
+          "name_vi": "Dạng sóng điển hình tần số cao",
+          "value_raw": "5 or 3.3 VDC square wave",
+          "source_rows": [
+            196
+          ]
+        },
+        {
+          "section": "PULSE MEASUREMENT SPECIFICATIONS",
+          "name_en": "High-Frequency Maximum Input Frequency",
+          "name_vi": "Tần số đầu vào tối đa tần số cao",
+          "value_raw": "1 MHz",
+          "source_rows": [
+            197
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Digital I/O Supported Functions",
+          "name_vi": "Chức năng I/O số hỗ trợ",
+          "value_raw": "Status high/low | Pulse width modulation | External interrupt | Edge timing | Switch closure pulse counting | High-frequency pulse counting | UART | RS-232 | RS-422 | RS-485 | SDM | SDI-12 | I2C | SPI",
+          "source_rows": [
+            199
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Digital I/O Sustained Logic Input Voltage without Damage",
+          "name_vi": "Điện áp logic I/O số duy trì không gây hỏng",
+          "value_raw": "±20 VDC",
+          "source_rows": [
+            200
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Digital I/O Logic Levels",
+          "name_vi": "Mức logic I/O số",
+          "value_raw": "5 V source: Logic low ≤1.5 V | Logic high ≥3.5 V | 3.3 V source: Logic low ≤0.8 V | Logic high ≥2.5 V",
+          "source_rows": [
+            201
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Digital I/O Drive Current - C1-C4",
+          "name_vi": "Dòng drive I/O số - C1-C4",
+          "value_raw": "5 V source: 10 mA @ 3.5 V | 3.3 V source: 10 mA @ 1.85 V",
+          "source_rows": [
+            202
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Digital I/O Drive Current - U Odd",
+          "name_vi": "Dòng drive I/O số - U lẻ",
+          "value_raw": "5 V source: 20 mA @ 3.5 V | 3.3 V source: 20 mA @ 1.85 V",
+          "source_rows": [
+            203
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Digital I/O Drive Current - U Even",
+          "name_vi": "Dòng drive I/O số - U chẵn",
+          "value_raw": "5 V source: 10 mA @ 3.5 V | 3.3 V source: 10 mA @ 1.85 V",
+          "source_rows": [
+            204
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Edge Timing",
+          "name_vi": "Định thời cạnh",
+          "value_raw": "Terminals: C1-C4 | U1-U12 | Maximum input frequency: ≤1 kHz | Resolution: 520 ns",
+          "source_rows": [
+            205
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Edge Counting",
+          "name_vi": "Đếm cạnh",
+          "value_raw": "Terminals: C1-C4 | U1-U12 | Maximum input frequency: ≤2.2 kHz",
+          "source_rows": [
+            206
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Quadrature Input",
+          "name_vi": "Đầu vào quadrature",
+          "value_raw": "Terminals: C1-C4 and U1-U12 configured as digital pairs | Maximum frequency: 2.5 kHz | Resolution: 31.25 µs or 32 kHz | Minimum pulse width: 10 µs",
+          "source_rows": [
+            207
+          ]
+        },
+        {
+          "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+          "name_en": "Pulse-Width Modulation",
+          "name_vi": "Điều chế độ rộng xung",
+          "value_raw": "Modulation voltage: Logic high | Maximum period: 128 seconds | 0 to ≤5 ms: 83.33 ns or 12 MHz | >5 to ≤300 ms: 5.33 µs or 187.62 kHz | >300 ms: 31.25 µs or 32 kHz",
+          "source_rows": [
+            208
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "Ethernet Port",
+          "name_vi": "Cổng Ethernet",
+          "value_raw": "RJ45 jack | 10/100Base Mbps | Full and half duplex | Auto-MDIX | Magnetic isolation | TVS surge protection",
+          "source_rows": [
+            210
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "Internet Protocols",
+          "name_vi": "Giao thức Internet",
+          "value_raw": "Ethernet | PPP | RNDIS | ICMP/Ping | Auto-IP (APIPA) | IPv4 | IPv6 | UDP | TCP | TLS (v1.2) | DNS | DHCP | SLAAC | Telnet | HTTP(S) | SFTP | FTP(S) | POP3/TLS | NTP | SMTP/TLS | SNMPv3 | CS I/O IP | MQTT",
+          "source_rows": [
+            211
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "Additional Protocols",
+          "name_vi": "Giao thức bổ sung",
+          "value_raw": "CPI | PakBus | PakBus Encryption | SDM | SDI-12 | Modbus RTU / ASCII / TCP | DNP3 outstation | Custom user definable over serial | NTCIP | NMEA 0183 | I2C | SPI",
+          "source_rows": [
+            212
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "USB Device",
+          "name_vi": "Thiết bị USB",
+          "value_raw": "Micro-B device for computer connectivity",
+          "source_rows": [
+            213
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "CS I/O",
+          "name_vi": "CS I/O",
+          "value_raw": "9-pin D-sub connector for Campbell Scientific CS I/O peripherals",
+          "source_rows": [
+            214
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "0-5 V Serial",
+          "name_vi": "Serial 0-5 V",
+          "value_raw": "U1-U12 and C1-C4 | Eight independent TX/RX pairs",
+          "source_rows": [
+            215
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "SDI-12",
+          "name_vi": "SDI-12",
+          "value_raw": "C1 | C3 | U1 | U3 | U5 | U7 | U9 | U11 | Eight independent SDI-12 compliant terminals | Meets SDI-12 Standard v1.4",
+          "source_rows": [
+            216
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "RS-485",
+          "name_vi": "RS-485",
+          "value_raw": "C1-C4 | Two half duplex",
+          "source_rows": [
+            217
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "RS-422",
+          "name_vi": "RS-422",
+          "value_raw": "C1-C4 | One full duplex or two half duplex",
+          "source_rows": [
+            218
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "RS-232/CPI",
+          "name_vi": "RS-232/CPI",
+          "value_raw": "Single RJ45 module port | Operates in CPI or RS-232 mode",
+          "source_rows": [
+            219
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "CPI",
+          "name_vi": "CPI",
+          "value_raw": "One CPI bus | Up to 1 Mbps data rate | Device synchronization to 5 µs | Total cable length up to 610 m (2000 ft) | Up to 20 devices",
+          "source_rows": [
+            220
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "Antenna Connection Types",
+          "name_vi": "Loại kết nối ăng-ten",
+          "value_raw": "Wi-Fi | SS 900 MHz | 2.4 GHz",
+          "source_rows": [
+            221
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "Wireless Communications",
+          "name_vi": "Truyền thông không dây",
+          "value_raw": "Wi-Fi | VHF | UHF | Spread spectrum | ELOS",
+          "source_rows": [
+            222
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "Hardwired Communications",
+          "name_vi": "Truyền thông có dây",
+          "value_raw": "Multi-drop | Short haul | RS-232 | Fiber optic",
+          "source_rows": [
+            223
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS SPECIFICATIONS",
+          "name_en": "Satellite Communications",
+          "name_vi": "Truyền thông vệ tinh",
+          "value_raw": "GOES | Argos | Inmarsat Hughes | Irridium",
+          "source_rows": [
+            224
+          ]
+        },
+        {
+          "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+          "name_en": "Shock and Vibration",
+          "name_vi": "Va đập và rung",
+          "value_raw": "MIL-STD 810G methods 516.6 and 514.6",
+          "source_rows": [
+            256
+          ]
+        },
+        {
+          "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+          "name_en": "Protection",
+          "name_vi": "Cấp bảo vệ",
+          "value_raw": "IP50",
+          "source_rows": [
+            257
+          ]
+        },
+        {
+          "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+          "name_en": "EMI/ESD - ESD",
+          "name_vi": "EMI/ESD - ESD",
+          "value_raw": "IEC 61000-4-2 | ±15 kV air | ±8 kV contact discharge",
+          "source_rows": [
+            258
+          ]
+        },
+        {
+          "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+          "name_en": "EMI/ESD - Radiated RF",
+          "name_vi": "EMI/ESD - RF bức xạ",
+          "value_raw": "IEC 61000-4-3 | 10 V/m, 80-1000 MHz",
+          "source_rows": [
+            259
+          ]
+        },
+        {
+          "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+          "name_en": "EMI/ESD - EFT",
+          "name_vi": "EMI/ESD - EFT",
+          "value_raw": "IEC 61000-4-4 | 4 kV power | 4 kV I/O",
+          "source_rows": [
+            260
+          ]
+        },
+        {
+          "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+          "name_en": "EMI/ESD - Surge",
+          "name_vi": "EMI/ESD - Surge",
+          "value_raw": "IEC 61000-4-5 | 4 kV power | 4 kV I/O",
+          "source_rows": [
+            261
+          ]
+        },
+        {
+          "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+          "name_en": "EMI/ESD - Conducted RF",
+          "name_vi": "EMI/ESD - RF dẫn",
+          "value_raw": "IEC 61000-4-6 | 10 V power | 10 V I/O",
+          "source_rows": [
+            262
+          ]
+        },
+        {
+          "section": "WARRANTY",
+          "name_en": "Warranty - Standard",
+          "name_vi": "Bảo hành - Tiêu chuẩn",
+          "value_raw": "Three years against defects in materials and workmanship",
+          "source_rows": [
+            264
+          ]
+        },
+        {
+          "section": "WARRANTY",
+          "name_en": "Warranty - Extended Optional",
+          "name_vi": "Bảo hành - Mở rộng tùy chọn",
+          "value_raw": "Additional four years | Total up to seven years",
+          "source_rows": [
+            265
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Single-Ended Voltage",
+          "name_vi": "Đầu vào analog - Điện áp single-ended",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            267
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Differential Voltage",
+          "name_vi": "Đầu vào analog - Điện áp vi sai",
+          "value_raw": "U1/U2 | U3/U4 | U5/U6 | U7/U8 | U9/U10 | U11/U12",
+          "source_rows": [
+            268
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Ratiometric/Bridge",
+          "name_vi": "Đầu vào analog - Ratiometric/Bridge",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            269
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Vibrating Wire Static",
+          "name_vi": "Đầu vào analog - Dây rung tĩnh",
+          "value_raw": "U2 | U4 | U6 | U8 | U10 | U12",
+          "source_rows": [
+            270
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Vibrating Wire with Thermistor",
+          "name_vi": "Đầu vào analog - Dây rung với thermistor",
+          "value_raw": "U2 | U6 | U10",
+          "source_rows": [
+            271
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Thermistor",
+          "name_vi": "Đầu vào analog - Thermistor",
+          "value_raw": "U2 | U4 | U6 | U8 | U10 | U12",
+          "source_rows": [
+            272
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Thermocouple",
+          "name_vi": "Đầu vào analog - Thermocouple",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            273
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Current Loop",
+          "name_vi": "Đầu vào analog - Vòng dòng",
+          "value_raw": "RG",
+          "source_rows": [
+            274
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Input - Period Average",
+          "name_vi": "Đầu vào analog - Trung bình chu kỳ",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            275
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Pulse Counting - Switch Closure",
+          "name_vi": "Đếm xung - Switch Closure",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            276
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Pulse Counting - High Frequency",
+          "name_vi": "Đếm xung - Tần số cao",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            277
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Pulse Counting - Low-Level AC",
+          "name_vi": "Đếm xung - AC mức thấp",
+          "value_raw": "U2 | U4 | U6 | U8 | U10 | U12",
+          "source_rows": [
+            278
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Output - Switched Voltage Excitation",
+          "name_vi": "Đầu ra analog - Kích thích điện áp chuyển mạch",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            279
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Analog Output - Switched Current Excitation",
+          "name_vi": "Đầu ra analog - Kích thích dòng chuyển mạch",
+          "value_raw": "U1-U12",
+          "source_rows": [
+            280
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Voltage Output - 3.3 VDC",
+          "name_vi": "Đầu ra điện áp - 3.3 VDC",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            281
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Voltage Output - 5 VDC",
+          "name_vi": "Đầu ra điện áp - 5 VDC",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            282
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Voltage Output - 12 VDC",
+          "name_vi": "Đầu ra điện áp - 12 VDC",
+          "value_raw": "12V | SW12-1 | SW12-2",
+          "source_rows": [
+            283
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Communications Terminal - SDI-12",
+          "name_vi": "Đầu cực truyền thông - SDI-12",
+          "value_raw": "U1 | U3 | U5 | U7 | U9 | U11 | C1 | C3",
+          "source_rows": [
+            284
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Communications Terminal - GPS Time Sync",
+          "name_vi": "Đầu cực truyền thông - Đồng bộ GPS",
+          "value_raw": "U1: PPS | U2: Rx | C1: Tx | C2: Rx | C3: Tx | C4: Rx",
+          "source_rows": [
+            285
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Communications Terminal - TTL 0-5 V",
+          "name_vi": "Đầu cực truyền thông - TTL 0-5 V",
+          "value_raw": "U1-U12 and C1-C4 configurable as TX/RX pairs",
+          "source_rows": [
+            286
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Communications Terminal - LVTTL 0-3.3 V",
+          "name_vi": "Đầu cực truyền thông - LVTTL 0-3.3 V",
+          "value_raw": "U1-U12 and C1-C4 configurable as TX/RX pairs",
+          "source_rows": [
+            287
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Communications Terminal - RS-232",
+          "name_vi": "Đầu cực truyền thông - RS-232",
+          "value_raw": "C1-C4 TX/RX | RS-232/CPI port",
+          "source_rows": [
+            288
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Communications Terminal - RS-485 Half Duplex",
+          "name_vi": "Đầu cực truyền thông - RS-485 Half Duplex",
+          "value_raw": "C1/C2: A-/B+ | C3/C4: A-/B+",
+          "source_rows": [
+            289
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Communications Terminal - RS-485 Full Duplex",
+          "name_vi": "Đầu cực truyền thông - RS-485 Full Duplex",
+          "value_raw": "C1: Tx- | C2: Tx+ | C3: Rx- | C4: Rx+",
+          "source_rows": [
+            290
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Digital I/O - General I/O",
+          "name_vi": "I/O số - General I/O",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            291
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Digital I/O - PWM Output",
+          "name_vi": "I/O số - Đầu ra PWM",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            292
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Digital I/O - Timer Input",
+          "name_vi": "I/O số - Timer Input",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            293
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Digital I/O - Interrupt",
+          "name_vi": "I/O số - Interrupt",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            294
+          ]
+        },
+        {
+          "section": "TERMINAL FUNCTIONS",
+          "name_en": "Digital I/O - Quadrature",
+          "name_vi": "I/O số - Quadrature",
+          "value_raw": "U1-U12 | C1-C4",
+          "source_rows": [
+            295
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "s_cr6.pdf",
+        "user_manual": "cr6.pdf",
+        "order_form": "https://www.campbellsci.com/products/cr6"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/11919",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

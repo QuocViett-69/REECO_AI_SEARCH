@@ -1,0 +1,650 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CR350_NA",
+  "model": "CR350-NA",
+  "raw_record_ref": {
+    "file": "data/raw/CR350-NA.json",
+    "product_index": 0,
+    "raw_record_key": "CR350-NA.json#0",
+    "raw_product_id": "CSI_CR350_NA",
+    "raw_model": "CR350-NA"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "CONFIGURATION",
+      "name_raw": "Variant Code Suffix",
+      "value_raw": "NA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "variant_code_suffix"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "CONFIGURATION",
+      "name_raw": "Communication Family",
+      "value_raw": "NA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "communication_family"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "CONFIGURATION",
+      "name_raw": "Configuration Description",
+      "value_raw": "No Additional Coms",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "configuration_description"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Model",
+      "value_raw": "CR350",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "model"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Product Type",
+      "value_raw": "Measurement and Control Datalogger",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "Environment: Non-condensing | Range: -40° to +70°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Maximum Scan Rate",
+      "value_raw": "10 Hz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 10,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "maximum_scan_rate"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Case Material",
+      "value_raw": "High-impact-resistant polycarbonate, recycle code 7",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "case_material"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Analog Inputs",
+      "value_raw": "4 single-ended or 2 differential (individually configured)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "analog_inputs"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Pulse Counters",
+      "value_raw": "8 (P_SW, P_LL, C1, C2, and SE1 to SE4)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "pulse_counters"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Voltage Excitation Terminals",
+      "value_raw": "2 (VX1, VX2)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "voltage_excitation_terminals",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Communications Ports",
+      "value_raw": "RS-232 | RS-485 | USB Type C 2.0",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232",
+          "RS-485",
+          "USB"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "RS-485",
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "communications_ports"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Switched 12 Volt",
+      "value_raw": "2 terminals",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "switched_12_volt",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Digital I/O",
+      "value_raw": "7 terminals (C1, C2, P_SW, and SE1 to SE4) configurable for digital input and output | Includes status high/low, pulse width modulation, external interrupt, and communications functions | Exception: C2 and P_SW do not do pulse-width modulation",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "digital_io"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Analog Input Limits",
+      "value_raw": "-100 to +2500 mV",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -100,
+        "max_value": 2500,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "analog_input_limits"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Analog Voltage Accuracy",
+      "value_raw": "0° to 40°C: ±(0.04% of measurement + offset) | -40° to +70°C: ±(0.1% of measurement + offset) | Note: Accuracy specifications do not include sensor or measurement noise",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "analog_voltage_accuracy",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "ADC",
+      "value_raw": "24-bit",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "adc"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "POWER / CLOCK / MEMORY",
+      "name_raw": "Charge Terminal Characteristics (CHG+ and CHG-)",
+      "value_raw": "Input: Power converter or solar panel, typical | Energy source: ES1 PS2 only | Hold current limit: 1.1 A @ 20°C | Voltage: 16 to 32 Vdc",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "charge_terminal_characteristics_chg_plus_and_chg",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "POWER / CLOCK / MEMORY",
+      "name_raw": "Battery Terminal Characteristics (BAT+ and BAT-)",
+      "value_raw": "Hold current limit: 3.7 A @ 20°C | Input: External battery, 7 Ah lead-acid, typical | Voltage input: 12 Vdc only",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "battery_terminal_characteristics_bat_plus_and_bat",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "POWER / CLOCK / MEMORY",
+      "name_raw": "Internal Lithium Battery",
+      "value_raw": "Battery: 3 V coin cell CR2032X for battery-backed clock | Life: 6 years with no external power source",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "internal_lithium_battery",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "POWER / CLOCK / MEMORY",
+      "name_raw": "Real-Time Clock Accuracy",
+      "value_raw": "±3 min. per year",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "real_time_clock_accuracy",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "POWER / CLOCK / MEMORY",
+      "name_raw": "CPU Drive/Programs",
+      "value_raw": "50 MB serial flash",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "cpu_drive_per_programs",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "POWER / CLOCK / MEMORY",
+      "name_raw": "Data Storage",
+      "value_raw": "50 MB serial flash",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "data_storage",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "POWER / CLOCK / MEMORY",
+      "name_raw": "Idle Current Drain, Average",
+      "value_raw": "0.5 mA (@ 12 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "idle_current_drain_average",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "POWER / CLOCK / MEMORY",
+      "name_raw": "Active Current Drain, Average",
+      "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "active_current_drain_average",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "COMMUNICATIONS",
+      "name_raw": "Internet Protocols",
+      "value_raw": "Ethernet | PPP | RNDIS | ICMP/Ping | Auto-IP (APIPA) | IPv4 | IPv6 | UDP | TCP | TLS (v1.2) | DNS | DHCP | SLAAC | NTP | Telnet | HTTP(S) | FTP(S) | SMTP/TLS | POP3/TLS | MQTT(S)",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Ethernet",
+          "IPv4",
+          "IPv6",
+          "ICMP",
+          "PPP",
+          "RNDIS",
+          "Auto-IP",
+          "UDP",
+          "TCP",
+          "TLS",
+          "DNS",
+          "DHCP",
+          "SLAAC",
+          "Telnet",
+          "HTTP",
+          "FTP",
+          "POP3",
+          "NTP",
+          "SMTP",
+          "MQTT"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Ethernet",
+          "IPv4",
+          "IPv6",
+          "ICMP",
+          "PPP",
+          "RNDIS",
+          "Auto-IP",
+          "UDP",
+          "TCP",
+          "TLS",
+          "DNS",
+          "DHCP",
+          "SLAAC",
+          "Telnet",
+          "HTTP",
+          "FTP",
+          "POP3",
+          "NTP",
+          "SMTP",
+          "MQTT"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "internet_protocols"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "COMMUNICATIONS",
+      "name_raw": "Communications Protocols",
+      "value_raw": "PakBus | PakBus Encryption | Modbus RTU/ASCII/TCP | DNP3 | SDI-12 | and others",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Modbus RTU",
+          "Modbus ASCII",
+          "Modbus TCP",
+          "SDI-12",
+          "PakBus",
+          "DNP3"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Modbus RTU",
+          "Modbus ASCII",
+          "Modbus TCP",
+          "SDI-12",
+          "PakBus",
+          "DNP3"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "communications_protocols"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "PHYSICAL",
+      "name_raw": "Dimensions",
+      "value_raw": "16.3 x 8.4 x 5.6 cm (6.4 x 3.3 x 2.2 in.) | Additional clearance required for cables and leads",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "physical_dimensions"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "PHYSICAL",
+      "name_raw": "Weight",
+      "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 288,
+        "max_value": 306,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 0.64,
+          "max_value": 0.68,
+          "unit": "lb"
+        },
+        "condition": "depending on communications option selected"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "physical_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "section": "PHYSICAL",
+      "name_raw": "Warranty",
+      "value_raw": "3 years",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3,
+        "unit": "year",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR350-NA.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "warranty"
+    }
+  ]
+}

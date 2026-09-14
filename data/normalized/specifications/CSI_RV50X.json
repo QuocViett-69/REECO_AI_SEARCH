@@ -1,0 +1,692 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_RV50X",
+  "model": "RV50X",
+  "raw_record_ref": {
+    "file": "data/raw/RV50X.json",
+    "product_index": 0,
+    "raw_record_key": "RV50X.json#0",
+    "raw_product_id": "CSI_RV50X",
+    "raw_model": "RV50X"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Product Type",
+      "value_raw": "Industrial 4G LTE Cellular Gateway",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary communications device / cellular gateway",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Available Configurations",
+      "value_raw": "RV50X-NE-V – Provisioned for Verizon US; RV50X-NE-VS – Provisioned for Verizon US Static IP; RV50X-NE-AT – Provisioned for AT&T North America; RV50X-NE-IT1A – Provisioned for International 1A; RV50X-NE-IT1B – Provisioned for International 1B; RV50X-NE-NP – No Provisioning",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "available_configurations"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Network Technology",
+      "value_raw": "4G LTE with automatic fallback to 3G",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "network_technology"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Cellular Technologies",
+      "value_raw": "4G LTE; 3G HSPA/HSPA+; 3G TD-SCDMA (Asia Pacific model only)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "cellular_technologies"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Radio Module",
+      "value_raw": "MC7455",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "radio_module"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "SIM Interface",
+      "value_raw": "Dual Mini-SIM (2FF) interfaces",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SIM"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SIM"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "sim_interface"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Host Interface",
+      "value_raw": "10/100/1000 Ethernet RJ45; USB 2.0 Micro-B; RS-232 Serial DTE DB9 Female",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232",
+          "Ethernet",
+          "USB",
+          "RJ45"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "Ethernet",
+          "USB",
+          "RJ45"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "host_interface"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "RS-232 Services",
+      "value_raw": "Serial server, serial client, and PPP host",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "PPP"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "rs_232_services"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Embedded Operating System",
+      "value_raw": "Sierra Wireless ALEOS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "embedded_operating_system"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Embedded Network Services",
+      "value_raw": "IP serial server/client, local PPP host, dynamic DNS client, routing, VPN, port forwarding",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "PPP",
+          "DNS"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "embedded_network_services"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "RF Connectors",
+      "value_raw": "3 female SMA jacks for primary cellular, optional diversity cellular, and GPS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "rf_connectors"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-30 to +70 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -30,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Dimensions",
+      "value_raw": "11.9 × 9.4 × 3.4 cm (4.69 × 3.7 × 1.34 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Weight",
+      "value_raw": "320 g (11.3 oz)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 320,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 11.3,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Operating Voltage",
+      "value_raw": "7 to 36 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 36,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "operating_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Typical Enable / Ignition Sense Low",
+      "value_raw": "1 mA @ 12 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "typical_enable_per_ignition_sense_low"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Typical Idle Current",
+      "value_raw": "65 to 95 mA @ 12 VDC, depending on configuration",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "typical_idle_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Typical Active Current",
+      "value_raw": "250 to 300 mA @ 12 VDC, depending on configuration",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "typical_active_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Radio Output Power",
+      "value_raw": "23 dBm on LTE; 23 dBm on UMTS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "radio_output_power",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "North America / EMEA Carrier Approval",
+      "value_raw": "Verizon, AT&T, T-Mobile USA, Southern Linc, Sprint, US Cellular, Rogers, Telus, Bell",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "north_america_per_emea_carrier_approval"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "North America / EMEA 4G LTE Bands",
+      "value_raw": "B1, B2, B3, B4, B5, B7, B8, B12, B13, B20, B25, B26, B29, B41",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "north_america_per_emea_4g_lte_bands"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "North America / EMEA 3G HSPA/HSPA+ Bands",
+      "value_raw": "B1, B2, B3, B4, B5, B8",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "north_america_per_emea_3g_hspa_per_hspa_plus_bands"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "North America / EMEA Industry Approvals",
+      "value_raw": "FCC, IC, PTCRB, R&TTE, GCF, CE",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "north_america_per_emea_industry_approvals"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Asia Pacific Carrier Approval",
+      "value_raw": "Telstra",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "asia_pacific_carrier_approval"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Asia Pacific 4G LTE Bands",
+      "value_raw": "B1, B3, B5, B7, B8, B18, B19, B21, B28, B38, B39, B40, B41",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "asia_pacific_4g_lte_bands"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Asia Pacific 3G HSPA/HSPA+ Bands",
+      "value_raw": "B1, B5, B6, B8, B9, B19",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "asia_pacific_3g_hspa_per_hspa_plus_bands"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Asia Pacific 3G TD-SCDMA Band",
+      "value_raw": "B39",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "asia_pacific_3g_td_scdma_band"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Asia Pacific Industry Approvals",
+      "value_raw": "RCM, JRF/JPA, Anatel",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "asia_pacific_industry_approvals"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Cellular Service Requirement",
+      "value_raw": "At least one Mini-SIM (2FF) and a compatible cellular data service",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SIM"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "cellular_service_requirement"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Configuration Tool",
+      "value_raw": "ACEManager web-based configuration tool",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "configuration_tool"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Data Logger Connectivity",
+      "value_raw": "RS-232 or Ethernet",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "Ethernet"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "data_logger_connectivity"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Internet Protocol Support",
+      "value_raw": "TCP/IP; supports use cases including Modbus, DNP3, email, HTTP, FTP",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Modbus",
+          "TCP/IP",
+          "HTTP",
+          "FTP",
+          "DNP3"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Modbus",
+          "TCP/IP",
+          "HTTP",
+          "FTP",
+          "DNP3"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "internet_protocol_support"
+    },
+    {
+      "product_id": "CSI_RV50X",
+      "section": "General Specifications",
+      "name_raw": "Antenna Requirement",
+      "value_raw": "Primary cellular antenna required; two external antennas recommended/required for reliable 4G LTE communications",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "antenna_requirement"
+    }
+  ]
+}

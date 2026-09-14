@@ -1,0 +1,3255 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CR310_NA",
+  "model": "CR310-NA",
+  "raw_record_ref": {
+    "file": "data/raw/CR310-NA.json",
+    "product_index": 0,
+    "raw_record_key": "CR310-NA.json#0",
+    "raw_product_id": "CSI_CR310_NA",
+    "raw_model": "CR310-NA"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "CONFIGURATION",
+      "name_raw": "Variant Code Suffix",
+      "value_raw": "NA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "variant_code_suffix"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "CONFIGURATION",
+      "name_raw": "Communication Family",
+      "value_raw": "NA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "communication_family"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "CONFIGURATION",
+      "name_raw": "Configuration Description",
+      "value_raw": "No Additional Coms",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "configuration_description"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PRODUCT PAGE SUMMARY",
+      "name_raw": "Operating Temperature Range - Product Page",
+      "value_raw": "-40° to +70°C (standard)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "operating_temperature_range_product_page",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PRODUCT PAGE SUMMARY",
+      "name_raw": "Maximum Scan Rate - Product Page",
+      "value_raw": "10 Hz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 10,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "maximum_scan_rate_product_page"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PRODUCT PAGE SUMMARY",
+      "name_raw": "Analog Inputs - Product Page",
+      "value_raw": "6 single-ended or 3 differential (individually configured)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "analog_inputs_product_page"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PRODUCT PAGE SUMMARY",
+      "name_raw": "Communications Ports - Product Page",
+      "value_raw": "USB Micro-B | RS-232 | 10/100 Ethernet RJ45",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232",
+          "Ethernet",
+          "USB",
+          "RJ45"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "Ethernet",
+          "USB",
+          "RJ45"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "communications_ports_product_page"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PRODUCT PAGE SUMMARY",
+      "name_raw": "Dimensions - Product Page",
+      "value_raw": "16.26 x 7.62 x 5.68 cm (6.4 x 3.0 x 2.2 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "dimensions_product_page"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PRODUCT PAGE SUMMARY",
+      "name_raw": "Weight / Mass",
+      "value_raw": "288 g (0.64 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 288,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.64,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "weight_per_mass",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SOURCE / CONFIGURATION",
+      "name_raw": "Primary Specification Source",
+      "value_raw": "CR300-Series Specifications, Revision 05/2026",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "primary_specification_source"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SOURCE / CONFIGURATION",
+      "name_raw": "Base Model",
+      "value_raw": "CR310",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "base_model"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SOURCE / CONFIGURATION",
+      "name_raw": "Electrical Specification Validity",
+      "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "electrical_specification_validity"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SOURCE / CONFIGURATION",
+      "name_raw": "Recalibration Recommendation",
+      "value_raw": "Every three years",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "recalibration_recommendation"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Processor",
+      "value_raw": "ARM Cortex M4 running at 144 MHz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "processor"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "CPU Drive",
+      "value_raw": "80 MB serial flash",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "cpu_drive"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Data Storage Memory",
+      "value_raw": "30 MB serial flash",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "data_storage_memory"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Operating System Memory",
+      "value_raw": "2 MB flash",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "operating_system_memory"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Settings / Calibration / TLS / System Information Memory",
+      "value_raw": "3 MB serial flash",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "settings_per_calibration_per_tls_per_system_information_memory"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Background Tasks / Buffers / Variables Memory",
+      "value_raw": "756 KB RAM",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "background_tasks_per_buffers_per_variables_memory"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Program Execution Period",
+      "value_raw": "100 ms to 1 day",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min": {
+          "value": 100,
+          "unit": "ms"
+        },
+        "max": {
+          "value": 1,
+          "unit": "day"
+        },
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "program_execution_period",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Real-Time Clock - Backup",
+      "value_raw": "Battery backed while external power is disconnected",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "real_time_clock_backup",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Real-Time Clock - Resolution",
+      "value_raw": "1 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "real_time_clock_resolution",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Real-Time Clock - Accuracy",
+      "value_raw": "±1 min. per month",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "real_time_clock_accuracy",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "SYSTEM SPECIFICATIONS",
+      "name_raw": "Wiring Panel Temperature",
+      "value_raw": "Measured using a thermistor, located on the processor board",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "wiring_panel_temperature",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PHYSICAL SPECIFICATIONS",
+      "name_raw": "Dimensions - CR310 (Specification Sheet)",
+      "value_raw": "16.3 x 8.4 x 5.6 cm (6.4 x 3.3 x 2.2 in.) | Additional clearance required for cables, wires and antennas",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "dimensions_cr310_specification_sheet"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PHYSICAL SPECIFICATIONS",
+      "name_raw": "Case Material",
+      "value_raw": "Powder-coated aluminum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "case_material"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Power Input Protection",
+      "value_raw": "Protected against surge, over-voltage, over-current, and reverse power | IEC 61000-4 Class 4 level",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "power_input_protection",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Charge Terminal (CHG+ / CHG-) - Input",
+      "value_raw": "Input from power converter or solar panel",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "charge_terminal_chg_plus_per_chg_input",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Charge Terminal - Energy Source",
+      "value_raw": "ES1 PS2 energy sources only",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "charge_terminal_energy_source",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Charge Terminal - Voltage",
+      "value_raw": "16 to 32 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 16,
+        "max_value": 32,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "charge_terminal_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Charge Terminal - Hold Current Limit",
+      "value_raw": "1.6 A @ 20°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "charge_terminal_hold_current_limit",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Battery Terminal (BAT+ / BAT-) - Input",
+      "value_raw": "Input from external battery, 7 Ah lead-acid typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "battery_terminal_bat_plus_per_bat_input",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Battery Terminal - Voltage",
+      "value_raw": "12 VDC only",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "battery_terminal_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Battery Terminal - Hold Current Limit",
+      "value_raw": "1.6 A @ 20°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          41
+        ]
+      },
+      "canonical_key": "battery_terminal_hold_current_limit",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Internal Lithium Battery",
+      "value_raw": "3 V coin cell CR2032X for battery-backed clock",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "internal_lithium_battery",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Internal Lithium Battery Life",
+      "value_raw": "6-year life with no external power source",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 35,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "internal_lithium_battery_life",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Average Current Drain - Idle",
+      "value_raw": "1.5 mA @ 12 VDC BAT terminals",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 36,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "average_current_drain_idle",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Average Current Drain - Active 1 Hz",
+      "value_raw": "5 mA @ 12 VDC with one analog measurement",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 37,
+        "source_rows": [
+          45
+        ]
+      },
+      "canonical_key": "average_current_drain_active_1_hz",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Average Current Drain - CR310 Active",
+      "value_raw": "36 mA @ 12 VDC (processor always on)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 38,
+        "source_rows": [
+          46
+        ]
+      },
+      "canonical_key": "average_current_drain_cr310_active",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "RS-232 Additional Current",
+      "value_raw": "Active + 5 mA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 39,
+        "source_rows": [
+          47
+        ]
+      },
+      "canonical_key": "rs_232_additional_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Ethernet Idle Additional Current",
+      "value_raw": "Active + 5 mA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 40,
+        "source_rows": [
+          48
+        ]
+      },
+      "canonical_key": "ethernet_idle_additional_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "Ethernet Linked Additional Current",
+      "value_raw": "Active + 20 mA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 41,
+        "source_rows": [
+          49
+        ]
+      },
+      "canonical_key": "ethernet_linked_additional_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER REQUIREMENTS",
+      "name_raw": "USB Power",
+      "value_raw": "USB 5 VDC supports sending programs, adjusting data logger settings, and some measurements | If USB is the only power source, VX1/VX2 ranges are reduced to 150 to 2500 mV | SW12V is not operational | C1/C2 voltage output limited to 4.75 V",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 42,
+        "source_rows": [
+          50
+        ]
+      },
+      "canonical_key": "usb_power",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "System Power Out Current Limit @ -40°C",
+      "value_raw": "5.8 A",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 5.8,
+        "unit": "A",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 43,
+        "source_rows": [
+          52
+        ]
+      },
+      "canonical_key": "system_power_out_current_limit_40_c",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "System Power Out Current Limit @ 20°C",
+      "value_raw": "3.7 A",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3.7,
+        "unit": "A",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 44,
+        "source_rows": [
+          53
+        ]
+      },
+      "canonical_key": "system_power_out_current_limit_20_c",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "System Power Out Current Limit @ 70°C",
+      "value_raw": "2.0 A",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2,
+        "unit": "A",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 45,
+        "source_rows": [
+          54
+        ]
+      },
+      "canonical_key": "system_power_out_current_limit_70_c",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "VX Terminals",
+      "value_raw": "Two independently configurable voltage terminals (VX1-VX2) | 12-bit DAC | Can provide switched, regulated 5 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 46,
+        "source_rows": [
+          55
+        ]
+      },
+      "canonical_key": "vx_terminals",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "VX Range",
+      "value_raw": "150 to 5000 mV",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 150,
+        "max_value": 5000,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 47,
+        "source_rows": [
+          56
+        ]
+      },
+      "canonical_key": "vx_range",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "VX Resolution",
+      "value_raw": "1.6 mV",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.6,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 48,
+        "source_rows": [
+          57
+        ]
+      },
+      "canonical_key": "vx_resolution",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "VX Maximum Source Current",
+      "value_raw": "50 mA total, concurrently or independently",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 49,
+        "source_rows": [
+          58
+        ]
+      },
+      "canonical_key": "vx_maximum_source_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "SW12V",
+      "value_raw": "Unregulated 12 VDC power with voltage equal to BAT+ input voltage | Disabled when operating on USB power only",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 50,
+        "source_rows": [
+          59
+        ]
+      },
+      "canonical_key": "sw12v",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "SW12V Thermal Fuse Hold Current @ -40°C",
+      "value_raw": "1200 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1200,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 51,
+        "source_rows": [
+          60
+        ]
+      },
+      "canonical_key": "sw12v_thermal_fuse_hold_current_40_c",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "SW12V Thermal Fuse Hold Current @ 20°C",
+      "value_raw": "1100 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1100,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 52,
+        "source_rows": [
+          61
+        ]
+      },
+      "canonical_key": "sw12v_thermal_fuse_hold_current_20_c",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "POWER OUTPUT SPECIFICATIONS",
+      "name_raw": "SW12V Thermal Fuse Hold Current @ 70°C",
+      "value_raw": "830 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 830,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 53,
+        "source_rows": [
+          62
+        ]
+      },
+      "canonical_key": "sw12v_thermal_fuse_hold_current_70_c",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Input Configuration",
+      "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals | Individually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements | 24-bit ADC | One channel at a time is measured",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 54,
+        "source_rows": [
+          64
+        ]
+      },
+      "canonical_key": "analog_input_configuration"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Differential Terminals",
+      "value_raw": "DIFF 1H/1L – 3H/3L",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 55,
+        "source_rows": [
+          65
+        ]
+      },
+      "canonical_key": "differential_terminals"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Single-Ended Terminals",
+      "value_raw": "SE1 – SE6",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 56,
+        "source_rows": [
+          66
+        ]
+      },
+      "canonical_key": "single_ended_terminals"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Input Resistance @ fN1 50/60 Hz",
+      "value_raw": "5 GΩ typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 57,
+        "source_rows": [
+          67
+        ]
+      },
+      "canonical_key": "input_resistance_fn1_50_per_60_hz"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Input Resistance @ fN1 4000 Hz",
+      "value_raw": "300 MΩ typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 58,
+        "source_rows": [
+          68
+        ]
+      },
+      "canonical_key": "input_resistance_fn1_4000_hz"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Input Voltage Limits",
+      "value_raw": "-100 to +2500 mV",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -100,
+        "max_value": 2500,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 59,
+        "source_rows": [
+          69
+        ]
+      },
+      "canonical_key": "input_voltage_limits",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Sustained Input Voltage without Damage - SE1-SE2",
+      "value_raw": "-6 V, +9 V",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 60,
+        "source_rows": [
+          70
+        ]
+      },
+      "canonical_key": "sustained_input_voltage_without_damage_se1_se2",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Sustained Input Voltage without Damage - SE3-SE6",
+      "value_raw": "±17 V",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 17,
+        "unit": "V",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 61,
+        "source_rows": [
+          71
+        ]
+      },
+      "canonical_key": "sustained_input_voltage_without_damage_se3_se6",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "DC Common Mode Rejection - With Input Reversal",
+      "value_raw": ">120 dB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 120,
+        "unit": "dB",
+        "qualifier": ">"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 62,
+        "source_rows": [
+          72
+        ]
+      },
+      "canonical_key": "dc_common_mode_rejection_with_input_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "DC Common Mode Rejection - Without Input Reversal",
+      "value_raw": "≥90 dB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 90,
+        "unit": "dB",
+        "qualifier": "≥"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 63,
+        "source_rows": [
+          73
+        ]
+      },
+      "canonical_key": "dc_common_mode_rejection_without_input_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Normal Mode Rejection @ 50 Hz",
+      "value_raw": ">71 dB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 71,
+        "unit": "dB",
+        "qualifier": ">"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 64,
+        "source_rows": [
+          74
+        ]
+      },
+      "canonical_key": "normal_mode_rejection_50_hz"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Normal Mode Rejection @ 60 Hz",
+      "value_raw": ">74 dB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 74,
+        "unit": "dB",
+        "qualifier": ">"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 65,
+        "source_rows": [
+          75
+        ]
+      },
+      "canonical_key": "normal_mode_rejection_60_hz"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Input Current @ 25°C - fN1 50/60 Hz",
+      "value_raw": "±0.08 nA typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 66,
+        "source_rows": [
+          76
+        ]
+      },
+      "canonical_key": "input_current_25_c_fn1_50_per_60_hz",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Input Current @ 25°C - fN1 4000 Hz",
+      "value_raw": "±13 nA typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 67,
+        "source_rows": [
+          77
+        ]
+      },
+      "canonical_key": "input_current_25_c_fn1_4000_hz",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Filter First Notch Frequency (fN1) Range",
+      "value_raw": "50/60, 400, 4000 Hz (user specified)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 68,
+        "source_rows": [
+          78
+        ]
+      },
+      "canonical_key": "filter_first_notch_frequency_fn1_range",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 4000 Hz, -100 to +2500 mV, Diff with reversal",
+      "value_raw": "23 µV RMS | 16.8 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 69,
+        "source_rows": [
+          79
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_4000_hz_100_to_plus_2500_mv_diff_with_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 4000 Hz, -34 to +34 mV, Diff with reversal",
+      "value_raw": "3.0 µV RMS | 14.5 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 70,
+        "source_rows": [
+          80
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_4000_hz_34_to_plus_34_mv_diff_with_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 4000 Hz, -100 to +2500 mV, No reversal",
+      "value_raw": "33 µV RMS | 16.3 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 71,
+        "source_rows": [
+          81
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_4000_hz_100_to_plus_2500_mv_no_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 4000 Hz, -34 to +34 mV, No reversal",
+      "value_raw": "4.2 µV RMS | 14.0 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 72,
+        "source_rows": [
+          82
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_4000_hz_34_to_plus_34_mv_no_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 400 Hz, -100 to +2500 mV, Diff with reversal",
+      "value_raw": "3.8 µV RMS | 19.4 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 73,
+        "source_rows": [
+          83
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_400_hz_100_to_plus_2500_mv_diff_with_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 400 Hz, -34 to +34 mV, Diff with reversal",
+      "value_raw": "0.58 µV RMS | 16.8 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 74,
+        "source_rows": [
+          84
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_400_hz_34_to_plus_34_mv_diff_with_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 400 Hz, -100 to +2500 mV, No reversal",
+      "value_raw": "5.4 µV RMS | 18.9 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 75,
+        "source_rows": [
+          85
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_400_hz_100_to_plus_2500_mv_no_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 400 Hz, -34 to +34 mV, No reversal",
+      "value_raw": "0.82 µV RMS | 16.3 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 76,
+        "source_rows": [
+          86
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_400_hz_34_to_plus_34_mv_no_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 50/60 Hz, -100 to +2500 mV, Diff with reversal",
+      "value_raw": "1.6 µV RMS | 20.6 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 77,
+        "source_rows": [
+          87
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_50_per_60_hz_100_to_plus_2500_mv_diff_with_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 50/60 Hz, -34 to +34 mV, Diff with reversal",
+      "value_raw": "0.23 µV RMS | 18.2 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 78,
+        "source_rows": [
+          88
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_50_per_60_hz_34_to_plus_34_mv_diff_with_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 50/60 Hz, -100 to +2500 mV, No reversal",
+      "value_raw": "2.3 µV RMS | 20.1 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 79,
+        "source_rows": [
+          89
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_50_per_60_hz_100_to_plus_2500_mv_no_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Analog Range/Resolution - 50/60 Hz, -34 to +34 mV, No reversal",
+      "value_raw": "0.33 µV RMS | 17.7 bits",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 80,
+        "source_rows": [
+          90
+        ]
+      },
+      "canonical_key": "analog_range_per_resolution_50_per_60_hz_34_to_plus_34_mv_no_reversal"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Voltage Measurement Accuracy @ 0 to 40°C",
+      "value_raw": "±(0.04% of measurement + offset)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 81,
+        "source_rows": [
+          91
+        ]
+      },
+      "canonical_key": "voltage_measurement_accuracy_0_to_40_c",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Voltage Measurement Accuracy @ -40 to 70°C",
+      "value_raw": "±(0.1% of measurement + offset)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 82,
+        "source_rows": [
+          92
+        ]
+      },
+      "canonical_key": "voltage_measurement_accuracy_40_to_70_c",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Voltage Accuracy Offset - -100 to +2500 mV",
+      "value_raw": "Differential with input reversal: ±20 µV RMS | Differential without input reversal: ±40 µV RMS | Single-ended: ±60 µV RMS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 83,
+        "source_rows": [
+          93
+        ]
+      },
+      "canonical_key": "voltage_accuracy_offset_100_to_plus_2500_mv",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Voltage Accuracy Offset - -34 to +34 mV",
+      "value_raw": "Differential with input reversal: ±6 µV RMS | Differential without input reversal: ±14 µV RMS | Single-ended: ±20 µV RMS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 84,
+        "source_rows": [
+          94
+        ]
+      },
+      "canonical_key": "voltage_accuracy_offset_34_to_plus_34_mv",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Measurement Settling Time",
+      "value_raw": "10 µs to 50 ms | 500 µs default",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 85,
+        "source_rows": [
+          95
+        ]
+      },
+      "canonical_key": "measurement_settling_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Multiplexed Measurement Time - 4000 Hz",
+      "value_raw": "Differential with input reversal: 2.9 ms | Single-ended/differential without reversal: 1.4 ms",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 86,
+        "source_rows": [
+          96
+        ]
+      },
+      "canonical_key": "multiplexed_measurement_time_4000_hz",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Multiplexed Measurement Time - 400 Hz",
+      "value_raw": "Differential with input reversal: 14.6 ms | Single-ended/differential without reversal: 7.3 ms",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 87,
+        "source_rows": [
+          97
+        ]
+      },
+      "canonical_key": "multiplexed_measurement_time_400_hz",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Multiplexed Measurement Time - 50/60 Hz",
+      "value_raw": "Differential with input reversal: 103 ms | Single-ended/differential without reversal: 51.5 ms",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 88,
+        "source_rows": [
+          98
+        ]
+      },
+      "canonical_key": "multiplexed_measurement_time_50_per_60_hz",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "RESISTANCE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Resistance Measurement Description",
+      "value_raw": "Ratiometric-resistance measurements for four- and six-wire full-bridge circuits and two-, three-, and four-wire half-bridge circuits using voltage excitation",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 89,
+        "source_rows": [
+          100
+        ]
+      },
+      "canonical_key": "resistance_measurement_description"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "RESISTANCE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Resistance Accuracy @ 0 to 40°C",
+      "value_raw": "±(0.05% of voltage measurement + offset)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 90,
+        "source_rows": [
+          101
+        ]
+      },
+      "canonical_key": "resistance_accuracy_0_to_40_c"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "RESISTANCE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Resistance Accuracy @ -40 to 70°C",
+      "value_raw": "±(0.06% of voltage measurement + offset)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 91,
+        "source_rows": [
+          102
+        ]
+      },
+      "canonical_key": "resistance_accuracy_40_to_70_c"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Period-Averaging Terminals",
+      "value_raw": "SE1-SE4",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 92,
+        "source_rows": [
+          104
+        ]
+      },
+      "canonical_key": "period_averaging_terminals",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Period-Averaging Accuracy",
+      "value_raw": "±(0.01% of measurement + resolution) | Resolution = 0.13 µs divided by number of cycles measured",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 93,
+        "source_rows": [
+          105
+        ]
+      },
+      "canonical_key": "period_averaging_accuracy",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Period-Averaging Voltage Range",
+      "value_raw": "0 to 3.3 V",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 3.3,
+        "unit": "V",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 94,
+        "source_rows": [
+          106
+        ]
+      },
+      "canonical_key": "period_averaging_voltage_range",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Period-Averaging Minimum Pulse Width",
+      "value_raw": "2.5 µs",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2.5,
+        "unit": "µs",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 95,
+        "source_rows": [
+          107
+        ]
+      },
+      "canonical_key": "period_averaging_minimum_pulse_width",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PERIOD-AVERAGING MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Period-Averaging Voltage Threshold",
+      "value_raw": "Counts cycles on transition from <0.9 VDC to >2.1 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 96,
+        "source_rows": [
+          108
+        ]
+      },
+      "canonical_key": "period_averaging_voltage_threshold",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Current-Loop Description",
+      "value_raw": "Two analog input terminals can be configured as independent, non-isolated 0-20 mA or 4-to-20 mA current-loop inputs referenced to ground | One channel at a time | 24-bit ADC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 97,
+        "source_rows": [
+          110
+        ]
+      },
+      "canonical_key": "current_loop_description",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Current-Loop Terminals",
+      "value_raw": "SE1-SE2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 98,
+        "source_rows": [
+          111
+        ]
+      },
+      "canonical_key": "current_loop_terminals",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Current-Loop Range",
+      "value_raw": "0 to 25 mA",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 25,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 99,
+        "source_rows": [
+          112
+        ]
+      },
+      "canonical_key": "current_loop_range",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Current-Loop Accuracy @ 0 to 40°C",
+      "value_raw": "±0.14% of reading",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 100,
+        "source_rows": [
+          113
+        ]
+      },
+      "canonical_key": "current_loop_accuracy_0_to_40_c",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "CURRENT-LOOP MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Current-Loop Accuracy @ -40 to 70°C",
+      "value_raw": "±0.26% of reading",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 101,
+        "source_rows": [
+          114
+        ]
+      },
+      "canonical_key": "current_loop_accuracy_40_to_70_c",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Switch-Closure Terminals",
+      "value_raw": "P_SW | C1-C2 (requires external 100 kΩ resistor from terminal to VX1 or VX2)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 102,
+        "source_rows": [
+          116
+        ]
+      },
+      "canonical_key": "switch_closure_terminals"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Switch-Closure Maximum Input Frequency",
+      "value_raw": "150 Hz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 150,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 103,
+        "source_rows": [
+          117
+        ]
+      },
+      "canonical_key": "switch_closure_maximum_input_frequency",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Switch-Closure Minimum Switch Closed Time",
+      "value_raw": "3 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 104,
+        "source_rows": [
+          118
+        ]
+      },
+      "canonical_key": "switch_closure_minimum_switch_closed_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Switch-Closure Minimum Switch Open Time",
+      "value_raw": "3 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 105,
+        "source_rows": [
+          119
+        ]
+      },
+      "canonical_key": "switch_closure_minimum_switch_open_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Switch-Closure Maximum Bounce Time",
+      "value_raw": "1 ms open without being counted",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 106,
+        "source_rows": [
+          120
+        ]
+      },
+      "canonical_key": "switch_closure_maximum_bounce_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "High-Frequency Input Terminals",
+      "value_raw": "SE1-SE4 | P_LL | P_SW | C1-C2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 107,
+        "source_rows": [
+          121
+        ]
+      },
+      "canonical_key": "high_frequency_input_terminals",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "High-Frequency Maximum Input Frequency - SE1-SE4",
+      "value_raw": "35 kHz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 35,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 108,
+        "source_rows": [
+          122
+        ]
+      },
+      "canonical_key": "high_frequency_maximum_input_frequency_se1_se4",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "High-Frequency Maximum Input Frequency - P_LL",
+      "value_raw": "20 kHz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 20,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 109,
+        "source_rows": [
+          123
+        ]
+      },
+      "canonical_key": "high_frequency_maximum_input_frequency_p_ll",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "High-Frequency Maximum Input Frequency - P_SW",
+      "value_raw": "35 kHz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 35,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 110,
+        "source_rows": [
+          124
+        ]
+      },
+      "canonical_key": "high_frequency_maximum_input_frequency_p_sw",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "High-Frequency Maximum Input Frequency - C1-C2",
+      "value_raw": "3 kHz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 111,
+        "source_rows": [
+          125
+        ]
+      },
+      "canonical_key": "high_frequency_maximum_input_frequency_c1_c2",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Low-Level AC Terminals",
+      "value_raw": "P_LL",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 112,
+        "source_rows": [
+          126
+        ]
+      },
+      "canonical_key": "low_level_ac_terminals"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Low-Level AC Maximum Input Voltage",
+      "value_raw": "±20 VDC",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 20,
+        "unit": "V DC",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 113,
+        "source_rows": [
+          127
+        ]
+      },
+      "canonical_key": "low_level_ac_maximum_input_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Low-Level AC DC-Offset Rejection",
+      "value_raw": "Internal AC coupling eliminates DC-offset voltages up to ±0.05 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 114,
+        "source_rows": [
+          128
+        ]
+      },
+      "canonical_key": "low_level_ac_dc_offset_rejection"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Low-Level AC Input Hysteresis",
+      "value_raw": "12 mV at 1 Hz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 115,
+        "source_rows": [
+          129
+        ]
+      },
+      "canonical_key": "low_level_ac_input_hysteresis"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Low-Level AC Pulse Input Range - 20 mV RMS",
+      "value_raw": "1.0 to 20 Hz",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 1,
+        "max_value": 20,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 116,
+        "source_rows": [
+          130
+        ]
+      },
+      "canonical_key": "low_level_ac_pulse_input_range_20_mv_rms"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Low-Level AC Pulse Input Range - 200 mV RMS",
+      "value_raw": "0.5 to 200 Hz",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0.5,
+        "max_value": 200,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 117,
+        "source_rows": [
+          131
+        ]
+      },
+      "canonical_key": "low_level_ac_pulse_input_range_200_mv_rms"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Low-Level AC Pulse Input Range - 2000 mV RMS",
+      "value_raw": "0.3 to 10,000 Hz",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0.3,
+        "max_value": 10000,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 118,
+        "source_rows": [
+          132
+        ]
+      },
+      "canonical_key": "low_level_ac_pulse_input_range_2000_mv_rms"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Low-Level AC Pulse Input Range - 5000 mV RMS",
+      "value_raw": "0.3 to 20,000 Hz",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0.3,
+        "max_value": 20000,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 119,
+        "source_rows": [
+          133
+        ]
+      },
+      "canonical_key": "low_level_ac_pulse_input_range_5000_mv_rms"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Quadrature Input Terminals",
+      "value_raw": "SE1 and SE2 or C1 and C2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 120,
+        "source_rows": [
+          134
+        ]
+      },
+      "canonical_key": "quadrature_input_terminals"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "PULSE MEASUREMENT SPECIFICATIONS",
+      "name_raw": "Quadrature Maximum Frequency",
+      "value_raw": "2.5 kHz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2.5,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 121,
+        "source_rows": [
+          135
+        ]
+      },
+      "canonical_key": "quadrature_maximum_frequency",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "Digital I/O Terminals",
+      "value_raw": "SE1-SE4 | P_SW | C1-C2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 122,
+        "source_rows": [
+          137
+        ]
+      },
+      "canonical_key": "digital_io_terminals"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "Digital I/O Voltage Levels - C1/C2",
+      "value_raw": "High: 5.0 V output / 3.3 V input | Low: 0 V | Current source: 10 mA at 3.5 V | Maximum input voltage: -10 V, +15 V",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 123,
+        "source_rows": [
+          138
+        ]
+      },
+      "canonical_key": "digital_io_voltage_levels_c1_per_c2",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "Digital I/O Voltage Levels - SE1/SE2",
+      "value_raw": "High: 3.3 V | Low: 0 V | Current source: 100 µA at 3.0 V | Maximum input voltage: -6 V, +9 V",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 124,
+        "source_rows": [
+          139
+        ]
+      },
+      "canonical_key": "digital_io_voltage_levels_se1_per_se2",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "Digital I/O Voltage Levels - SE3/SE4/P_SW",
+      "value_raw": "High: 3.3 V | Low: 0 V | Current source: 100 µA at 3.0 V | Maximum input voltage: ±17 V",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 125,
+        "source_rows": [
+          140
+        ]
+      },
+      "canonical_key": "digital_io_voltage_levels_se3_per_se4_per_p_sw",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "PWM Terminals",
+      "value_raw": "SE1-SE4",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 126,
+        "source_rows": [
+          141
+        ]
+      },
+      "canonical_key": "pwm_terminals"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "PWM Period Maximum",
+      "value_raw": "2047 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2047,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 127,
+        "source_rows": [
+          142
+        ]
+      },
+      "canonical_key": "pwm_period_maximum",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "PWM Resolution - 0 to 5 ms",
+      "value_raw": "83.33 ns or 12 MHz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 128,
+        "source_rows": [
+          143
+        ]
+      },
+      "canonical_key": "pwm_resolution_0_to_5_ms"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "PWM Resolution - 5 to 325 ms",
+      "value_raw": "5.00 µs or 200 kHz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 129,
+        "source_rows": [
+          144
+        ]
+      },
+      "canonical_key": "pwm_resolution_5_to_325_ms"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "DIGITAL INPUT/OUTPUT SPECIFICATIONS",
+      "name_raw": "PWM Resolution - >325 ms",
+      "value_raw": "31.25 µs or 32 kHz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 130,
+        "source_rows": [
+          145
+        ]
+      },
+      "canonical_key": "pwm_resolution_325_ms"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "COMMUNICATIONS SPECIFICATIONS",
+      "name_raw": "Ethernet Port",
+      "value_raw": "CR310 only | RJ45 jack | 10/100Base Mbps | Full and half duplex | Auto-MDIX | Magnetic isolation | TVS surge protection",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RJ45"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RJ45"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 131,
+        "source_rows": [
+          147
+        ]
+      },
+      "canonical_key": "ethernet_port"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "COMMUNICATIONS SPECIFICATIONS",
+      "name_raw": "Internet Protocols",
+      "value_raw": "Ethernet | PPP | RNDIS | ICMP/Ping | Auto-IP (APIPA) | IPv4 | IPv6 | UDP | TCP | TLS (v1.2) | DNS | DHCP | SLAAC | Telnet | HTTP(S) | FTP(S) | POP3/TLS | NTP | SMTP/TLS",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Ethernet",
+          "IPv4",
+          "IPv6",
+          "ICMP",
+          "PPP",
+          "RNDIS",
+          "Auto-IP",
+          "UDP",
+          "TCP",
+          "TLS",
+          "DNS",
+          "DHCP",
+          "SLAAC",
+          "Telnet",
+          "HTTP",
+          "FTP",
+          "POP3",
+          "NTP",
+          "SMTP"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Ethernet",
+          "IPv4",
+          "IPv6",
+          "ICMP",
+          "PPP",
+          "RNDIS",
+          "Auto-IP",
+          "UDP",
+          "TCP",
+          "TLS",
+          "DNS",
+          "DHCP",
+          "SLAAC",
+          "Telnet",
+          "HTTP",
+          "FTP",
+          "POP3",
+          "NTP",
+          "SMTP"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 132,
+        "source_rows": [
+          148
+        ]
+      },
+      "canonical_key": "internet_protocols"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "COMMUNICATIONS SPECIFICATIONS",
+      "name_raw": "Additional Protocols",
+      "value_raw": "PakBus | PakBus Encryption | SDI-12 | Modbus RTU / ASCII / TCP | DNP3 outstation | Custom user definable over serial",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Modbus RTU",
+          "Modbus ASCII",
+          "Modbus TCP",
+          "SDI-12",
+          "PakBus",
+          "DNP3"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Modbus RTU",
+          "Modbus ASCII",
+          "Modbus TCP",
+          "SDI-12",
+          "PakBus",
+          "DNP3"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 133,
+        "source_rows": [
+          149
+        ]
+      },
+      "canonical_key": "additional_protocols"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "COMMUNICATIONS SPECIFICATIONS",
+      "name_raw": "USB Device",
+      "value_raw": "Micro-B device for computer connectivity",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 134,
+        "source_rows": [
+          150
+        ]
+      },
+      "canonical_key": "usb_device"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "COMMUNICATIONS SPECIFICATIONS",
+      "name_raw": "SDI-12",
+      "value_raw": "C1 and C2 | Two independent SDI-12 compliant terminals | Meet SDI-12 Standard v1.4",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 135,
+        "source_rows": [
+          151
+        ]
+      },
+      "canonical_key": "sdi_12"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+      "name_raw": "Shock and Vibration",
+      "value_raw": "ASTM D4169",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 136,
+        "source_rows": [
+          153
+        ]
+      },
+      "canonical_key": "shock_and_vibration"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+      "name_raw": "Protection",
+      "value_raw": "IP30",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 137,
+        "source_rows": [
+          154
+        ]
+      },
+      "canonical_key": "protection"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+      "name_raw": "EMI/ESD - ESD Immunity",
+      "value_raw": "IEC 61000-4-2 | ±15 kV air | ±8 kV contact discharge",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 138,
+        "source_rows": [
+          155
+        ]
+      },
+      "canonical_key": "emi_per_esd_esd_immunity"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+      "name_raw": "EMI/ESD - Radiated RF Immunity",
+      "value_raw": "IEC 61000-4-3 | 10 V/m, 80-1000 MHz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 139,
+        "source_rows": [
+          156
+        ]
+      },
+      "canonical_key": "emi_per_esd_radiated_rf_immunity"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+      "name_raw": "EMI/ESD - EFT Immunity",
+      "value_raw": "IEC 61000-4-4 | 4 kV power | 4 kV I/O",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 140,
+        "source_rows": [
+          157
+        ]
+      },
+      "canonical_key": "emi_per_esd_eft_immunity"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+      "name_raw": "EMI/ESD - Surge Immunity",
+      "value_raw": "IEC 61000-4-5 | 4 kV power | 4 kV I/O",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 141,
+        "source_rows": [
+          158
+        ]
+      },
+      "canonical_key": "emi_per_esd_surge_immunity"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+      "name_raw": "EMI/ESD - Conducted RF Immunity",
+      "value_raw": "IEC 61000-4-6 | 10 V power | 10 V I/O",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 142,
+        "source_rows": [
+          159
+        ]
+      },
+      "canonical_key": "emi_per_esd_conducted_rf_immunity"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "STANDARDS COMPLIANCE SPECIFICATIONS",
+      "name_raw": "Warranty",
+      "value_raw": "Three years against defects in materials and workmanship",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 143,
+        "source_rows": [
+          160
+        ]
+      },
+      "canonical_key": "warranty"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Analog Input Function - Single-Ended Voltage",
+      "value_raw": "SE1-SE6",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 144,
+        "source_rows": [
+          162
+        ]
+      },
+      "canonical_key": "analog_input_function_single_ended_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Analog Input Function - Differential Voltage",
+      "value_raw": "DIFF 1H/1L, 2H/2L, 3H/3L",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 145,
+        "source_rows": [
+          163
+        ]
+      },
+      "canonical_key": "analog_input_function_differential_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Analog Input Function - Ratiometric/Bridge",
+      "value_raw": "SE1-SE6",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 146,
+        "source_rows": [
+          164
+        ]
+      },
+      "canonical_key": "analog_input_function_ratiometric_per_bridge"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Analog Input Function - Thermocouple",
+      "value_raw": "SE1-SE6",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 147,
+        "source_rows": [
+          165
+        ]
+      },
+      "canonical_key": "analog_input_function_thermocouple"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Analog Input Function - Current Loop",
+      "value_raw": "SE1-SE2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 148,
+        "source_rows": [
+          166
+        ]
+      },
+      "canonical_key": "analog_input_function_current_loop",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Pulse Function - Switch-Closure",
+      "value_raw": "C1, C2, P_SW",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 149,
+        "source_rows": [
+          167
+        ]
+      },
+      "canonical_key": "pulse_function_switch_closure"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Pulse Function - High Frequency",
+      "value_raw": "C1, C2, P_SW, P_LL, SE1-SE4",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 150,
+        "source_rows": [
+          168
+        ]
+      },
+      "canonical_key": "pulse_function_high_frequency",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Pulse Function - Low-Level AC",
+      "value_raw": "P_LL",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 151,
+        "source_rows": [
+          169
+        ]
+      },
+      "canonical_key": "pulse_function_low_level_ac"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Pulse Function - Quadrature",
+      "value_raw": "C1, C2, SE1, SE2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 152,
+        "source_rows": [
+          170
+        ]
+      },
+      "canonical_key": "pulse_function_quadrature"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Pulse Function - Period Average",
+      "value_raw": "SE1-SE4",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 153,
+        "source_rows": [
+          171
+        ]
+      },
+      "canonical_key": "pulse_function_period_average",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Analog Output Function - Switched Voltage Excitation",
+      "value_raw": "VX1, VX2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 154,
+        "source_rows": [
+          172
+        ]
+      },
+      "canonical_key": "analog_output_function_switched_voltage_excitation",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Voltage Output Function - 3.3 VDC",
+      "value_raw": "SE1-SE4, VX1, VX2, P_SW",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 155,
+        "source_rows": [
+          173
+        ]
+      },
+      "canonical_key": "voltage_output_function_3_3_vdc",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Voltage Output Function - 5 VDC",
+      "value_raw": "C1, C2, VX1, VX2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 156,
+        "source_rows": [
+          174
+        ]
+      },
+      "canonical_key": "voltage_output_function_5_vdc",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Voltage Output Function - BAT+",
+      "value_raw": "SW12V",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 157,
+        "source_rows": [
+          175
+        ]
+      },
+      "canonical_key": "voltage_output_function_bat_plus",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Communications Terminal Function - SDI-12",
+      "value_raw": "C1, C2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 158,
+        "source_rows": [
+          176
+        ]
+      },
+      "canonical_key": "communications_terminal_function_sdi_12"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Communications Terminal Function - RS-232",
+      "value_raw": "RS-232",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 159,
+        "source_rows": [
+          177
+        ]
+      },
+      "canonical_key": "communications_terminal_function_rs_232"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Communications Terminal Function - RS-232 0-5V",
+      "value_raw": "C1, C2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 160,
+        "source_rows": [
+          178
+        ]
+      },
+      "canonical_key": "communications_terminal_function_rs_232_0_5v"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Communications Terminal Function - GPS Time Sync",
+      "value_raw": "C1, C2, SE1-SE3",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 161,
+        "source_rows": [
+          179
+        ]
+      },
+      "canonical_key": "communications_terminal_function_gps_time_sync",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Communications Terminal Function - GPS NMEA Sentences",
+      "value_raw": "C1: Rx | C2: Rx | RS-232: Rx",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 162,
+        "source_rows": [
+          180
+        ]
+      },
+      "canonical_key": "communications_terminal_function_gps_nmea_sentences"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Digital I/O Function - General I/O",
+      "value_raw": "C1, C2, P_SW, SE1-SE4",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 163,
+        "source_rows": [
+          181
+        ]
+      },
+      "canonical_key": "digital_io_function_general_io"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Digital I/O Function - PWM Output",
+      "value_raw": "SE1-SE4",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 164,
+        "source_rows": [
+          182
+        ]
+      },
+      "canonical_key": "digital_io_function_pwm_output"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "section": "TERMINAL FUNCTIONS",
+      "name_raw": "Digital I/O Function - Interrupt",
+      "value_raw": "C1, C2, SE1-SE3",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR310-NA.json",
+        "product_index": 0,
+        "spec_index": 165,
+        "source_rows": [
+          183
+        ]
+      },
+      "canonical_key": "digital_io_function_interrupt"
+    }
+  ]
+}

@@ -1,0 +1,2001 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CRVW3_Master_Specifications.xlsx",
+    "sheet": "CRVW3_Master_Spec"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CRVW3",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3",
+      "product_name_en": "CRVW3",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "No Additional Coms",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Mounting Configuration",
+          "name_vi": "Cấu hình lắp đặt",
+          "value_raw": "Universal Mounting",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Battery Configuration Options",
+          "name_vi": "Tùy chọn cấu hình pin",
+          "value_raw": "w/o Battery | w/Rechargeable Battery",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weatherproof Enclosure Rating",
+          "name_vi": "Cấp bảo vệ vỏ chống thời tiết",
+          "value_raw": "NEMA 4X (IP66) | With proper use of cable entry points",
+          "source_rows": [
+            26,
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Mounting",
+          "name_vi": "Kiểu lắp vỏ",
+          "value_raw": "Stainless-steel universal mount for pole/wall mount (optional) | Plastic mounting tabs (included)",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Dimensions",
+          "name_vi": "Kích thước vỏ",
+          "value_raw": "24.1 x 22.9 x 14.0 cm | 9.5 x 9.0 x 5.5 in.",
+          "source_rows": [
+            31,
+            32
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "With rechargeable battery: 4.2 kg (9.2 lb) | With alkaline batteries: 3.0 kg (6.6 lb)",
+          "source_rows": [
+            33,
+            34
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter",
+          "source_rows": [
+            35,
+            36
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Battery Options",
+          "name_vi": "Tùy chọn pin",
+          "value_raw": "Rechargeable 7 Ah | 8 D-cell alkaline",
+          "source_rows": [
+            37,
+            38
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            39,
+            40
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            41,
+            42
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            45,
+            46,
+            47
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            48,
+            49
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Accuracy",
+          "name_vi": "Độ chính xác đo dây rung",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Method",
+          "name_vi": "Phương pháp đo dây rung",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            53,
+            54,
+            55
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            56,
+            57
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Method",
+          "name_vi": "Phương pháp đo nhiệt độ",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            58,
+            59,
+            60
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            61,
+            62
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Accuracy",
+          "name_vi": "Độ chính xác đo nhiệt độ",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            63,
+            64
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "CE approved",
+          "source_rows": [
+            77
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-dl.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14525",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_RF407",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-RF407",
+      "product_name_en": "CRVW3-RF407",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF407",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "w/900MHz Radio",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Mounting Configuration",
+          "name_vi": "Cấu hình lắp đặt",
+          "value_raw": "Universal Mounting",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Battery Configuration Options",
+          "name_vi": "Tùy chọn cấu hình pin",
+          "value_raw": "w/o Battery | w/Rechargeable Battery",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weatherproof Enclosure Rating",
+          "name_vi": "Cấp bảo vệ vỏ chống thời tiết",
+          "value_raw": "NEMA 4X (IP66) | With proper use of cable entry points",
+          "source_rows": [
+            26,
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Mounting",
+          "name_vi": "Kiểu lắp vỏ",
+          "value_raw": "Stainless-steel universal mount for pole/wall mount (optional) | Plastic mounting tabs (included)",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Dimensions",
+          "name_vi": "Kích thước vỏ",
+          "value_raw": "24.1 x 22.9 x 14.0 cm | 9.5 x 9.0 x 5.5 in.",
+          "source_rows": [
+            31,
+            32
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "With rechargeable battery: 4.2 kg (9.2 lb) | With alkaline batteries: 3.0 kg (6.6 lb)",
+          "source_rows": [
+            33,
+            34
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter",
+          "source_rows": [
+            35,
+            36
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Battery Options",
+          "name_vi": "Tùy chọn pin",
+          "value_raw": "Rechargeable 7 Ah | 8 D-cell alkaline",
+          "source_rows": [
+            37,
+            38
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            39,
+            40
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            41,
+            42
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            45,
+            46,
+            47
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            48,
+            49
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Accuracy",
+          "name_vi": "Độ chính xác đo dây rung",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Method",
+          "name_vi": "Phương pháp đo dây rung",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            53,
+            54,
+            55
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            56,
+            57
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Method",
+          "name_vi": "Phương pháp đo nhiệt độ",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            58,
+            59,
+            60
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            61,
+            62
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Accuracy",
+          "name_vi": "Độ chính xác đo nhiệt độ",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            63,
+            64
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 5 to 250 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            66,
+            67,
+            68,
+            69
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "name_vi": "Bộ lặp radio",
+          "value_raw": "Devices with the -RF407 option can be set up as a radio repeater",
+          "source_rows": [
+            70
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "US | Canada",
+          "source_rows": [
+            71,
+            72
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "name_vi": "Thông tin tuân thủ",
+          "value_raw": "1846A-XB900HP (Industry Canada [IC]) | MCQ-XB900HP (United States FCC Part 15.247) | RCPDIXB15-0672-A2 (Mexico IF)",
+          "source_rows": [
+            74,
+            75,
+            76
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "Not CE approved",
+          "source_rows": [
+            77
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-dl.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14525",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_RF412",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-RF412",
+      "product_name_en": "CRVW3-RF412",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF412",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "w/920MHz Radio",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Mounting Configuration",
+          "name_vi": "Cấu hình lắp đặt",
+          "value_raw": "Universal Mounting",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Battery Configuration Options",
+          "name_vi": "Tùy chọn cấu hình pin",
+          "value_raw": "w/o Battery | w/Rechargeable Battery",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weatherproof Enclosure Rating",
+          "name_vi": "Cấp bảo vệ vỏ chống thời tiết",
+          "value_raw": "NEMA 4X (IP66) | With proper use of cable entry points",
+          "source_rows": [
+            26,
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Mounting",
+          "name_vi": "Kiểu lắp vỏ",
+          "value_raw": "Stainless-steel universal mount for pole/wall mount (optional) | Plastic mounting tabs (included)",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Dimensions",
+          "name_vi": "Kích thước vỏ",
+          "value_raw": "24.1 x 22.9 x 14.0 cm | 9.5 x 9.0 x 5.5 in.",
+          "source_rows": [
+            31,
+            32
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "With rechargeable battery: 4.2 kg (9.2 lb) | With alkaline batteries: 3.0 kg (6.6 lb)",
+          "source_rows": [
+            33,
+            34
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter",
+          "source_rows": [
+            35,
+            36
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Battery Options",
+          "name_vi": "Tùy chọn pin",
+          "value_raw": "Rechargeable 7 Ah | 8 D-cell alkaline",
+          "source_rows": [
+            37,
+            38
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            39,
+            40
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            41,
+            42
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            45,
+            46,
+            47
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            48,
+            49
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Accuracy",
+          "name_vi": "Độ chính xác đo dây rung",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Method",
+          "name_vi": "Phương pháp đo dây rung",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            53,
+            54,
+            55
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            56,
+            57
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Method",
+          "name_vi": "Phương pháp đo nhiệt độ",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            58,
+            59,
+            60
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            61,
+            62
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Accuracy",
+          "name_vi": "Độ chính xác đo nhiệt độ",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            63,
+            64
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 5 to 250 mW, user selectable | Frequency: 915 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            66,
+            67,
+            68,
+            69
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "name_vi": "Bộ lặp radio",
+          "value_raw": "Devices with the -RF412 option can be set up as a radio repeater",
+          "source_rows": [
+            70
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "Australia",
+          "source_rows": [
+            71
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "name_vi": "Thông tin tuân thủ",
+          "value_raw": "1846A-XB900HP (Industry Canada [IC]) | ACMA RCM | MCQ-XB900HP (United States FCC Part 15.247)",
+          "source_rows": [
+            74,
+            75,
+            76
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "Not CE approved",
+          "source_rows": [
+            77
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-dl.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14525",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_RF422",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-RF422",
+      "product_name_en": "CRVW3-RF422",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF422",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "w/868MHz Radio",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Mounting Configuration",
+          "name_vi": "Cấu hình lắp đặt",
+          "value_raw": "Universal Mounting",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Battery Configuration Options",
+          "name_vi": "Tùy chọn cấu hình pin",
+          "value_raw": "w/o Battery | w/Rechargeable Battery",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weatherproof Enclosure Rating",
+          "name_vi": "Cấp bảo vệ vỏ chống thời tiết",
+          "value_raw": "NEMA 4X (IP66) | With proper use of cable entry points",
+          "source_rows": [
+            26,
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Mounting",
+          "name_vi": "Kiểu lắp vỏ",
+          "value_raw": "Stainless-steel universal mount for pole/wall mount (optional) | Plastic mounting tabs (included)",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Dimensions",
+          "name_vi": "Kích thước vỏ",
+          "value_raw": "24.1 x 22.9 x 14.0 cm | 9.5 x 9.0 x 5.5 in.",
+          "source_rows": [
+            31,
+            32
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "With rechargeable battery: 4.2 kg (9.2 lb) | With alkaline batteries: 3.0 kg (6.6 lb)",
+          "source_rows": [
+            33,
+            34
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter",
+          "source_rows": [
+            35,
+            36
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Battery Options",
+          "name_vi": "Tùy chọn pin",
+          "value_raw": "Rechargeable 7 Ah | 8 D-cell alkaline",
+          "source_rows": [
+            37,
+            38
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            39,
+            40
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            41,
+            42
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            45,
+            46,
+            47
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            48,
+            49
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Accuracy",
+          "name_vi": "Độ chính xác đo dây rung",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Method",
+          "name_vi": "Phương pháp đo dây rung",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            53,
+            54,
+            55
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            56,
+            57
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Method",
+          "name_vi": "Phương pháp đo nhiệt độ",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            58,
+            59,
+            60
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            61,
+            62
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Accuracy",
+          "name_vi": "Độ chính xác đo nhiệt độ",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            63,
+            64
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 2 to 25 mW, user selectable | Frequency: 863 to 870 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            66,
+            67,
+            68,
+            69
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "Europe | Some of Asia (ETSI)",
+          "source_rows": [
+            71,
+            72
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "name_vi": "Thông tin tuân thủ",
+          "value_raw": "EU Declaration of Conformity available in the Documents section of the product web page",
+          "source_rows": [
+            74
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "CE approved",
+          "source_rows": [
+            77
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-dl.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14525",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_RF452",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-RF452",
+      "product_name_en": "CRVW3-RF452",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF452",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "w/1W 900MHz Radio",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Mounting Configuration",
+          "name_vi": "Cấu hình lắp đặt",
+          "value_raw": "Universal Mounting",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Battery Configuration Options",
+          "name_vi": "Tùy chọn cấu hình pin",
+          "value_raw": "w/o Battery | w/Rechargeable Battery",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weatherproof Enclosure Rating",
+          "name_vi": "Cấp bảo vệ vỏ chống thời tiết",
+          "value_raw": "NEMA 4X (IP66) | With proper use of cable entry points",
+          "source_rows": [
+            26,
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Mounting",
+          "name_vi": "Kiểu lắp vỏ",
+          "value_raw": "Stainless-steel universal mount for pole/wall mount (optional) | Plastic mounting tabs (included)",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Enclosure Dimensions",
+          "name_vi": "Kích thước vỏ",
+          "value_raw": "24.1 x 22.9 x 14.0 cm | 9.5 x 9.0 x 5.5 in.",
+          "source_rows": [
+            31,
+            32
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "With rechargeable battery: 4.2 kg (9.2 lb) | With alkaline batteries: 3.0 kg (6.6 lb)",
+          "source_rows": [
+            33,
+            34
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter",
+          "source_rows": [
+            35,
+            36
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Battery Options",
+          "name_vi": "Tùy chọn pin",
+          "value_raw": "Rechargeable 7 Ah | 8 D-cell alkaline",
+          "source_rows": [
+            37,
+            38
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            39,
+            40
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            41,
+            42
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            45,
+            46,
+            47
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            48,
+            49
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Accuracy",
+          "name_vi": "Độ chính xác đo dây rung",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Vibrating Wire Measurement Method",
+          "name_vi": "Phương pháp đo dây rung",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            53,
+            54,
+            55
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            56,
+            57
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Method",
+          "name_vi": "Phương pháp đo nhiệt độ",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            58,
+            59,
+            60
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            61,
+            62
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Measurement Accuracy",
+          "name_vi": "Độ chính xác đo nhiệt độ",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            63,
+            64
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 10 to 1,000 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            66,
+            67,
+            68,
+            69
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "name_vi": "Bộ lặp radio",
+          "value_raw": "Devices with the -RF452 option can be set up as a radio repeater",
+          "source_rows": [
+            70
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "US | Canada | Australia",
+          "source_rows": [
+            71,
+            72,
+            73
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "name_vi": "Thông tin tuân thủ",
+          "value_raw": "2329B-AMM0921TT (Canada [IC]) | KNYAMM0921TT (United States FCC ID)",
+          "source_rows": [
+            74,
+            75
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "Not CE approved",
+          "source_rows": [
+            77
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-dl.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14525",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    }
+  ]
+}

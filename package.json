@@ -13,6 +13,10 @@
     "build:web": "npm run build --workspace=@reeco/web",
     "build:api": "npm run build --workspace=@reeco/api",
     "build": "npm run build:shared && npm run build:web && npm run build:api",
+    "build:product-master": "node scripts/product-master/build.mjs",
+    "validate:product-master": "node scripts/product-master/validate.mjs",
+    "build:spec-normalization": "node scripts/spec-normalization/build.mjs",
+    "validate:spec-normalization": "node scripts/spec-normalization/validate.mjs",
     "lint": "npm run lint --workspaces --if-present",
     "format": "prettier --write ."
   },

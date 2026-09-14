@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CS511_Specifications_SplitCells.xlsx",
+    "sheet": "CS511_Specifications"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS511",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS511",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "0° to 50°C",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "name_vi": "Dải đo",
+          "value_raw": "0.5 to 50 ppm (for O₂)",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±2%",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output",
+          "name_vi": "Đầu ra",
+          "value_raw": "33 mV ± 9 mV (100% saturation) | < 2 mV (0% saturation)",
+          "source_rows": [
+            6,
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Response Time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "5 min from 100% to 0% oxygen",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Minimum Water Velocity",
+          "name_vi": "Vận tốc nước tối thiểu",
+          "value_raw": "5 cm s⁻¹ (2 in. s⁻¹) across membrane",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Minimum Submersion Depth",
+          "name_vi": "Độ sâu ngập tối thiểu",
+          "value_raw": "6.35 cm (2.5 in.)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Pressure",
+          "name_vi": "Áp suất",
+          "value_raw": "0 to 100 psig",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Temperature Compensation",
+          "name_vi": "Bù nhiệt độ",
+          "value_raw": "Automatic from 4° to 40°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Probe Electrolyte",
+          "name_vi": "Điện phân đầu dò",
+          "value_raw": "NaCl + glycerol (prevents freezing)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "5.72 cm (2.25 in.)",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Height",
+          "name_vi": "Chiều cao",
+          "value_raw": "17.78 cm (7 in.) from bottom of sensor to end of cable strain relief",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Shipping Weight",
+          "name_vi": "Khối lượng vận chuyển",
+          "value_raw": "0.8 kg (1.75 lb) including sensor and shipping kit",
+          "source_rows": [
+            16
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs511_datasheet.pdf",
+        "user_manual": "cs511-l_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs511"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/5553",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

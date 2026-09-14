@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CH200",
+  "model": "CH200",
+  "raw_record_ref": {
+    "file": "data/raw/ch200_201_ps200.json",
+    "product_index": 0,
+    "raw_record_key": "ch200_201_ps200.json#0",
+    "raw_product_id": "CSI_CH200",
+    "raw_model": "CH200"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_CH200",
+      "section": "GENERAL",
+      "name_raw": "Operational Temperature",
+      "value_raw": "-40°C to +60°C; VRLA battery manufacturers state that “heat kills batteries” and recommend operating batteries at ≤50°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "operational_temperature",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "GENERAL",
+      "name_raw": "Dimensions",
+      "value_raw": "7.5 × 3.7 × 10.0 cm (3 × 1.5 × 3.9 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "general_dimensions"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "CHARGE – CHARGE TERMINALS (AC OR DC SOURCE)",
+      "name_raw": "AC",
+      "value_raw": "18 to 24 VRMS, internally limited to 1.2 ARMS maximum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "ac"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "CHARGE – CHARGE TERMINALS (AC OR DC SOURCE)",
+      "name_raw": "DC",
+      "value_raw": "16 to 40 Vdc, internally limited to 1.1 Adc maximum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "dc"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+      "name_raw": "Note",
+      "value_raw": "Battery voltages below 8.7 V may result in less than 3.0 A current limit because of fold-back current limit",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "note"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+      "name_raw": "Input Voltage Range",
+      "value_raw": "15 to 40 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 15,
+        "max_value": 40,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "input_voltage_range",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+      "name_raw": "Maximum Charging Current",
+      "value_raw": "4.0 Adc typical (3.2 to 4.9 Adc depending upon individual charger)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "maximum_charging_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "QUIESCENT CURRENT",
+      "name_raw": "No Charge Source Present",
+      "value_raw": "300 µA maximum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "no_charge_source_present",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "QUIESCENT CURRENT",
+      "name_raw": "No Battery Connected",
+      "value_raw": "2 mA maximum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "no_battery_connected",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "BATTERY CHARGING",
+      "name_raw": "Battery Charging Note",
+      "value_raw": "Two-step temperature-compensated constant-voltage charging for valve-regulated lead-acid batteries; cycle and float charging voltage parameters are programmable with default values listed",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "battery_charging_note"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "BATTERY CHARGING",
+      "name_raw": "CYCLE Charging",
+      "value_raw": "Vbatt(T) = 14.70 V − (24 mV) × (T − 25°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "cycle_charging"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "BATTERY CHARGING",
+      "name_raw": "FLOAT Charging",
+      "value_raw": "Vbatt(T) = 13.65 V − (18 mV) × (T − 25°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "float_charging"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "BATTERY CHARGING",
+      "name_raw": "Charging Voltage Accuracy",
+      "value_raw": "±1% on charging voltage over -40°C to +60°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "charging_voltage_accuracy",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "POWER OUT (+12 TERMINALS)",
+      "name_raw": "Voltage",
+      "value_raw": "Unregulated 12 V from battery",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "POWER OUT (+12 TERMINALS)",
+      "name_raw": "Output Protection",
+      "value_raw": "4 A self-resettable thermal fuse",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "output_protection",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "POWER OUT (+12 TERMINALS)",
+      "name_raw": "Fuse Hold Current Limit",
+      "value_raw": ">4 A (<20°C); 2.7 A (60°C); 3.1 A (50°C); 4.0 A (20°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "fuse_hold_current_limit",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "MEASUREMENTS",
+      "name_raw": "Measurement Temperature Note",
+      "value_raw": "At -40°C to +60°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "measurement_temperature_note",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "MEASUREMENTS",
+      "name_raw": "Average Battery Voltage",
+      "value_raw": "±(1% of reading + 15 mV)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "average_battery_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "MEASUREMENTS",
+      "name_raw": "Average Battery/Load Current",
+      "value_raw": "±(2% of reading + 2 mA)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "average_battery_per_load_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "REGULATOR INPUT VOLTAGE",
+      "name_raw": "Solar",
+      "value_raw": "±(1% of reading − 0.25 V) / −(1% of reading + 1 V)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "solar",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "REGULATOR INPUT VOLTAGE",
+      "name_raw": "Solar Negative Offset Note",
+      "value_raw": "1.0 V negative offset is worst-case due to reversal protection diode on input; typical diode drop is 0.35 V",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          41
+        ]
+      },
+      "canonical_key": "solar_negative_offset_note",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "REGULATOR INPUT VOLTAGE",
+      "name_raw": "Continuous",
+      "value_raw": "±(1% of reading − 0.5 V) / −(1% of reading + 2 V)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "continuous",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "REGULATOR INPUT VOLTAGE",
+      "name_raw": "Continuous Negative Offset Note",
+      "value_raw": "2.0 V negative offset is worst-case due to two series diodes in AC full-bridge; typical diode drops are 0.35 each for 0.7 V total",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "continuous_negative_offset_note",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "section": "REGULATOR INPUT VOLTAGE",
+      "name_raw": "Charger Temperature",
+      "value_raw": "±2°C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2,
+        "unit": "°C",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "charger_temperature",
+      "quantity_kind": "temperature"
+    }
+  ]
+}

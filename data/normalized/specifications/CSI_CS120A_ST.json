@@ -1,0 +1,656 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CS120A_ST",
+  "model": "CS120A-ST",
+  "raw_record_ref": {
+    "file": "data/raw/CS120A_CS125_Master.json",
+    "product_index": 0,
+    "raw_record_key": "CS120A_CS125_Master.json#0",
+    "raw_product_id": "CSI_CS120A_ST",
+    "raw_model": "CS120A-ST"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "CONFIGURATION",
+      "name_raw": "Base Model",
+      "value_raw": "CS120A",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "base_model"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "CONFIGURATION",
+      "name_raw": "Temperature Version",
+      "value_raw": "ST",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "temperature_version",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "CONFIGURATION",
+      "name_raw": "Configuration Description",
+      "value_raw": "CS120A | Temperature version: ST | Operating temperature: -25° to +60°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "configuration_description"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "CONFIGURATION",
+      "name_raw": "Cable Length Options",
+      "value_raw": "5 m (17 ft) per sensor | 10 m (33 ft) per sensor | 15 m (50 ft) per sensor | 30 m (100 ft) per sensor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "canonical_key": "cable_length_options",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "CONFIGURATION",
+      "name_raw": "Warranty",
+      "value_raw": "2 years",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2,
+        "unit": "year",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "warranty"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "ENVIRONMENTAL",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-25° to +60°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Signal Type/Output",
+      "value_raw": "RS-232 | RS-485",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232",
+          "RS-485"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          14,
+          15
+        ]
+      },
+      "canonical_key": "signal_type_per_output"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Measurement Description",
+      "value_raw": "Meteorological Observable Range (MOR)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "measurement_description"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Maximum Reported Visibility",
+      "value_raw": "100 km | 62.1 mi",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          17,
+          18
+        ]
+      },
+      "canonical_key": "maximum_reported_visibility"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Minimum Reported Visibility",
+      "value_raw": "5 m | 16.4 ft",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          19,
+          20
+        ]
+      },
+      "canonical_key": "minimum_reported_visibility"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Accuracy",
+      "value_raw": "< 600 m (< 1968.5 ft): ±8% | 600 to 10,000 m (1968.5 to 32,808.4 ft): ±10% | 10,000 to 15,000 m (32,808.4 to 49,212.6 ft): ±15% | 15,000 to 75,000 m (49,212.6 to 246,063 ft): ±20%",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "canonical_key": "general_per_operational_specifications_accuracy"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Resolution",
+      "value_raw": "1 m | 3.3 ft",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          25,
+          26
+        ]
+      },
+      "canonical_key": "general_per_operational_specifications_resolution"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Mounting",
+      "value_raw": "Stainless-steel V-bolt bracket | Pole outer diameter: 32 to 52.5 mm | Pole outer diameter: 1.25 to 2 in.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          59,
+          60,
+          61
+        ]
+      },
+      "canonical_key": "mounting"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Electronics Supply Voltage",
+      "value_raw": "7 to 30 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          64
+        ]
+      },
+      "canonical_key": "electronics_supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Total Unit Power",
+      "value_raw": "< 3 W while sampling continuously | Includes dew heaters",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          65,
+          66
+        ]
+      },
+      "canonical_key": "total_unit_power",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Standards",
+      "value_raw": "Frangible masts available to customer requirements to meet ICAO recommendations | Typical sample volume height: 2.5 m (8.2 ft)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          67,
+          68
+        ]
+      },
+      "canonical_key": "standards"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Sensor Dimensions",
+      "value_raw": "540 x 640 x 246 mm | 21.26 x 25.2 x 9.7 in. | Including mount",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          69,
+          70,
+          71
+        ]
+      },
+      "canonical_key": "sensor_dimensions"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+      "name_raw": "Sensor Weight",
+      "value_raw": "~3 kg | 6.6 lb | Depends on mounting system",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          72,
+          73,
+          74
+        ]
+      },
+      "canonical_key": "sensor_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "OPTICAL / PULSE",
+      "name_raw": "LED Center Wavelength",
+      "value_raw": "850 nm",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 850,
+        "unit": "nm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          78
+        ]
+      },
+      "canonical_key": "led_center_wavelength"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "OPTICAL / PULSE",
+      "name_raw": "LED Spectral Bandwidth",
+      "value_raw": "±35 nm",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 35,
+        "unit": "nm",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          79
+        ]
+      },
+      "canonical_key": "led_spectral_bandwidth"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "OPTICAL / PULSE",
+      "name_raw": "Light Pulse Rate",
+      "value_raw": "1 kHz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          80
+        ]
+      },
+      "canonical_key": "light_pulse_rate"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "OPTICAL / PULSE",
+      "name_raw": "Operating Humidity Range",
+      "value_raw": "0 to 100%",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          82
+        ]
+      },
+      "canonical_key": "operating_humidity_range"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "OPTICAL / PULSE",
+      "name_raw": "Sensor Sealing",
+      "value_raw": "Rated to IP66",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          83
+        ]
+      },
+      "canonical_key": "sensor_sealing"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "OPTICAL / PULSE",
+      "name_raw": "Wind Speed",
+      "value_raw": "Up to 60 m/s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 60,
+        "unit": "m/s",
+        "qualifier": "≤"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          84
+        ]
+      },
+      "canonical_key": "wind_speed",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "OPTICAL / PULSE",
+      "name_raw": "Sensor Heater Threshold",
+      "value_raw": "> 40°C: dew heater off | < 35°C: dew heater on | < 5°C: hood heater on | > 15°C: hood heater off",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          85,
+          86,
+          87,
+          88
+        ]
+      },
+      "canonical_key": "sensor_heater_threshold"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "ELECTRICAL / HEATERS / INTERFACE",
+      "name_raw": "DSP & Dew Heaters Power",
+      "value_raw": "2 x 0.6 W | Total: 1.4 W for dew heater",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          90,
+          91
+        ]
+      },
+      "canonical_key": "dsp_and_dew_heaters_power",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "ELECTRICAL / HEATERS / INTERFACE",
+      "name_raw": "Typical Current Consumption @ 12 Vdc",
+      "value_raw": "Dew heaters active + RS-232 communications: 200 mA | Continuous sampling + dew heaters active: 200 mA | Continuous sampling + dew heaters disabled: 110 mA | No sampling + dew heaters disabled: 21 mA",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "RS-232"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          92,
+          93,
+          94,
+          95
+        ]
+      },
+      "canonical_key": "typical_current_consumption_12_vdc",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "ELECTRICAL / HEATERS / INTERFACE",
+      "name_raw": "Hood Heater Supply Voltage",
+      "value_raw": "24 V dc or ac",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          96
+        ]
+      },
+      "canonical_key": "hood_heater_supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "ELECTRICAL / HEATERS / INTERFACE",
+      "name_raw": "Hood Heater Power",
+      "value_raw": "2 x 30 W | Total: 60 W",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          97,
+          98
+        ]
+      },
+      "canonical_key": "hood_heater_power",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "ELECTRICAL / HEATERS / INTERFACE",
+      "name_raw": "Serial Interface",
+      "value_raw": "RS-232 or RS-485 | 8 bit data bytes | 1 stop bit",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232",
+          "RS-485"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          99,
+          100,
+          101
+        ]
+      },
+      "canonical_key": "serial_interface"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "section": "ELECTRICAL / HEATERS / INTERFACE",
+      "name_raw": "Serial Data Rates",
+      "value_raw": "1200 to 115,200 bps | Default: 38,400 bps",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          102,
+          103
+        ]
+      },
+      "canonical_key": "serial_data_rates"
+    }
+  ]
+}

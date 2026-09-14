@@ -1,0 +1,497 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CLARIVUE10",
+  "model": "ClariVue10",
+  "raw_record_ref": {
+    "file": "data/raw/Clari10_20.json",
+    "product_index": 1,
+    "raw_record_key": "Clari10_20.json#1",
+    "raw_product_id": "CSI_CLARIVUE10",
+    "raw_model": "ClariVUE10"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Standards",
+      "value_raw": "Meets ISO 7027-1:2016 (side scatter) standard for turbidity measurements",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "standards"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Signal type",
+      "value_raw": "SDI-12 v1.4",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "signal_type"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Operating temperature range",
+      "value_raw": "−2 to 40 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -2,
+        "max_value": 40,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Power requirements",
+      "value_raw": "9.6 to 18 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 9.6,
+        "max_value": 18,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 3,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "power_requirements",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Power consumption – Idle",
+      "value_raw": "<300 µA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 300,
+        "unit": "µA",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 4,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "power_consumption_idle",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Power consumption – Measurement",
+      "value_raw": "<35 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 35,
+        "unit": "mA",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 5,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "power_consumption_measurement",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Measurement range",
+      "value_raw": "0 to 4000 FNU",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 4000,
+        "unit": "FNU",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 6,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "measurement_range"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "SDI-12 measurement response time",
+      "value_raw": "9 to 22 s depending on the SDI-12 command",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 9,
+        "max_value": 22,
+        "unit": "s",
+        "qualifier": null,
+        "condition": "depending on the SDI-12 command"
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 7,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "sdi_12_measurement_response_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Resolution",
+      "value_raw": "0.2 FNU",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.2,
+        "unit": "FNU",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 8,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "resolution"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Particle size",
+      "value_raw": "0.1 to 0.5 µm",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0.1,
+        "max_value": 0.5,
+        "unit": "µm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 9,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "particle_size"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Accuracy",
+      "value_raw": "±2% or 0.5 FNU, whichever is greater",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 10,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "accuracy"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Housing material",
+      "value_raw": "Delrin® plastic",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 11,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "housing_material"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Head material",
+      "value_raw": "Marine-grade bronze",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 12,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "head_material"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Optics",
+      "value_raw": "Sapphire lens",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 13,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "optics"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Connector description",
+      "value_raw": "MCBH-5-FS, marine-grade bronze, 3 gold-plated pins, wet-mateable",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 14,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "connector_description"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Cable type",
+      "value_raw": "3-conductor, polyurethane jacket with water block",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 15,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "cable_type"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Optical assembly",
+      "value_raw": "Sealed with double O-rings",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 16,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "optical_assembly"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Internal temperature measurement",
+      "value_raw": "±0.2 °C accuracy",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 17,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "internal_temperature_measurement",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Maximum depth",
+      "value_raw": "30 m (100 ft)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 30,
+        "unit": "m",
+        "qualifier": null,
+        "alternate": {
+          "value": 100,
+          "unit": "ft"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 18,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "maximum_depth",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Diameter",
+      "value_raw": "3.0 cm (1.2 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.2,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 19,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Length",
+      "value_raw": "16.6 cm (6.5 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 16.6,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 6.5,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 20,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CLARIVUE10",
+      "section": "General Specifications",
+      "name_raw": "Weight",
+      "value_raw": "158.76 g (0.35 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 158.76,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.35,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/Clari10_20.json",
+        "product_index": 1,
+        "spec_index": 21,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

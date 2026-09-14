@@ -1,0 +1,649 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_RF407",
+  "model": "RF407",
+  "raw_record_ref": {
+    "file": "data/raw/RF407-RF412-RF422-RF427.json",
+    "product_index": 0,
+    "raw_record_key": "RF407-RF412-RF422-RF427.json#0",
+    "raw_product_id": "CSI_RF407",
+    "raw_model": "RF407"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Product Type",
+      "value_raw": "900 MHz Spread-Spectrum Radio",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary communications device / spread-spectrum radio",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Product Family",
+      "value_raw": "RF407-series",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "product_family"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Country / Region",
+      "value_raw": "US, Canada",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "country_per_region"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Radio Type",
+      "value_raw": "Frequency Hopping Spread Spectrum (FHSS)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "radio_type"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Operating Frequency",
+      "value_raw": "902 to 928 MHz",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 902,
+        "max_value": 928,
+        "unit": "MHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "operating_frequency",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Transmit Power Output",
+      "value_raw": "5 to 250 mW (software-selectable)",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 5,
+        "max_value": 250,
+        "unit": "mW",
+        "qualifier": null,
+        "note": "software-selectable"
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "transmit_power_output",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Receiver Sensitivity",
+      "value_raw": "-101 dBm",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": -101,
+        "unit": "dBm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "receiver_sensitivity"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Channel Capacity",
+      "value_raw": "Eight 25-channel hop sequences sharing 64 available channels",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "channel_capacity"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "RF Data Rate",
+      "value_raw": "200 kbps",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 200,
+        "unit": "kbps",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "rf_data_rate",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Maximum Link Throughput",
+      "value_raw": "105 kbps",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 105,
+        "unit": "kbps",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "maximum_link_throughput"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Transmission Distance",
+      "value_raw": "Up to 1.61 km (1 mi) with omnidirectional antenna; up to 16.09 km (10 mi) with higher-gain directional antennas at ideal conditions",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "transmission_distance",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Network Operation",
+      "value_raw": "Point-to-point with RF retries; point-to-multipoint operations",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "network_operation"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Maximum Nodes in Network",
+      "value_raw": "50",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 50,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "maximum_nodes_in_network"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Antenna Connector",
+      "value_raw": "Reverse Polarity SMA (RPSMA) jack",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "antenna_connector"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "LED Indicators",
+      "value_raw": "Red TX/PWR and green RX",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "led_indicators"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "RS-232 Baud Rate",
+      "value_raw": "1200 to 115200 bps",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 1200,
+        "max_value": 115200,
+        "unit": "bps",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "rs_232_baud_rate",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "CS I/O Modes",
+      "value_raw": "SDC 7, 8, 10, 11, and ME master",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "cs_io_modes"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Communication Ports",
+      "value_raw": "RS-232 9-pin D female; USB Type B jack; CS I/O 9-pin D male",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232",
+          "USB",
+          "CS I/O"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "USB",
+          "CS I/O"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "communication_ports"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Input Voltage",
+      "value_raw": "9 to 16 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 9,
+        "max_value": 16,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "input_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Power Connector",
+      "value_raw": "2.5 mm DC power jack",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "power_connector",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Powered Over",
+      "value_raw": "CS I/O or barrel plug",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "CS I/O"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "powered_over"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Average Current Drain – Transmit",
+      "value_raw": "<80 mA at 250 mW TX power",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "average_current_drain_transmit",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Average Current Drain – Receive",
+      "value_raw": "15 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 15,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "average_current_drain_receive",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Average Current Drain – Standby/Sleep",
+      "value_raw": "<0.5 mA depending on power-saving mode",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "average_current_drain_standby_per_sleep",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-40 to +70 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Dimensions",
+      "value_raw": "11.1 × 6.9 × 2.7 cm (4.4 × 2.7 × 1.1 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Weight – Without Ships With Items",
+      "value_raw": "136 g (4.8 oz)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 136,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 4.8,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "weight_without_ships_with_items",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Weight – With Ships With Items",
+      "value_raw": "283.5 g (10 oz)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 283.5,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 10,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "weight_with_ships_with_items",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Compliance / Certification",
+      "value_raw": "United States FCC Part 15.247: MCQ-XB900HP; Industry Canada: 1846A-XB900HP",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "compliance_per_certification"
+    },
+    {
+      "product_id": "CSI_RF407",
+      "section": "General Specifications",
+      "name_raw": "Network Compatibility Restriction",
+      "value_raw": "RF407 only with RF407-type radios",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "network_compatibility_restriction"
+    }
+  ]
+}

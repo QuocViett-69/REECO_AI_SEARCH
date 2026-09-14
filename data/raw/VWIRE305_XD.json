@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "VWIRE305-XD.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_VWIRE_305",
+      "manufacturer": "Campbell Scientific",
+      "model": "VWIRE 305",
+      "product_name_en": "VWIRE 305",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "8-Channel Dynamic Vibrating-Wire Analyzer",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Number of Input Channels",
+          "name_vi": "Số kênh đầu vào",
+          "value_raw": "8",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sensor Capacity per Channel",
+          "name_vi": "Khả năng kết nối cảm biến mỗi kênh",
+          "value_raw": "1 vibrating wire sensor",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Sensor per Channel",
+          "name_vi": "Cảm biến nhiệt độ mỗi kênh",
+          "value_raw": "1 embedded thermistor or RTD",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Channel Measurement Mode",
+          "name_vi": "Chế độ đo các kênh",
+          "value_raw": "All channels measured simultaneously",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Technology",
+          "name_vi": "Công nghệ đo",
+          "value_raw": "VSPECT™ dynamic vibrating-wire measurement technology",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dynamic Vibrating-Wire Measurement Rate",
+          "name_vi": "Tốc độ đo dây rung động",
+          "value_raw": "20, 50, 100, 200, or 333.3 Hz",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Static Measurement Rate",
+          "name_vi": "Tốc độ đo tĩnh",
+          "value_raw": "1 Hz",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Embedded Thermistor / RTD Measurement Rate",
+          "name_vi": "Tốc độ đo thermistor / RTD tích hợp",
+          "value_raw": "1 Hz",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Vibrating-Wire Accuracy",
+          "name_vi": "Độ chính xác đo dây rung",
+          "value_raw": "±(0.005% of reading + effective measurement resolution)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Vibrating-Wire Input Resistance",
+          "name_vi": "Điện trở đầu vào dây rung",
+          "value_raw": "5 kΩ",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Vibrating-Wire Excitation Voltage Range",
+          "name_vi": "Dải điện áp kích thích dây rung",
+          "value_raw": "0 to ±3 V (6 V peak-to-peak)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Vibrating-Wire Excitation Voltage Resolution",
+          "name_vi": "Độ phân giải điện áp kích thích dây rung",
+          "value_raw": "26 mV",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Effective Resolution (Precision)",
+          "name_vi": "Độ phân giải hiệu dụng (độ chính xác lặp)",
+          "value_raw": "0.005 to 0.45 Hz RMS, depending on scan rate",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sustained Input Voltage Without Damage",
+          "name_vi": "Điện áp đầu vào duy trì không gây hư hỏng",
+          "value_raw": "-0.5 to 7.1 V",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Measurement",
+          "name_vi": "Phương pháp đo nhiệt độ",
+          "value_raw": "24-bit resistance measurement of thermistor or RTD embedded in the vibrating wire sensor",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Accuracy",
+          "name_vi": "Độ chính xác đo nhiệt độ",
+          "value_raw": "0.15% of reading",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Resolution",
+          "name_vi": "Độ phân giải đo nhiệt độ",
+          "value_raw": "0.002 Ω RMS @ 5 kΩ",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Bridge Resistor",
+          "name_vi": "Điện trở cầu",
+          "value_raw": "4.99 kΩ, 0.1%",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Excitation Voltage",
+          "name_vi": "Điện áp kích thích đo nhiệt độ",
+          "value_raw": "1.5 V",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CPI Interface",
+          "name_vi": "Giao tiếp CPI",
+          "value_raw": "RJ45 interface to Campbell Scientific data loggers, sensors, and GRANITE Measurement Modules",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "USB Interface",
+          "name_vi": "Giao tiếp USB",
+          "value_raw": "USB micro-B device only, USB 2.0 full-speed, 12 Mbps",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "Renesas RX63N (32-bit with hardware FPU, 96 MHz)",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Memory",
+          "name_vi": "Bộ nhớ",
+          "value_raw": "2 MB SRAM",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp nguồn cấp",
+          "value_raw": "10 to 32 VDC",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Current Drain @ 12 VDC",
+          "name_vi": "Dòng tiêu thụ điển hình @ 12 VDC",
+          "value_raw": "190 mA",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Current Drain @ 24 VDC",
+          "name_vi": "Dòng tiêu thụ điển hình @ 24 VDC",
+          "value_raw": "110 mA",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "20.3 × 12.7 × 5.1 cm (8.0 × 5.0 × 2.0 in)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "<1 kg (2.0 lb)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature – Extended Duty (XD)",
+          "name_vi": "Nhiệt độ hoạt động – bản Extended Duty (XD)",
+          "value_raw": "-55 to 85 °C",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default CPI Address",
+          "name_vi": "Địa chỉ CPI mặc định",
+          "value_raw": "1",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Allowable CPI Address Range",
+          "name_vi": "Dải địa chỉ CPI cho phép",
+          "value_raw": "1 to 120",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Data Loggers",
+          "name_vi": "Bộ ghi dữ liệu tương thích",
+          "value_raw": "GRANITE 10, GRANITE 9, GRANITE 6, CR6, CR1000X",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CPI Cable Type",
+          "name_vi": "Loại cáp CPI",
+          "value_raw": "CAT5e or better RJ45 cable",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Recommended Earth Ground Wire",
+          "name_vi": "Dây nối đất khuyến nghị",
+          "value_raw": "14 AWG or larger",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainflow Histogram Support",
+          "name_vi": "Hỗ trợ biểu đồ Rainflow",
+          "value_raw": "Yes; Matsuishi and Endo (1968) rainflow algorithm",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Diagnostic Outputs",
+          "name_vi": "Dữ liệu chẩn đoán",
+          "value_raw": "Excitation level; low/high-frequency warnings; low/high-amplitude warnings; standard deviation",
+          "source_rows": [
+            40
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": "VWIRE305-XD_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12090",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    }
+  ]
+}

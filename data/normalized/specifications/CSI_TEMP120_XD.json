@@ -1,0 +1,707 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_TEMP120_XD",
+  "model": "TEMP120-XD",
+  "raw_record_ref": {
+    "file": "data/raw/TEMP120-XD.json",
+    "product_index": 0,
+    "raw_record_key": "TEMP120-XD.json#0",
+    "raw_product_id": "CSI_TEMP120_XD",
+    "raw_model": "TEMP120-XD"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Product Variant",
+      "value_raw": "Extended Duty (XD)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_variant"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Product Type",
+      "value_raw": "20-Channel Thermocouple Module",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Number of Channels",
+      "value_raw": "20",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 20,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "number_of_channels"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Terminal Type",
+      "value_raw": "Universal (copper/copper), miniature socket connectors",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "terminal_type"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Supported Thermocouple Types",
+      "value_raw": "B, E, J, K, N, R, S, T",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "supported_thermocouple_types"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "A/D Converter",
+      "value_raw": "24-bit sigma-delta",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "a_per_d_converter"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Measurement Resolution",
+      "value_raw": "0.015 °C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.015,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "measurement_resolution"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-55 to +85 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 85,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Internal Cold Junction Accuracy – Maximum",
+      "value_raw": "±0.36 °C maximum (-55 to +85 °C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "internal_cold_junction_accuracy_maximum"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Total Measurement Accuracy – Static Environment – Maximum",
+      "value_raw": "±1.0 °C maximum (-55 to +85 °C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "total_measurement_accuracy_static_environment_maximum"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Total Measurement Accuracy – Rapid Temperature Ramps",
+      "value_raw": "±3 °C maximum (8 °C/min ambient gradient)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "total_measurement_accuracy_rapid_temperature_ramps",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Measurement Performance Verification",
+      "value_raw": "Engineering design; verified over the full product temperature range",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "measurement_performance_verification"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Calibration Certificate",
+      "value_raw": "Included",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "calibration_certificate"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Instrument Data Report",
+      "value_raw": "Included",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "instrument_data_report"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Recommended Calibration Interval",
+      "value_raw": "Every 3 years",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "recommended_calibration_interval",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Maximum Measurement Rate – Filtering Disabled",
+      "value_raw": "10 Hz for all 20 channels",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "maximum_measurement_rate_filtering_disabled"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Maximum Measurement Rate – Filtering Enabled",
+      "value_raw": "1 Hz for all 20 channels",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "maximum_measurement_rate_filtering_enabled"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Input Limits",
+      "value_raw": "0.25 to 3.0 VDC (built-in ±1.65 VDC bias voltage)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "input_limits"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Maximum Input Voltage",
+      "value_raw": "±10 VDC",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 10,
+        "unit": "V DC",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "maximum_input_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "DC Common-Mode Rejection",
+      "value_raw": "≥115 dB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 115,
+        "unit": "dB",
+        "qualifier": "≥"
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "dc_common_mode_rejection"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Normal-Mode Rejection",
+      "value_raw": ">80 dB at 50 and 60 Hz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "normal_mode_rejection"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "CPI Interface",
+      "value_raw": "RJ45 interface",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RJ45"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RJ45"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "cpi_interface"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "USB Interface",
+      "value_raw": "USB micro-B, USB 2.0 full-speed, 12 Mbps",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "USB"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "usb_interface"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Processor",
+      "value_raw": "Renesas RX63N, 32-bit with hardware FPU, 96 MHz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "processor"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Memory",
+      "value_raw": "2 MB SRAM",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "memory"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Power Supply Voltage",
+      "value_raw": "9.6 to 32 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 9.6,
+        "max_value": 32,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "power_supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Typical Current Drain – Sleep",
+      "value_raw": "5 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 5,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "typical_current_drain_sleep",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Typical Current Drain – Active",
+      "value_raw": "30 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 30,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "typical_current_drain_active",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Default CPI Address",
+      "value_raw": "1",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "default_cpi_address"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Allowable CPI Address Range",
+      "value_raw": "1 to 120",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 1,
+        "max_value": 120,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "allowable_cpi_address_range"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Compatible Data Loggers",
+      "value_raw": "GRANITE 10, GRANITE 9, GRANITE 6, CR6, CR1000X",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "compatible_data_loggers"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "CPI Cable",
+      "value_raw": "CAT5e or better RJ45 cable",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "RJ45"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "cpi_cable"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Earth Ground Wire",
+      "value_raw": "14 AWG minimum recommended",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "earth_ground_wire"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Dimensions",
+      "value_raw": "20.3 × 12.7 × 5.1 cm (8.0 × 5.0 × 2.0 in)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "section": "General Specifications",
+      "name_raw": "Weight",
+      "value_raw": "0.9 kg (1.95 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.9,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.95,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

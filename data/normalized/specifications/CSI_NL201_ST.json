@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_NL201_ST",
+  "model": "NL201-ST",
+  "raw_record_ref": {
+    "file": "data/raw/NL201.json",
+    "product_index": 0,
+    "raw_record_key": "NL201.json#0",
+    "raw_product_id": "CSI_NL201_ST",
+    "raw_model": "NL201-ST"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Base Model",
+      "value_raw": "NL201",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "base_model"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Product Type",
+      "value_raw": "Network Link Interface / Serial-to-Ethernet Interface",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Ethernet"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary communications device / Ethernet network interface",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Ethernet"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Temperature Configuration",
+      "value_raw": "Standard temperature",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "temperature_configuration",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Temperature Range",
+      "value_raw": "-25 to +50 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Primary Application",
+      "value_raw": "Provides wired Ethernet connectivity to data loggers, peripherals, and other serial devices",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Ethernet"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "primary_application"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Supported Modes",
+      "value_raw": "PakBus router; TCP serial server; TCP serial client; Modbus TCP/IP gateway; TLS proxy server; Ethernet-to-CS I/O bridge",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Modbus TCP",
+          "Ethernet",
+          "TCP/IP",
+          "TLS",
+          "PakBus",
+          "CS I/O"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "supported_modes"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Transmission Area",
+      "value_raw": "Worldwide",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "transmission_area"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Power Connector",
+      "value_raw": "CS I/O port or DC barrel connector; not powered over USB",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "CS I/O"
+        ],
+        "unsupported_protocols": [
+          "USB"
+        ]
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "power_connector",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Power Requirements",
+      "value_raw": "7 to 20 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 20,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "power_requirements",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "CS I/O Port",
+      "value_raw": "SDC 7, 8, 10, or 11; does not support ME",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "cs_io_port"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "RS-232 Port",
+      "value_raw": "DTE",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "rs_232_port"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "USB Port",
+      "value_raw": "Micro-B; configuration only",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "usb_port"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Ethernet Port",
+      "value_raw": "10Base-T and 100Base-TX; full/half duplex; Auto-MDIX; Auto-IP (APIPA)",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Auto-IP"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Auto-IP"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "ethernet_port"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Supported Network Protocols",
+      "value_raw": "IPv4, IPv6, ICMP/Ping, ICMPv6/Ping, TCP, DHCP Client, SLAAC, DNS Client, HTTPS Proxy, Telnet Server, TLS, PakBus, Modbus TCP/IP",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Modbus TCP",
+          "TCP/IP",
+          "IPv4",
+          "IPv6",
+          "ICMP",
+          "TLS",
+          "DNS",
+          "DHCP",
+          "SLAAC",
+          "Telnet",
+          "HTTPS",
+          "PakBus"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Modbus TCP",
+          "TCP/IP",
+          "IPv4",
+          "IPv6",
+          "ICMP",
+          "TLS",
+          "DNS",
+          "DHCP",
+          "SLAAC",
+          "Telnet",
+          "HTTPS",
+          "PakBus"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "supported_network_protocols"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "TCP Connections",
+      "value_raw": "50 simultaneous connections; up to 10 may be used for TLS",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "TLS"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "tcp_connections"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "PakBus Router Capacity",
+      "value_raw": "50 routes",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "pakbus_router_capacity"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Modbus Server Capacity",
+      "value_raw": "15 transactions maximum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "modbus_server_capacity"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Configuration Methods",
+      "value_raw": "Device Configuration Utility over USB or Ethernet; terminal menu over Telnet; terminal menu over RS-232",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "Ethernet",
+          "USB",
+          "Telnet"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "configuration_methods"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Service Requirements",
+      "value_raw": "Ethernet access",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Ethernet"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "service_requirements"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Dimensions",
+      "value_raw": "16 × 6.73 × 2.54 cm (6.3 × 2.65 × 1 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Weight",
+      "value_raw": "177 g (6.3 oz)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 177,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 6.3,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Current Drain – Active",
+      "value_raw": "50 mA @ 13 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "current_drain_active",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Current Drain – Forced Standby",
+      "value_raw": "2 mA (available in Ethernet-to-CS I/O Bridge Mode)",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Ethernet",
+          "CS I/O"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "current_drain_forced_standby",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "RS-232 Communication Rate",
+      "value_raw": "1200 bps to 115.2 kbps",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min": {
+          "value": 1200,
+          "unit": "bps"
+        },
+        "max": {
+          "value": 115.2,
+          "unit": "kbps"
+        },
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "rs_232_communication_rate",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "CS I/O Communication Rate",
+      "value_raw": "9600 bps to 460.8 kbps",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min": {
+          "value": 9600,
+          "unit": "bps"
+        },
+        "max": {
+          "value": 460.8,
+          "unit": "kbps"
+        },
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "cs_io_communication_rate",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Ethernet Communication Rate",
+      "value_raw": "10/100 Mbps",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "ethernet_communication_rate",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_NL201_ST",
+      "section": "General Specifications",
+      "name_raw": "Compliance",
+      "value_raw": "RoHS compliant; Class B under European Standards; EN61326-1:2013",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "compliance"
+    }
+  ]
+}

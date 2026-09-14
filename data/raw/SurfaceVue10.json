@@ -1,0 +1,575 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "SurfaceVue10.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_SURFACEVUE10",
+      "manufacturer": "Campbell Scientific",
+      "model": "SurfaceVue10",
+      "product_name_en": "SurfaceVue™10",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Fixed-Location, Non-Invasive Road Surface Condition Sensor",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Road Weather Information Systems (RWIS)",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "Non-invasive spectroscopic and infrared measurement",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Integrated Sensors",
+          "name_vi": "Cảm biến tích hợp",
+          "value_raw": "CS981 and CS991",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Surface States",
+          "name_vi": "Trạng thái bề mặt",
+          "value_raw": "Dry, moist, wet, slush, snow, ice",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Grip Measurement Range",
+          "name_vi": "Dải đo độ bám (ma sát)",
+          "value_raw": "0 to 1.0 (unitless)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Grip Accuracy",
+          "name_vi": "Độ chính xác độ bám",
+          "value_raw": "±0.1 (compared to braking friction reference)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Grip Resolution",
+          "name_vi": "Độ phân giải độ bám",
+          "value_raw": "±0.01",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Water and Ice Layer Thickness Range",
+          "name_vi": "Dải đo độ dày lớp nước và băng",
+          "value_raw": "0 to 3 mm (0 to 0.12 in.)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Water and Ice Layer Thickness Accuracy",
+          "name_vi": "Độ chính xác độ dày lớp nước và băng",
+          "value_raw": "±0.1 mm up to 1.0 mm; 10% above 1.0 mm",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Water and Ice Layer Thickness Resolution",
+          "name_vi": "Độ phân giải độ dày lớp nước và băng",
+          "value_raw": "±0.01 mm",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Road Surface Temperature Range",
+          "name_vi": "Dải đo nhiệt độ bề mặt đường",
+          "value_raw": "-40 to +60 °C (-40 to +140 °F)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Road Surface Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ bề mặt đường",
+          "value_raw": "±0.3 °C",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Road Surface Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ bề mặt đường",
+          "value_raw": "±0.1 °C",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ground Temperature Range (Modeled)",
+          "name_vi": "Dải nhiệt độ mặt đất (mô hình hóa)",
+          "value_raw": "-40 to +60 °C (-40 to +140 °F)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ground Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ mặt đất",
+          "value_raw": "±0.5 °C",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ground Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ mặt đất",
+          "value_raw": "±0.1 °C",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dew Point Temperature Range (Calculated)",
+          "name_vi": "Dải nhiệt độ điểm sương (tính toán)",
+          "value_raw": "-40 to +60 °C (-40 to +140 °F)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dew Point Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ điểm sương",
+          "value_raw": "±1.0 °C",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dew Point Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ điểm sương",
+          "value_raw": "±0.1 °C",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Air Temperature Range",
+          "name_vi": "Dải đo nhiệt độ không khí",
+          "value_raw": "-40 to +60 °C (-40 to +140 °F)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Air Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ không khí",
+          "value_raw": "±0.3 °C",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Air Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ không khí",
+          "value_raw": "±0.1 °C",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relative Humidity Range",
+          "name_vi": "Dải độ ẩm tương đối",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relative Humidity Accuracy",
+          "name_vi": "Độ chính xác độ ẩm tương đối",
+          "value_raw": "±2%",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relative Humidity Resolution",
+          "name_vi": "Độ phân giải độ ẩm tương đối",
+          "value_raw": "±0.1%",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Barometric Pressure Range",
+          "name_vi": "Dải áp suất khí quyển",
+          "value_raw": "500 to 1100 hPa",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Barometric Pressure Accuracy",
+          "name_vi": "Độ chính xác áp suất khí quyển",
+          "value_raw": "±1.0 hPa",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Barometric Pressure Resolution",
+          "name_vi": "Độ phân giải áp suất khí quyển",
+          "value_raw": "±0.1 hPa",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Range (Modeled)",
+          "name_vi": "Dải tốc độ gió (mô hình hóa)",
+          "value_raw": "0 to 60 m/s (0 to 134 mph)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Accuracy",
+          "name_vi": "Độ chính xác tốc độ gió",
+          "value_raw": "±10%",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Resolution",
+          "name_vi": "Độ phân giải tốc độ gió",
+          "value_raw": "±1 m/s",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Road Surface Conditions Field of View",
+          "name_vi": "Góc nhìn điều kiện bề mặt đường",
+          "value_raw": "2.8°; 0.5 m at 10 m",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Road Surface Temperature Field of View",
+          "name_vi": "Góc nhìn nhiệt độ bề mặt đường",
+          "value_raw": "10°; 1.7 m at 10 m",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measuring Range",
+          "name_vi": "Khoảng cách đo",
+          "value_raw": "3 to 10 m (9.8 to 32.8 ft)",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Preferred Measuring Range",
+          "name_vi": "Khoảng cách đo khuyến nghị",
+          "value_raw": "3 to 7 m (10 to 23 ft)",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Installation Angle",
+          "name_vi": "Góc lắp đặt",
+          "value_raw": "30 to 80°",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Preferred Installation Angle",
+          "name_vi": "Góc lắp đặt khuyến nghị",
+          "value_raw": "45 to 80°",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Recommended Installation Height",
+          "name_vi": "Chiều cao lắp đặt khuyến nghị",
+          "value_raw": "3 to 5 m (10 to 16 ft)",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +60 °C (-40 to +140 °F)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Humidity Range",
+          "name_vi": "Dải độ ẩm hoạt động",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Consumption @ 12 VDC",
+          "name_vi": "Dòng tiêu thụ @ 12 VDC",
+          "value_raw": "<100 mA (typical)",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supply Voltage Range",
+          "name_vi": "Dải điện áp nguồn",
+          "value_raw": "9 to 30 VDC",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Digital Output",
+          "name_vi": "Đầu ra số",
+          "value_raw": "RS-232; RS-485 with RS485EXT converter",
+          "source_rows": [
+            47
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Standard Serial Configuration",
+          "name_vi": "Cấu hình serial tiêu chuẩn",
+          "value_raw": "RS-232, 38400 baud, 8N1",
+          "source_rows": [
+            48
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Warm-up Time",
+          "name_vi": "Thời gian khởi động",
+          "value_raw": "1 min",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Data Update Interval",
+          "name_vi": "Chu kỳ cập nhật dữ liệu",
+          "value_raw": "Approximately every 10 to 20 seconds",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Type",
+          "name_vi": "Loại cáp",
+          "value_raw": "Five conductor",
+          "source_rows": [
+            51
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Length",
+          "name_vi": "Chiều dài cáp",
+          "value_raw": "10 m (32.8 ft)",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "76.2 × 27.9 × 17.8 cm (30 × 11 × 7 in.)",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "4.9 kg (10.8 lb)",
+          "source_rows": [
+            54
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 White Wire Function",
+          "name_vi": "Chức năng dây trắng RS-232",
+          "value_raw": "Receive signal (Rx)",
+          "source_rows": [
+            55
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Black Wire Function",
+          "name_vi": "Chức năng dây đen RS-232",
+          "value_raw": "Transmit signal (Tx)",
+          "source_rows": [
+            56
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Brown Wire Function",
+          "name_vi": "Chức năng dây nâu RS-232",
+          "value_raw": "Power 9 to 30 VDC",
+          "source_rows": [
+            57
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Blue Wire Function",
+          "name_vi": "Chức năng dây xanh dương RS-232",
+          "value_raw": "Ground",
+          "source_rows": [
+            58
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Yellow/Green Wire Function",
+          "name_vi": "Chức năng dây vàng/xanh lá RS-232",
+          "value_raw": "Not used",
+          "source_rows": [
+            59
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Communication Instructions",
+          "name_vi": "Lệnh giao tiếp CRBasic",
+          "value_raw": "SerialOut(), SerialIn(), SerialInRecord(), SplitStr()",
+          "source_rows": [
+            60
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Calibration",
+          "name_vi": "Hiệu chuẩn",
+          "value_raw": "Dry calibration required; recalibrate if distance to target or surface type changes",
+          "source_rows": [
+            61
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "SurfaceVue10_datasheet.pdf",
+        "user_manual": "SurfaceVue10_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13938",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    }
+  ]
+}

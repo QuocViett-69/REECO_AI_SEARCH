@@ -1,0 +1,335 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CH150&PS150.xlsx",
+    "sheet": "Sheet2"
+  },
+  "products": [
+    {
+      "product_id": "CSI_PS150",
+      "manufacturer": "Campbell Scientific",
+      "model": "PS150",
+      "product_name_en": "PS150",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Operational Temperature",
+          "name_vi": "Nhiệt độ hoạt động",
+          "value_raw": "-40°C to +60°C; VRLA battery manufacturers state that “heat kills batteries” and recommend operating batteries at ≤50°C",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "19.3 × 7.6 × 10.6 cm (7.5 × 3 × 4.2 in.)",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CHARGE - CHARGE TERMINALS (AC OR DC SOURCE)",
+          "name_en": "AC",
+          "name_vi": "Nguồn AC",
+          "value_raw": "18 to 24 VRMS, internally limited to 1.2 ARMS",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CHARGE - CHARGE TERMINALS (AC OR DC SOURCE)",
+          "name_en": "DC",
+          "name_vi": "Nguồn DC",
+          "value_raw": "16 to 40 Vdc, internally limited to 0.85 Adc",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "Battery voltages below 8.7 V may result in <3.0 A current limit because of fold-back current limit",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "15 to 40 Vdc",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Maximum Charging Current",
+          "name_vi": "Dòng sạc tối đa",
+          "value_raw": "4.0 Adc typical; 3.2 to 4.9 Adc depending upon individual charger",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Charge Source Present",
+          "name_vi": "Không có nguồn sạc",
+          "value_raw": "160 µA at 13.7 Vdc",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Battery Connected",
+          "name_vi": "Không kết nối pin",
+          "value_raw": "930 µA at 30 V input voltage, AC or DC",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "“T” represents temperature in degrees Celsius",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "FLOAT Charging",
+          "name_vi": "Sạc duy trì",
+          "value_raw": "Vbatt(T) = 13.65 V - (24 mV) × (T - 25) + (0.24 mV) × (T - 25)²",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±1% on charging voltage over -40°C to +60°C",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Voltage",
+          "name_vi": "Điện áp",
+          "value_raw": "Unregulated 12 V from battery; 4.65 A solid-state circuit breaker",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Standards",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "ETL Listed Class 2 power supply",
+          "source_rows": [
+            20
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_ps150data.pdf",
+        "user_manual": "ps150&ch150manuals.pdf",
+        "order_form": "https://www.campbellsci.com/products/ps150"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/5178",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CH150",
+      "manufacturer": "Campbell Scientific",
+      "model": "CH150",
+      "product_name_en": "CH150",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Operational Temperature",
+          "name_vi": "Nhiệt độ hoạt động",
+          "value_raw": "-40°C to +60°C; VRLA battery manufacturers state that “heat kills batteries” and recommend operating batteries at ≤50°C",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "7.5 × 3.7 × 10.0 cm (3 × 1.5 × 3.9 in.)",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CHARGE - CHARGE TERMINALS (AC OR DC SOURCE)",
+          "name_en": "AC",
+          "name_vi": "Nguồn AC",
+          "value_raw": "18 to 24 VRMS, internally limited to 1.2 ARMS",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CHARGE - CHARGE TERMINALS (AC OR DC SOURCE)",
+          "name_en": "DC",
+          "name_vi": "Nguồn DC",
+          "value_raw": "16 to 40 Vdc, internally limited to 0.85 Adc",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "Battery voltages below 8.7 V may result in <3.0 A current limit because of fold-back current limit",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "15 to 40 Vdc",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SOLAR TERMINALS (SOLAR PANEL OR OTHER DC SOURCE)",
+          "name_en": "Maximum Charging Current",
+          "name_vi": "Dòng sạc tối đa",
+          "value_raw": "4.0 Adc typical; 3.2 to 4.9 Adc depending upon individual charger",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Charge Source Present",
+          "name_vi": "Không có nguồn sạc",
+          "value_raw": "160 µA at 13.7 Vdc",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "QUIESCENT CURRENT",
+          "name_en": "No Battery Connected",
+          "name_vi": "Không kết nối pin",
+          "value_raw": "930 µA at 30 V input voltage, AC or DC",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "“T” represents temperature in degrees Celsius",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "FLOAT Charging",
+          "name_vi": "Sạc duy trì",
+          "value_raw": "Vbatt(T) = 13.65 V - (24 mV) × (T - 25) + (0.24 mV) × (T - 25)²",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "BATTERY CHARGING",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±1% on charging voltage over -40°C to +60°C",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Voltage",
+          "name_vi": "Điện áp",
+          "value_raw": "Unregulated 12 V from battery; 4.65 A solid-state circuit breaker",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "POWER OUT (+12 TERMINALS)",
+          "name_en": "Standards",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "ETL Listed Class 2 power supply",
+          "source_rows": [
+            20
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_ch150data.pdf",
+        "user_manual": "ps150&ch150manuals.pdf",
+        "order_form": "https://www.campbellsci.com/products/ch150"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/5129",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

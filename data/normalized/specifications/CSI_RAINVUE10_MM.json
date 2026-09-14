@@ -1,0 +1,736 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_RAINVUE10_MM",
+  "model": "RainVue10-MM",
+  "raw_record_ref": {
+    "file": "data/raw/RainVue10-20.json",
+    "product_index": 1,
+    "raw_record_key": "RainVue10-20.json#1",
+    "raw_product_id": "CSI_RAINVUE10",
+    "raw_model": "RainVue10"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Product Type",
+      "value_raw": "SDI-12 Precipitation Sensor with Plastic Funnel",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Manufacturer",
+      "value_raw": "Campbell Scientific, Inc.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary measurement device / precipitation sensor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Product Family",
+      "value_raw": "RainVue Series",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 3,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "product_family"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Available Configuration",
+      "value_raw": "0.1 mm (0.0039 inch) tip",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 4,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "available_configuration"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Sensor Type",
+      "value_raw": "Tipping bucket with magnetic reed switch",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 5,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "sensor_type"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Material",
+      "value_raw": "Injection-molded, highly robust, UV-stabilized plastic (ASA LI-911)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 6,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "material"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Output",
+      "value_raw": "SDI-12 version 1.4",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 7,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "output"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Sensor Configuration",
+      "value_raw": "SDI-12 or USB",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12",
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 8,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "sensor_configuration"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Measurement Range",
+      "value_raw": "0 to 500 mm/h (0 to 19.7 in./h)",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 500,
+        "unit": "mm/h",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 0,
+          "max_value": 19.7,
+          "unit": "in/h"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 9,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "measurement_range"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Precipitation Amount Resolution",
+      "value_raw": "0.1 mm (0.004 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.004,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 10,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "precipitation_amount_resolution"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Precipitation Amount Measurement Uncertainty",
+      "value_raw": "Larger of 0.1 mm or 4% error at 0 to 500 mm/h intensity",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 11,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "precipitation_amount_measurement_uncertainty"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Precipitation Intensity Range",
+      "value_raw": "0 to 500 mm/h (0 to 19.7 in./h)",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 500,
+        "unit": "mm/h",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 0,
+          "max_value": 19.7,
+          "unit": "in/h"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 12,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "precipitation_intensity_range"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Precipitation Intensity Measurement Uncertainty",
+      "value_raw": "≤3.5% at 0 to 300 mm/h; ≤5% at 0 to 500 mm/h",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 13,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "precipitation_intensity_measurement_uncertainty"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "WMO Compliant",
+      "value_raw": "Yes",
+      "type": "boolean",
+      "normalized": {
+        "type": "boolean",
+        "value": true
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 14,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "wmo_compliant"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-40 to +70 °C (including melting snow); 1 to 70 °C (liquid precipitation only)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 15,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Power Requirements",
+      "value_raw": "6 to 18 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 6,
+        "max_value": 18,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 16,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "power_requirements",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Active Current Drain",
+      "value_raw": "1 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 17,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "active_current_drain",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Quiescent Current Drain",
+      "value_raw": "0.07 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.07,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 18,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "quiescent_current_drain",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Internal Battery",
+      "value_raw": "240 mAh lithium battery; up to 15 days continual operation after power loss under stated conditions",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 19,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "internal_battery"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Response Time",
+      "value_raw": "0 s (M0! command); 1 s (M1! command)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 20,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "response_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Tilt Measurement Uncertainty",
+      "value_raw": "±1°",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 21,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "tilt_measurement_uncertainty"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Temperature Measurement Uncertainty",
+      "value_raw": "±0.25 °C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.25,
+        "unit": "°C",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 22,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "temperature_measurement_uncertainty",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Supply Voltage Measurement Uncertainty",
+      "value_raw": "±0.5 V",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.5,
+        "unit": "V",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 23,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "supply_voltage_measurement_uncertainty",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Orifice Diameter",
+      "value_raw": "20.0 cm (7.87 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 20,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.87,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 24,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "orifice_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Collecting Area",
+      "value_raw": "314.16 cm² (48.67 in²)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 314.16,
+        "unit": "cm²",
+        "qualifier": null,
+        "alternate": {
+          "value": 48.67,
+          "unit": "in²"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 25,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "collecting_area"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Height",
+      "value_raw": "43.5 to 46.5 cm (17.1 to 18.3 in.) with feet adjustment",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 43.5,
+        "max_value": 46.5,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 17.1,
+          "max_value": 18.3,
+          "unit": "in"
+        },
+        "condition": "with feet adjustment"
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 26,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Weight",
+      "value_raw": "2 kg (4.5 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 4.5,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 27,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Aspen 10 Compatibility",
+      "value_raw": "Compatible",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 28,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "aspen_10_compatibility"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "CRBasic Measurement Instruction",
+      "value_raw": "SDI12Recorder()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 29,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "crbasic_measurement_instruction"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "White Wire Function",
+      "value_raw": "SDI-12 signal",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 30,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "white_wire_function"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Clear Wire Function",
+      "value_raw": "Shield",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 31,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "clear_wire_function"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Brown Wire Function",
+      "value_raw": "Power",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 32,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "brown_wire_function"
+    },
+    {
+      "product_id": "CSI_RAINVUE10_MM",
+      "section": "General Specifications",
+      "name_raw": "Black Wire Function",
+      "value_raw": "Power ground",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 33,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "black_wire_function"
+    }
+  ]
+}

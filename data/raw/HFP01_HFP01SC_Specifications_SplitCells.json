@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "HFP01_HFP01SC_Specifications_SplitCells.xlsx",
+    "sheet": "HFP01_HFP01SC_Specifications"
+  },
+  "products": [
+    {
+      "product_id": "CSI_HFP01",
+      "manufacturer": "Campbell Scientific",
+      "model": "HFP01",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Type",
+          "name_vi": "Loại cảm biến",
+          "value_raw": "Thermopile",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensitivity",
+          "name_vi": "Độ nhạy",
+          "value_raw": "50 μV W⁻¹ m⁻² (nominal)",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Nominal Resistance",
+          "name_vi": "Điện trở danh định",
+          "value_raw": "2 Ω",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Temperature Range",
+          "name_vi": "Dải nhiệt độ",
+          "value_raw": "-30° to +70°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Thermal Resistance",
+          "name_vi": "Điện trở nhiệt của cảm biến",
+          "value_raw": "< 6.25 x 10⁻³ K m² W⁻¹",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "name_vi": "Dải đo",
+          "value_raw": "±2000 W m⁻²",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Expected Typical Accuracy",
+          "name_vi": "Độ chính xác điển hình dự kiến",
+          "value_raw": "Within -15% to +5% in most common soils (12 hour totals)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Plate Diameter",
+          "name_vi": "Đường kính tấm",
+          "value_raw": "80 mm (3.15 in.)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Plate Thickness",
+          "name_vi": "Độ dày tấm",
+          "value_raw": "5 mm (0.20 in.)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "200 g (7.05 oz) without cable",
+          "source_rows": [
+            18
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_hfp01_datasheet.pdf",
+        "user_manual": "hfp01_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/hfp01"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/318",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_HFP01SC",
+      "manufacturer": "Campbell Scientific",
+      "model": "HFP01SC",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Type",
+          "name_vi": "Loại cảm biến",
+          "value_raw": "Thermopile with film heater",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensitivity",
+          "name_vi": "Độ nhạy",
+          "value_raw": "50 μV W⁻¹ m⁻² (nominal)",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Nominal Resistance",
+          "name_vi": "Điện trở danh định",
+          "value_raw": "2 Ω",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Temperature Range",
+          "name_vi": "Dải nhiệt độ",
+          "value_raw": "-30° to +70°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Expected Typical Accuracy",
+          "name_vi": "Độ chính xác điển hình dự kiến",
+          "value_raw": "±3% of reading",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Heater Resistance",
+          "name_vi": "Điện trở bộ gia nhiệt",
+          "value_raw": "100 Ω (nominal)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Heater Voltage Input",
+          "name_vi": "Điện áp đầu vào bộ gia nhiệt",
+          "value_raw": "9 to 15 Vdc",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Heater Voltage Output",
+          "name_vi": "Điện áp đầu ra bộ gia nhiệt",
+          "value_raw": "0 to 2 Vdc",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Duration of Calibration",
+          "name_vi": "Thời lượng hiệu chuẩn",
+          "value_raw": "±3 minutes @ 1.5 W | typically performed every 3 to 6 hours",
+          "source_rows": [
+            13,
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Average Power Consumption",
+          "name_vi": "Công suất tiêu thụ trung bình",
+          "value_raw": "0.02 to 0.04 W",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Plate Diameter",
+          "name_vi": "Đường kính tấm",
+          "value_raw": "80 mm (3.15 in.)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Plate Thickness",
+          "name_vi": "Độ dày tấm",
+          "value_raw": "5 mm (0.20 in.)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "200 g (7.05 oz) without cable",
+          "source_rows": [
+            18
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_hfp01sc_datasheet.pdf",
+        "user_manual": "hfp01sc_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/hfp01sc"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/319",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CS320_Specifications_SplitCells.xlsx",
+    "sheet": "CS320_Specifications"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS320",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS320",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor",
+          "name_vi": "Cảm biến",
+          "value_raw": "Thermopile detector, acrylic diffuser, heater, and signal processing circuitry mounted in an aluminum housing",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Description",
+          "name_vi": "Mô tả phép đo",
+          "value_raw": "Measures broad-spectrum short-wave radiation",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "ISO Classification",
+          "name_vi": "Phân loại ISO",
+          "value_raw": "Class C (second class)",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibration Uncertainty",
+          "name_vi": "Độ không đảm bảo hiệu chuẩn",
+          "value_raw": "± 2.6%",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "name_vi": "Dải đo",
+          "value_raw": "0 to 2000 W/m² (net short-wave irradiance)",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Repeatability",
+          "name_vi": "Độ lặp lại phép đo",
+          "value_raw": "< 1%",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Long-Term Drift",
+          "name_vi": "Độ trôi dài hạn",
+          "value_raw": "< 2% (per year)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Non-Linearity",
+          "name_vi": "Độ phi tuyến",
+          "value_raw": "< 1%",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensitivity",
+          "name_vi": "Độ nhạy",
+          "value_raw": "0.057 mV/W/m²",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Detector Type",
+          "name_vi": "Loại bộ dò",
+          "value_raw": "Blackbody thermopile",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "SDI-12 Response Time",
+          "name_vi": "Thời gian đáp ứng SDI-12",
+          "value_raw": "2 s",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Field of View (FOV)",
+          "name_vi": "Trường nhìn (FOV)",
+          "value_raw": "180°",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Spectral Range",
+          "name_vi": "Dải phổ",
+          "value_raw": "385 to 2105 nm (50% points)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Directional (Cosine) Response",
+          "name_vi": "Đáp ứng định hướng (cosin)",
+          "value_raw": "< ±20 W/m² (at 80° solar zenith)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Temperature Response",
+          "name_vi": "Đáp ứng nhiệt độ",
+          "value_raw": "< 5% (from -15° to +45°C)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output",
+          "name_vi": "Đầu ra",
+          "value_raw": "SDI-12 (version 1.4) 1200 bps",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Zero Offset A",
+          "name_vi": "Độ lệch zero A",
+          "value_raw": "8 W/m²",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Zero Offset B",
+          "name_vi": "Độ lệch zero B",
+          "value_raw": "< 5 W/m²",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-50° to +60°C",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Environment",
+          "name_vi": "Môi trường hoạt động",
+          "value_raw": "0 to 100% relative humidity",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Heater",
+          "name_vi": "Bộ gia nhiệt",
+          "value_raw": "0.2 W (on-board)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Heater Power Requirements",
+          "name_vi": "Yêu cầu nguồn bộ gia nhiệt",
+          "value_raw": "25 mA current drain (at 12 Vdc)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Input Voltage Requirements",
+          "name_vi": "Yêu cầu điện áp đầu vào",
+          "value_raw": "6 to 24 Vdc",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "3 mA (standby) | 5 mA (measurement)",
+          "source_rows": [
+            26,
+            27
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Uncertainty in Daily Total",
+          "name_vi": "Độ không đảm bảo của tổng ngày",
+          "value_raw": "< 5%",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Error Due to Clouds",
+          "name_vi": "Sai số do mây",
+          "value_raw": "±2 %",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Mechanical Rating",
+          "name_vi": "Cấp bảo vệ cơ khí",
+          "value_raw": "IP66/68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Factory Calibrations",
+          "name_vi": "Hiệu chuẩn tại nhà máy",
+          "value_raw": "Traceable to secondary standard blackbody thermopile pyranometers traceable to the world radiation reference in Davos, Switzerland.",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compliance with Standards",
+          "name_vi": "Tuân thủ tiêu chuẩn",
+          "value_raw": "2011/65/EU RoHS Directive | 2015/863/EU RoHS Phthalates Amendment",
+          "source_rows": [
+            32,
+            33
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "4 years against defects in materials and workmanship",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "3.43 cm (1.35 in.)",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Height",
+          "name_vi": "Chiều cao",
+          "value_raw": "3.96 cm (1.56 in.)",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "~65 g (2.3oz) | May vary due to potting.",
+          "source_rows": [
+            37,
+            38
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs320_datasheet.pdf",
+        "user_manual": "cs320_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs320"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15431",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "NL241.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_NL241",
+      "manufacturer": "Campbell Scientific",
+      "model": "NL241",
+      "product_name_en": "NL241",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Wireless Network Link Interface",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary communications device / Wi-Fi WLAN interface",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Provides Wi-Fi connectivity for Campbell Scientific data loggers and peripherals",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Network Operation",
+          "name_vi": "Chế độ mạng",
+          "value_raw": "Can join an existing Wi-Fi network or create a Wi-Fi access point",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Connection Modes",
+          "name_vi": "Các chế độ kết nối hỗ trợ",
+          "value_raw": "PakBus router; TCP Serial Server; TCP Serial Client; Modbus TCP/IP Gateway; Wi-Fi to CS I/O bridge; TLS proxy server",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Transmission Area",
+          "name_vi": "Phạm vi sử dụng",
+          "value_raw": "Worldwide",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Housing Material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "Aluminum case with black anodized finish",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Configuration Methods",
+          "name_vi": "Phương thức cấu hình",
+          "value_raw": "Device Configuration Utility over USB or Wi-Fi; Telnet console over Wi-Fi; terminal menu over RS-232",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CS I/O Port",
+          "name_vi": "Cổng CS I/O",
+          "value_raw": "9600 bps to 460.8 kbps; SDC 7, 8, 10, or 11; does not support ME",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Port",
+          "name_vi": "Cổng RS-232",
+          "value_raw": "1200 bps to 115.2 kbps; DTE; DB9 male",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "USB Port",
+          "name_vi": "Cổng USB",
+          "value_raw": "Micro-B; configuration only",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Protocols",
+          "name_vi": "Giao thức hỗ trợ",
+          "value_raw": "IPv4, IPv6, ICMP/Ping, ICMPv6/Ping, TCP/IP, DHCP Client, DHCP Server (access point mode only), SLAAC, DNS Client, HTTPS Proxy, TLS, Telnet Server, PakBus, Modbus",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "TCP Connections",
+          "name_vi": "Kết nối TCP",
+          "value_raw": "50 simultaneous connections; up to 10 may be used for TLS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "PakBus Router Capacity",
+          "name_vi": "Dung lượng PakBus Router",
+          "value_raw": "50 routes",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Modbus Server Capacity",
+          "name_vi": "Dung lượng Modbus Server",
+          "value_raw": "Up to 15 concurrent transactions",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Source",
+          "name_vi": "Nguồn cấp",
+          "value_raw": "CS I/O or DC barrel connector; not USB",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "9 to 16 VDC",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Consumption – Client Mode",
+          "name_vi": "Công suất tiêu thụ – Client Mode",
+          "value_raw": "7.5 to 8 mA idle; 65 to 75 mA communicating @ 12 VDC",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Consumption – Access Point Mode",
+          "name_vi": "Công suất tiêu thụ – Access Point Mode",
+          "value_raw": "67 mA idle; 70 mA communicating @ 12 VDC",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Consumption – Standby",
+          "name_vi": "Công suất tiêu thụ – Standby",
+          "value_raw": "<1.5 mA @ 12 VDC",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "16 × 7.3 × 2.54 cm (6.3 × 2.9 × 1 in.)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "180.35 g (6.36 oz)",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "WLAN Antenna Connector",
+          "name_vi": "Đầu nối ăng-ten WLAN",
+          "value_raw": "RP-SMA",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "WLAN Frequency",
+          "name_vi": "Tần số WLAN",
+          "value_raw": "2.4 GHz",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported WLAN Technologies",
+          "name_vi": "Công nghệ WLAN hỗ trợ",
+          "value_raw": "802.11b/g/n; WPA/WPA2-Personal; WPA/WPA2-Enterprise; WEP",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Client Mode Security",
+          "name_vi": "Bảo mật Client Mode",
+          "value_raw": "WPA/WPA2-Personal and Enterprise; WEP",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Access Point Mode Security",
+          "name_vi": "Bảo mật Access Point Mode",
+          "value_raw": "WPA2-Personal",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "WLAN Communication Rate",
+          "name_vi": "Tốc độ truyền WLAN",
+          "value_raw": "Up to 72 Mbps (802.11n); up to 54 Mbps (802.11g); up to 11 Mbps (802.11b)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Transmit Power",
+          "name_vi": "Công suất phát",
+          "value_raw": "7 ±1 dBm (low); 10 ±1 dBm (medium); 18 ±2 dBm (high)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rx Sensitivity",
+          "name_vi": "Độ nhạy thu",
+          "value_raw": "-97 dBm",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "CE compliant; Class A digital device under FCC Part 15",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Embedded Radio Transmitter Approvals",
+          "name_vi": "Chứng nhận bộ phát radio tích hợp",
+          "value_raw": "FCC Identifier: XF6-RS9113SB; Industry Canada: 8407A-RS9113SB",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Service Requirement",
+          "name_vi": "Yêu cầu dịch vụ",
+          "value_raw": "Wi-Fi hotspot / access to standard 802.11b/g/n networks",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Wi-Fi Network",
+          "name_vi": "Mạng Wi-Fi mặc định",
+          "value_raw": "Creates an open network named NL241_SerialNumber",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default IP Address",
+          "name_vi": "Địa chỉ IP mặc định",
+          "value_raw": "192.168.67.1 when creating its default network",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Bridge Mode",
+          "name_vi": "Chế độ Bridge",
+          "value_raw": "Supports bridging WLAN and CS I/O communications for compatible data loggers",
+          "source_rows": [
+            40
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "nl241_datasheet.pdf",
+        "user_manual": "nl241_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/9653",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    }
+  ]
+}

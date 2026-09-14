@@ -1,0 +1,343 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CR1000xe.xlsx",
+    "sheet": "Sheet2"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "manufacturer": "Campbell Scientific",
+      "model": "CR1000Xe-XT-CC",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "-55 to +85°C Campbell Calibration",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Temperature Version",
+          "name_vi": "Phiên bản nhiệt độ",
+          "value_raw": "Extended",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Calibration Type",
+          "name_vi": "Loại hiệu chuẩn",
+          "value_raw": "Campbell Calibration",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-55° to +85°C",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Storage Temperature Range",
+          "name_vi": "Dải nhiệt độ lưu trữ",
+          "value_raw": "-60° to +85°C",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Humidity",
+          "name_vi": "Độ ẩm hoạt động",
+          "value_raw": "0–100% RH, non-condensing environment",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Maximum Scan Rate",
+          "name_vi": "Tốc độ quét tối đa",
+          "value_raw": "1000 Hz",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Case Material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "Anodized aluminum",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Analog Inputs",
+          "name_vi": "Đầu vào analog",
+          "value_raw": "16 single-ended or 8 differential (individually configured). Two analog inputs can measure 4 to 20 mA or 0 to 20 mA natively",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Pulse Counters",
+          "name_vi": "Bộ đếm xung",
+          "value_raw": "10 (P1 to P2 and C1 to C8)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Voltage Excitation Terminals",
+          "name_vi": "Đầu cực kích thích điện áp",
+          "value_raw": "4 (VX1 to VX4)",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Maximum Source/Sink Current",
+          "name_vi": "Dòng source/sink tối đa",
+          "value_raw": "±40 mA (voltage excitation) | 50 mA (regulated 3.3 or 5 V)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Communications Ports",
+          "name_vi": "Cổng giao tiếp",
+          "value_raw": "USB-C | Ethernet | RS-232 | RS-485 | CS I/O | RS-422 | CPI",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Internet Protocols",
+          "name_vi": "Giao thức Internet",
+          "value_raw": "Ethernet | PPP | RNDIS | ICMP/Ping | Auto-IP (APIPA) | IPv4 | IPv6 | UDP | TCP | TLS (v1.2) | DNS | DHCP | SLAAC | Telnet | HTTP(S) | SFTP | FTP(S) | POP3/TLS | NTP | SMTP/TLS | SNMPv3 | CS I/O IP | MQTT(S)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Communications Protocols",
+          "name_vi": "Giao thức truyền thông",
+          "value_raw": "CPI | PakBus | SDM | SDI-12 | Modbus | TCP | DNP3 outstation | UDP | NTCIP | NMEA 0183 | I2C | SPI | CampbellCloud HTTPS/MQTTS | and others",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "DATA STORAGE / I/O",
+          "name_en": "Data Storage Slots",
+          "name_vi": "Khe lưu trữ dữ liệu",
+          "value_raw": "microSD",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "DATA STORAGE / I/O",
+          "name_en": "Switched 12 Volt",
+          "name_vi": "Nguồn 12 V chuyển mạch",
+          "value_raw": "2 terminals, plus CS I/O pin 8",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "DATA STORAGE / I/O",
+          "name_en": "Digital I/O",
+          "name_vi": "I/O số",
+          "value_raw": "8 terminals (C1 to C8) configurable for digital input and output. Includes status high/low, pulse width modulation, external interrupt, edge timing, switch closure pulse counting, high-frequency pulse counting, plus UART, RS-232, RS-485, SDM, SDI-12, I2C, and SPI serial-communications functions. Terminals are configurable in pairs for 5 V or 3.3 V logic for some functions.",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "DATA STORAGE / I/O",
+          "name_en": "Input Limits",
+          "name_vi": "Giới hạn đầu vào",
+          "value_raw": "±5 V",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "DATA STORAGE / I/O",
+          "name_en": "ADC",
+          "name_vi": "Bộ chuyển đổi ADC",
+          "value_raw": "24-bit",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "ANALOG VOLTAGE ACCURACY",
+          "name_en": "Analog Voltage Accuracy Note",
+          "name_vi": "Ghi chú độ chính xác điện áp analog",
+          "value_raw": "Accuracy specifications do not include sensor or measurement noise",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "ANALOG VOLTAGE ACCURACY",
+          "name_en": "Analog Voltage Accuracy - Extended Temperature",
+          "name_vi": "Độ chính xác analog ở dải nhiệt độ mở rộng",
+          "value_raw": "±(0.08% of measurement + offset) at -55° to +85°C (extended temperature range)",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "ANALOG VOLTAGE ACCURACY",
+          "name_en": "Analog Voltage Accuracy - Standard Temperature",
+          "name_vi": "Độ chính xác analog ở dải nhiệt độ tiêu chuẩn",
+          "value_raw": "±(0.06% of measurement + offset) at -40° to +70°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "ANALOG VOLTAGE ACCURACY",
+          "name_en": "Analog Voltage Accuracy - 0° to 40°C",
+          "name_vi": "Độ chính xác analog trong khoảng 0° đến 40°C",
+          "value_raw": "±(0.04% of measurement + offset) at 0° to 40°C",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "POWER / CLOCK",
+          "name_en": "Power Requirements",
+          "name_vi": "Yêu cầu nguồn điện",
+          "value_raw": "10 to 36 Vdc input",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "POWER / CLOCK",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year (optional GPS connection to ±10 µs)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "POWER / CLOCK",
+          "name_en": "Idle Current Drain, Average",
+          "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+          "value_raw": "< 2.0 mA (@ 12 Vdc)",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "POWER / CLOCK",
+          "name_en": "Active Current Drain, Average - 20 Hz",
+          "name_vi": "Dòng tiêu thụ trung bình khi hoạt động - 20 Hz",
+          "value_raw": "57 mA (20 Hz scan @ 12 Vdc)",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "POWER / CLOCK",
+          "name_en": "Active Current Drain, Average - 1 Hz @ 24 Vdc",
+          "name_vi": "Dòng tiêu thụ trung bình - 1 Hz @ 24 Vdc",
+          "value_raw": "1.1 mA (1 Hz scan @ 24 Vdc)",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "POWER / CLOCK",
+          "name_en": "Active Current Drain, Average - 1 Hz @ 12 Vdc",
+          "name_vi": "Dòng tiêu thụ trung bình - 1 Hz @ 12 Vdc",
+          "value_raw": "2 mA (1 Hz scan @ 12 Vdc)",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "MEMORY / STORAGE",
+          "name_en": "Battery-Backed SRAM for CPU Usage and Final Storage",
+          "name_vi": "SRAM có pin dự phòng cho CPU và lưu trữ cuối",
+          "value_raw": "4 MB",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "MEMORY / STORAGE",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "4 MB SRAM + 72 MB flash (storage expansion of up to 16 GB with removable microSD flash memory card)",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "PHYSICAL",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "23.8 x 10.1 x 6.2 cm (9.4 x 4.0 x 2.4 in.) | Additional clearance required for cables and wires",
+          "source_rows": [
+            42
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cr1000xe.pdf",
+        "user_manual": "manualCR1000X(e).pdf",
+        "order_form": "https://www.campbellsci.com/products/cr1000xe"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/15120",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

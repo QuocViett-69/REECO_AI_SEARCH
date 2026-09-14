@@ -1,0 +1,774 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CS650",
+  "model": "CS650",
+  "raw_record_ref": {
+    "file": "data/raw/CS616_CS650_CS655.json",
+    "product_index": 1,
+    "raw_record_key": "CS616_CS650_CS655.json#1",
+    "raw_product_id": "CSI_CS650",
+    "raw_model": "CS650"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurements Made",
+      "value_raw": "Soil electrical conductivity (EC), relative dielectric permittivity, volumetric water content (VWC), soil temperature",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "measurements_made"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Required Equipment",
+      "value_raw": "Measurement system",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 1,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "required_equipment"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Soil Suitability",
+      "value_raw": "Long rods with large sensing volume (> 6 L) are suitable for soils with low to moderate electrical conductivity.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 2,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "soil_suitability"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Rods",
+      "value_raw": "Not replaceable",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 3,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "rods"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensors",
+      "value_raw": "Not interchangeable",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 4,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "sensors"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensing Volume",
+      "value_raw": "7800 cm³ (~7.5 cm radius around each probe rod and 4.5 cm beyond the end of the rods)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 5,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "sensing_volume"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Electromagnetic",
+      "value_raw": "CE compliant; Meets EN61326 requirements for protection against electrostatic discharge and surge.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 6,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "electromagnetic"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-50° to +70°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 7,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Output",
+      "value_raw": "SDI-12 | serial RS-232",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12",
+          "RS-232"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12",
+          "RS-232"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 8,
+        "source_rows": [
+          17,
+          18
+        ]
+      },
+      "canonical_key": "sensor_output"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Warm-up Time",
+      "value_raw": "3 s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3,
+        "unit": "s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 9,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "warm_up_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Time",
+      "value_raw": "3 ms to measure | 600 ms to complete SDI-12 command",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 10,
+        "source_rows": [
+          20,
+          21
+        ]
+      },
+      "canonical_key": "measurement_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Power Supply Requirements",
+      "value_raw": "6 to 18 Vdc | Must be able to supply 45 mA @ 12 Vdc.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 11,
+        "source_rows": [
+          22,
+          23
+        ]
+      },
+      "canonical_key": "power_supply_requirements",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Maximum Cable Length",
+      "value_raw": "610 m (2000 ft) combined length for up to 25 sensors connected to the same data logger control port",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 12,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "maximum_cable_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Rod Spacing",
+      "value_raw": "32 mm (1.3 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 32,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 13,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "rod_spacing"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Ingress Protection Rating",
+      "value_raw": "IP68",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 14,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "ingress_protection_rating"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Rod Diameter",
+      "value_raw": "3.2 mm (0.13 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3.2,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.13,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 15,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "rod_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Rod Length",
+      "value_raw": "300 mm (11.8 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 300,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 11.8,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 16,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "rod_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Probe Head Dimensions",
+      "value_raw": "85 x 63 x 18 mm (3.3 x 2.5 x 0.7 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 17,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "probe_head_dimensions"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Cable Weight",
+      "value_raw": "35 g per m (0.38 oz per ft)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 18,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "cable_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight / Probe Weight",
+      "value_raw": "280 g (9.9 oz) without cable",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 19,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "weight_per_probe_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Current Drain",
+      "name_raw": "Active (3 ms)",
+      "value_raw": "80 mA (@ 6 Vdc) | 45 mA typical (@ 12 Vdc) | 35 mA (@ 18 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 20,
+        "source_rows": [
+          37,
+          38,
+          39
+        ]
+      },
+      "canonical_key": "active_3_ms",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Current Drain",
+      "name_raw": "Quiescent",
+      "value_raw": "135 µA typical (@ 12 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 21,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "quiescent",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Electrical Conductivity",
+      "name_raw": "Range for Solution EC",
+      "value_raw": "0 to 3 dS/m",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 3,
+        "unit": "dS/m",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 22,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "range_for_solution_ec"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Electrical Conductivity",
+      "name_raw": "Range for Bulk EC",
+      "value_raw": "0 to 3 dS/m",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 3,
+        "unit": "dS/m",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 23,
+        "source_rows": [
+          45
+        ]
+      },
+      "canonical_key": "range_for_bulk_ec"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Electrical Conductivity",
+      "name_raw": "Accuracy",
+      "value_raw": "±(5% of reading + 0.05 dS/m)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 24,
+        "source_rows": [
+          46
+        ]
+      },
+      "canonical_key": "electrical_conductivity_accuracy"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Electrical Conductivity",
+      "name_raw": "Precision",
+      "value_raw": "0.5% of BEC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 25,
+        "source_rows": [
+          47
+        ]
+      },
+      "canonical_key": "precision_833a7822"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Relative Dielectric Permittivity",
+      "name_raw": "Range",
+      "value_raw": "1 to 81",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 1,
+        "max_value": 81,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 26,
+        "source_rows": [
+          49
+        ]
+      },
+      "canonical_key": "relative_dielectric_permittivity_range"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Relative Dielectric Permittivity",
+      "name_raw": "Accuracy",
+      "value_raw": "±(2% of reading + 0.6) from 1 to 40 for solution EC ≤ 3 dS/m | ±1.4 (from 40 to 81 for solution EC ≤ 1 dS/m)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 27,
+        "source_rows": [
+          50,
+          51
+        ]
+      },
+      "canonical_key": "relative_dielectric_permittivity_accuracy"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Relative Dielectric Permittivity",
+      "name_raw": "Precision",
+      "value_raw": "< 0.02",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.02,
+        "unit": null,
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 28,
+        "source_rows": [
+          52
+        ]
+      },
+      "canonical_key": "precision_9937885d"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Volumetric Water Content",
+      "name_raw": "Range",
+      "value_raw": "0 to 100% (with M4 command)",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null,
+        "condition": "with M4 command"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 29,
+        "source_rows": [
+          54
+        ]
+      },
+      "canonical_key": "volumetric_water_content_range"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Volumetric Water Content",
+      "name_raw": "Water Content Accuracy",
+      "value_raw": "±3% (typical with factory VWC model) where solution EC < 3 dS/m | ±1% (with soil-specific calibration)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 30,
+        "source_rows": [
+          55,
+          56
+        ]
+      },
+      "canonical_key": "water_content_accuracy"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Volumetric Water Content",
+      "name_raw": "Precision",
+      "value_raw": "< 0.05%",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.05,
+        "unit": "%",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 31,
+        "source_rows": [
+          57
+        ]
+      },
+      "canonical_key": "precision_b054553b"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Soil Temperature",
+      "name_raw": "Range",
+      "value_raw": "-50° to +70°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 32,
+        "source_rows": [
+          59
+        ]
+      },
+      "canonical_key": "soil_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Soil Temperature",
+      "name_raw": "Resolution",
+      "value_raw": "0.001°C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.001,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 33,
+        "source_rows": [
+          60
+        ]
+      },
+      "canonical_key": "soil_temperature_resolution",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Soil Temperature",
+      "name_raw": "Accuracy",
+      "value_raw": "±0.1°C (for typical soil temperatures [0 to 40°C] when probe body is buried in soil)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 34,
+        "source_rows": [
+          61
+        ]
+      },
+      "canonical_key": "soil_temperature_accuracy",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Soil Temperature",
+      "name_raw": "Precision",
+      "value_raw": "±0.5°C (for full temperature range)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 35,
+        "source_rows": [
+          62
+        ]
+      },
+      "canonical_key": "precision_d2aa46e8",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "section": "Soil Temperature",
+      "name_raw": "Precision",
+      "value_raw": "±0.02°C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.02,
+        "unit": "°C",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 36,
+        "source_rows": [
+          63
+        ]
+      },
+      "canonical_key": "precision_d2aa46e8",
+      "quantity_kind": "temperature"
+    }
+  ]
+}

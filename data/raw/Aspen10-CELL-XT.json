@@ -1,0 +1,316 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "Aspen10_4-Variants_Specifications_CELL-US_ST-XT.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_ASPEN10_CELL_XT",
+      "manufacturer": "Campbell Scientific",
+      "model": "Aspen10-CELL-XT",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "32-bit Arm Cortex (CPU)",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Memory",
+          "name_vi": "Bộ nhớ",
+          "value_raw": "2 MB flash; 640 KB SRAM",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Program Execution Period",
+          "name_vi": "Chu kỳ thực thi chương trình",
+          "value_raw": "1 s to 1 day; 1 s increments",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Real-Time Clock Resolution",
+          "name_vi": "Độ phân giải đồng hồ thời gian thực",
+          "value_raw": "±1 s",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "Synchronized with CampbellCloud once per day",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40°C to +75°C (extended); outdoor environment",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Scan Rate",
+          "name_vi": "Tốc độ quét tối đa",
+          "value_raw": "1 s",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Communications Protocols",
+          "name_vi": "Giao thức truyền thông",
+          "value_raw": "SDI-12, HTTP(S), MQTT",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Case Material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "High-impact-resistant and UV-resistant ASA, recycle code 7; IP65 water-resistant rated; Gore-Tex breathability",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Digital I/O",
+          "name_vi": "Ngõ vào/ra số",
+          "value_raw": "Terminals configured for SDI-12",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Certifications",
+          "name_vi": "Chứng nhận",
+          "value_raw": "CB Certificate Number NO127343",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "16.2 × 8.0 × 5.8 cm (6.4 × 3.2 × 2.3 in.)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "352 g (0.8 lb)",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery",
+          "name_vi": "Pin",
+          "value_raw": "Charge and discharge characteristics are controlled internally according to battery type",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Option",
+          "name_vi": "Tùy chọn pin",
+          "value_raw": "3.65 Vdc, 5.6 Ah, Li-ion Saft MP176065 xtd",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Average Current Drain",
+          "name_vi": "Dòng tiêu thụ trung bình",
+          "value_raw": "<0.35 µA (deep sleep)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Average Current Drain",
+          "name_vi": "Dòng tiêu thụ trung bình",
+          "value_raw": "30 mA for 12 Vdc sensor power supply",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Average Current Drain",
+          "name_vi": "Dòng tiêu thụ trung bình",
+          "value_raw": "14.3 mA for 8 Vdc sensor power supply",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Average Current Drain",
+          "name_vi": "Dòng tiêu thụ trung bình",
+          "value_raw": "5 mA for 5 Vdc sensor power supply",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Average Current Drain",
+          "name_vi": "Dòng tiêu thụ trung bình",
+          "value_raw": "10 µA (ultra-low power) for 5 Vdc sensor power supply",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Average Current Drain",
+          "name_vi": "Dòng tiêu thụ trung bình",
+          "value_raw": "<1 mA (idle)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "POWER OUTPUT",
+          "name_en": "Power Output Note",
+          "name_vi": "Ghi chú ngõ ra nguồn",
+          "value_raw": "Regulated 5, 8, or 12 Vdc; disabled when battery capacity <0.5 Ah",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "POWER OUTPUT",
+          "name_en": "5 Vdc Current Limit",
+          "name_vi": "Giới hạn dòng 5 VDC",
+          "value_raw": "210 mA; 30 mA (ultra-low power)",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "POWER OUTPUT",
+          "name_en": "8 Vdc Current Limit",
+          "name_vi": "Giới hạn dòng 8 VDC",
+          "value_raw": "210 mA",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "POWER OUTPUT",
+          "name_en": "12 Vdc Current Limit",
+          "name_vi": "Giới hạn dòng 12 VDC",
+          "value_raw": "210 mA",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Protocols",
+          "name_vi": "Giao thức",
+          "value_raw": "SDI-12",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Internet Protocols",
+          "name_vi": "Giao thức Internet",
+          "value_raw": "HTTP(S), MQTT",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Near Field Communication (NFC)",
+          "name_vi": "Giao tiếp trường gần NFC",
+          "value_raw": "Target device compatible with CampbellGo; maximum distance of 50 m (165 ft)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "Bluetooth Low Energy (BLE)",
+          "name_vi": "Bluetooth năng lượng thấp",
+          "value_raw": "Compatible with CampbellGo",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "COMMUNICATIONS",
+          "name_en": "SDI-12",
+          "name_vi": "Giao tiếp SDI-12",
+          "value_raw": "One SDI-12-compliant terminal meets SDI-12 Standard v1.4",
+          "source_rows": [
+            34
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": "aspen10-getting-started-guide.pdf",
+        "order_form": "https://www.campbellsci.com/products/aspen10"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/14446",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

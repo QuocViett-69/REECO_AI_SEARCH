@@ -1,0 +1,370 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "HygroVue10_Specifications_SplitCells (2).xlsx",
+    "sheet": "HygroVue10_Specifications"
+  },
+  "products": [
+    {
+      "product_id": "CSI_HYGROVUE_10",
+      "manufacturer": "Campbell Scientific",
+      "model": "HygroVue 10",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compatibility",
+          "name_vi": "Khả năng tương thích",
+          "value_raw": "Fully SDI-12 V1.3-compliant digital output (verified with an SDI-12 Verifier) | Compatible with SDI-12 V1.4 recorders including Campbell Scientific CR6, CR3000, CR1000X, CR800-series, CR300-series, and CR1000 data loggers. | A cable termination option allows the HygroVue 10 to connect to an Aspen 10 Edge Device.",
+          "source_rows": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor element",
+          "name_vi": "Phần tử cảm biến",
+          "value_raw": "Sensirion SHT35 derivative",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibration traceability",
+          "name_vi": "Khả năng truy xuất hiệu chuẩn",
+          "value_raw": "NIST and NPL standards. | See Sensor element calibration (p. 36) for details of calibration traceability.",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Supply voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "7 to 28 VDC",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Current consumption",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "50 μA quiescent, typical | 0.6 mA during 0.5 s measurement typical",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warm-up time",
+          "name_vi": "Thời gian khởi động",
+          "value_raw": "Sensor normally powered all the time; if power is switched, allow 1.8 s for sensor power-up.",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "12.5 mm (0.49 in) at sensor tip; maximum 18 mm (0.7 in) at connector",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Length",
+          "name_vi": "Chiều dài",
+          "value_raw": "180 mm (7.1 in), sensor only, without cable",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor body weight",
+          "name_vi": "Khối lượng thân cảm biến",
+          "value_raw": "50 g (1.8 oz)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "250 g (8.8 oz) with 5 m (16.4 ft) cable",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Housing material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "White PET-P",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Housing classification",
+          "name_vi": "Phân loại vỏ",
+          "value_raw": "IP67 (electronics housing)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor protection",
+          "name_vi": "Bảo vệ cảm biến",
+          "value_raw": "Outer glass-filled polypropylene cap fitted with a stainless steel mesh dust filter with nominal pore size of <30 µm. | The sensor element is fitted with a PTFE protective film with a filtration efficiency of >99.99% for particles of 200 nm or larger size.",
+          "source_rows": [
+            19,
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor cable connector",
+          "name_vi": "Đầu nối cáp cảm biến",
+          "value_raw": "M12, male, 4-pole, A-coded",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "EMC compliance",
+          "name_vi": "Tuân thủ EMC",
+          "value_raw": "Tested and conforms to IEC61326:2013",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibration",
+          "name_vi": "Hiệu chuẩn",
+          "value_raw": "The sensor element is individually calibrated during manufacture.",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compliance documents",
+          "name_vi": "Tài liệu tuân thủ",
+          "value_raw": "View at www.campbellsci.com/hygrovue10",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "Temperature measurement",
+          "name_en": "Operating range",
+          "name_vi": "Dải hoạt động",
+          "value_raw": "−40 to 70 °C",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "Temperature measurement",
+          "name_en": "Accuracy*",
+          "name_vi": "Độ chính xác*",
+          "value_raw": "±0.2 °C (−40 to 70 °C) | ±0.1 °C (20 to 60 °C)",
+          "source_rows": [
+            27,
+            28
+          ]
+        },
+        {
+          "section": "Temperature measurement",
+          "name_en": "Long term drift",
+          "name_vi": "Độ trôi dài hạn",
+          "value_raw": "≤±0.03 °C/year",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "Temperature measurement",
+          "name_en": "Reported resolution",
+          "name_vi": "Độ phân giải báo cáo",
+          "value_raw": "0.001 °C",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "Temperature measurement",
+          "name_en": "Repeatability**",
+          "name_vi": "Độ lặp lại**",
+          "value_raw": "0.04 °C",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "Temperature measurement",
+          "name_en": "Response time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "130 s (63% response time in air moving at 1 m/s)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "Temperature measurement",
+          "name_en": "Units",
+          "name_vi": "Đơn vị",
+          "value_raw": "Degrees Celsius",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "Temperature measurement",
+          "name_en": "-NOTE-",
+          "name_vi": "Ghi chú",
+          "value_raw": "The accuracy figures quoted are relative to factory standards. | Values are 3 standard deviations of 25 measurements at constant temperature.",
+          "source_rows": [
+            34,
+            35
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Operating range",
+          "name_vi": "Dải hoạt động",
+          "value_raw": "0 to 100% RH",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Accuracy (at 25 °C)*",
+          "name_vi": "Độ chính xác (ở 25 °C)*",
+          "value_raw": "±1.5% (0 to 80% RH) | ±2% (80 to 100% RH)",
+          "source_rows": [
+            38,
+            39
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Temperature dependence",
+          "name_vi": "Phụ thuộc nhiệt độ",
+          "value_raw": "< ±1% RH (−40 to 60 °C)",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Short term hysteresis",
+          "name_vi": "Độ trễ ngắn hạn",
+          "value_raw": "< ±1% RH",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Long-term stability",
+          "name_vi": "Độ ổn định dài hạn",
+          "value_raw": "±0.5% per year (drift in clean air conditions)",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Reported resolution",
+          "name_vi": "Độ phân giải báo cáo",
+          "value_raw": "0.001% RH",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Repeatability**",
+          "name_vi": "Độ lặp lại**",
+          "value_raw": "0.05% RH",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Response time with filter",
+          "name_vi": "Thời gian đáp ứng với bộ lọc",
+          "value_raw": "8 s (63% response time in air moving at 1 m/s @ 25 °C)",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "Environmental performance",
+          "name_vi": "Hiệu năng môi trường",
+          "value_raw": "See Environmental performance (p. 24)",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "Relative humidity measurement",
+          "name_en": "-NOTE-",
+          "name_vi": "Ghi chú",
+          "value_raw": "The accuracy figures quoted are relative to factory standards. | Values are 3 standard deviations of 25 measurements at constant humidity.",
+          "source_rows": [
+            47,
+            48
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": "hygrovue10_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/hygrovue10"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11956",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1553 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CS120A_CS125_Master_Specifications_SplitCells.xlsx",
+    "sheet": "CS120A_CS125_Master"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS120A_ST",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS120A-ST",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CS120A",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Temperature Version",
+          "name_vi": "Phiên bản nhiệt độ",
+          "value_raw": "ST",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "CS120A | Temperature version: ST | Operating temperature: -25° to +60°C",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable Length Options",
+          "name_vi": "Tùy chọn chiều dài cáp",
+          "value_raw": "5 m (17 ft) per sensor | 10 m (33 ft) per sensor | 15 m (50 ft) per sensor | 30 m (100 ft) per sensor",
+          "source_rows": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "2 years",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "ENVIRONMENTAL",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-25° to +60°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Signal Type/Output",
+          "name_vi": "Loại tín hiệu/Đầu ra",
+          "value_raw": "RS-232 | RS-485",
+          "source_rows": [
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Measurement Description",
+          "name_vi": "Mô tả phép đo",
+          "value_raw": "Meteorological Observable Range (MOR)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Maximum Reported Visibility",
+          "name_vi": "Tầm nhìn báo cáo tối đa",
+          "value_raw": "100 km | 62.1 mi",
+          "source_rows": [
+            17,
+            18
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Minimum Reported Visibility",
+          "name_vi": "Tầm nhìn báo cáo tối thiểu",
+          "value_raw": "5 m | 16.4 ft",
+          "source_rows": [
+            19,
+            20
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "< 600 m (< 1968.5 ft): ±8% | 600 to 10,000 m (1968.5 to 32,808.4 ft): ±10% | 10,000 to 15,000 m (32,808.4 to 49,212.6 ft): ±15% | 15,000 to 75,000 m (49,212.6 to 246,063 ft): ±20%",
+          "source_rows": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "1 m | 3.3 ft",
+          "source_rows": [
+            25,
+            26
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Stainless-steel V-bolt bracket | Pole outer diameter: 32 to 52.5 mm | Pole outer diameter: 1.25 to 2 in.",
+          "source_rows": [
+            59,
+            60,
+            61
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Electronics Supply Voltage",
+          "name_vi": "Điện áp cấp điện tử",
+          "value_raw": "7 to 30 Vdc",
+          "source_rows": [
+            64
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Total Unit Power",
+          "name_vi": "Công suất toàn bộ thiết bị",
+          "value_raw": "< 3 W while sampling continuously | Includes dew heaters",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Standards",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "Frangible masts available to customer requirements to meet ICAO recommendations | Typical sample volume height: 2.5 m (8.2 ft)",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Sensor Dimensions",
+          "name_vi": "Kích thước cảm biến",
+          "value_raw": "540 x 640 x 246 mm | 21.26 x 25.2 x 9.7 in. | Including mount",
+          "source_rows": [
+            69,
+            70,
+            71
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Sensor Weight",
+          "name_vi": "Khối lượng cảm biến",
+          "value_raw": "~3 kg | 6.6 lb | Depends on mounting system",
+          "source_rows": [
+            72,
+            73,
+            74
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "LED Center Wavelength",
+          "name_vi": "Bước sóng trung tâm LED",
+          "value_raw": "850 nm",
+          "source_rows": [
+            78
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "LED Spectral Bandwidth",
+          "name_vi": "Băng thông phổ LED",
+          "value_raw": "±35 nm",
+          "source_rows": [
+            79
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Light Pulse Rate",
+          "name_vi": "Tần số xung ánh sáng",
+          "value_raw": "1 kHz",
+          "source_rows": [
+            80
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Operating Humidity Range",
+          "name_vi": "Dải độ ẩm hoạt động",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            82
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Sensor Sealing",
+          "name_vi": "Cấp kín cảm biến",
+          "value_raw": "Rated to IP66",
+          "source_rows": [
+            83
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Wind Speed",
+          "name_vi": "Tốc độ gió",
+          "value_raw": "Up to 60 m/s",
+          "source_rows": [
+            84
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Sensor Heater Threshold",
+          "name_vi": "Ngưỡng bộ gia nhiệt cảm biến",
+          "value_raw": "> 40°C: dew heater off | < 35°C: dew heater on | < 5°C: hood heater on | > 15°C: hood heater off",
+          "source_rows": [
+            85,
+            86,
+            87,
+            88
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "DSP & Dew Heaters Power",
+          "name_vi": "Công suất DSP & bộ gia nhiệt chống sương",
+          "value_raw": "2 x 0.6 W | Total: 1.4 W for dew heater",
+          "source_rows": [
+            90,
+            91
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Typical Current Consumption @ 12 Vdc",
+          "name_vi": "Dòng tiêu thụ điển hình @ 12 Vdc",
+          "value_raw": "Dew heaters active + RS-232 communications: 200 mA | Continuous sampling + dew heaters active: 200 mA | Continuous sampling + dew heaters disabled: 110 mA | No sampling + dew heaters disabled: 21 mA",
+          "source_rows": [
+            92,
+            93,
+            94,
+            95
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Hood Heater Supply Voltage",
+          "name_vi": "Điện áp cấp bộ gia nhiệt hood",
+          "value_raw": "24 V dc or ac",
+          "source_rows": [
+            96
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Hood Heater Power",
+          "name_vi": "Công suất bộ gia nhiệt hood",
+          "value_raw": "2 x 30 W | Total: 60 W",
+          "source_rows": [
+            97,
+            98
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Serial Interface",
+          "name_vi": "Giao diện nối tiếp",
+          "value_raw": "RS-232 or RS-485 | 8 bit data bytes | 1 stop bit",
+          "source_rows": [
+            99,
+            100,
+            101
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Serial Data Rates",
+          "name_vi": "Tốc độ dữ liệu nối tiếp",
+          "value_raw": "1200 to 115,200 bps | Default: 38,400 bps",
+          "source_rows": [
+            102,
+            103
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs120a.pdf",
+        "user_manual": "cs120a-cs125man.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs120a"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/9003",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CS120A_XT",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS120A-XT",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CS120A",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Temperature Version",
+          "name_vi": "Phiên bản nhiệt độ",
+          "value_raw": "XT",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "CS120A | Temperature version: XT | Operating temperature: -40° to +70°C",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable Length Options",
+          "name_vi": "Tùy chọn chiều dài cáp",
+          "value_raw": "5 m (17 ft) per sensor | 10 m (33 ft) per sensor | 15 m (50 ft) per sensor | 30 m (100 ft) per sensor",
+          "source_rows": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "2 years",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "ENVIRONMENTAL",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Signal Type/Output",
+          "name_vi": "Loại tín hiệu/Đầu ra",
+          "value_raw": "RS-232 | RS-485",
+          "source_rows": [
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Measurement Description",
+          "name_vi": "Mô tả phép đo",
+          "value_raw": "Meteorological Observable Range (MOR)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Maximum Reported Visibility",
+          "name_vi": "Tầm nhìn báo cáo tối đa",
+          "value_raw": "100 km | 62.1 mi",
+          "source_rows": [
+            17,
+            18
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Minimum Reported Visibility",
+          "name_vi": "Tầm nhìn báo cáo tối thiểu",
+          "value_raw": "5 m | 16.4 ft",
+          "source_rows": [
+            19,
+            20
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "< 600 m (< 1968.5 ft): ±8% | 600 to 10,000 m (1968.5 to 32,808.4 ft): ±10% | 10,000 to 15,000 m (32,808.4 to 49,212.6 ft): ±15% | 15,000 to 75,000 m (49,212.6 to 246,063 ft): ±20%",
+          "source_rows": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "1 m | 3.3 ft",
+          "source_rows": [
+            25,
+            26
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Stainless-steel V-bolt bracket | Pole outer diameter: 32 to 52.5 mm | Pole outer diameter: 1.25 to 2 in.",
+          "source_rows": [
+            59,
+            60,
+            61
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Electronics Supply Voltage",
+          "name_vi": "Điện áp cấp điện tử",
+          "value_raw": "7 to 30 Vdc",
+          "source_rows": [
+            64
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Total Unit Power",
+          "name_vi": "Công suất toàn bộ thiết bị",
+          "value_raw": "< 3 W while sampling continuously | Includes dew heaters",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Standards",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "Frangible masts available to customer requirements to meet ICAO recommendations | Typical sample volume height: 2.5 m (8.2 ft)",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Sensor Dimensions",
+          "name_vi": "Kích thước cảm biến",
+          "value_raw": "540 x 640 x 246 mm | 21.26 x 25.2 x 9.7 in. | Including mount",
+          "source_rows": [
+            69,
+            70,
+            71
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Sensor Weight",
+          "name_vi": "Khối lượng cảm biến",
+          "value_raw": "~3 kg | 6.6 lb | Depends on mounting system",
+          "source_rows": [
+            72,
+            73,
+            74
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "LED Center Wavelength",
+          "name_vi": "Bước sóng trung tâm LED",
+          "value_raw": "850 nm",
+          "source_rows": [
+            78
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "LED Spectral Bandwidth",
+          "name_vi": "Băng thông phổ LED",
+          "value_raw": "±35 nm",
+          "source_rows": [
+            79
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Light Pulse Rate",
+          "name_vi": "Tần số xung ánh sáng",
+          "value_raw": "1 kHz",
+          "source_rows": [
+            80
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Operating Humidity Range",
+          "name_vi": "Dải độ ẩm hoạt động",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            82
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Sensor Sealing",
+          "name_vi": "Cấp kín cảm biến",
+          "value_raw": "Rated to IP66",
+          "source_rows": [
+            83
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Wind Speed",
+          "name_vi": "Tốc độ gió",
+          "value_raw": "Up to 60 m/s",
+          "source_rows": [
+            84
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Sensor Heater Threshold",
+          "name_vi": "Ngưỡng bộ gia nhiệt cảm biến",
+          "value_raw": "> 40°C: dew heater off | < 35°C: dew heater on | < 5°C: hood heater on | > 15°C: hood heater off",
+          "source_rows": [
+            85,
+            86,
+            87,
+            88
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "DSP & Dew Heaters Power",
+          "name_vi": "Công suất DSP & bộ gia nhiệt chống sương",
+          "value_raw": "2 x 0.6 W | Total: 1.4 W for dew heater",
+          "source_rows": [
+            90,
+            91
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Typical Current Consumption @ 12 Vdc",
+          "name_vi": "Dòng tiêu thụ điển hình @ 12 Vdc",
+          "value_raw": "Dew heaters active + RS-232 communications: 200 mA | Continuous sampling + dew heaters active: 200 mA | Continuous sampling + dew heaters disabled: 110 mA | No sampling + dew heaters disabled: 21 mA",
+          "source_rows": [
+            92,
+            93,
+            94,
+            95
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Hood Heater Supply Voltage",
+          "name_vi": "Điện áp cấp bộ gia nhiệt hood",
+          "value_raw": "24 V dc or ac",
+          "source_rows": [
+            96
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Hood Heater Power",
+          "name_vi": "Công suất bộ gia nhiệt hood",
+          "value_raw": "2 x 30 W | Total: 60 W",
+          "source_rows": [
+            97,
+            98
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Serial Interface",
+          "name_vi": "Giao diện nối tiếp",
+          "value_raw": "RS-232 or RS-485 | 8 bit data bytes | 1 stop bit",
+          "source_rows": [
+            99,
+            100,
+            101
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Serial Data Rates",
+          "name_vi": "Tốc độ dữ liệu nối tiếp",
+          "value_raw": "1200 to 115,200 bps | Default: 38,400 bps",
+          "source_rows": [
+            102,
+            103
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs120a.pdf",
+        "user_manual": "cs120a-cs125man.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs120a"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/9003",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CS125_ST",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS125-ST",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CS125",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Temperature Version",
+          "name_vi": "Phiên bản nhiệt độ",
+          "value_raw": "ST",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "CS125 | Temperature version: ST | Operating temperature: -25° to +60°C",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable Length Options",
+          "name_vi": "Tùy chọn chiều dài cáp",
+          "value_raw": "5 m (17 ft) per sensor | 10 m (33 ft) per sensor | 15 m (50 ft) per sensor | 30 m (100 ft) per sensor",
+          "source_rows": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "2 years",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "ENVIRONMENTAL",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-25° to +60°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Measurement Description",
+          "name_vi": "Mô tả phép đo",
+          "value_raw": "Present Weather and Visibility",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Maximum Reported Visibility",
+          "name_vi": "Tầm nhìn báo cáo tối đa",
+          "value_raw": "100 km | 62.1 mi",
+          "source_rows": [
+            17,
+            18
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Minimum Reported Visibility",
+          "name_vi": "Tầm nhìn báo cáo tối thiểu",
+          "value_raw": "5 m | 16.4 ft",
+          "source_rows": [
+            19,
+            20
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "Up to 600 m (1968.5 ft): ±8% | 600 to 10,000 m (1968.5 to 32,808.4 ft): ±10% | 10,000 to 15,000 m (32,808.4 to 49,212.6 ft): ±15% | Above 15,000 m (49,212.6 ft): ±20%",
+          "source_rows": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "1 m | 3.28 ft",
+          "source_rows": [
+            25,
+            26
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Outputs",
+          "name_vi": "Đầu ra",
+          "value_raw": "Present and past weather | Mist | Fog | Drizzle | Freezing drizzle | Drizzle and snow | Rain | Freezing rain | Rain and drizzle | Rain and snow | Snow | 57 SYNOP present weather codes | Associated METAR present weather codes | Associated NWS present weather codes | Hail detection | Past weather codes",
+          "source_rows": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Precipitation Detection Sensitivity",
+          "name_vi": "Độ nhạy phát hiện lượng mưa",
+          "value_raw": "0.05 mm/h",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accumulation Reporting Range",
+          "name_vi": "Dải báo cáo lượng tích lũy",
+          "value_raw": "0 to 999.9 mm | 0 to 39.37 in.",
+          "source_rows": [
+            44,
+            45
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accumulation Accuracy",
+          "name_vi": "Độ chính xác lượng tích lũy",
+          "value_raw": "±15% | Against factory calibration standards in the laboratory | For liquid precipitation",
+          "source_rows": [
+            46,
+            47,
+            48
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accumulation Resolution",
+          "name_vi": "Độ phân giải lượng tích lũy",
+          "value_raw": "0.1 mm | 0.0039 in.",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Rain Intensity Range",
+          "name_vi": "Dải cường độ mưa",
+          "value_raw": "0 to 999.9 mm/h | 0 to 39.37 in./h | Maximum reported intensity depends on mixture of precipitation falling",
+          "source_rows": [
+            51,
+            52,
+            53
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Intensity Accuracy",
+          "name_vi": "Độ chính xác cường độ",
+          "value_raw": "±15% | Against factory calibration standards in the laboratory | For liquid precipitation",
+          "source_rows": [
+            54,
+            55,
+            56
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Intensity Resolution",
+          "name_vi": "Độ phân giải cường độ",
+          "value_raw": "0.01 mm/h | 0.00039 in./h",
+          "source_rows": [
+            57,
+            58
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Stainless-steel clip on V-bolt mounting | Pole diameter: 32 to 52.5 mm | Pole diameter: 1.26 to 2.07 in.",
+          "source_rows": [
+            59,
+            60,
+            61
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Mounting Pole",
+          "name_vi": "Cột lắp đặt",
+          "value_raw": "Optical mounting pole available | Recommended WMO sample volume height: 1.5 m (4.9 ft)",
+          "source_rows": [
+            62,
+            63
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Electronics Supply Voltage",
+          "name_vi": "Điện áp cấp điện tử",
+          "value_raw": "7 to 30 Vdc",
+          "source_rows": [
+            64
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Total Unit Power",
+          "name_vi": "Công suất toàn bộ thiết bị",
+          "value_raw": "< 3 W while sampling continuously | Includes dew heaters",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Standards",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "Frangible masts available to customer requirements to meet ICAO recommendations | Typical sample volume height: 2.5 m (8.2 ft)",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Sensor Dimensions",
+          "name_vi": "Kích thước cảm biến",
+          "value_raw": "540 x 640 x 246 mm | 21.26 x 25.2 x 9.7 in. | Including mount",
+          "source_rows": [
+            69,
+            70,
+            71
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Sensor Weight",
+          "name_vi": "Khối lượng cảm biến",
+          "value_raw": "~3 kg | 6.61 lb | Depends on mounting system",
+          "source_rows": [
+            72,
+            73,
+            74
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Cable Length",
+          "name_vi": "Chiều dài cáp",
+          "value_raw": "5 m | 16.4 ft",
+          "source_rows": [
+            75,
+            76
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Emitter Light Frequency",
+          "name_vi": "Tần số ánh sáng phát",
+          "value_raw": "850 nm",
+          "source_rows": [
+            81
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Operating Humidity Range",
+          "name_vi": "Dải độ ẩm hoạt động",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            82
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Sensor Sealing",
+          "name_vi": "Cấp kín cảm biến",
+          "value_raw": "Rated to IP66",
+          "source_rows": [
+            83
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Wind Speed",
+          "name_vi": "Tốc độ gió",
+          "value_raw": "Up to 60 m/s",
+          "source_rows": [
+            84
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "DSP & Dew Heaters Power",
+          "name_vi": "Công suất DSP & bộ gia nhiệt chống sương",
+          "value_raw": "2 x 0.6 W | Total: 1.2 W",
+          "source_rows": [
+            90,
+            91
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Hood Heater Supply Voltage",
+          "name_vi": "Điện áp cấp bộ gia nhiệt hood",
+          "value_raw": "24 V dc or ac",
+          "source_rows": [
+            96
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Hood Heater Power",
+          "name_vi": "Công suất bộ gia nhiệt hood",
+          "value_raw": "2 x 30 W | Total: 60 W",
+          "source_rows": [
+            97,
+            98
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Serial Interface",
+          "name_vi": "Giao diện nối tiếp",
+          "value_raw": "RS-232 or RS-485",
+          "source_rows": [
+            99
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Serial Data Rates",
+          "name_vi": "Tốc độ dữ liệu nối tiếp",
+          "value_raw": "1200 to 115,200 bps | Default: 38,400 bps",
+          "source_rows": [
+            102,
+            103
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Alarm Outputs",
+          "name_vi": "Đầu ra cảnh báo",
+          "value_raw": "2 x 0 to 5 V outputs | 32 mA max",
+          "source_rows": [
+            104,
+            105
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Material",
+          "name_vi": "Vật liệu",
+          "value_raw": "Stainless steel | Hard-anodized aluminum powder-coated",
+          "source_rows": [
+            106,
+            107
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs125.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/cs125"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8886",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CS125_XT",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS125-XT",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CS125",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Temperature Version",
+          "name_vi": "Phiên bản nhiệt độ",
+          "value_raw": "XT",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "CS125 | Temperature version: XT | Operating temperature: -40° to +70°C",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable Length Options",
+          "name_vi": "Tùy chọn chiều dài cáp",
+          "value_raw": "5 m (17 ft) per sensor | 10 m (33 ft) per sensor | 15 m (50 ft) per sensor | 30 m (100 ft) per sensor",
+          "source_rows": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "2 years",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "ENVIRONMENTAL",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Measurement Description",
+          "name_vi": "Mô tả phép đo",
+          "value_raw": "Present Weather and Visibility",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Maximum Reported Visibility",
+          "name_vi": "Tầm nhìn báo cáo tối đa",
+          "value_raw": "100 km | 62.1 mi",
+          "source_rows": [
+            17,
+            18
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Minimum Reported Visibility",
+          "name_vi": "Tầm nhìn báo cáo tối thiểu",
+          "value_raw": "5 m | 16.4 ft",
+          "source_rows": [
+            19,
+            20
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "Up to 600 m (1968.5 ft): ±8% | 600 to 10,000 m (1968.5 to 32,808.4 ft): ±10% | 10,000 to 15,000 m (32,808.4 to 49,212.6 ft): ±15% | Above 15,000 m (49,212.6 ft): ±20%",
+          "source_rows": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "1 m | 3.28 ft",
+          "source_rows": [
+            25,
+            26
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Outputs",
+          "name_vi": "Đầu ra",
+          "value_raw": "Present and past weather | Mist | Fog | Drizzle | Freezing drizzle | Drizzle and snow | Rain | Freezing rain | Rain and drizzle | Rain and snow | Snow | 57 SYNOP present weather codes | Associated METAR present weather codes | Associated NWS present weather codes | Hail detection | Past weather codes",
+          "source_rows": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Precipitation Detection Sensitivity",
+          "name_vi": "Độ nhạy phát hiện lượng mưa",
+          "value_raw": "0.05 mm/h",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accumulation Reporting Range",
+          "name_vi": "Dải báo cáo lượng tích lũy",
+          "value_raw": "0 to 999.9 mm | 0 to 39.37 in.",
+          "source_rows": [
+            44,
+            45
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accumulation Accuracy",
+          "name_vi": "Độ chính xác lượng tích lũy",
+          "value_raw": "±15% | Against factory calibration standards in the laboratory | For liquid precipitation",
+          "source_rows": [
+            46,
+            47,
+            48
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Accumulation Resolution",
+          "name_vi": "Độ phân giải lượng tích lũy",
+          "value_raw": "0.1 mm | 0.0039 in.",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Rain Intensity Range",
+          "name_vi": "Dải cường độ mưa",
+          "value_raw": "0 to 999.9 mm/h | 0 to 39.37 in./h | Maximum reported intensity depends on mixture of precipitation falling",
+          "source_rows": [
+            51,
+            52,
+            53
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Intensity Accuracy",
+          "name_vi": "Độ chính xác cường độ",
+          "value_raw": "±15% | Against factory calibration standards in the laboratory | For liquid precipitation",
+          "source_rows": [
+            54,
+            55,
+            56
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Intensity Resolution",
+          "name_vi": "Độ phân giải cường độ",
+          "value_raw": "0.01 mm/h | 0.00039 in./h",
+          "source_rows": [
+            57,
+            58
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Stainless-steel clip on V-bolt mounting | Pole diameter: 32 to 52.5 mm | Pole diameter: 1.26 to 2.07 in.",
+          "source_rows": [
+            59,
+            60,
+            61
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Mounting Pole",
+          "name_vi": "Cột lắp đặt",
+          "value_raw": "Optical mounting pole available | Recommended WMO sample volume height: 1.5 m (4.9 ft)",
+          "source_rows": [
+            62,
+            63
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Electronics Supply Voltage",
+          "name_vi": "Điện áp cấp điện tử",
+          "value_raw": "7 to 30 Vdc",
+          "source_rows": [
+            64
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Total Unit Power",
+          "name_vi": "Công suất toàn bộ thiết bị",
+          "value_raw": "< 3 W while sampling continuously | Includes dew heaters",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Standards",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "Frangible masts available to customer requirements to meet ICAO recommendations | Typical sample volume height: 2.5 m (8.2 ft)",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Sensor Dimensions",
+          "name_vi": "Kích thước cảm biến",
+          "value_raw": "540 x 640 x 246 mm | 21.26 x 25.2 x 9.7 in. | Including mount",
+          "source_rows": [
+            69,
+            70,
+            71
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Sensor Weight",
+          "name_vi": "Khối lượng cảm biến",
+          "value_raw": "~3 kg | 6.61 lb | Depends on mounting system",
+          "source_rows": [
+            72,
+            73,
+            74
+          ]
+        },
+        {
+          "section": "GENERAL / OPERATIONAL SPECIFICATIONS",
+          "name_en": "Cable Length",
+          "name_vi": "Chiều dài cáp",
+          "value_raw": "5 m | 16.4 ft",
+          "source_rows": [
+            75,
+            76
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Emitter Light Frequency",
+          "name_vi": "Tần số ánh sáng phát",
+          "value_raw": "850 nm",
+          "source_rows": [
+            81
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Operating Humidity Range",
+          "name_vi": "Dải độ ẩm hoạt động",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            82
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Sensor Sealing",
+          "name_vi": "Cấp kín cảm biến",
+          "value_raw": "Rated to IP66",
+          "source_rows": [
+            83
+          ]
+        },
+        {
+          "section": "OPTICAL / PULSE",
+          "name_en": "Wind Speed",
+          "name_vi": "Tốc độ gió",
+          "value_raw": "Up to 60 m/s",
+          "source_rows": [
+            84
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "DSP & Dew Heaters Power",
+          "name_vi": "Công suất DSP & bộ gia nhiệt chống sương",
+          "value_raw": "2 x 0.6 W | Total: 1.2 W",
+          "source_rows": [
+            90,
+            91
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Hood Heater Supply Voltage",
+          "name_vi": "Điện áp cấp bộ gia nhiệt hood",
+          "value_raw": "24 V dc or ac",
+          "source_rows": [
+            96
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Hood Heater Power",
+          "name_vi": "Công suất bộ gia nhiệt hood",
+          "value_raw": "2 x 30 W | Total: 60 W",
+          "source_rows": [
+            97,
+            98
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Serial Interface",
+          "name_vi": "Giao diện nối tiếp",
+          "value_raw": "RS-232 or RS-485",
+          "source_rows": [
+            99
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Serial Data Rates",
+          "name_vi": "Tốc độ dữ liệu nối tiếp",
+          "value_raw": "1200 to 115,200 bps | Default: 38,400 bps",
+          "source_rows": [
+            102,
+            103
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Alarm Outputs",
+          "name_vi": "Đầu ra cảnh báo",
+          "value_raw": "2 x 0 to 5 V outputs | 32 mA max",
+          "source_rows": [
+            104,
+            105
+          ]
+        },
+        {
+          "section": "ELECTRICAL / HEATERS / INTERFACE",
+          "name_en": "Material",
+          "name_vi": "Vật liệu",
+          "value_raw": "Stainless steel | Hard-anodized aluminum powder-coated",
+          "source_rows": [
+            106,
+            107
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs125.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/cs125"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8886",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      }
+    }
+  ]
+}

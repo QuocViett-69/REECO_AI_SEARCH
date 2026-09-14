@@ -1,0 +1,422 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "TX325.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_TX325",
+      "manufacturer": "Campbell Scientific",
+      "model": "TX325",
+      "product_name_en": "TX325 Satellite Transmitter for GOES V2",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Satellite Transmitter for GOES CS2/v2.0",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Satellite System",
+          "name_vi": "Hệ thống vệ tinh",
+          "value_raw": "GOES DCS",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Successor To",
+          "name_vi": "Sản phẩm kế nhiệm",
+          "value_raw": "TX321",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Direction",
+          "name_vi": "Hướng truyền thông",
+          "value_raw": "One-way satellite data transmission",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Transmissions Supported",
+          "name_vi": "Kiểu truyền hỗ trợ",
+          "value_raw": "Random; Timed (Scheduled)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Transmission Rates",
+          "name_vi": "Tốc độ truyền hỗ trợ",
+          "value_raw": "300 and 1200 bps",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Data Formats",
+          "name_vi": "Định dạng dữ liệu",
+          "value_raw": "ASCII (SHEF); Pseudo Binary",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Radio Module",
+          "name_vi": "Mô-đun vô tuyến",
+          "value_raw": "OmniSat-3",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Certification",
+          "name_vi": "Chứng nhận",
+          "value_raw": "NOAA/NESDIS GOES High Data Rate Certification Standard V2, Certification #12142012",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +60 °C",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Storage Temperature Range",
+          "name_vi": "Dải nhiệt độ lưu trữ",
+          "value_raw": "-55 to +75 °C",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Case Dimensions – Without Connectors",
+          "name_vi": "Kích thước vỏ – không gồm đầu nối",
+          "value_raw": "15.88 × 12.7 × 4.57 cm (6.25 × 5 × 1.8 in.)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Dimensions – With Connectors",
+          "name_vi": "Kích thước tối đa – gồm đầu nối",
+          "value_raw": "15.88 × 14.99 × 4.57 cm (6.25 × 5.9 × 1.8 in.)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.77 kg (1.7 lb)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supply Voltage Range",
+          "name_vi": "Dải điện áp nguồn",
+          "value_raw": "10.5 to 16 Vdc",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Standby",
+          "name_vi": "Dòng tiêu thụ – chờ",
+          "value_raw": "<5 mA (2.8 mA typical at 12 Vdc)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – GPS Acquisition",
+          "name_vi": "Dòng tiêu thụ – khi thu GPS",
+          "value_raw": "<50 mA (25 mA typical at 12 Vdc)",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Transmitting",
+          "name_vi": "Dòng tiêu thụ – khi truyền",
+          "value_raw": "<2.5 A (1.8 A typical at 12 Vdc)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Connector",
+          "name_vi": "Đầu nối nguồn",
+          "value_raw": "2-pin screw terminal, 0.2 in. pitch",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Protection",
+          "name_vi": "Bảo vệ nguồn",
+          "value_raw": "Up to 23.1 V (reverse polarity and overvoltage); total system current fused at 5 A with replaceable fuse",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Baud Rates",
+          "name_vi": "Tốc độ baud",
+          "value_raw": "300 and 1200 bps",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Transmit Power – 300 baud",
+          "name_vi": "Công suất phát – 300 baud",
+          "value_raw": "31 dBm maximum",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical EIRP – 300 baud",
+          "name_vi": "EIRP điển hình – 300 baud",
+          "value_raw": "37 to 41 dBm",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum EIRP – 300 baud",
+          "name_vi": "EIRP tối đa – 300 baud",
+          "value_raw": "41 dBm",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Transmit Power – 1200 baud",
+          "name_vi": "Công suất phát – 1200 baud",
+          "value_raw": "37 dBm maximum",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical EIRP – 1200 baud",
+          "name_vi": "EIRP điển hình – 1200 baud",
+          "value_raw": "43 to 47 dBm",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum EIRP – 1200 baud",
+          "name_vi": "EIRP tối đa – 1200 baud",
+          "value_raw": "47 dBm",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Frequency Range",
+          "name_vi": "Dải tần",
+          "value_raw": "401.701 to 402.09925 MHz",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Initial Frequency Stability",
+          "name_vi": "Độ ổn định tần số ban đầu",
+          "value_raw": "±20 Hz disciplined to GPS",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Integrated GPS Receiver",
+          "name_vi": "Bộ thu GPS tích hợp",
+          "value_raw": "Yes",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "GPS Initial Time Accuracy",
+          "name_vi": "Độ chính xác thời gian GPS ban đầu",
+          "value_raw": "±100 μs (synchronized to GPS)",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Clock Drift Without GPS",
+          "name_vi": "Độ trôi đồng hồ khi không GPS",
+          "value_raw": "±40 ms/day",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "GPS Schedule",
+          "name_vi": "Chu kỳ cập nhật GPS",
+          "value_raw": "1 fix at power up; updated roughly every 11 hours",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum RF Input Gain",
+          "name_vi": "Độ lợi RF đầu vào tối đa",
+          "value_raw": "25 dB",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "GPS Receiver Type",
+          "name_vi": "Loại bộ thu GPS",
+          "value_raw": "3.3 V active",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "GPS Connector Type",
+          "name_vi": "Loại đầu nối GPS",
+          "value_raw": "SMA jack",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "External GPS Antenna Supply",
+          "name_vi": "Nguồn cấp anten GPS ngoài",
+          "value_raw": "Up to 19 mA at 2.7 V",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Recommended Maximum GPS Antenna LNA",
+          "name_vi": "LNA anten GPS tối đa khuyến nghị",
+          "value_raw": "1.5 dB",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Interface",
+          "name_vi": "Giao tiếp RS-232",
+          "value_raw": "DB9 F, DCE, 3-wire RS-232",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Satellite RF Transmit Out",
+          "name_vi": "Đầu ra RF vệ tinh",
+          "value_raw": "Type N jack",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Data Loggers – Fully Compatible",
+          "name_vi": "Bộ ghi dữ liệu tương thích đầy đủ",
+          "value_raw": "GRANITE series, CR6, CR1000X series, CR350, CR300 series",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Data Loggers – Limited Compatibility",
+          "name_vi": "Bộ ghi dữ liệu tương thích hạn chế",
+          "value_raw": "CR3000, CR800 series, CR1000",
+          "source_rows": [
+            47
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "TX325_datasheet.pdf",
+        "user_manual": "TX325_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12207",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    }
+  ]
+}

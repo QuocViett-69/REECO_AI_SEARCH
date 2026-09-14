@@ -1,0 +1,583 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "NL201.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_NL201_ST",
+      "manufacturer": "Campbell Scientific",
+      "model": "NL201-ST",
+      "product_name_en": "NL201-ST",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Base Model",
+          "name_vi": "Mã sản phẩm cơ sở",
+          "value_raw": "NL201",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Network Link Interface / Serial-to-Ethernet Interface",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary communications device / Ethernet network interface",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Configuration",
+          "name_vi": "Cấu hình nhiệt độ",
+          "value_raw": "Standard temperature",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Range",
+          "name_vi": "Dải nhiệt độ",
+          "value_raw": "-25 to +50 °C",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Provides wired Ethernet connectivity to data loggers, peripherals, and other serial devices",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Modes",
+          "name_vi": "Các chế độ hỗ trợ",
+          "value_raw": "PakBus router; TCP serial server; TCP serial client; Modbus TCP/IP gateway; TLS proxy server; Ethernet-to-CS I/O bridge",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Transmission Area",
+          "name_vi": "Phạm vi sử dụng",
+          "value_raw": "Worldwide",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Connector",
+          "name_vi": "Đầu nối nguồn",
+          "value_raw": "CS I/O port or DC barrel connector; not powered over USB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Requirements",
+          "name_vi": "Yêu cầu nguồn",
+          "value_raw": "7 to 20 VDC",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CS I/O Port",
+          "name_vi": "Cổng CS I/O",
+          "value_raw": "SDC 7, 8, 10, or 11; does not support ME",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Port",
+          "name_vi": "Cổng RS-232",
+          "value_raw": "DTE",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "USB Port",
+          "name_vi": "Cổng USB",
+          "value_raw": "Micro-B; configuration only",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ethernet Port",
+          "name_vi": "Cổng Ethernet",
+          "value_raw": "10Base-T and 100Base-TX; full/half duplex; Auto-MDIX; Auto-IP (APIPA)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Network Protocols",
+          "name_vi": "Các giao thức mạng hỗ trợ",
+          "value_raw": "IPv4, IPv6, ICMP/Ping, ICMPv6/Ping, TCP, DHCP Client, SLAAC, DNS Client, HTTPS Proxy, Telnet Server, TLS, PakBus, Modbus TCP/IP",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "TCP Connections",
+          "name_vi": "Kết nối TCP",
+          "value_raw": "50 simultaneous connections; up to 10 may be used for TLS",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "PakBus Router Capacity",
+          "name_vi": "Dung lượng PakBus Router",
+          "value_raw": "50 routes",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Modbus Server Capacity",
+          "name_vi": "Dung lượng Modbus Server",
+          "value_raw": "15 transactions maximum",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Configuration Methods",
+          "name_vi": "Phương thức cấu hình",
+          "value_raw": "Device Configuration Utility over USB or Ethernet; terminal menu over Telnet; terminal menu over RS-232",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Service Requirements",
+          "name_vi": "Yêu cầu dịch vụ",
+          "value_raw": "Ethernet access",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "16 × 6.73 × 2.54 cm (6.3 × 2.65 × 1 in.)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "177 g (6.3 oz)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Active",
+          "name_vi": "Dòng tiêu thụ – hoạt động",
+          "value_raw": "50 mA @ 13 VDC",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Forced Standby",
+          "name_vi": "Dòng tiêu thụ – Forced Standby",
+          "value_raw": "2 mA (available in Ethernet-to-CS I/O Bridge Mode)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Communication Rate",
+          "name_vi": "Tốc độ truyền RS-232",
+          "value_raw": "1200 bps to 115.2 kbps",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CS I/O Communication Rate",
+          "name_vi": "Tốc độ truyền CS I/O",
+          "value_raw": "9600 bps to 460.8 kbps",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ethernet Communication Rate",
+          "name_vi": "Tốc độ truyền Ethernet",
+          "value_raw": "10/100 Mbps",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS compliant; Class B under European Standards; EN61326-1:2013",
+          "source_rows": [
+            31
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "nl201_datasheet.pdf",
+        "user_manual": "nl200-201_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4349",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    },
+    {
+      "product_id": "CSI_NL201_XT",
+      "manufacturer": "Campbell Scientific",
+      "model": "NL201-XT",
+      "product_name_en": "NL201-XT",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Base Model",
+          "name_vi": "Mã sản phẩm cơ sở",
+          "value_raw": "NL201",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Network Link Interface / Serial-to-Ethernet Interface",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary communications device / Ethernet network interface",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Configuration",
+          "name_vi": "Cấu hình nhiệt độ",
+          "value_raw": "Extended temperature",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Range",
+          "name_vi": "Dải nhiệt độ",
+          "value_raw": "-55 to +85 °C",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Provides wired Ethernet connectivity to data loggers, peripherals, and other serial devices",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Modes",
+          "name_vi": "Các chế độ hỗ trợ",
+          "value_raw": "PakBus router; TCP serial server; TCP serial client; Modbus TCP/IP gateway; TLS proxy server; Ethernet-to-CS I/O bridge",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Transmission Area",
+          "name_vi": "Phạm vi sử dụng",
+          "value_raw": "Worldwide",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Connector",
+          "name_vi": "Đầu nối nguồn",
+          "value_raw": "CS I/O port or DC barrel connector; not powered over USB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Requirements",
+          "name_vi": "Yêu cầu nguồn",
+          "value_raw": "7 to 20 VDC",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CS I/O Port",
+          "name_vi": "Cổng CS I/O",
+          "value_raw": "SDC 7, 8, 10, or 11; does not support ME",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Port",
+          "name_vi": "Cổng RS-232",
+          "value_raw": "DTE",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "USB Port",
+          "name_vi": "Cổng USB",
+          "value_raw": "Micro-B; configuration only",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ethernet Port",
+          "name_vi": "Cổng Ethernet",
+          "value_raw": "10Base-T and 100Base-TX; full/half duplex; Auto-MDIX; Auto-IP (APIPA)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Network Protocols",
+          "name_vi": "Các giao thức mạng hỗ trợ",
+          "value_raw": "IPv4, IPv6, ICMP/Ping, ICMPv6/Ping, TCP, DHCP Client, SLAAC, DNS Client, HTTPS Proxy, Telnet Server, TLS, PakBus, Modbus TCP/IP",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "TCP Connections",
+          "name_vi": "Kết nối TCP",
+          "value_raw": "50 simultaneous connections; up to 10 may be used for TLS",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "PakBus Router Capacity",
+          "name_vi": "Dung lượng PakBus Router",
+          "value_raw": "50 routes",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Modbus Server Capacity",
+          "name_vi": "Dung lượng Modbus Server",
+          "value_raw": "15 transactions maximum",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Configuration Methods",
+          "name_vi": "Phương thức cấu hình",
+          "value_raw": "Device Configuration Utility over USB or Ethernet; terminal menu over Telnet; terminal menu over RS-232",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Service Requirements",
+          "name_vi": "Yêu cầu dịch vụ",
+          "value_raw": "Ethernet access",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "16 × 6.73 × 2.54 cm (6.3 × 2.65 × 1 in.)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "177 g (6.3 oz)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Active",
+          "name_vi": "Dòng tiêu thụ – hoạt động",
+          "value_raw": "50 mA @ 13 VDC",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Forced Standby",
+          "name_vi": "Dòng tiêu thụ – Forced Standby",
+          "value_raw": "2 mA (available in Ethernet-to-CS I/O Bridge Mode)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Communication Rate",
+          "name_vi": "Tốc độ truyền RS-232",
+          "value_raw": "1200 bps to 115.2 kbps",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CS I/O Communication Rate",
+          "name_vi": "Tốc độ truyền CS I/O",
+          "value_raw": "9600 bps to 460.8 kbps",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Ethernet Communication Rate",
+          "name_vi": "Tốc độ truyền Ethernet",
+          "value_raw": "10/100 Mbps",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS compliant; Class B under European Standards; EN61326-1:2013",
+          "source_rows": [
+            31
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "nl201_datasheet.pdf",
+        "user_manual": "nl200-201_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4349",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    }
+  ]
+}

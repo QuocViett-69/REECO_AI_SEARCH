@@ -1,0 +1,1236 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CLIMAVUE50G2",
+  "model": "ClimaVue50G2",
+  "raw_record_ref": {
+    "file": "data/raw/ClimaVue40&52G2.json",
+    "product_index": 1,
+    "raw_record_key": "ClimaVue40&52G2.json#1",
+    "raw_product_id": "CSI_CLIMAVUE_50_G2",
+    "raw_model": "ClimaVue 50 G2"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Measurements Made",
+      "value_raw": "Air temperature, barometric pressure, lightning average distance, lightning strike count, precipitation, precipitation electrical conductivity (EC), relative humidity, solar radiation, tilt, wind direction, and wind speed",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "measurements_made"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Output",
+      "value_raw": "SDI-12",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "output"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Minimum Supply Voltage",
+      "value_raw": "3.6 Vdc continuous",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 2,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "minimum_supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Maximum Supply Voltage",
+      "value_raw": "15.0 Vdc continuous",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 3,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "maximum_supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-50° to +60°C (generally)0° to +60°C (precipitation sensor, but will not measure solid precipitation)-40° to +60°C (barometer and RH sensors)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 4,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Typical Current Drain @ 12 Vdc",
+      "value_raw": "< 1 mA (average)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 5,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "typical_current_drain_12_vdc",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Typical Measurement Duration",
+      "value_raw": "110 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 110,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 6,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "typical_measurement_duration"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Maximum Measurement Duration",
+      "value_raw": "3,000 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3000,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 7,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "maximum_measurement_duration"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Maximum Polling Frequency",
+      "value_raw": "10 s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 10,
+        "unit": "s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 8,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "maximum_polling_frequency",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Connection Description",
+      "value_raw": "1.25 m (4 ft) pigtail with 8-pin M12 (male) connectorMarine-grade 316 stainless-steel knurl",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 9,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "connection_description"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Diameter",
+      "value_raw": "10 cm (4 in.) including rain gauge funnel",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 10,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Height",
+      "value_raw": "28 cm (11 in.) including rain gauge funnel",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 11,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "850 g (1.87 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 850,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.87,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 12,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Ingress Protection",
+      "value_raw": "The ClimaVue 50 G2 is intended for year-round, unattended outdoor use in meteorological and environmental monitoring applications. It tolerates continuous exposure to wind, heavy rain, dust, and solar radiation. When installed properly, the instrument housing provides environmental protection functionally equivalent to an IP65 rating, though no official certification is claimed. This device should not be subjected to high-pressure water streams, submersion in liquid, or corrosive gases.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 13,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "ingress_protection"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Application of Council Directive(s)",
+      "value_raw": "2014/30/EU: Electromagnetic Compatibility Directive (EMC)2011/65/EU: Restrictions of Hazardous Substances Directive (RoHS2)2015/863/EU: Amending Annex II of RoHS Directive 2011/65/EU: Phthalates Restrictions (EU)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 14,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "application_of_council_directive_s"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Standards to Which Conformity Is Declared",
+      "value_raw": "EN 61326-1:2013: Electrical equipment for measurement, control, and laboratory use—EMC requirements—for use in industrial locationsEN 63000:2018: Technical documentation for the assessment of electrical and electronic products with respect to the restriction of hazardous substances",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 15,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "standards_to_which_conformity_is_declared"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "POWER CONSUMPTION",
+      "name_raw": "Quiescent",
+      "value_raw": "0.3 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.3,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 16,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "quiescent",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "POWER CONSUMPTION",
+      "name_raw": "Maximum Peak Current",
+      "value_raw": "33 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 33,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 17,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "maximum_peak_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "POWER CONSUMPTION",
+      "name_raw": "Average Using the R7! Command every 10 s",
+      "value_raw": "1.0 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 18,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "average_using_the_r7_command_every_10_s",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "POWER CONSUMPTION",
+      "name_raw": "Average Using the R7! Command every 60 s (or slower)",
+      "value_raw": "0.4 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.4,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 19,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "average_using_the_r7_command_every_60_s_or_slower",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "PRECIPITATION",
+      "name_raw": "Precipitation Measurement Range",
+      "value_raw": "0 to 1,500 mm/h (60 in./h)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 20,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "precipitation_measurement_range"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "PRECIPITATION",
+      "name_raw": "Precipitation Resolution",
+      "value_raw": "0.017 mm",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.017,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 21,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "precipitation_resolution"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "PRECIPITATION",
+      "name_raw": "Precipitation Accuracy",
+      "value_raw": "±5% of measurement (from 0 to 1,000 mm/h or 0 to 40 in./h)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 22,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "precipitation_accuracy"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "VAPOR PRESSURE",
+      "name_raw": "Vapor Pressure Measurement Range",
+      "value_raw": "0 to 47 kPa",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 47,
+        "unit": "kPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 23,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "vapor_pressure_measurement_range",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "VAPOR PRESSURE",
+      "name_raw": "Vapor Pressure Resolution",
+      "value_raw": "0.01 kPa",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "kPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 24,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "vapor_pressure_resolution",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "VAPOR PRESSURE",
+      "name_raw": "Vapor Pressure Accuracy or Repeatability",
+      "value_raw": "Varies with temperature and humidity±0.2 kPa typical below 40°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 25,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "vapor_pressure_accuracy_or_repeatability",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "AIR TEMPERATURE",
+      "name_raw": "Air Temperature Measurement Range",
+      "value_raw": "-50° to +60°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 26,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "air_temperature_measurement_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "AIR TEMPERATURE",
+      "name_raw": "Air Temperature Resolution",
+      "value_raw": "0.1°C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 27,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "air_temperature_resolution",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "AIR TEMPERATURE",
+      "name_raw": "Air Temperature Accuracy",
+      "value_raw": "±0.6°C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.6,
+        "unit": "°C",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 28,
+        "source_rows": [
+          47
+        ]
+      },
+      "canonical_key": "air_temperature_accuracy",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "RELATIVE HUMIDITY",
+      "name_raw": "Relative Humidity Measurement Range",
+      "value_raw": "0 to 100%",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 29,
+        "source_rows": [
+          49
+        ]
+      },
+      "canonical_key": "relative_humidity_measurement_range",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "RELATIVE HUMIDITY",
+      "name_raw": "Relative Humidity Resolution",
+      "value_raw": "0.001",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.001,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 30,
+        "source_rows": [
+          50
+        ]
+      },
+      "canonical_key": "relative_humidity_resolution",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "RELATIVE HUMIDITY",
+      "name_raw": "Relative Humidity Accuracy",
+      "value_raw": "±2.5% RH typical (varies with temperature and humidity)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 31,
+        "source_rows": [
+          52
+        ]
+      },
+      "canonical_key": "relative_humidity_accuracy",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "BAROMETRIC PRESSURE",
+      "name_raw": "Barometer Operating Temperature Range",
+      "value_raw": "-40° to +60°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 32,
+        "source_rows": [
+          54
+        ]
+      },
+      "canonical_key": "barometer_operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "BAROMETRIC PRESSURE",
+      "name_raw": "Barometric Pressure Measurement Range",
+      "value_raw": "10 to 1200 hPa",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 10,
+        "max_value": 1200,
+        "unit": "hPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 33,
+        "source_rows": [
+          56
+        ]
+      },
+      "canonical_key": "barometric_pressure_measurement_range",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "BAROMETRIC PRESSURE",
+      "name_raw": "Barometric Pressure Resolution",
+      "value_raw": "0.1 hPa",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "hPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 34,
+        "source_rows": [
+          57
+        ]
+      },
+      "canonical_key": "barometric_pressure_resolution",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "BAROMETRIC PRESSURE",
+      "name_raw": "Barometric Pressure Accuracy",
+      "value_raw": "±0.5 hPa (over the range of -40° to +60°C)±0.1 hPa (over the range of -10° to +50°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 35,
+        "source_rows": [
+          59
+        ]
+      },
+      "canonical_key": "barometric_pressure_accuracy",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "BAROMETRIC PRESSURE",
+      "name_raw": "Barometric Pressure Long-Term Drift",
+      "value_raw": "< 1 hPa/year",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "hPa/year",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 36,
+        "source_rows": [
+          61
+        ]
+      },
+      "canonical_key": "barometric_pressure_long_term_drift",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "WIND SPEED",
+      "name_raw": "Wind Speed Maximum",
+      "value_raw": "3 s gust",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 37,
+        "source_rows": [
+          67
+        ]
+      },
+      "canonical_key": "wind_speed_maximum",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "WIND SPEED",
+      "name_raw": "Wind Speed Measurement Range",
+      "value_raw": "0 to 60 m/s (0 to 135 mph)",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 60,
+        "unit": "m/s",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 0,
+          "max_value": 135,
+          "unit": "mph"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 38,
+        "source_rows": [
+          68
+        ]
+      },
+      "canonical_key": "wind_speed_measurement_range",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "WIND SPEED",
+      "name_raw": "Wind Speed Resolution",
+      "value_raw": "0.01 m/s (0.02 mph)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "m/s",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.02,
+          "unit": "mph"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 39,
+        "source_rows": [
+          69
+        ]
+      },
+      "canonical_key": "wind_speed_resolution",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "WIND SPEED",
+      "name_raw": "Wind Speed Accuracy or Repeatability",
+      "value_raw": "0.3 m/s (0.67 mph) or 6%, whichever is greater",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 40,
+        "source_rows": [
+          70
+        ]
+      },
+      "canonical_key": "wind_speed_accuracy_or_repeatability",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "WIND DIRECTION",
+      "name_raw": "Wind Direction Measurement Range",
+      "value_raw": "0° to 359°",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 359,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 41,
+        "source_rows": [
+          77
+        ]
+      },
+      "canonical_key": "wind_direction_measurement_range"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "WIND DIRECTION",
+      "name_raw": "Wind Direction Resolution",
+      "value_raw": "1°",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 42,
+        "source_rows": [
+          78
+        ]
+      },
+      "canonical_key": "wind_direction_resolution"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "WIND DIRECTION",
+      "name_raw": "Wind Direction Accuracy",
+      "value_raw": "±5°",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 5,
+        "unit": "°",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 43,
+        "source_rows": [
+          80
+        ]
+      },
+      "canonical_key": "wind_direction_accuracy"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "SOLAR RADIATION",
+      "name_raw": "Solar Radiation Measurement Range",
+      "value_raw": "0 to 1750 W m⁻²",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 1750,
+        "unit": "W/m²",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 44,
+        "source_rows": [
+          82
+        ]
+      },
+      "canonical_key": "solar_radiation_measurement_range"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "SOLAR RADIATION",
+      "name_raw": "Solar Radiation Resolution",
+      "value_raw": "1 W m⁻²",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "W/m²",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 45,
+        "source_rows": [
+          83
+        ]
+      },
+      "canonical_key": "solar_radiation_resolution"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "SOLAR RADIATION",
+      "name_raw": "Solar Radiation Accuracy",
+      "value_raw": "±5% of measurement (typical)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 46,
+        "source_rows": [
+          84
+        ]
+      },
+      "canonical_key": "solar_radiation_accuracy"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "SOLAR RADIATION",
+      "name_raw": "Solar Radiation Spectral Range",
+      "value_raw": "300 to 1150 nm",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 300,
+        "max_value": 1150,
+        "unit": "nm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 47,
+        "source_rows": [
+          85
+        ]
+      },
+      "canonical_key": "solar_radiation_spectral_range"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "TILT",
+      "name_raw": "Tilt Measurement Range",
+      "value_raw": "0° to 180°",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 180,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 48,
+        "source_rows": [
+          88
+        ]
+      },
+      "canonical_key": "tilt_measurement_range"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "TILT",
+      "name_raw": "Tilt Resolution",
+      "value_raw": "0.1°",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 49,
+        "source_rows": [
+          89
+        ]
+      },
+      "canonical_key": "tilt_resolution"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "TILT",
+      "name_raw": "Tilt Accuracy",
+      "value_raw": "±1°",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 50,
+        "source_rows": [
+          91
+        ]
+      },
+      "canonical_key": "tilt_accuracy"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "LIGHTNING STRIKE COUNT",
+      "name_raw": "Lightning Strike Count Measurement Range",
+      "value_raw": "0 to 65,535 strikes",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 65535,
+        "unit": "strikes",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 51,
+        "source_rows": [
+          94
+        ]
+      },
+      "canonical_key": "lightning_strike_count_measurement_range"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "LIGHTNING STRIKE COUNT",
+      "name_raw": "Lightning Strike Count Resolution",
+      "value_raw": "1 strike",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "strikes",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 52,
+        "source_rows": [
+          95
+        ]
+      },
+      "canonical_key": "lightning_strike_count_resolution"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "LIGHTNING STRIKE COUNT",
+      "name_raw": "Lightning Strike Count Accuracy",
+      "value_raw": ">25% detection at <10 km typical (variable with distance)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 53,
+        "source_rows": [
+          97
+        ]
+      },
+      "canonical_key": "lightning_strike_count_accuracy"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "LIGHTNING AVERAGE DISTANCE",
+      "name_raw": "Lightning Average Distance Measurement Range",
+      "value_raw": "0 to 40 km (0 to 24.9 mi)",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 40,
+        "unit": "km",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 0,
+          "max_value": 24.9,
+          "unit": "mi"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 54,
+        "source_rows": [
+          100
+        ]
+      },
+      "canonical_key": "lightning_average_distance_measurement_range",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "LIGHTNING AVERAGE DISTANCE",
+      "name_raw": "Lightning Average Distance Resolution",
+      "value_raw": "3 km (1.86 mi)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3,
+        "unit": "km",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.86,
+          "unit": "mi"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 55,
+        "source_rows": [
+          101
+        ]
+      },
+      "canonical_key": "lightning_average_distance_resolution",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "section": "LIGHTNING AVERAGE DISTANCE",
+      "name_raw": "Lightning Average Distance Accuracy",
+      "value_raw": "Variable",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 1,
+        "spec_index": 56,
+        "source_rows": [
+          103
+        ]
+      },
+      "canonical_key": "lightning_average_distance_accuracy",
+      "quantity_kind": "length"
+    }
+  ]
+}

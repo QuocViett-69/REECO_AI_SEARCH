@@ -1,0 +1,947 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "AVW200-ST_AVW200-XT_Specifications.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_AVW200_ST",
+      "manufacturer": "Campbell Scientific",
+      "model": "AVW200-ST",
+      "product_name_en": "AVW200-ST",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "AVW200 vibrating-wire measurement and half-bridge thermistor measurement combined take less than 2 s per measurement",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "DF Measurement Time",
+          "name_vi": "Thời gian đo DF",
+          "value_raw": "Selectable frequency range: 1.4 to 1.6 s",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Half-Bridge Thermistor Measurement Time",
+          "name_vi": "Thời gian đo nhiệt điện trở half-bridge",
+          "value_raw": "60 ms or 70 ms depending on integration time selected",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Thermistor Integration Time",
+          "name_vi": "Thời gian tích phân nhiệt điện trở",
+          "value_raw": "20 ms (50 Hz) or 16.66 ms (60 Hz) with positive excitation, followed by 20 ms or 16.66 ms with negative excitation",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Description",
+          "name_vi": "Mô tả",
+          "value_raw": "Differential Coil+ (V+) and Coil− (V−) outputs/inputs for direct connection, excitation, and resonant-frequency measurement of vibrating-wire transducers",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Excitation Voltage",
+          "name_vi": "Điện áp kích thích",
+          "value_raw": "±2.5 V (5 V peak-to-peak) or ±6 V (12 V peak-to-peak), logarithmic sine wave",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Excitation Frequency Range",
+          "name_vi": "Dải tần số kích thích",
+          "value_raw": "100 Hz to 6.5 kHz",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản",
+          "value_raw": "24-bit",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "±250 mV differential",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Measurement Resolution",
+          "name_vi": "Độ phân giải phép đo",
+          "value_raw": "0.001 Hz RMS, from -55°C to +85°C",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.13% of reading, from -55°C to +85°C",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Input Resistance",
+          "name_vi": "Điện trở đầu vào",
+          "value_raw": "4.75 kΩ",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Description",
+          "name_vi": "Mô tả",
+          "value_raw": "Half-bridge ratiometric measurement; returned value is in ohms and can be used for temperature correction of the vibrating-wire measurement",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản",
+          "value_raw": "24-bit",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "±2500 mV single-ended",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Measurement Resolution",
+          "name_vi": "Độ phân giải phép đo",
+          "value_raw": "0.001 Ω RMS, from -55°C to +85°C",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.25% of reading, from -55°C to +85°C",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Input Resistance",
+          "name_vi": "Điện trở đầu vào",
+          "value_raw": "5 kΩ for thermistor input T−; 5 kΩ, 0.1% completion resistor",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Description",
+          "name_vi": "Mô tả",
+          "value_raw": "Three digital control ports, C1 to C3",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "C1 Function",
+          "name_vi": "Chức năng C1",
+          "value_raw": "SDI-12 I/O communication port",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "C2 Function",
+          "name_vi": "Chức năng C2",
+          "value_raw": "Clock output for multiplexer control",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "C3 Function",
+          "name_vi": "Chức năng C3",
+          "value_raw": "Reset output for multiplexer control",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Input State High",
+          "name_vi": "Trạng thái đầu vào mức cao",
+          "value_raw": "2.5 to 5.3 V",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Input State Low",
+          "name_vi": "Trạng thái đầu vào mức thấp",
+          "value_raw": "-0.3 to 1.0 V",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Input Hysteresis",
+          "name_vi": "Độ trễ đầu vào",
+          "value_raw": "1.32 V",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Input Resistance",
+          "name_vi": "Điện trở đầu vào",
+          "value_raw": "100 kΩ",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Output Voltage High",
+          "name_vi": "Điện áp đầu ra mức cao",
+          "value_raw": "5.0 V ±0.1 V, no load",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Output Voltage Low",
+          "name_vi": "Điện áp đầu ra mức thấp",
+          "value_raw": "<0.1 V, no load",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Output Resistance",
+          "name_vi": "Điện trở đầu ra",
+          "value_raw": "330 Ω",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "COMMUNICATION",
+          "name_en": "RS-232",
+          "name_vi": "RS-232",
+          "value_raw": "Non-isolated",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "COMMUNICATION",
+          "name_en": "Baud Rates",
+          "name_vi": "Tốc độ truyền",
+          "value_raw": "Selectable from 1200 to 38.4 kbps",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "COMMUNICATION",
+          "name_en": "RS-232 Protocol",
+          "name_vi": "Giao thức RS-232",
+          "value_raw": "ASCII; one start bit, one stop bit, eight data bits, no parity",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "COMMUNICATION",
+          "name_en": "SDI-12",
+          "name_vi": "SDI-12",
+          "value_raw": "Control Port 1 configured for SDI-12 sensor asynchronous communication; meets SDI-12 Standard version 1.3",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "SYSTEM",
+          "name_en": "Program Execution Interval",
+          "name_vi": "Chu kỳ thực thi chương trình",
+          "value_raw": "1 s",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "SYSTEM",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "Hitachi H8S 2334, 16-bit CPU with 32-bit internal core",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "SYSTEM",
+          "name_en": "Memory",
+          "name_vi": "Bộ nhớ",
+          "value_raw": "128 or 512 kB SRAM; 2 MB OS Flash",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "SYSTEM",
+          "name_en": "Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ",
+          "value_raw": "±10 minutes per month; synchronized with data logger clock every execution interval",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "CE COMPLIANCE",
+          "name_en": "Standard",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "IEC 61326:2002",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Voltage",
+          "name_vi": "Điện áp",
+          "value_raw": "9.6 to 32 Vdc",
+          "source_rows": [
+            48
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Quiescent, Radio Off",
+          "name_vi": "Dòng tiêu thụ điển hình — Chờ, radio tắt",
+          "value_raw": "Approximately 0.3 mA at 12 Vdc",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Radio Duty Cycling",
+          "name_vi": "Dòng tiêu thụ điển hình — Radio hoạt động theo chu kỳ",
+          "value_raw": "Approximately 3 mA at 12 Vdc, 1 s duty cycle including quiescent current",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Radio Always On",
+          "name_vi": "Dòng tiêu thụ điển hình — Radio luôn bật",
+          "value_raw": "Approximately 26 mA at 12 Vdc; radio transmit current 100 mA",
+          "source_rows": [
+            51
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Active RS-232 Communication",
+          "name_vi": "Dòng tiêu thụ điển hình — Giao tiếp RS-232 hoạt động",
+          "value_raw": "Approximately 6 mA at 12 Vdc; approximately 3 s after communication stops, current drops to quiescent level",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Measurement",
+          "name_vi": "Dòng tiêu thụ điển hình — Khi đo",
+          "value_raw": "Approximately 25 mA averaged over 2 s",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "OPERATING TEMPERATURE RANGE",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-25°C to +50°C, standard",
+          "source_rows": [
+            55
+          ]
+        },
+        {
+          "section": "PHYSICAL",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "21.6 × 11.18 × 3.18 cm (8.5 × 4.5 × 1.2 in.)",
+          "source_rows": [
+            57
+          ]
+        },
+        {
+          "section": "PHYSICAL",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.43 kg (0.95 lb)",
+          "source_rows": [
+            58
+          ]
+        },
+        {
+          "section": "WARRANTY",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            60
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "https://1drv.ms/b/c/99a72671b942ebbe/IQBG5yHw_XQPS56ayveY6EIvActsjmBTjuLqKYcVgPgx8LM?e=dHyI0d",
+        "user_manual": "avw200man.pdf",
+        "order_form": "https://www.campbellsci.com/products/avw200"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4132",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_AVW200_XT",
+      "manufacturer": "Campbell Scientific",
+      "model": "AVW200-XT",
+      "product_name_en": "AVW200-XT",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "AVW200 vibrating-wire measurement and half-bridge thermistor measurement combined take less than 2 s per measurement",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "DF Measurement Time",
+          "name_vi": "Thời gian đo DF",
+          "value_raw": "Selectable frequency range: 1.4 to 1.6 s",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Half-Bridge Thermistor Measurement Time",
+          "name_vi": "Thời gian đo nhiệt điện trở half-bridge",
+          "value_raw": "60 ms or 70 ms depending on integration time selected",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Thermistor Integration Time",
+          "name_vi": "Thời gian tích phân nhiệt điện trở",
+          "value_raw": "20 ms (50 Hz) or 16.66 ms (60 Hz) with positive excitation, followed by 20 ms or 16.66 ms with negative excitation",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Description",
+          "name_vi": "Mô tả",
+          "value_raw": "Differential Coil+ (V+) and Coil− (V−) outputs/inputs for direct connection, excitation, and resonant-frequency measurement of vibrating-wire transducers",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Excitation Voltage",
+          "name_vi": "Điện áp kích thích",
+          "value_raw": "±2.5 V (5 V peak-to-peak) or ±6 V (12 V peak-to-peak), logarithmic sine wave",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Excitation Frequency Range",
+          "name_vi": "Dải tần số kích thích",
+          "value_raw": "100 Hz to 6.5 kHz",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản",
+          "value_raw": "24-bit",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "±250 mV differential",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Measurement Resolution",
+          "name_vi": "Độ phân giải phép đo",
+          "value_raw": "0.001 Hz RMS, from -55°C to +85°C",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.13% of reading, from -55°C to +85°C",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "VIBRATING-WIRE INPUTS",
+          "name_en": "Input Resistance",
+          "name_vi": "Điện trở đầu vào",
+          "value_raw": "4.75 kΩ",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Description",
+          "name_vi": "Mô tả",
+          "value_raw": "Half-bridge ratiometric measurement; returned value is in ohms and can be used for temperature correction of the vibrating-wire measurement",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản",
+          "value_raw": "24-bit",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "±2500 mV single-ended",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Measurement Resolution",
+          "name_vi": "Độ phân giải phép đo",
+          "value_raw": "0.001 Ω RMS, from -55°C to +85°C",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.25% of reading, from -55°C to +85°C",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "THERMISTOR INPUTS",
+          "name_en": "Input Resistance",
+          "name_vi": "Điện trở đầu vào",
+          "value_raw": "5 kΩ for thermistor input T−; 5 kΩ, 0.1% completion resistor",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Description",
+          "name_vi": "Mô tả",
+          "value_raw": "Three digital control ports, C1 to C3",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "C1 Function",
+          "name_vi": "Chức năng C1",
+          "value_raw": "SDI-12 I/O communication port",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "C2 Function",
+          "name_vi": "Chức năng C2",
+          "value_raw": "Clock output for multiplexer control",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "C3 Function",
+          "name_vi": "Chức năng C3",
+          "value_raw": "Reset output for multiplexer control",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Input State High",
+          "name_vi": "Trạng thái đầu vào mức cao",
+          "value_raw": "2.5 to 5.3 V",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Input State Low",
+          "name_vi": "Trạng thái đầu vào mức thấp",
+          "value_raw": "-0.3 to 1.0 V",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Input Hysteresis",
+          "name_vi": "Độ trễ đầu vào",
+          "value_raw": "1.32 V",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Input Resistance",
+          "name_vi": "Điện trở đầu vào",
+          "value_raw": "100 kΩ",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Output Voltage High",
+          "name_vi": "Điện áp đầu ra mức cao",
+          "value_raw": "5.0 V ±0.1 V, no load",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Output Voltage Low",
+          "name_vi": "Điện áp đầu ra mức thấp",
+          "value_raw": "<0.1 V, no load",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "DIGITAL CONTROL PORTS",
+          "name_en": "Output Resistance",
+          "name_vi": "Điện trở đầu ra",
+          "value_raw": "330 Ω",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "COMMUNICATION",
+          "name_en": "RS-232",
+          "name_vi": "RS-232",
+          "value_raw": "Non-isolated",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "COMMUNICATION",
+          "name_en": "Baud Rates",
+          "name_vi": "Tốc độ truyền",
+          "value_raw": "Selectable from 1200 to 38.4 kbps",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "COMMUNICATION",
+          "name_en": "RS-232 Protocol",
+          "name_vi": "Giao thức RS-232",
+          "value_raw": "ASCII; one start bit, one stop bit, eight data bits, no parity",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "COMMUNICATION",
+          "name_en": "SDI-12",
+          "name_vi": "SDI-12",
+          "value_raw": "Control Port 1 configured for SDI-12 sensor asynchronous communication; meets SDI-12 Standard version 1.3",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "SYSTEM",
+          "name_en": "Program Execution Interval",
+          "name_vi": "Chu kỳ thực thi chương trình",
+          "value_raw": "1 s",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "SYSTEM",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "Hitachi H8S 2334, 16-bit CPU with 32-bit internal core",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "SYSTEM",
+          "name_en": "Memory",
+          "name_vi": "Bộ nhớ",
+          "value_raw": "128 or 512 kB SRAM; 2 MB OS Flash",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "SYSTEM",
+          "name_en": "Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ",
+          "value_raw": "±10 minutes per month; synchronized with data logger clock every execution interval",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "CE COMPLIANCE",
+          "name_en": "Standard",
+          "name_vi": "Tiêu chuẩn",
+          "value_raw": "IEC 61326:2002",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Voltage",
+          "name_vi": "Điện áp",
+          "value_raw": "9.6 to 32 Vdc",
+          "source_rows": [
+            48
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Quiescent, Radio Off",
+          "name_vi": "Dòng tiêu thụ điển hình — Chờ, radio tắt",
+          "value_raw": "Approximately 0.3 mA at 12 Vdc",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Radio Duty Cycling",
+          "name_vi": "Dòng tiêu thụ điển hình — Radio hoạt động theo chu kỳ",
+          "value_raw": "Approximately 3 mA at 12 Vdc, 1 s duty cycle including quiescent current",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Radio Always On",
+          "name_vi": "Dòng tiêu thụ điển hình — Radio luôn bật",
+          "value_raw": "Approximately 26 mA at 12 Vdc; radio transmit current 100 mA",
+          "source_rows": [
+            51
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Active RS-232 Communication",
+          "name_vi": "Dòng tiêu thụ điển hình — Giao tiếp RS-232 hoạt động",
+          "value_raw": "Approximately 6 mA at 12 Vdc; approximately 3 s after communication stops, current drops to quiescent level",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": "POWER REQUIREMENTS",
+          "name_en": "Typical Current Drain — Measurement",
+          "name_vi": "Dòng tiêu thụ điển hình — Khi đo",
+          "value_raw": "Approximately 25 mA averaged over 2 s",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "OPERATING TEMPERATURE RANGE",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-55°C to +85°C, extended",
+          "source_rows": [
+            55
+          ]
+        },
+        {
+          "section": "PHYSICAL",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "21.6 × 11.18 × 3.18 cm (8.5 × 4.5 × 1.2 in.)",
+          "source_rows": [
+            57
+          ]
+        },
+        {
+          "section": "PHYSICAL",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.43 kg (0.95 lb)",
+          "source_rows": [
+            58
+          ]
+        },
+        {
+          "section": "WARRANTY",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            60
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "https://1drv.ms/b/c/99a72671b942ebbe/IQBG5yHw_XQPS56ayveY6EIvActsjmBTjuLqKYcVgPgx8LM?e=dHyI0d",
+        "user_manual": "avw200man.pdf",
+        "order_form": "https://www.campbellsci.com/products/avw200"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4132",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "RV50X.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_RV50X",
+      "manufacturer": "Campbell Scientific",
+      "model": "RV50X",
+      "product_name_en": "RV50X",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Industrial 4G LTE Cellular Gateway",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary communications device / cellular gateway",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Available Configurations",
+          "name_vi": "Các cấu hình có sẵn",
+          "value_raw": "RV50X-NE-V – Provisioned for Verizon US; RV50X-NE-VS – Provisioned for Verizon US Static IP; RV50X-NE-AT – Provisioned for AT&T North America; RV50X-NE-IT1A – Provisioned for International 1A; RV50X-NE-IT1B – Provisioned for International 1B; RV50X-NE-NP – No Provisioning",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Network Technology",
+          "name_vi": "Công nghệ mạng",
+          "value_raw": "4G LTE with automatic fallback to 3G",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cellular Technologies",
+          "name_vi": "Công nghệ di động",
+          "value_raw": "4G LTE; 3G HSPA/HSPA+; 3G TD-SCDMA (Asia Pacific model only)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Radio Module",
+          "name_vi": "Mô-đun radio",
+          "value_raw": "MC7455",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "SIM Interface",
+          "name_vi": "Giao diện SIM",
+          "value_raw": "Dual Mini-SIM (2FF) interfaces",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Host Interface",
+          "name_vi": "Giao tiếp host",
+          "value_raw": "10/100/1000 Ethernet RJ45; USB 2.0 Micro-B; RS-232 Serial DTE DB9 Female",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-232 Services",
+          "name_vi": "Dịch vụ RS-232",
+          "value_raw": "Serial server, serial client, and PPP host",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Embedded Operating System",
+          "name_vi": "Hệ điều hành nhúng",
+          "value_raw": "Sierra Wireless ALEOS",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Embedded Network Services",
+          "name_vi": "Dịch vụ mạng tích hợp",
+          "value_raw": "IP serial server/client, local PPP host, dynamic DNS client, routing, VPN, port forwarding",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RF Connectors",
+          "name_vi": "Đầu nối RF",
+          "value_raw": "3 female SMA jacks for primary cellular, optional diversity cellular, and GPS",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30 to +70 °C",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "11.9 × 9.4 × 3.4 cm (4.69 × 3.7 × 1.34 in.)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "320 g (11.3 oz)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Voltage",
+          "name_vi": "Điện áp hoạt động",
+          "value_raw": "7 to 36 VDC",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Enable / Ignition Sense Low",
+          "name_vi": "Dòng Enable / Ignition Sense Low điển hình",
+          "value_raw": "1 mA @ 12 VDC",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Idle Current",
+          "name_vi": "Dòng nghỉ điển hình",
+          "value_raw": "65 to 95 mA @ 12 VDC, depending on configuration",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Active Current",
+          "name_vi": "Dòng hoạt động điển hình",
+          "value_raw": "250 to 300 mA @ 12 VDC, depending on configuration",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Radio Output Power",
+          "name_vi": "Công suất phát radio",
+          "value_raw": "23 dBm on LTE; 23 dBm on UMTS",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "North America / EMEA Carrier Approval",
+          "name_vi": "Nhà mạng được phê duyệt – Bắc Mỹ / EMEA",
+          "value_raw": "Verizon, AT&T, T-Mobile USA, Southern Linc, Sprint, US Cellular, Rogers, Telus, Bell",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "North America / EMEA 4G LTE Bands",
+          "name_vi": "Băng tần 4G LTE – Bắc Mỹ / EMEA",
+          "value_raw": "B1, B2, B3, B4, B5, B7, B8, B12, B13, B20, B25, B26, B29, B41",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "North America / EMEA 3G HSPA/HSPA+ Bands",
+          "name_vi": "Băng tần 3G HSPA/HSPA+ – Bắc Mỹ / EMEA",
+          "value_raw": "B1, B2, B3, B4, B5, B8",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "North America / EMEA Industry Approvals",
+          "name_vi": "Chứng nhận ngành – Bắc Mỹ / EMEA",
+          "value_raw": "FCC, IC, PTCRB, R&TTE, GCF, CE",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Asia Pacific Carrier Approval",
+          "name_vi": "Nhà mạng được phê duyệt – Châu Á Thái Bình Dương",
+          "value_raw": "Telstra",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Asia Pacific 4G LTE Bands",
+          "name_vi": "Băng tần 4G LTE – Châu Á Thái Bình Dương",
+          "value_raw": "B1, B3, B5, B7, B8, B18, B19, B21, B28, B38, B39, B40, B41",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Asia Pacific 3G HSPA/HSPA+ Bands",
+          "name_vi": "Băng tần 3G HSPA/HSPA+ – Châu Á Thái Bình Dương",
+          "value_raw": "B1, B5, B6, B8, B9, B19",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Asia Pacific 3G TD-SCDMA Band",
+          "name_vi": "Băng tần 3G TD-SCDMA – Châu Á Thái Bình Dương",
+          "value_raw": "B39",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Asia Pacific Industry Approvals",
+          "name_vi": "Chứng nhận ngành – Châu Á Thái Bình Dương",
+          "value_raw": "RCM, JRF/JPA, Anatel",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cellular Service Requirement",
+          "name_vi": "Yêu cầu dịch vụ di động",
+          "value_raw": "At least one Mini-SIM (2FF) and a compatible cellular data service",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Configuration Tool",
+          "name_vi": "Công cụ cấu hình",
+          "value_raw": "ACEManager web-based configuration tool",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Data Logger Connectivity",
+          "name_vi": "Kết nối với data logger",
+          "value_raw": "RS-232 or Ethernet",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Internet Protocol Support",
+          "name_vi": "Hỗ trợ giao thức Internet",
+          "value_raw": "TCP/IP; supports use cases including Modbus, DNP3, email, HTTP, FTP",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Antenna Requirement",
+          "name_vi": "Yêu cầu ăng-ten",
+          "value_raw": "Primary cellular antenna required; two external antennas recommended/required for reliable 4G LTE communications",
+          "source_rows": [
+            37
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "RV50X_datasheet.pdf",
+        "user_manual": "RV50X_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/7892",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "valid",
+        "warnings": []
+      }
+    }
+  ]
+}
