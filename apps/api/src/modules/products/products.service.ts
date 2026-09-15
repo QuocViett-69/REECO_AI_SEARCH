@@ -125,7 +125,14 @@ export class ProductsService {
       specifications,
       important_specifications: document?.important_specifications ?? [],
       aliases: document?.aliases ?? [],
-      media: media.map(({ product_id: _productId, ...item }) => item),
+      media: media.map((item) => ({
+        media_id: item.media_id,
+        media_type: item.media_type,
+        image_url: item.image_url,
+        product_url: item.product_url,
+        position: item.position,
+        metadata: item.metadata,
+      })),
     });
   }
 

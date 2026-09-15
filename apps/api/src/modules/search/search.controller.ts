@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
 import {
   SearchRequestSchema,
   type SearchRequest,
@@ -12,6 +12,7 @@ export class SearchController {
   constructor(private readonly searchService: SearchService) {}
 
   @Post()
+  @HttpCode(HttpStatus.OK)
   search(
     @Body(new ZodValidationPipe(SearchRequestSchema)) request: SearchRequest,
   ): Promise<SearchResponse> {

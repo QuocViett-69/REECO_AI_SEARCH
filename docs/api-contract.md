@@ -257,14 +257,14 @@ Sample review item:
 
 ```json
 {
-  "product_id": "CSI_REVIEW_EXAMPLE",
-  "model": "REVIEW-EXAMPLE",
-  "name_en": "Review product",
+  "product_id": "CSI_43347",
+  "model": "43347",
+  "name_en": "RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated",
   "name_vi": null,
-  "category": null,
-  "subcategory": null,
-  "device_type": null,
-  "image_url": null,
+  "category": "Sensors",
+  "subcategory": "Air Temperature Sensors",
+  "device_type": "Air Temperature Sensor",
+  "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/10",
   "status": "review"
 }
 ```
