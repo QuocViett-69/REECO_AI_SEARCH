@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TEMPVUE20_S",
+  "model": "TempVue20-S",
+  "name_en": "TempVue™20",
+  "name_vi": "TempVue™20",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Air Temperature Sensors",
+    "subcategory_key": "air_temperature_sensors",
+    "device_type": "Air Temperature Sensor",
+    "device_type_key": "air_temperature_sensor"
+  },
+  "measurements": [
+    {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_variant",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_protocol",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "default_address",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_type_per_output",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 16,
+            "source_rows": [
+              18
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "white_wire_function",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              34
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "TempVue20-S",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "TempVue20-S"
+        }
+      ]
+    },
+    {
+      "value": "CSI_TEMPVUE20_S",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_TEMPVUE20_S"
+        }
+      ]
+    },
+    {
+      "value": "TempVue™20",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "TempVue™20"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "TempVue20-S",
+      "TempVue™20",
+      "Sensors",
+      "Air Temperature Sensors",
+      "Air Temperature Sensor",
+      "Air Temperature",
+      "ambient temperature",
+      "SDI-12",
+      "Measure Air Temperature",
+      "CSI_TEMPVUE20_S"
+    ],
+    "vi": [
+      "TempVue20-S",
+      "TempVue™20",
+      "Cảm biến",
+      "Cảm biến nhiệt độ không khí",
+      "Nhiệt độ không khí",
+      "SDI-12",
+      "Đo nhiệt độ không khí"
+    ]
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_SOILVUE10_5",
+  "model": "SoilVue10-5",
+  "name_en": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Soil Moisture, Temperature, and EC Sensors",
+    "subcategory_key": "soil_moisture_temperature_and_ec_sensors",
+    "device_type": "Soil Moisture, Temperature, and EC Sensor",
+    "device_type_key": "soil_moisture_temperature_and_ec_sensor"
+  },
+  "measurements": [
+    {
+      "key": "soil_temperature",
+      "label_en": "Soil Temperature",
+      "label_vi": "Nhiệt độ đất"
+    },
+    {
+      "key": "volumetric_water_content",
+      "label_en": "Volumetric Water Content",
+      "label_vi": "Hàm lượng nước thể tích"
+    },
+    {
+      "key": "dielectric_permittivity",
+      "label_en": "Dielectric Permittivity",
+      "label_vi": "Hằng số điện môi"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_soil_temperature",
+      "label_en": "Measure Soil Temperature",
+      "label_vi": "Đo nhiệt độ đất"
+    },
+    {
+      "key": "measure_volumetric_water_content",
+      "label_en": "Measure Volumetric Water Content",
+      "label_vi": "Đo hàm lượng nước thể tích"
+    },
+    {
+      "key": "measure_dielectric_permittivity",
+      "label_en": "Measure Dielectric Permittivity",
+      "label_vi": "Đo hằng số điện môi"
+    }
+  ],
+  "supported_protocols": [
+    "SDI-12"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "SoilVue10-5",
+    "CSI_SOILVUE10_5",
+    "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+    "SoilVue™10"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SoilVue10.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      }
+    },
+    {
+      "canonical_key": "volumetric_water_content_range",
+      "name": "Volumetric Water Content Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SoilVue10.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      }
+    },
+    {
+      "canonical_key": "relative_dielectric_permittivity_range",
+      "name": "Relative Dielectric Permittivity Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 1,
+        "max_value": 80,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SoilVue10.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      }
+    },
+    {
+      "canonical_key": "electrical_conductivity_range",
+      "name": "Electrical Conductivity Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 10,
+        "unit": "dS/m",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SoilVue10.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_voltage_range",
+      "name": "Operating Voltage Range",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 9,
+        "max_value": 36,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SoilVue10.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.9,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 4.2,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/SoilVue10.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "SoilVue10-5",
+    "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+    "Sensors",
+    "Soil Moisture, Temperature, and EC Sensors",
+    "Soil Moisture, Temperature, and EC Sensor",
+    "Soil Temperature",
+    "Volumetric Water Content",
+    "VWC",
+    "Dielectric Permittivity",
+    "permittivity",
+    "SDI-12",
+    "Measure Soil Temperature",
+    "Measure Volumetric Water Content",
+    "Measure Dielectric Permittivity",
+    "CSI_SOILVUE10_5",
+    "SoilVue™10"
+  ],
+  "search_keywords_vi": [
+    "SoilVue10-5",
+    "Cảm biến",
+    "Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất",
+    "Nhiệt độ đất",
+    "Hàm lượng nước thể tích",
+    "Hằng số điện môi",
+    "SDI-12",
+    "Đo nhiệt độ đất",
+    "Đo hàm lượng nước thể tích",
+    "Đo hằng số điện môi"
+  ],
+  "search_text_en": "SoilVue10-5 | SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m | CSI_SOILVUE10_5 | SoilVue™10 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Soil Temperature | Volumetric Water Content | Dielectric Permittivity | Measure Soil Temperature | Measure Volumetric Water Content | Measure Dielectric Permittivity | SDI-12 | Operating Temperature Range: -40 to 60 °C | Volumetric Water Content Range: 0 to 100 % | Relative Dielectric Permittivity Range: 1 to 80 | Electrical Conductivity Range: 0 to 10 dS/m | Operating Voltage Range: 9 to 36 V DC | Weight: 1.9 kg | VWC | permittivity",
+  "search_text_vi": "SoilVue10-5 | CSI_SOILVUE10_5 | SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m | SoilVue™10 | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Nhiệt độ đất | Hàm lượng nước thể tích | Hằng số điện môi | Đo nhiệt độ đất | Đo hàm lượng nước thể tích | Đo hằng số điện môi | SDI-12 | Operating Temperature Range: -40 to 60 °C | Volumetric Water Content Range: 0 to 100 % | Relative Dielectric Permittivity Range: 1 to 80 | Electrical Conductivity Range: 0 to 10 dS/m | Operating Voltage Range: 9 to 36 V DC | Weight: 1.9 kg",
+  "search_text": "SoilVue10-5 | SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m | CSI_SOILVUE10_5 | SoilVue™10 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Soil Temperature | Volumetric Water Content | Dielectric Permittivity | Measure Soil Temperature | Measure Volumetric Water Content | Measure Dielectric Permittivity | SDI-12 | Operating Temperature Range: -40 to 60 °C | Volumetric Water Content Range: 0 to 100 % | Relative Dielectric Permittivity Range: 1 to 80 | Electrical Conductivity Range: 0 to 10 dS/m | Operating Voltage Range: 9 to 36 V DC | Weight: 1.9 kg | VWC | permittivity | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Nhiệt độ đất | Hàm lượng nước thể tích | Hằng số điện môi | Đo nhiệt độ đất | Đo hàm lượng nước thể tích | Đo hằng số điện môi",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "2cb37d1b93ef2ba739be9b2f0b2eeb858e2f819fe95f75f5287461627888130b"
+}

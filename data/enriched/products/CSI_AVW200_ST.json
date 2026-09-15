@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_AVW200_ST",
+  "model": "AVW200-ST",
+  "name_en": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Vibrating Wire Analyzers",
+    "subcategory_key": "vibrating_wire_analyzers",
+    "device_type": "Vibrating Wire Analyzer",
+    "device_type_key": "vibrating_wire_analyzer"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "ASCII",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_232_protocol",
+          "raw_ref": {
+            "file": "data/raw/AVW200_ST_XT.json",
+            "product_index": 0,
+            "spec_index": 31,
+            "source_rows": [
+              38
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "c1_function",
+          "raw_ref": {
+            "file": "data/raw/AVW200_ST_XT.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              25
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sdi_12",
+          "raw_ref": {
+            "file": "data/raw/AVW200_ST_XT.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              39
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "AVW200-ST",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "AVW200-ST"
+        }
+      ]
+    },
+    {
+      "value": "CSI_AVW200_ST",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_AVW200_ST"
+        }
+      ]
+    },
+    {
+      "value": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "AVW200-ST",
+      "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+      "Measurement Devices",
+      "Vibrating Wire Analyzers",
+      "Vibrating Wire Analyzer",
+      "ASCII",
+      "SDI-12",
+      "CSI_AVW200_ST"
+    ],
+    "vi": [
+      "AVW200-ST",
+      "Thiết bị đo lường",
+      "Bộ phân tích dây rung",
+      "ASCII",
+      "SDI-12"
+    ]
+  }
+}

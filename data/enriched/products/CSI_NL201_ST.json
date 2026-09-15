@@ -1,0 +1,609 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_NL201_ST",
+  "model": "NL201-ST",
+  "name_en": "NL201-ST",
+  "name_vi": "NL201-ST",
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Ethernet Communications",
+    "subcategory_key": "ethernet_communications",
+    "device_type": "Ethernet Communication Device",
+    "device_type_key": "ethernet_communication_device"
+  },
+  "measurements": [],
+  "applications": [
+    {
+      "key": "data_logger_connectivity",
+      "label_en": "Data Logger Connectivity",
+      "label_vi": "Kết nối bộ ghi dữ liệu",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "protocols": [
+    {
+      "name": "Auto-IP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "ethernet_port",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 13,
+            "source_rows": [
+              17
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_modes",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "power_connector",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "current_drain_forced_standby",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              27
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DHCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DNS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ethernet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              9
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_modes",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "configuration_methods",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              22
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "service_requirements",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              23
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "current_drain_forced_standby",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              27
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HTTPS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ICMP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPv4",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPv6",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus TCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_modes",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PakBus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_modes",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "configuration_methods",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              22
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SLAAC",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TCP/IP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_modes",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Telnet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "configuration_methods",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              22
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TLS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_modes",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_network_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              18
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tcp_connections",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 15,
+            "source_rows": [
+              19
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "configuration_methods",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              22
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "unsupported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "power_connector",
+          "raw_ref": {
+            "file": "data/raw/NL201.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "NL201-ST",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "NL201-ST"
+        }
+      ]
+    },
+    {
+      "value": "CSI_NL201_ST",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_NL201_ST"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "NL201-ST",
+      "Communications",
+      "Ethernet Communications",
+      "Ethernet Communication Device",
+      "Data Logger Connectivity",
+      "Auto-IP",
+      "CS I/O",
+      "DHCP",
+      "DNS",
+      "Ethernet",
+      "HTTPS",
+      "ICMP",
+      "IPv4",
+      "IPv6",
+      "Modbus TCP",
+      "PakBus",
+      "RS-232",
+      "SLAAC",
+      "TCP/IP",
+      "Telnet",
+      "TLS",
+      "USB",
+      "CSI_NL201_ST"
+    ],
+    "vi": [
+      "NL201-ST",
+      "Thiết bị truyền thông",
+      "Truyền thông Ethernet",
+      "Thiết bị truyền thông Ethernet",
+      "Kết nối bộ ghi dữ liệu",
+      "Auto-IP",
+      "CS I/O",
+      "DHCP",
+      "DNS",
+      "Ethernet",
+      "HTTPS",
+      "ICMP",
+      "IPv4",
+      "IPv6",
+      "Modbus TCP",
+      "PakBus",
+      "RS-232",
+      "SLAAC",
+      "TCP/IP",
+      "Telnet",
+      "TLS",
+      "USB"
+    ]
+  }
+}

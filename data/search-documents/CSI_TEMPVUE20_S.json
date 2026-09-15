@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TEMPVUE20_S",
+  "model": "TempVue20-S",
+  "name_en": "TempVue™20",
+  "name_vi": "TempVue™20",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Air Temperature Sensors",
+    "subcategory_key": "air_temperature_sensors",
+    "device_type": "Air Temperature Sensor",
+    "device_type_key": "air_temperature_sensor"
+  },
+  "measurements": [
+    {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí"
+    }
+  ],
+  "supported_protocols": [
+    "SDI-12"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "TempVue20-S",
+    "CSI_TEMPVUE20_S",
+    "TempVue™20"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "resolution",
+      "name": "Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue20.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      }
+    },
+    {
+      "canonical_key": "current",
+      "name": "Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 150,
+        "unit": "µA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue20.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "TempVue20-S",
+    "TempVue™20",
+    "Sensors",
+    "Air Temperature Sensors",
+    "Air Temperature Sensor",
+    "Air Temperature",
+    "ambient temperature",
+    "SDI-12",
+    "Measure Air Temperature",
+    "CSI_TEMPVUE20_S"
+  ],
+  "search_keywords_vi": [
+    "TempVue20-S",
+    "TempVue™20",
+    "Cảm biến",
+    "Cảm biến nhiệt độ không khí",
+    "Nhiệt độ không khí",
+    "SDI-12",
+    "Đo nhiệt độ không khí"
+  ],
+  "search_text_en": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | Sensors | Air Temperature Sensors | Air Temperature Sensor | Air Temperature | Measure Air Temperature | SDI-12 | Resolution: 0.01 °C | Current: 150 µA | ambient temperature",
+  "search_text_vi": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ không khí | Đo nhiệt độ không khí | SDI-12 | Resolution: 0.01 °C | Current: 150 µA",
+  "search_text": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | Sensors | Air Temperature Sensors | Air Temperature Sensor | Air Temperature | Measure Air Temperature | SDI-12 | Resolution: 0.01 °C | Current: 150 µA | ambient temperature | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ không khí | Đo nhiệt độ không khí",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "90c567637eedf2991d0d29e40f3d66d8d16a2fa834247716a2b1a5c28e8f5689"
+}

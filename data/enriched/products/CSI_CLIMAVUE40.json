@@ -1,0 +1,376 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CLIMAVUE40",
+  "model": "ClimaVue40",
+  "name_en": "Compact Digital RS-485 Modbus RTU Weather Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "All-in-One Weather Sensors",
+    "subcategory_key": "all_in_one_weather_sensors",
+    "device_type": "All-in-One Weather Sensor",
+    "device_type_key": "all_in_one_weather_sensor"
+  },
+  "measurements": [
+    {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              46
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              49
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "Modbus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              46
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              49
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "ClimaVue40",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "ClimaVue40"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CLIMAVUE40",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CLIMAVUE40"
+        }
+      ]
+    },
+    {
+      "value": "Compact Digital RS-485 Modbus RTU Weather Sensor",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Compact Digital RS-485 Modbus RTU Weather Sensor"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "ClimaVue40",
+      "Compact Digital RS-485 Modbus RTU Weather Sensor",
+      "Sensors",
+      "All-in-One Weather Sensors",
+      "All-in-One Weather Sensor",
+      "Air Temperature",
+      "ambient temperature",
+      "Relative Humidity",
+      "RH",
+      "Precipitation",
+      "rainfall",
+      "Wind Speed",
+      "Wind Direction",
+      "Modbus",
+      "RS-485",
+      "Measure Air Temperature",
+      "Measure Relative Humidity",
+      "Measure Precipitation",
+      "Measure Wind Speed",
+      "Measure Wind Direction",
+      "CSI_CLIMAVUE40"
+    ],
+    "vi": [
+      "ClimaVue40",
+      "Cảm biến",
+      "Cảm biến thời tiết tích hợp",
+      "Nhiệt độ không khí",
+      "Độ ẩm tương đối",
+      "Lượng mưa",
+      "Tốc độ gió",
+      "Hướng gió",
+      "Modbus",
+      "RS-485",
+      "Đo nhiệt độ không khí",
+      "Đo độ ẩm tương đối",
+      "Đo lượng mưa",
+      "Đo tốc độ gió",
+      "Đo hướng gió"
+    ]
+  }
+}

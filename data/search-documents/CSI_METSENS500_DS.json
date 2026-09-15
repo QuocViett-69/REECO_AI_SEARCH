@@ -1,0 +1,464 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_METSENS500_DS",
+  "model": "MetSENS500-DS",
+  "name_en": "MetSENS500-DS",
+  "name_vi": "MetSENS500-DS",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "All-in-One Weather Sensors",
+    "subcategory_key": "all_in_one_weather_sensors",
+    "device_type": "All-in-One Weather Sensor",
+    "device_type_key": "all_in_one_weather_sensor"
+  },
+  "measurements": [
+    {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí"
+    },
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối"
+    },
+    {
+      "key": "barometric_pressure",
+      "label_en": "Barometric Pressure",
+      "label_vi": "Áp suất khí quyển"
+    },
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió"
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió"
+    },
+    {
+      "key": "compass_heading",
+      "label_en": "Compass Heading",
+      "label_vi": "Hướng la bàn"
+    }
+  ],
+  "applications": [
+    {
+      "key": "meteorological_monitoring",
+      "label_en": "Meteorological Monitoring",
+      "label_vi": "Giám sát khí tượng"
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí"
+    },
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối"
+    },
+    {
+      "key": "measure_barometric_pressure",
+      "label_en": "Measure Barometric Pressure",
+      "label_vi": "Đo áp suất khí quyển"
+    },
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió"
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió"
+    },
+    {
+      "key": "measure_compass_heading",
+      "label_en": "Measure Compass Heading",
+      "label_vi": "Đo hướng la bàn"
+    }
+  ],
+  "supported_protocols": [
+    "SDI-12"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "MetSENS500-DS",
+    "CSI_METSENS500_DS"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      }
+    },
+    {
+      "canonical_key": "air_temperature_range",
+      "name": "Air Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "relative_humidity_range",
+      "name": "Relative Humidity Range",
+      "quantity_kind": "relative_humidity",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 28,
+        "source_rows": [
+          30
+        ]
+      }
+    },
+    {
+      "canonical_key": "barometric_pressure_range",
+      "name": "Barometric Pressure Range",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 300,
+        "max_value": 1100,
+        "unit": "hPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 31,
+        "source_rows": [
+          33
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_speed_range",
+      "name": "Wind Speed Range",
+      "quantity_kind": "speed",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0.01,
+        "max_value": 60,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 34,
+        "source_rows": [
+          36
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_direction_range",
+      "name": "Wind Direction Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 359,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 38,
+        "source_rows": [
+          40
+        ]
+      }
+    },
+    {
+      "canonical_key": "compass_accuracy",
+      "name": "Compass Accuracy",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 3,
+        "unit": "°",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 43,
+        "source_rows": [
+          45
+        ]
+      }
+    },
+    {
+      "canonical_key": "air_temperature_resolution",
+      "name": "Air Temperature Resolution",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 26,
+        "source_rows": [
+          28
+        ]
+      }
+    },
+    {
+      "canonical_key": "barometric_pressure_resolution",
+      "name": "Barometric Pressure Resolution",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "hPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 32,
+        "source_rows": [
+          34
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_speed_resolution",
+      "name": "Wind Speed Resolution",
+      "quantity_kind": "speed",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 35,
+        "source_rows": [
+          37
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_direction_resolution",
+      "name": "Wind Direction Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 39,
+        "source_rows": [
+          41
+        ]
+      }
+    },
+    {
+      "canonical_key": "compass_resolution",
+      "name": "Compass Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 42,
+        "source_rows": [
+          44
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_voltage",
+      "name": "Operating Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 5,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 19,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "overall_height",
+      "name": "Overall Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 222,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      }
+    },
+    {
+      "canonical_key": "maximum_diameter",
+      "name": "Maximum Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 142,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 24,
+        "source_rows": [
+          26
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.7,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.5,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "MetSENS500-DS",
+    "Sensors",
+    "All-in-One Weather Sensors",
+    "All-in-One Weather Sensor",
+    "Air Temperature",
+    "ambient temperature",
+    "Relative Humidity",
+    "RH",
+    "Barometric Pressure",
+    "Wind Speed",
+    "Wind Direction",
+    "Compass Heading",
+    "Meteorological Monitoring",
+    "weather monitoring",
+    "SDI-12",
+    "Measure Air Temperature",
+    "Measure Relative Humidity",
+    "Measure Barometric Pressure",
+    "Measure Wind Speed",
+    "Measure Wind Direction",
+    "Measure Compass Heading",
+    "CSI_METSENS500_DS"
+  ],
+  "search_keywords_vi": [
+    "MetSENS500-DS",
+    "Cảm biến",
+    "Cảm biến thời tiết tích hợp",
+    "Nhiệt độ không khí",
+    "Độ ẩm tương đối",
+    "Áp suất khí quyển",
+    "Tốc độ gió",
+    "Hướng gió",
+    "Hướng la bàn",
+    "Giám sát khí tượng",
+    "SDI-12",
+    "Đo nhiệt độ không khí",
+    "Đo độ ẩm tương đối",
+    "Đo áp suất khí quyển",
+    "Đo tốc độ gió",
+    "Đo hướng gió",
+    "Đo hướng la bàn"
+  ],
+  "search_text_en": "MetSENS500-DS | CSI_METSENS500_DS | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg | ambient temperature | RH | weather monitoring",
+  "search_text_vi": "MetSENS500-DS | CSI_METSENS500_DS | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng | SDI-12 | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg",
+  "search_text": "MetSENS500-DS | CSI_METSENS500_DS | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg | ambient temperature | RH | weather monitoring | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "868ba13000113b4400b2fffbff42df4ac50ddddb3c3999ff85a5252faa16085d"
+}

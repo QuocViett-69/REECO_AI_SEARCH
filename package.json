@@ -17,13 +17,26 @@
     "validate:product-master": "node scripts/product-master/validate.mjs",
     "build:spec-normalization": "node scripts/spec-normalization/build.mjs",
     "validate:spec-normalization": "node scripts/spec-normalization/validate.mjs",
+    "build:semantic-enrichment": "node scripts/semantic-enrichment/build.mjs",
+    "validate:semantic-enrichment": "node scripts/semantic-enrichment/validate.mjs",
+    "build:search-documents": "node scripts/search-documents/build.mjs",
+    "validate:search-documents": "node scripts/search-documents/validate.mjs",
+    "supabase:import": "node scripts/supabase/import-data-foundation.mjs",
+    "supabase:validate": "node scripts/supabase/import-data-foundation.mjs --validate-only",
+    "supabase:dry-run": "node scripts/supabase/import-data-foundation.mjs --dry-run",
+    "supabase:test:local": "node scripts/supabase/test-data-foundation-local.mjs",
     "lint": "npm run lint --workspaces --if-present",
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
     "@eslint/js": "^9.18.0",
     "eslint": "^9.18.0",
     "prettier": "^3.4.2",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.20.0",
+    "zod": "^3.24.1"
+  },
+  "dependencies": {
+    "postgres": "3.4.9"
   }
 }

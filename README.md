@@ -24,7 +24,7 @@ Project skeleton for the REECO product search application. This repository curre
 
 ## Requirements
 
-- Node.js 20 or newer
+- Node.js 22 or newer
 - npm 10 or newer
 
 ## Install

@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CLARIVUE10",
+  "model": "ClariVue10",
+  "name_en": "ClariVUE™ 10",
+  "name_vi": "Cảm biến độ đục ClariVUE™ 10",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Turbidity Sensors",
+    "subcategory_key": "turbidity_sensors",
+    "device_type": "Turbidity Sensor",
+    "device_type_key": "turbidity_sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internal_temperature_measurement",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 17,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "turbidity",
+      "label_en": "Turbidity",
+      "label_vi": "Độ đục",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "standards",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_type",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sdi_12_measurement_response_time",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 7,
+            "source_rows": [
+              14
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internal_temperature_measurement",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 17,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_turbidity",
+      "label_en": "Measure Turbidity",
+      "label_vi": "Đo độ đục",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "standards",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "ClariVue10",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "ClariVue10"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CLARIVUE10",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CLARIVUE10"
+        }
+      ]
+    },
+    {
+      "value": "ClariVUE™ 10",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "ClariVUE™ 10"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "ClariVue10",
+      "ClariVUE™ 10",
+      "Sensors",
+      "Turbidity Sensors",
+      "Turbidity Sensor",
+      "Temperature",
+      "temperature measurement",
+      "Turbidity",
+      "turbidity measurement",
+      "SDI-12",
+      "Measure Temperature",
+      "Measure Turbidity",
+      "CSI_CLARIVUE10"
+    ],
+    "vi": [
+      "ClariVue10",
+      "Cảm biến độ đục ClariVUE™ 10",
+      "Cảm biến",
+      "Cảm biến độ đục",
+      "Nhiệt độ",
+      "Độ đục",
+      "SDI-12",
+      "Đo nhiệt độ",
+      "Đo độ đục"
+    ]
+  }
+}

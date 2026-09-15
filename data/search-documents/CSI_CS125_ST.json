@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS125_ST",
+  "model": "CS125-ST",
+  "name_en": "CS125 Present Weather Sensor -ST -25 to +60C -1",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Present Weather Sensors",
+    "subcategory_key": "present_weather_sensors",
+    "device_type": "Present Weather Sensor",
+    "device_type_key": "present_weather_sensor"
+  },
+  "measurements": [
+    {
+      "key": "present_weather",
+      "label_en": "Present Weather",
+      "label_vi": "Thời tiết hiện tại"
+    },
+    {
+      "key": "visibility",
+      "label_en": "Visibility",
+      "label_vi": "Tầm nhìn"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_present_weather",
+      "label_en": "Measure Present Weather",
+      "label_vi": "Đo thời tiết hiện tại"
+    },
+    {
+      "key": "measure_visibility",
+      "label_en": "Measure Visibility",
+      "label_vi": "Đo tầm nhìn"
+    }
+  ],
+  "supported_protocols": [
+    "RS-232",
+    "RS-485"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS125-ST",
+    "CSI_CS125_ST",
+    "CS125 Present Weather Sensor -ST -25 to +60C -1"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 2,
+        "spec_index": 5,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_humidity_range",
+      "name": "Operating Humidity Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 2,
+        "spec_index": 28,
+        "source_rows": [
+          82
+        ]
+      }
+    },
+    {
+      "canonical_key": "electronics_supply_voltage",
+      "name": "Electronics Supply Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 2,
+        "spec_index": 21,
+        "source_rows": [
+          64
+        ]
+      }
+    },
+    {
+      "canonical_key": "emitter_light_frequency",
+      "name": "Emitter Light Frequency",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 850,
+        "unit": "nm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 2,
+        "spec_index": 27,
+        "source_rows": [
+          81
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS125-ST",
+    "CS125 Present Weather Sensor -ST -25 to +60C -1",
+    "Sensors",
+    "Present Weather Sensors",
+    "Present Weather Sensor",
+    "Present Weather",
+    "Visibility",
+    "meteorological optical range",
+    "MOR",
+    "RS-232",
+    "RS-485",
+    "Measure Present Weather",
+    "Measure Visibility",
+    "CSI_CS125_ST"
+  ],
+  "search_keywords_vi": [
+    "CS125-ST",
+    "Cảm biến",
+    "Cảm biến thời tiết hiện tại",
+    "Thời tiết hiện tại",
+    "Tầm nhìn",
+    "RS-232",
+    "RS-485",
+    "Đo thời tiết hiện tại",
+    "Đo tầm nhìn"
+  ],
+  "search_text_en": "CS125-ST | CS125 Present Weather Sensor -ST -25 to +60C -1 | CSI_CS125_ST | Sensors | Present Weather Sensors | Present Weather Sensor | Present Weather | Visibility | Measure Present Weather | Measure Visibility | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC | Emitter Light Frequency: 850 nm | meteorological optical range | MOR",
+  "search_text_vi": "CS125-ST | CSI_CS125_ST | CS125 Present Weather Sensor -ST -25 to +60C -1 | Cảm biến | Cảm biến thời tiết hiện tại | Thời tiết hiện tại | Tầm nhìn | Đo thời tiết hiện tại | Đo tầm nhìn | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC | Emitter Light Frequency: 850 nm",
+  "search_text": "CS125-ST | CS125 Present Weather Sensor -ST -25 to +60C -1 | CSI_CS125_ST | Sensors | Present Weather Sensors | Present Weather Sensor | Present Weather | Visibility | Measure Present Weather | Measure Visibility | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC | Emitter Light Frequency: 850 nm | meteorological optical range | MOR | Cảm biến | Cảm biến thời tiết hiện tại | Thời tiết hiện tại | Tầm nhìn | Đo thời tiết hiện tại | Đo tầm nhìn",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "3bc4a7b8d751952fee31ce80b2b37748191ce70e8e2b3a1ce536b22c4de1fdc3"
+}

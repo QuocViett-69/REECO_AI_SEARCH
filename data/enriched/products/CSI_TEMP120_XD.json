@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TEMP120_XD",
+  "model": "TEMP120-XD",
+  "name_en": "TEMP 120",
+  "name_vi": "TEMP 120",
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Thermocouple Measurement Modules",
+    "subcategory_key": "thermocouple_measurement_modules",
+    "device_type": "Measurement Device",
+    "device_type_key": "measurement_device"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/TEMP120-XD.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "total_measurement_accuracy_rapid_temperature_ramps",
+          "raw_ref": {
+            "file": "data/raw/TEMP120-XD.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RJ45",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "cpi_interface",
+          "raw_ref": {
+            "file": "data/raw/TEMP120-XD.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "cpi_cable",
+          "raw_ref": {
+            "file": "data/raw/TEMP120-XD.json",
+            "product_index": 0,
+            "spec_index": 31,
+            "source_rows": [
+              37
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_interface",
+          "raw_ref": {
+            "file": "data/raw/TEMP120-XD.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              28
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/TEMP120-XD.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "total_measurement_accuracy_rapid_temperature_ramps",
+          "raw_ref": {
+            "file": "data/raw/TEMP120-XD.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "TEMP120-XD",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "TEMP120-XD"
+        }
+      ]
+    },
+    {
+      "value": "CSI_TEMP120_XD",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_TEMP120_XD"
+        }
+      ]
+    },
+    {
+      "value": "TEMP 120",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "TEMP 120"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "TEMP120-XD",
+      "TEMP 120",
+      "Measurement Devices",
+      "Thermocouple Measurement Modules",
+      "Measurement Device",
+      "Temperature",
+      "temperature measurement",
+      "RJ45",
+      "USB",
+      "Measure Temperature",
+      "CSI_TEMP120_XD"
+    ],
+    "vi": [
+      "TEMP120-XD",
+      "TEMP 120",
+      "Thiết bị đo lường",
+      "Mô-đun đo cặp nhiệt điện",
+      "Nhiệt độ",
+      "RJ45",
+      "USB",
+      "Đo nhiệt độ"
+    ]
+  }
+}

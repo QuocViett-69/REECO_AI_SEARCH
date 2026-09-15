@@ -161,6 +161,8 @@ const UNIT_ALIASES = new Map(
     ['w/m²', 'W/m²'],
     ['w/m2', 'W/m²'],
     ['w m⁻²', 'W/m²'],
+    ['w/m²/mv', 'W/m²/mV'],
+    ['mv/w/m²', 'mV/W/m²'],
     ['pa', 'Pa'],
     ['hpa', 'hPa'],
     ['kpa', 'kPa'],
@@ -633,12 +635,15 @@ const diagnostic = (productId, rawRef, nameRaw, valueRaw, details = {}) => ({
   ...details,
 });
 
+const rawValueText = (value) =>
+  value === null || value === undefined ? '' : String(value);
+
 const normalizeValue = ({ productId, nameRaw, valueRaw, rawRef }) => {
   const parseWarnings = [];
   const unknownUnits = [];
   const unknownProtocols = [];
   const invalidRanges = [];
-  const trimmed = valueRaw.trim();
+  const trimmed = rawValueText(valueRaw).trim();
   const protocolClassification = classifyProtocols(trimmed);
   const facets = createProtocolFacets(protocolClassification);
   const numericContext = extractSafeRangeContext(trimmed);
@@ -943,7 +948,7 @@ const normalizeValue = ({ productId, nameRaw, valueRaw, rawRef }) => {
 };
 
 const isUnambiguousSimpleDualUnit = (valueRaw) => {
-  const trimmed = valueRaw.trim();
+  const trimmed = rawValueText(valueRaw).trim();
   const numericContext = extractSafeRangeContext(trimmed);
   const dualRangeMatch = numericContext.value.match(DUAL_RANGE_PATTERN);
   if (dualRangeMatch) {
@@ -979,7 +984,7 @@ const isUnambiguousSimpleDualUnit = (valueRaw) => {
 };
 
 const isUnambiguousSafeRange = (valueRaw) => {
-  const numericContext = extractSafeRangeContext(valueRaw.trim());
+  const numericContext = extractSafeRangeContext(rawValueText(valueRaw).trim());
   if (isUnambiguousSimpleDualUnit(valueRaw)) return true;
   const rangeMatch = numericContext.value.match(RANGE_PATTERN);
   if (!rangeMatch) return false;
@@ -1068,7 +1073,9 @@ const collectSemanticDiagnostics = (documents) => {
         );
       }
 
-      const classified = classifyProtocols(specification.value_raw);
+      const classified = classifyProtocols(
+        rawValueText(specification.value_raw),
+      );
       const negatedAsSupported = supported.filter((protocol) =>
         classified.unsupportedProtocols.includes(protocol),
       );
@@ -1298,6 +1305,16 @@ const createMissingRawManifest = ({
           'Provide a generic CS451 source/raw record or an explicit canonical variant policy; do not select HA, WN, or NN implicitly.',
       };
     }
+    if (reason === 'raw_identity_conflict') {
+      return {
+        product_id: product.product_id,
+        model: product.model,
+        status: product.status,
+        blocker: 'identity_conflict',
+        resolution:
+          'Resolve the conflicting model identity in the source/raw record before activation.',
+      };
+    }
     return {
       product_id: product.product_id,
       model: product.model,
@@ -1328,6 +1345,9 @@ const createMissingRawManifest = ({
       ).length,
       ambiguous_variant: products.filter(
         (product) => product.blocker === 'ambiguous_variant',
+      ).length,
+      identity_conflict: products.filter(
+        (product) => product.blocker === 'identity_conflict',
       ).length,
       new_raw_records_extracted: 0,
     },
@@ -1406,6 +1426,7 @@ export const createNormalizationPlan = async () => {
     upstream_missing_raw: [],
     variant_mismatch: [],
     ambiguous_variant: [],
+    identity_conflict: [],
     unknown_units: [],
     unknown_protocols: [],
     invalid_ranges: [],
@@ -1562,6 +1583,8 @@ export const createNormalizationPlan = async () => {
         ...item,
         policy: 'generic_product_requires_variant_policy',
       });
+    } else if (product.mapping_reason === 'raw_identity_conflict') {
+      diagnostics.identity_conflict.push(item);
     }
   }
 
@@ -1697,25 +1720,25 @@ export const writeNormalizationOutputs = async ({
       await unlink(path.join(outputDirectory, file));
     }
   }
+  const writeJsonIfChanged = async (filePath, value) => {
+    const content = `${JSON.stringify(value, null, 2)}\n`;
+    try {
+      if ((await readFile(filePath, 'utf8')) === content) return;
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+    }
+    await writeFile(filePath, content, 'utf8');
+  };
   await Promise.all(
     documents.map((document) =>
-      writeFile(
+      writeJsonIfChanged(
         path.join(outputDirectory, `${document.product_id}.json`),
-        `${JSON.stringify(document, null, 2)}\n`,
-        'utf8',
+        document,
       ),
     ),
   );
-  await writeFile(
-    normalizationReportPath,
-    `${JSON.stringify(report, null, 2)}\n`,
-    'utf8',
-  );
-  await writeFile(
-    missingRawManifestPath,
-    `${JSON.stringify(missingRawManifest, null, 2)}\n`,
-    'utf8',
-  );
+  await writeJsonIfChanged(normalizationReportPath, report);
+  await writeJsonIfChanged(missingRawManifestPath, missingRawManifest);
 };
 
 export const loadOutputDocuments = async () => {

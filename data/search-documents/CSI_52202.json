@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_52202",
+  "model": "52202",
+  "name_en": "RM Young Heated Rain Gage w/6.3 Orifice",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Precipitation Sensors",
+    "subcategory_key": "precipitation_sensors",
+    "device_type": "Precipitation Sensor",
+    "device_type_key": "precipitation_sensor"
+  },
+  "measurements": [
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa"
+    },
+    {
+      "key": "heated_precipitation_measurement",
+      "label_en": "Heated Precipitation Measurement",
+      "label_vi": "Đo lượng mưa có gia nhiệt"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "52202",
+    "CSI_52202",
+    "RM Young Heated Rain Gage w/6.3 Orifice"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "humidity_range",
+      "name": "Humidity Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "power_plug_weight",
+      "name": "Power Plug Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.43,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.95,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      }
+    },
+    {
+      "canonical_key": "orifice_diameter",
+      "name": "Orifice Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 16,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 6.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      }
+    },
+    {
+      "canonical_key": "diameter",
+      "name": "Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 18.5,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      }
+    },
+    {
+      "canonical_key": "height",
+      "name": "Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 30,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 11.8,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.16,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.55,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "52202",
+    "RM Young Heated Rain Gage w/6.3 Orifice",
+    "Sensors",
+    "Precipitation Sensors",
+    "Precipitation Sensor",
+    "Precipitation",
+    "rainfall",
+    "Measure Precipitation",
+    "Heated Precipitation Measurement",
+    "CSI_52202"
+  ],
+  "search_keywords_vi": [
+    "52202",
+    "Cảm biến",
+    "Cảm biến lượng mưa",
+    "Lượng mưa",
+    "Đo lượng mưa",
+    "Đo lượng mưa có gia nhiệt"
+  ],
+  "search_text_en": "52202 | RM Young Heated Rain Gage w/6.3 Orifice | CSI_52202 | Sensors | Precipitation Sensors | Precipitation Sensor | Precipitation | Measure Precipitation | Heated Precipitation Measurement | Humidity Range: 0 to 100 % | Power Plug Weight: 0.43 kg | Orifice Diameter: 16 cm | Diameter: 18.5 cm | Height: 30 cm | Weight: 1.16 kg | rainfall",
+  "search_text_vi": "52202 | CSI_52202 | RM Young Heated Rain Gage w/6.3 Orifice | Cảm biến | Cảm biến lượng mưa | Lượng mưa | Đo lượng mưa | Đo lượng mưa có gia nhiệt | Humidity Range: 0 to 100 % | Power Plug Weight: 0.43 kg | Orifice Diameter: 16 cm | Diameter: 18.5 cm | Height: 30 cm | Weight: 1.16 kg",
+  "search_text": "52202 | RM Young Heated Rain Gage w/6.3 Orifice | CSI_52202 | Sensors | Precipitation Sensors | Precipitation Sensor | Precipitation | Measure Precipitation | Heated Precipitation Measurement | Humidity Range: 0 to 100 % | Power Plug Weight: 0.43 kg | Orifice Diameter: 16 cm | Diameter: 18.5 cm | Height: 30 cm | Weight: 1.16 kg | rainfall | Cảm biến | Cảm biến lượng mưa | Lượng mưa | Đo lượng mưa | Đo lượng mưa có gia nhiệt",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "bce3f08fe00ee9eb180ae7c4bc857327e203b58c54dcca75cb505e94b2ea2308"
+}

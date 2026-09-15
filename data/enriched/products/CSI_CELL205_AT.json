@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CELL205_AT",
+  "model": "CELL205-AT",
+  "name_en": "4G LTE Cat1 Cellular Module for North America (-4",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/Cell205.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/Cell205.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/Cell205.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "CELL205-AT",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CELL205-AT"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CELL205_AT",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CELL205_AT"
+        }
+      ]
+    },
+    {
+      "value": "4G LTE Cat1 Cellular Module for North America (-4",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "4G LTE Cat1 Cellular Module for North America (-4"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CELL205-AT",
+      "4G LTE Cat1 Cellular Module for North America (-4",
+      "Communications",
+      "Cellular Communications",
+      "Cellular Modem / Router",
+      "CS I/O",
+      "RS-232",
+      "USB",
+      "CSI_CELL205_AT"
+    ],
+    "vi": [
+      "CELL205-AT",
+      "Thiết bị truyền thông",
+      "Truyền thông di động",
+      "Modem hoặc bộ định tuyến di động",
+      "CS I/O",
+      "RS-232",
+      "USB"
+    ]
+  }
+}

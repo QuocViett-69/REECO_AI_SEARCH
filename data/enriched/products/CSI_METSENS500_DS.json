@@ -1,0 +1,479 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_METSENS500_DS",
+  "model": "MetSENS500-DS",
+  "name_en": "MetSENS500-DS",
+  "name_vi": "MetSENS500-DS",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "All-in-One Weather Sensors",
+    "subcategory_key": "all_in_one_weather_sensors",
+    "device_type": "All-in-One Weather Sensor",
+    "device_type_key": "all_in_one_weather_sensor"
+  },
+  "measurements": [
+    {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "barometric_pressure",
+      "label_en": "Barometric Pressure",
+      "label_vi": "Áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "compass_heading",
+      "label_en": "Compass Heading",
+      "label_vi": "Hướng la bàn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "key": "meteorological_monitoring",
+      "label_en": "Meteorological Monitoring",
+      "label_vi": "Giám sát khí tượng",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "protocols": [
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_configuration",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_digital_interface",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 8,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "default_communication_settings",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 9,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "default_address",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 10,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "replacement_cable",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 11,
+            "source_rows": [
+              13
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_per_data_wiring",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 12,
+            "source_rows": [
+              14
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "direct_data_logger_connection",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 13,
+            "source_rows": [
+              15
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_barometric_pressure",
+      "label_en": "Measure Barometric Pressure",
+      "label_vi": "Đo áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_compass_heading",
+      "label_en": "Measure Compass Heading",
+      "label_vi": "Đo hướng la bàn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "MetSENS500-DS",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "MetSENS500-DS"
+        }
+      ]
+    },
+    {
+      "value": "CSI_METSENS500_DS",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_METSENS500_DS"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "MetSENS500-DS",
+      "Sensors",
+      "All-in-One Weather Sensors",
+      "All-in-One Weather Sensor",
+      "Air Temperature",
+      "ambient temperature",
+      "Relative Humidity",
+      "RH",
+      "Barometric Pressure",
+      "Wind Speed",
+      "Wind Direction",
+      "Compass Heading",
+      "Meteorological Monitoring",
+      "weather monitoring",
+      "SDI-12",
+      "Measure Air Temperature",
+      "Measure Relative Humidity",
+      "Measure Barometric Pressure",
+      "Measure Wind Speed",
+      "Measure Wind Direction",
+      "Measure Compass Heading",
+      "CSI_METSENS500_DS"
+    ],
+    "vi": [
+      "MetSENS500-DS",
+      "Cảm biến",
+      "Cảm biến thời tiết tích hợp",
+      "Nhiệt độ không khí",
+      "Độ ẩm tương đối",
+      "Áp suất khí quyển",
+      "Tốc độ gió",
+      "Hướng gió",
+      "Hướng la bàn",
+      "Giám sát khí tượng",
+      "SDI-12",
+      "Đo nhiệt độ không khí",
+      "Đo độ ẩm tương đối",
+      "Đo áp suất khí quyển",
+      "Đo tốc độ gió",
+      "Đo hướng gió",
+      "Đo hướng la bàn"
+    ]
+  }
+}

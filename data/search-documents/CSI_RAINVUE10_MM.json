@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RAINVUE10_MM",
+  "model": "RainVue10-MM",
+  "name_en": "RainVue™10",
+  "name_vi": "RainVue™10",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Precipitation Sensors",
+    "subcategory_key": "precipitation_sensors",
+    "device_type": "Precipitation Sensor",
+    "device_type_key": "precipitation_sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ"
+    },
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa"
+    },
+    {
+      "key": "precipitation_intensity",
+      "label_en": "Precipitation Intensity",
+      "label_vi": "Cường độ mưa"
+    },
+    {
+      "key": "tilt",
+      "label_en": "Tilt",
+      "label_vi": "Độ nghiêng"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ"
+    },
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa"
+    },
+    {
+      "key": "measure_precipitation_intensity",
+      "label_en": "Measure Precipitation Intensity",
+      "label_vi": "Đo cường độ mưa"
+    },
+    {
+      "key": "measure_tilt",
+      "label_en": "Measure Tilt",
+      "label_vi": "Đo độ nghiêng"
+    }
+  ],
+  "supported_protocols": [
+    "SDI-12",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "RainVue10-MM",
+    "CSI_RAINVUE10_MM",
+    "RainVue™10"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "measurement_range",
+      "name": "Measurement Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 500,
+        "unit": "mm/h",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 0,
+          "max_value": 19.7,
+          "unit": "in/h"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 9,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "precipitation_amount_resolution",
+      "name": "Precipitation Amount Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.004,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 10,
+        "source_rows": [
+          13
+        ]
+      }
+    },
+    {
+      "canonical_key": "power_requirements",
+      "name": "Power Requirements",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 6,
+        "max_value": 18,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 16,
+        "source_rows": [
+          19
+        ]
+      }
+    },
+    {
+      "canonical_key": "active_current_drain",
+      "name": "Active Current Drain",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 17,
+        "source_rows": [
+          20
+        ]
+      }
+    },
+    {
+      "canonical_key": "quiescent_current_drain",
+      "name": "Quiescent Current Drain",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.07,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 18,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "orifice_diameter",
+      "name": "Orifice Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 20,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.87,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 24,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "height",
+      "name": "Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 43.5,
+        "max_value": 46.5,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 17.1,
+          "max_value": 18.3,
+          "unit": "in"
+        },
+        "condition": "with feet adjustment"
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 26,
+        "source_rows": [
+          29
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 2,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 4.5,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RainVue10-20.json",
+        "product_index": 1,
+        "spec_index": 27,
+        "source_rows": [
+          30
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "RainVue10-MM",
+    "RainVue™10",
+    "Sensors",
+    "Precipitation Sensors",
+    "Precipitation Sensor",
+    "Temperature",
+    "temperature measurement",
+    "Precipitation",
+    "rainfall",
+    "Precipitation Intensity",
+    "Tilt",
+    "SDI-12",
+    "USB",
+    "Measure Temperature",
+    "Measure Precipitation",
+    "Measure Precipitation Intensity",
+    "Measure Tilt",
+    "CSI_RAINVUE10_MM"
+  ],
+  "search_keywords_vi": [
+    "RainVue10-MM",
+    "RainVue™10",
+    "Cảm biến",
+    "Cảm biến lượng mưa",
+    "Nhiệt độ",
+    "Lượng mưa",
+    "Cường độ mưa",
+    "Độ nghiêng",
+    "SDI-12",
+    "USB",
+    "Đo nhiệt độ",
+    "Đo lượng mưa",
+    "Đo cường độ mưa",
+    "Đo độ nghiêng"
+  ],
+  "search_text_en": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | Sensors | Precipitation Sensors | Precipitation Sensor | Temperature | Precipitation | Precipitation Intensity | Tilt | Measure Temperature | Measure Precipitation | Measure Precipitation Intensity | Measure Tilt | SDI-12 | USB | Measurement Range: 0 to 500 mm/h | Precipitation Amount Resolution: 0.1 mm | Power Requirements: 6 to 18 V DC | Active Current Drain: 1 mA | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg | temperature measurement | rainfall",
+  "search_text_vi": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | Cảm biến | Cảm biến lượng mưa | Nhiệt độ | Lượng mưa | Cường độ mưa | Độ nghiêng | Đo nhiệt độ | Đo lượng mưa | Đo cường độ mưa | Đo độ nghiêng | SDI-12 | USB | Measurement Range: 0 to 500 mm/h | Precipitation Amount Resolution: 0.1 mm | Power Requirements: 6 to 18 V DC | Active Current Drain: 1 mA | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg",
+  "search_text": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | Sensors | Precipitation Sensors | Precipitation Sensor | Temperature | Precipitation | Precipitation Intensity | Tilt | Measure Temperature | Measure Precipitation | Measure Precipitation Intensity | Measure Tilt | SDI-12 | USB | Measurement Range: 0 to 500 mm/h | Precipitation Amount Resolution: 0.1 mm | Power Requirements: 6 to 18 V DC | Active Current Drain: 1 mA | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg | temperature measurement | rainfall | Cảm biến | Cảm biến lượng mưa | Nhiệt độ | Lượng mưa | Cường độ mưa | Độ nghiêng | Đo nhiệt độ | Đo lượng mưa | Đo cường độ mưa | Đo độ nghiêng",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "1ed0815d4618b688cb9314c61e787dcb8f3aa6efdfcbdd65b8e9c42001c97e7a"
+}

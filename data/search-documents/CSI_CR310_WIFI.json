@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CR310_WIFI",
+  "model": "CR310-WIFI",
+  "name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Data Loggers",
+    "subcategory_key": "data_loggers",
+    "device_type": "Data Logger",
+    "device_type_key": "data_logger"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ"
+    }
+  ],
+  "supported_protocols": [
+    "Auto-IP",
+    "DHCP",
+    "DNP3",
+    "DNS",
+    "Ethernet",
+    "FTP",
+    "HTTP",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus ASCII",
+    "Modbus RTU",
+    "Modbus TCP",
+    "NTP",
+    "PakBus",
+    "POP3",
+    "PPP",
+    "RJ45",
+    "RNDIS",
+    "RS-232",
+    "SDI-12",
+    "SLAAC",
+    "SMTP",
+    "TCP",
+    "Telnet",
+    "TLS",
+    "UDP",
+    "USB",
+    "Wi-Fi"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CR310-WIFI",
+    "CSI_CR310_WIFI",
+    "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "real_time_clock_resolution",
+      "name": "Real-Time Clock - Resolution",
+      "quantity_kind": "time",
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "vx_resolution",
+      "name": "VX Resolution",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.6,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 48,
+        "source_rows": [
+          57
+        ]
+      }
+    },
+    {
+      "canonical_key": "charge_terminal_voltage",
+      "name": "Charge Terminal - Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 16,
+        "max_value": 32,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          37
+        ]
+      }
+    },
+    {
+      "canonical_key": "low_level_ac_maximum_input_voltage",
+      "name": "Low-Level AC Maximum Input Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "number",
+        "value": 20,
+        "unit": "V DC",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 113,
+        "source_rows": [
+          127
+        ]
+      }
+    },
+    {
+      "canonical_key": "system_power_out_current_limit_40_c",
+      "name": "System Power Out Current Limit @ -40°C",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 5.8,
+        "unit": "A",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 43,
+        "source_rows": [
+          52
+        ]
+      }
+    },
+    {
+      "canonical_key": "system_power_out_current_limit_20_c",
+      "name": "System Power Out Current Limit @ 20°C",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 3.7,
+        "unit": "A",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 44,
+        "source_rows": [
+          53
+        ]
+      }
+    },
+    {
+      "canonical_key": "system_power_out_current_limit_70_c",
+      "name": "System Power Out Current Limit @ 70°C",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 2,
+        "unit": "A",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 45,
+        "source_rows": [
+          54
+        ]
+      }
+    },
+    {
+      "canonical_key": "sw12v_thermal_fuse_hold_current_40_c",
+      "name": "SW12V Thermal Fuse Hold Current @ -40°C",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 1200,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 51,
+        "source_rows": [
+          60
+        ]
+      }
+    },
+    {
+      "canonical_key": "sw12v_thermal_fuse_hold_current_20_c",
+      "name": "SW12V Thermal Fuse Hold Current @ 20°C",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 1100,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 52,
+        "source_rows": [
+          61
+        ]
+      }
+    },
+    {
+      "canonical_key": "sw12v_thermal_fuse_hold_current_70_c",
+      "name": "SW12V Thermal Fuse Hold Current @ 70°C",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 830,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 53,
+        "source_rows": [
+          62
+        ]
+      }
+    },
+    {
+      "canonical_key": "current_loop_range",
+      "name": "Current-Loop Range",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 25,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 99,
+        "source_rows": [
+          112
+        ]
+      }
+    },
+    {
+      "canonical_key": "switch_closure_maximum_input_frequency",
+      "name": "Switch-Closure Maximum Input Frequency",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 150,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 103,
+        "source_rows": [
+          117
+        ]
+      }
+    },
+    {
+      "canonical_key": "high_frequency_maximum_input_frequency_se1_se4",
+      "name": "High-Frequency Maximum Input Frequency - SE1-SE4",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 35,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 108,
+        "source_rows": [
+          122
+        ]
+      }
+    },
+    {
+      "canonical_key": "high_frequency_maximum_input_frequency_p_ll",
+      "name": "High-Frequency Maximum Input Frequency - P_LL",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 20,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 109,
+        "source_rows": [
+          123
+        ]
+      }
+    },
+    {
+      "canonical_key": "high_frequency_maximum_input_frequency_p_sw",
+      "name": "High-Frequency Maximum Input Frequency - P_SW",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 35,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 110,
+        "source_rows": [
+          124
+        ]
+      }
+    },
+    {
+      "canonical_key": "high_frequency_maximum_input_frequency_c1_c2",
+      "name": "High-Frequency Maximum Input Frequency - C1-C2",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 3,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 111,
+        "source_rows": [
+          125
+        ]
+      }
+    },
+    {
+      "canonical_key": "quadrature_maximum_frequency",
+      "name": "Quadrature Maximum Frequency",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 2.5,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 121,
+        "source_rows": [
+          135
+        ]
+      }
+    },
+    {
+      "canonical_key": "period_averaging_minimum_pulse_width",
+      "name": "Period-Averaging Minimum Pulse Width",
+      "quantity_kind": "time",
+      "normalized_value": {
+        "type": "number",
+        "value": 2.5,
+        "unit": "µs",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR310-WIFI.json",
+        "product_index": 0,
+        "spec_index": 95,
+        "source_rows": [
+          107
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CR310-WIFI",
+    "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+    "Measurement Devices",
+    "Data Loggers",
+    "Data Logger",
+    "Temperature",
+    "temperature measurement",
+    "Auto-IP",
+    "DHCP",
+    "DNP3",
+    "DNS",
+    "Ethernet",
+    "FTP",
+    "HTTP",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus ASCII",
+    "Modbus RTU",
+    "Modbus TCP",
+    "NTP",
+    "PakBus",
+    "POP3",
+    "PPP",
+    "RJ45",
+    "RNDIS",
+    "RS-232",
+    "SDI-12",
+    "SLAAC",
+    "SMTP",
+    "TCP",
+    "Telnet",
+    "TLS",
+    "UDP",
+    "USB",
+    "Wi-Fi",
+    "Measure Temperature",
+    "CSI_CR310_WIFI"
+  ],
+  "search_keywords_vi": [
+    "CR310-WIFI",
+    "Thiết bị đo lường",
+    "Bộ ghi dữ liệu",
+    "Nhiệt độ",
+    "Auto-IP",
+    "DHCP",
+    "DNP3",
+    "DNS",
+    "Ethernet",
+    "FTP",
+    "HTTP",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus ASCII",
+    "Modbus RTU",
+    "Modbus TCP",
+    "NTP",
+    "PakBus",
+    "POP3",
+    "PPP",
+    "RJ45",
+    "RNDIS",
+    "RS-232",
+    "SDI-12",
+    "SLAAC",
+    "SMTP",
+    "TCP",
+    "Telnet",
+    "TLS",
+    "UDP",
+    "USB",
+    "Wi-Fi",
+    "Đo nhiệt độ"
+  ],
+  "search_text_en": "CR310-WIFI | CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M | CSI_CR310_WIFI | Measurement Devices | Data Loggers | Data Logger | Temperature | Measure Temperature | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Wi-Fi | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs | temperature measurement",
+  "search_text_vi": "CR310-WIFI | CSI_CR310_WIFI | CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M | Thiết bị đo lường | Bộ ghi dữ liệu | Nhiệt độ | Đo nhiệt độ | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Wi-Fi | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs",
+  "search_text": "CR310-WIFI | CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M | CSI_CR310_WIFI | Measurement Devices | Data Loggers | Data Logger | Temperature | Measure Temperature | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Wi-Fi | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs | temperature measurement | Thiết bị đo lường | Bộ ghi dữ liệu | Nhiệt độ | Đo nhiệt độ",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "8a083def288ea4d009d7603cc47efcdf6816284115f516182a792a92c061cf7a"
+}

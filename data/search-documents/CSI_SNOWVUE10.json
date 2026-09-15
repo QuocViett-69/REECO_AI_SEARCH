@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_SNOWVUE10",
+  "model": "SnowVue10",
+  "name_en": "Digital Snow Depth Sensor (-45 to +50C) w/o Cable",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Snow Water Equivalent / Snow Depth Sensors",
+    "subcategory_key": "snow_water_equivalent_snow_depth_sensors",
+    "device_type": "Snow Water Equivalent / Snow Depth Sensor",
+    "device_type_key": "snow_water_equivalent_snow_depth_sensor"
+  },
+  "measurements": [
+    {
+      "key": "distance",
+      "label_en": "Distance",
+      "label_vi": "Khoảng cách"
+    },
+    {
+      "key": "snow_depth",
+      "label_en": "Snow Depth",
+      "label_vi": "Độ sâu tuyết"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_distance",
+      "label_en": "Measure Distance",
+      "label_vi": "Đo khoảng cách"
+    },
+    {
+      "key": "measure_snow_depth",
+      "label_en": "Measure Snow Depth",
+      "label_vi": "Đo độ sâu tuyết"
+    }
+  ],
+  "supported_protocols": [
+    "SDI-12"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "SnowVue10",
+    "CSI_SNOWVUE10",
+    "Digital Snow Depth Sensor (-45 to +50C) w/o Cable",
+    "SnowVue™10"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -45,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      }
+    },
+    {
+      "canonical_key": "distance_measurement_range",
+      "name": "Distance Measurement Range",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0.4,
+        "max_value": 10,
+        "unit": "m",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 1.3,
+          "max_value": 32.8,
+          "unit": "ft"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      }
+    },
+    {
+      "canonical_key": "survivability_temperature_range",
+      "name": "Survivability Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      }
+    },
+    {
+      "canonical_key": "resolution",
+      "name": "Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "nominal_ultrasonic_frequency",
+      "name": "Nominal Ultrasonic Frequency",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 50,
+        "unit": "kHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "power_requirements",
+      "name": "Power Requirements",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 9,
+        "max_value": 18,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      }
+    },
+    {
+      "canonical_key": "quiescent_current_consumption",
+      "name": "Quiescent Current Consumption",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 300,
+        "unit": "µA",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      }
+    },
+    {
+      "canonical_key": "sensor_diameter",
+      "name": "Sensor Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 7.6,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 39,
+        "source_rows": [
+          41
+        ]
+      }
+    },
+    {
+      "canonical_key": "sensor_length",
+      "name": "Sensor Length",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 9.9,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 3.9,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/SnowVue10.json",
+        "product_index": 0,
+        "spec_index": 38,
+        "source_rows": [
+          40
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "SnowVue10",
+    "Digital Snow Depth Sensor (-45 to +50C) w/o Cable",
+    "Sensors",
+    "Snow Water Equivalent / Snow Depth Sensors",
+    "Snow Water Equivalent / Snow Depth Sensor",
+    "Distance",
+    "Snow Depth",
+    "SDI-12",
+    "Measure Distance",
+    "Measure Snow Depth",
+    "CSI_SNOWVUE10",
+    "SnowVue™10"
+  ],
+  "search_keywords_vi": [
+    "SnowVue10",
+    "Cảm biến",
+    "Cảm biến lượng nước tương đương tuyết và độ sâu tuyết",
+    "Khoảng cách",
+    "Độ sâu tuyết",
+    "SDI-12",
+    "Đo khoảng cách",
+    "Đo độ sâu tuyết"
+  ],
+  "search_text_en": "SnowVue10 | Digital Snow Depth Sensor (-45 to +50C) w/o Cable | CSI_SNOWVUE10 | SnowVue™10 | Sensors | Snow Water Equivalent / Snow Depth Sensors | Snow Water Equivalent / Snow Depth Sensor | Distance | Snow Depth | Measure Distance | Measure Snow Depth | SDI-12 | Operating Temperature Range: -45 to 50 °C | Distance Measurement Range: 0.4 to 10 m | Survivability Temperature Range: -55 to 80 °C | Resolution: 0.1 mm | Nominal Ultrasonic Frequency: 50 kHz | Power Requirements: 9 to 18 V DC | Quiescent Current Consumption: < 300 µA | Sensor Diameter: 7.6 cm | Sensor Length: 9.9 cm",
+  "search_text_vi": "SnowVue10 | CSI_SNOWVUE10 | Digital Snow Depth Sensor (-45 to +50C) w/o Cable | SnowVue™10 | Cảm biến | Cảm biến lượng nước tương đương tuyết và độ sâu tuyết | Khoảng cách | Độ sâu tuyết | Đo khoảng cách | Đo độ sâu tuyết | SDI-12 | Operating Temperature Range: -45 to 50 °C | Distance Measurement Range: 0.4 to 10 m | Survivability Temperature Range: -55 to 80 °C | Resolution: 0.1 mm | Nominal Ultrasonic Frequency: 50 kHz | Power Requirements: 9 to 18 V DC | Quiescent Current Consumption: < 300 µA | Sensor Diameter: 7.6 cm | Sensor Length: 9.9 cm",
+  "search_text": "SnowVue10 | Digital Snow Depth Sensor (-45 to +50C) w/o Cable | CSI_SNOWVUE10 | SnowVue™10 | Sensors | Snow Water Equivalent / Snow Depth Sensors | Snow Water Equivalent / Snow Depth Sensor | Distance | Snow Depth | Measure Distance | Measure Snow Depth | SDI-12 | Operating Temperature Range: -45 to 50 °C | Distance Measurement Range: 0.4 to 10 m | Survivability Temperature Range: -55 to 80 °C | Resolution: 0.1 mm | Nominal Ultrasonic Frequency: 50 kHz | Power Requirements: 9 to 18 V DC | Quiescent Current Consumption: < 300 µA | Sensor Diameter: 7.6 cm | Sensor Length: 9.9 cm | Cảm biến | Cảm biến lượng nước tương đương tuyết và độ sâu tuyết | Khoảng cách | Độ sâu tuyết | Đo khoảng cách | Đo độ sâu tuyết",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "bdb4ce02a7d195c528d6850c9ad8a2f0392cd73129381d4c10bfccfb9c7633e2"
+}

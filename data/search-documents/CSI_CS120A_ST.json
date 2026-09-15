@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS120A_ST",
+  "model": "CS120A-ST",
+  "name_en": "CS120A Atmospheric Visibility Sensor -ST -25 t",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Visibility Sensors",
+    "subcategory_key": "visibility_sensors",
+    "device_type": "Visibility Sensor",
+    "device_type_key": "visibility_sensor"
+  },
+  "measurements": [
+    {
+      "key": "visibility",
+      "label_en": "Visibility",
+      "label_vi": "Tầm nhìn"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_visibility",
+      "label_en": "Measure Visibility",
+      "label_vi": "Đo tầm nhìn"
+    }
+  ],
+  "supported_protocols": [
+    "RS-232",
+    "RS-485"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS120A-ST",
+    "CSI_CS120A_ST",
+    "CS120A Atmospheric Visibility Sensor -ST -25 t"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_humidity_range",
+      "name": "Operating Humidity Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          82
+        ]
+      }
+    },
+    {
+      "canonical_key": "electronics_supply_voltage",
+      "name": "Electronics Supply Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS120A_CS125_Master.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          64
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS120A-ST",
+    "CS120A Atmospheric Visibility Sensor -ST -25 t",
+    "Sensors",
+    "Visibility Sensors",
+    "Visibility Sensor",
+    "Visibility",
+    "meteorological optical range",
+    "MOR",
+    "RS-232",
+    "RS-485",
+    "Measure Visibility",
+    "CSI_CS120A_ST"
+  ],
+  "search_keywords_vi": [
+    "CS120A-ST",
+    "Cảm biến",
+    "Cảm biến tầm nhìn",
+    "Tầm nhìn",
+    "RS-232",
+    "RS-485",
+    "Đo tầm nhìn"
+  ],
+  "search_text_en": "CS120A-ST | CS120A Atmospheric Visibility Sensor -ST -25 t | CSI_CS120A_ST | Sensors | Visibility Sensors | Visibility Sensor | Visibility | Measure Visibility | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC | meteorological optical range | MOR",
+  "search_text_vi": "CS120A-ST | CSI_CS120A_ST | CS120A Atmospheric Visibility Sensor -ST -25 t | Cảm biến | Cảm biến tầm nhìn | Tầm nhìn | Đo tầm nhìn | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC",
+  "search_text": "CS120A-ST | CS120A Atmospheric Visibility Sensor -ST -25 t | CSI_CS120A_ST | Sensors | Visibility Sensors | Visibility Sensor | Visibility | Measure Visibility | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC | meteorological optical range | MOR | Cảm biến | Cảm biến tầm nhìn | Tầm nhìn | Đo tầm nhìn",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "3299fbd1745c7b3de4e3bc3d9eb3291b1673d32fb34b5b11ce8289fdd11d134a"
+}

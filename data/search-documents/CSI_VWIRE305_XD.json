@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_VWIRE305_XD",
+  "model": "VWIRE305-XD",
+  "name_en": "VWIRE 305",
+  "name_vi": "VWIRE 305",
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Vibrating Wire Measurement Modules",
+    "subcategory_key": "vibrating_wire_measurement_modules",
+    "device_type": "Measurement Device",
+    "device_type_key": "measurement_device"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ"
+    }
+  ],
+  "supported_protocols": [
+    "RJ45",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "VWIRE305-XD",
+    "CSI_VWIRE305_XD",
+    "VWIRE 305"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "vibrating_wire_excitation_voltage_resolution",
+      "name": "Vibrating-Wire Excitation Voltage Resolution",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "number",
+        "value": 26,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/VWIRE305_XD.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      }
+    },
+    {
+      "canonical_key": "supply_voltage",
+      "name": "Supply Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 10,
+        "max_value": 32,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/VWIRE305_XD.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          28
+        ]
+      }
+    },
+    {
+      "canonical_key": "typical_current_drain_12_vdc",
+      "name": "Typical Current Drain @ 12 VDC",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 190,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/VWIRE305_XD.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          29
+        ]
+      }
+    },
+    {
+      "canonical_key": "typical_current_drain_24_vdc",
+      "name": "Typical Current Drain @ 24 VDC",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 110,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/VWIRE305_XD.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          30
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "kg",
+        "qualifier": "<",
+        "alternate": {
+          "value": 2,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/VWIRE305_XD.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          32
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "VWIRE305-XD",
+    "VWIRE 305",
+    "Measurement Devices",
+    "Vibrating Wire Measurement Modules",
+    "Measurement Device",
+    "Temperature",
+    "temperature measurement",
+    "RJ45",
+    "USB",
+    "Measure Temperature",
+    "CSI_VWIRE305_XD"
+  ],
+  "search_keywords_vi": [
+    "VWIRE305-XD",
+    "VWIRE 305",
+    "Thiết bị đo lường",
+    "Mô-đun đo dây rung",
+    "Nhiệt độ",
+    "RJ45",
+    "USB",
+    "Đo nhiệt độ"
+  ],
+  "search_text_en": "VWIRE305-XD | VWIRE 305 | CSI_VWIRE305_XD | Measurement Devices | Vibrating Wire Measurement Modules | Measurement Device | Temperature | Measure Temperature | RJ45 | USB | Vibrating-Wire Excitation Voltage Resolution: 26 mV | Supply Voltage: 10 to 32 V DC | Typical Current Drain @ 12 VDC: 190 mA | Typical Current Drain @ 24 VDC: 110 mA | Weight: < 1 kg | temperature measurement",
+  "search_text_vi": "VWIRE305-XD | VWIRE 305 | CSI_VWIRE305_XD | Thiết bị đo lường | Mô-đun đo dây rung | Nhiệt độ | Đo nhiệt độ | RJ45 | USB | Vibrating-Wire Excitation Voltage Resolution: 26 mV | Supply Voltage: 10 to 32 V DC | Typical Current Drain @ 12 VDC: 190 mA | Typical Current Drain @ 24 VDC: 110 mA | Weight: < 1 kg",
+  "search_text": "VWIRE305-XD | VWIRE 305 | CSI_VWIRE305_XD | Measurement Devices | Vibrating Wire Measurement Modules | Measurement Device | Temperature | Measure Temperature | RJ45 | USB | Vibrating-Wire Excitation Voltage Resolution: 26 mV | Supply Voltage: 10 to 32 V DC | Typical Current Drain @ 12 VDC: 190 mA | Typical Current Drain @ 24 VDC: 110 mA | Weight: < 1 kg | temperature measurement | Thiết bị đo lường | Mô-đun đo dây rung | Nhiệt độ | Đo nhiệt độ",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "839a9a1a385bc48f45e8bf912966ca46052bb702c35b008fe836f8d70c13e284"
+}

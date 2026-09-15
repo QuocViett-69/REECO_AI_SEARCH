@@ -1,0 +1,964 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_METSENS500_DS",
+  "model": "MetSENS500-DS",
+  "raw_record_ref": {
+    "file": "data/raw/MetSENS500.json",
+    "product_index": 2,
+    "raw_record_key": "MetSENS500.json#2",
+    "raw_product_id": "CSI_METSENS500_DS",
+    "raw_model": "MetSENS500-DS"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Product Name",
+      "value_raw": "MetSENS500-DS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Base Model",
+      "value_raw": "MetSENS500",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "base_model"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Product Type",
+      "value_raw": "Compact Weather Sensor for Temperature, RH, Barometric Pressure, and Wind with Compass",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Manufacturer",
+      "value_raw": "Campbell Scientific, Inc.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Device Classification",
+      "value_raw": "Primary measurement device / integrated weather sensor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Primary Application",
+      "value_raw": "Integrated measurement of common meteorological parameters",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "primary_application"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Measurements Made",
+      "value_raw": "Air temperature; relative humidity; barometric pressure; wind speed; wind direction; compass heading",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "measurements_made"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Communication Configuration",
+      "value_raw": "SDI-12 digital output",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "communication_configuration"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Primary Digital Interface",
+      "value_raw": "SDI-12",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "primary_digital_interface"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Default Communication Settings",
+      "value_raw": "SDI-12 protocol",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "default_communication_settings"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Default Address",
+      "value_raw": "SDI-12 address 0",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "default_address"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Replacement Cable",
+      "value_raw": "METSENSCBL1 SDI-12 Replacement Cable",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "replacement_cable"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Signal / Data Wiring",
+      "value_raw": "Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "signal_per_data_wiring"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Direct Data Logger Connection",
+      "value_raw": "Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "direct_data_logger_connection"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "CRBasic Programming",
+      "value_raw": "SDI12Recorder()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "crbasic_programming"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Sampling Rate",
+      "value_raw": "1 Hz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "sampling_rate"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "IP Rating",
+      "value_raw": "IP66",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "ip_rating"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Compliance",
+      "value_raw": "CE and RoHS compliant; where applicable, individual parameters meet or exceed IEC 61724-1 (2017, 2021)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "compliance"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-40 to +70 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Operating Voltage",
+      "value_raw": "5 to 30 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 5,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 19,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "operating_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Typical Current Drain – Continuous High Mode",
+      "value_raw": "25 mA @ 12 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 20,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "typical_current_drain_continuous_high_mode",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Typical Current Drain – Eco-Power Mode",
+      "value_raw": "0.7 mA @ 12 VDC (1 hour polled)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "typical_current_drain_eco_power_mode",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Weight",
+      "value_raw": "0.7 kg (1.5 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.7,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.5,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Overall Height",
+      "value_raw": "222 mm",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 222,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "overall_height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Maximum Diameter",
+      "value_raw": "142 mm",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 142,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 24,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "maximum_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Air Temperature Range",
+      "value_raw": "-40 to +70 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "air_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Air Temperature Resolution",
+      "value_raw": "0.1 °C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 26,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "air_temperature_resolution",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Air Temperature Accuracy",
+      "value_raw": "±0.3 °C @ +20 °C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 27,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "air_temperature_accuracy",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Relative Humidity Range",
+      "value_raw": "0 to 100%",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 28,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "relative_humidity_range",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Relative Humidity Resolution",
+      "value_raw": "1% (manual); brochure states 0.1",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 29,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "relative_humidity_resolution",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Relative Humidity Accuracy",
+      "value_raw": "±2% @ 20 °C (10 to 90% RH)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 30,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "relative_humidity_accuracy",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Barometric Pressure Range",
+      "value_raw": "300 to 1100 hPa",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 300,
+        "max_value": 1100,
+        "unit": "hPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 31,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "barometric_pressure_range",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Barometric Pressure Resolution",
+      "value_raw": "0.1 hPa",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "hPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 32,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "barometric_pressure_resolution",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Barometric Pressure Accuracy",
+      "value_raw": "±0.5 hPa @ 25 °C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 33,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "barometric_pressure_accuracy",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Wind Speed Range",
+      "value_raw": "0.01 to 60 m/s",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0.01,
+        "max_value": 60,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 34,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "wind_speed_range",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Wind Speed Resolution",
+      "value_raw": "0.01 m/s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 35,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "wind_speed_resolution",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Wind Speed Starting Threshold",
+      "value_raw": "0.01 m/s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 36,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "wind_speed_starting_threshold",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Wind Speed Accuracy",
+      "value_raw": "±3% up to 40 m/s; ±5% up to 60 m/s",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 37,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "wind_speed_accuracy",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Wind Direction Range",
+      "value_raw": "0° to 359°",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 359,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 38,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "wind_direction_range"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Wind Direction Resolution",
+      "value_raw": "1°",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 39,
+        "source_rows": [
+          41
+        ]
+      },
+      "canonical_key": "wind_direction_resolution"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Wind Direction Accuracy",
+      "value_raw": "±3° up to 40 m/s; ±5° from 40 to 60 m/s",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 40,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "wind_direction_accuracy"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Compass Range",
+      "value_raw": "0° to 359°",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 359,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 41,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "compass_range"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Compass Resolution",
+      "value_raw": "1°",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 42,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "compass_resolution"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Compass Accuracy",
+      "value_raw": "±3°",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 3,
+        "unit": "°",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 43,
+        "source_rows": [
+          45
+        ]
+      },
+      "canonical_key": "compass_accuracy"
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "section": null,
+      "name_raw": "Cable Length Options",
+      "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/MetSENS500.json",
+        "product_index": 2,
+        "spec_index": 44,
+        "source_rows": [
+          46
+        ]
+      },
+      "canonical_key": "cable_length_options",
+      "quantity_kind": "length"
+    }
+  ]
+}

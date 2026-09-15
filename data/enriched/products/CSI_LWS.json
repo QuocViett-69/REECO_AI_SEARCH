@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_LWS",
+  "model": "LWS",
+  "name_en": "Meter Phytos 31 Leaf Wetness Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Leaf Wetness Sensors",
+    "subcategory_key": "leaf_wetness_sensors",
+    "device_type": "Leaf Wetness Sensor",
+    "device_type_key": "leaf_wetness_sensor"
+  },
+  "measurements": [
+    {
+      "key": "leaf_wetness",
+      "label_en": "Leaf Wetness",
+      "label_vi": "Độ ướt lá",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Meter Phytos 31 Leaf Wetness Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/LWS.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/LWS.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "key": "leaf_wetness_monitoring",
+      "label_en": "Leaf Wetness Monitoring",
+      "label_vi": "Giám sát độ ướt lá",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/LWS.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_leaf_wetness",
+      "label_en": "Measure Leaf Wetness",
+      "label_vi": "Đo độ ướt lá",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Meter Phytos 31 Leaf Wetness Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/LWS.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/LWS.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "LWS",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "LWS"
+        }
+      ]
+    },
+    {
+      "value": "CSI_LWS",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_LWS"
+        }
+      ]
+    },
+    {
+      "value": "Meter Phytos 31 Leaf Wetness Sensor",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Meter Phytos 31 Leaf Wetness Sensor"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "LWS",
+      "Meter Phytos 31 Leaf Wetness Sensor",
+      "Sensors",
+      "Leaf Wetness Sensors",
+      "Leaf Wetness Sensor",
+      "Leaf Wetness",
+      "Leaf Wetness Monitoring",
+      "Measure Leaf Wetness",
+      "CSI_LWS"
+    ],
+    "vi": [
+      "LWS",
+      "Cảm biến",
+      "Cảm biến độ ướt lá",
+      "Độ ướt lá",
+      "Giám sát độ ướt lá",
+      "Đo độ ướt lá"
+    ]
+  }
+}

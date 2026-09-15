@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_EE181",
+  "model": "EE181",
+  "name_en": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Air Temperature and Relative Humidity Sensors",
+    "subcategory_key": "air_temperature_and_relative_humidity_sensors",
+    "device_type": "Air Temperature and Relative Humidity Sensor",
+    "device_type_key": "air_temperature_and_relative_humidity_sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ"
+    },
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ"
+    },
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "EE181",
+    "CSI_EE181",
+    "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          15
+        ]
+      }
+    },
+    {
+      "canonical_key": "air_temperature_measurement_range",
+      "name": "Measurement Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "storage_temperature_range",
+      "name": "Storage Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          22
+        ]
+      }
+    },
+    {
+      "canonical_key": "average_current_consumption",
+      "name": "Average Current Consumption",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.2,
+        "unit": "mA",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          8
+        ]
+      }
+    },
+    {
+      "canonical_key": "sensor_diameter",
+      "name": "Sensor Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 2.1,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.83,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          16
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 290,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 10.2,
+          "unit": "oz"
+        },
+        "condition": "with 5 m cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          18
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "EE181",
+    "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable",
+    "Sensors",
+    "Air Temperature and Relative Humidity Sensors",
+    "Air Temperature and Relative Humidity Sensor",
+    "Temperature",
+    "temperature measurement",
+    "Relative Humidity",
+    "RH",
+    "Measure Temperature",
+    "Measure Relative Humidity",
+    "CSI_EE181"
+  ],
+  "search_keywords_vi": [
+    "EE181",
+    "Cảm biến",
+    "Cảm biến nhiệt độ không khí và độ ẩm tương đối",
+    "Nhiệt độ",
+    "Độ ẩm tương đối",
+    "Đo nhiệt độ",
+    "Đo độ ẩm tương đối"
+  ],
+  "search_text_en": "EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | CSI_EE181 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Temperature | Relative Humidity | Measure Temperature | Measure Relative Humidity | Operating Temperature Range: -40 to 60 °C | Measurement Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm | Weight: 290 g | temperature measurement | RH",
+  "search_text_vi": "EE181 | CSI_EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ | Độ ẩm tương đối | Đo nhiệt độ | Đo độ ẩm tương đối | Operating Temperature Range: -40 to 60 °C | Measurement Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm | Weight: 290 g",
+  "search_text": "EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | CSI_EE181 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Temperature | Relative Humidity | Measure Temperature | Measure Relative Humidity | Operating Temperature Range: -40 to 60 °C | Measurement Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm | Weight: 290 g | temperature measurement | RH | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ | Độ ẩm tương đối | Đo nhiệt độ | Đo độ ẩm tương đối",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "7e2e0904ff65df55b675ccba0747a91a39aab250dabd73b4b777d502a0801450"
+}

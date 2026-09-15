@@ -1,0 +1,198 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TEMPVUE50",
+  "model": "TempVue50",
+  "name_en": "TempVue™50",
+  "name_vi": "TempVue™50",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Water and Soil Temperature Sensors",
+    "subcategory_key": "water_and_soil_temperature_sensors",
+    "device_type": "Water and Soil Temperature Sensor",
+    "device_type_key": "water_and_soil_temperature_sensor"
+  },
+  "measurements": [
+    {
+      "key": "water_temperature",
+      "label_en": "Water Temperature",
+      "label_vi": "Nhiệt độ nước"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_water_temperature",
+      "label_en": "Measure Water Temperature",
+      "label_vi": "Đo nhiệt độ nước"
+    }
+  ],
+  "supported_protocols": [
+    "SDI-12"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "TempVue50",
+    "CSI_TEMPVUE50",
+    "TempVue™50"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "temperature_measurement_range",
+      "name": "Temperature Measurement Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      }
+    },
+    {
+      "canonical_key": "resolution",
+      "name": "Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "average_current",
+      "name": "Average Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 150,
+        "unit": "µA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      }
+    },
+    {
+      "canonical_key": "maximum_depth",
+      "name": "Maximum Depth",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 100,
+        "unit": "m",
+        "qualifier": null,
+        "alternate": {
+          "value": 328,
+          "unit": "ft"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      }
+    },
+    {
+      "canonical_key": "probe_diameter",
+      "name": "Probe Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.7,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.67,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      }
+    },
+    {
+      "canonical_key": "probe_length",
+      "name": "Probe Length",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 9.5,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 3.75,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TempVue50.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "TempVue50",
+    "TempVue™50",
+    "Sensors",
+    "Water and Soil Temperature Sensors",
+    "Water and Soil Temperature Sensor",
+    "Water Temperature",
+    "SDI-12",
+    "Measure Water Temperature",
+    "CSI_TEMPVUE50"
+  ],
+  "search_keywords_vi": [
+    "TempVue50",
+    "TempVue™50",
+    "Cảm biến",
+    "Cảm biến nhiệt độ nước và đất",
+    "Nhiệt độ nước",
+    "SDI-12",
+    "Đo nhiệt độ nước"
+  ],
+  "search_text_en": "TempVue50 | TempVue™50 | CSI_TEMPVUE50 | Sensors | Water and Soil Temperature Sensors | Water and Soil Temperature Sensor | Water Temperature | Measure Water Temperature | SDI-12 | Temperature Measurement Range: -40 to 60 °C | Resolution: 0.01 °C | Average Current: 150 µA | Maximum Depth: 100 m | Probe Diameter: 1.7 cm | Probe Length: 9.5 cm",
+  "search_text_vi": "TempVue50 | TempVue™50 | CSI_TEMPVUE50 | Cảm biến | Cảm biến nhiệt độ nước và đất | Nhiệt độ nước | Đo nhiệt độ nước | SDI-12 | Temperature Measurement Range: -40 to 60 °C | Resolution: 0.01 °C | Average Current: 150 µA | Maximum Depth: 100 m | Probe Diameter: 1.7 cm | Probe Length: 9.5 cm",
+  "search_text": "TempVue50 | TempVue™50 | CSI_TEMPVUE50 | Sensors | Water and Soil Temperature Sensors | Water and Soil Temperature Sensor | Water Temperature | Measure Water Temperature | SDI-12 | Temperature Measurement Range: -40 to 60 °C | Resolution: 0.01 °C | Average Current: 150 µA | Maximum Depth: 100 m | Probe Diameter: 1.7 cm | Probe Length: 9.5 cm | Cảm biến | Cảm biến nhiệt độ nước và đất | Nhiệt độ nước | Đo nhiệt độ nước",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "29a76df770413c2bf6c33b7dc0c74dd427b71a9c7fa9dd4e02686b687f680bf7"
+}

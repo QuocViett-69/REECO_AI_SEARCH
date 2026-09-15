@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_BAROVUE10",
+  "model": "BaroVue10",
+  "name_en": "Digital Barometer -40 to +60C, 76cm (30 Inch)",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Barometric Pressure Sensors",
+    "subcategory_key": "barometric_pressure_sensors",
+    "device_type": "Barometric Pressure Sensor",
+    "device_type_key": "barometric_pressure_sensor"
+  },
+  "measurements": [
+    {
+      "key": "barometric_pressure",
+      "label_en": "Barometric Pressure",
+      "label_vi": "Áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Digital Barometer -40 to +60C, 76cm (30 Inch)"
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "digital_output",
+          "raw_ref": {
+            "file": "data/raw/BaroVue10.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "digital_output",
+          "raw_ref": {
+            "file": "data/raw/BaroVue10.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_barometric_pressure",
+      "label_en": "Measure Barometric Pressure",
+      "label_vi": "Đo áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Digital Barometer -40 to +60C, 76cm (30 Inch)"
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "BaroVue10",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "BaroVue10"
+        }
+      ]
+    },
+    {
+      "value": "CSI_BAROVUE10",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_BAROVUE10"
+        }
+      ]
+    },
+    {
+      "value": "Digital Barometer -40 to +60C, 76cm (30 Inch)",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Digital Barometer -40 to +60C, 76cm (30 Inch)"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "BaroVue10",
+      "Digital Barometer -40 to +60C, 76cm (30 Inch)",
+      "Sensors",
+      "Barometric Pressure Sensors",
+      "Barometric Pressure Sensor",
+      "Barometric Pressure",
+      "RS-232",
+      "SDI-12",
+      "Measure Barometric Pressure",
+      "CSI_BAROVUE10"
+    ],
+    "vi": [
+      "BaroVue10",
+      "Cảm biến",
+      "Cảm biến áp suất khí quyển",
+      "Áp suất khí quyển",
+      "RS-232",
+      "SDI-12",
+      "Đo áp suất khí quyển"
+    ]
+  }
+}

@@ -176,8 +176,25 @@ export async function readJson(filePath) {
 }
 
 export async function writeJson(filePath, value) {
-  await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
+  const content = `${JSON.stringify(value, null, 2)}\n`;
+  try {
+    if ((await readFile(filePath, 'utf8')) === content) return false;
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  await writeFile(filePath, content, 'utf8');
+  return true;
 }
+
+export const preserveGeneratedAtWhenUnchanged = (report, previousReport) => {
+  if (!previousReport?.generated_at) return report;
+  const currentComparable = { ...report, generated_at: null };
+  const previousComparable = { ...previousReport, generated_at: null };
+  return JSON.stringify(currentComparable) ===
+    JSON.stringify(previousComparable)
+    ? { ...report, generated_at: previousReport.generated_at }
+    : report;
+};
 
 export async function loadRawProducts() {
   const fileNames = (await readdir(rawDirectory))
@@ -436,6 +453,24 @@ const getImageUrl = (rawProduct) => {
 
 function compareIdentity(sourceProduct, match) {
   if (!match.product) return [];
+  const rawWarnings = getRawWarnings(match.product);
+  const rawIdentityRequiresReview =
+    match.product.identity_source?.model === 'manual_review' ||
+    rawWarnings.some((warning) =>
+      /model identity|model number.*while|identity conflict/iu.test(warning),
+    );
+  if (rawIdentityRequiresReview) {
+    const declaredModel = getSpecification(match.product, 'Model Number');
+    return [
+      {
+        field: 'model',
+        master_value: sourceProduct.model,
+        raw_value: declaredModel?.value_raw ?? match.product.model ?? null,
+        raw_record_key: match.product.raw_record_key,
+        reason: 'raw_identity_requires_review',
+      },
+    ];
+  }
   const modelMatches =
     normalizeIdentity(sourceProduct.model) ===
     normalizeIdentity(match.product.model);
@@ -499,6 +534,8 @@ function createBuildMetadata(
   sourceMetadata = canonicalProduct,
 ) {
   const rawProduct = match.product;
+  const identityConflicts = compareIdentity(canonicalProduct, match);
+  const taxonomyConflicts = compareTaxonomy(product, rawProduct);
   return {
     product_id: product.product_id,
     ...rawLocation(
@@ -514,10 +551,16 @@ function createBuildMetadata(
     match_candidate_count: match.candidate_count,
     match_candidates: match.candidates,
     match_evidence: match.evidence,
-    unresolved_reason: match.unresolved_reason,
+    unresolved_reason:
+      match.unresolved_reason ??
+      (identityConflicts.length > 0
+        ? 'raw_identity_conflict'
+        : taxonomyConflicts.length > 0
+          ? 'raw_taxonomy_conflict'
+          : null),
     source_verified: sourceMetadata.verified ?? null,
-    identity_conflicts: compareIdentity(canonicalProduct, match),
-    taxonomy_conflicts: compareTaxonomy(product, rawProduct),
+    identity_conflicts: identityConflicts,
+    taxonomy_conflicts: taxonomyConflicts,
     raw_name_alias: getRawNameAlias(canonicalProduct, rawProduct),
     raw_warnings: getRawWarnings(rawProduct),
   };

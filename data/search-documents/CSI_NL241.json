@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_NL241",
+  "model": "NL241",
+  "name_en": "NL241",
+  "name_vi": "NL241",
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Wi-Fi Communications",
+    "subcategory_key": "wi_fi_communications",
+    "device_type": "Wi-Fi Communication Device",
+    "device_type_key": "wi_fi_communication_device"
+  },
+  "measurements": [],
+  "applications": [
+    {
+      "key": "data_logger_connectivity",
+      "label_en": "Data Logger Connectivity",
+      "label_vi": "Kết nối bộ ghi dữ liệu"
+    }
+  ],
+  "capabilities": [],
+  "supported_protocols": [
+    "CS I/O",
+    "DHCP",
+    "DNS",
+    "HTTPS",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus",
+    "Modbus TCP",
+    "PakBus",
+    "RS-232",
+    "SLAAC",
+    "TCP/IP",
+    "Telnet",
+    "TLS",
+    "USB",
+    "Wi-Fi"
+  ],
+  "unsupported_protocols": [
+    "USB"
+  ],
+  "aliases": [
+    "NL241",
+    "CSI_NL241"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL241.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      }
+    },
+    {
+      "canonical_key": "supply_voltage",
+      "name": "Supply Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 9,
+        "max_value": 16,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL241.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "wlan_frequency",
+      "name": "WLAN Frequency",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 2.4,
+        "unit": "GHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL241.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          28
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 180.35,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 6.36,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/NL241.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          26
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "NL241",
+    "Communications",
+    "Wi-Fi Communications",
+    "Wi-Fi Communication Device",
+    "Data Logger Connectivity",
+    "CS I/O",
+    "DHCP",
+    "DNS",
+    "HTTPS",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus",
+    "Modbus TCP",
+    "PakBus",
+    "RS-232",
+    "SLAAC",
+    "TCP/IP",
+    "Telnet",
+    "TLS",
+    "USB",
+    "Wi-Fi",
+    "CSI_NL241"
+  ],
+  "search_keywords_vi": [
+    "NL241",
+    "Thiết bị truyền thông",
+    "Truyền thông Wi-Fi",
+    "Thiết bị truyền thông Wi-Fi",
+    "Kết nối bộ ghi dữ liệu",
+    "CS I/O",
+    "DHCP",
+    "DNS",
+    "HTTPS",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus",
+    "Modbus TCP",
+    "PakBus",
+    "RS-232",
+    "SLAAC",
+    "TCP/IP",
+    "Telnet",
+    "TLS",
+    "USB",
+    "Wi-Fi"
+  ],
+  "search_text_en": "NL241 | CSI_NL241 | Communications | Wi-Fi Communications | Wi-Fi Communication Device | Data Logger Connectivity | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to 70 °C | Supply Voltage: 9 to 16 V DC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g",
+  "search_text_vi": "NL241 | CSI_NL241 | Thiết bị truyền thông | Truyền thông Wi-Fi | Thiết bị truyền thông Wi-Fi | Kết nối bộ ghi dữ liệu | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to 70 °C | Supply Voltage: 9 to 16 V DC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g",
+  "search_text": "NL241 | CSI_NL241 | Communications | Wi-Fi Communications | Wi-Fi Communication Device | Data Logger Connectivity | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to 70 °C | Supply Voltage: 9 to 16 V DC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g | Thiết bị truyền thông | Truyền thông Wi-Fi | Thiết bị truyền thông Wi-Fi | Kết nối bộ ghi dữ liệu",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "9bcc5dee7295e08b619c60a87a15a6f94462c339baa6558a1d06aa95e9eb5c5e"
+}

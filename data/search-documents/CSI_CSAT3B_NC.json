@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CSAT3B_NC",
+  "model": "CSAT3B-NC",
+  "name_en": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Wind Speed and Wind Direction Sensors",
+    "subcategory_key": "wind_speed_and_wind_direction_sensors",
+    "device_type": "Wind Speed and Wind Direction Sensor",
+    "device_type_key": "wind_speed_and_wind_direction_sensor"
+  },
+  "measurements": [
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió"
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió"
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió"
+    }
+  ],
+  "supported_protocols": [
+    "ASCII",
+    "CPI",
+    "RS-485",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CSAT3B-NC",
+    "CSI_CSAT3B_NC",
+    "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "inclinometer_accuracy",
+      "name": "Inclinometer Accuracy",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSAT3B_CSAT3BH.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          56
+        ]
+      }
+    },
+    {
+      "canonical_key": "board_temperature_accuracy",
+      "name": "Board Temperature Accuracy",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "number",
+        "value": 2,
+        "unit": "°C",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSAT3B_CSAT3BH.json",
+        "product_index": 0,
+        "spec_index": 35,
+        "source_rows": [
+          60
+        ]
+      }
+    },
+    {
+      "canonical_key": "transducer_diameter",
+      "name": "Transducer Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.64,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.25,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSAT3B_CSAT3BH.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          23
+        ]
+      }
+    },
+    {
+      "canonical_key": "transducer_mounting_arm_diameter",
+      "name": "Transducer Mounting Arm Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.84,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.33,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSAT3B_CSAT3BH.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          24
+        ]
+      }
+    },
+    {
+      "canonical_key": "support_arm_diameter",
+      "name": "Support Arm Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.59,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.63,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSAT3B_CSAT3BH.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          25
+        ]
+      }
+    },
+    {
+      "canonical_key": "anemometer_head_weight",
+      "name": "Anemometer Head Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.45,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 3.2,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSAT3B_CSAT3BH.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          26
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CSAT3B-NC",
+    "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni",
+    "Sensors",
+    "Wind Speed and Wind Direction Sensors",
+    "Wind Speed and Wind Direction Sensor",
+    "Wind Speed",
+    "Wind Direction",
+    "ASCII",
+    "CPI",
+    "RS-485",
+    "USB",
+    "Measure Wind Speed",
+    "Measure Wind Direction",
+    "CSI_CSAT3B_NC"
+  ],
+  "search_keywords_vi": [
+    "CSAT3B-NC",
+    "Cảm biến",
+    "Cảm biến tốc độ và hướng gió",
+    "Tốc độ gió",
+    "Hướng gió",
+    "ASCII",
+    "CPI",
+    "RS-485",
+    "USB",
+    "Đo tốc độ gió",
+    "Đo hướng gió"
+  ],
+  "search_text_en": "CSAT3B-NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | CSI_CSAT3B_NC | Sensors | Wind Speed and Wind Direction Sensors | Wind Speed and Wind Direction Sensor | Wind Speed | Wind Direction | Measure Wind Speed | Measure Wind Direction | ASCII | CPI | RS-485 | USB | Inclinometer Accuracy: ± 1 ° | Board Temperature Accuracy: ± 2 °C | Transducer Diameter: 0.64 cm | Transducer Mounting Arm Diameter: 0.84 cm | Support Arm Diameter: 1.59 cm | Anemometer Head Weight: 1.45 kg",
+  "search_text_vi": "CSAT3B-NC | CSI_CSAT3B_NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | Cảm biến | Cảm biến tốc độ và hướng gió | Tốc độ gió | Hướng gió | Đo tốc độ gió | Đo hướng gió | ASCII | CPI | RS-485 | USB | Inclinometer Accuracy: ± 1 ° | Board Temperature Accuracy: ± 2 °C | Transducer Diameter: 0.64 cm | Transducer Mounting Arm Diameter: 0.84 cm | Support Arm Diameter: 1.59 cm | Anemometer Head Weight: 1.45 kg",
+  "search_text": "CSAT3B-NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | CSI_CSAT3B_NC | Sensors | Wind Speed and Wind Direction Sensors | Wind Speed and Wind Direction Sensor | Wind Speed | Wind Direction | Measure Wind Speed | Measure Wind Direction | ASCII | CPI | RS-485 | USB | Inclinometer Accuracy: ± 1 ° | Board Temperature Accuracy: ± 2 °C | Transducer Diameter: 0.64 cm | Transducer Mounting Arm Diameter: 0.84 cm | Support Arm Diameter: 1.59 cm | Anemometer Head Weight: 1.45 kg | Cảm biến | Cảm biến tốc độ và hướng gió | Tốc độ gió | Hướng gió | Đo tốc độ gió | Đo hướng gió",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "e09eacfcd2aad073c20c348f0f2f1fe40a9612da888470c08903db4a79a77d79"
+}

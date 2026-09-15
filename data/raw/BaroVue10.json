@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "BaroVue10.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_BAROVUE10",
+      "manufacturer": "Campbell Scientific",
+      "model": "BaroVue10",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "filename",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "These specifications assume the recommended desiccation is used",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Pressure Range",
+          "name_vi": "Dải áp suất",
+          "value_raw": "500 to 1100 hPa",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Temperature Range",
+          "name_vi": "Dải nhiệt độ",
+          "value_raw": "-40°C to +60°C",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "9 to 28 Vdc",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Elevation",
+          "name_vi": "Độ cao hoạt động",
+          "value_raw": "Approximately 609.6 m (2,000 ft) below sea level, as in a mine, to 4,572 m (15,000 ft) above sea level",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Consumption",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "200 µA, sleep mode",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Consumption",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "<5 mA, active",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Digital Output",
+          "name_vi": "Đầu ra số",
+          "value_raw": "SDI-12, RS-232 serial",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Pressure Fitting",
+          "name_vi": "Đầu nối áp suất",
+          "value_raw": "Barbed fitting for 0.318 cm (0.125 in.)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "2.2 × 9.0 × 10.2 cm (0.87 × 3.54 × 4.02 in.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "226.8 g (0.5 lb)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "ACCURACY",
+          "name_en": "Calibration Uncertainty",
+          "name_vi": "Độ không đảm bảo hiệu chuẩn",
+          "value_raw": "±0.15 hPa",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "ACCURACY",
+          "name_en": "Uncertainty",
+          "name_vi": "Độ không đảm bảo đo",
+          "value_raw": "±0.3 hPa at 20°C",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "ACCURACY",
+          "name_en": "Total Uncertainty",
+          "name_vi": "Tổng độ không đảm bảo",
+          "value_raw": "±0.5 hPa from -40°C to +60°C",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "ACCURACY",
+          "name_en": "Long-Term Stability",
+          "name_vi": "Độ ổn định dài hạn",
+          "value_raw": "±0.1 hPa/year",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "ACCURACY",
+          "name_en": "Power Supply Rejection",
+          "name_vi": "Khả năng khử ảnh hưởng nguồn cấp",
+          "value_raw": "Negligible",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "ACCURACY",
+          "name_en": "Measurement Noise",
+          "name_vi": "Nhiễu phép đo",
+          "value_raw": "0.05 hPa RMS",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "ACCURACY",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.1 hPa",
+          "source_rows": [
+            20
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "BaroVue10.pdf",
+        "user_manual": "barovue10-manuals.pdf",
+        "order_form": "https://www.campbellsci.com/products/barovue10"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/13865",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Model was taken from filename because no explicit Model field was found in the worksheet.",
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

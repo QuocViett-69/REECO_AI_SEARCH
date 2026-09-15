@@ -1,0 +1,396 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_52202",
+  "model": "52202",
+  "raw_record_ref": {
+    "file": "data/raw/52202.json",
+    "product_index": 0,
+    "raw_record_key": "52202.json#0",
+    "raw_product_id": "CSI_52202",
+    "raw_model": "52202"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Sensor Type",
+      "value_raw": "Tipping bucket with magnetic reed switch, normally open",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "sensor_type"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Measurement Uncertainty",
+      "value_raw": "2% for up to 25 mm/h (1 in./h)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "measurement_uncertainty"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Measurement Uncertainty",
+      "value_raw": "3% for up to 50 mm/h (2 in./h)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "measurement_uncertainty"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Rainfall per Tip",
+      "value_raw": "0.1 mm (0.004 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.004,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "rainfall_per_tip"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-20°C to +50°C, heated",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Humidity Range",
+      "value_raw": "0 to 100%",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "humidity_range"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Power",
+      "value_raw": "18 W at 24 Vac, for heater only",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "power",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Heater Thermostat Set Point",
+      "value_raw": "10°C ±3°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "heater_thermostat_set_point"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Contact Rating",
+      "value_raw": "24 Vac/dc, 400 mA maximum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "contact_rating"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Compliance with Standards",
+      "value_raw": "2015/863/EU RoHS Phthalates Amendment",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "compliance_with_standards"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Compliance with Standards",
+      "value_raw": "2011/65/EU RoHS Directive",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "compliance_with_standards"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Mounting Pipe",
+      "value_raw": "30.5 cm (12 in.) length; 1 in. IPS; aluminum; unthreaded",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "mounting_pipe"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Catchment Area",
+      "value_raw": "200 cm² (31 in²)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 200,
+        "unit": "cm²",
+        "qualifier": null,
+        "alternate": {
+          "value": 31,
+          "unit": "in²"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "catchment_area"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Orifice Diameter",
+      "value_raw": "16 cm (6.3 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 16,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 6.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "orifice_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Diameter",
+      "value_raw": "18.5 cm (7.3 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 18.5,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Height",
+      "value_raw": "30 cm (11.8 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 30,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 11.8,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Power Plug Weight",
+      "value_raw": "0.43 kg (0.95 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.43,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.95,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "power_plug_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_52202",
+      "section": null,
+      "name_raw": "Weight",
+      "value_raw": "1.16 kg (2.55 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.16,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.55,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/52202.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

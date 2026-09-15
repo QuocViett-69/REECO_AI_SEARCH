@@ -1,0 +1,483 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CLIMAVUE40",
+  "model": "ClimaVue40",
+  "name_en": "Compact Digital RS-485 Modbus RTU Weather Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "All-in-One Weather Sensors",
+    "subcategory_key": "all_in_one_weather_sensors",
+    "device_type": "All-in-One Weather Sensor",
+    "device_type_key": "all_in_one_weather_sensor"
+  },
+  "measurements": [
+    {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí"
+    },
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối"
+    },
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa"
+    },
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió"
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí"
+    },
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối"
+    },
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa"
+    },
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió"
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió"
+    }
+  ],
+  "supported_protocols": [
+    "Modbus",
+    "RS-485"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "ClimaVue40",
+    "CSI_CLIMAVUE40",
+    "Compact Digital RS-485 Modbus RTU Weather Sensor"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          9
+        ]
+      }
+    },
+    {
+      "canonical_key": "relative_humidity_measurement_range",
+      "name": "Relative Humidity Measurement Range",
+      "quantity_kind": "relative_humidity",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          49
+        ]
+      }
+    },
+    {
+      "canonical_key": "precipitation_range",
+      "name": "Precipitation Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 1500,
+        "unit": "mm/h",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          30
+        ]
+      }
+    },
+    {
+      "canonical_key": "vapor_pressure_range",
+      "name": "Vapor Pressure Range",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 47,
+        "unit": "kPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          36
+        ]
+      }
+    },
+    {
+      "canonical_key": "air_temperature_range",
+      "name": "Air Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          42
+        ]
+      }
+    },
+    {
+      "canonical_key": "barometric_pressure_range",
+      "name": "Barometric Pressure Range",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 1,
+        "max_value": 120,
+        "unit": "kPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          55
+        ]
+      }
+    },
+    {
+      "canonical_key": "horizontal_wind_speed_range",
+      "name": "Horizontal Wind Speed Range",
+      "quantity_kind": "speed",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 60,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          63
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_direction_range",
+      "name": "Wind Direction Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 359,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 36,
+        "source_rows": [
+          76
+        ]
+      }
+    },
+    {
+      "canonical_key": "lightning_average_distance_range",
+      "name": "Lightning Average Distance Range",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 40,
+        "unit": "km",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 45,
+        "source_rows": [
+          99
+        ]
+      }
+    },
+    {
+      "canonical_key": "precipitation_resolution",
+      "name": "Precipitation Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.017,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          32
+        ]
+      }
+    },
+    {
+      "canonical_key": "vapor_pressure_resolution",
+      "name": "Vapor Pressure Resolution",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "kPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          38
+        ]
+      }
+    },
+    {
+      "canonical_key": "air_temperature_resolution",
+      "name": "Air Temperature Resolution",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          44
+        ]
+      }
+    },
+    {
+      "canonical_key": "relative_humidity_resolution",
+      "name": "Relative Humidity Resolution",
+      "quantity_kind": "relative_humidity",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          50
+        ]
+      }
+    },
+    {
+      "canonical_key": "barometric_pressure_resolution",
+      "name": "Barometric Pressure Resolution",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "kPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          57
+        ]
+      }
+    },
+    {
+      "canonical_key": "horizontal_wind_speed_resolution",
+      "name": "Horizontal Wind Speed Resolution",
+      "quantity_kind": "speed",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          64
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_gust_resolution",
+      "name": "Wind Gust Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          73
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_direction_resolution",
+      "name": "Wind Direction Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 37,
+        "source_rows": [
+          78
+        ]
+      }
+    },
+    {
+      "canonical_key": "tilt_resolution",
+      "name": "Tilt Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ClimaVue40&52G2.json",
+        "product_index": 0,
+        "spec_index": 40,
+        "source_rows": [
+          89
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "ClimaVue40",
+    "Compact Digital RS-485 Modbus RTU Weather Sensor",
+    "Sensors",
+    "All-in-One Weather Sensors",
+    "All-in-One Weather Sensor",
+    "Air Temperature",
+    "ambient temperature",
+    "Relative Humidity",
+    "RH",
+    "Precipitation",
+    "rainfall",
+    "Wind Speed",
+    "Wind Direction",
+    "Modbus",
+    "RS-485",
+    "Measure Air Temperature",
+    "Measure Relative Humidity",
+    "Measure Precipitation",
+    "Measure Wind Speed",
+    "Measure Wind Direction",
+    "CSI_CLIMAVUE40"
+  ],
+  "search_keywords_vi": [
+    "ClimaVue40",
+    "Cảm biến",
+    "Cảm biến thời tiết tích hợp",
+    "Nhiệt độ không khí",
+    "Độ ẩm tương đối",
+    "Lượng mưa",
+    "Tốc độ gió",
+    "Hướng gió",
+    "Modbus",
+    "RS-485",
+    "Đo nhiệt độ không khí",
+    "Đo độ ẩm tương đối",
+    "Đo lượng mưa",
+    "Đo tốc độ gió",
+    "Đo hướng gió"
+  ],
+  "search_text_en": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus | RS-485 | Operating Temperature Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Precipitation Range: 0 to 1500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50 to 60 °C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0 to 359 ° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Tilt Resolution: 0.1 ° | ambient temperature | RH | rainfall",
+  "search_text_vi": "ClimaVue40 | CSI_CLIMAVUE40 | Compact Digital RS-485 Modbus RTU Weather Sensor | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió | Modbus | RS-485 | Operating Temperature Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Precipitation Range: 0 to 1500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50 to 60 °C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0 to 359 ° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Tilt Resolution: 0.1 °",
+  "search_text": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus | RS-485 | Operating Temperature Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Precipitation Range: 0 to 1500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50 to 60 °C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0 to 359 ° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Tilt Resolution: 0.1 ° | ambient temperature | RH | rainfall | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "b0fd11071e5f45ab299538d41e7bcd15be86593bab2925a3b6525e5c702fa0db"
+}

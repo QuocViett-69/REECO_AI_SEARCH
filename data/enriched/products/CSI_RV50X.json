@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RV50X",
+  "model": "RV50X",
+  "name_en": "RV50X",
+  "name_vi": "RV50X",
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "DNP3",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocol_support",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              36
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DNS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "embedded_network_services",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              14
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ethernet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_logger_connectivity",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 31,
+            "source_rows": [
+              35
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocol_support",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              36
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HTTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocol_support",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              36
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocol_support",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              36
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PPP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_232_services",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "embedded_network_services",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              14
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RJ45",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              11
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_logger_connectivity",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 31,
+            "source_rows": [
+              35
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SIM",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sim_interface",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "cellular_service_requirement",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 29,
+            "source_rows": [
+              33
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TCP/IP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocol_support",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              36
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/RV50X.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              11
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "RV50X",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "RV50X"
+        }
+      ]
+    },
+    {
+      "value": "CSI_RV50X",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_RV50X"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "RV50X",
+      "Communications",
+      "Cellular Communications",
+      "Cellular Modem / Router",
+      "DNP3",
+      "DNS",
+      "Ethernet",
+      "FTP",
+      "HTTP",
+      "Modbus",
+      "PPP",
+      "RJ45",
+      "RS-232",
+      "SIM",
+      "TCP/IP",
+      "USB",
+      "CSI_RV50X"
+    ],
+    "vi": [
+      "RV50X",
+      "Thiết bị truyền thông",
+      "Truyền thông di động",
+      "Modem hoặc bộ định tuyến di động",
+      "DNP3",
+      "DNS",
+      "Ethernet",
+      "FTP",
+      "HTTP",
+      "Modbus",
+      "PPP",
+      "RJ45",
+      "RS-232",
+      "SIM",
+      "TCP/IP",
+      "USB"
+    ]
+  }
+}

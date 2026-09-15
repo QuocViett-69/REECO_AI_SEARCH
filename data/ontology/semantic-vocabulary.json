@@ -1,0 +1,897 @@
+{
+  "schema_version": "1.0",
+  "taxonomy": {
+    "categories": [
+      {
+        "source_value": "Communications",
+        "key": "communications",
+        "label_en": "Communications",
+        "label_vi": "Thiết bị truyền thông"
+      },
+      {
+        "source_value": "Measurement Devices",
+        "key": "measurement_devices",
+        "label_en": "Measurement Devices",
+        "label_vi": "Thiết bị đo lường"
+      },
+      {
+        "source_value": "Power",
+        "key": "power",
+        "label_en": "Power",
+        "label_vi": "Nguồn điện"
+      },
+      {
+        "source_value": "Sensors",
+        "key": "sensors",
+        "label_en": "Sensors",
+        "label_vi": "Cảm biến"
+      },
+      {
+        "source_value": "Systems",
+        "key": "systems",
+        "label_en": "Systems",
+        "label_vi": "Hệ thống"
+      }
+    ],
+    "subcategories": [
+      {
+        "source_value": "Air Temperature and Relative Humidity Sensors",
+        "key": "air_temperature_and_relative_humidity_sensors",
+        "label_en": "Air Temperature and Relative Humidity Sensors",
+        "label_vi": "Cảm biến nhiệt độ không khí và độ ẩm tương đối"
+      },
+      {
+        "source_value": "Air Temperature Sensors",
+        "key": "air_temperature_sensors",
+        "label_en": "Air Temperature Sensors",
+        "label_vi": "Cảm biến nhiệt độ không khí"
+      },
+      {
+        "source_value": "All-in-One Weather Sensors",
+        "key": "all_in_one_weather_sensors",
+        "label_en": "All-in-One Weather Sensors",
+        "label_vi": "Cảm biến thời tiết tích hợp"
+      },
+      {
+        "source_value": "Barometric Pressure Sensors",
+        "key": "barometric_pressure_sensors",
+        "label_en": "Barometric Pressure Sensors",
+        "label_vi": "Cảm biến áp suất khí quyển"
+      },
+      {
+        "source_value": "Cellular Communications",
+        "key": "cellular_communications",
+        "label_en": "Cellular Communications",
+        "label_vi": "Truyền thông di động"
+      },
+      {
+        "source_value": "Charge Regulators and DC Adapters",
+        "key": "charge_regulators_and_dc_adapters",
+        "label_en": "Charge Regulators and DC Adapters",
+        "label_vi": "Bộ điều khiển sạc và bộ chuyển đổi DC"
+      },
+      {
+        "source_value": "Data Loggers",
+        "key": "data_loggers",
+        "label_en": "Data Loggers",
+        "label_vi": "Bộ ghi dữ liệu"
+      },
+      {
+        "source_value": "Dissolved Oxygen Sensors",
+        "key": "dissolved_oxygen_sensors",
+        "label_en": "Dissolved Oxygen Sensors",
+        "label_vi": "Cảm biến oxy hòa tan"
+      },
+      {
+        "source_value": "Ethernet Communications",
+        "key": "ethernet_communications",
+        "label_en": "Ethernet Communications",
+        "label_vi": "Truyền thông Ethernet"
+      },
+      {
+        "source_value": "Leaf Wetness Sensors",
+        "key": "leaf_wetness_sensors",
+        "label_en": "Leaf Wetness Sensors",
+        "label_vi": "Cảm biến độ ướt lá"
+      },
+      {
+        "source_value": "Power Supplies and Charge Regulators",
+        "key": "power_supplies_and_charge_regulators",
+        "label_en": "Power Supplies and Charge Regulators",
+        "label_vi": "Bộ nguồn và bộ điều khiển sạc"
+      },
+      {
+        "source_value": "Precipitation Sensors",
+        "key": "precipitation_sensors",
+        "label_en": "Precipitation Sensors",
+        "label_vi": "Cảm biến lượng mưa"
+      },
+      {
+        "source_value": "Present Weather Sensors",
+        "key": "present_weather_sensors",
+        "label_en": "Present Weather Sensors",
+        "label_vi": "Cảm biến thời tiết hiện tại"
+      },
+      {
+        "source_value": "Satellite Communications",
+        "key": "satellite_communications",
+        "label_en": "Satellite Communications",
+        "label_vi": "Truyền thông vệ tinh"
+      },
+      {
+        "source_value": "Snow Water Equivalent / Snow Depth Sensors",
+        "key": "snow_water_equivalent_snow_depth_sensors",
+        "label_en": "Snow Water Equivalent / Snow Depth Sensors",
+        "label_vi": "Cảm biến lượng nước tương đương tuyết và độ sâu tuyết"
+      },
+      {
+        "source_value": "Soil Moisture, Temperature, and EC Sensors",
+        "key": "soil_moisture_temperature_and_ec_sensors",
+        "label_en": "Soil Moisture, Temperature, and EC Sensors",
+        "label_vi": "Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất"
+      },
+      {
+        "source_value": "Solar Monitoring Stations",
+        "key": "solar_monitoring_stations",
+        "label_en": "Solar Monitoring Stations",
+        "label_vi": "Trạm giám sát năng lượng mặt trời"
+      },
+      {
+        "source_value": "Solar Radiation Sensors",
+        "key": "solar_radiation_sensors",
+        "label_en": "Solar Radiation Sensors",
+        "label_vi": "Cảm biến bức xạ mặt trời"
+      },
+      {
+        "source_value": "Spread-Spectrum Radios",
+        "key": "spread_spectrum_radios",
+        "label_en": "Spread-Spectrum Radios",
+        "label_vi": "Vô tuyến trải phổ"
+      },
+      {
+        "source_value": "Temperature Sensors (Air/Soil/Water)",
+        "key": "temperature_sensors_air_soil_water",
+        "label_en": "Temperature Sensors (Air/Soil/Water)",
+        "label_vi": "Cảm biến nhiệt độ không khí, đất và nước"
+      },
+      {
+        "source_value": "Thermocouple Measurement Modules",
+        "key": "thermocouple_measurement_modules",
+        "label_en": "Thermocouple Measurement Modules",
+        "label_vi": "Mô-đun đo cặp nhiệt điện"
+      },
+      {
+        "source_value": "Turbidity Sensors",
+        "key": "turbidity_sensors",
+        "label_en": "Turbidity Sensors",
+        "label_vi": "Cảm biến độ đục"
+      },
+      {
+        "source_value": "Vibrating Wire Analyzers",
+        "key": "vibrating_wire_analyzers",
+        "label_en": "Vibrating Wire Analyzers",
+        "label_vi": "Bộ phân tích dây rung"
+      },
+      {
+        "source_value": "Vibrating Wire Measurement Modules",
+        "key": "vibrating_wire_measurement_modules",
+        "label_en": "Vibrating Wire Measurement Modules",
+        "label_vi": "Mô-đun đo dây rung"
+      },
+      {
+        "source_value": "Visibility Sensors",
+        "key": "visibility_sensors",
+        "label_en": "Visibility Sensors",
+        "label_vi": "Cảm biến tầm nhìn"
+      },
+      {
+        "source_value": "Water and Soil Temperature Sensors",
+        "key": "water_and_soil_temperature_sensors",
+        "label_en": "Water and Soil Temperature Sensors",
+        "label_vi": "Cảm biến nhiệt độ nước và đất"
+      },
+      {
+        "source_value": "Water Level, Stage, and Flow Sensors",
+        "key": "water_level_stage_and_flow_sensors",
+        "label_en": "Water Level, Stage, and Flow Sensors",
+        "label_vi": "Cảm biến mực nước, cao trình và lưu lượng"
+      },
+      {
+        "source_value": "Wi-Fi Communications",
+        "key": "wi_fi_communications",
+        "label_en": "Wi-Fi Communications",
+        "label_vi": "Truyền thông Wi-Fi"
+      },
+      {
+        "source_value": "Wind Speed and Wind Direction Sensors",
+        "key": "wind_speed_and_wind_direction_sensors",
+        "label_en": "Wind Speed and Wind Direction Sensors",
+        "label_vi": "Cảm biến tốc độ và hướng gió"
+      }
+    ],
+    "device_types": [
+      {
+        "source_value": "Air Temperature and Relative Humidity Sensor",
+        "key": "air_temperature_and_relative_humidity_sensor",
+        "label_en": "Air Temperature and Relative Humidity Sensor",
+        "label_vi": "Cảm biến nhiệt độ không khí và độ ẩm tương đối"
+      },
+      {
+        "source_value": "Air Temperature Sensor",
+        "key": "air_temperature_sensor",
+        "label_en": "Air Temperature Sensor",
+        "label_vi": "Cảm biến nhiệt độ không khí"
+      },
+      {
+        "source_value": "All-in-One Weather Sensor",
+        "key": "all_in_one_weather_sensor",
+        "label_en": "All-in-One Weather Sensor",
+        "label_vi": "Cảm biến thời tiết tích hợp"
+      },
+      {
+        "source_value": "Barometric Pressure Sensor",
+        "key": "barometric_pressure_sensor",
+        "label_en": "Barometric Pressure Sensor",
+        "label_vi": "Cảm biến áp suất khí quyển"
+      },
+      {
+        "source_value": "Cellular Modem / Router",
+        "key": "cellular_modem_router",
+        "label_en": "Cellular Modem / Router",
+        "label_vi": "Modem hoặc bộ định tuyến di động"
+      },
+      {
+        "source_value": "Charge Regulator / DC Adapter",
+        "key": "charge_regulator_dc_adapter",
+        "label_en": "Charge Regulator / DC Adapter",
+        "label_vi": "Bộ điều khiển sạc hoặc bộ chuyển đổi DC"
+      },
+      {
+        "source_value": "Data Logger",
+        "key": "data_logger",
+        "label_en": "Data Logger",
+        "label_vi": "Bộ ghi dữ liệu"
+      },
+      {
+        "source_value": "Dissolved Oxygen Sensor",
+        "key": "dissolved_oxygen_sensor",
+        "label_en": "Dissolved Oxygen Sensor",
+        "label_vi": "Cảm biến oxy hòa tan"
+      },
+      {
+        "source_value": "Ethernet Communication Device",
+        "key": "ethernet_communication_device",
+        "label_en": "Ethernet Communication Device",
+        "label_vi": "Thiết bị truyền thông Ethernet"
+      },
+      {
+        "source_value": "Leaf Wetness Sensor",
+        "key": "leaf_wetness_sensor",
+        "label_en": "Leaf Wetness Sensor",
+        "label_vi": "Cảm biến độ ướt lá"
+      },
+      {
+        "source_value": "Measurement Device",
+        "key": "measurement_device",
+        "label_en": "Measurement Device",
+        "label_vi": "Thiết bị đo lường"
+      },
+      {
+        "source_value": "Power Supply / Charge Regulator",
+        "key": "power_supply_charge_regulator",
+        "label_en": "Power Supply / Charge Regulator",
+        "label_vi": "Bộ nguồn hoặc bộ điều khiển sạc"
+      },
+      {
+        "source_value": "Precipitation Sensor",
+        "key": "precipitation_sensor",
+        "label_en": "Precipitation Sensor",
+        "label_vi": "Cảm biến lượng mưa"
+      },
+      {
+        "source_value": "Present Weather Sensor",
+        "key": "present_weather_sensor",
+        "label_en": "Present Weather Sensor",
+        "label_vi": "Cảm biến thời tiết hiện tại"
+      },
+      {
+        "source_value": "Radio Communication Device",
+        "key": "radio_communication_device",
+        "label_en": "Radio Communication Device",
+        "label_vi": "Thiết bị truyền thông vô tuyến"
+      },
+      {
+        "source_value": "Satellite Communication Device",
+        "key": "satellite_communication_device",
+        "label_en": "Satellite Communication Device",
+        "label_vi": "Thiết bị truyền thông vệ tinh"
+      },
+      {
+        "source_value": "Sensor",
+        "key": "sensor",
+        "label_en": "Sensor",
+        "label_vi": "Cảm biến"
+      },
+      {
+        "source_value": "Snow Water Equivalent / Snow Depth Sensor",
+        "key": "snow_water_equivalent_snow_depth_sensor",
+        "label_en": "Snow Water Equivalent / Snow Depth Sensor",
+        "label_vi": "Cảm biến lượng nước tương đương tuyết và độ sâu tuyết"
+      },
+      {
+        "source_value": "Soil Moisture, Temperature, and EC Sensor",
+        "key": "soil_moisture_temperature_and_ec_sensor",
+        "label_en": "Soil Moisture, Temperature, and EC Sensor",
+        "label_vi": "Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất"
+      },
+      {
+        "source_value": "Solar Monitoring Station",
+        "key": "solar_monitoring_station",
+        "label_en": "Solar Monitoring Station",
+        "label_vi": "Trạm giám sát năng lượng mặt trời"
+      },
+      {
+        "source_value": "Solar Radiation Sensor",
+        "key": "solar_radiation_sensor",
+        "label_en": "Solar Radiation Sensor",
+        "label_vi": "Cảm biến bức xạ mặt trời"
+      },
+      {
+        "source_value": "Turbidity Sensor",
+        "key": "turbidity_sensor",
+        "label_en": "Turbidity Sensor",
+        "label_vi": "Cảm biến độ đục"
+      },
+      {
+        "source_value": "Vibrating Wire Analyzer",
+        "key": "vibrating_wire_analyzer",
+        "label_en": "Vibrating Wire Analyzer",
+        "label_vi": "Bộ phân tích dây rung"
+      },
+      {
+        "source_value": "Visibility Sensor",
+        "key": "visibility_sensor",
+        "label_en": "Visibility Sensor",
+        "label_vi": "Cảm biến tầm nhìn"
+      },
+      {
+        "source_value": "Water and Soil Temperature Sensor",
+        "key": "water_and_soil_temperature_sensor",
+        "label_en": "Water and Soil Temperature Sensor",
+        "label_vi": "Cảm biến nhiệt độ nước và đất"
+      },
+      {
+        "source_value": "Water Level, Stage, and Flow Sensor",
+        "key": "water_level_stage_and_flow_sensor",
+        "label_en": "Water Level, Stage, and Flow Sensor",
+        "label_vi": "Cảm biến mực nước, cao trình và lưu lượng"
+      },
+      {
+        "source_value": "Wi-Fi Communication Device",
+        "key": "wi_fi_communication_device",
+        "label_en": "Wi-Fi Communication Device",
+        "label_vi": "Thiết bị truyền thông Wi-Fi"
+      },
+      {
+        "source_value": "Wind Speed and Wind Direction Sensor",
+        "key": "wind_speed_and_wind_direction_sensor",
+        "label_en": "Wind Speed and Wind Direction Sensor",
+        "label_vi": "Cảm biến tốc độ và hướng gió"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "aliases": [
+        "temperature measurement"
+      ]
+    },
+    {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí",
+      "aliases": [
+        "ambient temperature"
+      ]
+    },
+    {
+      "key": "water_temperature",
+      "label_en": "Water Temperature",
+      "label_vi": "Nhiệt độ nước",
+      "aliases": []
+    },
+    {
+      "key": "soil_temperature",
+      "label_en": "Soil Temperature",
+      "label_vi": "Nhiệt độ đất",
+      "aliases": []
+    },
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "aliases": [
+        "RH"
+      ]
+    },
+    {
+      "key": "barometric_pressure",
+      "label_en": "Barometric Pressure",
+      "label_vi": "Áp suất khí quyển",
+      "aliases": []
+    },
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa",
+      "aliases": [
+        "rainfall"
+      ]
+    },
+    {
+      "key": "precipitation_intensity",
+      "label_en": "Precipitation Intensity",
+      "label_vi": "Cường độ mưa",
+      "aliases": []
+    },
+    {
+      "key": "precipitation_electrical_conductivity",
+      "label_en": "Precipitation Electrical Conductivity",
+      "label_vi": "Độ dẫn điện của nước mưa",
+      "aliases": [
+        "precipitation EC"
+      ]
+    },
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió",
+      "aliases": []
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió",
+      "aliases": []
+    },
+    {
+      "key": "solar_radiation",
+      "label_en": "Solar Radiation",
+      "label_vi": "Bức xạ mặt trời",
+      "aliases": [
+        "sun plus sky radiation"
+      ]
+    },
+    {
+      "key": "net_radiation",
+      "label_en": "Net Radiation",
+      "label_vi": "Bức xạ thuần",
+      "aliases": [
+        "net radiometer"
+      ]
+    },
+    {
+      "key": "turbidity",
+      "label_en": "Turbidity",
+      "label_vi": "Độ đục",
+      "aliases": [
+        "turbidity measurement"
+      ]
+    },
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "aliases": [
+        "stage"
+      ]
+    },
+    {
+      "key": "distance",
+      "label_en": "Distance",
+      "label_vi": "Khoảng cách",
+      "aliases": []
+    },
+    {
+      "key": "volumetric_water_content",
+      "label_en": "Volumetric Water Content",
+      "label_vi": "Hàm lượng nước thể tích",
+      "aliases": [
+        "VWC"
+      ]
+    },
+    {
+      "key": "soil_electrical_conductivity",
+      "label_en": "Soil Electrical Conductivity",
+      "label_vi": "Độ dẫn điện của đất",
+      "aliases": [
+        "soil EC"
+      ]
+    },
+    {
+      "key": "dielectric_permittivity",
+      "label_en": "Dielectric Permittivity",
+      "label_vi": "Hằng số điện môi",
+      "aliases": [
+        "permittivity"
+      ]
+    },
+    {
+      "key": "leaf_wetness",
+      "label_en": "Leaf Wetness",
+      "label_vi": "Độ ướt lá",
+      "aliases": []
+    },
+    {
+      "key": "dissolved_oxygen",
+      "label_en": "Dissolved Oxygen",
+      "label_vi": "Oxy hòa tan",
+      "aliases": []
+    },
+    {
+      "key": "snow_depth",
+      "label_en": "Snow Depth",
+      "label_vi": "Độ sâu tuyết",
+      "aliases": []
+    },
+    {
+      "key": "present_weather",
+      "label_en": "Present Weather",
+      "label_vi": "Thời tiết hiện tại",
+      "aliases": []
+    },
+    {
+      "key": "visibility",
+      "label_en": "Visibility",
+      "label_vi": "Tầm nhìn",
+      "aliases": [
+        "meteorological optical range",
+        "MOR"
+      ]
+    },
+    {
+      "key": "compass_heading",
+      "label_en": "Compass Heading",
+      "label_vi": "Hướng la bàn",
+      "aliases": []
+    },
+    {
+      "key": "lightning_distance",
+      "label_en": "Lightning Distance",
+      "label_vi": "Khoảng cách sét",
+      "aliases": []
+    },
+    {
+      "key": "lightning_strike_count",
+      "label_en": "Lightning Strike Count",
+      "label_vi": "Số lần sét đánh",
+      "aliases": []
+    },
+    {
+      "key": "tilt",
+      "label_en": "Tilt",
+      "label_vi": "Độ nghiêng",
+      "aliases": []
+    }
+  ],
+  "applications": [
+    {
+      "key": "meteorological_monitoring",
+      "label_en": "Meteorological Monitoring",
+      "label_vi": "Giám sát khí tượng",
+      "aliases": [
+        "weather monitoring"
+      ]
+    },
+    {
+      "key": "energy_balance_studies",
+      "label_en": "Energy Balance Studies",
+      "label_vi": "Nghiên cứu cân bằng năng lượng",
+      "aliases": []
+    },
+    {
+      "key": "water_level_monitoring",
+      "label_en": "Water Level Monitoring",
+      "label_vi": "Giám sát mực nước",
+      "aliases": []
+    },
+    {
+      "key": "leaf_wetness_monitoring",
+      "label_en": "Leaf Wetness Monitoring",
+      "label_vi": "Giám sát độ ướt lá",
+      "aliases": []
+    },
+    {
+      "key": "data_logger_connectivity",
+      "label_en": "Data Logger Connectivity",
+      "label_vi": "Kết nối bộ ghi dữ liệu",
+      "aliases": []
+    },
+    {
+      "key": "system_power_supply",
+      "label_en": "System Power Supply",
+      "label_vi": "Cấp nguồn cho hệ thống",
+      "aliases": []
+    },
+    {
+      "key": "solar_resource_assessment",
+      "label_en": "Solar Resource Assessment",
+      "label_vi": "Đánh giá tài nguyên mặt trời",
+      "aliases": []
+    },
+    {
+      "key": "solar_project_monitoring",
+      "label_en": "Solar Project Monitoring",
+      "label_vi": "Giám sát dự án điện mặt trời",
+      "aliases": []
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "aliases": []
+    },
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí",
+      "aliases": []
+    },
+    {
+      "key": "measure_water_temperature",
+      "label_en": "Measure Water Temperature",
+      "label_vi": "Đo nhiệt độ nước",
+      "aliases": []
+    },
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "aliases": []
+    },
+    {
+      "key": "measure_barometric_pressure",
+      "label_en": "Measure Barometric Pressure",
+      "label_vi": "Đo áp suất khí quyển",
+      "aliases": []
+    },
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa",
+      "aliases": []
+    },
+    {
+      "key": "heated_precipitation_measurement",
+      "label_en": "Heated Precipitation Measurement",
+      "label_vi": "Đo lượng mưa có gia nhiệt",
+      "aliases": []
+    },
+    {
+      "key": "measure_precipitation_intensity",
+      "label_en": "Measure Precipitation Intensity",
+      "label_vi": "Đo cường độ mưa",
+      "aliases": []
+    },
+    {
+      "key": "measure_tilt",
+      "label_en": "Measure Tilt",
+      "label_vi": "Đo độ nghiêng",
+      "aliases": []
+    },
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió",
+      "aliases": []
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió",
+      "aliases": []
+    },
+    {
+      "key": "measure_precipitation_electrical_conductivity",
+      "label_en": "Measure Precipitation Electrical Conductivity",
+      "label_vi": "Đo độ dẫn điện của nước mưa",
+      "aliases": []
+    },
+    {
+      "key": "measure_solar_radiation",
+      "label_en": "Measure Solar Radiation",
+      "label_vi": "Đo bức xạ mặt trời",
+      "aliases": []
+    },
+    {
+      "key": "measure_lightning_distance",
+      "label_en": "Measure Lightning Distance",
+      "label_vi": "Đo khoảng cách sét",
+      "aliases": []
+    },
+    {
+      "key": "measure_lightning_strike_count",
+      "label_en": "Measure Lightning Strike Count",
+      "label_vi": "Đo số lần sét đánh",
+      "aliases": []
+    },
+    {
+      "key": "measure_compass_heading",
+      "label_en": "Measure Compass Heading",
+      "label_vi": "Đo hướng la bàn",
+      "aliases": []
+    },
+    {
+      "key": "measure_net_radiation",
+      "label_en": "Measure Net Radiation",
+      "label_vi": "Đo bức xạ thuần",
+      "aliases": []
+    },
+    {
+      "key": "measure_present_weather",
+      "label_en": "Measure Present Weather",
+      "label_vi": "Đo thời tiết hiện tại",
+      "aliases": []
+    },
+    {
+      "key": "measure_visibility",
+      "label_en": "Measure Visibility",
+      "label_vi": "Đo tầm nhìn",
+      "aliases": []
+    },
+    {
+      "key": "measure_dissolved_oxygen",
+      "label_en": "Measure Dissolved Oxygen",
+      "label_vi": "Đo oxy hòa tan",
+      "aliases": []
+    },
+    {
+      "key": "measure_turbidity",
+      "label_en": "Measure Turbidity",
+      "label_vi": "Đo độ đục",
+      "aliases": []
+    },
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "aliases": []
+    },
+    {
+      "key": "measure_distance",
+      "label_en": "Measure Distance",
+      "label_vi": "Đo khoảng cách",
+      "aliases": []
+    },
+    {
+      "key": "measure_volumetric_water_content",
+      "label_en": "Measure Volumetric Water Content",
+      "label_vi": "Đo hàm lượng nước thể tích",
+      "aliases": []
+    },
+    {
+      "key": "measure_soil_temperature",
+      "label_en": "Measure Soil Temperature",
+      "label_vi": "Đo nhiệt độ đất",
+      "aliases": []
+    },
+    {
+      "key": "measure_soil_electrical_conductivity",
+      "label_en": "Measure Soil Electrical Conductivity",
+      "label_vi": "Đo độ dẫn điện của đất",
+      "aliases": []
+    },
+    {
+      "key": "measure_dielectric_permittivity",
+      "label_en": "Measure Dielectric Permittivity",
+      "label_vi": "Đo hằng số điện môi",
+      "aliases": []
+    },
+    {
+      "key": "measure_leaf_wetness",
+      "label_en": "Measure Leaf Wetness",
+      "label_vi": "Đo độ ướt lá",
+      "aliases": []
+    },
+    {
+      "key": "measure_snow_depth",
+      "label_en": "Measure Snow Depth",
+      "label_vi": "Đo độ sâu tuyết",
+      "aliases": []
+    }
+  ],
+  "protocols": [
+    "ASCII",
+    "Auto-IP",
+    "CPI",
+    "CS I/O",
+    "DHCP",
+    "DNP3",
+    "DNS",
+    "Ethernet",
+    "FTP",
+    "HTTP",
+    "HTTPS",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus",
+    "Modbus ASCII",
+    "Modbus RTU",
+    "Modbus TCP",
+    "MQTT",
+    "NTP",
+    "PakBus",
+    "POP3",
+    "PPP",
+    "RJ45",
+    "RNDIS",
+    "RS-232",
+    "RS-485",
+    "SDI-12",
+    "SIM",
+    "SLAAC",
+    "SMTP",
+    "TCP",
+    "TCP/IP",
+    "Telnet",
+    "TLS",
+    "UDP",
+    "USB",
+    "Wi-Fi"
+  ],
+  "approved_aliases": {
+    "measurements": {
+      "temperature": [
+        "temperature measurement"
+      ],
+      "air_temperature": [
+        "ambient temperature"
+      ],
+      "relative_humidity": [
+        "RH"
+      ],
+      "precipitation": [
+        "rainfall"
+      ],
+      "precipitation_electrical_conductivity": [
+        "precipitation EC"
+      ],
+      "solar_radiation": [
+        "sun plus sky radiation"
+      ],
+      "net_radiation": [
+        "net radiometer"
+      ],
+      "turbidity": [
+        "turbidity measurement"
+      ],
+      "water_level": [
+        "stage"
+      ],
+      "volumetric_water_content": [
+        "VWC"
+      ],
+      "soil_electrical_conductivity": [
+        "soil EC"
+      ],
+      "dielectric_permittivity": [
+        "permittivity"
+      ],
+      "visibility": [
+        "meteorological optical range",
+        "MOR"
+      ]
+    },
+    "applications": {
+      "meteorological_monitoring": [
+        "weather monitoring"
+      ]
+    }
+  }
+}

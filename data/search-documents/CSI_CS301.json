@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS301",
+  "model": "CS301",
+  "name_en": "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Solar Radiation Sensors",
+    "subcategory_key": "solar_radiation_sensors",
+    "device_type": "Solar Radiation Sensor",
+    "device_type_key": "solar_radiation_sensor"
+  },
+  "measurements": [
+    {
+      "key": "solar_radiation",
+      "label_en": "Solar Radiation",
+      "label_vi": "Bức xạ mặt trời"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_solar_radiation",
+      "label_en": "Measure Solar Radiation",
+      "label_vi": "Đo bức xạ mặt trời"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS301",
+    "CSI_CS301",
+    "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS301.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          18
+        ]
+      }
+    },
+    {
+      "canonical_key": "relative_humidity_range",
+      "name": "Relative Humidity Range",
+      "quantity_kind": "relative_humidity",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS301.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          19
+        ]
+      }
+    },
+    {
+      "canonical_key": "diameter",
+      "name": "Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 2.4,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.9,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS301.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "height",
+      "name": "Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 2.5,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS301.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          22
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 65,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.3,
+          "unit": "oz"
+        },
+        "condition": "with 2-m (6.6-ft) lead wire"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS301.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          23
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS301",
+    "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+    "Sensors",
+    "Solar Radiation Sensors",
+    "Solar Radiation Sensor",
+    "Solar Radiation",
+    "sun plus sky radiation",
+    "Measure Solar Radiation",
+    "CSI_CS301"
+  ],
+  "search_keywords_vi": [
+    "CS301",
+    "Cảm biến",
+    "Cảm biến bức xạ mặt trời",
+    "Bức xạ mặt trời",
+    "Đo bức xạ mặt trời"
+  ],
+  "search_text_en": "CS301 | Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)* | CSI_CS301 | Sensors | Solar Radiation Sensors | Solar Radiation Sensor | Solar Radiation | Measure Solar Radiation | Operating Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Diameter: 2.4 cm | Height: 2.5 cm | Weight: 65 g | sun plus sky radiation",
+  "search_text_vi": "CS301 | CSI_CS301 | Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)* | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ mặt trời | Đo bức xạ mặt trời | Operating Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Diameter: 2.4 cm | Height: 2.5 cm | Weight: 65 g",
+  "search_text": "CS301 | Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)* | CSI_CS301 | Sensors | Solar Radiation Sensors | Solar Radiation Sensor | Solar Radiation | Measure Solar Radiation | Operating Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Diameter: 2.4 cm | Height: 2.5 cm | Weight: 65 g | sun plus sky radiation | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ mặt trời | Đo bức xạ mặt trời",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "216084f154935685356a2a160214151e9f5bef023ae2a08281f96b1977fb6595"
+}

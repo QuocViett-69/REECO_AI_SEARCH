@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_LWS",
+  "model": "LWS",
+  "name_en": "Meter Phytos 31 Leaf Wetness Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Leaf Wetness Sensors",
+    "subcategory_key": "leaf_wetness_sensors",
+    "device_type": "Leaf Wetness Sensor",
+    "device_type_key": "leaf_wetness_sensor"
+  },
+  "measurements": [
+    {
+      "key": "leaf_wetness",
+      "label_en": "Leaf Wetness",
+      "label_vi": "Độ ướt lá"
+    }
+  ],
+  "applications": [
+    {
+      "key": "leaf_wetness_monitoring",
+      "label_en": "Leaf Wetness Monitoring",
+      "label_vi": "Giám sát độ ướt lá"
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_leaf_wetness",
+      "label_en": "Measure Leaf Wetness",
+      "label_vi": "Đo độ ướt lá"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "LWS",
+    "CSI_LWS",
+    "Meter Phytos 31 Leaf Wetness Sensor"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/LWS.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      }
+    },
+    {
+      "canonical_key": "width",
+      "name": "Width",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 5.8,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/LWS.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "height",
+      "name": "Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.8,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/LWS.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          22
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.14,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 5,
+          "unit": "oz"
+        },
+        "condition": "with 4.57 m (15 ft) cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/LWS.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          24
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "LWS",
+    "Meter Phytos 31 Leaf Wetness Sensor",
+    "Sensors",
+    "Leaf Wetness Sensors",
+    "Leaf Wetness Sensor",
+    "Leaf Wetness",
+    "Leaf Wetness Monitoring",
+    "Measure Leaf Wetness",
+    "CSI_LWS"
+  ],
+  "search_keywords_vi": [
+    "LWS",
+    "Cảm biến",
+    "Cảm biến độ ướt lá",
+    "Độ ướt lá",
+    "Giám sát độ ướt lá",
+    "Đo độ ướt lá"
+  ],
+  "search_text_en": "LWS | Meter Phytos 31 Leaf Wetness Sensor | CSI_LWS | Sensors | Leaf Wetness Sensors | Leaf Wetness Sensor | Leaf Wetness | Measure Leaf Wetness | Leaf Wetness Monitoring | Operating Temperature Range: -40 to 60 °C | Width: 5.8 cm | Height: 0.8 cm | Weight: 0.14 kg",
+  "search_text_vi": "LWS | CSI_LWS | Meter Phytos 31 Leaf Wetness Sensor | Cảm biến | Cảm biến độ ướt lá | Độ ướt lá | Đo độ ướt lá | Giám sát độ ướt lá | Operating Temperature Range: -40 to 60 °C | Width: 5.8 cm | Height: 0.8 cm | Weight: 0.14 kg",
+  "search_text": "LWS | Meter Phytos 31 Leaf Wetness Sensor | CSI_LWS | Sensors | Leaf Wetness Sensors | Leaf Wetness Sensor | Leaf Wetness | Measure Leaf Wetness | Leaf Wetness Monitoring | Operating Temperature Range: -40 to 60 °C | Width: 5.8 cm | Height: 0.8 cm | Weight: 0.14 kg | Cảm biến | Cảm biến độ ướt lá | Độ ướt lá | Đo độ ướt lá | Giám sát độ ướt lá",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "69328e3c63ee0edb2b30b8e788952cbd90b9a18a41c56f267b68e565f9389e2e"
+}

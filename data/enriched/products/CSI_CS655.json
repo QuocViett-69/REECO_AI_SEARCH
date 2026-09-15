@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS655",
+  "model": "CS655",
+  "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Soil Moisture, Temperature, and EC Sensors",
+    "subcategory_key": "soil_moisture_temperature_and_ec_sensors",
+    "device_type": "Soil Moisture, Temperature, and EC Sensor",
+    "device_type_key": "soil_moisture_temperature_and_ec_sensor"
+  },
+  "measurements": [
+    {
+      "key": "soil_temperature",
+      "label_en": "Soil Temperature",
+      "label_vi": "Nhiệt độ đất",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "volumetric_water_content",
+      "label_en": "Volumetric Water Content",
+      "label_vi": "Hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "12cm Water Content Reflectometer Plus (-50 to +70C)**"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "soil_electrical_conductivity",
+      "label_en": "Soil Electrical Conductivity",
+      "label_vi": "Độ dẫn điện của đất",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "dielectric_permittivity",
+      "label_en": "Dielectric Permittivity",
+      "label_vi": "Hằng số điện môi",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sensor_output",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 8,
+            "source_rows": [
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sensor_output",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 8,
+            "source_rows": [
+              17,
+              18
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_time",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 10,
+            "source_rows": [
+              20,
+              21
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_soil_temperature",
+      "label_en": "Measure Soil Temperature",
+      "label_vi": "Đo nhiệt độ đất",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_volumetric_water_content",
+      "label_en": "Measure Volumetric Water Content",
+      "label_vi": "Đo hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "12cm Water Content Reflectometer Plus (-50 to +70C)**"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_soil_electrical_conductivity",
+      "label_en": "Measure Soil Electrical Conductivity",
+      "label_vi": "Đo độ dẫn điện của đất",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_dielectric_permittivity",
+      "label_en": "Measure Dielectric Permittivity",
+      "label_vi": "Đo hằng số điện môi",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 2,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CS655",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS655"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS655",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS655"
+        }
+      ]
+    },
+    {
+      "value": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "12cm Water Content Reflectometer Plus (-50 to +70C)**"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS655",
+      "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+      "Sensors",
+      "Soil Moisture, Temperature, and EC Sensors",
+      "Soil Moisture, Temperature, and EC Sensor",
+      "Soil Temperature",
+      "Volumetric Water Content",
+      "VWC",
+      "Soil Electrical Conductivity",
+      "soil EC",
+      "Dielectric Permittivity",
+      "permittivity",
+      "RS-232",
+      "SDI-12",
+      "Measure Soil Temperature",
+      "Measure Volumetric Water Content",
+      "Measure Soil Electrical Conductivity",
+      "Measure Dielectric Permittivity",
+      "CSI_CS655"
+    ],
+    "vi": [
+      "CS655",
+      "Cảm biến",
+      "Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất",
+      "Nhiệt độ đất",
+      "Hàm lượng nước thể tích",
+      "Độ dẫn điện của đất",
+      "Hằng số điện môi",
+      "RS-232",
+      "SDI-12",
+      "Đo nhiệt độ đất",
+      "Đo hàm lượng nước thể tích",
+      "Đo độ dẫn điện của đất",
+      "Đo hằng số điện môi"
+    ]
+  }
+}

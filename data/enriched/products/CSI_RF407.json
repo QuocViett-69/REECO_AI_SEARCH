@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RF407",
+  "model": "RF407",
+  "name_en": "RF407",
+  "name_vi": "RF407",
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Spread-Spectrum Radios",
+    "subcategory_key": "spread_spectrum_radios",
+    "device_type": "Radio Communication Device",
+    "device_type_key": "radio_communication_device"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_ports",
+          "raw_ref": {
+            "file": "data/raw/RF407-RF412-RF422-RF427.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              22
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "powered_over",
+          "raw_ref": {
+            "file": "data/raw/RF407-RF412-RF422-RF427.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              25
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_ports",
+          "raw_ref": {
+            "file": "data/raw/RF407-RF412-RF422-RF427.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              22
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_ports",
+          "raw_ref": {
+            "file": "data/raw/RF407-RF412-RF422-RF427.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              22
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "RF407",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "RF407"
+        }
+      ]
+    },
+    {
+      "value": "CSI_RF407",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_RF407"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "RF407",
+      "Communications",
+      "Spread-Spectrum Radios",
+      "Radio Communication Device",
+      "CS I/O",
+      "RS-232",
+      "USB",
+      "CSI_RF407"
+    ],
+    "vi": [
+      "RF407",
+      "Thiết bị truyền thông",
+      "Vô tuyến trải phổ",
+      "Thiết bị truyền thông vô tuyến",
+      "CS I/O",
+      "RS-232",
+      "USB"
+    ]
+  }
+}

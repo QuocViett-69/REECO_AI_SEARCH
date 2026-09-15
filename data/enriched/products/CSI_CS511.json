@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS511",
+  "model": "CS511",
+  "name_en": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Dissolved Oxygen Sensors",
+    "subcategory_key": "dissolved_oxygen_sensors",
+    "device_type": "Dissolved Oxygen Sensor",
+    "device_type_key": "dissolved_oxygen_sensor"
+  },
+  "measurements": [
+    {
+      "key": "dissolved_oxygen",
+      "label_en": "Dissolved Oxygen",
+      "label_vi": "Oxy hòa tan",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)"
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_dissolved_oxygen",
+      "label_en": "Measure Dissolved Oxygen",
+      "label_vi": "Đo oxy hòa tan",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)"
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CS511",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS511"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS511",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS511"
+        }
+      ]
+    },
+    {
+      "value": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS511",
+      "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+      "Sensors",
+      "Dissolved Oxygen Sensors",
+      "Dissolved Oxygen Sensor",
+      "Dissolved Oxygen",
+      "Measure Dissolved Oxygen",
+      "CSI_CS511"
+    ],
+    "vi": [
+      "CS511",
+      "Cảm biến",
+      "Cảm biến oxy hòa tan",
+      "Oxy hòa tan",
+      "Đo oxy hòa tan"
+    ]
+  }
+}

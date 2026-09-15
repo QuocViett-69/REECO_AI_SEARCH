@@ -2,6 +2,7 @@ import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import {
   masterPath,
+  preserveGeneratedAtWhenUnchanged,
   printValidationSummary,
   readJson,
   reportPath,
@@ -15,7 +16,16 @@ if (!Array.isArray(products))
     'data/master/product-master.json must contain a JSON array.',
   );
 
-const report = await validateProductMaster(products);
+let previousReport = null;
+try {
+  previousReport = await readJson(reportPath);
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
+const report = preserveGeneratedAtWhenUnchanged(
+  await validateProductMaster(products),
+  previousReport,
+);
 await mkdir(path.dirname(reportPath), { recursive: true });
 await writeJson(reportPath, report);
 

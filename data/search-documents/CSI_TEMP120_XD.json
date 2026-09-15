@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TEMP120_XD",
+  "model": "TEMP120-XD",
+  "name_en": "TEMP 120",
+  "name_vi": "TEMP 120",
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Thermocouple Measurement Modules",
+    "subcategory_key": "thermocouple_measurement_modules",
+    "device_type": "Measurement Device",
+    "device_type_key": "measurement_device"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ"
+    }
+  ],
+  "supported_protocols": [
+    "RJ45",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "TEMP120-XD",
+    "CSI_TEMP120_XD",
+    "TEMP 120"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 85,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      }
+    },
+    {
+      "canonical_key": "measurement_resolution",
+      "name": "Measurement Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.015,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      }
+    },
+    {
+      "canonical_key": "maximum_input_voltage",
+      "name": "Maximum Input Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "number",
+        "value": 10,
+        "unit": "V DC",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          24
+        ]
+      }
+    },
+    {
+      "canonical_key": "power_supply_voltage",
+      "name": "Power Supply Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 9.6,
+        "max_value": 32,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          31
+        ]
+      }
+    },
+    {
+      "canonical_key": "typical_current_drain_sleep",
+      "name": "Typical Current Drain – Sleep",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 5,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          32
+        ]
+      }
+    },
+    {
+      "canonical_key": "typical_current_drain_active",
+      "name": "Typical Current Drain – Active",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 30,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          33
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.9,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.95,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TEMP120-XD.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          40
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "TEMP120-XD",
+    "TEMP 120",
+    "Measurement Devices",
+    "Thermocouple Measurement Modules",
+    "Measurement Device",
+    "Temperature",
+    "temperature measurement",
+    "RJ45",
+    "USB",
+    "Measure Temperature",
+    "CSI_TEMP120_XD"
+  ],
+  "search_keywords_vi": [
+    "TEMP120-XD",
+    "TEMP 120",
+    "Thiết bị đo lường",
+    "Mô-đun đo cặp nhiệt điện",
+    "Nhiệt độ",
+    "RJ45",
+    "USB",
+    "Đo nhiệt độ"
+  ],
+  "search_text_en": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | Measurement Devices | Thermocouple Measurement Modules | Measurement Device | Temperature | Measure Temperature | RJ45 | USB | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA | Weight: 0.9 kg | temperature measurement",
+  "search_text_vi": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | Thiết bị đo lường | Mô-đun đo cặp nhiệt điện | Nhiệt độ | Đo nhiệt độ | RJ45 | USB | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA | Weight: 0.9 kg",
+  "search_text": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | Measurement Devices | Thermocouple Measurement Modules | Measurement Device | Temperature | Measure Temperature | RJ45 | USB | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA | Weight: 0.9 kg | temperature measurement | Thiết bị đo lường | Mô-đun đo cặp nhiệt điện | Nhiệt độ | Đo nhiệt độ",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "05c3c4b6c122fc0d683ef88c80d62581c0eab086c8370f56e3843f9913728dbd"
+}

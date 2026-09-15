@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_NL201_ST",
+  "model": "NL201-ST",
+  "name_en": "NL201-ST",
+  "name_vi": "NL201-ST",
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Ethernet Communications",
+    "subcategory_key": "ethernet_communications",
+    "device_type": "Ethernet Communication Device",
+    "device_type_key": "ethernet_communication_device"
+  },
+  "measurements": [],
+  "applications": [
+    {
+      "key": "data_logger_connectivity",
+      "label_en": "Data Logger Connectivity",
+      "label_vi": "Kết nối bộ ghi dữ liệu"
+    }
+  ],
+  "capabilities": [],
+  "supported_protocols": [
+    "Auto-IP",
+    "CS I/O",
+    "DHCP",
+    "DNS",
+    "Ethernet",
+    "HTTPS",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus TCP",
+    "PakBus",
+    "RS-232",
+    "SLAAC",
+    "TCP/IP",
+    "Telnet",
+    "TLS",
+    "USB"
+  ],
+  "unsupported_protocols": [
+    "USB"
+  ],
+  "aliases": [
+    "NL201-ST",
+    "CSI_NL201_ST"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "temperature_range",
+      "name": "Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      }
+    },
+    {
+      "canonical_key": "power_requirements",
+      "name": "Power Requirements",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 20,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 177,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 6.3,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/NL201.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          25
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "NL201-ST",
+    "Communications",
+    "Ethernet Communications",
+    "Ethernet Communication Device",
+    "Data Logger Connectivity",
+    "Auto-IP",
+    "CS I/O",
+    "DHCP",
+    "DNS",
+    "Ethernet",
+    "HTTPS",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus TCP",
+    "PakBus",
+    "RS-232",
+    "SLAAC",
+    "TCP/IP",
+    "Telnet",
+    "TLS",
+    "USB",
+    "CSI_NL201_ST"
+  ],
+  "search_keywords_vi": [
+    "NL201-ST",
+    "Thiết bị truyền thông",
+    "Truyền thông Ethernet",
+    "Thiết bị truyền thông Ethernet",
+    "Kết nối bộ ghi dữ liệu",
+    "Auto-IP",
+    "CS I/O",
+    "DHCP",
+    "DNS",
+    "Ethernet",
+    "HTTPS",
+    "ICMP",
+    "IPv4",
+    "IPv6",
+    "Modbus TCP",
+    "PakBus",
+    "RS-232",
+    "SLAAC",
+    "TCP/IP",
+    "Telnet",
+    "TLS",
+    "USB"
+  ],
+  "search_text_en": "NL201-ST | CSI_NL201_ST | Communications | Ethernet Communications | Ethernet Communication Device | Data Logger Connectivity | Auto-IP | CS I/O | DHCP | DNS | Ethernet | HTTPS | ICMP | IPv4 | IPv6 | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Temperature Range: -25 to 50 °C | Power Requirements: 7 to 20 V DC | Weight: 177 g",
+  "search_text_vi": "NL201-ST | CSI_NL201_ST | Thiết bị truyền thông | Truyền thông Ethernet | Thiết bị truyền thông Ethernet | Kết nối bộ ghi dữ liệu | Auto-IP | CS I/O | DHCP | DNS | Ethernet | HTTPS | ICMP | IPv4 | IPv6 | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Temperature Range: -25 to 50 °C | Power Requirements: 7 to 20 V DC | Weight: 177 g",
+  "search_text": "NL201-ST | CSI_NL201_ST | Communications | Ethernet Communications | Ethernet Communication Device | Data Logger Connectivity | Auto-IP | CS I/O | DHCP | DNS | Ethernet | HTTPS | ICMP | IPv4 | IPv6 | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Temperature Range: -25 to 50 °C | Power Requirements: 7 to 20 V DC | Weight: 177 g | Thiết bị truyền thông | Truyền thông Ethernet | Thiết bị truyền thông Ethernet | Kết nối bộ ghi dữ liệu",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "e0c2189ef2239d5c1d007c2de55b12d942fb420da82307060169274983448609"
+}

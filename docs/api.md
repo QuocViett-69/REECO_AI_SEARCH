@@ -1,21 +1,17 @@
 # API
 
+The implemented Basic Backend surface is:
+
 ```text
-GET    /api/v1/health
+GET  /api/v1/health
+GET  /api/v1/products
+GET  /api/v1/products/:productId
+POST /api/v1/search
 
-GET    /api/v1/products
-GET    /api/v1/products/:id
-POST   /api/v1/products
-PATCH  /api/v1/products/:id
-DELETE /api/v1/products/:id
-
-POST   /api/v1/imports
-GET    /api/v1/imports/:id
-
-POST   /api/v1/search
-
-POST   /api/v1/products/:id/reindex
-POST   /api/v1/index/rebuild
+GET  /api/v1/admin/products             Bearer token required
+GET  /api/v1/admin/products/:productId  Bearer token required
+POST /api/v1/admin/import               Bearer token required
 ```
 
-Only the health endpoint is implemented in the current scaffold.
+There is intentionally no compare endpoint. See [`api-contract.md`](./api-contract.md) for the full
+request/response/error contract and [`backend-handoff.md`](./backend-handoff.md) for React integration.

@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TX325",
+  "model": "TX325",
+  "name_en": "Satellite Transmitter for GOES V2 (-40 to +60C)**",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Satellite Communications",
+    "subcategory_key": "satellite_communications",
+    "device_type": "Satellite Communication Device",
+    "device_type_key": "satellite_communication_device"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "ASCII",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_formats",
+          "raw_ref": {
+            "file": "data/raw/TX325.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_232_interface",
+          "raw_ref": {
+            "file": "data/raw/TX325.json",
+            "product_index": 0,
+            "spec_index": 38,
+            "source_rows": [
+              44
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "TX325",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "TX325"
+        }
+      ]
+    },
+    {
+      "value": "CSI_TX325",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_TX325"
+        }
+      ]
+    },
+    {
+      "value": "Satellite Transmitter for GOES V2 (-40 to +60C)**",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Satellite Transmitter for GOES V2 (-40 to +60C)**"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "TX325",
+      "Satellite Transmitter for GOES V2 (-40 to +60C)**",
+      "Communications",
+      "Satellite Communications",
+      "Satellite Communication Device",
+      "ASCII",
+      "RS-232",
+      "CSI_TX325"
+    ],
+    "vi": [
+      "TX325",
+      "Thiết bị truyền thông",
+      "Truyền thông vệ tinh",
+      "Thiết bị truyền thông vệ tinh",
+      "ASCII",
+      "RS-232"
+    ]
+  }
+}

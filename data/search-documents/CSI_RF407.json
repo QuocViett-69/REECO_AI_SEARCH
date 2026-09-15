@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RF407",
+  "model": "RF407",
+  "name_en": "RF407",
+  "name_vi": "RF407",
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Spread-Spectrum Radios",
+    "subcategory_key": "spread_spectrum_radios",
+    "device_type": "Radio Communication Device",
+    "device_type_key": "radio_communication_device"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "CS I/O",
+    "RS-232",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "RF407",
+    "CSI_RF407"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          29
+        ]
+      }
+    },
+    {
+      "canonical_key": "input_voltage",
+      "name": "Input Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 9,
+        "max_value": 16,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          23
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_frequency",
+      "name": "Operating Frequency",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 902,
+        "max_value": 928,
+        "unit": "MHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      }
+    },
+    {
+      "canonical_key": "transmit_power_output",
+      "name": "Transmit Power Output",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 5,
+        "max_value": 250,
+        "unit": "mW",
+        "qualifier": null,
+        "note": "software-selectable"
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      }
+    },
+    {
+      "canonical_key": "rf_data_rate",
+      "name": "RF Data Rate",
+      "quantity_kind": "data_rate",
+      "normalized_value": {
+        "type": "number",
+        "value": 200,
+        "unit": "kbps",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      }
+    },
+    {
+      "canonical_key": "average_current_drain_receive",
+      "name": "Average Current Drain – Receive",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 15,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RF407-RF412-RF422-RF427.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          27
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "RF407",
+    "Communications",
+    "Spread-Spectrum Radios",
+    "Radio Communication Device",
+    "CS I/O",
+    "RS-232",
+    "USB",
+    "CSI_RF407"
+  ],
+  "search_keywords_vi": [
+    "RF407",
+    "Thiết bị truyền thông",
+    "Vô tuyến trải phổ",
+    "Thiết bị truyền thông vô tuyến",
+    "CS I/O",
+    "RS-232",
+    "USB"
+  ],
+  "search_text_en": "RF407 | CSI_RF407 | Communications | Spread-Spectrum Radios | Radio Communication Device | CS I/O | RS-232 | USB | Operating Temperature Range: -40 to 70 °C | Input Voltage: 9 to 16 V DC | Operating Frequency: 902 to 928 MHz | Transmit Power Output: 5 to 250 mW | RF Data Rate: 200 kbps | Average Current Drain – Receive: 15 mA",
+  "search_text_vi": "RF407 | CSI_RF407 | Thiết bị truyền thông | Vô tuyến trải phổ | Thiết bị truyền thông vô tuyến | CS I/O | RS-232 | USB | Operating Temperature Range: -40 to 70 °C | Input Voltage: 9 to 16 V DC | Operating Frequency: 902 to 928 MHz | Transmit Power Output: 5 to 250 mW | RF Data Rate: 200 kbps | Average Current Drain – Receive: 15 mA",
+  "search_text": "RF407 | CSI_RF407 | Communications | Spread-Spectrum Radios | Radio Communication Device | CS I/O | RS-232 | USB | Operating Temperature Range: -40 to 70 °C | Input Voltage: 9 to 16 V DC | Operating Frequency: 902 to 928 MHz | Transmit Power Output: 5 to 250 mW | RF Data Rate: 200 kbps | Average Current Drain – Receive: 15 mA | Thiết bị truyền thông | Vô tuyến trải phổ | Thiết bị truyền thông vô tuyến",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "dbd8fd599034dcc1fc09a07373cc3ee7f7528f91031de8f80d0e21125b960a54"
+}

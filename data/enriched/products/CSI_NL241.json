@@ -1,0 +1,585 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_NL241",
+  "model": "NL241",
+  "name_en": "NL241",
+  "name_vi": "NL241",
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Wi-Fi Communications",
+    "subcategory_key": "wi_fi_communications",
+    "device_type": "Wi-Fi Communication Device",
+    "device_type_key": "wi_fi_communication_device"
+  },
+  "measurements": [],
+  "applications": [
+    {
+      "key": "data_logger_connectivity",
+      "label_en": "Data Logger Connectivity",
+      "label_vi": "Kết nối bộ ghi dữ liệu",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_connection_modes",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "power_source",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 16,
+            "source_rows": [
+              20
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "bridge_mode",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 36,
+            "source_rows": [
+              40
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DHCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DNS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HTTPS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ICMP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPv4",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPv6",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus TCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_connection_modes",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PakBus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_connection_modes",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "configuration_methods",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SLAAC",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TCP/IP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_connection_modes",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Telnet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "configuration_methods",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TLS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_connection_modes",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_protocols",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              16
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tcp_connections",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 13,
+            "source_rows": [
+              17
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "configuration_methods",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "unsupported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "power_source",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 16,
+            "source_rows": [
+              20
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wi-Fi",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              5
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "network_operation",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              7
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "supported_connection_modes",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "configuration_methods",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "service_requirement",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 33,
+            "source_rows": [
+              37
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "NL241",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "NL241"
+        }
+      ]
+    },
+    {
+      "value": "CSI_NL241",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_NL241"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "NL241",
+      "Communications",
+      "Wi-Fi Communications",
+      "Wi-Fi Communication Device",
+      "Data Logger Connectivity",
+      "CS I/O",
+      "DHCP",
+      "DNS",
+      "HTTPS",
+      "ICMP",
+      "IPv4",
+      "IPv6",
+      "Modbus",
+      "Modbus TCP",
+      "PakBus",
+      "RS-232",
+      "SLAAC",
+      "TCP/IP",
+      "Telnet",
+      "TLS",
+      "USB",
+      "Wi-Fi",
+      "CSI_NL241"
+    ],
+    "vi": [
+      "NL241",
+      "Thiết bị truyền thông",
+      "Truyền thông Wi-Fi",
+      "Thiết bị truyền thông Wi-Fi",
+      "Kết nối bộ ghi dữ liệu",
+      "CS I/O",
+      "DHCP",
+      "DNS",
+      "HTTPS",
+      "ICMP",
+      "IPv4",
+      "IPv6",
+      "Modbus",
+      "Modbus TCP",
+      "PakBus",
+      "RS-232",
+      "SLAAC",
+      "TCP/IP",
+      "Telnet",
+      "TLS",
+      "USB",
+      "Wi-Fi"
+    ]
+  }
+}

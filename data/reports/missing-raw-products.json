@@ -14,96 +14,24 @@
     "extractable_missing_product_sources_found": 0
   },
   "summary": {
-    "upstream_blocked_products": 19,
-    "raw_record_not_found": 14,
+    "upstream_blocked_products": 8,
+    "raw_record_not_found": 2,
     "variant_mismatch": 4,
     "ambiguous_variant": 1,
+    "identity_conflict": 1,
     "new_raw_records_extracted": 0
   },
   "products": [
     {
-      "product_id": "CSI_109",
-      "model": "109",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
       "product_id": "CSI_43347",
       "model": "43347",
       "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_TEMPVUE20_S",
-      "model": "TempVue20-S",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_EE181",
-      "model": "EE181",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_BAROVUE10",
-      "model": "BaroVue10",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_52202",
-      "model": "52202",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
+      "blocker": "identity_conflict",
+      "resolution": "Resolve the conflicting model identity in the source/raw record before activation."
     },
     {
       "product_id": "CSI_5103",
       "model": "5103",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_CSAT3B_NC",
-      "model": "CSAT3B-NC",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_METSENS500_DS",
-      "model": "MetSENS500-DS",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_CS301",
-      "model": "CS301",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_NR01",
-      "model": "NR01",
       "status": "review",
       "blocker": "raw_record_not_found",
       "repository_source_found": false,
@@ -136,14 +64,6 @@
         }
       ],
       "resolution": "Provide a generic CS451 source/raw record or an explicit canonical variant policy; do not select HA, WN, or NN implicitly."
-    },
-    {
-      "product_id": "CSI_SNOWVUE10",
-      "model": "SnowVue10",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
     },
     {
       "product_id": "CSI_AM16_32B_ST",
@@ -204,14 +124,6 @@
         }
       ],
       "resolution": "Provide repository source evidence or a separate raw record for the exact ST variant; XT must not be reused."
-    },
-    {
-      "product_id": "CSI_CELL205_AT",
-      "model": "CELL205-AT",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
     },
     {
       "product_id": "CSI_CPEC310",

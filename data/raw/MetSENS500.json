@@ -1,0 +1,1339 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "MetSENS500.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_METSENS500_D2",
+      "manufacturer": "Campbell Scientific, Inc.",
+      "model": "MetSENS500-D2",
+      "product_name_en": "MetSENS500-D2",
+      "identity_source": {
+        "model": "worksheet_column_header",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": null,
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "MetSENS500-D2",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Base Model",
+          "name_vi": "Mã sản phẩm cơ sở",
+          "value_raw": "MetSENS500",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Compact Weather Sensor for Temperature, RH, Barometric Pressure, and Wind with Compass",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary measurement device / integrated weather sensor",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Integrated measurement of common meteorological parameters",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Measurements Made",
+          "name_vi": "Các thông số đo",
+          "value_raw": "Air temperature; relative humidity; barometric pressure; wind speed; wind direction; compass heading",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Communication Configuration",
+          "name_vi": "Cấu hình giao tiếp",
+          "value_raw": "RS-232 digital output",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Primary Digital Interface",
+          "name_vi": "Giao tiếp số chính",
+          "value_raw": "Serial RS-232",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Default Communication Settings",
+          "name_vi": "Cấu hình giao tiếp mặc định",
+          "value_raw": "9600 baud; 8 data bits; even parity; 1 stop bit",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Default Address",
+          "name_vi": "Địa chỉ mặc định",
+          "value_raw": null,
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Replacement Cable",
+          "name_vi": "Cáp thay thế",
+          "value_raw": "METSENSCBL3 RS-232 Replacement Cable",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Signal / Data Wiring",
+          "name_vi": "Đấu dây tín hiệu / dữ liệu",
+          "value_raw": "Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Direct Data Logger Connection",
+          "name_vi": "Kết nối trực tiếp với data logger",
+          "value_raw": "Green → C (odd); White → C (even); Red → 12V; Black/Clear → G",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "CRBasic Programming",
+          "name_vi": "Lập trình CRBasic",
+          "value_raw": "SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr()",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Sampling Rate",
+          "name_vi": "Tần số lấy mẫu",
+          "value_raw": "1 Hz",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "IP Rating",
+          "name_vi": "Cấp bảo vệ IP",
+          "value_raw": "IP66",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ / chứng nhận",
+          "value_raw": "CE and RoHS compliant; where applicable, individual parameters meet or exceed IEC 61724-1 (2017, 2021)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Voltage",
+          "name_vi": "Điện áp hoạt động",
+          "value_raw": "5 to 30 VDC",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Typical Current Drain – Continuous High Mode",
+          "name_vi": "Dòng tiêu thụ điển hình – chế độ liên tục",
+          "value_raw": "25 mA @ 12 VDC",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Typical Current Drain – Eco-Power Mode",
+          "name_vi": "Dòng tiêu thụ điển hình – chế độ tiết kiệm",
+          "value_raw": "0.7 mA @ 12 VDC (1 hour polled)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.7 kg (1.5 lb)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Overall Height",
+          "name_vi": "Chiều cao tổng thể",
+          "value_raw": "222 mm",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Maximum Diameter",
+          "name_vi": "Đường kính lớn nhất",
+          "value_raw": "142 mm",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Range",
+          "name_vi": "Dải đo nhiệt độ không khí",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ không khí",
+          "value_raw": "0.1 °C",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ không khí",
+          "value_raw": "±0.3 °C @ +20 °C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Range",
+          "name_vi": "Dải đo độ ẩm tương đối",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Resolution",
+          "name_vi": "Độ phân giải độ ẩm tương đối",
+          "value_raw": "1% (manual); brochure states 0.1",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Accuracy",
+          "name_vi": "Độ chính xác độ ẩm tương đối",
+          "value_raw": "±2% @ 20 °C (10 to 90% RH)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Range",
+          "name_vi": "Dải đo áp suất khí quyển",
+          "value_raw": "300 to 1100 hPa",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Resolution",
+          "name_vi": "Độ phân giải áp suất khí quyển",
+          "value_raw": "0.1 hPa",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Accuracy",
+          "name_vi": "Độ chính xác áp suất khí quyển",
+          "value_raw": "±0.5 hPa @ 25 °C",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Range",
+          "name_vi": "Dải đo tốc độ gió",
+          "value_raw": "0.01 to 60 m/s",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Resolution",
+          "name_vi": "Độ phân giải tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Starting Threshold",
+          "name_vi": "Ngưỡng khởi động tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Accuracy",
+          "name_vi": "Độ chính xác tốc độ gió",
+          "value_raw": "±3% up to 40 m/s; ±5% up to 60 m/s",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Range",
+          "name_vi": "Dải đo hướng gió",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Resolution",
+          "name_vi": "Độ phân giải hướng gió",
+          "value_raw": "1°",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Accuracy",
+          "name_vi": "Độ chính xác hướng gió",
+          "value_raw": "±3° up to 40 m/s; ±5° from 40 to 60 m/s",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Range",
+          "name_vi": "Dải đo la bàn",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Resolution",
+          "name_vi": "Độ phân giải la bàn",
+          "value_raw": "1°",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Accuracy",
+          "name_vi": "Độ chính xác la bàn",
+          "value_raw": "±3°",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Cable Length Options",
+          "name_vi": "Các tùy chọn chiều dài cáp",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+          "source_rows": [
+            46
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "metsens500_datasheet.pdf",
+        "user_manual": "metsens_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11230",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Field \"Default Address\" is blank for MetSENS500-D2 in source row 12; value was kept as null.",
+          "No explicit specification section labels were found in the worksheet; section was set to null for all specification entries.",
+          "No order form or product URL was found in the worksheet; corresponding document fields were set to null."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_METSENS500_DM",
+      "manufacturer": "Campbell Scientific, Inc.",
+      "model": "MetSENS500-DM",
+      "product_name_en": "MetSENS500-DM",
+      "identity_source": {
+        "model": "worksheet_column_header",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": null,
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "MetSENS500-DM",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Base Model",
+          "name_vi": "Mã sản phẩm cơ sở",
+          "value_raw": "MetSENS500",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Compact Weather Sensor for Temperature, RH, Barometric Pressure, and Wind with Compass",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary measurement device / integrated weather sensor",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Integrated measurement of common meteorological parameters",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Measurements Made",
+          "name_vi": "Các thông số đo",
+          "value_raw": "Air temperature; relative humidity; barometric pressure; wind speed; wind direction; compass heading",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Communication Configuration",
+          "name_vi": "Cấu hình giao tiếp",
+          "value_raw": "RS-485 Modbus output",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Primary Digital Interface",
+          "name_vi": "Giao tiếp số chính",
+          "value_raw": "Modbus RTU over RS-485",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Default Communication Settings",
+          "name_vi": "Cấu hình giao tiếp mặc định",
+          "value_raw": "19200 baud; 8 data bits; even parity; 1 stop bit",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Default Address",
+          "name_vi": "Địa chỉ mặc định",
+          "value_raw": "Modbus address 41",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Replacement Cable",
+          "name_vi": "Cáp thay thế",
+          "value_raw": "METSENSCBL2 RS-485 Replacement Cable",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Signal / Data Wiring",
+          "name_vi": "Đấu dây tín hiệu / dữ liệu",
+          "value_raw": "Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Direct Data Logger Connection",
+          "name_vi": "Kết nối trực tiếp với data logger",
+          "value_raw": "Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "CRBasic Programming",
+          "name_vi": "Lập trình CRBasic",
+          "value_raw": "SerialOpen() followed by ModbusClient()",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Sampling Rate",
+          "name_vi": "Tần số lấy mẫu",
+          "value_raw": "1 Hz",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "IP Rating",
+          "name_vi": "Cấp bảo vệ IP",
+          "value_raw": "IP66",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ / chứng nhận",
+          "value_raw": "CE and RoHS compliant; where applicable, individual parameters meet or exceed IEC 61724-1 (2017, 2021)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Voltage",
+          "name_vi": "Điện áp hoạt động",
+          "value_raw": "5 to 30 VDC",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Typical Current Drain – Continuous High Mode",
+          "name_vi": "Dòng tiêu thụ điển hình – chế độ liên tục",
+          "value_raw": "25 mA @ 12 VDC",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Typical Current Drain – Eco-Power Mode",
+          "name_vi": "Dòng tiêu thụ điển hình – chế độ tiết kiệm",
+          "value_raw": "0.7 mA @ 12 VDC (1 hour polled)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.7 kg (1.5 lb)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Overall Height",
+          "name_vi": "Chiều cao tổng thể",
+          "value_raw": "222 mm",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Maximum Diameter",
+          "name_vi": "Đường kính lớn nhất",
+          "value_raw": "142 mm",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Range",
+          "name_vi": "Dải đo nhiệt độ không khí",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ không khí",
+          "value_raw": "0.1 °C",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ không khí",
+          "value_raw": "±0.3 °C @ +20 °C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Range",
+          "name_vi": "Dải đo độ ẩm tương đối",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Resolution",
+          "name_vi": "Độ phân giải độ ẩm tương đối",
+          "value_raw": "1% (manual); brochure states 0.1",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Accuracy",
+          "name_vi": "Độ chính xác độ ẩm tương đối",
+          "value_raw": "±2% @ 20 °C (10 to 90% RH)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Range",
+          "name_vi": "Dải đo áp suất khí quyển",
+          "value_raw": "300 to 1100 hPa",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Resolution",
+          "name_vi": "Độ phân giải áp suất khí quyển",
+          "value_raw": "0.1 hPa",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Accuracy",
+          "name_vi": "Độ chính xác áp suất khí quyển",
+          "value_raw": "±0.5 hPa @ 25 °C",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Range",
+          "name_vi": "Dải đo tốc độ gió",
+          "value_raw": "0.01 to 60 m/s",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Resolution",
+          "name_vi": "Độ phân giải tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Starting Threshold",
+          "name_vi": "Ngưỡng khởi động tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Accuracy",
+          "name_vi": "Độ chính xác tốc độ gió",
+          "value_raw": "±3% up to 40 m/s; ±5% up to 60 m/s",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Range",
+          "name_vi": "Dải đo hướng gió",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Resolution",
+          "name_vi": "Độ phân giải hướng gió",
+          "value_raw": "1°",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Accuracy",
+          "name_vi": "Độ chính xác hướng gió",
+          "value_raw": "±3° up to 40 m/s; ±5° from 40 to 60 m/s",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Range",
+          "name_vi": "Dải đo la bàn",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Resolution",
+          "name_vi": "Độ phân giải la bàn",
+          "value_raw": "1°",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Accuracy",
+          "name_vi": "Độ chính xác la bàn",
+          "value_raw": "±3°",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Cable Length Options",
+          "name_vi": "Các tùy chọn chiều dài cáp",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+          "source_rows": [
+            46
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "metsens500_datasheet.pdf",
+        "user_manual": "metsens_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11230",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "No explicit specification section labels were found in the worksheet; section was set to null for all specification entries.",
+          "No order form or product URL was found in the worksheet; corresponding document fields were set to null."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "manufacturer": "Campbell Scientific, Inc.",
+      "model": "MetSENS500-DS",
+      "product_name_en": "MetSENS500-DS",
+      "identity_source": {
+        "model": "worksheet_column_header",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": null,
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "MetSENS500-DS",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Base Model",
+          "name_vi": "Mã sản phẩm cơ sở",
+          "value_raw": "MetSENS500",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Compact Weather Sensor for Temperature, RH, Barometric Pressure, and Wind with Compass",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary measurement device / integrated weather sensor",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Integrated measurement of common meteorological parameters",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Measurements Made",
+          "name_vi": "Các thông số đo",
+          "value_raw": "Air temperature; relative humidity; barometric pressure; wind speed; wind direction; compass heading",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Communication Configuration",
+          "name_vi": "Cấu hình giao tiếp",
+          "value_raw": "SDI-12 digital output",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Primary Digital Interface",
+          "name_vi": "Giao tiếp số chính",
+          "value_raw": "SDI-12",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Default Communication Settings",
+          "name_vi": "Cấu hình giao tiếp mặc định",
+          "value_raw": "SDI-12 protocol",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Default Address",
+          "name_vi": "Địa chỉ mặc định",
+          "value_raw": "SDI-12 address 0",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Replacement Cable",
+          "name_vi": "Cáp thay thế",
+          "value_raw": "METSENSCBL1 SDI-12 Replacement Cable",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Signal / Data Wiring",
+          "name_vi": "Đấu dây tín hiệu / dữ liệu",
+          "value_raw": "Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Direct Data Logger Connection",
+          "name_vi": "Kết nối trực tiếp với data logger",
+          "value_raw": "Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "CRBasic Programming",
+          "name_vi": "Lập trình CRBasic",
+          "value_raw": "SDI12Recorder()",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Sampling Rate",
+          "name_vi": "Tần số lấy mẫu",
+          "value_raw": "1 Hz",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "IP Rating",
+          "name_vi": "Cấp bảo vệ IP",
+          "value_raw": "IP66",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ / chứng nhận",
+          "value_raw": "CE and RoHS compliant; where applicable, individual parameters meet or exceed IEC 61724-1 (2017, 2021)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Voltage",
+          "name_vi": "Điện áp hoạt động",
+          "value_raw": "5 to 30 VDC",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Typical Current Drain – Continuous High Mode",
+          "name_vi": "Dòng tiêu thụ điển hình – chế độ liên tục",
+          "value_raw": "25 mA @ 12 VDC",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Typical Current Drain – Eco-Power Mode",
+          "name_vi": "Dòng tiêu thụ điển hình – chế độ tiết kiệm",
+          "value_raw": "0.7 mA @ 12 VDC (1 hour polled)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.7 kg (1.5 lb)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Overall Height",
+          "name_vi": "Chiều cao tổng thể",
+          "value_raw": "222 mm",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Maximum Diameter",
+          "name_vi": "Đường kính lớn nhất",
+          "value_raw": "142 mm",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Range",
+          "name_vi": "Dải đo nhiệt độ không khí",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Resolution",
+          "name_vi": "Độ phân giải nhiệt độ không khí",
+          "value_raw": "0.1 °C",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Air Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ không khí",
+          "value_raw": "±0.3 °C @ +20 °C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Range",
+          "name_vi": "Dải đo độ ẩm tương đối",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Resolution",
+          "name_vi": "Độ phân giải độ ẩm tương đối",
+          "value_raw": "1% (manual); brochure states 0.1",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Relative Humidity Accuracy",
+          "name_vi": "Độ chính xác độ ẩm tương đối",
+          "value_raw": "±2% @ 20 °C (10 to 90% RH)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Range",
+          "name_vi": "Dải đo áp suất khí quyển",
+          "value_raw": "300 to 1100 hPa",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Resolution",
+          "name_vi": "Độ phân giải áp suất khí quyển",
+          "value_raw": "0.1 hPa",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Barometric Pressure Accuracy",
+          "name_vi": "Độ chính xác áp suất khí quyển",
+          "value_raw": "±0.5 hPa @ 25 °C",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Range",
+          "name_vi": "Dải đo tốc độ gió",
+          "value_raw": "0.01 to 60 m/s",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Resolution",
+          "name_vi": "Độ phân giải tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Starting Threshold",
+          "name_vi": "Ngưỡng khởi động tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Speed Accuracy",
+          "name_vi": "Độ chính xác tốc độ gió",
+          "value_raw": "±3% up to 40 m/s; ±5% up to 60 m/s",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Range",
+          "name_vi": "Dải đo hướng gió",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Resolution",
+          "name_vi": "Độ phân giải hướng gió",
+          "value_raw": "1°",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Wind Direction Accuracy",
+          "name_vi": "Độ chính xác hướng gió",
+          "value_raw": "±3° up to 40 m/s; ±5° from 40 to 60 m/s",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Range",
+          "name_vi": "Dải đo la bàn",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Resolution",
+          "name_vi": "Độ phân giải la bàn",
+          "value_raw": "1°",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compass Accuracy",
+          "name_vi": "Độ chính xác la bàn",
+          "value_raw": "±3°",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Cable Length Options",
+          "name_vi": "Các tùy chọn chiều dài cáp",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+          "source_rows": [
+            46
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "metsens500_datasheet.pdf",
+        "user_manual": "metsens_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11230",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "No explicit specification section labels were found in the worksheet; section was set to null for all specification entries.",
+          "No order form or product URL was found in the worksheet; corresponding document fields were set to null."
+        ]
+      }
+    }
+  ]
+}

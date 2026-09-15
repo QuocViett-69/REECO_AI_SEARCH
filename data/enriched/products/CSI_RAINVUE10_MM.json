@@ -1,0 +1,394 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RAINVUE10_MM",
+  "model": "RainVue10-MM",
+  "name_en": "RainVue™10",
+  "name_vi": "RainVue™10",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Precipitation Sensors",
+    "subcategory_key": "precipitation_sensors",
+    "device_type": "Precipitation Sensor",
+    "device_type_key": "precipitation_sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "temperature_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 22,
+            "source_rows": [
+              25
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 2,
+            "source_rows": [
+              5
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_amount_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 11,
+            "source_rows": [
+              14
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_intensity_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 13,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "precipitation_intensity",
+      "label_en": "Precipitation Intensity",
+      "label_vi": "Cường độ mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_intensity_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 13,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "tilt",
+      "label_en": "Tilt",
+      "label_vi": "Độ nghiêng",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tilt_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 21,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 7,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sensor_configuration",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 8,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "white_wire_function",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 30,
+            "source_rows": [
+              33
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sensor_configuration",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 8,
+            "source_rows": [
+              11
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "temperature_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 22,
+            "source_rows": [
+              25
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 2,
+            "source_rows": [
+              5
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_amount_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 11,
+            "source_rows": [
+              14
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_intensity_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 13,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_precipitation_intensity",
+      "label_en": "Measure Precipitation Intensity",
+      "label_vi": "Đo cường độ mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_intensity_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 13,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_tilt",
+      "label_en": "Measure Tilt",
+      "label_vi": "Đo độ nghiêng",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tilt_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/RainVue10-20.json",
+            "product_index": 1,
+            "spec_index": 21,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "RainVue10-MM",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "RainVue10-MM"
+        }
+      ]
+    },
+    {
+      "value": "CSI_RAINVUE10_MM",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_RAINVUE10_MM"
+        }
+      ]
+    },
+    {
+      "value": "RainVue™10",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RainVue™10"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "RainVue10-MM",
+      "RainVue™10",
+      "Sensors",
+      "Precipitation Sensors",
+      "Precipitation Sensor",
+      "Temperature",
+      "temperature measurement",
+      "Precipitation",
+      "rainfall",
+      "Precipitation Intensity",
+      "Tilt",
+      "SDI-12",
+      "USB",
+      "Measure Temperature",
+      "Measure Precipitation",
+      "Measure Precipitation Intensity",
+      "Measure Tilt",
+      "CSI_RAINVUE10_MM"
+    ],
+    "vi": [
+      "RainVue10-MM",
+      "RainVue™10",
+      "Cảm biến",
+      "Cảm biến lượng mưa",
+      "Nhiệt độ",
+      "Lượng mưa",
+      "Cường độ mưa",
+      "Độ nghiêng",
+      "SDI-12",
+      "USB",
+      "Đo nhiệt độ",
+      "Đo lượng mưa",
+      "Đo cường độ mưa",
+      "Đo độ nghiêng"
+    ]
+  }
+}

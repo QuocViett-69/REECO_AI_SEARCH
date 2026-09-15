@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_52202",
+  "model": "52202",
+  "name_en": "RM Young Heated Rain Gage w/6.3 Orifice",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Precipitation Sensors",
+    "subcategory_key": "precipitation_sensors",
+    "device_type": "Precipitation Sensor",
+    "device_type_key": "precipitation_sensor"
+  },
+  "measurements": [
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young Heated Rain Gage w/6.3 Orifice"
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young Heated Rain Gage w/6.3 Orifice"
+        }
+      ]
+    },
+    {
+      "key": "heated_precipitation_measurement",
+      "label_en": "Heated Precipitation Measurement",
+      "label_vi": "Đo lượng mưa có gia nhiệt",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young Heated Rain Gage w/6.3 Orifice"
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "52202",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "52202"
+        }
+      ]
+    },
+    {
+      "value": "CSI_52202",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_52202"
+        }
+      ]
+    },
+    {
+      "value": "RM Young Heated Rain Gage w/6.3 Orifice",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young Heated Rain Gage w/6.3 Orifice"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "52202",
+      "RM Young Heated Rain Gage w/6.3 Orifice",
+      "Sensors",
+      "Precipitation Sensors",
+      "Precipitation Sensor",
+      "Precipitation",
+      "rainfall",
+      "Measure Precipitation",
+      "Heated Precipitation Measurement",
+      "CSI_52202"
+    ],
+    "vi": [
+      "52202",
+      "Cảm biến",
+      "Cảm biến lượng mưa",
+      "Lượng mưa",
+      "Đo lượng mưa",
+      "Đo lượng mưa có gia nhiệt"
+    ]
+  }
+}

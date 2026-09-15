@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "43347 Rtd Temperature Probe(2).xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": null,
+      "manufacturer": "Campbell Scientific",
+      "model": null,
+      "product_name_en": null,
+      "identity_source": {
+        "model": "manual_review",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": null,
+          "name_en": "Model Number",
+          "name_vi": "Mã model",
+          "value_raw": "41342",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Probe Tip Material",
+          "name_vi": "Vật liệu đầu dò",
+          "value_raw": "Stainless steel",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Probe Tip Sheath Diameter",
+          "name_vi": "Đường kính vỏ đầu dò",
+          "value_raw": "0.478 cm (0.188 in.)",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Stainless Steel Sheath Length",
+          "name_vi": "Chiều dài vỏ thép không gỉ",
+          "value_raw": "6.12 cm (2.41 in.)",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Total Probe Tip Length",
+          "name_vi": "Tổng chiều dài đầu dò",
+          "value_raw": "10.08 cm (3.97 in.)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Overall Length",
+          "name_vi": "Tổng chiều dài",
+          "value_raw": "17.8 cm (7 in.)",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Sensing Element",
+          "name_vi": "Phần tử cảm biến",
+          "value_raw": "HY-CAL 1000 Ω Platinum RTD",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Temperature Range",
+          "name_vi": "Dải nhiệt độ",
+          "value_raw": "±50°C",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.3°C at 0°C",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.1°C with NIST calibration",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Temperature Coefficient",
+          "name_vi": "Hệ số nhiệt độ",
+          "value_raw": "0.00375 Ω/Ω/°C",
+          "source_rows": [
+            12
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "43347 Rtd Temperature Probe & 43502 Aspirated Radiation Shield.pdf",
+        "user_manual": "rtdman.pdf",
+        "order_form": "https://www.campbellsci.com/products/43347"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/10",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Worksheet explicitly lists Model Number as 41342, while the source filename, datasheet filename, and order form reference 43347; model identity was not guessed and was set to null pending manual review.",
+          "Product name was not found explicitly in the worksheet.",
+          "No explicit specification section labels were found in the worksheet; section was set to null for all specifications."
+        ]
+      }
+    }
+  ]
+}

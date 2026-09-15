@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS511",
+  "model": "CS511",
+  "name_en": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Dissolved Oxygen Sensors",
+    "subcategory_key": "dissolved_oxygen_sensors",
+    "device_type": "Dissolved Oxygen Sensor",
+    "device_type_key": "dissolved_oxygen_sensor"
+  },
+  "measurements": [
+    {
+      "key": "dissolved_oxygen",
+      "label_en": "Dissolved Oxygen",
+      "label_vi": "Oxy hòa tan"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_dissolved_oxygen",
+      "label_en": "Measure Dissolved Oxygen",
+      "label_vi": "Đo oxy hòa tan"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS511",
+    "CSI_CS511",
+    "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      }
+    },
+    {
+      "canonical_key": "measurement_range",
+      "name": "Measurement Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0.5,
+        "max_value": 50,
+        "unit": "ppm",
+        "qualifier": null,
+        "condition": "for O₂"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      }
+    },
+    {
+      "canonical_key": "accuracy",
+      "name": "Accuracy",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 2,
+        "unit": "%",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      }
+    },
+    {
+      "canonical_key": "pressure",
+      "name": "Pressure",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "psig",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      }
+    },
+    {
+      "canonical_key": "minimum_submersion_depth",
+      "name": "Minimum Submersion Depth",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 6.35,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.5,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      }
+    },
+    {
+      "canonical_key": "diameter",
+      "name": "Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 5.72,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.25,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS511_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS511",
+    "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+    "Sensors",
+    "Dissolved Oxygen Sensors",
+    "Dissolved Oxygen Sensor",
+    "Dissolved Oxygen",
+    "Measure Dissolved Oxygen",
+    "CSI_CS511"
+  ],
+  "search_keywords_vi": [
+    "CS511",
+    "Cảm biến",
+    "Cảm biến oxy hòa tan",
+    "Oxy hòa tan",
+    "Đo oxy hòa tan"
+  ],
+  "search_text_en": "CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | CSI_CS511 | Sensors | Dissolved Oxygen Sensors | Dissolved Oxygen Sensor | Dissolved Oxygen | Measure Dissolved Oxygen | Operating Temperature Range: 0 to 50 °C | Measurement Range: 0.5 to 50 ppm | Accuracy: ± 2 % | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm | Diameter: 5.72 cm",
+  "search_text_vi": "CS511 | CSI_CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | Cảm biến | Cảm biến oxy hòa tan | Oxy hòa tan | Đo oxy hòa tan | Operating Temperature Range: 0 to 50 °C | Measurement Range: 0.5 to 50 ppm | Accuracy: ± 2 % | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm | Diameter: 5.72 cm",
+  "search_text": "CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | CSI_CS511 | Sensors | Dissolved Oxygen Sensors | Dissolved Oxygen Sensor | Dissolved Oxygen | Measure Dissolved Oxygen | Operating Temperature Range: 0 to 50 °C | Measurement Range: 0.5 to 50 ppm | Accuracy: ± 2 % | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm | Diameter: 5.72 cm | Cảm biến | Cảm biến oxy hòa tan | Oxy hòa tan | Đo oxy hòa tan",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "c77ec95474af6f2ead217493393c70826904bd81b48dc8aeb08d2828f33bba0c"
+}

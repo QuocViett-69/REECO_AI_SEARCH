@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS120A_ST",
+  "model": "CS120A-ST",
+  "name_en": "CS120A Atmospheric Visibility Sensor -ST -25 t",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Visibility Sensors",
+    "subcategory_key": "visibility_sensors",
+    "device_type": "Visibility Sensor",
+    "device_type_key": "visibility_sensor"
+  },
+  "measurements": [
+    {
+      "key": "visibility",
+      "label_en": "Visibility",
+      "label_vi": "Tầm nhìn",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS120A Atmospheric Visibility Sensor -ST -25 t"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_type_per_output",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              14,
+              15
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "typical_current_consumption_12_vdc",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 26,
+            "source_rows": [
+              92,
+              93,
+              94,
+              95
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "serial_interface",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 29,
+            "source_rows": [
+              99,
+              100,
+              101
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_type_per_output",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              14,
+              15
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "serial_interface",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 29,
+            "source_rows": [
+              99,
+              100,
+              101
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_visibility",
+      "label_en": "Measure Visibility",
+      "label_vi": "Đo tầm nhìn",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS120A Atmospheric Visibility Sensor -ST -25 t"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CS120A-ST",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS120A-ST"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS120A_ST",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS120A_ST"
+        }
+      ]
+    },
+    {
+      "value": "CS120A Atmospheric Visibility Sensor -ST -25 t",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS120A Atmospheric Visibility Sensor -ST -25 t"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS120A-ST",
+      "CS120A Atmospheric Visibility Sensor -ST -25 t",
+      "Sensors",
+      "Visibility Sensors",
+      "Visibility Sensor",
+      "Visibility",
+      "meteorological optical range",
+      "MOR",
+      "RS-232",
+      "RS-485",
+      "Measure Visibility",
+      "CSI_CS120A_ST"
+    ],
+    "vi": [
+      "CS120A-ST",
+      "Cảm biến",
+      "Cảm biến tầm nhìn",
+      "Tầm nhìn",
+      "RS-232",
+      "RS-485",
+      "Đo tầm nhìn"
+    ]
+  }
+}

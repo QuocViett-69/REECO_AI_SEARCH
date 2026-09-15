@@ -1,26 +1,26 @@
 {
   "schema_version": "1.2",
-  "input_fingerprint_sha256": "e46f556505c40409ce6884f103ffce9d0d4cee91f4cdc5a9e44db8ea6c770d10",
+  "input_fingerprint_sha256": "23439a0ea657b463a509a31cb7111283d02cd7a168d75631c1c4e7a348a284a9",
   "normalization_engine_status": "passed",
   "technical_normalization_status": "LOCKED",
   "validation_status": "passed",
   "dataset_coverage": {
     "master_products": 50,
-    "eligible_products": 31,
-    "normalized_products": 31,
-    "upstream_blocked_products": 19
+    "eligible_products": 42,
+    "normalized_products": 42,
+    "upstream_blocked_products": 8
   },
   "summary": {
     "master_product_count": 50,
-    "active_product_count": 31,
-    "products_normalized": 31,
-    "products_skipped": 19,
-    "total_specifications": 1332,
-    "normalized_successfully": 410,
-    "kept_as_text": 922,
+    "active_product_count": 42,
+    "products_normalized": 42,
+    "products_skipped": 8,
+    "total_specifications": 1715,
+    "normalized_successfully": 545,
+    "kept_as_text": 1170,
     "parse_warning_count": 0,
     "actionable_parse_warning_count": 0,
-    "intentionally_kept_as_text_count": 922,
+    "intentionally_kept_as_text_count": 1170,
     "unknown_unit_count": 0,
     "unknown_protocol_count": 0,
     "invalid_range_count": 0,
@@ -32,97 +32,34 @@
     "normalized_without_raw_ref_count": 0,
     "normalized_value_not_supported_by_raw_count": 0,
     "canonical_key_conflict_count": 0,
-    "protocol_facet_count": 94,
-    "supported_protocol_facet_value_count": 229,
+    "protocol_facet_count": 113,
+    "supported_protocol_facet_value_count": 253,
     "unsupported_protocol_facet_count": 2,
     "unsupported_protocol_facet_value_count": 2,
-    "dual_unit_values_parsed": 74,
-    "canonical_key_assigned": 1332,
-    "quantity_kind_assigned": 569,
+    "dual_unit_values_parsed": 111,
+    "canonical_key_assigned": 1715,
+    "quantity_kind_assigned": 723,
     "blocking_error_count": 0
   },
   "type_counts": {
-    "number": 235,
-    "range": 128,
+    "number": 313,
+    "range": 175,
     "boolean": 3,
-    "protocol": 43,
-    "list": 1,
-    "text": 922
+    "protocol": 52,
+    "list": 2,
+    "text": 1170
   },
   "skipped_products": [
-    {
-      "product_id": "CSI_109",
-      "model": "109",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
     {
       "product_id": "CSI_43347",
       "model": "43347",
       "status": "review",
       "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_TEMPVUE20_S",
-      "model": "TempVue20-S",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_EE181",
-      "model": "EE181",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_BAROVUE10",
-      "model": "BaroVue10",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_52202",
-      "model": "52202",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
+      "mapping_reason": "raw_identity_conflict"
     },
     {
       "product_id": "CSI_5103",
       "model": "5103",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_CSAT3B_NC",
-      "model": "CSAT3B-NC",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_METSENS500_DS",
-      "model": "MetSENS500-DS",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_CS301",
-      "model": "CS301",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_NR01",
-      "model": "NR01",
       "status": "review",
       "reason": "product_status_not_active",
       "mapping_reason": "raw_record_not_found"
@@ -133,13 +70,6 @@
       "status": "review",
       "reason": "product_status_not_active",
       "mapping_reason": "multiple_raw_records_match_without_variant_evidence"
-    },
-    {
-      "product_id": "CSI_SNOWVUE10",
-      "model": "SnowVue10",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
     },
     {
       "product_id": "CSI_AM16_32B_ST",
@@ -170,13 +100,6 @@
       "mapping_reason": "meaningful_model_suffix_mismatch"
     },
     {
-      "product_id": "CSI_CELL205_AT",
-      "model": "CELL205-AT",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
       "product_id": "CSI_CPEC310",
       "model": "CPEC310",
       "status": "review",
@@ -187,6 +110,662 @@
   "diagnostics": {
     "actionable_parse_warnings": [],
     "intentionally_kept_as_text": [
+      {
+        "product_id": "CSI_109",
+        "name_raw": "Output",
+        "value_raw": "Analog",
+        "raw_ref": {
+          "file": "data/raw/109.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            2
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_109",
+        "name_raw": "Sensor Description",
+        "value_raw": "Measurement Specialties™ 10K3A1iA Thermistor",
+        "raw_ref": {
+          "file": "data/raw/109.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_109",
+        "name_raw": "Tolerance",
+        "value_raw": "±0.2°C over 0°C to 70°C range",
+        "raw_ref": {
+          "file": "data/raw/109.json",
+          "product_index": 0,
+          "spec_index": 3,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_109",
+        "name_raw": "Steinhart-Hart Equation Error",
+        "value_raw": "≤0.03°C from -50°C to +70°C",
+        "raw_ref": {
+          "file": "data/raw/109.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            7
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_109",
+        "name_raw": "Interchangeability Error",
+        "value_raw": "±0.1°C over 0°C to 70°C range, increasing to ±0.5°C at -50°C",
+        "raw_ref": {
+          "file": "data/raw/109.json",
+          "product_index": 0,
+          "spec_index": 6,
+          "source_rows": [
+            8
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_109",
+        "name_raw": "Time Constant in Air",
+        "value_raw": "30 to 60 s, in a wind speed of 5 m/s",
+        "raw_ref": {
+          "file": "data/raw/109.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            9
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Product Name",
+        "value_raw": "TempVue™20",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            2
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Product Variant",
+        "value_raw": "SDI-12 output version",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Product Type",
+        "value_raw": "Pt100 Digital Air Temperature Sensor",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Manufacturer",
+        "value_raw": "Campbell Scientific, Inc.",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 3,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Measurement Parameter",
+        "value_raw": "Air temperature",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Sensor Description",
+        "value_raw": "Platinum Resistance Thermometer (Pt100)",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            7
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Default Address",
+        "value_raw": "SDI-12 address: 0",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            9
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Default RS-485 Configuration",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 8,
+          "source_rows": [
+            10
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Measurement Uncertainty – Common Range",
+        "value_raw": "±0.1 °C (-40 to +40 °C)",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            11
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Measurement Uncertainty – Full Range",
+        "value_raw": "±0.3 °C (-60 to -40 °C and 40 to 60 °C)",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            12
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Temperature Measurement Range",
+        "value_raw": "-60 to +60 °C (-76 to +140 °F)",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 11,
+          "source_rows": [
+            13
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Time Constant in Air",
+        "value_raw": "20 s for a wind speed of 1 m/s (3.3 ft/s)",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 12,
+          "source_rows": [
+            14
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Connector Type",
+        "value_raw": "M12",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 17,
+          "source_rows": [
+            19
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Ingress Protection",
+        "value_raw": "IP67",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 19,
+          "source_rows": [
+            21
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Probe Diameter",
+        "value_raw": "1.9 cm (0.75 in) maximum",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 20,
+          "source_rows": [
+            22
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Probe Length",
+        "value_raw": "12.1 cm (4.75 in) tip to end of cable gland",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 21,
+          "source_rows": [
+            23
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Extended Probe Length",
+        "value_raw": "18.1 cm (7.125 in) tip to end of extender piece",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 22,
+          "source_rows": [
+            24
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Total Length",
+        "value_raw": "97.16 cm (38.25 in) tip to end of connector",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 23,
+          "source_rows": [
+            25
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Weight",
+        "value_raw": "70 g (0.15 lb) including standard 1 m cable with M12 connector",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 24,
+          "source_rows": [
+            26
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Aspen 10 Compatibility",
+        "value_raw": "Direct connection supported",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 25,
+          "source_rows": [
+            27
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Compatible Data Loggers / Controllers",
+        "value_raw": "GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 26,
+          "source_rows": [
+            28
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Measurement Memory",
+        "value_raw": "Most recent 5760 measurements (one day worth)",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 27,
+          "source_rows": [
+            29
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Recommended Measurement Scan Interval",
+        "value_raw": "15 seconds or more",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 28,
+          "source_rows": [
+            30
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Temperature Output Units",
+        "value_raw": "°C or °F",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 29,
+          "source_rows": [
+            31
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Valid SDI-12 Addresses",
+        "value_raw": "0–9, a–z, A–Z",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 30,
+          "source_rows": [
+            32
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "CRBasic Measurement Instruction",
+        "value_raw": "SDI12Recorder()",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 31,
+          "source_rows": [
+            33
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "White Wire Function",
+        "value_raw": "SDI-12 signal",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 32,
+          "source_rows": [
+            34
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Yellow Wire Function",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 33,
+          "source_rows": [
+            35
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Blue Wire Function",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 34,
+          "source_rows": [
+            36
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Brown Wire Function",
+        "value_raw": "Power (12V)",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 35,
+          "source_rows": [
+            37
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Black Wire Function",
+        "value_raw": "Power ground",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 36,
+          "source_rows": [
+            38
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Gray Wire Function",
+        "value_raw": "Aspen detect signal",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 37,
+          "source_rows": [
+            39
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Clear Wire Function",
+        "value_raw": "Shield",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 38,
+          "source_rows": [
+            40
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Compatible Radiation Shields",
+        "value_raw": "RAD06, RAD10E, RAD14, TS100SS",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 39,
+          "source_rows": [
+            41
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "name_raw": "Compliance",
+        "value_raw": "UKCA and EU declarations of conformity",
+        "raw_ref": {
+          "file": "data/raw/TempVue20.json",
+          "product_index": 0,
+          "spec_index": 40,
+          "source_rows": [
+            42
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
       {
         "product_id": "CSI_TEMPVUE50",
         "name_raw": "Product Type",
@@ -473,6 +1052,204 @@
         },
         "reasons": [
           "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Signal Type/Output",
+        "value_raw": "Analog voltage",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Supply Voltage",
+        "value_raw": "7 to 30 Vdc | typically powered by the datalogger’s 12 V supply",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            6,
+            7
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Filter Description",
+        "value_raw": "30 μm pore size | stainless-steel mesh",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            9,
+            10
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Housing Body Material",
+        "value_raw": "Plastic",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 6,
+          "source_rows": [
+            12
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Housing Classification",
+        "value_raw": "IP65",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            13
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Field Replaceable Chip or Recalibrate",
+        "value_raw": "Recalibrate",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 8,
+          "source_rows": [
+            14
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Sensing Element",
+        "value_raw": "1000 Ω Platinum Resistance Thermometer (PRT)",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 13,
+          "source_rows": [
+            20
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Accuracy",
+        "value_raw": "±0.2°C (at +23°C)",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 17,
+          "source_rows": [
+            24
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Sensing Element",
+        "value_raw": "Capacitance",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 18,
+          "source_rows": [
+            26
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Measurement Range",
+        "value_raw": "0 to 100% RH (non-condensing)",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 19,
+          "source_rows": [
+            27
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Temperature Dependence",
+        "value_raw": "Typically 0.03% RH/°C",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 21,
+          "source_rows": [
+            29
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_EE181",
+        "name_raw": "Accuracy",
+        "value_raw": "± (1.5 + 0.015 • RH reading) % RH (at -40° to +60°C) | ± (1.4 + 0.01 • RH reading) % RH (at -25° to +60°C) | -NOTE- Accuracy specifications include hysteresis, non-linearity, and repeatability. | ±(1.3 + 0.003 • RH reading) % RH (at -15° to +40°C, 0 to 90% RH) | ± 2.3% RH (at -15° to +40°C, 90 to 100% RH)",
+        "raw_ref": {
+          "file": "data/raw/EE181.json",
+          "product_index": 0,
+          "spec_index": 22,
+          "source_rows": [
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
         ]
       },
       {
@@ -901,6 +1678,326 @@
         ]
       },
       {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Note",
+        "value_raw": "These specifications assume the recommended desiccation is used",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            2
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Elevation",
+        "value_raw": "Approximately 609.6 m (2,000 ft) below sea level, as in a mine, to 4,572 m (15,000 ft) above sea level",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Current Consumption",
+        "value_raw": "200 µA, sleep mode",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            7
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Current Consumption",
+        "value_raw": "<5 mA, active",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 6,
+          "source_rows": [
+            8
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Pressure Fitting",
+        "value_raw": "Barbed fitting for 0.318 cm (0.125 in.)",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 8,
+          "source_rows": [
+            10
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Dimensions",
+        "value_raw": "2.2 × 9.0 × 10.2 cm (0.87 × 3.54 × 4.02 in.)",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            11
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Uncertainty",
+        "value_raw": "±0.3 hPa at 20°C",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 12,
+          "source_rows": [
+            15
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Total Uncertainty",
+        "value_raw": "±0.5 hPa from -40°C to +60°C",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 13,
+          "source_rows": [
+            16
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Power Supply Rejection",
+        "value_raw": "Negligible",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 15,
+          "source_rows": [
+            18
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "name_raw": "Measurement Noise",
+        "value_raw": "0.05 hPa RMS",
+        "raw_ref": {
+          "file": "data/raw/BaroVue10.json",
+          "product_index": 0,
+          "spec_index": 16,
+          "source_rows": [
+            19
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Sensor Type",
+        "value_raw": "Tipping bucket with magnetic reed switch, normally open",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            2
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Measurement Uncertainty",
+        "value_raw": "2% for up to 25 mm/h (1 in./h)",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Measurement Uncertainty",
+        "value_raw": "3% for up to 50 mm/h (2 in./h)",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Operating Temperature Range",
+        "value_raw": "-20°C to +50°C, heated",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Power",
+        "value_raw": "18 W at 24 Vac, for heater only",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 6,
+          "source_rows": [
+            8
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Heater Thermostat Set Point",
+        "value_raw": "10°C ±3°C",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            9
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Contact Rating",
+        "value_raw": "24 Vac/dc, 400 mA maximum",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 8,
+          "source_rows": [
+            10
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Compliance with Standards",
+        "value_raw": "2015/863/EU RoHS Phthalates Amendment",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            11
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Compliance with Standards",
+        "value_raw": "2011/65/EU RoHS Directive",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            12
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_52202",
+        "name_raw": "Mounting Pipe",
+        "value_raw": "30.5 cm (12 in.) length; 1 in. IPS; aluminum; unthreaded",
+        "raw_ref": {
+          "file": "data/raw/52202.json",
+          "product_index": 0,
+          "spec_index": 11,
+          "source_rows": [
+            13
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
         "product_id": "CSI_RAINVUE10_MM",
         "name_raw": "Product Type",
         "value_raw": "SDI-12 Precipitation Sensor with Plastic Funnel",
@@ -1198,6 +2295,687 @@
           "spec_index": 33,
           "source_rows": [
             36
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Configuration Suffix",
+        "value_raw": "NC",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Carrying Case",
+        "value_raw": "No Carrying Case",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Sensor",
+        "value_raw": "3-dimensional sonic anemometer",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Measurement Description",
+        "value_raw": "Highest-quality wind speed and direction",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 3,
+          "source_rows": [
+            7
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Operating Temperature Range",
+        "value_raw": "-40 to +50°C (equivalent to 305 to 368 m s⁻¹ in speed of sound)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            8
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Outputs",
+        "value_raw": "ux, uy, uz, Ts | ux, uy, uz are wind components referenced to the anemometer axes | Ts is sonic temperature in degrees Celsius.",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            9,
+            10,
+            11
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Speed of Sound",
+        "value_raw": "Determined from three acoustic paths. | Corrected for crosswind effects.",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            13,
+            14
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Wind Direction Range",
+        "value_raw": "2.5 to 357.5° in CSAT3B coordinate system | 0 to 360° customized",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 8,
+          "source_rows": [
+            15,
+            16
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Range",
+        "value_raw": "±65 m s⁻¹ (full-scale wind)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            17
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Filter Bandwidths",
+        "value_raw": "5, 10, or 25 Hz",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            18
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Measurement Path Length",
+        "value_raw": "10.0 cm (3.9 in.) vertical | 5.8 cm (2.3 in.) horizontal",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 11,
+          "source_rows": [
+            19,
+            20
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Ingress Protection",
+        "value_raw": "IP67",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 13,
+          "source_rows": [
+            22
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Anemometer Dimensions",
+        "value_raw": "60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 18,
+          "source_rows": [
+            27
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "-NOTE-",
+        "value_raw": "Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170°",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 19,
+          "source_rows": [
+            29,
+            30,
+            31,
+            32
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Maximum Offset Error",
+        "value_raw": "< ±8.0 cm s⁻¹ (ux, uy) | < ±4.0 cm s⁻¹ (uz)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 20,
+          "source_rows": [
+            33,
+            34
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Maximum Gain Error",
+        "value_raw": "< ±3% of reading (wind vector within ±10° of horizontal) | < ±2% of reading (wind vector within ±5° of horizontal) | < ±6% of reading (wind vector within ±20° of horizontal)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 21,
+          "source_rows": [
+            35,
+            36,
+            37
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "ux, uy",
+        "value_raw": "1 mm s⁻¹ rms",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 22,
+          "source_rows": [
+            39
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "uz",
+        "value_raw": "0.5 mm s⁻¹ rms",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 23,
+          "source_rows": [
+            40
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Ts",
+        "value_raw": "0.002°C RMS (at 25°C)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 24,
+          "source_rows": [
+            41
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Wind Direction",
+        "value_raw": "< 0.058° (ux = uy ≤ 1 m s⁻¹)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 25,
+          "source_rows": [
+            42
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Unprompted Output (to PC)",
+        "value_raw": "10, 20, 50, or 100 Hz",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 27,
+          "source_rows": [
+            45
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Data Logger Triggered (no filter)",
+        "value_raw": "1 trigger period (1 scan interval)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 29,
+          "source_rows": [
+            48
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Filtered Output (data-logger-prompted or unprompted to PC)",
+        "value_raw": "395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 31,
+          "source_rows": [
+            50,
+            51,
+            52,
+            53
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Relative Humidity Accuracy",
+        "value_raw": "±7% (over 90 to 100% range) | ±7% (over 0 to 10% range) | ±3% (over 10 to 90% range)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 34,
+          "source_rows": [
+            57,
+            58,
+            59
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "-NOTE-",
+        "value_raw": "Used for data-logger-based data acquisition.",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 36,
+          "source_rows": [
+            62
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Cable Length",
+        "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 38,
+          "source_rows": [
+            64,
+            65
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "-NOTE-",
+        "value_raw": "Used for data-logger-based data acquisition.",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 41,
+          "source_rows": [
+            69
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Cable Length",
+        "value_raw": "122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 43,
+          "source_rows": [
+            71,
+            72,
+            73
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "-NOTE-",
+        "value_raw": "Used for configuration or PC-based data acquisition.",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 46,
+          "source_rows": [
+            77
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Cable Length",
+        "value_raw": "610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 48,
+          "source_rows": [
+            79,
+            80
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Bus Clocks per Sample",
+        "value_raw": "~500 (ASCII formatted)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 49,
+          "source_rows": [
+            81
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "-NOTE-",
+        "value_raw": "Used for configuration or PC-based data acquisition.",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 50,
+          "source_rows": [
+            83
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Connection Speed",
+        "value_raw": "USB 2.0 full speed 12 Mbps",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 51,
+          "source_rows": [
+            84
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Cable Length",
+        "value_raw": "5 m (16.4 ft) maximum",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 52,
+          "source_rows": [
+            85
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Current at 10 Hz Measurement Rate",
+        "value_raw": "65 mA (@ 24 Vdc) | 110 mA (@ 12 Vdc)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 54,
+          "source_rows": [
+            88,
+            89
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Current at 100 Hz Measurement Rate",
+        "value_raw": "80 mA (@ 24 Vdc) | 145 mA (@ 12 Vdc)",
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 55,
+          "source_rows": [
+            90,
+            91
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Heaters",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 56,
+          "source_rows": [
+            92
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Arms and Strut",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 57,
+          "source_rows": [
+            93,
+            94
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Transducer Fingers",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 58,
+          "source_rows": [
+            95,
+            96
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Total System Power",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 59,
+          "source_rows": [
+            97,
+            98
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "name_raw": "Controller Current Required",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/CSAT3B_CSAT3BH.json",
+          "product_index": 0,
+          "spec_index": 60,
+          "source_rows": [
+            99
           ]
         },
         "reasons": [
@@ -1822,6 +3600,1176 @@
           "spec_index": 56,
           "source_rows": [
             103
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Product Name",
+        "value_raw": "MetSENS500-DS",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 0,
+          "source_rows": [
+            2
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Base Model",
+        "value_raw": "MetSENS500",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 1,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Product Type",
+        "value_raw": "Compact Weather Sensor for Temperature, RH, Barometric Pressure, and Wind with Compass",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 2,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Manufacturer",
+        "value_raw": "Campbell Scientific, Inc.",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 3,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Device Classification",
+        "value_raw": "Primary measurement device / integrated weather sensor",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 4,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Primary Application",
+        "value_raw": "Integrated measurement of common meteorological parameters",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 5,
+          "source_rows": [
+            7
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Measurements Made",
+        "value_raw": "Air temperature; relative humidity; barometric pressure; wind speed; wind direction; compass heading",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 6,
+          "source_rows": [
+            8
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Default Address",
+        "value_raw": "SDI-12 address 0",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 10,
+          "source_rows": [
+            12
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Replacement Cable",
+        "value_raw": "METSENSCBL1 SDI-12 Replacement Cable",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 11,
+          "source_rows": [
+            13
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Signal / Data Wiring",
+        "value_raw": "Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 12,
+          "source_rows": [
+            14
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Direct Data Logger Connection",
+        "value_raw": "Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 13,
+          "source_rows": [
+            15
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "CRBasic Programming",
+        "value_raw": "SDI12Recorder()",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 14,
+          "source_rows": [
+            16
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "IP Rating",
+        "value_raw": "IP66",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 16,
+          "source_rows": [
+            18
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Compliance",
+        "value_raw": "CE and RoHS compliant; where applicable, individual parameters meet or exceed IEC 61724-1 (2017, 2021)",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 17,
+          "source_rows": [
+            19
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Typical Current Drain – Continuous High Mode",
+        "value_raw": "25 mA @ 12 VDC",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 20,
+          "source_rows": [
+            22
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Typical Current Drain – Eco-Power Mode",
+        "value_raw": "0.7 mA @ 12 VDC (1 hour polled)",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 21,
+          "source_rows": [
+            23
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Air Temperature Accuracy",
+        "value_raw": "±0.3 °C @ +20 °C",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 27,
+          "source_rows": [
+            29
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Relative Humidity Resolution",
+        "value_raw": "1% (manual); brochure states 0.1",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 29,
+          "source_rows": [
+            31
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Relative Humidity Accuracy",
+        "value_raw": "±2% @ 20 °C (10 to 90% RH)",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 30,
+          "source_rows": [
+            32
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Barometric Pressure Accuracy",
+        "value_raw": "±0.5 hPa @ 25 °C",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 33,
+          "source_rows": [
+            35
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Wind Speed Accuracy",
+        "value_raw": "±3% up to 40 m/s; ±5% up to 60 m/s",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 37,
+          "source_rows": [
+            39
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Wind Direction Accuracy",
+        "value_raw": "±3° up to 40 m/s; ±5° from 40 to 60 m/s",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 40,
+          "source_rows": [
+            42
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "name_raw": "Cable Length Options",
+        "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+        "raw_ref": {
+          "file": "data/raw/MetSENS500.json",
+          "product_index": 2,
+          "spec_index": 44,
+          "source_rows": [
+            46
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Sensor",
+        "value_raw": "Silicon photovoltaic detector mounted in a cosine-corrected head",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Measurement Description",
+        "value_raw": "Measures sun plus sky radiation",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "ISO Classification",
+        "value_raw": "Class C (second class)",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Light Spectrum Waveband",
+        "value_raw": "360 to 1120 nm (wavelengths where response is 10% of maximum)",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 3,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Measurement Range",
+        "value_raw": "0 to 2000 W/m² | Full sunlight ≈1000 W/m²",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Output Range",
+        "value_raw": "0 to 400 mV (full scale output)",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            9
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Absolute Accuracy",
+        "value_raw": "±5% for daily total radiation",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 6,
+          "source_rows": [
+            10
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Cosine Correction Error",
+        "value_raw": "±5% at 75° zenith angle | ±2% at 45° zenith angle",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            13,
+            14
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Temperature Response",
+        "value_raw": "0.04 ± 0.04% per °C",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            15
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS301",
+        "name_raw": "Long-Term Stability",
+        "value_raw": "< 2% per year",
+        "raw_ref": {
+          "file": "data/raw/CS301.json",
+          "product_index": 0,
+          "spec_index": 12,
+          "source_rows": [
+            17
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Product Name",
+        "value_raw": "NR01",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            2
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Product Type",
+        "value_raw": "Four-Component Net Radiometer",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Manufacturer",
+        "value_raw": "Hukseflux; cabled for use with Campbell Scientific data loggers",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Device Classification",
+        "value_raw": "Primary measurement device / sensor",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 3,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Primary Application",
+        "value_raw": "Scientific-grade energy balance studies",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Measurement Description",
+        "value_raw": "Measures incoming and outgoing short-wave and long-wave radiation",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            7
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Measurement Components",
+        "value_raw": "Two SR01 pyranometers, two IR01 pyrgeometers, PT100 RTD, and heater",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 6,
+          "source_rows": [
+            8
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Type",
+        "value_raw": "Hukseflux SR01 ISO-class thermopile pyranometer",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            9
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyrgeometer Type",
+        "value_raw": "IR01 pyrgeometer",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 8,
+          "source_rows": [
+            10
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Temperature Sensor",
+        "value_raw": "PT100 DIN Class A RTD",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            11
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Response Time",
+        "value_raw": "18 s (95% response)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            12
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Overall Expected Accuracy",
+        "value_raw": "±10% for 12-hour totals, day and night",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 11,
+          "source_rows": [
+            13
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Heater",
+        "value_raw": "90 Ω, 1.6 W at 12 VDC; 16 VDC maximum",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 13,
+          "source_rows": [
+            15
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Dimensions",
+        "value_raw": "26.3 × 11.3 × 12.1 cm (10.4 × 4.4 × 4.8 in.)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 15,
+          "source_rows": [
+            17
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Cable Length",
+        "value_raw": "User specified; maximum 100 ft",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 18,
+          "source_rows": [
+            20
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Cable Diameter",
+        "value_raw": "5.4 mm (2 cables)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 19,
+          "source_rows": [
+            21
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Leveling Assembly",
+        "value_raw": "2-axis leveling assembly included",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 20,
+          "source_rows": [
+            22
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Radiation Shields",
+        "value_raw": "Four shields included",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 21,
+          "source_rows": [
+            23
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Recommended Recalibration Interval",
+        "value_raw": "Every 2 years",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 22,
+          "source_rows": [
+            24
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "CE Compliance",
+        "value_raw": "Compliant with CE directives",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 23,
+          "source_rows": [
+            25
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Classification",
+        "value_raw": "Second class pyranometer according to ISO 9060 / WMO",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 24,
+          "source_rows": [
+            26
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Sensitivity",
+        "value_raw": "10 to 40 µV/(W/m²)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 25,
+          "source_rows": [
+            27
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Non-Stability",
+        "value_raw": "<1% change per year",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 31,
+          "source_rows": [
+            33
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Non-Linearity",
+        "value_raw": "<±2.5%",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 32,
+          "source_rows": [
+            34
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Directional Response",
+        "value_raw": "Within ±25 W/m²",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 33,
+          "source_rows": [
+            35
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Spectral Selectivity",
+        "value_raw": "±5% (305 to 2000 nm)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 34,
+          "source_rows": [
+            36
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Temperature Response",
+        "value_raw": "Within 6% (-10 to 40 °C)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 35,
+          "source_rows": [
+            37
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Tilt Response",
+        "value_raw": "Within ±2%",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 36,
+          "source_rows": [
+            38
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Sensor Resistance",
+        "value_raw": "40 to 60 Ω (without trimming)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 37,
+          "source_rows": [
+            39
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Power Required",
+        "value_raw": "Zero (passive sensor)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 38,
+          "source_rows": [
+            40
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyranometer Calibration Traceability",
+        "value_raw": "To WRR, procedure according to ISO 9847",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 39,
+          "source_rows": [
+            41
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyrgeometer Sensitivity",
+        "value_raw": "5 to 15 µV/(W/m²)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 41,
+          "source_rows": [
+            43
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyrgeometer Non-Stability",
+        "value_raw": "<1% change per year",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 47,
+          "source_rows": [
+            49
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyrgeometer Non-Linearity",
+        "value_raw": "<±2.5%",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 48,
+          "source_rows": [
+            50
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyrgeometer Temperature Response",
+        "value_raw": "Within 6% (-10 to 40 °C)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 49,
+          "source_rows": [
+            51
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyrgeometer Tilt Response",
+        "value_raw": "Within ±2%",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 50,
+          "source_rows": [
+            52
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyrgeometer Power Required",
+        "value_raw": "Zero (passive sensor)",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 52,
+          "source_rows": [
+            54
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Pyrgeometer Calibration Traceability",
+        "value_raw": "International temperature standard",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 53,
+          "source_rows": [
+            55
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "Compatible Campbell Scientific Data Loggers",
+        "value_raw": "CR6, CR3000, CR1000X, CR1000",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 54,
+          "source_rows": [
+            56
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_NR01",
+        "name_raw": "CR1000 / CR1000X RTD Requirement",
+        "value_raw": "4WPB100 PRT Bridge Module required to measure internal RTD",
+        "raw_ref": {
+          "file": "data/raw/NR01.json",
+          "product_index": 0,
+          "spec_index": 55,
+          "source_rows": [
+            57
           ]
         },
         "reasons": [
@@ -5335,6 +8283,566 @@
           "spec_index": 34,
           "source_rows": [
             38
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Product Name",
+        "value_raw": "SnowVue™10",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            2
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Product Type",
+        "value_raw": "Digital Snow-Depth Sensor / Sonic Ranging Sensor",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Manufacturer",
+        "value_raw": "Campbell Scientific, Inc.",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Device Classification",
+        "value_raw": "Primary measurement device / sensor",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 3,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Measurement Principle",
+        "value_raw": "Ultrasonic time-of-flight measurement",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Measurement Parameter",
+        "value_raw": "Distance to target / snow depth",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 6,
+          "source_rows": [
+            8
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Accuracy",
+        "value_raw": "0.2% of distance to target",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            11
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Recommended Minimum Distance to Target",
+        "value_raw": "At least 70 cm (27.5 in.)",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 12,
+          "source_rows": [
+            14
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Humidity Range",
+        "value_raw": "0 to 100% non-condensing",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 15,
+          "source_rows": [
+            17
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Active Current Consumption",
+        "value_raw": "210 mA peak; 14 mA average @ 20 °C",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 18,
+          "source_rows": [
+            20
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Measurement Time",
+        "value_raw": "5 s typical; 20 s maximum",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 19,
+          "source_rows": [
+            21
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Valid SDI-12 Addresses",
+        "value_raw": "0–9, a–z, A–Z",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 24,
+          "source_rows": [
+            26
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Temperature Compensation Requirement",
+        "value_raw": "External temperature measurement required for accurate distance compensation",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 25,
+          "source_rows": [
+            27
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Example Reference Temperature Sensor",
+        "value_raw": "TempVue 10",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 26,
+          "source_rows": [
+            28
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Speed of Sound Reference",
+        "value_raw": "331.4 m/s at 0 °C",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 27,
+          "source_rows": [
+            29
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Measurement Quality Output",
+        "value_raw": "Quality number based on standard deviation of multiple readings",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 28,
+          "source_rows": [
+            30
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Sensor Diagnostics",
+        "value_raw": "Internal RH, measurement quality, supply voltage, transducer health",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 32,
+          "source_rows": [
+            34
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Pitch and Roll Reporting",
+        "value_raw": "Yes",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 33,
+          "source_rows": [
+            35
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Sensor Connector Type",
+        "value_raw": "M12, 5-pole, A-coded, pin connector",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 34,
+          "source_rows": [
+            36
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Cable Type",
+        "value_raw": "3-conductor, polyurethane sheathed, screened cable; 4.8 mm nominal diameter",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 36,
+          "source_rows": [
+            38
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Chassis Material",
+        "value_raw": "Corrosion-resistant Type III anodized aluminum",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 37,
+          "source_rows": [
+            39
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Electrical Housing IP Rating",
+        "value_raw": "IP67",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 42,
+          "source_rows": [
+            44
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Transducer IP Rating",
+        "value_raw": "IP64",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 43,
+          "source_rows": [
+            45
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Compatible Data Loggers / Controllers",
+        "value_raw": "Aspen 10; GRANITE series; CR6; CR1000X; CR350 series; CR300 series; CR1000; CR800 series",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 44,
+          "source_rows": [
+            46
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Black Wire Function",
+        "value_raw": "Power ground",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 45,
+          "source_rows": [
+            47
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Brown Wire Function",
+        "value_raw": "Power",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 46,
+          "source_rows": [
+            48
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "White Wire Function",
+        "value_raw": "SDI-12 signal",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 47,
+          "source_rows": [
+            49
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Clear Wire Function",
+        "value_raw": "Shield",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 48,
+          "source_rows": [
+            50
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "CRBasic Measurement Instruction",
+        "value_raw": "SDI12Recorder()",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 49,
+          "source_rows": [
+            51
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Mounting",
+        "value_raw": "Tripod mast, tower leg, or user-supplied pole using mounting kit / crossarm",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 50,
+          "source_rows": [
+            52
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Comparison to SR50A – Measurement Time",
+        "value_raw": "SnowVue10: 5–20 s; SR50A: 1 s",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 51,
+          "source_rows": [
+            53
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Comparison to SR50A – Resolution",
+        "value_raw": "SnowVue10: 0.1 mm; SR50A: 0.25 mm",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 52,
+          "source_rows": [
+            54
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Comparison to SR50A – Measurement Range",
+        "value_raw": "SnowVue10: 0.4–10 m; SR50A: 0.5–10 m",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 53,
+          "source_rows": [
+            55
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Comparison to SR50A – Advanced Processing",
+        "value_raw": "SnowVue10: Yes; SR50A: No",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 54,
+          "source_rows": [
+            56
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_SNOWVUE10",
+        "name_raw": "Comparison to SR50A – Ingress Protection Improvement",
+        "value_raw": "SnowVue10 adds vapor barrier / ingress protection improvement",
+        "raw_ref": {
+          "file": "data/raw/SnowVue10.json",
+          "product_index": 0,
+          "spec_index": 55,
+          "source_rows": [
+            57
           ]
         },
         "reasons": [
@@ -11134,6 +14642,422 @@
         ]
       },
       {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Product Series",
+        "value_raw": "CELL200 Series",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            2
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Product Model",
+        "value_raw": "CELL205",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Product Type",
+        "value_raw": "4G LTE cellular device",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Network Technology",
+        "value_raw": "4G LTE CAT-1 with automatic fallback to 3G",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 3,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Transmission Distance or Area",
+        "value_raw": "Dependent upon antenna used and LTE, WCDMA, GSM EDGE, and GSM GPRS coverage",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Certifications",
+        "value_raw": "IC (Industry Canada) 10224A-201611EC21A",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            7
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "RF Connectors",
+        "value_raw": "2 SMA antenna connectors, primary and diversity",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            9
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "SIM Interface",
+        "value_raw": "3FF, 6 position/contacts; supports SIMs requiring 1.8 or 3 Vdc",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            11
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Service Requirements",
+        "value_raw": "Network coverage at the data logger site and cellular data service plan",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            12
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Dimensions",
+        "value_raw": "13.46 × 8.1 × 2.86 cm (5.3 × 3.19 × 1.13 in.)",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 11,
+          "source_rows": [
+            13
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Carrier Approval",
+        "value_raw": "AT&T, T-Mobile USA, Rogers, Bell, Telus",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 13,
+          "source_rows": [
+            15
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "LTE Bands",
+        "value_raw": "1900 (B2), AWS (B4), 700 (B12)",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 14,
+          "source_rows": [
+            16
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "WCDMA Bands",
+        "value_raw": "1900 (B2), AWS (B4), 850 (B5)",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 15,
+          "source_rows": [
+            17
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "LTE Download Speed",
+        "value_raw": "Max 10 Mbps",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 16,
+          "source_rows": [
+            18
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "LTE Upload Speed",
+        "value_raw": "Max 5 Mbps",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 17,
+          "source_rows": [
+            19
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "WCDMA Download Speed",
+        "value_raw": "Max 384 Kbps",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 18,
+          "source_rows": [
+            20
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "WCDMA Upload Speed",
+        "value_raw": "Max 384 Kbps",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 19,
+          "source_rows": [
+            21
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "GSM EDGE Upload Speed",
+        "value_raw": "Max 236.8 Kbps",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 20,
+          "source_rows": [
+            22
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "GSM EDGE Download Speed",
+        "value_raw": "Max 296 Kbps",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 21,
+          "source_rows": [
+            23
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "GSM GPRS Download Speed",
+        "value_raw": "Max 107 Kbps",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 22,
+          "source_rows": [
+            24
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "GSM GPRS Upload Speed",
+        "value_raw": "Max 85.6 Kbps",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 23,
+          "source_rows": [
+            25
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Output Power",
+        "value_raw": "24 dBm on UMTS; 23 dBm on LTE; 27 dBm on EDGE; 33 dBm on GSM",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 28,
+          "source_rows": [
+            30
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Sensitivity Range",
+        "value_raw": "-99.5 to 110.5 dBm (10 M)",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 29,
+          "source_rows": [
+            31
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Provisioning Option",
+        "value_raw": "Provisioned for AT&T North America",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 30,
+          "source_rows": [
+            32
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Provisioning Status",
+        "value_raw": "Provisioned",
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 31,
+          "source_rows": [
+            33
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "name_raw": "Ships As",
+        "value_raw": null,
+        "raw_ref": {
+          "file": "data/raw/Cell205.json",
+          "product_index": 0,
+          "spec_index": 32,
+          "source_rows": [
+            34
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
         "product_id": "CSI_RV50X",
         "name_raw": "Product Type",
         "value_raw": "Industrial 4G LTE Cellular Gateway",
@@ -15040,68 +18964,8 @@
     ],
     "upstream_missing_raw": [
       {
-        "product_id": "CSI_109",
-        "model": "109",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_43347",
-        "model": "43347",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_TEMPVUE20_S",
-        "model": "TempVue20-S",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_EE181",
-        "model": "EE181",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_BAROVUE10",
-        "model": "BaroVue10",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_52202",
-        "model": "52202",
-        "reason": "raw_record_not_found"
-      },
-      {
         "product_id": "CSI_5103",
         "model": "5103",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_CSAT3B_NC",
-        "model": "CSAT3B-NC",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_METSENS500_DS",
-        "model": "MetSENS500-DS",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_CS301",
-        "model": "CS301",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_NR01",
-        "model": "NR01",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_SNOWVUE10",
-        "model": "SnowVue10",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_CELL205_AT",
-        "model": "CELL205-AT",
         "reason": "raw_record_not_found"
       },
       {
@@ -15140,6 +19004,13 @@
         "policy": "generic_product_requires_variant_policy"
       }
     ],
+    "identity_conflict": [
+      {
+        "product_id": "CSI_43347",
+        "model": "43347",
+        "reason": "raw_identity_conflict"
+      }
+    ],
     "unknown_units": [],
     "unknown_protocols": [],
     "invalid_ranges": [],
@@ -15154,11 +19025,20 @@
   },
   "blocking_errors": [],
   "outputs": [
+    "data/normalized/specifications/CSI_109.json",
+    "data/normalized/specifications/CSI_TEMPVUE20_S.json",
     "data/normalized/specifications/CSI_TEMPVUE50.json",
+    "data/normalized/specifications/CSI_EE181.json",
     "data/normalized/specifications/CSI_HYGROVUE10.json",
+    "data/normalized/specifications/CSI_BAROVUE10.json",
+    "data/normalized/specifications/CSI_52202.json",
     "data/normalized/specifications/CSI_RAINVUE10_MM.json",
+    "data/normalized/specifications/CSI_CSAT3B_NC.json",
     "data/normalized/specifications/CSI_CLIMAVUE40.json",
     "data/normalized/specifications/CSI_CLIMAVUE50G2.json",
+    "data/normalized/specifications/CSI_METSENS500_DS.json",
+    "data/normalized/specifications/CSI_CS301.json",
+    "data/normalized/specifications/CSI_NR01.json",
     "data/normalized/specifications/CSI_CS125_ST.json",
     "data/normalized/specifications/CSI_CS120A_ST.json",
     "data/normalized/specifications/CSI_CS511.json",
@@ -15169,12 +19049,14 @@
     "data/normalized/specifications/CSI_CS655.json",
     "data/normalized/specifications/CSI_SOILVUE10_5.json",
     "data/normalized/specifications/CSI_LWS.json",
+    "data/normalized/specifications/CSI_SNOWVUE10.json",
     "data/normalized/specifications/CSI_AVW200_ST.json",
     "data/normalized/specifications/CSI_CR310_NA.json",
     "data/normalized/specifications/CSI_CR310_WIFI.json",
     "data/normalized/specifications/CSI_CR350_NA.json",
     "data/normalized/specifications/CSI_TEMP120_XD.json",
     "data/normalized/specifications/CSI_VWIRE305_XD.json",
+    "data/normalized/specifications/CSI_CELL205_AT.json",
     "data/normalized/specifications/CSI_RV50X.json",
     "data/normalized/specifications/CSI_RF407.json",
     "data/normalized/specifications/CSI_NL241.json",

@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS616",
+  "model": "CS616",
+  "name_en": "Water Content Reflectometer (0 to +70C)**",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Soil Moisture, Temperature, and EC Sensors",
+    "subcategory_key": "soil_moisture_temperature_and_ec_sensors",
+    "device_type": "Soil Moisture, Temperature, and EC Sensor",
+    "device_type_key": "soil_moisture_temperature_and_ec_sensor"
+  },
+  "measurements": [
+    {
+      "key": "volumetric_water_content",
+      "label_en": "Volumetric Water Content",
+      "label_vi": "Hàm lượng nước thể tích"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_volumetric_water_content",
+      "label_en": "Measure Volumetric Water Content",
+      "label_vi": "Đo hàm lượng nước thể tích"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS616",
+    "CSI_CS616",
+    "Water Content Reflectometer (0 to +70C)**"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "rod_diameter",
+      "name": "Rod Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 3.2,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.13,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          31
+        ]
+      }
+    },
+    {
+      "canonical_key": "rod_length",
+      "name": "Rod Length",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 300,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 11.8,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          32
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS616",
+    "Water Content Reflectometer (0 to +70C)**",
+    "Sensors",
+    "Soil Moisture, Temperature, and EC Sensors",
+    "Soil Moisture, Temperature, and EC Sensor",
+    "Volumetric Water Content",
+    "VWC",
+    "Measure Volumetric Water Content",
+    "CSI_CS616"
+  ],
+  "search_keywords_vi": [
+    "CS616",
+    "Cảm biến",
+    "Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất",
+    "Hàm lượng nước thể tích",
+    "Đo hàm lượng nước thể tích"
+  ],
+  "search_text_en": "CS616 | Water Content Reflectometer (0 to +70C)** | CSI_CS616 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Volumetric Water Content | Measure Volumetric Water Content | Operating Temperature Range: 0 to 70 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm | VWC",
+  "search_text_vi": "CS616 | CSI_CS616 | Water Content Reflectometer (0 to +70C)** | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích | Operating Temperature Range: 0 to 70 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm",
+  "search_text": "CS616 | Water Content Reflectometer (0 to +70C)** | CSI_CS616 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Volumetric Water Content | Measure Volumetric Water Content | Operating Temperature Range: 0 to 70 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm | VWC | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "804ea7d967ee7781e226a65d8a3810b1b31adab17c7d63b77c843367d26d091b"
+}

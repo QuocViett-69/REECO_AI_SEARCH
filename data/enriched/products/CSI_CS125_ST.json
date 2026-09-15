@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS125_ST",
+  "model": "CS125-ST",
+  "name_en": "CS125 Present Weather Sensor -ST -25 to +60C -1",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Present Weather Sensors",
+    "subcategory_key": "present_weather_sensors",
+    "device_type": "Present Weather Sensor",
+    "device_type_key": "present_weather_sensor"
+  },
+  "measurements": [
+    {
+      "key": "present_weather",
+      "label_en": "Present Weather",
+      "label_vi": "Thời tiết hiện tại",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS125 Present Weather Sensor -ST -25 to +60C -1"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "visibility",
+      "label_en": "Visibility",
+      "label_vi": "Tầm nhìn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "serial_interface",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 34,
+            "source_rows": [
+              99
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "serial_interface",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 34,
+            "source_rows": [
+              99
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_present_weather",
+      "label_en": "Measure Present Weather",
+      "label_vi": "Đo thời tiết hiện tại",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS125 Present Weather Sensor -ST -25 to +60C -1"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_visibility",
+      "label_en": "Measure Visibility",
+      "label_vi": "Đo tầm nhìn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 6,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CS125-ST",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS125-ST"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS125_ST",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS125_ST"
+        }
+      ]
+    },
+    {
+      "value": "CS125 Present Weather Sensor -ST -25 to +60C -1",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS125 Present Weather Sensor -ST -25 to +60C -1"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS125-ST",
+      "CS125 Present Weather Sensor -ST -25 to +60C -1",
+      "Sensors",
+      "Present Weather Sensors",
+      "Present Weather Sensor",
+      "Present Weather",
+      "Visibility",
+      "meteorological optical range",
+      "MOR",
+      "RS-232",
+      "RS-485",
+      "Measure Present Weather",
+      "Measure Visibility",
+      "CSI_CS125_ST"
+    ],
+    "vi": [
+      "CS125-ST",
+      "Cảm biến",
+      "Cảm biến thời tiết hiện tại",
+      "Thời tiết hiện tại",
+      "Tầm nhìn",
+      "RS-232",
+      "RS-485",
+      "Đo thời tiết hiện tại",
+      "Đo tầm nhìn"
+    ]
+  }
+}

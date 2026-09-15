@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TX325",
+  "model": "TX325",
+  "name_en": "Satellite Transmitter for GOES V2 (-40 to +60C)**",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Satellite Communications",
+    "subcategory_key": "satellite_communications",
+    "device_type": "Satellite Communication Device",
+    "device_type_key": "satellite_communication_device"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "ASCII",
+    "RS-232"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "TX325",
+    "CSI_TX325",
+    "Satellite Transmitter for GOES V2 (-40 to +60C)**"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      }
+    },
+    {
+      "canonical_key": "storage_temperature_range",
+      "name": "Storage Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 75,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      }
+    },
+    {
+      "canonical_key": "supply_voltage_range",
+      "name": "Supply Voltage Range",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 10.5,
+        "max_value": 16,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      }
+    },
+    {
+      "canonical_key": "frequency_range",
+      "name": "Frequency Range",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 401.701,
+        "max_value": 402.09925,
+        "unit": "MHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          31
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.77,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.7,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/TX325.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "TX325",
+    "Satellite Transmitter for GOES V2 (-40 to +60C)**",
+    "Communications",
+    "Satellite Communications",
+    "Satellite Communication Device",
+    "ASCII",
+    "RS-232",
+    "CSI_TX325"
+  ],
+  "search_keywords_vi": [
+    "TX325",
+    "Thiết bị truyền thông",
+    "Truyền thông vệ tinh",
+    "Thiết bị truyền thông vệ tinh",
+    "ASCII",
+    "RS-232"
+  ],
+  "search_text_en": "TX325 | Satellite Transmitter for GOES V2 (-40 to +60C)** | CSI_TX325 | Communications | Satellite Communications | Satellite Communication Device | ASCII | RS-232 | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -55 to 75 °C | Supply Voltage Range: 10.5 to 16 V DC | Frequency Range: 401.701 to 402.09925 MHz | Weight: 0.77 kg",
+  "search_text_vi": "TX325 | CSI_TX325 | Satellite Transmitter for GOES V2 (-40 to +60C)** | Thiết bị truyền thông | Truyền thông vệ tinh | Thiết bị truyền thông vệ tinh | ASCII | RS-232 | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -55 to 75 °C | Supply Voltage Range: 10.5 to 16 V DC | Frequency Range: 401.701 to 402.09925 MHz | Weight: 0.77 kg",
+  "search_text": "TX325 | Satellite Transmitter for GOES V2 (-40 to +60C)** | CSI_TX325 | Communications | Satellite Communications | Satellite Communication Device | ASCII | RS-232 | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -55 to 75 °C | Supply Voltage Range: 10.5 to 16 V DC | Frequency Range: 401.701 to 402.09925 MHz | Weight: 0.77 kg | Thiết bị truyền thông | Truyền thông vệ tinh | Thiết bị truyền thông vệ tinh",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "5785fb82eb0cc6df5d76ab53d3610860d9af8b5f04e98588a22a88fa2794da2c"
+}

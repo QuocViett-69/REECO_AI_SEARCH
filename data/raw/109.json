@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "109(1).xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_109",
+      "manufacturer": "Campbell Scientific",
+      "model": "109",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "filename",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": null,
+          "name_en": "Output",
+          "name_vi": "Đầu ra",
+          "value_raw": "Analog",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-50°C to +70°C",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Sensor Description",
+          "name_vi": "Mô tả cảm biến",
+          "value_raw": "Measurement Specialties™ 10K3A1iA Thermistor",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Tolerance",
+          "name_vi": "Dung sai",
+          "value_raw": "±0.2°C over 0°C to 70°C range",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Temperature Measurement Range",
+          "name_vi": "Dải đo nhiệt độ",
+          "value_raw": "-50°C to +70°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Steinhart-Hart Equation Error",
+          "name_vi": "Sai số phương trình Steinhart-Hart",
+          "value_raw": "≤0.03°C from -50°C to +70°C",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Interchangeability Error",
+          "name_vi": "Sai số khả năng thay thế",
+          "value_raw": "±0.1°C over 0°C to 70°C range, increasing to ±0.5°C at -50°C",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Time Constant in Air",
+          "name_vi": "Hằng số thời gian trong không khí",
+          "value_raw": "30 to 60 s, in a wind speed of 5 m/s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Maximum Submergence",
+          "name_vi": "Độ sâu ngâm tối đa",
+          "value_raw": "15 m (50 ft)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "305 m (1000 ft)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Probe Length",
+          "name_vi": "Chiều dài đầu dò",
+          "value_raw": "10.4 cm (4.1 in.)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Probe Diameter",
+          "name_vi": "Đường kính đầu dò",
+          "value_raw": "0.76 cm (0.3 in.)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "136 g (5 oz) with 3.05 m (10 ft) cable",
+          "source_rows": [
+            14
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "109- Temperature Sensor-campell-datasheet.pdf",
+        "user_manual": "109man.pdf",
+        "order_form": "https://www.campbellsci.com/products/109"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/179",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Model was taken from filename because no explicit Model field was found in the worksheet.",
+          "Product name was not found explicitly in the worksheet.",
+          "No explicit specification section labels were found in the worksheet; section was set to null for all specifications."
+        ]
+      }
+    }
+  ]
+}

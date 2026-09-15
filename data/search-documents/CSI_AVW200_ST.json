@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_AVW200_ST",
+  "model": "AVW200-ST",
+  "name_en": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Vibrating Wire Analyzers",
+    "subcategory_key": "vibrating_wire_analyzers",
+    "device_type": "Vibrating Wire Analyzer",
+    "device_type_key": "vibrating_wire_analyzer"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "ASCII",
+    "SDI-12"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "AVW200-ST",
+    "CSI_AVW200_ST",
+    "AVW200 2-Channel Vibrating Wire Spectrum Analyzer"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null,
+        "note": "standard"
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 44,
+        "source_rows": [
+          55
+        ]
+      }
+    },
+    {
+      "canonical_key": "excitation_frequency_range",
+      "name": "Excitation Frequency Range",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "range",
+        "min": {
+          "value": 100,
+          "unit": "Hz"
+        },
+        "max": {
+          "value": 6.5,
+          "unit": "kHz"
+        },
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      }
+    },
+    {
+      "canonical_key": "physical_weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.43,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.95,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/AVW200_ST_XT.json",
+        "product_index": 0,
+        "spec_index": 46,
+        "source_rows": [
+          58
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "AVW200-ST",
+    "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+    "Measurement Devices",
+    "Vibrating Wire Analyzers",
+    "Vibrating Wire Analyzer",
+    "ASCII",
+    "SDI-12",
+    "CSI_AVW200_ST"
+  ],
+  "search_keywords_vi": [
+    "AVW200-ST",
+    "Thiết bị đo lường",
+    "Bộ phân tích dây rung",
+    "ASCII",
+    "SDI-12"
+  ],
+  "search_text_en": "AVW200-ST | AVW200 2-Channel Vibrating Wire Spectrum Analyzer | CSI_AVW200_ST | Measurement Devices | Vibrating Wire Analyzers | Vibrating Wire Analyzer | ASCII | SDI-12 | Operating Temperature Range: -25 to 50 °C | Excitation Frequency Range: 100 Hz to 6.5 kHz | Weight: 0.43 kg",
+  "search_text_vi": "AVW200-ST | CSI_AVW200_ST | AVW200 2-Channel Vibrating Wire Spectrum Analyzer | Thiết bị đo lường | Bộ phân tích dây rung | ASCII | SDI-12 | Operating Temperature Range: -25 to 50 °C | Excitation Frequency Range: 100 Hz to 6.5 kHz | Weight: 0.43 kg",
+  "search_text": "AVW200-ST | AVW200 2-Channel Vibrating Wire Spectrum Analyzer | CSI_AVW200_ST | Measurement Devices | Vibrating Wire Analyzers | Vibrating Wire Analyzer | ASCII | SDI-12 | Operating Temperature Range: -25 to 50 °C | Excitation Frequency Range: 100 Hz to 6.5 kHz | Weight: 0.43 kg | Thiết bị đo lường | Bộ phân tích dây rung",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "ff15aab51e31b717b11e23dc680cf4918b0282095ba0ba2ad50f19592e5dfaa1"
+}

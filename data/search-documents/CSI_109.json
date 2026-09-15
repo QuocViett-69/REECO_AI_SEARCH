@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_109",
+  "model": "109",
+  "name_en": "Temperature Sensor (-50 to +70C)",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Temperature Sensors (Air/Soil/Water)",
+    "subcategory_key": "temperature_sensors_air_soil_water",
+    "device_type": "Sensor",
+    "device_type_key": "sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "109",
+    "CSI_109",
+    "Temperature Sensor (-50 to +70C)"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/109.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      }
+    },
+    {
+      "canonical_key": "temperature_measurement_range",
+      "name": "Temperature Measurement Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/109.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      }
+    },
+    {
+      "canonical_key": "probe_diameter",
+      "name": "Probe Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.76,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/109.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      }
+    },
+    {
+      "canonical_key": "probe_length",
+      "name": "Probe Length",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 10.4,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 4.1,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/109.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 136,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 5,
+          "unit": "oz"
+        },
+        "condition": "with 3.05 m (10 ft) cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/109.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "109",
+    "Temperature Sensor (-50 to +70C)",
+    "Sensors",
+    "Temperature Sensors (Air/Soil/Water)",
+    "Sensor",
+    "Temperature",
+    "temperature measurement",
+    "Measure Temperature",
+    "CSI_109"
+  ],
+  "search_keywords_vi": [
+    "109",
+    "Cảm biến",
+    "Cảm biến nhiệt độ không khí, đất và nước",
+    "Nhiệt độ",
+    "Đo nhiệt độ"
+  ],
+  "search_text_en": "109 | Temperature Sensor (-50 to +70C) | CSI_109 | Sensors | Temperature Sensors (Air/Soil/Water) | Sensor | Temperature | Measure Temperature | Operating Temperature Range: -50 to 70 °C | Temperature Measurement Range: -50 to 70 °C | Probe Diameter: 0.76 cm | Probe Length: 10.4 cm | Weight: 136 g | temperature measurement",
+  "search_text_vi": "109 | CSI_109 | Temperature Sensor (-50 to +70C) | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Nhiệt độ | Đo nhiệt độ | Operating Temperature Range: -50 to 70 °C | Temperature Measurement Range: -50 to 70 °C | Probe Diameter: 0.76 cm | Probe Length: 10.4 cm | Weight: 136 g",
+  "search_text": "109 | Temperature Sensor (-50 to +70C) | CSI_109 | Sensors | Temperature Sensors (Air/Soil/Water) | Sensor | Temperature | Measure Temperature | Operating Temperature Range: -50 to 70 °C | Temperature Measurement Range: -50 to 70 °C | Probe Diameter: 0.76 cm | Probe Length: 10.4 cm | Weight: 136 g | temperature measurement | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Nhiệt độ | Đo nhiệt độ",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "d1085c9505ac4fd15777229602c8c7ae55332489f460830cb66671ef281cb2be"
+}

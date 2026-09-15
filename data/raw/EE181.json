@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "EE181_Specifications_SplitCells (1).xlsx",
+    "sheet": "EE181_Specifications"
+  },
+  "products": [
+    {
+      "product_id": "CSI_EE181",
+      "manufacturer": "Campbell Scientific",
+      "model": "EE181",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet_column_header",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Description",
+          "name_vi": "Mô tả phép đo",
+          "value_raw": "Temperature | relative humidity",
+          "source_rows": [
+            3,
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Signal Type/Output",
+          "name_vi": "Loại tín hiệu / Đầu ra",
+          "value_raw": "Analog voltage",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "7 to 30 Vdc | typically powered by the datalogger’s 12 V supply",
+          "source_rows": [
+            6,
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Average Current Consumption",
+          "name_vi": "Dòng tiêu thụ trung bình",
+          "value_raw": "< 1.2 mA",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filter Description",
+          "name_vi": "Mô tả bộ lọc",
+          "value_raw": "30 μm pore size | stainless-steel mesh",
+          "source_rows": [
+            9,
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Startup Time",
+          "name_vi": "Thời gian khởi động",
+          "value_raw": "2 s",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Housing Body Material",
+          "name_vi": "Vật liệu thân vỏ",
+          "value_raw": "Plastic",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Housing Classification",
+          "name_vi": "Phân loại vỏ",
+          "value_raw": "IP65",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Field Replaceable Chip or Recalibrate",
+          "name_vi": "Chip có thể thay tại hiện trường hoặc hiệu chuẩn lại",
+          "value_raw": "Recalibrate",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +60°C",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Diameter",
+          "name_vi": "Đường kính cảm biến",
+          "value_raw": "2.1 cm (0.83 in.)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Length",
+          "name_vi": "Chiều dài",
+          "value_raw": "16.0 cm (6.3 in.)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "290 g (10.2 oz) with 5 m cable",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Sensing Element",
+          "name_vi": "Phần tử cảm biến",
+          "value_raw": "1000 Ω Platinum Resistance Thermometer (PRT)",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Measurement Range",
+          "name_vi": "Dải đo",
+          "value_raw": "-40° to +60°C",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Storage Temperature Range",
+          "name_vi": "Dải nhiệt độ lưu trữ",
+          "value_raw": "-40° to +80°C",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Output Signal Range",
+          "name_vi": "Dải tín hiệu đầu ra",
+          "value_raw": "0 to 1 Vdc",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "AIR TEMPERATURE",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.2°C (at +23°C)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Sensing Element",
+          "name_vi": "Phần tử cảm biến",
+          "value_raw": "Capacitance",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Measurement Range",
+          "name_vi": "Dải đo",
+          "value_raw": "0 to 100% RH (non-condensing)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Output Signal Range",
+          "name_vi": "Dải tín hiệu đầu ra",
+          "value_raw": "0 to 1 Vdc",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Temperature Dependence",
+          "name_vi": "Phụ thuộc nhiệt độ",
+          "value_raw": "Typically 0.03% RH/°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "RELATIVE HUMIDITY",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "± (1.5 + 0.015 • RH reading) % RH (at -40° to +60°C) | ± (1.4 + 0.01 • RH reading) % RH (at -25° to +60°C) | -NOTE- Accuracy specifications include hysteresis, non-linearity, and repeatability. | ±(1.3 + 0.003 • RH reading) % RH (at -15° to +40°C, 0 to 90% RH) | ± 2.3% RH (at -15° to +40°C, 90 to 100% RH)",
+          "source_rows": [
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_ee181_datasheet.pdf",
+        "user_manual": "ee181_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/ee181-l"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/9241",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

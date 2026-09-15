@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_SUNSCOUT",
+  "model": "SunScout",
+  "name_en": "Class A Solar Resource Assessment Station",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Systems",
+    "category_key": "systems",
+    "subcategory": "Solar Monitoring Stations",
+    "subcategory_key": "solar_monitoring_stations",
+    "device_type": "Solar Monitoring Station",
+    "device_type_key": "solar_monitoring_station"
+  },
+  "measurements": [],
+  "applications": [
+    {
+      "key": "solar_resource_assessment",
+      "label_en": "Solar Resource Assessment",
+      "label_vi": "Đánh giá tài nguyên mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/SunScout.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "solar_project_monitoring",
+      "label_en": "Solar Project Monitoring",
+      "label_vi": "Giám sát dự án điện mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/SunScout.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "protocols": [
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "field_wiring_digital_sensors",
+          "raw_ref": {
+            "file": "data/raw/SunScout.json",
+            "product_index": 0,
+            "spec_index": 45,
+            "source_rows": [
+              49
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "climavue_40_communication",
+          "raw_ref": {
+            "file": "data/raw/SunScout.json",
+            "product_index": 0,
+            "spec_index": 47,
+            "source_rows": [
+              51
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "SunScout",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "SunScout"
+        }
+      ]
+    },
+    {
+      "value": "CSI_SUNSCOUT",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_SUNSCOUT"
+        }
+      ]
+    },
+    {
+      "value": "Class A Solar Resource Assessment Station",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Class A Solar Resource Assessment Station"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "SunScout",
+      "Class A Solar Resource Assessment Station",
+      "Systems",
+      "Solar Monitoring Stations",
+      "Solar Monitoring Station",
+      "Solar Resource Assessment",
+      "Solar Project Monitoring",
+      "RS-485",
+      "CSI_SUNSCOUT"
+    ],
+    "vi": [
+      "SunScout",
+      "Hệ thống",
+      "Trạm giám sát năng lượng mặt trời",
+      "Đánh giá tài nguyên mặt trời",
+      "Giám sát dự án điện mặt trời",
+      "RS-485"
+    ]
+  }
+}

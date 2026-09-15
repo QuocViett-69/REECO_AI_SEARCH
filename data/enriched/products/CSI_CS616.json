@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS616",
+  "model": "CS616",
+  "name_en": "Water Content Reflectometer (0 to +70C)**",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Soil Moisture, Temperature, and EC Sensors",
+    "subcategory_key": "soil_moisture_temperature_and_ec_sensors",
+    "device_type": "Soil Moisture, Temperature, and EC Sensor",
+    "device_type_key": "soil_moisture_temperature_and_ec_sensor"
+  },
+  "measurements": [
+    {
+      "key": "volumetric_water_content",
+      "label_en": "Volumetric Water Content",
+      "label_vi": "Hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Water Content Reflectometer (0 to +70C)**"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_volumetric_water_content",
+      "label_en": "Measure Volumetric Water Content",
+      "label_vi": "Đo hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Water Content Reflectometer (0 to +70C)**"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CS616",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS616"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS616",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS616"
+        }
+      ]
+    },
+    {
+      "value": "Water Content Reflectometer (0 to +70C)**",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Water Content Reflectometer (0 to +70C)**"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS616",
+      "Water Content Reflectometer (0 to +70C)**",
+      "Sensors",
+      "Soil Moisture, Temperature, and EC Sensors",
+      "Soil Moisture, Temperature, and EC Sensor",
+      "Volumetric Water Content",
+      "VWC",
+      "Measure Volumetric Water Content",
+      "CSI_CS616"
+    ],
+    "vi": [
+      "CS616",
+      "Cảm biến",
+      "Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất",
+      "Hàm lượng nước thể tích",
+      "Đo hàm lượng nước thể tích"
+    ]
+  }
+}

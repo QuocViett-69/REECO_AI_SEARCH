@@ -1,0 +1,786 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CR310_NA",
+  "model": "CR310-NA",
+  "name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Data Loggers",
+    "subcategory_key": "data_loggers",
+    "device_type": "Data Logger",
+    "device_type_key": "data_logger"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wiring_panel_temperature",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              29
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "analog_input_configuration",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 54,
+            "source_rows": [
+              64
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "Auto-IP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DHCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DNP3",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 133,
+            "source_rows": [
+              149
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DNS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ethernet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_ports_product_page",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HTTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ICMP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPv4",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPv6",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus ASCII",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 133,
+            "source_rows": [
+              149
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus RTU",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 133,
+            "source_rows": [
+              149
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus TCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 133,
+            "source_rows": [
+              149
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "NTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PakBus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 133,
+            "source_rows": [
+              149
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "POP3",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PPP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RJ45",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_ports_product_page",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "ethernet_port",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 131,
+            "source_rows": [
+              147
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RNDIS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_ports_product_page",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_terminal_function_rs_232",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 159,
+            "source_rows": [
+              177
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_terminal_function_gps_nmea_sentences",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 162,
+            "source_rows": [
+              180
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 133,
+            "source_rows": [
+              149
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sdi_12",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 135,
+            "source_rows": [
+              151
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SLAAC",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SMTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Telnet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TLS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "UDP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 132,
+            "source_rows": [
+              148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_ports_product_page",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_power",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 42,
+            "source_rows": [
+              50
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sw12v",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 50,
+            "source_rows": [
+              59
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wiring_panel_temperature",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              29
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "analog_input_configuration",
+          "raw_ref": {
+            "file": "data/raw/CR310-NA.json",
+            "product_index": 0,
+            "spec_index": 54,
+            "source_rows": [
+              64
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CR310-NA",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CR310-NA"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CR310_NA",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CR310_NA"
+        }
+      ]
+    },
+    {
+      "value": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CR310 Datalogger (-40 to +70C) -NA No Additional Co"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CR310-NA",
+      "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+      "Measurement Devices",
+      "Data Loggers",
+      "Data Logger",
+      "Temperature",
+      "temperature measurement",
+      "Auto-IP",
+      "DHCP",
+      "DNP3",
+      "DNS",
+      "Ethernet",
+      "FTP",
+      "HTTP",
+      "ICMP",
+      "IPv4",
+      "IPv6",
+      "Modbus ASCII",
+      "Modbus RTU",
+      "Modbus TCP",
+      "NTP",
+      "PakBus",
+      "POP3",
+      "PPP",
+      "RJ45",
+      "RNDIS",
+      "RS-232",
+      "SDI-12",
+      "SLAAC",
+      "SMTP",
+      "TCP",
+      "Telnet",
+      "TLS",
+      "UDP",
+      "USB",
+      "Measure Temperature",
+      "CSI_CR310_NA"
+    ],
+    "vi": [
+      "CR310-NA",
+      "Thiết bị đo lường",
+      "Bộ ghi dữ liệu",
+      "Nhiệt độ",
+      "Auto-IP",
+      "DHCP",
+      "DNP3",
+      "DNS",
+      "Ethernet",
+      "FTP",
+      "HTTP",
+      "ICMP",
+      "IPv4",
+      "IPv6",
+      "Modbus ASCII",
+      "Modbus RTU",
+      "Modbus TCP",
+      "NTP",
+      "PakBus",
+      "POP3",
+      "PPP",
+      "RJ45",
+      "RNDIS",
+      "RS-232",
+      "SDI-12",
+      "SLAAC",
+      "SMTP",
+      "TCP",
+      "Telnet",
+      "TLS",
+      "UDP",
+      "USB",
+      "Đo nhiệt độ"
+    ]
+  }
+}

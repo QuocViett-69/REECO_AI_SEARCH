@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RV50X",
+  "model": "RV50X",
+  "name_en": "RV50X",
+  "name_vi": "RV50X",
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "DNP3",
+    "DNS",
+    "Ethernet",
+    "FTP",
+    "HTTP",
+    "Modbus",
+    "PPP",
+    "RJ45",
+    "RS-232",
+    "SIM",
+    "TCP/IP",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "RV50X",
+    "CSI_RV50X"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -30,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_voltage",
+      "name": "Operating Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 36,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 320,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 11.3,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/RV50X.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "RV50X",
+    "Communications",
+    "Cellular Communications",
+    "Cellular Modem / Router",
+    "DNP3",
+    "DNS",
+    "Ethernet",
+    "FTP",
+    "HTTP",
+    "Modbus",
+    "PPP",
+    "RJ45",
+    "RS-232",
+    "SIM",
+    "TCP/IP",
+    "USB",
+    "CSI_RV50X"
+  ],
+  "search_keywords_vi": [
+    "RV50X",
+    "Thiết bị truyền thông",
+    "Truyền thông di động",
+    "Modem hoặc bộ định tuyến di động",
+    "DNP3",
+    "DNS",
+    "Ethernet",
+    "FTP",
+    "HTTP",
+    "Modbus",
+    "PPP",
+    "RJ45",
+    "RS-232",
+    "SIM",
+    "TCP/IP",
+    "USB"
+  ],
+  "search_text_en": "RV50X | CSI_RV50X | Communications | Cellular Communications | Cellular Modem / Router | DNP3 | DNS | Ethernet | FTP | HTTP | Modbus | PPP | RJ45 | RS-232 | SIM | TCP/IP | USB | Operating Temperature Range: -30 to 70 °C | Operating Voltage: 7 to 36 V DC | Weight: 320 g",
+  "search_text_vi": "RV50X | CSI_RV50X | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động | DNP3 | DNS | Ethernet | FTP | HTTP | Modbus | PPP | RJ45 | RS-232 | SIM | TCP/IP | USB | Operating Temperature Range: -30 to 70 °C | Operating Voltage: 7 to 36 V DC | Weight: 320 g",
+  "search_text": "RV50X | CSI_RV50X | Communications | Cellular Communications | Cellular Modem / Router | DNP3 | DNS | Ethernet | FTP | HTTP | Modbus | PPP | RJ45 | RS-232 | SIM | TCP/IP | USB | Operating Temperature Range: -30 to 70 °C | Operating Voltage: 7 to 36 V DC | Weight: 320 g | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "329e954370fc2de1b068c1e4a7283383105c93cd435d337a5fe7bc0a044c39ed"
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_PS200",
+  "model": "PS200",
+  "name_en": "Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Power",
+    "category_key": "power",
+    "subcategory": "Power Supplies and Charge Regulators",
+    "subcategory_key": "power_supplies_and_charge_regulators",
+    "device_type": "Power Supply / Charge Regulator",
+    "device_type_key": "power_supply_charge_regulator"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "PS200",
+    "CSI_PS200",
+    "Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "input_voltage_range",
+      "name": "Input Voltage Range",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 15,
+        "max_value": 40,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 1,
+        "spec_index": 5,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "general_weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 376.48,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.83,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 1,
+        "spec_index": 1,
+        "source_rows": [
+          6
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "PS200",
+    "Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery",
+    "Power",
+    "Power Supplies and Charge Regulators",
+    "Power Supply / Charge Regulator",
+    "CSI_PS200"
+  ],
+  "search_keywords_vi": [
+    "PS200",
+    "Nguồn điện",
+    "Bộ nguồn và bộ điều khiển sạc",
+    "Bộ nguồn hoặc bộ điều khiển sạc"
+  ],
+  "search_text_en": "PS200 | Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery | CSI_PS200 | Power | Power Supplies and Charge Regulators | Power Supply / Charge Regulator | Input Voltage Range: 15 to 40 V DC | Weight: 376.48 g",
+  "search_text_vi": "PS200 | CSI_PS200 | Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery | Nguồn điện | Bộ nguồn và bộ điều khiển sạc | Bộ nguồn hoặc bộ điều khiển sạc | Input Voltage Range: 15 to 40 V DC | Weight: 376.48 g",
+  "search_text": "PS200 | Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery | CSI_PS200 | Power | Power Supplies and Charge Regulators | Power Supply / Charge Regulator | Input Voltage Range: 15 to 40 V DC | Weight: 376.48 g | Nguồn điện | Bộ nguồn và bộ điều khiển sạc | Bộ nguồn hoặc bộ điều khiển sạc",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "0487666bab93d53ed6646385dae544492a2cd4cc7b45229b7f5d6ef06091b3a3"
+}

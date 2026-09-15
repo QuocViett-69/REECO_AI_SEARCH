@@ -1,0 +1,503 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_EE181",
+  "model": "EE181",
+  "raw_record_ref": {
+    "file": "data/raw/EE181.json",
+    "product_index": 0,
+    "raw_record_key": "EE181.json#0",
+    "raw_product_id": "CSI_EE181",
+    "raw_model": "EE181"
+  },
+  "specifications": [
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Description",
+      "value_raw": "Temperature | relative humidity",
+      "type": "list",
+      "normalized": {
+        "type": "list",
+        "values": [
+          "Temperature",
+          "relative humidity"
+        ]
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3,
+          4
+        ]
+      },
+      "canonical_key": "measurement_description"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Signal Type/Output",
+      "value_raw": "Analog voltage",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "signal_type_per_output"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Supply Voltage",
+      "value_raw": "7 to 30 Vdc | typically powered by the datalogger’s 12 V supply",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6,
+          7
+        ]
+      },
+      "canonical_key": "supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Average Current Consumption",
+      "value_raw": "< 1.2 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.2,
+        "unit": "mA",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "average_current_consumption",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Filter Description",
+      "value_raw": "30 μm pore size | stainless-steel mesh",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          9,
+          10
+        ]
+      },
+      "canonical_key": "filter_description"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Startup Time",
+      "value_raw": "2 s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2,
+        "unit": "s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "startup_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Housing Body Material",
+      "value_raw": "Plastic",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "housing_body_material"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Housing Classification",
+      "value_raw": "IP65",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "housing_classification"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Field Replaceable Chip or Recalibrate",
+      "value_raw": "Recalibrate",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "field_replaceable_chip_or_recalibrate"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-40° to +60°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Diameter",
+      "value_raw": "2.1 cm (0.83 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2.1,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.83,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "sensor_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Length",
+      "value_raw": "16.0 cm (6.3 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 16,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 6.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "290 g (10.2 oz) with 5 m cable",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 290,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 10.2,
+          "unit": "oz"
+        },
+        "condition": "with 5 m cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "AIR TEMPERATURE",
+      "name_raw": "Sensing Element",
+      "value_raw": "1000 Ω Platinum Resistance Thermometer (PRT)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "sensing_element_ed5a510d",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "AIR TEMPERATURE",
+      "name_raw": "Measurement Range",
+      "value_raw": "-40° to +60°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "air_temperature_measurement_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "AIR TEMPERATURE",
+      "name_raw": "Storage Temperature Range",
+      "value_raw": "-40° to +80°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "storage_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "AIR TEMPERATURE",
+      "name_raw": "Output Signal Range",
+      "value_raw": "0 to 1 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 1,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "output_signal_range_65fa0d2b",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "AIR TEMPERATURE",
+      "name_raw": "Accuracy",
+      "value_raw": "±0.2°C (at +23°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "air_temperature_accuracy",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "RELATIVE HUMIDITY",
+      "name_raw": "Sensing Element",
+      "value_raw": "Capacitance",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "sensing_element_9c9dea9b",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "RELATIVE HUMIDITY",
+      "name_raw": "Measurement Range",
+      "value_raw": "0 to 100% RH (non-condensing)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "relative_humidity_measurement_range",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "RELATIVE HUMIDITY",
+      "name_raw": "Output Signal Range",
+      "value_raw": "0 to 1 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 1,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "output_signal_range_c496baf8",
+      "quantity_kind": "relative_humidity"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "RELATIVE HUMIDITY",
+      "name_raw": "Temperature Dependence",
+      "value_raw": "Typically 0.03% RH/°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "temperature_dependence",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "section": "RELATIVE HUMIDITY",
+      "name_raw": "Accuracy",
+      "value_raw": "± (1.5 + 0.015 • RH reading) % RH (at -40° to +60°C) | ± (1.4 + 0.01 • RH reading) % RH (at -25° to +60°C) | -NOTE- Accuracy specifications include hysteresis, non-linearity, and repeatability. | ±(1.3 + 0.003 • RH reading) % RH (at -15° to +40°C, 0 to 90% RH) | ± 2.3% RH (at -15° to +40°C, 90 to 100% RH)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          30,
+          31,
+          32,
+          33,
+          34
+        ]
+      },
+      "canonical_key": "relative_humidity_accuracy",
+      "quantity_kind": "relative_humidity"
+    }
+  ]
+}

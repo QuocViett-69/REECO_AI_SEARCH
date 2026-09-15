@@ -1,0 +1,321 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS650",
+  "model": "CS650",
+  "name_en": "30CM Water Content Reflectometer plus",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Soil Moisture, Temperature, and EC Sensors",
+    "subcategory_key": "soil_moisture_temperature_and_ec_sensors",
+    "device_type": "Soil Moisture, Temperature, and EC Sensor",
+    "device_type_key": "soil_moisture_temperature_and_ec_sensor"
+  },
+  "measurements": [
+    {
+      "key": "soil_temperature",
+      "label_en": "Soil Temperature",
+      "label_vi": "Nhiệt độ đất"
+    },
+    {
+      "key": "volumetric_water_content",
+      "label_en": "Volumetric Water Content",
+      "label_vi": "Hàm lượng nước thể tích"
+    },
+    {
+      "key": "soil_electrical_conductivity",
+      "label_en": "Soil Electrical Conductivity",
+      "label_vi": "Độ dẫn điện của đất"
+    },
+    {
+      "key": "dielectric_permittivity",
+      "label_en": "Dielectric Permittivity",
+      "label_vi": "Hằng số điện môi"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_soil_temperature",
+      "label_en": "Measure Soil Temperature",
+      "label_vi": "Đo nhiệt độ đất"
+    },
+    {
+      "key": "measure_volumetric_water_content",
+      "label_en": "Measure Volumetric Water Content",
+      "label_vi": "Đo hàm lượng nước thể tích"
+    },
+    {
+      "key": "measure_soil_electrical_conductivity",
+      "label_en": "Measure Soil Electrical Conductivity",
+      "label_vi": "Đo độ dẫn điện của đất"
+    },
+    {
+      "key": "measure_dielectric_permittivity",
+      "label_en": "Measure Dielectric Permittivity",
+      "label_vi": "Đo hằng số điện môi"
+    }
+  ],
+  "supported_protocols": [
+    "RS-232",
+    "SDI-12"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS650",
+    "CSI_CS650",
+    "30CM Water Content Reflectometer plus"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 7,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "relative_dielectric_permittivity_range",
+      "name": "Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 1,
+        "max_value": 81,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 26,
+        "source_rows": [
+          49
+        ]
+      }
+    },
+    {
+      "canonical_key": "volumetric_water_content_range",
+      "name": "Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null,
+        "condition": "with M4 command"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 29,
+        "source_rows": [
+          54
+        ]
+      }
+    },
+    {
+      "canonical_key": "soil_temperature_range",
+      "name": "Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 32,
+        "source_rows": [
+          59
+        ]
+      }
+    },
+    {
+      "canonical_key": "precision_9937885d",
+      "name": "Precision",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.02,
+        "unit": null,
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 28,
+        "source_rows": [
+          52
+        ]
+      }
+    },
+    {
+      "canonical_key": "precision_b054553b",
+      "name": "Precision",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.05,
+        "unit": "%",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 31,
+        "source_rows": [
+          57
+        ]
+      }
+    },
+    {
+      "canonical_key": "precision_d2aa46e8",
+      "name": "Precision",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.02,
+        "unit": "°C",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 36,
+        "source_rows": [
+          63
+        ]
+      }
+    },
+    {
+      "canonical_key": "soil_temperature_resolution",
+      "name": "Resolution",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.001,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 33,
+        "source_rows": [
+          60
+        ]
+      }
+    },
+    {
+      "canonical_key": "rod_diameter",
+      "name": "Rod Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 3.2,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.13,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 15,
+        "source_rows": [
+          31
+        ]
+      }
+    },
+    {
+      "canonical_key": "rod_length",
+      "name": "Rod Length",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 300,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 11.8,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CS616_CS650_CS655.json",
+        "product_index": 1,
+        "spec_index": 16,
+        "source_rows": [
+          32
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS650",
+    "30CM Water Content Reflectometer plus",
+    "Sensors",
+    "Soil Moisture, Temperature, and EC Sensors",
+    "Soil Moisture, Temperature, and EC Sensor",
+    "Soil Temperature",
+    "Volumetric Water Content",
+    "VWC",
+    "Soil Electrical Conductivity",
+    "soil EC",
+    "Dielectric Permittivity",
+    "permittivity",
+    "RS-232",
+    "SDI-12",
+    "Measure Soil Temperature",
+    "Measure Volumetric Water Content",
+    "Measure Soil Electrical Conductivity",
+    "Measure Dielectric Permittivity",
+    "CSI_CS650"
+  ],
+  "search_keywords_vi": [
+    "CS650",
+    "Cảm biến",
+    "Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất",
+    "Nhiệt độ đất",
+    "Hàm lượng nước thể tích",
+    "Độ dẫn điện của đất",
+    "Hằng số điện môi",
+    "RS-232",
+    "SDI-12",
+    "Đo nhiệt độ đất",
+    "Đo hàm lượng nước thể tích",
+    "Đo độ dẫn điện của đất",
+    "Đo hằng số điện môi"
+  ],
+  "search_text_en": "CS650 | 30CM Water Content Reflectometer plus | CSI_CS650 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Soil Temperature | Volumetric Water Content | Soil Electrical Conductivity | Dielectric Permittivity | Measure Soil Temperature | Measure Volumetric Water Content | Measure Soil Electrical Conductivity | Measure Dielectric Permittivity | RS-232 | SDI-12 | Operating Temperature Range: -50 to 70 °C | Range: 1 to 81 | Range: 0 to 100 % | Range: -50 to 70 °C | Precision: < 0.02 | Precision: < 0.05 % | Precision: ± 0.02 °C | Resolution: 0.001 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm | VWC | soil EC | permittivity",
+  "search_text_vi": "CS650 | CSI_CS650 | 30CM Water Content Reflectometer plus | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Nhiệt độ đất | Hàm lượng nước thể tích | Độ dẫn điện của đất | Hằng số điện môi | Đo nhiệt độ đất | Đo hàm lượng nước thể tích | Đo độ dẫn điện của đất | Đo hằng số điện môi | RS-232 | SDI-12 | Operating Temperature Range: -50 to 70 °C | Range: 1 to 81 | Range: 0 to 100 % | Range: -50 to 70 °C | Precision: < 0.02 | Precision: < 0.05 % | Precision: ± 0.02 °C | Resolution: 0.001 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm",
+  "search_text": "CS650 | 30CM Water Content Reflectometer plus | CSI_CS650 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Soil Temperature | Volumetric Water Content | Soil Electrical Conductivity | Dielectric Permittivity | Measure Soil Temperature | Measure Volumetric Water Content | Measure Soil Electrical Conductivity | Measure Dielectric Permittivity | RS-232 | SDI-12 | Operating Temperature Range: -50 to 70 °C | Range: 1 to 81 | Range: 0 to 100 % | Range: -50 to 70 °C | Precision: < 0.02 | Precision: < 0.05 % | Precision: ± 0.02 °C | Resolution: 0.001 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm | VWC | soil EC | permittivity | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Nhiệt độ đất | Hàm lượng nước thể tích | Độ dẫn điện của đất | Hằng số điện môi | Đo nhiệt độ đất | Đo hàm lượng nước thể tích | Đo độ dẫn điện của đất | Đo hằng số điện môi",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "4b18999fc0db78e0bfc4e5df2b1d7fc4f5c95e2b6d3db48b54116387eaa5e154"
+}

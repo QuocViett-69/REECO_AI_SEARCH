@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "52202(1).xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_52202",
+      "manufacturer": null,
+      "model": "52202",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "filename",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": null,
+          "name_en": "Sensor Type",
+          "name_vi": "Loại cảm biến",
+          "value_raw": "Tipping bucket with magnetic reed switch, normally open",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Measurement Uncertainty",
+          "name_vi": "Độ không đảm bảo đo",
+          "value_raw": "2% for up to 25 mm/h (1 in./h)",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Measurement Uncertainty",
+          "name_vi": "Độ không đảm bảo đo",
+          "value_raw": "3% for up to 50 mm/h (2 in./h)",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Rainfall per Tip",
+          "name_vi": "Lượng mưa trên mỗi lần lật gàu",
+          "value_raw": "0.1 mm (0.004 in.)",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-20°C to +50°C, heated",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Humidity Range",
+          "name_vi": "Dải độ ẩm",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Power",
+          "name_vi": "Công suất",
+          "value_raw": "18 W at 24 Vac, for heater only",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Heater Thermostat Set Point",
+          "name_vi": "Điểm đặt bộ điều nhiệt",
+          "value_raw": "10°C ±3°C",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Contact Rating",
+          "name_vi": "Định mức tiếp điểm",
+          "value_raw": "24 Vac/dc, 400 mA maximum",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compliance with Standards",
+          "name_vi": "Tuân thủ tiêu chuẩn",
+          "value_raw": "2015/863/EU RoHS Phthalates Amendment",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compliance with Standards",
+          "name_vi": "Tuân thủ tiêu chuẩn",
+          "value_raw": "2011/65/EU RoHS Directive",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Mounting Pipe",
+          "name_vi": "Ống lắp đặt",
+          "value_raw": "30.5 cm (12 in.) length; 1 in. IPS; aluminum; unthreaded",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Catchment Area",
+          "name_vi": "Diện tích thu nước",
+          "value_raw": "200 cm² (31 in²)",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Orifice Diameter",
+          "name_vi": "Đường kính miệng thu",
+          "value_raw": "16 cm (6.3 in.)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "18.5 cm (7.3 in.)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Height",
+          "name_vi": "Chiều cao",
+          "value_raw": "30 cm (11.8 in.)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Power Plug Weight",
+          "name_vi": "Khối lượng phích cắm nguồn",
+          "value_raw": "0.43 kg (0.95 lb)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "1.16 kg (2.55 lb)",
+          "source_rows": [
+            19
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "52202_RM Young Heated Rain Gage.pdf",
+        "user_manual": "52202man.pdf",
+        "order_form": "https://www.campbellsci.com/products/pn52202"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/1700",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Model was taken from filename because no explicit Model field was found in the worksheet.",
+          "Product name was not found explicitly in the worksheet.",
+          "Manufacturer was not found explicitly in the worksheet.",
+          "No explicit specification section labels were found in the worksheet; section was set to null for all specifications."
+        ]
+      }
+    }
+  ]
+}

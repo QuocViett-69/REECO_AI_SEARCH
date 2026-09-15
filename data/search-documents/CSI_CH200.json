@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CH200",
+  "model": "CH200",
+  "name_en": "12V Charging Regulator (-40 to +60C)",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Power",
+    "category_key": "power",
+    "subcategory": "Charge Regulators and DC Adapters",
+    "subcategory_key": "charge_regulators_and_dc_adapters",
+    "device_type": "Charge Regulator / DC Adapter",
+    "device_type_key": "charge_regulator_dc_adapter"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CH200",
+    "CSI_CH200",
+    "12V Charging Regulator (-40 to +60C)"
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "input_voltage_range",
+      "name": "Input Voltage Range",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 15,
+        "max_value": 40,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/ch200_201_ps200.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          12
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CH200",
+    "12V Charging Regulator (-40 to +60C)",
+    "Power",
+    "Charge Regulators and DC Adapters",
+    "Charge Regulator / DC Adapter",
+    "CSI_CH200"
+  ],
+  "search_keywords_vi": [
+    "CH200",
+    "Nguồn điện",
+    "Bộ điều khiển sạc và bộ chuyển đổi DC",
+    "Bộ điều khiển sạc hoặc bộ chuyển đổi DC"
+  ],
+  "search_text_en": "CH200 | 12V Charging Regulator (-40 to +60C) | CSI_CH200 | Power | Charge Regulators and DC Adapters | Charge Regulator / DC Adapter | Input Voltage Range: 15 to 40 V DC",
+  "search_text_vi": "CH200 | CSI_CH200 | 12V Charging Regulator (-40 to +60C) | Nguồn điện | Bộ điều khiển sạc và bộ chuyển đổi DC | Bộ điều khiển sạc hoặc bộ chuyển đổi DC | Input Voltage Range: 15 to 40 V DC",
+  "search_text": "CH200 | 12V Charging Regulator (-40 to +60C) | CSI_CH200 | Power | Charge Regulators and DC Adapters | Charge Regulator / DC Adapter | Input Voltage Range: 15 to 40 V DC | Nguồn điện | Bộ điều khiển sạc và bộ chuyển đổi DC | Bộ điều khiển sạc hoặc bộ chuyển đổi DC",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "79994ed48e2739cff3b535a4b567fa23172a9f58f908b4042810ed01e7f7fd50"
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "validation_status": "passed",
+  "blockers": 0,
+  "input_fingerprints": {
+    "product_master": "fa24e7ad0d7ca978f150fd5b21bd7a432015a080f71607bf184b1a84fac916a9",
+    "normalized_specifications": "493c580667fd5a6ff523188677a3d55e7e2b5310c3c33baa13526b7dff76ce24",
+    "enriched_products": "97c6d5d14fa444502f1b209c1552e2879809733b7fe4c90e25cf72e24e51ce84",
+    "semantic_vocabulary": "4a7dfb50027b63500d3c49cfa70907c6131de9362c4d46f472a8bdde507d9606"
+  },
+  "checks": {
+    "master_products": 50,
+    "active_products": 42,
+    "search_documents": 42,
+    "skipped_review_products": 8,
+    "duplicate_product_id": 0,
+    "document_without_enrichment": 0,
+    "document_without_normalization": 0,
+    "invalid_normalized_reference": 0,
+    "unsupported_protocol_as_supported": 0,
+    "search_text_empty": 0,
+    "search_text_duplicate_ratio": 0,
+    "missing_content_hash": 0,
+    "hash_mismatch": 0,
+    "upstream_mutation": 0,
+    "zod_validation_passed": 42,
+    "zod_validation_failed": 0
+  },
+  "metrics": {
+    "average_search_text_length": 599.45,
+    "min_search_text_length": 264,
+    "max_search_text_length": 2019,
+    "average_measurements_per_product": 1.57,
+    "average_capabilities_per_product": 1.6,
+    "average_aliases_per_product": 2.93,
+    "products_without_applications": 34,
+    "products_without_measurements": 13,
+    "products_without_protocols": 12,
+    "important_specification_count": 270,
+    "en_keyword_count": 607,
+    "vi_keyword_count": 459
+  },
+  "skipped_review_products": [
+    {
+      "product_id": "CSI_43347",
+      "model": "43347"
+    },
+    {
+      "product_id": "CSI_5103",
+      "model": "5103"
+    },
+    {
+      "product_id": "CSI_CS451",
+      "model": "CS451"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "model": "AM16/32B-ST"
+    },
+    {
+      "product_id": "CSI_ASPEN10_CELL_ST",
+      "model": "Aspen10-CELL-ST"
+    },
+    {
+      "product_id": "CSI_CR1000XE_ST_CC",
+      "model": "CR1000Xe-ST-CC"
+    },
+    {
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "model": "CR6-NA-ST-CC"
+    },
+    {
+      "product_id": "CSI_CPEC310",
+      "model": "CPEC310"
+    }
+  ],
+  "coverage_details": {
+    "product_ids_without_applications": [
+      "CSI_109",
+      "CSI_TEMPVUE20_S",
+      "CSI_TEMPVUE50",
+      "CSI_EE181",
+      "CSI_HYGROVUE10",
+      "CSI_BAROVUE10",
+      "CSI_52202",
+      "CSI_RAINVUE10_MM",
+      "CSI_CSAT3B_NC",
+      "CSI_CLIMAVUE40",
+      "CSI_CLIMAVUE50G2",
+      "CSI_CS301",
+      "CSI_CS125_ST",
+      "CSI_CS120A_ST",
+      "CSI_CS511",
+      "CSI_CLARIVUE10",
+      "CSI_CS616",
+      "CSI_CS650",
+      "CSI_CS655",
+      "CSI_SOILVUE10_5",
+      "CSI_SNOWVUE10",
+      "CSI_AVW200_ST",
+      "CSI_CR310_NA",
+      "CSI_CR310_WIFI",
+      "CSI_CR350_NA",
+      "CSI_TEMP120_XD",
+      "CSI_VWIRE305_XD",
+      "CSI_CELL205_AT",
+      "CSI_RV50X",
+      "CSI_RF407",
+      "CSI_TX325",
+      "CSI_CH200",
+      "CSI_PS150",
+      "CSI_PS200"
+    ],
+    "product_ids_without_measurements": [
+      "CSI_AVW200_ST",
+      "CSI_CR350_NA",
+      "CSI_CELL205_AT",
+      "CSI_RV50X",
+      "CSI_RF407",
+      "CSI_NL241",
+      "CSI_NL201_ST",
+      "CSI_TX325",
+      "CSI_CH200",
+      "CSI_PS150",
+      "CSI_PS200",
+      "CSI_PS84_CR",
+      "CSI_SUNSCOUT"
+    ],
+    "product_ids_without_protocols": [
+      "CSI_109",
+      "CSI_EE181",
+      "CSI_52202",
+      "CSI_CS301",
+      "CSI_NR01",
+      "CSI_CS511",
+      "CSI_CS616",
+      "CSI_LWS",
+      "CSI_CH200",
+      "CSI_PS150",
+      "CSI_PS200",
+      "CSI_PS84_CR"
+    ]
+  },
+  "diagnostics": {
+    "invalid_references": [],
+    "protocol_violations": [],
+    "zod_failures": [],
+    "mutated_upstream_inputs": []
+  }
+}

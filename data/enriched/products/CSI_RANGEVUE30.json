@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RANGEVUE30",
+  "model": "RangeVue30",
+  "name_en": "RangeVue™30",
+  "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Water Level, Stage, and Flow Sensors",
+    "subcategory_key": "water_level_stage_and_flow_sensors",
+    "device_type": "Water Level, Stage, and Flow Sensor",
+    "device_type_key": "water_level_stage_and_flow_sensor"
+  },
+  "measurements": [
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "distance",
+      "label_en": "Distance",
+      "label_vi": "Khoảng cách",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "key": "water_level_monitoring",
+      "label_en": "Water Level Monitoring",
+      "label_vi": "Giám sát mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 4,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "protocols": [
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output_protocol",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 10,
+            "source_rows": [
+              13
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "compatible_data_loggers_per_controllers",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 43,
+            "source_rows": [
+              46
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "white_wire_function",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 44,
+            "source_rows": [
+              47
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_distance",
+      "label_en": "Measure Distance",
+      "label_vi": "Đo khoảng cách",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "RangeVue30",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "RangeVue30"
+        }
+      ]
+    },
+    {
+      "value": "CSI_RANGEVUE30",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_RANGEVUE30"
+        }
+      ]
+    },
+    {
+      "value": "RangeVue™30",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RangeVue™30"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "RangeVue30",
+      "RangeVue™30",
+      "Sensors",
+      "Water Level, Stage, and Flow Sensors",
+      "Water Level, Stage, and Flow Sensor",
+      "Water Level",
+      "stage",
+      "Distance",
+      "Water Level Monitoring",
+      "SDI-12",
+      "Measure Water Level",
+      "Measure Distance",
+      "CSI_RANGEVUE30"
+    ],
+    "vi": [
+      "RangeVue30",
+      "Cảm biến radar đo mực nước RangeVue™30",
+      "Cảm biến",
+      "Cảm biến mực nước, cao trình và lưu lượng",
+      "Mực nước",
+      "Khoảng cách",
+      "Giám sát mực nước",
+      "SDI-12",
+      "Đo mực nước",
+      "Đo khoảng cách"
+    ]
+  }
+}

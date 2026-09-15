@@ -1,4 +1,1 @@
-export interface SearchRequest {
-  query: string;
-  limit?: number;
-}
+export type { SearchRequest } from '../schemas/api-contract';

@@ -1,0 +1,552 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "NR01.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_NR01",
+      "manufacturer": "Hukseflux; cabled for use with Campbell Scientific data loggers",
+      "model": "NR01",
+      "product_name_en": "NR01",
+      "identity_source": {
+        "model": "worksheet_product_name",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": null,
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "NR01",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Four-Component Net Radiometer",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Hukseflux; cabled for use with Campbell Scientific data loggers",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary measurement device / sensor",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Scientific-grade energy balance studies",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Measurement Description",
+          "name_vi": "Mô tả phép đo",
+          "value_raw": "Measures incoming and outgoing short-wave and long-wave radiation",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Measurement Components",
+          "name_vi": "Các thành phần đo",
+          "value_raw": "Two SR01 pyranometers, two IR01 pyrgeometers, PT100 RTD, and heater",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Type",
+          "name_vi": "Loại pyranometer",
+          "value_raw": "Hukseflux SR01 ISO-class thermopile pyranometer",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Type",
+          "name_vi": "Loại pyrgeometer",
+          "value_raw": "IR01 pyrgeometer",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Temperature Sensor",
+          "name_vi": "Cảm biến nhiệt độ",
+          "value_raw": "PT100 DIN Class A RTD",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Response Time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "18 s (95% response)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Overall Expected Accuracy",
+          "name_vi": "Độ chính xác dự kiến tổng thể",
+          "value_raw": "±10% for 12-hour totals, day and night",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +80 °C",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Heater",
+          "name_vi": "Bộ gia nhiệt",
+          "value_raw": "90 Ω, 1.6 W at 12 VDC; 16 VDC maximum",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Heater Current Drain",
+          "name_vi": "Dòng tiêu thụ bộ gia nhiệt",
+          "value_raw": "~140 mA",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "26.3 × 11.3 × 12.1 cm (10.4 × 4.4 × 4.8 in.)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Weight – Sensor Only",
+          "name_vi": "Khối lượng – chỉ cảm biến",
+          "value_raw": "0.9 kg (2 lb)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Weight – With 5 m Cable",
+          "name_vi": "Khối lượng – với cáp 5 m",
+          "value_raw": "1.3 kg (2.9 lb)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Cable Length",
+          "name_vi": "Chiều dài cáp",
+          "value_raw": "User specified; maximum 100 ft",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Cable Diameter",
+          "name_vi": "Đường kính cáp",
+          "value_raw": "5.4 mm (2 cables)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Leveling Assembly",
+          "name_vi": "Bộ cân bằng",
+          "value_raw": "2-axis leveling assembly included",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Radiation Shields",
+          "name_vi": "Tấm chắn bức xạ",
+          "value_raw": "Four shields included",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Recommended Recalibration Interval",
+          "name_vi": "Chu kỳ hiệu chuẩn lại khuyến nghị",
+          "value_raw": "Every 2 years",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "CE Compliance",
+          "name_vi": "Tuân thủ CE",
+          "value_raw": "Compliant with CE directives",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Classification",
+          "name_vi": "Phân loại pyranometer",
+          "value_raw": "Second class pyranometer according to ISO 9060 / WMO",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Sensitivity",
+          "name_vi": "Độ nhạy pyranometer",
+          "value_raw": "10 to 40 µV/(W/m²)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Expected Voltage Output",
+          "name_vi": "Điện áp đầu ra dự kiến của pyranometer",
+          "value_raw": "-0.1 to +50 mV",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Range",
+          "name_vi": "Dải đo pyranometer",
+          "value_raw": "Up to 2000 W/m²",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Spectral Range",
+          "name_vi": "Dải phổ pyranometer",
+          "value_raw": "305 to 2800 nm",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Zero Offset A",
+          "name_vi": "Độ lệch zero A của pyranometer",
+          "value_raw": "<15 W/m²",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Zero Offset B",
+          "name_vi": "Độ lệch zero B của pyranometer",
+          "value_raw": "<4 W/m²",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Non-Stability",
+          "name_vi": "Độ không ổn định pyranometer",
+          "value_raw": "<1% change per year",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Non-Linearity",
+          "name_vi": "Độ phi tuyến pyranometer",
+          "value_raw": "<±2.5%",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Directional Response",
+          "name_vi": "Đáp ứng hướng pyranometer",
+          "value_raw": "Within ±25 W/m²",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Spectral Selectivity",
+          "name_vi": "Độ chọn lọc phổ pyranometer",
+          "value_raw": "±5% (305 to 2000 nm)",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Temperature Response",
+          "name_vi": "Đáp ứng nhiệt độ pyranometer",
+          "value_raw": "Within 6% (-10 to 40 °C)",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Tilt Response",
+          "name_vi": "Đáp ứng nghiêng pyranometer",
+          "value_raw": "Within ±2%",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Sensor Resistance",
+          "name_vi": "Điện trở cảm biến pyranometer",
+          "value_raw": "40 to 60 Ω (without trimming)",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Power Required",
+          "name_vi": "Nguồn yêu cầu cho pyranometer",
+          "value_raw": "Zero (passive sensor)",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyranometer Calibration Traceability",
+          "name_vi": "Truy xuất hiệu chuẩn pyranometer",
+          "value_raw": "To WRR, procedure according to ISO 9847",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Field of View",
+          "name_vi": "Trường nhìn pyrgeometer",
+          "value_raw": "150°",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Sensitivity",
+          "name_vi": "Độ nhạy pyrgeometer",
+          "value_raw": "5 to 15 µV/(W/m²)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Expected Voltage Output",
+          "name_vi": "Điện áp đầu ra dự kiến của pyrgeometer",
+          "value_raw": "-5 to +5 mV",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Range",
+          "name_vi": "Dải đo pyrgeometer",
+          "value_raw": "Up to 1000 W/m²",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Spectral Range",
+          "name_vi": "Dải phổ pyrgeometer",
+          "value_raw": "4500 to 50,000 nm",
+          "source_rows": [
+            46
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Window Heating Offset",
+          "name_vi": "Độ lệch do gia nhiệt cửa sổ pyrgeometer",
+          "value_raw": "<15 W/m²",
+          "source_rows": [
+            47
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Zero Offset B",
+          "name_vi": "Độ lệch zero B của pyrgeometer",
+          "value_raw": "<4 W/m²",
+          "source_rows": [
+            48
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Non-Stability",
+          "name_vi": "Độ không ổn định pyrgeometer",
+          "value_raw": "<1% change per year",
+          "source_rows": [
+            49
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Non-Linearity",
+          "name_vi": "Độ phi tuyến pyrgeometer",
+          "value_raw": "<±2.5%",
+          "source_rows": [
+            50
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Temperature Response",
+          "name_vi": "Đáp ứng nhiệt độ pyrgeometer",
+          "value_raw": "Within 6% (-10 to 40 °C)",
+          "source_rows": [
+            51
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Tilt Response",
+          "name_vi": "Đáp ứng nghiêng pyrgeometer",
+          "value_raw": "Within ±2%",
+          "source_rows": [
+            52
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Sensor Resistance",
+          "name_vi": "Điện trở cảm biến pyrgeometer",
+          "value_raw": "100 to 400 Ω",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Power Required",
+          "name_vi": "Nguồn yêu cầu cho pyrgeometer",
+          "value_raw": "Zero (passive sensor)",
+          "source_rows": [
+            54
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Pyrgeometer Calibration Traceability",
+          "name_vi": "Truy xuất hiệu chuẩn pyrgeometer",
+          "value_raw": "International temperature standard",
+          "source_rows": [
+            55
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "Compatible Campbell Scientific Data Loggers",
+          "name_vi": "Data logger Campbell Scientific tương thích",
+          "value_raw": "CR6, CR3000, CR1000X, CR1000",
+          "source_rows": [
+            56
+          ]
+        },
+        {
+          "section": null,
+          "name_en": "CR1000 / CR1000X RTD Requirement",
+          "name_vi": "Yêu cầu RTD với CR1000 / CR1000X",
+          "value_raw": "4WPB100 PRT Bridge Module required to measure internal RTD",
+          "source_rows": [
+            57
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "nr01_datasheet.pdf",
+        "user_manual": "nr01_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/6322",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "No explicit Model field was found in the worksheet; model was set to NR01 from the explicit Product Name value.",
+          "No explicit specification section labels were found in the worksheet; section was set to null for all specification entries.",
+          "No order form or product URL was found in the worksheet; corresponding document fields were set to null."
+        ]
+      }
+    }
+  ]
+}

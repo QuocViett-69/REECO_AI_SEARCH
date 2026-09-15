@@ -1,0 +1,199 @@
+{
+  "generated_at": "2026-09-15T03:57:50.305Z",
+  "engine": "PGlite/PostgreSQL local compatibility test",
+  "note": "The vector extension is replaced with real[] only in this local harness; the committed Supabase migration uses extensions.vector.",
+  "status": "passed",
+  "validation": {
+    "products": 50,
+    "active": 42,
+    "review": 8,
+    "product_specifications": 545,
+    "product_documents": 42,
+    "product_media": 43,
+    "product_search_index": 42,
+    "review_products_indexed": 0,
+    "orphan_specifications": 0,
+    "orphan_documents": 0,
+    "orphan_search_index": 0,
+    "duplicate_product_id": 0,
+    "duplicate_model": 0,
+    "document_hash_mismatch": 0,
+    "search_index_hash_mismatch": 0,
+    "invalid_fk": 0
+  },
+  "assertions": {
+    "products": true,
+    "active": true,
+    "review": true,
+    "product_documents": true,
+    "product_search_index": true,
+    "review_products_indexed": true,
+    "orphan_specifications": true,
+    "orphan_documents": true,
+    "orphan_search_index": true,
+    "duplicate_product_id": true,
+    "duplicate_model": true,
+    "document_hash_mismatch": true,
+    "search_index_hash_mismatch": true,
+    "invalid_fk": true,
+    "fts_gin_index": true,
+    "idempotency": true
+  },
+  "fts_index": {
+    "indexname": "product_search_index_search_tsv_idx",
+    "indexdef": "CREATE INDEX product_search_index_search_tsv_idx ON public.product_search_index USING gin (search_tsv)"
+  },
+  "keyword_results": {
+    "CS655": [
+      {
+        "product_id": "CSI_CS655",
+        "model": "CS655",
+        "product_name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+        "rank": 0.16666667
+      }
+    ],
+    "soil moisture": [
+      {
+        "product_id": "CSI_SOILVUE10_5",
+        "model": "SoilVue10-5",
+        "product_name_en": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+        "rank": 0.25876012
+      },
+      {
+        "product_id": "CSI_CS650",
+        "model": "CS650",
+        "product_name_en": "30CM Water Content Reflectometer plus",
+        "rank": 0.1935484
+      },
+      {
+        "product_id": "CSI_CS655",
+        "model": "CS655",
+        "product_name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+        "rank": 0.1935484
+      },
+      {
+        "product_id": "CSI_CS616",
+        "model": "CS616",
+        "product_name_en": "Water Content Reflectometer (0 to +70C)**",
+        "rank": 0.18032788
+      }
+    ],
+    "cảm biến độ ẩm đất": [
+      {
+        "product_id": "CSI_CS616",
+        "model": "CS616",
+        "product_name_en": "Water Content Reflectometer (0 to +70C)**",
+        "rank": 0.016393444
+      },
+      {
+        "product_id": "CSI_CS650",
+        "model": "CS650",
+        "product_name_en": "30CM Water Content Reflectometer plus",
+        "rank": 0.016393444
+      },
+      {
+        "product_id": "CSI_CS655",
+        "model": "CS655",
+        "product_name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+        "rank": 0.016393444
+      },
+      {
+        "product_id": "CSI_SOILVUE10_5",
+        "model": "SoilVue10-5",
+        "product_name_en": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+        "rank": 0.016393444
+      }
+    ],
+    "SDI-12": [
+      {
+        "product_id": "CSI_CLIMAVUE50G2",
+        "model": "ClimaVue50G2",
+        "product_name_en": "G2 Compact Digital SDI-12 Weather Sensor (-50 to",
+        "rank": 0.16666667
+      },
+      {
+        "product_id": "CSI_AVW200_ST",
+        "model": "AVW200-ST",
+        "product_name_en": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+        "rank": 0.09090909
+      },
+      {
+        "product_id": "CSI_BAROVUE10",
+        "model": "BaroVue10",
+        "product_name_en": "Digital Barometer -40 to +60C, 76cm (30 Inch)",
+        "rank": 0.09090909
+      },
+      {
+        "product_id": "CSI_CR310_NA",
+        "model": "CR310-NA",
+        "product_name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+        "rank": 0.09090909
+      },
+      {
+        "product_id": "CSI_CR310_WIFI",
+        "model": "CR310-WIFI",
+        "product_name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+        "rank": 0.09090909
+      }
+    ],
+    "Modbus": [
+      {
+        "product_id": "CSI_CR310_NA",
+        "model": "CR310-NA",
+        "product_name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+        "rank": 0.23076923
+      },
+      {
+        "product_id": "CSI_CR310_WIFI",
+        "model": "CR310-WIFI",
+        "product_name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+        "rank": 0.23076923
+      },
+      {
+        "product_id": "CSI_CR350_NA",
+        "model": "CR350-NA",
+        "product_name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
+        "rank": 0.23076923
+      },
+      {
+        "product_id": "CSI_CLIMAVUE40",
+        "model": "ClimaVue40",
+        "product_name_en": "Compact Digital RS-485 Modbus RTU Weather Sensor",
+        "rank": 0.16666667
+      },
+      {
+        "product_id": "CSI_NL241",
+        "model": "NL241",
+        "product_name_en": "NL241",
+        "rank": 0.16666667
+      }
+    ],
+    "900 MHz radio": [],
+    "power supply": [
+      {
+        "product_id": "CSI_PS84_CR",
+        "model": "PS84-CR",
+        "product_name_en": "PS84 84 Ah Power Supply with CH200 Regulator and 14 x 16 in. Enclosure",
+        "rank": 0.24963926
+      },
+      {
+        "product_id": "CSI_PS200",
+        "model": "PS200",
+        "product_name_en": "Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery",
+        "rank": 0.17293233
+      },
+      {
+        "product_id": "CSI_PS150",
+        "model": "PS150",
+        "product_name_en": "12 V Power Supply with Charging Regulator and 7 Ah Sealed Rechargeable Battery",
+        "rank": 0.1724138
+      },
+      {
+        "product_id": "CSI_TEMP120_XD",
+        "model": "TEMP120-XD",
+        "product_name_en": "TEMP 120",
+        "rank": 0.09090909
+      }
+    ]
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CSAT3B_NC",
+  "model": "CSAT3B-NC",
+  "name_en": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Wind Speed and Wind Direction Sensors",
+    "subcategory_key": "wind_speed_and_wind_direction_sensors",
+    "device_type": "Wind Speed and Wind Direction Sensor",
+    "device_type_key": "wind_speed_and_wind_direction_sensor"
+  },
+  "measurements": [
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "ASCII",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "bus_clocks_per_sample_eb41c436",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 49,
+            "source_rows": [
+              81
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CPI",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_type_per_output",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_type_per_output",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_type_per_output",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "connection_speed",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 51,
+            "source_rows": [
+              84
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CSAT3B-NC",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CSAT3B-NC"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CSAT3B_NC",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CSAT3B_NC"
+        }
+      ]
+    },
+    {
+      "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CSAT3B-NC",
+      "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni",
+      "Sensors",
+      "Wind Speed and Wind Direction Sensors",
+      "Wind Speed and Wind Direction Sensor",
+      "Wind Speed",
+      "Wind Direction",
+      "ASCII",
+      "CPI",
+      "RS-485",
+      "USB",
+      "Measure Wind Speed",
+      "Measure Wind Direction",
+      "CSI_CSAT3B_NC"
+    ],
+    "vi": [
+      "CSAT3B-NC",
+      "Cảm biến",
+      "Cảm biến tốc độ và hướng gió",
+      "Tốc độ gió",
+      "Hướng gió",
+      "ASCII",
+      "CPI",
+      "RS-485",
+      "USB",
+      "Đo tốc độ gió",
+      "Đo hướng gió"
+    ]
+  }
+}

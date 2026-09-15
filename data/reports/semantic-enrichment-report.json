@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "input_fingerprint_sha256": "31f4ec62553554e5b231ce8f8f3ae8c4fe463dbdecb64c01543ee9e7a85e2acb",
+  "validation_status": "passed",
+  "summary": {
+    "total_master_products": 50,
+    "active_products": 42,
+    "enriched_products": 42,
+    "skipped_products": 8,
+    "products_with_name_vi": 12,
+    "products_requiring_translation_review": 30,
+    "measurement_concepts": 28,
+    "total_measurement_assignments": 66,
+    "application_concepts": 8,
+    "total_application_assignments": 9,
+    "supported_protocol_assignments": 174,
+    "unsupported_protocol_assignments": 2,
+    "capability_concepts": 29,
+    "capability_assignments": 67,
+    "aliases": 123,
+    "en_keywords": 607,
+    "vi_keywords": 459,
+    "enrichment_without_evidence_count": 0,
+    "unknown_measurement_count": 0,
+    "unknown_application_count": 0,
+    "unknown_capability_count": 0,
+    "taxonomy_unmapped_count": 0,
+    "protocol_relation_conflict_count": 0,
+    "alias_collision_count": 0,
+    "duplicate_keyword_count": 0,
+    "translation_review_count": 30,
+    "invalid_raw_ref_count": 0,
+    "unsupported_semantic_claim_count": 0,
+    "duplicate_product_artifact_count": 0,
+    "blockers": 0
+  },
+  "skipped_products": [
+    {
+      "product_id": "CSI_43347",
+      "model": "43347",
+      "status": "review",
+      "reason": "product_status_review"
+    },
+    {
+      "product_id": "CSI_5103",
+      "model": "5103",
+      "status": "review",
+      "reason": "product_status_review"
+    },
+    {
+      "product_id": "CSI_CS451",
+      "model": "CS451",
+      "status": "review",
+      "reason": "product_status_review"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "model": "AM16/32B-ST",
+      "status": "review",
+      "reason": "product_status_review"
+    },
+    {
+      "product_id": "CSI_ASPEN10_CELL_ST",
+      "model": "Aspen10-CELL-ST",
+      "status": "review",
+      "reason": "product_status_review"
+    },
+    {
+      "product_id": "CSI_CR1000XE_ST_CC",
+      "model": "CR1000Xe-ST-CC",
+      "status": "review",
+      "reason": "product_status_review"
+    },
+    {
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "model": "CR6-NA-ST-CC",
+      "status": "review",
+      "reason": "product_status_review"
+    },
+    {
+      "product_id": "CSI_CPEC310",
+      "model": "CPEC310",
+      "status": "review",
+      "reason": "product_status_review"
+    }
+  ],
+  "translation_review": [
+    {
+      "product_id": "CSI_109",
+      "name_en": "Temperature Sensor (-50 to +70C)",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_EE181",
+      "name_en": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_HYGROVUE10",
+      "name_en": "Digital Temperature/RH Sensor w/M12 Connector w/o",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_BAROVUE10",
+      "name_en": "Digital Barometer -40 to +60C, 76cm (30 Inch)",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_52202",
+      "name_en": "RM Young Heated Rain Gage w/6.3 Orifice",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CSAT3B_NC",
+      "name_en": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE40",
+      "name_en": "Compact Digital RS-485 Modbus RTU Weather Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CLIMAVUE50G2",
+      "name_en": "G2 Compact Digital SDI-12 Weather Sensor (-50 to",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS301",
+      "name_en": "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_NR01",
+      "name_en": "4Component Net Radiation Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS125_ST",
+      "name_en": "CS125 Present Weather Sensor -ST -25 to +60C -1",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS120A_ST",
+      "name_en": "CS120A Atmospheric Visibility Sensor -ST -25 t",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS511",
+      "name_en": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS616",
+      "name_en": "Water Content Reflectometer (0 to +70C)**",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS650",
+      "name_en": "30CM Water Content Reflectometer plus",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS655",
+      "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_SOILVUE10_5",
+      "name_en": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_LWS",
+      "name_en": "Meter Phytos 31 Leaf Wetness Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_SNOWVUE10",
+      "name_en": "Digital Snow Depth Sensor (-45 to +50C) w/o Cable",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_AVW200_ST",
+      "name_en": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CR310_NA",
+      "name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CR310_WIFI",
+      "name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CR350_NA",
+      "name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CELL205_AT",
+      "name_en": "4G LTE Cat1 Cellular Module for North America (-4",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_TX325",
+      "name_en": "Satellite Transmitter for GOES V2 (-40 to +60C)**",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CH200",
+      "name_en": "12V Charging Regulator (-40 to +60C)",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_PS150",
+      "name_en": "12 V Power Supply with Charging Regulator and 7 Ah Sealed Rechargeable Battery",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_PS200",
+      "name_en": "Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_PS84_CR",
+      "name_en": "PS84 84 Ah Power Supply with CH200 Regulator and 14 x 16 in. Enclosure",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_SUNSCOUT",
+      "name_en": "Class A Solar Resource Assessment Station",
+      "reason": "conservative_translation_not_available"
+    }
+  ],
+  "diagnostics": {
+    "enrichment_without_evidence": [],
+    "invalid_raw_refs": [],
+    "unknown_measurements": [],
+    "unknown_applications": [],
+    "unknown_capabilities": [],
+    "taxonomy_unmapped": [],
+    "protocol_relation_conflicts": [],
+    "alias_collisions": [],
+    "duplicate_keywords": [],
+    "unsupported_semantic_claims": [],
+    "protocol_relation_omissions": []
+  },
+  "outputs": [
+    "data/enriched/products/CSI_109.json",
+    "data/enriched/products/CSI_TEMPVUE20_S.json",
+    "data/enriched/products/CSI_TEMPVUE50.json",
+    "data/enriched/products/CSI_EE181.json",
+    "data/enriched/products/CSI_HYGROVUE10.json",
+    "data/enriched/products/CSI_BAROVUE10.json",
+    "data/enriched/products/CSI_52202.json",
+    "data/enriched/products/CSI_RAINVUE10_MM.json",
+    "data/enriched/products/CSI_CSAT3B_NC.json",
+    "data/enriched/products/CSI_CLIMAVUE40.json",
+    "data/enriched/products/CSI_CLIMAVUE50G2.json",
+    "data/enriched/products/CSI_METSENS500_DS.json",
+    "data/enriched/products/CSI_CS301.json",
+    "data/enriched/products/CSI_NR01.json",
+    "data/enriched/products/CSI_CS125_ST.json",
+    "data/enriched/products/CSI_CS120A_ST.json",
+    "data/enriched/products/CSI_CS511.json",
+    "data/enriched/products/CSI_CLARIVUE10.json",
+    "data/enriched/products/CSI_RANGEVUE30.json",
+    "data/enriched/products/CSI_CS616.json",
+    "data/enriched/products/CSI_CS650.json",
+    "data/enriched/products/CSI_CS655.json",
+    "data/enriched/products/CSI_SOILVUE10_5.json",
+    "data/enriched/products/CSI_LWS.json",
+    "data/enriched/products/CSI_SNOWVUE10.json",
+    "data/enriched/products/CSI_AVW200_ST.json",
+    "data/enriched/products/CSI_CR310_NA.json",
+    "data/enriched/products/CSI_CR310_WIFI.json",
+    "data/enriched/products/CSI_CR350_NA.json",
+    "data/enriched/products/CSI_TEMP120_XD.json",
+    "data/enriched/products/CSI_VWIRE305_XD.json",
+    "data/enriched/products/CSI_CELL205_AT.json",
+    "data/enriched/products/CSI_RV50X.json",
+    "data/enriched/products/CSI_RF407.json",
+    "data/enriched/products/CSI_NL241.json",
+    "data/enriched/products/CSI_NL201_ST.json",
+    "data/enriched/products/CSI_TX325.json",
+    "data/enriched/products/CSI_CH200.json",
+    "data/enriched/products/CSI_PS150.json",
+    "data/enriched/products/CSI_PS200.json",
+    "data/enriched/products/CSI_PS84_CR.json",
+    "data/enriched/products/CSI_SUNSCOUT.json"
+  ]
+}

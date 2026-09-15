@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_PS84_CR",
+  "model": "PS84-CR",
+  "name_en": "PS84 84 Ah Power Supply with CH200 Regulator and 14 x 16 in. Enclosure",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Power",
+    "category_key": "power",
+    "subcategory": "Power Supplies and Charge Regulators",
+    "subcategory_key": "power_supplies_and_charge_regulators",
+    "device_type": "Power Supply / Charge Regulator",
+    "device_type_key": "power_supply_charge_regulator"
+  },
+  "measurements": [],
+  "applications": [
+    {
+      "key": "system_power_supply",
+      "label_en": "System Power Supply",
+      "label_vi": "Cấp nguồn cho hệ thống",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/PS84.json",
+            "product_index": 2,
+            "spec_index": 3,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "protocols": [],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "PS84-CR",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "PS84-CR"
+        }
+      ]
+    },
+    {
+      "value": "CSI_PS84_CR",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_PS84_CR"
+        }
+      ]
+    },
+    {
+      "value": "PS84 84 Ah Power Supply with CH200 Regulator and 14 x 16 in. Enclosure",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "PS84 84 Ah Power Supply with CH200 Regulator and 14 x 16 in. Enclosure"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "PS84-CR",
+      "PS84 84 Ah Power Supply with CH200 Regulator and 14 x 16 in. Enclosure",
+      "Power",
+      "Power Supplies and Charge Regulators",
+      "Power Supply / Charge Regulator",
+      "System Power Supply",
+      "CSI_PS84_CR"
+    ],
+    "vi": [
+      "PS84-CR",
+      "Nguồn điện",
+      "Bộ nguồn và bộ điều khiển sạc",
+      "Bộ nguồn hoặc bộ điều khiển sạc",
+      "Cấp nguồn cho hệ thống"
+    ]
+  }
+}

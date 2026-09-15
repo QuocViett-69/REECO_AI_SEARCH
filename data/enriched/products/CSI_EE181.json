@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_EE181",
+  "model": "EE181",
+  "name_en": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Air Temperature and Relative Humidity Sensors",
+    "subcategory_key": "air_temperature_and_relative_humidity_sensors",
+    "device_type": "Air Temperature and Relative Humidity Sensor",
+    "device_type_key": "air_temperature_and_relative_humidity_sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              27
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              27
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "EE181",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "EE181"
+        }
+      ]
+    },
+    {
+      "value": "CSI_EE181",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_EE181"
+        }
+      ]
+    },
+    {
+      "value": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "EE181",
+      "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable",
+      "Sensors",
+      "Air Temperature and Relative Humidity Sensors",
+      "Air Temperature and Relative Humidity Sensor",
+      "Temperature",
+      "temperature measurement",
+      "Relative Humidity",
+      "RH",
+      "Measure Temperature",
+      "Measure Relative Humidity",
+      "CSI_EE181"
+    ],
+    "vi": [
+      "EE181",
+      "Cảm biến",
+      "Cảm biến nhiệt độ không khí và độ ẩm tương đối",
+      "Nhiệt độ",
+      "Độ ẩm tương đối",
+      "Đo nhiệt độ",
+      "Đo độ ẩm tương đối"
+    ]
+  }
+}
