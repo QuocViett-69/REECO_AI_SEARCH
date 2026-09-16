@@ -19,9 +19,7 @@ export const ProductMasterProductSchema = z
   })
   .strict();
 
-export const ProductMasterSchema = z
-  .array(ProductMasterProductSchema)
-  .length(50);
+export const ProductMasterSchema = z.array(ProductMasterProductSchema).min(1);
 
 export type ProductMasterStatus = z.infer<typeof ProductMasterStatusSchema>;
 export type ProductMasterProduct = z.infer<typeof ProductMasterProductSchema>;

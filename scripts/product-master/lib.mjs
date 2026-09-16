@@ -14,8 +14,6 @@ export const PRODUCT_MASTER_FIELDS = [
   'status',
 ];
 
-export const EXPECTED_PRODUCT_COUNT = 50;
-
 const REQUIRED_CANONICAL_FIELDS = [
   'product_id',
   'model',
@@ -626,11 +624,6 @@ export async function validateProductMaster(products, context = {}) {
       );
     });
 
-  const productCount = {
-    passed: products.length === EXPECTED_PRODUCT_COUNT,
-    expected: EXPECTED_PRODUCT_COUNT,
-    actual: products.length,
-  };
   const duplicateProductIds = duplicateGroups(products, 'product_id');
   const duplicateModels = duplicateGroups(products, 'model');
   const missingKeys = products.flatMap((product, index) => {
@@ -798,7 +791,6 @@ export async function validateProductMaster(products, context = {}) {
   }));
 
   const blockingErrors =
-    (productCount.passed ? 0 : 1) +
     duplicateProductIds.length +
     duplicateModels.length +
     missingKeys.length +
@@ -823,7 +815,6 @@ export async function validateProductMaster(products, context = {}) {
     generated_at: new Date().toISOString(),
     validation_status: blockingErrors === 0 ? 'passed' : 'failed',
     summary: {
-      expected_product_count: EXPECTED_PRODUCT_COUNT,
       actual_product_count: products.length,
       unique_product_id_count: new Set(
         products.map((product) => product.product_id),
@@ -845,7 +836,6 @@ export async function validateProductMaster(products, context = {}) {
       blocking_errors: blockingErrors,
     },
     checks: {
-      product_count: productCount,
       duplicate_product_ids: {
         passed: duplicateProductIds.length === 0,
         items: duplicateProductIds,
@@ -930,9 +920,7 @@ export async function validateProductMaster(products, context = {}) {
 export function printValidationSummary(report) {
   const { summary } = report;
   console.log(`Product Master validation: ${report.validation_status}`);
-  console.log(
-    `Products: ${summary.actual_product_count}/${summary.expected_product_count}`,
-  );
+  console.log(`Products: ${summary.actual_product_count}`);
   console.log(
     `Unique: ${summary.unique_product_id_count} product_id, ${summary.unique_model_count} model`,
   );

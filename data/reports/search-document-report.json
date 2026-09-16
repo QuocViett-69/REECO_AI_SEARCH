@@ -13,6 +13,12 @@
     "active_products": 42,
     "search_documents": 42,
     "skipped_review_products": 8,
+    "status_partition_valid": true,
+    "active_review_id_overlap": 0,
+    "active_without_search_document": 0,
+    "non_active_search_documents": 0,
+    "review_search_documents": 0,
+    "document_count_matches_active": true,
     "duplicate_product_id": 0,
     "document_without_enrichment": 0,
     "document_without_normalization": 0,
@@ -142,6 +148,10 @@
     ]
   },
   "diagnostics": {
+    "active_review_id_overlap": [],
+    "active_without_search_document": [],
+    "non_active_search_document_ids": [],
+    "review_search_document_ids": [],
     "invalid_references": [],
     "protocol_violations": [],
     "zod_failures": [],

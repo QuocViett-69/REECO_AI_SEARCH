@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-09-15T03:57:50.305Z",
+  "generated_at": "2026-09-16T07:09:46.576Z",
   "engine": "PGlite/PostgreSQL local compatibility test",
-  "note": "The vector extension is replaced with real[] only in this local harness; the committed Supabase migration uses extensions.vector.",
+  "note": "The vector extension is replaced with real[] only in this local harness; the committed Supabase migration uses extensions.vector. The conditional hardening migration is executed with rls_auto_enable absent. PGlite does not runtime-test the pending event-trigger migration.",
   "status": "passed",
+  "expected": {
+    "products": 50,
+    "active": 42,
+    "review": 8,
+    "product_documents": 42,
+    "product_search_index": 42
+  },
   "validation": {
     "products": 50,
     "active": 42,
@@ -14,6 +21,7 @@
     "review_products_indexed": 0,
     "orphan_specifications": 0,
     "orphan_documents": 0,
+    "orphan_media": 0,
     "orphan_search_index": 0,
     "duplicate_product_id": 0,
     "duplicate_model": 0,
@@ -21,15 +29,34 @@
     "search_index_hash_mismatch": 0,
     "invalid_fk": 0
   },
+  "set_diagnostics": {
+    "stale_database_product_ids": [],
+    "missing_database_product_ids": [],
+    "active_without_search_index": [],
+    "non_active_search_index_ids": [],
+    "review_products_indexed": [],
+    "duplicate_source_document_ids": [],
+    "source_document_hash_mismatch_ids": [],
+    "search_index_source_hash_mismatch_ids": []
+  },
   "assertions": {
+    "source_status_partition": true,
+    "source_unique_product_ids": true,
+    "source_unique_document_ids": true,
+    "source_document_ids_match_active_ids": true,
     "products": true,
     "active": true,
     "review": true,
     "product_documents": true,
     "product_search_index": true,
+    "active_products_indexed": true,
+    "non_active_products_not_indexed": true,
     "review_products_indexed": true,
+    "stale_database_product_ids": true,
+    "missing_database_product_ids": true,
     "orphan_specifications": true,
     "orphan_documents": true,
+    "orphan_media": true,
     "orphan_search_index": true,
     "duplicate_product_id": true,
     "duplicate_model": true,
@@ -37,6 +64,8 @@
     "search_index_hash_mismatch": true,
     "invalid_fk": true,
     "fts_gin_index": true,
+    "keyword_rpc_behavior": true,
+    "hardening_migration_allows_missing_rls_auto_enable": true,
     "idempotency": true
   },
   "fts_index": {

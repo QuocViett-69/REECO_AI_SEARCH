@@ -64,6 +64,18 @@ const specificationSourceKey = (specification) =>
       raw_ref: specification.raw_ref,
     }),
   );
+const sortedSetDifference = (left, right) =>
+  [...left].filter((value) => !right.has(value)).sort();
+const sortedSetIntersection = (left, right) =>
+  [...left].filter((value) => right.has(value)).sort();
+const duplicateValues = (values) =>
+  [
+    ...new Set(
+      values.filter((value, index) => values.indexOf(value) !== index),
+    ),
+  ].sort();
+const sameStringSets = (left, right) =>
+  left.size === right.size && [...left].every((value) => right.has(value));
 
 async function loadSourceData() {
   const master = await readJson(masterPath);
@@ -77,6 +89,7 @@ async function loadSourceData() {
       .filter((product) => product.status === 'review')
       .map((product) => product.product_id),
   );
+  const masterIds = new Set(master.map((product) => product.product_id));
   const documentFiles = (await readdir(documentsDirectory))
     .filter((file) => file.endsWith('.json'))
     .sort();
@@ -97,12 +110,15 @@ async function loadSourceData() {
     master.length - new Set(master.map((product) => product.product_id)).size;
   const duplicateModels =
     master.length - new Set(master.map((product) => product.model)).size;
-  if (master.length !== 50)
-    sourceErrors.push(`Expected 50 products, found ${master.length}`);
-  if (activeIds.size !== 42)
-    sourceErrors.push(`Expected 42 active products, found ${activeIds.size}`);
-  if (reviewIds.size !== 8)
-    sourceErrors.push(`Expected 8 review products, found ${reviewIds.size}`);
+  const activeReviewOverlap = sortedSetIntersection(activeIds, reviewIds);
+  if (master.length !== activeIds.size + reviewIds.size)
+    sourceErrors.push(
+      `Product status partition is invalid: ${master.length} total, ${activeIds.size} active, ${reviewIds.size} review`,
+    );
+  if (activeReviewOverlap.length !== 0)
+    sourceErrors.push(
+      `Product IDs appear in both active and review sets: ${activeReviewOverlap.join(', ')}`,
+    );
   if (duplicateProductIds !== 0)
     sourceErrors.push(
       `Found ${duplicateProductIds} duplicate product_id values`,
@@ -110,22 +126,37 @@ async function loadSourceData() {
   if (duplicateModels !== 0)
     sourceErrors.push(`Found ${duplicateModels} duplicate model values`);
 
+  const documentProductIds = documents.map((document) => document.product_id);
+  const documentIds = new Set(documentProductIds);
+  const duplicateDocumentIds = duplicateValues(documentProductIds);
+  const activeWithoutDocuments = sortedSetDifference(activeIds, documentIds);
+  const nonActiveDocumentIds = sortedSetDifference(documentIds, activeIds);
+  const reviewDocumentIds = sortedSetIntersection(documentIds, reviewIds);
   const activeDocuments = documents.filter((document) =>
     activeIds.has(document.product_id),
   );
-  const nonActiveDocuments = documents.filter(
-    (document) => !activeIds.has(document.product_id),
-  );
-  const hashMismatches = activeDocuments.filter(
+  const hashMismatches = documents.filter(
     (document) => document.content_hash !== documentHash(document),
   );
-  if (activeDocuments.length !== 42)
+  if (duplicateDocumentIds.length !== 0)
     sourceErrors.push(
-      `Expected 42 active documents, found ${activeDocuments.length}`,
+      `Found duplicate Search Document product IDs: ${duplicateDocumentIds.join(', ')}`,
     );
-  if (nonActiveDocuments.length !== 0)
+  if (activeWithoutDocuments.length !== 0)
     sourceErrors.push(
-      `Found ${nonActiveDocuments.length} non-active documents`,
+      `Active products without Search Documents: ${activeWithoutDocuments.join(', ')}`,
+    );
+  if (nonActiveDocumentIds.length !== 0)
+    sourceErrors.push(
+      `Search Documents for non-active products: ${nonActiveDocumentIds.join(', ')}`,
+    );
+  if (reviewDocumentIds.length !== 0)
+    sourceErrors.push(
+      `Review products with Search Documents: ${reviewDocumentIds.join(', ')}`,
+    );
+  if (documents.length !== activeIds.size)
+    sourceErrors.push(
+      `Search Document count ${documents.length} does not match active product count ${activeIds.size}`,
     );
   if (hashMismatches.length !== 0)
     sourceErrors.push(
@@ -172,8 +203,10 @@ async function loadSourceData() {
   return {
     sourceErrors,
     products,
+    masterIds: [...masterIds],
     activeIds: [...activeIds],
     reviewIds: [...reviewIds],
+    documentIds: [...documentIds],
     specifications,
     documents: activeDocuments.map((document) => ({
       product_id: document.product_id,
@@ -200,6 +233,13 @@ async function loadSourceData() {
       product_media: media.length,
       duplicate_product_id: duplicateProductIds,
       duplicate_model: duplicateModels,
+      duplicate_document_product_ids: duplicateDocumentIds,
+      status_partition_valid: master.length === activeIds.size + reviewIds.size,
+      active_review_id_overlap: activeReviewOverlap,
+      active_without_documents: activeWithoutDocuments,
+      non_active_document_ids: nonActiveDocumentIds,
+      review_document_ids: reviewDocumentIds,
+      document_ids_match_active_ids: sameStringSets(documentIds, activeIds),
       document_hash_mismatch: hashMismatches.length,
     },
   };
@@ -397,41 +437,28 @@ async function importData(sql, data) {
   });
 }
 
-async function validateDatabase(sql) {
-  const [counts, checks, indexes, extensions] = await Promise.all([
+async function validateDatabase(sql, data) {
+  const [
+    productRows,
+    specificationRows,
+    documentRows,
+    mediaRows,
+    searchIndexRows,
+    indexes,
+    extensions,
+  ] = await Promise.all([
+    sql`select product_id, model, status from public.products order by product_id`,
+    sql`select product_id from public.product_specifications order by product_id`,
     sql`
-      select 'products' as table_name, count(*)::integer as row_count from public.products
-      union all select 'product_specifications', count(*)::integer from public.product_specifications
-      union all select 'product_documents', count(*)::integer from public.product_documents
-      union all select 'product_media', count(*)::integer from public.product_media
-      union all select 'product_search_index', count(*)::integer from public.product_search_index
-      order by table_name
+      select product_id, content_hash, search_document ->> 'content_hash' as document_content_hash
+      from public.product_documents
+      order by product_id
     `,
+    sql`select product_id from public.product_media order by product_id`,
     sql`
-      select
-        (select count(*)::integer from public.products where status = 'active') as active,
-        (select count(*)::integer from public.products where status = 'review') as review,
-        (select count(*)::integer
-          from public.product_search_index search_index
-          join public.products products using (product_id)
-          where products.status = 'review') as review_products_indexed,
-        (select count(*)::integer from public.product_specifications specifications
-          left join public.products products using (product_id)
-          where products.product_id is null) as orphan_specifications,
-        (select count(*)::integer from public.product_documents documents
-          left join public.products products using (product_id)
-          where products.product_id is null) as orphan_documents,
-        (select count(*)::integer from public.product_search_index search_index
-          left join public.products products using (product_id)
-          where products.product_id is null) as orphan_search_index,
-        (select count(*)::integer - count(distinct product_id)::integer from public.products) as duplicate_product_id,
-        (select count(*)::integer - count(distinct model)::integer from public.products) as duplicate_model,
-        (select count(*)::integer from public.product_documents
-          where content_hash is distinct from search_document ->> 'content_hash') as document_hash_mismatch,
-        (select count(*)::integer from public.product_search_index search_index
-          left join public.product_documents documents using (product_id)
-          where documents.product_id is null
-            or search_index.source_content_hash is distinct from documents.content_hash) as search_index_hash_mismatch
+      select product_id, source_content_hash
+      from public.product_search_index
+      order by product_id
     `,
     sql`
       select indexname, indexdef
@@ -443,28 +470,164 @@ async function validateDatabase(sql) {
     sql`select exists(select 1 from pg_extension where extname = 'vector') as vector_enabled`,
   ]);
 
-  const check = checks[0];
-  const invalidFk =
-    check.orphan_specifications +
-    check.orphan_documents +
-    check.orphan_search_index;
-  const tableCounts = Object.fromEntries(
-    counts.map((row) => [row.table_name, row.row_count]),
+  const expectedProductIds = new Set(data.masterIds);
+  const expectedActiveIds = new Set(data.activeIds);
+  const expectedReviewIds = new Set(data.reviewIds);
+  const expectedDocumentIds = new Set(
+    data.documents.map((document) => document.product_id),
   );
+  const expectedDocumentHashes = new Map(
+    data.documents.map((document) => [
+      document.product_id,
+      document.content_hash,
+    ]),
+  );
+
+  const databaseProductIds = new Set(productRows.map((row) => row.product_id));
+  const databaseActiveIds = new Set(
+    productRows
+      .filter((row) => row.status === 'active')
+      .map((row) => row.product_id),
+  );
+  const databaseReviewIds = new Set(
+    productRows
+      .filter((row) => row.status === 'review')
+      .map((row) => row.product_id),
+  );
+  const databaseDocumentIds = new Set(
+    documentRows.map((row) => row.product_id),
+  );
+  const databaseSearchIndexIds = new Set(
+    searchIndexRows.map((row) => row.product_id),
+  );
+  const databaseDocumentHashes = new Map(
+    documentRows.map((row) => [row.product_id, row.content_hash]),
+  );
+
+  const staleDatabaseProductIds = sortedSetDifference(
+    databaseProductIds,
+    expectedProductIds,
+  );
+  const missingDatabaseProductIds = sortedSetDifference(
+    expectedProductIds,
+    databaseProductIds,
+  );
+  const unexpectedDatabaseActiveIds = sortedSetDifference(
+    databaseActiveIds,
+    expectedActiveIds,
+  );
+  const missingDatabaseActiveIds = sortedSetDifference(
+    expectedActiveIds,
+    databaseActiveIds,
+  );
+  const unexpectedDatabaseReviewIds = sortedSetDifference(
+    databaseReviewIds,
+    expectedReviewIds,
+  );
+  const missingDatabaseReviewIds = sortedSetDifference(
+    expectedReviewIds,
+    databaseReviewIds,
+  );
+  const unexpectedDatabaseDocumentIds = sortedSetDifference(
+    databaseDocumentIds,
+    expectedDocumentIds,
+  );
+  const missingDatabaseDocumentIds = sortedSetDifference(
+    expectedDocumentIds,
+    databaseDocumentIds,
+  );
+  const unexpectedDatabaseSearchIndexIds = sortedSetDifference(
+    databaseSearchIndexIds,
+    expectedDocumentIds,
+  );
+  const missingDatabaseSearchIndexIds = sortedSetDifference(
+    expectedDocumentIds,
+    databaseSearchIndexIds,
+  );
+  const reviewProductsIndexed = sortedSetIntersection(
+    databaseSearchIndexIds,
+    expectedReviewIds,
+  );
+  const orphanSpecificationProductIds = sortedSetDifference(
+    new Set(specificationRows.map((row) => row.product_id)),
+    databaseProductIds,
+  );
+  const orphanDocumentProductIds = sortedSetDifference(
+    databaseDocumentIds,
+    databaseProductIds,
+  );
+  const orphanMediaProductIds = sortedSetDifference(
+    new Set(mediaRows.map((row) => row.product_id)),
+    databaseProductIds,
+  );
+  const orphanSearchIndexProductIds = sortedSetDifference(
+    databaseSearchIndexIds,
+    databaseProductIds,
+  );
+  const internalDocumentHashMismatchIds = documentRows
+    .filter((row) => row.content_hash !== row.document_content_hash)
+    .map((row) => row.product_id)
+    .sort();
+  const sourceDocumentHashMismatchIds = documentRows
+    .filter(
+      (row) => expectedDocumentHashes.get(row.product_id) !== row.content_hash,
+    )
+    .map((row) => row.product_id)
+    .sort();
+  const searchIndexHashMismatchIds = searchIndexRows
+    .filter(
+      (row) =>
+        databaseDocumentHashes.get(row.product_id) !==
+          row.source_content_hash ||
+        expectedDocumentHashes.get(row.product_id) !== row.source_content_hash,
+    )
+    .map((row) => row.product_id)
+    .sort();
+  const duplicateProductIds = duplicateValues(
+    productRows.map((row) => row.product_id),
+  );
+  const duplicateModels = duplicateValues(productRows.map((row) => row.model));
+  const invalidFk =
+    orphanSpecificationProductIds.length +
+    orphanDocumentProductIds.length +
+    orphanMediaProductIds.length +
+    orphanSearchIndexProductIds.length;
+
+  const tableCounts = {
+    product_documents: documentRows.length,
+    product_media: mediaRows.length,
+    product_search_index: searchIndexRows.length,
+    product_specifications: specificationRows.length,
+    products: productRows.length,
+  };
+  const expectedRows = {
+    products: expectedProductIds.size,
+    active: expectedActiveIds.size,
+    review: expectedReviewIds.size,
+    product_documents: expectedDocumentIds.size,
+    product_search_index: expectedDocumentIds.size,
+  };
   const expectedChecks = {
-    products: tableCounts.products === 50,
-    active: check.active === 42,
-    review: check.review === 8,
-    product_documents: tableCounts.product_documents === 42,
-    product_search_index: tableCounts.product_search_index === 42,
-    review_products_indexed: check.review_products_indexed === 0,
-    orphan_specifications: check.orphan_specifications === 0,
-    orphan_documents: check.orphan_documents === 0,
-    orphan_search_index: check.orphan_search_index === 0,
-    duplicate_product_id: check.duplicate_product_id === 0,
-    duplicate_model: check.duplicate_model === 0,
-    document_hash_mismatch: check.document_hash_mismatch === 0,
-    search_index_hash_mismatch: check.search_index_hash_mismatch === 0,
+    products: sameStringSets(databaseProductIds, expectedProductIds),
+    active: sameStringSets(databaseActiveIds, expectedActiveIds),
+    review: sameStringSets(databaseReviewIds, expectedReviewIds),
+    product_documents: sameStringSets(databaseDocumentIds, expectedDocumentIds),
+    product_search_index: sameStringSets(
+      databaseSearchIndexIds,
+      expectedDocumentIds,
+    ),
+    stale_database_product_ids: staleDatabaseProductIds.length === 0,
+    review_products_indexed: reviewProductsIndexed.length === 0,
+    orphan_specifications: orphanSpecificationProductIds.length === 0,
+    orphan_documents: orphanDocumentProductIds.length === 0,
+    orphan_media: orphanMediaProductIds.length === 0,
+    orphan_search_index: orphanSearchIndexProductIds.length === 0,
+    duplicate_product_id: duplicateProductIds.length === 0,
+    duplicate_model: duplicateModels.length === 0,
+    document_hash_mismatch:
+      internalDocumentHashMismatchIds.length === 0 &&
+      sourceDocumentHashMismatchIds.length === 0,
+    search_index_hash_mismatch: searchIndexHashMismatchIds.length === 0,
     invalid_fk: invalidFk === 0,
     fts_gin_index:
       indexes.length === 1 &&
@@ -473,8 +636,33 @@ async function validateDatabase(sql) {
 
   return {
     status: Object.values(expectedChecks).every(Boolean) ? 'passed' : 'failed',
+    expected_rows: expectedRows,
     rows_per_table: tableCounts,
-    checks: { ...check, invalid_fk: invalidFk },
+    checks: {
+      active: databaseActiveIds.size,
+      review: databaseReviewIds.size,
+      stale_database_product_ids: staleDatabaseProductIds,
+      missing_database_product_ids: missingDatabaseProductIds,
+      unexpected_database_active_ids: unexpectedDatabaseActiveIds,
+      missing_database_active_ids: missingDatabaseActiveIds,
+      unexpected_database_review_ids: unexpectedDatabaseReviewIds,
+      missing_database_review_ids: missingDatabaseReviewIds,
+      unexpected_database_document_ids: unexpectedDatabaseDocumentIds,
+      missing_database_document_ids: missingDatabaseDocumentIds,
+      unexpected_database_search_index_ids: unexpectedDatabaseSearchIndexIds,
+      missing_database_search_index_ids: missingDatabaseSearchIndexIds,
+      review_products_indexed: reviewProductsIndexed,
+      orphan_specification_product_ids: orphanSpecificationProductIds,
+      orphan_document_product_ids: orphanDocumentProductIds,
+      orphan_media_product_ids: orphanMediaProductIds,
+      orphan_search_index_product_ids: orphanSearchIndexProductIds,
+      duplicate_product_ids: duplicateProductIds,
+      duplicate_models: duplicateModels,
+      internal_document_hash_mismatch_ids: internalDocumentHashMismatchIds,
+      source_document_hash_mismatch_ids: sourceDocumentHashMismatchIds,
+      search_index_hash_mismatch_ids: searchIndexHashMismatchIds,
+      invalid_fk: invalidFk,
+    },
     assertions: expectedChecks,
     fts_index: indexes[0] ?? null,
     vector_enabled: extensions[0]?.vector_enabled ?? false,
@@ -525,7 +713,7 @@ async function main() {
   const sql = postgres(databaseUrl, { max: 1, prepare: false });
   try {
     const importStats = validateOnly ? null : await importData(sql, data);
-    const validation = await validateDatabase(sql);
+    const validation = await validateDatabase(sql, data);
     const keywordResults = await runKeywordTests(sql);
     const report = {
       generated_at: new Date().toISOString(),

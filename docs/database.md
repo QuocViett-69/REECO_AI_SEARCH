@@ -2,7 +2,9 @@
 
 The committed migration creates the first PostgreSQL search foundation for REECO:
 
-- `products`: all 50 Product Master rows. `status = 'active'` is the search-eligibility rule.
+- `products`: all Product Master rows in the current dataset. `status = 'active'` is the
+  search-eligibility rule. The current MVP snapshot is 50 total / 42 active / 8 review; these counts
+  are informational and are not validation constraints.
 - `product_specifications`: normalized specification values for active products only.
 - `product_documents`: one complete Search Document per active product, guarded by `content_hash`.
 - `product_media`: primary image/product URLs with an extensible media type, position, and metadata shape.

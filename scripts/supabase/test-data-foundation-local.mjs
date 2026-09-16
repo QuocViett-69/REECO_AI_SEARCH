@@ -12,6 +12,12 @@ const migrationPath = path.join(
   'migrations',
   '20260915034753_data_foundation_v1.sql',
 );
+const hardeningMigrationPath = path.join(
+  projectRoot,
+  'supabase',
+  'migrations',
+  '20260915082000_harden_rls_auto_enable.sql',
+);
 const reportPath = path.join(
   projectRoot,
   'data',
@@ -41,6 +47,18 @@ const canonicalJson = (value) => {
   return JSON.stringify(value);
 };
 const sha256 = (value) => createHash('sha256').update(value).digest('hex');
+const sortedSetDifference = (left, right) =>
+  [...left].filter((value) => !right.has(value)).sort();
+const sortedSetIntersection = (left, right) =>
+  [...left].filter((value) => right.has(value)).sort();
+const duplicateValues = (values) =>
+  [
+    ...new Set(
+      values.filter((value, index) => values.indexOf(value) !== index),
+    ),
+  ].sort();
+const sameStringSets = (left, right) =>
+  left.size === right.size && [...left].every((value) => right.has(value));
 
 async function loadData() {
   const products = await readJson(
@@ -49,6 +67,11 @@ async function loadData() {
   const activeIds = new Set(
     products
       .filter((product) => product.status === 'active')
+      .map((product) => product.product_id),
+  );
+  const reviewIds = new Set(
+    products
+      .filter((product) => product.status === 'review')
       .map((product) => product.product_id),
   );
   const documentFiles = (
@@ -91,7 +114,14 @@ async function loadData() {
         }),
       ),
     }));
-  return { products, documents, specifications };
+  return {
+    products,
+    activeIds,
+    reviewIds,
+    documentIds: new Set(documents.map((document) => document.product_id)),
+    documents,
+    specifications,
+  };
 }
 
 async function seedDatabase(database, data) {
@@ -247,6 +277,8 @@ async function main() {
       )
       .replace('embedding extensions.vector,', 'embedding real[],');
     await database.exec(migration);
+    const hardeningMigration = await readFile(hardeningMigrationPath, 'utf8');
+    await database.exec(hardeningMigration);
 
     const data = await loadData();
     await seedDatabase(database, data);
@@ -269,6 +301,8 @@ async function main() {
           left join public.products products using (product_id) where products.product_id is null) as orphan_specifications,
         (select count(*)::integer from public.product_documents documents
           left join public.products products using (product_id) where products.product_id is null) as orphan_documents,
+        (select count(*)::integer from public.product_media media
+          left join public.products products using (product_id) where products.product_id is null) as orphan_media,
         (select count(*)::integer from public.product_search_index search_index
           left join public.products products using (product_id) where products.product_id is null) as orphan_search_index,
         (select count(*)::integer - count(distinct product_id)::integer from public.products) as duplicate_product_id,
@@ -284,7 +318,97 @@ async function main() {
     validation.invalid_fk =
       validation.orphan_specifications +
       validation.orphan_documents +
+      validation.orphan_media +
       validation.orphan_search_index;
+
+    const productRows = (
+      await database.query(
+        'select product_id, model, status from public.products order by product_id',
+      )
+    ).rows;
+    const documentRows = (
+      await database.query(
+        `select product_id, content_hash, search_document ->> 'content_hash' as document_content_hash
+         from public.product_documents order by product_id`,
+      )
+    ).rows;
+    const searchIndexRows = (
+      await database.query(
+        'select product_id, source_content_hash from public.product_search_index order by product_id',
+      )
+    ).rows;
+
+    const expectedProductIds = new Set(
+      data.products.map((product) => product.product_id),
+    );
+    const databaseProductIds = new Set(
+      productRows.map((row) => row.product_id),
+    );
+    const databaseActiveIds = new Set(
+      productRows
+        .filter((row) => row.status === 'active')
+        .map((row) => row.product_id),
+    );
+    const databaseReviewIds = new Set(
+      productRows
+        .filter((row) => row.status === 'review')
+        .map((row) => row.product_id),
+    );
+    const databaseDocumentIds = new Set(
+      documentRows.map((row) => row.product_id),
+    );
+    const databaseSearchIndexIds = new Set(
+      searchIndexRows.map((row) => row.product_id),
+    );
+    const expectedDocumentHashes = new Map(
+      data.documents.map((document) => [
+        document.product_id,
+        document.content_hash,
+      ]),
+    );
+    const databaseDocumentHashes = new Map(
+      documentRows.map((row) => [row.product_id, row.content_hash]),
+    );
+    const staleDatabaseProductIds = sortedSetDifference(
+      databaseProductIds,
+      expectedProductIds,
+    );
+    const missingDatabaseProductIds = sortedSetDifference(
+      expectedProductIds,
+      databaseProductIds,
+    );
+    const activeWithoutSearchIndex = sortedSetDifference(
+      data.activeIds,
+      databaseSearchIndexIds,
+    );
+    const nonActiveSearchIndexIds = sortedSetDifference(
+      databaseSearchIndexIds,
+      data.activeIds,
+    );
+    const reviewProductsIndexed = sortedSetIntersection(
+      databaseSearchIndexIds,
+      data.reviewIds,
+    );
+    const sourceDocumentHashMismatchIds = documentRows
+      .filter(
+        (row) =>
+          expectedDocumentHashes.get(row.product_id) !== row.content_hash,
+      )
+      .map((row) => row.product_id)
+      .sort();
+    const searchIndexSourceHashMismatchIds = searchIndexRows
+      .filter(
+        (row) =>
+          expectedDocumentHashes.get(row.product_id) !==
+            row.source_content_hash ||
+          databaseDocumentHashes.get(row.product_id) !==
+            row.source_content_hash,
+      )
+      .map((row) => row.product_id)
+      .sort();
+    const duplicateSourceDocumentIds = duplicateValues(
+      data.documents.map((document) => document.product_id),
+    );
 
     const ftsIndexResult = await database.query(`
       select indexname, indexdef
@@ -303,33 +427,88 @@ async function main() {
       keywordResults[query] = result.rows;
     }
 
+    const keywordRpcBehavior =
+      keywordResults.CS655.some((row) => row.product_id === 'CSI_CS655') &&
+      Object.values(keywordResults).every(
+        (rows) =>
+          rows.length <= 5 &&
+          rows.every((row) => data.activeIds.has(row.product_id)),
+      );
+
     const assertions = {
-      products: validation.products === 50,
-      active: validation.active === 42,
-      review: validation.review === 8,
-      product_documents: validation.product_documents === 42,
-      product_search_index: validation.product_search_index === 42,
-      review_products_indexed: validation.review_products_indexed === 0,
+      source_status_partition:
+        data.products.length === data.activeIds.size + data.reviewIds.size &&
+        sortedSetIntersection(data.activeIds, data.reviewIds).length === 0,
+      source_unique_product_ids:
+        expectedProductIds.size === data.products.length,
+      source_unique_document_ids: duplicateSourceDocumentIds.length === 0,
+      source_document_ids_match_active_ids: sameStringSets(
+        data.documentIds,
+        data.activeIds,
+      ),
+      products: sameStringSets(databaseProductIds, expectedProductIds),
+      active: sameStringSets(databaseActiveIds, data.activeIds),
+      review: sameStringSets(databaseReviewIds, data.reviewIds),
+      product_documents:
+        sameStringSets(databaseDocumentIds, data.documentIds) &&
+        documentRows.length === data.documents.length,
+      product_search_index: sameStringSets(
+        databaseSearchIndexIds,
+        data.documentIds,
+      ),
+      active_products_indexed: activeWithoutSearchIndex.length === 0,
+      non_active_products_not_indexed: nonActiveSearchIndexIds.length === 0,
+      review_products_indexed:
+        validation.review_products_indexed === 0 &&
+        reviewProductsIndexed.length === 0,
+      stale_database_product_ids: staleDatabaseProductIds.length === 0,
+      missing_database_product_ids: missingDatabaseProductIds.length === 0,
       orphan_specifications: validation.orphan_specifications === 0,
       orphan_documents: validation.orphan_documents === 0,
+      orphan_media: validation.orphan_media === 0,
       orphan_search_index: validation.orphan_search_index === 0,
       duplicate_product_id: validation.duplicate_product_id === 0,
       duplicate_model: validation.duplicate_model === 0,
-      document_hash_mismatch: validation.document_hash_mismatch === 0,
-      search_index_hash_mismatch: validation.search_index_hash_mismatch === 0,
+      document_hash_mismatch:
+        validation.document_hash_mismatch === 0 &&
+        sourceDocumentHashMismatchIds.length === 0,
+      search_index_hash_mismatch:
+        validation.search_index_hash_mismatch === 0 &&
+        searchIndexSourceHashMismatchIds.length === 0,
       invalid_fk: validation.invalid_fk === 0,
       fts_gin_index:
         ftsIndexResult.rows.length === 1 &&
         ftsIndexResult.rows[0].indexdef.toLowerCase().includes('using gin'),
+      keyword_rpc_behavior: keywordRpcBehavior,
+      hardening_migration_allows_missing_rls_auto_enable: true,
       idempotency:
         JSON.stringify(firstSnapshot) === JSON.stringify(secondSnapshot),
+    };
+    const expected = {
+      products: expectedProductIds.size,
+      active: data.activeIds.size,
+      review: data.reviewIds.size,
+      product_documents: data.documentIds.size,
+      product_search_index: data.documentIds.size,
+    };
+    const setDiagnostics = {
+      stale_database_product_ids: staleDatabaseProductIds,
+      missing_database_product_ids: missingDatabaseProductIds,
+      active_without_search_index: activeWithoutSearchIndex,
+      non_active_search_index_ids: nonActiveSearchIndexIds,
+      review_products_indexed: reviewProductsIndexed,
+      duplicate_source_document_ids: duplicateSourceDocumentIds,
+      source_document_hash_mismatch_ids: sourceDocumentHashMismatchIds,
+      search_index_source_hash_mismatch_ids: searchIndexSourceHashMismatchIds,
     };
     const report = {
       generated_at: new Date().toISOString(),
       engine: 'PGlite/PostgreSQL local compatibility test',
-      note: 'The vector extension is replaced with real[] only in this local harness; the committed Supabase migration uses extensions.vector.',
+      note: 'The vector extension is replaced with real[] only in this local harness; the committed Supabase migration uses extensions.vector. The conditional hardening migration is executed with rls_auto_enable absent. PGlite does not runtime-test the pending event-trigger migration.',
       status: Object.values(assertions).every(Boolean) ? 'passed' : 'failed',
+      expected,
       validation,
+      set_diagnostics: setDiagnostics,
       assertions,
       fts_index: ftsIndexResult.rows[0] ?? null,
       keyword_results: keywordResults,

@@ -302,6 +302,8 @@ const buildDocument = ({ product, normalized, enriched, ontology }) => {
 const average = (values) => values.length === 0 ? 0 : Number(
   (values.reduce((sum, value) => sum + value, 0) / values.length).toFixed(2),
 );
+const setDifference = (left, right) => [...left].filter((value) => !right.has(value));
+const setIntersection = (left, right) => [...left].filter((value) => right.has(value));
 const findInvalidReferences = (documents, normalizedById) => documents.flatMap((document) => {
   const normalized = normalizedById.get(document.product_id);
   return document.important_specifications
@@ -342,6 +344,8 @@ export const createSearchDocumentPlan = async () => {
   ]);
   const activeProducts = master.filter((product) => product.status === 'active');
   const reviewProducts = master.filter((product) => product.status === 'review');
+  const activeIds = new Set(activeProducts.map((product) => product.product_id));
+  const reviewIds = new Set(reviewProducts.map((product) => product.product_id));
   const normalizedById = new Map();
   const enrichedById = new Map();
   for (const product of activeProducts) {
@@ -365,6 +369,13 @@ export const createSearchDocumentPlan = async () => {
   const duplicateProductIds = documents.length - new Set(documents.map((document) => document.product_id)).size;
   const documentsWithoutEnrichment = activeProducts.filter((product) => !enrichedById.has(product.product_id));
   const documentsWithoutNormalization = activeProducts.filter((product) => !normalizedById.has(product.product_id));
+  const documentIds = new Set(documents.map((document) => document.product_id));
+  const activeReviewOverlap = setIntersection(activeIds, reviewIds);
+  const activeWithoutDocuments = setDifference(activeIds, documentIds);
+  const nonActiveDocuments = setDifference(documentIds, activeIds);
+  const reviewDocuments = setIntersection(documentIds, reviewIds);
+  const statusPartitionValid = master.length === activeProducts.length + reviewProducts.length;
+  const documentCountMatchesActive = documents.length === activeProducts.length;
   const invalidReferences = findInvalidReferences(documents, normalizedById);
   const protocolViolations = unsupportedProtocolViolations(documents, enrichedById);
   const zodFailures = documents.flatMap((document) => {
@@ -385,6 +396,12 @@ export const createSearchDocumentPlan = async () => {
     active_products: activeProducts.length,
     search_documents: documents.length,
     skipped_review_products: reviewProducts.length,
+    status_partition_valid: statusPartitionValid,
+    active_review_id_overlap: activeReviewOverlap.length,
+    active_without_search_document: activeWithoutDocuments.length,
+    non_active_search_documents: nonActiveDocuments.length,
+    review_search_documents: reviewDocuments.length,
+    document_count_matches_active: documentCountMatchesActive,
     duplicate_product_id: duplicateProductIds,
     document_without_enrichment: documentsWithoutEnrichment.length,
     document_without_normalization: documentsWithoutNormalization.length,
@@ -401,9 +418,9 @@ export const createSearchDocumentPlan = async () => {
   const blockingCount = duplicateProductIds + documentsWithoutEnrichment.length +
     documentsWithoutNormalization.length + invalidReferences.length + protocolViolations.length +
     checks.search_text_empty + checks.missing_content_hash + hashMismatches.length + zodFailures.length +
-    mutatedUpstreamInputs.length +
-    Math.abs(master.length - 50) + Math.abs(activeProducts.length - 42) +
-    Math.abs(reviewProducts.length - 8) + Math.abs(documents.length - 42);
+    mutatedUpstreamInputs.length + activeReviewOverlap.length + activeWithoutDocuments.length +
+    nonActiveDocuments.length + reviewDocuments.length +
+    (statusPartitionValid ? 0 : 1) + (documentCountMatchesActive ? 0 : 1);
   const report = {
     schema_version: '1.0',
     validation_status: blockingCount === 0 ? 'passed' : 'failed',
@@ -431,13 +448,24 @@ export const createSearchDocumentPlan = async () => {
       product_ids_without_protocols: productIds((document) => document.supported_protocols.length === 0 && document.unsupported_protocols.length === 0),
     },
     diagnostics: {
+      active_review_id_overlap: activeReviewOverlap,
+      active_without_search_document: activeWithoutDocuments,
+      non_active_search_document_ids: nonActiveDocuments,
+      review_search_document_ids: reviewDocuments,
       invalid_references: invalidReferences,
       protocol_violations: protocolViolations,
       zod_failures: zodFailures,
       mutated_upstream_inputs: mutatedUpstreamInputs,
     },
   };
-  return { documents, report };
+  return {
+    documents,
+    report,
+    source_ids: {
+      active: [...activeIds].sort(),
+      review: [...reviewIds].sort(),
+    },
+  };
 };
 
 export const writeSearchDocumentOutputs = async ({ documents, report }) => {
@@ -461,14 +489,56 @@ export const validateSearchDocuments = async () => {
   });
   const jsonFiles = files.filter((file) => file.endsWith('.json')).sort();
   const expectedByFile = new Map(expected.documents.map((document) => [`${document.product_id}.json`, document]));
+  const actualDocuments = [];
   for (const file of jsonFiles) {
+    const document = await readJson(path.join(outputDirectory, file));
+    actualDocuments.push({ file, document });
+    const parsedDocument = SearchDocumentSchema.safeParse(document);
+    if (!parsedDocument.success) {
+      errors.push({ code: 'invalid_search_document', file, issues: parsedDocument.error.issues });
+    }
+    if (document.content_hash !== hashDocument(document)) {
+      errors.push({ code: 'search_document_hash_mismatch', file });
+    }
+    if (`${document.product_id}.json` !== file) {
+      errors.push({ code: 'search_document_filename_mismatch', file, product_id: document.product_id });
+    }
     if (!expectedByFile.has(file)) errors.push({ code: 'unexpected_search_document', file });
-    else if (JSON.stringify(await readJson(path.join(outputDirectory, file))) !== JSON.stringify(expectedByFile.get(file))) {
+    else if (JSON.stringify(document) !== JSON.stringify(expectedByFile.get(file))) {
       errors.push({ code: 'stale_or_modified_search_document', file });
     }
   }
   for (const file of expectedByFile.keys()) {
     if (!jsonFiles.includes(file)) errors.push({ code: 'missing_search_document', file });
+  }
+  const activeIds = new Set(expected.source_ids.active);
+  const reviewIds = new Set(expected.source_ids.review);
+  const actualDocumentIds = actualDocuments.map(({ document }) => document.product_id);
+  const actualDocumentIdSet = new Set(actualDocumentIds);
+  const duplicateDocumentIds = [...new Set(actualDocumentIds.filter(
+    (productId, index) => actualDocumentIds.indexOf(productId) !== index,
+  ))].sort();
+  const activeWithoutDocuments = setDifference(activeIds, actualDocumentIdSet).sort();
+  const nonActiveDocuments = setDifference(actualDocumentIdSet, activeIds).sort();
+  const reviewDocuments = setIntersection(actualDocumentIdSet, reviewIds).sort();
+  if (duplicateDocumentIds.length > 0) {
+    errors.push({ code: 'duplicate_search_document_product_id', product_ids: duplicateDocumentIds });
+  }
+  if (activeWithoutDocuments.length > 0) {
+    errors.push({ code: 'active_products_without_search_document', product_ids: activeWithoutDocuments });
+  }
+  if (nonActiveDocuments.length > 0) {
+    errors.push({ code: 'non_active_search_documents', product_ids: nonActiveDocuments });
+  }
+  if (reviewDocuments.length > 0) {
+    errors.push({ code: 'review_products_with_search_document', product_ids: reviewDocuments });
+  }
+  if (actualDocuments.length !== activeIds.size) {
+    errors.push({
+      code: 'search_document_count_does_not_match_active_count',
+      actual: actualDocuments.length,
+      expected: activeIds.size,
+    });
   }
   let actualReport = null;
   try { actualReport = await readJson(reportPath); } catch (error) { if (error.code !== 'ENOENT') throw error; }
