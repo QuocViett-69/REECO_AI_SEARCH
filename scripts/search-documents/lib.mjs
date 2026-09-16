@@ -65,15 +65,20 @@ const directoryFingerprint = async (directory) => {
   const files = (await readdir(directory)).filter((file) => file.endsWith('.json')).sort();
   const entries = [];
   for (const file of files) {
-    entries.push([file, sha256(await readFile(path.join(directory, file)))]);
+    const content = await readFile(path.join(directory, file), 'utf8');
+    entries.push([file, sha256(content.replace(/\r\n/gu, '\n'))]);
   }
   return sha256(canonicalJson(entries));
 };
 const inputFingerprints = async () => ({
-  product_master: sha256(await readFile(masterPath)),
+  product_master: sha256(
+    (await readFile(masterPath, 'utf8')).replace(/\r\n/gu, '\n'),
+  ),
   normalized_specifications: await directoryFingerprint(normalizedDirectory),
   enriched_products: await directoryFingerprint(enrichedDirectory),
-  semantic_vocabulary: sha256(await readFile(ontologyPath)),
+  semantic_vocabulary: sha256(
+    (await readFile(ontologyPath, 'utf8')).replace(/\r\n/gu, '\n'),
+  ),
 });
 
 const SemanticItemSchema = z.object({

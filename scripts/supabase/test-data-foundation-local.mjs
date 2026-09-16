@@ -18,6 +18,18 @@ const hardeningMigrationPath = path.join(
   'migrations',
   '20260915082000_harden_rls_auto_enable.sql',
 );
+const rlsAutoEnableMigrationPath = path.join(
+  projectRoot,
+  'supabase',
+  'migrations',
+  '20260916074530_ensure_rls_auto_enable_reproducible.sql',
+);
+const semanticSearchMigrationPath = path.join(
+  projectRoot,
+  'supabase',
+  'migrations',
+  '20260916080205_step7_semantic_search_foundation.sql',
+);
 const reportPath = path.join(
   projectRoot,
   'data',
@@ -279,6 +291,55 @@ async function main() {
     await database.exec(migration);
     const hardeningMigration = await readFile(hardeningMigrationPath, 'utf8');
     await database.exec(hardeningMigration);
+    const rlsAutoEnableMigration = await readFile(
+      rlsAutoEnableMigrationPath,
+      'utf8',
+    );
+    const rlsAutoEnableStaticContract = [
+      /rls_auto_enable/iu,
+      /returns\s+event_trigger/iu,
+      /security\s+definer/iu,
+      /set\s+search_path\s*=\s*pg_catalog/iu,
+      /ensure_rls/iu,
+      /on\s+ddl_command_end/iu,
+      /create table/iu,
+      /create table as/iu,
+      /select into/iu,
+      /revoke\s+execute/iu,
+      /from\s+public/iu,
+      /from\s+anon/iu,
+      /from\s+authenticated/iu,
+      /from\s+service_role/iu,
+    ].every((pattern) => pattern.test(rlsAutoEnableMigration));
+    const semanticSearchMigration = await readFile(
+      semanticSearchMigrationPath,
+      'utf8',
+    );
+    const semanticSearchMigrationStaticContract =
+      [
+        /extensions\.vector\s*\(\s*1536\s*\)/iu,
+        /if\s+exists\s*\([\s\S]*embedding\s+is\s+not\s+null[\s\S]*raise\s+exception/iu,
+        /using\s+embedding::extensions\.vector\s*\(\s*1536\s*\)/iu,
+        /product_search_index_embedding_state_check/iu,
+        /embedding\s+is\s+null[\s\S]*embedding_model\s+is\s+null[\s\S]*embedding_dimensions\s+is\s+null[\s\S]*embedding_version\s+is\s+null[\s\S]*embedded_at\s+is\s+null/iu,
+        /search_products_semantic/iu,
+        /query_embedding/iu,
+        /required_embedding_model/iu,
+        /required_embedding_version/iu,
+        /products\.status\s*=\s*'active'/iu,
+        /embedding\s+is\s+not\s+null/iu,
+        /embedding_dimensions\s*=\s*1536/iu,
+        /operator\s*\(\s*extensions\.<=>\s*\)/iu,
+        /limit\s+least\s*\(\s*greatest\s*\(\s*coalesce\s*\(\s*result_limit\s*,\s*10\s*\)\s*,\s*1\s*\)\s*,\s*100\s*\)/iu,
+        /security\s+invoker/iu,
+        /revoke\s+execute[\s\S]*from\s+public/iu,
+        /revoke\s+execute[\s\S]*from\s+anon/iu,
+        /revoke\s+execute[\s\S]*from\s+authenticated/iu,
+        /grant\s+execute[\s\S]*to\s+service_role/iu,
+      ].every((pattern) => pattern.test(semanticSearchMigration)) &&
+      !/security\s+definer/iu.test(semanticSearchMigration) &&
+      !/\bhnsw\b/iu.test(semanticSearchMigration) &&
+      !/\bivfflat\b/iu.test(semanticSearchMigration);
 
     const data = await loadData();
     await seedDatabase(database, data);
@@ -481,6 +542,10 @@ async function main() {
         ftsIndexResult.rows[0].indexdef.toLowerCase().includes('using gin'),
       keyword_rpc_behavior: keywordRpcBehavior,
       hardening_migration_allows_missing_rls_auto_enable: true,
+      rls_auto_enable_migration_static_contract:
+        rlsAutoEnableStaticContract,
+      semantic_search_migration_static_contract:
+        semanticSearchMigrationStaticContract,
       idempotency:
         JSON.stringify(firstSnapshot) === JSON.stringify(secondSnapshot),
     };
@@ -504,7 +569,7 @@ async function main() {
     const report = {
       generated_at: new Date().toISOString(),
       engine: 'PGlite/PostgreSQL local compatibility test',
-      note: 'The vector extension is replaced with real[] only in this local harness; the committed Supabase migration uses extensions.vector. The conditional hardening migration is executed with rls_auto_enable absent. PGlite does not runtime-test the pending event-trigger migration.',
+      note: 'The vector extension is replaced with real[] only in this local harness; committed Supabase migrations use extensions.vector. The conditional hardening migration is executed with rls_auto_enable absent. The RLS auto-enable and semantic-search migrations receive static contract checks only. PGlite does not runtime-test event-trigger or pgvector behavior.',
       status: Object.values(assertions).every(Boolean) ? 'passed' : 'failed',
       expected,
       validation,

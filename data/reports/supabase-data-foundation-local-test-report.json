@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-16T07:09:46.576Z",
+  "generated_at": "2026-09-16T08:05:20.260Z",
   "engine": "PGlite/PostgreSQL local compatibility test",
-  "note": "The vector extension is replaced with real[] only in this local harness; the committed Supabase migration uses extensions.vector. The conditional hardening migration is executed with rls_auto_enable absent. PGlite does not runtime-test the pending event-trigger migration.",
+  "note": "The vector extension is replaced with real[] only in this local harness; committed Supabase migrations use extensions.vector. The conditional hardening migration is executed with rls_auto_enable absent. The RLS auto-enable and semantic-search migrations receive static contract checks only. PGlite does not runtime-test event-trigger or pgvector behavior.",
   "status": "passed",
   "expected": {
     "products": 50,
@@ -66,6 +66,8 @@
     "fts_gin_index": true,
     "keyword_rpc_behavior": true,
     "hardening_migration_allows_missing_rls_auto_enable": true,
+    "rls_auto_enable_migration_static_contract": true,
+    "semantic_search_migration_static_contract": true,
     "idempotency": true
   },
   "fts_index": {

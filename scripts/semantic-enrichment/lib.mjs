@@ -1001,10 +1001,10 @@ const validatePlan = ({
 
 const hashInputs = (masterContent, normalizedEntries) => {
   const hash = createHash('sha256');
-  hash.update(masterContent);
+  hash.update(masterContent.replace(/\r\n/gu, '\n'));
   for (const entry of normalizedEntries) {
     hash.update(entry.file);
-    hash.update(entry.content);
+    hash.update(entry.content.replace(/\r\n/gu, '\n'));
   }
   return hash.digest('hex');
 };

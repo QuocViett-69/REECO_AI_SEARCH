@@ -1378,7 +1378,7 @@ const createFingerprint = ({ master, productMasterReport, rawEntries }) => {
   hash.update(JSON.stringify(productMasterReport.mappings ?? []));
   for (const entry of rawEntries) {
     hash.update(entry.file);
-    hash.update(entry.content);
+    hash.update(entry.content.replace(/\r\n/gu, '\n'));
   }
   return hash.digest('hex');
 };
