@@ -25,14 +25,23 @@ Call `POST /search` with `{ "query": string, "limit"?: number }`. Render `result
 rerank phases will populate existing slots rather than replace the response shape. `matched_features` is
 currently empty.
 
+The backend contains a server-only local Ollama embedding provider, but it is not connected to this
+endpoint. Backend startup performs no Ollama request, so keyword search continues to run when Ollama is
+offline, the model is unloaded, or the model has not been pulled. The semantic database migration also
+has not been deployed to hosted Supabase and hosted embeddings have not been generated.
+
 ## Compare 2 Products
 
 There is no compare API in this phase. Fetch both in parallel:
 
 ```ts
 const [left, right] = await Promise.all([
-  fetch(`${apiUrl}/products/${leftProductId}`).then((response) => response.json()),
-  fetch(`${apiUrl}/products/${rightProductId}`).then((response) => response.json()),
+  fetch(`${apiUrl}/products/${leftProductId}`).then((response) =>
+    response.json(),
+  ),
+  fetch(`${apiUrl}/products/${rightProductId}`).then((response) =>
+    response.json(),
+  ),
 ]);
 ```
 
@@ -67,7 +76,7 @@ The complete HTTP contract, examples, and error codes are in [`api-contract.md`]
 
 ## Local run
 
-Use Node.js 22 or newer. Copy `apps/api/.env.example` to `apps/api/.env`, fill server-only values, and run:
+Use Node.js 24 or newer. Copy `apps/api/.env.example` to `apps/api/.env`, fill server-only values, and run:
 
 ```powershell
 npm install
@@ -80,6 +89,12 @@ In another shell:
 ```powershell
 npm run dev:web
 ```
+
+The embedding defaults are `EMBEDDING_PROVIDER=ollama`,
+`OLLAMA_BASE_URL=http://127.0.0.1:11434`, `EMBEDDING_MODEL=qwen3-embedding:4b`, 1536 dimensions,
+version `ollama-qwen3-embedding-4b-1536-v1`, 180-second timeout, and batch size 8. These values are
+server-only and must not be exposed through `VITE_*` variables. A cold local model load can take
+significant time.
 
 Before handoff or deployment run:
 

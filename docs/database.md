@@ -17,12 +17,13 @@ The migrations enable the `vector` extension and constrain `product_search_index
 
 ## Semantic search database foundation
 
-Step 7 uses OpenAI `text-embedding-3-large` with an explicit output dimension of `1536` and the
-embedding version identifier `openai-te3-large-1536-v1`. The search-index row stores the vector together
-with `embedding_model`, `embedding_dimensions`, `embedding_version`, and `embedded_at`. Database integrity
+The local Step 7 embedding contract uses Ollama at `http://127.0.0.1:11434` by default, model
+`qwen3-embedding:4b`, explicit dimension `1536`, and version
+`ollama-qwen3-embedding-4b-1536-v1`. The search-index row stores the vector together with
+`embedding_model`, `embedding_dimensions`, `embedding_version`, and `embedded_at`. Database integrity
 requires either all five fields to be null or a populated vector with complete metadata and
-`embedding_dimensions = 1536`. The migration intentionally does not hard-code a model or version string;
-runtime writes and queries match those metadata values explicitly.
+`embedding_dimensions = 1536`. The migration remains provider/model-agnostic: it does not hard-code a
+model or version string, and runtime writes and queries match those metadata values explicitly.
 
 `search_products_semantic(extensions.vector(1536), text, text, integer)` returns active products whose
 embedding model and version match the caller's requirements. It ranks by raw cosine distance (`<=>`) and
@@ -30,8 +31,17 @@ returns a bounded `0..1` similarity score. Results use an exact vector scan with
 no HNSW or IVFFlat index is created at the current dataset scale. Execute access is revoked from `PUBLIC`,
 `anon`, and `authenticated` and granted only to `service_role`, so browser clients cannot call it directly.
 
-Embedding generation, backfill, semantic runtime services, and hybrid retrieval are not implemented in
-Step 7.2.
+Step 7.3A implements local Ollama embedding generation plus safe backfill tooling. Its only embedding
+source is `product_search_index.search_text`; it does not translate or embed source JSON, URLs, images,
+or complete product objects. The backfill selects active products with non-empty text, skips vectors
+whose model/dimension/version are already current, batches requests, and guards updates with the source
+content hash and index version read before embedding.
+
+The semantic migration exists in this repository but has not been deployed to hosted Supabase. No hosted
+embeddings have been generated. Semantic NestJS retrieval and hybrid search are not implemented.
+
+Local model loading can take significant time, especially on the first request. The Ollama client has a
+configurable 180-second default timeout and does not contact Ollama during backend startup.
 
 ## Auth and access
 
@@ -89,3 +99,21 @@ npm run supabase:test:local
 The local harness replaces only the pgvector column type because PGlite does not bundle pgvector. The
 committed Supabase migration continues to use `extensions.vector`. PGlite does not runtime-test
 event-trigger behavior; a full local Supabase test depends on Docker and the local stack.
+
+## Embedding tools
+
+The default backfill command is deliberately a no-database/no-Ollama dry-run that writes only the local
+report at `data/reports/embedding-backfill-report.json`:
+
+```powershell
+npm run embeddings:test
+npm run embeddings:validate
+npm run embeddings:backfill
+npm run embeddings:smoke
+```
+
+`embeddings:validate` uses fixtures and does not contact a database or Ollama. A future database backfill
+must be opted into explicitly with `node scripts/create-embeddings/backfill.mjs --execute` and a
+server-side `DATABASE_URL`; do not run that command until the migration and operational target have been
+reviewed. Execute mode records only counters and sanitized product-level failure codes, never vectors,
+full search text, or credentials.
