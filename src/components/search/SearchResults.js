@@ -2,19 +2,75 @@ import React, { useState } from 'react';
 import {
   Search,
   ChevronRight,
-  Sparkles,
   Check,
   Eye,
   GitCompare,
   Layers,
   Package,
   Cpu,
+  AlertTriangle,
+  RefreshCw,
+  WifiOff,
 } from 'lucide-react';
-import { generateExplanation } from '../../data/searchEngine';
+
+// ─── Parse a matched_feature string into a human-readable chip ────────────────
+function parseFeatureChip(feature) {
+  if (!feature) return null;
+  // e.g. "identity:model:CS655" → "Model: CS655"
+  // e.g. "protocol:SDI-12" → "Protocol: SDI-12"
+  // e.g. "operating-temperature:-40°C" → "Temp: -40°C"
+  const parts = feature.split(':');
+  if (parts.length >= 2) {
+    const type = parts[0];
+    const rest = parts.slice(1).join(':');
+    if (type === 'identity') {
+      const subParts = rest.split(':');
+      return subParts.length >= 2 ? `${capitalize(subParts[0])}: ${subParts.slice(1).join(':')}` : rest;
+    }
+    if (type === 'protocol') return `Protocol: ${rest}`;
+    if (type === 'operating-temperature') return `Op. Temp: ${rest}`;
+    if (type === 'measurement-temperature') return `Meas. Temp: ${rest}`;
+    return `${capitalize(type)}: ${rest}`;
+  }
+  return feature;
+}
+
+function capitalize(s) {
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+}
+
+// ─── Mode label: only show when NOT hybrid (degraded state) ──────────────────
+function ModeLabel({ mode }) {
+  if (!mode || mode === 'hybrid') return null;
+  const label = mode === 'keyword'
+    ? 'Keyword search only (semantic unavailable)'
+    : 'Semantic search only (keyword unavailable)';
+  return (
+    <div
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 6,
+        fontSize: 12,
+        color: 'var(--text-3, #888)',
+        background: 'rgba(255,200,0,0.08)',
+        border: '1px solid rgba(255,200,0,0.2)',
+        borderRadius: 6,
+        padding: '3px 10px',
+        marginLeft: 8,
+      }}
+    >
+      <AlertTriangle size={12} />
+      {label}
+    </div>
+  );
+}
 
 export function SearchResults({
   query,
   results,
+  mode,
+  searchError,
   isLoading,
   onEditSearch,
   onViewDetail,
@@ -23,7 +79,6 @@ export function SearchResults({
 }) {
   const [filterCategory, setFilterCategory] = useState('All');
 
-  // Lấy danh sách category động từ kết quả tìm kiếm
   const categories = Array.from(new Set(results.map((p) => p.category).filter(Boolean)));
 
   const filteredResults = results.filter((p) => {
@@ -42,10 +97,11 @@ export function SearchResults({
           </button>
         </div>
 
-        {!isLoading && (
+        {!isLoading && !searchError && (
           <div className="results-meta">
             <h2>
               <strong>{filteredResults.length}</strong> matching products
+              <ModeLabel mode={mode} />
             </h2>
             <div className="results-filters">
               <button
@@ -81,6 +137,26 @@ export function SearchResults({
               <div className="skeleton-line medium" />
             </div>
           ))
+        ) : searchError ? (
+          // ── Error state ─────────────────────────────────────────────────────
+          <div className="state-empty" style={{ margin: '40px auto', textAlign: 'center' }}>
+            <div className="state-icon">
+              {searchError.error === 'unavailable' ? (
+                <WifiOff size={32} />
+              ) : (
+                <AlertTriangle size={32} />
+              )}
+            </div>
+            <div className="state-title">
+              {searchError.error === 'invalid_input' ? 'Invalid search query' : 'Search unavailable'}
+            </div>
+            <div className="state-desc">{searchError.message}</div>
+            {searchError.error !== 'invalid_input' && (
+              <button type="button" className="btn btn-primary" onClick={onEditSearch} style={{ marginTop: 16 }}>
+                <RefreshCw size={16} /> Try again
+              </button>
+            )}
+          </div>
         ) : filteredResults.length === 0 ? (
           <div className="state-empty" style={{ margin: '40px auto', textAlign: 'center' }}>
             <div className="state-title">No products found</div>
@@ -88,14 +164,8 @@ export function SearchResults({
           </div>
         ) : (
           filteredResults.map((p) => {
-            const circumference = 2 * Math.PI * 28;
-            const score = p.score || 70;
-            const offset = circumference - (score / 100) * circumference;
-            // Hỗ trợ cả format API (không có specs) và format cũ (có specs)
-            const specsObj = p.specs || {};
-            const allSpecs = Object.values(specsObj).flatMap((s) => Object.entries(s));
-            const topSpecs = allSpecs.slice(0, 4);
             const inCompare = isInCompare(p.model);
+            const features = p.matched_features || [];
 
             return (
               <article key={p.model} className="product-result-card" data-model={p.model}>
@@ -128,55 +198,27 @@ export function SearchResults({
                     <div className="product-result-name">{p.name}</div>
                     <div className="product-result-tags">
                       <span className="product-result-tag">{p.deviceType}</span>
-                      <span className="product-result-tag protocol">{p.protocol}</span>
                     </div>
-                  </div>
-
-                  <div className="match-badge">
-                    <div className="match-circle">
-                      <svg width="64" height="64" viewBox="0 0 64 64">
-                        <circle className="bg" cx="32" cy="32" r="28" fill="none" strokeWidth="5" />
-                        <circle
-                          className="fg"
-                          cx="32"
-                          cy="32"
-                          r="28"
-                          fill="none"
-                          strokeWidth="5"
-                          strokeDasharray={circumference}
-                          strokeDashoffset={offset}
-                        />
-                      </svg>
-                      <div className="match-value">{score}%</div>
-                    </div>
-                    <div className="match-label">Match</div>
                   </div>
                 </div>
 
-                <div className="ai-explanation">
-                  <div className="label">
-                    <Sparkles size={16} />
-                    Why this matches
-                  </div>
-                  <div className="text">{generateExplanation(p, p.requirements || [])}</div>
-                  <div className="matched-specs">
-                    {(p.requirements || []).slice(0, 3).map((r) => (
-                      <div key={r} className="matched-spec">
-                        <Check size={14} />
-                        {r}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="product-result-specs">
-                  {topSpecs.map(([k, v]) => (
-                    <div key={k} className="spec-item">
-                      <div className="spec-label">{k}</div>
-                      <div className="spec-value">{v}</div>
+                {/* ── Matched Features (only when backend returns evidence) ── */}
+                {features.length > 0 && (
+                  <div className="ai-explanation">
+                    <div className="label">
+                      <Check size={14} />
+                      Matched features
                     </div>
-                  ))}
-                </div>
+                    <div className="matched-specs">
+                      {features.slice(0, 5).map((f) => (
+                        <div key={f} className="matched-spec">
+                          <Check size={13} />
+                          {parseFeatureChip(f)}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div className="product-result-actions">
                   <button

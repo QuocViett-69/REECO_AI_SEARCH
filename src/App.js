@@ -19,6 +19,8 @@ export function App() {
   // Search State
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [searchMode, setSearchMode] = useState(null); // 'hybrid' | 'keyword' | 'semantic'
+  const [searchError, setSearchError] = useState(null); // null | { type, message }
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
@@ -52,16 +54,21 @@ export function App() {
     setSearchQuery(query);
     setHasSearched(true);
     setIsSearching(true);
+    setSearchError(null);
+    setSearchMode(null);
     setCurrentPage('search');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Call Backend API
-    const apiResults = await searchProductsApi(query);
+    // Call Backend API — returns { query, mode, results } or { error, message }
+    const response = await searchProductsApi(query);
 
-    if (apiResults && apiResults.length > 0) {
-      setSearchResults(apiResults);
+    if (response && response.error) {
+      setSearchResults([]);
+      setSearchError(response);
+    } else if (response && response.results) {
+      setSearchResults(response.results);
+      setSearchMode(response.mode);
     } else {
-      // API failed: show empty result with message
       setSearchResults([]);
     }
     setIsSearching(false);
@@ -69,6 +76,8 @@ export function App() {
 
   const handleEditSearch = () => {
     setHasSearched(false);
+    setSearchError(null);
+    setSearchMode(null);
   };
 
   // View Detail
@@ -166,6 +175,8 @@ export function App() {
               <SearchResults
                 query={searchQuery}
                 results={searchResults}
+                mode={searchMode}
+                searchError={searchError}
                 isLoading={isSearching}
                 onEditSearch={handleEditSearch}
                 onViewDetail={handleViewDetail}

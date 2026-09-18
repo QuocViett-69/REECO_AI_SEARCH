@@ -1,6 +1,24 @@
 const API_BASE_URL =
   process.env.REACT_APP_API_URL || 'http://localhost:4000/api/v1';
 
+// ─── Format a normalized spec value to human-readable string ──────────────────
+function formatSpecValue(val) {
+  if (!val) return '';
+  if (val.type === 'range') {
+    const min = val.min_value ?? val.min ?? '';
+    const max = val.max_value ?? val.max ?? '';
+    const unit = val.unit || '';
+    return `${min} – ${max} ${unit}`.trim();
+  }
+  if (val.type === 'number' || val.type === 'quantity') {
+    return `${val.value ?? ''} ${val.unit || ''}`.trim();
+  }
+  if (val.type === 'boolean') {
+    return val.value ? 'Yes' : 'No';
+  }
+  return String(val.value ?? '');
+}
+
 // ─── Normalize a product summary row from backend into UI shape ────────────────
 function normalizeProduct(p) {
   return {
@@ -12,7 +30,6 @@ function normalizeProduct(p) {
     category: p.category || 'Uncategorized',
     subcategory: p.subcategory || p.device_type || 'General',
     deviceType: p.device_type || 'Hardware',
-    protocol: 'SDI-12',
     image: p.image_url || null,
     status: p.status,
   };
@@ -21,29 +38,17 @@ function normalizeProduct(p) {
 // ─── Normalize detail response ─────────────────────────────────────────────────
 function normalizeProductDetail(data) {
   const p = data.product;
-  const protocols =
-    data.supported_protocols?.map((pr) => pr.key).join(', ') || 'SDI-12';
 
-  // Build specs map from specifications array
+  // supported_protocols is a plain string array: ["SDI-12", "RS-232"]
+  const protocols = (data.supported_protocols || []).join(', ') || '';
+
+  // Build specs map from specifications array using correct field names
   const specs = {};
   if (Array.isArray(data.specifications) && data.specifications.length > 0) {
     data.specifications.forEach((spec) => {
       const group = spec.quantity_kind || 'General';
       if (!specs[group]) specs[group] = {};
-      const val = spec.normalized_value;
-      let displayVal = '';
-      if (val) {
-        if (val.type === 'range') {
-          displayVal = `${val.min} \u2013 ${val.max} ${val.unit || ''}`.trim();
-        } else if (val.type === 'quantity') {
-          displayVal = `${val.value} ${val.unit || ''}`.trim();
-        } else if (val.type === 'boolean') {
-          displayVal = val.value ? 'Yes' : 'No';
-        } else {
-          displayVal = String(val.value ?? '');
-        }
-      }
-      specs[group][spec.canonical_key] = displayVal;
+      specs[group][spec.canonical_key] = formatSpecValue(spec.normalized_value);
     });
   }
 
@@ -68,7 +73,10 @@ function normalizeProductDetail(data) {
     category: p.category || 'Uncategorized',
     subcategory: p.subcategory || p.device_type || 'General',
     deviceType: p.device_type || 'Hardware',
+    // protocols is the joined string for display; keep array separately
     protocol: protocols,
+    supported_protocols: data.supported_protocols || [],
+    unsupported_protocols: data.unsupported_protocols || [],
     image: primaryImageUrl,
     status: p.status,
     specs,
@@ -76,9 +84,9 @@ function normalizeProductDetail(data) {
     measurements: data.measurements || [],
     applications: data.applications || [],
     capabilities: data.capabilities || [],
-    supported_protocols: data.supported_protocols || [],
     aliases: data.aliases || [],
     media: data.media || [],
+    specifications: data.specifications || [],
     important_specifications: data.important_specifications || [],
   };
 }
@@ -114,6 +122,7 @@ export async function getProductDetailApi(productIdOrModel) {
     const res = await fetch(
       `${API_BASE_URL}/products/${encodeURIComponent(productIdOrModel)}`
     );
+    if (res.status === 404) return null;
     if (!res.ok) throw new Error(`Product Detail API error ${res.status}`);
     const data = await res.json();
     return normalizeProductDetail(data);
@@ -124,6 +133,8 @@ export async function getProductDetailApi(productIdOrModel) {
 }
 
 // ─── POST /search ────────────────────────────────────────────────────────────────
+// Returns { query, mode, results } — results contain real scores and matched_features.
+// Do NOT fabricate percentage scores or generate explanation text from these fields.
 export async function searchProductsApi(query, limit = 10) {
   try {
     const res = await fetch(`${API_BASE_URL}/search`, {
@@ -131,15 +142,26 @@ export async function searchProductsApi(query, limit = 10) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, limit }),
     });
+    if (res.status === 400) {
+      const errData = await res.json().catch(() => ({}));
+      return { error: 'invalid_input', message: errData.message || 'Invalid search query' };
+    }
+    if (res.status === 503) {
+      return { error: 'unavailable', message: 'Search service is temporarily unavailable. Please try again.' };
+    }
     if (!res.ok) throw new Error(`Search API responded with status ${res.status}`);
     const data = await res.json();
-    return (data.results || []).map((r) => ({
-      ...normalizeProduct(r),
-      score: Math.min(98, Math.max(65, Math.round((r.scores?.keyword || 0.8) * 35 + 60))),
-      scores: r.scores,
-    }));
+    return {
+      query: data.query,
+      mode: data.mode,  // 'hybrid' | 'keyword' | 'semantic'
+      results: (data.results || []).map((r) => ({
+        ...normalizeProduct(r),
+        matched_features: r.matched_features || [],
+        scores: r.scores || {},
+      })),
+    };
   } catch (error) {
     console.warn('API Search failed:', error.message);
-    return null;
+    return { error: 'network_error', message: 'Could not connect to the search server.' };
   }
 }

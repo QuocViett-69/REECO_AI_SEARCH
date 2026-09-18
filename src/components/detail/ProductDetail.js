@@ -5,17 +5,33 @@ import {
   Folder,
   Tag,
   Radio,
-  User,
-  ShoppingCart,
   GitCompare,
   Check,
   ExternalLink,
   Loader,
   Activity,
-  Zap,
   Globe,
+  Zap,
 } from 'lucide-react';
 import { getProductDetailApi } from '../../services/api';
+
+// ─── Format normalized spec value for display ─────────────────────────────────
+function formatSpecValue(val) {
+  if (!val) return '—';
+  if (val.type === 'range') {
+    const min = val.min_value ?? '';
+    const max = val.max_value ?? '';
+    const unit = val.unit || '';
+    return `${min} – ${max} ${unit}`.trim();
+  }
+  if (val.type === 'number' || val.type === 'quantity') {
+    return `${val.value ?? ''} ${val.unit || ''}`.trim();
+  }
+  if (val.type === 'boolean') {
+    return val.value ? 'Yes' : 'No';
+  }
+  return String(val.value ?? '—');
+}
 
 export function ProductDetail({
   model,
@@ -23,10 +39,8 @@ export function ProductDetail({
   onBack,
   onToggleCompare,
   isInCompare,
-  onSelectProduct,
 }) {
   const [activeTab, setActiveTab] = useState('overview');
-  const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -76,19 +90,31 @@ export function ProductDetail({
   }
 
   const inCompare = isInCompare(product.model);
-  const specRows = Object.values(product.specs).flatMap((s) => Object.entries(s));
 
-  // Build benefits dynamically from API data
-  const benefits = [
-    ...(product.measurements?.map((m) => `Measures ${m.label_en}`) || []),
-    ...(product.capabilities?.map((c) => c.label_en || c.key) || []),
-    `${product.deviceType} designed for ${product.subcategory} applications`,
-    product.protocol && `Supports ${product.protocol} communication interface`,
-    'Low power consumption for remote deployments',
-    'Rugged construction for harsh environments',
-  ].filter(Boolean).slice(0, 6);
+  // ── Protocols: supported_protocols is a string array ─────────────────────────
+  const protocols = product.supported_protocols || [];
 
-  const tabs = ['overview', 'technical', 'benefits', 'specs', 'accessories', 'resources'];
+  // ── Tabs: only show tabs that have real data ──────────────────────────────────
+  const hasOverview = true;
+  const hasTechnical = (product.important_specifications || []).length > 0 || protocols.length > 0;
+  const hasCapabilities = (product.measurements || []).length > 0 || (product.capabilities || []).length > 0;
+  const hasSpecs = (product.specifications || []).length > 0;
+  const hasResources = (product.media || []).filter((m) => m.product_url).length > 0;
+
+  const tabs = [
+    hasOverview && 'overview',
+    hasTechnical && 'technical',
+    hasCapabilities && 'capabilities',
+    hasSpecs && 'specs',
+    hasResources && 'resources',
+  ].filter(Boolean);
+
+  // Ensure activeTab is valid after product loads
+  const currentTab = tabs.includes(activeTab) ? activeTab : tabs[0] || 'overview';
+
+  // Product URL from media (if available)
+  const productUrl = (product.media || []).find((m) => m.product_url)?.product_url
+    || `https://www.campbellsci.com/${product.model.toLowerCase()}`;
 
   return (
     <section className="page active" id="page-detail">
@@ -142,52 +168,16 @@ export function ProductDetail({
             <span className="badge badge-success">
               <Tag size={14} /> {product.subcategory}
             </span>
-            {product.protocol && (
-              <span className="badge badge-neutral">
-                <Radio size={14} /> {product.protocol}
+            {protocols.map((pr) => (
+              <span key={pr} className="badge badge-neutral">
+                <Radio size={14} /> {pr}
               </span>
-            )}
-            {product.measurements?.map((m) => (
+            ))}
+            {(product.measurements || []).map((m) => (
               <span key={m.key} className="badge badge-neutral" style={{ background: 'rgba(59,130,246,0.1)', color: '#3b82f6' }}>
                 <Activity size={14} /> {m.label_en}
               </span>
             ))}
-          </div>
-
-          <div className="pricing-box">
-            <div className="pricing-label">PRICING</div>
-            <div className="pricing-signin">
-              <User size={15} />
-              Sign in for pricing
-            </div>
-            <div className="pricing-row">
-              <input
-                type="number"
-                className="qty-input"
-                value={quantity}
-                min="1"
-                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value, 10) || 1))}
-              />
-              <button
-                type="button"
-                className="add-to-quote-btn"
-                onClick={() => alert(`Added ${quantity} x ${product.model} to quote request!`)}
-              >
-                <ShoppingCart size={15} />
-                ADD TO QUOTE
-              </button>
-            </div>
-            <div className="pricing-meta">
-              <div>
-                <strong>Model:</strong> <span>{product.model}</span>
-              </div>
-              <div>
-                <strong>Category:</strong> <span>{product.category}</span>
-              </div>
-              <div>
-                <strong>Device Type:</strong> <span>{product.deviceType}</span>
-              </div>
-            </div>
           </div>
 
           <div className="detail-actions">
@@ -200,7 +190,7 @@ export function ProductDetail({
               <span>{inCompare ? 'In Compare' : 'Add to Compare'}</span>
             </button>
             <a
-              href={`https://www.campbellscientific.com/${product.model.toLowerCase()}`}
+              href={productUrl}
               target="_blank"
               rel="noreferrer"
               className="btn btn-secondary"
@@ -217,7 +207,7 @@ export function ProductDetail({
         {tabs.map((tab) => (
           <div
             key={tab}
-            className={`detail-tab ${activeTab === tab ? 'active' : ''}`}
+            className={`detail-tab ${currentTab === tab ? 'active' : ''}`}
             onClick={() => setActiveTab(tab)}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -225,8 +215,8 @@ export function ProductDetail({
         ))}
       </div>
 
-      {/* Tab Contents */}
-      {activeTab === 'overview' && (
+      {/* ── Overview ─────────────────────────────────────────────────────────── */}
+      {currentTab === 'overview' && (
         <div className="tab-content active">
           <div className="content-section">
             <h3>Overview</h3>
@@ -234,11 +224,11 @@ export function ProductDetail({
               The <strong>{product.model}</strong> is a{' '}
               <strong>{product.deviceType.toLowerCase()}</strong> from Campbell Scientific,
               designed for <strong>{product.subcategory.toLowerCase()}</strong> applications.
-              {product.protocol && (
-                <> It communicates via <strong>{product.protocol}</strong> and is built for reliable, long-term environmental monitoring deployments.</>
+              {protocols.length > 0 && (
+                <> It supports <strong>{protocols.join(', ')}</strong> communication interface(s).</>
               )}
             </p>
-            {product.applications?.length > 0 && (
+            {(product.applications || []).length > 0 && (
               <>
                 <h4 style={{ marginTop: 20, marginBottom: 10, fontSize: 14, fontWeight: 600 }}>Applications</h4>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
@@ -254,50 +244,53 @@ export function ProductDetail({
         </div>
       )}
 
-      {activeTab === 'technical' && (
+      {/* ── Technical ─────────────────────────────────────────────────────────── */}
+      {currentTab === 'technical' && (
         <div className="tab-content active">
           <div className="content-section">
-            <h3>Technical Description</h3>
-            {product.supported_protocols?.length > 0 && (
+            <h3>Technical Specifications</h3>
+            {protocols.length > 0 && (
               <div style={{ marginBottom: 16 }}>
                 <strong>Supported Protocols:</strong>{' '}
-                {product.supported_protocols.map((p) => p.key || p).join(', ')}
+                {protocols.join(', ')}
               </div>
             )}
-            <p>
-              Technical specifications include:{' '}
-              {specRows.slice(0, 4).map(([k, v]) => `${k}: ${v}`).join('. ')}.
-              The {product.model} is engineered for precise, repeatable measurements with low
-              power consumption, making it ideal for remote, battery-operated installations.
-            </p>
-            {product.important_specifications?.length > 0 && (
-              <div style={{ marginTop: 16 }}>
-                <h4 style={{ marginBottom: 10, fontSize: 14, fontWeight: 600 }}>Key Specifications</h4>
-                <table className="spec-table">
-                  <tbody>
-                    {product.important_specifications.map((spec) => (
-                      <tr key={spec.canonical_key}>
-                        <td>{spec.canonical_key}</td>
-                        <td>{JSON.stringify(spec.normalized_value?.value ?? spec.normalized_value)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+            {(product.important_specifications || []).length > 0 ? (
+              <table className="spec-table">
+                <tbody>
+                  {product.important_specifications.map((spec) => (
+                    <tr key={spec.canonical_key}>
+                      <td>{spec.canonical_key.replace(/_/g, ' ')}</td>
+                      <td>{formatSpecValue(spec.normalized_value)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p style={{ color: 'var(--text-3)', fontSize: 13 }}>
+                No key specifications available.
+              </p>
             )}
           </div>
         </div>
       )}
 
-      {activeTab === 'benefits' && (
+      {/* ── Capabilities ─────────────────────────────────────────────────────── */}
+      {currentTab === 'capabilities' && (
         <div className="tab-content active">
           <div className="content-section">
-            <h3>Benefits</h3>
+            <h3>Capabilities &amp; Measurements</h3>
             <div className="benefits-list">
-              {benefits.map((b, i) => (
-                <div key={i} className="benefit-item">
+              {(product.measurements || []).map((m) => (
+                <div key={m.key} className="benefit-item">
+                  <Activity size={16} />
+                  <span>Measures {m.label_en}</span>
+                </div>
+              ))}
+              {(product.capabilities || []).map((c) => (
+                <div key={c.key} className="benefit-item">
                   <Zap size={16} />
-                  <span>{b}</span>
+                  <span>{c.label_en || c.key}</span>
                 </div>
               ))}
             </div>
@@ -305,17 +298,18 @@ export function ProductDetail({
         </div>
       )}
 
-      {activeTab === 'specs' && (
+      {/* ── Full Specs ───────────────────────────────────────────────────────── */}
+      {currentTab === 'specs' && (
         <div className="tab-content active">
           <div className="content-section">
             <h3>Specifications</h3>
-            {specRows.length > 0 ? (
+            {(product.specifications || []).length > 0 ? (
               <table className="spec-table">
                 <tbody>
-                  {specRows.map(([k, v]) => (
-                    <tr key={k}>
-                      <td>{k}</td>
-                      <td>{v}</td>
+                  {product.specifications.map((spec) => (
+                    <tr key={spec.specification_id || spec.canonical_key}>
+                      <td>{spec.canonical_key.replace(/_/g, ' ')}</td>
+                      <td>{formatSpecValue(spec.normalized_value)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -329,48 +323,23 @@ export function ProductDetail({
         </div>
       )}
 
-      {activeTab === 'accessories' && (
-        <div className="tab-content active">
-          <div className="content-section">
-            <h3>Accessories</h3>
-            <p style={{ color: 'var(--text-3)', fontSize: 13 }}>
-              Danh sách phụ kiện đang được cập nhật từ hệ thống.
-            </p>
-          </div>
-        </div>
-      )}
-
-      {activeTab === 'resources' && (
+      {/* ── Resources ────────────────────────────────────────────────────────── */}
+      {currentTab === 'resources' && (
         <div className="tab-content active">
           <div className="content-section">
             <h3>Resources</h3>
-            {product.media?.filter((m) => m.product_url).length > 0 ? (
-              <ul>
-                {product.media
-                  .filter((m) => m.product_url)
-                  .map((m, i) => (
-                    <li key={i}>
-                      <a href={m.product_url} target="_blank" rel="noreferrer"
-                        style={{ color: 'var(--primary-accent)', fontWeight: 600 }}>
-                        {m.metadata?.title || `Resource ${i + 1}`}
-                      </a>
-                    </li>
-                  ))}
-              </ul>
-            ) : (
-              <p>
-                Manuals, datasheets, and technical notes available on the{' '}
-                <a
-                  href={`https://www.campbellscientific.com/${product.model.toLowerCase()}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ color: 'var(--primary-accent)', fontWeight: 600 }}
-                >
-                  Campbell Scientific website
-                </a>
-                .
-              </p>
-            )}
+            <ul>
+              {(product.media || [])
+                .filter((m) => m.product_url)
+                .map((m, i) => (
+                  <li key={i}>
+                    <a href={m.product_url} target="_blank" rel="noreferrer"
+                      style={{ color: 'var(--primary-accent)', fontWeight: 600 }}>
+                      {m.metadata?.title || `Resource ${i + 1}`}
+                    </a>
+                  </li>
+                ))}
+            </ul>
           </div>
         </div>
       )}
