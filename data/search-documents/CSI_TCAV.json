@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TCAV",
+  "model": "TCAV",
+  "name_en": "TCAV",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Temperature Sensors (Air/Soil/Water)",
+    "subcategory_key": "temperature_sensors_air_soil_water",
+    "device_type": "Soil Temperature Sensor",
+    "device_type_key": "soil_temperature_sensor"
+  },
+  "measurements": [
+    {
+      "key": "soil_temperature",
+      "label_en": "Soil Temperature",
+      "label_vi": "Nhiệt độ đất"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_soil_temperature",
+      "label_en": "Measure Soil Temperature",
+      "label_vi": "Đo nhiệt độ đất"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "TCAV",
+    "CSI_TCAV"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_TCAV",
+      "model": "TCAV",
+      "product_name_en": "TCAV",
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.45,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "lb"
+        },
+        "condition": "with 15.24 m (50 ft) cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "TCAV",
+    "Sensors",
+    "Temperature Sensors (Air/Soil/Water)",
+    "Soil Temperature Sensor",
+    "Soil Temperature",
+    "Measure Soil Temperature",
+    "CSI_TCAV"
+  ],
+  "search_keywords_vi": [
+    "TCAV",
+    "Cảm biến",
+    "Cảm biến nhiệt độ không khí, đất và nước",
+    "Cảm biến nhiệt độ đất",
+    "Nhiệt độ đất",
+    "Đo nhiệt độ đất"
+  ],
+  "search_text_en": "TCAV | CSI_TCAV | Sensors | Temperature Sensors (Air/Soil/Water) | Soil Temperature Sensor | Soil Temperature | Measure Soil Temperature | Weight: 0.45 kg",
+  "search_text_vi": "TCAV | CSI_TCAV | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến nhiệt độ đất | Nhiệt độ đất | Đo nhiệt độ đất | Weight: 0.45 kg",
+  "search_text": "TCAV | CSI_TCAV | Sensors | Temperature Sensors (Air/Soil/Water) | Soil Temperature Sensor | Soil Temperature | Measure Soil Temperature | Weight: 0.45 kg | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến nhiệt độ đất | Nhiệt độ đất | Đo nhiệt độ đất",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "9f9e484bc09f1a05b7a37c0b3a4e54e2163892f214cf665579081dc0465a14d0"
+}

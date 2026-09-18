@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_BLACKGLOBE",
+  "model": "BLACKGLOBE",
+  "name_en": "BlackGlobe Temperature Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Air Temperature Sensors",
+    "subcategory_key": "air_temperature_sensors",
+    "device_type": "Black Globe Temperature Sensor",
+    "device_type_key": "black_globe_temperature_sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "BlackGlobe Temperature Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_BLACKGLOBE.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "BlackGlobe Temperature Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_BLACKGLOBE.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "BLACKGLOBE",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "BLACKGLOBE"
+        }
+      ]
+    },
+    {
+      "value": "CSI_BLACKGLOBE",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_BLACKGLOBE"
+        }
+      ]
+    },
+    {
+      "value": "BlackGlobe Temperature Sensor",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "BlackGlobe Temperature Sensor"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "BLACKGLOBE",
+      "BlackGlobe Temperature Sensor",
+      "Sensors",
+      "Air Temperature Sensors",
+      "Black Globe Temperature Sensor",
+      "Temperature",
+      "temperature measurement",
+      "Measure Temperature",
+      "CSI_BLACKGLOBE"
+    ],
+    "vi": [
+      "BLACKGLOBE",
+      "Cảm biến",
+      "Cảm biến nhiệt độ không khí",
+      "Cảm biến nhiệt độ cầu đen",
+      "Nhiệt độ",
+      "Đo nhiệt độ"
+    ]
+  }
+}

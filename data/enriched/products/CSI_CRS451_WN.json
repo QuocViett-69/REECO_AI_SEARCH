@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CRS451_WN",
+  "model": "CRS451-WN",
+  "name_en": "CRS451 Stainless-Steel Water-Level Recording Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Water Level Sensors",
+    "subcategory_key": "water_level_sensors",
+    "device_type": "Water Level Recording Sensor",
+    "device_type_key": "water_level_recording_sensor"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "HTTPS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "dai_o_o_sau_nuoc_ngot_0_en_102_m",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRS451_WN.json",
+            "product_index": 0,
+            "spec_index": 27,
+            "source_rows": [
+              53,
+              54,
+              55,
+              56,
+              57
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tuy_chon_au_ra",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRS451_WN.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              11
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "CRS451-WN",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CRS451-WN"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CRS451_WN",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CRS451_WN"
+        }
+      ]
+    },
+    {
+      "value": "CRS451 Stainless-Steel Water-Level Recording Sensor",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CRS451 Stainless-Steel Water-Level Recording Sensor"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CRS451-WN",
+      "CRS451 Stainless-Steel Water-Level Recording Sensor",
+      "Sensors",
+      "Water Level Sensors",
+      "Water Level Recording Sensor",
+      "HTTPS",
+      "USB",
+      "CSI_CRS451_WN"
+    ],
+    "vi": [
+      "CRS451-WN",
+      "Cảm biến",
+      "Cảm biến mực nước",
+      "Cảm biến ghi mực nước",
+      "HTTPS",
+      "USB"
+    ]
+  }
+}

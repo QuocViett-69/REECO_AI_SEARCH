@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_TCAV",
+  "model": "TCAV",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_TCAV.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_TCAV.json#0",
+    "raw_product_id": "CSI_TCAV",
+    "raw_model": "TCAV"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_TCAV",
+      "model": "TCAV",
+      "product_name_en": "TCAV",
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Name",
+      "value_raw": "TCAV",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Type",
+      "value_raw": "Averaging Soil Thermocouple Probe",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Manufacturer",
+      "value_raw": "Campbell Scientific, Inc.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Parameter",
+      "value_raw": "Average soil temperature",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "measurement_parameter"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Primary Application",
+      "value_raw": "Energy-balance / soil heat flux systems",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "primary_application"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Thermocouple Type",
+      "value_raw": "Type E",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "thermocouple_type"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Thermocouple Materials",
+      "value_raw": "Chromel-Constantan",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "thermocouple_materials"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Number of Thermocouples",
+      "value_raw": "4",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 4,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "number_of_thermocouples"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Wire Gauge",
+      "value_raw": "24 AWG",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "wire_gauge"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Maximum Spacing Between Thermocouple Pairs",
+      "value_raw": "Up to 1 m",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "m",
+        "qualifier": "≤"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "maximum_spacing_between_thermocouple_pairs"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Typical Output",
+      "value_raw": "60 µV/°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "typical_output"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "0.45 kg (1 lb) with 15.24 m (50 ft) cable",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.45,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "lb"
+        },
+        "condition": "with 15.24 m (50 ft) cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Reference Temperature Required",
+      "value_raw": "Yes",
+      "type": "boolean",
+      "normalized": {
+        "type": "boolean",
+        "value": true
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "reference_temperature_required",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Recommended Reference Temperature Source",
+      "value_raw": "Data logger panel temperature sensor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "recommended_reference_temperature_source",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Differential Measurement Instruction",
+      "value_raw": "TCDiff()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "differential_measurement_instruction"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Single-Ended Measurement Instruction",
+      "value_raw": "TCSe()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "single_ended_measurement_instruction"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Recommended Measurement Instruction",
+      "value_raw": "TCDiff()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "recommended_measurement_instruction"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Thermocouple Type Setting in CRBasic",
+      "value_raw": "TypeE",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "thermocouple_type_setting_in_crbasic"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Reference Temperature Instruction",
+      "value_raw": "PanelTemp()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "reference_temperature_instruction",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Purple Wire Function",
+      "value_raw": "Analog signal",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "purple_wire_function"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Red Wire Function",
+      "value_raw": "Signal reference",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "red_wire_function"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Differential High Connection",
+      "value_raw": "U configured for differential high / DIFF H",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "differential_high_connection"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Differential Low Connection",
+      "value_raw": "U configured for differential low / DIFF L",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "differential_low_connection"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Single-Ended Connection",
+      "value_raw": "U configured for single-ended / SE",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "single_ended_connection"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Typical Soil Heat Flux System Components",
+      "value_raw": "TCAV, HFP01SC Soil Heat Flux Plates, and CS616 / CS650 / CS655 water content reflectometer",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "typical_soil_heat_flux_system_components"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Warranty",
+      "value_raw": "12 months",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_TCAV.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "warranty"
+    }
+  ]
+}

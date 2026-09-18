@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_HFP01",
+  "model": "HFP01",
+  "raw_record_ref": {
+    "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+    "product_index": 0,
+    "raw_record_key": "HFP01_HFP01SC_Specifications_SplitCells.json#0",
+    "raw_product_id": "CSI_HFP01",
+    "raw_model": "HFP01"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_HFP01",
+      "model": "HFP01",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Type",
+          "value_raw": "Thermopile"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Expected Typical Accuracy",
+          "value_raw": "Within -15% to +5% in most common soils (12 hour totals)"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_HFP01SC",
+      "model": "HFP01SC",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Type",
+          "value_raw": "Thermopile with film heater"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Expected Typical Accuracy",
+          "value_raw": "±3% of reading"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Type",
+      "value_raw": "Thermopile",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "sensor_type"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensitivity",
+      "value_raw": "50 μV W⁻¹ m⁻² (nominal)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "sensitivity"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Nominal Resistance",
+      "value_raw": "2 Ω",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2,
+        "unit": "Ω",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "nominal_resistance"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Temperature Range",
+      "value_raw": "-30° to +70°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -30,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Thermal Resistance",
+      "value_raw": "< 6.25 x 10⁻³ K m² W⁻¹",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "sensor_thermal_resistance"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Range",
+      "value_raw": "±2000 W m⁻²",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2000,
+        "unit": "W/m²",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "measurement_range"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Expected Typical Accuracy",
+      "value_raw": "Within -15% to +5% in most common soils (12 hour totals)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "expected_typical_accuracy"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Plate Diameter",
+      "value_raw": "80 mm (3.15 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 80,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 3.15,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "plate_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Plate Thickness",
+      "value_raw": "5 mm (0.20 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 5,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.2,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "plate_thickness"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "200 g (7.05 oz) without cable",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

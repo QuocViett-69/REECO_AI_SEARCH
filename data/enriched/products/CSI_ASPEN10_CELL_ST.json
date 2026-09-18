@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_ASPEN10_CELL_ST",
+  "model": "Aspen10-CELL-ST",
+  "name_en": "Aspen10 Edge Device for a Single Sensor -CEL",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Data Loggers / Edge Devices",
+    "subcategory_key": "data_loggers_edge_devices",
+    "device_type": "Data Logger / Edge Device",
+    "device_type_key": "data_logger_edge_device"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "HTTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              31
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "MQTT",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              31
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "digital_io",
+          "raw_ref": {
+            "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+            "product_index": 0,
+            "spec_index": 9,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              30
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sdi_12",
+          "raw_ref": {
+            "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              34
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "Aspen10-CELL-ST",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "Aspen10-CELL-ST"
+        }
+      ]
+    },
+    {
+      "value": "CSI_ASPEN10_CELL_ST",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_ASPEN10_CELL_ST"
+        }
+      ]
+    },
+    {
+      "value": "Aspen10 Edge Device for a Single Sensor -CEL",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Aspen10 Edge Device for a Single Sensor -CEL"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "Aspen10-CELL-ST",
+      "Aspen10 Edge Device for a Single Sensor -CEL",
+      "Measurement Devices",
+      "Data Loggers / Edge Devices",
+      "Data Logger / Edge Device",
+      "HTTP",
+      "MQTT",
+      "SDI-12",
+      "CSI_ASPEN10_CELL_ST"
+    ],
+    "vi": [
+      "Aspen10-CELL-ST",
+      "Thiết bị đo lường",
+      "Bộ ghi dữ liệu / thiết bị biên",
+      "HTTP",
+      "MQTT",
+      "SDI-12"
+    ]
+  }
+}

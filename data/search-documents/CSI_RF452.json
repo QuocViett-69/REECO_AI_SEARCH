@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RF452",
+  "model": "RF452",
+  "name_en": "RF452",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Radios",
+    "subcategory_key": "radios",
+    "device_type": "Spread-Spectrum Radio",
+    "device_type_key": "spread_spectrum_radio"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "CS I/O",
+    "PakBus",
+    "RS-232",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "RF452",
+    "CSI_RF452"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_RF452",
+      "model": "RF452",
+      "product_name_en": "RF452",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Available Configurations",
+          "value_raw": "RF452-NA – for use in US/Canada (ships as 40389, 16675, and 17648); RF452-AU – AUS for use in Australia (ships as 40753, 16675, and 17648)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Configuration Tool",
+          "value_raw": "Campbell Scientific Device Configuration Utility (DevConfig)"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 85,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF452.json",
+        "product_index": 0,
+        "spec_index": 38,
+        "source_rows": [
+          40
+        ]
+      }
+    },
+    {
+      "canonical_key": "input_voltage",
+      "name": "Input Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 28,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF452.json",
+        "product_index": 0,
+        "spec_index": 44,
+        "source_rows": [
+          46
+        ]
+      }
+    },
+    {
+      "canonical_key": "frequency",
+      "name": "Frequency",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 902,
+        "max_value": 928,
+        "unit": "MHz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF452.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      }
+    },
+    {
+      "canonical_key": "maximum_rf_power",
+      "name": "Maximum RF Power",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "number",
+        "value": 30,
+        "unit": "dBm",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "W"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF452.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      }
+    },
+    {
+      "canonical_key": "frequency_zones",
+      "name": "Frequency Zones",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 16,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF452.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      }
+    },
+    {
+      "canonical_key": "frequency_key",
+      "name": "Frequency Key",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 14,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF452.json",
+        "product_index": 0,
+        "spec_index": 36,
+        "source_rows": [
+          38
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.18,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.4,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF452.json",
+        "product_index": 0,
+        "spec_index": 48,
+        "source_rows": [
+          50
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "RF452",
+    "Communications",
+    "Radios",
+    "Spread-Spectrum Radio",
+    "CS I/O",
+    "PakBus",
+    "RS-232",
+    "USB",
+    "CSI_RF452"
+  ],
+  "search_keywords_vi": [
+    "RF452",
+    "Thiết bị truyền thông",
+    "Thiết bị vô tuyến",
+    "Thiết bị vô tuyến trải phổ",
+    "CS I/O",
+    "PakBus",
+    "RS-232",
+    "USB"
+  ],
+  "search_text_en": "RF452 | CSI_RF452 | Communications | Radios | Spread-Spectrum Radio | CS I/O | PakBus | RS-232 | USB | Available Configurations: RF452-NA – for use in US/Canada (ships as 40389, 16675, and 17648); RF452-AU – AUS for use in Australia (ships as 40753, 16675, and 17648) | Configuration Tool: Campbell Scientific Device Configuration Utility (DevConfig) | Operating Temperature Range: -40 to 85 °C | Input Voltage: 7 to 28 V DC | Frequency: 902 to 928 MHz | Maximum RF Power: 30 dBm | Frequency Zones: 16 | Frequency Key: 0 to 14 | Weight: 0.18 kg",
+  "search_text_vi": "RF452 | CSI_RF452 | Thiết bị truyền thông | Thiết bị vô tuyến | Thiết bị vô tuyến trải phổ | CS I/O | PakBus | RS-232 | USB | Available Configurations: RF452-NA – for use in US/Canada (ships as 40389, 16675, and 17648); RF452-AU – AUS for use in Australia (ships as 40753, 16675, and 17648) | Configuration Tool: Campbell Scientific Device Configuration Utility (DevConfig) | Operating Temperature Range: -40 to 85 °C | Input Voltage: 7 to 28 V DC | Frequency: 902 to 928 MHz | Maximum RF Power: 30 dBm | Frequency Zones: 16 | Frequency Key: 0 to 14 | Weight: 0.18 kg",
+  "search_text": "RF452 | CSI_RF452 | Communications | Radios | Spread-Spectrum Radio | CS I/O | PakBus | RS-232 | USB | Available Configurations: RF452-NA – for use in US/Canada (ships as 40389, 16675, and 17648); RF452-AU – AUS for use in Australia (ships as 40753, 16675, and 17648) | Configuration Tool: Campbell Scientific Device Configuration Utility (DevConfig) | Operating Temperature Range: -40 to 85 °C | Input Voltage: 7 to 28 V DC | Frequency: 902 to 928 MHz | Maximum RF Power: 30 dBm | Frequency Zones: 16 | Frequency Key: 0 to 14 | Weight: 0.18 kg | Thiết bị truyền thông | Thiết bị vô tuyến | Thiết bị vô tuyến trải phổ",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "dbd2b98537e6fa3a78f2fdb45bc0cb8abfeb86a6452d0d7016993522de2e2056"
+}

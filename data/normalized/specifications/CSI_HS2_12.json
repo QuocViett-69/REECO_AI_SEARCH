@@ -1,0 +1,789 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_HS2_12",
+  "model": "HS2-12",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_HS2_12.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_HS2_12.json#0",
+    "raw_product_id": "CSI_HS2_12",
+    "raw_model": "HS2-12"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_HS2_12",
+      "model": "HS2-12",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration",
+          "value_raw": "CS659 Sensor & Rods"
+        },
+        {
+          "section": "Handheld Display",
+          "name_en": "Weight",
+          "value_raw": "340 g (12 oz)"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "-NOTE-",
+          "value_raw": "The CS659 and CS658 cannot share rods."
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Water Content Accuracy",
+          "value_raw": "3% typical (Accuracy assumes solution EC of < 6.5 dS/m when using the CS659 12-cm probe.)"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Volumetric Water Content Resolution",
+          "value_raw": "< 0.05%"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Volumetric Water Content Range",
+          "value_raw": "0% to 50% VWC"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Cable Type",
+          "value_raw": "Spiral"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Cable Length",
+          "value_raw": "250 cm (98 in.) extended"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Rod Diameter",
+          "value_raw": "5 mm (0.14 in.)"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Rod Length",
+          "value_raw": "120 mm (4.7 in.) for the CS659 12-cm probe"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Body Dimensions",
+          "value_raw": "100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.)"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Weight",
+          "value_raw": "450 g (15.9 oz)"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_HS2_20",
+      "model": "HS2-20",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration",
+          "value_raw": "CS658 Sensor & Rods"
+        },
+        {
+          "section": "Handheld Display",
+          "name_en": "Weight",
+          "value_raw": "340 g (12 oz)"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "-NOTE-",
+          "value_raw": "The CS659 and CS658 cannot share rods."
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Water Content Accuracy",
+          "value_raw": "3% typical (Accuracy assumes solution EC of < 4 dS/m when using the CS658 20-cm probe.)"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Volumetric Water Content Resolution",
+          "value_raw": "< 0.05%"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Volumetric Water Content Range",
+          "value_raw": "0% to 50% VWC"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Cable Type",
+          "value_raw": "Spiral"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Cable Length",
+          "value_raw": "250 cm (98 in.) extended"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Rod Diameter",
+          "value_raw": "5 mm (0.14 in.)"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Rod Length",
+          "value_raw": "200 mm (7.9 in.) for the CS658 20-cm probe"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Body Dimensions",
+          "value_raw": "100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.)"
+        },
+        {
+          "section": "Probe Options",
+          "name_en": "Weight",
+          "value_raw": "450 g (15.9 oz)"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_HS2_NS",
+      "model": "HS2-NS",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration",
+          "value_raw": "No Sensor"
+        },
+        {
+          "section": "Handheld Display",
+          "name_en": "Weight",
+          "value_raw": "340 g (12 oz)"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "CONFIGURATION",
+      "name_raw": "Configuration",
+      "value_raw": "CS659 Sensor & Rods",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "configuration"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurements Made",
+      "value_raw": "Volumetric water content (VWC) of porous media (such as soil)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "measurements_made"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Required Equipment",
+      "value_raw": "HS2 is a complete system.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "required_equipment"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Soil Suitability",
+      "value_raw": "Short rods are easy to install in hard soil. Suitable for soils with higher electrical conductivity.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "soil_suitability"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Rods",
+      "value_raw": "Replaceable",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "rods"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensors",
+      "value_raw": "Interchangeable sensors; can swap the 12 cm and 20 cm sensors with the reader.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "sensors"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Display",
+      "value_raw": "128 x 64 pixel graphic LCD",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "display"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Backlight",
+      "value_raw": "Blue and white LED (brightness-adjustable)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "backlight"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "GPS Accuracy",
+      "value_raw": "±1 ms time with GPS sync | ±5 m (16.4 ft) typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          13,
+          14
+        ]
+      },
+      "canonical_key": "gps_accuracy"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Bluetooth Range",
+      "value_raw": "~10 m (~30 ft)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "bluetooth_range"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Data Storage",
+      "value_raw": "> 1000 records (ring memory)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "data_storage"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Zone Storage",
+      "value_raw": "> 100 records",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "zone_storage"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Power Supply",
+      "value_raw": "6 Vdc, 4 AA batteries",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "power_supply",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Battery Life",
+      "value_raw": "6 to 12 months (typical usage)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "battery_life"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Dimensions",
+      "value_raw": "200 x 100 x 58 mm (7.9 x 3.9 x 2.3 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "handheld_display_dimensions"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Handheld Display",
+      "name_raw": "Weight",
+      "value_raw": "340 g (12 oz)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 340,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 12,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "handheld_display_weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Typical Power Consumption of Display",
+      "name_raw": "Sleep",
+      "value_raw": "20 µA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 20,
+        "unit": "µA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "sleep",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Typical Power Consumption of Display",
+      "name_raw": "Backlight Off",
+      "value_raw": "2 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "backlight_off",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Typical Power Consumption of Display",
+      "name_raw": "Backlight at 60%",
+      "value_raw": "18 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 18,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "backlight_at_60_percent",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Typical Power Consumption of Display",
+      "name_raw": "Backlight at 100%",
+      "value_raw": "30 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 30,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "backlight_at_100_percent",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Typical Power Consumption of Display",
+      "name_raw": "GPS Active",
+      "value_raw": "35 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 35,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "gps_active",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Typical Power Consumption of Display",
+      "name_raw": "Bluetooth Active",
+      "value_raw": "30 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 30,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "bluetooth_active",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "-NOTE-",
+      "value_raw": "The CS659 and CS658 cannot share rods.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "note"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Water Content Accuracy",
+      "value_raw": "3% typical (Accuracy assumes solution EC of < 6.5 dS/m when using the CS659 12-cm probe.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "water_content_accuracy"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Volumetric Water Content Resolution",
+      "value_raw": "< 0.05%",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.05,
+        "unit": "%",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "volumetric_water_content_resolution"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Volumetric Water Content Range",
+      "value_raw": "0% to 50% VWC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "volumetric_water_content_range"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Cable Type",
+      "value_raw": "Spiral",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "cable_type"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Cable Length",
+      "value_raw": "250 cm (98 in.) extended",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "cable_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Rod Diameter",
+      "value_raw": "5 mm (0.14 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 5,
+        "unit": "mm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.14,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "rod_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Rod Length",
+      "value_raw": "120 mm (4.7 in.) for the CS659 12-cm probe",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "rod_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Body Dimensions",
+      "value_raw": "100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "body_dimensions"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "section": "Probe Options",
+      "name_raw": "Weight",
+      "value_raw": "450 g (15.9 oz)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 450,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 15.9,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HS2_12.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "probe_options_weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

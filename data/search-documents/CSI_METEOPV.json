@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_METEOPV",
+  "model": "MeteoPV",
+  "name_en": "MeteoPV",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Systems",
+    "category_key": "systems",
+    "subcategory": "Solar Monitoring Stations",
+    "subcategory_key": "solar_monitoring_stations",
+    "device_type": "Solar Monitoring Station",
+    "device_type_key": "solar_monitoring_station"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "Ethernet",
+    "Modbus",
+    "Modbus RTU",
+    "Modbus TCP",
+    "RJ45",
+    "RS-485",
+    "TCP",
+    "TCP/IP",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "MeteoPV",
+    "CSI_METEOPV"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_METEOPV",
+      "model": "MeteoPV",
+      "product_name_en": "MeteoPV",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Sensor Configuration",
+          "value_raw": "Up to 4 pyranometers, 1 compact weather sensor, and up to 4 back-of-module temperature sensors"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration Interface",
+          "value_raw": "Onboard browser-based user interface"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration URL",
+          "value_raw": "www.linktodevice.com"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration File Management",
+          "value_raw": "Apply to Station; Save to File; Load from File"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Remote Configuration Requirement",
+          "value_raw": "Administrator account required for configuration over Ethernet"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          30
+        ]
+      }
+    },
+    {
+      "canonical_key": "rs_485_current_supply_limit",
+      "name": "RS-485 Current Supply Limit",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 500,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "MeteoPV",
+    "Systems",
+    "Solar Monitoring Stations",
+    "Solar Monitoring Station",
+    "Ethernet",
+    "Modbus",
+    "Modbus RTU",
+    "Modbus TCP",
+    "RJ45",
+    "RS-485",
+    "TCP",
+    "TCP/IP",
+    "USB",
+    "CSI_METEOPV"
+  ],
+  "search_keywords_vi": [
+    "MeteoPV",
+    "Hệ thống",
+    "Trạm giám sát năng lượng mặt trời",
+    "Ethernet",
+    "Modbus",
+    "Modbus RTU",
+    "Modbus TCP",
+    "RJ45",
+    "RS-485",
+    "TCP",
+    "TCP/IP",
+    "USB"
+  ],
+  "search_text_en": "MeteoPV | CSI_METEOPV | Systems | Solar Monitoring Stations | Solar Monitoring Station | Ethernet | Modbus | Modbus RTU | Modbus TCP | RJ45 | RS-485 | TCP | TCP/IP | USB | Maximum Sensor Configuration: Up to 4 pyranometers, 1 compact weather sensor, and up to 4 back-of-module temperature sensors | Configuration Interface: Onboard browser-based user interface | Configuration URL: www.linktodevice.com | Configuration File Management: Apply to Station; Save to File; Load from File | Remote Configuration Requirement: Administrator account required for configuration over Ethernet | Operating Temperature Range: -40 to 70 °C | RS-485 Current Supply Limit: 500 mA",
+  "search_text_vi": "MeteoPV | CSI_METEOPV | Hệ thống | Trạm giám sát năng lượng mặt trời | Ethernet | Modbus | Modbus RTU | Modbus TCP | RJ45 | RS-485 | TCP | TCP/IP | USB | Maximum Sensor Configuration: Up to 4 pyranometers, 1 compact weather sensor, and up to 4 back-of-module temperature sensors | Configuration Interface: Onboard browser-based user interface | Configuration URL: www.linktodevice.com | Configuration File Management: Apply to Station; Save to File; Load from File | Remote Configuration Requirement: Administrator account required for configuration over Ethernet | Operating Temperature Range: -40 to 70 °C | RS-485 Current Supply Limit: 500 mA",
+  "search_text": "MeteoPV | CSI_METEOPV | Systems | Solar Monitoring Stations | Solar Monitoring Station | Ethernet | Modbus | Modbus RTU | Modbus TCP | RJ45 | RS-485 | TCP | TCP/IP | USB | Maximum Sensor Configuration: Up to 4 pyranometers, 1 compact weather sensor, and up to 4 back-of-module temperature sensors | Configuration Interface: Onboard browser-based user interface | Configuration URL: www.linktodevice.com | Configuration File Management: Apply to Station; Save to File; Load from File | Remote Configuration Requirement: Administrator account required for configuration over Ethernet | Operating Temperature Range: -40 to 70 °C | RS-485 Current Supply Limit: 500 mA | Hệ thống | Trạm giám sát năng lượng mặt trời",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "8cae2423d2b881daa6f1a3d630c7d8cbbed422c244a2f2f7da446816e7e0ab85"
+}

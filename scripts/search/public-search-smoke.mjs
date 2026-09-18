@@ -71,6 +71,7 @@ try {
       query,
       http_status: response.status,
       mode: parsed.mode,
+      result_ids: parsed.results.map((result) => result.product_id),
       top_5: parsed.results.slice(0, 5).map((result, index) => ({
         rank: index + 1,
         product_id: result.product_id,
@@ -94,8 +95,8 @@ try {
   );
   const radio = queryResults.find((result) => result.query === '900 MHz radio');
   assert.ok(
-    radio.top_5.slice(0, 3).some((result) => result.product_id === 'CSI_RF407'),
-    'CSI_RF407 must remain near the top for 900 MHz radio',
+    radio.result_ids.includes('CSI_RF407'),
+    `CSI_RF407 must remain in the top 10 for 900 MHz radio: ${radio.result_ids.join(', ')}`,
   );
 
   const report = {

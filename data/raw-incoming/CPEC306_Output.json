@@ -1,0 +1,879 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CPEC306.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CPEC306_DW",
+      "manufacturer": "Campbell Scientific",
+      "model": "CPEC306-DW",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Option",
+          "name_vi": "Tùy chọn cấu hình",
+          "value_raw": "Wired for CR6",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Category",
+          "name_vi": "Nhóm cấu hình",
+          "value_raw": "Data Logger / Wiring",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30° to +50°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "10.5 to 16.0 Vdc",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Maximum",
+          "name_vi": "Công suất tối đa",
+          "value_raw": "35 W (maximum, at cold startup)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Typical",
+          "name_vi": "Công suất điển hình",
+          "value_raw": "12 W (typical)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "54 x 44.5 x 29.7 cm (21.3 x 17.5 x 11.7 in.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - Without Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi không có module Granite Volt 116 tùy chọn",
+          "value_raw": "13.72 kg (30.25 lb)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - With Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi có module Granite Volt 116 tùy chọn",
+          "value_raw": "14.6 kg (32.2 lb) when configured with optional Granite Volt 116 module",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Inlet Connection",
+          "name_vi": "Kết nối đầu vào",
+          "value_raw": "3/8-in. Swagelok",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pressure Sensor Range",
+          "name_vi": "Dải cảm biến áp suất",
+          "value_raw": "15 to 115 kPa",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pumping Speed",
+          "name_vi": "Tốc độ bơm",
+          "value_raw": "3 to 9 LPM (automatically controlled at the set point, typically 8 LPM)",
+          "source_rows": [
+            17
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cpec306.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/cpec306"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11117",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CPEC306_6NA",
+      "manufacturer": "Campbell Scientific",
+      "model": "CPEC306-6NA",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Option",
+          "name_vi": "Tùy chọn cấu hình",
+          "value_raw": "w/CR6-NA",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Category",
+          "name_vi": "Nhóm cấu hình",
+          "value_raw": "Data Logger",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30° to +50°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "10.5 to 16.0 Vdc",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Maximum",
+          "name_vi": "Công suất tối đa",
+          "value_raw": "35 W (maximum, at cold startup)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Typical",
+          "name_vi": "Công suất điển hình",
+          "value_raw": "12 W (typical)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "54 x 44.5 x 29.7 cm (21.3 x 17.5 x 11.7 in.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - Without Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi không có module Granite Volt 116 tùy chọn",
+          "value_raw": "13.72 kg (30.25 lb)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - With Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi có module Granite Volt 116 tùy chọn",
+          "value_raw": "14.6 kg (32.2 lb) when configured with optional Granite Volt 116 module",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Inlet Connection",
+          "name_vi": "Kết nối đầu vào",
+          "value_raw": "3/8-in. Swagelok",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pressure Sensor Range",
+          "name_vi": "Dải cảm biến áp suất",
+          "value_raw": "15 to 115 kPa",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pumping Speed",
+          "name_vi": "Tốc độ bơm",
+          "value_raw": "3 to 9 LPM (automatically controlled at the set point, typically 8 LPM)",
+          "source_rows": [
+            17
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cpec306.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/cpec306"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11117",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CPEC306_WIFI",
+      "manufacturer": "Campbell Scientific",
+      "model": "CPEC306-WIFI",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Option",
+          "name_vi": "Tùy chọn cấu hình",
+          "value_raw": "w/CR6-WIFI",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Category",
+          "name_vi": "Nhóm cấu hình",
+          "value_raw": "Data Logger",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30° to +50°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "10.5 to 16.0 Vdc",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Maximum",
+          "name_vi": "Công suất tối đa",
+          "value_raw": "35 W (maximum, at cold startup)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Typical",
+          "name_vi": "Công suất điển hình",
+          "value_raw": "12 W (typical)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "54 x 44.5 x 29.7 cm (21.3 x 17.5 x 11.7 in.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - Without Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi không có module Granite Volt 116 tùy chọn",
+          "value_raw": "13.72 kg (30.25 lb)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - With Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi có module Granite Volt 116 tùy chọn",
+          "value_raw": "14.6 kg (32.2 lb) when configured with optional Granite Volt 116 module",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Inlet Connection",
+          "name_vi": "Kết nối đầu vào",
+          "value_raw": "3/8-in. Swagelok",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pressure Sensor Range",
+          "name_vi": "Dải cảm biến áp suất",
+          "value_raw": "15 to 115 kPa",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pumping Speed",
+          "name_vi": "Tốc độ bơm",
+          "value_raw": "3 to 9 LPM (automatically controlled at the set point, typically 8 LPM)",
+          "source_rows": [
+            17
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cpec306.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/cpec306"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11117",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CPEC306_AM",
+      "manufacturer": "Campbell Scientific",
+      "model": "CPEC306-AM",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Option",
+          "name_vi": "Tùy chọn cấu hình",
+          "value_raw": "w/VOLT116",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Category",
+          "name_vi": "Nhóm cấu hình",
+          "value_raw": "Expansion Module",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30° to +50°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "10.5 to 16.0 Vdc",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Maximum",
+          "name_vi": "Công suất tối đa",
+          "value_raw": "35 W (maximum, at cold startup)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Typical",
+          "name_vi": "Công suất điển hình",
+          "value_raw": "12 W (typical)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "54 x 44.5 x 29.7 cm (21.3 x 17.5 x 11.7 in.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - Without Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi không có module Granite Volt 116 tùy chọn",
+          "value_raw": "13.72 kg (30.25 lb) without optional Granite Volt 116 module",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - With Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi có module Granite Volt 116 tùy chọn",
+          "value_raw": "14.6 kg (32.2 lb) with optional Granite Volt 116 module",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Inlet Connection",
+          "name_vi": "Kết nối đầu vào",
+          "value_raw": "3/8-in. Swagelok",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pressure Sensor Range",
+          "name_vi": "Dải cảm biến áp suất",
+          "value_raw": "15 to 115 kPa",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pumping Speed",
+          "name_vi": "Tốc độ bơm",
+          "value_raw": "3 to 9 LPM (automatically controlled at the set point, typically 8 LPM)",
+          "source_rows": [
+            17
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cpec306.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/cpec306"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11117",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CPEC306_KD",
+      "manufacturer": "Campbell Scientific",
+      "model": "CPEC306-KD",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Option",
+          "name_vi": "Tùy chọn cấu hình",
+          "value_raw": "w/Keyboard/Display",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Category",
+          "name_vi": "Nhóm cấu hình",
+          "value_raw": "Keyboard / Display",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30° to +50°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "10.5 to 16.0 Vdc",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Maximum",
+          "name_vi": "Công suất tối đa",
+          "value_raw": "35 W (maximum, at cold startup)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Typical",
+          "name_vi": "Công suất điển hình",
+          "value_raw": "12 W (typical)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "54 x 44.5 x 29.7 cm (21.3 x 17.5 x 11.7 in.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - Without Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi không có module Granite Volt 116 tùy chọn",
+          "value_raw": "13.72 kg (30.25 lb)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - With Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi có module Granite Volt 116 tùy chọn",
+          "value_raw": "14.6 kg (32.2 lb) when configured with optional Granite Volt 116 module",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Inlet Connection",
+          "name_vi": "Kết nối đầu vào",
+          "value_raw": "3/8-in. Swagelok",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pressure Sensor Range",
+          "name_vi": "Dải cảm biến áp suất",
+          "value_raw": "15 to 115 kPa",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pumping Speed",
+          "name_vi": "Tốc độ bơm",
+          "value_raw": "3 to 9 LPM (automatically controlled at the set point, typically 8 LPM)",
+          "source_rows": [
+            17
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cpec306.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/cpec306"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11117",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CPEC306_SS2",
+      "manufacturer": "Campbell Scientific",
+      "model": "CPEC306-SS2",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Option",
+          "name_vi": "Tùy chọn cấu hình",
+          "value_raw": "w/CSAT3A Harsh",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Category",
+          "name_vi": "Nhóm cấu hình",
+          "value_raw": "Sonic Anemometer",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-30° to +50°C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "10.5 to 16.0 Vdc",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Maximum",
+          "name_vi": "Công suất tối đa",
+          "value_raw": "35 W (maximum, at cold startup)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Power - Typical",
+          "name_vi": "Công suất điển hình",
+          "value_raw": "12 W (typical)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "54 x 44.5 x 29.7 cm (21.3 x 17.5 x 11.7 in.)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - Without Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi không có module Granite Volt 116 tùy chọn",
+          "value_raw": "13.72 kg (30.25 lb)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SYSTEM ENCLOSURE",
+          "name_en": "Weight - With Optional Granite Volt 116 Module",
+          "name_vi": "Khối lượng khi có module Granite Volt 116 tùy chọn",
+          "value_raw": "14.6 kg (32.2 lb) when configured with optional Granite Volt 116 module",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Inlet Connection",
+          "name_vi": "Kết nối đầu vào",
+          "value_raw": "3/8-in. Swagelok",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pressure Sensor Range",
+          "name_vi": "Dải cảm biến áp suất",
+          "value_raw": "15 to 115 kPa",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "PUMP MODULE",
+          "name_en": "Pumping Speed",
+          "name_vi": "Tốc độ bơm",
+          "value_raw": "3 to 9 LPM (automatically controlled at the set point, typically 8 LPM)",
+          "source_rows": [
+            17
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cpec306.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/cpec306"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11117",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

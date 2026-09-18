@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_SKYVUE8",
+  "model": "SkyVue8",
+  "name_en": "SkyVue™8",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Weather Sensors",
+    "subcategory_key": "weather_sensors",
+    "device_type": "LIDAR Ceilometer",
+    "device_type_key": "lidar_ceilometer"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "Ethernet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_interfaces",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_interfaces",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-422",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_interfaces",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_interfaces",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "maintenance_interface",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              34
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "SkyVue8",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "SkyVue8"
+        }
+      ]
+    },
+    {
+      "value": "CSI_SKYVUE8",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_SKYVUE8"
+        }
+      ]
+    },
+    {
+      "value": "SkyVue™8",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "SkyVue™8"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "SkyVue8",
+      "SkyVue™8",
+      "Sensors",
+      "Weather Sensors",
+      "LIDAR Ceilometer",
+      "Ethernet",
+      "RS-232",
+      "RS-422",
+      "RS-485",
+      "USB",
+      "CSI_SKYVUE8"
+    ],
+    "vi": [
+      "SkyVue8",
+      "Cảm biến",
+      "Cảm biến thời tiết",
+      "Máy đo trần mây LIDAR",
+      "Ethernet",
+      "RS-232",
+      "RS-422",
+      "RS-485",
+      "USB"
+    ]
+  }
+}

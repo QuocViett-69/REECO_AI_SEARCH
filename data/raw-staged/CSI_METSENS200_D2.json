@@ -1,0 +1,670 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "MetSENS200_Output.json",
+        "original_source": {
+          "file": "MetSENS200.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_METSENS200_D2",
+      "manufacturer": "Campbell Scientific",
+      "model": "MetSENS200-D2",
+      "product_name_en": "MetSENS200-D2",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Weather Sensors",
+        "device_type": "Compact Weather Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Base Model",
+          "name_vi": "Mã sản phẩm cơ sở",
+          "value_raw": "MetSENS200",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Compact Weather Sensor for Wind with Compass",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary measurement device / integrated weather sensor",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Integrated ultrasonic measurement of wind speed and wind direction with electronic compass",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurements Made",
+          "name_vi": "Các thông số đo",
+          "value_raw": "Wind speed; wind direction; compass heading",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Additional Derived Data",
+          "name_vi": "Dữ liệu suy ra bổ sung",
+          "value_raw": "WMO average wind speed and direction; gust data",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Configuration",
+          "name_vi": "Cấu hình giao tiếp",
+          "value_raw": "RS-232 digital output",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Digital Interface",
+          "name_vi": "Giao tiếp số chính",
+          "value_raw": "Serial RS-232",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Communication Settings",
+          "name_vi": "Cấu hình giao tiếp mặc định",
+          "value_raw": "9600 baud; 8 data bits; even parity; 1 stop bit",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Replacement Cable",
+          "name_vi": "Cáp thay thế",
+          "value_raw": "METSENSCBL3 RS-232 Replacement Cable",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal / Data Wiring",
+          "name_vi": "Đấu dây tín hiệu / dữ liệu",
+          "value_raw": "Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Direct Data Logger Connection",
+          "name_vi": "Kết nối trực tiếp với data logger",
+          "value_raw": "Green → C (odd); White → C (even); Red → 12V; Black/Clear → G",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Programming",
+          "name_vi": "Lập trình CRBasic",
+          "value_raw": "SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr()",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sampling Rate",
+          "name_vi": "Tần số lấy mẫu",
+          "value_raw": "1 Hz",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "IP Rating",
+          "name_vi": "Cấp bảo vệ IP",
+          "value_raw": "IP66",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ / chứng nhận",
+          "value_raw": "CE and RoHS compliant; where applicable, individual parameters meet or exceed IEC 61724-1 (2017, 2021)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Voltage",
+          "name_vi": "Điện áp hoạt động",
+          "value_raw": "5 to 30 VDC",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Current Drain – Continuous High Mode",
+          "name_vi": "Dòng tiêu thụ điển hình – chế độ liên tục",
+          "value_raw": "25 mA @ 12 VDC",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Current Drain – Eco-Power Mode",
+          "name_vi": "Dòng tiêu thụ điển hình – chế độ tiết kiệm",
+          "value_raw": "0.7 mA @ 12 VDC (1 hour polled)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.5 kg (1.1 lb)",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Range",
+          "name_vi": "Dải đo tốc độ gió",
+          "value_raw": "0.01 to 60 m/s",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Resolution",
+          "name_vi": "Độ phân giải tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Starting Threshold",
+          "name_vi": "Ngưỡng khởi động tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Accuracy",
+          "name_vi": "Độ chính xác tốc độ gió",
+          "value_raw": "±3% up to 40 m/s; ±5% up to 60 m/s",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Direction Range",
+          "name_vi": "Dải đo hướng gió",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Direction Resolution",
+          "name_vi": "Độ phân giải hướng gió",
+          "value_raw": "1°",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Direction Accuracy",
+          "name_vi": "Độ chính xác hướng gió",
+          "value_raw": "±3° up to 40 m/s; ±5° from 40 to 60 m/s",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compass Range",
+          "name_vi": "Dải đo la bàn",
+          "value_raw": "0° to 359°",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compass Resolution",
+          "name_vi": "Độ phân giải la bàn",
+          "value_raw": "1°",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compass Accuracy",
+          "name_vi": "Độ chính xác la bàn",
+          "value_raw": "±3°",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Length Options",
+          "name_vi": "Các tùy chọn chiều dài cáp",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+          "source_rows": [
+            37
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "metsens200_datasheet.pdf",
+        "user_manual": "metsens_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11228",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_METSENS200_D2",
+        "variant_count": 3,
+        "source_files": [
+          "MetSENS200_Output.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_METSENS200_D2",
+          "model": "MetSENS200-D2",
+          "product_name_en": "MetSENS200-D2",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Communication Configuration",
+              "name_vi": "Cấu hình giao tiếp",
+              "value_raw": "RS-232 digital output",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Primary Digital Interface",
+              "name_vi": "Giao tiếp số chính",
+              "value_raw": "Serial RS-232",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Default Communication Settings",
+              "name_vi": "Cấu hình giao tiếp mặc định",
+              "value_raw": "9600 baud; 8 data bits; even parity; 1 stop bit",
+              "source_rows": [
+                12
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Replacement Cable",
+              "name_vi": "Cáp thay thế",
+              "value_raw": "METSENSCBL3 RS-232 Replacement Cable",
+              "source_rows": [
+                14
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Signal / Data Wiring",
+              "name_vi": "Đấu dây tín hiệu / dữ liệu",
+              "value_raw": "Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Direct Data Logger Connection",
+              "name_vi": "Kết nối trực tiếp với data logger",
+              "value_raw": "Green → C (odd); White → C (even); Red → 12V; Black/Clear → G",
+              "source_rows": [
+                16
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "CRBasic Programming",
+              "name_vi": "Lập trình CRBasic",
+              "value_raw": "SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr()",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Cable Length Options",
+              "name_vi": "Các tùy chọn chiều dài cáp",
+              "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+              "source_rows": [
+                37
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "metsens200_datasheet.pdf",
+            "user_manual": "metsens_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11228",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "MetSENS200_Output.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_METSENS200_DM",
+          "model": "MetSENS200-DM",
+          "product_name_en": "MetSENS200-DM",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Communication Configuration",
+              "name_vi": "Cấu hình giao tiếp",
+              "value_raw": "RS-485 Modbus output",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Primary Digital Interface",
+              "name_vi": "Giao tiếp số chính",
+              "value_raw": "Modbus RTU over RS-485",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Default Communication Settings",
+              "name_vi": "Cấu hình giao tiếp mặc định",
+              "value_raw": "19200 baud; 8 data bits; even parity; 1 stop bit",
+              "source_rows": [
+                12
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Default Address",
+              "name_vi": "Địa chỉ mặc định",
+              "value_raw": "Modbus address 41",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Replacement Cable",
+              "name_vi": "Cáp thay thế",
+              "value_raw": "METSENSCBL2 RS-485 Replacement Cable",
+              "source_rows": [
+                14
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Signal / Data Wiring",
+              "name_vi": "Đấu dây tín hiệu / dữ liệu",
+              "value_raw": "Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Direct Data Logger Connection",
+              "name_vi": "Kết nối trực tiếp với data logger",
+              "value_raw": "Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G",
+              "source_rows": [
+                16
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "CRBasic Programming",
+              "name_vi": "Lập trình CRBasic",
+              "value_raw": "SerialOpen() followed by ModbusClient()",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Cable Length Options",
+              "name_vi": "Các tùy chọn chiều dài cáp",
+              "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+              "source_rows": [
+                37
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "metsens200_datasheet.pdf",
+            "user_manual": "metsens_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11228",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "MetSENS200_Output.json",
+            "product_index": 1
+          }
+        },
+        {
+          "product_id": "CSI_METSENS200_DS",
+          "model": "MetSENS200-DS",
+          "product_name_en": "MetSENS200-DS",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Communication Configuration",
+              "name_vi": "Cấu hình giao tiếp",
+              "value_raw": "SDI-12 digital output",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Primary Digital Interface",
+              "name_vi": "Giao tiếp số chính",
+              "value_raw": "SDI-12",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Default Communication Settings",
+              "name_vi": "Cấu hình giao tiếp mặc định",
+              "value_raw": "SDI-12 protocol",
+              "source_rows": [
+                12
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Default Address",
+              "name_vi": "Địa chỉ mặc định",
+              "value_raw": "SDI-12 address 0",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Replacement Cable",
+              "name_vi": "Cáp thay thế",
+              "value_raw": "METSENSCBL1 SDI-12 Replacement Cable",
+              "source_rows": [
+                14
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Signal / Data Wiring",
+              "name_vi": "Đấu dây tín hiệu / dữ liệu",
+              "value_raw": "Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Direct Data Logger Connection",
+              "name_vi": "Kết nối trực tiếp với data logger",
+              "value_raw": "Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G",
+              "source_rows": [
+                16
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "CRBasic Programming",
+              "name_vi": "Lập trình CRBasic",
+              "value_raw": "SDI12Recorder()",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Cable Length Options",
+              "name_vi": "Các tùy chọn chiều dài cáp",
+              "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified",
+              "source_rows": [
+                37
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "metsens200_datasheet.pdf",
+            "user_manual": "metsens_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11228",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "MetSENS200_Output.json",
+            "product_index": 2
+          }
+        }
+      ]
+    }
+  ]
+}

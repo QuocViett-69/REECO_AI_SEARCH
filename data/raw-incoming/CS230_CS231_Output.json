@@ -1,0 +1,434 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CS230_CS231_Master_Specifications_SplitCells.xlsx",
+    "sheet": "CS230_CS231_Master"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS230",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS230",
+      "product_name_en": "SDI-12 Temperature Profiler",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "SDI-12 Temperature Profiler",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Model",
+          "name_vi": "Model",
+          "value_raw": "CS230",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-55° to +85°C",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Typical Accuracy",
+          "name_vi": "Độ chính xác điển hình",
+          "value_raw": "±0.2°C (-40° to +85°C) includes lifetime drift",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Worst Case Accuracy",
+          "name_vi": "Độ chính xác trường hợp xấu nhất",
+          "value_raw": "±0.5°C (-55° to -40°C) includes lifetime drift | ±0.4°C (−40° to +85°C) includes lifetime drift",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.0078°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Communications",
+          "name_vi": "Giao tiếp",
+          "value_raw": "SDI-12",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Sensors per Probe",
+          "name_vi": "Số cảm biến tối đa trên mỗi đầu dò",
+          "value_raw": "32",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Minimum Spacing",
+          "name_vi": "Khoảng cách tối thiểu",
+          "value_raw": "5 cm (1.97 in.)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Optional External Probes",
+          "name_vi": "Đầu dò ngoài tùy chọn",
+          "value_raw": "4 (maximum)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "9 to 28 Vdc",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Current Consumption",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "1.0 mA (max) quiescent current draw per sensor | 20 mA + (# sensors * 1.0 mA) active current draw",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warm-up Time on Power up",
+          "name_vi": "Thời gian khởi động sau khi cấp nguồn",
+          "value_raw": "10 s",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Probe Diameter",
+          "name_vi": "Đường kính đầu dò",
+          "value_raw": "2.13 cm (0.84 in.)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Standard External Probe Length",
+          "name_vi": "Chiều dài đầu dò ngoài tiêu chuẩn",
+          "value_raw": "45 cm (18 in.)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Length",
+          "name_vi": "Chiều dài tối đa",
+          "value_raw": "3.0 m (118 in.)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "152 m (500 ft)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Electronics Sealing Classification",
+          "name_vi": "Phân loại độ kín điện tử",
+          "value_raw": "IP68",
+          "source_rows": [
+            26
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": null,
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4415",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      }
+    },
+    {
+      "product_id": "CSI_CS231",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS231",
+      "product_name_en": "SDI-12 Temperature Profiler",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "SDI-12 Temperature Profiler",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Model",
+          "name_vi": "Model",
+          "value_raw": "CS231",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Item Number",
+          "name_vi": "Mã sản phẩm",
+          "value_raw": "45287",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "1 year",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-55° to +85°C",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Typical Accuracy",
+          "name_vi": "Độ chính xác điển hình",
+          "value_raw": "±0.2°C (at -40° to +85°C)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Worst Case Accuracy",
+          "name_vi": "Độ chính xác trường hợp xấu nhất",
+          "value_raw": "±0.4°C (at -40° to +85°C) | ±0.5°C (at -55° to -40°C)",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.0078°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Communications",
+          "name_vi": "Giao tiếp",
+          "value_raw": "SDI-12",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Sensors per Probe",
+          "name_vi": "Số cảm biến tối đa trên mỗi đầu dò",
+          "value_raw": "32",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Minimum Spacing",
+          "name_vi": "Khoảng cách tối thiểu",
+          "value_raw": "5 cm (1.97 in.)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Optional External Probes",
+          "name_vi": "Đầu dò ngoài tùy chọn",
+          "value_raw": "4 maximum",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "9 to 28 Vdc",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Current Consumption",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "1.0 mA (maximum per sensor) | 20 mA + (number of sensors * 1.0 mA)",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warm-up Time on Power up",
+          "name_vi": "Thời gian khởi động sau khi cấp nguồn",
+          "value_raw": "10 s",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Cable Insulation",
+          "name_vi": "Vật liệu cách điện cáp",
+          "value_raw": "Polypropylene Pro-Fax 8623, 105°C",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Probe Diameter",
+          "name_vi": "Đường kính đầu dò",
+          "value_raw": "2.13 cm (0.84 in.)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Standard External Probe Length",
+          "name_vi": "Chiều dài đầu dò ngoài tiêu chuẩn",
+          "value_raw": "45 cm (18 in.)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Length",
+          "name_vi": "Chiều dài tối đa",
+          "value_raw": "3.0 m (118 in.)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "152 m (500 ft)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Electronics Sealing Classification",
+          "name_vi": "Phân loại độ kín điện tử",
+          "value_raw": "IP68",
+          "source_rows": [
+            26
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": null,
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10296",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      }
+    }
+  ]
+}

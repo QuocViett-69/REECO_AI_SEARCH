@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_HS2_12",
+  "model": "HS2-12",
+  "name_en": "HS2 HydroSense II Handheld Soil Water Content Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Soil Sensors",
+    "subcategory_key": "soil_sensors",
+    "device_type": "Handheld Soil Moisture Meter",
+    "device_type_key": "handheld_soil_moisture_meter"
+  },
+  "measurements": [
+    {
+      "key": "volumetric_water_content",
+      "label_en": "Volumetric Water Content",
+      "label_vi": "Hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_HS2_12.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_volumetric_water_content",
+      "label_en": "Measure Volumetric Water Content",
+      "label_vi": "Đo hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_HS2_12.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "HS2-12",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "HS2-12"
+        }
+      ]
+    },
+    {
+      "value": "CSI_HS2_12",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_HS2_12"
+        }
+      ]
+    },
+    {
+      "value": "HS2 HydroSense II Handheld Soil Water Content Sensor",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "HS2 HydroSense II Handheld Soil Water Content Sensor"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "HS2-12",
+      "HS2 HydroSense II Handheld Soil Water Content Sensor",
+      "Sensors",
+      "Soil Sensors",
+      "Handheld Soil Moisture Meter",
+      "Volumetric Water Content",
+      "VWC",
+      "Measure Volumetric Water Content",
+      "CSI_HS2_12"
+    ],
+    "vi": [
+      "HS2-12",
+      "Cảm biến",
+      "Cảm biến đất",
+      "Máy đo độ ẩm đất cầm tay",
+      "Hàm lượng nước thể tích",
+      "Đo hàm lượng nước thể tích"
+    ]
+  }
+}

@@ -1,0 +1,2497 @@
+{
+  "raw_json": {
+    "schema_version": "1.1",
+    "source": {
+      "file": "CSAT3B_NC_SC_CSAT3BH_NC_SC_Specifications_With_Configuration_Top(1).xlsx",
+      "sheet": "CSAT3B_CSAT3BH_Specifications"
+    },
+    "products": [
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "manufacturer": "Campbell Scientific",
+        "model": "CSAT3B-NC",
+        "product_name_en": "CSAT3B-NC",
+        "identity_source": {
+          "model": "worksheet",
+          "product_name_en": "worksheet"
+        },
+        "taxonomy": {
+          "category": null,
+          "subcategory": null,
+          "device_type": null
+        },
+        "specifications": [
+          {
+            "section": "CONFIGURATION",
+            "name_en": "Configuration Suffix",
+            "name_vi": "Hậu tố cấu hình",
+            "value_raw": "NC",
+            "source_rows": [
+              3
+            ]
+          },
+          {
+            "section": "CONFIGURATION",
+            "name_en": "Carrying Case",
+            "name_vi": "Hộp đựng",
+            "value_raw": "No Carrying Case",
+            "source_rows": [
+              4
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Sensor",
+            "name_vi": "Cảm biến",
+            "value_raw": "3-dimensional sonic anemometer",
+            "source_rows": [
+              6
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Measurement Description",
+            "name_vi": "Mô tả phép đo",
+            "value_raw": "Highest-quality wind speed and direction",
+            "source_rows": [
+              7
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Operating Temperature Range",
+            "name_vi": "Dải nhiệt độ hoạt động",
+            "value_raw": "-40 to +50°C (equivalent to 305 to 368 m s⁻¹ in speed of sound)",
+            "source_rows": [
+              8
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Outputs",
+            "name_vi": "Đầu ra",
+            "value_raw": "ux, uy, uz, Ts\nux, uy, uz are wind components referenced to the anemometer axes\nTs is sonic temperature in degrees Celsius.",
+            "source_rows": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Signal Type/Output",
+            "name_vi": "Loại tín hiệu / Đầu ra",
+            "value_raw": "SDM, CPI, USB, RS-485",
+            "source_rows": [
+              12
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Speed of Sound",
+            "name_vi": "Tốc độ âm thanh",
+            "value_raw": "Determined from three acoustic paths.\nCorrected for crosswind effects.",
+            "source_rows": [
+              13,
+              14
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Wind Direction Range",
+            "name_vi": "Dải hướng gió",
+            "value_raw": "2.5 to 357.5° in CSAT3B coordinate system\n0 to 360° customized",
+            "source_rows": [
+              15,
+              16
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Range",
+            "name_vi": "Dải đo",
+            "value_raw": "±65 m s⁻¹ (full-scale wind)",
+            "source_rows": [
+              17
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Filter Bandwidths",
+            "name_vi": "Băng thông bộ lọc",
+            "value_raw": "5, 10, or 25 Hz",
+            "source_rows": [
+              18
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Measurement Path Length",
+            "name_vi": "Chiều dài đường đo",
+            "value_raw": "10.0 cm (3.9 in.) vertical\n5.8 cm (2.3 in.) horizontal",
+            "source_rows": [
+              19,
+              20
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Angle from Horizontal",
+            "name_vi": "Góc đầu dò so với phương ngang",
+            "value_raw": "60 degrees",
+            "source_rows": [
+              21
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Ingress Protection",
+            "name_vi": "Cấp bảo vệ xâm nhập",
+            "value_raw": "IP67",
+            "source_rows": [
+              22
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Diameter",
+            "name_vi": "Đường kính đầu dò",
+            "value_raw": "0.64 cm (0.25 in.)",
+            "source_rows": [
+              23
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Mounting Arm Diameter",
+            "name_vi": "Đường kính tay gắn đầu dò",
+            "value_raw": "0.84 cm (0.33 in.)",
+            "source_rows": [
+              24
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Support Arm Diameter",
+            "name_vi": "Đường kính tay đỡ",
+            "value_raw": "1.59 cm (0.63 in.)",
+            "source_rows": [
+              25
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Anemometer Head Weight",
+            "name_vi": "Khối lượng đầu đo gió",
+            "value_raw": "1.45 kg (3.2 lb)",
+            "source_rows": [
+              26
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Anemometer Dimensions",
+            "name_vi": "Kích thước máy đo gió",
+            "value_raw": "60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.)",
+            "source_rows": [
+              27
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Accuracy specifications assume the following:\n-40° to +50°C operating range\nWind speeds < 30 m s⁻¹\nWind angles between ±170°",
+            "source_rows": [
+              29,
+              30,
+              31,
+              32
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "Maximum Offset Error",
+            "name_vi": "Sai số lệch tối đa",
+            "value_raw": "< ±8.0 cm s⁻¹ (ux, uy)\n< ±4.0 cm s⁻¹ (uz)",
+            "source_rows": [
+              33,
+              34
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "Maximum Gain Error",
+            "name_vi": "Sai số hệ số khuếch đại tối đa",
+            "value_raw": "< ±3% of reading (wind vector within ±10° of horizontal)\n< ±2% of reading (wind vector within ±5° of horizontal)\n< ±6% of reading (wind vector within ±20° of horizontal)",
+            "source_rows": [
+              35,
+              36,
+              37
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "ux, uy",
+            "name_vi": "ux, uy",
+            "value_raw": "1 mm s⁻¹ rms",
+            "source_rows": [
+              39
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "uz",
+            "name_vi": "uz",
+            "value_raw": "0.5 mm s⁻¹ rms",
+            "source_rows": [
+              40
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "Ts",
+            "name_vi": "Ts",
+            "value_raw": "0.002°C RMS (at 25°C)",
+            "source_rows": [
+              41
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "Wind Direction",
+            "name_vi": "Hướng gió",
+            "value_raw": "< 0.058° (ux = uy ≤ 1 m s⁻¹)",
+            "source_rows": [
+              42
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Data Logger Triggered",
+            "name_vi": "Kích hoạt bởi bộ ghi dữ liệu",
+            "value_raw": "1 to 100 Hz",
+            "source_rows": [
+              44
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Unprompted Output (to PC)",
+            "name_vi": "Đầu ra không yêu cầu (đến PC)",
+            "value_raw": "10, 20, 50, or 100 Hz",
+            "source_rows": [
+              45
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Internal Self-Trigger Rate",
+            "name_vi": "Tốc độ tự kích hoạt nội bộ",
+            "value_raw": "100 Hz",
+            "source_rows": [
+              46
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Data Logger Triggered (no filter)",
+            "name_vi": "Kích hoạt bởi bộ ghi dữ liệu (không lọc)",
+            "value_raw": "1 trigger period (1 scan interval)",
+            "source_rows": [
+              48
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Unprompted Output (no filter)",
+            "name_vi": "Đầu ra không yêu cầu (không lọc)",
+            "value_raw": "10 ms",
+            "source_rows": [
+              49
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Filtered Output (data-logger-prompted or unprompted to PC)",
+            "name_vi": "Đầu ra đã lọc",
+            "value_raw": "395 ms (with 10 Hz bandwidth filter)\n155 ms (with 25 Hz bandwidth filter)\n795 ms (with 5 Hz bandwidth filter)\nnull",
+            "source_rows": [
+              50,
+              51,
+              52,
+              53
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Update Rate",
+            "name_vi": "Tốc độ cập nhật",
+            "value_raw": "2 Hz",
+            "source_rows": [
+              55
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Inclinometer Accuracy",
+            "name_vi": "Độ chính xác cảm biến nghiêng",
+            "value_raw": "±1°",
+            "source_rows": [
+              56
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Relative Humidity Accuracy",
+            "name_vi": "Độ chính xác độ ẩm tương đối",
+            "value_raw": "±7% (over 90 to 100% range)\n±7% (over 0 to 10% range)\n±3% (over 10 to 90% range)",
+            "source_rows": [
+              57,
+              58,
+              59
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Board Temperature Accuracy",
+            "name_vi": "Độ chính xác nhiệt độ bo mạch",
+            "value_raw": "±2°C",
+            "source_rows": [
+              60
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for data-logger-based data acquisition.",
+            "source_rows": [
+              62
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Bit Period",
+            "name_vi": "Chu kỳ bit",
+            "value_raw": "10 µs to 1 ms",
+            "source_rows": [
+              63
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period)\n76 m (250 ft) max (@ 1 ms bit period)",
+            "source_rows": [
+              64,
+              65
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Address Range",
+            "name_vi": "Dải địa chỉ",
+            "value_raw": "1 to 14",
+            "source_rows": [
+              66
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~200",
+            "source_rows": [
+              67
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for data-logger-based data acquisition.",
+            "source_rows": [
+              69
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Baud Rate",
+            "name_vi": "Tốc độ baud",
+            "value_raw": "50 kbps to 1 Mbps",
+            "source_rows": [
+              70
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "122 m (400 ft) max (@ 250 kbps)\n15 m (50 ft) max (@ 1 Mbps)\n853 m (2800 ft) max (@ 50 kbps)",
+            "source_rows": [
+              71,
+              72,
+              73
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Address Range",
+            "name_vi": "Dải địa chỉ",
+            "value_raw": "1 to 120",
+            "source_rows": [
+              74
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~300",
+            "source_rows": [
+              75
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for configuration or PC-based data acquisition.",
+            "source_rows": [
+              77
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Baud Rate",
+            "name_vi": "Tốc độ baud",
+            "value_raw": "9.6 kbps to 115.2 kbps",
+            "source_rows": [
+              78
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "610 m (2000 ft) max (@ 9.6 kbps)\n305 m (1000 ft) max (@ 115.2 kbps)",
+            "source_rows": [
+              79,
+              80
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~500 (ASCII formatted)",
+            "source_rows": [
+              81
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for configuration or PC-based data acquisition.",
+            "source_rows": [
+              83
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "Connection Speed",
+            "name_vi": "Tốc độ kết nối",
+            "value_raw": "USB 2.0 full speed 12 Mbps",
+            "source_rows": [
+              84
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "5 m (16.4 ft) maximum",
+            "source_rows": [
+              85
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Voltage Supply / Anemometer Voltage Requirement",
+            "name_vi": "Điện áp cấp / Yêu cầu điện áp máy đo gió",
+            "value_raw": "9.5 to 32 Vdc",
+            "source_rows": [
+              87
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Current at 10 Hz Measurement Rate",
+            "name_vi": "Dòng tại tốc độ đo 10 Hz",
+            "value_raw": "65 mA (@ 24 Vdc)\n110 mA (@ 12 Vdc)",
+            "source_rows": [
+              88,
+              89
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Current at 100 Hz Measurement Rate",
+            "name_vi": "Dòng tại tốc độ đo 100 Hz",
+            "value_raw": "80 mA (@ 24 Vdc)\n145 mA (@ 12 Vdc)",
+            "source_rows": [
+              90,
+              91
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Heaters",
+            "name_vi": "Bộ gia nhiệt",
+            "value_raw": "null",
+            "source_rows": [
+              92
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Arms and Strut",
+            "name_vi": "Tay và thanh chống",
+            "value_raw": "null\nnull",
+            "source_rows": [
+              93,
+              94
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Transducer Fingers",
+            "name_vi": "Ngón đầu dò",
+            "value_raw": "null\nnull",
+            "source_rows": [
+              95,
+              96
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Total System Power",
+            "name_vi": "Công suất toàn hệ thống",
+            "value_raw": "null\nnull",
+            "source_rows": [
+              97,
+              98
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Controller Current Required",
+            "name_vi": "Dòng yêu cầu bộ điều khiển",
+            "value_raw": "null",
+            "source_rows": [
+              99
+            ]
+          }
+        ],
+        "documents": {
+          "product_url": null,
+          "datasheet": "b_csat3b_datasheet.pdf",
+          "user_manual": "csat3b_manual.pdf",
+          "order_form": "https://www.campbellsci.com/products/csat3b"
+        },
+        "media": {
+          "product_images": [
+            {
+              "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13110",
+              "source": "user_provided"
+            }
+          ]
+        },
+        "validation": {
+          "status": "review",
+          "warnings": [
+            "Taxonomy could not be determined from source file."
+          ]
+        }
+      },
+      {
+        "product_id": "CSI_CSAT3B_SC",
+        "manufacturer": "Campbell Scientific",
+        "model": "CSAT3B-SC",
+        "product_name_en": "CSAT3B-SC",
+        "identity_source": {
+          "model": "worksheet",
+          "product_name_en": "worksheet"
+        },
+        "taxonomy": {
+          "category": null,
+          "subcategory": null,
+          "device_type": null
+        },
+        "specifications": [
+          {
+            "section": "CONFIGURATION",
+            "name_en": "Configuration Suffix",
+            "name_vi": "Hậu tố cấu hình",
+            "value_raw": "SC",
+            "source_rows": [
+              3
+            ]
+          },
+          {
+            "section": "CONFIGURATION",
+            "name_en": "Carrying Case",
+            "name_vi": "Hộp đựng",
+            "value_raw": "Sonic Carrying Case",
+            "source_rows": [
+              4
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Sensor",
+            "name_vi": "Cảm biến",
+            "value_raw": "3-dimensional sonic anemometer",
+            "source_rows": [
+              6
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Measurement Description",
+            "name_vi": "Mô tả phép đo",
+            "value_raw": "Highest-quality wind speed and direction",
+            "source_rows": [
+              7
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Operating Temperature Range",
+            "name_vi": "Dải nhiệt độ hoạt động",
+            "value_raw": "-40 to +50°C (equivalent to 305 to 368 m s⁻¹ in speed of sound)",
+            "source_rows": [
+              8
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Outputs",
+            "name_vi": "Đầu ra",
+            "value_raw": "ux, uy, uz, Ts\nux, uy, uz are wind components referenced to the anemometer axes\nTs is sonic temperature in degrees Celsius.",
+            "source_rows": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Signal Type/Output",
+            "name_vi": "Loại tín hiệu / Đầu ra",
+            "value_raw": "SDM, CPI, USB, RS-485",
+            "source_rows": [
+              12
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Speed of Sound",
+            "name_vi": "Tốc độ âm thanh",
+            "value_raw": "Determined from three acoustic paths.\nCorrected for crosswind effects.",
+            "source_rows": [
+              13,
+              14
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Wind Direction Range",
+            "name_vi": "Dải hướng gió",
+            "value_raw": "2.5 to 357.5° in CSAT3B coordinate system\n0 to 360° customized",
+            "source_rows": [
+              15,
+              16
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Range",
+            "name_vi": "Dải đo",
+            "value_raw": "±65 m s⁻¹ (full-scale wind)",
+            "source_rows": [
+              17
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Filter Bandwidths",
+            "name_vi": "Băng thông bộ lọc",
+            "value_raw": "5, 10, or 25 Hz",
+            "source_rows": [
+              18
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Measurement Path Length",
+            "name_vi": "Chiều dài đường đo",
+            "value_raw": "10.0 cm (3.9 in.) vertical\n5.8 cm (2.3 in.) horizontal",
+            "source_rows": [
+              19,
+              20
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Angle from Horizontal",
+            "name_vi": "Góc đầu dò so với phương ngang",
+            "value_raw": "60 degrees",
+            "source_rows": [
+              21
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Ingress Protection",
+            "name_vi": "Cấp bảo vệ xâm nhập",
+            "value_raw": "IP67",
+            "source_rows": [
+              22
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Diameter",
+            "name_vi": "Đường kính đầu dò",
+            "value_raw": "0.64 cm (0.25 in.)",
+            "source_rows": [
+              23
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Mounting Arm Diameter",
+            "name_vi": "Đường kính tay gắn đầu dò",
+            "value_raw": "0.84 cm (0.33 in.)",
+            "source_rows": [
+              24
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Support Arm Diameter",
+            "name_vi": "Đường kính tay đỡ",
+            "value_raw": "1.59 cm (0.63 in.)",
+            "source_rows": [
+              25
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Anemometer Head Weight",
+            "name_vi": "Khối lượng đầu đo gió",
+            "value_raw": "1.45 kg (3.2 lb)",
+            "source_rows": [
+              26
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Anemometer Dimensions",
+            "name_vi": "Kích thước máy đo gió",
+            "value_raw": "60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.)",
+            "source_rows": [
+              27
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Accuracy specifications assume the following:\n-40° to +50°C operating range\nWind speeds < 30 m s⁻¹\nWind angles between ±170°",
+            "source_rows": [
+              29,
+              30,
+              31,
+              32
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "Maximum Offset Error",
+            "name_vi": "Sai số lệch tối đa",
+            "value_raw": "< ±8.0 cm s⁻¹ (ux, uy)\n< ±4.0 cm s⁻¹ (uz)",
+            "source_rows": [
+              33,
+              34
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "Maximum Gain Error",
+            "name_vi": "Sai số hệ số khuếch đại tối đa",
+            "value_raw": "< ±3% of reading (wind vector within ±10° of horizontal)\n< ±2% of reading (wind vector within ±5° of horizontal)\n< ±6% of reading (wind vector within ±20° of horizontal)",
+            "source_rows": [
+              35,
+              36,
+              37
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "ux, uy",
+            "name_vi": "ux, uy",
+            "value_raw": "1 mm s⁻¹ rms",
+            "source_rows": [
+              39
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "uz",
+            "name_vi": "uz",
+            "value_raw": "0.5 mm s⁻¹ rms",
+            "source_rows": [
+              40
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "Ts",
+            "name_vi": "Ts",
+            "value_raw": "0.002°C RMS (at 25°C)",
+            "source_rows": [
+              41
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "Wind Direction",
+            "name_vi": "Hướng gió",
+            "value_raw": "< 0.058° (ux = uy ≤ 1 m s⁻¹)",
+            "source_rows": [
+              42
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Data Logger Triggered",
+            "name_vi": "Kích hoạt bởi bộ ghi dữ liệu",
+            "value_raw": "1 to 100 Hz",
+            "source_rows": [
+              44
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Unprompted Output (to PC)",
+            "name_vi": "Đầu ra không yêu cầu (đến PC)",
+            "value_raw": "10, 20, 50, or 100 Hz",
+            "source_rows": [
+              45
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Internal Self-Trigger Rate",
+            "name_vi": "Tốc độ tự kích hoạt nội bộ",
+            "value_raw": "100 Hz",
+            "source_rows": [
+              46
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Data Logger Triggered (no filter)",
+            "name_vi": "Kích hoạt bởi bộ ghi dữ liệu (không lọc)",
+            "value_raw": "1 trigger period (1 scan interval)",
+            "source_rows": [
+              48
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Unprompted Output (no filter)",
+            "name_vi": "Đầu ra không yêu cầu (không lọc)",
+            "value_raw": "10 ms",
+            "source_rows": [
+              49
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Filtered Output (data-logger-prompted or unprompted to PC)",
+            "name_vi": "Đầu ra đã lọc",
+            "value_raw": "395 ms (with 10 Hz bandwidth filter)\n155 ms (with 25 Hz bandwidth filter)\n795 ms (with 5 Hz bandwidth filter)\nnull",
+            "source_rows": [
+              50,
+              51,
+              52,
+              53
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Update Rate",
+            "name_vi": "Tốc độ cập nhật",
+            "value_raw": "2 Hz",
+            "source_rows": [
+              55
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Inclinometer Accuracy",
+            "name_vi": "Độ chính xác cảm biến nghiêng",
+            "value_raw": "±1°",
+            "source_rows": [
+              56
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Relative Humidity Accuracy",
+            "name_vi": "Độ chính xác độ ẩm tương đối",
+            "value_raw": "±7% (over 90 to 100% range)\n±7% (over 0 to 10% range)\n±3% (over 10 to 90% range)",
+            "source_rows": [
+              57,
+              58,
+              59
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Board Temperature Accuracy",
+            "name_vi": "Độ chính xác nhiệt độ bo mạch",
+            "value_raw": "±2°C",
+            "source_rows": [
+              60
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for data-logger-based data acquisition.",
+            "source_rows": [
+              62
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Bit Period",
+            "name_vi": "Chu kỳ bit",
+            "value_raw": "10 µs to 1 ms",
+            "source_rows": [
+              63
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period)\n76 m (250 ft) max (@ 1 ms bit period)",
+            "source_rows": [
+              64,
+              65
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Address Range",
+            "name_vi": "Dải địa chỉ",
+            "value_raw": "1 to 14",
+            "source_rows": [
+              66
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~200",
+            "source_rows": [
+              67
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for data-logger-based data acquisition.",
+            "source_rows": [
+              69
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Baud Rate",
+            "name_vi": "Tốc độ baud",
+            "value_raw": "50 kbps to 1 Mbps",
+            "source_rows": [
+              70
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "122 m (400 ft) max (@ 250 kbps)\n15 m (50 ft) max (@ 1 Mbps)\n853 m (2800 ft) max (@ 50 kbps)",
+            "source_rows": [
+              71,
+              72,
+              73
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Address Range",
+            "name_vi": "Dải địa chỉ",
+            "value_raw": "1 to 120",
+            "source_rows": [
+              74
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~300",
+            "source_rows": [
+              75
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for configuration or PC-based data acquisition.",
+            "source_rows": [
+              77
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Baud Rate",
+            "name_vi": "Tốc độ baud",
+            "value_raw": "9.6 kbps to 115.2 kbps",
+            "source_rows": [
+              78
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "610 m (2000 ft) max (@ 9.6 kbps)\n305 m (1000 ft) max (@ 115.2 kbps)",
+            "source_rows": [
+              79,
+              80
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~500 (ASCII formatted)",
+            "source_rows": [
+              81
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for configuration or PC-based data acquisition.",
+            "source_rows": [
+              83
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "Connection Speed",
+            "name_vi": "Tốc độ kết nối",
+            "value_raw": "USB 2.0 full speed 12 Mbps",
+            "source_rows": [
+              84
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "5 m (16.4 ft) maximum",
+            "source_rows": [
+              85
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Voltage Supply / Anemometer Voltage Requirement",
+            "name_vi": "Điện áp cấp / Yêu cầu điện áp máy đo gió",
+            "value_raw": "9.5 to 32 Vdc",
+            "source_rows": [
+              87
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Current at 10 Hz Measurement Rate",
+            "name_vi": "Dòng tại tốc độ đo 10 Hz",
+            "value_raw": "65 mA (@ 24 Vdc)\n110 mA (@ 12 Vdc)",
+            "source_rows": [
+              88,
+              89
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Current at 100 Hz Measurement Rate",
+            "name_vi": "Dòng tại tốc độ đo 100 Hz",
+            "value_raw": "80 mA (@ 24 Vdc)\n145 mA (@ 12 Vdc)",
+            "source_rows": [
+              90,
+              91
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Heaters",
+            "name_vi": "Bộ gia nhiệt",
+            "value_raw": "null",
+            "source_rows": [
+              92
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Arms and Strut",
+            "name_vi": "Tay và thanh chống",
+            "value_raw": "null\nnull",
+            "source_rows": [
+              93,
+              94
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Transducer Fingers",
+            "name_vi": "Ngón đầu dò",
+            "value_raw": "null\nnull",
+            "source_rows": [
+              95,
+              96
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Total System Power",
+            "name_vi": "Công suất toàn hệ thống",
+            "value_raw": "null\nnull",
+            "source_rows": [
+              97,
+              98
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Controller Current Required",
+            "name_vi": "Dòng yêu cầu bộ điều khiển",
+            "value_raw": "null",
+            "source_rows": [
+              99
+            ]
+          }
+        ],
+        "documents": {
+          "product_url": null,
+          "datasheet": "b_csat3b_datasheet.pdf",
+          "user_manual": "csat3b_manual.pdf",
+          "order_form": "https://www.campbellsci.com/products/csat3b"
+        },
+        "media": {
+          "product_images": [
+            {
+              "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13110",
+              "source": "user_provided"
+            }
+          ]
+        },
+        "validation": {
+          "status": "review",
+          "warnings": [
+            "Taxonomy could not be determined from source file."
+          ]
+        }
+      },
+      {
+        "product_id": "CSI_CSAT3BH_NC",
+        "manufacturer": "Campbell Scientific",
+        "model": "CSAT3BH-NC",
+        "product_name_en": "CSAT3BH-NC",
+        "identity_source": {
+          "model": "worksheet",
+          "product_name_en": "worksheet"
+        },
+        "taxonomy": {
+          "category": null,
+          "subcategory": null,
+          "device_type": null
+        },
+        "specifications": [
+          {
+            "section": "CONFIGURATION",
+            "name_en": "Configuration Suffix",
+            "name_vi": "Hậu tố cấu hình",
+            "value_raw": "NC",
+            "source_rows": [
+              3
+            ]
+          },
+          {
+            "section": "CONFIGURATION",
+            "name_en": "Carrying Case",
+            "name_vi": "Hộp đựng",
+            "value_raw": "No Carrying Case",
+            "source_rows": [
+              4
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Sensor",
+            "name_vi": "Cảm biến",
+            "value_raw": "3-dimensional sonic anemometer",
+            "source_rows": [
+              6
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Measurement Description",
+            "name_vi": "Mô tả phép đo",
+            "value_raw": "Highest-quality wind speed and direction",
+            "source_rows": [
+              7
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Operating Temperature Range",
+            "name_vi": "Dải nhiệt độ hoạt động",
+            "value_raw": "-40 to +50°C (equivalent to 305 to 368 m s⁻¹ in speed of sound)",
+            "source_rows": [
+              8
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Outputs",
+            "name_vi": "Đầu ra",
+            "value_raw": "ux, uy, uz, Ts\nux, uy, uz are wind components referenced to the anemometer axes\nTs is sonic temperature in degrees Celsius.",
+            "source_rows": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Signal Type/Output",
+            "name_vi": "Loại tín hiệu / Đầu ra",
+            "value_raw": "null",
+            "source_rows": [
+              12
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Speed of Sound",
+            "name_vi": "Tốc độ âm thanh",
+            "value_raw": "Determined from three acoustic paths.\nCorrected for crosswind effects.",
+            "source_rows": [
+              13,
+              14
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Wind Direction Range",
+            "name_vi": "Dải hướng gió",
+            "value_raw": "2.5 to 357.5° in CSAT3B coordinate system\n0 to 360° customized",
+            "source_rows": [
+              15,
+              16
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Range",
+            "name_vi": "Dải đo",
+            "value_raw": "null",
+            "source_rows": [
+              17
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Filter Bandwidths",
+            "name_vi": "Băng thông bộ lọc",
+            "value_raw": "5, 10, 20, or 25 Hz",
+            "source_rows": [
+              18
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Measurement Path Length",
+            "name_vi": "Chiều dài đường đo",
+            "value_raw": "10.0 cm (3.9 in.) vertical\n5.8 cm (2.3 in.) horizontal",
+            "source_rows": [
+              19,
+              20
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Angle from Horizontal",
+            "name_vi": "Góc đầu dò so với phương ngang",
+            "value_raw": "60 degrees",
+            "source_rows": [
+              21
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Ingress Protection",
+            "name_vi": "Cấp bảo vệ xâm nhập",
+            "value_raw": "null",
+            "source_rows": [
+              22
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Diameter",
+            "name_vi": "Đường kính đầu dò",
+            "value_raw": "0.64 cm (0.25 in.)",
+            "source_rows": [
+              23
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Mounting Arm Diameter",
+            "name_vi": "Đường kính tay gắn đầu dò",
+            "value_raw": "0.84 cm (0.33 in.)",
+            "source_rows": [
+              24
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Support Arm Diameter",
+            "name_vi": "Đường kính tay đỡ",
+            "value_raw": "1.59 cm (0.63 in.)",
+            "source_rows": [
+              25
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Anemometer Head Weight",
+            "name_vi": "Khối lượng đầu đo gió",
+            "value_raw": "1.9 kg (4.2 lb)",
+            "source_rows": [
+              26
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Anemometer Dimensions",
+            "name_vi": "Kích thước máy đo gió",
+            "value_raw": "63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.)",
+            "source_rows": [
+              27
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Accuracy specifications assume the following:\n-40° to +50°C operating range\nWind speeds < 30 m s⁻¹\nWind angles between ±170°",
+            "source_rows": [
+              29,
+              30,
+              31,
+              32
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "Maximum Offset Error",
+            "name_vi": "Sai số lệch tối đa",
+            "value_raw": "< ±8.0 cm s⁻¹ (ux, uy)\n< ±4.0 cm s⁻¹ (uz)",
+            "source_rows": [
+              33,
+              34
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "Maximum Gain Error",
+            "name_vi": "Sai số hệ số khuếch đại tối đa",
+            "value_raw": "< ±3% of reading (wind vector within ±10° of horizontal)\n< ±2% of reading (wind vector within ±5° of horizontal)\n< ±6% of reading (wind vector within ±20° of horizontal)",
+            "source_rows": [
+              35,
+              36,
+              37
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "ux, uy",
+            "name_vi": "ux, uy",
+            "value_raw": "1 mm s⁻¹ RMS",
+            "source_rows": [
+              39
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "uz",
+            "name_vi": "uz",
+            "value_raw": "0.5 mm s⁻¹ RMS",
+            "source_rows": [
+              40
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "Ts",
+            "name_vi": "Ts",
+            "value_raw": "0.002°C RMS (at 25°C)",
+            "source_rows": [
+              41
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "Wind Direction",
+            "name_vi": "Hướng gió",
+            "value_raw": "< 0.058° (ux = uy ≤ 1 m s⁻¹)",
+            "source_rows": [
+              42
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Data Logger Triggered",
+            "name_vi": "Kích hoạt bởi bộ ghi dữ liệu",
+            "value_raw": "1 to 100 Hz",
+            "source_rows": [
+              44
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Unprompted Output (to PC)",
+            "name_vi": "Đầu ra không yêu cầu (đến PC)",
+            "value_raw": "10, 20, 50, or 100 Hz",
+            "source_rows": [
+              45
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Internal Self-Trigger Rate",
+            "name_vi": "Tốc độ tự kích hoạt nội bộ",
+            "value_raw": "100 Hz",
+            "source_rows": [
+              46
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Data Logger Triggered (no filter)",
+            "name_vi": "Kích hoạt bởi bộ ghi dữ liệu (không lọc)",
+            "value_raw": "1 trigger period (1 scan interval)",
+            "source_rows": [
+              48
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Unprompted Output (no filter)",
+            "name_vi": "Đầu ra không yêu cầu (không lọc)",
+            "value_raw": "10 ms",
+            "source_rows": [
+              49
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Filtered Output (data-logger-prompted or unprompted to PC)",
+            "name_vi": "Đầu ra đã lọc",
+            "value_raw": "395 ms (with 10 Hz bandwidth filter)\n795 ms (with 5 Hz bandwidth filter)\n155 ms (with 25 Hz bandwidth filter)\n195 ms (with 20 Hz bandwidth filter)",
+            "source_rows": [
+              50,
+              51,
+              52,
+              53
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Update Rate",
+            "name_vi": "Tốc độ cập nhật",
+            "value_raw": "2 Hz",
+            "source_rows": [
+              55
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Inclinometer Accuracy",
+            "name_vi": "Độ chính xác cảm biến nghiêng",
+            "value_raw": "±1°",
+            "source_rows": [
+              56
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Relative Humidity Accuracy",
+            "name_vi": "Độ chính xác độ ẩm tương đối",
+            "value_raw": "±7% (over 90 to 100% range)\n±7% (over 0 to 10% range)\n±3% (over 10 to 90% range)",
+            "source_rows": [
+              57,
+              58,
+              59
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Board Temperature Accuracy",
+            "name_vi": "Độ chính xác nhiệt độ bo mạch",
+            "value_raw": "±2°C",
+            "source_rows": [
+              60
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for data-logger-based data acquisition.",
+            "source_rows": [
+              62
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Bit Period",
+            "name_vi": "Chu kỳ bit",
+            "value_raw": "10 µs to 1 ms",
+            "source_rows": [
+              63
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period)\n76 m (250 ft) max (@ 1 ms bit period)",
+            "source_rows": [
+              64,
+              65
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Address Range",
+            "name_vi": "Dải địa chỉ",
+            "value_raw": "1 to 14",
+            "source_rows": [
+              66
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~200",
+            "source_rows": [
+              67
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for data-logger-based data acquisition.",
+            "source_rows": [
+              69
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Baud Rate",
+            "name_vi": "Tốc độ baud",
+            "value_raw": "50 kbps to 1 Mbps",
+            "source_rows": [
+              70
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "853 m (2800 ft) max (@ 50 kbps)\n122 m (400 ft) max (@ 250 kbps)\n15 m (50 ft) max (@ 1 Mbps)",
+            "source_rows": [
+              71,
+              72,
+              73
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Address Range",
+            "name_vi": "Dải địa chỉ",
+            "value_raw": "1 to 120",
+            "source_rows": [
+              74
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~300",
+            "source_rows": [
+              75
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for anemometer configuration or PC-based data acquisition.",
+            "source_rows": [
+              77
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Baud Rate",
+            "name_vi": "Tốc độ baud",
+            "value_raw": "9.6 kbps to 115.2 kbps",
+            "source_rows": [
+              78
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "610 m (2000 ft) max (@ 9.6 kbps)\n305 m (1000 ft) max (@ 115.2 kbps)",
+            "source_rows": [
+              79,
+              80
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~500 (ASCII formatted)",
+            "source_rows": [
+              81
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for anemometer configuration or PC-based data acquisition.",
+            "source_rows": [
+              83
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "Connection Speed",
+            "name_vi": "Tốc độ kết nối",
+            "value_raw": "USB 2.0 full speed 12 Mbps",
+            "source_rows": [
+              84
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "5 m (16.4 ft) maximum",
+            "source_rows": [
+              85
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Voltage Supply / Anemometer Voltage Requirement",
+            "name_vi": "Điện áp cấp / Yêu cầu điện áp máy đo gió",
+            "value_raw": "9.5 to 32 Vdc",
+            "source_rows": [
+              87
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Current at 10 Hz Measurement Rate",
+            "name_vi": "Dòng tại tốc độ đo 10 Hz",
+            "value_raw": "65 mA (@ 24 Vdc)\n110 mA (@ 12 Vdc)",
+            "source_rows": [
+              88,
+              89
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Current at 100 Hz Measurement Rate",
+            "name_vi": "Dòng tại tốc độ đo 100 Hz",
+            "value_raw": "80 mA (@ 24 Vdc)\n145 mA (@ 12 Vdc)",
+            "source_rows": [
+              90,
+              91
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Heaters",
+            "name_vi": "Bộ gia nhiệt",
+            "value_raw": "6.2 A (@ 24 Vdc)",
+            "source_rows": [
+              92
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Arms and Strut",
+            "name_vi": "Tay và thanh chống",
+            "value_raw": "2.46 A at maximum heating (@ 24 Vdc)\n0.74 A nominal (@ 24 Vdc)",
+            "source_rows": [
+              93,
+              94
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Transducer Fingers",
+            "name_vi": "Ngón đầu dò",
+            "value_raw": "3.75 A at maximum heating (@ 24 Vdc)\n1.13 A nominal (@ 24 Vdc)",
+            "source_rows": [
+              95,
+              96
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Total System Power",
+            "name_vi": "Công suất toàn hệ thống",
+            "value_raw": "6.2 A at maximum heating (@ 24 Vdc)\n1.86 A nominal (@ 24 Vdc)",
+            "source_rows": [
+              97,
+              98
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Controller Current Required",
+            "name_vi": "Dòng yêu cầu bộ điều khiển",
+            "value_raw": "30 mA (heaters off [quiescent] @ 24 Vdc)",
+            "source_rows": [
+              99
+            ]
+          }
+        ],
+        "documents": {
+          "product_url": null,
+          "datasheet": "b_csat3bh_datasheet.pdf",
+          "user_manual": "csat3bh_manual.pdf",
+          "order_form": "https://www.campbellsci.com/products/csat3bh"
+        },
+        "media": {
+          "product_images": [
+            {
+              "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13110",
+              "source": "user_provided"
+            }
+          ]
+        },
+        "validation": {
+          "status": "review",
+          "warnings": [
+            "Taxonomy could not be determined from source file."
+          ]
+        }
+      },
+      {
+        "product_id": "CSI_CSAT3BH_SC",
+        "manufacturer": "Campbell Scientific",
+        "model": "CSAT3BH-SC",
+        "product_name_en": "CSAT3BH-SC",
+        "identity_source": {
+          "model": "worksheet",
+          "product_name_en": "worksheet"
+        },
+        "taxonomy": {
+          "category": null,
+          "subcategory": null,
+          "device_type": null
+        },
+        "specifications": [
+          {
+            "section": "CONFIGURATION",
+            "name_en": "Configuration Suffix",
+            "name_vi": "Hậu tố cấu hình",
+            "value_raw": "SC",
+            "source_rows": [
+              3
+            ]
+          },
+          {
+            "section": "CONFIGURATION",
+            "name_en": "Carrying Case",
+            "name_vi": "Hộp đựng",
+            "value_raw": "Sonic Carrying Case",
+            "source_rows": [
+              4
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Sensor",
+            "name_vi": "Cảm biến",
+            "value_raw": "3-dimensional sonic anemometer",
+            "source_rows": [
+              6
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Measurement Description",
+            "name_vi": "Mô tả phép đo",
+            "value_raw": "Highest-quality wind speed and direction",
+            "source_rows": [
+              7
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Operating Temperature Range",
+            "name_vi": "Dải nhiệt độ hoạt động",
+            "value_raw": "-40 to +50°C (equivalent to 305 to 368 m s⁻¹ in speed of sound)",
+            "source_rows": [
+              8
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Outputs",
+            "name_vi": "Đầu ra",
+            "value_raw": "ux, uy, uz, Ts\nux, uy, uz are wind components referenced to the anemometer axes\nTs is sonic temperature in degrees Celsius.",
+            "source_rows": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Signal Type/Output",
+            "name_vi": "Loại tín hiệu / Đầu ra",
+            "value_raw": "null",
+            "source_rows": [
+              12
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Speed of Sound",
+            "name_vi": "Tốc độ âm thanh",
+            "value_raw": "Determined from three acoustic paths.\nCorrected for crosswind effects.",
+            "source_rows": [
+              13,
+              14
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Wind Direction Range",
+            "name_vi": "Dải hướng gió",
+            "value_raw": "2.5 to 357.5° in CSAT3B coordinate system\n0 to 360° customized",
+            "source_rows": [
+              15,
+              16
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Range",
+            "name_vi": "Dải đo",
+            "value_raw": "null",
+            "source_rows": [
+              17
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Filter Bandwidths",
+            "name_vi": "Băng thông bộ lọc",
+            "value_raw": "5, 10, 20, or 25 Hz",
+            "source_rows": [
+              18
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Measurement Path Length",
+            "name_vi": "Chiều dài đường đo",
+            "value_raw": "10.0 cm (3.9 in.) vertical\n5.8 cm (2.3 in.) horizontal",
+            "source_rows": [
+              19,
+              20
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Angle from Horizontal",
+            "name_vi": "Góc đầu dò so với phương ngang",
+            "value_raw": "60 degrees",
+            "source_rows": [
+              21
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Ingress Protection",
+            "name_vi": "Cấp bảo vệ xâm nhập",
+            "value_raw": "null",
+            "source_rows": [
+              22
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Diameter",
+            "name_vi": "Đường kính đầu dò",
+            "value_raw": "0.64 cm (0.25 in.)",
+            "source_rows": [
+              23
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Transducer Mounting Arm Diameter",
+            "name_vi": "Đường kính tay gắn đầu dò",
+            "value_raw": "0.84 cm (0.33 in.)",
+            "source_rows": [
+              24
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Support Arm Diameter",
+            "name_vi": "Đường kính tay đỡ",
+            "value_raw": "1.59 cm (0.63 in.)",
+            "source_rows": [
+              25
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Anemometer Head Weight",
+            "name_vi": "Khối lượng đầu đo gió",
+            "value_raw": "1.9 kg (4.2 lb)",
+            "source_rows": [
+              26
+            ]
+          },
+          {
+            "section": "SPECIFICATIONS",
+            "name_en": "Anemometer Dimensions",
+            "name_vi": "Kích thước máy đo gió",
+            "value_raw": "63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.)",
+            "source_rows": [
+              27
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Accuracy specifications assume the following:\n-40° to +50°C operating range\nWind speeds < 30 m s⁻¹\nWind angles between ±170°",
+            "source_rows": [
+              29,
+              30,
+              31,
+              32
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "Maximum Offset Error",
+            "name_vi": "Sai số lệch tối đa",
+            "value_raw": "< ±8.0 cm s⁻¹ (ux, uy)\n< ±4.0 cm s⁻¹ (uz)",
+            "source_rows": [
+              33,
+              34
+            ]
+          },
+          {
+            "section": "Wind Accuracy",
+            "name_en": "Maximum Gain Error",
+            "name_vi": "Sai số hệ số khuếch đại tối đa",
+            "value_raw": "< ±3% of reading (wind vector within ±10° of horizontal)\n< ±2% of reading (wind vector within ±5° of horizontal)\n< ±6% of reading (wind vector within ±20° of horizontal)",
+            "source_rows": [
+              35,
+              36,
+              37
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "ux, uy",
+            "name_vi": "ux, uy",
+            "value_raw": "1 mm s⁻¹ RMS",
+            "source_rows": [
+              39
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "uz",
+            "name_vi": "uz",
+            "value_raw": "0.5 mm s⁻¹ RMS",
+            "source_rows": [
+              40
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "Ts",
+            "name_vi": "Ts",
+            "value_raw": "0.002°C RMS (at 25°C)",
+            "source_rows": [
+              41
+            ]
+          },
+          {
+            "section": "Measurement Resolution",
+            "name_en": "Wind Direction",
+            "name_vi": "Hướng gió",
+            "value_raw": "< 0.058° (ux = uy ≤ 1 m s⁻¹)",
+            "source_rows": [
+              42
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Data Logger Triggered",
+            "name_vi": "Kích hoạt bởi bộ ghi dữ liệu",
+            "value_raw": "1 to 100 Hz",
+            "source_rows": [
+              44
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Unprompted Output (to PC)",
+            "name_vi": "Đầu ra không yêu cầu (đến PC)",
+            "value_raw": "10, 20, 50, or 100 Hz",
+            "source_rows": [
+              45
+            ]
+          },
+          {
+            "section": "Measurement Rates",
+            "name_en": "Internal Self-Trigger Rate",
+            "name_vi": "Tốc độ tự kích hoạt nội bộ",
+            "value_raw": "100 Hz",
+            "source_rows": [
+              46
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Data Logger Triggered (no filter)",
+            "name_vi": "Kích hoạt bởi bộ ghi dữ liệu (không lọc)",
+            "value_raw": "1 trigger period (1 scan interval)",
+            "source_rows": [
+              48
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Unprompted Output (no filter)",
+            "name_vi": "Đầu ra không yêu cầu (không lọc)",
+            "value_raw": "10 ms",
+            "source_rows": [
+              49
+            ]
+          },
+          {
+            "section": "Measurement Delay",
+            "name_en": "Filtered Output (data-logger-prompted or unprompted to PC)",
+            "name_vi": "Đầu ra đã lọc",
+            "value_raw": "395 ms (with 10 Hz bandwidth filter)\n795 ms (with 5 Hz bandwidth filter)\n155 ms (with 25 Hz bandwidth filter)\n195 ms (with 20 Hz bandwidth filter)",
+            "source_rows": [
+              50,
+              51,
+              52,
+              53
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Update Rate",
+            "name_vi": "Tốc độ cập nhật",
+            "value_raw": "2 Hz",
+            "source_rows": [
+              55
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Inclinometer Accuracy",
+            "name_vi": "Độ chính xác cảm biến nghiêng",
+            "value_raw": "±1°",
+            "source_rows": [
+              56
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Relative Humidity Accuracy",
+            "name_vi": "Độ chính xác độ ẩm tương đối",
+            "value_raw": "±7% (over 90 to 100% range)\n±7% (over 0 to 10% range)\n±3% (over 10 to 90% range)",
+            "source_rows": [
+              57,
+              58,
+              59
+            ]
+          },
+          {
+            "section": "Internal Monitor Measurements",
+            "name_en": "Board Temperature Accuracy",
+            "name_vi": "Độ chính xác nhiệt độ bo mạch",
+            "value_raw": "±2°C",
+            "source_rows": [
+              60
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for data-logger-based data acquisition.",
+            "source_rows": [
+              62
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Bit Period",
+            "name_vi": "Chu kỳ bit",
+            "value_raw": "10 µs to 1 ms",
+            "source_rows": [
+              63
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period)\n76 m (250 ft) max (@ 1 ms bit period)",
+            "source_rows": [
+              64,
+              65
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Address Range",
+            "name_vi": "Dải địa chỉ",
+            "value_raw": "1 to 14",
+            "source_rows": [
+              66
+            ]
+          },
+          {
+            "section": "SDM",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~200",
+            "source_rows": [
+              67
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for data-logger-based data acquisition.",
+            "source_rows": [
+              69
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Baud Rate",
+            "name_vi": "Tốc độ baud",
+            "value_raw": "50 kbps to 1 Mbps",
+            "source_rows": [
+              70
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "853 m (2800 ft) max (@ 50 kbps)\n122 m (400 ft) max (@ 250 kbps)\n15 m (50 ft) max (@ 1 Mbps)",
+            "source_rows": [
+              71,
+              72,
+              73
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Address Range",
+            "name_vi": "Dải địa chỉ",
+            "value_raw": "1 to 120",
+            "source_rows": [
+              74
+            ]
+          },
+          {
+            "section": "CPI",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~300",
+            "source_rows": [
+              75
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for anemometer configuration or PC-based data acquisition.",
+            "source_rows": [
+              77
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Baud Rate",
+            "name_vi": "Tốc độ baud",
+            "value_raw": "9.6 kbps to 115.2 kbps",
+            "source_rows": [
+              78
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "610 m (2000 ft) max (@ 9.6 kbps)\n305 m (1000 ft) max (@ 115.2 kbps)",
+            "source_rows": [
+              79,
+              80
+            ]
+          },
+          {
+            "section": "RS-485",
+            "name_en": "Bus Clocks per Sample",
+            "name_vi": "Xung bus trên mỗi mẫu",
+            "value_raw": "~500 (ASCII formatted)",
+            "source_rows": [
+              81
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "-NOTE-",
+            "name_vi": "Ghi chú",
+            "value_raw": "Used for anemometer configuration or PC-based data acquisition.",
+            "source_rows": [
+              83
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "Connection Speed",
+            "name_vi": "Tốc độ kết nối",
+            "value_raw": "USB 2.0 full speed 12 Mbps",
+            "source_rows": [
+              84
+            ]
+          },
+          {
+            "section": "USB",
+            "name_en": "Cable Length",
+            "name_vi": "Chiều dài cáp",
+            "value_raw": "5 m (16.4 ft) maximum",
+            "source_rows": [
+              85
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Voltage Supply / Anemometer Voltage Requirement",
+            "name_vi": "Điện áp cấp / Yêu cầu điện áp máy đo gió",
+            "value_raw": "9.5 to 32 Vdc",
+            "source_rows": [
+              87
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Current at 10 Hz Measurement Rate",
+            "name_vi": "Dòng tại tốc độ đo 10 Hz",
+            "value_raw": "65 mA (@ 24 Vdc)\n110 mA (@ 12 Vdc)",
+            "source_rows": [
+              88,
+              89
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Current at 100 Hz Measurement Rate",
+            "name_vi": "Dòng tại tốc độ đo 100 Hz",
+            "value_raw": "80 mA (@ 24 Vdc)\n145 mA (@ 12 Vdc)",
+            "source_rows": [
+              90,
+              91
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Heaters",
+            "name_vi": "Bộ gia nhiệt",
+            "value_raw": "6.2 A (@ 24 Vdc)",
+            "source_rows": [
+              92
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Arms and Strut",
+            "name_vi": "Tay và thanh chống",
+            "value_raw": "2.46 A at maximum heating (@ 24 Vdc)\n0.74 A nominal (@ 24 Vdc)",
+            "source_rows": [
+              93,
+              94
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Transducer Fingers",
+            "name_vi": "Ngón đầu dò",
+            "value_raw": "3.75 A at maximum heating (@ 24 Vdc)\n1.13 A nominal (@ 24 Vdc)",
+            "source_rows": [
+              95,
+              96
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Total System Power",
+            "name_vi": "Công suất toàn hệ thống",
+            "value_raw": "6.2 A at maximum heating (@ 24 Vdc)\n1.86 A nominal (@ 24 Vdc)",
+            "source_rows": [
+              97,
+              98
+            ]
+          },
+          {
+            "section": "Power Requirements",
+            "name_en": "Controller Current Required",
+            "name_vi": "Dòng yêu cầu bộ điều khiển",
+            "value_raw": "30 mA (heaters off [quiescent] @ 24 Vdc)",
+            "source_rows": [
+              99
+            ]
+          }
+        ],
+        "documents": {
+          "product_url": null,
+          "datasheet": "b_csat3bh_datasheet.pdf",
+          "user_manual": "csat3bh_manual.pdf",
+          "order_form": "https://www.campbellsci.com/products/csat3bh"
+        },
+        "media": {
+          "product_images": [
+            {
+              "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13110",
+              "source": "user_provided"
+            }
+          ]
+        },
+        "validation": {
+          "status": "review",
+          "warnings": [
+            "Taxonomy could not be determined from source file."
+          ]
+        }
+      }
+    ]
+  },
+  "canonical_json": [
+    {
+      "product_id": "CSI_CSAT3B_NC",
+      "model": "CSAT3B-NC",
+      "product_name_en": "CSAT3B-NC",
+      "category": null,
+      "subcategory": null,
+      "device_type": null,
+      "source_url": null,
+      "verified": "Yes"
+    },
+    {
+      "product_id": "CSI_CSAT3B_SC",
+      "model": "CSAT3B-SC",
+      "product_name_en": "CSAT3B-SC",
+      "category": null,
+      "subcategory": null,
+      "device_type": null,
+      "source_url": null,
+      "verified": "Yes"
+    },
+    {
+      "product_id": "CSI_CSAT3BH_NC",
+      "model": "CSAT3BH-NC",
+      "product_name_en": "CSAT3BH-NC",
+      "category": null,
+      "subcategory": null,
+      "device_type": null,
+      "source_url": null,
+      "verified": "Yes"
+    },
+    {
+      "product_id": "CSI_CSAT3BH_SC",
+      "model": "CSAT3BH-SC",
+      "product_name_en": "CSAT3BH-SC",
+      "category": null,
+      "subcategory": null,
+      "device_type": null,
+      "source_url": null,
+      "verified": "Yes"
+    }
+  ]
+}

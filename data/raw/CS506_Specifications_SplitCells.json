@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "source": {
     "file": "CS506_Specifications_SplitCells.xlsx",
     "sheet": "CS506_Specifications"
@@ -9,15 +9,15 @@
       "product_id": "CSI_CS506",
       "manufacturer": "Campbell Scientific",
       "model": "CS506",
-      "product_name_en": null,
+      "product_name_en": "CS506 Fuel Moisture Sensor",
       "identity_source": {
         "model": "worksheet",
         "product_name_en": "manual_review"
       },
       "taxonomy": {
-        "category": null,
-        "subcategory": null,
-        "device_type": null
+        "category": "Sensors",
+        "subcategory": "Fuel Moisture Sensors",
+        "device_type": "Fuel Moisture Sensor"
       },
       "specifications": [
         {
@@ -86,7 +86,7 @@
           ]
         },
         {
-          "section": "Fuel Moisture Accuracy",
+          "section": "SPECIFICATIONS",
           "name_en": "0 to 10% Range",
           "name_vi": "Dải 0 đến 10%",
           "value_raw": "±1.25% (worst case) | ±0.74% (RMS error)",
@@ -96,7 +96,7 @@
           ]
         },
         {
-          "section": "Fuel Moisture Accuracy",
+          "section": "SPECIFICATIONS",
           "name_en": "10 to 20% Range",
           "name_vi": "Dải 10 đến 20%",
           "value_raw": "±0.9% (RMS error) | ±2% (worst case)",
@@ -106,7 +106,7 @@
           ]
         },
         {
-          "section": "Fuel Moisture Accuracy",
+          "section": "SPECIFICATIONS",
           "name_en": "20 to 30% Range",
           "name_vi": "Dải 20 đến 30%",
           "value_raw": "±3.4% (worst case) | ±1.94% (RMS error)",
@@ -116,7 +116,7 @@
           ]
         },
         {
-          "section": "Fuel Moisture Accuracy",
+          "section": "SPECIFICATIONS",
           "name_en": "30 to 50% Range",
           "name_vi": "Dải 30 đến 50%",
           "value_raw": "±2.27% (RMS error) | ±4.11% (worst case)",
@@ -135,7 +135,7 @@
       "media": {
         "product_images": [
           {
-            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/1718",
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/1716",
             "source": "user_provided"
           }
         ]
@@ -143,9 +143,43 @@
       "validation": {
         "status": "needs_review",
         "warnings": [
-          "Product name was not found explicitly in the worksheet or supplied Product Master."
+          "Product name was not found explicitly in the worksheet."
         ]
-      }
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_CS506",
+        "variant_count": 1,
+        "source_files": [
+          "CS506_Output_Fix.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_CS506",
+          "model": "CS506",
+          "product_name_en": null,
+          "is_representative": true,
+          "distinguishing_specifications": [],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cs506_datasheet.pdf",
+            "user_manual": "cs506_manual.pdf",
+            "order_form": "https://www.campbellsci.com/products/cs506"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/1716",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CS506_Output_Fix.json",
+            "product_index": 0
+          }
+        }
+      ]
     }
   ]
 }

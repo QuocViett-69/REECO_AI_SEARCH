@@ -1,0 +1,958 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_METEOPV",
+  "model": "MeteoPV",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_METEOPV.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_METEOPV.json#0",
+    "raw_product_id": "CSI_METEOPV",
+    "raw_model": "MeteoPV"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_METEOPV",
+      "model": "MeteoPV",
+      "product_name_en": "MeteoPV",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Sensor Configuration",
+          "value_raw": "Up to 4 pyranometers, 1 compact weather sensor, and up to 4 back-of-module temperature sensors"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration Interface",
+          "value_raw": "Onboard browser-based user interface"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration URL",
+          "value_raw": "www.linktodevice.com"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration File Management",
+          "value_raw": "Apply to Station; Save to File; Load from File"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Remote Configuration Requirement",
+          "value_raw": "Administrator account required for configuration over Ethernet"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Name",
+      "value_raw": "MeteoPV",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Type",
+      "value_raw": "Solar Resource Platform / Modbus TCP-to-Modbus RTU Gateway",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Modbus RTU",
+          "Modbus TCP"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Manufacturer",
+      "value_raw": "Campbell Scientific, Inc.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary communications and data-aggregation device / PV monitoring gateway",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Primary Application",
+      "value_raw": "Distributed photovoltaic monitoring and plane-of-array (POA) sunstations",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "primary_application"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Core Function",
+      "value_raw": "Connects multiple RS-485 sensors, consolidates sensor data and metadata into a unified Modbus map, and exposes data to SCADA or other collection platforms over Modbus TCP/IP",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Modbus TCP",
+          "RS-485",
+          "TCP/IP"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "core_function"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Datalogger / Gateway Role",
+      "value_raw": "Modbus/TCP-to-Modbus/RTU gateway; Modbus data aggregation platform",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Modbus",
+          "TCP"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "datalogger_per_gateway_role"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Supported Sensor Categories",
+      "value_raw": "Pyranometers; reference cells; back-of-module temperature sensors; compact weather sensors",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "supported_sensor_categories"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Maximum Sensor Configuration",
+      "value_raw": "Up to 4 pyranometers, 1 compact weather sensor, and up to 4 back-of-module temperature sensors",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "maximum_sensor_configuration"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "SCADA Interface",
+      "value_raw": "Ethernet / Modbus TCP/IP",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Modbus TCP",
+          "Ethernet",
+          "TCP/IP"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Modbus TCP",
+          "Ethernet",
+          "TCP/IP"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "scada_interface"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Interface",
+      "value_raw": "Half-duplex RS-485 / Modbus RTU",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Modbus RTU",
+          "RS-485"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Modbus RTU",
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "sensor_interface"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Ethernet Port",
+      "value_raw": "RJ45, 10/100Base-TX, full and half duplex",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RJ45"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RJ45"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "ethernet_port"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Ethernet Features",
+      "value_raw": "Auto-MDIX; IP Address, Netmask, and Gateway configuration; Modbus TCP/IP",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Modbus TCP",
+          "TCP/IP"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "ethernet_features"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RS-485 Maximum Cable Length",
+      "value_raw": "1200 m",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1200,
+        "unit": "m",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "rs_485_maximum_cable_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RS-485 Output Voltage",
+      "value_raw": "12 V supplied by RS-485 terminals; varies with load",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-485"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "rs_485_output_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RS-485 Output Voltage – Minimum",
+      "value_raw": "11 V",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 11,
+        "unit": "V",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "rs_485_output_voltage_minimum",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RS-485 Output Voltage – Maximum",
+      "value_raw": "14.5 V",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 14.5,
+        "unit": "V",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "rs_485_output_voltage_maximum",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RS-485 Output Voltage – Typical",
+      "value_raw": "11.6 V under full load of 500 mA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "rs_485_output_voltage_typical",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RS-485 Current Supply Limit",
+      "value_raw": "500 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 500,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "rs_485_current_supply_limit",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Voltage",
+      "value_raw": "10 to 30 VDC per 2026 Getting Started guide; 2018 brochure states 9 to 30 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "operating_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Power Sources",
+      "value_raw": "USB for configuration only; 10 to 30 VDC terminal supply; Power over Ethernet (PoE)",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Ethernet",
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "power_sources",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Power over Ethernet",
+      "value_raw": "Supported; 2018 brochure states isolated PoE, IEEE 802.3af compliant",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "power_over_ethernet",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "USB Power Behavior",
+      "value_raw": "USB can power MeteoPV for configuration, but does not supply power to connected sensors",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "usb_power_behavior",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Power Behavior",
+      "value_raw": "When powered by external DC or PoE, MeteoPV provides 12 VDC power to connected RS-485 sensors",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "sensor_power_behavior",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Power Consumption",
+      "value_raw": "2018 brochure: ~30 mA at 12 VDC, excluding sensors",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "power_consumption",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "USB Interface",
+      "value_raw": "Micro-B USB; configuration/computer connection",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "USB"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "usb_interface"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "USB Data Rate",
+      "value_raw": "2018 brochure: USB 2.0 full-speed, 12 Mbps",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "usb_data_rate",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "CPU",
+      "value_raw": "2018 brochure: ARM Cortex-M4, 144 MHz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "cpu"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-40 to +70 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Configuration Interface",
+      "value_raw": "Onboard browser-based user interface",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "configuration_interface"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Default USB IP Address",
+      "value_raw": "192.168.66.1",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "default_usb_ip_address"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Configuration URL",
+      "value_raw": "www.linktodevice.com",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "configuration_url"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Station Metadata",
+      "value_raw": "Station Name, Location, and Station Notes can be configured",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "station_metadata"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Configuration File Management",
+      "value_raw": "Apply to Station; Save to File; Load from File",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "configuration_file_management"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "User Account Levels",
+      "value_raw": "None; Read only; Administrator",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "user_account_levels"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Remote Configuration Requirement",
+      "value_raw": "Administrator account required for configuration over Ethernet",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Ethernet"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 35,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "remote_configuration_requirement"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Default Anonymous Access",
+      "value_raw": "Anonymous account is provided with read-only permissions by default",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 36,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "default_anonymous_access"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Installation Report",
+      "value_raw": "Browser-based interface can generate a PDF installation report containing site data, sensor metadata, and configuration data",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 37,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "installation_report"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Programming Requirement",
+      "value_raw": "No coding required for normal deployment/configuration",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 38,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "programming_requirement"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Mounting",
+      "value_raw": "DIN-rail mounting",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 39,
+        "source_rows": [
+          41
+        ]
+      },
+      "canonical_key": "mounting"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Surge / ESD Protection",
+      "value_raw": "Integrated surge and ESD protection",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 40,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "surge_per_esd_protection"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "EMC Immunity",
+      "value_raw": "2018 brochure: IEC 61000-4-2 Class 4",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 41,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "emc_immunity"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Compatible Campbell Scientific Sensors",
+      "value_raw": "CS240DM; MetSENS series; CS325DM (2018 brochure)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 42,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "compatible_campbell_scientific_sensors"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Other Compatible Sensors",
+      "value_raw": "EKO MS-80M; Hukseflux SR30 and SR20-D2; Kipp & Zonen SMP series (2018 brochure)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_METEOPV.json",
+        "product_index": 0,
+        "spec_index": 43,
+        "source_rows": [
+          45
+        ]
+      },
+      "canonical_key": "other_compatible_sensors"
+    }
+  ]
+}

@@ -1,0 +1,909 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_MS80SH",
+  "model": "MS-80SH",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_MS80SH.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_MS80SH.json#0",
+    "raw_product_id": "CSI_MS80SH",
+    "raw_model": "MS-80SH"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_MS80SH",
+      "model": "MS-80SH",
+      "product_name_en": "MS-80SH",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default RS-485 Configuration",
+          "value_raw": "19200 baud; 8 data bits; even parity; 1 stop bit"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Name",
+      "value_raw": "MS-80SH",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Type",
+      "value_raw": "Class A Digital Pyranometer with SDI-12 and Modbus Output",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Modbus",
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Manufacturer",
+      "value_raw": "EKO Instruments; supplied/cabled for Campbell Scientific systems",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary measurement device / solar radiation sensor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Primary Application",
+      "value_raw": "Monitoring solar irradiance across the full solar spectrum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "primary_application"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "ISO Classification",
+      "value_raw": "ISO 9060:2018 Class A spectrally flat and fast-response pyranometer (secondary standard)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "iso_classification"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Calibration",
+      "value_raw": "ISO 17025-certified calibration",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "calibration"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Construction",
+      "value_raw": "Internal desiccation; single dome; quartz diffusor; thermally isolated thermopile detector",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "sensor_construction"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Integrated Sensors",
+      "value_raw": "Tilt / roll sensor; internal temperature sensor; internal humidity sensor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "integrated_sensors"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Integrated Heater",
+      "value_raw": "Controllable dome heater for dew and frost mitigation",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "integrated_heater"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Output",
+      "value_raw": "SDI-12 and Modbus RTU over RS-485 (digital)",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Modbus RTU",
+          "SDI-12",
+          "RS-485"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Modbus RTU",
+          "SDI-12",
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "output"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Default SDI-12 Address",
+      "value_raw": "0",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "default_sdi_12_address"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Default Modbus Address",
+      "value_raw": "Last two digits of serial number",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "default_modbus_address"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Default RS-485 Configuration",
+      "value_raw": "19200 baud; 8 data bits; even parity; 1 stop bit",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "default_rs_485_configuration"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensitivity",
+      "value_raw": "~10 µV/(W/m²)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "sensitivity"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Response Time – 95%",
+      "value_raw": "<0.5 s (manual); brochure states <1 s",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "response_time_95_percent",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Response Time – 99%",
+      "value_raw": "<1 s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "s",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "response_time_99_percent",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Zero Offset A",
+      "value_raw": "<1 W/m² (response to 200 W/m² net thermal radiation)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "zero_offset_a"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Zero Offset B",
+      "value_raw": "±1 W/m² (response to 5 K/h change in ambient temperature)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "zero_offset_b"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Non-Stability",
+      "value_raw": "±0.5% change in 5 years",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "non_stability"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Non-Linearity",
+      "value_raw": "±0.2% at 1000 W/m²",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "non_linearity"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Directional Response",
+      "value_raw": "±10 W/m² at 1000 W/m²",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "directional_response"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Spectral Selectivity",
+      "value_raw": "±3% (0.35 to 1.5 µm)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "spectral_selectivity"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Spectral Range",
+      "value_raw": "285 to 3000 nm",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 285,
+        "max_value": 3000,
+        "unit": "nm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "spectral_range"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Irradiance Range",
+      "value_raw": "0 to 4000 W/m²",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 4000,
+        "unit": "W/m²",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "irradiance_range"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Temperature Response",
+      "value_raw": "±0.5% (-20 to +50 °C) per manual; brochure states <0.8% (-10 to +40 °C) and <1% (-20 to +50 °C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "temperature_response",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Tilt Response",
+      "value_raw": "±0.2% at 1000 W/m²",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "tilt_response"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-40 to +80 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Supply Voltage",
+      "value_raw": "8 to 30 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 8,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Wiring Power Input",
+      "value_raw": "8 to 32 VDC",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 8,
+        "max_value": 32,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "wiring_power_input",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Power Consumption",
+      "value_raw": "<0.2 W without heater; <1.4 W with heater",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "power_consumption",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Diameter – Including Sun Screen",
+      "value_raw": "9.6 cm (3.8 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 9.6,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 3.8,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "diameter_including_sun_screen",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Body Height",
+      "value_raw": "7.3 cm (2.9 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 7.3,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.9,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "body_height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Dome Height",
+      "value_raw": "1.2 cm (0.5 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.2,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.5,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "dome_height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Leveling Screw Height",
+      "value_raw": "1.6 cm (0.6 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.6,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.6,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "leveling_screw_height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "0.41 kg (0.90 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.41,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.9,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 35,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "SDI-12 Valid Addresses",
+      "value_raw": "0–9, a–z, A–Z",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 36,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "sdi_12_valid_addresses"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "SDI-12 Measurement Instruction",
+      "value_raw": "SDI12Recorder()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 37,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "sdi_12_measurement_instruction"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Modbus Measurement Instructions",
+      "value_raw": "SerialOpen() followed by ModbusClient()",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 38,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "modbus_measurement_instructions"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Compatible Campbell Scientific Data Loggers",
+      "value_raw": "GRANITE series, CR6, CR1000X, CR350 series, CR300 series, CR1000, CR800 series",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 39,
+        "source_rows": [
+          41
+        ]
+      },
+      "canonical_key": "compatible_campbell_scientific_data_loggers"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RS-485 Direct Compatibility",
+      "value_raw": "MeteoPV, CR6 series, CR1000X, or Modbus RTU RS-485 network",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Modbus RTU",
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 40,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "rs_485_direct_compatibility"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Maintenance",
+      "value_raw": "No scheduled replacement service items; no accessible desiccant cartridge",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 41,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "maintenance"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Recommended Recalibration Interval",
+      "value_raw": "2 years in the product manual; brochure states a 5-year recalibration interval",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 42,
+        "source_rows": [
+          44
+        ]
+      },
+      "canonical_key": "recommended_recalibration_interval",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Warranty",
+      "value_raw": "5 years",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 5,
+        "unit": "year",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_MS80SH.json",
+        "product_index": 0,
+        "spec_index": 43,
+        "source_rows": [
+          45
+        ]
+      },
+      "canonical_key": "warranty"
+    }
+  ]
+}

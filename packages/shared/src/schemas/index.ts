@@ -40,6 +40,14 @@ export {
   SearchDocumentSemanticItemSchema,
   SearchDocumentTaxonomySchema,
 } from './product-search-document';
+export {
+  ProductVariantSchema,
+  ProductVariantSpecificationSchema,
+} from './product-variant';
+export type {
+  ProductVariant,
+  ProductVariantSpecification,
+} from './product-variant';
 export type {
   ImportantSearchSpecification,
   ProductSearchDocument,

@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_VWANALYZER",
+  "model": "VWANALYZER",
+  "name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Vibrating Wire Analyzers",
+    "subcategory_key": "vibrating_wire_analyzers",
+    "device_type": "Vibrating Wire Analyzer",
+    "device_type_key": "vibrating_wire_analyzer"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_VWANALYZER.json",
+            "product_index": 0,
+            "spec_index": 29,
+            "source_rows": [
+              32
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "VWANALYZER",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "VWANALYZER"
+        }
+      ]
+    },
+    {
+      "value": "CSI_VWANALYZER",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_VWANALYZER"
+        }
+      ]
+    },
+    {
+      "value": "Vibrating Wire Analyzer (VWAnalyzer)",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Vibrating Wire Analyzer (VWAnalyzer)"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "VWANALYZER",
+      "Vibrating Wire Analyzer (VWAnalyzer)",
+      "Measurement Devices",
+      "Vibrating Wire Analyzers",
+      "Vibrating Wire Analyzer",
+      "USB",
+      "CSI_VWANALYZER"
+    ],
+    "vi": [
+      "VWANALYZER",
+      "Thiết bị đo lường",
+      "Bộ phân tích dây rung",
+      "USB"
+    ]
+  }
+}

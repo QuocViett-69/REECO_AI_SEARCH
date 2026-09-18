@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS456",
+  "model": "CS456",
+  "name_en": "CS456",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Water Level, Stage, and Flow Sensors",
+    "subcategory_key": "water_level_stage_and_flow_sensors",
+    "device_type": "Water-Level Sensor",
+    "device_type_key": "water_level_sensor"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output_options",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS456.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4,
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output_options",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS456.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4,
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "CS456",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS456"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS456",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS456"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS456",
+      "Sensors",
+      "Water Level, Stage, and Flow Sensors",
+      "Water-Level Sensor",
+      "RS-232",
+      "SDI-12",
+      "CSI_CS456"
+    ],
+    "vi": [
+      "CS456",
+      "Cảm biến",
+      "Cảm biến mực nước, cao trình và lưu lượng",
+      "Cảm biến mực nước",
+      "RS-232",
+      "SDI-12"
+    ]
+  }
+}

@@ -61,7 +61,2275 @@
   "aliases": [
     "CR310-NA",
     "CSI_CR310_NA",
-    "CR310 Datalogger (-40 to +70C) -NA No Additional Co"
+    "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+    "CR310-CELL205-NP",
+    "CR310-CELL205-AT",
+    "CR310-CELL205-BC",
+    "CR310-CELL205-IT1A",
+    "CR310-CELL205-IT1B",
+    "CR310-CELL210-NP",
+    "CR310-CELL210-V",
+    "CR310-CELL210-VS",
+    "CR310-CELL215-NP",
+    "CR310-CELL215-IT1A",
+    "CR310-CELL215-IT1B",
+    "CR310-CELL220-NP",
+    "CR310-CELL220-IT1A",
+    "CR310-CELL220-IT1B",
+    "CR310-CELL225-NP",
+    "CR310-CELL225-IT1A",
+    "CR310-CELL225-IT1B",
+    "CR310-RF407",
+    "CR310-RF412",
+    "CR310-RF422",
+    "CR310-RF427",
+    "CR310-WIFI"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CR310_NA",
+      "model": "CR310-NA",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "No Additional Coms"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 g (0.64 lb)"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL205_NP",
+      "model": "CR310-CELL205-NP",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "NP"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL205"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/4G LTE CAT1 3G ATT No Provisioning"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL205 option is not compatible with a Verizon cellular network."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850, 1700/2100 (AWS), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL205_AT",
+      "model": "CR310-CELL205-AT",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "AT"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL205"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/4G LTE CAT1 Provisioned for AT&T North America"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL205 option is not compatible with a Verizon cellular network."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850, 1700/2100 (AWS), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL205_BC",
+      "model": "CR310-CELL205-BC",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "BC"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL205"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL205 option is not compatible with a Verizon cellular network."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850, 1700/2100 (AWS), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL205_IT1A",
+      "model": "CR310-CELL205-IT1A",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "IT1A"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL205"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL205 option is not compatible with a Verizon cellular network."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850, 1700/2100 (AWS), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL205_IT1B",
+      "model": "CR310-CELL205-IT1B",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "IT1B"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL205"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL205 option is not compatible with a Verizon cellular network."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850, 1700/2100 (AWS), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL210_NP",
+      "model": "CR310-CELL210-NP",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "NP"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL210"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL210 option is only compatible with a Verizon cellular network."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1700, 1900, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "28 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "90 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL210_V",
+      "model": "CR310-CELL210-V",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "V"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL210"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/4G LTE CAT1 VZ Provisioned for Verizon US"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL210 option is only compatible with a Verizon cellular network."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1700, 1900, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "28 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "90 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL210_VS",
+      "model": "CR310-CELL210-VS",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "VS"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL210"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/4G LTE CAT1 VZ Provisioned for Verizon US Static IP"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL210 option is only compatible with a Verizon cellular network."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1700, 1900, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "28 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "90 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL215_NP",
+      "model": "CR310-CELL215-NP",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "NP"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL215"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/4G LTE CAT1 No Provisioning"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL215 option is intended for use in EMEA countries."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "2G (GSM/GPRS/EDGE)\n3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "2G Frequency Bands",
+          "value_raw": "900 and 1800 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850, 900, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "800, 850, 900, 1800, 2100, and 2600 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL215_IT1A",
+      "model": "CR310-CELL215-IT1A",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "IT1A"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL215"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL215 option is intended for use in EMEA countries."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "2G (GSM/GPRS/EDGE)\n3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "2G Frequency Bands",
+          "value_raw": "900 and 1800 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850, 900, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "800, 850, 900, 1800, 2100, and 2600 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL215_IT1B",
+      "model": "CR310-CELL215-IT1B",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "IT1B"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL215"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL215 option is intended for use in EMEA countries."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "2G (GSM/GPRS/EDGE)\n3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "2G Frequency Bands",
+          "value_raw": "900 and 1800 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850, 900, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "800, 850, 900, 1800, 2100, and 2600 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL220_NP",
+      "model": "CR310-CELL220-NP",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "NP"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL220"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/4G LTE CAT1 for Telstra Australia/NZ No Provisioning"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL220 option is intended for use in Australia and New Zealand."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850 and 2100 MHz (EC-21AUT)\n850, 900, 1900, and 2100 MHz (EC-21AU)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1800, 2100, and 2600 MHz (EC-21AUT)\n700, 900, 1700, 1800, 1900, 2100, and 2600 MHz (EC-21AU)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL220_IT1A",
+      "model": "CR310-CELL220-IT1A",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "IT1A"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL220"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL220 option is intended for use in Australia and New Zealand."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850 and 2100 MHz (EC-21AUT)\n850, 900, 1900, and 2100 MHz (EC-21AU)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1800, 2100, and 2600 MHz (EC-21AUT)\n700, 900, 1700, 1800, 1900, 2100, and 2600 MHz (EC-21AU)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL220_IT1B",
+      "model": "CR310-CELL220-IT1B",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "IT1B"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL220"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL220 option is intended for use in Australia and New Zealand."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "3G (UMTS/HSPA+)\n4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "3G Frequency Bands",
+          "value_raw": "850 and 2100 MHz (EC-21AUT)\n850, 900, 1900, and 2100 MHz (EC-21AU)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "700, 850, 1800, 2100, and 2600 MHz (EC-21AUT)\n700, 900, 1700, 1800, 1900, 2100, and 2600 MHz (EC-21AU)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL225_NP",
+      "model": "CR310-CELL225-NP",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "NP"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL225"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/4G LTE CAT1 for Japan No Provisioning"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL225 option is intended for use in Japan."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL225_IT1A",
+      "model": "CR310-CELL225-IT1A",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "IT1A"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL225"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL225 option is intended for use in Japan."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_CELL225_IT1B",
+      "model": "CR310-CELL225-IT1B",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "IT1B"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "CELL225"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Option Note",
+          "value_raw": "The CR310-CELL225 option is intended for use in Japan."
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cell Technologies",
+          "value_raw": "4G (LTE CAT-1)"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "4G Frequency Bands",
+          "value_raw": "800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "SMA\nExternal antenna required"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "SIM Interface",
+          "value_raw": "3FF (6 position/contacts)\nSupports SIMs that require 1.8 or 3 V"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Idle",
+          "value_raw": "14 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Additional Current - Transfer/Receive",
+          "value_raw": "75 mA average @ 12 Vdc"
+        },
+        {
+          "section": "CELLULAR OPTION SPECIFICATIONS",
+          "name_en": "Cellular Compliance",
+          "value_raw": "Industry Canada (IC): 10224A-201611EC21A"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_RF407",
+      "model": "CR310-RF407",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "RF407"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "RF407"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/900MHz Radio"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "306 g (0.68 lb)"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Type",
+          "value_raw": "Frequency-Hopping Spread-Spectrum (FHSS)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Frequency",
+          "value_raw": "902 to 928 MHz (US, Canada)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Transmit Power Output",
+          "value_raw": "5 to 250 mW (software/user selectable)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Channel Capacity",
+          "value_raw": "Eight 25-channel hop sequences sharing 64 available channels"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Receive Sensitivity",
+          "value_raw": "-101 dBm"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Data Rate",
+          "value_raw": "200 kbps"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Maximum Nodes in Network",
+          "value_raw": "50"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "Reverse Polarity SMA (RPSMA) jack (female)\nExternal antenna required"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Transmit",
+          "value_raw": "< 80 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle On",
+          "value_raw": "12 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 0.5 s Power Mode",
+          "value_raw": "4 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 1 s Power Mode",
+          "value_raw": "3 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 4 s Power Mode",
+          "value_raw": "1.5 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Compliance",
+          "value_raw": "United States FCC Part 15.247: MCQ-XB900HP\nIndustry Canada (IC): 1846A-XB900HP\nMexico IF: RCPDIXB15-0672-A1"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_RF412",
+      "model": "CR310-RF412",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "RF412"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "RF412"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "306 g (0.68 lb)"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Type",
+          "value_raw": "Frequency-Hopping Spread-Spectrum (FHSS)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Frequency",
+          "value_raw": "915 to 928 MHz (Australia, New Zealand)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Transmit Power Output",
+          "value_raw": "5 to 250 mW (software/user selectable)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Channel Capacity",
+          "value_raw": "Eight 25-channel hop sequences sharing 31 available channels"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Receive Sensitivity",
+          "value_raw": "-101 dBm"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Data Rate",
+          "value_raw": "200 kbps"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Maximum Nodes in Network",
+          "value_raw": "50"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "Reverse Polarity SMA (RPSMA) jack (female)\nExternal antenna required"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Transmit",
+          "value_raw": "< 80 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle On",
+          "value_raw": "12 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 0.5 s Power Mode",
+          "value_raw": "4 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 1 s Power Mode",
+          "value_raw": "3 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 4 s Power Mode",
+          "value_raw": "1.5 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Compliance",
+          "value_raw": "ACMA RCM\nUnited States FCC Part 15.247: MCQ-XB900HP\nIndustry Canada (IC): 1846A-XB900HP"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_RF422",
+      "model": "CR310-RF422",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "RF422"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "RF422"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "306 g (0.68 lb)"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Type",
+          "value_raw": "SRD860 Radio with Listen Before Talk (LBT) and Automatic Frequency Agility (AFA)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Frequency",
+          "value_raw": "863 to 870 MHz (Europe, Middle East, and Africa)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Transmit Power Output",
+          "value_raw": "2 to 25 mW (software/user selectable)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Channel Capacity",
+          "value_raw": "Ten 30-channel hop sequences (default), software configurable to meet local regulations\n10 sequences for reducing interference through channel hop"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Receive Sensitivity",
+          "value_raw": "-106 dBm"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Data Rate",
+          "value_raw": "10 kbps"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Maximum Nodes in Network",
+          "value_raw": "20"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "Reverse Polarity SMA (RPSMA) jack (female)\nExternal antenna required"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Transmit",
+          "value_raw": "20 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle On",
+          "value_raw": "9.5 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 0.5 s Power Mode",
+          "value_raw": "3.5 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 1 s Power Mode",
+          "value_raw": "2 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 4 s Power Mode",
+          "value_raw": "1.5 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Compliance",
+          "value_raw": "EU Declaration of Conformity available from Campbell Scientific CR300/CR310 product pages"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_RF427",
+      "model": "CR310-RF427",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "RF427"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "RF427"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "288 to 306 g (0.64 to 0.68 lb) depending on communications option selected"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Type",
+          "value_raw": "Frequency-Hopping Spread-Spectrum (FHSS)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Frequency",
+          "value_raw": "902 to 907.5 MHz\n915 to 928 MHz (Brazil)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Transmit Power Output",
+          "value_raw": "5 to 250 mW (software/user selectable)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Channel Capacity",
+          "value_raw": "Eight 25-channel hop sequences sharing 43 available channels"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Receive Sensitivity",
+          "value_raw": "-101 dBm"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Data Rate",
+          "value_raw": "200 kbps"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Maximum Nodes in Network",
+          "value_raw": "50"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "Reverse Polarity SMA (RPSMA) jack (female)\nExternal antenna required"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Transmit",
+          "value_raw": "< 80 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle On",
+          "value_raw": "12 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 0.5 s Power Mode",
+          "value_raw": "4 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 1 s Power Mode",
+          "value_raw": "3 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Current - Idle 4 s Power Mode",
+          "value_raw": "1.5 mA @ 12 Vdc"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "RF Compliance",
+          "value_raw": "Brazil ANATEL standards in Resolution No. 506: 08335-17-10644"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CR310_WIFI",
+      "model": "CR310-WIFI",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Variant Code Suffix",
+          "value_raw": "WIFI"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Family",
+          "value_raw": "WIFI"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "w/Wireless Modem"
+        },
+        {
+          "section": "PRODUCT PAGE SUMMARY",
+          "name_en": "Weight / Mass",
+          "value_raw": "306 g (0.68 lb)"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Primary Specification Source",
+          "value_raw": "CR300-Series Specifications, Revision 05/2026"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CR310"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Electrical Specification Validity",
+          "value_raw": "-40° to +70°C, non-condensing environment, unless otherwise specified"
+        },
+        {
+          "section": "SOURCE / CONFIGURATION",
+          "name_en": "Recalibration Recommendation",
+          "value_raw": "Every three years"
+        },
+        {
+          "section": "ANALOG MEASUREMENT SPECIFICATIONS",
+          "name_en": "Analog Input Configuration",
+          "value_raw": "6 single-ended (SE) or 3 differential (DIFF) terminals\nIndividually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements\n24-bit ADC\nOne channel at a time is measured"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Maximum Possible Over-the-Air Data Rates",
+          "value_raw": "<11 Mbps over 802.11b\n<54 Mbps over 802.11g\n<72 Mbps over 802.11n"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Operating Frequency",
+          "value_raw": "2.4 GHz, 20 MHz bandwidth"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Antenna Connector",
+          "value_raw": "Reverse Polarity SMA (RPSMA)"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Antenna",
+          "value_raw": "Unity gain (0 dBd), 1/2 wave whip, omnidirectional\nArticulating knuckle joint for vertical or right-angle orientation"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Supported Technologies",
+          "value_raw": "802.11 b/g/n\nWPA/WPA2-Personal\nWPA/WPA2-Enterprise Security\nWEP"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Client Mode",
+          "value_raw": "WPA/WPA2-Personal and Enterprise\nWEP"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Access Point Mode",
+          "value_raw": "WPA2-Personal"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Receive Sensitivity",
+          "value_raw": "-97 dBm"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Wi-Fi Current - Client Communicating",
+          "value_raw": "70 mA typical @ 12 Vdc"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Wi-Fi Current - Client Idle",
+          "value_raw": "7 mA typical @ 12 Vdc"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Wi-Fi Current - Access Point Communicating",
+          "value_raw": "70 mA @ 12 Vdc"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Wi-Fi Current - Access Point Idle",
+          "value_raw": "62 mA typical @ 12 Vdc"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Wi-Fi Current - Idle",
+          "value_raw": "<0.1 mA @ 12 Vdc"
+        },
+        {
+          "section": "WI-FI OPTION SPECIFICATIONS",
+          "name_en": "Wi-Fi Compliance",
+          "value_raw": "United States FCC ID: XF6-RS9113SB\nIndustry Canada (IC): 8407A-RS9113SB"
+        }
+      ]
+    }
   ],
   "important_specifications": [
     {
@@ -77,7 +2345,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 21,
+        "spec_index": 19,
         "source_rows": [
           27
         ]
@@ -96,7 +2364,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 48,
+        "spec_index": 46,
         "source_rows": [
           57
         ]
@@ -116,7 +2384,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 29,
+        "spec_index": 27,
         "source_rows": [
           37
         ]
@@ -135,7 +2403,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 113,
+        "spec_index": 111,
         "source_rows": [
           127
         ]
@@ -154,7 +2422,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 43,
+        "spec_index": 41,
         "source_rows": [
           52
         ]
@@ -173,7 +2441,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 44,
+        "spec_index": 42,
         "source_rows": [
           53
         ]
@@ -192,7 +2460,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 45,
+        "spec_index": 43,
         "source_rows": [
           54
         ]
@@ -211,7 +2479,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 51,
+        "spec_index": 49,
         "source_rows": [
           60
         ]
@@ -230,7 +2498,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 52,
+        "spec_index": 50,
         "source_rows": [
           61
         ]
@@ -249,7 +2517,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 53,
+        "spec_index": 51,
         "source_rows": [
           62
         ]
@@ -269,7 +2537,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 99,
+        "spec_index": 97,
         "source_rows": [
           112
         ]
@@ -288,7 +2556,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 103,
+        "spec_index": 101,
         "source_rows": [
           117
         ]
@@ -307,7 +2575,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 108,
+        "spec_index": 106,
         "source_rows": [
           122
         ]
@@ -326,7 +2594,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 109,
+        "spec_index": 107,
         "source_rows": [
           123
         ]
@@ -345,7 +2613,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 110,
+        "spec_index": 108,
         "source_rows": [
           124
         ]
@@ -364,7 +2632,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 111,
+        "spec_index": 109,
         "source_rows": [
           125
         ]
@@ -383,7 +2651,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 121,
+        "spec_index": 119,
         "source_rows": [
           135
         ]
@@ -402,7 +2670,7 @@
       "raw_ref": {
         "file": "data/raw/CR310-NA.json",
         "product_index": 0,
-        "spec_index": 95,
+        "spec_index": 93,
         "source_rows": [
           107
         ]
@@ -483,14 +2751,14 @@
     "USB",
     "Đo nhiệt độ"
   ],
-  "search_text_en": "CR310-NA | CR310 Datalogger (-40 to +70C) -NA No Additional Co | CSI_CR310_NA | Measurement Devices | Data Loggers | Data Logger | Temperature | Measure Temperature | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs | temperature measurement",
-  "search_text_vi": "CR310-NA | CSI_CR310_NA | CR310 Datalogger (-40 to +70C) -NA No Additional Co | Thiết bị đo lường | Bộ ghi dữ liệu | Nhiệt độ | Đo nhiệt độ | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs",
-  "search_text": "CR310-NA | CR310 Datalogger (-40 to +70C) -NA No Additional Co | CSI_CR310_NA | Measurement Devices | Data Loggers | Data Logger | Temperature | Measure Temperature | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs | temperature measurement | Thiết bị đo lường | Bộ ghi dữ liệu | Nhiệt độ | Đo nhiệt độ",
+  "search_text_en": "CR310-NA | CR310 Datalogger (-40 to +70C) -NA No Additional Co | CSI_CR310_NA | CR310-CELL205-NP | CR310-CELL205-AT | CR310-CELL205-BC | CR310-CELL205-IT1A | CR310-CELL205-IT1B | CR310-CELL210-NP | CR310-CELL210-V | CR310-CELL210-VS | CR310-CELL215-NP | CR310-CELL215-IT1A | CR310-CELL215-IT1B | CR310-CELL220-NP | CR310-CELL220-IT1A | CR310-CELL220-IT1B | CR310-CELL225-NP | CR310-CELL225-IT1A | CR310-CELL225-IT1B | CR310-RF407 | CR310-RF412 | CR310-RF422 | CR310-RF427 | CR310-WIFI | Measurement Devices | Data Loggers | Data Logger | Temperature | Measure Temperature | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Configuration Description: No Additional Coms | Weight / Mass: 288 g (0.64 lb) | Primary Specification Source: CR300-Series Specifications, Revision 05/2026 | Base Model: CR310 | Electrical Specification Validity: -40° to +70°C, non-condensing environment, unless otherwise specified | Recalibration Recommendation: Every three years | Analog Input Configuration: 6 single-ended (SE) or 3 differential (DIFF) terminals Individually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements 24-bit ADC One channel at a time is measured | Variant Code Suffix: NP | Communication Family: CELL205 | Configuration Description: w/4G LTE CAT1 3G ATT No Provisioning | Weight / Mass: 288 to 306 g (0.64 to 0.68 lb) depending on communications option selected | Option Note: The CR310-CELL205 option is not compatible with a Verizon cellular network. | Cell Technologies: 3G (UMTS/HSPA+) 4G (LTE CAT-1) | 3G Frequency Bands: 850, 1700/2100 (AWS), and 1900 MHz | 4G Frequency Bands: 700, 850, 1700/2100 (AWS-1), and 1900 MHz | Antenna Connector: SMA External antenna required | SIM Interface: 3FF (6 position/contacts) Supports SIMs that require 1.8 or 3 V | Cellular Additional Current - Idle: 14 mA average @ 12 Vdc | Cellular Additional Current - Transfer/Receive: 75 mA average @ 12 Vdc | Cellular Compliance: Industry Canada (IC): 10224A-201611EC21A | Variant Code Suffix: AT | Configuration Description: w/4G LTE CAT1 Provisioned for AT&T North America | Variant Code Suffix: BC | Variant Code Suffix: IT1A | Variant Code Suffix: IT1B | Communication Family: CELL210 | Option Note: The CR310-CELL210 option is only compatible with a Verizon cellular network. | Cell Technologies: 4G (LTE CAT-1) | 4G Frequency Bands: 700, 850, 1700, 1900, and 2100 MHz | Cellular Additional Current - Idle: 28 mA average @ 12 Vdc | Cellular Additional Current - Transfer/Receive: 90 mA average @ 12 Vdc | Variant Code Suffix: V | Configuration Description: w/4G LTE CAT1 VZ Provisioned for Verizon US | Variant Code Suffix: VS | Configuration Description: w/4G LTE CAT1 VZ Provisioned for Verizon US Static IP | Communication Family: CELL215 | Configuration Description: w/4G LTE CAT1 No Provisioning | Option Note: The CR310-CELL215 option is intended for use in EMEA countries. | Cell Technologies: 2G (GSM/GPRS/EDGE) 3G (UMTS/HSPA+) 4G (LTE CAT-1) | 2G Frequency Bands: 900 and 1800 MHz | 3G Frequency Bands: 850, 900, and 2100 MHz | 4G Frequency Bands: 800, 850, 900, 1800, 2100, and 2600 MHz | Communication Family: CELL220 | Configuration Description: w/4G LTE CAT1 for Telstra Australia/NZ No Provisioning | Option Note: The CR310-CELL220 option is intended for use in Australia and New Zealand. | 3G Frequency Bands: 850 and 2100 MHz (EC-21AUT) 850, 900, 1900, and 2100 MHz (EC-21AU) | 4G Frequency Bands: 700, 850, 1800, 2100, and 2600 MHz (EC-21AUT) 700, 900, 1700, 1800, 1900, 2100, and 2600 MHz (EC-21AU) | Communication Family: CELL225 | Configuration Description: w/4G LTE CAT1 for Japan No Provisioning | Option Note: The CR310-CELL225 option is intended for use in Japan. | 4G Frequency Bands: 800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz | Variant Code Suffix: RF407 | Communication Family: RF407 | Configuration Description: w/900MHz Radio | Weight / Mass: 306 g (0.68 lb) | Radio Type: Frequency-Hopping Spread-Spectrum (FHSS) | Frequency: 902 to 928 MHz (US, Canada) | Transmit Power Output: 5 to 250 mW (software/user selectable) | Channel Capacity: Eight 25-channel hop sequences sharing 64 available channels | Receive Sensitivity: -101 dBm | RF Data Rate: 200 kbps | Maximum Nodes in Network: 50 | Antenna Connector: Reverse Polarity SMA (RPSMA) jack (female) External antenna required | RF Current - Transmit: < 80 mA @ 12 Vdc | RF Current - Idle On: 12 mA @ 12 Vdc | RF Current - Idle 0.5 s Power Mode: 4 mA @ 12 Vdc | RF Current - Idle 1 s Power Mode: 3 mA @ 12 Vdc | RF Current - Idle 4 s Power Mode: 1.5 mA @ 12 Vdc | RF Compliance: United States FCC Part 15.247: MCQ-XB900HP Industry Canada (IC): 1846A-XB900HP Mexico IF: RCPDIXB15-0672-A1 | Variant Code Suffix: RF412 | Communication Family: RF412 | Frequency: 915 to 928 MHz (Australia, New Zealand) | Channel Capacity: Eight 25-channel hop sequences sharing 31 available channels | RF Compliance: ACMA RCM United States FCC Part 15.247: MCQ-XB900HP Industry Canada (IC): 1846A-XB900HP | Variant Code Suffix: RF422 | Communication Family: RF422 | Radio Type: SRD860 Radio with Listen Before Talk (LBT) and Automatic Frequency Agility (AFA) | Frequency: 863 to 870 MHz (Europe, Middle East, and Africa) | Transmit Power Output: 2 to 25 mW (software/user selectable) | Channel Capacity: Ten 30-channel hop sequences (default), software configurable to meet local regulations 10 sequences for reducing interference through channel hop | Receive Sensitivity: -106 dBm | RF Data Rate: 10 kbps | Maximum Nodes in Network: 20 | RF Current - Transmit: 20 mA @ 12 Vdc | RF Current - Idle On: 9.5 mA @ 12 Vdc | RF Current - Idle 0.5 s Power Mode: 3.5 mA @ 12 Vdc | RF Current - Idle 1 s Power Mode: 2 mA @ 12 Vdc | RF Compliance: EU Declaration of Conformity available from Campbell Scientific CR300/CR310 product pages | Variant Code Suffix: RF427 | Communication Family: RF427 | Frequency: 902 to 907.5 MHz 915 to 928 MHz (Brazil) | Channel Capacity: Eight 25-channel hop sequences sharing 43 available channels | RF Compliance: Brazil ANATEL standards in Resolution No. 506: 08335-17-10644 | Variant Code Suffix: WIFI | Communication Family: WIFI | Configuration Description: w/Wireless Modem | Maximum Possible Over-the-Air Data Rates: <11 Mbps over 802.11b <54 Mbps over 802.11g <72 Mbps over 802.11n | Operating Frequency: 2.4 GHz, 20 MHz bandwidth | Antenna Connector: Reverse Polarity SMA (RPSMA) | Antenna: Unity gain (0 dBd), 1/2 wave whip, omnidirectional Articulating knuckle joint for vertical or right-angle orientation | Supported Technologies: 802.11 b/g/n WPA/WPA2-Personal WPA/WPA2-Enterprise Security WEP | Client Mode: WPA/WPA2-Personal and Enterprise WEP | Access Point Mode: WPA2-Personal | Receive Sensitivity: -97 dBm | Wi-Fi Current - Client Communicating: 70 mA typical @ 12 Vdc | Wi-Fi Current - Client Idle: 7 mA typical @ 12 Vdc | Wi-Fi Current - Access Point Communicating: 70 mA @ 12 Vdc | Wi-Fi Current - Access Point Idle: 62 mA typical @ 12 Vdc | Wi-Fi Current - Idle: <0.1 mA @ 12 Vdc | Wi-Fi Compliance: United States FCC ID: XF6-RS9113SB Industry Canada (IC): 8407A-RS9113SB | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs | temperature measurement",
+  "search_text_vi": "CR310-NA | CSI_CR310_NA | CR310 Datalogger (-40 to +70C) -NA No Additional Co | CR310-CELL205-NP | CR310-CELL205-AT | CR310-CELL205-BC | CR310-CELL205-IT1A | CR310-CELL205-IT1B | CR310-CELL210-NP | CR310-CELL210-V | CR310-CELL210-VS | CR310-CELL215-NP | CR310-CELL215-IT1A | CR310-CELL215-IT1B | CR310-CELL220-NP | CR310-CELL220-IT1A | CR310-CELL220-IT1B | CR310-CELL225-NP | CR310-CELL225-IT1A | CR310-CELL225-IT1B | CR310-RF407 | CR310-RF412 | CR310-RF422 | CR310-RF427 | CR310-WIFI | Thiết bị đo lường | Bộ ghi dữ liệu | Nhiệt độ | Đo nhiệt độ | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Configuration Description: No Additional Coms | Weight / Mass: 288 g (0.64 lb) | Primary Specification Source: CR300-Series Specifications, Revision 05/2026 | Base Model: CR310 | Electrical Specification Validity: -40° to +70°C, non-condensing environment, unless otherwise specified | Recalibration Recommendation: Every three years | Analog Input Configuration: 6 single-ended (SE) or 3 differential (DIFF) terminals Individually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements 24-bit ADC One channel at a time is measured | Variant Code Suffix: NP | Communication Family: CELL205 | Configuration Description: w/4G LTE CAT1 3G ATT No Provisioning | Weight / Mass: 288 to 306 g (0.64 to 0.68 lb) depending on communications option selected | Option Note: The CR310-CELL205 option is not compatible with a Verizon cellular network. | Cell Technologies: 3G (UMTS/HSPA+) 4G (LTE CAT-1) | 3G Frequency Bands: 850, 1700/2100 (AWS), and 1900 MHz | 4G Frequency Bands: 700, 850, 1700/2100 (AWS-1), and 1900 MHz | Antenna Connector: SMA External antenna required | SIM Interface: 3FF (6 position/contacts) Supports SIMs that require 1.8 or 3 V | Cellular Additional Current - Idle: 14 mA average @ 12 Vdc | Cellular Additional Current - Transfer/Receive: 75 mA average @ 12 Vdc | Cellular Compliance: Industry Canada (IC): 10224A-201611EC21A | Variant Code Suffix: AT | Configuration Description: w/4G LTE CAT1 Provisioned for AT&T North America | Variant Code Suffix: BC | Variant Code Suffix: IT1A | Variant Code Suffix: IT1B | Communication Family: CELL210 | Option Note: The CR310-CELL210 option is only compatible with a Verizon cellular network. | Cell Technologies: 4G (LTE CAT-1) | 4G Frequency Bands: 700, 850, 1700, 1900, and 2100 MHz | Cellular Additional Current - Idle: 28 mA average @ 12 Vdc | Cellular Additional Current - Transfer/Receive: 90 mA average @ 12 Vdc | Variant Code Suffix: V | Configuration Description: w/4G LTE CAT1 VZ Provisioned for Verizon US | Variant Code Suffix: VS | Configuration Description: w/4G LTE CAT1 VZ Provisioned for Verizon US Static IP | Communication Family: CELL215 | Configuration Description: w/4G LTE CAT1 No Provisioning | Option Note: The CR310-CELL215 option is intended for use in EMEA countries. | Cell Technologies: 2G (GSM/GPRS/EDGE) 3G (UMTS/HSPA+) 4G (LTE CAT-1) | 2G Frequency Bands: 900 and 1800 MHz | 3G Frequency Bands: 850, 900, and 2100 MHz | 4G Frequency Bands: 800, 850, 900, 1800, 2100, and 2600 MHz | Communication Family: CELL220 | Configuration Description: w/4G LTE CAT1 for Telstra Australia/NZ No Provisioning | Option Note: The CR310-CELL220 option is intended for use in Australia and New Zealand. | 3G Frequency Bands: 850 and 2100 MHz (EC-21AUT) 850, 900, 1900, and 2100 MHz (EC-21AU) | 4G Frequency Bands: 700, 850, 1800, 2100, and 2600 MHz (EC-21AUT) 700, 900, 1700, 1800, 1900, 2100, and 2600 MHz (EC-21AU) | Communication Family: CELL225 | Configuration Description: w/4G LTE CAT1 for Japan No Provisioning | Option Note: The CR310-CELL225 option is intended for use in Japan. | 4G Frequency Bands: 800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz | Variant Code Suffix: RF407 | Communication Family: RF407 | Configuration Description: w/900MHz Radio | Weight / Mass: 306 g (0.68 lb) | Radio Type: Frequency-Hopping Spread-Spectrum (FHSS) | Frequency: 902 to 928 MHz (US, Canada) | Transmit Power Output: 5 to 250 mW (software/user selectable) | Channel Capacity: Eight 25-channel hop sequences sharing 64 available channels | Receive Sensitivity: -101 dBm | RF Data Rate: 200 kbps | Maximum Nodes in Network: 50 | Antenna Connector: Reverse Polarity SMA (RPSMA) jack (female) External antenna required | RF Current - Transmit: < 80 mA @ 12 Vdc | RF Current - Idle On: 12 mA @ 12 Vdc | RF Current - Idle 0.5 s Power Mode: 4 mA @ 12 Vdc | RF Current - Idle 1 s Power Mode: 3 mA @ 12 Vdc | RF Current - Idle 4 s Power Mode: 1.5 mA @ 12 Vdc | RF Compliance: United States FCC Part 15.247: MCQ-XB900HP Industry Canada (IC): 1846A-XB900HP Mexico IF: RCPDIXB15-0672-A1 | Variant Code Suffix: RF412 | Communication Family: RF412 | Frequency: 915 to 928 MHz (Australia, New Zealand) | Channel Capacity: Eight 25-channel hop sequences sharing 31 available channels | RF Compliance: ACMA RCM United States FCC Part 15.247: MCQ-XB900HP Industry Canada (IC): 1846A-XB900HP | Variant Code Suffix: RF422 | Communication Family: RF422 | Radio Type: SRD860 Radio with Listen Before Talk (LBT) and Automatic Frequency Agility (AFA) | Frequency: 863 to 870 MHz (Europe, Middle East, and Africa) | Transmit Power Output: 2 to 25 mW (software/user selectable) | Channel Capacity: Ten 30-channel hop sequences (default), software configurable to meet local regulations 10 sequences for reducing interference through channel hop | Receive Sensitivity: -106 dBm | RF Data Rate: 10 kbps | Maximum Nodes in Network: 20 | RF Current - Transmit: 20 mA @ 12 Vdc | RF Current - Idle On: 9.5 mA @ 12 Vdc | RF Current - Idle 0.5 s Power Mode: 3.5 mA @ 12 Vdc | RF Current - Idle 1 s Power Mode: 2 mA @ 12 Vdc | RF Compliance: EU Declaration of Conformity available from Campbell Scientific CR300/CR310 product pages | Variant Code Suffix: RF427 | Communication Family: RF427 | Frequency: 902 to 907.5 MHz 915 to 928 MHz (Brazil) | Channel Capacity: Eight 25-channel hop sequences sharing 43 available channels | RF Compliance: Brazil ANATEL standards in Resolution No. 506: 08335-17-10644 | Variant Code Suffix: WIFI | Communication Family: WIFI | Configuration Description: w/Wireless Modem | Maximum Possible Over-the-Air Data Rates: <11 Mbps over 802.11b <54 Mbps over 802.11g <72 Mbps over 802.11n | Operating Frequency: 2.4 GHz, 20 MHz bandwidth | Antenna Connector: Reverse Polarity SMA (RPSMA) | Antenna: Unity gain (0 dBd), 1/2 wave whip, omnidirectional Articulating knuckle joint for vertical or right-angle orientation | Supported Technologies: 802.11 b/g/n WPA/WPA2-Personal WPA/WPA2-Enterprise Security WEP | Client Mode: WPA/WPA2-Personal and Enterprise WEP | Access Point Mode: WPA2-Personal | Receive Sensitivity: -97 dBm | Wi-Fi Current - Client Communicating: 70 mA typical @ 12 Vdc | Wi-Fi Current - Client Idle: 7 mA typical @ 12 Vdc | Wi-Fi Current - Access Point Communicating: 70 mA @ 12 Vdc | Wi-Fi Current - Access Point Idle: 62 mA typical @ 12 Vdc | Wi-Fi Current - Idle: <0.1 mA @ 12 Vdc | Wi-Fi Compliance: United States FCC ID: XF6-RS9113SB Industry Canada (IC): 8407A-RS9113SB | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs",
+  "search_text": "CR310-NA | CR310 Datalogger (-40 to +70C) -NA No Additional Co | CSI_CR310_NA | CR310-CELL205-NP | CR310-CELL205-AT | CR310-CELL205-BC | CR310-CELL205-IT1A | CR310-CELL205-IT1B | CR310-CELL210-NP | CR310-CELL210-V | CR310-CELL210-VS | CR310-CELL215-NP | CR310-CELL215-IT1A | CR310-CELL215-IT1B | CR310-CELL220-NP | CR310-CELL220-IT1A | CR310-CELL220-IT1B | CR310-CELL225-NP | CR310-CELL225-IT1A | CR310-CELL225-IT1B | CR310-RF407 | CR310-RF412 | CR310-RF422 | CR310-RF427 | CR310-WIFI | Measurement Devices | Data Loggers | Data Logger | Temperature | Measure Temperature | Auto-IP | DHCP | DNP3 | DNS | Ethernet | FTP | HTTP | ICMP | IPv4 | IPv6 | Modbus ASCII | Modbus RTU | Modbus TCP | NTP | PakBus | POP3 | PPP | RJ45 | RNDIS | RS-232 | SDI-12 | SLAAC | SMTP | TCP | Telnet | TLS | UDP | USB | Configuration Description: No Additional Coms | Weight / Mass: 288 g (0.64 lb) | Primary Specification Source: CR300-Series Specifications, Revision 05/2026 | Base Model: CR310 | Electrical Specification Validity: -40° to +70°C, non-condensing environment, unless otherwise specified | Recalibration Recommendation: Every three years | Analog Input Configuration: 6 single-ended (SE) or 3 differential (DIFF) terminals Individually configurable for voltage, thermocouple, current loop, ratiometric, and period average measurements 24-bit ADC One channel at a time is measured | Variant Code Suffix: NP | Communication Family: CELL205 | Configuration Description: w/4G LTE CAT1 3G ATT No Provisioning | Weight / Mass: 288 to 306 g (0.64 to 0.68 lb) depending on communications option selected | Option Note: The CR310-CELL205 option is not compatible with a Verizon cellular network. | Cell Technologies: 3G (UMTS/HSPA+) 4G (LTE CAT-1) | 3G Frequency Bands: 850, 1700/2100 (AWS), and 1900 MHz | 4G Frequency Bands: 700, 850, 1700/2100 (AWS-1), and 1900 MHz | Antenna Connector: SMA External antenna required | SIM Interface: 3FF (6 position/contacts) Supports SIMs that require 1.8 or 3 V | Cellular Additional Current - Idle: 14 mA average @ 12 Vdc | Cellular Additional Current - Transfer/Receive: 75 mA average @ 12 Vdc | Cellular Compliance: Industry Canada (IC): 10224A-201611EC21A | Variant Code Suffix: AT | Configuration Description: w/4G LTE CAT1 Provisioned for AT&T North America | Variant Code Suffix: BC | Variant Code Suffix: IT1A | Variant Code Suffix: IT1B | Communication Family: CELL210 | Option Note: The CR310-CELL210 option is only compatible with a Verizon cellular network. | Cell Technologies: 4G (LTE CAT-1) | 4G Frequency Bands: 700, 850, 1700, 1900, and 2100 MHz | Cellular Additional Current - Idle: 28 mA average @ 12 Vdc | Cellular Additional Current - Transfer/Receive: 90 mA average @ 12 Vdc | Variant Code Suffix: V | Configuration Description: w/4G LTE CAT1 VZ Provisioned for Verizon US | Variant Code Suffix: VS | Configuration Description: w/4G LTE CAT1 VZ Provisioned for Verizon US Static IP | Communication Family: CELL215 | Configuration Description: w/4G LTE CAT1 No Provisioning | Option Note: The CR310-CELL215 option is intended for use in EMEA countries. | Cell Technologies: 2G (GSM/GPRS/EDGE) 3G (UMTS/HSPA+) 4G (LTE CAT-1) | 2G Frequency Bands: 900 and 1800 MHz | 3G Frequency Bands: 850, 900, and 2100 MHz | 4G Frequency Bands: 800, 850, 900, 1800, 2100, and 2600 MHz | Communication Family: CELL220 | Configuration Description: w/4G LTE CAT1 for Telstra Australia/NZ No Provisioning | Option Note: The CR310-CELL220 option is intended for use in Australia and New Zealand. | 3G Frequency Bands: 850 and 2100 MHz (EC-21AUT) 850, 900, 1900, and 2100 MHz (EC-21AU) | 4G Frequency Bands: 700, 850, 1800, 2100, and 2600 MHz (EC-21AUT) 700, 900, 1700, 1800, 1900, 2100, and 2600 MHz (EC-21AU) | Communication Family: CELL225 | Configuration Description: w/4G LTE CAT1 for Japan No Provisioning | Option Note: The CR310-CELL225 option is intended for use in Japan. | 4G Frequency Bands: 800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz | Variant Code Suffix: RF407 | Communication Family: RF407 | Configuration Description: w/900MHz Radio | Weight / Mass: 306 g (0.68 lb) | Radio Type: Frequency-Hopping Spread-Spectrum (FHSS) | Frequency: 902 to 928 MHz (US, Canada) | Transmit Power Output: 5 to 250 mW (software/user selectable) | Channel Capacity: Eight 25-channel hop sequences sharing 64 available channels | Receive Sensitivity: -101 dBm | RF Data Rate: 200 kbps | Maximum Nodes in Network: 50 | Antenna Connector: Reverse Polarity SMA (RPSMA) jack (female) External antenna required | RF Current - Transmit: < 80 mA @ 12 Vdc | RF Current - Idle On: 12 mA @ 12 Vdc | RF Current - Idle 0.5 s Power Mode: 4 mA @ 12 Vdc | RF Current - Idle 1 s Power Mode: 3 mA @ 12 Vdc | RF Current - Idle 4 s Power Mode: 1.5 mA @ 12 Vdc | RF Compliance: United States FCC Part 15.247: MCQ-XB900HP Industry Canada (IC): 1846A-XB900HP Mexico IF: RCPDIXB15-0672-A1 | Variant Code Suffix: RF412 | Communication Family: RF412 | Frequency: 915 to 928 MHz (Australia, New Zealand) | Channel Capacity: Eight 25-channel hop sequences sharing 31 available channels | RF Compliance: ACMA RCM United States FCC Part 15.247: MCQ-XB900HP Industry Canada (IC): 1846A-XB900HP | Variant Code Suffix: RF422 | Communication Family: RF422 | Radio Type: SRD860 Radio with Listen Before Talk (LBT) and Automatic Frequency Agility (AFA) | Frequency: 863 to 870 MHz (Europe, Middle East, and Africa) | Transmit Power Output: 2 to 25 mW (software/user selectable) | Channel Capacity: Ten 30-channel hop sequences (default), software configurable to meet local regulations 10 sequences for reducing interference through channel hop | Receive Sensitivity: -106 dBm | RF Data Rate: 10 kbps | Maximum Nodes in Network: 20 | RF Current - Transmit: 20 mA @ 12 Vdc | RF Current - Idle On: 9.5 mA @ 12 Vdc | RF Current - Idle 0.5 s Power Mode: 3.5 mA @ 12 Vdc | RF Current - Idle 1 s Power Mode: 2 mA @ 12 Vdc | RF Compliance: EU Declaration of Conformity available from Campbell Scientific CR300/CR310 product pages | Variant Code Suffix: RF427 | Communication Family: RF427 | Frequency: 902 to 907.5 MHz 915 to 928 MHz (Brazil) | Channel Capacity: Eight 25-channel hop sequences sharing 43 available channels | RF Compliance: Brazil ANATEL standards in Resolution No. 506: 08335-17-10644 | Variant Code Suffix: WIFI | Communication Family: WIFI | Configuration Description: w/Wireless Modem | Maximum Possible Over-the-Air Data Rates: <11 Mbps over 802.11b <54 Mbps over 802.11g <72 Mbps over 802.11n | Operating Frequency: 2.4 GHz, 20 MHz bandwidth | Antenna Connector: Reverse Polarity SMA (RPSMA) | Antenna: Unity gain (0 dBd), 1/2 wave whip, omnidirectional Articulating knuckle joint for vertical or right-angle orientation | Supported Technologies: 802.11 b/g/n WPA/WPA2-Personal WPA/WPA2-Enterprise Security WEP | Client Mode: WPA/WPA2-Personal and Enterprise WEP | Access Point Mode: WPA2-Personal | Receive Sensitivity: -97 dBm | Wi-Fi Current - Client Communicating: 70 mA typical @ 12 Vdc | Wi-Fi Current - Client Idle: 7 mA typical @ 12 Vdc | Wi-Fi Current - Access Point Communicating: 70 mA @ 12 Vdc | Wi-Fi Current - Access Point Idle: 62 mA typical @ 12 Vdc | Wi-Fi Current - Idle: <0.1 mA @ 12 Vdc | Wi-Fi Compliance: United States FCC ID: XF6-RS9113SB Industry Canada (IC): 8407A-RS9113SB | Real-Time Clock - Resolution: 1 ms | VX Resolution: 1.6 mV | Charge Terminal - Voltage: 16 to 32 V DC | Low-Level AC Maximum Input Voltage: ± 20 V DC | System Power Out Current Limit @ -40°C: 5.8 A | System Power Out Current Limit @ 20°C: 3.7 A | System Power Out Current Limit @ 70°C: 2 A | SW12V Thermal Fuse Hold Current @ -40°C: 1200 mA | SW12V Thermal Fuse Hold Current @ 20°C: 1100 mA | SW12V Thermal Fuse Hold Current @ 70°C: 830 mA | Current-Loop Range: 0 to 25 mA | Switch-Closure Maximum Input Frequency: 150 Hz | High-Frequency Maximum Input Frequency - SE1-SE4: 35 kHz | High-Frequency Maximum Input Frequency - P_LL: 20 kHz | High-Frequency Maximum Input Frequency - P_SW: 35 kHz | High-Frequency Maximum Input Frequency - C1-C2: 3 kHz | Quadrature Maximum Frequency: 2.5 kHz | Period-Averaging Minimum Pulse Width: 2.5 µs | temperature measurement | Thiết bị đo lường | Bộ ghi dữ liệu | Nhiệt độ | Đo nhiệt độ",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "0461a41ab8e59456cdb43c3ce7a6f0d8aa78fa8b440a90fe36ee9f5b4c9237b5"
+  "content_hash": "c2122f141963d931f87f9fff85f0fdb98c127e6489b66dc358691974eebc8a8b"
 }

@@ -1,0 +1,383 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "WindSonic1_Output.json",
+        "original_source": {
+          "file": "WindSonic1.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_WINDSONIC1",
+      "manufacturer": "Campbell Scientific / Gill Instruments",
+      "model": "WindSonic1",
+      "product_name_en": "WindSonic1",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Wind Sensors",
+        "device_type": "Ultrasonic Wind Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "2-D Sonic Wind Sensor / Two-dimensional ultrasonic anemometer",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific / manufactured by Gill Instruments, Ltd.",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Description",
+          "name_vi": "Đại lượng đo",
+          "value_raw": "Wind speed and direction",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Technology / Principle",
+          "name_vi": "Công nghệ / Nguyên lý",
+          "value_raw": "Ultrasonic; two pairs of orthogonally oriented transducers",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Applications",
+          "name_vi": "Ứng dụng",
+          "value_raw": "Extreme (blowing sand, salt spray); General (rain with light snow, little/no riming or blowing sand, no salt spray)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Input Voltage",
+          "name_vi": "Điện áp đầu vào",
+          "value_raw": "9 to 30 Vdc",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Current Drain",
+          "name_vi": "Dòng tiêu thụ điển hình",
+          "value_raw": "~15 mA (continuous)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Humidity Range",
+          "name_vi": "Dải độ ẩm hoạt động",
+          "value_raw": "<5% to 100% RH",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-35 to +70 °C",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Storage Temperature Range",
+          "name_vi": "Dải nhiệt độ lưu trữ",
+          "value_raw": "-40 to +80 °C",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Frequency",
+          "name_vi": "Tần số đo",
+          "value_raw": "40 Hz block averaged to a programmable output frequency; factory set to 1 Hz",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Output Parameters",
+          "name_vi": "Thông số đầu ra",
+          "value_raw": "Polar (direction and speed) or orthogonal (Ux and Uy wind)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Output Signal",
+          "name_vi": "Tín hiệu đầu ra",
+          "value_raw": "RS-232",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Factory-default Baud Rate",
+          "name_vi": "Tốc độ baud mặc định",
+          "value_raw": "9600 baud",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Cable Capacitance",
+          "name_vi": "Điện dung cáp tối đa",
+          "value_raw": "2500 pF",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "15.24 m (50 ft)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "142 × 160 mm (5.6 × 6.3 in)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "14.2 cm (5.6 in)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Length",
+          "name_vi": "Chiều dài",
+          "value_raw": "16.0 cm",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.5 kg (1.1 lb)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Direction Range",
+          "name_vi": "Dải đo hướng gió",
+          "value_raw": "0° to 359° (no dead band)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Direction Accuracy",
+          "name_vi": "Độ chính xác hướng gió",
+          "value_raw": "±3°",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Direction Resolution",
+          "name_vi": "Độ phân giải hướng gió",
+          "value_raw": "1°",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Range",
+          "name_vi": "Dải đo tốc độ gió",
+          "value_raw": "0 to 60 m/s",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Accuracy",
+          "name_vi": "Độ chính xác tốc độ gió",
+          "value_raw": "±2% @ 12 m/s",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wind Speed Resolution",
+          "name_vi": "Độ phân giải tốc độ gió",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Minimum Detectable Wind Speed",
+          "name_vi": "Tốc độ gió nhỏ nhất có thể phát hiện",
+          "value_raw": "0.01 m/s",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Heated",
+          "name_vi": "Có gia nhiệt",
+          "value_raw": "No",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Recommended Conditions",
+          "name_vi": "Điều kiện sử dụng khuyến nghị",
+          "value_raw": "Not recommended where rime, ice, or horizontal snow will occur",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Data Loggers",
+          "name_vi": "Bộ ghi dữ liệu tương thích",
+          "value_raw": "CR6, CR1000X series, CR350, CR300 series; datasheet also lists CR1000, CR3000, CR310, CR800, CR850",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Serial Modules",
+          "name_vi": "Mô-đun nối tiếp tương thích",
+          "value_raw": "SDM-SIO1A and SDM-SIO4A",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Wind Speed Unit",
+          "name_vi": "Đơn vị tốc độ gió mặc định",
+          "value_raw": "m/s",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Output Frequency",
+          "name_vi": "Tần số đầu ra mặc định",
+          "value_raw": "1 Hz",
+          "source_rows": [
+            35
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "windsonic1_datasheet.pdf",
+        "user_manual": "windsonic1_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_WINDSONIC1",
+        "variant_count": 1,
+        "source_files": [
+          "WindSonic1_Output.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_WINDSONIC1",
+          "model": "WindSonic1",
+          "product_name_en": "WindSonic1",
+          "is_representative": true,
+          "distinguishing_specifications": [],
+          "documents": {
+            "product_url": null,
+            "datasheet": "windsonic1_datasheet.pdf",
+            "user_manual": "windsonic1_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "WindSonic1_Output.json",
+            "product_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

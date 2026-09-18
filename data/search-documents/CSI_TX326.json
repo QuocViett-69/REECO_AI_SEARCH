@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TX326",
+  "model": "TX326",
+  "name_en": "TX326 Satellite Transmitter for METEOSAT",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Satellite Transmitters",
+    "subcategory_key": "satellite_transmitters",
+    "device_type": "Satellite Transmitter",
+    "device_type_key": "satellite_transmitter"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "ASCII",
+    "RS-232"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "TX326",
+    "CSI_TX326",
+    "TX326 Satellite Transmitter for METEOSAT"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_TX326",
+      "model": "TX326",
+      "product_name_en": "TX326 Satellite Transmitter for METEOSAT",
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TX326.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      }
+    },
+    {
+      "canonical_key": "storage_temperature_range",
+      "name": "Storage Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 75,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TX326.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      }
+    },
+    {
+      "canonical_key": "supply_voltage_range",
+      "name": "Supply Voltage Range",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 10.5,
+        "max_value": 16,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TX326.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.77,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.7,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TX326.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "TX326",
+    "TX326 Satellite Transmitter for METEOSAT",
+    "Communications",
+    "Satellite Transmitters",
+    "Satellite Transmitter",
+    "ASCII",
+    "RS-232",
+    "CSI_TX326"
+  ],
+  "search_keywords_vi": [
+    "TX326",
+    "Thiết bị truyền thông",
+    "Bộ phát vệ tinh",
+    "ASCII",
+    "RS-232"
+  ],
+  "search_text_en": "TX326 | TX326 Satellite Transmitter for METEOSAT | CSI_TX326 | Communications | Satellite Transmitters | Satellite Transmitter | ASCII | RS-232 | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -55 to 75 °C | Supply Voltage Range: 10.5 to 16 V DC | Weight: 0.77 kg",
+  "search_text_vi": "TX326 | CSI_TX326 | TX326 Satellite Transmitter for METEOSAT | Thiết bị truyền thông | Bộ phát vệ tinh | ASCII | RS-232 | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -55 to 75 °C | Supply Voltage Range: 10.5 to 16 V DC | Weight: 0.77 kg",
+  "search_text": "TX326 | TX326 Satellite Transmitter for METEOSAT | CSI_TX326 | Communications | Satellite Transmitters | Satellite Transmitter | ASCII | RS-232 | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -55 to 75 °C | Supply Voltage Range: 10.5 to 16 V DC | Weight: 0.77 kg | Thiết bị truyền thông | Bộ phát vệ tinh",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "aebd301c023e8e6fa53762857ea77077c1c045fcefa90c423f82abf3aee3bab2"
+}

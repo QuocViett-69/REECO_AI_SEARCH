@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_METSENS200_D2",
+  "model": "MetSENS200-D2",
+  "name_en": "MetSENS200-D2",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Weather Sensors",
+    "subcategory_key": "weather_sensors",
+    "device_type": "Compact Weather Sensor",
+    "device_type_key": "compact_weather_sensor"
+  },
+  "measurements": [
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "compass_heading",
+      "label_en": "Compass Heading",
+      "label_vi": "Hướng la bàn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_configuration",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              10
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_digital_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "replacement_cable",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              14
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "signal_per_data_wiring",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 11,
+            "source_rows": [
+              15
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_compass_heading",
+      "label_en": "Measure Compass Heading",
+      "label_vi": "Đo hướng la bàn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "MetSENS200-D2",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "MetSENS200-D2"
+        }
+      ]
+    },
+    {
+      "value": "CSI_METSENS200_D2",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_METSENS200_D2"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "MetSENS200-D2",
+      "Sensors",
+      "Weather Sensors",
+      "Compact Weather Sensor",
+      "Wind Speed",
+      "Wind Direction",
+      "Compass Heading",
+      "RS-232",
+      "Measure Wind Speed",
+      "Measure Wind Direction",
+      "Measure Compass Heading",
+      "CSI_METSENS200_D2"
+    ],
+    "vi": [
+      "MetSENS200-D2",
+      "Cảm biến",
+      "Cảm biến thời tiết",
+      "Cảm biến thời tiết nhỏ gọn",
+      "Tốc độ gió",
+      "Hướng gió",
+      "Hướng la bàn",
+      "RS-232",
+      "Đo tốc độ gió",
+      "Đo hướng gió",
+      "Đo hướng la bàn"
+    ]
+  }
+}

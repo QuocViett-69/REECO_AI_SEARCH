@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CS610",
+  "model": "CS610",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_CS610.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_CS610.json#0",
+    "raw_product_id": "CSI_CS610",
+    "raw_model": "CS610"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_CS610",
+      "model": "CS610",
+      "product_name_en": "3-rod TDR Probe",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "MAJOR SPECIFICATIONS",
+          "name_en": "Application / Soil Type",
+          "value_raw": "For typical soils"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Length",
+          "value_raw": "30 cm (12 in)"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Diameter",
+          "value_raw": "0.475 cm (0.187 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Length",
+          "value_raw": "10.8 cm (4.3 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Width",
+          "value_raw": "7.0 cm (2.8 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Thickness",
+          "value_raw": "1.9 cm (0.7 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Cable Type",
+          "value_raw": "RG8 low loss"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Maximum Soil Bulk Electrical Conductivity",
+          "value_raw": "1.4 dS m⁻¹"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CS635",
+      "model": "CS635",
+      "product_name_en": "3-rod TDR Probe",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "MAJOR SPECIFICATIONS",
+          "name_en": "Application / Soil Type",
+          "value_raw": "For high conductivity soils"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Length",
+          "value_raw": "15 cm (6 in)"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Diameter",
+          "value_raw": "0.318 cm (0.125 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Length",
+          "value_raw": "5.75 cm (2.25 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Width",
+          "value_raw": "4.0 cm (1.57 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Thickness",
+          "value_raw": "1.25 cm (0.49 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Cable Type",
+          "value_raw": "LMR-200 low loss"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Maximum Soil Bulk Electrical Conductivity",
+          "value_raw": "3.5 dS m⁻¹"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CS645",
+      "model": "CS645",
+      "product_name_en": "3-rod TDR Probe",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "MAJOR SPECIFICATIONS",
+          "name_en": "Application / Soil Type",
+          "value_raw": "For very high conductivity soils"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Length",
+          "value_raw": "7.5 cm (3 in)"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Diameter",
+          "value_raw": "0.159 cm (0.063 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Length",
+          "value_raw": "4.5 cm (1.77 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Width",
+          "value_raw": "2.2 cm (0.87 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Thickness",
+          "value_raw": "1.0 cm (0.39 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Cable Type",
+          "value_raw": "LMR-200 low loss"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Maximum Soil Bulk Electrical Conductivity",
+          "value_raw": "5 dS m⁻¹"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_CS610",
+      "section": "MAJOR SPECIFICATIONS",
+      "name_raw": "Probe Type",
+      "value_raw": "3-rod TDR Probe",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "probe_type"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "MAJOR SPECIFICATIONS",
+      "name_raw": "Application / Soil Type",
+      "value_raw": "For typical soils",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "application_per_soil_type"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "Rod Dimensions",
+      "name_raw": "Length",
+      "value_raw": "30 cm (12 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 30,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 12,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "length_8744598c",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "Rod Dimensions",
+      "name_raw": "Diameter",
+      "value_raw": "0.475 cm (0.187 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.475,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.187,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "Probe Head Dimensions",
+      "name_raw": "Length",
+      "value_raw": "10.8 cm (4.3 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 10.8,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 4.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "length_11521ffe",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "Probe Head Dimensions",
+      "name_raw": "Width",
+      "value_raw": "7.0 cm (2.8 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 7,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.8,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "width",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "Probe Head Dimensions",
+      "name_raw": "Thickness",
+      "value_raw": "1.9 cm (0.7 in)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.9,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.7,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "thickness"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "Probe Head Dimensions",
+      "name_raw": "Cable Type",
+      "value_raw": "RG8 low loss",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "cable_type"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "Probe Head Dimensions",
+      "name_raw": "Maximum Soil Bulk Electrical Conductivity",
+      "value_raw": "1.4 dS m⁻¹",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "maximum_soil_bulk_electrical_conductivity"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "section": "Probe Head Dimensions",
+      "name_raw": "Maximum Cable Length (measured from the tips of the probe's rods to the reflectometer)",
+      "value_raw": "25 m (82 ft)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 25,
+        "unit": "m",
+        "qualifier": null,
+        "alternate": {
+          "value": 82,
+          "unit": "ft"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "maximum_cable_length_measured_from_the_tips_of_the_probe_s_rods_to_the_reflectometer",
+      "quantity_kind": "length"
+    }
+  ]
+}

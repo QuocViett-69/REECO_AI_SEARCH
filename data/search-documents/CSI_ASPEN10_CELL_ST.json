@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_ASPEN10_CELL_ST",
+  "model": "Aspen10-CELL-ST",
+  "name_en": "Aspen10 Edge Device for a Single Sensor -CEL",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Data Loggers / Edge Devices",
+    "subcategory_key": "data_loggers_edge_devices",
+    "device_type": "Data Logger / Edge Device",
+    "device_type_key": "data_logger_edge_device"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "HTTP",
+    "MQTT",
+    "SDI-12"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "Aspen10-CELL-ST",
+    "CSI_ASPEN10_CELL_ST",
+    "Aspen10 Edge Device for a Single Sensor -CEL",
+    "Aspen10-CELL-XT",
+    "Aspen10-US-ST",
+    "Aspen10-US-XT"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_ASPEN10_CELL_ST",
+      "model": "Aspen10-CELL-ST",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-20°C to +60°C (standard); outdoor environment"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "395 g (0.9 lb)"
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Option",
+          "value_raw": "3.2 Vdc, 7.2 Ah, Li-Po PHD26650"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_ASPEN10_CELL_XT",
+      "model": "Aspen10-CELL-XT",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-40°C to +75°C (extended); outdoor environment"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "352 g (0.8 lb)"
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Option",
+          "value_raw": "3.65 Vdc, 5.6 Ah, Li-ion Saft MP176065 xtd"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_ASPEN10_US_ST",
+      "model": "Aspen10-US-ST",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-20°C to +60°C (standard); outdoor environment"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "395 g (0.9 lb)"
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Option",
+          "value_raw": "3.2 Vdc, 7.2 Ah, Li-Po PHD26650"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_ASPEN10_US_XT",
+      "model": "Aspen10-US-XT",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-40°C to +75°C (extended); outdoor environment"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "352 g (0.8 lb)"
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Option",
+          "value_raw": "3.65 Vdc, 5.6 Ah, Li-ion Saft MP176065 xtd"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "real_time_clock_resolution",
+      "name": "Real-Time Clock Resolution",
+      "quantity_kind": "time",
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "s",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      }
+    },
+    {
+      "canonical_key": "8_vdc_current_limit",
+      "name": "8 Vdc Current Limit",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 210,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "12_vdc_current_limit",
+      "name": "12 Vdc Current Limit",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 210,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          28
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 395,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.9,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_ASPEN10_CELL_ST.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "Aspen10-CELL-ST",
+    "Aspen10 Edge Device for a Single Sensor -CEL",
+    "Measurement Devices",
+    "Data Loggers / Edge Devices",
+    "Data Logger / Edge Device",
+    "HTTP",
+    "MQTT",
+    "SDI-12",
+    "CSI_ASPEN10_CELL_ST"
+  ],
+  "search_keywords_vi": [
+    "Aspen10-CELL-ST",
+    "Thiết bị đo lường",
+    "Bộ ghi dữ liệu / thiết bị biên",
+    "HTTP",
+    "MQTT",
+    "SDI-12"
+  ],
+  "search_text_en": "Aspen10-CELL-ST | Aspen10 Edge Device for a Single Sensor -CEL | CSI_ASPEN10_CELL_ST | Aspen10-CELL-XT | Aspen10-US-ST | Aspen10-US-XT | Measurement Devices | Data Loggers / Edge Devices | Data Logger / Edge Device | HTTP | MQTT | SDI-12 | Operating Temperature Range: -20°C to +60°C (standard); outdoor environment | Weight: 395 g (0.9 lb) | Battery Option: 3.2 Vdc, 7.2 Ah, Li-Po PHD26650 | Operating Temperature Range: -40°C to +75°C (extended); outdoor environment | Weight: 352 g (0.8 lb) | Battery Option: 3.65 Vdc, 5.6 Ah, Li-ion Saft MP176065 xtd | Real-Time Clock Resolution: ± 1 s | 8 Vdc Current Limit: 210 mA | 12 Vdc Current Limit: 210 mA | Weight: 395 g",
+  "search_text_vi": "Aspen10-CELL-ST | CSI_ASPEN10_CELL_ST | Aspen10 Edge Device for a Single Sensor -CEL | Aspen10-CELL-XT | Aspen10-US-ST | Aspen10-US-XT | Thiết bị đo lường | Bộ ghi dữ liệu / thiết bị biên | HTTP | MQTT | SDI-12 | Operating Temperature Range: -20°C to +60°C (standard); outdoor environment | Weight: 395 g (0.9 lb) | Battery Option: 3.2 Vdc, 7.2 Ah, Li-Po PHD26650 | Operating Temperature Range: -40°C to +75°C (extended); outdoor environment | Weight: 352 g (0.8 lb) | Battery Option: 3.65 Vdc, 5.6 Ah, Li-ion Saft MP176065 xtd | Real-Time Clock Resolution: ± 1 s | 8 Vdc Current Limit: 210 mA | 12 Vdc Current Limit: 210 mA | Weight: 395 g",
+  "search_text": "Aspen10-CELL-ST | Aspen10 Edge Device for a Single Sensor -CEL | CSI_ASPEN10_CELL_ST | Aspen10-CELL-XT | Aspen10-US-ST | Aspen10-US-XT | Measurement Devices | Data Loggers / Edge Devices | Data Logger / Edge Device | HTTP | MQTT | SDI-12 | Operating Temperature Range: -20°C to +60°C (standard); outdoor environment | Weight: 395 g (0.9 lb) | Battery Option: 3.2 Vdc, 7.2 Ah, Li-Po PHD26650 | Operating Temperature Range: -40°C to +75°C (extended); outdoor environment | Weight: 352 g (0.8 lb) | Battery Option: 3.65 Vdc, 5.6 Ah, Li-ion Saft MP176065 xtd | Real-Time Clock Resolution: ± 1 s | 8 Vdc Current Limit: 210 mA | 12 Vdc Current Limit: 210 mA | Weight: 395 g | Thiết bị đo lường | Bộ ghi dữ liệu / thiết bị biên",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "cf803d2577d4cecf401f15bbf4e5e913bba2d224f981d3e5634084b1cb7d0017"
+}

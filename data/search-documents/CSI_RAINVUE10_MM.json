@@ -24,11 +24,6 @@
       "label_vi": "Lượng mưa"
     },
     {
-      "key": "precipitation_intensity",
-      "label_en": "Precipitation Intensity",
-      "label_vi": "Cường độ mưa"
-    },
-    {
       "key": "tilt",
       "label_en": "Tilt",
       "label_vi": "Độ nghiêng"
@@ -47,11 +42,6 @@
       "label_vi": "Đo lượng mưa"
     },
     {
-      "key": "measure_precipitation_intensity",
-      "label_en": "Measure Precipitation Intensity",
-      "label_vi": "Đo cường độ mưa"
-    },
-    {
       "key": "measure_tilt",
       "label_en": "Measure Tilt",
       "label_vi": "Đo độ nghiêng"
@@ -65,7 +55,347 @@
   "aliases": [
     "RainVue10-MM",
     "CSI_RAINVUE10_MM",
-    "RainVue™10"
+    "RainVue™10",
+    "RainVue10",
+    "RainVue20",
+    "RainVue™20"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_RAINVUE10_001_INCH_TIP",
+      "model": "RainVue10",
+      "product_name_en": "RainVue™10",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "value_raw": "SDI-12 Precipitation Sensor with Plastic Funnel"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Available Configuration",
+          "value_raw": "0.01 inch (0.254 mm) tip"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Material",
+          "value_raw": "Injection-molded, highly robust, UV-stabilized plastic (ASA LI-911)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sensor Configuration",
+          "value_raw": "SDI-12 or USB"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Range",
+          "value_raw": "0 to 1200 mm/h (0 to 48 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Resolution",
+          "value_raw": "0.254 mm (0.01 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Measurement Uncertainty",
+          "value_raw": "1% at 0 to 1200 mm/h intensity"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Range",
+          "value_raw": "0 to 1200 mm/h (0 to 48 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "WMO Compliant",
+          "value_raw": "No"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Active Current Drain",
+          "value_raw": "1 mA"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "2 kg (4.5 lb)"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_RAINVUE10_01_MM_TIP",
+      "model": "RainVue10",
+      "product_name_en": "RainVue™10",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "value_raw": "SDI-12 Precipitation Sensor with Plastic Funnel"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Available Configuration",
+          "value_raw": "0.1 mm (0.0039 inch) tip"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Material",
+          "value_raw": "Injection-molded, highly robust, UV-stabilized plastic (ASA LI-911)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sensor Configuration",
+          "value_raw": "SDI-12 or USB"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Range",
+          "value_raw": "0 to 500 mm/h (0 to 19.7 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Resolution",
+          "value_raw": "0.1 mm (0.004 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Measurement Uncertainty",
+          "value_raw": "Larger of 0.1 mm or 4% error at 0 to 500 mm/h intensity"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Range",
+          "value_raw": "0 to 500 mm/h (0 to 19.7 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Measurement Uncertainty",
+          "value_raw": "≤3.5% at 0 to 300 mm/h; ≤5% at 0 to 500 mm/h"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "WMO Compliant",
+          "value_raw": "Yes"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Active Current Drain",
+          "value_raw": "1 mA"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "2 kg (4.5 lb)"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_RAINVUE10_02_MM_TIP",
+      "model": "RainVue10",
+      "product_name_en": "RainVue™10",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "value_raw": "SDI-12 Precipitation Sensor with Plastic Funnel"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Available Configuration",
+          "value_raw": "0.2 mm (0.0078 inch) tip"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Material",
+          "value_raw": "Injection-molded, highly robust, UV-stabilized plastic (ASA LI-911)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sensor Configuration",
+          "value_raw": "SDI-12 or USB"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Range",
+          "value_raw": "0 to 1000 mm/h (0 to 39.4 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Resolution",
+          "value_raw": "0.2 mm (0.008 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Measurement Uncertainty",
+          "value_raw": "<4% at 0 to 1000 mm/h intensity"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Range",
+          "value_raw": "0 to 500 mm/h (0 to 19.7 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Measurement Uncertainty",
+          "value_raw": "4% at 0 to 1000 mm/h intensity"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "WMO Compliant",
+          "value_raw": "No"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Active Current Drain",
+          "value_raw": "1 mA"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "2 kg (4.5 lb)"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_RAINVUE20_001_INCH_TIP",
+      "model": "RainVue20",
+      "product_name_en": "RainVue™20",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "value_raw": "SDI-12 Precipitation Sensor with Aluminum Funnel"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Available Configuration",
+          "value_raw": "0.01 inch (0.254 mm) tip"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Material",
+          "value_raw": "Main collector body: 2 mm-thick powder-coated aluminum; Base: LM6 marine-grade aluminum"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sensor Configuration",
+          "value_raw": "SDI-12 or USB"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Range",
+          "value_raw": "0 to 1200 mm/h (0 to 48 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Resolution",
+          "value_raw": "0.254 mm (0.01 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Measurement Uncertainty",
+          "value_raw": "1% at 0 to 500 mm/h intensity"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Range",
+          "value_raw": "0 to 1200 mm/h (0 to 48 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Measurement Uncertainty",
+          "value_raw": "1% at 0 to 500 mm/h intensity"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "WMO Compliant",
+          "value_raw": "No"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Active Current Drain",
+          "value_raw": "0.8 mA or 1 mA"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "6 kg (13 lb)"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_RAINVUE20_01_MM_TIP",
+      "model": "RainVue20",
+      "product_name_en": "RainVue™20",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "value_raw": "SDI-12 Precipitation Sensor with Aluminum Funnel"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Available Configuration",
+          "value_raw": "0.1 mm (0.0039 inch) tip"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Material",
+          "value_raw": "Main collector body: 2 mm-thick powder-coated aluminum; Base: LM6 marine-grade aluminum"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sensor Configuration",
+          "value_raw": "SDI-12 or USB"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Range",
+          "value_raw": "0 to 600 mm/h (0 to 23.6 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Resolution",
+          "value_raw": "0.1 mm (0.004 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Amount Measurement Uncertainty",
+          "value_raw": "3.08% at 0 to 20 mm/h; 3.6% at 20 to 600 mm/h"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Range",
+          "value_raw": "0.1 to 600 mm/h (0.004 to 23.6 in./h)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Precipitation Intensity Measurement Uncertainty",
+          "value_raw": "3.58% at 0 to 600 mm/h"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "WMO Compliant",
+          "value_raw": "Yes"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Active Current Drain",
+          "value_raw": "0.8 mA or 1 mA"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "6 kg (13 lb)"
+        }
+      ]
+    }
   ],
   "important_specifications": [
     {
@@ -75,18 +405,18 @@
       "normalized_value": {
         "type": "range",
         "min_value": 0,
-        "max_value": 500,
+        "max_value": 1200,
         "unit": "mm/h",
         "qualifier": null,
         "alternate": {
           "min_value": 0,
-          "max_value": 19.7,
+          "max_value": 48,
           "unit": "in/h"
         }
       },
       "raw_ref": {
-        "file": "data/raw/RainVue10-20.json",
-        "product_index": 1,
+        "file": "data/raw/CSI_RAINVUE10_MM.json",
+        "product_index": 0,
         "spec_index": 9,
         "source_rows": [
           12
@@ -99,17 +429,17 @@
       "quantity_kind": null,
       "normalized_value": {
         "type": "number",
-        "value": 0.1,
+        "value": 0.254,
         "unit": "mm",
         "qualifier": null,
         "alternate": {
-          "value": 0.004,
+          "value": 0.01,
           "unit": "in"
         }
       },
       "raw_ref": {
-        "file": "data/raw/RainVue10-20.json",
-        "product_index": 1,
+        "file": "data/raw/CSI_RAINVUE10_MM.json",
+        "product_index": 0,
         "spec_index": 10,
         "source_rows": [
           13
@@ -128,9 +458,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/RainVue10-20.json",
-        "product_index": 1,
-        "spec_index": 16,
+        "file": "data/raw/CSI_RAINVUE10_MM.json",
+        "product_index": 0,
+        "spec_index": 15,
         "source_rows": [
           19
         ]
@@ -147,9 +477,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/RainVue10-20.json",
-        "product_index": 1,
-        "spec_index": 17,
+        "file": "data/raw/CSI_RAINVUE10_MM.json",
+        "product_index": 0,
+        "spec_index": 16,
         "source_rows": [
           20
         ]
@@ -166,9 +496,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/RainVue10-20.json",
-        "product_index": 1,
-        "spec_index": 18,
+        "file": "data/raw/CSI_RAINVUE10_MM.json",
+        "product_index": 0,
+        "spec_index": 17,
         "source_rows": [
           21
         ]
@@ -189,9 +519,9 @@
         }
       },
       "raw_ref": {
-        "file": "data/raw/RainVue10-20.json",
-        "product_index": 1,
-        "spec_index": 24,
+        "file": "data/raw/CSI_RAINVUE10_MM.json",
+        "product_index": 0,
+        "spec_index": 23,
         "source_rows": [
           27
         ]
@@ -215,9 +545,9 @@
         "condition": "with feet adjustment"
       },
       "raw_ref": {
-        "file": "data/raw/RainVue10-20.json",
-        "product_index": 1,
-        "spec_index": 26,
+        "file": "data/raw/CSI_RAINVUE10_MM.json",
+        "product_index": 0,
+        "spec_index": 25,
         "source_rows": [
           29
         ]
@@ -238,9 +568,9 @@
         }
       },
       "raw_ref": {
-        "file": "data/raw/RainVue10-20.json",
-        "product_index": 1,
-        "spec_index": 27,
+        "file": "data/raw/CSI_RAINVUE10_MM.json",
+        "product_index": 0,
+        "spec_index": 26,
         "source_rows": [
           30
         ]
@@ -257,13 +587,11 @@
     "temperature measurement",
     "Precipitation",
     "rainfall",
-    "Precipitation Intensity",
     "Tilt",
     "SDI-12",
     "USB",
     "Measure Temperature",
     "Measure Precipitation",
-    "Measure Precipitation Intensity",
     "Measure Tilt",
     "CSI_RAINVUE10_MM"
   ],
@@ -274,23 +602,21 @@
     "Cảm biến lượng mưa",
     "Nhiệt độ",
     "Lượng mưa",
-    "Cường độ mưa",
     "Độ nghiêng",
     "SDI-12",
     "USB",
     "Đo nhiệt độ",
     "Đo lượng mưa",
-    "Đo cường độ mưa",
     "Đo độ nghiêng"
   ],
-  "search_text_en": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | Sensors | Precipitation Sensors | Precipitation Sensor | Temperature | Precipitation | Precipitation Intensity | Tilt | Measure Temperature | Measure Precipitation | Measure Precipitation Intensity | Measure Tilt | SDI-12 | USB | Measurement Range: 0 to 500 mm/h | Precipitation Amount Resolution: 0.1 mm | Power Requirements: 6 to 18 V DC | Active Current Drain: 1 mA | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg | temperature measurement | rainfall",
-  "search_text_vi": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | Cảm biến | Cảm biến lượng mưa | Nhiệt độ | Lượng mưa | Cường độ mưa | Độ nghiêng | Đo nhiệt độ | Đo lượng mưa | Đo cường độ mưa | Đo độ nghiêng | SDI-12 | USB | Measurement Range: 0 to 500 mm/h | Precipitation Amount Resolution: 0.1 mm | Power Requirements: 6 to 18 V DC | Active Current Drain: 1 mA | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg",
-  "search_text": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | Sensors | Precipitation Sensors | Precipitation Sensor | Temperature | Precipitation | Precipitation Intensity | Tilt | Measure Temperature | Measure Precipitation | Measure Precipitation Intensity | Measure Tilt | SDI-12 | USB | Measurement Range: 0 to 500 mm/h | Precipitation Amount Resolution: 0.1 mm | Power Requirements: 6 to 18 V DC | Active Current Drain: 1 mA | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg | temperature measurement | rainfall | Cảm biến | Cảm biến lượng mưa | Nhiệt độ | Lượng mưa | Cường độ mưa | Độ nghiêng | Đo nhiệt độ | Đo lượng mưa | Đo cường độ mưa | Đo độ nghiêng",
+  "search_text_en": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | RainVue10 | RainVue20 | RainVue™20 | Sensors | Precipitation Sensors | Precipitation Sensor | Temperature | Precipitation | Tilt | Measure Temperature | Measure Precipitation | Measure Tilt | SDI-12 | USB | Product Type: SDI-12 Precipitation Sensor with Plastic Funnel | Available Configuration: 0.01 inch (0.254 mm) tip | Material: Injection-molded, highly robust, UV-stabilized plastic (ASA LI-911) | Sensor Configuration: SDI-12 or USB | Measurement Range: 0 to 1200 mm/h (0 to 48 in./h) | Precipitation Amount Resolution: 0.254 mm (0.01 in.) | Precipitation Amount Measurement Uncertainty: 1% at 0 to 1200 mm/h intensity | Precipitation Intensity Range: 0 to 1200 mm/h (0 to 48 in./h) | WMO Compliant: No | Active Current Drain: 1 mA | Weight: 2 kg (4.5 lb) | Available Configuration: 0.1 mm (0.0039 inch) tip | Measurement Range: 0 to 500 mm/h (0 to 19.7 in./h) | Precipitation Amount Resolution: 0.1 mm (0.004 in.) | Precipitation Amount Measurement Uncertainty: Larger of 0.1 mm or 4% error at 0 to 500 mm/h intensity | Precipitation Intensity Range: 0 to 500 mm/h (0 to 19.7 in./h) | Precipitation Intensity Measurement Uncertainty: ≤3.5% at 0 to 300 mm/h; ≤5% at 0 to 500 mm/h | WMO Compliant: Yes | Available Configuration: 0.2 mm (0.0078 inch) tip | Measurement Range: 0 to 1000 mm/h (0 to 39.4 in./h) | Precipitation Amount Resolution: 0.2 mm (0.008 in.) | Precipitation Amount Measurement Uncertainty: <4% at 0 to 1000 mm/h intensity | Precipitation Intensity Measurement Uncertainty: 4% at 0 to 1000 mm/h intensity | Product Type: SDI-12 Precipitation Sensor with Aluminum Funnel | Material: Main collector body: 2 mm-thick powder-coated aluminum; Base: LM6 marine-grade aluminum | Precipitation Amount Measurement Uncertainty: 1% at 0 to 500 mm/h intensity | Precipitation Intensity Measurement Uncertainty: 1% at 0 to 500 mm/h intensity | Active Current Drain: 0.8 mA or 1 mA | Weight: 6 kg (13 lb) | Measurement Range: 0 to 600 mm/h (0 to 23.6 in./h) | Precipitation Amount Measurement Uncertainty: 3.08% at 0 to 20 mm/h; 3.6% at 20 to 600 mm/h | Precipitation Intensity Range: 0.1 to 600 mm/h (0.004 to 23.6 in./h) | Precipitation Intensity Measurement Uncertainty: 3.58% at 0 to 600 mm/h | Measurement Range: 0 to 1200 mm/h | Precipitation Amount Resolution: 0.254 mm | Power Requirements: 6 to 18 V DC | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg | temperature measurement | rainfall",
+  "search_text_vi": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | RainVue10 | RainVue20 | RainVue™20 | Cảm biến | Cảm biến lượng mưa | Nhiệt độ | Lượng mưa | Độ nghiêng | Đo nhiệt độ | Đo lượng mưa | Đo độ nghiêng | SDI-12 | USB | Product Type: SDI-12 Precipitation Sensor with Plastic Funnel | Available Configuration: 0.01 inch (0.254 mm) tip | Material: Injection-molded, highly robust, UV-stabilized plastic (ASA LI-911) | Sensor Configuration: SDI-12 or USB | Measurement Range: 0 to 1200 mm/h (0 to 48 in./h) | Precipitation Amount Resolution: 0.254 mm (0.01 in.) | Precipitation Amount Measurement Uncertainty: 1% at 0 to 1200 mm/h intensity | Precipitation Intensity Range: 0 to 1200 mm/h (0 to 48 in./h) | WMO Compliant: No | Active Current Drain: 1 mA | Weight: 2 kg (4.5 lb) | Available Configuration: 0.1 mm (0.0039 inch) tip | Measurement Range: 0 to 500 mm/h (0 to 19.7 in./h) | Precipitation Amount Resolution: 0.1 mm (0.004 in.) | Precipitation Amount Measurement Uncertainty: Larger of 0.1 mm or 4% error at 0 to 500 mm/h intensity | Precipitation Intensity Range: 0 to 500 mm/h (0 to 19.7 in./h) | Precipitation Intensity Measurement Uncertainty: ≤3.5% at 0 to 300 mm/h; ≤5% at 0 to 500 mm/h | WMO Compliant: Yes | Available Configuration: 0.2 mm (0.0078 inch) tip | Measurement Range: 0 to 1000 mm/h (0 to 39.4 in./h) | Precipitation Amount Resolution: 0.2 mm (0.008 in.) | Precipitation Amount Measurement Uncertainty: <4% at 0 to 1000 mm/h intensity | Precipitation Intensity Measurement Uncertainty: 4% at 0 to 1000 mm/h intensity | Product Type: SDI-12 Precipitation Sensor with Aluminum Funnel | Material: Main collector body: 2 mm-thick powder-coated aluminum; Base: LM6 marine-grade aluminum | Precipitation Amount Measurement Uncertainty: 1% at 0 to 500 mm/h intensity | Precipitation Intensity Measurement Uncertainty: 1% at 0 to 500 mm/h intensity | Active Current Drain: 0.8 mA or 1 mA | Weight: 6 kg (13 lb) | Measurement Range: 0 to 600 mm/h (0 to 23.6 in./h) | Precipitation Amount Measurement Uncertainty: 3.08% at 0 to 20 mm/h; 3.6% at 20 to 600 mm/h | Precipitation Intensity Range: 0.1 to 600 mm/h (0.004 to 23.6 in./h) | Precipitation Intensity Measurement Uncertainty: 3.58% at 0 to 600 mm/h | Measurement Range: 0 to 1200 mm/h | Precipitation Amount Resolution: 0.254 mm | Power Requirements: 6 to 18 V DC | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg",
+  "search_text": "RainVue10-MM | RainVue™10 | CSI_RAINVUE10_MM | RainVue10 | RainVue20 | RainVue™20 | Sensors | Precipitation Sensors | Precipitation Sensor | Temperature | Precipitation | Tilt | Measure Temperature | Measure Precipitation | Measure Tilt | SDI-12 | USB | Product Type: SDI-12 Precipitation Sensor with Plastic Funnel | Available Configuration: 0.01 inch (0.254 mm) tip | Material: Injection-molded, highly robust, UV-stabilized plastic (ASA LI-911) | Sensor Configuration: SDI-12 or USB | Measurement Range: 0 to 1200 mm/h (0 to 48 in./h) | Precipitation Amount Resolution: 0.254 mm (0.01 in.) | Precipitation Amount Measurement Uncertainty: 1% at 0 to 1200 mm/h intensity | Precipitation Intensity Range: 0 to 1200 mm/h (0 to 48 in./h) | WMO Compliant: No | Active Current Drain: 1 mA | Weight: 2 kg (4.5 lb) | Available Configuration: 0.1 mm (0.0039 inch) tip | Measurement Range: 0 to 500 mm/h (0 to 19.7 in./h) | Precipitation Amount Resolution: 0.1 mm (0.004 in.) | Precipitation Amount Measurement Uncertainty: Larger of 0.1 mm or 4% error at 0 to 500 mm/h intensity | Precipitation Intensity Range: 0 to 500 mm/h (0 to 19.7 in./h) | Precipitation Intensity Measurement Uncertainty: ≤3.5% at 0 to 300 mm/h; ≤5% at 0 to 500 mm/h | WMO Compliant: Yes | Available Configuration: 0.2 mm (0.0078 inch) tip | Measurement Range: 0 to 1000 mm/h (0 to 39.4 in./h) | Precipitation Amount Resolution: 0.2 mm (0.008 in.) | Precipitation Amount Measurement Uncertainty: <4% at 0 to 1000 mm/h intensity | Precipitation Intensity Measurement Uncertainty: 4% at 0 to 1000 mm/h intensity | Product Type: SDI-12 Precipitation Sensor with Aluminum Funnel | Material: Main collector body: 2 mm-thick powder-coated aluminum; Base: LM6 marine-grade aluminum | Precipitation Amount Measurement Uncertainty: 1% at 0 to 500 mm/h intensity | Precipitation Intensity Measurement Uncertainty: 1% at 0 to 500 mm/h intensity | Active Current Drain: 0.8 mA or 1 mA | Weight: 6 kg (13 lb) | Measurement Range: 0 to 600 mm/h (0 to 23.6 in./h) | Precipitation Amount Measurement Uncertainty: 3.08% at 0 to 20 mm/h; 3.6% at 20 to 600 mm/h | Precipitation Intensity Range: 0.1 to 600 mm/h (0.004 to 23.6 in./h) | Precipitation Intensity Measurement Uncertainty: 3.58% at 0 to 600 mm/h | Measurement Range: 0 to 1200 mm/h | Precipitation Amount Resolution: 0.254 mm | Power Requirements: 6 to 18 V DC | Quiescent Current Drain: 0.07 mA | Orifice Diameter: 20 cm | Height: 43.5 to 46.5 cm | Weight: 2 kg | temperature measurement | rainfall | Cảm biến | Cảm biến lượng mưa | Nhiệt độ | Lượng mưa | Độ nghiêng | Đo nhiệt độ | Đo lượng mưa | Đo độ nghiêng",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "1ed0815d4618b688cb9314c61e787dcb8f3aa6efdfcbdd65b8e9c42001c97e7a"
+  "content_hash": "17132fad642ccb968d90dff8b69235dba3485df83bccb85cf06270ca0d82f543"
 }

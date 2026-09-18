@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_AM16_32B_ST",
+  "model": "AM16/32B-ST",
+  "name_en": "16 or 32 Channel Relay Multiplexer** -ST -25 to",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Multiplexers",
+    "subcategory_key": "multiplexers",
+    "device_type": "Multiplexer",
+    "device_type_key": "multiplexer"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "AM16/32B-ST",
+    "CSI_AM16_32B_ST",
+    "16 or 32 Channel Relay Multiplexer** -ST -25 to",
+    "16 or 32 Channel Relay Multiplexer",
+    "AM16/32B-XT"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "model": "AM16/32B-ST",
+      "product_name_en": "16 or 32 Channel Relay Multiplexer",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Version",
+          "value_raw": "Standard Temperature"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-25°C to +50°C, standard"
+        },
+        {
+          "section": "TYPICAL CURRENT DRAIN",
+          "name_en": "Active",
+          "value_raw": "11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode"
+        },
+        {
+          "section": "RESET LEVELS",
+          "name_en": "Active",
+          "value_raw": "3.3 to 8 V"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_AM16_32B_XT",
+      "model": "AM16/32B-XT",
+      "product_name_en": "16 or 32 Channel Relay Multiplexer",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Version",
+          "value_raw": "Extended Temperature"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-55°C to +85°C, extended"
+        },
+        {
+          "section": "TYPICAL CURRENT DRAIN",
+          "name_en": "Active",
+          "value_raw": "11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode"
+        },
+        {
+          "section": "RESET LEVELS",
+          "name_en": "Active",
+          "value_raw": "3.3 to 8 V"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null,
+        "note": "standard"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "maximum_switching_current",
+      "name": "Maximum Switching Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 500,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "minimum_clock_pulse_width",
+      "name": "Minimum Clock Pulse Width",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "AM16/32B-ST",
+    "16 or 32 Channel Relay Multiplexer** -ST -25 to",
+    "Measurement Devices",
+    "Multiplexers",
+    "Multiplexer",
+    "CSI_AM16_32B_ST"
+  ],
+  "search_keywords_vi": [
+    "AM16/32B-ST",
+    "Thiết bị đo lường",
+    "Bộ ghép kênh"
+  ],
+  "search_text_en": "AM16/32B-ST | 16 or 32 Channel Relay Multiplexer** -ST -25 to | CSI_AM16_32B_ST | 16 or 32 Channel Relay Multiplexer | AM16/32B-XT | Measurement Devices | Multiplexers | Multiplexer | Version: Standard Temperature | Operating Temperature Range: -25°C to +50°C, standard | Active: 11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode | Active: 3.3 to 8 V | Version: Extended Temperature | Operating Temperature Range: -55°C to +85°C, extended | Operating Temperature Range: -25 to 50 °C | Maximum Switching Current: 500 mA | Minimum Clock Pulse Width: 1 ms",
+  "search_text_vi": "AM16/32B-ST | CSI_AM16_32B_ST | 16 or 32 Channel Relay Multiplexer** -ST -25 to | 16 or 32 Channel Relay Multiplexer | AM16/32B-XT | Thiết bị đo lường | Bộ ghép kênh | Version: Standard Temperature | Operating Temperature Range: -25°C to +50°C, standard | Active: 11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode | Active: 3.3 to 8 V | Version: Extended Temperature | Operating Temperature Range: -55°C to +85°C, extended | Operating Temperature Range: -25 to 50 °C | Maximum Switching Current: 500 mA | Minimum Clock Pulse Width: 1 ms",
+  "search_text": "AM16/32B-ST | 16 or 32 Channel Relay Multiplexer** -ST -25 to | CSI_AM16_32B_ST | 16 or 32 Channel Relay Multiplexer | AM16/32B-XT | Measurement Devices | Multiplexers | Multiplexer | Version: Standard Temperature | Operating Temperature Range: -25°C to +50°C, standard | Active: 11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode | Active: 3.3 to 8 V | Version: Extended Temperature | Operating Temperature Range: -55°C to +85°C, extended | Operating Temperature Range: -25 to 50 °C | Maximum Switching Current: 500 mA | Minimum Clock Pulse Width: 1 ms | Thiết bị đo lường | Bộ ghép kênh",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "b62607369c342d594a901adf056e35eedf80d261ce5b128ee982ca561e9d78f2"
+}

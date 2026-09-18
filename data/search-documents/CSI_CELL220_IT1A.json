@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CELL220_IT1A",
+  "model": "CELL220-IT1A",
+  "name_en": "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "CS I/O",
+    "RS-232",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CELL220-IT1A",
+    "CSI_CELL220_IT1A",
+    "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+    "CELL220-IT1B",
+    "CELL220-NP"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CELL220_IT1A",
+      "model": "CELL220-IT1A",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CELLULAR WAN (EC-21AUT)",
+          "name_en": "LTE Bands",
+          "value_raw": "2100(B1), 1800(B3), 850(B5), 2600(B7), 700(B28)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AUT)",
+          "name_en": "WCDMA Bands",
+          "value_raw": "1900(B1), 850(B5)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AU)",
+          "name_en": "LTE Bands",
+          "value_raw": "LTE 2100(B1), 1900(B2), 1800(B3), 1700/2100(B4), 2600(B7), 900(B8), 700(B28)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AU)",
+          "name_en": "WCDMA Bands",
+          "value_raw": "2100(B1), 1900(B2), 850(B5), 900(B8)"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "Australia Provisioned for International 1A"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL220_IT1B",
+      "model": "CELL220-IT1B",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CELLULAR WAN (EC-21AUT)",
+          "name_en": "LTE Bands",
+          "value_raw": "2100(B1), 1800(B3), 850(B5), 2600(B7), 700(B28)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AUT)",
+          "name_en": "WCDMA Bands",
+          "value_raw": "1900(B1), 850(B5)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AU)",
+          "name_en": "LTE Bands",
+          "value_raw": "LTE 2100(B1), 1900(B2), 1800(B3), 1700/2100(B4), 2600(B7), 900(B8), 700(B28)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AU)",
+          "name_en": "WCDMA Bands",
+          "value_raw": "2100(B1), 1900(B2), 850(B5), 900(B8)"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "Australia Provisioned for International 1B"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL220_NP",
+      "model": "CELL220-NP",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CELLULAR WAN (EC-21AUT)",
+          "name_en": "LTE Bands",
+          "value_raw": "2100(B1), 1800(B3), 850(B5), 2600(B7), 700(B28)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AUT)",
+          "name_en": "WCDMA Bands",
+          "value_raw": "1900(B1), 850(B5)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AU)",
+          "name_en": "LTE Bands",
+          "value_raw": "LTE 2100(B1), 1900(B2), 1800(B3), 1700/2100(B4), 2600(B7), 900(B8), 700(B28)"
+        },
+        {
+          "section": "CELLULAR WAN (EC-21AU)",
+          "name_en": "WCDMA Bands",
+          "value_raw": "2100(B1), 1900(B2), 850(B5), 900(B8)"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "No Provisioning"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Not Provisioned"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "Ships as 33587 & 16675"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL220_IT1A.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "low_power_mode",
+      "name": "Low Power Mode",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "number",
+        "value": 300,
+        "unit": "µA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL220_IT1A.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          32
+        ]
+      }
+    },
+    {
+      "canonical_key": "idle_current",
+      "name": "Idle Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 14,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL220_IT1A.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          33
+        ]
+      }
+    },
+    {
+      "canonical_key": "active_current",
+      "name": "Active Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 39,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL220_IT1A.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          34
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 215.5,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.6,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL220_IT1A.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CELL220-IT1A",
+    "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+    "Communications",
+    "Cellular Communications",
+    "Cellular Modem / Router",
+    "CS I/O",
+    "RS-232",
+    "USB",
+    "CSI_CELL220_IT1A"
+  ],
+  "search_keywords_vi": [
+    "CELL220-IT1A",
+    "Thiết bị truyền thông",
+    "Truyền thông di động",
+    "Modem hoặc bộ định tuyến di động",
+    "CS I/O",
+    "RS-232",
+    "USB"
+  ],
+  "search_text_en": "CELL220-IT1A | 4G LTE CAT-1 Cellular Module for Australia and New Zealand | CSI_CELL220_IT1A | CELL220-IT1B | CELL220-NP | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | LTE Bands: 2100(B1), 1800(B3), 850(B5), 2600(B7), 700(B28) | WCDMA Bands: 1900(B1), 850(B5) | LTE Bands: LTE 2100(B1), 1900(B2), 1800(B3), 1700/2100(B4), 2600(B7), 900(B8), 700(B28) | WCDMA Bands: 2100(B1), 1900(B2), 850(B5), 900(B8) | Provisioning Option: Australia Provisioned for International 1A | Provisioning Status: Provisioned | Provisioning Option: Australia Provisioned for International 1B | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 33587 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g",
+  "search_text_vi": "CELL220-IT1A | CSI_CELL220_IT1A | 4G LTE CAT-1 Cellular Module for Australia and New Zealand | CELL220-IT1B | CELL220-NP | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động | CS I/O | RS-232 | USB | LTE Bands: 2100(B1), 1800(B3), 850(B5), 2600(B7), 700(B28) | WCDMA Bands: 1900(B1), 850(B5) | LTE Bands: LTE 2100(B1), 1900(B2), 1800(B3), 1700/2100(B4), 2600(B7), 900(B8), 700(B28) | WCDMA Bands: 2100(B1), 1900(B2), 850(B5), 900(B8) | Provisioning Option: Australia Provisioned for International 1A | Provisioning Status: Provisioned | Provisioning Option: Australia Provisioned for International 1B | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 33587 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g",
+  "search_text": "CELL220-IT1A | 4G LTE CAT-1 Cellular Module for Australia and New Zealand | CSI_CELL220_IT1A | CELL220-IT1B | CELL220-NP | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | LTE Bands: 2100(B1), 1800(B3), 850(B5), 2600(B7), 700(B28) | WCDMA Bands: 1900(B1), 850(B5) | LTE Bands: LTE 2100(B1), 1900(B2), 1800(B3), 1700/2100(B4), 2600(B7), 900(B8), 700(B28) | WCDMA Bands: 2100(B1), 1900(B2), 850(B5), 900(B8) | Provisioning Option: Australia Provisioned for International 1A | Provisioning Status: Provisioned | Provisioning Option: Australia Provisioned for International 1B | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 33587 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "739728855d041eedf00420bcafa9a036861feb34826e652c8b4d4fe805edce98"
+}

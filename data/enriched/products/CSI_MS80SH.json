@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_MS80SH",
+  "model": "MS-80SH",
+  "name_en": "MS-80SH",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Solar Radiation Sensors",
+    "subcategory_key": "solar_radiation_sensors",
+    "device_type": "Pyranometer",
+    "device_type_key": "pyranometer"
+  },
+  "measurements": [
+    {
+      "key": "solar_radiation",
+      "label_en": "Solar Radiation",
+      "label_vi": "Bức xạ mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "Modbus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus RTU",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_485_direct_compatibility",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 40,
+            "source_rows": [
+              42
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_485_direct_compatibility",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 40,
+            "source_rows": [
+              42
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_solar_radiation",
+      "label_en": "Measure Solar Radiation",
+      "label_vi": "Đo bức xạ mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "MS-80SH",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "MS-80SH"
+        }
+      ]
+    },
+    {
+      "value": "CSI_MS80SH",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_MS80SH"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "MS-80SH",
+      "Sensors",
+      "Solar Radiation Sensors",
+      "Pyranometer",
+      "Solar Radiation",
+      "sun plus sky radiation",
+      "Modbus",
+      "Modbus RTU",
+      "RS-485",
+      "SDI-12",
+      "Measure Solar Radiation",
+      "CSI_MS80SH"
+    ],
+    "vi": [
+      "MS-80SH",
+      "Cảm biến",
+      "Cảm biến bức xạ mặt trời",
+      "Bức xạ mặt trời",
+      "Modbus",
+      "Modbus RTU",
+      "RS-485",
+      "SDI-12",
+      "Đo bức xạ mặt trời"
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "BLACKGLOBE.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_BLACKGLOBE",
+      "manufacturer": "Campbell Scientific",
+      "model": "BLACKGLOBE",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "filename",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "BlackGlobe Near Normal Emittance",
+          "name_vi": "Hệ số phát xạ gần vuông góc của cầu đen",
+          "value_raw": "0.957",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Element",
+          "name_vi": "Phần tử cảm biến",
+          "value_raw": "Measurement Specialties 100K6A1iA thermistor",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Temperature Survival Range",
+          "name_vi": "Dải nhiệt độ chịu đựng",
+          "value_raw": "-50°C to +100°C",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Temperature Measurement Range",
+          "name_vi": "Dải đo nhiệt độ",
+          "value_raw": "-5°C to +95°C",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Time Constant in Air",
+          "name_vi": "Hằng số thời gian trong không khí",
+          "value_raw": "200 ±10 s",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "305 m (1000 ft)",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Worst-Case Accuracy",
+          "name_vi": "Độ chính xác trong trường hợp bất lợi nhất",
+          "value_raw": "±0.3°C from -3°C to 90°C",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Worst-Case Accuracy",
+          "name_vi": "Độ chính xác trong trường hợp bất lợi nhất",
+          "value_raw": "±0.7°C from -5°C to 95°C",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Interchangeability Error",
+          "name_vi": "Sai số khả năng thay thế",
+          "value_raw": "±0.10°C from 0°C to 70°C",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Interchangeability Error",
+          "name_vi": "Sai số khả năng thay thế",
+          "value_raw": "±0.14°C at -5°C",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Interchangeability Error",
+          "name_vi": "Sai số khả năng thay thế",
+          "value_raw": "±0.25°C at 85°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Interchangeability Error",
+          "name_vi": "Sai số khả năng thay thế",
+          "value_raw": "±0.35°C at 95°C",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Steinhart-Hart Equation Error",
+          "name_vi": "Sai số phương trình Steinhart-Hart",
+          "value_raw": "≤±0.01°C from -35°C to 50°C",
+          "source_rows": [
+            14
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "BLACKGLOBE.pdf",
+        "user_manual": "blackglobe manuals.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/3949",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "review",
+        "warnings": [
+          "Model was taken from filename because no explicit Model field was found in the worksheet.",
+          "Product name was not found explicitly in the worksheet or supplied Product Master.",
+          "Taxonomy could not be determined from source file."
+        ]
+      }
+    }
+  ]
+}

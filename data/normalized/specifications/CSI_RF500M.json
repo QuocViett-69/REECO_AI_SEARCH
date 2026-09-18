@@ -1,0 +1,617 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_RF500M",
+  "model": "RF500M",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_RF500M.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_RF500M.json#0",
+    "raw_product_id": "CSI_RF500M",
+    "raw_model": "RF500M"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_RF500M",
+      "model": "RF500M",
+      "product_name_en": "RF500M",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating System Options",
+          "value_raw": "-PB PakBus OS (standard); -AL ALERT OS; -DA Dial OS"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration Tool",
+          "value_raw": "Device Configuration Utility (DevConfig)"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Name",
+      "value_raw": "RF500M",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Type",
+      "value_raw": "Radio Modem / Versatile Radio Modem",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Manufacturer",
+      "value_raw": "Campbell Scientific, Inc.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary communications device / radio modem",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Primary Application",
+      "value_raw": "Interface for licensed UHF/VHF radio telemetry networks",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "primary_application"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Roles",
+      "value_raw": "Field modem; stand-alone repeater; base-station modem",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "operating_roles"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Network Compatibility",
+      "value_raw": "Legacy or existing PakBus and mixed-array/dial-up networks",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "PakBus"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "network_compatibility"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Compatible Radio Series",
+      "value_raw": "RF320 series; RF310 series; RF300 series; other radio/modem combinations that output a demodulated byte stream via RS-232",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "RS-232"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "compatible_radio_series"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "ALERT Compatibility",
+      "value_raw": "Suitable for ALERT store-and-forward repeaters or base-station-decoder applications",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "alert_compatibility"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating System Options",
+      "value_raw": "-PB PakBus OS (standard); -AL ALERT OS; -DA Dial OS",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "PakBus"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "operating_system_options"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "PakBus OS",
+      "value_raw": "Uses TDRF polling; compatible with -TD, -PB, and current-generation PakBus data loggers",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "PakBus"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "pakbus_os"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "ALERT Dual Mode OS",
+      "value_raw": "Supports transmission, repeating, and reception of binary ALERT-formatted data; supports ALERT and TDRF communications",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "alert_dual_mode_os"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Dial OS",
+      "value_raw": "Supports mixed-array and PakBus/table-based data loggers and point-to-point networking",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "PakBus"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "dial_os"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Configuration Tool",
+      "value_raw": "Device Configuration Utility (DevConfig)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "configuration_tool"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RS-232 Port",
+      "value_raw": "DTE; used for modem configuration, RS-232 radio connection, or PC connection as an RF base",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "rs_232_port"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "CS I/O Port",
+      "value_raw": "Connects to data logger or PC as an RF base",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "cs_io_port"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Transceiver Port",
+      "value_raw": "Connects to compatible analog radio/transceiver",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "transceiver_port"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "RF Address Range",
+      "value_raw": "1 to 255",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 1,
+        "max_value": 255,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "rf_address_range"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Default RF Address",
+      "value_raw": "1",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "default_rf_address"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Voltage",
+      "value_raw": "7 to 20 VDC; can be provided by the CS I/O port",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "CS I/O"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Active Current Drain",
+      "value_raw": "<8 mA RMS @ 12 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "active_current_drain",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Standard Temperature Range",
+      "value_raw": "-25 to +50 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "standard_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Extended Temperature Range",
+      "value_raw": "-55 to +85 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 85,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "extended_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Dimensions",
+      "value_raw": "16.0 × 9.5 × 2.2 cm (6.31 × 3.69 × 0.88 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "0.18 kg (0.4 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.18,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.4,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Transceiver Audio Output – J1",
+      "value_raw": "310 mV peak-to-peak",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "transceiver_audio_output_j1"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Transceiver Audio Output – J3",
+      "value_raw": "670 mV peak-to-peak",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "transceiver_audio_output_j3"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Analog Radio Compatibility",
+      "value_raw": "RF320 series; RF310 series; RF300 series; unmodified DataRadio DL-3400",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "analog_radio_compatibility"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Digital Radio Compatibility",
+      "value_raw": "Digital RS-232 radios such as DataRadio Integra",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "RS-232"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "digital_radio_compatibility"
+    }
+  ]
+}

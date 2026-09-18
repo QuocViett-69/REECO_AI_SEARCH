@@ -9,6 +9,520 @@
     "raw_product_id": "CSI_CSAT3B_NC",
     "raw_model": "CSAT3B-NC"
   },
+  "variants": [
+    {
+      "product_id": "CSI_CSAT3B_NC",
+      "model": "CSAT3B-NC",
+      "product_name_en": "3-Dimensional Sonic Anemometer",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Suffix",
+          "value_raw": "NC"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Carrying Case",
+          "value_raw": "No Carrying Case"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filter Bandwidths",
+          "value_raw": "5, 10, or 25 Hz"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Anemometer Head Weight",
+          "value_raw": "1.45 kg (3.2 lb)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Anemometer Dimensions",
+          "value_raw": "60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "-NOTE-",
+          "value_raw": "Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170°"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "ux, uy",
+          "value_raw": "1 mm s⁻¹ rms"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "uz",
+          "value_raw": "0.5 mm s⁻¹ rms"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filtered Output (data-logger-prompted or unprompted to PC)",
+          "value_raw": "395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter)"
+        },
+        {
+          "section": "SDM",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for data-logger-based data acquisition."
+        },
+        {
+          "section": "SDM",
+          "name_en": "Cable Length",
+          "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period)"
+        },
+        {
+          "section": "SDM",
+          "name_en": "Address Range",
+          "value_raw": "1 to 14"
+        },
+        {
+          "section": "SDM",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~200"
+        },
+        {
+          "section": "CPI",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for data-logger-based data acquisition."
+        },
+        {
+          "section": "CPI",
+          "name_en": "Baud Rate",
+          "value_raw": "50 kbps to 1 Mbps"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Cable Length",
+          "value_raw": "122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps)"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Address Range",
+          "value_raw": "1 to 120"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~300"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for configuration or PC-based data acquisition."
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Baud Rate",
+          "value_raw": "9.6 kbps to 115.2 kbps"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Cable Length",
+          "value_raw": "610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps)"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~500 (ASCII formatted)"
+        },
+        {
+          "section": "USB",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for configuration or PC-based data acquisition."
+        },
+        {
+          "section": "USB",
+          "name_en": "Cable Length",
+          "value_raw": "5 m (16.4 ft) maximum"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CSAT3B_SC",
+      "model": "CSAT3B-SC",
+      "product_name_en": "3-Dimensional Sonic Anemometer",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Suffix",
+          "value_raw": "SC"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Carrying Case",
+          "value_raw": "Sonic Carrying Case"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filter Bandwidths",
+          "value_raw": "5, 10, or 25 Hz"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Anemometer Head Weight",
+          "value_raw": "1.45 kg (3.2 lb)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Anemometer Dimensions",
+          "value_raw": "60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "-NOTE-",
+          "value_raw": "Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170°"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "ux, uy",
+          "value_raw": "1 mm s⁻¹ rms"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "uz",
+          "value_raw": "0.5 mm s⁻¹ rms"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filtered Output (data-logger-prompted or unprompted to PC)",
+          "value_raw": "395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter)"
+        },
+        {
+          "section": "SDM",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for data-logger-based data acquisition."
+        },
+        {
+          "section": "SDM",
+          "name_en": "Cable Length",
+          "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period)"
+        },
+        {
+          "section": "SDM",
+          "name_en": "Address Range",
+          "value_raw": "1 to 14"
+        },
+        {
+          "section": "SDM",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~200"
+        },
+        {
+          "section": "CPI",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for data-logger-based data acquisition."
+        },
+        {
+          "section": "CPI",
+          "name_en": "Baud Rate",
+          "value_raw": "50 kbps to 1 Mbps"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Cable Length",
+          "value_raw": "122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps)"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Address Range",
+          "value_raw": "1 to 120"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~300"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for configuration or PC-based data acquisition."
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Baud Rate",
+          "value_raw": "9.6 kbps to 115.2 kbps"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Cable Length",
+          "value_raw": "610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps)"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~500 (ASCII formatted)"
+        },
+        {
+          "section": "USB",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for configuration or PC-based data acquisition."
+        },
+        {
+          "section": "USB",
+          "name_en": "Cable Length",
+          "value_raw": "5 m (16.4 ft) maximum"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CSAT3BH_NC",
+      "model": "CSAT3BH-NC",
+      "product_name_en": "3-Dimensional Sonic Anemometer",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Suffix",
+          "value_raw": "NC"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Carrying Case",
+          "value_raw": "No Carrying Case"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filter Bandwidths",
+          "value_raw": "5, 10, 20, or 25 Hz"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Anemometer Head Weight",
+          "value_raw": "1.9 kg (4.2 lb)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Anemometer Dimensions",
+          "value_raw": "63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "-NOTE-",
+          "value_raw": "Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170°"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "ux, uy",
+          "value_raw": "1 mm s⁻¹ RMS"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "uz",
+          "value_raw": "0.5 mm s⁻¹ RMS"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filtered Output (data-logger-prompted or unprompted to PC)",
+          "value_raw": "395 ms (with 10 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 195 ms (with 20 Hz bandwidth filter)"
+        },
+        {
+          "section": "SDM",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for data-logger-based data acquisition."
+        },
+        {
+          "section": "SDM",
+          "name_en": "Cable Length",
+          "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period)"
+        },
+        {
+          "section": "SDM",
+          "name_en": "Address Range",
+          "value_raw": "1 to 14"
+        },
+        {
+          "section": "SDM",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~200"
+        },
+        {
+          "section": "CPI",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for data-logger-based data acquisition."
+        },
+        {
+          "section": "CPI",
+          "name_en": "Baud Rate",
+          "value_raw": "50 kbps to 1 Mbps"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Cable Length",
+          "value_raw": "853 m (2800 ft) max (@ 50 kbps) | 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps)"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Address Range",
+          "value_raw": "1 to 120"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~300"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for anemometer configuration or PC-based data acquisition."
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Baud Rate",
+          "value_raw": "9.6 kbps to 115.2 kbps"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Cable Length",
+          "value_raw": "610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps)"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~500 (ASCII formatted)"
+        },
+        {
+          "section": "USB",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for anemometer configuration or PC-based data acquisition."
+        },
+        {
+          "section": "USB",
+          "name_en": "Cable Length",
+          "value_raw": "5 m (16.4 ft) maximum"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CSAT3BH_SC",
+      "model": "CSAT3BH-SC",
+      "product_name_en": "3-Dimensional Sonic Anemometer",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Suffix",
+          "value_raw": "SC"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Carrying Case",
+          "value_raw": "Sonic Carrying Case"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filter Bandwidths",
+          "value_raw": "5, 10, 20, or 25 Hz"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Anemometer Head Weight",
+          "value_raw": "1.9 kg (4.2 lb)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Anemometer Dimensions",
+          "value_raw": "63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "-NOTE-",
+          "value_raw": "Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170°"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "ux, uy",
+          "value_raw": "1 mm s⁻¹ RMS"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "uz",
+          "value_raw": "0.5 mm s⁻¹ RMS"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Filtered Output (data-logger-prompted or unprompted to PC)",
+          "value_raw": "395 ms (with 10 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 195 ms (with 20 Hz bandwidth filter)"
+        },
+        {
+          "section": "SDM",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for data-logger-based data acquisition."
+        },
+        {
+          "section": "SDM",
+          "name_en": "Cable Length",
+          "value_raw": "7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period)"
+        },
+        {
+          "section": "SDM",
+          "name_en": "Address Range",
+          "value_raw": "1 to 14"
+        },
+        {
+          "section": "SDM",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~200"
+        },
+        {
+          "section": "CPI",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for data-logger-based data acquisition."
+        },
+        {
+          "section": "CPI",
+          "name_en": "Baud Rate",
+          "value_raw": "50 kbps to 1 Mbps"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Cable Length",
+          "value_raw": "853 m (2800 ft) max (@ 50 kbps) | 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps)"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Address Range",
+          "value_raw": "1 to 120"
+        },
+        {
+          "section": "CPI",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~300"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for anemometer configuration or PC-based data acquisition."
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Baud Rate",
+          "value_raw": "9.6 kbps to 115.2 kbps"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Cable Length",
+          "value_raw": "610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps)"
+        },
+        {
+          "section": "RS-485",
+          "name_en": "Bus Clocks per Sample",
+          "value_raw": "~500 (ASCII formatted)"
+        },
+        {
+          "section": "USB",
+          "name_en": "-NOTE-",
+          "value_raw": "Used for anemometer configuration or PC-based data acquisition."
+        },
+        {
+          "section": "USB",
+          "name_en": "Cable Length",
+          "value_raw": "5 m (16.4 ft) maximum"
+        }
+      ]
+    }
+  ],
   "specifications": [
     {
       "product_id": "CSI_CSAT3B_NC",
@@ -403,7 +917,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "WIND ACCURACY",
+      "section": "SPECIFICATIONS",
       "name_raw": "-NOTE-",
       "value_raw": "Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170°",
       "type": "text",
@@ -419,11 +933,11 @@
           32
         ]
       },
-      "canonical_key": "note_f2bebc72"
+      "canonical_key": "note_05d5e3cd"
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "WIND ACCURACY",
+      "section": "SPECIFICATIONS",
       "name_raw": "Maximum Offset Error",
       "value_raw": "< ±8.0 cm s⁻¹ (ux, uy) | < ±4.0 cm s⁻¹ (uz)",
       "type": "text",
@@ -441,7 +955,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "WIND ACCURACY",
+      "section": "SPECIFICATIONS",
       "name_raw": "Maximum Gain Error",
       "value_raw": "< ±3% of reading (wind vector within ±10° of horizontal) | < ±2% of reading (wind vector within ±5° of horizontal) | < ±6% of reading (wind vector within ±20° of horizontal)",
       "type": "text",
@@ -460,7 +974,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT RESOLUTION",
+      "section": "SPECIFICATIONS",
       "name_raw": "ux, uy",
       "value_raw": "1 mm s⁻¹ rms",
       "type": "text",
@@ -477,7 +991,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT RESOLUTION",
+      "section": "SPECIFICATIONS",
       "name_raw": "uz",
       "value_raw": "0.5 mm s⁻¹ rms",
       "type": "text",
@@ -494,7 +1008,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT RESOLUTION",
+      "section": "SPECIFICATIONS",
       "name_raw": "Ts",
       "value_raw": "0.002°C RMS (at 25°C)",
       "type": "text",
@@ -511,7 +1025,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT RESOLUTION",
+      "section": "SPECIFICATIONS",
       "name_raw": "Wind Direction",
       "value_raw": "< 0.058° (ux = uy ≤ 1 m s⁻¹)",
       "type": "text",
@@ -528,7 +1042,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT RATES",
+      "section": "SPECIFICATIONS",
       "name_raw": "Data Logger Triggered",
       "value_raw": "1 to 100 Hz",
       "type": "range",
@@ -551,7 +1065,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT RATES",
+      "section": "SPECIFICATIONS",
       "name_raw": "Unprompted Output (to PC)",
       "value_raw": "10, 20, 50, or 100 Hz",
       "type": "text",
@@ -568,7 +1082,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT RATES",
+      "section": "SPECIFICATIONS",
       "name_raw": "Internal Self-Trigger Rate",
       "value_raw": "100 Hz",
       "type": "number",
@@ -590,7 +1104,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT DELAY",
+      "section": "SPECIFICATIONS",
       "name_raw": "Data Logger Triggered (no filter)",
       "value_raw": "1 trigger period (1 scan interval)",
       "type": "text",
@@ -607,7 +1121,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT DELAY",
+      "section": "SPECIFICATIONS",
       "name_raw": "Unprompted Output (no filter)",
       "value_raw": "10 ms",
       "type": "number",
@@ -629,7 +1143,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "MEASUREMENT DELAY",
+      "section": "SPECIFICATIONS",
       "name_raw": "Filtered Output (data-logger-prompted or unprompted to PC)",
       "value_raw": "395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter)",
       "type": "text",
@@ -641,15 +1155,14 @@
         "source_rows": [
           50,
           51,
-          52,
-          53
+          52
         ]
       },
       "canonical_key": "filtered_output_data_logger_prompted_or_unprompted_to_pc"
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "INTERNAL MONITOR MEASUREMENTS",
+      "section": "SPECIFICATIONS",
       "name_raw": "Update Rate",
       "value_raw": "2 Hz",
       "type": "number",
@@ -671,7 +1184,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "INTERNAL MONITOR MEASUREMENTS",
+      "section": "SPECIFICATIONS",
       "name_raw": "Inclinometer Accuracy",
       "value_raw": "±1°",
       "type": "number",
@@ -693,7 +1206,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "INTERNAL MONITOR MEASUREMENTS",
+      "section": "SPECIFICATIONS",
       "name_raw": "Relative Humidity Accuracy",
       "value_raw": "±7% (over 90 to 100% range) | ±7% (over 0 to 10% range) | ±3% (over 10 to 90% range)",
       "type": "text",
@@ -713,7 +1226,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "INTERNAL MONITOR MEASUREMENTS",
+      "section": "SPECIFICATIONS",
       "name_raw": "Board Temperature Accuracy",
       "value_raw": "±2°C",
       "type": "number",
@@ -1099,7 +1612,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "POWER REQUIREMENTS",
+      "section": "USB",
       "name_raw": "Voltage Supply / Anemometer Voltage Requirement",
       "value_raw": "9.5 to 32 Vdc",
       "type": "range",
@@ -1123,7 +1636,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "POWER REQUIREMENTS",
+      "section": "USB",
       "name_raw": "Current at 10 Hz Measurement Rate",
       "value_raw": "65 mA (@ 24 Vdc) | 110 mA (@ 12 Vdc)",
       "type": "text",
@@ -1142,7 +1655,7 @@
     },
     {
       "product_id": "CSI_CSAT3B_NC",
-      "section": "POWER REQUIREMENTS",
+      "section": "USB",
       "name_raw": "Current at 100 Hz Measurement Rate",
       "value_raw": "80 mA (@ 24 Vdc) | 145 mA (@ 12 Vdc)",
       "type": "text",
@@ -1157,99 +1670,6 @@
         ]
       },
       "canonical_key": "current_at_100_hz_measurement_rate",
-      "quantity_kind": "current"
-    },
-    {
-      "product_id": "CSI_CSAT3B_NC",
-      "section": "POWER REQUIREMENTS",
-      "name_raw": "Heaters",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/CSAT3B_CSAT3BH.json",
-        "product_index": 0,
-        "spec_index": 56,
-        "source_rows": [
-          92
-        ]
-      },
-      "canonical_key": "heaters",
-      "quantity_kind": "power"
-    },
-    {
-      "product_id": "CSI_CSAT3B_NC",
-      "section": "POWER REQUIREMENTS",
-      "name_raw": "Arms and Strut",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/CSAT3B_CSAT3BH.json",
-        "product_index": 0,
-        "spec_index": 57,
-        "source_rows": [
-          93,
-          94
-        ]
-      },
-      "canonical_key": "arms_and_strut",
-      "quantity_kind": "power"
-    },
-    {
-      "product_id": "CSI_CSAT3B_NC",
-      "section": "POWER REQUIREMENTS",
-      "name_raw": "Transducer Fingers",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/CSAT3B_CSAT3BH.json",
-        "product_index": 0,
-        "spec_index": 58,
-        "source_rows": [
-          95,
-          96
-        ]
-      },
-      "canonical_key": "transducer_fingers",
-      "quantity_kind": "power"
-    },
-    {
-      "product_id": "CSI_CSAT3B_NC",
-      "section": "POWER REQUIREMENTS",
-      "name_raw": "Total System Power",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/CSAT3B_CSAT3BH.json",
-        "product_index": 0,
-        "spec_index": 59,
-        "source_rows": [
-          97,
-          98
-        ]
-      },
-      "canonical_key": "total_system_power",
-      "quantity_kind": "power"
-    },
-    {
-      "product_id": "CSI_CSAT3B_NC",
-      "section": "POWER REQUIREMENTS",
-      "name_raw": "Controller Current Required",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/CSAT3B_CSAT3BH.json",
-        "product_index": 0,
-        "spec_index": 60,
-        "source_rows": [
-          99
-        ]
-      },
-      "canonical_key": "controller_current_required",
       "quantity_kind": "current"
     }
   ]

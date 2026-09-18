@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "source": {
     "file": "SkyVue.xlsx",
     "sheet": "Sheet1"
@@ -15,9 +15,9 @@
         "product_name_en": "worksheet"
       },
       "taxonomy": {
-        "category": null,
-        "subcategory": null,
-        "device_type": null
+        "category": "Sensors",
+        "subcategory": "Weather Sensors",
+        "device_type": "LIDAR Ceilometer"
       },
       "specifications": [
         {
@@ -320,8 +320,8 @@
       ],
       "documents": {
         "product_url": null,
-        "datasheet": "Datasheet",
-        "user_manual": "User manual",
+        "datasheet": "skyvue8_datasheet.pdf",
+        "user_manual": "skyvue8.pdf",
         "order_form": null
       },
       "media": {
@@ -333,9 +333,564 @@
         ]
       },
       "validation": {
-        "status": "valid",
+        "status": "passed",
         "warnings": []
-      }
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_SKYVUE8",
+        "variant_count": 3,
+        "source_files": [
+          "SkyVue_Output.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_SKYVUE8",
+          "model": "SkyVue8",
+          "product_name_en": "SkyVue™8",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Legacy / Alternate Model",
+              "name_vi": "Mã model cũ / thay thế",
+              "value_raw": "CS136",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Product Type",
+              "name_vi": "Loại sản phẩm",
+              "value_raw": "LIDAR Ceilometer",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Primary Application",
+              "name_vi": "Ứng dụng chính",
+              "value_raw": "Cloud base height and vertical visibility measurement for aviation and meteorological applications",
+              "source_rows": [
+                7
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Reported Parameters",
+              "name_vi": "Các thông số báo cáo",
+              "value_raw": "Cloud base heights, sky condition, vertical visibility, raw backscatter profiles",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Reporting Range",
+              "name_vi": "Dải báo cáo",
+              "value_raw": "0 to 8 km (0 to 26,250 ft)",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Cloud Layers Reported",
+              "name_vi": "Số lớp mây báo cáo",
+              "value_raw": "Up to four layers",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Vertical Visibility",
+              "name_vi": "Tầm nhìn thẳng đứng",
+              "value_raw": "Reported when there is obscuration but no clouds detected",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Dimensions",
+              "name_vi": "Kích thước",
+              "value_raw": "737 × 294 × 240 mm (29.0 × 11.6 × 9.5 in.) including tilt base",
+              "source_rows": [
+                22
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Weight",
+              "name_vi": "Khối lượng",
+              "value_raw": "18 kg (39.7 lb)",
+              "source_rows": [
+                24
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Power Source",
+              "name_vi": "Nguồn cấp",
+              "value_raw": "115/230 VAC ±15% auto-switching, 50 to 60 Hz",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Power / Current Consumption",
+              "name_vi": "Công suất / dòng tiêu thụ",
+              "value_raw": "15 W minimum; up to 380 W with all heaters on; optional current-limited mode 250 W max.",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Battery Backup",
+              "name_vi": "Pin dự phòng",
+              "value_raw": "Internal 12 V, 7 Ah battery",
+              "source_rows": [
+                30
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Data Interfaces",
+              "name_vi": "Giao tiếp dữ liệu",
+              "value_raw": "RS-232 / RS-422 / RS-485 / Ethernet option",
+              "source_rows": [
+                32
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-40 to +60 °C excluding battery",
+              "source_rows": [
+                36
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Extended / Battery Temperature Range",
+              "name_vi": "Dải nhiệt độ mở rộng / với pin",
+              "value_raw": "-50 to +60 °C available as a special",
+              "source_rows": [
+                37
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Maximum Wind Speed",
+              "name_vi": "Tốc độ gió tối đa",
+              "value_raw": "55 m/s (123 mph)",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Standards / Guidance",
+              "name_vi": "Tiêu chuẩn / hướng dẫn",
+              "value_raw": "ICAO, CAA, WMO; includes ICAO 9837, ICAO Annex 3, CAP 437, CAP 746",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "skyvue8_datasheet.pdf",
+            "user_manual": "skyvue8.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11943",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "SkyVue_Output.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_SKYVUE8M",
+          "model": "SkyVue8M",
+          "product_name_en": "SkyVue™8M",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Product Type",
+              "name_vi": "Loại sản phẩm",
+              "value_raw": "Tactical LIDAR Ceilometer",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Primary Application",
+              "name_vi": "Ứng dụng chính",
+              "value_raw": "Quick tactical deployment for military or civilian aviation and meteorological applications",
+              "source_rows": [
+                7
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Reported Parameters",
+              "name_vi": "Các thông số báo cáo",
+              "value_raw": "Cloud height, sky condition, vertical visibility, raw backscatter profiles",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Reporting Range",
+              "name_vi": "Dải báo cáo",
+              "value_raw": "0 to 8 km (0 to 26,250 ft)",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Cloud Layers Reported",
+              "name_vi": "Số lớp mây báo cáo",
+              "value_raw": "Up to four layers; up to five layers in Sky Condition",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Dimensions",
+              "name_vi": "Kích thước",
+              "value_raw": "763 × 360 × 253 mm (30.0 × 14.2 × 10.0 in.) including base and handle",
+              "source_rows": [
+                22
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Weight",
+              "name_vi": "Khối lượng",
+              "value_raw": "18 kg (39.7 lb) excluding cables",
+              "source_rows": [
+                24
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Power Source",
+              "name_vi": "Nguồn cấp",
+              "value_raw": "10 to 40 VDC; DC power source only",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Power / Current Consumption",
+              "name_vi": "Công suất / dòng tiêu thụ",
+              "value_raw": "9 A at 12 VDC; 4.5 A at 24 VDC",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Data Interfaces",
+              "name_vi": "Giao tiếp dữ liệu",
+              "value_raw": "RS-232 / RS-422* / RS-485* / Ethernet option",
+              "source_rows": [
+                32
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-40 to +60 °C",
+              "source_rows": [
+                36
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Maximum Wind Speed",
+              "name_vi": "Tốc độ gió tối đa",
+              "value_raw": "55 m/s (123 mph) when securely attached to ground without camouflage covers",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Electrical Safety Compliance",
+              "name_vi": "Tuân thủ an toàn điện",
+              "value_raw": "EN 61010-1:2010",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Laser Safety Compliance",
+              "name_vi": "Tuân thủ an toàn laser",
+              "value_raw": "EN 60825-1:2014",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Standards / Guidance",
+              "name_vi": "Tiêu chuẩn / hướng dẫn",
+              "value_raw": "ICAO, CAA, WMO requirements and recommendations",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "skyvue8m_datasheet.pdf",
+            "user_manual": "skyvue8m.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12838",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "SkyVue_Output.json",
+            "product_index": 1
+          }
+        },
+        {
+          "product_id": "CSI_SKYVUEPRO",
+          "model": "SkyVuePRO",
+          "product_name_en": "SkyVue™PRO",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Legacy / Alternate Model",
+              "name_vi": "Mã model cũ / thay thế",
+              "value_raw": "CS135",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Product Type",
+              "name_vi": "Loại sản phẩm",
+              "value_raw": "LIDAR Ceilometer",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Primary Application",
+              "name_vi": "Ứng dụng chính",
+              "value_raw": "Cloud height and vertical visibility measurement for meteorological, aviation, and long-term research applications",
+              "source_rows": [
+                7
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Reported Parameters",
+              "name_vi": "Các thông số báo cáo",
+              "value_raw": "Cloud height, sky condition, vertical visibility, raw backscatter profiles",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Mixing Layer Height Option",
+              "name_vi": "Tùy chọn chiều cao lớp trộn",
+              "value_raw": "Available for air-quality applications",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Reporting Range",
+              "name_vi": "Dải báo cáo",
+              "value_raw": "0 to 10 km (0 to 33,000 ft)",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Cloud Layers Reported",
+              "name_vi": "Số lớp mây báo cáo",
+              "value_raw": "Up to four layers",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Vertical Visibility",
+              "name_vi": "Tầm nhìn thẳng đứng",
+              "value_raw": "Reported when no clouds selected",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Dimensions",
+              "name_vi": "Kích thước",
+              "value_raw": "100 × 32.7 × 28.1 cm (39.4 × 12.9 × 11.1 in.) including base",
+              "source_rows": [
+                22
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Weight",
+              "name_vi": "Khối lượng",
+              "value_raw": "32 kg (71 lb) without cables",
+              "source_rows": [
+                24
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Power Source",
+              "name_vi": "Nguồn cấp",
+              "value_raw": "115/230 VAC ±10%, 50 to 60 Hz",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Power / Current Consumption",
+              "name_vi": "Công suất / dòng tiêu thụ",
+              "value_raw": "470 W maximum",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Battery Backup",
+              "name_vi": "Pin dự phòng",
+              "value_raw": "Internal 12 VDC, 2 Ah battery backup",
+              "source_rows": [
+                30
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Data Interfaces",
+              "name_vi": "Giao tiếp dữ liệu",
+              "value_raw": "RS-232 / RS-422 / RS-485 / Ethernet",
+              "source_rows": [
+                32
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-40 to +60 °C excluding battery",
+              "source_rows": [
+                36
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Extended / Battery Temperature Range",
+              "name_vi": "Dải nhiệt độ mở rộng / với pin",
+              "value_raw": "-20 to +50 °C with standard battery",
+              "source_rows": [
+                37
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Maximum Wind Speed",
+              "name_vi": "Tốc độ gió tối đa",
+              "value_raw": "55 m/s (123 mph)",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Electrical Safety Compliance",
+              "name_vi": "Tuân thủ an toàn điện",
+              "value_raw": "EN 61010-1",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Laser Safety Compliance",
+              "name_vi": "Tuân thủ an toàn laser",
+              "value_raw": "EN 60825-1:2001",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Standards / Guidance",
+              "name_vi": "Tiêu chuẩn / hướng dẫn",
+              "value_raw": "CAA, WMO, ICAO; includes CAP 437, CAP 670, CAP 746",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "skyvuepro_datasheet.pdf",
+            "user_manual": "skyvuepro.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11702",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "SkyVue_Output.json",
+            "product_index": 2
+          }
+        }
+      ]
     },
     {
       "product_id": "CSI_SKYVUE8M",

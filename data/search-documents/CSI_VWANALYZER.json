@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_VWANALYZER",
+  "model": "VWANALYZER",
+  "name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Vibrating Wire Analyzers",
+    "subcategory_key": "vibrating_wire_analyzers",
+    "device_type": "Vibrating Wire Analyzer",
+    "device_type_key": "vibrating_wire_analyzer"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "VWANALYZER",
+    "CSI_VWANALYZER",
+    "Vibrating Wire Analyzer (VWAnalyzer)"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_VWANALYZER",
+      "model": "VWANALYZER",
+      "product_name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -20,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          35
+        ]
+      }
+    },
+    {
+      "canonical_key": "vibrating_wire_frequency_range",
+      "name": "Vibrating Wire Frequency Range",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 300,
+        "max_value": 6500,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.34,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.75,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 37,
+        "source_rows": [
+          40
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "VWANALYZER",
+    "Vibrating Wire Analyzer (VWAnalyzer)",
+    "Measurement Devices",
+    "Vibrating Wire Analyzers",
+    "Vibrating Wire Analyzer",
+    "USB",
+    "CSI_VWANALYZER"
+  ],
+  "search_keywords_vi": [
+    "VWANALYZER",
+    "Thiết bị đo lường",
+    "Bộ phân tích dây rung",
+    "USB"
+  ],
+  "search_text_en": "VWANALYZER | Vibrating Wire Analyzer (VWAnalyzer) | CSI_VWANALYZER | Measurement Devices | Vibrating Wire Analyzers | Vibrating Wire Analyzer | USB | Operating Temperature Range: -20 to 70 °C | Vibrating Wire Frequency Range: 300 to 6500 Hz | Weight: 0.34 kg",
+  "search_text_vi": "VWANALYZER | CSI_VWANALYZER | Vibrating Wire Analyzer (VWAnalyzer) | Thiết bị đo lường | Bộ phân tích dây rung | USB | Operating Temperature Range: -20 to 70 °C | Vibrating Wire Frequency Range: 300 to 6500 Hz | Weight: 0.34 kg",
+  "search_text": "VWANALYZER | Vibrating Wire Analyzer (VWAnalyzer) | CSI_VWANALYZER | Measurement Devices | Vibrating Wire Analyzers | Vibrating Wire Analyzer | USB | Operating Temperature Range: -20 to 70 °C | Vibrating Wire Frequency Range: 300 to 6500 Hz | Weight: 0.34 kg | Thiết bị đo lường | Bộ phân tích dây rung",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "ead7eb6bf291c97f7a33e48dec4cad49b96c4740cac3b34f0b6415acb4ecd237"
+}

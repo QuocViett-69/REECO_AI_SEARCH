@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS610",
+  "model": "CS610",
+  "name_en": "3-rod TDR Probe",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Soil Sensors",
+    "subcategory_key": "soil_sensors",
+    "device_type": "TDR Soil Moisture Probe",
+    "device_type_key": "tdr_soil_moisture_probe"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS610",
+    "CSI_CS610",
+    "3-rod TDR Probe",
+    "CS635",
+    "CS645"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CS610",
+      "model": "CS610",
+      "product_name_en": "3-rod TDR Probe",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "MAJOR SPECIFICATIONS",
+          "name_en": "Application / Soil Type",
+          "value_raw": "For typical soils"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Length",
+          "value_raw": "30 cm (12 in)"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Diameter",
+          "value_raw": "0.475 cm (0.187 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Length",
+          "value_raw": "10.8 cm (4.3 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Width",
+          "value_raw": "7.0 cm (2.8 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Thickness",
+          "value_raw": "1.9 cm (0.7 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Cable Type",
+          "value_raw": "RG8 low loss"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Maximum Soil Bulk Electrical Conductivity",
+          "value_raw": "1.4 dS m⁻¹"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CS635",
+      "model": "CS635",
+      "product_name_en": "3-rod TDR Probe",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "MAJOR SPECIFICATIONS",
+          "name_en": "Application / Soil Type",
+          "value_raw": "For high conductivity soils"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Length",
+          "value_raw": "15 cm (6 in)"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Diameter",
+          "value_raw": "0.318 cm (0.125 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Length",
+          "value_raw": "5.75 cm (2.25 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Width",
+          "value_raw": "4.0 cm (1.57 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Thickness",
+          "value_raw": "1.25 cm (0.49 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Cable Type",
+          "value_raw": "LMR-200 low loss"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Maximum Soil Bulk Electrical Conductivity",
+          "value_raw": "3.5 dS m⁻¹"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CS645",
+      "model": "CS645",
+      "product_name_en": "3-rod TDR Probe",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "MAJOR SPECIFICATIONS",
+          "name_en": "Application / Soil Type",
+          "value_raw": "For very high conductivity soils"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Length",
+          "value_raw": "7.5 cm (3 in)"
+        },
+        {
+          "section": "Rod Dimensions",
+          "name_en": "Diameter",
+          "value_raw": "0.159 cm (0.063 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Length",
+          "value_raw": "4.5 cm (1.77 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Width",
+          "value_raw": "2.2 cm (0.87 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Thickness",
+          "value_raw": "1.0 cm (0.39 in)"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Cable Type",
+          "value_raw": "LMR-200 low loss"
+        },
+        {
+          "section": "Probe Head Dimensions",
+          "name_en": "Maximum Soil Bulk Electrical Conductivity",
+          "value_raw": "5 dS m⁻¹"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "diameter",
+      "name": "Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.475,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.187,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "width",
+      "name": "Width",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 7,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.8,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS610.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          10
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS610",
+    "3-rod TDR Probe",
+    "Sensors",
+    "Soil Sensors",
+    "TDR Soil Moisture Probe",
+    "CSI_CS610"
+  ],
+  "search_keywords_vi": [
+    "CS610",
+    "Cảm biến",
+    "Cảm biến đất",
+    "Đầu dò độ ẩm đất TDR"
+  ],
+  "search_text_en": "CS610 | 3-rod TDR Probe | CSI_CS610 | CS635 | CS645 | Sensors | Soil Sensors | TDR Soil Moisture Probe | Application / Soil Type: For typical soils | Length: 30 cm (12 in) | Diameter: 0.475 cm (0.187 in) | Length: 10.8 cm (4.3 in) | Width: 7.0 cm (2.8 in) | Thickness: 1.9 cm (0.7 in) | Cable Type: RG8 low loss | Maximum Soil Bulk Electrical Conductivity: 1.4 dS m⁻¹ | Application / Soil Type: For high conductivity soils | Length: 15 cm (6 in) | Diameter: 0.318 cm (0.125 in) | Length: 5.75 cm (2.25 in) | Width: 4.0 cm (1.57 in) | Thickness: 1.25 cm (0.49 in) | Cable Type: LMR-200 low loss | Maximum Soil Bulk Electrical Conductivity: 3.5 dS m⁻¹ | Application / Soil Type: For very high conductivity soils | Length: 7.5 cm (3 in) | Diameter: 0.159 cm (0.063 in) | Length: 4.5 cm (1.77 in) | Width: 2.2 cm (0.87 in) | Thickness: 1.0 cm (0.39 in) | Maximum Soil Bulk Electrical Conductivity: 5 dS m⁻¹ | Diameter: 0.475 cm | Width: 7 cm",
+  "search_text_vi": "CS610 | CSI_CS610 | 3-rod TDR Probe | CS635 | CS645 | Cảm biến | Cảm biến đất | Đầu dò độ ẩm đất TDR | Application / Soil Type: For typical soils | Length: 30 cm (12 in) | Diameter: 0.475 cm (0.187 in) | Length: 10.8 cm (4.3 in) | Width: 7.0 cm (2.8 in) | Thickness: 1.9 cm (0.7 in) | Cable Type: RG8 low loss | Maximum Soil Bulk Electrical Conductivity: 1.4 dS m⁻¹ | Application / Soil Type: For high conductivity soils | Length: 15 cm (6 in) | Diameter: 0.318 cm (0.125 in) | Length: 5.75 cm (2.25 in) | Width: 4.0 cm (1.57 in) | Thickness: 1.25 cm (0.49 in) | Cable Type: LMR-200 low loss | Maximum Soil Bulk Electrical Conductivity: 3.5 dS m⁻¹ | Application / Soil Type: For very high conductivity soils | Length: 7.5 cm (3 in) | Diameter: 0.159 cm (0.063 in) | Length: 4.5 cm (1.77 in) | Width: 2.2 cm (0.87 in) | Thickness: 1.0 cm (0.39 in) | Maximum Soil Bulk Electrical Conductivity: 5 dS m⁻¹ | Diameter: 0.475 cm | Width: 7 cm",
+  "search_text": "CS610 | 3-rod TDR Probe | CSI_CS610 | CS635 | CS645 | Sensors | Soil Sensors | TDR Soil Moisture Probe | Application / Soil Type: For typical soils | Length: 30 cm (12 in) | Diameter: 0.475 cm (0.187 in) | Length: 10.8 cm (4.3 in) | Width: 7.0 cm (2.8 in) | Thickness: 1.9 cm (0.7 in) | Cable Type: RG8 low loss | Maximum Soil Bulk Electrical Conductivity: 1.4 dS m⁻¹ | Application / Soil Type: For high conductivity soils | Length: 15 cm (6 in) | Diameter: 0.318 cm (0.125 in) | Length: 5.75 cm (2.25 in) | Width: 4.0 cm (1.57 in) | Thickness: 1.25 cm (0.49 in) | Cable Type: LMR-200 low loss | Maximum Soil Bulk Electrical Conductivity: 3.5 dS m⁻¹ | Application / Soil Type: For very high conductivity soils | Length: 7.5 cm (3 in) | Diameter: 0.159 cm (0.063 in) | Length: 4.5 cm (1.77 in) | Width: 2.2 cm (0.87 in) | Thickness: 1.0 cm (0.39 in) | Maximum Soil Bulk Electrical Conductivity: 5 dS m⁻¹ | Diameter: 0.475 cm | Width: 7 cm | Cảm biến | Cảm biến đất | Đầu dò độ ẩm đất TDR",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "d4c22b5226997e10bda83f8e4c6ecaacc09589490daa38160e05353c7322689c"
+}

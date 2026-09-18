@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "RF500M.json",
+        "original_source": {
+          "file": "RF500M.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_RF500M",
+      "manufacturer": "Campbell Scientific",
+      "model": "RF500M",
+      "product_name_en": "RF500M",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Communications",
+        "subcategory": "Radio Communications",
+        "device_type": "Radio Modem"
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "RF500M",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Radio Modem / Versatile Radio Modem",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary communications device / radio modem",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Interface for licensed UHF/VHF radio telemetry networks",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Roles",
+          "name_vi": "Vai trò hoạt động",
+          "value_raw": "Field modem; stand-alone repeater; base-station modem",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Network Compatibility",
+          "name_vi": "Khả năng tương thích mạng",
+          "value_raw": "Legacy or existing PakBus and mixed-array/dial-up networks",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compatible Radio Series",
+          "name_vi": "Dòng radio tương thích",
+          "value_raw": "RF320 series; RF310 series; RF300 series; other radio/modem combinations that output a demodulated byte stream via RS-232",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "ALERT Compatibility",
+          "name_vi": "Khả năng tương thích ALERT",
+          "value_raw": "Suitable for ALERT store-and-forward repeaters or base-station-decoder applications",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating System Options",
+          "name_vi": "Các tùy chọn hệ điều hành",
+          "value_raw": "-PB PakBus OS (standard); -AL ALERT OS; -DA Dial OS",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "PakBus OS",
+          "name_vi": "Hệ điều hành PakBus",
+          "value_raw": "Uses TDRF polling; compatible with -TD, -PB, and current-generation PakBus data loggers",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "ALERT Dual Mode OS",
+          "name_vi": "Hệ điều hành ALERT Dual Mode",
+          "value_raw": "Supports transmission, repeating, and reception of binary ALERT-formatted data; supports ALERT and TDRF communications",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Dial OS",
+          "name_vi": "Hệ điều hành Dial",
+          "value_raw": "Supports mixed-array and PakBus/table-based data loggers and point-to-point networking",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration Tool",
+          "name_vi": "Công cụ cấu hình",
+          "value_raw": "Device Configuration Utility (DevConfig)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RS-232 Port",
+          "name_vi": "Cổng RS-232",
+          "value_raw": "DTE; used for modem configuration, RS-232 radio connection, or PC connection as an RF base",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "CS I/O Port",
+          "name_vi": "Cổng CS I/O",
+          "value_raw": "Connects to data logger or PC as an RF base",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Transceiver Port",
+          "name_vi": "Cổng Transceiver",
+          "value_raw": "Connects to compatible analog radio/transceiver",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RF Address Range",
+          "name_vi": "Dải địa chỉ RF",
+          "value_raw": "1 to 255",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default RF Address",
+          "name_vi": "Địa chỉ RF mặc định",
+          "value_raw": "1",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Voltage",
+          "name_vi": "Điện áp",
+          "value_raw": "7 to 20 VDC; can be provided by the CS I/O port",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Active Current Drain",
+          "name_vi": "Dòng tiêu thụ khi hoạt động",
+          "value_raw": "<8 mA RMS @ 12 VDC",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Standard Temperature Range",
+          "name_vi": "Dải nhiệt độ tiêu chuẩn",
+          "value_raw": "-25 to +50 °C",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Extended Temperature Range",
+          "name_vi": "Dải nhiệt độ mở rộng",
+          "value_raw": "-55 to +85 °C",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "16.0 × 9.5 × 2.2 cm (6.31 × 3.69 × 0.88 in.)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.18 kg (0.4 lb)",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Transceiver Audio Output – J1",
+          "name_vi": "Đầu ra âm thanh transceiver – J1",
+          "value_raw": "310 mV peak-to-peak",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Transceiver Audio Output – J3",
+          "name_vi": "Đầu ra âm thanh transceiver – J3",
+          "value_raw": "670 mV peak-to-peak",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Analog Radio Compatibility",
+          "name_vi": "Tương thích radio analog",
+          "value_raw": "RF320 series; RF310 series; RF300 series; unmodified DataRadio DL-3400",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Digital Radio Compatibility",
+          "name_vi": "Tương thích radio số",
+          "value_raw": "Digital RS-232 radios such as DataRadio Integra",
+          "source_rows": [
+            30
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/rf500m"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/1441",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "review",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_RF500M",
+        "variant_count": 1,
+        "source_files": [
+          "RF500M.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_RF500M",
+          "model": "RF500M",
+          "product_name_en": "RF500M",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Operating System Options",
+              "name_vi": "Các tùy chọn hệ điều hành",
+              "value_raw": "-PB PakBus OS (standard); -AL ALERT OS; -DA Dial OS",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Configuration Tool",
+              "name_vi": "Công cụ cấu hình",
+              "value_raw": "Device Configuration Utility (DevConfig)",
+              "source_rows": [
+                15
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": null,
+            "user_manual": null,
+            "order_form": "https://www.campbellsci.com/products/rf500m"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/1441",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "RF500M.json",
+            "product_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

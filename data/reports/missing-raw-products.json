@@ -14,9 +14,9 @@
     "extractable_missing_product_sources_found": 0
   },
   "summary": {
-    "upstream_blocked_products": 8,
+    "upstream_blocked_products": 5,
     "raw_record_not_found": 2,
-    "variant_mismatch": 4,
+    "variant_mismatch": 1,
     "ambiguous_variant": 1,
     "identity_conflict": 1,
     "new_raw_records_extracted": 0
@@ -66,36 +66,6 @@
       "resolution": "Provide a generic CS451 source/raw record or an explicit canonical variant policy; do not select HA, WN, or NN implicitly."
     },
     {
-      "product_id": "CSI_AM16_32B_ST",
-      "model": "AM16/32B-ST",
-      "status": "review",
-      "blocker": "variant_mismatch",
-      "existing_raw_candidates": [
-        {
-          "file": "data/raw/AM16_32B-XT.json",
-          "product_index": 0,
-          "product_id": "CSI_AM16_32B_XT",
-          "model": "AM16/32B-XT"
-        }
-      ],
-      "resolution": "Provide repository source evidence or a separate raw record for the exact ST variant; XT must not be reused."
-    },
-    {
-      "product_id": "CSI_ASPEN10_CELL_ST",
-      "model": "Aspen10-CELL-ST",
-      "status": "review",
-      "blocker": "variant_mismatch",
-      "existing_raw_candidates": [
-        {
-          "file": "data/raw/Aspen10-CELL-XT.json",
-          "product_index": 0,
-          "product_id": "CSI_ASPEN10_CELL_XT",
-          "model": "Aspen10-CELL-XT"
-        }
-      ],
-      "resolution": "Provide repository source evidence or a separate raw record for the exact ST variant; XT must not be reused."
-    },
-    {
       "product_id": "CSI_CR1000XE_ST_CC",
       "model": "CR1000Xe-ST-CC",
       "status": "review",
@@ -106,21 +76,6 @@
           "product_index": 0,
           "product_id": "CSI_CR1000XE_XT_CC",
           "model": "CR1000Xe-XT-CC"
-        }
-      ],
-      "resolution": "Provide repository source evidence or a separate raw record for the exact ST variant; XT must not be reused."
-    },
-    {
-      "product_id": "CSI_CR6_NA_ST_CC",
-      "model": "CR6-NA-ST-CC",
-      "status": "review",
-      "blocker": "variant_mismatch",
-      "existing_raw_candidates": [
-        {
-          "file": "data/raw/CR6-NA-XT-CC.json",
-          "product_index": 0,
-          "product_id": "CSI_CR6_NA_XT_CC",
-          "model": "CR6-NA-XT-CC"
         }
       ],
       "resolution": "Provide repository source evidence or a separate raw record for the exact ST variant; XT must not be reused."

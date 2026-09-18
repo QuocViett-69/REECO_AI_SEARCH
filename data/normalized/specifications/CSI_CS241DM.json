@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CS241DM",
+  "model": "CS241DM",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_CS241DM.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_CS241DM.json#0",
+    "raw_product_id": "CSI_CS241DM",
+    "raw_model": "CS241DM"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_CS241DM",
+      "model": "CS241DM",
+      "product_name_en": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Product Name",
+          "value_raw": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Model",
+          "value_raw": "CS241DM G2"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "CONFIGURATION",
+      "name_raw": "Product Name",
+      "value_raw": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "Modbus",
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "CONFIGURATION",
+      "name_raw": "Model",
+      "value_raw": "CS241DM G2",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "model"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Precision",
+      "value_raw": "Precision 1,000 ohm Class A platinum sensing element (Pt-1000)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "sensor_precision"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-50° to +150°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 150,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Class A PRT Accuracy",
+      "value_raw": "±(0.15 + 0.002T)°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "class_a_prt_accuracy"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Temperature Coefficient",
+      "value_raw": "TCR = 3,850 ppm/K",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "temperature_coefficient",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Long-Term Stability",
+      "value_raw": "Maximum R0 drift 0.04% (after 1,000 h at 400°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "long_term_stability"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measuring Current",
+      "value_raw": "0.1 to 0.3 mA",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0.1,
+        "max_value": 0.3,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "measuring_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Uncertainty",
+      "value_raw": "The temperature uncertainty is ±0.3° to 0.4°C in the measurement range of -40° to +150°C.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "uncertainty"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Disk Material",
+      "value_raw": "Anodized aluminum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "disk_material"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Disk Diameter",
+      "value_raw": "2.54 cm (1.0 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 2.54,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "disk_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Height",
+      "value_raw": "0.419 cm (0.165 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.419,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.165,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "height",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "~27 g (0.06 lb) with connector and 1 m (3 ft) cable",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 27,
+        "unit": "g",
+        "qualifier": "~",
+        "alternate": {
+          "value": 0.06,
+          "unit": "lb"
+        },
+        "condition": "with connector and 1 m (3 ft) cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SENSOR CABLE",
+      "name_raw": "Jacket Material",
+      "value_raw": "Black semi-gloss PFA, shielded",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "jacket_material"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SENSOR CABLE",
+      "name_raw": "Minimum Bend Radius",
+      "value_raw": "6 mm (0.25 in.) at least 6 mm (0.25 in.) away from sensor disk",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "minimum_bend_radius"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SENSOR CABLE",
+      "name_raw": "Cable Diameter",
+      "value_raw": "0.216 cm (0.085 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.216,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.085,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "cable_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "SENSOR CABLE",
+      "name_raw": "Cable Length",
+      "value_raw": "0.9144 m (3 ft)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.9144,
+        "unit": "m",
+        "qualifier": null,
+        "alternate": {
+          "value": 3,
+          "unit": "ft"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "cable_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "COMPLIANCE",
+      "name_raw": "Compliance - NOTE",
+      "value_raw": "Compliance information can be found in the Documents section of the web page.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "compliance_note"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "COMPLIANCE",
+      "name_raw": "Approvals",
+      "value_raw": "CSA AWM 600 V 105°C FTI\nUL AWM 2586 1,000 V 105°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          24,
+          25
+        ]
+      },
+      "canonical_key": "approvals"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "COMPLIANCE",
+      "name_raw": "EMC Compliance",
+      "value_raw": "Conforms to Electromagnetic Compatibility Directive (EMC)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "emc_compliance"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "COMPLIANCE",
+      "name_raw": "RoHS2",
+      "value_raw": "Conforms to the Restriction of Hazardous Substances Directive (RoHS2)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "rohs2"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "COMPLIANCE",
+      "name_raw": "Industry Approvals",
+      "value_raw": "Compliant with IEC 60751\nDIN EN 60751\nIndustrial Design (IEC Class 4) (formerly known as IEC 751)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          28,
+          29,
+          30
+        ]
+      },
+      "canonical_key": "industry_approvals"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "section": "COMPLIANCE",
+      "name_raw": "IP Rating",
+      "value_raw": "IP68 rating (self-certified): 1 m submersion for 90 min",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "ip_rating"
+    }
+  ]
+}

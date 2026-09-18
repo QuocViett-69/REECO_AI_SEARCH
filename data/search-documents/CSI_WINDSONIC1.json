@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_WINDSONIC1",
+  "model": "WindSonic1",
+  "name_en": "WindSonic1",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Wind Sensors",
+    "subcategory_key": "wind_sensors",
+    "device_type": "Ultrasonic Wind Sensor",
+    "device_type_key": "ultrasonic_wind_sensor"
+  },
+  "measurements": [
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió"
+    }
+  ],
+  "supported_protocols": [
+    "RS-232"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "WindSonic1",
+    "CSI_WINDSONIC1"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_WINDSONIC1",
+      "model": "WindSonic1",
+      "product_name_en": "WindSonic1",
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -35,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_humidity_range",
+      "name": "Operating Humidity Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min": {
+          "value": 5,
+          "unit": "%"
+        },
+        "max": {
+          "value": 100,
+          "unit": "% RH"
+        },
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      }
+    },
+    {
+      "canonical_key": "storage_temperature_range",
+      "name": "Storage Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_speed_range",
+      "name": "Wind Speed Range",
+      "quantity_kind": "speed",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 60,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_direction_accuracy",
+      "name": "Wind Direction Accuracy",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 3,
+        "unit": "°",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_direction_resolution",
+      "name": "Wind Direction Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "°",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      }
+    },
+    {
+      "canonical_key": "wind_speed_resolution",
+      "name": "Wind Speed Resolution",
+      "quantity_kind": "speed",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.01,
+        "unit": "m/s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "input_voltage",
+      "name": "Input Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 9,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "default_output_frequency",
+      "name": "Default Output Frequency",
+      "quantity_kind": "frequency",
+      "normalized_value": {
+        "type": "number",
+        "value": 1,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          35
+        ]
+      }
+    },
+    {
+      "canonical_key": "diameter",
+      "name": "Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 14.2,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 5.6,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.5,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.1,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          21
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "WindSonic1",
+    "Sensors",
+    "Wind Sensors",
+    "Ultrasonic Wind Sensor",
+    "Wind Speed",
+    "RS-232",
+    "Measure Wind Speed",
+    "CSI_WINDSONIC1"
+  ],
+  "search_keywords_vi": [
+    "WindSonic1",
+    "Cảm biến",
+    "Cảm biến gió",
+    "Cảm biến gió siêu âm",
+    "Tốc độ gió",
+    "RS-232",
+    "Đo tốc độ gió"
+  ],
+  "search_text_en": "WindSonic1 | CSI_WINDSONIC1 | Sensors | Wind Sensors | Ultrasonic Wind Sensor | Wind Speed | Measure Wind Speed | RS-232 | Operating Temperature Range: -35 to 70 °C | Operating Humidity Range: 5 % to 100 % RH | Storage Temperature Range: -40 to 80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ± 3 ° | Wind Direction Resolution: 1 ° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 V DC | Default Output Frequency: 1 Hz | Diameter: 14.2 cm | Weight: 0.5 kg",
+  "search_text_vi": "WindSonic1 | CSI_WINDSONIC1 | Cảm biến | Cảm biến gió | Cảm biến gió siêu âm | Tốc độ gió | Đo tốc độ gió | RS-232 | Operating Temperature Range: -35 to 70 °C | Operating Humidity Range: 5 % to 100 % RH | Storage Temperature Range: -40 to 80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ± 3 ° | Wind Direction Resolution: 1 ° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 V DC | Default Output Frequency: 1 Hz | Diameter: 14.2 cm | Weight: 0.5 kg",
+  "search_text": "WindSonic1 | CSI_WINDSONIC1 | Sensors | Wind Sensors | Ultrasonic Wind Sensor | Wind Speed | Measure Wind Speed | RS-232 | Operating Temperature Range: -35 to 70 °C | Operating Humidity Range: 5 % to 100 % RH | Storage Temperature Range: -40 to 80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ± 3 ° | Wind Direction Resolution: 1 ° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 V DC | Default Output Frequency: 1 Hz | Diameter: 14.2 cm | Weight: 0.5 kg | Cảm biến | Cảm biến gió | Cảm biến gió siêu âm | Tốc độ gió | Đo tốc độ gió",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "3c8f549d3cffc3a2ebe0995e64b4c5ab878b0f06b52514dadb4fa6cfce86967e"
+}

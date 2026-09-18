@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "AM16_32B_Output.json",
+        "original_source": {
+          "file": "AM16 32B-ST16 or 32 Channel Relay Multiplexer -ST -25 to 50 & -55 to 85.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "manufacturer": "Campbell Scientific",
+      "model": "AM16/32B-ST",
+      "product_name_en": "16 or 32 Channel Relay Multiplexer** -ST -25 to",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Measurement Devices",
+        "subcategory": "Multiplexers",
+        "device_type": "Multiplexer"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Version",
+          "name_vi": "Phiên bản",
+          "value_raw": "Standard Temperature",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Note",
+          "name_vi": "Ghi chú",
+          "value_raw": "Protection on the reset, clock, and +12 V inputs is provided by 18 V TVS diodes",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power",
+          "name_vi": "Nguồn điện",
+          "value_raw": "Unregulated 9.6 to 16 Vdc",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Scan Advance",
+          "name_vi": "Điều kiện chuyển bước quét",
+          "value_raw": "Occurs on the leading edge of the clock pulse transition, from below 1.5 V to above 3.3 V",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Minimum Clock Pulse Width",
+          "name_vi": "Độ rộng xung đồng hồ tối thiểu",
+          "value_raw": "1 ms",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Actuation Time for Relay",
+          "name_vi": "Thời gian tác động tối đa của rơ-le",
+          "value_raw": "20 ms",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relay Operation",
+          "name_vi": "Kiểu hoạt động của rơ-le",
+          "value_raw": "Break before make",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Initial Relay Resistance, Closed",
+          "name_vi": "Điện trở ban đầu của rơ-le khi đóng",
+          "value_raw": "0.1 Ω",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Switching Current",
+          "name_vi": "Dòng chuyển mạch tối đa",
+          "value_raw": "500 mA",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Switching Current Note",
+          "name_vi": "Ghi chú về dòng chuyển mạch tối đa",
+          "value_raw": "Switching currents greater than 30 mA are occasionally acceptable but will degrade the contact surfaces of the mechanical relays and increase their resistance",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Switching Voltage",
+          "name_vi": "Điện áp chuyển mạch tối đa",
+          "value_raw": "50 Vdc",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Switching Voltage Note",
+          "name_vi": "Ghi chú về điện áp chuyển mạch tối đa",
+          "value_raw": "A voltage divider such as the VDIV10:1 may be needed between the AM16/32B and the data logger to stay within the input limits of the data logger channel",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Minimum Contact Life",
+          "name_vi": "Tuổi thọ tiếp điểm tối thiểu",
+          "value_raw": "5 × 10⁷ operations",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Contact Voltage Rating",
+          "name_vi": "Định mức điện áp tiếp điểm tối đa",
+          "value_raw": "70 V",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Voltage",
+          "name_vi": "Điện áp tối đa",
+          "value_raw": "8 Vdc, clock level",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CE Compliance",
+          "name_vi": "Tuân thủ CE",
+          "value_raw": "EN 55022:1998 Class B; EN 61326:1998",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Surge",
+          "name_vi": "Khả năng chống xung",
+          "value_raw": "Complies with IEC 61000-4-5, test level 3, ±2 kV, 2 Ω coupling impedance",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-25°C to +50°C, standard",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "23.9 × 10.2 × 4.6 cm (9.4 × 4.0 × 1.8 in.)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "Approximately 680 g (approximately 1.5 lb)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "ESD",
+          "name_en": "Air Discharge",
+          "name_vi": "Phóng điện qua không khí",
+          "value_raw": "Complies with IEC 61000-4-2, test level 4, ±15 kV",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "ESD",
+          "name_en": "Contact Discharge",
+          "name_vi": "Phóng điện tiếp xúc",
+          "value_raw": "Complies with IEC 61000-4-2, test level 4, ±8 kV",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "TYPICAL CURRENT DRAIN",
+          "name_en": "Quiescent",
+          "name_vi": "Trạng thái chờ",
+          "value_raw": "<210 µA",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "TYPICAL CURRENT DRAIN",
+          "name_en": "Active",
+          "name_vi": "Trạng thái hoạt động",
+          "value_raw": "11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "RESET LEVELS",
+          "name_en": "Inactive",
+          "name_vi": "Không hoạt động",
+          "value_raw": "<0.9 V",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "RESET LEVELS",
+          "name_en": "Active",
+          "name_vi": "Hoạt động",
+          "value_raw": "3.3 to 8 V",
+          "source_rows": [
+            32
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "AM16 32B-ST 16 or 32 Channel Relay Multiplexer -ST -25 to.pdf",
+        "user_manual": "am16-32bman.pdf",
+        "order_form": "https://www.campbellsci.com/products/am16-32b"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8428",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_AM16_32B_ST",
+        "variant_count": 2,
+        "source_files": [
+          "AM16_32B_Output.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_AM16_32B_ST",
+          "model": "AM16/32B-ST",
+          "product_name_en": "16 or 32 Channel Relay Multiplexer",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Version",
+              "name_vi": "Phiên bản",
+              "value_raw": "Standard Temperature",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-25°C to +50°C, standard",
+              "source_rows": [
+                21
+              ]
+            },
+            {
+              "section": "TYPICAL CURRENT DRAIN",
+              "name_en": "Active",
+              "name_vi": "Trạng thái hoạt động",
+              "value_raw": "11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RESET LEVELS",
+              "name_en": "Active",
+              "name_vi": "Hoạt động",
+              "value_raw": "3.3 to 8 V",
+              "source_rows": [
+                32
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "AM16 32B-ST 16 or 32 Channel Relay Multiplexer -ST -25 to.pdf",
+            "user_manual": "am16-32bman.pdf",
+            "order_form": "https://www.campbellsci.com/products/am16-32b"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8428",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "AM16_32B_Output.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_AM16_32B_XT",
+          "model": "AM16/32B-XT",
+          "product_name_en": "16 or 32 Channel Relay Multiplexer",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Version",
+              "name_vi": "Phiên bản",
+              "value_raw": "Extended Temperature",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-55°C to +85°C, extended",
+              "source_rows": [
+                21
+              ]
+            },
+            {
+              "section": "TYPICAL CURRENT DRAIN",
+              "name_en": "Active",
+              "name_vi": "Trạng thái hoạt động",
+              "value_raw": "11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RESET LEVELS",
+              "name_en": "Active",
+              "name_vi": "Hoạt động",
+              "value_raw": "3.3 to 8 V",
+              "source_rows": [
+                32
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "AM16 32B-ST 16 or 32 Channel Relay Multiplexer -ST -25 to.pdf",
+            "user_manual": "am16-32bman.pdf",
+            "order_form": "https://www.campbellsci.com/products/am16-32b"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8428",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "AM16_32B_Output.json",
+            "product_index": 1
+          }
+        }
+      ]
+    }
+  ]
+}

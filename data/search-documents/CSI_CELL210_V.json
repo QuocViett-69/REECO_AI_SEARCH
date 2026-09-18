@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CELL210_V",
+  "model": "CELL210-V",
+  "name_en": "4G LTE CAT-1 Cellular Module for Verizon",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "CS I/O",
+    "RS-232",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CELL210-V",
+    "CSI_CELL210_V",
+    "4G LTE CAT-1 Cellular Module for Verizon",
+    "CELL210-VS",
+    "CELL210-NP"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CELL210_V",
+      "model": "CELL210-V",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Verizon",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for Verizon US"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL210_VS",
+      "model": "CELL210-VS",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Verizon",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for Verizon US Static IP"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Static IP",
+          "value_raw": "Verizon US Static IP"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL210_NP",
+      "model": "CELL210-NP",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Verizon",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "No Provisioning"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Not Provisioned"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "Ships as 34080 & 16675"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL210_V.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      }
+    },
+    {
+      "canonical_key": "low_power_mode",
+      "name": "Low Power Mode",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "number",
+        "value": 300,
+        "unit": "µA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL210_V.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          29
+        ]
+      }
+    },
+    {
+      "canonical_key": "idle_current",
+      "name": "Idle Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 14,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL210_V.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          30
+        ]
+      }
+    },
+    {
+      "canonical_key": "active_current",
+      "name": "Active Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 25,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL210_V.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          31
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 215.5,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.6,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL210_V.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CELL210-V",
+    "4G LTE CAT-1 Cellular Module for Verizon",
+    "Communications",
+    "Cellular Communications",
+    "Cellular Modem / Router",
+    "CS I/O",
+    "RS-232",
+    "USB",
+    "CSI_CELL210_V"
+  ],
+  "search_keywords_vi": [
+    "CELL210-V",
+    "Thiết bị truyền thông",
+    "Truyền thông di động",
+    "Modem hoặc bộ định tuyến di động",
+    "CS I/O",
+    "RS-232",
+    "USB"
+  ],
+  "search_text_en": "CELL210-V | 4G LTE CAT-1 Cellular Module for Verizon | CSI_CELL210_V | CELL210-VS | CELL210-NP | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for Verizon US | Provisioning Status: Provisioned | Provisioning Option: Provisioned for Verizon US Static IP | Static IP: Verizon US Static IP | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 34080 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 25 mA | Weight: 215.5 g",
+  "search_text_vi": "CELL210-V | CSI_CELL210_V | 4G LTE CAT-1 Cellular Module for Verizon | CELL210-VS | CELL210-NP | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for Verizon US | Provisioning Status: Provisioned | Provisioning Option: Provisioned for Verizon US Static IP | Static IP: Verizon US Static IP | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 34080 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 25 mA | Weight: 215.5 g",
+  "search_text": "CELL210-V | 4G LTE CAT-1 Cellular Module for Verizon | CSI_CELL210_V | CELL210-VS | CELL210-NP | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for Verizon US | Provisioning Status: Provisioned | Provisioning Option: Provisioned for Verizon US Static IP | Static IP: Verizon US Static IP | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 34080 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 25 mA | Weight: 215.5 g | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "481332a741b4b1a4261f72f7b7fb0f46e5f3bcbf2c7410487a231367cdfdf7c1"
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TB4",
+  "model": "TB4",
+  "name_en": "TB4",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Precipitation Sensors",
+    "subcategory_key": "precipitation_sensors",
+    "device_type": "Rain Gage",
+    "device_type_key": "rain_gage"
+  },
+  "measurements": [
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/CSI_TB4.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/CSI_TB4.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "TB4",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "TB4"
+        }
+      ]
+    },
+    {
+      "value": "CSI_TB4",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_TB4"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "TB4",
+      "Sensors",
+      "Precipitation Sensors",
+      "Rain Gage",
+      "Precipitation",
+      "rainfall",
+      "Measure Precipitation",
+      "CSI_TB4"
+    ],
+    "vi": [
+      "TB4",
+      "Cảm biến",
+      "Cảm biến lượng mưa",
+      "Cảm biến đo mưa",
+      "Lượng mưa",
+      "Đo lượng mưa"
+    ]
+  }
+}

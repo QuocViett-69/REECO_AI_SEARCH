@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TB4",
+  "model": "TB4",
+  "name_en": "TB4",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Precipitation Sensors",
+    "subcategory_key": "precipitation_sensors",
+    "device_type": "Rain Gage",
+    "device_type_key": "rain_gage"
+  },
+  "measurements": [
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "TB4",
+    "CSI_TB4",
+    "TB4MM"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_TB4",
+      "model": "TB4",
+      "product_name_en": "TB4",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "value_raw": "Rain Gage with 8 in. Orifice"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall per Tip",
+          "value_raw": "0.254 mm (0.01 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall Multiplier – Inches",
+          "value_raw": "0.01"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall Multiplier – Millimeters",
+          "value_raw": "0.254"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_TB4MM",
+      "model": "TB4MM",
+      "product_name_en": "TB4MM",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "value_raw": "Metric Rain Gage with 8 in. Orifice"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall per Tip",
+          "value_raw": "0.2 mm (0.008 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall Multiplier – Inches",
+          "value_raw": "0.008"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall Multiplier – Millimeters",
+          "value_raw": "0.2"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "measurement_range",
+      "name": "Measurement Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 700,
+        "unit": "mm/h",
+        "qualifier": null,
+        "alternate": {
+          "min_value": 0,
+          "max_value": 27.6,
+          "unit": "in/h"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TB4.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          8
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TB4.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          11
+        ]
+      }
+    },
+    {
+      "canonical_key": "humidity_range",
+      "name": "Humidity Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TB4.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          12
+        ]
+      }
+    },
+    {
+      "canonical_key": "orifice_diameter",
+      "name": "Orifice Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 20,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.9,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TB4.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          13
+        ]
+      }
+    },
+    {
+      "canonical_key": "height",
+      "name": "Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 33,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 13,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TB4.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          14
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 2,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 4.4,
+          "unit": "lb"
+        },
+        "condition": "with 7.62 m (25 ft) signal cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_TB4.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          15
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "TB4",
+    "Sensors",
+    "Precipitation Sensors",
+    "Rain Gage",
+    "Precipitation",
+    "rainfall",
+    "Measure Precipitation",
+    "CSI_TB4"
+  ],
+  "search_keywords_vi": [
+    "TB4",
+    "Cảm biến",
+    "Cảm biến lượng mưa",
+    "Cảm biến đo mưa",
+    "Lượng mưa",
+    "Đo lượng mưa"
+  ],
+  "search_text_en": "TB4 | CSI_TB4 | TB4MM | Sensors | Precipitation Sensors | Rain Gage | Precipitation | Measure Precipitation | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100 % | Orifice Diameter: 20 cm | Height: 33 cm | Weight: 2 kg | rainfall",
+  "search_text_vi": "TB4 | CSI_TB4 | TB4MM | Cảm biến | Cảm biến lượng mưa | Cảm biến đo mưa | Lượng mưa | Đo lượng mưa | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100 % | Orifice Diameter: 20 cm | Height: 33 cm | Weight: 2 kg",
+  "search_text": "TB4 | CSI_TB4 | TB4MM | Sensors | Precipitation Sensors | Rain Gage | Precipitation | Measure Precipitation | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100 % | Orifice Diameter: 20 cm | Height: 33 cm | Weight: 2 kg | rainfall | Cảm biến | Cảm biến lượng mưa | Cảm biến đo mưa | Lượng mưa | Đo lượng mưa",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "f50e8ecd8a13ff65d2fd5eae0e88cfcb7b229756787a65b8f9893eea88738579"
+}

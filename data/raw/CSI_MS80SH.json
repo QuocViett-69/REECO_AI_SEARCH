@@ -1,0 +1,494 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "MS-80SH.json",
+        "original_source": {
+          "file": "MS-80SH.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_MS80SH",
+      "manufacturer": "EKO Instruments / Campbell Scientific",
+      "model": "MS-80SH",
+      "product_name_en": "MS-80SH",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Solar Radiation Sensors",
+        "device_type": "Pyranometer"
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "MS-80SH",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Class A Digital Pyranometer with SDI-12 and Modbus Output",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "EKO Instruments; supplied/cabled for Campbell Scientific systems",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary measurement device / solar radiation sensor",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Monitoring solar irradiance across the full solar spectrum",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "ISO Classification",
+          "name_vi": "Phân loại ISO",
+          "value_raw": "ISO 9060:2018 Class A spectrally flat and fast-response pyranometer (secondary standard)",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibration",
+          "name_vi": "Hiệu chuẩn",
+          "value_raw": "ISO 17025-certified calibration",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Construction",
+          "name_vi": "Cấu tạo cảm biến",
+          "value_raw": "Internal desiccation; single dome; quartz diffusor; thermally isolated thermopile detector",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Integrated Sensors",
+          "name_vi": "Cảm biến tích hợp",
+          "value_raw": "Tilt / roll sensor; internal temperature sensor; internal humidity sensor",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Integrated Heater",
+          "name_vi": "Bộ gia nhiệt tích hợp",
+          "value_raw": "Controllable dome heater for dew and frost mitigation",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output",
+          "name_vi": "Đầu ra",
+          "value_raw": "SDI-12 and Modbus RTU over RS-485 (digital)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default SDI-12 Address",
+          "name_vi": "Địa chỉ SDI-12 mặc định",
+          "value_raw": "0",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default Modbus Address",
+          "name_vi": "Địa chỉ Modbus mặc định",
+          "value_raw": "Last two digits of serial number",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default RS-485 Configuration",
+          "name_vi": "Cấu hình RS-485 mặc định",
+          "value_raw": "19200 baud; 8 data bits; even parity; 1 stop bit",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensitivity",
+          "name_vi": "Độ nhạy",
+          "value_raw": "~10 µV/(W/m²)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Response Time – 95%",
+          "name_vi": "Thời gian đáp ứng – 95%",
+          "value_raw": "<0.5 s (manual); brochure states <1 s",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Response Time – 99%",
+          "name_vi": "Thời gian đáp ứng – 99%",
+          "value_raw": "<1 s",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Zero Offset A",
+          "name_vi": "Độ lệch zero A",
+          "value_raw": "<1 W/m² (response to 200 W/m² net thermal radiation)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Zero Offset B",
+          "name_vi": "Độ lệch zero B",
+          "value_raw": "±1 W/m² (response to 5 K/h change in ambient temperature)",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Non-Stability",
+          "name_vi": "Độ không ổn định",
+          "value_raw": "±0.5% change in 5 years",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Non-Linearity",
+          "name_vi": "Độ phi tuyến",
+          "value_raw": "±0.2% at 1000 W/m²",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Directional Response",
+          "name_vi": "Đáp ứng hướng",
+          "value_raw": "±10 W/m² at 1000 W/m²",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Spectral Selectivity",
+          "name_vi": "Độ chọn lọc phổ",
+          "value_raw": "±3% (0.35 to 1.5 µm)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Spectral Range",
+          "name_vi": "Dải phổ",
+          "value_raw": "285 to 3000 nm",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Irradiance Range",
+          "name_vi": "Dải bức xạ",
+          "value_raw": "0 to 4000 W/m²",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Temperature Response",
+          "name_vi": "Đáp ứng nhiệt độ",
+          "value_raw": "±0.5% (-20 to +50 °C) per manual; brochure states <0.8% (-10 to +40 °C) and <1% (-20 to +50 °C)",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Tilt Response",
+          "name_vi": "Đáp ứng nghiêng",
+          "value_raw": "±0.2% at 1000 W/m²",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +80 °C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "8 to 30 VDC",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Wiring Power Input",
+          "name_vi": "Nguồn vào theo sơ đồ đấu dây",
+          "value_raw": "8 to 32 VDC",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power Consumption",
+          "name_vi": "Công suất tiêu thụ",
+          "value_raw": "<0.2 W without heater; <1.4 W with heater",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Diameter – Including Sun Screen",
+          "name_vi": "Đường kính – gồm tấm chắn nắng",
+          "value_raw": "9.6 cm (3.8 in.)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Body Height",
+          "name_vi": "Chiều cao thân",
+          "value_raw": "7.3 cm (2.9 in.)",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Dome Height",
+          "name_vi": "Chiều cao dome",
+          "value_raw": "1.2 cm (0.5 in.)",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Leveling Screw Height",
+          "name_vi": "Chiều cao vít cân bằng",
+          "value_raw": "1.6 cm (0.6 in.)",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.41 kg (0.90 lb)",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "SDI-12 Valid Addresses",
+          "name_vi": "Địa chỉ SDI-12 hợp lệ",
+          "value_raw": "0–9, a–z, A–Z",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "SDI-12 Measurement Instruction",
+          "name_vi": "Lệnh đo SDI-12",
+          "value_raw": "SDI12Recorder()",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Modbus Measurement Instructions",
+          "name_vi": "Lệnh đo Modbus",
+          "value_raw": "SerialOpen() followed by ModbusClient()",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compatible Campbell Scientific Data Loggers",
+          "name_vi": "Data logger Campbell Scientific tương thích",
+          "value_raw": "GRANITE series, CR6, CR1000X, CR350 series, CR300 series, CR1000, CR800 series",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RS-485 Direct Compatibility",
+          "name_vi": "Khả năng tương thích RS-485 trực tiếp",
+          "value_raw": "MeteoPV, CR6 series, CR1000X, or Modbus RTU RS-485 network",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maintenance",
+          "name_vi": "Bảo trì",
+          "value_raw": "No scheduled replacement service items; no accessible desiccant cartridge",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Recommended Recalibration Interval",
+          "name_vi": "Chu kỳ hiệu chuẩn lại khuyến nghị",
+          "value_raw": "2 years in the product manual; brochure states a 5-year recalibration interval",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "5 years",
+          "source_rows": [
+            45
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "ms80-sh_datasheet.pdf",
+        "user_manual": "ms-80sh_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/ms-80sh"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12144",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "review",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_MS80SH",
+        "variant_count": 1,
+        "source_files": [
+          "MS-80SH.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_MS80SH",
+          "model": "MS-80SH",
+          "product_name_en": "MS-80SH",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Default RS-485 Configuration",
+              "name_vi": "Cấu hình RS-485 mặc định",
+              "value_raw": "19200 baud; 8 data bits; even parity; 1 stop bit",
+              "source_rows": [
+                15
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "ms80-sh_datasheet.pdf",
+            "user_manual": "ms-80sh_manual.pdf",
+            "order_form": "https://www.campbellsci.com/products/ms-80sh"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12144",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "MS-80SH.json",
+            "product_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

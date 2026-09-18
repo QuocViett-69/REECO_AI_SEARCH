@@ -9,6 +9,7 @@ import {
   SearchDocumentSemanticItemSchema,
   SearchDocumentTaxonomySchema,
 } from './product-search-document';
+import { ProductVariantSchema } from './product-variant';
 
 const NullableTextSchema = z.string().nullable();
 
@@ -95,6 +96,7 @@ export const ProductDetailSchema = z
     specifications: z.array(ProductSpecificationSchema),
     important_specifications: z.array(ImportantSearchSpecificationSchema),
     aliases: z.array(z.string().min(1)),
+    variants: z.array(ProductVariantSchema).default([]),
     media: z.array(ProductMediaSchema),
   })
   .strict();

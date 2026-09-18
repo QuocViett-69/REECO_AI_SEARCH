@@ -24,7 +24,84 @@
   "aliases": [
     "CELL205-AT",
     "CSI_CELL205_AT",
-    "4G LTE Cat1 Cellular Module for North America (-4"
+    "4G LTE Cat1 Cellular Module for North America (-4",
+    "CELL205-IT1A",
+    "CELL205-IT1B",
+    "CELL205-NP"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CELL205_AT",
+      "model": "CELL205-AT",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for AT&T North America"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL205_IT1A",
+      "model": "CELL205-IT1A",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for International 1A"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL205_IT1B",
+      "model": "CELL205-IT1B",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for International 1B"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL205_NP",
+      "model": "CELL205-NP",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Option",
+          "value_raw": "Not Provisioned"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Status",
+          "value_raw": "Not Provisioned"
+        }
+      ]
+    }
   ],
   "important_specifications": [
     {
@@ -148,14 +225,14 @@
     "RS-232",
     "USB"
   ],
-  "search_text_en": "CELL205-AT | 4G LTE Cat1 Cellular Module for North America (-4 | CSI_CELL205_AT | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g",
-  "search_text_vi": "CELL205-AT | CSI_CELL205_AT | 4G LTE Cat1 Cellular Module for North America (-4 | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động | CS I/O | RS-232 | USB | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g",
-  "search_text": "CELL205-AT | 4G LTE Cat1 Cellular Module for North America (-4 | CSI_CELL205_AT | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động",
+  "search_text_en": "CELL205-AT | 4G LTE Cat1 Cellular Module for North America (-4 | CSI_CELL205_AT | CELL205-IT1A | CELL205-IT1B | CELL205-NP | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for AT&T North America | Provisioning Status: Provisioned | Provisioning Option: Provisioned for International 1A | Provisioning Option: Provisioned for International 1B | Provisioning Option: Not Provisioned | Provisioning Status: Not Provisioned | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g",
+  "search_text_vi": "CELL205-AT | CSI_CELL205_AT | 4G LTE Cat1 Cellular Module for North America (-4 | CELL205-IT1A | CELL205-IT1B | CELL205-NP | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for AT&T North America | Provisioning Status: Provisioned | Provisioning Option: Provisioned for International 1A | Provisioning Option: Provisioned for International 1B | Provisioning Option: Not Provisioned | Provisioning Status: Not Provisioned | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g",
+  "search_text": "CELL205-AT | 4G LTE Cat1 Cellular Module for North America (-4 | CSI_CELL205_AT | CELL205-IT1A | CELL205-IT1B | CELL205-NP | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for AT&T North America | Provisioning Status: Provisioned | Provisioning Option: Provisioned for International 1A | Provisioning Option: Provisioned for International 1B | Provisioning Option: Not Provisioned | Provisioning Status: Not Provisioned | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "2a7b15acf2263fd127b031a88849e9815446474dd64cc5b9f355e0c0a1c2fd7c"
+  "content_hash": "78c42f6d152287f7e4c7e9de572f26683bccbdbd680c25da9d69f71171fb6693"
 }

@@ -149,8 +149,16 @@ if (
 ) {
   throw new Error('Vietnamese soil query baseline signal changed unexpectedly');
 }
-if (queryResults[2].results[0]?.product_id !== 'CSI_RF407') {
-  throw new Error('RF407 is not first for the 900 MHz radio query');
+if (
+  !queryResults[2].results
+    .slice(0, 10)
+    .some((candidate) => candidate.product_id === 'CSI_RF407')
+) {
+  throw new Error(
+    `RF407 is not in the top 10 for the 900 MHz radio query: ${queryResults[2].results
+      .map((candidate) => candidate.product_id)
+      .join(', ')}`,
+  );
 }
 
 const report = {

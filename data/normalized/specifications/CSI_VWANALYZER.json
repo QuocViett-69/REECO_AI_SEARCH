@@ -1,0 +1,780 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_VWANALYZER",
+  "model": "VWANALYZER",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_VWANALYZER.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_VWANALYZER.json#0",
+    "raw_product_id": "CSI_VWANALYZER",
+    "raw_model": "VWANALYZER"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_VWANALYZER",
+      "model": "VWANALYZER",
+      "product_name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Name",
+      "value_raw": "Vibrating Wire Analyzer (VWAnalyzer)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Type",
+      "value_raw": "Vibrating wire field reader / analyzer",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Manufacturer",
+      "value_raw": "Campbell Scientific, Inc.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Technology",
+      "value_raw": "VSPECT™ (Vibrating Wire Spectral Analysis)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "measurement_technology"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Channel Count",
+      "value_raw": "1 channel (vibrating wire and thermistor reading)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "channel_count"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Vibrating Wire Frequency Range",
+      "value_raw": "300 to 6500 Hz",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 300,
+        "max_value": 6500,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "vibrating_wire_frequency_range",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Vibrating Wire Resolution",
+      "value_raw": "0.001 Hz RMS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "vibrating_wire_resolution"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Vibrating Wire Accuracy",
+      "value_raw": "±0.005% of reading",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "vibrating_wire_accuracy"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Excitation",
+      "value_raw": "2 V, 5 V, 12 V (user-selectable)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "excitation"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Interval Range",
+      "value_raw": "1 s to 15 min (continuous reading mode only)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "measurement_interval_range",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Fastest Measurement Speed",
+      "value_raw": "1 s",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "s",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "fastest_measurement_speed",
+      "quantity_kind": "speed"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Thermistor Resolution",
+      "value_raw": "0.01 Ω RMS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "thermistor_resolution"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Thermistor Accuracy",
+      "value_raw": "±0.15% of reading",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "thermistor_accuracy"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Frequency Output",
+      "value_raw": "Hz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "sensor_frequency_output",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Amplitude Diagnostic",
+      "value_raw": "mV RMS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "sensor_amplitude_diagnostic"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Signal-to-Noise Ratio Diagnostic",
+      "value_raw": "Unitless",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "signal_to_noise_ratio_diagnostic"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Noise Frequency Diagnostic",
+      "value_raw": "Hz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "noise_frequency_diagnostic",
+      "quantity_kind": "frequency"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Thermistor / RTD Resistance Output",
+      "value_raw": "Ω",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "thermistor_per_rtd_resistance_output"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Integrated GPS",
+      "value_raw": "Yes",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "integrated_gps"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "GPS Accuracy",
+      "value_raw": "±5 m (16.4 ft) typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "gps_accuracy"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "GPS Time Sync",
+      "value_raw": "±1 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "ms",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "gps_time_sync",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Site Capacity",
+      "value_raw": "40 unique sites",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "site_capacity"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensors per Site",
+      "value_raw": "22 sensors per site",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "sensors_per_site"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Maximum Unique Sensors",
+      "value_raw": "880",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 880,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "maximum_unique_sensors"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Site / Sensor Measurements Memory",
+      "value_raw": "1,700 measurements (most recent)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "site_per_sensor_measurements_memory"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Single Measurements Memory",
+      "value_raw": "240 measurements (most recent)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "single_measurements_memory"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Continuous Measurements Memory",
+      "value_raw": "16,500 measurements (most recent)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "continuous_measurements_memory"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "USB Memory",
+      "value_raw": "80 MB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 80,
+        "unit": "MB",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "usb_memory"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Stored / Transfer File Types",
+      "value_raw": "PDF, CSV, VWA, and other files",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "stored_per_transfer_file_types"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "USB Interface",
+      "value_raw": "USB Mini B; direct connection to PC",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "USB"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "USB"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "usb_interface"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Battery Type",
+      "value_raw": "5 AA (1.5 V)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "battery_type"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Battery Life",
+      "value_raw": "20 hours continuous use",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "battery_life"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-20 to +70 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -20,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Enclosure Rating",
+      "value_raw": "IP62",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "enclosure_rating"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Compliance",
+      "value_raw": "CE, RoHS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 34,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "compliance"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Warranty",
+      "value_raw": "One year against defects in materials and workmanship",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 35,
+        "source_rows": [
+          38
+        ]
+      },
+      "canonical_key": "warranty"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Dimensions",
+      "value_raw": "200 × 100 × 58 mm (7.9 × 3.9 × 2.3 in)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 36,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "0.34 kg (0.75 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.34,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.75,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 37,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "PDF Report Generation",
+      "value_raw": "Yes",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 38,
+        "source_rows": [
+          41
+        ]
+      },
+      "canonical_key": "pdf_report_generation"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "CSV Output",
+      "value_raw": "Yes",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 39,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "csv_output"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Library",
+      "value_raw": "Common vibrating wire sensors",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_VWANALYZER.json",
+        "product_index": 0,
+        "spec_index": 40,
+        "source_rows": [
+          43
+        ]
+      },
+      "canonical_key": "sensor_library"
+    }
+  ]
+}

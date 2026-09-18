@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_VOLT108_XD",
+  "model": "VOLT108-XD",
+  "name_en": "Granite™ Volt 108 Extended Duty (-XD)",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Analog Input Modules",
+    "subcategory_key": "analog_input_modules",
+    "device_type": "Analog Input Module",
+    "device_type_key": "analog_input_module"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RJ45",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "cpi_cable",
+          "raw_ref": {
+            "file": "data/raw/CSI_VOLT108_XD.json",
+            "product_index": 0,
+            "spec_index": 38,
+            "source_rows": [
+              40
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_VOLT108_XD.json",
+            "product_index": 0,
+            "spec_index": 39,
+            "source_rows": [
+              41
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "VOLT108-XD",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "VOLT108-XD"
+        }
+      ]
+    },
+    {
+      "value": "CSI_VOLT108_XD",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_VOLT108_XD"
+        }
+      ]
+    },
+    {
+      "value": "Granite™ Volt 108 Extended Duty (-XD)",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Granite™ Volt 108 Extended Duty (-XD)"
+        }
+      ]
+    },
+    {
+      "value": "Granite™ Volt 108",
+      "type": "source_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_name",
+          "raw_ref": {
+            "file": "data/raw/CSI_VOLT108_XD.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "VOLT108-XD",
+      "Granite™ Volt 108 Extended Duty (-XD)",
+      "Sensors",
+      "Analog Input Modules",
+      "Analog Input Module",
+      "RJ45",
+      "USB",
+      "CSI_VOLT108_XD",
+      "Granite™ Volt 108"
+    ],
+    "vi": [
+      "VOLT108-XD",
+      "Cảm biến",
+      "Mô-đun đầu vào tương tự",
+      "RJ45",
+      "USB"
+    ]
+  }
+}

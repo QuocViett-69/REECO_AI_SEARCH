@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CELL215_IT1A",
+  "model": "CELL215-IT1A",
+  "name_en": "4G LTE CAT-1 Cellular Module for EMEA Countries",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL215_IT1A.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL215_IT1A.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL215_IT1A.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "CELL215-IT1A",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CELL215-IT1A"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CELL215_IT1A",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CELL215_IT1A"
+        }
+      ]
+    },
+    {
+      "value": "4G LTE CAT-1 Cellular Module for EMEA Countries",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "4G LTE CAT-1 Cellular Module for EMEA Countries"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CELL215-IT1A",
+      "4G LTE CAT-1 Cellular Module for EMEA Countries",
+      "Communications",
+      "Cellular Communications",
+      "Cellular Modem / Router",
+      "CS I/O",
+      "RS-232",
+      "USB",
+      "CSI_CELL215_IT1A"
+    ],
+    "vi": [
+      "CELL215-IT1A",
+      "Thiết bị truyền thông",
+      "Truyền thông di động",
+      "Modem hoặc bộ định tuyến di động",
+      "CS I/O",
+      "RS-232",
+      "USB"
+    ]
+  }
+}

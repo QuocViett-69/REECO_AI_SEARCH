@@ -9,10 +9,123 @@
     "raw_product_id": "CSI_TEMPVUE20_S",
     "raw_model": "TempVue20-S"
   },
+  "variants": [
+    {
+      "product_id": "CSI_TEMPVUE20_S",
+      "model": "TempVue20-S",
+      "product_name_en": "TempVue™20",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Variant",
+          "value_raw": "SDI-12 output version"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Communication Protocol",
+          "value_raw": "SDI-12 version 1.4"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default Address",
+          "value_raw": "SDI-12 address: 0"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Signal Type / Output",
+          "value_raw": "Digital output, SDI-12"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compatible Data Loggers / Controllers",
+          "value_raw": "GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "CRBasic Measurement Instruction",
+          "value_raw": "SDI12Recorder()"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Brown Wire Function",
+          "value_raw": "Power (12V)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Black Wire Function",
+          "value_raw": "Power ground"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Gray Wire Function",
+          "value_raw": "Aspen detect signal"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_TEMPVUE20_M",
+      "model": "TempVue20-M",
+      "product_name_en": "TempVue™20",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Variant",
+          "value_raw": "Modbus / RS-485 output version"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Communication Protocol",
+          "value_raw": "Modbus RTU protocol over RS-485"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default Address",
+          "value_raw": "Modbus address: 1"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default RS-485 Configuration",
+          "value_raw": "19200 baud, 8 data bits, even parity, one stop bit"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Signal Type / Output",
+          "value_raw": "Digital output, Modbus RTU over RS-485"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compatible Data Loggers / Controllers",
+          "value_raw": "GRANITE series, CR6, CR1000X series, CR3000 (with MD485), CR800 series (with MD485), CR300 series (with MD485), CR1000 (with MD485)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "CRBasic Measurement Instruction",
+          "value_raw": "SerialOpen() followed by ModbusClient()"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Brown Wire Function",
+          "value_raw": "12 VDC"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Black Wire Function",
+          "value_raw": "Power and signal ground"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Gray Wire Function",
+          "value_raw": "Ground (if present)"
+        }
+      ]
+    }
+  ],
   "specifications": [
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Product Name",
       "value_raw": "TempVue™20",
       "type": "text",
@@ -29,7 +142,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Product Variant",
       "value_raw": "SDI-12 output version",
       "type": "text",
@@ -52,7 +165,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Product Type",
       "value_raw": "Pt100 Digital Air Temperature Sensor",
       "type": "text",
@@ -69,7 +182,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Manufacturer",
       "value_raw": "Campbell Scientific, Inc.",
       "type": "text",
@@ -86,7 +199,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Measurement Parameter",
       "value_raw": "Air temperature",
       "type": "text",
@@ -103,7 +216,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Sensor Description",
       "value_raw": "Platinum Resistance Thermometer (Pt100)",
       "type": "text",
@@ -120,7 +233,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Communication Protocol",
       "value_raw": "SDI-12 version 1.4",
       "type": "protocol",
@@ -148,7 +261,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Default Address",
       "value_raw": "SDI-12 address: 0",
       "type": "text",
@@ -171,24 +284,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
-      "name_raw": "Default RS-485 Configuration",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/TempVue20.json",
-        "product_index": 0,
-        "spec_index": 8,
-        "source_rows": [
-          10
-        ]
-      },
-      "canonical_key": "default_rs_485_configuration"
-    },
-    {
-      "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Measurement Uncertainty – Common Range",
       "value_raw": "±0.1 °C (-40 to +40 °C)",
       "type": "text",
@@ -196,7 +292,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 9,
+        "spec_index": 8,
         "source_rows": [
           11
         ]
@@ -205,7 +301,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Measurement Uncertainty – Full Range",
       "value_raw": "±0.3 °C (-60 to -40 °C and 40 to 60 °C)",
       "type": "text",
@@ -213,7 +309,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 10,
+        "spec_index": 9,
         "source_rows": [
           12
         ]
@@ -222,7 +318,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Temperature Measurement Range",
       "value_raw": "-60 to +60 °C (-76 to +140 °F)",
       "type": "text",
@@ -230,7 +326,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 11,
+        "spec_index": 10,
         "source_rows": [
           13
         ]
@@ -240,7 +336,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Time Constant in Air",
       "value_raw": "20 s for a wind speed of 1 m/s (3.3 ft/s)",
       "type": "text",
@@ -248,7 +344,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 12,
+        "spec_index": 11,
         "source_rows": [
           14
         ]
@@ -258,7 +354,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Resolution",
       "value_raw": "0.01 °C",
       "type": "number",
@@ -271,7 +367,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 13,
+        "spec_index": 12,
         "source_rows": [
           15
         ]
@@ -280,7 +376,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Voltage Range",
       "value_raw": "6 to 16 VDC",
       "type": "range",
@@ -294,7 +390,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 14,
+        "spec_index": 13,
         "source_rows": [
           16
         ]
@@ -304,7 +400,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Current",
       "value_raw": "150 µA",
       "type": "number",
@@ -317,7 +413,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 15,
+        "spec_index": 14,
         "source_rows": [
           17
         ]
@@ -327,7 +423,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Signal Type / Output",
       "value_raw": "Digital output, SDI-12",
       "type": "protocol",
@@ -346,7 +442,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 16,
+        "spec_index": 15,
         "source_rows": [
           18
         ]
@@ -355,7 +451,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Connector Type",
       "value_raw": "M12",
       "type": "text",
@@ -363,7 +459,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 17,
+        "spec_index": 16,
         "source_rows": [
           19
         ]
@@ -372,7 +468,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Standard Cable Length",
       "value_raw": "1 m (3 ft)",
       "type": "number",
@@ -389,7 +485,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 18,
+        "spec_index": 17,
         "source_rows": [
           20
         ]
@@ -399,7 +495,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Ingress Protection",
       "value_raw": "IP67",
       "type": "text",
@@ -407,7 +503,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 19,
+        "spec_index": 18,
         "source_rows": [
           21
         ]
@@ -416,7 +512,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Probe Diameter",
       "value_raw": "1.9 cm (0.75 in) maximum",
       "type": "text",
@@ -424,7 +520,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 20,
+        "spec_index": 19,
         "source_rows": [
           22
         ]
@@ -434,7 +530,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Probe Length",
       "value_raw": "12.1 cm (4.75 in) tip to end of cable gland",
       "type": "text",
@@ -442,7 +538,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 21,
+        "spec_index": 20,
         "source_rows": [
           23
         ]
@@ -452,7 +548,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Extended Probe Length",
       "value_raw": "18.1 cm (7.125 in) tip to end of extender piece",
       "type": "text",
@@ -460,7 +556,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 22,
+        "spec_index": 21,
         "source_rows": [
           24
         ]
@@ -470,7 +566,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Total Length",
       "value_raw": "97.16 cm (38.25 in) tip to end of connector",
       "type": "text",
@@ -478,7 +574,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 23,
+        "spec_index": 22,
         "source_rows": [
           25
         ]
@@ -488,7 +584,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Weight",
       "value_raw": "70 g (0.15 lb) including standard 1 m cable with M12 connector",
       "type": "text",
@@ -496,7 +592,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 24,
+        "spec_index": 23,
         "source_rows": [
           26
         ]
@@ -506,7 +602,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Aspen 10 Compatibility",
       "value_raw": "Direct connection supported",
       "type": "text",
@@ -514,7 +610,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 25,
+        "spec_index": 24,
         "source_rows": [
           27
         ]
@@ -523,7 +619,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Compatible Data Loggers / Controllers",
       "value_raw": "GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000",
       "type": "text",
@@ -531,7 +627,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 26,
+        "spec_index": 25,
         "source_rows": [
           28
         ]
@@ -540,7 +636,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Measurement Memory",
       "value_raw": "Most recent 5760 measurements (one day worth)",
       "type": "text",
@@ -548,7 +644,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 27,
+        "spec_index": 26,
         "source_rows": [
           29
         ]
@@ -557,7 +653,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Recommended Measurement Scan Interval",
       "value_raw": "15 seconds or more",
       "type": "text",
@@ -565,7 +661,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 28,
+        "spec_index": 27,
         "source_rows": [
           30
         ]
@@ -575,7 +671,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Temperature Output Units",
       "value_raw": "°C or °F",
       "type": "text",
@@ -583,7 +679,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 29,
+        "spec_index": 28,
         "source_rows": [
           31
         ]
@@ -593,7 +689,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Valid SDI-12 Addresses",
       "value_raw": "0–9, a–z, A–Z",
       "type": "text",
@@ -601,7 +697,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 30,
+        "spec_index": 29,
         "source_rows": [
           32
         ]
@@ -610,7 +706,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "CRBasic Measurement Instruction",
       "value_raw": "SDI12Recorder()",
       "type": "text",
@@ -618,7 +714,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 31,
+        "spec_index": 30,
         "source_rows": [
           33
         ]
@@ -627,7 +723,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "White Wire Function",
       "value_raw": "SDI-12 signal",
       "type": "text",
@@ -641,7 +737,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 32,
+        "spec_index": 31,
         "source_rows": [
           34
         ]
@@ -650,41 +746,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
-      "name_raw": "Yellow Wire Function",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/TempVue20.json",
-        "product_index": 0,
-        "spec_index": 33,
-        "source_rows": [
-          35
-        ]
-      },
-      "canonical_key": "yellow_wire_function"
-    },
-    {
-      "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
-      "name_raw": "Blue Wire Function",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/TempVue20.json",
-        "product_index": 0,
-        "spec_index": 34,
-        "source_rows": [
-          36
-        ]
-      },
-      "canonical_key": "blue_wire_function"
-    },
-    {
-      "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Brown Wire Function",
       "value_raw": "Power (12V)",
       "type": "text",
@@ -692,7 +754,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 35,
+        "spec_index": 32,
         "source_rows": [
           37
         ]
@@ -701,7 +763,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Black Wire Function",
       "value_raw": "Power ground",
       "type": "text",
@@ -709,7 +771,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 36,
+        "spec_index": 33,
         "source_rows": [
           38
         ]
@@ -718,7 +780,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Gray Wire Function",
       "value_raw": "Aspen detect signal",
       "type": "text",
@@ -726,7 +788,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 37,
+        "spec_index": 34,
         "source_rows": [
           39
         ]
@@ -735,7 +797,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Clear Wire Function",
       "value_raw": "Shield",
       "type": "text",
@@ -743,7 +805,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 38,
+        "spec_index": 35,
         "source_rows": [
           40
         ]
@@ -752,7 +814,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Compatible Radiation Shields",
       "value_raw": "RAD06, RAD10E, RAD14, TS100SS",
       "type": "text",
@@ -760,7 +822,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 39,
+        "spec_index": 36,
         "source_rows": [
           41
         ]
@@ -769,7 +831,7 @@
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
-      "section": null,
+      "section": "SPECIFICATIONS",
       "name_raw": "Compliance",
       "value_raw": "UKCA and EU declarations of conformity",
       "type": "text",
@@ -777,7 +839,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 40,
+        "spec_index": 37,
         "source_rows": [
           42
         ]

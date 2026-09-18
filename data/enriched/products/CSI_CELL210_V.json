@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CELL210_V",
+  "model": "CELL210-V",
+  "name_en": "4G LTE CAT-1 Cellular Module for Verizon",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL210_V.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL210_V.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL210_V.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "CELL210-V",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CELL210-V"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CELL210_V",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CELL210_V"
+        }
+      ]
+    },
+    {
+      "value": "4G LTE CAT-1 Cellular Module for Verizon",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "4G LTE CAT-1 Cellular Module for Verizon"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CELL210-V",
+      "4G LTE CAT-1 Cellular Module for Verizon",
+      "Communications",
+      "Cellular Communications",
+      "Cellular Modem / Router",
+      "CS I/O",
+      "RS-232",
+      "USB",
+      "CSI_CELL210_V"
+    ],
+    "vi": [
+      "CELL210-V",
+      "Thiết bị truyền thông",
+      "Truyền thông di động",
+      "Modem hoặc bộ định tuyến di động",
+      "CS I/O",
+      "RS-232",
+      "USB"
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RF500M",
+  "model": "RF500M",
+  "name_en": "RF500M",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Radio Communications",
+    "subcategory_key": "radio_communications",
+    "device_type": "Radio Modem",
+    "device_type_key": "radio_modem"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "CS I/O",
+    "PakBus",
+    "RS-232"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "RF500M",
+    "CSI_RF500M"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_RF500M",
+      "model": "RF500M",
+      "product_name_en": "RF500M",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating System Options",
+          "value_raw": "-PB PakBus OS (standard); -AL ALERT OS; -DA Dial OS"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration Tool",
+          "value_raw": "Device Configuration Utility (DevConfig)"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "standard_temperature_range",
+      "name": "Standard Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      }
+    },
+    {
+      "canonical_key": "extended_temperature_range",
+      "name": "Extended Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 85,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.18,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.4,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_RF500M.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          26
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "RF500M",
+    "Communications",
+    "Radio Communications",
+    "Radio Modem",
+    "CS I/O",
+    "PakBus",
+    "RS-232",
+    "CSI_RF500M"
+  ],
+  "search_keywords_vi": [
+    "RF500M",
+    "Thiết bị truyền thông",
+    "Truyền thông vô tuyến",
+    "Modem vô tuyến",
+    "CS I/O",
+    "PakBus",
+    "RS-232"
+  ],
+  "search_text_en": "RF500M | CSI_RF500M | Communications | Radio Communications | Radio Modem | CS I/O | PakBus | RS-232 | Operating System Options: -PB PakBus OS (standard); -AL ALERT OS; -DA Dial OS | Configuration Tool: Device Configuration Utility (DevConfig) | Standard Temperature Range: -25 to 50 °C | Extended Temperature Range: -55 to 85 °C | Weight: 0.18 kg",
+  "search_text_vi": "RF500M | CSI_RF500M | Thiết bị truyền thông | Truyền thông vô tuyến | Modem vô tuyến | CS I/O | PakBus | RS-232 | Operating System Options: -PB PakBus OS (standard); -AL ALERT OS; -DA Dial OS | Configuration Tool: Device Configuration Utility (DevConfig) | Standard Temperature Range: -25 to 50 °C | Extended Temperature Range: -55 to 85 °C | Weight: 0.18 kg",
+  "search_text": "RF500M | CSI_RF500M | Communications | Radio Communications | Radio Modem | CS I/O | PakBus | RS-232 | Operating System Options: -PB PakBus OS (standard); -AL ALERT OS; -DA Dial OS | Configuration Tool: Device Configuration Utility (DevConfig) | Standard Temperature Range: -25 to 50 °C | Extended Temperature Range: -55 to 85 °C | Weight: 0.18 kg | Thiết bị truyền thông | Truyền thông vô tuyến | Modem vô tuyến",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "f024e4ebb6afb0ab526c3530535c5300edd723ebcca81038db35e70387b10891"
+}

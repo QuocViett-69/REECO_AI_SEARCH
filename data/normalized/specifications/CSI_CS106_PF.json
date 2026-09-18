@@ -1,0 +1,459 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CS106_PF",
+  "model": "CS106-PF",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_CS106_PF.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_CS106_PF.json#0",
+    "raw_product_id": "CSI_CS106_PF",
+    "raw_model": "CS106-PF"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_CS106_PF",
+      "model": "CS106-PF",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CS106"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Inch cable w/Ferrules on Wires"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable End Configuration",
+          "value_raw": "Ferrules on wires"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CS106_PT",
+      "model": "CS106-PT",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CS106"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Inch Cable w/Tinned Wires"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable End Configuration",
+          "value_raw": "Tinned wires"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "CONFIGURATION",
+      "name_raw": "Base Model",
+      "value_raw": "CS106",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "base_model"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "CONFIGURATION",
+      "name_raw": "Configuration Description",
+      "value_raw": "Inch cable w/Ferrules on Wires",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "configuration_description"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "CONFIGURATION",
+      "name_raw": "Cable End Configuration",
+      "value_raw": "Ferrules on wires",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "cable_end_configuration"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Pressure Range",
+      "value_raw": "500 to 1100 hPa | Note: 1 hPa = 1 mBar",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7,
+          8
+        ]
+      },
+      "canonical_key": "pressure_range",
+      "quantity_kind": "pressure"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Long-Term Stability",
+      "value_raw": "±0.1 hPa per year",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "long_term_stability"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Settling Time",
+      "value_raw": "1 s to reach full accuracy after power-up",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "settling_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Response Time",
+      "value_raw": "500 ms to reach full accuracy after a pressure step",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "response_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Output Voltage",
+      "value_raw": "0 to 2.5 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 2.5,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "output_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Supply Voltage",
+      "value_raw": "10 to 30 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 10,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Elevation",
+      "value_raw": "Below sea level: ~609.6 m (2,000 ft) | Above sea level: 4,572 m (15,000 ft)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          14,
+          15
+        ]
+      },
+      "canonical_key": "elevation"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Accuracy",
+      "value_raw": "-40° to +60°C: ±1.5 hPa | +20°C: ±0.3 hPa | 0° to 40°C: ±0.6 hPa | -20° to +45°C: ±1.0 hPa | Accuracy refers to the root sum squared (RSS) of end point non-linearity, hysteresis, repeatability, and calibration uncertainty",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "canonical_key": "accuracy"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Linearity",
+      "value_raw": "±0.25 hPa",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.25,
+        "unit": "hPa",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "linearity"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Hysteresis",
+      "value_raw": "±0.03 hPa",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.03,
+        "unit": "hPa",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "hysteresis"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Repeatability",
+      "value_raw": "±0.03 hPa",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.03,
+        "unit": "hPa",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "repeatability"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Calibration Uncertainty",
+      "value_raw": "±0.15 hPa",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.15,
+        "unit": "hPa",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "calibration_uncertainty"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Current Consumption",
+      "value_raw": "Quiescent: < 1 µA | Active: < 4 mA",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          25,
+          26
+        ]
+      },
+      "canonical_key": "current_consumption",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Temperature Range",
+      "value_raw": "-40° to +60°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Dimensions",
+      "value_raw": "6.8 x 9.7 x 2.8 cm | 2.7 x 3.8 x 1.1 in.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          28,
+          29
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Cable Length",
+      "value_raw": "76.2 cm | 30 in.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          30,
+          31
+        ]
+      },
+      "canonical_key": "cable_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "90 g | 3.2 oz",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          32,
+          33
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

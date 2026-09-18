@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS241DM",
+  "model": "CS241DM",
+  "name_en": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Temperature Sensors (Air/Soil/Water)",
+    "subcategory_key": "temperature_sensors_air_soil_water",
+    "device_type": "Back-of-Module Temperature Sensor",
+    "device_type_key": "back_of_module_temperature_sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ"
+    }
+  ],
+  "supported_protocols": [
+    "Modbus",
+    "RS-485"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS241DM",
+    "CSI_CS241DM",
+    "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CS241DM",
+      "model": "CS241DM",
+      "product_name_en": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Product Name",
+          "value_raw": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Model",
+          "value_raw": "CS241DM G2"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 150,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "measuring_current",
+      "name": "Measuring Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0.1,
+        "max_value": 0.3,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      }
+    },
+    {
+      "canonical_key": "disk_diameter",
+      "name": "Disk Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 2.54,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 1,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      }
+    },
+    {
+      "canonical_key": "height",
+      "name": "Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.419,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.165,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      }
+    },
+    {
+      "canonical_key": "cable_diameter",
+      "name": "Cable Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.216,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.085,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          20
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 27,
+        "unit": "g",
+        "qualifier": "~",
+        "alternate": {
+          "value": 0.06,
+          "unit": "lb"
+        },
+        "condition": "with connector and 1 m (3 ft) cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS241DM.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS241DM",
+    "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+    "Sensors",
+    "Temperature Sensors (Air/Soil/Water)",
+    "Back-of-Module Temperature Sensor",
+    "Temperature",
+    "temperature measurement",
+    "Modbus",
+    "RS-485",
+    "Measure Temperature",
+    "CSI_CS241DM"
+  ],
+  "search_keywords_vi": [
+    "CS241DM",
+    "Cảm biến",
+    "Cảm biến nhiệt độ không khí, đất và nước",
+    "Cảm biến nhiệt độ mặt sau mô-đun",
+    "Nhiệt độ",
+    "Modbus",
+    "RS-485",
+    "Đo nhiệt độ"
+  ],
+  "search_text_en": "CS241DM | Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation | CSI_CS241DM | Sensors | Temperature Sensors (Air/Soil/Water) | Back-of-Module Temperature Sensor | Temperature | Measure Temperature | Modbus | RS-485 | Product Name: Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation | Model: CS241DM G2 | Operating Temperature Range: -50 to 150 °C | Measuring Current: 0.1 to 0.3 mA | Disk Diameter: 2.54 cm | Height: 0.419 cm | Cable Diameter: 0.216 cm | Weight: ~ 27 g | temperature measurement",
+  "search_text_vi": "CS241DM | CSI_CS241DM | Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến nhiệt độ mặt sau mô-đun | Nhiệt độ | Đo nhiệt độ | Modbus | RS-485 | Product Name: Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation | Model: CS241DM G2 | Operating Temperature Range: -50 to 150 °C | Measuring Current: 0.1 to 0.3 mA | Disk Diameter: 2.54 cm | Height: 0.419 cm | Cable Diameter: 0.216 cm | Weight: ~ 27 g",
+  "search_text": "CS241DM | Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation | CSI_CS241DM | Sensors | Temperature Sensors (Air/Soil/Water) | Back-of-Module Temperature Sensor | Temperature | Measure Temperature | Modbus | RS-485 | Product Name: Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation | Model: CS241DM G2 | Operating Temperature Range: -50 to 150 °C | Measuring Current: 0.1 to 0.3 mA | Disk Diameter: 2.54 cm | Height: 0.419 cm | Cable Diameter: 0.216 cm | Weight: ~ 27 g | temperature measurement | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến nhiệt độ mặt sau mô-đun | Nhiệt độ | Đo nhiệt độ",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "8ece8943c56281838e0d612cdb336e7dae17710f3ef40b612fce60b99266ffbe"
+}

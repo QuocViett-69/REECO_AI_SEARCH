@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "source": {
     "file": "TEMP120-XD.xlsx",
     "sheet": "Sheet1"
@@ -15,9 +15,9 @@
         "product_name_en": "worksheet"
       },
       "taxonomy": {
-        "category": null,
-        "subcategory": null,
-        "device_type": null
+        "category": "Measurement Devices",
+        "subcategory": "Thermocouple Measurement Modules",
+        "device_type": "Measurement Device"
       },
       "specifications": [
         {
@@ -36,6 +36,15 @@
           "value_raw": "20-Channel Thermocouple Module",
           "source_rows": [
             4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
           ]
         },
         {
@@ -325,15 +334,6 @@
           "source_rows": [
             39
           ]
-        },
-        {
-          "section": "General Specifications",
-          "name_en": "Weight",
-          "name_vi": "Khối lượng",
-          "value_raw": "0.9 kg (1.95 lb)",
-          "source_rows": [
-            40
-          ]
         }
       ],
       "documents": {
@@ -345,15 +345,202 @@
       "media": {
         "product_images": [
           {
-            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12081",
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12081",
             "source": "user_provided"
           }
         ]
       },
       "validation": {
-        "status": "valid",
+        "status": "passed",
         "warnings": []
-      }
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_TEMP120_XD",
+        "variant_count": 2,
+        "source_files": [
+          "TEMP120_Output.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_TEMP120_SD",
+          "model": "TEMP120-SD",
+          "product_name_en": "TEMP 120 Standard Duty (SD)",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Product Variant",
+              "name_vi": "Phiên bản sản phẩm",
+              "value_raw": "Standard Duty (SD)",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-40 to +70 °C",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Internal Cold Junction Accuracy – Maximum",
+              "name_vi": "Độ chính xác mối nối lạnh nội – tối đa",
+              "value_raw": "±0.28 °C maximum (-40 to +70 °C)",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Total Measurement Accuracy – Static Environment – Maximum",
+              "name_vi": "Độ chính xác tổng – môi trường tĩnh – tối đa",
+              "value_raw": "±0.8 °C maximum (-40 to +70 °C)",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Measurement Performance Verification",
+              "name_vi": "Xác minh hiệu năng đo",
+              "value_raw": "Engineering design; verified in a laboratory environment",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Calibration Certificate",
+              "name_vi": "Chứng chỉ hiệu chuẩn",
+              "value_raw": "Not included",
+              "source_rows": [
+                18
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Instrument Data Report",
+              "name_vi": "Báo cáo dữ liệu thiết bị",
+              "value_raw": "Not included",
+              "source_rows": [
+                19
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": null,
+            "user_manual": "TEMP120-XD_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12081",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TEMP120_Output.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "product_name_en": "TEMP 120 Extended Duty (XD)",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Product Variant",
+              "name_vi": "Phiên bản sản phẩm",
+              "value_raw": "Extended Duty (XD)",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-55 to +85 °C",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Internal Cold Junction Accuracy – Maximum",
+              "name_vi": "Độ chính xác mối nối lạnh nội – tối đa",
+              "value_raw": "±0.36 °C maximum (-55 to +85 °C)",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Total Measurement Accuracy – Static Environment – Maximum",
+              "name_vi": "Độ chính xác tổng – môi trường tĩnh – tối đa",
+              "value_raw": "±1.0 °C maximum (-55 to +85 °C)",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Measurement Performance Verification",
+              "name_vi": "Xác minh hiệu năng đo",
+              "value_raw": "Engineering design; verified over the full product temperature range",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Calibration Certificate",
+              "name_vi": "Chứng chỉ hiệu chuẩn",
+              "value_raw": "Included",
+              "source_rows": [
+                18
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Instrument Data Report",
+              "name_vi": "Báo cáo dữ liệu thiết bị",
+              "value_raw": "Included",
+              "source_rows": [
+                19
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": null,
+            "user_manual": "TEMP120-XD_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12081",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TEMP120_Output.json",
+            "product_index": 1
+          }
+        }
+      ]
     }
   ]
 }

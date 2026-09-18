@@ -1,0 +1,361 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_COM220_AU",
+  "model": "COM220-AU",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_COM220_AU.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_COM220_AU.json#0",
+    "raw_product_id": "CSI_COM220_AU",
+    "raw_model": "COM220-AU"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_COM220_AU",
+      "model": "COM220-AU",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Set for Australia"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Ships As",
+          "value_raw": "43010, 16675, & 2365"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_COM220_NA",
+      "model": "COM220-NA",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Set for US/Canada"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Ships As",
+          "value_raw": "18895, 16675, & 2365"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_COM220_UK",
+      "model": "COM220-UK",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Set for UK"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Ships As",
+          "value_raw": "43009, 16675, & 2365"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Configuration",
+      "value_raw": "Set for Australia",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "configuration"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Ships As",
+      "value_raw": "43010, 16675, & 2365",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "ships_as"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Standards",
+      "value_raw": "V.92, K56Flex, V.90, V.34, V.32bis, V.32, V.23, V.22bis, V.22, V.21, B212, B103",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "standards"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "EU Declaration of Conformity",
+      "value_raw": "www.campbellsci.com/com220",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "eu_declaration_of_conformity"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Operating Voltage",
+      "value_raw": "12 Vdc",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 12,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "operating_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Operating Temperature",
+      "value_raw": "-25° to +50°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "operating_temperature",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Communication Rate Between Data Logger and COM220",
+      "value_raw": "9600, 38400, 57600, 115200 bps (selected by user)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "communication_rate_between_data_logger_and_com220",
+      "quantity_kind": "data_rate"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Operation",
+      "value_raw": "Full-duplex over standard analog phone lines",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "operation"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Dimensions",
+      "value_raw": "16.5 x 2.5 x 6.6 cm (6.5 x 1.0 x 2.6 in)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "0.16 kg (0.35 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.16,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.35,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "REGISTRATION",
+      "name_raw": "FCC US",
+      "value_raw": "3A4M508BSM2-T-W",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "fcc_us"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "REGISTRATION",
+      "name_raw": "IC",
+      "value_raw": "2377 A-SM2TW",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "ic"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "REGISTRATION",
+      "name_raw": "TBR21",
+      "value_raw": "TBR21",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "tbr21"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "CURRENT DRAIN",
+      "name_raw": "Quiescent",
+      "value_raw": "~120 µA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 120,
+        "unit": "µA",
+        "qualifier": "~"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "quiescent",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "section": "CURRENT DRAIN",
+      "name_raw": "Active",
+      "value_raw": "~30 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 30,
+        "unit": "mA",
+        "qualifier": "~"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "active",
+      "quantity_kind": "current"
+    }
+  ]
+}

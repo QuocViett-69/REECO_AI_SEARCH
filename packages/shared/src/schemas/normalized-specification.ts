@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import { ProductVariantSchema } from './product-variant';
+
 const NullableUnitSchema = z.string().min(1).nullable();
 const QualifierSchema = z
   .enum(['<', '≤', '>', '≥', '±', '~', 'approximately', 'minimum', 'maximum'])
@@ -165,6 +167,7 @@ export const NormalizedSpecificationDocumentSchema = z.object({
     raw_product_id: z.string().nullable(),
     raw_model: z.string().nullable(),
   }),
+  variants: z.array(ProductVariantSchema).default([]),
   specifications: z.array(NormalizedSpecificationSchema),
 });
 

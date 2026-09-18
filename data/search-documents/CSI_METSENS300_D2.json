@@ -1,0 +1,494 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_METSENS300_D2",
+  "model": "MetSENS300-D2",
+  "name_en": "MetSENS300-D2",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Weather Sensors",
+    "subcategory_key": "weather_sensors",
+    "device_type": "Compact Weather Sensor",
+    "device_type_key": "compact_weather_sensor"
+  },
+  "measurements": [
+    {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí"
+    },
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối"
+    },
+    {
+      "key": "barometric_pressure",
+      "label_en": "Barometric Pressure",
+      "label_vi": "Áp suất khí quyển"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí"
+    },
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối"
+    },
+    {
+      "key": "measure_barometric_pressure",
+      "label_en": "Measure Barometric Pressure",
+      "label_vi": "Đo áp suất khí quyển"
+    }
+  ],
+  "supported_protocols": [
+    "RS-232"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "MetSENS300-D2",
+    "CSI_METSENS300_D2",
+    "MetSENS300-DM",
+    "MetSENS300-DS"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_METSENS300_D2",
+      "model": "MetSENS300-D2",
+      "product_name_en": "MetSENS300-D2",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Configuration",
+          "value_raw": "RS-232 digital output"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Digital Interface",
+          "value_raw": "Serial RS-232"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Communication Settings",
+          "value_raw": "9600 baud; 8 data bits; even parity; 1 stop bit"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Replacement Cable",
+          "value_raw": "METSENSCBL3 RS-232 Replacement Cable"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal / Data Wiring",
+          "value_raw": "Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Direct Data Logger Connection",
+          "value_raw": "Green → C (odd); White → C (even); Red → 12V; Black/Clear → G"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Programming",
+          "value_raw": "SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr()"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Length Options",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_METSENS300_DM",
+      "model": "MetSENS300-DM",
+      "product_name_en": "MetSENS300-DM",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Configuration",
+          "value_raw": "RS-485 Modbus output"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Digital Interface",
+          "value_raw": "Modbus RTU over RS-485"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Communication Settings",
+          "value_raw": "19200 baud; 8 data bits; even parity; 1 stop bit"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Address",
+          "value_raw": "Modbus address 41"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Replacement Cable",
+          "value_raw": "METSENSCBL2 RS-485 Replacement Cable"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal / Data Wiring",
+          "value_raw": "Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Direct Data Logger Connection",
+          "value_raw": "Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Programming",
+          "value_raw": "SerialOpen() followed by ModbusClient()"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Length Options",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_METSENS300_DS",
+      "model": "MetSENS300-DS",
+      "product_name_en": "MetSENS300-DS",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Configuration",
+          "value_raw": "SDI-12 digital output"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Digital Interface",
+          "value_raw": "SDI-12"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Communication Settings",
+          "value_raw": "SDI-12 protocol"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Address",
+          "value_raw": "SDI-12 address 0"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Replacement Cable",
+          "value_raw": "METSENSCBL1 SDI-12 Replacement Cable"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal / Data Wiring",
+          "value_raw": "Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Direct Data Logger Connection",
+          "value_raw": "Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Programming",
+          "value_raw": "SDI12Recorder()"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Length Options",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          22
+        ]
+      }
+    },
+    {
+      "canonical_key": "air_temperature_range",
+      "name": "Air Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          31
+        ]
+      }
+    },
+    {
+      "canonical_key": "relative_humidity_range",
+      "name": "Relative Humidity Range",
+      "quantity_kind": "relative_humidity",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          34
+        ]
+      }
+    },
+    {
+      "canonical_key": "barometric_pressure_range",
+      "name": "Barometric Pressure Range",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 300,
+        "max_value": 1100,
+        "unit": "hPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          37
+        ]
+      }
+    },
+    {
+      "canonical_key": "air_temperature_resolution",
+      "name": "Air Temperature Resolution",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          32
+        ]
+      }
+    },
+    {
+      "canonical_key": "barometric_pressure_resolution",
+      "name": "Barometric Pressure Resolution",
+      "quantity_kind": "pressure",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "hPa",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 33,
+        "source_rows": [
+          38
+        ]
+      }
+    },
+    {
+      "canonical_key": "operating_voltage",
+      "name": "Operating Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 5,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          23
+        ]
+      }
+    },
+    {
+      "canonical_key": "overall_height",
+      "name": "Overall Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 155,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "maximum_diameter",
+      "name": "Maximum Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 142,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          28
+        ]
+      }
+    },
+    {
+      "canonical_key": "lower_body_diameter",
+      "name": "Lower Body Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 44.5,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          29
+        ]
+      }
+    },
+    {
+      "canonical_key": "connector_section_diameter",
+      "name": "Connector Section Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 38.5,
+        "unit": "mm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          30
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.5,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.1,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_METSENS300_D2.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          26
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "MetSENS300-D2",
+    "Sensors",
+    "Weather Sensors",
+    "Compact Weather Sensor",
+    "Air Temperature",
+    "ambient temperature",
+    "Relative Humidity",
+    "RH",
+    "Barometric Pressure",
+    "RS-232",
+    "Measure Air Temperature",
+    "Measure Relative Humidity",
+    "Measure Barometric Pressure",
+    "CSI_METSENS300_D2"
+  ],
+  "search_keywords_vi": [
+    "MetSENS300-D2",
+    "Cảm biến",
+    "Cảm biến thời tiết",
+    "Cảm biến thời tiết nhỏ gọn",
+    "Nhiệt độ không khí",
+    "Độ ẩm tương đối",
+    "Áp suất khí quyển",
+    "RS-232",
+    "Đo nhiệt độ không khí",
+    "Đo độ ẩm tương đối",
+    "Đo áp suất khí quyển"
+  ],
+  "search_text_en": "MetSENS300-D2 | CSI_METSENS300_D2 | MetSENS300-DM | MetSENS300-DS | Sensors | Weather Sensors | Compact Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Operating Voltage: 5 to 30 V DC | Overall Height: 155 mm | Maximum Diameter: 142 mm | Lower Body Diameter: 44.5 mm | Connector Section Diameter: 38.5 mm | Weight: 0.5 kg | ambient temperature | RH",
+  "search_text_vi": "MetSENS300-D2 | CSI_METSENS300_D2 | MetSENS300-DM | MetSENS300-DS | Cảm biến | Cảm biến thời tiết | Cảm biến thời tiết nhỏ gọn | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Operating Voltage: 5 to 30 V DC | Overall Height: 155 mm | Maximum Diameter: 142 mm | Lower Body Diameter: 44.5 mm | Connector Section Diameter: 38.5 mm | Weight: 0.5 kg",
+  "search_text": "MetSENS300-D2 | CSI_METSENS300_D2 | MetSENS300-DM | MetSENS300-DS | Sensors | Weather Sensors | Compact Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Operating Voltage: 5 to 30 V DC | Overall Height: 155 mm | Maximum Diameter: 142 mm | Lower Body Diameter: 44.5 mm | Connector Section Diameter: 38.5 mm | Weight: 0.5 kg | ambient temperature | RH | Cảm biến | Cảm biến thời tiết | Cảm biến thời tiết nhỏ gọn | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "1f065b4d31b0bc633d4ec7172c44c936b5593142313e57f40388864fa572a6a9"
+}

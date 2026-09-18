@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CELL225_IT1A",
+  "model": "CELL225-IT1A",
+  "name_en": "4G LTE CAT-1 Cellular Module for Japan",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "CS I/O",
+    "RS-232",
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CELL225-IT1A",
+    "CSI_CELL225_IT1A",
+    "4G LTE CAT-1 Cellular Module for Japan",
+    "CELL225-IT1B",
+    "CELL225-NP"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CELL225_IT1A",
+      "model": "CELL225-IT1A",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Japan",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for International 1A"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL225_IT1B",
+      "model": "CELL225-IT1B",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Japan",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for International 1B"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL225_NP",
+      "model": "CELL225-NP",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Japan",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "value_raw": "No Provisioning"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "value_raw": "Not Provisioned"
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "Ships as 35175 & 16675"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL225_IT1A.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "low_power_mode",
+      "name": "Low Power Mode",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "number",
+        "value": 300,
+        "unit": "µA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL225_IT1A.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          20
+        ]
+      }
+    },
+    {
+      "canonical_key": "idle_current",
+      "name": "Idle Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 14,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL225_IT1A.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "active_current",
+      "name": "Active Current",
+      "quantity_kind": "current",
+      "normalized_value": {
+        "type": "number",
+        "value": 39,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL225_IT1A.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          22
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 215.5,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.6,
+          "unit": "oz"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CELL225_IT1A.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CELL225-IT1A",
+    "4G LTE CAT-1 Cellular Module for Japan",
+    "Communications",
+    "Cellular Communications",
+    "Cellular Modem / Router",
+    "CS I/O",
+    "RS-232",
+    "USB",
+    "CSI_CELL225_IT1A"
+  ],
+  "search_keywords_vi": [
+    "CELL225-IT1A",
+    "Thiết bị truyền thông",
+    "Truyền thông di động",
+    "Modem hoặc bộ định tuyến di động",
+    "CS I/O",
+    "RS-232",
+    "USB"
+  ],
+  "search_text_en": "CELL225-IT1A | 4G LTE CAT-1 Cellular Module for Japan | CSI_CELL225_IT1A | CELL225-IT1B | CELL225-NP | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for International 1A | Provisioning Status: Provisioned | Provisioning Option: Provisioned for International 1B | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 35175 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g",
+  "search_text_vi": "CELL225-IT1A | CSI_CELL225_IT1A | 4G LTE CAT-1 Cellular Module for Japan | CELL225-IT1B | CELL225-NP | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for International 1A | Provisioning Status: Provisioned | Provisioning Option: Provisioned for International 1B | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 35175 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g",
+  "search_text": "CELL225-IT1A | 4G LTE CAT-1 Cellular Module for Japan | CSI_CELL225_IT1A | CELL225-IT1B | CELL225-NP | Communications | Cellular Communications | Cellular Modem / Router | CS I/O | RS-232 | USB | Provisioning Option: Provisioned for International 1A | Provisioning Status: Provisioned | Provisioning Option: Provisioned for International 1B | Provisioning Option: No Provisioning | Provisioning Status: Not Provisioned | Ships As: Ships as 35175 & 16675 | Operating Temperature Range: -40 to 80 °C | Low Power Mode: 300 µA | Idle Current: 14 mA | Active Current: 39 mA | Weight: 215.5 g | Thiết bị truyền thông | Truyền thông di động | Modem hoặc bộ định tuyến di động",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "ae8f29138494413fc4d20db384373633b1c69ad75698e1439074bfe76dfc773d"
+}

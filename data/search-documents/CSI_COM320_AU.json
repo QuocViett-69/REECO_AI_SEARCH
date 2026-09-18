@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_COM320_AU",
+  "model": "COM320-AU",
+  "name_en": "COM320 Voice Phone Modem",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Telephone Communications",
+    "subcategory_key": "telephone_communications",
+    "device_type": "Telephone Modem",
+    "device_type_key": "telephone_modem"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "CS I/O"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "COM320-AU",
+    "CSI_COM320_AU",
+    "COM320 Voice Phone Modem",
+    "COM320-US",
+    "COM320-UK"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_COM320_AU",
+      "model": "COM320-AU",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration",
+          "value_raw": "Set for Australia"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "43005 / 16675 / 2365"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_COM320_US",
+      "model": "COM320-US",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration",
+          "value_raw": "Set for US/Canada"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "21755 / 16675 / 2365"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_COM320_UK",
+      "model": "COM320-UK",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration",
+          "value_raw": "Set for UK"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "43004 / 16675 / 2365"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_voltage",
+      "name": "Operating Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "number",
+        "value": 12,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM320_AU.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.16,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.35,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM320_AU.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "COM320-AU",
+    "COM320 Voice Phone Modem",
+    "Communications",
+    "Telephone Communications",
+    "Telephone Modem",
+    "CS I/O",
+    "CSI_COM320_AU"
+  ],
+  "search_keywords_vi": [
+    "COM320-AU",
+    "Thiết bị truyền thông",
+    "Truyền thông điện thoại",
+    "Modem điện thoại",
+    "CS I/O"
+  ],
+  "search_text_en": "COM320-AU | COM320 Voice Phone Modem | CSI_COM320_AU | COM320-US | COM320-UK | Communications | Telephone Communications | Telephone Modem | CS I/O | Configuration: Set for Australia | Ships As: 43005 / 16675 / 2365 | Configuration: Set for US/Canada | Ships As: 21755 / 16675 / 2365 | Configuration: Set for UK | Ships As: 43004 / 16675 / 2365 | Operating Voltage: 12 V DC | Weight: 0.16 kg",
+  "search_text_vi": "COM320-AU | CSI_COM320_AU | COM320 Voice Phone Modem | COM320-US | COM320-UK | Thiết bị truyền thông | Truyền thông điện thoại | Modem điện thoại | CS I/O | Configuration: Set for Australia | Ships As: 43005 / 16675 / 2365 | Configuration: Set for US/Canada | Ships As: 21755 / 16675 / 2365 | Configuration: Set for UK | Ships As: 43004 / 16675 / 2365 | Operating Voltage: 12 V DC | Weight: 0.16 kg",
+  "search_text": "COM320-AU | COM320 Voice Phone Modem | CSI_COM320_AU | COM320-US | COM320-UK | Communications | Telephone Communications | Telephone Modem | CS I/O | Configuration: Set for Australia | Ships As: 43005 / 16675 / 2365 | Configuration: Set for US/Canada | Ships As: 21755 / 16675 / 2365 | Configuration: Set for UK | Ships As: 43004 / 16675 / 2365 | Operating Voltage: 12 V DC | Weight: 0.16 kg | Thiết bị truyền thông | Truyền thông điện thoại | Modem điện thoại",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "90dbaa0b5a26bea38c23fe43f79b72ca8907fbb1fc55790fb860be130564da95"
+}

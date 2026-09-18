@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CS506",
+  "model": "CS506",
+  "raw_record_ref": {
+    "file": "data/raw/CS506_Specifications_SplitCells.json",
+    "product_index": 0,
+    "raw_record_key": "CS506_Specifications_SplitCells.json#0",
+    "raw_product_id": "CSI_CS506",
+    "raw_model": "CS506"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_CS506",
+      "model": "CS506",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Range",
+      "value_raw": "0 to 70% moisture content",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "operating_range"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Power Supply",
+      "value_raw": "5 to 18 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 5,
+        "max_value": 18,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "power_supply",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Enable Voltage",
+      "value_raw": "on at 5 Vdc (> 4 Vdc; maximum 18 Vdc) | off at 0 Vdc (< 1 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5,
+          6
+        ]
+      },
+      "canonical_key": "enable_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Current Consumption",
+      "value_raw": "65 mA (active) | 45 μA (quiescent)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7,
+          8
+        ]
+      },
+      "canonical_key": "current_consumption",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Output Signal",
+      "value_raw": "±0.7 Vdc square wave (with an output frequency of approximately 31 to 58 kHz)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "output_signal"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Dimensions",
+      "value_raw": "10.16 x 6.35 x 1.91 cm (4 x 2.5 x 0.75 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "< 0.5 kg (< 1 lb)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "0 to 10% Range",
+      "value_raw": "±1.25% (worst case) | ±0.74% (RMS error)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          13,
+          14
+        ]
+      },
+      "canonical_key": "0_to_10_percent_range"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "10 to 20% Range",
+      "value_raw": "±0.9% (RMS error) | ±2% (worst case)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          15,
+          16
+        ]
+      },
+      "canonical_key": "10_to_20_percent_range"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "20 to 30% Range",
+      "value_raw": "±3.4% (worst case) | ±1.94% (RMS error)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          17,
+          18
+        ]
+      },
+      "canonical_key": "20_to_30_percent_range"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "section": "SPECIFICATIONS",
+      "name_raw": "30 to 50% Range",
+      "value_raw": "±2.27% (RMS error) | ±4.11% (worst case)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CS506_Specifications_SplitCells.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          19,
+          20
+        ]
+      },
+      "canonical_key": "30_to_50_percent_range"
+    }
+  ]
+}

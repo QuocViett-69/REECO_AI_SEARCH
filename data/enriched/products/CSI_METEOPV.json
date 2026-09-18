@@ -1,0 +1,408 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_METEOPV",
+  "model": "MeteoPV",
+  "name_en": "MeteoPV",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Systems",
+    "category_key": "systems",
+    "subcategory": "Solar Monitoring Stations",
+    "subcategory_key": "solar_monitoring_stations",
+    "device_type": "Solar Monitoring Station",
+    "device_type_key": "solar_monitoring_station"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "Ethernet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "scada_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 9,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "power_sources",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              22
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "remote_configuration_requirement",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 35,
+            "source_rows": [
+              37
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "datalogger_per_gateway_role",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus RTU",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sensor_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus TCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "core_function",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "scada_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 9,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "ethernet_features",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              14
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RJ45",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "ethernet_port",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 11,
+            "source_rows": [
+              13
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "core_function",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sensor_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_485_output_voltage",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              16
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sensor_power_behavior",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              25
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "datalogger_per_gateway_role",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TCP/IP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "core_function",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "scada_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 9,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "ethernet_features",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              14
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "power_sources",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              22
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_power_behavior",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              24
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_data_rate",
+          "raw_ref": {
+            "file": "data/raw/CSI_METEOPV.json",
+            "product_index": 0,
+            "spec_index": 26,
+            "source_rows": [
+              28
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "MeteoPV",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "MeteoPV"
+        }
+      ]
+    },
+    {
+      "value": "CSI_METEOPV",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_METEOPV"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "MeteoPV",
+      "Systems",
+      "Solar Monitoring Stations",
+      "Solar Monitoring Station",
+      "Ethernet",
+      "Modbus",
+      "Modbus RTU",
+      "Modbus TCP",
+      "RJ45",
+      "RS-485",
+      "TCP",
+      "TCP/IP",
+      "USB",
+      "CSI_METEOPV"
+    ],
+    "vi": [
+      "MeteoPV",
+      "Hệ thống",
+      "Trạm giám sát năng lượng mặt trời",
+      "Ethernet",
+      "Modbus",
+      "Modbus RTU",
+      "Modbus TCP",
+      "RJ45",
+      "RS-485",
+      "TCP",
+      "TCP/IP",
+      "USB"
+    ]
+  }
+}

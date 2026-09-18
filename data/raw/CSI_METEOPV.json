@@ -1,0 +1,530 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "MeteoPV.json",
+        "original_source": {
+          "file": "MeteoPV.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_METEOPV",
+      "manufacturer": "Campbell Scientific",
+      "model": "MeteoPV",
+      "product_name_en": "MeteoPV",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Systems",
+        "subcategory": "Solar Monitoring Stations",
+        "device_type": "Solar Monitoring Station"
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "MeteoPV",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Solar Resource Platform / Modbus TCP-to-Modbus RTU Gateway",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary communications and data-aggregation device / PV monitoring gateway",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Distributed photovoltaic monitoring and plane-of-array (POA) sunstations",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Core Function",
+          "name_vi": "Chức năng chính",
+          "value_raw": "Connects multiple RS-485 sensors, consolidates sensor data and metadata into a unified Modbus map, and exposes data to SCADA or other collection platforms over Modbus TCP/IP",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Datalogger / Gateway Role",
+          "name_vi": "Vai trò datalogger / gateway",
+          "value_raw": "Modbus/TCP-to-Modbus/RTU gateway; Modbus data aggregation platform",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Supported Sensor Categories",
+          "name_vi": "Nhóm cảm biến hỗ trợ",
+          "value_raw": "Pyranometers; reference cells; back-of-module temperature sensors; compact weather sensors",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Sensor Configuration",
+          "name_vi": "Cấu hình cảm biến tối đa",
+          "value_raw": "Up to 4 pyranometers, 1 compact weather sensor, and up to 4 back-of-module temperature sensors",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "SCADA Interface",
+          "name_vi": "Giao tiếp SCADA",
+          "value_raw": "Ethernet / Modbus TCP/IP",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Interface",
+          "name_vi": "Giao tiếp cảm biến",
+          "value_raw": "Half-duplex RS-485 / Modbus RTU",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Ethernet Port",
+          "name_vi": "Cổng Ethernet",
+          "value_raw": "RJ45, 10/100Base-TX, full and half duplex",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Ethernet Features",
+          "name_vi": "Tính năng Ethernet",
+          "value_raw": "Auto-MDIX; IP Address, Netmask, and Gateway configuration; Modbus TCP/IP",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RS-485 Maximum Cable Length",
+          "name_vi": "Chiều dài cáp RS-485 tối đa",
+          "value_raw": "1200 m",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RS-485 Output Voltage",
+          "name_vi": "Điện áp đầu ra RS-485",
+          "value_raw": "12 V supplied by RS-485 terminals; varies with load",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RS-485 Output Voltage – Minimum",
+          "name_vi": "Điện áp đầu ra RS-485 – tối thiểu",
+          "value_raw": "11 V",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RS-485 Output Voltage – Maximum",
+          "name_vi": "Điện áp đầu ra RS-485 – tối đa",
+          "value_raw": "14.5 V",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RS-485 Output Voltage – Typical",
+          "name_vi": "Điện áp đầu ra RS-485 – điển hình",
+          "value_raw": "11.6 V under full load of 500 mA",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "RS-485 Current Supply Limit",
+          "name_vi": "Giới hạn dòng cấp RS-485",
+          "value_raw": "500 mA",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Voltage",
+          "name_vi": "Điện áp hoạt động",
+          "value_raw": "10 to 30 VDC per 2026 Getting Started guide; 2018 brochure states 9 to 30 VDC",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power Sources",
+          "name_vi": "Nguồn cấp",
+          "value_raw": "USB for configuration only; 10 to 30 VDC terminal supply; Power over Ethernet (PoE)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power over Ethernet",
+          "name_vi": "Cấp nguồn qua Ethernet",
+          "value_raw": "Supported; 2018 brochure states isolated PoE, IEEE 802.3af compliant",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "USB Power Behavior",
+          "name_vi": "Hành vi cấp nguồn qua USB",
+          "value_raw": "USB can power MeteoPV for configuration, but does not supply power to connected sensors",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Power Behavior",
+          "name_vi": "Cấp nguồn cho cảm biến",
+          "value_raw": "When powered by external DC or PoE, MeteoPV provides 12 VDC power to connected RS-485 sensors",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power Consumption",
+          "name_vi": "Công suất / dòng tiêu thụ",
+          "value_raw": "2018 brochure: ~30 mA at 12 VDC, excluding sensors",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "USB Interface",
+          "name_vi": "Giao tiếp USB",
+          "value_raw": "Micro-B USB; configuration/computer connection",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "USB Data Rate",
+          "name_vi": "Tốc độ dữ liệu USB",
+          "value_raw": "2018 brochure: USB 2.0 full-speed, 12 Mbps",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "CPU",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "2018 brochure: ARM Cortex-M4, 144 MHz",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration Interface",
+          "name_vi": "Giao diện cấu hình",
+          "value_raw": "Onboard browser-based user interface",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default USB IP Address",
+          "name_vi": "Địa chỉ IP mặc định qua USB",
+          "value_raw": "192.168.66.1",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration URL",
+          "name_vi": "Địa chỉ cấu hình",
+          "value_raw": "www.linktodevice.com",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Station Metadata",
+          "name_vi": "Thông tin metadata trạm",
+          "value_raw": "Station Name, Location, and Station Notes can be configured",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Configuration File Management",
+          "name_vi": "Quản lý file cấu hình",
+          "value_raw": "Apply to Station; Save to File; Load from File",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "User Account Levels",
+          "name_vi": "Cấp quyền tài khoản",
+          "value_raw": "None; Read only; Administrator",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Remote Configuration Requirement",
+          "name_vi": "Yêu cầu cấu hình từ xa",
+          "value_raw": "Administrator account required for configuration over Ethernet",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default Anonymous Access",
+          "name_vi": "Quyền truy cập anonymous mặc định",
+          "value_raw": "Anonymous account is provided with read-only permissions by default",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Installation Report",
+          "name_vi": "Báo cáo cài đặt",
+          "value_raw": "Browser-based interface can generate a PDF installation report containing site data, sensor metadata, and configuration data",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Programming Requirement",
+          "name_vi": "Yêu cầu lập trình",
+          "value_raw": "No coding required for normal deployment/configuration",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Kiểu lắp đặt",
+          "value_raw": "DIN-rail mounting",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Surge / ESD Protection",
+          "name_vi": "Bảo vệ surge / ESD",
+          "value_raw": "Integrated surge and ESD protection",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "EMC Immunity",
+          "name_vi": "Miễn nhiễm EMC",
+          "value_raw": "2018 brochure: IEC 61000-4-2 Class 4",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compatible Campbell Scientific Sensors",
+          "name_vi": "Cảm biến Campbell Scientific tương thích",
+          "value_raw": "CS240DM; MetSENS series; CS325DM (2018 brochure)",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Other Compatible Sensors",
+          "name_vi": "Cảm biến hãng khác tương thích",
+          "value_raw": "EKO MS-80M; Hukseflux SR30 and SR20-D2; Kipp & Zonen SMP series (2018 brochure)",
+          "source_rows": [
+            45
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "meteopv_datasheet.pdf",
+        "user_manual": null,
+        "order_form": "https://www.campbellsci.com/products/meteopv"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12136",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "review",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_METEOPV",
+        "variant_count": 1,
+        "source_files": [
+          "MeteoPV.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_METEOPV",
+          "model": "MeteoPV",
+          "product_name_en": "MeteoPV",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Maximum Sensor Configuration",
+              "name_vi": "Cấu hình cảm biến tối đa",
+              "value_raw": "Up to 4 pyranometers, 1 compact weather sensor, and up to 4 back-of-module temperature sensors",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Configuration Interface",
+              "name_vi": "Giao diện cấu hình",
+              "value_raw": "Onboard browser-based user interface",
+              "source_rows": [
+                31
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Configuration URL",
+              "name_vi": "Địa chỉ cấu hình",
+              "value_raw": "www.linktodevice.com",
+              "source_rows": [
+                33
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Configuration File Management",
+              "name_vi": "Quản lý file cấu hình",
+              "value_raw": "Apply to Station; Save to File; Load from File",
+              "source_rows": [
+                35
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Remote Configuration Requirement",
+              "name_vi": "Yêu cầu cấu hình từ xa",
+              "value_raw": "Administrator account required for configuration over Ethernet",
+              "source_rows": [
+                37
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "meteopv_datasheet.pdf",
+            "user_manual": null,
+            "order_form": "https://www.campbellsci.com/products/meteopv"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12136",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "MeteoPV.json",
+            "product_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

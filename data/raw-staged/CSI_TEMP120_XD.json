@@ -1,0 +1,554 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "TEMP120_Output.json",
+        "original_source": {
+          "file": "TEMP120-XD.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "manufacturer": "Campbell Scientific",
+      "model": "TEMP120-XD",
+      "product_name_en": "TEMP 120",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Measurement Devices",
+        "subcategory": "Thermocouple Measurement Modules",
+        "device_type": "Measurement Device"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Variant",
+          "name_vi": "Phiên bản sản phẩm",
+          "value_raw": "Extended Duty (XD)",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "20-Channel Thermocouple Module",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Number of Channels",
+          "name_vi": "Số kênh",
+          "value_raw": "20",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Terminal Type",
+          "name_vi": "Loại đầu nối cảm biến",
+          "value_raw": "Universal (copper/copper), miniature socket connectors",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Supported Thermocouple Types",
+          "name_vi": "Loại thermocouple hỗ trợ",
+          "value_raw": "B, E, J, K, N, R, S, T",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "A/D Converter",
+          "name_vi": "Bộ chuyển đổi A/D",
+          "value_raw": "24-bit sigma-delta",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Resolution",
+          "name_vi": "Độ phân giải phép đo",
+          "value_raw": "0.015 °C",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-55 to +85 °C",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Internal Cold Junction Accuracy – Maximum",
+          "name_vi": "Độ chính xác mối nối lạnh nội – tối đa",
+          "value_raw": "±0.36 °C maximum (-55 to +85 °C)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Total Measurement Accuracy – Static Environment – Maximum",
+          "name_vi": "Độ chính xác tổng – môi trường tĩnh – tối đa",
+          "value_raw": "±1.0 °C maximum (-55 to +85 °C)",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Total Measurement Accuracy – Rapid Temperature Ramps",
+          "name_vi": "Độ chính xác tổng – khi nhiệt độ thay đổi nhanh",
+          "value_raw": "±3 °C maximum (8 °C/min ambient gradient)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Performance Verification",
+          "name_vi": "Xác minh hiệu năng đo",
+          "value_raw": "Engineering design; verified over the full product temperature range",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Calibration Certificate",
+          "name_vi": "Chứng chỉ hiệu chuẩn",
+          "value_raw": "Included",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Instrument Data Report",
+          "name_vi": "Báo cáo dữ liệu thiết bị",
+          "value_raw": "Included",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Recommended Calibration Interval",
+          "name_vi": "Chu kỳ hiệu chuẩn khuyến nghị",
+          "value_raw": "Every 3 years",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Measurement Rate – Filtering Disabled",
+          "name_vi": "Tốc độ đo tối đa – tắt lọc",
+          "value_raw": "10 Hz for all 20 channels",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Measurement Rate – Filtering Enabled",
+          "name_vi": "Tốc độ đo tối đa – bật lọc",
+          "value_raw": "1 Hz for all 20 channels",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Input Limits",
+          "name_vi": "Giới hạn đầu vào",
+          "value_raw": "0.25 to 3.0 VDC (built-in ±1.65 VDC bias voltage)",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Input Voltage",
+          "name_vi": "Điện áp đầu vào tối đa",
+          "value_raw": "±10 VDC",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "DC Common-Mode Rejection",
+          "name_vi": "Khả năng khử chế độ chung DC",
+          "value_raw": "≥115 dB",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Normal-Mode Rejection",
+          "name_vi": "Khả năng khử nhiễu chế độ thường",
+          "value_raw": ">80 dB at 50 and 60 Hz",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CPI Interface",
+          "name_vi": "Giao tiếp CPI",
+          "value_raw": "RJ45 interface",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "USB Interface",
+          "name_vi": "Giao tiếp USB",
+          "value_raw": "USB micro-B, USB 2.0 full-speed, 12 Mbps",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "Renesas RX63N, 32-bit with hardware FPU, 96 MHz",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Memory",
+          "name_vi": "Bộ nhớ",
+          "value_raw": "2 MB SRAM",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Supply Voltage",
+          "name_vi": "Điện áp nguồn cấp",
+          "value_raw": "9.6 to 32 VDC",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Current Drain – Sleep",
+          "name_vi": "Dòng tiêu thụ điển hình – Sleep",
+          "value_raw": "5 mA",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Current Drain – Active",
+          "name_vi": "Dòng tiêu thụ điển hình – Active",
+          "value_raw": "30 mA",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default CPI Address",
+          "name_vi": "Địa chỉ CPI mặc định",
+          "value_raw": "1",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Allowable CPI Address Range",
+          "name_vi": "Dải địa chỉ CPI cho phép",
+          "value_raw": "1 to 120",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Data Loggers",
+          "name_vi": "Bộ ghi dữ liệu tương thích",
+          "value_raw": "GRANITE 10, GRANITE 9, GRANITE 6, CR6, CR1000X",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CPI Cable",
+          "name_vi": "Cáp CPI",
+          "value_raw": "CAT5e or better RJ45 cable",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Earth Ground Wire",
+          "name_vi": "Dây nối đất",
+          "value_raw": "14 AWG minimum recommended",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "20.3 × 12.7 × 5.1 cm (8.0 × 5.0 × 2.0 in)",
+          "source_rows": [
+            39
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": "TEMP120-XD_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12081",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_TEMP120_XD",
+        "variant_count": 2,
+        "source_files": [
+          "TEMP120_Output.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_TEMP120_SD",
+          "model": "TEMP120-SD",
+          "product_name_en": "TEMP 120 Standard Duty (SD)",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Product Variant",
+              "name_vi": "Phiên bản sản phẩm",
+              "value_raw": "Standard Duty (SD)",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-40 to +70 °C",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Internal Cold Junction Accuracy – Maximum",
+              "name_vi": "Độ chính xác mối nối lạnh nội – tối đa",
+              "value_raw": "±0.28 °C maximum (-40 to +70 °C)",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Total Measurement Accuracy – Static Environment – Maximum",
+              "name_vi": "Độ chính xác tổng – môi trường tĩnh – tối đa",
+              "value_raw": "±0.8 °C maximum (-40 to +70 °C)",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Measurement Performance Verification",
+              "name_vi": "Xác minh hiệu năng đo",
+              "value_raw": "Engineering design; verified in a laboratory environment",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Calibration Certificate",
+              "name_vi": "Chứng chỉ hiệu chuẩn",
+              "value_raw": "Not included",
+              "source_rows": [
+                18
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Instrument Data Report",
+              "name_vi": "Báo cáo dữ liệu thiết bị",
+              "value_raw": "Not included",
+              "source_rows": [
+                19
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": null,
+            "user_manual": "TEMP120-XD_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12081",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TEMP120_Output.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "product_name_en": "TEMP 120 Extended Duty (XD)",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Product Variant",
+              "name_vi": "Phiên bản sản phẩm",
+              "value_raw": "Extended Duty (XD)",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Operating Temperature Range",
+              "name_vi": "Dải nhiệt độ hoạt động",
+              "value_raw": "-55 to +85 °C",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Internal Cold Junction Accuracy – Maximum",
+              "name_vi": "Độ chính xác mối nối lạnh nội – tối đa",
+              "value_raw": "±0.36 °C maximum (-55 to +85 °C)",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Total Measurement Accuracy – Static Environment – Maximum",
+              "name_vi": "Độ chính xác tổng – môi trường tĩnh – tối đa",
+              "value_raw": "±1.0 °C maximum (-55 to +85 °C)",
+              "source_rows": [
+                15
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Measurement Performance Verification",
+              "name_vi": "Xác minh hiệu năng đo",
+              "value_raw": "Engineering design; verified over the full product temperature range",
+              "source_rows": [
+                17
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Calibration Certificate",
+              "name_vi": "Chứng chỉ hiệu chuẩn",
+              "value_raw": "Included",
+              "source_rows": [
+                18
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Instrument Data Report",
+              "name_vi": "Báo cáo dữ liệu thiết bị",
+              "value_raw": "Included",
+              "source_rows": [
+                19
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": null,
+            "user_manual": "TEMP120-XD_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12081",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TEMP120_Output.json",
+            "product_index": 1
+          }
+        }
+      ]
+    }
+  ]
+}

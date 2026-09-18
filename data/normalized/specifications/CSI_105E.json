@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_105E",
+  "model": "105E",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_105E.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_105E.json#0",
+    "raw_product_id": "CSI_105E",
+    "raw_model": "105E"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_105E",
+      "model": "105E",
+      "product_name_en": "Type E Thermocouple Burial Probe",
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_105E",
+      "section": "General Specifications",
+      "name_raw": "Type",
+      "value_raw": "Chromel-Constantan",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_105E.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "type"
+    },
+    {
+      "product_id": "CSI_105E",
+      "section": "General Specifications",
+      "name_raw": "Typical Output",
+      "value_raw": "60 µV/°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_105E.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "typical_output"
+    },
+    {
+      "product_id": "CSI_105E",
+      "section": "General Specifications",
+      "name_raw": "Accuracy",
+      "value_raw": "Refer to the Thermocouple Measurement section in the data logger manual",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_105E.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "accuracy"
+    },
+    {
+      "product_id": "CSI_105E",
+      "section": "General Specifications",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-55°C to +125°C, limited by the TPE outer jacket",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_105E.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_105E",
+      "section": "General Specifications",
+      "name_raw": "Probe Diameter",
+      "value_raw": "0.8 cm (0.3 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.8,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.3,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_105E.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "probe_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_105E",
+      "section": "General Specifications",
+      "name_raw": "Plug Dimensions",
+      "value_raw": "1.8 × 3.3 × 1.0 cm (0.7 × 1.3 × 0.4 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_105E.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "plug_dimensions"
+    },
+    {
+      "product_id": "CSI_105E",
+      "section": "General Specifications",
+      "name_raw": "Weight",
+      "value_raw": "90 g (0.2 lb) with 3.05 m (10 ft) cable",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 90,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.2,
+          "unit": "lb"
+        },
+        "condition": "with 3.05 m (10 ft) cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_105E.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    }
+  ]
+}

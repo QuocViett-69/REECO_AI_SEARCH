@@ -9,10 +9,84 @@
     "raw_product_id": "CSI_CELL205_AT",
     "raw_model": "CELL205-AT"
   },
+  "variants": [
+    {
+      "product_id": "CSI_CELL205_AT",
+      "model": "CELL205-AT",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for AT&T North America"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL205_IT1A",
+      "model": "CELL205-IT1A",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for International 1A"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL205_IT1B",
+      "model": "CELL205-IT1B",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Option",
+          "value_raw": "Provisioned for International 1B"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Status",
+          "value_raw": "Provisioned"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CELL205_NP",
+      "model": "CELL205-NP",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Option",
+          "value_raw": "Not Provisioned"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Provisioning Status",
+          "value_raw": "Not Provisioned"
+        }
+      ]
+    }
+  ],
   "specifications": [
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Product Series",
       "value_raw": "CELL200 Series",
       "type": "text",
@@ -29,7 +103,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Product Model",
       "value_raw": "CELL205",
       "type": "text",
@@ -46,7 +120,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Product Type",
       "value_raw": "4G LTE cellular device",
       "type": "text",
@@ -63,7 +137,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Network Technology",
       "value_raw": "4G LTE CAT-1 with automatic fallback to 3G",
       "type": "text",
@@ -80,7 +154,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Transmission Distance or Area",
       "value_raw": "Dependent upon antenna used and LTE, WCDMA, GSM EDGE, and GSM GPRS coverage",
       "type": "text",
@@ -98,7 +172,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Certifications",
       "value_raw": "IC (Industry Canada) 10224A-201611EC21A",
       "type": "text",
@@ -115,7 +189,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Host Interface",
       "value_raw": "CS I/O communications port, DB9 male; RS-232 serial port, DB9 female; USB version 2.0 with micro-B connector",
       "type": "protocol",
@@ -147,7 +221,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "RF Connectors",
       "value_raw": "2 SMA antenna connectors, primary and diversity",
       "type": "text",
@@ -164,7 +238,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Operating Temperature Range",
       "value_raw": "-40°C to +80°C",
       "type": "range",
@@ -188,7 +262,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "SIM Interface",
       "value_raw": "3FF, 6 position/contacts; supports SIMs requiring 1.8 or 3 Vdc",
       "type": "text",
@@ -205,7 +279,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Service Requirements",
       "value_raw": "Network coverage at the data logger site and cellular data service plan",
       "type": "text",
@@ -222,7 +296,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Dimensions",
       "value_raw": "13.46 × 8.1 × 2.86 cm (5.3 × 3.19 × 1.13 in.)",
       "type": "text",
@@ -239,7 +313,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Weight",
       "value_raw": "215.5 g (7.6 oz)",
       "type": "number",
@@ -266,7 +340,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Carrier Approval",
       "value_raw": "AT&T, T-Mobile USA, Rogers, Bell, Telus",
       "type": "text",
@@ -283,7 +357,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "LTE Bands",
       "value_raw": "1900 (B2), AWS (B4), 700 (B12)",
       "type": "text",
@@ -300,7 +374,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "WCDMA Bands",
       "value_raw": "1900 (B2), AWS (B4), 850 (B5)",
       "type": "text",
@@ -317,7 +391,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "LTE Download Speed",
       "value_raw": "Max 10 Mbps",
       "type": "text",
@@ -335,7 +409,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "LTE Upload Speed",
       "value_raw": "Max 5 Mbps",
       "type": "text",
@@ -353,7 +427,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "WCDMA Download Speed",
       "value_raw": "Max 384 Kbps",
       "type": "text",
@@ -371,7 +445,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "WCDMA Upload Speed",
       "value_raw": "Max 384 Kbps",
       "type": "text",
@@ -389,7 +463,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "GSM EDGE Upload Speed",
       "value_raw": "Max 236.8 Kbps",
       "type": "text",
@@ -407,7 +481,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "GSM EDGE Download Speed",
       "value_raw": "Max 296 Kbps",
       "type": "text",
@@ -425,7 +499,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "GSM GPRS Download Speed",
       "value_raw": "Max 107 Kbps",
       "type": "text",
@@ -443,7 +517,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "GSM GPRS Upload Speed",
       "value_raw": "Max 85.6 Kbps",
       "type": "text",
@@ -461,7 +535,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "RS-232 or CS I/O",
       "value_raw": "9600 bps to 460.8 kbps",
       "type": "range",
@@ -489,7 +563,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Low Power Mode",
       "value_raw": "300 µA",
       "type": "number",
@@ -512,7 +586,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Idle Current",
       "value_raw": "14 mA",
       "type": "number",
@@ -535,7 +609,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Active Current",
       "value_raw": "39 mA",
       "type": "number",
@@ -558,7 +632,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Output Power",
       "value_raw": "24 dBm on UMTS; 23 dBm on LTE; 27 dBm on EDGE; 33 dBm on GSM",
       "type": "text",
@@ -576,7 +650,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Sensitivity Range",
       "value_raw": "-99.5 to 110.5 dBm (10 M)",
       "type": "text",
@@ -593,7 +667,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Provisioning Option",
       "value_raw": "Provisioned for AT&T North America",
       "type": "text",
@@ -610,7 +684,7 @@
     },
     {
       "product_id": "CSI_CELL205_AT",
-      "section": null,
+      "section": "General Specifications",
       "name_raw": "Provisioning Status",
       "value_raw": "Provisioned",
       "type": "text",
@@ -624,23 +698,6 @@
         ]
       },
       "canonical_key": "provisioning_status"
-    },
-    {
-      "product_id": "CSI_CELL205_AT",
-      "section": null,
-      "name_raw": "Ships As",
-      "value_raw": null,
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/Cell205.json",
-        "product_index": 0,
-        "spec_index": 32,
-        "source_rows": [
-          34
-        ]
-      },
-      "canonical_key": "ships_as"
     }
   ]
 }

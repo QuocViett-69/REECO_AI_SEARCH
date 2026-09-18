@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "source": {
     "file": "CR350_Master_Specifications.xlsx",
     "sheet": "CR350_Master_Spec"
@@ -9,35 +9,17 @@
       "product_id": "CSI_CR350_NA",
       "manufacturer": "Campbell Scientific",
       "model": "CR350-NA",
-      "product_name_en": null,
+      "product_name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
       "identity_source": {
         "model": "worksheet",
         "product_name_en": "manual_review"
       },
       "taxonomy": {
-        "category": null,
-        "subcategory": null,
-        "device_type": null
+        "category": "Measurement Devices",
+        "subcategory": "Data Loggers",
+        "device_type": "Data Logger"
       },
       "specifications": [
-        {
-          "section": "CONFIGURATION",
-          "name_en": "Variant Code Suffix",
-          "name_vi": "Hậu tố mã cấu hình",
-          "value_raw": "NA",
-          "source_rows": [
-            3
-          ]
-        },
-        {
-          "section": "CONFIGURATION",
-          "name_en": "Communication Family",
-          "name_vi": "Nhóm truyền thông",
-          "value_raw": "NA",
-          "source_rows": [
-            4
-          ]
-        },
         {
           "section": "CONFIGURATION",
           "name_en": "Configuration Description",
@@ -300,7 +282,7 @@
       "media": {
         "product_images": [
           {
-            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13645",
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
             "source": "user_provided"
           }
         ]
@@ -308,9 +290,3924 @@
       "validation": {
         "status": "needs_review",
         "warnings": [
-          "Product name was not found explicitly in the worksheet or supplied Product Master."
+          "Product name was not found explicitly in the worksheet."
         ]
-      }
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_CR350_NA",
+        "variant_count": 27,
+        "source_files": [
+          "CR350_Master_Specifications_Output (2).json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "product_name_en": null,
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "No Additional Coms",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL205_NP",
+          "model": "CR350-CELL205-NP",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "NP",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL205",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL205 option is not compatible with a Verizon cellular network.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Certifications",
+              "name_vi": "Chứng nhận",
+              "value_raw": "IC (Industry Canada) 10224A-201611EC21A",
+              "source_rows": [
+                54
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "850, 1700/2100 (AWS), and 1900 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "EDGE: 27 dBm | GSM: 33 dBm | LTE: 23 dBm | UMTS: 24 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 1
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL205_AT",
+          "model": "CR350-CELL205-AT",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "AT",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL205",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "w/4G LTE CAT1 ATT Provisioned for AT&T North America",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL205 option is not compatible with a Verizon cellular network.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Certifications",
+              "name_vi": "Chứng nhận",
+              "value_raw": "IC (Industry Canada) 10224A-201611EC21A",
+              "source_rows": [
+                54
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "850, 1700/2100 (AWS), and 1900 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "EDGE: 27 dBm | GSM: 33 dBm | LTE: 23 dBm | UMTS: 24 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 2
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL205_BC",
+          "model": "CR350-CELL205-BC",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "BC",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL205",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL205 option is not compatible with a Verizon cellular network.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Certifications",
+              "name_vi": "Chứng nhận",
+              "value_raw": "IC (Industry Canada) 10224A-201611EC21A",
+              "source_rows": [
+                54
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "850, 1700/2100 (AWS), and 1900 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "EDGE: 27 dBm | GSM: 33 dBm | LTE: 23 dBm | UMTS: 24 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 3
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL205_IT1A",
+          "model": "CR350-CELL205-IT1A",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "IT1A",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL205",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL205 option is not compatible with a Verizon cellular network.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Certifications",
+              "name_vi": "Chứng nhận",
+              "value_raw": "IC (Industry Canada) 10224A-201611EC21A",
+              "source_rows": [
+                54
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "850, 1700/2100 (AWS), and 1900 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "EDGE: 27 dBm | GSM: 33 dBm | LTE: 23 dBm | UMTS: 24 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 4
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL205_IT1B",
+          "model": "CR350-CELL205-IT1B",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "IT1B",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL205",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL205 option is not compatible with a Verizon cellular network.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Certifications",
+              "name_vi": "Chứng nhận",
+              "value_raw": "IC (Industry Canada) 10224A-201611EC21A",
+              "source_rows": [
+                54
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "850, 1700/2100 (AWS), and 1900 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "700, 850, 1700/2100 (AWS-1), and 1900 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "EDGE: 27 dBm | GSM: 33 dBm | LTE: 23 dBm | UMTS: 24 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 5
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL210",
+          "model": "CR350-CELL210",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL210",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL210 option is only compatible with a Verizon cellular network.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "700, 850, 1700, 1900, and 2100 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Low Power Mode",
+              "name_vi": "Mức tiêu thụ điện - Chế độ công suất thấp",
+              "value_raw": "5 mA",
+              "source_rows": [
+                61
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "28 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "90 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 6
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL210_V",
+          "model": "CR350-CELL210-V",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "V",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL210",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "w/4G LTE CAT1 VZW Provisioned for Verizon US",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL210 option is only compatible with a Verizon cellular network.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "700, 850, 1700, 1900, and 2100 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Low Power Mode",
+              "name_vi": "Mức tiêu thụ điện - Chế độ công suất thấp",
+              "value_raw": "5 mA",
+              "source_rows": [
+                61
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "28 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "90 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 7
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL210_VS",
+          "model": "CR350-CELL210-VS",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "VS",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL210",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "4G LTE CAT1 VZW Provisioned for Verizon US Static IP",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL210 option is only compatible with a Verizon cellular network.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "700, 850, 1700, 1900, and 2100 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Low Power Mode",
+              "name_vi": "Mức tiêu thụ điện - Chế độ công suất thấp",
+              "value_raw": "5 mA",
+              "source_rows": [
+                61
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "28 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "90 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 8
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL215_NP",
+          "model": "CR350-CELL215-NP",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "NP",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL215",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "w/CELL215 w/CAT1 for EMEA No Provisioning",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL215 option is intended for use in EMEA countries.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+) | 2G (GSM/GPRS/EDGE)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "2G Frequency Bands",
+              "name_vi": "Băng tần 2G",
+              "value_raw": "900 and 1800 MHz",
+              "source_rows": [
+                56
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "850, 900, and 2100 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "800, 850, 900, 1800, 2100, and 2600 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "EDGE: 27 dBm | UMTS: 24 dBm | GSM: 33 dBm | LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 9
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL215_IT1A",
+          "model": "CR350-CELL215-IT1A",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "IT1A",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL215",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL215 option is intended for use in EMEA countries.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+) | 2G (GSM/GPRS/EDGE)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "2G Frequency Bands",
+              "name_vi": "Băng tần 2G",
+              "value_raw": "900 and 1800 MHz",
+              "source_rows": [
+                56
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "850, 900, and 2100 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "800, 850, 900, 1800, 2100, and 2600 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "EDGE: 27 dBm | UMTS: 24 dBm | GSM: 33 dBm | LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 10
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL215_IT1B",
+          "model": "CR350-CELL215-IT1B",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "IT1B",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL215",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL215 option is intended for use in EMEA countries.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+) | 2G (GSM/GPRS/EDGE)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "2G Frequency Bands",
+              "name_vi": "Băng tần 2G",
+              "value_raw": "900 and 1800 MHz",
+              "source_rows": [
+                56
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "850, 900, and 2100 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "800, 850, 900, 1800, 2100, and 2600 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "EDGE: 27 dBm | UMTS: 24 dBm | GSM: 33 dBm | LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 11
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL220_NP",
+          "model": "CR350-CELL220-NP",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "NP",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL220",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "w/4G LTE CAT1 Telstra for Australia/NZ No Provisioning",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL220 option is intended for use in Australia and New Zealand.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "EC-21AUT: 850 and 2100 MHz | EC-21AU: 850, 900, 1900, and 2100 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "EC-21AUT: 700, 850, 1800, 2100, and 2600 MHz | EC-21AU: 700, 900, 1700, 1800, 1900, 2100, and 2600 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "UMTS: 24 dBm | LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 12
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL220_IT1A",
+          "model": "CR350-CELL220-IT1A",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "IT1A",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL220",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL220 option is intended for use in Australia and New Zealand.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "EC-21AUT: 850 and 2100 MHz | EC-21AU: 850, 900, 1900, and 2100 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "EC-21AUT: 700, 850, 1800, 2100, and 2600 MHz | EC-21AU: 700, 900, 1700, 1800, 1900, 2100, and 2600 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "UMTS: 24 dBm | LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 13
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL220_IT1B",
+          "model": "CR350-CELL220-IT1B",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "IT1B",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL220",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL220 option is intended for use in Australia and New Zealand.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1) | 3G (UMTS/HSPA+)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "3G Frequency Bands",
+              "name_vi": "Băng tần 3G",
+              "value_raw": "EC-21AUT: 850 and 2100 MHz | EC-21AU: 850, 900, 1900, and 2100 MHz",
+              "source_rows": [
+                57
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "EC-21AUT: 700, 850, 1800, 2100, and 2600 MHz | EC-21AU: 700, 900, 1700, 1800, 1900, 2100, and 2600 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "UMTS: 24 dBm | LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 14
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL225_NP",
+          "model": "CR350-CELL225-NP",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "NP",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL225",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL225 option is intended for use in Japan.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 15
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL225_IT1A",
+          "model": "CR350-CELL225-IT1A",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "IT1A",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL225",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL225 option is intended for use in Japan.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 16
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL225_IT1B",
+          "model": "CR350-CELL225-IT1B",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "IT1B",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL225",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Option Note",
+              "name_vi": "Ghi chú tùy chọn",
+              "value_raw": "The CR350-CELL225 option is intended for use in Japan.",
+              "source_rows": [
+                53
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "4G (LTE CAT-1)",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "4G Frequency Bands",
+              "name_vi": "Băng tần 4G",
+              "value_raw": "800 (lower), 800 (upper), 850+, 900, 1800, and 2100 MHz",
+              "source_rows": [
+                58
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "14 mA (average)",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "75 mA (average)",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Output Power",
+              "name_vi": "Công suất đầu ra radio",
+              "value_raw": "LTE: 23 dBm",
+              "source_rows": [
+                65
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Radio Sensitivity Range",
+              "name_vi": "Dải độ nhạy radio",
+              "value_raw": "-99.5 to 110.5 dBm (10 M)",
+              "source_rows": [
+                66
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 17
+          }
+        },
+        {
+          "product_id": "CSI_CR350_CELL230_NP",
+          "model": "CR350-CELL230-NP",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "NP",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "CELL230",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "w/4G CAT M1 NB-IoT No Provisioning",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Cell Technologies",
+              "name_vi": "Công nghệ mạng di động",
+              "value_raw": "LTE-Cat M | NB-IoT",
+              "source_rows": [
+                55
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Frequency Bands",
+              "name_vi": "Băng tần",
+              "value_raw": "LTE M: B1/B2/B3/B4/B5/B8/B12/B13/B18/B19/B20/B25/B26/B27/B28/B66/B85 | LTE NB-IoT: B1/B2/B3/B4/B5/B8/B12/B13/B18/B19/B20/B25/B28/B66/B71/B85",
+              "source_rows": [
+                59
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "SMA | External antenna required",
+              "source_rows": [
+                60
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Idle",
+              "name_vi": "Mức tiêu thụ điện - Nghỉ",
+              "value_raw": "GPS off: 23 mA average | GPS on: 26 mA average",
+              "source_rows": [
+                62
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "Power Consumption - Active",
+              "name_vi": "Mức tiêu thụ điện - Hoạt động",
+              "value_raw": "GPS off: 50 mA average | GPS on: 53 mA average",
+              "source_rows": [
+                63
+              ]
+            },
+            {
+              "section": "CELLULAR OPTION SPECIFICATIONS",
+              "name_en": "SIM Interface",
+              "name_vi": "Giao diện SIM",
+              "value_raw": "3FF (6 position/contacts) | Supports SIMs that require 1.8 or 3 V",
+              "source_rows": [
+                64
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 18
+          }
+        },
+        {
+          "product_id": "CSI_CR350_RF407",
+          "model": "CR350-RF407",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "RF407",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "RF407",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "w/900MHZ Radio",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Radio Type",
+              "name_vi": "Loại radio",
+              "value_raw": "Frequency Hopping Spread Spectrum (FHSS)",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Output Power",
+              "name_vi": "Công suất phát",
+              "value_raw": "5 to 250 mW (user-selectable)",
+              "source_rows": [
+                39
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Frequency",
+              "name_vi": "Tần số",
+              "value_raw": "902 to 928 MHz (US, Canada)",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "RF Data Rate",
+              "name_vi": "Tốc độ dữ liệu RF",
+              "value_raw": "200 kbps",
+              "source_rows": [
+                41
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Receive Sensitivity",
+              "name_vi": "Độ nhạy thu",
+              "value_raw": "-101 dBm",
+              "source_rows": [
+                42
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "RPSMA | External antenna required",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "12 mA (@ 12 Vdc)",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "< 80 mA (@ 12 Vdc)",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 19
+          }
+        },
+        {
+          "product_id": "CSI_CR350_RF412",
+          "model": "CR350-RF412",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "RF412",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "RF412",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Radio Type",
+              "name_vi": "Loại radio",
+              "value_raw": "Frequency Hopping Spread Spectrum (FHSS)",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Output Power",
+              "name_vi": "Công suất phát",
+              "value_raw": "5 to 250 mW (user-selectable)",
+              "source_rows": [
+                39
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Frequency",
+              "name_vi": "Tần số",
+              "value_raw": "915 to 928 MHz (Australia, New Zealand)",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "RF Data Rate",
+              "name_vi": "Tốc độ dữ liệu RF",
+              "value_raw": "200 kbps",
+              "source_rows": [
+                41
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Receive Sensitivity",
+              "name_vi": "Độ nhạy thu",
+              "value_raw": "-101 dBm",
+              "source_rows": [
+                42
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "RPSMA | External antenna required",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "12 mA (@ 12 Vdc)",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "< 80 mA (@ 12 Vdc)",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 20
+          }
+        },
+        {
+          "product_id": "CSI_CR350_RF422",
+          "model": "CR350-RF422",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "RF422",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "RF422",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Radio Type",
+              "name_vi": "Loại radio",
+              "value_raw": "868 MHz SRD 860 with Listen Before Talk (LBT) and Automatic Frequency Agility (AFA)",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Output Power",
+              "name_vi": "Công suất phát",
+              "value_raw": "2 to 25 mW (user-selectable)",
+              "source_rows": [
+                39
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Frequency",
+              "name_vi": "Tần số",
+              "value_raw": "863 to 870 MHz (European Union)",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "RF Data Rate",
+              "name_vi": "Tốc độ dữ liệu RF",
+              "value_raw": "10 kbps",
+              "source_rows": [
+                41
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Receive Sensitivity",
+              "name_vi": "Độ nhạy thu",
+              "value_raw": "-106 dBm",
+              "source_rows": [
+                42
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "RPSMA | External antenna required",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "9.5 mA",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "20 mA",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 21
+          }
+        },
+        {
+          "product_id": "CSI_CR350_RF427",
+          "model": "CR350-RF427",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "RF427",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "RF427",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Radio Type",
+              "name_vi": "Loại radio",
+              "value_raw": "Frequency Hopping Spread Spectrum (FHSS)",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Output Power",
+              "name_vi": "Công suất phát",
+              "value_raw": "5 to 250 mW (user-selectable)",
+              "source_rows": [
+                39
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Frequency",
+              "name_vi": "Tần số",
+              "value_raw": "902 to 907.5 MHz | 915 to 928 MHz (Brazil)",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "RF Data Rate",
+              "name_vi": "Tốc độ dữ liệu RF",
+              "value_raw": "200 kbps",
+              "source_rows": [
+                41
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Receive Sensitivity",
+              "name_vi": "Độ nhạy thu",
+              "value_raw": "-101 dBm",
+              "source_rows": [
+                42
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "RPSMA | External antenna required",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "12 mA (@ 12 Vdc)",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "< 80 mA (@ 12 Vdc)",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 22
+          }
+        },
+        {
+          "product_id": "CSI_CR350_RF452_NA",
+          "model": "CR350-RF452-NA",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "RF452",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "w/1W 900MHz Radio for use in US/Canada",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Radio Type",
+              "name_vi": "Loại radio",
+              "value_raw": "Frequency Hopping Spread Spectrum (FHSS)",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Output Power",
+              "name_vi": "Công suất phát",
+              "value_raw": "10 mW to 1,000 mW (user-selectable)",
+              "source_rows": [
+                39
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Frequency",
+              "name_vi": "Tần số",
+              "value_raw": "902 to 928 MHz",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "RF Data Rate",
+              "name_vi": "Tốc độ dữ liệu RF",
+              "value_raw": "115.2 or 153.6 kbps",
+              "source_rows": [
+                41
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Receive Sensitivity",
+              "name_vi": "Độ nhạy thu",
+              "value_raw": "115.2 kbps at 10^-4 BER: -108 dBm | 153.6 kbps at 10^-4 BER: -103 dBm",
+              "source_rows": [
+                42
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "RPSMA | External antenna required",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "< 29 mA (maximum @ 12 Vdc)",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "< 84 mA (maximum @ 12 Vdc)",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 23
+          }
+        },
+        {
+          "product_id": "CSI_CR350_RF452_A",
+          "model": "CR350-RF452-A",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "A",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "RF452",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Radio Type",
+              "name_vi": "Loại radio",
+              "value_raw": "Frequency Hopping Spread Spectrum (FHSS)",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Output Power",
+              "name_vi": "Công suất phát",
+              "value_raw": "10 mW to 1,000 mW (user-selectable)",
+              "source_rows": [
+                39
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Frequency",
+              "name_vi": "Tần số",
+              "value_raw": "902 to 928 MHz",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "RF Data Rate",
+              "name_vi": "Tốc độ dữ liệu RF",
+              "value_raw": "115.2 or 153.6 kbps",
+              "source_rows": [
+                41
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Receive Sensitivity",
+              "name_vi": "Độ nhạy thu",
+              "value_raw": "115.2 kbps at 10^-4 BER: -108 dBm | 153.6 kbps at 10^-4 BER: -103 dBm",
+              "source_rows": [
+                42
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "RPSMA | External antenna required",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "< 29 mA (maximum @ 12 Vdc)",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "< 84 mA (maximum @ 12 Vdc)",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 24
+          }
+        },
+        {
+          "product_id": "CSI_CR350_RF452_NZ",
+          "model": "CR350-RF452-NZ",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "NZ",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "RF452",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Radio Type",
+              "name_vi": "Loại radio",
+              "value_raw": "Frequency Hopping Spread Spectrum (FHSS)",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Output Power",
+              "name_vi": "Công suất phát",
+              "value_raw": "10 mW to 1,000 mW (user-selectable)",
+              "source_rows": [
+                39
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Frequency",
+              "name_vi": "Tần số",
+              "value_raw": "902 to 928 MHz",
+              "source_rows": [
+                40
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "RF Data Rate",
+              "name_vi": "Tốc độ dữ liệu RF",
+              "value_raw": "115.2 or 153.6 kbps",
+              "source_rows": [
+                41
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Receive Sensitivity",
+              "name_vi": "Độ nhạy thu",
+              "value_raw": "115.2 kbps at 10^-4 BER: -108 dBm | 153.6 kbps at 10^-4 BER: -103 dBm",
+              "source_rows": [
+                42
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "RPSMA | External antenna required",
+              "source_rows": [
+                43
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "< 29 mA (maximum @ 12 Vdc)",
+              "source_rows": [
+                44
+              ]
+            },
+            {
+              "section": "RF RADIO OPTION SPECIFICATIONS",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "< 84 mA (maximum @ 12 Vdc)",
+              "source_rows": [
+                45
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 25
+          }
+        },
+        {
+          "product_id": "CSI_CR350_WIFI",
+          "model": "CR350-WIFI",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Variant Code Suffix",
+              "name_vi": "Hậu tố mã cấu hình",
+              "value_raw": "WIFI",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Communication Family",
+              "name_vi": "Nhóm truyền thông",
+              "value_raw": "WIFI",
+              "source_rows": [
+                4
+              ]
+            },
+            {
+              "section": "CONFIGURATION",
+              "name_en": "Configuration Description",
+              "name_vi": "Mô tả cấu hình",
+              "value_raw": "w/Wireless Modem",
+              "source_rows": [
+                5
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Idle Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi nghỉ",
+              "value_raw": "0.5 mA (@ 12 Vdc)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "POWER / CLOCK / MEMORY",
+              "name_en": "Active Current Drain, Average",
+              "name_vi": "Dòng tiêu thụ trung bình khi hoạt động",
+              "value_raw": "1 Hz scan with 1 analog measurement: < 1.5 mA @ 12 Vdc | Processor always on: 8 mA @ 12 Vdc",
+              "source_rows": [
+                29
+              ]
+            },
+            {
+              "section": "WI-FI OPTION SPECIFICATIONS",
+              "name_en": "Operational Modes",
+              "name_vi": "Chế độ hoạt động",
+              "value_raw": "Client or Access Point",
+              "source_rows": [
+                47
+              ]
+            },
+            {
+              "section": "WI-FI OPTION SPECIFICATIONS",
+              "name_en": "Operating Frequency",
+              "name_vi": "Tần số hoạt động",
+              "value_raw": "2.4 GHz, 20 MHz bandwidth",
+              "source_rows": [
+                48
+              ]
+            },
+            {
+              "section": "WI-FI OPTION SPECIFICATIONS",
+              "name_en": "Antenna Connector",
+              "name_vi": "Đầu nối ăng-ten",
+              "value_raw": "Reverse Polarity SMA (RPSMA)",
+              "source_rows": [
+                49
+              ]
+            },
+            {
+              "section": "WI-FI OPTION SPECIFICATIONS",
+              "name_en": "Antenna",
+              "name_vi": "Ăng-ten",
+              "value_raw": "pn 16005 unity gain (0 dBd) | 1/2 wave whip | Omnidirectional | Articulating knuckle joint for vertical or horizontal orientation",
+              "source_rows": [
+                50
+              ]
+            },
+            {
+              "section": "WI-FI OPTION SPECIFICATIONS",
+              "name_en": "Transmit Power",
+              "name_vi": "Công suất phát",
+              "value_raw": "7 to 18 dBm (5 to 63 mW)",
+              "source_rows": [
+                51
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cr350.pdf",
+            "user_manual": "cr350man.pdf",
+            "order_form": "https://www.campbellsci.com/products/cr350"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 26
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "105E.json",
+        "original_source": {
+          "file": "105EType E Thermocouple Burial Probe.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_105E",
+      "manufacturer": "Campbell Scientific",
+      "model": "105E",
+      "product_name_en": "Type E Thermocouple Burial Probe",
+      "identity_source": {
+        "model": "filename",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Temperature Sensors (Air/Soil/Water)",
+        "device_type": "Soil Temperature Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Type",
+          "name_vi": "Loại",
+          "value_raw": "Chromel-Constantan",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Typical Output",
+          "name_vi": "Đầu ra điển hình",
+          "value_raw": "60 µV/°C",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "Refer to the Thermocouple Measurement section in the data logger manual",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-55°C to +125°C, limited by the TPE outer jacket",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Probe Diameter",
+          "name_vi": "Đường kính đầu dò",
+          "value_raw": "0.8 cm (0.3 in.)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Plug Dimensions",
+          "name_vi": "Kích thước đầu cắm",
+          "value_raw": "1.8 × 3.3 × 1.0 cm (0.7 × 1.3 × 0.4 in.)",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "90 g (0.2 lb) with 3.05 m (10 ft) cable",
+          "source_rows": [
+            8
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "105E Type E Thermocouple Burial Probe.pdf",
+        "user_manual": null,
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/321",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Model was taken from filename because no explicit Model field was found in the worksheet.",
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_105E",
+        "variant_count": 1,
+        "source_files": [
+          "105E.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_105E",
+          "model": "105E",
+          "product_name_en": "Type E Thermocouple Burial Probe",
+          "is_representative": true,
+          "distinguishing_specifications": [],
+          "documents": {
+            "product_url": null,
+            "datasheet": "105E Type E Thermocouple Burial Probe.pdf",
+            "user_manual": null,
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/321",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "105E.json",
+            "product_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

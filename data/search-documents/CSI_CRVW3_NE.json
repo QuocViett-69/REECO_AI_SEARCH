@@ -1,0 +1,516 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CRVW3_NE",
+  "model": "CRVW3-NE",
+  "name_en": "CRVW3 Vibrating-Wire Data Logger",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Vibrating Wire Measurement Modules",
+    "subcategory_key": "vibrating_wire_measurement_modules",
+    "device_type": "Vibrating Wire Data Logger",
+    "device_type_key": "vibrating_wire_data_logger"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ"
+    }
+  ],
+  "supported_protocols": [
+    "USB"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CRVW3-NE",
+    "CSI_CRVW3_NE",
+    "CRVW3 Vibrating-Wire Data Logger",
+    "CRVW3-NE-RF407",
+    "CRVW3-NE-RF412",
+    "CRVW3-NE-RF422",
+    "CRVW3-NE-RF427",
+    "CRVW3-NE-RF452"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CRVW3_NE",
+      "model": "CRVW3-NE",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CRVW3-NE"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | NA No Additional Coms"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "value_raw": "Without enclosure"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "32145 | 43376"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Software configurable | No programming required"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data"
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "value_raw": "CE approved"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF407",
+      "model": "CRVW3-NE-RF407",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CRVW3-NE"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "value_raw": "RF407"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/900MHz Radio"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "value_raw": "Without enclosure"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "32147 | 43376"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Software configurable | No programming required"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data"
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "value_raw": "Output power: 5 to 250 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "value_raw": "Devices with the -RF407 option can be set up as a radio repeater"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "value_raw": "US | Canada"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "value_raw": "RCPDIXB15-0672-A2 (Mexico IF) | RCPDIXB15-0672-A2 (Mexico IF) | MCQ-XB900HP (United States FCC Part 15.247)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "value_raw": "Not CE approved"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF412",
+      "model": "CRVW3-NE-RF412",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CRVW3-NE"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "value_raw": "RF412"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/920MHz Radio for use in Australia/NZ"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "value_raw": "Without enclosure"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "32792 | 43376"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Software configurable | No programming required"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data"
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "value_raw": "Output power: 5 to 250 mW, user selectable | Frequency: 915 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "value_raw": "Devices with the -RF412 option can be set up as a radio repeater"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "value_raw": "Australia"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "value_raw": "ACMA RCM | 1846A-XB900HP (Industry Canada [IC]) | MCQ-XB900HP (United States FCC Part 15.247)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "value_raw": "Not CE approved"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF422",
+      "model": "CRVW3-NE-RF422",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CRVW3-NE"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "value_raw": "RF422"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/868MHz Radio for use in EMEA"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "value_raw": "Without enclosure"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "32793 | 43376"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Software configurable | No programming required"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data"
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "value_raw": "Output power: 2 to 25 mW, user selectable | Frequency: 863 to 870 MHz | License-free band | Frequency hopping spread-spectrum radio"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "value_raw": "Europe | Some of Asia (ETSI)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "EU Conformity",
+          "value_raw": "EU Declaration of Conformity available in the Documents section of the product web page"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "value_raw": "CE approved"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF427",
+      "model": "CRVW3-NE-RF427",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CRVW3-NE"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "value_raw": "RF427"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/Radio for use in Brazil"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "value_raw": "Without enclosure"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "32702 | 43376"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Software configurable | No programming required"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data"
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "value_raw": "Output power: 5 to 250 mW, user selectable | Frequency: 905/920 MHz | License-free band | Frequency hopping spread-spectrum radio"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "value_raw": "Devices with the -RF427 option can be set up as a radio repeater"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "value_raw": "Brazil"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "value_raw": "08335-17-10644 Brazil (ANATEL standards in Resolution No. 506)"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "value_raw": "Not CE approved"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF452",
+      "model": "CRVW3-NE-RF452",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CRVW3-NE"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "value_raw": "RF452"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/1W 900MHz Radio"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "value_raw": "Without enclosure"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "value_raw": "40576 | 43376"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Software configurable | No programming required"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)"
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data"
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "value_raw": "Output power: 10 to 1,000 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "value_raw": "Devices with the -RF452 option can be set up as a radio repeater"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "value_raw": "US | Canada | Australia"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "value_raw": "KNYAMM0921TT (United States FCC ID) | 2329B-AMM0921TT (Canada [IC])"
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "value_raw": "Not CE approved"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [],
+  "search_keywords_en": [
+    "CRVW3-NE",
+    "CRVW3 Vibrating-Wire Data Logger",
+    "Measurement Devices",
+    "Vibrating Wire Measurement Modules",
+    "Vibrating Wire Data Logger",
+    "Temperature",
+    "temperature measurement",
+    "USB",
+    "Measure Temperature",
+    "CSI_CRVW3_NE"
+  ],
+  "search_keywords_vi": [
+    "CRVW3-NE",
+    "Thiết bị đo lường",
+    "Mô-đun đo dây rung",
+    "Bộ ghi dữ liệu dây rung",
+    "Nhiệt độ",
+    "USB",
+    "Đo nhiệt độ"
+  ],
+  "search_text_en": "CRVW3-NE | CRVW3 Vibrating-Wire Data Logger | CSI_CRVW3_NE | CRVW3-NE-RF407 | CRVW3-NE-RF412 | CRVW3-NE-RF422 | CRVW3-NE-RF427 | CRVW3-NE-RF452 | Measurement Devices | Vibrating Wire Measurement Modules | Vibrating Wire Data Logger | Temperature | Measure Temperature | USB | Base Model: CRVW3-NE | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | NA No Additional Coms | Enclosure Configuration: Without enclosure | Ships As: 32145 | 43376 | Configuration: Software configurable | No programming required | Measurement Excitation Options: 2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V) | Measurement Method: VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data | Measurement Method: Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1% | CE Approval: CE approved | Communication Option: RF407 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/900MHz Radio | Ships As: 32147 | 43376 | Internal Radio Description: Output power: 5 to 250 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF407 option can be set up as a radio repeater | Where Used: US | Canada | Compliance Information: RCPDIXB15-0672-A2 (Mexico IF) | RCPDIXB15-0672-A2 (Mexico IF) | MCQ-XB900HP (United States FCC Part 15.247) | CE Approval: Not CE approved | Communication Option: RF412 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/920MHz Radio for use in Australia/NZ | Ships As: 32792 | 43376 | Internal Radio Description: Output power: 5 to 250 mW, user selectable | Frequency: 915 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF412 option can be set up as a radio repeater | Where Used: Australia | Compliance Information: ACMA RCM | 1846A-XB900HP (Industry Canada [IC]) | MCQ-XB900HP (United States FCC Part 15.247) | Communication Option: RF422 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/868MHz Radio for use in EMEA | Ships As: 32793 | 43376 | Internal Radio Description: Output power: 2 to 25 mW, user selectable | Frequency: 863 to 870 MHz | License-free band | Frequency hopping spread-spectrum radio | Where Used: Europe | Some of Asia (ETSI) | EU Conformity: EU Declaration of Conformity available in the Documents section of the product web page | Communication Option: RF427 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/Radio for use in Brazil | Ships As: 32702 | 43376 | Internal Radio Description: Output power: 5 to 250 mW, user selectable | Frequency: 905/920 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF427 option can be set up as a radio repeater | Where Used: Brazil | Compliance Information: 08335-17-10644 Brazil (ANATEL standards in Resolution No. 506) | Communication Option: RF452 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/1W 900MHz Radio | Ships As: 40576 | 43376 | Internal Radio Description: Output power: 10 to 1,000 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF452 option can be set up as a radio repeater | Where Used: US | Canada | Australia | Compliance Information: KNYAMM0921TT (United States FCC ID) | 2329B-AMM0921TT (Canada [IC]) | temperature measurement",
+  "search_text_vi": "CRVW3-NE | CSI_CRVW3_NE | CRVW3 Vibrating-Wire Data Logger | CRVW3-NE-RF407 | CRVW3-NE-RF412 | CRVW3-NE-RF422 | CRVW3-NE-RF427 | CRVW3-NE-RF452 | Thiết bị đo lường | Mô-đun đo dây rung | Bộ ghi dữ liệu dây rung | Nhiệt độ | Đo nhiệt độ | USB | Base Model: CRVW3-NE | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | NA No Additional Coms | Enclosure Configuration: Without enclosure | Ships As: 32145 | 43376 | Configuration: Software configurable | No programming required | Measurement Excitation Options: 2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V) | Measurement Method: VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data | Measurement Method: Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1% | CE Approval: CE approved | Communication Option: RF407 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/900MHz Radio | Ships As: 32147 | 43376 | Internal Radio Description: Output power: 5 to 250 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF407 option can be set up as a radio repeater | Where Used: US | Canada | Compliance Information: RCPDIXB15-0672-A2 (Mexico IF) | RCPDIXB15-0672-A2 (Mexico IF) | MCQ-XB900HP (United States FCC Part 15.247) | CE Approval: Not CE approved | Communication Option: RF412 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/920MHz Radio for use in Australia/NZ | Ships As: 32792 | 43376 | Internal Radio Description: Output power: 5 to 250 mW, user selectable | Frequency: 915 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF412 option can be set up as a radio repeater | Where Used: Australia | Compliance Information: ACMA RCM | 1846A-XB900HP (Industry Canada [IC]) | MCQ-XB900HP (United States FCC Part 15.247) | Communication Option: RF422 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/868MHz Radio for use in EMEA | Ships As: 32793 | 43376 | Internal Radio Description: Output power: 2 to 25 mW, user selectable | Frequency: 863 to 870 MHz | License-free band | Frequency hopping spread-spectrum radio | Where Used: Europe | Some of Asia (ETSI) | EU Conformity: EU Declaration of Conformity available in the Documents section of the product web page | Communication Option: RF427 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/Radio for use in Brazil | Ships As: 32702 | 43376 | Internal Radio Description: Output power: 5 to 250 mW, user selectable | Frequency: 905/920 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF427 option can be set up as a radio repeater | Where Used: Brazil | Compliance Information: 08335-17-10644 Brazil (ANATEL standards in Resolution No. 506) | Communication Option: RF452 | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/1W 900MHz Radio | Ships As: 40576 | 43376 | Internal Radio Description: Output power: 10 to 1,000 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF452 option can be set up as a radio repeater | Where Used: US | Canada | Australia | Compliance Information: KNYAMM0921TT (United States FCC ID) | 2329B-AMM0921TT (Canada [IC])",
+  "search_text": "CRVW3-NE | CRVW3 Vibrating-Wire Data Logger | CSI_CRVW3_NE | CRVW3-NE-RF407 | CRVW3-NE-RF412 | CRVW3-NE-RF422 | CRVW3-NE-RF427 | CRVW3-NE-RF452 | Measurement Devices | Vibrating Wire Measurement Modules | Vibrating Wire Data Logger | Temperature | Measure Temperature | USB | Base Model: CRVW3-NE | Configuration Description: Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | NA No Additional Coms | Enclosure Configuration: Without enclosure | Ships As: 32145 | 43376 | Configuration: Software configurable | No programming required | Measurement Excitation Options: 2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V) | Measurement Method: VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data | Measurement Method: Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1% | CE Approval: CE approved | Communication Option: RF407 | w/900MHz Radio | Ships As: 32147 | Internal Radio Description: Output power: 5 to 250 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio | Radio Repeater: Devices with the -RF407 option can be set up as a radio repeater | Where Used: US | Canada | Compliance Information: RCPDIXB15-0672-A2 (Mexico IF) | RCPDIXB15-0672-A2 (Mexico IF) | MCQ-XB900HP (United States FCC Part 15.247) | CE Approval: Not CE approved | Communication Option: RF412 | w/920MHz Radio for use in Australia/NZ | Ships As: 32792 | Frequency: 915 to 928 MHz | Radio Repeater: Devices with the -RF412 option can be set up as a radio repeater | Where Used: Australia | Compliance Information: ACMA RCM | 1846A-XB900HP (Industry Canada [IC]) | Communication Option: RF422 | w/868MHz Radio for use in EMEA | Ships As: 32793 | Internal Radio Description: Output power: 2 to 25 mW, user selectable | Frequency: 863 to 870 MHz | Where Used: Europe | Some of Asia (ETSI) | EU Conformity: EU Declaration of Conformity available in the Documents section of the product web page | Communication Option: RF427 | w/Radio for use in Brazil | Ships As: 32702 | Frequency: 905/920 MHz | Radio Repeater: Devices with the -RF427 option can be set up as a radio repeater | Where Used: Brazil | Compliance Information: 08335-17-10644 Brazil (ANATEL standards in Resolution No. 506) | Communication Option: RF452 | w/1W 900MHz Radio | Ships As: 40576 | Internal Radio Description: Output power: 10 to 1,000 mW, user selectable | Radio Repeater: Devices with the -RF452 option can be set up as a radio repeater | Australia | Compliance Information: KNYAMM0921TT (United States FCC ID) | 2329B-AMM0921TT (Canada [IC]) | temperature measurement | Thiết bị đo lường | Mô-đun đo dây rung | Bộ ghi dữ liệu dây rung | Nhiệt độ | Đo nhiệt độ",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "c99bc8eb2029c3847a4857376ee6c966d9a91570e563a8fc8e5a22553d05da74"
+}

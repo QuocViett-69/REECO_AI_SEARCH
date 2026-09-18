@@ -6,12 +6,37 @@ import { z } from 'zod';
 
 const scriptsDirectory = path.dirname(fileURLToPath(import.meta.url));
 export const projectRoot = path.resolve(scriptsDirectory, '..', '..');
-const masterPath = path.join(projectRoot, 'data', 'master', 'product-master.json');
-const normalizedDirectory = path.join(projectRoot, 'data', 'normalized', 'specifications');
-const enrichedDirectory = path.join(projectRoot, 'data', 'enriched', 'products');
-const ontologyPath = path.join(projectRoot, 'data', 'ontology', 'semantic-vocabulary.json');
+const masterPath = path.join(
+  projectRoot,
+  'data',
+  'master',
+  'product-master.json',
+);
+const normalizedDirectory = path.join(
+  projectRoot,
+  'data',
+  'normalized',
+  'specifications',
+);
+const enrichedDirectory = path.join(
+  projectRoot,
+  'data',
+  'enriched',
+  'products',
+);
+const ontologyPath = path.join(
+  projectRoot,
+  'data',
+  'ontology',
+  'semantic-vocabulary.json',
+);
 const outputDirectory = path.join(projectRoot, 'data', 'search-documents');
-const reportPath = path.join(projectRoot, 'data', 'reports', 'search-document-report.json');
+const reportPath = path.join(
+  projectRoot,
+  'data',
+  'reports',
+  'search-document-report.json',
+);
 
 const SOURCE_VERSIONS = Object.freeze({
   product_master: '2.0',
@@ -21,9 +46,14 @@ const SOURCE_VERSIONS = Object.freeze({
 });
 const MAX_IMPORTANT_SPECIFICATIONS = 18;
 
-const readJson = async (filePath) => JSON.parse(await readFile(filePath, 'utf8'));
-const normalizeWhitespace = (value) => String(value ?? '').replace(/\s+/gu, ' ').trim();
-const caseKey = (value) => normalizeWhitespace(value).toLocaleLowerCase('en-US');
+const readJson = async (filePath) =>
+  JSON.parse(await readFile(filePath, 'utf8'));
+const normalizeWhitespace = (value) =>
+  String(value ?? '')
+    .replace(/\s+/gu, ' ')
+    .trim();
+const caseKey = (value) =>
+  normalizeWhitespace(value).toLocaleLowerCase('en-US');
 const uniqueStrings = (items) => {
   const seen = new Set();
   return items
@@ -62,7 +92,9 @@ const writeJsonIfChanged = async (filePath, value) => {
   return true;
 };
 const directoryFingerprint = async (directory) => {
-  const files = (await readdir(directory)).filter((file) => file.endsWith('.json')).sort();
+  const files = (await readdir(directory))
+    .filter((file) => file.endsWith('.json'))
+    .sort();
   const entries = [];
   for (const file of files) {
     const content = await readFile(path.join(directory, file), 'utf8');
@@ -98,7 +130,9 @@ const NormalizedValueSchema = z.discriminatedUnion('type', [
     value: z.number().finite(),
     unit: z.string().min(1).nullable(),
     qualifier: z.string().nullable(),
-    alternate: z.object({ value: z.number().finite(), unit: z.string().min(1) }).optional(),
+    alternate: z
+      .object({ value: z.number().finite(), unit: z.string().min(1) })
+      .optional(),
     condition: z.string().min(1).optional(),
     note: z.string().min(1).optional(),
   }),
@@ -107,20 +141,32 @@ const NormalizedValueSchema = z.discriminatedUnion('type', [
     min_value: z.number().finite().optional(),
     max_value: z.number().finite().optional(),
     unit: z.string().min(1).nullable().optional(),
-    min: z.object({ value: z.number().finite(), unit: z.string().min(1) }).optional(),
-    max: z.object({ value: z.number().finite(), unit: z.string().min(1) }).optional(),
+    min: z
+      .object({ value: z.number().finite(), unit: z.string().min(1) })
+      .optional(),
+    max: z
+      .object({ value: z.number().finite(), unit: z.string().min(1) })
+      .optional(),
     qualifier: z.string().nullable(),
-    alternate: z.object({
-      min_value: z.number().finite(),
-      max_value: z.number().finite(),
-      unit: z.string().min(1),
-    }).optional(),
+    alternate: z
+      .object({
+        min_value: z.number().finite(),
+        max_value: z.number().finite(),
+        unit: z.string().min(1),
+      })
+      .optional(),
     condition: z.string().min(1).optional(),
     note: z.string().min(1).optional(),
   }),
   z.object({ type: z.literal('boolean'), value: z.boolean() }),
-  z.object({ type: z.literal('protocol'), values: z.array(z.string().min(1)).min(1) }),
-  z.object({ type: z.literal('list'), values: z.array(z.string().min(1)).min(2) }),
+  z.object({
+    type: z.literal('protocol'),
+    values: z.array(z.string().min(1)).min(1),
+  }),
+  z.object({
+    type: z.literal('list'),
+    values: z.array(z.string().min(1)).min(2),
+  }),
 ]);
 const SearchDocumentSchema = z.object({
   schema_version: z.literal('1.0'),
@@ -142,13 +188,30 @@ const SearchDocumentSchema = z.object({
   supported_protocols: z.array(z.string().min(1)),
   unsupported_protocols: z.array(z.string().min(1)),
   aliases: z.array(z.string().min(1)),
-  important_specifications: z.array(z.object({
-    canonical_key: z.string().regex(/^[a-z0-9]+(?:_[a-z0-9]+)*$/u),
-    name: z.string().min(1),
-    quantity_kind: z.string().min(1).nullable(),
-    normalized_value: NormalizedValueSchema,
-    raw_ref: RawRefSchema,
-  })),
+  variants: z.array(
+    z.object({
+      product_id: z.string().min(1),
+      model: z.string().min(1),
+      product_name_en: z.string().min(1).nullable(),
+      is_representative: z.boolean(),
+      distinguishing_specifications: z.array(
+        z.object({
+          section: z.string().nullable(),
+          name_en: z.string().min(1),
+          value_raw: z.string(),
+        }),
+      ),
+    }),
+  ),
+  important_specifications: z.array(
+    z.object({
+      canonical_key: z.string().regex(/^[a-z0-9]+(?:_[a-z0-9]+)*$/u),
+      name: z.string().min(1),
+      quantity_kind: z.string().min(1).nullable(),
+      normalized_value: NormalizedValueSchema,
+      raw_ref: RawRefSchema,
+    }),
+  ),
   search_keywords_en: z.array(z.string().min(1)),
   search_keywords_vi: z.array(z.string().min(1)),
   search_text_en: z.string().min(1),
@@ -166,64 +229,85 @@ const SearchDocumentSchema = z.object({
 const importantSpecificationPriority = (specification) => {
   if (!specification.normalized || !specification.canonical_key) return null;
   const key = specification.canonical_key;
-  if (key === 'measurement_range' || key === 'operating_temperature_range') return 10;
+  if (key === 'measurement_range' || key === 'operating_temperature_range')
+    return 10;
   if (/(?:measurement|measuring)_range$/u.test(key)) return 15;
-  if (/(?:temperature|humidity|pressure|precipitation|wind_speed|wind_direction|turbidity|visibility|distance|water_content|permittivity|conductivity)_range$/u.test(key)) return 20;
+  if (
+    /(?:temperature|humidity|pressure|precipitation|wind_speed|wind_direction|turbidity|visibility|distance|water_content|permittivity|conductivity)_range$/u.test(
+      key,
+    )
+  )
+    return 20;
   if (/(?:^|_)(?:accuracy|precision)(?:_|$)/u.test(key)) return 30;
   if (/(?:^|_)resolution(?:_|$)/u.test(key)) return 40;
-  if (/(?:supply|input|operating|charge_terminal)_voltage(?:_range)?$/u.test(key)) return 50;
-  if (/(?:^|_)(?:current|power|frequency|data_rate|pressure)(?:_|$)/u.test(key)) return 55;
-  if (/(?:^|_)(?:dimensions?|diameter|width|height|depth)$/u.test(key)) return 60;
+  if (
+    /(?:supply|input|operating|charge_terminal)_voltage(?:_range)?$/u.test(key)
+  )
+    return 50;
+  if (/(?:^|_)(?:current|power|frequency|data_rate|pressure)(?:_|$)/u.test(key))
+    return 55;
+  if (/(?:^|_)(?:dimensions?|diameter|width|height|depth)$/u.test(key))
+    return 60;
   if (/^(?:probe|rod|sensor|enclosure)_length$/u.test(key)) return 61;
   if (/(?:^|_)(?:weight|mass)$/u.test(key)) return 70;
   if (/(?:^|_)(?:ingress_protection|ip_rating)(?:_|$)/u.test(key)) return 80;
   return null;
 };
 
-const selectImportantSpecifications = (normalized) => normalized.specifications
-  .map((specification, index) => ({
-    specification,
-    index,
-    priority: importantSpecificationPriority(specification),
-  }))
-  .filter(({ priority }) => priority !== null)
-  .sort((left, right) => left.priority - right.priority || left.index - right.index)
-  .slice(0, MAX_IMPORTANT_SPECIFICATIONS)
-  .map(({ specification }) => ({
-    canonical_key: specification.canonical_key,
-    name: normalizeWhitespace(specification.name_raw),
-    quantity_kind: specification.quantity_kind ?? null,
-    normalized_value: specification.normalized,
-    raw_ref: specification.raw_ref,
-  }));
+const selectImportantSpecifications = (normalized) =>
+  normalized.specifications
+    .map((specification, index) => ({
+      specification,
+      index,
+      priority: importantSpecificationPriority(specification),
+    }))
+    .filter(({ priority }) => priority !== null)
+    .sort(
+      (left, right) =>
+        left.priority - right.priority || left.index - right.index,
+    )
+    .slice(0, MAX_IMPORTANT_SPECIFICATIONS)
+    .map(({ specification }) => ({
+      canonical_key: specification.canonical_key,
+      name: normalizeWhitespace(specification.name_raw),
+      quantity_kind: specification.quantity_kind ?? null,
+      normalized_value: specification.normalized,
+      raw_ref: specification.raw_ref,
+    }));
 
-const formatNumber = (value) => Number.isInteger(value) ? String(value) : String(value);
+const formatNumber = (value) =>
+  Number.isInteger(value) ? String(value) : String(value);
 const formatNormalizedValue = (normalized) => {
   if (normalized.type === 'number') {
     const qualifier = normalized.qualifier ? `${normalized.qualifier} ` : '';
     const unit = normalized.unit ? ` ${normalized.unit}` : '';
-    return normalizeWhitespace(`${qualifier}${formatNumber(normalized.value)}${unit}`);
+    return normalizeWhitespace(
+      `${qualifier}${formatNumber(normalized.value)}${unit}`,
+    );
   }
   if (normalized.type === 'range') {
     if (normalized.min && normalized.max) {
       return `${formatNumber(normalized.min.value)} ${normalized.min.unit} to ${formatNumber(normalized.max.value)} ${normalized.max.unit}`;
     }
     const unit = normalized.unit ? ` ${normalized.unit}` : '';
-    return normalizeWhitespace(`${formatNumber(normalized.min_value)} to ${formatNumber(normalized.max_value)}${unit}`);
+    return normalizeWhitespace(
+      `${formatNumber(normalized.min_value)} to ${formatNumber(normalized.max_value)}${unit}`,
+    );
   }
   if (normalized.type === 'boolean') return normalized.value ? 'true' : 'false';
   return normalized.values.join(', ');
 };
-const compactSemanticItems = (items) => items.map(({ key, label_en, label_vi }) => ({
-  key,
-  label_en: normalizeWhitespace(label_en),
-  label_vi: normalizeWhitespace(label_vi),
-}));
-const ontologyLabelMap = (ontology, group) => new Map(
-  ontology.taxonomy[group].map((item) => [item.key, item.label_vi]),
-);
+const compactSemanticItems = (items) =>
+  items.map(({ key, label_en, label_vi }) => ({
+    key,
+    label_en: normalizeWhitespace(label_en),
+    label_vi: normalizeWhitespace(label_vi),
+  }));
+const ontologyLabelMap = (ontology, group) =>
+  new Map(ontology.taxonomy[group].map((item) => [item.key, item.label_vi]));
 const taxonomyPhrases = (taxonomy, ontology, language) => {
-  if (language === 'en') return [taxonomy.category, taxonomy.subcategory, taxonomy.device_type];
+  if (language === 'en')
+    return [taxonomy.category, taxonomy.subcategory, taxonomy.device_type];
   const categories = ontologyLabelMap(ontology, 'categories');
   const subcategories = ontologyLabelMap(ontology, 'subcategories');
   const deviceTypes = ontologyLabelMap(ontology, 'device_types');
@@ -238,15 +322,28 @@ const filterPositiveKeywords = (keywords, supported, unsupported) => {
   const unsupportedOnly = new Set(
     unsupported.map(caseKey).filter((name) => !supportedKeys.has(name)),
   );
-  return uniqueStrings(keywords).filter((keyword) => !unsupportedOnly.has(caseKey(keyword)));
+  return uniqueStrings(keywords).filter(
+    (keyword) => !unsupportedOnly.has(caseKey(keyword)),
+  );
 };
 const buildSearchText = ({ document, ontology, language }) => {
   const labelKey = language === 'en' ? 'label_en' : 'label_vi';
   const names = language === 'en' ? [document.name_en] : [document.name_vi];
-  const keywordList = language === 'en' ? document.search_keywords_en : document.search_keywords_vi;
+  const keywordList =
+    language === 'en'
+      ? document.search_keywords_en
+      : document.search_keywords_vi;
   const specificationPhrases = document.important_specifications.map(
-    (specification) => `${specification.name}: ${formatNormalizedValue(specification.normalized_value)}`,
+    (specification) =>
+      `${specification.name}: ${formatNormalizedValue(specification.normalized_value)}`,
   );
+  const variantPhrases = document.variants.flatMap((variant) => [
+    variant.model,
+    variant.product_name_en,
+    ...variant.distinguishing_specifications.map(
+      (specification) => `${specification.name_en}: ${specification.value_raw}`,
+    ),
+  ]);
   return uniqueStrings([
     document.model,
     ...names,
@@ -256,19 +353,28 @@ const buildSearchText = ({ document, ontology, language }) => {
     ...document.capabilities.map((item) => item[labelKey]),
     ...document.applications.map((item) => item[labelKey]),
     ...document.supported_protocols,
+    ...variantPhrases,
     ...specificationPhrases,
     ...keywordList,
   ]).join(' | ');
 };
 
 const buildDocument = ({ product, normalized, enriched, ontology }) => {
-  const supported = uniqueStrings(enriched.protocols
-    .filter((protocol) => protocol.relation === 'supported')
-    .map((protocol) => protocol.name));
-  const unsupported = uniqueStrings(enriched.protocols
-    .filter((protocol) => protocol.relation === 'unsupported')
-    .map((protocol) => protocol.name));
-  const aliases = uniqueStrings(enriched.aliases.map((alias) => alias.value));
+  const supported = uniqueStrings(
+    enriched.protocols
+      .filter((protocol) => protocol.relation === 'supported')
+      .map((protocol) => protocol.name),
+  );
+  const unsupported = uniqueStrings(
+    enriched.protocols
+      .filter((protocol) => protocol.relation === 'unsupported')
+      .map((protocol) => protocol.name),
+  );
+  const variants = normalized.variants ?? [];
+  const aliases = uniqueStrings([
+    ...enriched.aliases.map((alias) => alias.value),
+    ...variants.flatMap((variant) => [variant.model, variant.product_name_en]),
+  ]);
   const base = {
     schema_version: '1.0',
     product_id: product.product_id,
@@ -282,16 +388,33 @@ const buildDocument = ({ product, normalized, enriched, ontology }) => {
     supported_protocols: supported,
     unsupported_protocols: unsupported,
     aliases,
+    variants,
     important_specifications: selectImportantSpecifications(normalized),
-    search_keywords_en: filterPositiveKeywords(enriched.search_keywords.en, supported, unsupported),
-    search_keywords_vi: filterPositiveKeywords(enriched.search_keywords.vi, supported, unsupported),
+    search_keywords_en: filterPositiveKeywords(
+      enriched.search_keywords.en,
+      supported,
+      unsupported,
+    ),
+    search_keywords_vi: filterPositiveKeywords(
+      enriched.search_keywords.vi,
+      supported,
+      unsupported,
+    ),
     search_text_en: '',
     search_text_vi: '',
     search_text: '',
     source_versions: { ...SOURCE_VERSIONS },
   };
-  base.search_text_en = buildSearchText({ document: base, ontology, language: 'en' });
-  base.search_text_vi = buildSearchText({ document: base, ontology, language: 'vi' });
+  base.search_text_en = buildSearchText({
+    document: base,
+    ontology,
+    language: 'en',
+  });
+  base.search_text_vi = buildSearchText({
+    document: base,
+    ontology,
+    language: 'vi',
+  });
   base.search_text = uniqueStrings([
     ...base.search_text_en.split(' | '),
     ...base.search_text_vi.split(' | '),
@@ -304,42 +427,78 @@ const buildDocument = ({ product, normalized, enriched, ontology }) => {
   };
 };
 
-const average = (values) => values.length === 0 ? 0 : Number(
-  (values.reduce((sum, value) => sum + value, 0) / values.length).toFixed(2),
-);
-const setDifference = (left, right) => [...left].filter((value) => !right.has(value));
-const setIntersection = (left, right) => [...left].filter((value) => right.has(value));
-const findInvalidReferences = (documents, normalizedById) => documents.flatMap((document) => {
-  const normalized = normalizedById.get(document.product_id);
-  return document.important_specifications
-    .filter((important) => !normalized?.specifications.some((specification) =>
-      specification.canonical_key === important.canonical_key &&
-      JSON.stringify(specification.raw_ref) === JSON.stringify(important.raw_ref) &&
-      JSON.stringify(specification.normalized) === JSON.stringify(important.normalized_value)))
-    .map((important) => ({ product_id: document.product_id, raw_ref: important.raw_ref }));
-});
-const unsupportedProtocolViolations = (documents, enrichedById) => documents.flatMap((document) => {
-  const enriched = enrichedById.get(document.product_id);
-  if (!enriched) return [];
-  const supported = new Set(enriched.protocols.filter((item) => item.relation === 'supported').map((item) => caseKey(item.name)));
-  const unsupportedOnly = enriched.protocols
-    .filter((item) => item.relation === 'unsupported' && !supported.has(caseKey(item.name)))
-    .map((item) => caseKey(item.name));
-  const positivePhrases = new Set([
-    ...document.supported_protocols,
-    ...document.search_keywords_en,
-    ...document.search_keywords_vi,
-    ...document.search_text_en.split(' | '),
-    ...document.search_text_vi.split(' | '),
-  ].map(caseKey));
-  const invalidSupported = document.supported_protocols
-    .filter((name) => !supported.has(caseKey(name)))
-    .map((name) => ({ product_id: document.product_id, protocol: name, reason: 'not_supported_upstream' }));
-  const promotedUnsupported = unsupportedOnly
-    .filter((name) => positivePhrases.has(name))
-    .map((name) => ({ product_id: document.product_id, protocol: name, reason: 'unsupported_promoted_to_positive' }));
-  return [...invalidSupported, ...promotedUnsupported];
-});
+const average = (values) =>
+  values.length === 0
+    ? 0
+    : Number(
+        (values.reduce((sum, value) => sum + value, 0) / values.length).toFixed(
+          2,
+        ),
+      );
+const setDifference = (left, right) =>
+  [...left].filter((value) => !right.has(value));
+const setIntersection = (left, right) =>
+  [...left].filter((value) => right.has(value));
+const findInvalidReferences = (documents, normalizedById) =>
+  documents.flatMap((document) => {
+    const normalized = normalizedById.get(document.product_id);
+    return document.important_specifications
+      .filter(
+        (important) =>
+          !normalized?.specifications.some(
+            (specification) =>
+              specification.canonical_key === important.canonical_key &&
+              JSON.stringify(specification.raw_ref) ===
+                JSON.stringify(important.raw_ref) &&
+              JSON.stringify(specification.normalized) ===
+                JSON.stringify(important.normalized_value),
+          ),
+      )
+      .map((important) => ({
+        product_id: document.product_id,
+        raw_ref: important.raw_ref,
+      }));
+  });
+const unsupportedProtocolViolations = (documents, enrichedById) =>
+  documents.flatMap((document) => {
+    const enriched = enrichedById.get(document.product_id);
+    if (!enriched) return [];
+    const supported = new Set(
+      enriched.protocols
+        .filter((item) => item.relation === 'supported')
+        .map((item) => caseKey(item.name)),
+    );
+    const unsupportedOnly = enriched.protocols
+      .filter(
+        (item) =>
+          item.relation === 'unsupported' && !supported.has(caseKey(item.name)),
+      )
+      .map((item) => caseKey(item.name));
+    const positivePhrases = new Set(
+      [
+        ...document.supported_protocols,
+        ...document.search_keywords_en,
+        ...document.search_keywords_vi,
+        ...document.search_text_en.split(' | '),
+        ...document.search_text_vi.split(' | '),
+      ].map(caseKey),
+    );
+    const invalidSupported = document.supported_protocols
+      .filter((name) => !supported.has(caseKey(name)))
+      .map((name) => ({
+        product_id: document.product_id,
+        protocol: name,
+        reason: 'not_supported_upstream',
+      }));
+    const promotedUnsupported = unsupportedOnly
+      .filter((name) => positivePhrases.has(name))
+      .map((name) => ({
+        product_id: document.product_id,
+        protocol: name,
+        reason: 'unsupported_promoted_to_positive',
+      }));
+    return [...invalidSupported, ...promotedUnsupported];
+  });
 
 export const createSearchDocumentPlan = async () => {
   const [master, ontology, fingerprints] = await Promise.all([
@@ -347,55 +506,101 @@ export const createSearchDocumentPlan = async () => {
     readJson(ontologyPath),
     inputFingerprints(),
   ]);
-  const activeProducts = master.filter((product) => product.status === 'active');
-  const reviewProducts = master.filter((product) => product.status === 'review');
-  const activeIds = new Set(activeProducts.map((product) => product.product_id));
-  const reviewIds = new Set(reviewProducts.map((product) => product.product_id));
+  const activeProducts = master.filter(
+    (product) => product.status === 'active',
+  );
+  const reviewProducts = master.filter(
+    (product) => product.status === 'review',
+  );
+  const activeIds = new Set(
+    activeProducts.map((product) => product.product_id),
+  );
+  const reviewIds = new Set(
+    reviewProducts.map((product) => product.product_id),
+  );
   const normalizedById = new Map();
   const enrichedById = new Map();
   for (const product of activeProducts) {
-    const normalizedFile = path.join(normalizedDirectory, `${product.product_id}.json`);
-    const enrichedFile = path.join(enrichedDirectory, `${product.product_id}.json`);
-    try { normalizedById.set(product.product_id, await readJson(normalizedFile)); } catch (error) { if (error.code !== 'ENOENT') throw error; }
-    try { enrichedById.set(product.product_id, await readJson(enrichedFile)); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+    const normalizedFile = path.join(
+      normalizedDirectory,
+      `${product.product_id}.json`,
+    );
+    const enrichedFile = path.join(
+      enrichedDirectory,
+      `${product.product_id}.json`,
+    );
+    try {
+      normalizedById.set(product.product_id, await readJson(normalizedFile));
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+    }
+    try {
+      enrichedById.set(product.product_id, await readJson(enrichedFile));
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+    }
   }
   const documents = activeProducts
-    .filter((product) => normalizedById.has(product.product_id) && enrichedById.has(product.product_id))
-    .map((product) => buildDocument({
-      product,
-      normalized: normalizedById.get(product.product_id),
-      enriched: enrichedById.get(product.product_id),
-      ontology,
-    }));
+    .filter(
+      (product) =>
+        normalizedById.has(product.product_id) &&
+        enrichedById.has(product.product_id),
+    )
+    .map((product) =>
+      buildDocument({
+        product,
+        normalized: normalizedById.get(product.product_id),
+        enriched: enrichedById.get(product.product_id),
+        ontology,
+      }),
+    );
   const fingerprintsAfterBuild = await inputFingerprints();
   const mutatedUpstreamInputs = Object.keys(fingerprints).filter(
     (key) => fingerprints[key] !== fingerprintsAfterBuild[key],
   );
-  const duplicateProductIds = documents.length - new Set(documents.map((document) => document.product_id)).size;
-  const documentsWithoutEnrichment = activeProducts.filter((product) => !enrichedById.has(product.product_id));
-  const documentsWithoutNormalization = activeProducts.filter((product) => !normalizedById.has(product.product_id));
+  const duplicateProductIds =
+    documents.length -
+    new Set(documents.map((document) => document.product_id)).size;
+  const documentsWithoutEnrichment = activeProducts.filter(
+    (product) => !enrichedById.has(product.product_id),
+  );
+  const documentsWithoutNormalization = activeProducts.filter(
+    (product) => !normalizedById.has(product.product_id),
+  );
   const documentIds = new Set(documents.map((document) => document.product_id));
   const activeReviewOverlap = setIntersection(activeIds, reviewIds);
   const activeWithoutDocuments = setDifference(activeIds, documentIds);
   const nonActiveDocuments = setDifference(documentIds, activeIds);
   const reviewDocuments = setIntersection(documentIds, reviewIds);
-  const statusPartitionValid = master.length === activeProducts.length + reviewProducts.length;
+  const statusPartitionValid =
+    master.length === activeProducts.length + reviewProducts.length;
   const documentCountMatchesActive = documents.length === activeProducts.length;
   const invalidReferences = findInvalidReferences(documents, normalizedById);
-  const protocolViolations = unsupportedProtocolViolations(documents, enrichedById);
+  const protocolViolations = unsupportedProtocolViolations(
+    documents,
+    enrichedById,
+  );
   const zodFailures = documents.flatMap((document) => {
     const result = SearchDocumentSchema.safeParse(document);
-    return result.success ? [] : [{ product_id: document.product_id, issues: result.error.issues }];
+    return result.success
+      ? []
+      : [{ product_id: document.product_id, issues: result.error.issues }];
   });
-  const hashMismatches = documents.filter((document) => document.content_hash !== hashDocument(document));
+  const hashMismatches = documents.filter(
+    (document) => document.content_hash !== hashDocument(document),
+  );
   const textLengths = documents.map((document) => document.search_text.length);
   const searchTextDuplicateRatios = documents.map((document) => {
-    const phrases = document.search_text.split(' | ').map(caseKey).filter(Boolean);
+    const phrases = document.search_text
+      .split(' | ')
+      .map(caseKey)
+      .filter(Boolean);
     return phrases.length === 0
       ? 0
       : (phrases.length - new Set(phrases).size) / phrases.length;
   });
-  const productIds = (predicate) => documents.filter(predicate).map((document) => document.product_id);
+  const productIds = (predicate) =>
+    documents.filter(predicate).map((document) => document.product_id);
   const checks = {
     master_products: master.length,
     active_products: activeProducts.length,
@@ -412,20 +617,39 @@ export const createSearchDocumentPlan = async () => {
     document_without_normalization: documentsWithoutNormalization.length,
     invalid_normalized_reference: invalidReferences.length,
     unsupported_protocol_as_supported: protocolViolations.length,
-    search_text_empty: documents.filter((document) => !document.search_text_en || !document.search_text_vi || !document.search_text).length,
-    search_text_duplicate_ratio: Number(average(searchTextDuplicateRatios).toFixed(4)),
-    missing_content_hash: documents.filter((document) => !document.content_hash).length,
+    search_text_empty: documents.filter(
+      (document) =>
+        !document.search_text_en ||
+        !document.search_text_vi ||
+        !document.search_text,
+    ).length,
+    search_text_duplicate_ratio: Number(
+      average(searchTextDuplicateRatios).toFixed(4),
+    ),
+    missing_content_hash: documents.filter((document) => !document.content_hash)
+      .length,
     hash_mismatch: hashMismatches.length,
     upstream_mutation: mutatedUpstreamInputs.length,
     zod_validation_passed: documents.length - zodFailures.length,
     zod_validation_failed: zodFailures.length,
   };
-  const blockingCount = duplicateProductIds + documentsWithoutEnrichment.length +
-    documentsWithoutNormalization.length + invalidReferences.length + protocolViolations.length +
-    checks.search_text_empty + checks.missing_content_hash + hashMismatches.length + zodFailures.length +
-    mutatedUpstreamInputs.length + activeReviewOverlap.length + activeWithoutDocuments.length +
-    nonActiveDocuments.length + reviewDocuments.length +
-    (statusPartitionValid ? 0 : 1) + (documentCountMatchesActive ? 0 : 1);
+  const blockingCount =
+    duplicateProductIds +
+    documentsWithoutEnrichment.length +
+    documentsWithoutNormalization.length +
+    invalidReferences.length +
+    protocolViolations.length +
+    checks.search_text_empty +
+    checks.missing_content_hash +
+    hashMismatches.length +
+    zodFailures.length +
+    mutatedUpstreamInputs.length +
+    activeReviewOverlap.length +
+    activeWithoutDocuments.length +
+    nonActiveDocuments.length +
+    reviewDocuments.length +
+    (statusPartitionValid ? 0 : 1) +
+    (documentCountMatchesActive ? 0 : 1);
   const report = {
     schema_version: '1.0',
     validation_status: blockingCount === 0 ? 'passed' : 'failed',
@@ -436,21 +660,55 @@ export const createSearchDocumentPlan = async () => {
       average_search_text_length: average(textLengths),
       min_search_text_length: textLengths.length ? Math.min(...textLengths) : 0,
       max_search_text_length: textLengths.length ? Math.max(...textLengths) : 0,
-      average_measurements_per_product: average(documents.map((document) => document.measurements.length)),
-      average_capabilities_per_product: average(documents.map((document) => document.capabilities.length)),
-      average_aliases_per_product: average(documents.map((document) => document.aliases.length)),
-      products_without_applications: productIds((document) => document.applications.length === 0).length,
-      products_without_measurements: productIds((document) => document.measurements.length === 0).length,
-      products_without_protocols: productIds((document) => document.supported_protocols.length === 0 && document.unsupported_protocols.length === 0).length,
-      important_specification_count: documents.reduce((sum, document) => sum + document.important_specifications.length, 0),
-      en_keyword_count: documents.reduce((sum, document) => sum + document.search_keywords_en.length, 0),
-      vi_keyword_count: documents.reduce((sum, document) => sum + document.search_keywords_vi.length, 0),
+      average_measurements_per_product: average(
+        documents.map((document) => document.measurements.length),
+      ),
+      average_capabilities_per_product: average(
+        documents.map((document) => document.capabilities.length),
+      ),
+      average_aliases_per_product: average(
+        documents.map((document) => document.aliases.length),
+      ),
+      products_without_applications: productIds(
+        (document) => document.applications.length === 0,
+      ).length,
+      products_without_measurements: productIds(
+        (document) => document.measurements.length === 0,
+      ).length,
+      products_without_protocols: productIds(
+        (document) =>
+          document.supported_protocols.length === 0 &&
+          document.unsupported_protocols.length === 0,
+      ).length,
+      important_specification_count: documents.reduce(
+        (sum, document) => sum + document.important_specifications.length,
+        0,
+      ),
+      en_keyword_count: documents.reduce(
+        (sum, document) => sum + document.search_keywords_en.length,
+        0,
+      ),
+      vi_keyword_count: documents.reduce(
+        (sum, document) => sum + document.search_keywords_vi.length,
+        0,
+      ),
     },
-    skipped_review_products: reviewProducts.map(({ product_id, model }) => ({ product_id, model })),
+    skipped_review_products: reviewProducts.map(({ product_id, model }) => ({
+      product_id,
+      model,
+    })),
     coverage_details: {
-      product_ids_without_applications: productIds((document) => document.applications.length === 0),
-      product_ids_without_measurements: productIds((document) => document.measurements.length === 0),
-      product_ids_without_protocols: productIds((document) => document.supported_protocols.length === 0 && document.unsupported_protocols.length === 0),
+      product_ids_without_applications: productIds(
+        (document) => document.applications.length === 0,
+      ),
+      product_ids_without_measurements: productIds(
+        (document) => document.measurements.length === 0,
+      ),
+      product_ids_without_protocols: productIds(
+        (document) =>
+          document.supported_protocols.length === 0 &&
+          document.unsupported_protocols.length === 0,
+      ),
     },
     diagnostics: {
       active_review_id_overlap: activeReviewOverlap,
@@ -475,12 +733,20 @@ export const createSearchDocumentPlan = async () => {
 
 export const writeSearchDocumentOutputs = async ({ documents, report }) => {
   await mkdir(outputDirectory, { recursive: true });
-  const expectedFiles = new Set(documents.map((document) => `${document.product_id}.json`));
-  for (const file of (await readdir(outputDirectory)).filter((item) => item.endsWith('.json'))) {
-    if (!expectedFiles.has(file)) await unlink(path.join(outputDirectory, file));
+  const expectedFiles = new Set(
+    documents.map((document) => `${document.product_id}.json`),
+  );
+  for (const file of (await readdir(outputDirectory)).filter((item) =>
+    item.endsWith('.json'),
+  )) {
+    if (!expectedFiles.has(file))
+      await unlink(path.join(outputDirectory, file));
   }
   for (const document of documents) {
-    await writeJsonIfChanged(path.join(outputDirectory, `${document.product_id}.json`), document);
+    await writeJsonIfChanged(
+      path.join(outputDirectory, `${document.product_id}.json`),
+      document,
+    );
   }
   await writeJsonIfChanged(reportPath, report);
 };
@@ -493,50 +759,94 @@ export const validateSearchDocuments = async () => {
     throw error;
   });
   const jsonFiles = files.filter((file) => file.endsWith('.json')).sort();
-  const expectedByFile = new Map(expected.documents.map((document) => [`${document.product_id}.json`, document]));
+  const expectedByFile = new Map(
+    expected.documents.map((document) => [
+      `${document.product_id}.json`,
+      document,
+    ]),
+  );
   const actualDocuments = [];
   for (const file of jsonFiles) {
     const document = await readJson(path.join(outputDirectory, file));
     actualDocuments.push({ file, document });
     const parsedDocument = SearchDocumentSchema.safeParse(document);
     if (!parsedDocument.success) {
-      errors.push({ code: 'invalid_search_document', file, issues: parsedDocument.error.issues });
+      errors.push({
+        code: 'invalid_search_document',
+        file,
+        issues: parsedDocument.error.issues,
+      });
     }
     if (document.content_hash !== hashDocument(document)) {
       errors.push({ code: 'search_document_hash_mismatch', file });
     }
     if (`${document.product_id}.json` !== file) {
-      errors.push({ code: 'search_document_filename_mismatch', file, product_id: document.product_id });
+      errors.push({
+        code: 'search_document_filename_mismatch',
+        file,
+        product_id: document.product_id,
+      });
     }
-    if (!expectedByFile.has(file)) errors.push({ code: 'unexpected_search_document', file });
-    else if (JSON.stringify(document) !== JSON.stringify(expectedByFile.get(file))) {
+    if (!expectedByFile.has(file))
+      errors.push({ code: 'unexpected_search_document', file });
+    else if (
+      JSON.stringify(document) !== JSON.stringify(expectedByFile.get(file))
+    ) {
       errors.push({ code: 'stale_or_modified_search_document', file });
     }
   }
   for (const file of expectedByFile.keys()) {
-    if (!jsonFiles.includes(file)) errors.push({ code: 'missing_search_document', file });
+    if (!jsonFiles.includes(file))
+      errors.push({ code: 'missing_search_document', file });
   }
   const activeIds = new Set(expected.source_ids.active);
   const reviewIds = new Set(expected.source_ids.review);
-  const actualDocumentIds = actualDocuments.map(({ document }) => document.product_id);
+  const actualDocumentIds = actualDocuments.map(
+    ({ document }) => document.product_id,
+  );
   const actualDocumentIdSet = new Set(actualDocumentIds);
-  const duplicateDocumentIds = [...new Set(actualDocumentIds.filter(
-    (productId, index) => actualDocumentIds.indexOf(productId) !== index,
-  ))].sort();
-  const activeWithoutDocuments = setDifference(activeIds, actualDocumentIdSet).sort();
-  const nonActiveDocuments = setDifference(actualDocumentIdSet, activeIds).sort();
-  const reviewDocuments = setIntersection(actualDocumentIdSet, reviewIds).sort();
+  const duplicateDocumentIds = [
+    ...new Set(
+      actualDocumentIds.filter(
+        (productId, index) => actualDocumentIds.indexOf(productId) !== index,
+      ),
+    ),
+  ].sort();
+  const activeWithoutDocuments = setDifference(
+    activeIds,
+    actualDocumentIdSet,
+  ).sort();
+  const nonActiveDocuments = setDifference(
+    actualDocumentIdSet,
+    activeIds,
+  ).sort();
+  const reviewDocuments = setIntersection(
+    actualDocumentIdSet,
+    reviewIds,
+  ).sort();
   if (duplicateDocumentIds.length > 0) {
-    errors.push({ code: 'duplicate_search_document_product_id', product_ids: duplicateDocumentIds });
+    errors.push({
+      code: 'duplicate_search_document_product_id',
+      product_ids: duplicateDocumentIds,
+    });
   }
   if (activeWithoutDocuments.length > 0) {
-    errors.push({ code: 'active_products_without_search_document', product_ids: activeWithoutDocuments });
+    errors.push({
+      code: 'active_products_without_search_document',
+      product_ids: activeWithoutDocuments,
+    });
   }
   if (nonActiveDocuments.length > 0) {
-    errors.push({ code: 'non_active_search_documents', product_ids: nonActiveDocuments });
+    errors.push({
+      code: 'non_active_search_documents',
+      product_ids: nonActiveDocuments,
+    });
   }
   if (reviewDocuments.length > 0) {
-    errors.push({ code: 'review_products_with_search_document', product_ids: reviewDocuments });
+    errors.push({
+      code: 'review_products_with_search_document',
+      product_ids: reviewDocuments,
+    });
   }
   if (actualDocuments.length !== activeIds.size) {
     errors.push({
@@ -546,13 +856,21 @@ export const validateSearchDocuments = async () => {
     });
   }
   let actualReport = null;
-  try { actualReport = await readJson(reportPath); } catch (error) { if (error.code !== 'ENOENT') throw error; }
-  if (JSON.stringify(actualReport) !== JSON.stringify(expected.report)) errors.push({ code: 'stale_or_modified_search_document_report' });
-  const passed = errors.length === 0 && expected.report.validation_status === 'passed';
+  try {
+    actualReport = await readJson(reportPath);
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  if (JSON.stringify(actualReport) !== JSON.stringify(expected.report))
+    errors.push({ code: 'stale_or_modified_search_document_report' });
+  const passed =
+    errors.length === 0 && expected.report.validation_status === 'passed';
   return {
     passed,
     errors,
-    report: passed ? expected.report : { ...expected.report, validation_status: 'failed' },
+    report: passed
+      ? expected.report
+      : { ...expected.report, validation_status: 'failed' },
   };
 };
 
@@ -564,14 +882,26 @@ export const printSearchDocumentSummary = (report) => {
   console.log(`search_documents=${checks.search_documents}`);
   console.log(`skipped_review_products=${checks.skipped_review_products}`);
   console.log(`duplicate_product_id=${checks.duplicate_product_id}`);
-  console.log(`document_without_enrichment=${checks.document_without_enrichment}`);
-  console.log(`invalid_normalized_reference=${checks.invalid_normalized_reference}`);
-  console.log(`unsupported_protocol_as_supported=${checks.unsupported_protocol_as_supported}`);
+  console.log(
+    `document_without_enrichment=${checks.document_without_enrichment}`,
+  );
+  console.log(
+    `invalid_normalized_reference=${checks.invalid_normalized_reference}`,
+  );
+  console.log(
+    `unsupported_protocol_as_supported=${checks.unsupported_protocol_as_supported}`,
+  );
   console.log(`search_text_empty=${checks.search_text_empty}`);
   console.log(`missing_content_hash=${checks.missing_content_hash}`);
   console.log(`hash_mismatch=${checks.hash_mismatch}`);
-  console.log(`zod_validation=${checks.zod_validation_passed}/${checks.search_documents}`);
-  console.log(`average_search_text_length=${metrics.average_search_text_length}`);
-  console.log(`important_specification_count=${metrics.important_specification_count}`);
+  console.log(
+    `zod_validation=${checks.zod_validation_passed}/${checks.search_documents}`,
+  );
+  console.log(
+    `average_search_text_length=${metrics.average_search_text_length}`,
+  );
+  console.log(
+    `important_specification_count=${metrics.important_specification_count}`,
+  );
   console.log(`blockers=${report.blockers}`);
 };

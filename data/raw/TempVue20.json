@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "source": {
     "file": "TempVue20.xlsx",
     "sheet": "Sheet1"
@@ -11,17 +11,17 @@
       "model": "TempVue20-S",
       "product_name_en": "TempVue™20",
       "identity_source": {
-        "model": "worksheet_column_header",
+        "model": "worksheet",
         "product_name_en": "worksheet"
       },
       "taxonomy": {
-        "category": null,
-        "subcategory": null,
-        "device_type": null
+        "category": "Sensors",
+        "subcategory": "Air Temperature Sensors",
+        "device_type": "Air Temperature Sensor"
       },
       "specifications": [
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Product Name",
           "name_vi": "Tên sản phẩm",
           "value_raw": "TempVue™20",
@@ -30,7 +30,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Product Variant",
           "name_vi": "Phiên bản sản phẩm",
           "value_raw": "SDI-12 output version",
@@ -39,7 +39,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Product Type",
           "name_vi": "Loại sản phẩm",
           "value_raw": "Pt100 Digital Air Temperature Sensor",
@@ -48,7 +48,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Manufacturer",
           "name_vi": "Nhà sản xuất",
           "value_raw": "Campbell Scientific, Inc.",
@@ -57,7 +57,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Measurement Parameter",
           "name_vi": "Đại lượng đo",
           "value_raw": "Air temperature",
@@ -66,7 +66,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Sensor Description",
           "name_vi": "Mô tả cảm biến",
           "value_raw": "Platinum Resistance Thermometer (Pt100)",
@@ -75,7 +75,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Communication Protocol",
           "name_vi": "Giao thức truyền thông",
           "value_raw": "SDI-12 version 1.4",
@@ -84,7 +84,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Default Address",
           "name_vi": "Địa chỉ mặc định",
           "value_raw": "SDI-12 address: 0",
@@ -93,16 +93,7 @@
           ]
         },
         {
-          "section": null,
-          "name_en": "Default RS-485 Configuration",
-          "name_vi": "Cấu hình RS-485 mặc định",
-          "value_raw": null,
-          "source_rows": [
-            10
-          ]
-        },
-        {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Measurement Uncertainty – Common Range",
           "name_vi": "Độ không đảm bảo đo – dải thông dụng",
           "value_raw": "±0.1 °C (-40 to +40 °C)",
@@ -111,7 +102,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Measurement Uncertainty – Full Range",
           "name_vi": "Độ không đảm bảo đo – toàn dải",
           "value_raw": "±0.3 °C (-60 to -40 °C and 40 to 60 °C)",
@@ -120,7 +111,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Temperature Measurement Range",
           "name_vi": "Dải đo nhiệt độ",
           "value_raw": "-60 to +60 °C (-76 to +140 °F)",
@@ -129,7 +120,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Time Constant in Air",
           "name_vi": "Hằng số thời gian trong không khí",
           "value_raw": "20 s for a wind speed of 1 m/s (3.3 ft/s)",
@@ -138,7 +129,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Resolution",
           "name_vi": "Độ phân giải",
           "value_raw": "0.01 °C",
@@ -147,7 +138,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Voltage Range",
           "name_vi": "Dải điện áp",
           "value_raw": "6 to 16 VDC",
@@ -156,7 +147,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Current",
           "name_vi": "Dòng điện",
           "value_raw": "150 µA",
@@ -165,7 +156,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Signal Type / Output",
           "name_vi": "Loại tín hiệu / đầu ra",
           "value_raw": "Digital output, SDI-12",
@@ -174,7 +165,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Connector Type",
           "name_vi": "Loại đầu nối",
           "value_raw": "M12",
@@ -183,7 +174,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Standard Cable Length",
           "name_vi": "Chiều dài cáp tiêu chuẩn",
           "value_raw": "1 m (3 ft)",
@@ -192,7 +183,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Ingress Protection",
           "name_vi": "Cấp bảo vệ",
           "value_raw": "IP67",
@@ -201,7 +192,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Probe Diameter",
           "name_vi": "Đường kính đầu dò",
           "value_raw": "1.9 cm (0.75 in) maximum",
@@ -210,7 +201,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Probe Length",
           "name_vi": "Chiều dài đầu dò",
           "value_raw": "12.1 cm (4.75 in) tip to end of cable gland",
@@ -219,7 +210,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Extended Probe Length",
           "name_vi": "Chiều dài đầu dò mở rộng",
           "value_raw": "18.1 cm (7.125 in) tip to end of extender piece",
@@ -228,7 +219,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Total Length",
           "name_vi": "Tổng chiều dài",
           "value_raw": "97.16 cm (38.25 in) tip to end of connector",
@@ -237,7 +228,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Weight",
           "name_vi": "Khối lượng",
           "value_raw": "70 g (0.15 lb) including standard 1 m cable with M12 connector",
@@ -246,7 +237,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Aspen 10 Compatibility",
           "name_vi": "Tương thích Aspen 10",
           "value_raw": "Direct connection supported",
@@ -255,7 +246,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Compatible Data Loggers / Controllers",
           "name_vi": "Bộ ghi dữ liệu / bộ điều khiển tương thích",
           "value_raw": "GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000",
@@ -264,7 +255,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Measurement Memory",
           "name_vi": "Bộ nhớ phép đo",
           "value_raw": "Most recent 5760 measurements (one day worth)",
@@ -273,7 +264,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Recommended Measurement Scan Interval",
           "name_vi": "Khoảng quét đo khuyến nghị",
           "value_raw": "15 seconds or more",
@@ -282,7 +273,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Temperature Output Units",
           "name_vi": "Đơn vị nhiệt độ đầu ra",
           "value_raw": "°C or °F",
@@ -291,7 +282,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Valid SDI-12 Addresses",
           "name_vi": "Địa chỉ SDI-12 hợp lệ",
           "value_raw": "0–9, a–z, A–Z",
@@ -300,7 +291,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "CRBasic Measurement Instruction",
           "name_vi": "Lệnh đo CRBasic",
           "value_raw": "SDI12Recorder()",
@@ -309,7 +300,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "White Wire Function",
           "name_vi": "Chức năng dây trắng",
           "value_raw": "SDI-12 signal",
@@ -318,25 +309,7 @@
           ]
         },
         {
-          "section": null,
-          "name_en": "Yellow Wire Function",
-          "name_vi": "Chức năng dây vàng",
-          "value_raw": null,
-          "source_rows": [
-            35
-          ]
-        },
-        {
-          "section": null,
-          "name_en": "Blue Wire Function",
-          "name_vi": "Chức năng dây xanh dương",
-          "value_raw": null,
-          "source_rows": [
-            36
-          ]
-        },
-        {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Brown Wire Function",
           "name_vi": "Chức năng dây nâu",
           "value_raw": "Power (12V)",
@@ -345,7 +318,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Black Wire Function",
           "name_vi": "Chức năng dây đen",
           "value_raw": "Power ground",
@@ -354,7 +327,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Gray Wire Function",
           "name_vi": "Chức năng dây xám",
           "value_raw": "Aspen detect signal",
@@ -363,7 +336,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Clear Wire Function",
           "name_vi": "Chức năng dây trong",
           "value_raw": "Shield",
@@ -372,7 +345,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Compatible Radiation Shields",
           "name_vi": "Tấm chắn bức xạ tương thích",
           "value_raw": "RAD06, RAD10E, RAD14, TS100SS",
@@ -381,7 +354,7 @@
           ]
         },
         {
-          "section": null,
+          "section": "SPECIFICATIONS",
           "name_en": "Compliance",
           "name_vi": "Tuân thủ / chứng nhận",
           "value_raw": "UKCA and EU declarations of conformity",
@@ -399,20 +372,250 @@
       "media": {
         "product_images": [
           {
-            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/14672",
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/14672",
             "source": "user_provided"
           }
         ]
       },
       "validation": {
-        "status": "needs_review",
+        "status": "review",
         "warnings": [
-          "Field \"Default RS-485 Configuration\" is blank for TempVue20-S in source row 10; no value was inferred from the other product variant.",
-          "Field \"Yellow Wire Function\" is blank for TempVue20-S in source row 35; no value was inferred from the other product variant.",
-          "Field \"Blue Wire Function\" is blank for TempVue20-S in source row 36; no value was inferred from the other product variant.",
-          "No explicit specification section labels were found in the worksheet; section was set to null for all specification entries."
+          "Taxonomy could not be determined from source file.",
+          "Product image URL was not provided in the user message."
         ]
-      }
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_TEMPVUE20_S",
+        "variant_count": 2,
+        "source_files": [
+          "TempVue20.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "product_name_en": "TempVue™20",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Product Variant",
+              "name_vi": "Phiên bản sản phẩm",
+              "value_raw": "SDI-12 output version",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Communication Protocol",
+              "name_vi": "Giao thức truyền thông",
+              "value_raw": "SDI-12 version 1.4",
+              "source_rows": [
+                8
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Default Address",
+              "name_vi": "Địa chỉ mặc định",
+              "value_raw": "SDI-12 address: 0",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Signal Type / Output",
+              "name_vi": "Loại tín hiệu / đầu ra",
+              "value_raw": "Digital output, SDI-12",
+              "source_rows": [
+                18
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Compatible Data Loggers / Controllers",
+              "name_vi": "Bộ ghi dữ liệu / bộ điều khiển tương thích",
+              "value_raw": "GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "CRBasic Measurement Instruction",
+              "name_vi": "Lệnh đo CRBasic",
+              "value_raw": "SDI12Recorder()",
+              "source_rows": [
+                33
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Brown Wire Function",
+              "name_vi": "Chức năng dây nâu",
+              "value_raw": "Power (12V)",
+              "source_rows": [
+                37
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Black Wire Function",
+              "name_vi": "Chức năng dây đen",
+              "value_raw": "Power ground",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Gray Wire Function",
+              "name_vi": "Chức năng dây xám",
+              "value_raw": "Aspen detect signal",
+              "source_rows": [
+                39
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "TempVue20_datasheet.pdf",
+            "user_manual": "TempVue20_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/14672",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TempVue20.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_TEMPVUE20_M",
+          "model": "TempVue20-M",
+          "product_name_en": "TempVue™20",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Product Variant",
+              "name_vi": "Phiên bản sản phẩm",
+              "value_raw": "Modbus / RS-485 output version",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Communication Protocol",
+              "name_vi": "Giao thức truyền thông",
+              "value_raw": "Modbus RTU protocol over RS-485",
+              "source_rows": [
+                8
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Default Address",
+              "name_vi": "Địa chỉ mặc định",
+              "value_raw": "Modbus address: 1",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Default RS-485 Configuration",
+              "name_vi": "Cấu hình RS-485 mặc định",
+              "value_raw": "19200 baud, 8 data bits, even parity, one stop bit",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Signal Type / Output",
+              "name_vi": "Loại tín hiệu / đầu ra",
+              "value_raw": "Digital output, Modbus RTU over RS-485",
+              "source_rows": [
+                18
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Compatible Data Loggers / Controllers",
+              "name_vi": "Bộ ghi dữ liệu / bộ điều khiển tương thích",
+              "value_raw": "GRANITE series, CR6, CR1000X series, CR3000 (with MD485), CR800 series (with MD485), CR300 series (with MD485), CR1000 (with MD485)",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "CRBasic Measurement Instruction",
+              "name_vi": "Lệnh đo CRBasic",
+              "value_raw": "SerialOpen() followed by ModbusClient()",
+              "source_rows": [
+                33
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Brown Wire Function",
+              "name_vi": "Chức năng dây nâu",
+              "value_raw": "12 VDC",
+              "source_rows": [
+                37
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Black Wire Function",
+              "name_vi": "Chức năng dây đen",
+              "value_raw": "Power and signal ground",
+              "source_rows": [
+                38
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Gray Wire Function",
+              "name_vi": "Chức năng dây xám",
+              "value_raw": "Ground (if present)",
+              "source_rows": [
+                39
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "TempVue20_datasheet.pdf",
+            "user_manual": "TempVue20_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/14672",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TempVue20.json",
+            "product_index": 1
+          }
+        }
+      ]
     },
     {
       "product_id": "CSI_TEMPVUE20_M",

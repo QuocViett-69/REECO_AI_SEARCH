@@ -1,0 +1,2373 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CRVW3-NE_Master_Specifications_SplitCells.xlsx",
+    "sheet": "CRVW3-NE_Master_Spec"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CRVW3_NE",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-NE",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3-NE",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | NA No Additional Coms",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "name_vi": "Cấu hình vỏ",
+          "value_raw": "Without enclosure",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "name_vi": "Mã cấu hình khi xuất hàng",
+          "value_raw": "32145 | 43376",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Mounting holes for easy mounting and installation in a Campbell Scientific enclosure",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "18.4 x 12.7 x 4.5 cm | 7.25 x 5.0 x 1.75 in.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.36 kg | 0.8 lb",
+          "source_rows": [
+            30,
+            31
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter | Typical solar panel applications: 10 to 20 W",
+          "source_rows": [
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Terminal",
+          "name_vi": "Đầu cực pin",
+          "value_raw": "Sealed, rechargeable, lead-acid batteries | Typical battery capacity: 7 Ah | Typical battery capacity: 12 Ah | Typical battery capacity: 24 Ah",
+          "source_rows": [
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            40,
+            41
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Accuracy",
+          "name_vi": "Độ chính xác đo",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            54,
+            55
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            56,
+            57,
+            58
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            60,
+            61
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            62,
+            63,
+            64
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "CE approved",
+          "source_rows": [
+            82
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-ne.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3-ne"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8218",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF407",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-NE-RF407",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3-NE",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF407",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/900MHz Radio",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "name_vi": "Cấu hình vỏ",
+          "value_raw": "Without enclosure",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "name_vi": "Mã cấu hình khi xuất hàng",
+          "value_raw": "32147 | 43376",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Mounting holes for easy mounting and installation in a Campbell Scientific enclosure",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "18.4 x 12.7 x 4.5 cm | 7.25 x 5.0 x 1.75 in.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.36 kg | 0.8 lb",
+          "source_rows": [
+            30,
+            31
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter | Typical solar panel applications: 10 to 20 W",
+          "source_rows": [
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Terminal",
+          "name_vi": "Đầu cực pin",
+          "value_raw": "Sealed, rechargeable, lead-acid batteries | Typical battery capacity: 7 Ah | Typical battery capacity: 12 Ah | Typical battery capacity: 24 Ah",
+          "source_rows": [
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            40,
+            41
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Accuracy",
+          "name_vi": "Độ chính xác đo",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            54,
+            55
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            56,
+            57,
+            58
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            60,
+            61
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            62,
+            63,
+            64
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 5 to 250 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            70,
+            71,
+            72,
+            73
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "name_vi": "Bộ lặp radio",
+          "value_raw": "Devices with the -RF407 option can be set up as a radio repeater",
+          "source_rows": [
+            74
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "US | Canada",
+          "source_rows": [
+            75,
+            76
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "name_vi": "Thông tin tuân thủ",
+          "value_raw": "RCPDIXB15-0672-A2 (Mexico IF) | RCPDIXB15-0672-A2 (Mexico IF) | MCQ-XB900HP (United States FCC Part 15.247)",
+          "source_rows": [
+            78,
+            79,
+            80
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "Not CE approved",
+          "source_rows": [
+            82
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-ne.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3-ne"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8218",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF412",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-NE-RF412",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3-NE",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF412",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/920MHz Radio for use in Australia/NZ",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "name_vi": "Cấu hình vỏ",
+          "value_raw": "Without enclosure",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "name_vi": "Mã cấu hình khi xuất hàng",
+          "value_raw": "32792 | 43376",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Mounting holes for easy mounting and installation in a Campbell Scientific enclosure",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "18.4 x 12.7 x 4.5 cm | 7.25 x 5.0 x 1.75 in.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.36 kg | 0.8 lb",
+          "source_rows": [
+            30,
+            31
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter | Typical solar panel applications: 10 to 20 W",
+          "source_rows": [
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Terminal",
+          "name_vi": "Đầu cực pin",
+          "value_raw": "Sealed, rechargeable, lead-acid batteries | Typical battery capacity: 7 Ah | Typical battery capacity: 12 Ah | Typical battery capacity: 24 Ah",
+          "source_rows": [
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            40,
+            41
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Accuracy",
+          "name_vi": "Độ chính xác đo",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            54,
+            55
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            56,
+            57,
+            58
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            60,
+            61
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            62,
+            63,
+            64
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 5 to 250 mW, user selectable | Frequency: 915 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            70,
+            71,
+            72,
+            73
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "name_vi": "Bộ lặp radio",
+          "value_raw": "Devices with the -RF412 option can be set up as a radio repeater",
+          "source_rows": [
+            74
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "Australia",
+          "source_rows": [
+            75
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "name_vi": "Thông tin tuân thủ",
+          "value_raw": "ACMA RCM | 1846A-XB900HP (Industry Canada [IC]) | MCQ-XB900HP (United States FCC Part 15.247)",
+          "source_rows": [
+            78,
+            79,
+            80
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "Not CE approved",
+          "source_rows": [
+            82
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-ne.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3-ne"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8218",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF422",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-NE-RF422",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3-NE",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF422",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/868MHz Radio for use in EMEA",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "name_vi": "Cấu hình vỏ",
+          "value_raw": "Without enclosure",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "name_vi": "Mã cấu hình khi xuất hàng",
+          "value_raw": "32793 | 43376",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Mounting holes for easy mounting and installation in a Campbell Scientific enclosure",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "18.4 x 12.7 x 4.5 cm | 7.25 x 5.0 x 1.75 in.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.36 kg | 0.8 lb",
+          "source_rows": [
+            30,
+            31
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter | Typical solar panel applications: 10 to 20 W",
+          "source_rows": [
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Terminal",
+          "name_vi": "Đầu cực pin",
+          "value_raw": "Sealed, rechargeable, lead-acid batteries | Typical battery capacity: 7 Ah | Typical battery capacity: 12 Ah | Typical battery capacity: 24 Ah",
+          "source_rows": [
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            40,
+            41
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Accuracy",
+          "name_vi": "Độ chính xác đo",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            54,
+            55
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            56,
+            57,
+            58
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            60,
+            61
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            62,
+            63,
+            64
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 2 to 25 mW, user selectable | Frequency: 863 to 870 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            70,
+            71,
+            72,
+            73
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "Europe | Some of Asia (ETSI)",
+          "source_rows": [
+            75,
+            76
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "EU Conformity",
+          "name_vi": "Tuân thủ EU",
+          "value_raw": "EU Declaration of Conformity available in the Documents section of the product web page",
+          "source_rows": [
+            81
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "CE approved",
+          "source_rows": [
+            82
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-ne.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3-ne"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8218",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF427",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-NE-RF427",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3-NE",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF427",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/Radio for use in Brazil",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "name_vi": "Cấu hình vỏ",
+          "value_raw": "Without enclosure",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "name_vi": "Mã cấu hình khi xuất hàng",
+          "value_raw": "32702 | 43376",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Mounting holes for easy mounting and installation in a Campbell Scientific enclosure",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "18.4 x 12.7 x 4.5 cm | 7.25 x 5.0 x 1.75 in.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.36 kg | 0.8 lb",
+          "source_rows": [
+            30,
+            31
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter | Typical solar panel applications: 10 to 20 W",
+          "source_rows": [
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Terminal",
+          "name_vi": "Đầu cực pin",
+          "value_raw": "Sealed, rechargeable, lead-acid batteries | Typical battery capacity: 7 Ah | Typical battery capacity: 12 Ah | Typical battery capacity: 24 Ah",
+          "source_rows": [
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            40,
+            41
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Accuracy",
+          "name_vi": "Độ chính xác đo",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            54,
+            55
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            56,
+            57,
+            58
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            60,
+            61
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            62,
+            63,
+            64
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 5 to 250 mW, user selectable | Frequency: 905/920 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            70,
+            71,
+            72,
+            73
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "name_vi": "Bộ lặp radio",
+          "value_raw": "Devices with the -RF427 option can be set up as a radio repeater",
+          "source_rows": [
+            74
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "Brazil",
+          "source_rows": [
+            75
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "name_vi": "Thông tin tuân thủ",
+          "value_raw": "08335-17-10644 Brazil (ANATEL standards in Resolution No. 506)",
+          "source_rows": [
+            78
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "Not CE approved",
+          "source_rows": [
+            82
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-ne.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3-ne"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8218",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRVW3_NE_RF452",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRVW3-NE-RF452",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CRVW3-NE",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Communication Option",
+          "name_vi": "Tùy chọn truyền thông",
+          "value_raw": "RF452",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "Vibrating-Wire Datalogger w/o Enclosure (-40 to +70°C) | w/1W 900MHz Radio",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Enclosure Configuration",
+          "name_vi": "Cấu hình vỏ",
+          "value_raw": "Without enclosure",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Ships As",
+          "name_vi": "Mã cấu hình khi xuất hàng",
+          "value_raw": "40576 | 43376",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C | Non-condensing environment",
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Processor",
+          "name_vi": "Bộ xử lý",
+          "value_raw": "ST ARM CORTEX-M4 (32-bit with hardware FPU, running at 144 MHz)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Data Storage",
+          "name_vi": "Bộ nhớ lưu trữ dữ liệu",
+          "value_raw": "16 MB serial flash | Up to 420,000 records (single channel) | Up to 160,000 records (3 channels)",
+          "source_rows": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Real-Time Clock Accuracy",
+          "name_vi": "Độ chính xác đồng hồ thời gian thực",
+          "value_raw": "±3 min. per year",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Measurement Interval Range",
+          "name_vi": "Dải chu kỳ đo",
+          "value_raw": "1 s to 1 day",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "USB Micro B",
+          "name_vi": "USB Micro B",
+          "value_raw": "Direct connect to PC | Supplies power for configuration and data collection | USB 2.0 full speed | 12 Mbps",
+          "source_rows": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "name_vi": "Cấu hình",
+          "value_raw": "Software configurable | No programming required",
+          "source_rows": [
+            22,
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Compliance",
+          "name_vi": "Tuân thủ",
+          "value_raw": "RoHS",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "One year against defects in materials and workmanship",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Static Vibrating Wire Measurements",
+          "name_vi": "Đo dây rung tĩnh",
+          "value_raw": "Supported",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Mounting",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Mounting holes for easy mounting and installation in a Campbell Scientific enclosure",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "18.4 x 12.7 x 4.5 cm | 7.25 x 5.0 x 1.75 in.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.36 kg | 0.8 lb",
+          "source_rows": [
+            30,
+            31
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Charge Terminal",
+          "name_vi": "Đầu cực sạc",
+          "value_raw": "16 to 28 Vdc | Source: solar panel or dc power converter | Typical solar panel applications: 10 to 20 W",
+          "source_rows": [
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Battery Terminal",
+          "name_vi": "Đầu cực pin",
+          "value_raw": "Sealed, rechargeable, lead-acid batteries | Typical battery capacity: 7 Ah | Typical battery capacity: 12 Ah | Typical battery capacity: 24 Ah",
+          "source_rows": [
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "section": "POWER",
+          "name_en": "Current Drain",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "~37.5 mA/s each time a channel is measured | 1 mA with no radio, basic operation",
+          "source_rows": [
+            40,
+            41
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Channel Count",
+          "name_vi": "Số kênh",
+          "value_raw": "3 vibrating wire (VW) measurements | 3 thermistor/RTD (temperature) measurements",
+          "source_rows": [
+            43,
+            44
+          ]
+        },
+        {
+          "section": "MEASUREMENTS",
+          "name_en": "Measurement Speed",
+          "name_vi": "Tốc độ đo",
+          "value_raw": "1 s per sensor | VW and temperature",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Excitation Options",
+          "name_vi": "Tùy chọn kích thích đo",
+          "value_raw": "2 V (±1 V) | 5 V (±2.5 V) | 12 V (±6 V)",
+          "source_rows": [
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement (Frequency) Resolution",
+          "name_vi": "Độ phân giải đo tần số",
+          "value_raw": "0.001 Hz RMS | Temperature range: -40° to +70°C",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Time-series Basic Resolution",
+          "name_vi": "Độ phân giải cơ bản chuỗi thời gian",
+          "value_raw": "24-bit ADC",
+          "source_rows": [
+            53
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Accuracy",
+          "name_vi": "Độ chính xác đo",
+          "value_raw": "±0.005% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            54,
+            55
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - VIBRATING WIRE",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "VSPECT (Spectral Analysis) | U.S. Patent No. 7,779,690 | Includes diagnostic data",
+          "source_rows": [
+            56,
+            57,
+            58
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Temperature Measurement Note",
+          "name_vi": "Ghi chú đo nhiệt độ",
+          "value_raw": "Thermistor or RTD resistance can be scaled to Temperature (Deg C) per manufacturer specifications | Resulting temperature can be used as a correction factor for the sensor’s output",
+          "source_rows": [
+            60,
+            61
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Measurement Method",
+          "name_vi": "Phương pháp đo",
+          "value_raw": "Half-bridge ratiometric | 24-bit ADC | Built-in completion resistor: 4.99 kΩ 0.1%",
+          "source_rows": [
+            62,
+            63,
+            64
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Thermistor Precision",
+          "name_vi": "Độ chính xác lặp thermistor",
+          "value_raw": "0.020 Ω RMS @ 3000 Ω | ~0.00015°C RMS for most vibrating wire thermistors",
+          "source_rows": [
+            65,
+            66
+          ]
+        },
+        {
+          "section": "MEASUREMENTS - TEMPERATURE (RESISTANCE)",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.15% of reading | Temperature range: -40° to +70°C",
+          "source_rows": [
+            67,
+            68
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Internal Radio Description",
+          "name_vi": "Mô tả radio tích hợp",
+          "value_raw": "Output power: 10 to 1,000 mW, user selectable | Frequency: 902 to 928 MHz | License-free band | Frequency hopping spread-spectrum radio",
+          "source_rows": [
+            70,
+            71,
+            72,
+            73
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Radio Repeater",
+          "name_vi": "Bộ lặp radio",
+          "value_raw": "Devices with the -RF452 option can be set up as a radio repeater",
+          "source_rows": [
+            74
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Where Used",
+          "name_vi": "Khu vực sử dụng",
+          "value_raw": "US | Canada | Australia",
+          "source_rows": [
+            75,
+            76,
+            77
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "Compliance Information",
+          "name_vi": "Thông tin tuân thủ",
+          "value_raw": "KNYAMM0921TT (United States FCC ID) | 2329B-AMM0921TT (Canada [IC])",
+          "source_rows": [
+            78,
+            79
+          ]
+        },
+        {
+          "section": "RF RADIO OPTION SPECIFICATIONS",
+          "name_en": "CE Approval",
+          "name_vi": "Chứng nhận CE",
+          "value_raw": "Not CE approved",
+          "source_rows": [
+            82
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crvw3-ne.pdf",
+        "user_manual": "crvw3man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crvw3-ne"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8218",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

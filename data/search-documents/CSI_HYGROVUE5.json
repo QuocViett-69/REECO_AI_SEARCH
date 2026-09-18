@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_HYGROVUE5",
+  "model": "HygroVue5",
+  "name_en": "HygroVue5 Digital Temperature and Relative Humidity Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Temperature & Humidity Sensors",
+    "subcategory_key": "temperature_and_humidity_sensors",
+    "device_type": "Temperature and Relative Humidity Sensor",
+    "device_type_key": "temperature_and_relative_humidity_sensor"
+  },
+  "measurements": [
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "HygroVue5",
+    "CSI_HYGROVUE5",
+    "HygroVue5 Digital Temperature and Relative Humidity Sensor"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "model": "HygroVue5",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "value_raw": "-40 to +70°C"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "value_raw": "±0.4°C (over the range -40° to +70°C) | ±0.3°C (over the range 20° to 60°C)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Reported Resolution",
+          "value_raw": "0.001°C"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "value_raw": "0 to 100% RH"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "value_raw": "±3% (at 25°C, over the range 80 to 100% RH) | ±1.8% (at 25°C, over the range 0 to 80% RH)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Reported Resolution",
+          "value_raw": "0.001% RH"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "measurement_range",
+      "name": "Measurement Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          21
+        ]
+      }
+    },
+    {
+      "canonical_key": "measurement_range",
+      "name": "Measurement Range",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "% RH",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          31
+        ]
+      }
+    },
+    {
+      "canonical_key": "reported_resolution",
+      "name": "Reported Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.001,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          25
+        ]
+      }
+    },
+    {
+      "canonical_key": "reported_resolution",
+      "name": "Reported Resolution",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 0.001,
+        "unit": "% RH",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          37
+        ]
+      }
+    },
+    {
+      "canonical_key": "supply_voltage",
+      "name": "Supply Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 28,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "HygroVue5",
+    "HygroVue5 Digital Temperature and Relative Humidity Sensor",
+    "Sensors",
+    "Temperature & Humidity Sensors",
+    "Temperature and Relative Humidity Sensor",
+    "Relative Humidity",
+    "RH",
+    "Measure Relative Humidity",
+    "CSI_HYGROVUE5"
+  ],
+  "search_keywords_vi": [
+    "HygroVue5",
+    "Cảm biến",
+    "Cảm biến nhiệt độ và độ ẩm",
+    "Cảm biến nhiệt độ và độ ẩm tương đối",
+    "Độ ẩm tương đối",
+    "Đo độ ẩm tương đối"
+  ],
+  "search_text_en": "HygroVue5 | HygroVue5 Digital Temperature and Relative Humidity Sensor | CSI_HYGROVUE5 | Sensors | Temperature & Humidity Sensors | Temperature and Relative Humidity Sensor | Relative Humidity | Measure Relative Humidity | Measurement Range: -40 to +70°C | Accuracy: ±0.4°C (over the range -40° to +70°C) | ±0.3°C (over the range 20° to 60°C) | Reported Resolution: 0.001°C | Measurement Range: 0 to 100% RH | Accuracy: ±3% (at 25°C, over the range 80 to 100% RH) | ±1.8% (at 25°C, over the range 0 to 80% RH) | Reported Resolution: 0.001% RH | Measurement Range: -40 to 70 °C | Measurement Range: 0 to 100 % RH | Reported Resolution: 0.001 °C | Reported Resolution: 0.001 % RH | Supply Voltage: 7 to 28 V DC | RH",
+  "search_text_vi": "HygroVue5 | CSI_HYGROVUE5 | HygroVue5 Digital Temperature and Relative Humidity Sensor | Cảm biến | Cảm biến nhiệt độ và độ ẩm | Cảm biến nhiệt độ và độ ẩm tương đối | Độ ẩm tương đối | Đo độ ẩm tương đối | Measurement Range: -40 to +70°C | Accuracy: ±0.4°C (over the range -40° to +70°C) | ±0.3°C (over the range 20° to 60°C) | Reported Resolution: 0.001°C | Measurement Range: 0 to 100% RH | Accuracy: ±3% (at 25°C, over the range 80 to 100% RH) | ±1.8% (at 25°C, over the range 0 to 80% RH) | Reported Resolution: 0.001% RH | Measurement Range: -40 to 70 °C | Measurement Range: 0 to 100 % RH | Reported Resolution: 0.001 °C | Reported Resolution: 0.001 % RH | Supply Voltage: 7 to 28 V DC",
+  "search_text": "HygroVue5 | HygroVue5 Digital Temperature and Relative Humidity Sensor | CSI_HYGROVUE5 | Sensors | Temperature & Humidity Sensors | Temperature and Relative Humidity Sensor | Relative Humidity | Measure Relative Humidity | Measurement Range: -40 to +70°C | Accuracy: ±0.4°C (over the range -40° to +70°C) | ±0.3°C (over the range 20° to 60°C) | Reported Resolution: 0.001°C | Measurement Range: 0 to 100% RH | Accuracy: ±3% (at 25°C, over the range 80 to 100% RH) | ±1.8% (at 25°C, over the range 0 to 80% RH) | Reported Resolution: 0.001% RH | Measurement Range: -40 to 70 °C | Measurement Range: 0 to 100 % RH | Reported Resolution: 0.001 °C | Reported Resolution: 0.001 % RH | Supply Voltage: 7 to 28 V DC | RH | Cảm biến | Cảm biến nhiệt độ và độ ẩm | Cảm biến nhiệt độ và độ ẩm tương đối | Độ ẩm tương đối | Đo độ ẩm tương đối",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "582cab50c9ad0c981cfaaf65b73ce5dc0879837c1b2023291f19711f18aac39d"
+}

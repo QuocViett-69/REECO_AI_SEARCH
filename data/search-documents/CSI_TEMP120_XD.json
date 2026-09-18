@@ -35,7 +35,98 @@
   "aliases": [
     "TEMP120-XD",
     "CSI_TEMP120_XD",
-    "TEMP 120"
+    "TEMP 120",
+    "TEMP120-SD",
+    "TEMP 120 Standard Duty (SD)",
+    "TEMP 120 Extended Duty (XD)"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_TEMP120_SD",
+      "model": "TEMP120-SD",
+      "product_name_en": "TEMP 120 Standard Duty (SD)",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Variant",
+          "value_raw": "Standard Duty (SD)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-40 to +70 °C"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Internal Cold Junction Accuracy – Maximum",
+          "value_raw": "±0.28 °C maximum (-40 to +70 °C)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Total Measurement Accuracy – Static Environment – Maximum",
+          "value_raw": "±0.8 °C maximum (-40 to +70 °C)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Performance Verification",
+          "value_raw": "Engineering design; verified in a laboratory environment"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Calibration Certificate",
+          "value_raw": "Not included"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Instrument Data Report",
+          "value_raw": "Not included"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_TEMP120_XD",
+      "model": "TEMP120-XD",
+      "product_name_en": "TEMP 120 Extended Duty (XD)",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Variant",
+          "value_raw": "Extended Duty (XD)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-55 to +85 °C"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Internal Cold Junction Accuracy – Maximum",
+          "value_raw": "±0.36 °C maximum (-55 to +85 °C)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Total Measurement Accuracy – Static Environment – Maximum",
+          "value_raw": "±1.0 °C maximum (-55 to +85 °C)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Performance Verification",
+          "value_raw": "Engineering design; verified over the full product temperature range"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Calibration Certificate",
+          "value_raw": "Included"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Instrument Data Report",
+          "value_raw": "Included"
+        }
+      ]
+    }
   ],
   "important_specifications": [
     {
@@ -52,7 +143,7 @@
       "raw_ref": {
         "file": "data/raw/TEMP120-XD.json",
         "product_index": 0,
-        "spec_index": 7,
+        "spec_index": 8,
         "source_rows": [
           11
         ]
@@ -71,7 +162,7 @@
       "raw_ref": {
         "file": "data/raw/TEMP120-XD.json",
         "product_index": 0,
-        "spec_index": 6,
+        "spec_index": 7,
         "source_rows": [
           10
         ]
@@ -90,7 +181,7 @@
       "raw_ref": {
         "file": "data/raw/TEMP120-XD.json",
         "product_index": 0,
-        "spec_index": 18,
+        "spec_index": 19,
         "source_rows": [
           24
         ]
@@ -110,7 +201,7 @@
       "raw_ref": {
         "file": "data/raw/TEMP120-XD.json",
         "product_index": 0,
-        "spec_index": 25,
+        "spec_index": 26,
         "source_rows": [
           31
         ]
@@ -129,7 +220,7 @@
       "raw_ref": {
         "file": "data/raw/TEMP120-XD.json",
         "product_index": 0,
-        "spec_index": 26,
+        "spec_index": 27,
         "source_rows": [
           32
         ]
@@ -148,32 +239,9 @@
       "raw_ref": {
         "file": "data/raw/TEMP120-XD.json",
         "product_index": 0,
-        "spec_index": 27,
+        "spec_index": 28,
         "source_rows": [
           33
-        ]
-      }
-    },
-    {
-      "canonical_key": "weight",
-      "name": "Weight",
-      "quantity_kind": "mass",
-      "normalized_value": {
-        "type": "number",
-        "value": 0.9,
-        "unit": "kg",
-        "qualifier": null,
-        "alternate": {
-          "value": 1.95,
-          "unit": "lb"
-        }
-      },
-      "raw_ref": {
-        "file": "data/raw/TEMP120-XD.json",
-        "product_index": 0,
-        "spec_index": 34,
-        "source_rows": [
-          40
         ]
       }
     }
@@ -201,14 +269,14 @@
     "USB",
     "Đo nhiệt độ"
   ],
-  "search_text_en": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | Measurement Devices | Thermocouple Measurement Modules | Measurement Device | Temperature | Measure Temperature | RJ45 | USB | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA | Weight: 0.9 kg | temperature measurement",
-  "search_text_vi": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | Thiết bị đo lường | Mô-đun đo cặp nhiệt điện | Nhiệt độ | Đo nhiệt độ | RJ45 | USB | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA | Weight: 0.9 kg",
-  "search_text": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | Measurement Devices | Thermocouple Measurement Modules | Measurement Device | Temperature | Measure Temperature | RJ45 | USB | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA | Weight: 0.9 kg | temperature measurement | Thiết bị đo lường | Mô-đun đo cặp nhiệt điện | Nhiệt độ | Đo nhiệt độ",
+  "search_text_en": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | TEMP120-SD | TEMP 120 Standard Duty (SD) | TEMP 120 Extended Duty (XD) | Measurement Devices | Thermocouple Measurement Modules | Measurement Device | Temperature | Measure Temperature | RJ45 | USB | Product Variant: Standard Duty (SD) | Operating Temperature Range: -40 to +70 °C | Internal Cold Junction Accuracy – Maximum: ±0.28 °C maximum (-40 to +70 °C) | Total Measurement Accuracy – Static Environment – Maximum: ±0.8 °C maximum (-40 to +70 °C) | Measurement Performance Verification: Engineering design; verified in a laboratory environment | Calibration Certificate: Not included | Instrument Data Report: Not included | Product Variant: Extended Duty (XD) | Operating Temperature Range: -55 to +85 °C | Internal Cold Junction Accuracy – Maximum: ±0.36 °C maximum (-55 to +85 °C) | Total Measurement Accuracy – Static Environment – Maximum: ±1.0 °C maximum (-55 to +85 °C) | Measurement Performance Verification: Engineering design; verified over the full product temperature range | Calibration Certificate: Included | Instrument Data Report: Included | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA | temperature measurement",
+  "search_text_vi": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | TEMP120-SD | TEMP 120 Standard Duty (SD) | TEMP 120 Extended Duty (XD) | Thiết bị đo lường | Mô-đun đo cặp nhiệt điện | Nhiệt độ | Đo nhiệt độ | RJ45 | USB | Product Variant: Standard Duty (SD) | Operating Temperature Range: -40 to +70 °C | Internal Cold Junction Accuracy – Maximum: ±0.28 °C maximum (-40 to +70 °C) | Total Measurement Accuracy – Static Environment – Maximum: ±0.8 °C maximum (-40 to +70 °C) | Measurement Performance Verification: Engineering design; verified in a laboratory environment | Calibration Certificate: Not included | Instrument Data Report: Not included | Product Variant: Extended Duty (XD) | Operating Temperature Range: -55 to +85 °C | Internal Cold Junction Accuracy – Maximum: ±0.36 °C maximum (-55 to +85 °C) | Total Measurement Accuracy – Static Environment – Maximum: ±1.0 °C maximum (-55 to +85 °C) | Measurement Performance Verification: Engineering design; verified over the full product temperature range | Calibration Certificate: Included | Instrument Data Report: Included | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA",
+  "search_text": "TEMP120-XD | TEMP 120 | CSI_TEMP120_XD | TEMP120-SD | TEMP 120 Standard Duty (SD) | TEMP 120 Extended Duty (XD) | Measurement Devices | Thermocouple Measurement Modules | Measurement Device | Temperature | Measure Temperature | RJ45 | USB | Product Variant: Standard Duty (SD) | Operating Temperature Range: -40 to +70 °C | Internal Cold Junction Accuracy – Maximum: ±0.28 °C maximum (-40 to +70 °C) | Total Measurement Accuracy – Static Environment – Maximum: ±0.8 °C maximum (-40 to +70 °C) | Measurement Performance Verification: Engineering design; verified in a laboratory environment | Calibration Certificate: Not included | Instrument Data Report: Not included | Product Variant: Extended Duty (XD) | Operating Temperature Range: -55 to +85 °C | Internal Cold Junction Accuracy – Maximum: ±0.36 °C maximum (-55 to +85 °C) | Total Measurement Accuracy – Static Environment – Maximum: ±1.0 °C maximum (-55 to +85 °C) | Measurement Performance Verification: Engineering design; verified over the full product temperature range | Calibration Certificate: Included | Instrument Data Report: Included | Operating Temperature Range: -55 to 85 °C | Measurement Resolution: 0.015 °C | Maximum Input Voltage: ± 10 V DC | Power Supply Voltage: 9.6 to 32 V DC | Typical Current Drain – Sleep: 5 mA | Typical Current Drain – Active: 30 mA | temperature measurement | Thiết bị đo lường | Mô-đun đo cặp nhiệt điện | Nhiệt độ | Đo nhiệt độ",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "05c3c4b6c122fc0d683ef88c80d62581c0eab086c8370f56e3843f9913728dbd"
+  "content_hash": "6a03264cb0e6dfaa746c39d578d56c04865533afda19921ea1178ef1ebdd815c"
 }

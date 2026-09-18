@@ -89,7 +89,6 @@ async function loadSourceData() {
       .filter((product) => product.status === 'review')
       .map((product) => product.product_id),
   );
-  const masterIds = new Set(master.map((product) => product.product_id));
   const documentFiles = (await readdir(documentsDirectory))
     .filter((file) => file.endsWith('.json'))
     .sort();
@@ -180,7 +179,11 @@ async function loadSourceData() {
     }));
 
   const media = master
-    .filter((product) => product.image_url || product.product_url)
+    .filter(
+      (product) =>
+        product.status === 'active' &&
+        (product.image_url || product.product_url),
+    )
     .map((product) => ({
       product_id: product.product_id,
       media_type: 'primary',
@@ -190,20 +193,22 @@ async function loadSourceData() {
       metadata: {},
     }));
 
-  const products = master.map((product) => ({
-    product_id: product.product_id,
-    model: product.model,
-    product_name_en: product.product_name_en,
-    category: product.category ?? null,
-    subcategory: product.subcategory ?? null,
-    device_type: product.device_type ?? null,
-    status: product.status,
-  }));
+  const products = master
+    .filter((product) => product.status === 'active')
+    .map((product) => ({
+      product_id: product.product_id,
+      model: product.model,
+      product_name_en: product.product_name_en,
+      category: product.category ?? null,
+      subcategory: product.subcategory ?? null,
+      device_type: product.device_type ?? null,
+      status: product.status,
+    }));
 
   return {
     sourceErrors,
     products,
-    masterIds: [...masterIds],
+    masterIds: [...activeIds],
     activeIds: [...activeIds],
     reviewIds: [...reviewIds],
     documentIds: [...documentIds],
@@ -224,9 +229,10 @@ async function loadSourceData() {
       index_version: indexVersion,
     })),
     sourceValidation: {
-      products: master.length,
+      products: products.length,
       active: activeIds.size,
       review: reviewIds.size,
+      skipped_review: reviewIds.size,
       product_documents: activeDocuments.length,
       product_search_index: activeDocuments.length,
       product_specifications: specifications.length,
@@ -249,6 +255,7 @@ async function importData(sql, data) {
   return sql.begin(async (transaction) => {
     const stats = {
       products_changed: 0,
+      products_removed: 0,
       specifications_changed: 0,
       specifications_removed: 0,
       documents_changed: 0,
@@ -433,6 +440,14 @@ async function importData(sql, data) {
         or product_search_index.index_version is distinct from excluded.index_version
     `;
     stats.search_index_changed = searchResult.count;
+
+    if (data.reviewIds.length > 0) {
+      const productsRemoved = await transaction`
+        delete from public.products
+        where product_id = any(${transaction.array(data.reviewIds)}::text[])
+      `;
+      stats.products_removed = productsRemoved.count;
+    }
     return stats;
   });
 }
@@ -472,7 +487,7 @@ async function validateDatabase(sql, data) {
 
   const expectedProductIds = new Set(data.masterIds);
   const expectedActiveIds = new Set(data.activeIds);
-  const expectedReviewIds = new Set(data.reviewIds);
+  const expectedReviewIds = new Set();
   const expectedDocumentIds = new Set(
     data.documents.map((document) => document.product_id),
   );

@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "TCAV.json",
+        "original_source": {
+          "file": "TCAV.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_TCAV",
+      "manufacturer": "Campbell Scientific",
+      "model": "TCAV",
+      "product_name_en": "TCAV",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Temperature Sensors (Air/Soil/Water)",
+        "device_type": "Soil Temperature Sensor"
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "TCAV",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Averaging Soil Thermocouple Probe",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Parameter",
+          "name_vi": "Đại lượng đo",
+          "value_raw": "Average soil temperature",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Energy-balance / soil heat flux systems",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Thermocouple Type",
+          "name_vi": "Loại thermocouple",
+          "value_raw": "Type E",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Thermocouple Materials",
+          "name_vi": "Vật liệu thermocouple",
+          "value_raw": "Chromel-Constantan",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Number of Thermocouples",
+          "name_vi": "Số thermocouple",
+          "value_raw": "4",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Wire Gauge",
+          "name_vi": "Cỡ dây",
+          "value_raw": "24 AWG",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Maximum Spacing Between Thermocouple Pairs",
+          "name_vi": "Khoảng cách tối đa giữa các cặp thermocouple",
+          "value_raw": "Up to 1 m",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Typical Output",
+          "name_vi": "Đầu ra điển hình",
+          "value_raw": "60 µV/°C",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "0.45 kg (1 lb) with 15.24 m (50 ft) cable",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Reference Temperature Required",
+          "name_vi": "Yêu cầu nhiệt độ tham chiếu",
+          "value_raw": "Yes",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Recommended Reference Temperature Source",
+          "name_vi": "Nguồn nhiệt độ tham chiếu khuyến nghị",
+          "value_raw": "Data logger panel temperature sensor",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Differential Measurement Instruction",
+          "name_vi": "Lệnh đo vi sai",
+          "value_raw": "TCDiff()",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Single-Ended Measurement Instruction",
+          "name_vi": "Lệnh đo single-ended",
+          "value_raw": "TCSe()",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Recommended Measurement Instruction",
+          "name_vi": "Lệnh đo khuyến nghị",
+          "value_raw": "TCDiff()",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Thermocouple Type Setting in CRBasic",
+          "name_vi": "Thiết lập loại thermocouple trong CRBasic",
+          "value_raw": "TypeE",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Reference Temperature Instruction",
+          "name_vi": "Lệnh đo nhiệt độ tham chiếu",
+          "value_raw": "PanelTemp()",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Purple Wire Function",
+          "name_vi": "Chức năng dây tím",
+          "value_raw": "Analog signal",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Red Wire Function",
+          "name_vi": "Chức năng dây đỏ",
+          "value_raw": "Signal reference",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Differential High Connection",
+          "name_vi": "Kết nối vi sai mức cao",
+          "value_raw": "U configured for differential high / DIFF H",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Differential Low Connection",
+          "name_vi": "Kết nối vi sai mức thấp",
+          "value_raw": "U configured for differential low / DIFF L",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Single-Ended Connection",
+          "name_vi": "Kết nối single-ended",
+          "value_raw": "U configured for single-ended / SE",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Typical Soil Heat Flux System Components",
+          "name_vi": "Thành phần hệ thống đo nhiệt thông lượng đất điển hình",
+          "value_raw": "TCAV, HFP01SC Soil Heat Flux Plates, and CS616 / CS650 / CS655 water content reflectometer",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "12 months",
+          "source_rows": [
+            27
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": "TCAV_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/tcav"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_700/322",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "review",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_TCAV",
+        "variant_count": 1,
+        "source_files": [
+          "TCAV.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_TCAV",
+          "model": "TCAV",
+          "product_name_en": "TCAV",
+          "is_representative": true,
+          "distinguishing_specifications": [],
+          "documents": {
+            "product_url": null,
+            "datasheet": null,
+            "user_manual": "TCAV_manual.pdf",
+            "order_form": "https://www.campbellsci.com/products/tcav"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_700/322",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TCAV.json",
+            "product_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

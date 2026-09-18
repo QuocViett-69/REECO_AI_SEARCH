@@ -1,25 +1,25 @@
 {
   "schema_version": "1.0",
-  "input_fingerprint_sha256": "31f4ec62553554e5b231ce8f8f3ae8c4fe463dbdecb64c01543ee9e7a85e2acb",
+  "input_fingerprint_sha256": "83d7ecda5a321d40fed392a918557fea79ff38624b75884a68408bd02b3be898",
   "validation_status": "passed",
   "summary": {
-    "total_master_products": 50,
-    "active_products": 42,
-    "enriched_products": 42,
-    "skipped_products": 8,
+    "total_master_products": 91,
+    "active_products": 86,
+    "enriched_products": 86,
+    "skipped_products": 5,
     "products_with_name_vi": 12,
-    "products_requiring_translation_review": 30,
-    "measurement_concepts": 28,
-    "total_measurement_assignments": 66,
+    "products_requiring_translation_review": 74,
+    "measurement_concepts": 27,
+    "total_measurement_assignments": 91,
     "application_concepts": 8,
-    "total_application_assignments": 9,
-    "supported_protocol_assignments": 174,
-    "unsupported_protocol_assignments": 2,
-    "capability_concepts": 29,
-    "capability_assignments": 67,
-    "aliases": 123,
-    "en_keywords": 607,
-    "vi_keywords": 459,
+    "total_application_assignments": 11,
+    "supported_protocol_assignments": 273,
+    "unsupported_protocol_assignments": 3,
+    "capability_concepts": 28,
+    "capability_assignments": 92,
+    "aliases": 240,
+    "en_keywords": 1022,
+    "vi_keywords": 775,
     "enrichment_without_evidence_count": 0,
     "unknown_measurement_count": 0,
     "unknown_application_count": 0,
@@ -28,7 +28,7 @@
     "protocol_relation_conflict_count": 0,
     "alias_collision_count": 0,
     "duplicate_keyword_count": 0,
-    "translation_review_count": 30,
+    "translation_review_count": 74,
     "invalid_raw_ref_count": 0,
     "unsupported_semantic_claim_count": 0,
     "duplicate_product_artifact_count": 0,
@@ -54,26 +54,8 @@
       "reason": "product_status_review"
     },
     {
-      "product_id": "CSI_AM16_32B_ST",
-      "model": "AM16/32B-ST",
-      "status": "review",
-      "reason": "product_status_review"
-    },
-    {
-      "product_id": "CSI_ASPEN10_CELL_ST",
-      "model": "Aspen10-CELL-ST",
-      "status": "review",
-      "reason": "product_status_review"
-    },
-    {
       "product_id": "CSI_CR1000XE_ST_CC",
       "model": "CR1000Xe-ST-CC",
-      "status": "review",
-      "reason": "product_status_review"
-    },
-    {
-      "product_id": "CSI_CR6_NA_ST_CC",
-      "model": "CR6-NA-ST-CC",
       "status": "review",
       "reason": "product_status_review"
     },
@@ -181,6 +163,16 @@
       "reason": "conservative_translation_not_available"
     },
     {
+      "product_id": "CSI_AM16_32B_ST",
+      "name_en": "16 or 32 Channel Relay Multiplexer** -ST -25 to",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_ASPEN10_CELL_ST",
+      "name_en": "Aspen10 Edge Device for a Single Sensor -CEL",
+      "reason": "conservative_translation_not_available"
+    },
+    {
       "product_id": "CSI_AVW200_ST",
       "name_en": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
       "reason": "conservative_translation_not_available"
@@ -198,6 +190,11 @@
     {
       "product_id": "CSI_CR350_NA",
       "name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
       "reason": "conservative_translation_not_available"
     },
     {
@@ -233,6 +230,211 @@
     {
       "product_id": "CSI_SUNSCOUT",
       "name_en": "Class A Solar Resource Assessment Station",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_105E",
+      "name_en": "Type E Thermocouple Burial Probe",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_BLACKGLOBE",
+      "name_en": "BlackGlobe Temperature Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CELL210_V",
+      "name_en": "4G LTE CAT-1 Cellular Module for Verizon",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CELL215_IT1A",
+      "name_en": "4G LTE CAT-1 Cellular Module for EMEA Countries",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CELL220_IT1A",
+      "name_en": "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CELL225_IT1A",
+      "name_en": "4G LTE CAT-1 Cellular Module for Japan",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "name_en": "COM220 Phone Modem",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_COM320_AU",
+      "name_en": "COM320 Voice Phone Modem",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CPEC306_DW",
+      "name_en": "CPEC306 Closed-Path Eddy-Covariance System",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CRS451_WN",
+      "name_en": "CRS451 Stainless-Steel Water-Level Recording Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CRVW3_NE",
+      "name_en": "CRVW3 Vibrating-Wire Data Logger",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "name_en": "CS106 Barometric Pressure Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS140",
+      "name_en": "Background Luminance Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS230",
+      "name_en": "SDI-12 Temperature Profiler",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "name_en": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS310",
+      "name_en": "CS310 Quantum Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS456",
+      "name_en": "CS456",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS506",
+      "name_en": "CS506 Fuel Moisture Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CS610",
+      "name_en": "3-rod TDR Probe",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "name_en": "HFP01 Soil Heat Flux Plate",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_HMP60",
+      "name_en": "HMP60 Temperature and Relative Humidity Probe",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "name_en": "HS2 HydroSense II Handheld Soil Water Content Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "name_en": "HygroVue5 Digital Temperature and Relative Humidity Sensor",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_LEVELVUEB10_15",
+      "name_en": "LevelVueB10-15",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "name_en": "MeteoPV",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_METSENS200_D2",
+      "name_en": "MetSENS200-D2",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_METSENS300_D2",
+      "name_en": "MetSENS300-D2",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_METSENS550_D2",
+      "name_en": "MetSENS550-D2",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "name_en": "MS-80SH",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "name_en": "PS24-w/CH150",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_RF452",
+      "name_en": "RF452",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "name_en": "RF500M",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_SKYVUE8",
+      "name_en": "SkyVue™8",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "name_en": "SN500SS",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_TB4",
+      "name_en": "TB4",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "name_en": "TCAV",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_TE525",
+      "name_en": "TE525",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_TX326",
+      "name_en": "TX326 Satellite Transmitter for METEOSAT",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_VOLT108_XD",
+      "name_en": "Granite™ Volt 108 Extended Duty (-XD)",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_WINDSONIC1",
+      "name_en": "WindSonic1",
       "reason": "conservative_translation_not_available"
     }
   ],
@@ -275,10 +477,13 @@
     "data/enriched/products/CSI_SOILVUE10_5.json",
     "data/enriched/products/CSI_LWS.json",
     "data/enriched/products/CSI_SNOWVUE10.json",
+    "data/enriched/products/CSI_AM16_32B_ST.json",
+    "data/enriched/products/CSI_ASPEN10_CELL_ST.json",
     "data/enriched/products/CSI_AVW200_ST.json",
     "data/enriched/products/CSI_CR310_NA.json",
     "data/enriched/products/CSI_CR310_WIFI.json",
     "data/enriched/products/CSI_CR350_NA.json",
+    "data/enriched/products/CSI_CR6_NA_ST_CC.json",
     "data/enriched/products/CSI_TEMP120_XD.json",
     "data/enriched/products/CSI_VWIRE305_XD.json",
     "data/enriched/products/CSI_CELL205_AT.json",
@@ -291,6 +496,47 @@
     "data/enriched/products/CSI_PS150.json",
     "data/enriched/products/CSI_PS200.json",
     "data/enriched/products/CSI_PS84_CR.json",
-    "data/enriched/products/CSI_SUNSCOUT.json"
+    "data/enriched/products/CSI_SUNSCOUT.json",
+    "data/enriched/products/CSI_105E.json",
+    "data/enriched/products/CSI_BLACKGLOBE.json",
+    "data/enriched/products/CSI_CELL210_V.json",
+    "data/enriched/products/CSI_CELL215_IT1A.json",
+    "data/enriched/products/CSI_CELL220_IT1A.json",
+    "data/enriched/products/CSI_CELL225_IT1A.json",
+    "data/enriched/products/CSI_COM220_AU.json",
+    "data/enriched/products/CSI_COM320_AU.json",
+    "data/enriched/products/CSI_CPEC306_DW.json",
+    "data/enriched/products/CSI_CRS451_WN.json",
+    "data/enriched/products/CSI_CRVW3_NE.json",
+    "data/enriched/products/CSI_CS106_PF.json",
+    "data/enriched/products/CSI_CS140.json",
+    "data/enriched/products/CSI_CS230.json",
+    "data/enriched/products/CSI_CS241DM.json",
+    "data/enriched/products/CSI_CS310.json",
+    "data/enriched/products/CSI_CS456.json",
+    "data/enriched/products/CSI_CS506.json",
+    "data/enriched/products/CSI_CS610.json",
+    "data/enriched/products/CSI_HFP01.json",
+    "data/enriched/products/CSI_HMP60.json",
+    "data/enriched/products/CSI_HS2_12.json",
+    "data/enriched/products/CSI_HYGROVUE5.json",
+    "data/enriched/products/CSI_LEVELVUEB10_15.json",
+    "data/enriched/products/CSI_METEOPV.json",
+    "data/enriched/products/CSI_METSENS200_D2.json",
+    "data/enriched/products/CSI_METSENS300_D2.json",
+    "data/enriched/products/CSI_METSENS550_D2.json",
+    "data/enriched/products/CSI_MS80SH.json",
+    "data/enriched/products/CSI_PS24_W_CH150.json",
+    "data/enriched/products/CSI_RF452.json",
+    "data/enriched/products/CSI_RF500M.json",
+    "data/enriched/products/CSI_SKYVUE8.json",
+    "data/enriched/products/CSI_SN500SS.json",
+    "data/enriched/products/CSI_TB4.json",
+    "data/enriched/products/CSI_TCAV.json",
+    "data/enriched/products/CSI_TE525.json",
+    "data/enriched/products/CSI_TX326.json",
+    "data/enriched/products/CSI_VOLT108_XD.json",
+    "data/enriched/products/CSI_VWANALYZER.json",
+    "data/enriched/products/CSI_WINDSONIC1.json"
   ]
 }

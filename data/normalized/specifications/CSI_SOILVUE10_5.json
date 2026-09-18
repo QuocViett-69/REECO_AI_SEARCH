@@ -3,30 +3,91 @@
   "product_id": "CSI_SOILVUE10_5",
   "model": "SoilVue10-5",
   "raw_record_ref": {
-    "file": "data/raw/SoilVue10.json",
+    "file": "data/raw/CSI_SOILVUE10_5.json",
     "product_index": 0,
-    "raw_record_key": "SoilVue10.json#0",
-    "raw_product_id": "CSI_SOILVUE10_0_5_M",
-    "raw_model": "SoilVue10 – 0.5 m"
+    "raw_record_key": "CSI_SOILVUE10_5.json#0",
+    "raw_product_id": "CSI_SOILVUE10_5",
+    "raw_model": "SoilVue10-5"
   },
-  "specifications": [
+  "variants": [
     {
-      "product_id": "CSI_SOILVUE10_5",
-      "section": "General Specifications",
-      "name_raw": "Product Name",
-      "value_raw": "SoilVue™10",
-      "type": "text",
-      "normalized": null,
-      "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
-        "product_index": 0,
-        "spec_index": 0,
-        "source_rows": [
-          2
-        ]
-      },
-      "canonical_key": "product_name"
+      "product_id": "CSI_SOILVUE10_0_5M",
+      "model": "SoilVue10-0.5m",
+      "product_name_en": "SoilVue™10",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Variant",
+          "value_raw": "0.5 m option"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Number of Measurement Depths",
+          "value_raw": "6"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Depths",
+          "value_raw": "5, 10, 20, 30, 40, 50 cm (2, 4, 8, 12, 16, 20 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Length",
+          "value_raw": "0.55 m (21.5 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "1.9 kg (4.2 lb)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Response Time",
+          "value_raw": "Up to 1 minute"
+        }
+      ]
     },
+    {
+      "product_id": "CSI_SOILVUE10_1_0M",
+      "model": "SoilVue10-1.0m",
+      "product_name_en": "SoilVue™10",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Variant",
+          "value_raw": "1.0 m option"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Number of Measurement Depths",
+          "value_raw": "9"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Depths",
+          "value_raw": "5, 10, 20, 30, 40, 50, 60, 75, 100 cm (2, 4, 8, 12, 16, 20, 24, 30, 40 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Length",
+          "value_raw": "1.05 m (41.2 in.)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "value_raw": "3.6 kg (7.9 lb)"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Response Time",
+          "value_raw": "Up to 1.5 minutes"
+        }
+      ]
+    }
+  ],
+  "specifications": [
     {
       "product_id": "CSI_SOILVUE10_5",
       "section": "General Specifications",
@@ -35,9 +96,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 1,
+        "spec_index": 0,
         "source_rows": [
           3
         ]
@@ -52,9 +113,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 2,
+        "spec_index": 1,
         "source_rows": [
           4
         ]
@@ -69,9 +130,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 3,
+        "spec_index": 2,
         "source_rows": [
           5
         ]
@@ -86,9 +147,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 4,
+        "spec_index": 3,
         "source_rows": [
           6
         ]
@@ -103,9 +164,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 5,
+        "spec_index": 4,
         "source_rows": [
           7
         ]
@@ -125,9 +186,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 6,
+        "spec_index": 5,
         "source_rows": [
           8
         ]
@@ -142,9 +203,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 7,
+        "spec_index": 6,
         "source_rows": [
           9
         ]
@@ -165,9 +226,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 8,
+        "spec_index": 7,
         "source_rows": [
           10
         ]
@@ -189,9 +250,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 9,
+        "spec_index": 8,
         "source_rows": [
           11
         ]
@@ -207,9 +268,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 10,
+        "spec_index": 9,
         "source_rows": [
           12
         ]
@@ -225,9 +286,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 11,
+        "spec_index": 10,
         "source_rows": [
           13
         ]
@@ -254,9 +315,9 @@
         "unsupported_protocols": []
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 12,
+        "spec_index": 11,
         "source_rows": [
           14
         ]
@@ -276,9 +337,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 13,
+        "spec_index": 12,
         "source_rows": [
           15
         ]
@@ -302,9 +363,9 @@
         }
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 14,
+        "spec_index": 13,
         "source_rows": [
           16
         ]
@@ -329,9 +390,9 @@
         }
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 15,
+        "spec_index": 14,
         "source_rows": [
           17
         ]
@@ -356,9 +417,9 @@
         }
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 16,
+        "spec_index": 15,
         "source_rows": [
           18
         ]
@@ -383,9 +444,9 @@
         }
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 17,
+        "spec_index": 16,
         "source_rows": [
           19
         ]
@@ -410,9 +471,9 @@
         }
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 18,
+        "spec_index": 17,
         "source_rows": [
           20
         ]
@@ -437,9 +498,9 @@
         }
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 19,
+        "spec_index": 18,
         "source_rows": [
           21
         ]
@@ -455,9 +516,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 20,
+        "spec_index": 19,
         "source_rows": [
           22
         ]
@@ -478,9 +539,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 21,
+        "spec_index": 20,
         "source_rows": [
           23
         ]
@@ -495,9 +556,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 22,
+        "spec_index": 21,
         "source_rows": [
           24
         ]
@@ -518,9 +579,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 23,
+        "spec_index": 22,
         "source_rows": [
           25
         ]
@@ -535,9 +596,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 24,
+        "spec_index": 23,
         "source_rows": [
           26
         ]
@@ -558,9 +619,9 @@
         "qualifier": null
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 25,
+        "spec_index": 24,
         "source_rows": [
           27
         ]
@@ -575,9 +636,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 26,
+        "spec_index": 25,
         "source_rows": [
           28
         ]
@@ -592,9 +653,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 27,
+        "spec_index": 26,
         "source_rows": [
           29
         ]
@@ -609,9 +670,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 28,
+        "spec_index": 27,
         "source_rows": [
           30
         ]
@@ -632,9 +693,9 @@
         "qualifier": "≤"
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 29,
+        "spec_index": 28,
         "source_rows": [
           31
         ]
@@ -650,9 +711,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 30,
+        "spec_index": 29,
         "source_rows": [
           32
         ]
@@ -667,9 +728,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 31,
+        "spec_index": 30,
         "source_rows": [
           33
         ]
@@ -685,9 +746,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 32,
+        "spec_index": 31,
         "source_rows": [
           34
         ]
@@ -702,9 +763,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 33,
+        "spec_index": 32,
         "source_rows": [
           35
         ]
@@ -719,9 +780,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 34,
+        "spec_index": 33,
         "source_rows": [
           36
         ]
@@ -742,9 +803,9 @@
         "unsupported_protocols": []
       },
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 35,
+        "spec_index": 34,
         "source_rows": [
           37
         ]
@@ -759,9 +820,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 36,
+        "spec_index": 35,
         "source_rows": [
           38
         ]
@@ -776,9 +837,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 37,
+        "spec_index": 36,
         "source_rows": [
           39
         ]
@@ -793,9 +854,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 38,
+        "spec_index": 37,
         "source_rows": [
           40
         ]
@@ -810,9 +871,9 @@
       "type": "text",
       "normalized": null,
       "raw_ref": {
-        "file": "data/raw/SoilVue10.json",
+        "file": "data/raw/CSI_SOILVUE10_5.json",
         "product_index": 0,
-        "spec_index": 39,
+        "spec_index": 38,
         "source_rows": [
           41
         ]

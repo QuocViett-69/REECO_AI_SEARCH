@@ -1,22 +1,22 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-09-16T06:54:58.685Z",
+  "generated_at": "2026-09-18T08:29:41.875Z",
   "validation_status": "failed",
   "summary": {
-    "actual_product_count": 50,
-    "unique_product_id_count": 50,
-    "unique_model_count": 50,
-    "active_count": 42,
-    "review_count": 8,
-    "raw_file_count": 55,
-    "raw_product_record_count": 98,
-    "raw_unique_product_id_count": 95,
-    "matched_raw_count": 43,
-    "unmatched_raw_count": 7,
+    "actual_product_count": 91,
+    "unique_product_id_count": 91,
+    "unique_model_count": 91,
+    "active_count": 86,
+    "review_count": 5,
+    "raw_file_count": 97,
+    "raw_product_record_count": 140,
+    "raw_unique_product_id_count": 137,
+    "matched_raw_count": 87,
+    "unmatched_raw_count": 4,
     "taxonomy_conflict_count": 0,
     "true_identity_conflict_count": 1,
     "ambiguous_raw_match_count": 1,
-    "blocking_errors": 8
+    "blocking_errors": 5
   },
   "checks": {
     "duplicate_product_ids": {
@@ -118,28 +118,7 @@
           ]
         },
         {
-          "product_id": "CSI_AM16_32B_ST",
-          "fields": [
-            "product_url",
-            "image_url"
-          ]
-        },
-        {
-          "product_id": "CSI_ASPEN10_CELL_ST",
-          "fields": [
-            "product_url",
-            "image_url"
-          ]
-        },
-        {
           "product_id": "CSI_CR1000XE_ST_CC",
-          "fields": [
-            "product_url",
-            "image_url"
-          ]
-        },
-        {
-          "product_id": "CSI_CR6_NA_ST_CC",
           "fields": [
             "product_url",
             "image_url"
@@ -202,6 +181,102 @@
         },
         {
           "product_id": "CSI_SUNSCOUT",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_105E",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_BLACKGLOBE",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_CS230",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_CS241DM",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_LEVELVUEB10_15",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_METSENS200_D2",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_METSENS300_D2",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_METSENS550_D2",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_RF452",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_SKYVUE8",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_TB4",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_TE525",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_TX326",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_VOLT108_XD",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_VWANALYZER",
+          "fields": [
+            "product_url"
+          ]
+        },
+        {
+          "product_id": "CSI_WINDSONIC1",
           "fields": [
             "product_url"
           ]
@@ -269,32 +344,6 @@
           ]
         },
         {
-          "product_id": "CSI_AM16_32B_ST",
-          "reason": "meaningful_model_suffix_mismatch",
-          "candidates": [
-            {
-              "raw_file": "AM16_32B-XT.json",
-              "raw_index": 0,
-              "raw_record_key": "AM16_32B-XT.json#0",
-              "raw_product_id": "CSI_AM16_32B_XT",
-              "raw_model": "AM16/32B-XT"
-            }
-          ]
-        },
-        {
-          "product_id": "CSI_ASPEN10_CELL_ST",
-          "reason": "meaningful_model_suffix_mismatch",
-          "candidates": [
-            {
-              "raw_file": "Aspen10-CELL-XT.json",
-              "raw_index": 0,
-              "raw_record_key": "Aspen10-CELL-XT.json#0",
-              "raw_product_id": "CSI_ASPEN10_CELL_XT",
-              "raw_model": "Aspen10-CELL-XT"
-            }
-          ]
-        },
-        {
           "product_id": "CSI_CR1000XE_ST_CC",
           "reason": "meaningful_model_suffix_mismatch",
           "candidates": [
@@ -304,19 +353,6 @@
               "raw_record_key": "CR1000Xe-XT-CC.json#0",
               "raw_product_id": "CSI_CR1000XE_XT_CC",
               "raw_model": "CR1000Xe-XT-CC"
-            }
-          ]
-        },
-        {
-          "product_id": "CSI_CR6_NA_ST_CC",
-          "reason": "meaningful_model_suffix_mismatch",
-          "candidates": [
-            {
-              "raw_file": "CR6-NA-XT-CC.json",
-              "raw_index": 0,
-              "raw_record_key": "CR6-NA-XT-CC.json#0",
-              "raw_product_id": "CSI_CR6_NA_XT_CC",
-              "raw_model": "CR6-NA-XT-CC"
             }
           ]
         },
@@ -435,12 +471,6 @@
         "raw_record_key": "NR01.json#0"
       },
       {
-        "product_id": "CSI_SOILVUE10_5",
-        "canonical_name": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
-        "raw_alias": "SoilVue™10",
-        "raw_record_key": "SoilVue10.json#0"
-      },
-      {
         "product_id": "CSI_LWS",
         "canonical_name": "Meter Phytos 31 Leaf Wetness Sensor",
         "raw_alias": "LWS",
@@ -518,10 +548,8 @@
         "product_id": "CSI_TEMPVUE20_S",
         "raw_record_key": "TempVue20.json#0",
         "warnings": [
-          "Field \"Default RS-485 Configuration\" is blank for TempVue20-S in source row 10; no value was inferred from the other product variant.",
-          "Field \"Yellow Wire Function\" is blank for TempVue20-S in source row 35; no value was inferred from the other product variant.",
-          "Field \"Blue Wire Function\" is blank for TempVue20-S in source row 36; no value was inferred from the other product variant.",
-          "No explicit specification section labels were found in the worksheet; section was set to null for all specification entries."
+          "Taxonomy could not be determined from source file.",
+          "Product image URL was not provided in the user message."
         ]
       },
       {
@@ -564,23 +592,6 @@
         ]
       },
       {
-        "product_id": "CSI_CSAT3B_NC",
-        "raw_record_key": "CSAT3B_CSAT3BH.json#0",
-        "warnings": [
-          "Worksheet row 53 contains literal \"null\" as a continuation of \"Filtered Output (data-logger-prompted or unprompted to PC)\"; converted to JSON null.",
-          "Worksheet row 92 contains literal \"null\" for \"Heaters\"; converted to JSON null.",
-          "Worksheet row 93 contains literal \"null\" for \"Arms and Strut\"; converted to JSON null.",
-          "Worksheet row 94 contains literal \"null\" as a continuation of \"Arms and Strut\"; converted to JSON null.",
-          "Worksheet row 95 contains literal \"null\" for \"Transducer Fingers\"; converted to JSON null.",
-          "Worksheet row 96 contains literal \"null\" as a continuation of \"Transducer Fingers\"; converted to JSON null.",
-          "Worksheet row 97 contains literal \"null\" for \"Total System Power\"; converted to JSON null.",
-          "Worksheet row 98 contains literal \"null\" as a continuation of \"Total System Power\"; converted to JSON null.",
-          "Worksheet row 99 contains literal \"null\" for \"Controller Current Required\"; converted to JSON null.",
-          "Product name was not found explicitly in the worksheet.",
-          "Document rows are family-level rather than four-variant-aligned; documents were associated deterministically by the explicit CSAT3B/CSAT3BH token in each filename or order-form URL."
-        ]
-      },
-      {
         "product_id": "CSI_CLIMAVUE40",
         "raw_record_key": "ClimaVue40&52G2.json#0",
         "warnings": [
@@ -592,14 +603,6 @@
         "raw_record_key": "ClimaVue40&52G2.json#1",
         "warnings": [
           "Product name was not found explicitly in the worksheet or supplied Product Master."
-        ]
-      },
-      {
-        "product_id": "CSI_METSENS500_DS",
-        "raw_record_key": "MetSENS500.json#2",
-        "warnings": [
-          "No explicit specification section labels were found in the worksheet; section was set to null for all specification entries.",
-          "No order form or product URL was found in the worksheet; corresponding document fields were set to null."
         ]
       },
       {
@@ -685,6 +688,13 @@
         ]
       },
       {
+        "product_id": "CSI_ASPEN10_CELL_ST",
+        "raw_record_key": "CSI_ASPEN10_CELL_ST.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
         "product_id": "CSI_AVW200_ST",
         "raw_record_key": "AVW200_ST_XT.json#0",
         "warnings": [
@@ -695,7 +705,7 @@
         "product_id": "CSI_CR310_NA",
         "raw_record_key": "CR310-NA.json#0",
         "warnings": [
-          "Product name was not found explicitly in the worksheet or supplied Product Master."
+          "Product name was not found explicitly in the worksheet."
         ]
       },
       {
@@ -709,16 +719,21 @@
         "product_id": "CSI_CR350_NA",
         "raw_record_key": "CR350-NA.json#0",
         "warnings": [
-          "Product name was not found explicitly in the worksheet or supplied Product Master."
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_CR6_NA_ST_CC",
+        "raw_record_key": "CSI_CR6_NA_ST_CC.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
         ]
       },
       {
         "product_id": "CSI_CELL205_AT",
         "raw_record_key": "Cell205.json#0",
         "warnings": [
-          "Field \"Ships As\" is blank for CELL205-AT in source row 34; value was kept as null.",
-          "No explicit specification section labels were found in the worksheet; section was set to null for all specification entries.",
-          "User manual, datasheet, and order form are listed only in the first product column in the worksheet; they were associated with all CELL205 variants as family-level documents and require manual review."
+          "Product name was not found explicitly in the worksheet."
         ]
       },
       {
@@ -740,6 +755,171 @@
         "raw_record_key": "ch200_201_ps200.json#1",
         "warnings": [
           "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_105E",
+        "raw_record_key": "CSI_105E.json#0",
+        "warnings": [
+          "Model was taken from filename because no explicit Model field was found in the worksheet.",
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
+        ]
+      },
+      {
+        "product_id": "CSI_BLACKGLOBE",
+        "raw_record_key": "CSI_BLACKGLOBE.json#0",
+        "warnings": [
+          "Model was taken from filename because no explicit Model field was found in the worksheet.",
+          "Product name was not found explicitly in the worksheet or supplied Product Master.",
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_COM220_AU",
+        "raw_record_key": "CSI_COM220_AU.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_COM320_AU",
+        "raw_record_key": "CSI_COM320_AU.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_CPEC306_DW",
+        "raw_record_key": "CSI_CPEC306_DW.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_CRS451_WN",
+        "raw_record_key": "CSI_CRS451_WN.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_CRVW3_NE",
+        "raw_record_key": "CSI_CRVW3_NE.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_CS106_PF",
+        "raw_record_key": "CSI_CS106_PF.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_CS241DM",
+        "raw_record_key": "CSI_CS241DM.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_CS310",
+        "raw_record_key": "CSI_CS310.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_CS456",
+        "raw_record_key": "CSI_CS456.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_CS506",
+        "raw_record_key": "CS506_Specifications_SplitCells.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_HFP01",
+        "raw_record_key": "HFP01_HFP01SC_Specifications_SplitCells.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_HMP60",
+        "raw_record_key": "CSI_HMP60.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master.",
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_HS2_12",
+        "raw_record_key": "CSI_HS2_12.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_HYGROVUE5",
+        "raw_record_key": "CSI_HYGROVUE5.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_METEOPV",
+        "raw_record_key": "CSI_METEOPV.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_MS80SH",
+        "raw_record_key": "CSI_MS80SH.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_PS24_W_CH150",
+        "raw_record_key": "CSI_PS24_W_CH150.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_RF500M",
+        "raw_record_key": "CSI_RF500M.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_SN500SS",
+        "raw_record_key": "CSI_SN500SS.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_TCAV",
+        "raw_record_key": "CSI_TCAV.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
+        ]
+      },
+      {
+        "product_id": "CSI_VWANALYZER",
+        "raw_record_key": "CSI_VWANALYZER.json#0",
+        "warnings": [
+          "Taxonomy could not be determined from source file."
         ]
       }
     ],
@@ -943,6 +1123,170 @@
       {
         "product_id": "CSI_SUNSCOUT",
         "verified": "No"
+      },
+      {
+        "product_id": "CSI_105E",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_BLACKGLOBE",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CELL210_V",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CELL215_IT1A",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CELL220_IT1A",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CELL225_IT1A",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_COM220_AU",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_COM320_AU",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CPEC306_DW",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CRS451_WN",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CRVW3_NE",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CS106_PF",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CS140",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CS230",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CS241DM",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_CS310",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CS456",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_CS506",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_CS610",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_HFP01",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_HMP60",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_HS2_12",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_HYGROVUE5",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_LEVELVUEB10_15",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_METEOPV",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_METSENS200_D2",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_METSENS300_D2",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_METSENS550_D2",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_MS80SH",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_PS24_W_CH150",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_RF452",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_RF500M",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_SKYVUE8",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_SN500SS",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_TB4",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_TCAV",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_TE525",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_TX326",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_VOLT108_XD",
+        "verified": "No"
+      },
+      {
+        "product_id": "CSI_VWANALYZER",
+        "verified": "Yes"
+      },
+      {
+        "product_id": "CSI_WINDSONIC1",
+        "verified": "No"
       }
     ],
     "source_metadata_differences": []
@@ -1042,17 +1386,13 @@
     },
     {
       "product_id": "CSI_RAINVUE10_MM",
-      "raw_file": "RainVue10-20.json",
-      "raw_index": 1,
-      "raw_record_key": "RainVue10-20.json#1",
-      "raw_product_id": "CSI_RAINVUE10",
-      "raw_model": "RainVue10",
-      "match_method": "explicit_alias",
-      "match_evidence": {
-        "reason": "RainVue10-MM is the 0.1 mm tip record; -MM2 is the separate 0.2 mm variant.",
-        "specification_name": "Available Configuration",
-        "specification_value": "0.1 mm (0.0039 inch) tip"
-      },
+      "raw_file": "CSI_RAINVUE10_MM.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_RAINVUE10_MM.json#0",
+      "raw_product_id": "CSI_RAINVUE10_MM",
+      "raw_model": "RainVue10-MM",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
       "unresolved_reason": null
     },
     {
@@ -1233,17 +1573,13 @@
     },
     {
       "product_id": "CSI_SOILVUE10_5",
-      "raw_file": "SoilVue10.json",
+      "raw_file": "CSI_SOILVUE10_5.json",
       "raw_index": 0,
-      "raw_record_key": "SoilVue10.json#0",
-      "raw_product_id": "CSI_SOILVUE10_0_5_M",
-      "raw_model": "SoilVue10 – 0.5 m",
-      "match_method": "explicit_alias",
-      "match_evidence": {
-        "reason": "The canonical -5 variant is the raw 0.5 m option.",
-        "specification_name": "Product Variant",
-        "specification_value": "0.5 m option"
-      },
+      "raw_record_key": "CSI_SOILVUE10_5.json#0",
+      "raw_product_id": "CSI_SOILVUE10_5",
+      "raw_model": "SoilVue10-5",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
       "unresolved_reason": null
     },
     {
@@ -1270,25 +1606,25 @@
     },
     {
       "product_id": "CSI_AM16_32B_ST",
-      "raw_file": null,
-      "raw_index": null,
-      "raw_record_key": null,
-      "raw_product_id": null,
-      "raw_model": null,
-      "match_method": null,
+      "raw_file": "CSI_AM16_32B_ST.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_AM16_32B_ST.json#0",
+      "raw_product_id": "CSI_AM16_32B_ST",
+      "raw_model": "AM16/32B-ST",
+      "match_method": "exact_product_id",
       "match_evidence": null,
-      "unresolved_reason": "meaningful_model_suffix_mismatch"
+      "unresolved_reason": null
     },
     {
       "product_id": "CSI_ASPEN10_CELL_ST",
-      "raw_file": null,
-      "raw_index": null,
-      "raw_record_key": null,
-      "raw_product_id": null,
-      "raw_model": null,
-      "match_method": null,
+      "raw_file": "CSI_ASPEN10_CELL_ST.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_ASPEN10_CELL_ST.json#0",
+      "raw_product_id": "CSI_ASPEN10_CELL_ST",
+      "raw_model": "Aspen10-CELL-ST",
+      "match_method": "exact_product_id",
       "match_evidence": null,
-      "unresolved_reason": "meaningful_model_suffix_mismatch"
+      "unresolved_reason": null
     },
     {
       "product_id": "CSI_AVW200_ST",
@@ -1347,14 +1683,14 @@
     },
     {
       "product_id": "CSI_CR6_NA_ST_CC",
-      "raw_file": null,
-      "raw_index": null,
-      "raw_record_key": null,
-      "raw_product_id": null,
-      "raw_model": null,
-      "match_method": null,
+      "raw_file": "CSI_CR6_NA_ST_CC.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CR6_NA_ST_CC.json#0",
+      "raw_product_id": "CSI_CR6_NA_ST_CC",
+      "raw_model": "CR6-NA-ST-CC",
+      "match_method": "exact_product_id",
       "match_evidence": null,
-      "unresolved_reason": "meaningful_model_suffix_mismatch"
+      "unresolved_reason": null
     },
     {
       "product_id": "CSI_TEMP120_XD",
@@ -1510,6 +1846,457 @@
       "raw_record_key": "SunScout.json#0",
       "raw_product_id": "CSI_SUNSCOUT",
       "raw_model": "SunScout",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_105E",
+      "raw_file": "CSI_105E.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_105E.json#0",
+      "raw_product_id": "CSI_105E",
+      "raw_model": "105E",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_BLACKGLOBE",
+      "raw_file": "CSI_BLACKGLOBE.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_BLACKGLOBE.json#0",
+      "raw_product_id": "CSI_BLACKGLOBE",
+      "raw_model": "BLACKGLOBE",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CELL210_V",
+      "raw_file": "CSI_CELL210_V.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CELL210_V.json#0",
+      "raw_product_id": "CSI_CELL210_V",
+      "raw_model": "CELL210-V",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CELL215_IT1A",
+      "raw_file": "CSI_CELL215_IT1A.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CELL215_IT1A.json#0",
+      "raw_product_id": "CSI_CELL215_IT1A",
+      "raw_model": "CELL215-IT1A",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CELL220_IT1A",
+      "raw_file": "CSI_CELL220_IT1A.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CELL220_IT1A.json#0",
+      "raw_product_id": "CSI_CELL220_IT1A",
+      "raw_model": "CELL220-IT1A",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CELL225_IT1A",
+      "raw_file": "CSI_CELL225_IT1A.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CELL225_IT1A.json#0",
+      "raw_product_id": "CSI_CELL225_IT1A",
+      "raw_model": "CELL225-IT1A",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_COM220_AU",
+      "raw_file": "CSI_COM220_AU.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_COM220_AU.json#0",
+      "raw_product_id": "CSI_COM220_AU",
+      "raw_model": "COM220-AU",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_COM320_AU",
+      "raw_file": "CSI_COM320_AU.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_COM320_AU.json#0",
+      "raw_product_id": "CSI_COM320_AU",
+      "raw_model": "COM320-AU",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CPEC306_DW",
+      "raw_file": "CSI_CPEC306_DW.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CPEC306_DW.json#0",
+      "raw_product_id": "CSI_CPEC306_DW",
+      "raw_model": "CPEC306-DW",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CRS451_WN",
+      "raw_file": "CSI_CRS451_WN.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CRS451_WN.json#0",
+      "raw_product_id": "CSI_CRS451_WN",
+      "raw_model": "CRS451-WN",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CRVW3_NE",
+      "raw_file": "CSI_CRVW3_NE.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CRVW3_NE.json#0",
+      "raw_product_id": "CSI_CRVW3_NE",
+      "raw_model": "CRVW3-NE",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CS106_PF",
+      "raw_file": "CSI_CS106_PF.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CS106_PF.json#0",
+      "raw_product_id": "CSI_CS106_PF",
+      "raw_model": "CS106-PF",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CS140",
+      "raw_file": "CSI_CS140.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CS140.json#0",
+      "raw_product_id": "CSI_CS140",
+      "raw_model": "CS140",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CS230",
+      "raw_file": "CSI_CS230.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CS230.json#0",
+      "raw_product_id": "CSI_CS230",
+      "raw_model": "CS230",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CS241DM",
+      "raw_file": "CSI_CS241DM.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CS241DM.json#0",
+      "raw_product_id": "CSI_CS241DM",
+      "raw_model": "CS241DM",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CS310",
+      "raw_file": "CSI_CS310.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CS310.json#0",
+      "raw_product_id": "CSI_CS310",
+      "raw_model": "CS310",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CS456",
+      "raw_file": "CSI_CS456.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CS456.json#0",
+      "raw_product_id": "CSI_CS456",
+      "raw_model": "CS456",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CS506",
+      "raw_file": "CS506_Specifications_SplitCells.json",
+      "raw_index": 0,
+      "raw_record_key": "CS506_Specifications_SplitCells.json#0",
+      "raw_product_id": "CSI_CS506",
+      "raw_model": "CS506",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_CS610",
+      "raw_file": "CSI_CS610.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_CS610.json#0",
+      "raw_product_id": "CSI_CS610",
+      "raw_model": "CS610",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_HFP01",
+      "raw_file": "HFP01_HFP01SC_Specifications_SplitCells.json",
+      "raw_index": 0,
+      "raw_record_key": "HFP01_HFP01SC_Specifications_SplitCells.json#0",
+      "raw_product_id": "CSI_HFP01",
+      "raw_model": "HFP01",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_HMP60",
+      "raw_file": "CSI_HMP60.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_HMP60.json#0",
+      "raw_product_id": "CSI_HMP60",
+      "raw_model": "HMP60",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_HS2_12",
+      "raw_file": "CSI_HS2_12.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_HS2_12.json#0",
+      "raw_product_id": "CSI_HS2_12",
+      "raw_model": "HS2-12",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "raw_file": "CSI_HYGROVUE5.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_HYGROVUE5.json#0",
+      "raw_product_id": "CSI_HYGROVUE5",
+      "raw_model": "HygroVue5",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_LEVELVUEB10_15",
+      "raw_file": "CSI_LEVELVUEB10_15.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_LEVELVUEB10_15.json#0",
+      "raw_product_id": "CSI_LEVELVUEB10_15",
+      "raw_model": "LevelVueB10-15",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_METEOPV",
+      "raw_file": "CSI_METEOPV.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_METEOPV.json#0",
+      "raw_product_id": "CSI_METEOPV",
+      "raw_model": "MeteoPV",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_METSENS200_D2",
+      "raw_file": "CSI_METSENS200_D2.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_METSENS200_D2.json#0",
+      "raw_product_id": "CSI_METSENS200_D2",
+      "raw_model": "MetSENS200-D2",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_METSENS300_D2",
+      "raw_file": "CSI_METSENS300_D2.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_METSENS300_D2.json#0",
+      "raw_product_id": "CSI_METSENS300_D2",
+      "raw_model": "MetSENS300-D2",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_METSENS550_D2",
+      "raw_file": "CSI_METSENS550_D2.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_METSENS550_D2.json#0",
+      "raw_product_id": "CSI_METSENS550_D2",
+      "raw_model": "MetSENS550-D2",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_MS80SH",
+      "raw_file": "CSI_MS80SH.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_MS80SH.json#0",
+      "raw_product_id": "CSI_MS80SH",
+      "raw_model": "MS-80SH",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "raw_file": "CSI_PS24_W_CH150.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_PS24_W_CH150.json#0",
+      "raw_product_id": "CSI_PS24_W_CH150",
+      "raw_model": "PS24-w/CH150",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_RF452",
+      "raw_file": "CSI_RF452.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_RF452.json#0",
+      "raw_product_id": "CSI_RF452",
+      "raw_model": "RF452",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_RF500M",
+      "raw_file": "CSI_RF500M.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_RF500M.json#0",
+      "raw_product_id": "CSI_RF500M",
+      "raw_model": "RF500M",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_SKYVUE8",
+      "raw_file": "SkyVue.json",
+      "raw_index": 0,
+      "raw_record_key": "SkyVue.json#0",
+      "raw_product_id": "CSI_SKYVUE8",
+      "raw_model": "SkyVue8",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "raw_file": "CSI_SN500SS.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_SN500SS.json#0",
+      "raw_product_id": "CSI_SN500SS",
+      "raw_model": "SN500SS",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_TB4",
+      "raw_file": "CSI_TB4.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_TB4.json#0",
+      "raw_product_id": "CSI_TB4",
+      "raw_model": "TB4",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_TCAV",
+      "raw_file": "CSI_TCAV.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_TCAV.json#0",
+      "raw_product_id": "CSI_TCAV",
+      "raw_model": "TCAV",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_TE525",
+      "raw_file": "CSI_TE525.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_TE525.json#0",
+      "raw_product_id": "CSI_TE525",
+      "raw_model": "TE525",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_TX326",
+      "raw_file": "CSI_TX326.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_TX326.json#0",
+      "raw_product_id": "CSI_TX326",
+      "raw_model": "TX326",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_VOLT108_XD",
+      "raw_file": "CSI_VOLT108_XD.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_VOLT108_XD.json#0",
+      "raw_product_id": "CSI_VOLT108_XD",
+      "raw_model": "VOLT108-XD",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_VWANALYZER",
+      "raw_file": "CSI_VWANALYZER.json",
+      "raw_index": 0,
+      "raw_record_key": "CSI_VWANALYZER.json#0",
+      "raw_product_id": "CSI_VWANALYZER",
+      "raw_model": "VWANALYZER",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
+    },
+    {
+      "product_id": "CSI_WINDSONIC1",
+      "raw_file": "WindSonic1.json",
+      "raw_index": 0,
+      "raw_record_key": "WindSonic1.json#0",
+      "raw_product_id": "CSI_WINDSONIC1",
+      "raw_model": "WindSonic1",
       "match_method": "exact_product_id",
       "match_evidence": null,
       "unresolved_reason": null

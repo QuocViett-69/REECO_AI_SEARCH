@@ -34,7 +34,121 @@
   "aliases": [
     "TempVue20-S",
     "CSI_TEMPVUE20_S",
-    "TempVue™20"
+    "TempVue™20",
+    "TempVue20-M"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_TEMPVUE20_S",
+      "model": "TempVue20-S",
+      "product_name_en": "TempVue™20",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Variant",
+          "value_raw": "SDI-12 output version"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Communication Protocol",
+          "value_raw": "SDI-12 version 1.4"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default Address",
+          "value_raw": "SDI-12 address: 0"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Signal Type / Output",
+          "value_raw": "Digital output, SDI-12"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compatible Data Loggers / Controllers",
+          "value_raw": "GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "CRBasic Measurement Instruction",
+          "value_raw": "SDI12Recorder()"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Brown Wire Function",
+          "value_raw": "Power (12V)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Black Wire Function",
+          "value_raw": "Power ground"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Gray Wire Function",
+          "value_raw": "Aspen detect signal"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_TEMPVUE20_M",
+      "model": "TempVue20-M",
+      "product_name_en": "TempVue™20",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Variant",
+          "value_raw": "Modbus / RS-485 output version"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Communication Protocol",
+          "value_raw": "Modbus RTU protocol over RS-485"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default Address",
+          "value_raw": "Modbus address: 1"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Default RS-485 Configuration",
+          "value_raw": "19200 baud, 8 data bits, even parity, one stop bit"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Signal Type / Output",
+          "value_raw": "Digital output, Modbus RTU over RS-485"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Compatible Data Loggers / Controllers",
+          "value_raw": "GRANITE series, CR6, CR1000X series, CR3000 (with MD485), CR800 series (with MD485), CR300 series (with MD485), CR1000 (with MD485)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "CRBasic Measurement Instruction",
+          "value_raw": "SerialOpen() followed by ModbusClient()"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Brown Wire Function",
+          "value_raw": "12 VDC"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Black Wire Function",
+          "value_raw": "Power and signal ground"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Gray Wire Function",
+          "value_raw": "Ground (if present)"
+        }
+      ]
+    }
   ],
   "important_specifications": [
     {
@@ -50,7 +164,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 13,
+        "spec_index": 12,
         "source_rows": [
           15
         ]
@@ -69,7 +183,7 @@
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
-        "spec_index": 15,
+        "spec_index": 14,
         "source_rows": [
           17
         ]
@@ -97,14 +211,14 @@
     "SDI-12",
     "Đo nhiệt độ không khí"
   ],
-  "search_text_en": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | Sensors | Air Temperature Sensors | Air Temperature Sensor | Air Temperature | Measure Air Temperature | SDI-12 | Resolution: 0.01 °C | Current: 150 µA | ambient temperature",
-  "search_text_vi": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ không khí | Đo nhiệt độ không khí | SDI-12 | Resolution: 0.01 °C | Current: 150 µA",
-  "search_text": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | Sensors | Air Temperature Sensors | Air Temperature Sensor | Air Temperature | Measure Air Temperature | SDI-12 | Resolution: 0.01 °C | Current: 150 µA | ambient temperature | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ không khí | Đo nhiệt độ không khí",
+  "search_text_en": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | TempVue20-M | Sensors | Air Temperature Sensors | Air Temperature Sensor | Air Temperature | Measure Air Temperature | SDI-12 | Product Variant: SDI-12 output version | Communication Protocol: SDI-12 version 1.4 | Default Address: SDI-12 address: 0 | Signal Type / Output: Digital output, SDI-12 | Compatible Data Loggers / Controllers: GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000 | CRBasic Measurement Instruction: SDI12Recorder() | Brown Wire Function: Power (12V) | Black Wire Function: Power ground | Gray Wire Function: Aspen detect signal | Product Variant: Modbus / RS-485 output version | Communication Protocol: Modbus RTU protocol over RS-485 | Default Address: Modbus address: 1 | Default RS-485 Configuration: 19200 baud, 8 data bits, even parity, one stop bit | Signal Type / Output: Digital output, Modbus RTU over RS-485 | Compatible Data Loggers / Controllers: GRANITE series, CR6, CR1000X series, CR3000 (with MD485), CR800 series (with MD485), CR300 series (with MD485), CR1000 (with MD485) | CRBasic Measurement Instruction: SerialOpen() followed by ModbusClient() | Brown Wire Function: 12 VDC | Black Wire Function: Power and signal ground | Gray Wire Function: Ground (if present) | Resolution: 0.01 °C | Current: 150 µA | ambient temperature",
+  "search_text_vi": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | TempVue20-M | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ không khí | Đo nhiệt độ không khí | SDI-12 | Product Variant: SDI-12 output version | Communication Protocol: SDI-12 version 1.4 | Default Address: SDI-12 address: 0 | Signal Type / Output: Digital output, SDI-12 | Compatible Data Loggers / Controllers: GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000 | CRBasic Measurement Instruction: SDI12Recorder() | Brown Wire Function: Power (12V) | Black Wire Function: Power ground | Gray Wire Function: Aspen detect signal | Product Variant: Modbus / RS-485 output version | Communication Protocol: Modbus RTU protocol over RS-485 | Default Address: Modbus address: 1 | Default RS-485 Configuration: 19200 baud, 8 data bits, even parity, one stop bit | Signal Type / Output: Digital output, Modbus RTU over RS-485 | Compatible Data Loggers / Controllers: GRANITE series, CR6, CR1000X series, CR3000 (with MD485), CR800 series (with MD485), CR300 series (with MD485), CR1000 (with MD485) | CRBasic Measurement Instruction: SerialOpen() followed by ModbusClient() | Brown Wire Function: 12 VDC | Black Wire Function: Power and signal ground | Gray Wire Function: Ground (if present) | Resolution: 0.01 °C | Current: 150 µA",
+  "search_text": "TempVue20-S | TempVue™20 | CSI_TEMPVUE20_S | TempVue20-M | Sensors | Air Temperature Sensors | Air Temperature Sensor | Air Temperature | Measure Air Temperature | SDI-12 | Product Variant: SDI-12 output version | Communication Protocol: SDI-12 version 1.4 | Default Address: SDI-12 address: 0 | Signal Type / Output: Digital output, SDI-12 | Compatible Data Loggers / Controllers: GRANITE series, CR6, CR1000X, CR800 series, CR300 series, CR3000, CR1000 | CRBasic Measurement Instruction: SDI12Recorder() | Brown Wire Function: Power (12V) | Black Wire Function: Power ground | Gray Wire Function: Aspen detect signal | Product Variant: Modbus / RS-485 output version | Communication Protocol: Modbus RTU protocol over RS-485 | Default Address: Modbus address: 1 | Default RS-485 Configuration: 19200 baud, 8 data bits, even parity, one stop bit | Signal Type / Output: Digital output, Modbus RTU over RS-485 | Compatible Data Loggers / Controllers: GRANITE series, CR6, CR1000X series, CR3000 (with MD485), CR800 series (with MD485), CR300 series (with MD485), CR1000 (with MD485) | CRBasic Measurement Instruction: SerialOpen() followed by ModbusClient() | Brown Wire Function: 12 VDC | Black Wire Function: Power and signal ground | Gray Wire Function: Ground (if present) | Resolution: 0.01 °C | Current: 150 µA | ambient temperature | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ không khí | Đo nhiệt độ không khí",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "90c567637eedf2991d0d29e40f3d66d8d16a2fa834247716a2b1a5c28e8f5689"
+  "content_hash": "f82c3f8ae51e71d9aaf4807d4e671a00514af2c8de3580f55179070b559c1252"
 }

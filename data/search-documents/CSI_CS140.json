@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS140",
+  "model": "CS140",
+  "name_en": "Background Luminance Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Present Weather Sensors",
+    "subcategory_key": "present_weather_sensors",
+    "device_type": "Background Luminance Sensor",
+    "device_type_key": "background_luminance_sensor"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [
+    "RS-232",
+    "RS-485"
+  ],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS140",
+    "CSI_CS140",
+    "Background Luminance Sensor"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CS140",
+      "model": "CS140",
+      "product_name_en": "Background Luminance Sensor",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Product Name",
+          "value_raw": "Background Luminance Sensor"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Model",
+          "value_raw": "CS140"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Item Number",
+          "value_raw": "34293"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Warranty",
+          "value_raw": "2 years"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "electronics_supply_voltage",
+      "name": "Electronics Supply Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 9,
+        "max_value": 24,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS140.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "hood_heater_power",
+      "name": "Hood Heater Power",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "number",
+        "value": 48,
+        "unit": "W",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS140.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          29
+        ]
+      }
+    },
+    {
+      "canonical_key": "dew_heater_power",
+      "name": "Dew Heater Power",
+      "quantity_kind": "power",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.6,
+        "unit": "W",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS140.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          30
+        ]
+      }
+    },
+    {
+      "canonical_key": "shipping_weight",
+      "name": "Shipping Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 3.5,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 7.7,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS140.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          22
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS140",
+    "Background Luminance Sensor",
+    "Sensors",
+    "Present Weather Sensors",
+    "RS-232",
+    "RS-485",
+    "CSI_CS140"
+  ],
+  "search_keywords_vi": [
+    "CS140",
+    "Cảm biến",
+    "Cảm biến thời tiết hiện tại",
+    "Cảm biến độ chói nền",
+    "RS-232",
+    "RS-485"
+  ],
+  "search_text_en": "CS140 | Background Luminance Sensor | CSI_CS140 | Sensors | Present Weather Sensors | RS-232 | RS-485 | Product Name: Background Luminance Sensor | Model: CS140 | Item Number: 34293 | Warranty: 2 years | Electronics Supply Voltage: 9 to 24 V DC | Hood Heater Power: 48 W | Dew Heater Power: 0.6 W | Shipping Weight: 3.5 kg",
+  "search_text_vi": "CS140 | CSI_CS140 | Background Luminance Sensor | Cảm biến | Cảm biến thời tiết hiện tại | Cảm biến độ chói nền | RS-232 | RS-485 | Product Name: Background Luminance Sensor | Model: CS140 | Item Number: 34293 | Warranty: 2 years | Electronics Supply Voltage: 9 to 24 V DC | Hood Heater Power: 48 W | Dew Heater Power: 0.6 W | Shipping Weight: 3.5 kg",
+  "search_text": "CS140 | Background Luminance Sensor | CSI_CS140 | Sensors | Present Weather Sensors | RS-232 | RS-485 | Product Name: Background Luminance Sensor | Model: CS140 | Item Number: 34293 | Warranty: 2 years | Electronics Supply Voltage: 9 to 24 V DC | Hood Heater Power: 48 W | Dew Heater Power: 0.6 W | Shipping Weight: 3.5 kg | Cảm biến | Cảm biến thời tiết hiện tại | Cảm biến độ chói nền",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "6eda50e18ec3c4e4b3c6cee5b23b3cd5e518a0e553927c0e52c8c02315ad35d6"
+}

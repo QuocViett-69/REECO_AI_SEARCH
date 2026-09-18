@@ -1,0 +1,772 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "SoilVue10.xlsx",
+    "sheet": "Sheet1"
+  },
+  "products": [
+    {
+      "product_id": "CSI_SOILVUE10_0_5M",
+      "manufacturer": "Campbell Scientific",
+      "model": "SoilVue10-0.5m",
+      "product_name_en": "SoilVue™10",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Soil Sensors",
+        "device_type": "Soil Profiler / TDR Soil Moisture and Temperature Profile Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Variant",
+          "name_vi": "Phiên bản sản phẩm",
+          "value_raw": "0.5 m option",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Complete Soil Profiler / TDR Soil Moisture and Temperature Profile Sensor",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Technology",
+          "name_vi": "Công nghệ đo",
+          "value_raw": "Campbell TrueWave™ TDR",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurements Made",
+          "name_vi": "Các đại lượng đo",
+          "value_raw": "Volumetric water content (VWC), permittivity, electrical conductivity (EC), and temperature",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Number of Measurement Depths",
+          "name_vi": "Số độ sâu đo",
+          "value_raw": "6",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Depths",
+          "name_vi": "Các độ sâu đo",
+          "value_raw": "5, 10, 20, 30, 40, 50 cm (2, 4, 8, 12, 16, 20 in.)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +60 °C",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Voltage Range",
+          "name_vi": "Dải điện áp hoạt động",
+          "value_raw": "9 to 36 VDC",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Active",
+          "name_vi": "Dòng tiêu thụ – Active",
+          "value_raw": "~64 mA @ 12 VDC",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Quiescent",
+          "name_vi": "Dòng tiêu thụ – nghỉ",
+          "value_raw": "~1.5 mA @ 12 VDC",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Output",
+          "name_vi": "Đầu ra",
+          "value_raw": "SDI-12 version 1.4 compliant",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default SDI-12 Address",
+          "name_vi": "Địa chỉ SDI-12 mặc định",
+          "value_raw": "0",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Installation Torque",
+          "name_vi": "Mô-men lắp đặt tối đa",
+          "value_raw": "54 N·m (40 ft·lb)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Diameter Including Threads",
+          "name_vi": "Đường kính gồm ren",
+          "value_raw": "5.8 cm (2.3 in.)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Diameter Without Threads",
+          "name_vi": "Đường kính không gồm ren",
+          "value_raw": "5.2 cm (2.05 in.)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Length",
+          "name_vi": "Chiều dài",
+          "value_raw": "0.55 m (21.5 in.)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "1.9 kg (4.2 lb)",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "304.8 m (1,000 ft)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Connector",
+          "name_vi": "Đầu nối cáp",
+          "value_raw": "Detachable IP67-rated M12 connector",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Volumetric Water Content Range",
+          "name_vi": "Dải hàm lượng nước thể tích",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Volumetric Water Content Accuracy",
+          "name_vi": "Độ chính xác hàm lượng nước thể tích",
+          "value_raw": "±1.5% typical with most soils",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relative Dielectric Permittivity Range",
+          "name_vi": "Dải hằng số điện môi tương đối",
+          "value_raw": "1 to 80",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relative Dielectric Permittivity Accuracy",
+          "name_vi": "Độ chính xác hằng số điện môi tương đối",
+          "value_raw": "±1 permittivity unit between 4 and 42",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Electrical Conductivity Range",
+          "name_vi": "Dải độ dẫn điện",
+          "value_raw": "0 to 10 dS/m",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Electrical Conductivity Accuracy – Low Range",
+          "name_vi": "Độ chính xác độ dẫn điện – dải thấp",
+          "value_raw": "±2% (0 to 2.5 dS/m)",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Electrical Conductivity Accuracy – Full Range",
+          "name_vi": "Độ chính xác độ dẫn điện – toàn dải",
+          "value_raw": "±5% (full range)",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Soil Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ đất",
+          "value_raw": "±0.15 °C between -30 and +40 °C",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Response Time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "Up to 1 minute",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Recommended Scan Rate",
+          "name_vi": "Chu kỳ quét khuyến nghị",
+          "value_raw": "At least 60 seconds for the 0.5 m probe with six sensors",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Installation Hole Diameter",
+          "name_vi": "Đường kính lỗ lắp đặt",
+          "value_raw": "Standard 5 cm (2 in.) hand auger hole",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Threaded Design",
+          "name_vi": "Thiết kế ren",
+          "value_raw": "Individual waveguides built into threads for improved soil contact and reduced air-gap errors",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Aspen 10 Compatibility",
+          "name_vi": "Tương thích Aspen 10",
+          "value_raw": "Compatible",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible CRBasic Data Loggers",
+          "name_vi": "Data logger CRBasic tương thích",
+          "value_raw": "GRANITE series, CR6, CR1000X, CR800 series, CR350 series, CR300 series, CR3000, CR1000",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "White Wire Function",
+          "name_vi": "Chức năng dây trắng",
+          "value_raw": "SDI-12 signal",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Clear Wire Function",
+          "name_vi": "Chức năng dây trong",
+          "value_raw": "Shield",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Brown Wire Function",
+          "name_vi": "Chức năng dây nâu",
+          "value_raw": "Power",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Black Wire Function",
+          "name_vi": "Chức năng dây đen",
+          "value_raw": "Power ground",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Measurement Instruction",
+          "name_vi": "Lệnh đo CRBasic",
+          "value_raw": "SDI12Recorder()",
+          "source_rows": [
+            41
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": null,
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11468",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      }
+    },
+    {
+      "product_id": "CSI_SOILVUE10_1_0M",
+      "manufacturer": "Campbell Scientific",
+      "model": "SoilVue10-1.0m",
+      "product_name_en": "SoilVue™10",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Soil Sensors",
+        "device_type": "Soil Profiler / TDR Soil Moisture and Temperature Profile Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Variant",
+          "name_vi": "Phiên bản sản phẩm",
+          "value_raw": "1.0 m option",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Complete Soil Profiler / TDR Soil Moisture and Temperature Profile Sensor",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Technology",
+          "name_vi": "Công nghệ đo",
+          "value_raw": "Campbell TrueWave™ TDR",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurements Made",
+          "name_vi": "Các đại lượng đo",
+          "value_raw": "Volumetric water content (VWC), permittivity, electrical conductivity (EC), and temperature",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Number of Measurement Depths",
+          "name_vi": "Số độ sâu đo",
+          "value_raw": "9",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Depths",
+          "name_vi": "Các độ sâu đo",
+          "value_raw": "5, 10, 20, 30, 40, 50, 60, 75, 100 cm (2, 4, 8, 12, 16, 20, 24, 30, 40 in.)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +60 °C",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Voltage Range",
+          "name_vi": "Dải điện áp hoạt động",
+          "value_raw": "9 to 36 VDC",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Active",
+          "name_vi": "Dòng tiêu thụ – Active",
+          "value_raw": "~64 mA @ 12 VDC",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current Drain – Quiescent",
+          "name_vi": "Dòng tiêu thụ – nghỉ",
+          "value_raw": "~1.5 mA @ 12 VDC",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Output",
+          "name_vi": "Đầu ra",
+          "value_raw": "SDI-12 version 1.4 compliant",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default SDI-12 Address",
+          "name_vi": "Địa chỉ SDI-12 mặc định",
+          "value_raw": "0",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Installation Torque",
+          "name_vi": "Mô-men lắp đặt tối đa",
+          "value_raw": "54 N·m (40 ft·lb)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Diameter Including Threads",
+          "name_vi": "Đường kính gồm ren",
+          "value_raw": "5.8 cm (2.3 in.)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Diameter Without Threads",
+          "name_vi": "Đường kính không gồm ren",
+          "value_raw": "5.2 cm (2.05 in.)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Length",
+          "name_vi": "Chiều dài",
+          "value_raw": "1.05 m (41.2 in.)",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "3.6 kg (7.9 lb)",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Maximum Cable Length",
+          "name_vi": "Chiều dài cáp tối đa",
+          "value_raw": "304.8 m (1,000 ft)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Connector",
+          "name_vi": "Đầu nối cáp",
+          "value_raw": "Detachable IP67-rated M12 connector",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Volumetric Water Content Range",
+          "name_vi": "Dải hàm lượng nước thể tích",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Volumetric Water Content Accuracy",
+          "name_vi": "Độ chính xác hàm lượng nước thể tích",
+          "value_raw": "±1.5% typical with most soils",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relative Dielectric Permittivity Range",
+          "name_vi": "Dải hằng số điện môi tương đối",
+          "value_raw": "1 to 80",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relative Dielectric Permittivity Accuracy",
+          "name_vi": "Độ chính xác hằng số điện môi tương đối",
+          "value_raw": "±1 permittivity unit between 4 and 42",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Electrical Conductivity Range",
+          "name_vi": "Dải độ dẫn điện",
+          "value_raw": "0 to 10 dS/m",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Electrical Conductivity Accuracy – Low Range",
+          "name_vi": "Độ chính xác độ dẫn điện – dải thấp",
+          "value_raw": "±2% (0 to 2.5 dS/m)",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Electrical Conductivity Accuracy – Full Range",
+          "name_vi": "Độ chính xác độ dẫn điện – toàn dải",
+          "value_raw": "±5% (full range)",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Soil Temperature Accuracy",
+          "name_vi": "Độ chính xác nhiệt độ đất",
+          "value_raw": "±0.15 °C between -30 and +40 °C",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Response Time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "Up to 1.5 minutes",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Installation Hole Diameter",
+          "name_vi": "Đường kính lỗ lắp đặt",
+          "value_raw": "Standard 5 cm (2 in.) hand auger hole",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Threaded Design",
+          "name_vi": "Thiết kế ren",
+          "value_raw": "Individual waveguides built into threads for improved soil contact and reduced air-gap errors",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Aspen 10 Compatibility",
+          "name_vi": "Tương thích Aspen 10",
+          "value_raw": "Compatible",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible CRBasic Data Loggers",
+          "name_vi": "Data logger CRBasic tương thích",
+          "value_raw": "GRANITE series, CR6, CR1000X, CR800 series, CR350 series, CR300 series, CR3000, CR1000",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "White Wire Function",
+          "name_vi": "Chức năng dây trắng",
+          "value_raw": "SDI-12 signal",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Clear Wire Function",
+          "name_vi": "Chức năng dây trong",
+          "value_raw": "Shield",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Brown Wire Function",
+          "name_vi": "Chức năng dây nâu",
+          "value_raw": "Power",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Black Wire Function",
+          "name_vi": "Chức năng dây đen",
+          "value_raw": "Power ground",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Measurement Instruction",
+          "name_vi": "Lệnh đo CRBasic",
+          "value_raw": "SDI12Recorder()",
+          "source_rows": [
+            41
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": null,
+        "user_manual": null,
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11468",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      }
+    }
+  ]
+}

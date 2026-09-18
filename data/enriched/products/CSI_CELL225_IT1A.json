@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CELL225_IT1A",
+  "model": "CELL225-IT1A",
+  "name_en": "4G LTE CAT-1 Cellular Module for Japan",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Cellular Communications",
+    "subcategory_key": "cellular_communications",
+    "device_type": "Cellular Modem / Router",
+    "device_type_key": "cellular_modem_router"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL225_IT1A.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL225_IT1A.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "host_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CELL225_IT1A.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "CELL225-IT1A",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CELL225-IT1A"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CELL225_IT1A",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CELL225_IT1A"
+        }
+      ]
+    },
+    {
+      "value": "4G LTE CAT-1 Cellular Module for Japan",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "4G LTE CAT-1 Cellular Module for Japan"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CELL225-IT1A",
+      "4G LTE CAT-1 Cellular Module for Japan",
+      "Communications",
+      "Cellular Communications",
+      "Cellular Modem / Router",
+      "CS I/O",
+      "RS-232",
+      "USB",
+      "CSI_CELL225_IT1A"
+    ],
+    "vi": [
+      "CELL225-IT1A",
+      "Thiết bị truyền thông",
+      "Truyền thông di động",
+      "Modem hoặc bộ định tuyến di động",
+      "CS I/O",
+      "RS-232",
+      "USB"
+    ]
+  }
+}

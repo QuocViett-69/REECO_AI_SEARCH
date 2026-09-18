@@ -1,15 +1,16 @@
 {
-  "generated_at": "2026-09-18T02:11:42.935Z",
-  "mode": "dry-run",
+  "generated_at": "2026-09-18T08:40:04.217Z",
+  "mode": "import",
   "index_version": "fts-v1",
   "source_validation": {
-    "products": 50,
-    "active": 42,
-    "review": 8,
-    "product_documents": 42,
-    "product_search_index": 42,
-    "product_specifications": 545,
-    "product_media": 43,
+    "products": 86,
+    "active": 86,
+    "review": 5,
+    "skipped_review": 5,
+    "product_documents": 86,
+    "product_search_index": 86,
+    "product_specifications": 988,
+    "product_media": 86,
     "duplicate_product_id": 0,
     "duplicate_model": 0,
     "duplicate_document_product_ids": [],
@@ -22,5 +23,267 @@
     "document_hash_mismatch": 0
   },
   "source_status": "passed",
-  "database_status": "not-run"
+  "import_status": "completed",
+  "import_stats": {
+    "products_changed": 44,
+    "products_removed": 5,
+    "specifications_changed": 562,
+    "specifications_removed": 119,
+    "documents_changed": 86,
+    "documents_removed": 0,
+    "media_changed": 52,
+    "media_removed": 1,
+    "search_index_changed": 86,
+    "search_index_removed": 0
+  },
+  "validation": {
+    "status": "passed",
+    "expected_rows": {
+      "products": 86,
+      "active": 86,
+      "review": 0,
+      "product_documents": 86,
+      "product_search_index": 86
+    },
+    "rows_per_table": {
+      "product_documents": 86,
+      "product_media": 86,
+      "product_search_index": 86,
+      "product_specifications": 988,
+      "products": 86
+    },
+    "checks": {
+      "active": 86,
+      "review": 0,
+      "stale_database_product_ids": [],
+      "missing_database_product_ids": [],
+      "unexpected_database_active_ids": [],
+      "missing_database_active_ids": [],
+      "unexpected_database_review_ids": [],
+      "missing_database_review_ids": [],
+      "unexpected_database_document_ids": [],
+      "missing_database_document_ids": [],
+      "unexpected_database_search_index_ids": [],
+      "missing_database_search_index_ids": [],
+      "review_products_indexed": [],
+      "orphan_specification_product_ids": [],
+      "orphan_document_product_ids": [],
+      "orphan_media_product_ids": [],
+      "orphan_search_index_product_ids": [],
+      "duplicate_product_ids": [],
+      "duplicate_models": [],
+      "internal_document_hash_mismatch_ids": [],
+      "source_document_hash_mismatch_ids": [],
+      "search_index_hash_mismatch_ids": [],
+      "invalid_fk": 0
+    },
+    "assertions": {
+      "products": true,
+      "active": true,
+      "review": true,
+      "product_documents": true,
+      "product_search_index": true,
+      "stale_database_product_ids": true,
+      "review_products_indexed": true,
+      "orphan_specifications": true,
+      "orphan_documents": true,
+      "orphan_media": true,
+      "orphan_search_index": true,
+      "duplicate_product_id": true,
+      "duplicate_model": true,
+      "document_hash_mismatch": true,
+      "search_index_hash_mismatch": true,
+      "invalid_fk": true,
+      "fts_gin_index": true
+    },
+    "fts_index": {
+      "indexname": "product_search_index_search_tsv_idx",
+      "indexdef": "CREATE INDEX product_search_index_search_tsv_idx ON public.product_search_index USING gin (search_tsv)"
+    },
+    "vector_enabled": true
+  },
+  "keyword_results": {
+    "CS655": [
+      {
+        "product_id": "CSI_CS655",
+        "model": "CS655",
+        "product_name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+        "rank": 0.166667
+      }
+    ],
+    "soil moisture": [
+      {
+        "product_id": "CSI_SOILVUE10_5",
+        "model": "SoilVue10-5",
+        "product_name_en": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+        "rank": 0.256993
+      },
+      {
+        "product_id": "CSI_CS650",
+        "model": "CS650",
+        "product_name_en": "30CM Water Content Reflectometer plus",
+        "rank": 0.193548
+      },
+      {
+        "product_id": "CSI_CS655",
+        "model": "CS655",
+        "product_name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+        "rank": 0.193548
+      },
+      {
+        "product_id": "CSI_CS616",
+        "model": "CS616",
+        "product_name_en": "Water Content Reflectometer (0 to +70C)**",
+        "rank": 0.180328
+      },
+      {
+        "product_id": "CSI_CS610",
+        "model": "CS610",
+        "product_name_en": "3-rod TDR Probe",
+        "rank": 0.117647
+      }
+    ],
+    "cảm biến độ ẩm đất": [
+      {
+        "product_id": "CSI_CS610",
+        "model": "CS610",
+        "product_name_en": "3-rod TDR Probe",
+        "rank": 0.0322581
+      },
+      {
+        "product_id": "CSI_HS2_12",
+        "model": "HS2-12",
+        "product_name_en": "HS2 HydroSense II Handheld Soil Water Content Sensor",
+        "rank": 0.0322581
+      },
+      {
+        "product_id": "CSI_CS616",
+        "model": "CS616",
+        "product_name_en": "Water Content Reflectometer (0 to +70C)**",
+        "rank": 0.0163934
+      },
+      {
+        "product_id": "CSI_CS650",
+        "model": "CS650",
+        "product_name_en": "30CM Water Content Reflectometer plus",
+        "rank": 0.0163934
+      },
+      {
+        "product_id": "CSI_CS655",
+        "model": "CS655",
+        "product_name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+        "rank": 0.0163934
+      }
+    ],
+    "SDI-12": [
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "model": "MetSENS500-DS",
+        "product_name_en": "MetSENS500-DS",
+        "rank": 0.473684
+      },
+      {
+        "product_id": "CSI_METSENS200_D2",
+        "model": "MetSENS200-D2",
+        "product_name_en": "MetSENS200-D2",
+        "rank": 0.444444
+      },
+      {
+        "product_id": "CSI_METSENS300_D2",
+        "model": "MetSENS300-D2",
+        "product_name_en": "MetSENS300-D2",
+        "rank": 0.444444
+      },
+      {
+        "product_id": "CSI_METSENS550_D2",
+        "model": "MetSENS550-D2",
+        "product_name_en": "MetSENS550-D2",
+        "rank": 0.444444
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "model": "TempVue20-S",
+        "product_name_en": "TempVue™20",
+        "rank": 0.333333
+      }
+    ],
+    "Modbus": [
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "model": "TempVue20-S",
+        "product_name_en": "TempVue™20",
+        "rank": 0.285714
+      },
+      {
+        "product_id": "CSI_CR310_NA",
+        "model": "CR310-NA",
+        "product_name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+        "rank": 0.230769
+      },
+      {
+        "product_id": "CSI_CR310_WIFI",
+        "model": "CR310-WIFI",
+        "product_name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+        "rank": 0.230769
+      },
+      {
+        "product_id": "CSI_CR350_NA",
+        "model": "CR350-NA",
+        "product_name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
+        "rank": 0.230769
+      },
+      {
+        "product_id": "CSI_CR6_NA_ST_CC",
+        "model": "CR6-NA-ST-CC",
+        "product_name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+        "rank": 0.230769
+      }
+    ],
+    "900 MHz radio": [
+      {
+        "product_id": "CSI_CR350_NA",
+        "model": "CR350-NA",
+        "product_name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
+        "rank": 0.0240906
+      },
+      {
+        "product_id": "CSI_CR310_NA",
+        "model": "CR310-NA",
+        "product_name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+        "rank": 0.0070922
+      }
+    ],
+    "power supply": [
+      {
+        "product_id": "CSI_PS84_CR",
+        "model": "PS84-CR",
+        "product_name_en": "PS84 84 Ah Power Supply with CH200 Regulator and 14 x 16 in. Enclosure",
+        "rank": 0.249639
+      },
+      {
+        "product_id": "CSI_PS24_W_CH150",
+        "model": "PS24-w/CH150",
+        "product_name_en": "PS24-w/CH150",
+        "rank": 0.184598
+      },
+      {
+        "product_id": "CSI_PS200",
+        "model": "PS200",
+        "product_name_en": "Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery",
+        "rank": 0.172932
+      },
+      {
+        "product_id": "CSI_PS150",
+        "model": "PS150",
+        "product_name_en": "12 V Power Supply with Charging Regulator and 7 Ah Sealed Rechargeable Battery",
+        "rank": 0.172414
+      },
+      {
+        "product_id": "CSI_CS506",
+        "model": "CS506",
+        "product_name_en": "CS506 Fuel Moisture Sensor",
+        "rank": 0.0909091
+      }
+    ]
+  }
 }

@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_PS24_W_CH150",
+  "model": "PS24-w/CH150",
+  "name_en": "PS24-w/CH150",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Power",
+    "category_key": "power",
+    "subcategory": "Power Supplies and Charge Regulators",
+    "subcategory_key": "power_supplies_and_charge_regulators",
+    "device_type": "Power Supply / Charge Regulator",
+    "device_type_key": "power_supply_charge_regulator"
+  },
+  "measurements": [],
+  "applications": [
+    {
+      "key": "system_power_supply",
+      "label_en": "System Power Supply",
+      "label_vi": "Cấp nguồn cho hệ thống",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/CSI_PS24_W_CH150.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              10
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "protocols": [],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "PS24-w/CH150",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "PS24-w/CH150"
+        }
+      ]
+    },
+    {
+      "value": "CSI_PS24_W_CH150",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_PS24_W_CH150"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "PS24-w/CH150",
+      "Power",
+      "Power Supplies and Charge Regulators",
+      "Power Supply / Charge Regulator",
+      "System Power Supply",
+      "CSI_PS24_W_CH150"
+    ],
+    "vi": [
+      "PS24-w/CH150",
+      "Nguồn điện",
+      "Bộ nguồn và bộ điều khiển sạc",
+      "Bộ nguồn hoặc bộ điều khiển sạc",
+      "Cấp nguồn cho hệ thống"
+    ]
+  }
+}

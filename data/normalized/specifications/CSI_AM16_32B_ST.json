@@ -1,0 +1,580 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_AM16_32B_ST",
+  "model": "AM16/32B-ST",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_AM16_32B_ST.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_AM16_32B_ST.json#0",
+    "raw_product_id": "CSI_AM16_32B_ST",
+    "raw_model": "AM16/32B-ST"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "model": "AM16/32B-ST",
+      "product_name_en": "16 or 32 Channel Relay Multiplexer",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Version",
+          "value_raw": "Standard Temperature"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-25°C to +50°C, standard"
+        },
+        {
+          "section": "TYPICAL CURRENT DRAIN",
+          "name_en": "Active",
+          "value_raw": "11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode"
+        },
+        {
+          "section": "RESET LEVELS",
+          "name_en": "Active",
+          "value_raw": "3.3 to 8 V"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_AM16_32B_XT",
+      "model": "AM16/32B-XT",
+      "product_name_en": "16 or 32 Channel Relay Multiplexer",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Version",
+          "value_raw": "Extended Temperature"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "value_raw": "-55°C to +85°C, extended"
+        },
+        {
+          "section": "TYPICAL CURRENT DRAIN",
+          "name_en": "Active",
+          "value_raw": "11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode"
+        },
+        {
+          "section": "RESET LEVELS",
+          "name_en": "Active",
+          "value_raw": "3.3 to 8 V"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Version",
+      "value_raw": "Standard Temperature",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "version"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Note",
+      "value_raw": "Protection on the reset, clock, and +12 V inputs is provided by 18 V TVS diodes",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "note"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Power",
+      "value_raw": "Unregulated 9.6 to 16 Vdc",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "power",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Scan Advance",
+      "value_raw": "Occurs on the leading edge of the clock pulse transition, from below 1.5 V to above 3.3 V",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "scan_advance"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Minimum Clock Pulse Width",
+      "value_raw": "1 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "minimum_clock_pulse_width",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Maximum Actuation Time for Relay",
+      "value_raw": "20 ms",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 20,
+        "unit": "ms",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "maximum_actuation_time_for_relay",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Relay Operation",
+      "value_raw": "Break before make",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "relay_operation"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Initial Relay Resistance, Closed",
+      "value_raw": "0.1 Ω",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.1,
+        "unit": "Ω",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "initial_relay_resistance_closed"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Maximum Switching Current",
+      "value_raw": "500 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 500,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "maximum_switching_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Maximum Switching Current Note",
+      "value_raw": "Switching currents greater than 30 mA are occasionally acceptable but will degrade the contact surfaces of the mechanical relays and increase their resistance",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "maximum_switching_current_note",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Maximum Switching Voltage",
+      "value_raw": "50 Vdc",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 50,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "maximum_switching_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Maximum Switching Voltage Note",
+      "value_raw": "A voltage divider such as the VDIV10:1 may be needed between the AM16/32B and the data logger to stay within the input limits of the data logger channel",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "maximum_switching_voltage_note",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Minimum Contact Life",
+      "value_raw": "5 × 10⁷ operations",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "minimum_contact_life"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Maximum Contact Voltage Rating",
+      "value_raw": "70 V",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 70,
+        "unit": "V",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "maximum_contact_voltage_rating",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Maximum Voltage",
+      "value_raw": "8 Vdc, clock level",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "maximum_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "CE Compliance",
+      "value_raw": "EN 55022:1998 Class B; EN 61326:1998",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "ce_compliance"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Surge",
+      "value_raw": "Complies with IEC 61000-4-5, test level 3, ±2 kV, 2 Ω coupling impedance",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "surge"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-25°C to +50°C, standard",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -25,
+        "max_value": 50,
+        "unit": "°C",
+        "qualifier": null,
+        "note": "standard"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Dimensions",
+      "value_raw": "23.9 × 10.2 × 4.6 cm (9.4 × 4.0 × 1.8 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "General Specifications",
+      "name_raw": "Weight",
+      "value_raw": "Approximately 680 g (approximately 1.5 lb)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "ESD",
+      "name_raw": "Air Discharge",
+      "value_raw": "Complies with IEC 61000-4-2, test level 4, ±15 kV",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "air_discharge"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "ESD",
+      "name_raw": "Contact Discharge",
+      "value_raw": "Complies with IEC 61000-4-2, test level 4, ±8 kV",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "contact_discharge"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "TYPICAL CURRENT DRAIN",
+      "name_raw": "Quiescent",
+      "value_raw": "<210 µA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 210,
+        "unit": "µA",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "quiescent",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "TYPICAL CURRENT DRAIN",
+      "name_raw": "Active",
+      "value_raw": "11 mA typical in 4×16 mode; 6 mA typical in 2×32 mode",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "active_75fced42",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "RESET LEVELS",
+      "name_raw": "Inactive",
+      "value_raw": "<0.9 V",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.9,
+        "unit": "V",
+        "qualifier": "<"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "inactive"
+    },
+    {
+      "product_id": "CSI_AM16_32B_ST",
+      "section": "RESET LEVELS",
+      "name_raw": "Active",
+      "value_raw": "3.3 to 8 V",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 3.3,
+        "max_value": 8,
+        "unit": "V",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_AM16_32B_ST.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "active_f31b3bf3"
+    }
+  ]
+}

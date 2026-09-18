@@ -1,0 +1,581 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "LevelVueB10_Output.json",
+        "original_source": {
+          "file": "LevelVueB10.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_LEVELVUEB10_15",
+      "manufacturer": "Campbell Scientific",
+      "model": "LevelVueB10-15",
+      "product_name_en": "LevelVueB10-15",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water-Level Continuous Flow Bubbler"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Base Model",
+          "name_vi": "Mã sản phẩm cơ sở",
+          "value_raw": "LevelVue B10",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Water-Level Continuous Flow Bubbler with Integrated Screen",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Campbell Scientific, Inc.",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Device Classification",
+          "name_vi": "Phân loại thiết bị",
+          "value_raw": "Primary measurement device / water-level bubbler sensor",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Application",
+          "name_vi": "Ứng dụng chính",
+          "value_raw": "Measurement of groundwater, surface water, or other liquid levels using a non-submersible continuous-air-flow bubbler system",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Principle",
+          "name_vi": "Nguyên lý đo",
+          "value_raw": "Measures the pressure required to maintain constant airflow through a submerged orifice line; pressure is converted to water depth",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Pressure Range",
+          "name_vi": "Dải áp suất",
+          "value_raw": "0 to 15 psi",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Water Depth Range",
+          "name_vi": "Dải đo độ sâu nước",
+          "value_raw": "0 to 10.54 m (34.6 ft)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "±2.1 mm (0.007 ft)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "≤0.02% of full-scale output (FSO) over temperature range",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sensor Overpressure Rating",
+          "name_vi": "Khả năng chịu quá áp cảm biến",
+          "value_raw": "2 × pressure range",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Long-Term Drift",
+          "name_vi": "Độ trôi dài hạn",
+          "value_raw": "0.1% FS / 6 months",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40 to +60 °C",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Storage Temperature Range",
+          "name_vi": "Dải nhiệt độ lưu trữ",
+          "value_raw": "-40 to +80 °C",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Relative Humidity",
+          "name_vi": "Độ ẩm tương đối",
+          "value_raw": "0 to 95% (non-condensing)",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Memory",
+          "name_vi": "Bộ nhớ",
+          "value_raw": "All settings and parameters stored in non-volatile memory",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Real-Time Clock",
+          "name_vi": "Đồng hồ thời gian thực",
+          "value_raw": "Continues operation with lithium battery during power disconnects",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Enclosure Material",
+          "name_vi": "Vật liệu vỏ",
+          "value_raw": "Fiberglass",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Enclosure Dimensions",
+          "name_vi": "Kích thước vỏ",
+          "value_raw": "28.9 × 34 × 13 cm (11.4 × 13.4 × 5.2 in.)",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Enclosure Weight",
+          "name_vi": "Khối lượng vỏ",
+          "value_raw": "7.5 kg (16.5 lb)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Airflow Type",
+          "name_vi": "Loại luồng khí",
+          "value_raw": "Microprocessor-controlled constant airflow over full pressure range and temperature",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Bubble Rate",
+          "name_vi": "Tốc độ tạo bọt",
+          "value_raw": "30 to 120 bubbles/min programmable; 60 bubbles/min default",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Purge Pressure",
+          "name_vi": "Áp suất purge",
+          "value_raw": "30 to 90 psi programmable",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Purge Sustain Time",
+          "name_vi": "Thời gian duy trì purge",
+          "value_raw": "0 to 30 s programmable",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Automatic Purge",
+          "name_vi": "Purge tự động",
+          "value_raw": "Once a day to once every 30 days; 1-day resolution",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Pressure Inlet",
+          "name_vi": "Đầu vào áp suất",
+          "value_raw": "1/8 in. female NPT",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Orifice Line Outlet",
+          "name_vi": "Đầu ra ống orifice",
+          "value_raw": "1/8 in. female NPT",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Input Voltage Range",
+          "name_vi": "Dải điện áp đầu vào",
+          "value_raw": "11.5 to 16.5 VDC",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current – Standby",
+          "name_vi": "Dòng điện – chờ",
+          "value_raw": "5 mA",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current – Compressor Active",
+          "name_vi": "Dòng điện – máy nén hoạt động",
+          "value_raw": "7 A typical; 10 A maximum",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Current – Startup Surge",
+          "name_vi": "Dòng điện – xung khởi động",
+          "value_raw": "18 A maximum",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Average Power Consumption",
+          "name_vi": "Mức tiêu thụ điện trung bình",
+          "value_raw": "<60 mA average at 60 bubbles/min with samples averaged over 10 s",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Power Protection",
+          "name_vi": "Bảo vệ nguồn",
+          "value_raw": "Protected against surge, overvoltage, and reverse polarity up to 20 VDC",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Interfaces",
+          "name_vi": "Giao tiếp truyền thông",
+          "value_raw": "SDI-12 and RS-485 Modbus",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "SDI-12 Protocol",
+          "name_vi": "Giao thức SDI-12",
+          "value_raw": "SDI-12 V1.4 compliant",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "SDI-12 Default Address",
+          "name_vi": "Địa chỉ SDI-12 mặc định",
+          "value_raw": "0",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "SDI-12 Measurement Response Time",
+          "name_vi": "Thời gian phản hồi đo SDI-12",
+          "value_raw": "10 s for M! command with default 5 s averaging time",
+          "source_rows": [
+            39
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-485 Protocol",
+          "name_vi": "Giao thức RS-485",
+          "value_raw": "Modbus",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-485 Default Address",
+          "name_vi": "Địa chỉ RS-485 mặc định",
+          "value_raw": "1",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-485 Default Configuration",
+          "name_vi": "Cấu hình RS-485 mặc định",
+          "value_raw": "19200 bps; 8 data bits; even parity; 1 stop bit",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RS-485 Data Type",
+          "name_vi": "Kiểu dữ liệu RS-485",
+          "value_raw": "32-bit float; byte order ABCD",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Keypad / Display",
+          "name_vi": "Bàn phím / màn hình",
+          "value_raw": "Graphical 8-line × 20-character display; supports complete system setup",
+          "source_rows": [
+            44
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Recommended Measurement Scan",
+          "name_vi": "Chu kỳ quét đo khuyến nghị",
+          "value_raw": "At least 30 s",
+          "source_rows": [
+            45
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Campbell Scientific Data Loggers",
+          "name_vi": "Data logger Campbell Scientific tương thích",
+          "value_raw": "GRANITE series, CR6, CR1000X, CR350 series, CR300 series, CR1000, CR800 series",
+          "source_rows": [
+            46
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "levelvueb10_datasheet.pdf",
+        "user_manual": "levelvueb10_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11826",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_LEVELVUEB10_15",
+        "variant_count": 2,
+        "source_files": [
+          "LevelVueB10_Output.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_LEVELVUEB10_15",
+          "model": "LevelVueB10-15",
+          "product_name_en": "LevelVueB10-15",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Pressure Range",
+              "name_vi": "Dải áp suất",
+              "value_raw": "0 to 15 psi",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Water Depth Range",
+              "name_vi": "Dải đo độ sâu nước",
+              "value_raw": "0 to 10.54 m (34.6 ft)",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Resolution",
+              "name_vi": "Độ phân giải",
+              "value_raw": "±2.1 mm (0.007 ft)",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "RS-485 Default Configuration",
+              "name_vi": "Cấu hình RS-485 mặc định",
+              "value_raw": "19200 bps; 8 data bits; even parity; 1 stop bit",
+              "source_rows": [
+                42
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "levelvueb10_datasheet.pdf",
+            "user_manual": "levelvueb10_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11826",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "LevelVueB10_Output.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_LEVELVUEB10_30",
+          "model": "LevelVueB10-30",
+          "product_name_en": "LevelVueB10-30",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Pressure Range",
+              "name_vi": "Dải áp suất",
+              "value_raw": "0 to 30 psi",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Water Depth Range",
+              "name_vi": "Dải đo độ sâu nước",
+              "value_raw": "0 to 21 m (69.2 ft)",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Resolution",
+              "name_vi": "Độ phân giải",
+              "value_raw": "±4.26 mm (0.014 ft)",
+              "source_rows": [
+                11
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "RS-485 Default Configuration",
+              "name_vi": "Cấu hình RS-485 mặc định",
+              "value_raw": "19200 bps; 8 data bits; even parity; 1 stop bit",
+              "source_rows": [
+                42
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "levelvueb10_datasheet.pdf",
+            "user_manual": "levelvueb10_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11826",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "LevelVueB10_Output.json",
+            "product_index": 1
+          }
+        }
+      ]
+    }
+  ]
+}

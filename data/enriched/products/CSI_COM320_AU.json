@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_COM320_AU",
+  "model": "COM320-AU",
+  "name_en": "COM320 Voice Phone Modem",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Telephone Communications",
+    "subcategory_key": "telephone_communications",
+    "device_type": "Telephone Modem",
+    "device_type_key": "telephone_modem"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_logger_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_COM320_AU.json",
+            "product_index": 0,
+            "spec_index": 9,
+            "source_rows": [
+              13
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "COM320-AU",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "COM320-AU"
+        }
+      ]
+    },
+    {
+      "value": "CSI_COM320_AU",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_COM320_AU"
+        }
+      ]
+    },
+    {
+      "value": "COM320 Voice Phone Modem",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "COM320 Voice Phone Modem"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "COM320-AU",
+      "COM320 Voice Phone Modem",
+      "Communications",
+      "Telephone Communications",
+      "Telephone Modem",
+      "CS I/O",
+      "CSI_COM320_AU"
+    ],
+    "vi": [
+      "COM320-AU",
+      "Thiết bị truyền thông",
+      "Truyền thông điện thoại",
+      "Modem điện thoại",
+      "CS I/O"
+    ]
+  }
+}

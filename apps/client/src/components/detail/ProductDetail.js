@@ -81,7 +81,12 @@ export function ProductDetail({
       <section className="page active">
         <div className="state-empty" style={{ margin: '60px auto' }}>
           <div className="state-title">{error || 'Product not found'}</div>
-          <button type="button" className="btn btn-primary" onClick={onBack} style={{ marginTop: 16 }}>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={onBack}
+            style={{ marginTop: 16 }}
+          >
             <ArrowLeft size={16} /> Go Back
           </button>
         </div>
@@ -96,31 +101,42 @@ export function ProductDetail({
 
   // ── Tabs: only show tabs that have real data ──────────────────────────────────
   const hasOverview = true;
-  const hasTechnical = (product.important_specifications || []).length > 0 || protocols.length > 0;
-  const hasCapabilities = (product.measurements || []).length > 0 || (product.capabilities || []).length > 0;
+  const hasTechnical =
+    (product.important_specifications || []).length > 0 || protocols.length > 0;
+  const hasCapabilities =
+    (product.measurements || []).length > 0 ||
+    (product.capabilities || []).length > 0;
   const hasSpecs = (product.specifications || []).length > 0;
-  const hasResources = (product.media || []).filter((m) => m.product_url).length > 0;
+  const hasVariants = (product.variants || []).length > 1;
+  const hasResources =
+    (product.media || []).filter((m) => m.product_url).length > 0;
 
   const tabs = [
     hasOverview && 'overview',
     hasTechnical && 'technical',
     hasCapabilities && 'capabilities',
+    hasVariants && 'variants',
     hasSpecs && 'specs',
     hasResources && 'resources',
   ].filter(Boolean);
 
   // Ensure activeTab is valid after product loads
-  const currentTab = tabs.includes(activeTab) ? activeTab : tabs[0] || 'overview';
+  const currentTab = tabs.includes(activeTab)
+    ? activeTab
+    : tabs[0] || 'overview';
 
   // Product URL from media (if available)
-  const productUrl = (product.media || []).find((m) => m.product_url)?.product_url
-    || `https://www.campbellsci.com/${product.model.toLowerCase()}`;
+  const productUrl =
+    (product.media || []).find((m) => m.product_url)?.product_url ||
+    `https://www.campbellsci.com/${product.model.toLowerCase()}`;
 
   return (
     <section className="page active" id="page-detail">
       <div className="detail-back" onClick={onBack}>
         <ArrowLeft size={16} />
-        <span>{previousPage === 'search' ? 'Back to search' : 'Back to products'}</span>
+        <span>
+          {previousPage === 'search' ? 'Back to search' : 'Back to products'}
+        </span>
       </div>
 
       <div className="detail-header">
@@ -137,14 +153,18 @@ export function ProductDetail({
               }}
               onError={(e) => {
                 e.target.style.display = 'none';
-                const placeholder = e.target.parentElement.querySelector('.img-placeholder');
+                const placeholder =
+                  e.target.parentElement.querySelector('.img-placeholder');
                 if (placeholder) placeholder.style.display = 'flex';
               }}
             />
           ) : null}
           <div
             className="img-placeholder"
-            style={{ fontSize: '36px', display: product.image ? 'none' : 'flex' }}
+            style={{
+              fontSize: '36px',
+              display: product.image ? 'none' : 'flex',
+            }}
           >
             {product.model}
           </div>
@@ -174,7 +194,11 @@ export function ProductDetail({
               </span>
             ))}
             {(product.measurements || []).map((m) => (
-              <span key={m.key} className="badge badge-neutral" style={{ background: 'rgba(59,130,246,0.1)', color: '#3b82f6' }}>
+              <span
+                key={m.key}
+                className="badge badge-neutral"
+                style={{ background: 'rgba(59,130,246,0.1)', color: '#3b82f6' }}
+              >
                 <Activity size={14} /> {m.label_en}
               </span>
             ))}
@@ -222,18 +246,36 @@ export function ProductDetail({
             <h3>Overview</h3>
             <p>
               The <strong>{product.model}</strong> is a{' '}
-              <strong>{product.deviceType.toLowerCase()}</strong> from Campbell Scientific,
-              designed for <strong>{product.subcategory.toLowerCase()}</strong> applications.
+              <strong>{product.deviceType.toLowerCase()}</strong> from Campbell
+              Scientific, designed for{' '}
+              <strong>{product.subcategory.toLowerCase()}</strong> applications.
               {protocols.length > 0 && (
-                <> It supports <strong>{protocols.join(', ')}</strong> communication interface(s).</>
+                <>
+                  {' '}
+                  It supports <strong>{protocols.join(', ')}</strong>{' '}
+                  communication interface(s).
+                </>
               )}
             </p>
             {(product.applications || []).length > 0 && (
               <>
-                <h4 style={{ marginTop: 20, marginBottom: 10, fontSize: 14, fontWeight: 600 }}>Applications</h4>
+                <h4
+                  style={{
+                    marginTop: 20,
+                    marginBottom: 10,
+                    fontSize: 14,
+                    fontWeight: 600,
+                  }}
+                >
+                  Applications
+                </h4>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {product.applications.map((a) => (
-                    <span key={a.key} className="badge badge-neutral" style={{ padding: '4px 12px' }}>
+                    <span
+                      key={a.key}
+                      className="badge badge-neutral"
+                      style={{ padding: '4px 12px' }}
+                    >
                       <Globe size={13} /> {a.label_en}
                     </span>
                   ))}
@@ -251,8 +293,7 @@ export function ProductDetail({
             <h3>Technical Specifications</h3>
             {protocols.length > 0 && (
               <div style={{ marginBottom: 16 }}>
-                <strong>Supported Protocols:</strong>{' '}
-                {protocols.join(', ')}
+                <strong>Supported Protocols:</strong> {protocols.join(', ')}
               </div>
             )}
             {(product.important_specifications || []).length > 0 ? (
@@ -299,6 +340,44 @@ export function ProductDetail({
       )}
 
       {/* ── Full Specs ───────────────────────────────────────────────────────── */}
+      {currentTab === 'variants' && (
+        <div className="tab-content active">
+          <div className="content-section">
+            <h3>Available Variants</h3>
+            <table className="spec-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Name</th>
+                  <th>Configuration differences</th>
+                </tr>
+              </thead>
+              <tbody>
+                {product.variants.map((variant) => (
+                  <tr key={variant.product_id}>
+                    <td>
+                      <strong>{variant.model}</strong>
+                      {variant.is_representative ? ' (Representative)' : ''}
+                    </td>
+                    <td>{variant.product_name_en || '—'}</td>
+                    <td>
+                      {(variant.distinguishing_specifications || []).length > 0
+                        ? variant.distinguishing_specifications
+                            .map(
+                              (specification) =>
+                                `${specification.name_en}: ${specification.value_raw}`,
+                            )
+                            .join('; ')
+                        : 'Same core specifications'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
       {currentTab === 'specs' && (
         <div className="tab-content active">
           <div className="content-section">
@@ -333,8 +412,15 @@ export function ProductDetail({
                 .filter((m) => m.product_url)
                 .map((m, i) => (
                   <li key={i}>
-                    <a href={m.product_url} target="_blank" rel="noreferrer"
-                      style={{ color: 'var(--primary-accent)', fontWeight: 600 }}>
+                    <a
+                      href={m.product_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        color: 'var(--primary-accent)',
+                        fontWeight: 600,
+                      }}
+                    >
                       {m.metadata?.title || `Resource ${i + 1}`}
                     </a>
                   </li>

@@ -1,0 +1,587 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_HYGROVUE5",
+  "model": "HygroVue5",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_HYGROVUE5.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_HYGROVUE5.json#0",
+    "raw_product_id": "CSI_HYGROVUE5",
+    "raw_model": "HygroVue5"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "model": "HygroVue5",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "value_raw": "-40 to +70°C"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "value_raw": "±0.4°C (over the range -40° to +70°C) | ±0.3°C (over the range 20° to 60°C)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Reported Resolution",
+          "value_raw": "0.001°C"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "value_raw": "0 to 100% RH"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "value_raw": "±3% (at 25°C, over the range 80 to 100% RH) | ±1.8% (at 25°C, over the range 0 to 80% RH)"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Reported Resolution",
+          "value_raw": "0.001% RH"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensing Element",
+      "value_raw": "SHT35 derivative (specially coated for reliability)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "sensing_element"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Calibration Traceability",
+      "value_raw": "NIST and NPL standards",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "calibration_traceability"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Supply Voltage",
+      "value_raw": "7 to 28 Vdc",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 7,
+        "max_value": 28,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "supply_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Warm-up Time",
+      "value_raw": "Sensor is normally powered all the time. If power is switched off, allow 1.8 s for sensor to power up.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "warm_up_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Main Housing Material",
+      "value_raw": "White PET-P",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "main_housing_material"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Housing Classification",
+      "value_raw": "IP67 (electronics housing)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "housing_classification"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Protection",
+      "value_raw": "Outer glass-filled polypropylene cap fitted with a stainless-steel mesh dust filter with nominal pore size of < 30 µm. | The sensor element is fitted with a PTFE protective film with a filtration efficiency of > 99.99% for particles of 200 nm or larger size.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          9,
+          10
+        ]
+      },
+      "canonical_key": "sensor_protection"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "EMC Compliance",
+      "value_raw": "Tested and conforms to IEC 61326:2013",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "emc_compliance"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Calibration",
+      "value_raw": "The sensor element is individually calibrated during manufacture.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "calibration"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Field-Replaceable Chip or Recalibrate",
+      "value_raw": "Field-replaceable chip",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "field_replaceable_chip_or_recalibrate"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Diameter",
+      "value_raw": "12.5 mm (0.49 in.) at sensor tip | maximum 16 mm (0.63 in.) at the cable end",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14,
+          15
+        ]
+      },
+      "canonical_key": "diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Length",
+      "value_raw": "115 mm (4.52 in.) sensor only, without cable",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Quiescent",
+      "value_raw": "50 μA typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "quiescent"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "During Measurement",
+      "value_raw": "0.6 mA (takes 0.5 s) typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "during_measurement"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Range",
+      "value_raw": "-40 to +70°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "measurement_range"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Accuracy",
+      "value_raw": "±0.4°C (over the range -40° to +70°C) | ±0.3°C (over the range 20° to 60°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          22,
+          23
+        ]
+      },
+      "canonical_key": "accuracy"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Long-Term Drift",
+      "value_raw": "< ±0.03°C per year",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "long_term_drift"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Reported Resolution",
+      "value_raw": "0.001°C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.001,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "reported_resolution"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Repeatability",
+      "value_raw": "0.04°C | Values are 3 standard deviations of 25 measurements at constant temperature.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          26,
+          27
+        ]
+      },
+      "canonical_key": "repeatability"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Response Time",
+      "value_raw": "130 s (63% response time in air moving at 1 m/s)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "response_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Units",
+      "value_raw": "Degrees Celsius",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "units"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Range",
+      "value_raw": "0 to 100% RH",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "% RH",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          31
+        ]
+      },
+      "canonical_key": "measurement_range"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Accuracy",
+      "value_raw": "±3% (at 25°C, over the range 80 to 100% RH) | ±1.8% (at 25°C, over the range 0 to 80% RH)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          32,
+          33
+        ]
+      },
+      "canonical_key": "accuracy"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Additional Errors at Other Temperatures",
+      "value_raw": "< ±1% RH (over -40° to +60°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "additional_errors_at_other_temperatures"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Short-Term Hysteresis",
+      "value_raw": "< ±1% RH",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "short_term_hysteresis"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Long-Term Stability",
+      "value_raw": "±0.5% per year (maximum drift in clean air conditions)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "long_term_stability"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Reported Resolution",
+      "value_raw": "0.001% RH",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.001,
+        "unit": "% RH",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "reported_resolution"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Repeatibility",
+      "value_raw": "0.05% RH | Values are 3 standard deviations of 25 measurements at constant humidity.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          38,
+          39
+        ]
+      },
+      "canonical_key": "repeatibility"
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Response Time with Filter",
+      "value_raw": "8 s (63% response time in air moving at 1 m/s at 25°C)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_HYGROVUE5.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "response_time_with_filter",
+      "quantity_kind": "time"
+    }
+  ]
+}

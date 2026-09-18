@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "source": {
     "file": "HFP01_HFP01SC_Specifications_SplitCells.xlsx",
     "sheet": "HFP01_HFP01SC_Specifications"
@@ -9,15 +9,15 @@
       "product_id": "CSI_HFP01",
       "manufacturer": "Campbell Scientific",
       "model": "HFP01",
-      "product_name_en": null,
+      "product_name_en": "HFP01 Soil Heat Flux Plate",
       "identity_source": {
         "model": "worksheet",
         "product_name_en": "manual_review"
       },
       "taxonomy": {
-        "category": null,
-        "subcategory": null,
-        "device_type": null
+        "category": "Sensors",
+        "subcategory": "Soil Sensors",
+        "device_type": "Heat Flux Plate"
       },
       "specifications": [
         {
@@ -120,7 +120,7 @@
       "media": {
         "product_images": [
           {
-            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/318",
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/318",
             "source": "user_provided"
           }
         ]
@@ -128,9 +128,106 @@
       "validation": {
         "status": "needs_review",
         "warnings": [
-          "Product name was not found explicitly in the worksheet or supplied Product Master."
+          "Product name was not found explicitly in the worksheet."
         ]
-      }
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_HFP01",
+        "variant_count": 2,
+        "source_files": [
+          "HFP01_Output_Fix.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_HFP01",
+          "model": "HFP01",
+          "product_name_en": null,
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Sensor Type",
+              "name_vi": "Loại cảm biến",
+              "value_raw": "Thermopile",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Expected Typical Accuracy",
+              "name_vi": "Độ chính xác điển hình dự kiến",
+              "value_raw": "Within -15% to +5% in most common soils (12 hour totals)",
+              "source_rows": [
+                9
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_hfp01_datasheet.pdf",
+            "user_manual": "hfp01_manual.pdf",
+            "order_form": "https://www.campbellsci.com/products/hfp01"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/318",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "HFP01_Output_Fix.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_HFP01SC",
+          "model": "HFP01SC",
+          "product_name_en": null,
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Sensor Type",
+              "name_vi": "Loại cảm biến",
+              "value_raw": "Thermopile with film heater",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "SPECIFICATIONS",
+              "name_en": "Expected Typical Accuracy",
+              "name_vi": "Độ chính xác điển hình dự kiến",
+              "value_raw": "±3% of reading",
+              "source_rows": [
+                9
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_hfp01sc_datasheet.pdf",
+            "user_manual": "hfp01sc_manual.pdf",
+            "order_form": "https://www.campbellsci.com/products/hfp01sc"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/319",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "HFP01_Output_Fix.json",
+            "product_index": 1
+          }
+        }
+      ]
     },
     {
       "product_id": "CSI_HFP01SC",

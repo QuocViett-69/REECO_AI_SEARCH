@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_SN500SS",
+  "model": "SN500SS",
+  "name_en": "SN500SS",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Solar Radiation Sensors",
+    "subcategory_key": "solar_radiation_sensors",
+    "device_type": "Net Radiometer",
+    "device_type_key": "net_radiometer"
+  },
+  "measurements": [
+    {
+      "key": "net_radiation",
+      "label_en": "Net Radiation",
+      "label_vi": "Bức xạ thuần",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "response_time",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              12
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_net_radiation",
+      "label_en": "Measure Net Radiation",
+      "label_vi": "Đo bức xạ thuần",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "SN500SS",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "SN500SS"
+        }
+      ]
+    },
+    {
+      "value": "CSI_SN500SS",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_SN500SS"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "SN500SS",
+      "Sensors",
+      "Solar Radiation Sensors",
+      "Net Radiometer",
+      "Net Radiation",
+      "SDI-12",
+      "Measure Net Radiation",
+      "CSI_SN500SS"
+    ],
+    "vi": [
+      "SN500SS",
+      "Cảm biến",
+      "Cảm biến bức xạ mặt trời",
+      "Cảm biến bức xạ thuần",
+      "Bức xạ thuần",
+      "SDI-12",
+      "Đo bức xạ thuần"
+    ]
+  }
+}

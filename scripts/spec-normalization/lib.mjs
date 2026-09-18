@@ -1561,6 +1561,19 @@ export const createNormalizationPlan = async () => {
         raw_product_id: rawProduct.product_id ?? null,
         raw_model: rawProduct.model ?? null,
       },
+      variants: (rawProduct.variants ?? []).map((variant) => ({
+        product_id: variant.product_id,
+        model: variant.model,
+        product_name_en: variant.product_name_en ?? null,
+        is_representative: variant.is_representative === true,
+        distinguishing_specifications: (
+          variant.distinguishing_specifications ?? []
+        ).map((specification) => ({
+          section: specification.section ?? null,
+          name_en: specification.name_en ?? '',
+          value_raw: String(specification.value_raw ?? ''),
+        })),
+      })),
       specifications,
     });
   }

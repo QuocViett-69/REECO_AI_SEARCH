@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS310",
+  "model": "CS310",
+  "name_en": "CS310 Quantum Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Solar Radiation Sensors",
+    "subcategory_key": "solar_radiation_sensors",
+    "device_type": "Quantum Sensor",
+    "device_type_key": "quantum_sensor"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS310",
+    "CSI_CS310",
+    "CS310 Quantum Sensor"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CS310",
+      "model": "CS310",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": []
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_temperature_range",
+      "name": "Operating Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 70,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS310.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          26
+        ]
+      }
+    },
+    {
+      "canonical_key": "diameter",
+      "name": "Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 2.4,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.9,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS310.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          33
+        ]
+      }
+    },
+    {
+      "canonical_key": "height",
+      "name": "Height",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 3.5,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 1.4,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS310.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          34
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS310",
+    "CS310 Quantum Sensor",
+    "Sensors",
+    "Solar Radiation Sensors",
+    "Quantum Sensor",
+    "CSI_CS310"
+  ],
+  "search_keywords_vi": [
+    "CS310",
+    "Cảm biến",
+    "Cảm biến bức xạ mặt trời",
+    "Cảm biến lượng tử"
+  ],
+  "search_text_en": "CS310 | CS310 Quantum Sensor | CSI_CS310 | Sensors | Solar Radiation Sensors | Quantum Sensor | Operating Temperature Range: -40 to 70 °C | Diameter: 2.4 cm | Height: 3.5 cm",
+  "search_text_vi": "CS310 | CSI_CS310 | CS310 Quantum Sensor | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến lượng tử | Operating Temperature Range: -40 to 70 °C | Diameter: 2.4 cm | Height: 3.5 cm",
+  "search_text": "CS310 | CS310 Quantum Sensor | CSI_CS310 | Sensors | Solar Radiation Sensors | Quantum Sensor | Operating Temperature Range: -40 to 70 °C | Diameter: 2.4 cm | Height: 3.5 cm | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến lượng tử",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "db49148c353212d495b86a61b43dbd3dcd93334b21be430afe1ce301ddc6c5a2"
+}

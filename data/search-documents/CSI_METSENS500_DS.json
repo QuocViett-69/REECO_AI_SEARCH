@@ -89,7 +89,165 @@
   "unsupported_protocols": [],
   "aliases": [
     "MetSENS500-DS",
-    "CSI_METSENS500_DS"
+    "CSI_METSENS500_DS",
+    "MetSENS500-D2",
+    "MetSENS500-DM"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_METSENS500_D2",
+      "model": "MetSENS500-D2",
+      "product_name_en": "MetSENS500-D2",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Configuration",
+          "value_raw": "RS-232 digital output"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Digital Interface",
+          "value_raw": "Serial RS-232"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Communication Settings",
+          "value_raw": "9600 baud; 8 data bits; even parity; 1 stop bit"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Replacement Cable",
+          "value_raw": "METSENSCBL3 RS-232 Replacement Cable"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal / Data Wiring",
+          "value_raw": "Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Direct Data Logger Connection",
+          "value_raw": "Green → C (odd); White → C (even); Red → 12V; Black/Clear → G"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Programming",
+          "value_raw": "SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr()"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Length Options",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_METSENS500_DM",
+      "model": "MetSENS500-DM",
+      "product_name_en": "MetSENS500-DM",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Configuration",
+          "value_raw": "RS-485 Modbus output"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Digital Interface",
+          "value_raw": "Modbus RTU over RS-485"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Communication Settings",
+          "value_raw": "19200 baud; 8 data bits; even parity; 1 stop bit"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Address",
+          "value_raw": "Modbus address 41"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Replacement Cable",
+          "value_raw": "METSENSCBL2 RS-485 Replacement Cable"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal / Data Wiring",
+          "value_raw": "Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Direct Data Logger Connection",
+          "value_raw": "Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Programming",
+          "value_raw": "SerialOpen() followed by ModbusClient()"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Length Options",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_METSENS500_DS",
+      "model": "MetSENS500-DS",
+      "product_name_en": "MetSENS500-DS",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Communication Configuration",
+          "value_raw": "SDI-12 digital output"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Primary Digital Interface",
+          "value_raw": "SDI-12"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Communication Settings",
+          "value_raw": "SDI-12 protocol"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Default Address",
+          "value_raw": "SDI-12 address 0"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Replacement Cable",
+          "value_raw": "METSENSCBL1 SDI-12 Replacement Cable"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Signal / Data Wiring",
+          "value_raw": "Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Direct Data Logger Connection",
+          "value_raw": "Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Programming",
+          "value_raw": "SDI12Recorder()"
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Length Options",
+          "value_raw": "5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified"
+        }
+      ]
+    }
   ],
   "important_specifications": [
     {
@@ -106,7 +264,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 18,
+        "spec_index": 17,
         "source_rows": [
           20
         ]
@@ -126,7 +284,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 25,
+        "spec_index": 24,
         "source_rows": [
           27
         ]
@@ -146,7 +304,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 28,
+        "spec_index": 27,
         "source_rows": [
           30
         ]
@@ -166,7 +324,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 31,
+        "spec_index": 30,
         "source_rows": [
           33
         ]
@@ -186,7 +344,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 34,
+        "spec_index": 33,
         "source_rows": [
           36
         ]
@@ -206,7 +364,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 38,
+        "spec_index": 37,
         "source_rows": [
           40
         ]
@@ -225,7 +383,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 43,
+        "spec_index": 42,
         "source_rows": [
           45
         ]
@@ -244,7 +402,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 26,
+        "spec_index": 25,
         "source_rows": [
           28
         ]
@@ -263,7 +421,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 32,
+        "spec_index": 31,
         "source_rows": [
           34
         ]
@@ -282,7 +440,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 35,
+        "spec_index": 34,
         "source_rows": [
           37
         ]
@@ -301,7 +459,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 39,
+        "spec_index": 38,
         "source_rows": [
           41
         ]
@@ -320,7 +478,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 42,
+        "spec_index": 41,
         "source_rows": [
           44
         ]
@@ -340,7 +498,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 19,
+        "spec_index": 18,
         "source_rows": [
           21
         ]
@@ -359,7 +517,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 23,
+        "spec_index": 22,
         "source_rows": [
           25
         ]
@@ -378,7 +536,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 24,
+        "spec_index": 23,
         "source_rows": [
           26
         ]
@@ -401,7 +559,7 @@
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
-        "spec_index": 22,
+        "spec_index": 21,
         "source_rows": [
           24
         ]
@@ -451,14 +609,14 @@
     "Đo hướng gió",
     "Đo hướng la bàn"
   ],
-  "search_text_en": "MetSENS500-DS | CSI_METSENS500_DS | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg | ambient temperature | RH | weather monitoring",
-  "search_text_vi": "MetSENS500-DS | CSI_METSENS500_DS | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng | SDI-12 | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg",
-  "search_text": "MetSENS500-DS | CSI_METSENS500_DS | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg | ambient temperature | RH | weather monitoring | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng",
+  "search_text_en": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg | ambient temperature | RH | weather monitoring",
+  "search_text_vi": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg",
+  "search_text": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg | ambient temperature | RH | weather monitoring | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "868ba13000113b4400b2fffbff42df4ac50ddddb3c3999ff85a5252faa16085d"
+  "content_hash": "5ff73e42acedfb9f6d3426f7ad40b3c5cce8be105281e992ba3dd200eff63215"
 }

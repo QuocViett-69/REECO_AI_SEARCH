@@ -1,0 +1,1320 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-18T08:21:57.797Z",
+  "source_directory": "data/raw-incoming",
+  "summary": {
+    "file_count": 57,
+    "direct_raw_file_count": 41,
+    "wrapped_file_count": 16,
+    "raw_product_record_count": 208,
+    "unique_product_id_count": 199,
+    "duplicate_product_id_group_count": 9,
+    "existing_raw_overlap_count": 27,
+    "existing_master_overlap_count": 11,
+    "embedded_canonical_record_count": 51,
+    "unique_embedded_canonical_id_count": 51,
+    "product_ids_without_embedded_canonical_count": 148,
+    "structural_error_count": 0,
+    "products_missing_core_fields_count": 0
+  },
+  "checks": {
+    "structural_errors": [],
+    "duplicate_incoming_product_ids": [
+      {
+        "product_id": "CSI_COM320_UK",
+        "locations": [
+          {
+            "file": "COM320_Output.json",
+            "product_index": 2,
+            "source_product_id": "CSI_COM320_UK",
+            "model": "COM320-UK",
+            "missing_fields": []
+          },
+          {
+            "file": "COM320-UK.json",
+            "product_index": 0,
+            "source_product_id": "CSI_COM320_UK",
+            "model": "COM320-UK",
+            "missing_fields": []
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "locations": [
+          {
+            "file": "CSAT3B_CSAT3BH_all_variants.json",
+            "product_index": 0,
+            "source_product_id": "CSI_CSAT3B_NC",
+            "model": "CSAT3B-NC",
+            "missing_fields": []
+          },
+          {
+            "file": "CSAT3B_Output_Fix.json",
+            "product_index": 0,
+            "source_product_id": "CSI_CSAT3B_NC",
+            "model": "CSAT3B-NC",
+            "missing_fields": []
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_SC",
+        "locations": [
+          {
+            "file": "CSAT3B_CSAT3BH_all_variants.json",
+            "product_index": 1,
+            "source_product_id": "CSI_CSAT3B_SC",
+            "model": "CSAT3B-SC",
+            "missing_fields": []
+          },
+          {
+            "file": "CSAT3B_Output_Fix.json",
+            "product_index": 1,
+            "source_product_id": "CSI_CSAT3B_SC",
+            "model": "CSAT3B-SC",
+            "missing_fields": []
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3BH_NC",
+        "locations": [
+          {
+            "file": "CSAT3B_CSAT3BH_all_variants.json",
+            "product_index": 2,
+            "source_product_id": "CSI_CSAT3BH_NC",
+            "model": "CSAT3BH-NC",
+            "missing_fields": []
+          },
+          {
+            "file": "CSAT3B_Output_Fix.json",
+            "product_index": 2,
+            "source_product_id": "CSI_CSAT3BH_NC",
+            "model": "CSAT3BH-NC",
+            "missing_fields": []
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3BH_SC",
+        "locations": [
+          {
+            "file": "CSAT3B_CSAT3BH_all_variants.json",
+            "product_index": 3,
+            "source_product_id": "CSI_CSAT3BH_SC",
+            "model": "CSAT3BH-SC",
+            "missing_fields": []
+          },
+          {
+            "file": "CSAT3B_Output_Fix.json",
+            "product_index": 3,
+            "source_product_id": "CSI_CSAT3BH_SC",
+            "model": "CSAT3BH-SC",
+            "missing_fields": []
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS300_DS",
+        "locations": [
+          {
+            "file": "MetSENS300_Output.json",
+            "product_index": 2,
+            "source_product_id": "CSI_METSENS300_DS",
+            "model": "MetSENS300-DS",
+            "missing_fields": []
+          },
+          {
+            "file": "MetSENS300-DS.json",
+            "product_index": 0,
+            "source_product_id": "CSI_MetSENS300_DS",
+            "model": "MetSENS300-DS",
+            "missing_fields": []
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_TE525",
+        "locations": [
+          {
+            "file": "TE525_Output.json",
+            "product_index": 0,
+            "source_product_id": "CSI_TE525",
+            "model": "TE525",
+            "missing_fields": []
+          },
+          {
+            "file": "TE525.json",
+            "product_index": 0,
+            "source_product_id": "CSI_TE525",
+            "model": "TE525",
+            "missing_fields": []
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_TE525WS",
+        "locations": [
+          {
+            "file": "TE525_Output.json",
+            "product_index": 1,
+            "source_product_id": "CSI_TE525WS",
+            "model": "TE525WS",
+            "missing_fields": []
+          },
+          {
+            "file": "TE525.json",
+            "product_index": 1,
+            "source_product_id": "CSI_TE525WS",
+            "model": "TE525WS",
+            "missing_fields": []
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_TE525MM",
+        "locations": [
+          {
+            "file": "TE525_Output.json",
+            "product_index": 2,
+            "source_product_id": "CSI_TE525MM",
+            "model": "TE525MM",
+            "missing_fields": []
+          },
+          {
+            "file": "TE525.json",
+            "product_index": 2,
+            "source_product_id": "CSI_TE525MM",
+            "model": "TE525MM",
+            "missing_fields": []
+          }
+        ]
+      }
+    ],
+    "existing_raw_overlaps": [
+      {
+        "product_id": "CSI_AM16_32B_XT",
+        "incoming_locations": [
+          {
+            "file": "AM16_32B_Output.json",
+            "product_index": 1,
+            "source_product_id": "CSI_AM16_32B_XT",
+            "model": "AM16/32B-XT",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "AM16_32B-XT.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_ASPEN10_CELL_XT",
+        "incoming_locations": [
+          {
+            "file": "Aspen10_4_Variants.json",
+            "product_index": 1,
+            "source_product_id": "CSI_ASPEN10_CELL_XT",
+            "model": "Aspen10-CELL-XT",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "Aspen10-CELL-XT.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_AT",
+        "incoming_locations": [
+          {
+            "file": "Cell205_output.json",
+            "product_index": 0,
+            "source_product_id": "CSI_CELL205_AT",
+            "model": "CELL205-AT",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "Cell205.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_IT1A",
+        "incoming_locations": [
+          {
+            "file": "Cell205_output.json",
+            "product_index": 1,
+            "source_product_id": "CSI_CELL205_IT1A",
+            "model": "CELL205-IT1A",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "Cell205.json",
+            "product_index": 1
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_IT1B",
+        "incoming_locations": [
+          {
+            "file": "Cell205_output.json",
+            "product_index": 2,
+            "source_product_id": "CSI_CELL205_IT1B",
+            "model": "CELL205-IT1B",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "Cell205.json",
+            "product_index": 2
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CELL205_NP",
+        "incoming_locations": [
+          {
+            "file": "Cell205_output.json",
+            "product_index": 3,
+            "source_product_id": "CSI_CELL205_NP",
+            "model": "CELL205-NP",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "Cell205.json",
+            "product_index": 3
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CR310_NA",
+        "incoming_locations": [
+          {
+            "file": "CR310_Master_Specifications_Full_Output.json",
+            "product_index": 0,
+            "source_product_id": "CSI_CR310_NA",
+            "model": "CR310-NA",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CR310-NA.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CR310_WIFI",
+        "incoming_locations": [
+          {
+            "file": "CR310_Master_Specifications_Full_Output.json",
+            "product_index": 22,
+            "source_product_id": "CSI_CR310_WIFI",
+            "model": "CR310-WIFI",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CR310-WIFI.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CR350_NA",
+        "incoming_locations": [
+          {
+            "file": "CR350_Master_Specifications_Output (2).json",
+            "product_index": 0,
+            "source_product_id": "CSI_CR350_NA",
+            "model": "CR350-NA",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CR350-NA.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CR6_NA_XT_CC",
+        "incoming_locations": [
+          {
+            "file": "CR6_all_variants.json",
+            "product_index": 2,
+            "source_product_id": "CSI_CR6_NA_XT_CC",
+            "model": "CR6-NA-XT-CC",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CR6-NA-XT-CC.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CS506",
+        "incoming_locations": [
+          {
+            "file": "CS506_Output_Fix.json",
+            "product_index": 0,
+            "source_product_id": "CSI_CS506",
+            "model": "CS506",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CS506_Specifications_SplitCells.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_NC",
+        "incoming_locations": [
+          {
+            "file": "CSAT3B_CSAT3BH_all_variants.json",
+            "product_index": 0,
+            "source_product_id": "CSI_CSAT3B_NC",
+            "model": "CSAT3B-NC",
+            "missing_fields": []
+          },
+          {
+            "file": "CSAT3B_Output_Fix.json",
+            "product_index": 0,
+            "source_product_id": "CSI_CSAT3B_NC",
+            "model": "CSAT3B-NC",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CSAT3B_CSAT3BH.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3B_SC",
+        "incoming_locations": [
+          {
+            "file": "CSAT3B_CSAT3BH_all_variants.json",
+            "product_index": 1,
+            "source_product_id": "CSI_CSAT3B_SC",
+            "model": "CSAT3B-SC",
+            "missing_fields": []
+          },
+          {
+            "file": "CSAT3B_Output_Fix.json",
+            "product_index": 1,
+            "source_product_id": "CSI_CSAT3B_SC",
+            "model": "CSAT3B-SC",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CSAT3B_CSAT3BH.json",
+            "product_index": 1
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3BH_NC",
+        "incoming_locations": [
+          {
+            "file": "CSAT3B_CSAT3BH_all_variants.json",
+            "product_index": 2,
+            "source_product_id": "CSI_CSAT3BH_NC",
+            "model": "CSAT3BH-NC",
+            "missing_fields": []
+          },
+          {
+            "file": "CSAT3B_Output_Fix.json",
+            "product_index": 2,
+            "source_product_id": "CSI_CSAT3BH_NC",
+            "model": "CSAT3BH-NC",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CSAT3B_CSAT3BH.json",
+            "product_index": 2
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_CSAT3BH_SC",
+        "incoming_locations": [
+          {
+            "file": "CSAT3B_CSAT3BH_all_variants.json",
+            "product_index": 3,
+            "source_product_id": "CSI_CSAT3BH_SC",
+            "model": "CSAT3BH-SC",
+            "missing_fields": []
+          },
+          {
+            "file": "CSAT3B_Output_Fix.json",
+            "product_index": 3,
+            "source_product_id": "CSI_CSAT3BH_SC",
+            "model": "CSAT3BH-SC",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "CSAT3B_CSAT3BH.json",
+            "product_index": 3
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_HFP01",
+        "incoming_locations": [
+          {
+            "file": "HFP01_Output_Fix.json",
+            "product_index": 0,
+            "source_product_id": "CSI_HFP01",
+            "model": "HFP01",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "HFP01_HFP01SC_Specifications_SplitCells.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_HFP01SC",
+        "incoming_locations": [
+          {
+            "file": "HFP01_Output_Fix.json",
+            "product_index": 1,
+            "source_product_id": "CSI_HFP01SC",
+            "model": "HFP01SC",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "HFP01_HFP01SC_Specifications_SplitCells.json",
+            "product_index": 1
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_D2",
+        "incoming_locations": [
+          {
+            "file": "MetSENS500_Output.json",
+            "product_index": 0,
+            "source_product_id": "CSI_METSENS500_D2",
+            "model": "MetSENS500-D2",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "MetSENS500.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DM",
+        "incoming_locations": [
+          {
+            "file": "MetSENS500_Output.json",
+            "product_index": 1,
+            "source_product_id": "CSI_METSENS500_DM",
+            "model": "MetSENS500-DM",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "MetSENS500.json",
+            "product_index": 1
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_METSENS500_DS",
+        "incoming_locations": [
+          {
+            "file": "MetSENS500_Output.json",
+            "product_index": 2,
+            "source_product_id": "CSI_METSENS500_DS",
+            "model": "MetSENS500-DS",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "MetSENS500.json",
+            "product_index": 2
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_SKYVUE8",
+        "incoming_locations": [
+          {
+            "file": "SkyVue_Output.json",
+            "product_index": 0,
+            "source_product_id": "CSI_SKYVUE8",
+            "model": "SkyVue8",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "SkyVue.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_SKYVUE8M",
+        "incoming_locations": [
+          {
+            "file": "SkyVue_Output.json",
+            "product_index": 1,
+            "source_product_id": "CSI_SKYVUE8M",
+            "model": "SkyVue8M",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "SkyVue.json",
+            "product_index": 1
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_SKYVUEPRO",
+        "incoming_locations": [
+          {
+            "file": "SkyVue_Output.json",
+            "product_index": 2,
+            "source_product_id": "CSI_SKYVUEPRO",
+            "model": "SkyVuePRO",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "SkyVue.json",
+            "product_index": 2
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_TEMP120_XD",
+        "incoming_locations": [
+          {
+            "file": "TEMP120_Output.json",
+            "product_index": 1,
+            "source_product_id": "CSI_TEMP120_XD",
+            "model": "TEMP120-XD",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "TEMP120-XD.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_S",
+        "incoming_locations": [
+          {
+            "file": "TempVue20.json",
+            "product_index": 0,
+            "source_product_id": "CSI_TempVue20_S",
+            "model": "TempVue20-S",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "TempVue20.json",
+            "product_index": 0
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_TEMPVUE20_M",
+        "incoming_locations": [
+          {
+            "file": "TempVue20.json",
+            "product_index": 1,
+            "source_product_id": "CSI_TempVue20_M",
+            "model": "TempVue20-M",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "TempVue20.json",
+            "product_index": 1
+          }
+        ]
+      },
+      {
+        "product_id": "CSI_WINDSONIC1",
+        "incoming_locations": [
+          {
+            "file": "WindSonic1_Output.json",
+            "product_index": 0,
+            "source_product_id": "CSI_WINDSONIC1",
+            "model": "WindSonic1",
+            "missing_fields": []
+          }
+        ],
+        "existing_locations": [
+          {
+            "file": "WindSonic1.json",
+            "product_index": 0
+          }
+        ]
+      }
+    ],
+    "product_ids_without_embedded_canonical": [
+      "CSI_105E",
+      "CSI_AM16_32B_ST",
+      "CSI_AM16_32B_XT",
+      "CSI_ASPEN10_CELL_ST",
+      "CSI_ASPEN10_CELL_XT",
+      "CSI_ASPEN10_US_ST",
+      "CSI_ASPEN10_US_XT",
+      "CSI_BLACKGLOBE",
+      "CSI_CELL205_AT",
+      "CSI_CELL205_IT1A",
+      "CSI_CELL205_IT1B",
+      "CSI_CELL205_NP",
+      "CSI_CELL210_V",
+      "CSI_CELL210_VS",
+      "CSI_CELL210_NP",
+      "CSI_CELL215_IT1A",
+      "CSI_CELL215_IT1B",
+      "CSI_CELL215_NP",
+      "CSI_CELL220_IT1A",
+      "CSI_CELL220_IT1B",
+      "CSI_CELL220_NP",
+      "CSI_CELL225_IT1A",
+      "CSI_CELL225_IT1B",
+      "CSI_CELL225_NP",
+      "CSI_COM220_AU",
+      "CSI_COM220_NA",
+      "CSI_COM220_UK",
+      "CSI_COM320_AU",
+      "CSI_COM320_US",
+      "CSI_CPEC306_DW",
+      "CSI_CPEC306_6NA",
+      "CSI_CPEC306_WIFI",
+      "CSI_CPEC306_AM",
+      "CSI_CPEC306_KD",
+      "CSI_CPEC306_SS2",
+      "CSI_CR310_NA",
+      "CSI_CR310_CELL205_NP",
+      "CSI_CR310_CELL205_AT",
+      "CSI_CR310_CELL205_BC",
+      "CSI_CR310_CELL205_IT1A",
+      "CSI_CR310_CELL205_IT1B",
+      "CSI_CR310_CELL210_NP",
+      "CSI_CR310_CELL210_V",
+      "CSI_CR310_CELL210_VS",
+      "CSI_CR310_CELL215_NP",
+      "CSI_CR310_CELL215_IT1A",
+      "CSI_CR310_CELL215_IT1B",
+      "CSI_CR310_CELL220_NP",
+      "CSI_CR310_CELL220_IT1A",
+      "CSI_CR310_CELL220_IT1B",
+      "CSI_CR310_CELL225_NP",
+      "CSI_CR310_CELL225_IT1A",
+      "CSI_CR310_CELL225_IT1B",
+      "CSI_CR310_RF407",
+      "CSI_CR310_RF412",
+      "CSI_CR310_RF422",
+      "CSI_CR310_RF427",
+      "CSI_CR310_WIFI",
+      "CSI_CR350_NA",
+      "CSI_CR350_CELL205_NP",
+      "CSI_CR350_CELL205_AT",
+      "CSI_CR350_CELL205_BC",
+      "CSI_CR350_CELL205_IT1A",
+      "CSI_CR350_CELL205_IT1B",
+      "CSI_CR350_CELL210",
+      "CSI_CR350_CELL210_V",
+      "CSI_CR350_CELL210_VS",
+      "CSI_CR350_CELL215_NP",
+      "CSI_CR350_CELL215_IT1A",
+      "CSI_CR350_CELL215_IT1B",
+      "CSI_CR350_CELL220_NP",
+      "CSI_CR350_CELL220_IT1A",
+      "CSI_CR350_CELL220_IT1B",
+      "CSI_CR350_CELL225_NP",
+      "CSI_CR350_CELL225_IT1A",
+      "CSI_CR350_CELL225_IT1B",
+      "CSI_CR350_CELL230_NP",
+      "CSI_CR350_RF407",
+      "CSI_CR350_RF412",
+      "CSI_CR350_RF422",
+      "CSI_CR350_RF427",
+      "CSI_CR350_RF452_NA",
+      "CSI_CR350_RF452_A",
+      "CSI_CR350_RF452_NZ",
+      "CSI_CR350_WIFI",
+      "CSI_CRS451_WN",
+      "CSI_CRS451_NN",
+      "CSI_CRS451V_HA",
+      "CSI_CRS451V_WN",
+      "CSI_CRS451V_NN",
+      "CSI_CRS456",
+      "CSI_CRS456_WN",
+      "CSI_CRS456_NN",
+      "CSI_CRVW3_NE",
+      "CSI_CRVW3_NE_RF407",
+      "CSI_CRVW3_NE_RF412",
+      "CSI_CRVW3_NE_RF422",
+      "CSI_CRVW3_NE_RF427",
+      "CSI_CRVW3_NE_RF452",
+      "CSI_CS106_PF",
+      "CSI_CS106_PT",
+      "CSI_CS140",
+      "CSI_CS230",
+      "CSI_CS231",
+      "CSI_CS310",
+      "CSI_CS506",
+      "CSI_CS610",
+      "CSI_CS635",
+      "CSI_CS645",
+      "CSI_HFP01",
+      "CSI_HFP01SC",
+      "CSI_HS2_12",
+      "CSI_HS2_20",
+      "CSI_HS2_NS",
+      "CSI_HYGROVUE5",
+      "CSI_LEVELVUEB10_15",
+      "CSI_LEVELVUEB10_30",
+      "CSI_METSENS200_D2",
+      "CSI_METSENS200_DM",
+      "CSI_METSENS200_DS",
+      "CSI_METSENS300_D2",
+      "CSI_METSENS300_DM",
+      "CSI_METSENS500_D2",
+      "CSI_METSENS500_DM",
+      "CSI_METSENS500_DS",
+      "CSI_METSENS550_D2",
+      "CSI_METSENS550_DM",
+      "CSI_METSENS550_DS",
+      "CSI_PS24_W_CH150",
+      "CSI_PS24_W_CH200",
+      "CSI_RAINVUE10_001_INCH_TIP",
+      "CSI_RAINVUE10_01_MM_TIP",
+      "CSI_RAINVUE10_02_MM_TIP",
+      "CSI_RAINVUE20_001_INCH_TIP",
+      "CSI_RAINVUE20_01_MM_TIP",
+      "CSI_RF452",
+      "CSI_SKYVUE8",
+      "CSI_SKYVUE8M",
+      "CSI_SKYVUEPRO",
+      "CSI_SOILVUE10_0_5M",
+      "CSI_SOILVUE10_1_0M",
+      "CSI_TB4",
+      "CSI_TB4MM",
+      "CSI_TEMP120_SD",
+      "CSI_TEMP120_XD",
+      "CSI_TX326",
+      "CSI_VOLT108_XD",
+      "CSI_WINDSONIC1"
+    ]
+  },
+  "files": [
+    {
+      "file": "105E.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "AM16_32B_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "Aspen10_4_Variants.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 4,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "BLACKGLOBE.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "Cell205_output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 4,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CELL210_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CELL215_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CELL220_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CELL225_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "COM220_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "COM320_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "COM320-UK.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CPEC306_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 6,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CR310_Master_Specifications_Full_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 23,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CR350_Master_Specifications_Output (2).json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 27,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CR6_all_variants.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 28,
+      "canonical_record_count": 28,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CRS451_CRS451V_CRS456_Output_Fixed.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 8,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CRVW3_NE_Master_Specifications_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 6,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CS106_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CS140_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CS230_CS231_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CS241DM.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CS310_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CS456_all_variants.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 4,
+      "canonical_record_count": 4,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CS506_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CS610_CS635_CS645_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CSAT3B_CSAT3BH_all_variants.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 4,
+      "canonical_record_count": 4,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "CSAT3B_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 4,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "HFP01_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "HMP60.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "HS2_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "HygroVue5_Output_Fix.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "LevelVueB10_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "MeteoPV.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "MetSENS200_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "MetSENS300_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "MetSENS300-DS.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "MetSENS500_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "MetSENS550_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "MS-80SH.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "PS24.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "RainVue_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 5,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "RF452_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "RF500M.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "SkyVue_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "SN500SS.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "SoilVue10_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "TB4_TB4MM_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "TCAV.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "TE525_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "TE525.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 3,
+      "canonical_record_count": 3,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "TEMP120_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "TempVue20.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 2,
+      "canonical_record_count": 2,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "TX326_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "VOLT108_XD_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "VWANALYZER.json",
+      "input_shape": "wrapped",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 1,
+      "products_missing_core_fields": 0
+    },
+    {
+      "file": "WindSonic1_Output.json",
+      "input_shape": "raw_document",
+      "schema_version": "1.1",
+      "product_record_count": 1,
+      "canonical_record_count": 0,
+      "products_missing_core_fields": 0
+    }
+  ]
+}

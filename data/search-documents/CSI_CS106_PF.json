@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS106_PF",
+  "model": "CS106-PF",
+  "name_en": "CS106 Barometric Pressure Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Barometric Pressure Sensors",
+    "subcategory_key": "barometric_pressure_sensors",
+    "device_type": "Barometric Pressure Sensor",
+    "device_type_key": "barometric_pressure_sensor"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "CS106-PF",
+    "CSI_CS106_PF",
+    "CS106 Barometric Pressure Sensor",
+    "CS106-PT"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_CS106_PF",
+      "model": "CS106-PF",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CS106"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Inch cable w/Ferrules on Wires"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable End Configuration",
+          "value_raw": "Ferrules on wires"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_CS106_PT",
+      "model": "CS106-PT",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "value_raw": "CS106"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "value_raw": "Inch Cable w/Tinned Wires"
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable End Configuration",
+          "value_raw": "Tinned wires"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "temperature_range",
+      "name": "Temperature Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          27
+        ]
+      }
+    },
+    {
+      "canonical_key": "supply_voltage",
+      "name": "Supply Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 10,
+        "max_value": 30,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_CS106_PF.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          13
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "CS106-PF",
+    "CS106 Barometric Pressure Sensor",
+    "Sensors",
+    "Barometric Pressure Sensors",
+    "Barometric Pressure Sensor",
+    "CSI_CS106_PF"
+  ],
+  "search_keywords_vi": [
+    "CS106-PF",
+    "Cảm biến",
+    "Cảm biến áp suất khí quyển"
+  ],
+  "search_text_en": "CS106-PF | CS106 Barometric Pressure Sensor | CSI_CS106_PF | CS106-PT | Sensors | Barometric Pressure Sensors | Barometric Pressure Sensor | Base Model: CS106 | Configuration Description: Inch cable w/Ferrules on Wires | Cable End Configuration: Ferrules on wires | Configuration Description: Inch Cable w/Tinned Wires | Cable End Configuration: Tinned wires | Temperature Range: -40 to 60 °C | Supply Voltage: 10 to 30 V DC",
+  "search_text_vi": "CS106-PF | CSI_CS106_PF | CS106 Barometric Pressure Sensor | CS106-PT | Cảm biến | Cảm biến áp suất khí quyển | Base Model: CS106 | Configuration Description: Inch cable w/Ferrules on Wires | Cable End Configuration: Ferrules on wires | Configuration Description: Inch Cable w/Tinned Wires | Cable End Configuration: Tinned wires | Temperature Range: -40 to 60 °C | Supply Voltage: 10 to 30 V DC",
+  "search_text": "CS106-PF | CS106 Barometric Pressure Sensor | CSI_CS106_PF | CS106-PT | Sensors | Barometric Pressure Sensors | Barometric Pressure Sensor | Base Model: CS106 | Configuration Description: Inch cable w/Ferrules on Wires | Cable End Configuration: Ferrules on wires | Configuration Description: Inch Cable w/Tinned Wires | Cable End Configuration: Tinned wires | Temperature Range: -40 to 60 °C | Supply Voltage: 10 to 30 V DC | Cảm biến | Cảm biến áp suất khí quyển",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "c12465bf1578abdc7be8138f148a003614ff5f68421f50143a447d1dd56db60d"
+}

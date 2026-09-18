@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CS140_Master_Specifications_SplitCells (1).xlsx",
+    "sheet": "CS140_Master"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS140",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS140",
+      "product_name_en": "Background Luminance Sensor",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Product Name",
+          "name_vi": "Tên sản phẩm",
+          "value_raw": "Background Luminance Sensor",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Model",
+          "name_vi": "Model",
+          "value_raw": "CS140",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Item Number",
+          "name_vi": "Mã sản phẩm",
+          "value_raw": "34293",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "2 years",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "name_vi": "Dải đo",
+          "value_raw": "0 to 45,000 cd/m²",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "±0.6 cd/m² (< 6 cd/m²) | ±10% (> 6 cd/m²)",
+          "source_rows": [
+            9,
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature",
+          "name_vi": "Nhiệt độ hoạt động",
+          "value_raw": "-25° to +60°C (standard) | -50° to +70°C (extended, optional) | -40° to +70°C (extended, optional)",
+          "source_rows": [
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Humidity",
+          "name_vi": "Độ ẩm hoạt động",
+          "value_raw": "0 to 100%",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Wind Speed",
+          "name_vi": "Tốc độ gió",
+          "value_raw": "Up to 60 m/s",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Sealing",
+          "name_vi": "Cấp kín cảm biến",
+          "value_raw": "Rated to IP66",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Response Time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "1 s",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Mountings",
+          "name_vi": "Lắp đặt",
+          "value_raw": "Stainless-steel V-bolt mounting to pole | Diameter 3.2 to 5.25 cm (1.26 to 2.07 in.)",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Dimensions",
+          "name_vi": "Kích thước cảm biến",
+          "value_raw": "36 x 18 x 9 cm (14.2 x 7.1 x 3.5 in.)",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "~2.4 kg (~5.3 lb) dependent upon mounting system",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Shipping Weight",
+          "name_vi": "Khối lượng vận chuyển",
+          "value_raw": "3.5 kg (7.7 lb)",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "ELECTRICAL",
+          "name_en": "Electrical - NOTE",
+          "name_vi": "Ghi chú - Điện",
+          "value_raw": "Lower power states can be achieved by less frequent sampling and remote control of heaters. | Optional power supplies with battery back-up available. | A low-voltage shutdown level can be set to prevent back-up batteries from being damaged.",
+          "source_rows": [
+            24,
+            25,
+            26
+          ]
+        },
+        {
+          "section": "ELECTRICAL",
+          "name_en": "Electronics Supply Voltage",
+          "name_vi": "Điện áp cấp điện tử",
+          "value_raw": "9 to 24 Vdc",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "ELECTRICAL",
+          "name_en": "Hood Heater Supply Voltage",
+          "name_vi": "Điện áp cấp bộ gia nhiệt hood",
+          "value_raw": "24 V dc or ac",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "ELECTRICAL",
+          "name_en": "Hood Heater Power",
+          "name_vi": "Công suất bộ gia nhiệt hood",
+          "value_raw": "48 W",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "ELECTRICAL",
+          "name_en": "Dew Heater Power",
+          "name_vi": "Công suất bộ gia nhiệt chống sương",
+          "value_raw": "0.6 W",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "ELECTRICAL",
+          "name_en": "Total Unit Power",
+          "name_vi": "Công suất toàn bộ thiết bị",
+          "value_raw": "< 1.5 W while sampling continuously (including dew heater)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "INTERFACE",
+          "name_en": "Serial Interface",
+          "name_vi": "Giao diện nối tiếp",
+          "value_raw": "RS-232 (full duplex, no hardware handshaking) | RS-485 (half duplex only)",
+          "source_rows": [
+            33,
+            34
+          ]
+        },
+        {
+          "section": "INTERFACE",
+          "name_en": "Serial Data Rates",
+          "name_vi": "Tốc độ dữ liệu nối tiếp",
+          "value_raw": "1200 to 115,200 bps | 38,400 bps default rate",
+          "source_rows": [
+            35,
+            36
+          ]
+        },
+        {
+          "section": "OPTICAL",
+          "name_en": "Optical - NOTE",
+          "name_vi": "Ghi chú - Quang học",
+          "value_raw": "Lens contamination circuitry monitors the window for contamination. | The sensor can be configured to adjust calibration for contamination.",
+          "source_rows": [
+            38,
+            39
+          ]
+        },
+        {
+          "section": "OPTICAL",
+          "name_en": "Field of View (FOV)",
+          "name_vi": "Trường nhìn (FOV)",
+          "value_raw": "6° wide with sharp cut-off",
+          "source_rows": [
+            40
+          ]
+        },
+        {
+          "section": "OPTICAL",
+          "name_en": "Elevation Angle",
+          "name_vi": "Góc nâng",
+          "value_raw": "6° with hood horizontal",
+          "source_rows": [
+            41
+          ]
+        },
+        {
+          "section": "OPTICAL",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "0.1 cd/m²",
+          "source_rows": [
+            42
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs140_datasheet.pdf",
+        "user_manual": "cs140_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs140"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11334",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      }
+    }
+  ]
+}

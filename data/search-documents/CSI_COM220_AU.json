@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_COM220_AU",
+  "model": "COM220-AU",
+  "name_en": "COM220 Phone Modem",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Telephone Communications",
+    "subcategory_key": "telephone_communications",
+    "device_type": "Telephone Modem",
+    "device_type_key": "telephone_modem"
+  },
+  "measurements": [],
+  "applications": [],
+  "capabilities": [],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "COM220-AU",
+    "CSI_COM220_AU",
+    "COM220 Phone Modem",
+    "COM220-NA",
+    "COM220-UK"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_COM220_AU",
+      "model": "COM220-AU",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Set for Australia"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Ships As",
+          "value_raw": "43010, 16675, & 2365"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_COM220_NA",
+      "model": "COM220-NA",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Set for US/Canada"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Ships As",
+          "value_raw": "18895, 16675, & 2365"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_COM220_UK",
+      "model": "COM220-UK",
+      "product_name_en": null,
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Configuration",
+          "value_raw": "Set for UK"
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Ships As",
+          "value_raw": "43009, 16675, & 2365"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "operating_voltage",
+      "name": "Operating Voltage",
+      "quantity_kind": "voltage",
+      "normalized_value": {
+        "type": "number",
+        "value": 12,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          7
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.16,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.35,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_COM220_AU.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          12
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "COM220-AU",
+    "COM220 Phone Modem",
+    "Communications",
+    "Telephone Communications",
+    "Telephone Modem",
+    "CSI_COM220_AU"
+  ],
+  "search_keywords_vi": [
+    "COM220-AU",
+    "Thiết bị truyền thông",
+    "Truyền thông điện thoại",
+    "Modem điện thoại"
+  ],
+  "search_text_en": "COM220-AU | COM220 Phone Modem | CSI_COM220_AU | COM220-NA | COM220-UK | Communications | Telephone Communications | Telephone Modem | Configuration: Set for Australia | Ships As: 43010, 16675, & 2365 | Configuration: Set for US/Canada | Ships As: 18895, 16675, & 2365 | Configuration: Set for UK | Ships As: 43009, 16675, & 2365 | Operating Voltage: 12 V DC | Weight: 0.16 kg",
+  "search_text_vi": "COM220-AU | CSI_COM220_AU | COM220 Phone Modem | COM220-NA | COM220-UK | Thiết bị truyền thông | Truyền thông điện thoại | Modem điện thoại | Configuration: Set for Australia | Ships As: 43010, 16675, & 2365 | Configuration: Set for US/Canada | Ships As: 18895, 16675, & 2365 | Configuration: Set for UK | Ships As: 43009, 16675, & 2365 | Operating Voltage: 12 V DC | Weight: 0.16 kg",
+  "search_text": "COM220-AU | COM220 Phone Modem | CSI_COM220_AU | COM220-NA | COM220-UK | Communications | Telephone Communications | Telephone Modem | Configuration: Set for Australia | Ships As: 43010, 16675, & 2365 | Configuration: Set for US/Canada | Ships As: 18895, 16675, & 2365 | Configuration: Set for UK | Ships As: 43009, 16675, & 2365 | Operating Voltage: 12 V DC | Weight: 0.16 kg | Thiết bị truyền thông | Truyền thông điện thoại | Modem điện thoại",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "724fc29956c4dfd473510a5ec98994b8851e0caa0771644ae4ead02e65034c0f"
+}

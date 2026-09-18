@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T02:12:07.495Z",
+  "generated_at": "2026-09-18T08:45:15.614Z",
   "purpose": "Step 7.6B public technical-ranking POST /api/v1/search smoke",
   "endpoint": "POST /api/v1/search",
   "request_limit": 10,
@@ -8,6 +8,18 @@
       "query": "CS655",
       "http_status": 200,
       "mode": "hybrid",
+      "result_ids": [
+        "CSI_CS655",
+        "CSI_CS506",
+        "CSI_CS120A_ST",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_VWIRE305_XD",
+        "CSI_CR350_NA",
+        "CSI_CS511",
+        "CSI_CS125_ST",
+        "CSI_METSENS550_D2",
+        "CSI_CR310_NA"
+      ],
       "top_5": [
         {
           "rank": 1,
@@ -22,28 +34,28 @@
         },
         {
           "rank": 2,
-          "product_id": "CSI_CS120A_ST",
-          "model": "CS120A-ST",
+          "product_id": "CSI_CS506",
+          "model": "CS506",
           "keyword_score": 0,
-          "semantic_score": 0.512115589059228,
+          "semantic_score": 0.514207715675459,
           "hybrid_score": 0.01639344262295082,
           "matched_features": []
         },
         {
           "rank": 3,
-          "product_id": "CSI_CR350_NA",
-          "model": "CR350-NA",
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
           "keyword_score": 0,
-          "semantic_score": 0.481933500035698,
+          "semantic_score": 0.505209291663443,
           "hybrid_score": 0.016129032258064516,
           "matched_features": []
         },
         {
           "rank": 4,
-          "product_id": "CSI_CS511",
-          "model": "CS511",
+          "product_id": "CSI_CR6_NA_ST_CC",
+          "model": "CR6-NA-ST-CC",
           "keyword_score": 0,
-          "semantic_score": 0.477727853574778,
+          "semantic_score": 0.490630898250024,
           "hybrid_score": 0.015873015873015872,
           "matched_features": []
         },
@@ -62,23 +74,35 @@
       "query": "soil moisture sensor",
       "http_status": 200,
       "mode": "hybrid",
+      "result_ids": [
+        "CSI_SOILVUE10_5",
+        "CSI_HS2_12",
+        "CSI_CS650",
+        "CSI_CS655",
+        "CSI_CS616",
+        "CSI_TCAV",
+        "CSI_LWS",
+        "CSI_CLIMAVUE40",
+        "CSI_HYGROVUE10",
+        "CSI_CLIMAVUE50G2"
+      ],
       "top_5": [
         {
           "rank": 1,
           "product_id": "CSI_SOILVUE10_5",
           "model": "SoilVue10-5",
-          "keyword_score": 0.108028,
-          "semantic_score": 0.748047410510769,
-          "hybrid_score": 0.03278688524590164,
+          "keyword_score": 0.10146,
+          "semantic_score": 0.712853920927208,
+          "hybrid_score": 0.032018442622950824,
           "matched_features": []
         },
         {
           "rank": 2,
-          "product_id": "CSI_CS655",
-          "model": "CS655",
-          "keyword_score": 0.047619,
-          "semantic_score": 0.675499380424566,
-          "hybrid_score": 0.03149801587301587,
+          "product_id": "CSI_HS2_12",
+          "model": "HS2-12",
+          "keyword_score": 0.0171258,
+          "semantic_score": 0.726292182595689,
+          "hybrid_score": 0.03177805800756621,
           "matched_features": []
         },
         {
@@ -86,26 +110,26 @@
           "product_id": "CSI_CS650",
           "model": "CS650",
           "keyword_score": 0.047619,
-          "semantic_score": 0.6688012492187,
-          "hybrid_score": 0.03128054740957967,
+          "semantic_score": 0.668652673621563,
+          "hybrid_score": 0.031054405392392875,
           "matched_features": []
         },
         {
           "rank": 4,
-          "product_id": "CSI_CS616",
-          "model": "CS616",
-          "keyword_score": 0.0243902,
-          "semantic_score": 0.668891370495385,
-          "hybrid_score": 0.031009615384615385,
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "keyword_score": 0.047619,
+          "semantic_score": 0.676434162772009,
+          "hybrid_score": 0.031024531024531024,
           "matched_features": []
         },
         {
           "rank": 5,
-          "product_id": "CSI_LWS",
-          "model": "LWS",
-          "keyword_score": 0,
-          "semantic_score": 0.716668117543937,
-          "hybrid_score": 0.016129032258064516,
+          "product_id": "CSI_CS616",
+          "model": "CS616",
+          "keyword_score": 0.0243902,
+          "semantic_score": 0.664623002637644,
+          "hybrid_score": 0.030330882352941176,
           "matched_features": []
         }
       ]
@@ -114,50 +138,62 @@
       "query": "cảm biến độ ẩm đất",
       "http_status": 200,
       "mode": "hybrid",
+      "result_ids": [
+        "CSI_HS2_12",
+        "CSI_CS610",
+        "CSI_SOILVUE10_5",
+        "CSI_CS655",
+        "CSI_CS616",
+        "CSI_CS650",
+        "CSI_TCAV",
+        "CSI_LWS",
+        "CSI_CLIMAVUE40",
+        "CSI_105E"
+      ],
       "top_5": [
         {
           "rank": 1,
-          "product_id": "CSI_CS616",
-          "model": "CS616",
-          "keyword_score": 0.0163934,
-          "semantic_score": 0.624873101711273,
-          "hybrid_score": 0.03177805800756621,
+          "product_id": "CSI_HS2_12",
+          "model": "HS2-12",
+          "keyword_score": 0.0322581,
+          "semantic_score": 0.672575668945629,
+          "hybrid_score": 0.03200204813108039,
           "matched_features": []
         },
         {
           "rank": 2,
-          "product_id": "CSI_SOILVUE10_5",
-          "model": "SoilVue10-5",
-          "keyword_score": 0.0163934,
-          "semantic_score": 0.696625323776333,
-          "hybrid_score": 0.031754032258064516,
+          "product_id": "CSI_CS610",
+          "model": "CS610",
+          "keyword_score": 0.0322581,
+          "semantic_score": 0.623902842533254,
+          "hybrid_score": 0.031099324975891997,
           "matched_features": []
         },
         {
           "rank": 3,
-          "product_id": "CSI_CS655",
-          "model": "CS655",
+          "product_id": "CSI_SOILVUE10_5",
+          "model": "SoilVue10-5",
           "keyword_score": 0.0163934,
-          "semantic_score": 0.630097389221191,
-          "hybrid_score": 0.03149801587301587,
+          "semantic_score": 0.663810252632555,
+          "hybrid_score": 0.030776515151515152,
           "matched_features": []
         },
         {
           "rank": 4,
-          "product_id": "CSI_CS650",
-          "model": "CS650",
+          "product_id": "CSI_CS655",
+          "model": "CS655",
           "keyword_score": 0.0163934,
-          "semantic_score": 0.621971050786014,
-          "hybrid_score": 0.03128054740957967,
+          "semantic_score": 0.631210377242987,
+          "hybrid_score": 0.030309988518943745,
           "matched_features": []
         },
         {
           "rank": 5,
-          "product_id": "CSI_LWS",
-          "model": "LWS",
-          "keyword_score": 0,
-          "semantic_score": 0.700355446508223,
-          "hybrid_score": 0.01639344262295082,
+          "product_id": "CSI_CS616",
+          "model": "CS616",
+          "keyword_score": 0.0163934,
+          "semantic_score": 0.622300320178203,
+          "hybrid_score": 0.030158730158730156,
           "matched_features": []
         }
       ]
@@ -166,49 +202,61 @@
       "query": "900 MHz radio",
       "http_status": 200,
       "mode": "hybrid",
+      "result_ids": [
+        "CSI_CR350_NA",
+        "CSI_CR310_NA",
+        "CSI_RF452",
+        "CSI_CRVW3_NE",
+        "CSI_RF500M",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_RF407",
+        "CSI_CLIMAVUE40",
+        "CSI_COM320_AU",
+        "CSI_COM220_AU"
+      ],
       "top_5": [
         {
           "rank": 1,
-          "product_id": "CSI_RF407",
-          "model": "RF407",
-          "keyword_score": 0,
-          "semantic_score": 0.587962999112079,
-          "hybrid_score": 0.01639344262295082,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "keyword_score": 0.0240906,
+          "semantic_score": 0.663527371183266,
+          "hybrid_score": 0.03278688524590164,
           "matched_features": []
         },
         {
           "rank": 2,
-          "product_id": "CSI_CLIMAVUE40",
-          "model": "ClimaVue40",
-          "keyword_score": 0,
-          "semantic_score": 0.558901989296447,
-          "hybrid_score": 0.016129032258064516,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_score": 0.0070922,
+          "semantic_score": 0.649441197348137,
+          "hybrid_score": 0.03225806451612903,
           "matched_features": []
         },
         {
           "rank": 3,
-          "product_id": "CSI_CLIMAVUE50G2",
-          "model": "ClimaVue50G2",
+          "product_id": "CSI_RF452",
+          "model": "RF452",
           "keyword_score": 0,
-          "semantic_score": 0.554260402570583,
+          "semantic_score": 0.628227651119272,
           "hybrid_score": 0.015873015873015872,
           "matched_features": []
         },
         {
           "rank": 4,
-          "product_id": "CSI_TX325",
-          "model": "TX325",
+          "product_id": "CSI_CRVW3_NE",
+          "model": "CRVW3-NE",
           "keyword_score": 0,
-          "semantic_score": 0.544914132104692,
+          "semantic_score": 0.626964612624298,
           "hybrid_score": 0.015625,
           "matched_features": []
         },
         {
           "rank": 5,
-          "product_id": "CSI_CS301",
-          "model": "CS301",
+          "product_id": "CSI_RF500M",
+          "model": "RF500M",
           "keyword_score": 0,
-          "semantic_score": 0.54458574903275,
+          "semantic_score": 0.626004509328453,
           "hybrid_score": 0.015384615384615385,
           "matched_features": []
         }
@@ -218,58 +266,70 @@
       "query": "SDI-12",
       "http_status": 200,
       "mode": "hybrid",
+      "result_ids": [
+        "CSI_METSENS500_DS",
+        "CSI_CLIMAVUE50G2",
+        "CSI_TEMPVUE20_S",
+        "CSI_CR310_NA",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS230",
+        "CSI_BAROVUE10",
+        "CSI_CR350_NA",
+        "CSI_CR310_WIFI",
+        "CSI_CLARIVUE10"
+      ],
       "top_5": [
         {
           "rank": 1,
-          "product_id": "CSI_CLIMAVUE50G2",
-          "model": "ClimaVue50G2",
-          "keyword_score": 0.166667,
-          "semantic_score": 0.714254030140688,
-          "hybrid_score": 0.03278688524590164,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "keyword_score": 0.473684,
+          "semantic_score": 0.670921406804871,
+          "hybrid_score": 0.030886196246139225,
           "matched_features": [
             "protocol:SDI-12"
           ]
         },
         {
           "rank": 2,
-          "product_id": "CSI_CR350_NA",
-          "model": "CR350-NA",
-          "keyword_score": 0.0909091,
-          "semantic_score": 0.692837946958709,
-          "hybrid_score": 0.030798389007344232,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_score": 0.166667,
+          "semantic_score": 0.708519958059785,
+          "hybrid_score": 0.030834914611005692,
           "matched_features": [
             "protocol:SDI-12"
           ]
         },
         {
           "rank": 3,
-          "product_id": "CSI_CR310_NA",
-          "model": "CR310-NA",
-          "keyword_score": 0.0909091,
-          "semantic_score": 0.686452690324673,
-          "hybrid_score": 0.03076923076923077,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_score": 0.333333,
+          "semantic_score": 0.683591217153533,
+          "hybrid_score": 0.030536130536130537,
           "matched_features": [
             "protocol:SDI-12"
           ]
         },
         {
           "rank": 4,
-          "product_id": "CSI_BAROVUE10",
-          "model": "BaroVue10",
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
           "keyword_score": 0.0909091,
-          "semantic_score": 0.651744626202555,
-          "hybrid_score": 0.029571646010002173,
+          "semantic_score": 0.692406849281343,
+          "hybrid_score": 0.029386529386529386,
           "matched_features": [
             "protocol:SDI-12"
           ]
         },
         {
           "rank": 5,
-          "product_id": "CSI_TEMPVUE20_S",
-          "model": "TempVue20-S",
+          "product_id": "CSI_CR6_NA_ST_CC",
+          "model": "CR6-NA-ST-CC",
           "keyword_score": 0.0909091,
-          "semantic_score": 0.693770149535868,
-          "hybrid_score": 0.02928692699490662,
+          "semantic_score": 0.711674984245802,
+          "hybrid_score": 0.02938045560996381,
           "matched_features": [
             "protocol:SDI-12"
           ]
@@ -280,9 +340,30 @@
       "query": "weather station",
       "http_status": 200,
       "mode": "hybrid",
+      "result_ids": [
+        "CSI_METEOPV",
+        "CSI_CLIMAVUE40",
+        "CSI_CLIMAVUE50G2",
+        "CSI_LWS",
+        "CSI_CS125_ST",
+        "CSI_METSENS500_DS",
+        "CSI_SNOWVUE10",
+        "CSI_METSENS550_D2",
+        "CSI_BAROVUE10",
+        "CSI_CS120A_ST"
+      ],
       "top_5": [
         {
           "rank": 1,
+          "product_id": "CSI_METEOPV",
+          "model": "MeteoPV",
+          "keyword_score": 0.00805153,
+          "semantic_score": null,
+          "hybrid_score": 0.01639344262295082,
+          "matched_features": []
+        },
+        {
+          "rank": 2,
           "product_id": "CSI_CLIMAVUE40",
           "model": "ClimaVue40",
           "keyword_score": 0,
@@ -291,21 +372,12 @@
           "matched_features": []
         },
         {
-          "rank": 2,
+          "rank": 3,
           "product_id": "CSI_CLIMAVUE50G2",
           "model": "ClimaVue50G2",
           "keyword_score": 0,
-          "semantic_score": 0.686831222627972,
+          "semantic_score": 0.682478014895471,
           "hybrid_score": 0.016129032258064516,
-          "matched_features": []
-        },
-        {
-          "rank": 3,
-          "product_id": "CSI_METSENS500_DS",
-          "model": "MetSENS500-DS",
-          "keyword_score": 0,
-          "semantic_score": 0.68393140382255,
-          "hybrid_score": 0.015873015873015872,
           "matched_features": []
         },
         {
@@ -314,7 +386,7 @@
           "model": "LWS",
           "keyword_score": 0,
           "semantic_score": 0.620645029775621,
-          "hybrid_score": 0.015625,
+          "hybrid_score": 0.015873015873015872,
           "matched_features": []
         },
         {
@@ -322,8 +394,8 @@
           "product_id": "CSI_CS125_ST",
           "model": "CS125-ST",
           "keyword_score": 0,
-          "semantic_score": 0.620318170218337,
-          "hybrid_score": 0.015384615384615385,
+          "semantic_score": 0.61303870522515,
+          "hybrid_score": 0.015625,
           "matched_features": []
         }
       ]

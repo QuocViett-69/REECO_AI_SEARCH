@@ -1,0 +1,1498 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-18T08:29:34.691Z",
+  "source_directory": "data/raw-incoming",
+  "staged_directory": "data/raw-staged",
+  "strategy": {
+    "unit": "product_family",
+    "grouping": "Files sharing a product_id are consolidated.",
+    "representative_selection": "Prefer an active/current master product, then an embedded canonical product, then the highest-quality raw record.",
+    "variant_preservation": "All unique product IDs are retained in products[0].variants with distinguishing specifications and source provenance."
+  },
+  "summary": {
+    "incoming_file_count": 57,
+    "staged_family_count": 53,
+    "consolidated_source_file_count": 8,
+    "representative_already_in_master_count": 53,
+    "new_representative_count": 0,
+    "total_preserved_variant_count": 199,
+    "families_missing_canonical_fields_count": 0
+  },
+  "families": [
+    {
+      "output_file": "CSI_105E.json",
+      "representative_product_id": "CSI_105E",
+      "representative_source_product_id": "CSI_105E",
+      "representative_model": "105E",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_105E"
+      ],
+      "source_files": [
+        "105E.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_105E",
+        "model": "105E",
+        "product_name_en": "Type E Thermocouple Burial Probe",
+        "category": "Sensors",
+        "subcategory": "Temperature Sensors (Air/Soil/Water)",
+        "device_type": "Soil Temperature Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_AM16_32B_ST.json",
+      "representative_product_id": "CSI_AM16_32B_ST",
+      "representative_source_product_id": "CSI_AM16_32B_ST",
+      "representative_model": "AM16/32B-ST",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_AM16_32B_ST",
+        "CSI_AM16_32B_XT"
+      ],
+      "source_files": [
+        "AM16_32B_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_AM16_32B_ST",
+        "model": "AM16/32B-ST",
+        "product_name_en": "16 or 32 Channel Relay Multiplexer** -ST -25 to",
+        "category": "Measurement Devices",
+        "subcategory": "Multiplexers",
+        "device_type": "Multiplexer",
+        "source_url": "https://www.campbellsci.com/products/am16-32b",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_ASPEN10_CELL_ST.json",
+      "representative_product_id": "CSI_ASPEN10_CELL_ST",
+      "representative_source_product_id": "CSI_ASPEN10_CELL_ST",
+      "representative_model": "Aspen10-CELL-ST",
+      "representative_already_in_master": true,
+      "variant_count": 4,
+      "variant_product_ids": [
+        "CSI_ASPEN10_CELL_ST",
+        "CSI_ASPEN10_CELL_XT",
+        "CSI_ASPEN10_US_ST",
+        "CSI_ASPEN10_US_XT"
+      ],
+      "source_files": [
+        "Aspen10_4_Variants.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_ASPEN10_CELL_ST",
+        "model": "Aspen10-CELL-ST",
+        "product_name_en": "Aspen10 Edge Device for a Single Sensor -CEL",
+        "category": "Measurement Devices",
+        "subcategory": "Data Loggers / Edge Devices",
+        "device_type": "Data Logger / Edge Device",
+        "source_url": "https://www.campbellsci.com/products/aspen10",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_BLACKGLOBE.json",
+      "representative_product_id": "CSI_BLACKGLOBE",
+      "representative_source_product_id": "CSI_BLACKGLOBE",
+      "representative_model": "BLACKGLOBE",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_BLACKGLOBE"
+      ],
+      "source_files": [
+        "BLACKGLOBE.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_BLACKGLOBE",
+        "model": "BLACKGLOBE",
+        "product_name_en": "BlackGlobe Temperature Sensor",
+        "category": "Sensors",
+        "subcategory": "Air Temperature Sensors",
+        "device_type": "Black Globe Temperature Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CELL205_AT.json",
+      "representative_product_id": "CSI_CELL205_AT",
+      "representative_source_product_id": "CSI_CELL205_AT",
+      "representative_model": "CELL205-AT",
+      "representative_already_in_master": true,
+      "variant_count": 4,
+      "variant_product_ids": [
+        "CSI_CELL205_AT",
+        "CSI_CELL205_IT1A",
+        "CSI_CELL205_IT1B",
+        "CSI_CELL205_NP"
+      ],
+      "source_files": [
+        "Cell205_output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CELL205_AT",
+        "model": "CELL205-AT",
+        "product_name_en": "4G LTE Cat1 Cellular Module for North America (-4",
+        "category": "Communications",
+        "subcategory": "Cellular Communications",
+        "device_type": "Cellular Modem / Router",
+        "source_url": "https://www.campbellsci.com/products/cell205",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CELL210_V.json",
+      "representative_product_id": "CSI_CELL210_V",
+      "representative_source_product_id": "CSI_CELL210_V",
+      "representative_model": "CELL210-V",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_CELL210_V",
+        "CSI_CELL210_VS",
+        "CSI_CELL210_NP"
+      ],
+      "source_files": [
+        "CELL210_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CELL210_V",
+        "model": "CELL210-V",
+        "product_name_en": "4G LTE CAT-1 Cellular Module for Verizon",
+        "category": "Communications",
+        "subcategory": "Cellular Communications",
+        "device_type": "Cellular Modem / Router",
+        "source_url": "https://www.campbellsci.com/products/cell210",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CELL215_IT1A.json",
+      "representative_product_id": "CSI_CELL215_IT1A",
+      "representative_source_product_id": "CSI_CELL215_IT1A",
+      "representative_model": "CELL215-IT1A",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_CELL215_IT1A",
+        "CSI_CELL215_IT1B",
+        "CSI_CELL215_NP"
+      ],
+      "source_files": [
+        "CELL215_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CELL215_IT1A",
+        "model": "CELL215-IT1A",
+        "product_name_en": "4G LTE CAT-1 Cellular Module for EMEA Countries",
+        "category": "Communications",
+        "subcategory": "Cellular Communications",
+        "device_type": "Cellular Modem / Router",
+        "source_url": "https://www.campbellsci.com/products/cell215",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CELL220_IT1A.json",
+      "representative_product_id": "CSI_CELL220_IT1A",
+      "representative_source_product_id": "CSI_CELL220_IT1A",
+      "representative_model": "CELL220-IT1A",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_CELL220_IT1A",
+        "CSI_CELL220_IT1B",
+        "CSI_CELL220_NP"
+      ],
+      "source_files": [
+        "CELL220_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CELL220_IT1A",
+        "model": "CELL220-IT1A",
+        "product_name_en": "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+        "category": "Communications",
+        "subcategory": "Cellular Communications",
+        "device_type": "Cellular Modem / Router",
+        "source_url": "https://www.campbellsci.com/products/cell220",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CELL225_IT1A.json",
+      "representative_product_id": "CSI_CELL225_IT1A",
+      "representative_source_product_id": "CSI_CELL225_IT1A",
+      "representative_model": "CELL225-IT1A",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_CELL225_IT1A",
+        "CSI_CELL225_IT1B",
+        "CSI_CELL225_NP"
+      ],
+      "source_files": [
+        "CELL225_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CELL225_IT1A",
+        "model": "CELL225-IT1A",
+        "product_name_en": "4G LTE CAT-1 Cellular Module for Japan",
+        "category": "Communications",
+        "subcategory": "Cellular Communications",
+        "device_type": "Cellular Modem / Router",
+        "source_url": "https://www.campbellsci.com/products/cell225",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_COM220_AU.json",
+      "representative_product_id": "CSI_COM220_AU",
+      "representative_source_product_id": "CSI_COM220_AU",
+      "representative_model": "COM220-AU",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_COM220_AU",
+        "CSI_COM220_NA",
+        "CSI_COM220_UK"
+      ],
+      "source_files": [
+        "COM220_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_COM220_AU",
+        "model": "COM220-AU",
+        "product_name_en": "COM220 Phone Modem",
+        "category": "Communications",
+        "subcategory": "Telephone Communications",
+        "device_type": "Telephone Modem",
+        "source_url": "https://www.campbellsci.com/products/com220",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_COM320_AU.json",
+      "representative_product_id": "CSI_COM320_AU",
+      "representative_source_product_id": "CSI_COM320_AU",
+      "representative_model": "COM320-AU",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_COM320_AU",
+        "CSI_COM320_US",
+        "CSI_COM320_UK"
+      ],
+      "source_files": [
+        "COM320_Output.json",
+        "COM320-UK.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_COM320_AU",
+        "model": "COM320-AU",
+        "product_name_en": "COM320 Voice Phone Modem",
+        "category": "Communications",
+        "subcategory": "Telephone Communications",
+        "device_type": "Telephone Modem",
+        "source_url": "https://www.campbellsci.com/products/com320",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CPEC306_DW.json",
+      "representative_product_id": "CSI_CPEC306_DW",
+      "representative_source_product_id": "CSI_CPEC306_DW",
+      "representative_model": "CPEC306-DW",
+      "representative_already_in_master": true,
+      "variant_count": 6,
+      "variant_product_ids": [
+        "CSI_CPEC306_DW",
+        "CSI_CPEC306_6NA",
+        "CSI_CPEC306_WIFI",
+        "CSI_CPEC306_AM",
+        "CSI_CPEC306_KD",
+        "CSI_CPEC306_SS2"
+      ],
+      "source_files": [
+        "CPEC306_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CPEC306_DW",
+        "model": "CPEC306-DW",
+        "product_name_en": "CPEC306 Closed-Path Eddy-Covariance System",
+        "category": "Systems",
+        "subcategory": "Carbon Flux Systems",
+        "device_type": "Carbon Flux Measurement System",
+        "source_url": "https://www.campbellsci.com/products/cpec306",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CR310_NA.json",
+      "representative_product_id": "CSI_CR310_NA",
+      "representative_source_product_id": "CSI_CR310_NA",
+      "representative_model": "CR310-NA",
+      "representative_already_in_master": true,
+      "variant_count": 23,
+      "variant_product_ids": [
+        "CSI_CR310_NA",
+        "CSI_CR310_CELL205_NP",
+        "CSI_CR310_CELL205_AT",
+        "CSI_CR310_CELL205_BC",
+        "CSI_CR310_CELL205_IT1A",
+        "CSI_CR310_CELL205_IT1B",
+        "CSI_CR310_CELL210_NP",
+        "CSI_CR310_CELL210_V",
+        "CSI_CR310_CELL210_VS",
+        "CSI_CR310_CELL215_NP",
+        "CSI_CR310_CELL215_IT1A",
+        "CSI_CR310_CELL215_IT1B",
+        "CSI_CR310_CELL220_NP",
+        "CSI_CR310_CELL220_IT1A",
+        "CSI_CR310_CELL220_IT1B",
+        "CSI_CR310_CELL225_NP",
+        "CSI_CR310_CELL225_IT1A",
+        "CSI_CR310_CELL225_IT1B",
+        "CSI_CR310_RF407",
+        "CSI_CR310_RF412",
+        "CSI_CR310_RF422",
+        "CSI_CR310_RF427",
+        "CSI_CR310_WIFI"
+      ],
+      "source_files": [
+        "CR310_Master_Specifications_Full_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CR310_NA",
+        "model": "CR310-NA",
+        "product_name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+        "category": "Measurement Devices",
+        "subcategory": "Data Loggers",
+        "device_type": "Data Logger",
+        "source_url": "https://www.campbellsci.com/products/cr310",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CR350_NA.json",
+      "representative_product_id": "CSI_CR350_NA",
+      "representative_source_product_id": "CSI_CR350_NA",
+      "representative_model": "CR350-NA",
+      "representative_already_in_master": true,
+      "variant_count": 27,
+      "variant_product_ids": [
+        "CSI_CR350_NA",
+        "CSI_CR350_CELL205_NP",
+        "CSI_CR350_CELL205_AT",
+        "CSI_CR350_CELL205_BC",
+        "CSI_CR350_CELL205_IT1A",
+        "CSI_CR350_CELL205_IT1B",
+        "CSI_CR350_CELL210",
+        "CSI_CR350_CELL210_V",
+        "CSI_CR350_CELL210_VS",
+        "CSI_CR350_CELL215_NP",
+        "CSI_CR350_CELL215_IT1A",
+        "CSI_CR350_CELL215_IT1B",
+        "CSI_CR350_CELL220_NP",
+        "CSI_CR350_CELL220_IT1A",
+        "CSI_CR350_CELL220_IT1B",
+        "CSI_CR350_CELL225_NP",
+        "CSI_CR350_CELL225_IT1A",
+        "CSI_CR350_CELL225_IT1B",
+        "CSI_CR350_CELL230_NP",
+        "CSI_CR350_RF407",
+        "CSI_CR350_RF412",
+        "CSI_CR350_RF422",
+        "CSI_CR350_RF427",
+        "CSI_CR350_RF452_NA",
+        "CSI_CR350_RF452_A",
+        "CSI_CR350_RF452_NZ",
+        "CSI_CR350_WIFI"
+      ],
+      "source_files": [
+        "CR350_Master_Specifications_Output (2).json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CR350_NA",
+        "model": "CR350-NA",
+        "product_name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
+        "category": "Measurement Devices",
+        "subcategory": "Data Loggers",
+        "device_type": "Data Logger",
+        "source_url": "https://www.campbellsci.com/products/cr350",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CR6_NA_ST_CC.json",
+      "representative_product_id": "CSI_CR6_NA_ST_CC",
+      "representative_source_product_id": "CSI_CR6_NA_ST_CC",
+      "representative_model": "CR6-NA-ST-CC",
+      "representative_already_in_master": true,
+      "variant_count": 28,
+      "variant_product_ids": [
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CR6_NA_ST_IC",
+        "CSI_CR6_NA_XT_CC",
+        "CSI_CR6_NA_XT_IC",
+        "CSI_CR6_RF407_ST_CC",
+        "CSI_CR6_RF407_ST_IC",
+        "CSI_CR6_RF407_XT_CC",
+        "CSI_CR6_RF407_XT_IC",
+        "CSI_CR6_RF412_ST_CC",
+        "CSI_CR6_RF412_ST_IC",
+        "CSI_CR6_RF412_XT_CC",
+        "CSI_CR6_RF412_XT_IC",
+        "CSI_CR6_RF422_ST_CC",
+        "CSI_CR6_RF422_ST_IC",
+        "CSI_CR6_RF422_XT_CC",
+        "CSI_CR6_RF422_XT_IC",
+        "CSI_CR6_RF427_ST_CC",
+        "CSI_CR6_RF427_ST_IC",
+        "CSI_CR6_RF427_XT_CC",
+        "CSI_CR6_RF427_XT_IC",
+        "CSI_CR6_RF452_ST_CC",
+        "CSI_CR6_RF452_ST_IC",
+        "CSI_CR6_RF452_XT_CC",
+        "CSI_CR6_RF452_XT_IC",
+        "CSI_CR6_WIFI_ST_CC",
+        "CSI_CR6_WIFI_ST_IC",
+        "CSI_CR6_WIFI_XT_CC",
+        "CSI_CR6_WIFI_XT_IC"
+      ],
+      "source_files": [
+        "CR6_all_variants.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CR6_NA_ST_CC",
+        "model": "CR6-NA-ST-CC",
+        "product_name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+        "category": "Measurement Devices",
+        "subcategory": "Data Loggers",
+        "device_type": "Data Logger",
+        "source_url": "https://www.campbellsci.com/products/cr6",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CRS451_WN.json",
+      "representative_product_id": "CSI_CRS451_WN",
+      "representative_source_product_id": "CSI_CRS451_WN",
+      "representative_model": "CRS451-WN",
+      "representative_already_in_master": true,
+      "variant_count": 8,
+      "variant_product_ids": [
+        "CSI_CRS451_WN",
+        "CSI_CRS451_NN",
+        "CSI_CRS451V_HA",
+        "CSI_CRS451V_WN",
+        "CSI_CRS451V_NN",
+        "CSI_CRS456",
+        "CSI_CRS456_WN",
+        "CSI_CRS456_NN"
+      ],
+      "source_files": [
+        "CRS451_CRS451V_CRS456_Output_Fixed.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CRS451_WN",
+        "model": "CRS451-WN",
+        "product_name_en": "CRS451 Stainless-Steel Water-Level Recording Sensor",
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor",
+        "source_url": "https://www.campbellsci.com/products/crs451",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CRVW3_NE.json",
+      "representative_product_id": "CSI_CRVW3_NE",
+      "representative_source_product_id": "CSI_CRVW3_NE",
+      "representative_model": "CRVW3-NE",
+      "representative_already_in_master": true,
+      "variant_count": 6,
+      "variant_product_ids": [
+        "CSI_CRVW3_NE",
+        "CSI_CRVW3_NE_RF407",
+        "CSI_CRVW3_NE_RF412",
+        "CSI_CRVW3_NE_RF422",
+        "CSI_CRVW3_NE_RF427",
+        "CSI_CRVW3_NE_RF452"
+      ],
+      "source_files": [
+        "CRVW3_NE_Master_Specifications_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CRVW3_NE",
+        "model": "CRVW3-NE",
+        "product_name_en": "CRVW3 Vibrating-Wire Data Logger",
+        "category": "Measurement Devices",
+        "subcategory": "Vibrating Wire Measurement Modules",
+        "device_type": "Vibrating Wire Data Logger",
+        "source_url": "https://www.campbellsci.com/products/crvw3-ne",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CS106_PF.json",
+      "representative_product_id": "CSI_CS106_PF",
+      "representative_source_product_id": "CSI_CS106_PF",
+      "representative_model": "CS106-PF",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_CS106_PF",
+        "CSI_CS106_PT"
+      ],
+      "source_files": [
+        "CS106_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CS106_PF",
+        "model": "CS106-PF",
+        "product_name_en": "CS106 Barometric Pressure Sensor",
+        "category": "Sensors",
+        "subcategory": "Barometric Pressure Sensors",
+        "device_type": "Barometric Pressure Sensor",
+        "source_url": "https://www.campbellsci.com/products/cs106",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CS140.json",
+      "representative_product_id": "CSI_CS140",
+      "representative_source_product_id": "CSI_CS140",
+      "representative_model": "CS140",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_CS140"
+      ],
+      "source_files": [
+        "CS140_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CS140",
+        "model": "CS140",
+        "product_name_en": "Background Luminance Sensor",
+        "category": "Sensors",
+        "subcategory": "Present Weather Sensors",
+        "device_type": "Background Luminance Sensor",
+        "source_url": "https://www.campbellsci.com/products/cs140",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CS230.json",
+      "representative_product_id": "CSI_CS230",
+      "representative_source_product_id": "CSI_CS230",
+      "representative_model": "CS230",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_CS230",
+        "CSI_CS231"
+      ],
+      "source_files": [
+        "CS230_CS231_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CS230",
+        "model": "CS230",
+        "product_name_en": "SDI-12 Temperature Profiler",
+        "category": "Sensors",
+        "subcategory": "Temperature Sensors (Air/Soil/Water)",
+        "device_type": "Temperature Profiler",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CS241DM.json",
+      "representative_product_id": "CSI_CS241DM",
+      "representative_source_product_id": "CSI_CS241DM",
+      "representative_model": "CS241DM",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_CS241DM"
+      ],
+      "source_files": [
+        "CS241DM.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CS241DM",
+        "model": "CS241DM",
+        "product_name_en": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+        "category": "Sensors",
+        "subcategory": "Temperature Sensors (Air/Soil/Water)",
+        "device_type": "Back-of-Module Temperature Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CS310.json",
+      "representative_product_id": "CSI_CS310",
+      "representative_source_product_id": "CSI_CS310",
+      "representative_model": "CS310",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_CS310"
+      ],
+      "source_files": [
+        "CS310_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CS310",
+        "model": "CS310",
+        "product_name_en": "CS310 Quantum Sensor",
+        "category": "Sensors",
+        "subcategory": "Solar Radiation Sensors",
+        "device_type": "Quantum Sensor",
+        "source_url": "https://www.campbellsci.com/products/cs310",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CS456.json",
+      "representative_product_id": "CSI_CS456",
+      "representative_source_product_id": "CSI_CS456",
+      "representative_model": "CS456",
+      "representative_already_in_master": true,
+      "variant_count": 4,
+      "variant_product_ids": [
+        "CSI_CS456",
+        "CSI_CS456_HA",
+        "CSI_CS456_WN",
+        "CSI_CS456_NN"
+      ],
+      "source_files": [
+        "CS456_all_variants.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CS456",
+        "model": "CS456",
+        "product_name_en": "CS456",
+        "category": "Sensors",
+        "subcategory": "Water Level, Stage, and Flow Sensors",
+        "device_type": "Water-Level Sensor",
+        "source_url": "https://www.campbellsci.com/products/cs456",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CS506.json",
+      "representative_product_id": "CSI_CS506",
+      "representative_source_product_id": "CSI_CS506",
+      "representative_model": "CS506",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_CS506"
+      ],
+      "source_files": [
+        "CS506_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CS506",
+        "model": "CS506",
+        "product_name_en": "CS506 Fuel Moisture Sensor",
+        "category": "Sensors",
+        "subcategory": "Fuel Moisture Sensors",
+        "device_type": "Fuel Moisture Sensor",
+        "source_url": "https://www.campbellsci.com/products/cs506",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CS610.json",
+      "representative_product_id": "CSI_CS610",
+      "representative_source_product_id": "CSI_CS610",
+      "representative_model": "CS610",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_CS610",
+        "CSI_CS635",
+        "CSI_CS645"
+      ],
+      "source_files": [
+        "CS610_CS635_CS645_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CS610",
+        "model": "CS610",
+        "product_name_en": "3-rod TDR Probe",
+        "category": "Sensors",
+        "subcategory": "Soil Sensors",
+        "device_type": "TDR Soil Moisture Probe",
+        "source_url": "https://www.campbellsci.com/products/cs610",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_CSAT3B_NC.json",
+      "representative_product_id": "CSI_CSAT3B_NC",
+      "representative_source_product_id": "CSI_CSAT3B_NC",
+      "representative_model": "CSAT3B-NC",
+      "representative_already_in_master": true,
+      "variant_count": 4,
+      "variant_product_ids": [
+        "CSI_CSAT3B_NC",
+        "CSI_CSAT3B_SC",
+        "CSI_CSAT3BH_NC",
+        "CSI_CSAT3BH_SC"
+      ],
+      "source_files": [
+        "CSAT3B_CSAT3BH_all_variants.json",
+        "CSAT3B_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_CSAT3B_NC",
+        "model": "CSAT3B-NC",
+        "product_name_en": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni",
+        "category": "Sensors",
+        "subcategory": "Wind Speed and Wind Direction Sensors",
+        "device_type": "Wind Speed and Wind Direction Sensor",
+        "source_url": "https://www.campbellsci.com/products/csat3b",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_HFP01.json",
+      "representative_product_id": "CSI_HFP01",
+      "representative_source_product_id": "CSI_HFP01",
+      "representative_model": "HFP01",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_HFP01",
+        "CSI_HFP01SC"
+      ],
+      "source_files": [
+        "HFP01_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_HFP01",
+        "model": "HFP01",
+        "product_name_en": "HFP01 Soil Heat Flux Plate",
+        "category": "Sensors",
+        "subcategory": "Soil Sensors",
+        "device_type": "Heat Flux Plate",
+        "source_url": "https://www.campbellsci.com/products/hfp01",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_HMP60.json",
+      "representative_product_id": "CSI_HMP60",
+      "representative_source_product_id": "CSI_HMP60",
+      "representative_model": "HMP60",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_HMP60"
+      ],
+      "source_files": [
+        "HMP60.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_HMP60",
+        "model": "HMP60",
+        "product_name_en": "HMP60 Temperature and Relative Humidity Probe",
+        "category": "Sensors",
+        "subcategory": "Air Temperature and Relative Humidity Sensors",
+        "device_type": "Air Temperature and Relative Humidity Sensor",
+        "source_url": "https://www.campbellsci.com/products/hmp60",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_HS2_12.json",
+      "representative_product_id": "CSI_HS2_12",
+      "representative_source_product_id": "CSI_HS2_12",
+      "representative_model": "HS2-12",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_HS2_12",
+        "CSI_HS2_20",
+        "CSI_HS2_NS"
+      ],
+      "source_files": [
+        "HS2_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_HS2_12",
+        "model": "HS2-12",
+        "product_name_en": "HS2 HydroSense II Handheld Soil Water Content Sensor",
+        "category": "Sensors",
+        "subcategory": "Soil Sensors",
+        "device_type": "Handheld Soil Moisture Meter",
+        "source_url": "https://www.campbellsci.com/products/hs2",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_HYGROVUE5.json",
+      "representative_product_id": "CSI_HYGROVUE5",
+      "representative_source_product_id": "CSI_HYGROVUE5",
+      "representative_model": "HygroVue5",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_HYGROVUE5"
+      ],
+      "source_files": [
+        "HygroVue5_Output_Fix.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_HYGROVUE5",
+        "model": "HygroVue5",
+        "product_name_en": "HygroVue5 Digital Temperature and Relative Humidity Sensor",
+        "category": "Sensors",
+        "subcategory": "Temperature & Humidity Sensors",
+        "device_type": "Temperature and Relative Humidity Sensor",
+        "source_url": "https://www.campbellsci.com/products/hygrovue5",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_LEVELVUEB10_15.json",
+      "representative_product_id": "CSI_LEVELVUEB10_15",
+      "representative_source_product_id": "CSI_LEVELVUEB10_15",
+      "representative_model": "LevelVueB10-15",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_LEVELVUEB10_15",
+        "CSI_LEVELVUEB10_30"
+      ],
+      "source_files": [
+        "LevelVueB10_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_LEVELVUEB10_15",
+        "model": "LevelVueB10-15",
+        "product_name_en": "LevelVueB10-15",
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water-Level Continuous Flow Bubbler",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_METEOPV.json",
+      "representative_product_id": "CSI_METEOPV",
+      "representative_source_product_id": "CSI_METEOPV",
+      "representative_model": "MeteoPV",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_METEOPV"
+      ],
+      "source_files": [
+        "MeteoPV.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_METEOPV",
+        "model": "MeteoPV",
+        "product_name_en": "MeteoPV",
+        "category": "Systems",
+        "subcategory": "Solar Monitoring Stations",
+        "device_type": "Solar Monitoring Station",
+        "source_url": "https://www.campbellsci.com/products/meteopv",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_METSENS200_D2.json",
+      "representative_product_id": "CSI_METSENS200_D2",
+      "representative_source_product_id": "CSI_METSENS200_D2",
+      "representative_model": "MetSENS200-D2",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_METSENS200_D2",
+        "CSI_METSENS200_DM",
+        "CSI_METSENS200_DS"
+      ],
+      "source_files": [
+        "MetSENS200_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_METSENS200_D2",
+        "model": "MetSENS200-D2",
+        "product_name_en": "MetSENS200-D2",
+        "category": "Sensors",
+        "subcategory": "Weather Sensors",
+        "device_type": "Compact Weather Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_METSENS300_D2.json",
+      "representative_product_id": "CSI_METSENS300_D2",
+      "representative_source_product_id": "CSI_METSENS300_D2",
+      "representative_model": "MetSENS300-D2",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_METSENS300_D2",
+        "CSI_METSENS300_DM",
+        "CSI_METSENS300_DS"
+      ],
+      "source_files": [
+        "MetSENS300_Output.json",
+        "MetSENS300-DS.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_METSENS300_D2",
+        "model": "MetSENS300-D2",
+        "product_name_en": "MetSENS300-D2",
+        "category": "Sensors",
+        "subcategory": "Weather Sensors",
+        "device_type": "Compact Weather Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_METSENS500_DS.json",
+      "representative_product_id": "CSI_METSENS500_DS",
+      "representative_source_product_id": "CSI_METSENS500_DS",
+      "representative_model": "MetSENS500-DS",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_METSENS500_D2",
+        "CSI_METSENS500_DM",
+        "CSI_METSENS500_DS"
+      ],
+      "source_files": [
+        "MetSENS500_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_METSENS500_DS",
+        "model": "MetSENS500-DS",
+        "product_name_en": "MetSENS500-DS",
+        "category": "Sensors",
+        "subcategory": "All-in-One Weather Sensors",
+        "device_type": "All-in-One Weather Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_METSENS550_D2.json",
+      "representative_product_id": "CSI_METSENS550_D2",
+      "representative_source_product_id": "CSI_METSENS550_D2",
+      "representative_model": "MetSENS550-D2",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_METSENS550_D2",
+        "CSI_METSENS550_DM",
+        "CSI_METSENS550_DS"
+      ],
+      "source_files": [
+        "MetSENS550_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_METSENS550_D2",
+        "model": "MetSENS550-D2",
+        "product_name_en": "MetSENS550-D2",
+        "category": "Sensors",
+        "subcategory": "Weather Sensors",
+        "device_type": "Compact Weather Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_MS80SH.json",
+      "representative_product_id": "CSI_MS80SH",
+      "representative_source_product_id": "CSI_MS80SH",
+      "representative_model": "MS-80SH",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_MS80SH"
+      ],
+      "source_files": [
+        "MS-80SH.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_MS80SH",
+        "model": "MS-80SH",
+        "product_name_en": "MS-80SH",
+        "category": "Sensors",
+        "subcategory": "Solar Radiation Sensors",
+        "device_type": "Pyranometer",
+        "source_url": "https://www.campbellsci.com/products/ms-80sh",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_PS24_W_CH150.json",
+      "representative_product_id": "CSI_PS24_W_CH150",
+      "representative_source_product_id": "CSI_PS24_W_CH150",
+      "representative_model": "PS24-w/CH150",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_PS24_W_CH150",
+        "CSI_PS24_W_CH200"
+      ],
+      "source_files": [
+        "PS24.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_PS24_W_CH150",
+        "model": "PS24-w/CH150",
+        "product_name_en": "PS24-w/CH150",
+        "category": "Power",
+        "subcategory": "Power Supplies and Charge Regulators",
+        "device_type": "Power Supply / Charge Regulator",
+        "source_url": "https://www.campbellsci.com/products/ps24",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_RAINVUE10_MM.json",
+      "representative_product_id": "CSI_RAINVUE10_MM",
+      "representative_source_product_id": "CSI_RAINVUE10_001_INCH_TIP",
+      "representative_model": "RainVue10-MM",
+      "representative_already_in_master": true,
+      "variant_count": 5,
+      "variant_product_ids": [
+        "CSI_RAINVUE10_001_INCH_TIP",
+        "CSI_RAINVUE10_01_MM_TIP",
+        "CSI_RAINVUE10_02_MM_TIP",
+        "CSI_RAINVUE20_001_INCH_TIP",
+        "CSI_RAINVUE20_01_MM_TIP"
+      ],
+      "source_files": [
+        "RainVue_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_RAINVUE10_MM",
+        "model": "RainVue10-MM",
+        "product_name_en": "RainVue™10",
+        "category": "Sensors",
+        "subcategory": "Precipitation Sensors",
+        "device_type": "Precipitation Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_RF452.json",
+      "representative_product_id": "CSI_RF452",
+      "representative_source_product_id": "CSI_RF452",
+      "representative_model": "RF452",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_RF452"
+      ],
+      "source_files": [
+        "RF452_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_RF452",
+        "model": "RF452",
+        "product_name_en": "RF452",
+        "category": "Communications",
+        "subcategory": "Radios",
+        "device_type": "Spread-Spectrum Radio",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_RF500M.json",
+      "representative_product_id": "CSI_RF500M",
+      "representative_source_product_id": "CSI_RF500M",
+      "representative_model": "RF500M",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_RF500M"
+      ],
+      "source_files": [
+        "RF500M.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_RF500M",
+        "model": "RF500M",
+        "product_name_en": "RF500M",
+        "category": "Communications",
+        "subcategory": "Radio Communications",
+        "device_type": "Radio Modem",
+        "source_url": "https://www.campbellsci.com/products/rf500m",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_SKYVUE8.json",
+      "representative_product_id": "CSI_SKYVUE8",
+      "representative_source_product_id": "CSI_SKYVUE8",
+      "representative_model": "SkyVue8",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_SKYVUE8",
+        "CSI_SKYVUE8M",
+        "CSI_SKYVUEPRO"
+      ],
+      "source_files": [
+        "SkyVue_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_SKYVUE8",
+        "model": "SkyVue8",
+        "product_name_en": "SkyVue™8",
+        "category": "Sensors",
+        "subcategory": "Weather Sensors",
+        "device_type": "LIDAR Ceilometer",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_SN500SS.json",
+      "representative_product_id": "CSI_SN500SS",
+      "representative_source_product_id": "CSI_SN500SS",
+      "representative_model": "SN500SS",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_SN500SS"
+      ],
+      "source_files": [
+        "SN500SS.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_SN500SS",
+        "model": "SN500SS",
+        "product_name_en": "SN500SS",
+        "category": "Sensors",
+        "subcategory": "Solar Radiation Sensors",
+        "device_type": "Net Radiometer",
+        "source_url": "https://www.campbellsci.com/products/sn500ss",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_SOILVUE10_5.json",
+      "representative_product_id": "CSI_SOILVUE10_5",
+      "representative_source_product_id": "CSI_SOILVUE10_0_5M",
+      "representative_model": "SoilVue10-5",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_SOILVUE10_0_5M",
+        "CSI_SOILVUE10_1_0M"
+      ],
+      "source_files": [
+        "SoilVue10_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_SOILVUE10_5",
+        "model": "SoilVue10-5",
+        "product_name_en": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+        "category": "Sensors",
+        "subcategory": "Soil Moisture, Temperature, and EC Sensors",
+        "device_type": "Soil Moisture, Temperature, and EC Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_TB4.json",
+      "representative_product_id": "CSI_TB4",
+      "representative_source_product_id": "CSI_TB4",
+      "representative_model": "TB4",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_TB4",
+        "CSI_TB4MM"
+      ],
+      "source_files": [
+        "TB4_TB4MM_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_TB4",
+        "model": "TB4",
+        "product_name_en": "TB4",
+        "category": "Sensors",
+        "subcategory": "Precipitation Sensors",
+        "device_type": "Rain Gage",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_TCAV.json",
+      "representative_product_id": "CSI_TCAV",
+      "representative_source_product_id": "CSI_TCAV",
+      "representative_model": "TCAV",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_TCAV"
+      ],
+      "source_files": [
+        "TCAV.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_TCAV",
+        "model": "TCAV",
+        "product_name_en": "TCAV",
+        "category": "Sensors",
+        "subcategory": "Temperature Sensors (Air/Soil/Water)",
+        "device_type": "Soil Temperature Sensor",
+        "source_url": "https://www.campbellsci.com/products/tcav",
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_TE525.json",
+      "representative_product_id": "CSI_TE525",
+      "representative_source_product_id": "CSI_TE525",
+      "representative_model": "TE525",
+      "representative_already_in_master": true,
+      "variant_count": 3,
+      "variant_product_ids": [
+        "CSI_TE525",
+        "CSI_TE525WS",
+        "CSI_TE525MM"
+      ],
+      "source_files": [
+        "TE525_Output.json",
+        "TE525.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_TE525",
+        "model": "TE525",
+        "product_name_en": "TE525",
+        "category": "Sensors",
+        "subcategory": "Precipitation Sensors",
+        "device_type": "Tipping Bucket Rain Gage",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_TEMP120_XD.json",
+      "representative_product_id": "CSI_TEMP120_XD",
+      "representative_source_product_id": "CSI_TEMP120_XD",
+      "representative_model": "TEMP120-XD",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_TEMP120_SD",
+        "CSI_TEMP120_XD"
+      ],
+      "source_files": [
+        "TEMP120_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_TEMP120_XD",
+        "model": "TEMP120-XD",
+        "product_name_en": "TEMP 120",
+        "category": "Measurement Devices",
+        "subcategory": "Thermocouple Measurement Modules",
+        "device_type": "Measurement Device",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_TEMPVUE20_S.json",
+      "representative_product_id": "CSI_TEMPVUE20_S",
+      "representative_source_product_id": "CSI_TEMPVUE20_S",
+      "representative_model": "TempVue20-S",
+      "representative_already_in_master": true,
+      "variant_count": 2,
+      "variant_product_ids": [
+        "CSI_TEMPVUE20_S",
+        "CSI_TEMPVUE20_M"
+      ],
+      "source_files": [
+        "TempVue20.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_TEMPVUE20_S",
+        "model": "TempVue20-S",
+        "product_name_en": "TempVue™20",
+        "category": "Sensors",
+        "subcategory": "Air Temperature Sensors",
+        "device_type": "Air Temperature Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_TX326.json",
+      "representative_product_id": "CSI_TX326",
+      "representative_source_product_id": "CSI_TX326",
+      "representative_model": "TX326",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_TX326"
+      ],
+      "source_files": [
+        "TX326_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_TX326",
+        "model": "TX326",
+        "product_name_en": "TX326 Satellite Transmitter for METEOSAT",
+        "category": "Communications",
+        "subcategory": "Satellite Transmitters",
+        "device_type": "Satellite Transmitter",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_VOLT108_XD.json",
+      "representative_product_id": "CSI_VOLT108_XD",
+      "representative_source_product_id": "CSI_VOLT108_XD",
+      "representative_model": "VOLT108-XD",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_VOLT108_XD"
+      ],
+      "source_files": [
+        "VOLT108_XD_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_VOLT108_XD",
+        "model": "VOLT108-XD",
+        "product_name_en": "Granite™ Volt 108 Extended Duty (-XD)",
+        "category": "Sensors",
+        "subcategory": "Analog Input Modules",
+        "device_type": "Analog Input Module",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_VWANALYZER.json",
+      "representative_product_id": "CSI_VWANALYZER",
+      "representative_source_product_id": "CSI_VWANALYZER",
+      "representative_model": "VWANALYZER",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_VWANALYZER"
+      ],
+      "source_files": [
+        "VWANALYZER.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_VWANALYZER",
+        "model": "VWANALYZER",
+        "product_name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+        "category": "Measurement Devices",
+        "subcategory": "Vibrating Wire Analyzers",
+        "device_type": "Vibrating Wire Analyzer",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    },
+    {
+      "output_file": "CSI_WINDSONIC1.json",
+      "representative_product_id": "CSI_WINDSONIC1",
+      "representative_source_product_id": "CSI_WINDSONIC1",
+      "representative_model": "WindSonic1",
+      "representative_already_in_master": true,
+      "variant_count": 1,
+      "variant_product_ids": [
+        "CSI_WINDSONIC1"
+      ],
+      "source_files": [
+        "WindSonic1_Output.json"
+      ],
+      "canonical": {
+        "product_id": "CSI_WINDSONIC1",
+        "model": "WindSonic1",
+        "product_name_en": "WindSonic1",
+        "category": "Sensors",
+        "subcategory": "Wind Sensors",
+        "device_type": "Ultrasonic Wind Sensor",
+        "source_url": null,
+        "verified": "Yes"
+      },
+      "missing_canonical_fields": []
+    }
+  ]
+}

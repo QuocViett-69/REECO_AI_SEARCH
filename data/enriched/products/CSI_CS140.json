@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS140",
+  "model": "CS140",
+  "name_en": "Background Luminance Sensor",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Present Weather Sensors",
+    "subcategory_key": "present_weather_sensors",
+    "device_type": "Background Luminance Sensor",
+    "device_type_key": "background_luminance_sensor"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "serial_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS140.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              33,
+              34
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "serial_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS140.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              33,
+              34
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "CS140",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS140"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS140",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS140"
+        }
+      ]
+    },
+    {
+      "value": "Background Luminance Sensor",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Background Luminance Sensor"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS140",
+      "Background Luminance Sensor",
+      "Sensors",
+      "Present Weather Sensors",
+      "RS-232",
+      "RS-485",
+      "CSI_CS140"
+    ],
+    "vi": [
+      "CS140",
+      "Cảm biến",
+      "Cảm biến thời tiết hiện tại",
+      "Cảm biến độ chói nền",
+      "RS-232",
+      "RS-485"
+    ]
+  }
+}

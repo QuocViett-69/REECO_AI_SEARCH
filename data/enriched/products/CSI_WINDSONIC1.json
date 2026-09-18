@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_WINDSONIC1",
+  "model": "WindSonic1",
+  "name_en": "WindSonic1",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Wind Sensors",
+    "subcategory_key": "wind_sensors",
+    "device_type": "Ultrasonic Wind Sensor",
+    "device_type_key": "ultrasonic_wind_sensor"
+  },
+  "measurements": [
+    {
+      "key": "wind_speed",
+      "label_en": "Wind Speed",
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "output_signal",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              14
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_wind_speed",
+      "label_en": "Measure Wind Speed",
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "WindSonic1",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "WindSonic1"
+        }
+      ]
+    },
+    {
+      "value": "CSI_WINDSONIC1",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_WINDSONIC1"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "WindSonic1",
+      "Sensors",
+      "Wind Sensors",
+      "Ultrasonic Wind Sensor",
+      "Wind Speed",
+      "RS-232",
+      "Measure Wind Speed",
+      "CSI_WINDSONIC1"
+    ],
+    "vi": [
+      "WindSonic1",
+      "Cảm biến",
+      "Cảm biến gió",
+      "Cảm biến gió siêu âm",
+      "Tốc độ gió",
+      "RS-232",
+      "Đo tốc độ gió"
+    ]
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_LEVELVUEB10_15",
+  "model": "LevelVueB10-15",
+  "name_en": "LevelVueB10-15",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Water Level Sensors",
+    "subcategory_key": "water_level_sensors",
+    "device_type": "Water-Level Continuous Flow Bubbler",
+    "device_type_key": "water_level_continuous_flow_bubbler"
+  },
+  "measurements": [
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "Modbus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_interfaces",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 33,
+            "source_rows": [
+              36
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_485_protocol",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 37,
+            "source_rows": [
+              40
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_interfaces",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 33,
+            "source_rows": [
+              36
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communication_interfaces",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 33,
+            "source_rows": [
+              36
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sdi_12_protocol",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 34,
+            "source_rows": [
+              37
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "LevelVueB10-15",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "LevelVueB10-15"
+        }
+      ]
+    },
+    {
+      "value": "CSI_LEVELVUEB10_15",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_LEVELVUEB10_15"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "LevelVueB10-15",
+      "Sensors",
+      "Water Level Sensors",
+      "Water-Level Continuous Flow Bubbler",
+      "Water Level",
+      "stage",
+      "Modbus",
+      "RS-485",
+      "SDI-12",
+      "Measure Water Level",
+      "CSI_LEVELVUEB10_15"
+    ],
+    "vi": [
+      "LevelVueB10-15",
+      "Cảm biến",
+      "Cảm biến mực nước",
+      "Thiết bị sủi khí dòng liên tục đo mực nước",
+      "Mực nước",
+      "Modbus",
+      "RS-485",
+      "SDI-12",
+      "Đo mực nước"
+    ]
+  }
+}

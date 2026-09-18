@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS241DM",
+  "model": "CS241DM",
+  "name_en": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Temperature Sensors (Air/Soil/Water)",
+    "subcategory_key": "temperature_sensors_air_soil_water",
+    "device_type": "Back-of-Module Temperature Sensor",
+    "device_type_key": "back_of_module_temperature_sensor"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation"
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "Modbus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_name",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS241DM.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_name",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS241DM.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation"
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CS241DM",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS241DM"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS241DM",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS241DM"
+        }
+      ]
+    },
+    {
+      "value": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS241DM",
+      "Pt-1000 Class A, Precision Back-of-Module Temperature Sensor with Digital Modbus RS-485 Output, Second Generation",
+      "Sensors",
+      "Temperature Sensors (Air/Soil/Water)",
+      "Back-of-Module Temperature Sensor",
+      "Temperature",
+      "temperature measurement",
+      "Modbus",
+      "RS-485",
+      "Measure Temperature",
+      "CSI_CS241DM"
+    ],
+    "vi": [
+      "CS241DM",
+      "Cảm biến",
+      "Cảm biến nhiệt độ không khí, đất và nước",
+      "Cảm biến nhiệt độ mặt sau mô-đun",
+      "Nhiệt độ",
+      "Modbus",
+      "RS-485",
+      "Đo nhiệt độ"
+    ]
+  }
+}

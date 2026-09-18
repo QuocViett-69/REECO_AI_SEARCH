@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_HMP60",
+  "model": "HMP60",
+  "name_en": "HMP60 Temperature and Relative Humidity Probe",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Air Temperature and Relative Humidity Sensors",
+    "subcategory_key": "air_temperature_and_relative_humidity_sensors",
+    "device_type": "Air Temperature and Relative Humidity Sensor",
+    "device_type_key": "air_temperature_and_relative_humidity_sensor"
+  },
+  "measurements": [
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối"
+    }
+  ],
+  "applications": [],
+  "capabilities": [
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối"
+    }
+  ],
+  "supported_protocols": [],
+  "unsupported_protocols": [],
+  "aliases": [
+    "HMP60",
+    "CSI_HMP60",
+    "HMP60 Temperature and Relative Humidity Probe"
+  ],
+  "variants": [
+    {
+      "product_id": "CSI_HMP60",
+      "model": "HMP60",
+      "product_name_en": null,
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "Relative Humidity",
+          "name_en": "Sensing Element",
+          "value_raw": "Vaisala’s INTERCAP capacitive chip"
+        },
+        {
+          "section": "Relative Humidity",
+          "name_en": "Measurement Range",
+          "value_raw": "0 to 100% RH (non-condensing)"
+        },
+        {
+          "section": "Air Temperature",
+          "name_en": "Sensing Element",
+          "value_raw": "1000 ohm Platinum Resistance Thermometer (PRT)"
+        },
+        {
+          "section": "Air Temperature",
+          "name_en": "Measurement Range",
+          "value_raw": "-40° to +60°C"
+        }
+      ]
+    }
+  ],
+  "important_specifications": [
+    {
+      "canonical_key": "air_temperature_measurement_range",
+      "name": "Measurement Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HMP60.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          29
+        ]
+      }
+    },
+    {
+      "canonical_key": "air_temperature_accuracy",
+      "name": "Accuracy",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.6,
+        "unit": "°C",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HMP60.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          30
+        ]
+      }
+    },
+    {
+      "canonical_key": "sensor_diameter",
+      "name": "Sensor Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.2,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.5,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HMP60.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          13
+        ]
+      }
+    },
+    {
+      "canonical_key": "filter_diameter",
+      "name": "Filter Diameter",
+      "quantity_kind": "length",
+      "normalized_value": {
+        "type": "number",
+        "value": 1.2,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.5,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HMP60.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          14
+        ]
+      }
+    },
+    {
+      "canonical_key": "weight",
+      "name": "Weight",
+      "quantity_kind": "mass",
+      "normalized_value": {
+        "type": "number",
+        "value": 0.05,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.1,
+          "unit": "lb"
+        },
+        "condition": "with 1.83 m (6 ft) cable"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_HMP60.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          16
+        ]
+      }
+    }
+  ],
+  "search_keywords_en": [
+    "HMP60",
+    "HMP60 Temperature and Relative Humidity Probe",
+    "Sensors",
+    "Air Temperature and Relative Humidity Sensors",
+    "Air Temperature and Relative Humidity Sensor",
+    "Relative Humidity",
+    "RH",
+    "Measure Relative Humidity",
+    "CSI_HMP60"
+  ],
+  "search_keywords_vi": [
+    "HMP60",
+    "Cảm biến",
+    "Cảm biến nhiệt độ không khí và độ ẩm tương đối",
+    "Độ ẩm tương đối",
+    "Đo độ ẩm tương đối"
+  ],
+  "search_text_en": "HMP60 | HMP60 Temperature and Relative Humidity Probe | CSI_HMP60 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Relative Humidity | Measure Relative Humidity | Sensing Element: Vaisala’s INTERCAP capacitive chip | Measurement Range: 0 to 100% RH (non-condensing) | Sensing Element: 1000 ohm Platinum Resistance Thermometer (PRT) | Measurement Range: -40° to +60°C | Measurement Range: -40 to 60 °C | Accuracy: ± 0.6 °C | Sensor Diameter: 1.2 cm | Filter Diameter: 1.2 cm | Weight: 0.05 kg | RH",
+  "search_text_vi": "HMP60 | CSI_HMP60 | HMP60 Temperature and Relative Humidity Probe | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Độ ẩm tương đối | Đo độ ẩm tương đối | Sensing Element: Vaisala’s INTERCAP capacitive chip | Measurement Range: 0 to 100% RH (non-condensing) | Sensing Element: 1000 ohm Platinum Resistance Thermometer (PRT) | Measurement Range: -40° to +60°C | Measurement Range: -40 to 60 °C | Accuracy: ± 0.6 °C | Sensor Diameter: 1.2 cm | Filter Diameter: 1.2 cm | Weight: 0.05 kg",
+  "search_text": "HMP60 | HMP60 Temperature and Relative Humidity Probe | CSI_HMP60 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Relative Humidity | Measure Relative Humidity | Sensing Element: Vaisala’s INTERCAP capacitive chip | Measurement Range: 0 to 100% RH (non-condensing) | Sensing Element: 1000 ohm Platinum Resistance Thermometer (PRT) | Measurement Range: -40° to +60°C | Measurement Range: -40 to 60 °C | Accuracy: ± 0.6 °C | Sensor Diameter: 1.2 cm | Filter Diameter: 1.2 cm | Weight: 0.05 kg | RH | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Độ ẩm tương đối | Đo độ ẩm tương đối",
+  "source_versions": {
+    "product_master": "2.0",
+    "technical_normalization": "1.2",
+    "semantic_enrichment": "1.0",
+    "semantic_vocabulary": "1.0"
+  },
+  "content_hash": "874a05ac99ab51b3495272f9fc341581af940a2950210a389b17840e4ec36256"
+}

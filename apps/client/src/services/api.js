@@ -85,6 +85,7 @@ function normalizeProductDetail(data) {
     applications: data.applications || [],
     capabilities: data.capabilities || [],
     aliases: data.aliases || [],
+    variants: data.variants || [],
     media: data.media || [],
     specifications: data.specifications || [],
     important_specifications: data.important_specifications || [],
@@ -108,7 +109,12 @@ export async function getProductsApi(params = {}) {
     const data = await res.json();
     return {
       items: (data.items || []).map(normalizeProduct),
-      pagination: data.pagination || { page: 1, limit: 100, total: 0, total_pages: 0 },
+      pagination: data.pagination || {
+        page: 1,
+        limit: 100,
+        total: 0,
+        total_pages: 0,
+      },
     };
   } catch (error) {
     console.warn('API Get products failed:', error.message);
@@ -120,7 +126,7 @@ export async function getProductsApi(params = {}) {
 export async function getProductDetailApi(productIdOrModel) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/products/${encodeURIComponent(productIdOrModel)}`
+      `${API_BASE_URL}/products/${encodeURIComponent(productIdOrModel)}`,
     );
     if (res.status === 404) return null;
     if (!res.ok) throw new Error(`Product Detail API error ${res.status}`);
@@ -144,16 +150,23 @@ export async function searchProductsApi(query, limit = 10) {
     });
     if (res.status === 400) {
       const errData = await res.json().catch(() => ({}));
-      return { error: 'invalid_input', message: errData.message || 'Invalid search query' };
+      return {
+        error: 'invalid_input',
+        message: errData.message || 'Invalid search query',
+      };
     }
     if (res.status === 503) {
-      return { error: 'unavailable', message: 'Search service is temporarily unavailable. Please try again.' };
+      return {
+        error: 'unavailable',
+        message: 'Search service is temporarily unavailable. Please try again.',
+      };
     }
-    if (!res.ok) throw new Error(`Search API responded with status ${res.status}`);
+    if (!res.ok)
+      throw new Error(`Search API responded with status ${res.status}`);
     const data = await res.json();
     return {
       query: data.query,
-      mode: data.mode,  // 'hybrid' | 'keyword' | 'semantic'
+      mode: data.mode, // 'hybrid' | 'keyword' | 'semantic'
       results: (data.results || []).map((r) => ({
         ...normalizeProduct(r),
         matched_features: r.matched_features || [],
@@ -162,6 +175,9 @@ export async function searchProductsApi(query, limit = 10) {
     };
   } catch (error) {
     console.warn('API Search failed:', error.message);
-    return { error: 'network_error', message: 'Could not connect to the search server.' };
+    return {
+      error: 'network_error',
+      message: 'Could not connect to the search server.',
+    };
   }
 }

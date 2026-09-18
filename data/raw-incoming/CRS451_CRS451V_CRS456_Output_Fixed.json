@@ -1,0 +1,2477 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CRS451_CRS451V_CRS456.xlsx",
+    "sheet": "CRS451_CRS451V_CRS456"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CRS451_WN",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRS451-WN",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Model cơ sở",
+          "name_vi": "CRS451",
+          "value_raw": "CRS451",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mô tả cấu hình",
+          "name_vi": "w/Weighted Nose Cone",
+          "value_raw": "w/Weighted Nose Cone",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Nguồn chính",
+          "name_vi": "CRS451 brochure (03/19/2026)",
+          "value_raw": "CRS451 brochure (03/19/2026)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Kiểu thông khí",
+          "name_vi": "Unvented",
+          "value_raw": "Unvented",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Thời gian đo",
+          "name_vi": "< 1.0 s",
+          "value_raw": "< 1.0 s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tùy chọn đầu ra",
+          "name_vi": "micro USB",
+          "value_raw": "micro USB",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Bộ nhớ thu thập dữ liệu nội bộ",
+          "name_vi": "4 MB",
+          "value_raw": "4 MB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chế độ ghi/quét",
+          "name_vi": "Standard",
+          "value_raw": "Standard | Delta | Wave | Logarithmic",
+          "source_rows": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ phân giải",
+          "name_vi": "0.0035% FS",
+          "value_raw": "0.0035% FS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ lưu trữ khô",
+          "name_vi": "-10° to +80°C",
+          "value_raw": "-10° to +80°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ hoạt động",
+          "name_vi": "0° to 60°C",
+          "value_raw": "0° to 60°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Quá áp",
+          "name_vi": "2 x pressure range",
+          "value_raw": "2 x pressure range",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Yêu cầu nguồn",
+          "name_vi": "Internal user-replaceable lithium battery",
+          "value_raw": "Internal user-replaceable lithium battery",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tuổi thọ pin",
+          "name_vi": "5 years (when logging interval is once per hour)",
+          "value_raw": "5 years (when logging interval is once per hour)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Vật liệu thân",
+          "name_vi": "316L stainless steel",
+          "value_raw": "316L stainless steel",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác mực nước",
+          "name_vi": "±0.1% full-scale-range TEB",
+          "value_raw": "±0.1% full-scale-range TEB | Includes combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1",
+          "source_rows": [
+            27,
+            28
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác nhiệt độ",
+          "name_vi": "±0.2°C",
+          "value_raw": "±0.2°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Cấp bảo vệ",
+          "name_vi": "Exceeds IP68",
+          "value_raw": "Exceeds IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Đường kính",
+          "name_vi": "2.22 cm (0.875 in.)",
+          "value_raw": "2.22 cm (0.875 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chiều dài",
+          "name_vi": "22.23 cm (8.75 in.)",
+          "value_raw": "22.23 cm (8.75 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Khối lượng",
+          "name_vi": "230 g (0.51 lb)",
+          "value_raw": "230 g (0.51 lb)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi nghỉ",
+          "name_vi": "< 80 µA",
+          "value_raw": "< 80 µA",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi đo/giao tiếp",
+          "name_vi": "4 mA (1 s measurement)",
+          "value_raw": "4 mA (1 s measurement)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 5.1 m",
+          "name_vi": "Pressure: 0 to 50 kPa",
+          "value_raw": "Pressure: 0 to 50 kPa | 0 to 7.25 psi",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 10.2 m",
+          "name_vi": "Pressure: 0 to 100 kPa",
+          "value_raw": "Pressure: 0 to 100 kPa | 0 to 14.5 psi",
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 20.4 m",
+          "name_vi": "Pressure: 0 to 200 kPa",
+          "value_raw": "Pressure: 0 to 200 kPa | 0 to 29 psi",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 50.9 m",
+          "name_vi": "Pressure: 0 to 500 kPa",
+          "value_raw": "Pressure: 0 to 500 kPa | 0 to 72.5 psi",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 102 m",
+          "name_vi": "Pressure: 0 to 1000 kPa",
+          "value_raw": "Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs451.pdf | https://www.campbellsci.com/products/crs451",
+          "source_rows": [
+            53,
+            54,
+            55,
+            56,
+            57
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crs451.pdf",
+        "user_manual": "crs451-crs456man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crs451"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3583",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRS451_NN",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRS451-NN",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Model cơ sở",
+          "name_vi": "CRS451",
+          "value_raw": "CRS451",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mô tả cấu hình",
+          "name_vi": "w/Weighted Nose Cone",
+          "value_raw": "w/NPT Fitting",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Nguồn chính",
+          "name_vi": "CRS451 brochure (03/19/2026)",
+          "value_raw": "CRS451 brochure (03/19/2026)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Kiểu thông khí",
+          "name_vi": "Unvented",
+          "value_raw": "Unvented",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Thời gian đo",
+          "name_vi": "< 1.0 s",
+          "value_raw": "< 1.0 s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tùy chọn đầu ra",
+          "name_vi": "micro USB",
+          "value_raw": "micro USB",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Bộ nhớ thu thập dữ liệu nội bộ",
+          "name_vi": "4 MB",
+          "value_raw": "4 MB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chế độ ghi/quét",
+          "name_vi": "Standard",
+          "value_raw": "Standard | Delta | Wave | Logarithmic",
+          "source_rows": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ phân giải",
+          "name_vi": "0.0035% FS",
+          "value_raw": "0.0035% FS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ lưu trữ khô",
+          "name_vi": "-10° to +80°C",
+          "value_raw": "-10° to +80°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ hoạt động",
+          "name_vi": "0° to 60°C",
+          "value_raw": "0° to 60°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Quá áp",
+          "name_vi": "2 x pressure range",
+          "value_raw": "2 x pressure range",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Yêu cầu nguồn",
+          "name_vi": "Internal user-replaceable lithium battery",
+          "value_raw": "Internal user-replaceable lithium battery",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tuổi thọ pin",
+          "name_vi": "5 years (when logging interval is once per hour)",
+          "value_raw": "5 years (when logging interval is once per hour)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Vật liệu thân",
+          "name_vi": "316L stainless steel",
+          "value_raw": "316L stainless steel",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác mực nước",
+          "name_vi": "±0.1% full-scale-range TEB",
+          "value_raw": "±0.1% full-scale-range TEB | Includes combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1",
+          "source_rows": [
+            27,
+            28
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác nhiệt độ",
+          "name_vi": "±0.2°C",
+          "value_raw": "±0.2°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Cấp bảo vệ",
+          "name_vi": "Exceeds IP68",
+          "value_raw": "Exceeds IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Đường kính",
+          "name_vi": "2.22 cm (0.875 in.)",
+          "value_raw": "2.22 cm (0.875 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chiều dài",
+          "name_vi": "22.23 cm (8.75 in.)",
+          "value_raw": "22.23 cm (8.75 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Khối lượng",
+          "name_vi": "230 g (0.51 lb)",
+          "value_raw": "230 g (0.51 lb)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi nghỉ",
+          "name_vi": "< 80 µA",
+          "value_raw": "< 80 µA",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi đo/giao tiếp",
+          "name_vi": "4 mA (1 s measurement)",
+          "value_raw": "4 mA (1 s measurement)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 5.1 m",
+          "name_vi": "Pressure: 0 to 50 kPa",
+          "value_raw": "Pressure: 0 to 50 kPa | 0 to 7.25 psi",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 10.2 m",
+          "name_vi": "Pressure: 0 to 100 kPa",
+          "value_raw": "Pressure: 0 to 100 kPa | 0 to 14.5 psi",
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 20.4 m",
+          "name_vi": "Pressure: 0 to 200 kPa",
+          "value_raw": "Pressure: 0 to 200 kPa | 0 to 29 psi",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 50.9 m",
+          "name_vi": "Pressure: 0 to 500 kPa",
+          "value_raw": "Pressure: 0 to 500 kPa | 0 to 72.5 psi",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 102 m",
+          "name_vi": "Pressure: 0 to 1000 kPa",
+          "value_raw": "Pressure: 0 to 1000 kPa | 0 to 145 psi",
+          "source_rows": [
+            53,
+            54
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crs451.pdf",
+        "user_manual": "crs451-crs456man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crs451"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3583",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRS451V_HA",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRS451V-HA",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Model cơ sở",
+          "name_vi": "CRS451",
+          "value_raw": "CRS451V",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mô tả cấu hình",
+          "name_vi": "w/Weighted Nose Cone",
+          "value_raw": "Higher 0.05% Accuracy",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cấu hình độ chính xác",
+          "name_vi": null,
+          "value_raw": "Higher 0.05% Accuracy",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Nguồn chính",
+          "name_vi": "CRS451 brochure (03/19/2026)",
+          "value_raw": "CRS451V brochure (03/19/2026)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Kiểu thông khí",
+          "name_vi": "Unvented",
+          "value_raw": "Vented",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Thời gian đo",
+          "name_vi": "< 1.0 s",
+          "value_raw": "< 1.0 s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Điện áp đầu vào",
+          "name_vi": null,
+          "value_raw": "6 to 16 Vdc",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tùy chọn đầu ra",
+          "name_vi": "micro USB",
+          "value_raw": "micro USB",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Bộ nhớ thu thập dữ liệu nội bộ",
+          "name_vi": "4 MB",
+          "value_raw": "4 MB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chế độ ghi/quét",
+          "name_vi": "Standard",
+          "value_raw": "Standard | Delta | Wave | Logarithmic",
+          "source_rows": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ phân giải",
+          "name_vi": "0.0035% FS",
+          "value_raw": "0.0035% FS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ lưu trữ khô",
+          "name_vi": "-10° to +80°C",
+          "value_raw": "-10° to +80°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ hoạt động",
+          "name_vi": "0° to 60°C",
+          "value_raw": "0° to 60°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Quá áp",
+          "name_vi": "2 x pressure range",
+          "value_raw": "2 x pressure range",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Yêu cầu nguồn",
+          "name_vi": "Internal user-replaceable lithium battery",
+          "value_raw": "Internal user-replaceable lithium battery",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tuổi thọ pin",
+          "name_vi": "5 years (when logging interval is once per hour)",
+          "value_raw": "5 years (when logging interval is once per hour | approximately 40,000 measurements)",
+          "source_rows": [
+            24,
+            25
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Vật liệu thân",
+          "name_vi": "316L stainless steel",
+          "value_raw": "316L stainless steel",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác nhiệt độ",
+          "name_vi": "±0.2°C",
+          "value_raw": "±0.2°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Cấp bảo vệ",
+          "name_vi": "Exceeds IP68",
+          "value_raw": "Exceeds IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Đường kính",
+          "name_vi": "2.22 cm (0.875 in.)",
+          "value_raw": "2.22 cm (0.875 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chiều dài",
+          "name_vi": "22.23 cm (8.75 in.)",
+          "value_raw": "22.23 cm (8.75 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Khối lượng",
+          "name_vi": "230 g (0.51 lb)",
+          "value_raw": "230 g (0.51 lb)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi nghỉ",
+          "name_vi": "< 80 µA",
+          "value_raw": "< 80 µA",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi đo/giao tiếp",
+          "name_vi": "4 mA (1 s measurement)",
+          "value_raw": "4 mA (1 s measurement)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 5.1 m",
+          "name_vi": "Pressure: 0 to 50 kPa",
+          "value_raw": "Pressure: 0 to 7.25 psi | 0 to 50 kPa",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 10.2 m",
+          "name_vi": "Pressure: 0 to 100 kPa",
+          "value_raw": "Pressure: 0 to 100 kPa | 0 to 14.5 psi",
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 20.4 m",
+          "name_vi": "Pressure: 0 to 200 kPa",
+          "value_raw": "Pressure: 0 to 200 kPa | 0 to 29 psi",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 50.9 m",
+          "name_vi": "Pressure: 0 to 500 kPa",
+          "value_raw": "Pressure: 0 to 500 kPa | 0 to 72.5 psi",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 102 m",
+          "name_vi": "Pressure: 0 to 1000 kPa",
+          "value_raw": "Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451v-crs456vman.pdf | b_crs451v.pdf | https://www.campbellsci.com/products/crs451v",
+          "source_rows": [
+            53,
+            54,
+            55,
+            56,
+            57
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crs451v.pdf",
+        "user_manual": "crs451-crs456man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crs451v"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10345",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRS451V_WN",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRS451V-WN",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Model cơ sở",
+          "name_vi": "CRS451",
+          "value_raw": "CRS451V",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mô tả cấu hình",
+          "name_vi": "w/Weighted Nose Cone",
+          "value_raw": "w/Weighted Nose Cone",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Nguồn chính",
+          "name_vi": "CRS451 brochure (03/19/2026)",
+          "value_raw": "CRS451V brochure (03/19/2026)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Kiểu thông khí",
+          "name_vi": "Unvented",
+          "value_raw": "Vented",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Thời gian đo",
+          "name_vi": "< 1.0 s",
+          "value_raw": "< 1.0 s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Điện áp đầu vào",
+          "name_vi": null,
+          "value_raw": "6 to 16 Vdc",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tùy chọn đầu ra",
+          "name_vi": "micro USB",
+          "value_raw": "micro USB",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Bộ nhớ thu thập dữ liệu nội bộ",
+          "name_vi": "4 MB",
+          "value_raw": "4 MB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chế độ ghi/quét",
+          "name_vi": "Standard",
+          "value_raw": "Standard | Delta | Wave | Logarithmic",
+          "source_rows": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ phân giải",
+          "name_vi": "0.0035% FS",
+          "value_raw": "0.0035% FS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ lưu trữ khô",
+          "name_vi": "-10° to +80°C",
+          "value_raw": "-10° to +80°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ hoạt động",
+          "name_vi": "0° to 60°C",
+          "value_raw": "0° to 60°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Quá áp",
+          "name_vi": "2 x pressure range",
+          "value_raw": "2 x pressure range",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Yêu cầu nguồn",
+          "name_vi": "Internal user-replaceable lithium battery",
+          "value_raw": "Internal user-replaceable lithium battery",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tuổi thọ pin",
+          "name_vi": "5 years (when logging interval is once per hour)",
+          "value_raw": "5 years (when logging interval is once per hour | approximately 40,000 measurements)",
+          "source_rows": [
+            24,
+            25
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Vật liệu thân",
+          "name_vi": "316L stainless steel",
+          "value_raw": "316L stainless steel",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác mực nước",
+          "name_vi": "±0.1% full-scale-range TEB",
+          "value_raw": "±0.1% full-scale-range TEB | Includes combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1",
+          "source_rows": [
+            27,
+            28
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác nhiệt độ",
+          "name_vi": "±0.2°C",
+          "value_raw": "±0.2°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Cấp bảo vệ",
+          "name_vi": "Exceeds IP68",
+          "value_raw": "Exceeds IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Đường kính",
+          "name_vi": "2.22 cm (0.875 in.)",
+          "value_raw": "2.22 cm (0.875 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chiều dài",
+          "name_vi": "22.23 cm (8.75 in.)",
+          "value_raw": "22.23 cm (8.75 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Khối lượng",
+          "name_vi": "230 g (0.51 lb)",
+          "value_raw": "230 g (0.51 lb)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi nghỉ",
+          "name_vi": "< 80 µA",
+          "value_raw": "< 80 µA",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi đo/giao tiếp",
+          "name_vi": "4 mA (1 s measurement)",
+          "value_raw": "4 mA (1 s measurement)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 5.1 m",
+          "name_vi": "Pressure: 0 to 50 kPa",
+          "value_raw": "Pressure: 0 to 7.25 psi | 0 to 50 kPa",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 10.2 m",
+          "name_vi": "Pressure: 0 to 100 kPa",
+          "value_raw": "Pressure: 0 to 100 kPa | 0 to 14.5 psi",
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 20.4 m",
+          "name_vi": "Pressure: 0 to 200 kPa",
+          "value_raw": "Pressure: 0 to 200 kPa | 0 to 29 psi",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 50.9 m",
+          "name_vi": "Pressure: 0 to 500 kPa",
+          "value_raw": "Pressure: 0 to 500 kPa | 0 to 72.5 psi",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 102 m",
+          "name_vi": "Pressure: 0 to 1000 kPa",
+          "value_raw": "Pressure: 0 to 1000 kPa | 0 to 145 psi",
+          "source_rows": [
+            53,
+            54
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crs451v.pdf",
+        "user_manual": "crs451-crs456man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crs451v"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10345",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRS451V_NN",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRS451V-NN",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Model cơ sở",
+          "name_vi": "CRS451",
+          "value_raw": "CRS451V",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mô tả cấu hình",
+          "name_vi": "w/Weighted Nose Cone",
+          "value_raw": "w/NPT Fitting",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Nguồn chính",
+          "name_vi": "CRS451 brochure (03/19/2026)",
+          "value_raw": "CRS451V brochure (03/19/2026)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Kiểu thông khí",
+          "name_vi": "Unvented",
+          "value_raw": "Vented",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Thời gian đo",
+          "name_vi": "< 1.0 s",
+          "value_raw": "< 1.0 s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Điện áp đầu vào",
+          "name_vi": null,
+          "value_raw": "6 to 16 Vdc",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tùy chọn đầu ra",
+          "name_vi": "micro USB",
+          "value_raw": "micro USB",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Bộ nhớ thu thập dữ liệu nội bộ",
+          "name_vi": "4 MB",
+          "value_raw": "4 MB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chế độ ghi/quét",
+          "name_vi": "Standard",
+          "value_raw": "Standard | Delta | Wave | Logarithmic",
+          "source_rows": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ phân giải",
+          "name_vi": "0.0035% FS",
+          "value_raw": "0.0035% FS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ lưu trữ khô",
+          "name_vi": "-10° to +80°C",
+          "value_raw": "-10° to +80°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ hoạt động",
+          "name_vi": "0° to 60°C",
+          "value_raw": "0° to 60°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Quá áp",
+          "name_vi": "2 x pressure range",
+          "value_raw": "2 x pressure range",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Yêu cầu nguồn",
+          "name_vi": "Internal user-replaceable lithium battery",
+          "value_raw": "Internal user-replaceable lithium battery",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tuổi thọ pin",
+          "name_vi": "5 years (when logging interval is once per hour)",
+          "value_raw": "5 years (when logging interval is once per hour | approximately 40,000 measurements)",
+          "source_rows": [
+            24,
+            25
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Vật liệu thân",
+          "name_vi": "316L stainless steel",
+          "value_raw": "316L stainless steel",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác mực nước",
+          "name_vi": "±0.1% full-scale-range TEB",
+          "value_raw": "±0.1% full-scale-range TEB | Includes combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1",
+          "source_rows": [
+            27,
+            28
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác nhiệt độ",
+          "name_vi": "±0.2°C",
+          "value_raw": "±0.2°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Cấp bảo vệ",
+          "name_vi": "Exceeds IP68",
+          "value_raw": "Exceeds IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Đường kính",
+          "name_vi": "2.22 cm (0.875 in.)",
+          "value_raw": "2.22 cm (0.875 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chiều dài",
+          "name_vi": "22.23 cm (8.75 in.)",
+          "value_raw": "22.23 cm (8.75 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Khối lượng",
+          "name_vi": "230 g (0.51 lb)",
+          "value_raw": "230 g (0.51 lb)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi nghỉ",
+          "name_vi": "< 80 µA",
+          "value_raw": "< 80 µA",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi đo/giao tiếp",
+          "name_vi": "4 mA (1 s measurement)",
+          "value_raw": "4 mA (1 s measurement)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 5.1 m",
+          "name_vi": "Pressure: 0 to 50 kPa",
+          "value_raw": "Pressure: 0 to 7.25 psi | 0 to 50 kPa",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 10.2 m",
+          "name_vi": "Pressure: 0 to 100 kPa",
+          "value_raw": "Pressure: 0 to 100 kPa | 0 to 14.5 psi",
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 20.4 m",
+          "name_vi": "Pressure: 0 to 200 kPa",
+          "value_raw": "Pressure: 0 to 200 kPa | 0 to 29 psi",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 50.9 m",
+          "name_vi": "Pressure: 0 to 500 kPa",
+          "value_raw": "Pressure: 0 to 500 kPa | 0 to 72.5 psi",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 102 m",
+          "name_vi": "Pressure: 0 to 1000 kPa",
+          "value_raw": "Pressure: 0 to 1000 kPa | 0 to 145 psi",
+          "source_rows": [
+            53,
+            54
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crs451v.pdf",
+        "user_manual": "crs451-crs456man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crs451v"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10345",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRS456",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRS456",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Model cơ sở",
+          "name_vi": "CRS451",
+          "value_raw": "CRS456",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mô tả cấu hình",
+          "name_vi": "w/Weighted Nose Cone",
+          "value_raw": "Water Level Recording Sensor, Titanium",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Nguồn chính",
+          "name_vi": "CRS451 brochure (03/19/2026)",
+          "value_raw": "CRS456 brochure (03/19/2026)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Kiểu thông khí",
+          "name_vi": "Unvented",
+          "value_raw": "Unvented",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Thời gian đo",
+          "name_vi": "< 1.0 s",
+          "value_raw": "< 1.0 s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tùy chọn đầu ra",
+          "name_vi": "micro USB",
+          "value_raw": "micro USB",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Bộ nhớ thu thập dữ liệu nội bộ",
+          "name_vi": "4 MB",
+          "value_raw": "4 MB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chế độ ghi/quét",
+          "name_vi": "Standard",
+          "value_raw": "Standard | Delta | Wave | Logarithmic",
+          "source_rows": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ phân giải",
+          "name_vi": "0.0035% FS",
+          "value_raw": "0.0035% FS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ lưu trữ khô",
+          "name_vi": "-10° to +80°C",
+          "value_raw": "-10° to +80°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ hoạt động",
+          "name_vi": "0° to 60°C",
+          "value_raw": "0° to 60°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Quá áp",
+          "name_vi": "2 x pressure range",
+          "value_raw": "2 x pressure range",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Yêu cầu nguồn",
+          "name_vi": "Internal user-replaceable lithium battery",
+          "value_raw": "Internal user-replaceable lithium battery",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tuổi thọ pin",
+          "name_vi": "5 years (when logging interval is once per hour)",
+          "value_raw": "5+ years (when logging interval is once per hour)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Vật liệu thân",
+          "name_vi": "316L stainless steel",
+          "value_raw": "Titanium",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác mực nước",
+          "name_vi": "±0.1% full-scale-range TEB",
+          "value_raw": "±0.1% full-scale-range TEB | Includes combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1",
+          "source_rows": [
+            27,
+            28
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác nhiệt độ",
+          "name_vi": "±0.2°C",
+          "value_raw": "±0.2°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Cấp bảo vệ",
+          "name_vi": "Exceeds IP68",
+          "value_raw": "Exceeds IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Đường kính",
+          "name_vi": "2.22 cm (0.875 in.)",
+          "value_raw": "2.22 cm (0.875 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chiều dài",
+          "name_vi": "22.23 cm (8.75 in.)",
+          "value_raw": "22.23 cm (8.75 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Khối lượng",
+          "name_vi": "230 g (0.51 lb)",
+          "value_raw": "230 g (0.51 lb)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "CẤU HÌNH CƠ KHÍ",
+          "name_en": "Khoảng cách - Standard Nose Cone",
+          "name_vi": null,
+          "value_raw": "2.3 cm (0.9 in.) | Distance from black line etched on housing to end of standard nose cone",
+          "source_rows": [
+            35,
+            36
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi nghỉ",
+          "name_vi": "< 80 µA",
+          "value_raw": "< 80 µA",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi đo/giao tiếp",
+          "name_vi": "4 mA (1 s measurement)",
+          "value_raw": "4 mA (1 s measurement)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 5.1 m",
+          "name_vi": "Pressure: 0 to 50 kPa",
+          "value_raw": "Pressure: 0 to 7.25 psi | 0 to 50 kPa",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 10.2 m",
+          "name_vi": "Pressure: 0 to 100 kPa",
+          "value_raw": "Pressure: 0 to 100 kPa | 0 to 14.5 psi",
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 20.4 m",
+          "name_vi": "Pressure: 0 to 200 kPa",
+          "value_raw": "Pressure: 0 to 200 kPa | 0 to 29 psi",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 50.9 m",
+          "name_vi": "Pressure: 0 to 500 kPa",
+          "value_raw": "Pressure: 0 to 72.5 psi | 0 to 500 kPa",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 102 m",
+          "name_vi": "Pressure: 0 to 1000 kPa",
+          "value_raw": "Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs456.pdf | https://www.campbellsci.com/products/crs456",
+          "source_rows": [
+            53,
+            54,
+            55,
+            56,
+            57
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crs456.pdf",
+        "user_manual": "crs451-crs456man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crs456"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3676",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRS456_WN",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRS456-WN",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Model cơ sở",
+          "name_vi": "CRS451",
+          "value_raw": "CRS456",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mô tả cấu hình",
+          "name_vi": "w/Weighted Nose Cone",
+          "value_raw": "w/Weighted Nose Cone",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Nguồn chính",
+          "name_vi": "CRS451 brochure (03/19/2026)",
+          "value_raw": "CRS456 brochure (03/19/2026)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Kiểu thông khí",
+          "name_vi": "Unvented",
+          "value_raw": "Unvented",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Thời gian đo",
+          "name_vi": "< 1.0 s",
+          "value_raw": "< 1.0 s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tùy chọn đầu ra",
+          "name_vi": "micro USB",
+          "value_raw": "micro USB",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Bộ nhớ thu thập dữ liệu nội bộ",
+          "name_vi": "4 MB",
+          "value_raw": "4 MB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chế độ ghi/quét",
+          "name_vi": "Standard",
+          "value_raw": "Standard | Delta | Wave | Logarithmic",
+          "source_rows": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ phân giải",
+          "name_vi": "0.0035% FS",
+          "value_raw": "0.0035% FS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ lưu trữ khô",
+          "name_vi": "-10° to +80°C",
+          "value_raw": "-10° to +80°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ hoạt động",
+          "name_vi": "0° to 60°C",
+          "value_raw": "0° to 60°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Quá áp",
+          "name_vi": "2 x pressure range",
+          "value_raw": "2 x pressure range",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Yêu cầu nguồn",
+          "name_vi": "Internal user-replaceable lithium battery",
+          "value_raw": "Internal user-replaceable lithium battery",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tuổi thọ pin",
+          "name_vi": "5 years (when logging interval is once per hour)",
+          "value_raw": "5+ years (when logging interval is once per hour)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Vật liệu thân",
+          "name_vi": "316L stainless steel",
+          "value_raw": "Titanium",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác mực nước",
+          "name_vi": "±0.1% full-scale-range TEB",
+          "value_raw": "±0.1% full-scale-range TEB | Includes combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1",
+          "source_rows": [
+            27,
+            28
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác nhiệt độ",
+          "name_vi": "±0.2°C",
+          "value_raw": "±0.2°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Cấp bảo vệ",
+          "name_vi": "Exceeds IP68",
+          "value_raw": "Exceeds IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Đường kính",
+          "name_vi": "2.22 cm (0.875 in.)",
+          "value_raw": "2.22 cm (0.875 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chiều dài",
+          "name_vi": "22.23 cm (8.75 in.)",
+          "value_raw": "22.23 cm (8.75 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Khối lượng",
+          "name_vi": "230 g (0.51 lb)",
+          "value_raw": "230 g (0.51 lb)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "CẤU HÌNH CƠ KHÍ",
+          "name_en": "Khoảng cách - Weighted Nose Cone",
+          "name_vi": null,
+          "value_raw": "9.9 cm (3.9 in.) | Distance from black line etched on housing to end of weighted nose cone",
+          "source_rows": [
+            37,
+            38
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi nghỉ",
+          "name_vi": "< 80 µA",
+          "value_raw": "< 80 µA",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi đo/giao tiếp",
+          "name_vi": "4 mA (1 s measurement)",
+          "value_raw": "4 mA (1 s measurement)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 5.1 m",
+          "name_vi": "Pressure: 0 to 50 kPa",
+          "value_raw": "Pressure: 0 to 7.25 psi | 0 to 50 kPa",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 10.2 m",
+          "name_vi": "Pressure: 0 to 100 kPa",
+          "value_raw": "Pressure: 0 to 100 kPa | 0 to 14.5 psi",
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 20.4 m",
+          "name_vi": "Pressure: 0 to 200 kPa",
+          "value_raw": "Pressure: 0 to 200 kPa | 0 to 29 psi",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 50.9 m",
+          "name_vi": "Pressure: 0 to 500 kPa",
+          "value_raw": "Pressure: 0 to 72.5 psi | 0 to 500 kPa",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 102 m",
+          "name_vi": "Pressure: 0 to 1000 kPa",
+          "value_raw": "Pressure: 0 to 1000 kPa | 0 to 145 psi",
+          "source_rows": [
+            53,
+            54
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crs456.pdf",
+        "user_manual": "crs451-crs456man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crs456"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3676",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CRS456_NN",
+      "manufacturer": "Campbell Scientific",
+      "model": "CRS456-NN",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Water Level Sensors",
+        "device_type": "Water Level Recording Sensor"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Model cơ sở",
+          "name_vi": "CRS451",
+          "value_raw": "CRS456",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mô tả cấu hình",
+          "name_vi": "w/Weighted Nose Cone",
+          "value_raw": "w/NPT Fitting",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Nguồn chính",
+          "name_vi": "CRS451 brochure (03/19/2026)",
+          "value_raw": "CRS456 brochure (03/19/2026)",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Kiểu thông khí",
+          "name_vi": "Unvented",
+          "value_raw": "Unvented",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Thời gian đo",
+          "name_vi": "< 1.0 s",
+          "value_raw": "< 1.0 s",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tùy chọn đầu ra",
+          "name_vi": "micro USB",
+          "value_raw": "micro USB",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Bộ nhớ thu thập dữ liệu nội bộ",
+          "name_vi": "4 MB",
+          "value_raw": "4 MB",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chế độ ghi/quét",
+          "name_vi": "Standard",
+          "value_raw": "Standard | Delta | Wave | Logarithmic",
+          "source_rows": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ phân giải",
+          "name_vi": "0.0035% FS",
+          "value_raw": "0.0035% FS",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ lưu trữ khô",
+          "name_vi": "-10° to +80°C",
+          "value_raw": "-10° to +80°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            18,
+            19
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Dải nhiệt độ hoạt động",
+          "name_vi": "0° to 60°C",
+          "value_raw": "0° to 60°C | Warning: Sensor could be damaged if encased in frozen ice",
+          "source_rows": [
+            20,
+            21
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Quá áp",
+          "name_vi": "2 x pressure range",
+          "value_raw": "2 x pressure range",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Yêu cầu nguồn",
+          "name_vi": "Internal user-replaceable lithium battery",
+          "value_raw": "Internal user-replaceable lithium battery",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Tuổi thọ pin",
+          "name_vi": "5 years (when logging interval is once per hour)",
+          "value_raw": "5+ years (when logging interval is once per hour)",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Vật liệu thân",
+          "name_vi": "316L stainless steel",
+          "value_raw": "Titanium",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác mực nước",
+          "name_vi": "±0.1% full-scale-range TEB",
+          "value_raw": "±0.1% full-scale-range TEB | Includes combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1",
+          "source_rows": [
+            27,
+            28
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Độ chính xác nhiệt độ",
+          "name_vi": "±0.2°C",
+          "value_raw": "±0.2°C",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Cấp bảo vệ",
+          "name_vi": "Exceeds IP68",
+          "value_raw": "Exceeds IP68",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Đường kính",
+          "name_vi": "2.22 cm (0.875 in.)",
+          "value_raw": "2.22 cm (0.875 in.)",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Chiều dài",
+          "name_vi": "22.23 cm (8.75 in.)",
+          "value_raw": "22.23 cm (8.75 in.)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "THÔNG SỐ CHUNG",
+          "name_en": "Khối lượng",
+          "name_vi": "230 g (0.51 lb)",
+          "value_raw": "230 g (0.51 lb)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "CẤU HÌNH CƠ KHÍ",
+          "name_en": "Khoảng cách - NPT Fitting",
+          "name_vi": null,
+          "value_raw": "2.54 cm (1 in.) | Distance from black line etched on housing to end of NPT fitting",
+          "source_rows": [
+            39,
+            40
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi nghỉ",
+          "name_vi": "< 80 µA",
+          "value_raw": "< 80 µA",
+          "source_rows": [
+            42
+          ]
+        },
+        {
+          "section": "MỨC TIÊU THỤ ĐIỆN",
+          "name_en": "Dòng tiêu thụ khi đo/giao tiếp",
+          "name_vi": "4 mA (1 s measurement)",
+          "value_raw": "4 mA (1 s measurement)",
+          "source_rows": [
+            43
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 5.1 m",
+          "name_vi": "Pressure: 0 to 50 kPa",
+          "value_raw": "Pressure: 0 to 7.25 psi | 0 to 50 kPa",
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 10.2 m",
+          "name_vi": "Pressure: 0 to 100 kPa",
+          "value_raw": "Pressure: 0 to 100 kPa | 0 to 14.5 psi",
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 20.4 m",
+          "name_vi": "Pressure: 0 to 200 kPa",
+          "value_raw": "Pressure: 0 to 200 kPa | 0 to 29 psi",
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 50.9 m",
+          "name_vi": "Pressure: 0 to 500 kPa",
+          "value_raw": "Pressure: 0 to 72.5 psi | 0 to 500 kPa",
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        {
+          "section": "DẢI ĐO THEO ĐỘ SÂU NƯỚC NGỌT",
+          "name_en": "Dải đo - Độ sâu nước ngọt 0 đến 102 m",
+          "name_vi": "Pressure: 0 to 1000 kPa",
+          "value_raw": "Pressure: 0 to 1000 kPa | 0 to 145 psi",
+          "source_rows": [
+            53,
+            54
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_crs456.pdf",
+        "user_manual": "crs451-crs456man.pdf",
+        "order_form": "https://www.campbellsci.com/products/crs456"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3676",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

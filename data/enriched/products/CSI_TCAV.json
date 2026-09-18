@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TCAV",
+  "model": "TCAV",
+  "name_en": "TCAV",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Temperature Sensors (Air/Soil/Water)",
+    "subcategory_key": "temperature_sensors_air_soil_water",
+    "device_type": "Soil Temperature Sensor",
+    "device_type_key": "soil_temperature_sensor"
+  },
+  "measurements": [
+    {
+      "key": "soil_temperature",
+      "label_en": "Soil Temperature",
+      "label_vi": "Nhiệt độ đất",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/CSI_TCAV.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [],
+  "capabilities": [
+    {
+      "key": "measure_soil_temperature",
+      "label_en": "Measure Soil Temperature",
+      "label_vi": "Đo nhiệt độ đất",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/CSI_TCAV.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "TCAV",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "TCAV"
+        }
+      ]
+    },
+    {
+      "value": "CSI_TCAV",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_TCAV"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "TCAV",
+      "Sensors",
+      "Temperature Sensors (Air/Soil/Water)",
+      "Soil Temperature Sensor",
+      "Soil Temperature",
+      "Measure Soil Temperature",
+      "CSI_TCAV"
+    ],
+    "vi": [
+      "TCAV",
+      "Cảm biến",
+      "Cảm biến nhiệt độ không khí, đất và nước",
+      "Cảm biến nhiệt độ đất",
+      "Nhiệt độ đất",
+      "Đo nhiệt độ đất"
+    ]
+  }
+}

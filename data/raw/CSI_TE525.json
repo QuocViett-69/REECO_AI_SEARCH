@@ -1,0 +1,741 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "TE525_Output.json",
+        "original_source": {
+          "file": "TE525.xlsx",
+          "sheet": "Sheet1"
+        }
+      },
+      {
+        "incoming_file": "TE525.json",
+        "original_source": {
+          "file": "TE525.xlsx",
+          "sheet": "Sheet1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_TE525",
+      "manufacturer": "Texas Electronics",
+      "model": "TE525",
+      "product_name_en": "TE525",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Precipitation Sensors",
+        "device_type": "Tipping Bucket Rain Gage"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "Tipping Bucket Rain Gage",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Manufacturer",
+          "name_vi": "Nhà sản xuất",
+          "value_raw": "Texas Electronics; cabled by Campbell Scientific",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Sensor Type",
+          "name_vi": "Loại cảm biến",
+          "value_raw": "Tipping bucket / potted magnetic momentary-contact reed switch",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "0 to +50 °C",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Storage Temperature Range",
+          "name_vi": "Dải nhiệt độ lưu trữ",
+          "value_raw": "-40 to +70 °C",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Resolution",
+          "name_vi": "Độ phân giải",
+          "value_raw": "1 tip",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Volume per Tip",
+          "name_vi": "Thể tích mỗi lần lật",
+          "value_raw": "4.73 ml/tip (0.16 fl. oz/tip)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall per Tip",
+          "name_vi": "Lượng mưa mỗi lần lật",
+          "value_raw": "0.01 in. (0.254 mm)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Measurement Accuracy",
+          "name_vi": "Độ chính xác đo",
+          "value_raw": "1.0% up to 50 mm/h (2 in./h)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Funnel Collector Diameter",
+          "name_vi": "Đường kính phễu thu",
+          "value_raw": "15.4 cm (6.06 in.)",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Height",
+          "name_vi": "Chiều cao",
+          "value_raw": "24.1 cm (9.5 in.)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Tipping Bucket Weight",
+          "name_vi": "Khối lượng bộ gầu lật",
+          "value_raw": "0.9 kg (2 lb)",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Type",
+          "name_vi": "Loại cáp",
+          "value_raw": "2-conductor shielded cable",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Cable Weight",
+          "name_vi": "Khối lượng cáp",
+          "value_raw": "0.1 kg (0.2 lb) per 3.05 m (10 ft)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Switch Rating – DC",
+          "name_vi": "Định mức công tắc – DC",
+          "value_raw": "30 VDC at 2 A",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Switch Rating – AC",
+          "name_vi": "Định mức công tắc – AC",
+          "value_raw": "115 VAC at 1 A",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Switch Closure Time",
+          "name_vi": "Thời gian đóng công tắc",
+          "value_raw": "135 ms",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Bounce Settling Time",
+          "name_vi": "Thời gian ổn định tiếp điểm",
+          "value_raw": "0.75 ms",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Bucket Material",
+          "name_vi": "Vật liệu gầu",
+          "value_raw": "White powder-coated spun aluminum",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Funnel Collector Material",
+          "name_vi": "Vật liệu phễu thu",
+          "value_raw": "Gold anodized spun aluminum",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Screen Material",
+          "name_vi": "Vật liệu lưới chắn",
+          "value_raw": "Gold anodized spun aluminum",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Locking Snap Ring Material",
+          "name_vi": "Vật liệu vòng hãm",
+          "value_raw": "Stainless steel",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Tipping Mechanism Material",
+          "name_vi": "Vật liệu cơ cấu gầu lật",
+          "value_raw": "UV-protected black ABS plastic with hardened stainless-steel jewel bearings and pivot",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CS705 Snowfall Adapter Compatibility",
+          "name_vi": "Tương thích bộ chuyển đổi tuyết CS705",
+          "value_raw": "No direct compatibility",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Wireless Sensor Network Compatibility",
+          "name_vi": "Tương thích mạng cảm biến không dây",
+          "value_raw": "Compatible with CWS900-series interfaces",
+          "source_rows": [
+            28
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Compatible Data Loggers",
+          "name_vi": "Bộ ghi dữ liệu tương thích",
+          "value_raw": "All Campbell Scientific data loggers",
+          "source_rows": [
+            29
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Mounting",
+          "name_vi": "Kiểu lắp đặt",
+          "value_raw": "Pole or mast mounting; CM300-series pole or user-supplied pole",
+          "source_rows": [
+            30
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Black Wire Function",
+          "name_vi": "Chức năng dây đen",
+          "value_raw": "Rain signal",
+          "source_rows": [
+            31
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "White Wire Function",
+          "name_vi": "Chức năng dây trắng",
+          "value_raw": "Rain signal reference",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Clear Wire Function",
+          "name_vi": "Chức năng dây trong",
+          "value_raw": "Shield",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "CRBasic Measurement Instruction",
+          "name_vi": "Lệnh đo CRBasic",
+          "value_raw": "PulseCount()",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall Multiplier – Inches",
+          "name_vi": "Hệ số lượng mưa – inch",
+          "value_raw": "0.01",
+          "source_rows": [
+            35
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Rainfall Multiplier – Millimeters",
+          "name_vi": "Hệ số lượng mưa – mm",
+          "value_raw": "0.254",
+          "source_rows": [
+            36
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Field Calibration Check Interval",
+          "name_vi": "Chu kỳ kiểm tra hiệu chuẩn tại hiện trường",
+          "value_raw": "Every 12 months",
+          "source_rows": [
+            37
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Field Calibration Check – Expected Tips per 16 fl oz",
+          "name_vi": "Kiểm tra hiệu chuẩn – số lần lật với 16 fl oz",
+          "value_raw": "100 ± 3",
+          "source_rows": [
+            38
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "3 years",
+          "source_rows": [
+            39
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "te525_datasheet.pdf",
+        "user_manual": "te525_manual.pdf",
+        "order_form": null
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10627",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_TE525",
+        "variant_count": 3,
+        "source_files": [
+          "TE525_Output.json",
+          "TE525.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_TE525",
+          "model": "TE525",
+          "product_name_en": "TE525",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Product Type",
+              "name_vi": "Loại sản phẩm",
+              "value_raw": "Tipping Bucket Rain Gage",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Volume per Tip",
+              "name_vi": "Thể tích mỗi lần lật",
+              "value_raw": "4.73 ml/tip (0.16 fl. oz/tip)",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall per Tip",
+              "name_vi": "Lượng mưa mỗi lần lật",
+              "value_raw": "0.01 in. (0.254 mm)",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Funnel Collector Diameter",
+              "name_vi": "Đường kính phễu thu",
+              "value_raw": "15.4 cm (6.06 in.)",
+              "source_rows": [
+                12
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Height",
+              "name_vi": "Chiều cao",
+              "value_raw": "24.1 cm (9.5 in.)",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Tipping Bucket Weight",
+              "name_vi": "Khối lượng bộ gầu lật",
+              "value_raw": "0.9 kg (2 lb)",
+              "source_rows": [
+                14
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "CS705 Snowfall Adapter Compatibility",
+              "name_vi": "Tương thích bộ chuyển đổi tuyết CS705",
+              "value_raw": "No direct compatibility",
+              "source_rows": [
+                27
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall Multiplier – Inches",
+              "name_vi": "Hệ số lượng mưa – inch",
+              "value_raw": "0.01",
+              "source_rows": [
+                35
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall Multiplier – Millimeters",
+              "name_vi": "Hệ số lượng mưa – mm",
+              "value_raw": "0.254",
+              "source_rows": [
+                36
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Field Calibration Check – Expected Tips per 16 fl oz",
+              "name_vi": "Kiểm tra hiệu chuẩn – số lần lật với 16 fl oz",
+              "value_raw": "100 ± 3",
+              "source_rows": [
+                38
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "te525_datasheet.pdf",
+            "user_manual": "te525_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10627",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TE525_Output.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_TE525WS",
+          "model": "TE525WS",
+          "product_name_en": "TE525WS",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Product Type",
+              "name_vi": "Loại sản phẩm",
+              "value_raw": "Tipping Bucket Rain Gage with 8 in. Orifice",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Volume per Tip",
+              "name_vi": "Thể tích mỗi lần lật",
+              "value_raw": "8.24 ml/tip (0.28 fl. oz/tip)",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall per Tip",
+              "name_vi": "Lượng mưa mỗi lần lật",
+              "value_raw": "0.01 in. (0.254 mm)",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Funnel Collector Diameter",
+              "name_vi": "Đường kính phễu thu",
+              "value_raw": "20.3 cm (8 in.)",
+              "source_rows": [
+                12
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Height",
+              "name_vi": "Chiều cao",
+              "value_raw": "26.7 cm (10.5 in.)",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Tipping Bucket Weight",
+              "name_vi": "Khối lượng bộ gầu lật",
+              "value_raw": "1.0 kg (2.2 lb)",
+              "source_rows": [
+                14
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "CS705 Snowfall Adapter Compatibility",
+              "name_vi": "Tương thích bộ chuyển đổi tuyết CS705",
+              "value_raw": "Directly compatible",
+              "source_rows": [
+                27
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall Multiplier – Inches",
+              "name_vi": "Hệ số lượng mưa – inch",
+              "value_raw": "0.01",
+              "source_rows": [
+                35
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall Multiplier – Millimeters",
+              "name_vi": "Hệ số lượng mưa – mm",
+              "value_raw": "0.254",
+              "source_rows": [
+                36
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Field Calibration Check – Expected Tips per 16 fl oz",
+              "name_vi": "Kiểm tra hiệu chuẩn – số lần lật với 16 fl oz",
+              "value_raw": "57 ± 2",
+              "source_rows": [
+                38
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "te525_datasheet.pdf",
+            "user_manual": "te525_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10627",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TE525_Output.json",
+            "product_index": 1
+          }
+        },
+        {
+          "product_id": "CSI_TE525MM",
+          "model": "TE525MM",
+          "product_name_en": "TE525MM",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "General Specifications",
+              "name_en": "Product Type",
+              "name_vi": "Loại sản phẩm",
+              "value_raw": "Metric Tipping Bucket Rain Gage",
+              "source_rows": [
+                3
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Volume per Tip",
+              "name_vi": "Thể tích mỗi lần lật",
+              "value_raw": "4.73 ml/tip (0.16 fl. oz/tip)",
+              "source_rows": [
+                9
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall per Tip",
+              "name_vi": "Lượng mưa mỗi lần lật",
+              "value_raw": "0.1 mm (0.004 in.)",
+              "source_rows": [
+                10
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Funnel Collector Diameter",
+              "name_vi": "Đường kính phễu thu",
+              "value_raw": "24.5 cm (9.7 in.)",
+              "source_rows": [
+                12
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Height",
+              "name_vi": "Chiều cao",
+              "value_raw": "29.2 cm (11.5 in.)",
+              "source_rows": [
+                13
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Tipping Bucket Weight",
+              "name_vi": "Khối lượng bộ gầu lật",
+              "value_raw": "1.1 kg (2.4 lb)",
+              "source_rows": [
+                14
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "CS705 Snowfall Adapter Compatibility",
+              "name_vi": "Tương thích bộ chuyển đổi tuyết CS705",
+              "value_raw": "No direct compatibility",
+              "source_rows": [
+                27
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall Multiplier – Inches",
+              "name_vi": "Hệ số lượng mưa – inch",
+              "value_raw": "0.00394",
+              "source_rows": [
+                35
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Rainfall Multiplier – Millimeters",
+              "name_vi": "Hệ số lượng mưa – mm",
+              "value_raw": "0.1",
+              "source_rows": [
+                36
+              ]
+            },
+            {
+              "section": "General Specifications",
+              "name_en": "Field Calibration Check – Expected Tips per 16 fl oz",
+              "name_vi": "Kiểm tra hiệu chuẩn – số lần lật với 16 fl oz",
+              "value_raw": "100 ± 3",
+              "source_rows": [
+                38
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "te525_datasheet.pdf",
+            "user_manual": "te525_manual.pdf",
+            "order_form": null
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10627",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "TE525_Output.json",
+            "product_index": 2
+          }
+        }
+      ]
+    }
+  ]
+}

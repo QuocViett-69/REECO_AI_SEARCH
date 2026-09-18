@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CS106_PF_PT_Master_Specifications_SplitCells.xlsx",
+    "sheet": "CS106_Master_Spec"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS106_PF",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS106-PF",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CS106",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "Inch cable w/Ferrules on Wires",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable End Configuration",
+          "name_vi": "Cấu hình đầu cáp",
+          "value_raw": "Ferrules on wires",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Pressure Range",
+          "name_vi": "Dải áp suất",
+          "value_raw": "500 to 1100 hPa | Note: 1 hPa = 1 mBar",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Long-Term Stability",
+          "name_vi": "Độ ổn định dài hạn",
+          "value_raw": "±0.1 hPa per year",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Settling Time",
+          "name_vi": "Thời gian ổn định",
+          "value_raw": "1 s to reach full accuracy after power-up",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Response Time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "500 ms to reach full accuracy after a pressure step",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Output Voltage",
+          "name_vi": "Điện áp đầu ra",
+          "value_raw": "0 to 2.5 Vdc",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "10 to 30 Vdc",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Elevation",
+          "name_vi": "Độ cao",
+          "value_raw": "Below sea level: ~609.6 m (2,000 ft) | Above sea level: 4,572 m (15,000 ft)",
+          "source_rows": [
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "-40° to +60°C: ±1.5 hPa | +20°C: ±0.3 hPa | 0° to 40°C: ±0.6 hPa | -20° to +45°C: ±1.0 hPa | Accuracy refers to the root sum squared (RSS) of end point non-linearity, hysteresis, repeatability, and calibration uncertainty",
+          "source_rows": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Linearity",
+          "name_vi": "Độ tuyến tính",
+          "value_raw": "±0.25 hPa",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Hysteresis",
+          "name_vi": "Độ trễ",
+          "value_raw": "±0.03 hPa",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Repeatability",
+          "name_vi": "Độ lặp lại",
+          "value_raw": "±0.03 hPa",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Calibration Uncertainty",
+          "name_vi": "Độ không đảm bảo hiệu chuẩn",
+          "value_raw": "±0.15 hPa",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Current Consumption",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "Quiescent: < 1 µA | Active: < 4 mA",
+          "source_rows": [
+            25,
+            26
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Range",
+          "name_vi": "Dải nhiệt độ",
+          "value_raw": "-40° to +60°C",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "6.8 x 9.7 x 2.8 cm | 2.7 x 3.8 x 1.1 in.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Cable Length",
+          "name_vi": "Chiều dài cáp",
+          "value_raw": "76.2 cm | 30 in.",
+          "source_rows": [
+            30,
+            31
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "90 g | 3.2 oz",
+          "source_rows": [
+            32,
+            33
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs106.pdf",
+        "user_manual": "cs106.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs106"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11564",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    },
+    {
+      "product_id": "CSI_CS106_PT",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS106-PT",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Base Model",
+          "name_vi": "Model cơ sở",
+          "value_raw": "CS106",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Configuration Description",
+          "name_vi": "Mô tả cấu hình",
+          "value_raw": "Inch Cable w/Tinned Wires",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "CONFIGURATION",
+          "name_en": "Cable End Configuration",
+          "name_vi": "Cấu hình đầu cáp",
+          "value_raw": "Tinned wires",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Pressure Range",
+          "name_vi": "Dải áp suất",
+          "value_raw": "500 to 1100 hPa | Note: 1 hPa = 1 mBar",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Long-Term Stability",
+          "name_vi": "Độ ổn định dài hạn",
+          "value_raw": "±0.1 hPa per year",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Settling Time",
+          "name_vi": "Thời gian ổn định",
+          "value_raw": "1 s to reach full accuracy after power-up",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Response Time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "500 ms to reach full accuracy after a pressure step",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Output Voltage",
+          "name_vi": "Điện áp đầu ra",
+          "value_raw": "0 to 2.5 Vdc",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Supply Voltage",
+          "name_vi": "Điện áp cấp",
+          "value_raw": "10 to 30 Vdc",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Elevation",
+          "name_vi": "Độ cao",
+          "value_raw": "Below sea level: ~609.6 m (2,000 ft) | Above sea level: 4,572 m (15,000 ft)",
+          "source_rows": [
+            14,
+            15
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Accuracy",
+          "name_vi": "Độ chính xác",
+          "value_raw": "-40° to +60°C: ±1.5 hPa | +20°C: ±0.3 hPa | 0° to 40°C: ±0.6 hPa | -20° to +45°C: ±1.0 hPa | Accuracy refers to the root sum squared (RSS) of end point non-linearity, hysteresis, repeatability, and calibration uncertainty",
+          "source_rows": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Linearity",
+          "name_vi": "Độ tuyến tính",
+          "value_raw": "±0.25 hPa",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Hysteresis",
+          "name_vi": "Độ trễ",
+          "value_raw": "±0.03 hPa",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Repeatability",
+          "name_vi": "Độ lặp lại",
+          "value_raw": "±0.03 hPa",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Calibration Uncertainty",
+          "name_vi": "Độ không đảm bảo hiệu chuẩn",
+          "value_raw": "±0.15 hPa",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Current Consumption",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "Quiescent: < 1 µA | Active: < 4 mA",
+          "source_rows": [
+            25,
+            26
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Temperature Range",
+          "name_vi": "Dải nhiệt độ",
+          "value_raw": "-40° to +60°C",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "6.8 x 9.7 x 2.8 cm | 2.7 x 3.8 x 1.1 in.",
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Cable Length",
+          "name_vi": "Chiều dài cáp",
+          "value_raw": "76.2 cm | 30 in.",
+          "source_rows": [
+            30,
+            31
+          ]
+        },
+        {
+          "section": "GENERAL SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "90 g | 3.2 oz",
+          "source_rows": [
+            32,
+            33
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs106.pdf",
+        "user_manual": "cs106.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs106"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11564",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

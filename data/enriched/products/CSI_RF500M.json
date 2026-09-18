@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RF500M",
+  "model": "RF500M",
+  "name_en": "RF500M",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Radio Communications",
+    "subcategory_key": "radio_communications",
+    "device_type": "Radio Modem",
+    "device_type_key": "radio_modem"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "voltage",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF500M.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PakBus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "network_compatibility",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF500M.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "operating_system_options",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF500M.json",
+            "product_index": 0,
+            "spec_index": 9,
+            "source_rows": [
+              11
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "pakbus_os",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF500M.json",
+            "product_index": 0,
+            "spec_index": 10,
+            "source_rows": [
+              12
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "dial_os",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF500M.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              14
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "compatible_radio_series",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF500M.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_232_port",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF500M.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              16
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "digital_radio_compatibility",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF500M.json",
+            "product_index": 0,
+            "spec_index": 28,
+            "source_rows": [
+              30
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "RF500M",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "RF500M"
+        }
+      ]
+    },
+    {
+      "value": "CSI_RF500M",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_RF500M"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "RF500M",
+      "Communications",
+      "Radio Communications",
+      "Radio Modem",
+      "CS I/O",
+      "PakBus",
+      "RS-232",
+      "CSI_RF500M"
+    ],
+    "vi": [
+      "RF500M",
+      "Thiết bị truyền thông",
+      "Truyền thông vô tuyến",
+      "Modem vô tuyến",
+      "CS I/O",
+      "PakBus",
+      "RS-232"
+    ]
+  }
+}

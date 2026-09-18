@@ -1,0 +1,400 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "CELL225_Output.json",
+        "original_source": {
+          "file": "cell225.xlsx",
+          "sheet": "Trang_tính1"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_CELL225_IT1A",
+      "manufacturer": "Campbell Scientific",
+      "model": "CELL225-IT1A",
+      "product_name_en": "4G LTE CAT-1 Cellular Module for Japan",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "worksheet"
+      },
+      "taxonomy": {
+        "category": "Communications",
+        "subcategory": "Cellular Communications",
+        "device_type": "Cellular Modem / Router"
+      },
+      "specifications": [
+        {
+          "section": "General Specifications",
+          "name_en": "Product Model",
+          "name_vi": "Model sản phẩm",
+          "value_raw": "CELL225",
+          "source_rows": [
+            2
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Product Type",
+          "name_vi": "Loại sản phẩm",
+          "value_raw": "4G LTE CAT-1 Cellular Module for Japan",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Certifications",
+          "name_vi": "Chứng nhận",
+          "value_raw": "IC (Industry Canada) 10224A-201611EC21A",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Host Interface",
+          "name_vi": "Giao diện kết nối thiết bị chủ",
+          "value_raw": "RS-232 serial port, DB9 female; CS I/O communications port, DB9 male; USB version 2.0 with micro-B connector",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "RF Connectors",
+          "name_vi": "Đầu nối RF",
+          "value_raw": "2 SMA antenna connectors, primary and diversity",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40°C to +80°C",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "SIM Interface",
+          "name_vi": "Giao diện SIM",
+          "value_raw": "3FF, 6 position/contacts; supports SIMs that require 1.8 or 3 Vdc",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "13.46 × 8.1 × 2.86 cm (5.3 × 3.19 × 1.13 in.)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "General Specifications",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "215.5 g (7.6 oz)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "CELLULAR WAN",
+          "name_en": "Network Technology",
+          "name_vi": "Công nghệ mạng",
+          "value_raw": "4G LTE CAT-1",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "CELLULAR WAN",
+          "name_en": "Carrier Approval",
+          "name_vi": "Nhà mạng được phê duyệt",
+          "value_raw": "JATE / TELEC / DOCOMO",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "CELLULAR WAN",
+          "name_en": "LTE Bands",
+          "name_vi": "Băng tần LTE",
+          "value_raw": "2100(B1), 1800(B3), 900(B8), 800 Lower(B18), 800 Upper(B19), 850+(B26)",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "DATA SPEEDS",
+          "name_en": "LTE Upload Speed",
+          "name_vi": "Tốc độ tải lên LTE",
+          "value_raw": "Max 5 Mbps",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "DATA SPEEDS",
+          "name_en": "LTE Download Speed",
+          "name_vi": "Tốc độ tải xuống LTE",
+          "value_raw": "Max 10 Mbps",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "DATA SPEEDS",
+          "name_en": "RS-232 or CS I/O",
+          "name_vi": "Tốc độ RS-232 hoặc CS I/O",
+          "value_raw": "9600 bps to 460.8 kbps",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "POWER CONSUMPTION",
+          "name_en": "Low Power Mode",
+          "name_vi": "Chế độ công suất thấp",
+          "value_raw": "300 µA",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "POWER CONSUMPTION",
+          "name_en": "Idle Current",
+          "name_vi": "Dòng chờ",
+          "value_raw": "14 mA",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "POWER CONSUMPTION",
+          "name_en": "Active Current",
+          "name_vi": "Dòng hoạt động",
+          "value_raw": "39 mA",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "RADIO OUTPUT AND SENSITIVITY",
+          "name_en": "Output Power",
+          "name_vi": "Công suất phát",
+          "value_raw": "23 dBm on LTE",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "RADIO OUTPUT AND SENSITIVITY",
+          "name_en": "Sensitivity Range",
+          "name_vi": "Dải độ nhạy",
+          "value_raw": "-99.5 to 110.5 dBm (10 M)",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Option",
+          "name_vi": "Tùy chọn cấu hình dịch vụ",
+          "value_raw": "Provisioned for International 1A",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "ORDERING CONFIGURATION",
+          "name_en": "Provisioning Status",
+          "name_vi": "Trạng thái cấu hình",
+          "value_raw": "Provisioned",
+          "source_rows": [
+            28
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cell225datasheet.pdf",
+        "user_manual": "cell200-seriesmanuals.pdf",
+        "order_form": "https://www.campbellsci.com/products/cell225"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12128",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "passed",
+        "warnings": []
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_CELL225_IT1A",
+        "variant_count": 3,
+        "source_files": [
+          "CELL225_Output.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_CELL225_IT1A",
+          "model": "CELL225-IT1A",
+          "product_name_en": "4G LTE CAT-1 Cellular Module for Japan",
+          "is_representative": true,
+          "distinguishing_specifications": [
+            {
+              "section": "ORDERING CONFIGURATION",
+              "name_en": "Provisioning Option",
+              "name_vi": "Tùy chọn cấu hình dịch vụ",
+              "value_raw": "Provisioned for International 1A",
+              "source_rows": [
+                27
+              ]
+            },
+            {
+              "section": "ORDERING CONFIGURATION",
+              "name_en": "Provisioning Status",
+              "name_vi": "Trạng thái cấu hình",
+              "value_raw": "Provisioned",
+              "source_rows": [
+                28
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cell225datasheet.pdf",
+            "user_manual": "cell200-seriesmanuals.pdf",
+            "order_form": "https://www.campbellsci.com/products/cell225"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12128",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CELL225_Output.json",
+            "product_index": 0
+          }
+        },
+        {
+          "product_id": "CSI_CELL225_IT1B",
+          "model": "CELL225-IT1B",
+          "product_name_en": "4G LTE CAT-1 Cellular Module for Japan",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "ORDERING CONFIGURATION",
+              "name_en": "Provisioning Option",
+              "name_vi": "Tùy chọn cấu hình dịch vụ",
+              "value_raw": "Provisioned for International 1B",
+              "source_rows": [
+                27
+              ]
+            },
+            {
+              "section": "ORDERING CONFIGURATION",
+              "name_en": "Provisioning Status",
+              "name_vi": "Trạng thái cấu hình",
+              "value_raw": "Provisioned",
+              "source_rows": [
+                28
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cell225datasheet.pdf",
+            "user_manual": "cell200-seriesmanuals.pdf",
+            "order_form": "https://www.campbellsci.com/products/cell225"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12128",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CELL225_Output.json",
+            "product_index": 1
+          }
+        },
+        {
+          "product_id": "CSI_CELL225_NP",
+          "model": "CELL225-NP",
+          "product_name_en": "4G LTE CAT-1 Cellular Module for Japan",
+          "is_representative": false,
+          "distinguishing_specifications": [
+            {
+              "section": "ORDERING CONFIGURATION",
+              "name_en": "Provisioning Option",
+              "name_vi": "Tùy chọn cấu hình dịch vụ",
+              "value_raw": "No Provisioning",
+              "source_rows": [
+                27
+              ]
+            },
+            {
+              "section": "ORDERING CONFIGURATION",
+              "name_en": "Provisioning Status",
+              "name_vi": "Trạng thái cấu hình",
+              "value_raw": "Not Provisioned",
+              "source_rows": [
+                28
+              ]
+            },
+            {
+              "section": "ORDERING CONFIGURATION",
+              "name_en": "Ships As",
+              "name_vi": "Mã hàng giao",
+              "value_raw": "Ships as 35175 & 16675",
+              "source_rows": [
+                29
+              ]
+            }
+          ],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cell225datasheet.pdf",
+            "user_manual": "cell200-seriesmanuals.pdf",
+            "order_form": "https://www.campbellsci.com/products/cell225"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12128",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CELL225_Output.json",
+            "product_index": 2
+          }
+        }
+      ]
+    }
+  ]
+}

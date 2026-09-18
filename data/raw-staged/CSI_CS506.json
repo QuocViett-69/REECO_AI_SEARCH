@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.2",
+  "source": {
+    "type": "consolidated_product_family",
+    "files": [
+      {
+        "incoming_file": "CS506_Output_Fix.json",
+        "original_source": {
+          "file": "CS506_Specifications_SplitCells.xlsx",
+          "sheet": "CS506_Specifications"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS506",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS506",
+      "product_name_en": "CS506 Fuel Moisture Sensor",
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": "Sensors",
+        "subcategory": "Fuel Moisture Sensors",
+        "device_type": "Fuel Moisture Sensor"
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Range",
+          "name_vi": "Dải hoạt động",
+          "value_raw": "0 to 70% moisture content",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power Supply",
+          "name_vi": "Nguồn cấp",
+          "value_raw": "5 to 18 Vdc",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Enable Voltage",
+          "name_vi": "Điện áp kích hoạt",
+          "value_raw": "on at 5 Vdc (> 4 Vdc; maximum 18 Vdc) | off at 0 Vdc (< 1 Vdc)",
+          "source_rows": [
+            5,
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Current Consumption",
+          "name_vi": "Dòng tiêu thụ",
+          "value_raw": "65 mA (active) | 45 μA (quiescent)",
+          "source_rows": [
+            7,
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Output Signal",
+          "name_vi": "Tín hiệu đầu ra",
+          "value_raw": "±0.7 Vdc square wave (with an output frequency of approximately 31 to 58 kHz)",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Dimensions",
+          "name_vi": "Kích thước",
+          "value_raw": "10.16 x 6.35 x 1.91 cm (4 x 2.5 x 0.75 in.)",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "< 0.5 kg (< 1 lb)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "0 to 10% Range",
+          "name_vi": "Dải 0 đến 10%",
+          "value_raw": "±1.25% (worst case) | ±0.74% (RMS error)",
+          "source_rows": [
+            13,
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "10 to 20% Range",
+          "name_vi": "Dải 10 đến 20%",
+          "value_raw": "±0.9% (RMS error) | ±2% (worst case)",
+          "source_rows": [
+            15,
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "20 to 30% Range",
+          "name_vi": "Dải 20 đến 30%",
+          "value_raw": "±3.4% (worst case) | ±1.94% (RMS error)",
+          "source_rows": [
+            17,
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "30 to 50% Range",
+          "name_vi": "Dải 30 đến 50%",
+          "value_raw": "±2.27% (RMS error) | ±4.11% (worst case)",
+          "source_rows": [
+            19,
+            20
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs506_datasheet.pdf",
+        "user_manual": "cs506_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs506"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/1716",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      "variant_group": {
+        "representative_product_id": "CSI_CS506",
+        "variant_count": 1,
+        "source_files": [
+          "CS506_Output_Fix.json"
+        ]
+      },
+      "variants": [
+        {
+          "product_id": "CSI_CS506",
+          "model": "CS506",
+          "product_name_en": null,
+          "is_representative": true,
+          "distinguishing_specifications": [],
+          "documents": {
+            "product_url": null,
+            "datasheet": "b_cs506_datasheet.pdf",
+            "user_manual": "cs506_manual.pdf",
+            "order_form": "https://www.campbellsci.com/products/cs506"
+          },
+          "media": {
+            "product_images": [
+              {
+                "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/1716",
+                "source": "user_provided"
+              }
+            ]
+          },
+          "source": {
+            "file": "CS506_Output_Fix.json",
+            "product_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

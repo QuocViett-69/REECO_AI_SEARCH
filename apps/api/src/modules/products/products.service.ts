@@ -182,6 +182,7 @@ export class ProductsService {
       specifications,
       important_specifications: document?.important_specifications ?? [],
       aliases: document?.aliases ?? [],
+      variants: document?.variants ?? [],
       media: media.map((item) => ({
         media_id: item.media_id,
         media_type: item.media_type,

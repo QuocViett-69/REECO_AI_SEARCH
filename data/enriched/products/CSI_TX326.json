@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_TX326",
+  "model": "TX326",
+  "name_en": "TX326 Satellite Transmitter for METEOSAT",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Satellite Transmitters",
+    "subcategory_key": "satellite_transmitters",
+    "device_type": "Satellite Transmitter",
+    "device_type_key": "satellite_transmitter"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "ASCII",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_formats",
+          "raw_ref": {
+            "file": "data/raw/CSI_TX326.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_232_interface",
+          "raw_ref": {
+            "file": "data/raw/CSI_TX326.json",
+            "product_index": 0,
+            "spec_index": 44,
+            "source_rows": [
+              46
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "TX326",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "TX326"
+        }
+      ]
+    },
+    {
+      "value": "CSI_TX326",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_TX326"
+        }
+      ]
+    },
+    {
+      "value": "TX326 Satellite Transmitter for METEOSAT",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "TX326 Satellite Transmitter for METEOSAT"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "TX326",
+      "TX326 Satellite Transmitter for METEOSAT",
+      "Communications",
+      "Satellite Transmitters",
+      "Satellite Transmitter",
+      "ASCII",
+      "RS-232",
+      "CSI_TX326"
+    ],
+    "vi": [
+      "TX326",
+      "Thiết bị truyền thông",
+      "Bộ phát vệ tinh",
+      "ASCII",
+      "RS-232"
+    ]
+  }
+}

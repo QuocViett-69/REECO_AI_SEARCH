@@ -1,0 +1,1028 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CR6_NA_ST_CC",
+  "model": "CR6-NA-ST-CC",
+  "name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Measurement Devices",
+    "category_key": "measurement_devices",
+    "subcategory": "Data Loggers",
+    "subcategory_key": "data_loggers",
+    "device_type": "Data Logger",
+    "device_type_key": "data_logger"
+  },
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wiring_panel_temperature",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "analog_measurement_terminals",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 85,
+            "source_rows": [
+              94
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "4-20 mA",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "current_loop_availability_note",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 148,
+            "source_rows": [
+              162
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auto-IP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CPI",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 195,
+            "source_rows": [
+              212
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_232_per_cpi",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 202,
+            "source_rows": [
+              219
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "cpi",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 203,
+            "source_rows": [
+              220
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_terminal_rs_232",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 266,
+            "source_rows": [
+              288
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "cs_io",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 197,
+            "source_rows": [
+              214
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CS I/O",
+      "relation": "unsupported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_power",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 36,
+            "source_rows": [
+              42
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DHCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DNP3",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 195,
+            "source_rows": [
+              212
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DNS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ethernet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "HTTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ICMP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPv4",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPv6",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus ASCII",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 195,
+            "source_rows": [
+              212
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus RTU",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 195,
+            "source_rows": [
+              212
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Modbus TCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 195,
+            "source_rows": [
+              212
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "MQTT",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "NTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PakBus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 195,
+            "source_rows": [
+              212
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "POP3",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PPP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RJ45",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "ethernet_port",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 193,
+            "source_rows": [
+              210
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_232_per_cpi",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 202,
+            "source_rows": [
+              219
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RNDIS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "serial_additional_current",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 41,
+            "source_rows": [
+              47
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "digital_io_supported_functions",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 183,
+            "source_rows": [
+              199
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rs_232_per_cpi",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 202,
+            "source_rows": [
+              219
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "hardwired_communications",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 206,
+            "source_rows": [
+              223
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications_terminal_rs_232",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 266,
+            "source_rows": [
+              288
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-422",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "digital_io_supported_functions",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 183,
+            "source_rows": [
+              199
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-485",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "serial_additional_current",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 41,
+            "source_rows": [
+              47
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "digital_io_supported_functions",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 183,
+            "source_rows": [
+              199
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "digital_io_supported_functions",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 183,
+            "source_rows": [
+              199
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "additional_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 195,
+            "source_rows": [
+              212
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "sdi_12",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 199,
+            "source_rows": [
+              216
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SLAAC",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "SMTP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TCP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Telnet",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "TLS",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "UDP",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internet_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 194,
+            "source_rows": [
+              211
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb_power",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 36,
+            "source_rows": [
+              42
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "12_v_per_sw12_v_output",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 49,
+            "source_rows": [
+              56
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wi-Fi",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "antenna_connection_types",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 204,
+            "source_rows": [
+              221
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wireless_communications",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 205,
+            "source_rows": [
+              222
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wiring_panel_temperature",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "analog_measurement_terminals",
+          "raw_ref": {
+            "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+            "product_index": 0,
+            "spec_index": 85,
+            "source_rows": [
+              94
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "value": "CR6-NA-ST-CC",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CR6-NA-ST-CC"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CR6_NA_ST_CC",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CR6_NA_ST_CC"
+        }
+      ]
+    },
+    {
+      "value": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CR6 Datalogger -NA No Additional Coms -ST -40 t"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CR6-NA-ST-CC",
+      "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+      "Measurement Devices",
+      "Data Loggers",
+      "Data Logger",
+      "Temperature",
+      "temperature measurement",
+      "4-20 mA",
+      "Auto-IP",
+      "CPI",
+      "CS I/O",
+      "DHCP",
+      "DNP3",
+      "DNS",
+      "Ethernet",
+      "FTP",
+      "HTTP",
+      "ICMP",
+      "IPv4",
+      "IPv6",
+      "Modbus ASCII",
+      "Modbus RTU",
+      "Modbus TCP",
+      "MQTT",
+      "NTP",
+      "PakBus",
+      "POP3",
+      "PPP",
+      "RJ45",
+      "RNDIS",
+      "RS-232",
+      "RS-422",
+      "RS-485",
+      "SDI-12",
+      "SLAAC",
+      "SMTP",
+      "TCP",
+      "Telnet",
+      "TLS",
+      "UDP",
+      "USB",
+      "Wi-Fi",
+      "Measure Temperature",
+      "CSI_CR6_NA_ST_CC"
+    ],
+    "vi": [
+      "CR6-NA-ST-CC",
+      "Thiết bị đo lường",
+      "Bộ ghi dữ liệu",
+      "Nhiệt độ",
+      "4-20 mA",
+      "Auto-IP",
+      "CPI",
+      "CS I/O",
+      "DHCP",
+      "DNP3",
+      "DNS",
+      "Ethernet",
+      "FTP",
+      "HTTP",
+      "ICMP",
+      "IPv4",
+      "IPv6",
+      "Modbus ASCII",
+      "Modbus RTU",
+      "Modbus TCP",
+      "MQTT",
+      "NTP",
+      "PakBus",
+      "POP3",
+      "PPP",
+      "RJ45",
+      "RNDIS",
+      "RS-232",
+      "RS-422",
+      "RS-485",
+      "SDI-12",
+      "SLAAC",
+      "SMTP",
+      "TCP",
+      "Telnet",
+      "TLS",
+      "UDP",
+      "USB",
+      "Wi-Fi",
+      "Đo nhiệt độ"
+    ]
+  }
+}

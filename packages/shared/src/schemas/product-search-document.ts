@@ -4,6 +4,7 @@ import {
   NormalizedValueSchema,
   RawSpecificationReferenceSchema,
 } from './normalized-specification';
+import { ProductVariantSchema } from './product-variant';
 
 const SemanticKeySchema = z.string().regex(/^[a-z0-9]+(?:_[a-z0-9]+)*$/u);
 
@@ -43,6 +44,7 @@ export const ProductSearchDocumentSchema = z.object({
   supported_protocols: z.array(z.string().min(1)),
   unsupported_protocols: z.array(z.string().min(1)),
   aliases: z.array(z.string().min(1)),
+  variants: z.array(ProductVariantSchema).default([]),
   important_specifications: z.array(ImportantSearchSpecificationSchema),
   search_keywords_en: z.array(z.string().min(1)),
   search_keywords_vi: z.array(z.string().min(1)),
@@ -67,6 +69,4 @@ export type SearchDocumentSemanticItem = z.infer<
 export type ImportantSearchSpecification = z.infer<
   typeof ImportantSearchSpecificationSchema
 >;
-export type ProductSearchDocument = z.infer<
-  typeof ProductSearchDocumentSchema
->;
+export type ProductSearchDocument = z.infer<typeof ProductSearchDocumentSchema>;

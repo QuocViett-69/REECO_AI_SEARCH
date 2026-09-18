@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_RF452",
+  "model": "RF452",
+  "name_en": "RF452",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Communications",
+    "category_key": "communications",
+    "subcategory": "Radios",
+    "subcategory_key": "radios",
+    "device_type": "Spread-Spectrum Radio",
+    "device_type_key": "spread_spectrum_radio"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "CS I/O",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_interface_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF452.json",
+            "product_index": 0,
+            "spec_index": 33,
+            "source_rows": [
+              35
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "powered_over",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF452.json",
+            "product_index": 0,
+            "spec_index": 45,
+            "source_rows": [
+              47
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PakBus",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF452.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RS-232",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_interface_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF452.json",
+            "product_index": 0,
+            "spec_index": 33,
+            "source_rows": [
+              35
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "USB",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "usb",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF452.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              34
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "data_interface_protocols",
+          "raw_ref": {
+            "file": "data/raw/CSI_RF452.json",
+            "product_index": 0,
+            "spec_index": 33,
+            "source_rows": [
+              35
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "RF452",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "RF452"
+        }
+      ]
+    },
+    {
+      "value": "CSI_RF452",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_RF452"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "RF452",
+      "Communications",
+      "Radios",
+      "Spread-Spectrum Radio",
+      "CS I/O",
+      "PakBus",
+      "RS-232",
+      "USB",
+      "CSI_RF452"
+    ],
+    "vi": [
+      "RF452",
+      "Thiết bị truyền thông",
+      "Thiết bị vô tuyến",
+      "Thiết bị vô tuyến trải phổ",
+      "CS I/O",
+      "PakBus",
+      "RS-232",
+      "USB"
+    ]
+  }
+}

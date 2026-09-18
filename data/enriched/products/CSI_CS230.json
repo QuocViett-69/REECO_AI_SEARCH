@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "product_id": "CSI_CS230",
+  "model": "CS230",
+  "name_en": "SDI-12 Temperature Profiler",
+  "name_vi": null,
+  "taxonomy": {
+    "category": "Sensors",
+    "category_key": "sensors",
+    "subcategory": "Temperature Sensors (Air/Soil/Water)",
+    "subcategory_key": "temperature_sensors_air_soil_water",
+    "device_type": "Temperature Profiler",
+    "device_type_key": "temperature_profiler"
+  },
+  "measurements": [],
+  "applications": [],
+  "protocols": [
+    {
+      "name": "SDI-12",
+      "relation": "supported",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_name",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS230.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "communications",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS230.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              13
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [],
+  "aliases": [
+    {
+      "value": "CS230",
+      "type": "model",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "model",
+          "value": "CS230"
+        }
+      ]
+    },
+    {
+      "value": "CSI_CS230",
+      "type": "product_id",
+      "language": "und",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_id",
+          "value": "CSI_CS230"
+        }
+      ]
+    },
+    {
+      "value": "SDI-12 Temperature Profiler",
+      "type": "canonical_name",
+      "language": "en",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "SDI-12 Temperature Profiler"
+        }
+      ]
+    }
+  ],
+  "search_keywords": {
+    "en": [
+      "CS230",
+      "SDI-12 Temperature Profiler",
+      "Sensors",
+      "Temperature Sensors (Air/Soil/Water)",
+      "Temperature Profiler",
+      "SDI-12",
+      "CSI_CS230"
+    ],
+    "vi": [
+      "CS230",
+      "Cảm biến",
+      "Cảm biến nhiệt độ không khí, đất và nước",
+      "Cảm biến hồ sơ nhiệt độ",
+      "SDI-12"
+    ]
+  }
+}

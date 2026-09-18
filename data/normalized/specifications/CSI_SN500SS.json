@@ -1,0 +1,567 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_SN500SS",
+  "model": "SN500SS",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_SN500SS.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_SN500SS.json#0",
+    "raw_product_id": "CSI_SN500SS",
+    "raw_model": "SN500SS"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_SN500SS",
+      "model": "SN500SS",
+      "product_name_en": "SN500SS",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor Configuration",
+          "value_raw": "Two thermopile pyranometers and two pyrgeometers"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Name",
+      "value_raw": "SN500SS",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Type",
+      "value_raw": "Four-Component Net Radiometer",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Manufacturer",
+      "value_raw": "Apogee Instruments; supplied by Campbell Scientific",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary measurement device / sensor",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Measurement Description",
+      "value_raw": "Measures incoming and outgoing short-wave and long-wave radiation",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "measurement_description"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Sensor Configuration",
+      "value_raw": "Two thermopile pyranometers and two pyrgeometers",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "sensor_configuration"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Output",
+      "value_raw": "SDI-12",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "SDI-12"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "output"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Heater",
+      "value_raw": "62 mA current drain and 740 mW power requirement at 12 VDC",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "heater"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-50 to +80 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -50,
+        "max_value": 80,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Humidity Range",
+      "value_raw": "0 to 100%",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 100,
+        "unit": "%",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "operating_humidity_range"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Response Time",
+      "value_raw": "1 s SDI-12 data transfer rate; detector response time 0.5 s",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "response_time",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Heater Current Drain – Heaters Off, Communication Disabled",
+      "value_raw": "0.6 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.6,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "heater_current_drain_heaters_off_communication_disabled",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Heater Current Drain – Heaters On, Communication Enabled",
+      "value_raw": "63 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 63,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "heater_current_drain_heaters_on_communication_enabled",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Heater Current Drain – Heaters Off, Communication Enabled",
+      "value_raw": "1.5 mA",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1.5,
+        "unit": "mA",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "heater_current_drain_heaters_off_communication_enabled",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Dimensions",
+      "value_raw": "11.6 × 4.5 × 6.6 cm (4.6 × 1.8 × 2.6 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "dimensions"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "320 g (11.29 oz) with mounting rod and 5 m (16.4 ft) lead wire",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 320,
+        "unit": "g",
+        "qualifier": null,
+        "alternate": {
+          "value": 11.29,
+          "unit": "oz"
+        },
+        "condition": "with mounting rod and 5 m (16.4 ft) lead wire"
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Package Includes",
+      "value_raw": "Net radiometer, mounting rod, pigtail lead cable for data logger interface, and carrying case",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "package_includes"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyranometer Spectral Range – Downward-Looking",
+      "value_raw": "295 to 2685 nm",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 295,
+        "max_value": 2685,
+        "unit": "nm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "pyranometer_spectral_range_downward_looking"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyranometer Spectral Range – Upward-Looking",
+      "value_raw": "385 to 2105 nm",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 385,
+        "max_value": 2105,
+        "unit": "nm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "pyranometer_spectral_range_upward_looking"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyranometer Sensitivity – Upward-Looking",
+      "value_raw": "0.057 mV per W/m²",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "pyranometer_sensitivity_upward_looking"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyranometer Sensitivity – Downward-Looking",
+      "value_raw": "0.15 mV per W/m²",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "pyranometer_sensitivity_downward_looking"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyranometer Expected Output Range – Downward-Looking",
+      "value_raw": "0 to 300 mV",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 300,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "pyranometer_expected_output_range_downward_looking"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyranometer Expected Output Range – Upward-Looking",
+      "value_raw": "0 to 114 mV",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 114,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "pyranometer_expected_output_range_upward_looking"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyrgeometer Spectral Range",
+      "value_raw": "5,000 to 30,000 nm",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": 5000,
+        "max_value": 30000,
+        "unit": "nm",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "pyrgeometer_spectral_range"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyrgeometer Sensitivity",
+      "value_raw": "0.12 mV per W/m²",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "pyrgeometer_sensitivity"
+    },
+    {
+      "product_id": "CSI_SN500SS",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Pyrgeometer Expected Output Range",
+      "value_raw": "-24 to +24 mV",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -24,
+        "max_value": 24,
+        "unit": "mV",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_SN500SS.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "pyrgeometer_expected_output_range"
+    }
+  ]
+}

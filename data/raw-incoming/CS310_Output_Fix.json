@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "file": "CS310_Specifications_SplitCells_Superscript.xlsx",
+    "sheet": "CS310_Specifications"
+  },
+  "products": [
+    {
+      "product_id": "CSI_CS310",
+      "manufacturer": "Campbell Scientific",
+      "model": "CS310",
+      "product_name_en": null,
+      "identity_source": {
+        "model": "worksheet",
+        "product_name_en": "manual_review"
+      },
+      "taxonomy": {
+        "category": null,
+        "subcategory": null,
+        "device_type": null
+      },
+      "specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensor",
+          "name_vi": "Cảm biến",
+          "value_raw": "Blue-enhanced silicon photodiode and custom optical filters",
+          "source_rows": [
+            3
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Description",
+          "name_vi": "Mô tả phép đo",
+          "value_raw": "Measures photosynthetic photon flux density (PPFD) in both natural and artificial light",
+          "source_rows": [
+            4
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Power Supply",
+          "name_vi": "Nguồn cấp",
+          "value_raw": "Self-powered",
+          "source_rows": [
+            5
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Sensitivity",
+          "name_vi": "Độ nhạy",
+          "value_raw": "0.01 mV per µmol m⁻² s⁻¹",
+          "source_rows": [
+            6
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibration Factor (Reciprocal of Sensitivity)",
+          "name_vi": "Hệ số hiệu chuẩn (nghịch đảo của độ nhạy)",
+          "value_raw": "100.0 µmol m⁻² s⁻¹ per mV",
+          "source_rows": [
+            7
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibration Uncertainty",
+          "name_vi": "Độ không đảm bảo hiệu chuẩn",
+          "value_raw": "±5% (for daily total radiation)",
+          "source_rows": [
+            8
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Calibrated Output Range",
+          "name_vi": "Dải đầu ra đã hiệu chuẩn",
+          "value_raw": "0 to 40 mV",
+          "source_rows": [
+            9
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Range",
+          "name_vi": "Dải đo",
+          "value_raw": "0 to 4000 µmol m⁻² s⁻¹",
+          "source_rows": [
+            10
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Measurement Repeatability",
+          "name_vi": "Độ lặp lại phép đo",
+          "value_raw": "< 1% (up to 4000 μmol m⁻² s⁻¹)",
+          "source_rows": [
+            11
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Long-Term Drift",
+          "name_vi": "Độ trôi dài hạn",
+          "value_raw": "< 2% per year",
+          "source_rows": [
+            12
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Non-Linearity",
+          "name_vi": "Độ phi tuyến",
+          "value_raw": "< 1% (up to 4000 µmol m⁻² s⁻¹)",
+          "source_rows": [
+            13
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Response Time",
+          "name_vi": "Thời gian đáp ứng",
+          "value_raw": "< 1 ms",
+          "source_rows": [
+            14
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Field of View (FOV)",
+          "name_vi": "Trường nhìn (FOV)",
+          "value_raw": "180°",
+          "source_rows": [
+            15
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Spectral Range",
+          "name_vi": "Dải phổ",
+          "value_raw": "389 to 692 nm ±5 nm (wavelengths where response is greater than 50% of maximum)",
+          "source_rows": [
+            16
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Spectral Selectivity",
+          "name_vi": "Độ chọn lọc phổ",
+          "value_raw": "< 10% from 412 to 682 nm ±5 nm",
+          "source_rows": [
+            17
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Directional (Cosine) Response",
+          "name_vi": "Đáp ứng định hướng (cosin)",
+          "value_raw": "±5% (at 75° zenith angle)",
+          "source_rows": [
+            18
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Azimuth Error",
+          "name_vi": "Sai số phương vị",
+          "value_raw": "< 0.5%",
+          "source_rows": [
+            19
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Tilt Error",
+          "name_vi": "Sai số nghiêng",
+          "value_raw": "< 0.5%",
+          "source_rows": [
+            20
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Temperature Response",
+          "name_vi": "Đáp ứng nhiệt độ",
+          "value_raw": "-0.11 ±0.04% per °C",
+          "source_rows": [
+            21
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Uncertainty in Daily Total",
+          "name_vi": "Độ không đảm bảo của tổng ngày",
+          "value_raw": "< 5%",
+          "source_rows": [
+            22
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Detector",
+          "name_vi": "Bộ dò",
+          "value_raw": "Blue-enhanced silicon photodiode",
+          "source_rows": [
+            23
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Housing",
+          "name_vi": "Vỏ",
+          "value_raw": "Anodized aluminum body with acrylic diffuser",
+          "source_rows": [
+            24
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "IP Rating",
+          "name_vi": "Cấp bảo vệ IP",
+          "value_raw": "IP68",
+          "source_rows": [
+            25
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Temperature Range",
+          "name_vi": "Dải nhiệt độ hoạt động",
+          "value_raw": "-40° to +70°C",
+          "source_rows": [
+            26
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Operating Environment",
+          "name_vi": "Môi trường hoạt động",
+          "value_raw": "0 to 100% relative humidity",
+          "source_rows": [
+            27
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Cable",
+          "name_vi": "Cáp",
+          "value_raw": "5 m of shielded, twisted-pair wire | Additional cable available in multiples of 5 m | Santoprene rubber jacket (high water resistance, high UV stability, flexibility in cold conditions) | Pigtail lead wires",
+          "source_rows": [
+            28,
+            29,
+            30,
+            31
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Warranty",
+          "name_vi": "Bảo hành",
+          "value_raw": "4 years (against defects in materials and workmanship)",
+          "source_rows": [
+            32
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Diameter",
+          "name_vi": "Đường kính",
+          "value_raw": "2.4 cm (0.9 in.)",
+          "source_rows": [
+            33
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Height",
+          "name_vi": "Chiều cao",
+          "value_raw": "3.5 cm (1.4 in.)",
+          "source_rows": [
+            34
+          ]
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Weight",
+          "name_vi": "Khối lượng",
+          "value_raw": "100 g with 5 m of lead wire (3.53 oz with 16.4 ft of lead wire)",
+          "source_rows": [
+            35
+          ]
+        }
+      ],
+      "documents": {
+        "product_url": null,
+        "datasheet": "b_cs310_datasheet.pdf",
+        "user_manual": "cs310_manual.pdf",
+        "order_form": "https://www.campbellsci.com/products/cs310"
+      },
+      "media": {
+        "product_images": [
+          {
+            "url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12750",
+            "source": "user_provided"
+          }
+        ]
+      },
+      "validation": {
+        "status": "needs_review",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet."
+        ]
+      }
+    }
+  ]
+}

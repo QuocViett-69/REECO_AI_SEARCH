@@ -1,0 +1,517 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_PS24_W_CH150",
+  "model": "PS24-w/CH150",
+  "raw_record_ref": {
+    "file": "data/raw/CSI_PS24_W_CH150.json",
+    "product_index": 0,
+    "raw_record_key": "CSI_PS24_W_CH150.json#0",
+    "raw_product_id": "CSI_PS24_W_CH150",
+    "raw_model": "PS24-w/CH150"
+  },
+  "variants": [
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "model": "PS24-w/CH150",
+      "product_name_en": "PS24-w/CH150",
+      "is_representative": true,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Name",
+          "value_raw": "PS24-w/CH150"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Regulator",
+          "value_raw": "CH150"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Regulator Role",
+          "value_raw": "Microcontroller-based smart charger with temperature compensation; intended for standard applications"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Included Main Components",
+          "value_raw": "24 Ah battery; CH150 regulator; 10 × 12 in. environmental enclosure"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Current Website Configuration Status",
+          "value_raw": "Available with multiple mounting options (for example -MM, -LM, -TM, -PM, -EM)"
+        }
+      ]
+    },
+    {
+      "product_id": "CSI_PS24_W_CH200",
+      "model": "PS24-w/CH200",
+      "product_name_en": "PS24-w/CH200",
+      "is_representative": false,
+      "distinguishing_specifications": [
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Product Name",
+          "value_raw": "PS24-w/CH200"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Regulator",
+          "value_raw": "CH200"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Regulator Role",
+          "value_raw": "Microcontroller-based smart charger with temperature compensation; adds power-system monitoring capabilities"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Included Main Components",
+          "value_raw": "24 Ah battery; CH200 regulator; 10 × 12 in. environmental enclosure"
+        },
+        {
+          "section": "SPECIFICATIONS",
+          "name_en": "Current Website Configuration Status",
+          "value_raw": "Available with multiple mounting options (for example -MM, -LM, -TM, -PM, -EM)"
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Name",
+      "value_raw": "PS24-w/CH150",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "product_name"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Base Model",
+      "value_raw": "PS24",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "base_model"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Product Type",
+      "value_raw": "24 Ah Power Supply with 10 × 12 in. Enclosure",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "product_type"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Manufacturer",
+      "value_raw": "Campbell Scientific, Inc.",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "manufacturer"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Device Classification",
+      "value_raw": "Primary power-supply assembly",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "device_classification"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Regulator",
+      "value_raw": "CH150",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "regulator"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Regulator Role",
+      "value_raw": "Microcontroller-based smart charger with temperature compensation; intended for standard applications",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "regulator_role"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Primary Application",
+      "value_raw": "Power supply for systems with above-average power requirements where the battery/power supply is housed in a separate enclosure",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "primary_application"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Included Main Components",
+      "value_raw": "24 Ah battery; CH150 regulator; 10 × 12 in. environmental enclosure",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "included_main_components"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Charging Source",
+      "value_raw": "AC wall charger or solar panel; ordered separately",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "charging_source"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Cable Entry",
+      "value_raw": "One 1.5 in. diameter conduit",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "cable_entry"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Included Output Cable",
+      "value_raw": "3.05 m (10.0 ft) cable to a data logger or other device requiring 12 V/Ground",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "included_output_cable"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Input Voltage",
+      "value_raw": "15 to 28 VDC or 18 VAC RMS (CHG terminals)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "input_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Charging Output Voltage",
+      "value_raw": "Temperature-compensated float charge for 12 V battery",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          16
+        ]
+      },
+      "canonical_key": "charging_output_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Charging Current Limit",
+      "value_raw": "1.2 A typical",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "charging_current_limit",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Power Out (+12 Terminals) Voltage",
+      "value_raw": "Unregulated 12 V from battery",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "power_out_plus_12_terminals_voltage",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Battery Nominal Rating",
+      "value_raw": "24 Ah",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 24,
+        "unit": "Ah",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "battery_nominal_rating"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Enclosure Rating",
+      "value_raw": "NEMA 4X (modified for cable entry)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          20
+        ]
+      },
+      "canonical_key": "enclosure_rating"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Enclosure Internal Dimensions",
+      "value_raw": "25.4 × 30.5 × 11.4 cm (10 × 12 × 4.5 in.)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "enclosure_internal_dimensions"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Enclosure Color",
+      "value_raw": "White",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "enclosure_color"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Enclosure Construction",
+      "value_raw": "Fiberglass-reinforced polyester enclosure with door gasket, external grounding lug, stainless steel hinge, and lockable hasps",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "enclosure_construction"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-40 to +60 °C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -40,
+        "max_value": 60,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Weight",
+      "value_raw": "10.2 kg (22.4 lb)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 10.2,
+        "unit": "kg",
+        "qualifier": null,
+        "alternate": {
+          "value": 22.4,
+          "unit": "lb"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "weight",
+      "quantity_kind": "mass"
+    },
+    {
+      "product_id": "CSI_PS24_W_CH150",
+      "section": "SPECIFICATIONS",
+      "name_raw": "Current Website Configuration Status",
+      "value_raw": "Available with multiple mounting options (for example -MM, -LM, -TM, -PM, -EM)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CSI_PS24_W_CH150.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          26
+        ]
+      },
+      "canonical_key": "current_website_configuration_status",
+      "quantity_kind": "current"
+    }
+  ]
+}
