@@ -39,37 +39,66 @@ export function LoginPage() {
   }
 
   return (
-    <main>
-      <h1>REECO Admin Sign In</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input
-            autoComplete="email"
-            name="email"
-            onChange={(event) => setEmail(event.target.value)}
-            required
-            type="email"
-            value={email}
-          />
-        </label>
-        <label>
-          Password
-          <input
-            autoComplete="current-password"
-            name="password"
-            onChange={(event) => setPassword(event.target.value)}
-            required
-            type="password"
-            value={password}
-          />
-        </label>
-        <button disabled={isSubmitting} type="submit">
-          {isSubmitting ? 'Signing in…' : 'Sign in'}
-        </button>
-      </form>
-      {errorMessage ? <p role="alert">{errorMessage}</p> : null}
-      <Link to="/">Back to search</Link>
+    <main className="login-page">
+      <section className="login-brand">
+        <Link className="brand" to="/">
+          <span className="brand-mark">R</span>
+          <span>
+            <strong>REECO</strong>
+            <small>AI product intelligence</small>
+          </span>
+        </Link>
+        <h1>Product operations, grounded in verified data.</h1>
+        <p>
+          Sign in to inspect all catalog records and run the controlled
+          server-side import.
+        </p>
+      </section>
+      <section className="login-form-wrap">
+        <div className="login-card panel">
+          <h2>Admin sign in</h2>
+          <p>Use an existing Supabase account to continue.</p>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Email
+              <input
+                autoComplete="email"
+                name="email"
+                onChange={(event) => setEmail(event.target.value)}
+                required
+                type="email"
+                value={email}
+              />
+            </label>
+            <label>
+              Password
+              <input
+                autoComplete="current-password"
+                name="password"
+                onChange={(event) => setPassword(event.target.value)}
+                required
+                type="password"
+                value={password}
+              />
+            </label>
+            <button
+              className="button button-primary"
+              disabled={isSubmitting}
+              type="submit"
+            >
+              {isSubmitting ? 'Signing in…' : 'Sign in'}
+            </button>
+          </form>
+          {errorMessage ? (
+            <p className="inline-error" role="alert">
+              {errorMessage}
+            </p>
+          ) : null}
+          <Link className="back-link" to="/">
+            ← Back to search
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
