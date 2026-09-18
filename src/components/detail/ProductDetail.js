@@ -12,8 +12,14 @@ import {
   Activity,
   Globe,
   Zap,
+  Minus,
+  Plus,
+  ShoppingCart,
 } from 'lucide-react';
 import { getProductDetailApi } from '../../services/api';
+import { FavoriteButton } from '../commerce/FavoriteButton';
+import { RecommendationRow } from '../commerce/RecommendationRow';
+import { useCart } from '../../context/CartContext';
 
 // ─── Format normalized spec value for display ─────────────────────────────────
 function formatSpecValue(val) {
@@ -39,17 +45,22 @@ export function ProductDetail({
   onBack,
   onToggleCompare,
   isInCompare,
+  onSelectProduct,
+  onNavigate,
 }) {
   const [activeTab, setActiveTab] = useState('overview');
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [qty, setQty] = useState(1);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     setIsLoading(true);
     setError(null);
     setProduct(null);
     setActiveTab('overview');
+    setQty(1);
 
     getProductDetailApi(model)
       .then((data) => {
@@ -180,23 +191,50 @@ export function ProductDetail({
             ))}
           </div>
 
-          <div className="detail-actions">
-            <button
-              type="button"
-              className={`btn ${inCompare ? 'btn-added' : 'btn-primary'}`}
-              onClick={() => onToggleCompare(product.model)}
-            >
+          {/* ── B. Commerce Purchase Panel ──────────────────────────────────── */}
+          <div className="commerce-panel">
+            <div className="commerce-panel__price-row">
+              {product.price != null ? (
+                <div className="commerce-panel__price">
+                  ${product.price.toLocaleString()}
+                  <span className="commerce-panel__currency">{product.currency || 'USD'}</span>
+                </div>
+              ) : (
+                <div style={{ fontSize: 14, color: 'var(--text-3)' }}>Price available on order</div>
+              )}
+              <div className="availability-badge availability-badge--lg">
+                <Tag size={12} /> Available for order
+              </div>
+            </div>
+
+            <div className="commerce-panel__qty">
+              <span style={{ fontSize: 13, color: 'var(--text-2)', marginRight: 8 }}>Qty:</span>
+              <div className="qty-selector">
+                <button type="button" className="qty-btn" onClick={() => setQty(q => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Decrease"><Minus size={14} /></button>
+                <span className="qty-display" aria-live="polite">{qty}</span>
+                <button type="button" className="qty-btn" onClick={() => setQty(q => q + 1)} aria-label="Increase"><Plus size={14} /></button>
+              </div>
+            </div>
+
+            <div className="commerce-panel__actions">
+              <button type="button" className="btn btn-cart" onClick={() => addToCart({ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }, qty)}>
+                <ShoppingCart size={16} /> Add to Cart
+              </button>
+              <button type="button" className="btn btn-primary" onClick={() => { addToCart({ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }, qty); if (onNavigate) onNavigate('checkout'); }}>
+                Buy Now
+              </button>
+              <FavoriteButton product={{ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }} size="lg" />
+            </div>
+
+            <button type="button" className={`btn ${inCompare ? 'btn-added' : 'btn-secondary'}`} onClick={() => onToggleCompare(product.model)} style={{ marginTop: 8 }}>
               {inCompare ? <Check size={16} /> : <GitCompare size={16} />}
               <span>{inCompare ? 'In Compare' : 'Add to Compare'}</span>
             </button>
-            <a
-              href={productUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-secondary"
-              style={{ textDecoration: 'none' }}
-            >
-              <ExternalLink size={16} /> View on Website
+          </div>
+
+          <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
+            <a href={productUrl} target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ textDecoration: 'none', fontSize: 13 }}>
+              <ExternalLink size={15} /> View on Website
             </a>
           </div>
         </div>
@@ -341,6 +379,13 @@ export function ProductDetail({
                 ))}
             </ul>
           </div>
+        </div>
+      )}
+
+      {/* ── E. You May Also Need (AI Recommendations) ─────────────────────────── */}
+      {product.product_id && (
+        <div className="detail-recommendations">
+          <RecommendationRow productId={product.product_id} onViewDetail={onSelectProduct} />
         </div>
       )}
     </section>
