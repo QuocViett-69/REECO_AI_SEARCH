@@ -21,7 +21,6 @@ product access, and an idempotent product import pipeline. See
 - `apps/api`: NestJS backend (port 3000)
 - `apps/client`: Customer-facing React frontend — CRA, port 5173
 - `apps/admin`: Admin React frontend — CRA, port 5174
-- `apps/web`: Legacy React scaffold (Vite, port 5173)
 - `packages/shared`: shared TypeScript types and constants
 - `supabase`: versioned database migrations and RLS policies
 - `scripts`: product processing, import, validation, and local database tooling
@@ -73,8 +72,6 @@ npm run dev:client       # http://localhost:5173
 # Admin frontend
 npm run dev:admin        # http://localhost:5174
 
-# Legacy web scaffold (Vite)
-npm run dev:web          # http://localhost:5173
 ```
 
 Health endpoint: http://localhost:3000/api/v1/health

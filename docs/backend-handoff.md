@@ -3,7 +3,7 @@
 This remains the implementation-oriented backend note. For the frozen Step 7.7 startup, endpoint,
 error, security, and UI readiness contract, use [`frontend-handoff.md`](./frontend-handoff.md).
 
-The React application should use `VITE_API_URL=http://localhost:3000/api/v1` and import response/request
+The React applications use `REACT_APP_API_URL=http://localhost:3000/api/v1` and import response/request
 types plus Zod schemas from `@reeco/shared`. Product data must come through NestJS; the browser never
 receives `SUPABASE_SERVICE_ROLE_KEY` or `DATABASE_URL`.
 
@@ -98,7 +98,7 @@ request runs. Show `409` as “an import is already running”; show a generic r
 - Validate major payloads with `ProductListResponseSchema`, `ProductDetailSchema`, or
   `SearchResponseSchema` from `@reeco/shared` during integration/development.
 - Do not call Supabase database tables from React and never add service-role/database credentials to
-  a `VITE_*` variable.
+  a `REACT_APP_*` variable.
 - Public pages do not need a token. Only `/admin/*` API calls attach the Supabase access token.
 
 The complete HTTP contract, examples, and error codes are in [`api-contract.md`](./api-contract.md).
@@ -116,13 +116,14 @@ npm run dev:api
 In another shell:
 
 ```powershell
-npm run dev:web
+npm run dev:client
+npm run dev:admin
 ```
 
 The embedding defaults are `EMBEDDING_PROVIDER=ollama`,
 `OLLAMA_BASE_URL=http://127.0.0.1:11434`, `EMBEDDING_MODEL=qwen3-embedding:4b`, 1536 dimensions,
 version `ollama-qwen3-embedding-4b-1536-v1`, 180-second timeout, and batch size 8. These values are
-server-only and must not be exposed through `VITE_*` variables. A cold local model load can take
+server-only and must not be exposed through `REACT_APP_*` variables. A cold local model load can take
 significant time.
 
 Before handoff or deployment run:

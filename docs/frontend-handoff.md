@@ -17,7 +17,8 @@ Install once and create local environment files:
 ```bash
 npm install
 cp apps/api/.env.example apps/api/.env
-cp apps/web/.env.example apps/web/.env
+cp apps/client/.env.example apps/client/.env
+cp apps/admin/.env.example apps/admin/.env
 ollama list
 ollama pull qwen3-embedding:4b
 ```
@@ -27,33 +28,31 @@ is missing. Start `ollama serve` only when Ollama is not already running, then u
 
 ```bash
 npm run dev:api
-npm run dev:web
+npm run dev:client
+npm run dev:admin
 ```
 
-The defaults are API `http://localhost:3000/api/v1` and web `http://localhost:5173`.
+The defaults are API `http://localhost:3000/api/v1`, client `http://localhost:5173`, and admin
+`http://localhost:5174`.
 
 ## Frontend Environment Contract
 
 ```dotenv
-VITE_API_URL=http://localhost:3000/api/v1
-VITE_SUPABASE_URL=
-VITE_SUPABASE_PUBLISHABLE_KEY=
+REACT_APP_API_URL=http://localhost:3000/api/v1
 ```
 
-Public browse, detail, and search need only `VITE_API_URL`. The two Supabase public values are needed
-for the existing admin login/session flow. They are browser-safe public configuration; authorization
-still depends on the access token.
+Both CRA frontends use `REACT_APP_API_URL`. The admin API client attaches an existing Supabase session
+token from browser storage; the current admin application does not include a login screen.
 
 Never put `SUPABASE_SERVICE_ROLE_KEY`, `DATABASE_URL`, Ollama configuration, or any backend secret in a
-`VITE_` variable. The browser may contact Supabase Auth for sign-in, but all product access remains
-through NestJS.
+`REACT_APP_` variable. All product access remains through NestJS.
 
 ## CORS
 
-The API reads a comma-separated `CORS_ORIGIN` allowlist and defaults to
-`http://localhost:5173`. It allows credentials, headers `Authorization` and `Content-Type`, and methods
-`GET`, `POST`, and `OPTIONS`. It does not use wildcard origin. A live preflight from the default Vite
-origin was verified during Step 7.7 and returned `204` with the expected headers.
+The API reads a comma-separated `CORS_ORIGIN` allowlist. The example environment allows
+`http://localhost:5173,http://localhost:5174`; the code fallback is client-only `http://localhost:5173`.
+It allows credentials, headers `Authorization` and `Content-Type`, and methods
+`GET`, `POST`, and `OPTIONS`. It does not use wildcard origin.
 
 ## Frozen Endpoint Surface
 

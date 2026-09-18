@@ -65,7 +65,7 @@ All public-schema tables have RLS enabled and explicit Data API grants:
 
 - `anon` can read active product data only and can call the keyword-search RPC.
 - `authenticated` can read all imported product rows, including review rows.
-- Browser code uses only `VITE_SUPABASE_PUBLISHABLE_KEY`.
+- Browser code receives only public configuration through `REACT_APP_*` variables.
 - The NestJS API keeps `SUPABASE_SERVICE_ROLE_KEY` server-side and validates Bearer tokens for import routes.
 - `/admin/products` and `/admin/import` are protected React routes; `/login` uses email/password Auth.
 
