@@ -18,8 +18,10 @@ product access, and an idempotent product import pipeline. See
 
 ## Project Structure
 
-- `apps/web`: React frontend
-- `apps/api`: NestJS backend
+- `apps/api`: NestJS backend (port 3000)
+- `apps/client`: Customer-facing React frontend — CRA, port 5173
+- `apps/admin`: Admin React frontend — CRA, port 5174
+- `apps/web`: Legacy React scaffold (Vite, port 5173)
 - `packages/shared`: shared TypeScript types and constants
 - `supabase`: versioned database migrations and RLS policies
 - `scripts`: product processing, import, validation, and local database tooling
@@ -41,8 +43,16 @@ npm install
 ## Run locally
 
 Copy `apps/api/.env.example` to `apps/api/.env` and configure the Supabase URL, service-role key, and
-database connection string. Copy `apps/web/.env.example` to `apps/web/.env`; its default
-`VITE_API_URL` targets the local API. Never expose backend secrets through a `VITE_` variable.
+database connection string.
+
+For the CRA frontends:
+
+```bash
+cp apps/client/.env.example apps/client/.env
+cp apps/admin/.env.example apps/admin/.env
+```
+
+Both use `REACT_APP_*` environment variables (CRA runtime requirement). Never expose backend secrets through a `REACT_APP_` variable.
 
 Confirm the embedding model exists:
 
@@ -51,16 +61,21 @@ ollama list
 ollama pull qwen3-embedding:4b
 ```
 
-Run Ollama if it is not already active, then start the API and web app in separate terminals:
+Run Ollama if it is not already active, then start services in separate terminals:
 
 ```bash
-npm run dev:api
-npm run dev:web
+# Backend API
+npm run dev:api          # http://localhost:3000
+
+# Customer frontend
+npm run dev:client       # http://localhost:5173
+
+# Admin frontend
+npm run dev:admin        # http://localhost:5174
+
+# Legacy web scaffold (Vite)
+npm run dev:web          # http://localhost:5173
 ```
-
-Backend default: http://localhost:3000
-
-Frontend default: http://localhost:5173
 
 Health endpoint: http://localhost:3000/api/v1/health
 

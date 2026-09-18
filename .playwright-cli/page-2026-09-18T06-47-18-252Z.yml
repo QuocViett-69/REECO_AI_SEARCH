@@ -1,0 +1,7 @@
+- iframe [ref=e2]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e3]: "Uncaught runtime errors:"
+    - button "Dismiss" [ref=f1e4] [cursor=pointer]: ×
+    - generic [ref=f1e6]:
+      - generic [ref=f1e7]: ERROR
+      - generic [ref=f1e8]: "A React Element from an older version of React was rendered. This is not supported. It can happen if: - Multiple copies of the \"react\" package is used. - A library pre-bundled an old copy of \"react\" or \"react/jsx-runtime\". - A compiler tries to \"inline\" JSX instead of using the runtime. Error: A React Element from an older version of React was rendered. This is not supported. It can happen if: - Multiple copies of the \"react\" package is used. - A library pre-bundled an old copy of \"react\" or \"react/jsx-runtime\". - A compiler tries to \"inline\" JSX instead of using the runtime. at throwOnInvalidObjectTypeImpl (http://localhost:5173/static/js/bundle.js:8162:64) at throwOnInvalidObjectType (http://localhost:5173/static/js/bundle.js:8168:106) at reconcileChildFibersImpl (http://localhost:5173/static/js/bundle.js:8490:9) at http://localhost:5173/static/js/bundle.js:8502:31 at reconcileChildren (http://localhost:5173/static/js/bundle.js:10082:47) at updateForwardRef (http://localhost:5173/static/js/bundle.js:10099:5) at beginWork (http://localhost:5173/static/js/bundle.js:10967:16) at runWithFiberInDEV (http://localhost:5173/static/js/bundle.js:5241:68) at performUnitOfWork (http://localhost:5173/static/js/bundle.js:13803:93) at workLoopSync (http://localhost:5173/static/js/bundle.js:13698:38)"
