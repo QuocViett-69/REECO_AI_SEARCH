@@ -1,0 +1,241 @@
+{
+  "generated_at": "2026-09-17T10:28:54.0753282Z",
+  "provider": "ollama",
+  "model": "qwen3-embedding:4b",
+  "dimensions": 1536,
+  "embedding_version": "ollama-qwen3-embedding-4b-1536-v1",
+  "rpc_context": "service_role",
+  "canary": {
+    "query": "soil moisture sensor",
+    "current_embeddings": 1,
+    "result_count": 1,
+    "results": [
+      {
+        "rank": 1,
+        "product_id": "CSI_109",
+        "model": "109",
+        "similarity": 0.613665383646937
+      }
+    ],
+    "result": "PASS"
+  },
+  "post_backfill_validation": {
+    "searchable_rows": 42,
+    "current_embeddings": 42,
+    "missing_embeddings": 0,
+    "stale_model": 0,
+    "stale_dimensions": 0,
+    "stale_version": 0,
+    "partial_metadata_state": 0,
+    "review_products_indexed": 0,
+    "wrong_vector_dimensions": 0,
+    "wrong_dimension_metadata": 0
+  },
+  "all_results_active": true,
+  "similarity_range_valid": true,
+  "limit_valid": true,
+  "query_results": [
+    {
+      "query": "soil moisture sensor",
+      "result_count": 10,
+      "deterministic_ordering": true,
+      "results": [
+        {
+          "rank": 1,
+          "product_id": "CSI_SOILVUE10_5",
+          "model": "SoilVue10-5",
+          "similarity": 0.747868216066631
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "similarity": 0.716770965935156
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "similarity": 0.6909880194291
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "similarity": 0.675471864781369
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "similarity": 0.668734214256871
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CS616",
+          "model": "CS616",
+          "similarity": 0.66872747800576
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_HYGROVUE10",
+          "model": "HygroVue10",
+          "similarity": 0.655430312906634
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "similarity": 0.655136894536692
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "similarity": 0.64921573069753
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "similarity": 0.645664269524057
+        }
+      ]
+    },
+    {
+      "query": "cảm biến độ ẩm đất",
+      "result_count": 10,
+      "deterministic_ordering": true,
+      "results": [
+        {
+          "rank": 1,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "similarity": 0.700355446508223
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_SOILVUE10_5",
+          "model": "SoilVue10-5",
+          "similarity": 0.696625323776333
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "similarity": 0.656477547325319
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "similarity": 0.630097389221191
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CS616",
+          "model": "CS616",
+          "similarity": 0.624873101711273
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "similarity": 0.621971050786014
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_HYGROVUE10",
+          "model": "HygroVue10",
+          "similarity": 0.610435999061824
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "similarity": 0.610074707932753
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "similarity": 0.605764063789338
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_109",
+          "model": "109",
+          "similarity": 0.597182619907548
+        }
+      ]
+    },
+    {
+      "query": "900 MHz radio",
+      "result_count": 10,
+      "deterministic_ordering": true,
+      "results": [
+        {
+          "rank": 1,
+          "product_id": "CSI_RF407",
+          "model": "RF407",
+          "similarity": 0.587962999112079
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "similarity": 0.558901989296447
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "similarity": 0.554260402570583
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_TX325",
+          "model": "TX325",
+          "similarity": 0.544914132104692
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CS301",
+          "model": "CS301",
+          "similarity": 0.54458574903275
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_BAROVUE10",
+          "model": "BaroVue10",
+          "similarity": 0.54022000302315
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "similarity": 0.539848543378528
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "similarity": 0.537677348267749
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "similarity": 0.537462618920601
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_VWIRE305_XD",
+          "model": "VWIRE305-XD",
+          "similarity": 0.536978222740771
+        }
+      ]
+    }
+  ],
+  "result": "PASS"
+}

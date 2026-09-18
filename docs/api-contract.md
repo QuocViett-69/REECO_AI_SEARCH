@@ -1,5 +1,8 @@
 # REECO Basic Backend API Contract
 
+This endpoint behavior is frozen for the Step 7.7 backend MVP. Frontend setup, UI guidance, and
+schema-valid JSON fixtures are linked from [`frontend-handoff.md`](./frontend-handoff.md).
+
 Base URL for local development: `http://localhost:3000/api/v1`.
 
 Requests and responses use JSON. Public product and search endpoints expose only
@@ -34,6 +37,10 @@ or non-public product, `409` for an import already in progress, and `503` for mi
 configuration or an unavailable database/import process. Server errors never include Supabase keys,
 database credentials, or raw database error details.
 
+The current API does not emit `403`: a valid Supabase token is authenticated but no admin role or
+allowlist is enforced yet. This is a pre-production authorization TODO. Unexpected server failures use
+`500`.
+
 ## GET `/health`
 
 - Auth: none.
@@ -55,14 +62,14 @@ database credentials, or raw database error details.
 
 Query parameters:
 
-| Parameter | Type | Default | Notes |
-| --- | --- | --- | --- |
-| `page` | positive integer | `1` | Page number |
-| `limit` | integer 1–100 | `20` | Items per page |
-| `q` | string | omitted | Case-insensitive model/name substring |
-| `category` | string | omitted | Exact category filter |
-| `subcategory` | string | omitted | Exact subcategory filter |
-| `device_type` | string | omitted | Exact device-type filter |
+| Parameter     | Type             | Default | Notes                                 |
+| ------------- | ---------------- | ------- | ------------------------------------- |
+| `page`        | positive integer | `1`     | Page number                           |
+| `limit`       | integer 1–100    | `20`    | Items per page                        |
+| `q`           | string           | omitted | Case-insensitive model/name substring |
+| `category`    | string           | omitted | Exact category filter                 |
+| `subcategory` | string           | omitted | Exact subcategory filter              |
+| `device_type` | string           | omitted | Exact device-type filter              |
 
 Example: `GET /products?page=1&limit=20&q=CS655&category=Sensors`
 
@@ -199,7 +206,7 @@ Errors: `404` when the product does not exist or is not active; `503` when Supab
 - Auth: none.
 - Query parameters: none.
 - Success: `200 OK`.
-- Retrieval mode: PostgreSQL keyword FTS through `search_products_keyword`.
+- Retrieval: keyword FTS and semantic vector search fused with Reciprocal Rank Fusion (RRF).
 - Only active/searchable products are returned.
 
 Request:
@@ -218,7 +225,7 @@ Response:
 ```json
 {
   "query": "soil moisture",
-  "mode": "keyword",
+  "mode": "hybrid",
   "results": [
     {
       "product_id": "CSI_CS655",
@@ -231,8 +238,8 @@ Response:
       "matched_features": [],
       "scores": {
         "keyword": 0.1935484,
-        "semantic": null,
-        "hybrid": null,
+        "semantic": 0.8123,
+        "hybrid": 0.0325224749,
         "rerank": null
       }
     }
@@ -240,9 +247,38 @@ Response:
 }
 ```
 
-The nullable score slots are reserved so later AI search phases do not require a new top-level FE
-contract. `matched_features` is empty in keyword-only mode. Errors: `400` for an invalid body and
-`503` when Supabase/RPC is unavailable.
+Public `mode` is one of `hybrid`, `keyword`, or `semantic` and describes the retrieval path, not a
+quality judgment:
+
+- `hybrid`: both keyword and semantic retrieval executed successfully, including when either source
+  returned zero candidates.
+- `keyword`: semantic retrieval was unavailable and keyword fallback succeeded.
+- `semantic`: keyword retrieval was unavailable and semantic fallback succeeded.
+
+Internal fallback names are never exposed. In hybrid mode, `scores.keyword` is the raw keyword score
+or `0` when the candidate came only from semantic retrieval, `scores.semantic` is cosine similarity or
+`null`, and `scores.hybrid` is the RRF score. In keyword fallback, only `scores.keyword` is populated.
+In semantic fallback, `scores.keyword` is `0` and only `scores.semantic` is populated. These fields use
+different scales and must not be compared directly. `scores.hybrid` remains the original RRF retrieval
+score after technical ordering and therefore technical-query results are not guaranteed to be globally
+sorted by it. `scores.rerank` remains `null`.
+
+After retrieval, the server applies a deterministic structured technical policy. A retrieved exact
+active identity ranks first. Confirmed protocol matches rank before candidates without confirmed
+protocol evidence, but protocol unknowns are retained. For high-confidence Celsius operating or
+measurement constraints, `MATCH` ranks before `UNKNOWN`, definitive `MISMATCH` is filtered, and
+`UNKNOWN` is retained. No product is injected outside the retrieval union and no arbitrary numeric
+boost is added. `matched_features` uses the existing string-array field and contains positive evidence
+only, for example `identity:model:CS655`, `protocol:SDI-12`,
+`operating-temperature:-40°C`, or `measurement-temperature:up-to-70°C`.
+
+The request `limit` controls final results. The server retrieves at least
+`max(SEARCH_RETRIEVAL_LIMIT, request.limit)`, clamped to 1–100, performs technical evaluation and
+filtering before the final limit, batch-loads active product summaries, drops any candidate without an
+active public summary, and only then applies the final request limit. Definitive numeric mismatches are
+not backfilled merely to reach the limit. Errors: `400` for an invalid body and `503` only when both
+retrieval sources fail or required product data is unavailable. A successful single-source fallback
+returns `200`.
 
 ## GET `/admin/products`
 

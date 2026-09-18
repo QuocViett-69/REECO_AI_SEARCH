@@ -10,13 +10,13 @@ const migrationPath = path.join(
   projectRoot,
   'supabase',
   'migrations',
-  '20260915034753_data_foundation_v1.sql',
+  '20260915081333_data_foundation_v1.sql',
 );
 const hardeningMigrationPath = path.join(
   projectRoot,
   'supabase',
   'migrations',
-  '20260915082000_harden_rls_auto_enable.sql',
+  '20260915081951_harden_rls_auto_enable.sql',
 );
 const rlsAutoEnableMigrationPath = path.join(
   projectRoot,

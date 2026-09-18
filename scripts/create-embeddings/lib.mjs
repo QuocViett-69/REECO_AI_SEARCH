@@ -18,6 +18,25 @@ const positiveInteger = (value, name) => {
   return parsed;
 };
 
+export function parseBackfillLimit(args) {
+  const positions = args
+    .map((argument, index) => (argument === '--limit' ? index : -1))
+    .filter((index) => index >= 0);
+  if (positions.length === 0) return undefined;
+  if (positions.length > 1) {
+    throw Object.assign(new Error('--limit may only be provided once'), {
+      code: 'EMBEDDING_CONFIG_INVALID',
+    });
+  }
+  const value = args[positions[0] + 1];
+  if (value === undefined || value.startsWith('--')) {
+    throw Object.assign(new Error('--limit requires a positive integer'), {
+      code: 'EMBEDDING_CONFIG_INVALID',
+    });
+  }
+  return positiveInteger(value, '--limit');
+}
+
 export function embeddingConfig(environment = process.env) {
   const config = {
     provider: environment.EMBEDDING_PROVIDER ?? EMBEDDING_DEFAULTS.provider,
@@ -110,7 +129,12 @@ export const sanitizedReason = (error) =>
     ? error.code
     : 'UNKNOWN_EMBEDDING_ERROR';
 
-export async function runEmbeddingBackfill({ repository, provider, config }) {
+export async function runEmbeddingBackfill({
+  repository,
+  provider,
+  config,
+  limit,
+}) {
   const rows = await repository.findSearchableRows();
   const candidates = [];
   let skippedCurrent = 0;
@@ -118,6 +142,8 @@ export async function runEmbeddingBackfill({ repository, provider, config }) {
     if (classifyEmbedding(row, config).current) skippedCurrent += 1;
     else candidates.push(row);
   }
+  const selectedCandidates =
+    limit === undefined ? candidates : candidates.slice(0, limit);
 
   const result = {
     searchable_rows: rows.length,
@@ -128,14 +154,23 @@ export async function runEmbeddingBackfill({ repository, provider, config }) {
     skipped_current: skippedCurrent,
     concurrent_source_changed: 0,
     remaining_missing_or_stale: candidates.length,
+    provider_calls: 0,
+    database_update_calls: 0,
+    database_updates: 0,
+    embedded_products: [],
     failures: [],
   };
 
-  for (let offset = 0; offset < candidates.length; offset += config.batchSize) {
-    const batch = candidates.slice(offset, offset + config.batchSize);
+  for (
+    let offset = 0;
+    offset < selectedCandidates.length;
+    offset += config.batchSize
+  ) {
+    const batch = selectedCandidates.slice(offset, offset + config.batchSize);
     result.attempted += batch.length;
     let vectors;
     try {
+      result.provider_calls += 1;
       vectors = await provider.embedMany(batch.map((row) => row.search_text));
     } catch (error) {
       const reason = sanitizedReason(error);
@@ -148,6 +183,7 @@ export async function runEmbeddingBackfill({ repository, provider, config }) {
 
     for (let index = 0; index < batch.length; index += 1) {
       const row = batch[index];
+      result.database_update_calls += 1;
       const updated = await repository.updateEmbeddingIfSourceCurrent({
         productId: row.product_id,
         sourceContentHash: row.source_content_hash,
@@ -157,8 +193,14 @@ export async function runEmbeddingBackfill({ repository, provider, config }) {
         dimensions: config.dimensions,
         version: config.version,
       });
-      if (updated) result.embedded += 1;
-      else result.concurrent_source_changed += 1;
+      if (updated) {
+        result.embedded += 1;
+        result.database_updates += 1;
+        result.embedded_products.push({
+          product_id: row.product_id,
+          model: row.model,
+        });
+      } else result.concurrent_source_changed += 1;
     }
   }
 
@@ -176,6 +218,10 @@ export function emptyBackfillStats() {
     skipped_current: 0,
     concurrent_source_changed: 0,
     remaining_missing_or_stale: 0,
+    provider_calls: 0,
+    database_update_calls: 0,
+    database_updates: 0,
+    embedded_products: [],
     failures: [],
   };
 }

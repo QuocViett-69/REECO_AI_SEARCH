@@ -1,0 +1,259 @@
+import { Injectable } from '@nestjs/common';
+import type { ProductSpecification } from '@reeco/shared';
+import { ProductsService } from '../products/products.service';
+import {
+  CELSIUS_UNIT,
+  MEASUREMENT_TEMPERATURE_KEYS,
+  OPERATING_TEMPERATURE_KEYS,
+} from './technical-query.constants';
+import type {
+  ParsedTechnicalProtocol,
+  ParsedTechnicalQuery,
+  TemperatureConstraint,
+} from './technical-query-parser.service';
+
+export type TechnicalEvaluation = 'MATCH' | 'MISMATCH' | 'UNKNOWN';
+
+export interface IdentityMatchEvidence {
+  source: 'products';
+  field: 'product_id' | 'model';
+  value: string;
+}
+
+export interface ProtocolMatchEvidence {
+  source: 'product_document';
+  canonicalProtocol: string;
+  relation: 'supported' | 'unsupported';
+}
+
+export interface ProtocolMatchEvaluation {
+  queryProtocol: ParsedTechnicalProtocol;
+  result: TechnicalEvaluation;
+  evidence: ProtocolMatchEvidence[];
+}
+
+export interface TemperatureMatchEvidence {
+  source: 'normalized_spec';
+  canonicalKey: string;
+  candidateRange: {
+    minCelsius: number;
+    maxCelsius: number;
+    unit: typeof CELSIUS_UNIT;
+  } | null;
+  result: TechnicalEvaluation;
+  rawRef: ProductSpecification['raw_ref'];
+}
+
+export interface TemperatureMatchEvaluation {
+  constraint: TemperatureConstraint;
+  result: TechnicalEvaluation;
+  evidence: TemperatureMatchEvidence[];
+}
+
+export interface TechnicalMatchResult {
+  productId: string;
+  identityMatch: 'exact' | 'none';
+  identityEvidence: IdentityMatchEvidence[];
+  protocolMatches: ProtocolMatchEvaluation[];
+  temperatureMatches: TemperatureMatchEvaluation[];
+  hardMismatch: boolean;
+}
+
+const operatingTemperatureKeys = new Set<string>(OPERATING_TEMPERATURE_KEYS);
+const measurementTemperatureKeys = new Set<string>(
+  MEASUREMENT_TEMPERATURE_KEYS,
+);
+
+@Injectable()
+export class TechnicalMatchService {
+  constructor(private readonly productsService: ProductsService) {}
+
+  async evaluate(
+    parsedQuery: ParsedTechnicalQuery,
+    candidateProductIds: string[],
+  ): Promise<TechnicalMatchResult[]> {
+    const evidenceById =
+      await this.productsService.getTechnicalEvidenceByIds(candidateProductIds);
+
+    return candidateProductIds.map((productId) => {
+      const evidence = evidenceById.get(productId);
+      const identity =
+        evidence && parsedQuery.identity?.productId === productId
+          ? this.identityEvidence(parsedQuery, evidence.product)
+          : [];
+      const protocolMatches = parsedQuery.protocols.map((protocol) =>
+        this.evaluateProtocol(protocol, evidence?.document ?? null),
+      );
+      const temperatureMatches = parsedQuery.temperatureConstraints.map(
+        (constraint) =>
+          this.evaluateTemperature(constraint, evidence?.specifications ?? []),
+      );
+
+      return {
+        productId,
+        identityMatch: identity.length > 0 ? 'exact' : 'none',
+        identityEvidence: identity,
+        protocolMatches,
+        temperatureMatches,
+        hardMismatch: temperatureMatches.some(
+          (match) => match.result === 'MISMATCH',
+        ),
+      };
+    });
+  }
+
+  private identityEvidence(
+    parsedQuery: ParsedTechnicalQuery,
+    product: { product_id: string; model: string },
+  ): IdentityMatchEvidence[] {
+    const identity = parsedQuery.identity;
+    if (!identity || identity.productId !== product.product_id) return [];
+    return [
+      {
+        source: 'products',
+        field: identity.matchedField,
+        value:
+          identity.matchedField === 'product_id'
+            ? product.product_id
+            : product.model,
+      },
+    ];
+  }
+
+  private evaluateProtocol(
+    queryProtocol: ParsedTechnicalProtocol,
+    document: {
+      supported_protocols: string[];
+      unsupported_protocols: string[];
+    } | null,
+  ): ProtocolMatchEvaluation {
+    if (!document) {
+      return { queryProtocol, result: 'UNKNOWN', evidence: [] };
+    }
+
+    const supported = document.supported_protocols.find((protocol) =>
+      this.protocolSatisfies(queryProtocol, protocol),
+    );
+    if (supported) {
+      return {
+        queryProtocol,
+        result: 'MATCH',
+        evidence: [
+          {
+            source: 'product_document',
+            canonicalProtocol: supported,
+            relation: 'supported',
+          },
+        ],
+      };
+    }
+
+    const unsupported = document.unsupported_protocols.find((protocol) =>
+      this.protocolSatisfies(queryProtocol, protocol),
+    );
+    if (unsupported) {
+      return {
+        queryProtocol,
+        result: 'MISMATCH',
+        evidence: [
+          {
+            source: 'product_document',
+            canonicalProtocol: unsupported,
+            relation: 'unsupported',
+          },
+        ],
+      };
+    }
+
+    return { queryProtocol, result: 'UNKNOWN', evidence: [] };
+  }
+
+  private protocolSatisfies(
+    queryProtocol: ParsedTechnicalProtocol,
+    evidenceProtocol: string,
+  ): boolean {
+    if (queryProtocol === 'Modbus') {
+      return (
+        evidenceProtocol === 'Modbus' || evidenceProtocol.startsWith('Modbus ')
+      );
+    }
+    return evidenceProtocol === queryProtocol;
+  }
+
+  private evaluateTemperature(
+    constraint: TemperatureConstraint,
+    specifications: ProductSpecification[],
+  ): TemperatureMatchEvaluation {
+    if (constraint.confidence !== 'high' || constraint.intent === 'ambiguous') {
+      return { constraint, result: 'UNKNOWN', evidence: [] };
+    }
+
+    const approvedKeys =
+      constraint.intent === 'operating'
+        ? operatingTemperatureKeys
+        : measurementTemperatureKeys;
+    const relevant = specifications.filter((specification) =>
+      approvedKeys.has(specification.canonical_key),
+    );
+    if (relevant.length === 0) {
+      return { constraint, result: 'UNKNOWN', evidence: [] };
+    }
+
+    const evidence = relevant.map((specification) =>
+      this.evaluateTemperatureSpecification(constraint, specification),
+    );
+    const result = evidence.some((item) => item.result === 'MATCH')
+      ? 'MATCH'
+      : evidence.every((item) => item.result === 'MISMATCH')
+        ? 'MISMATCH'
+        : 'UNKNOWN';
+    return { constraint, result, evidence };
+  }
+
+  private evaluateTemperatureSpecification(
+    constraint: TemperatureConstraint,
+    specification: ProductSpecification,
+  ): TemperatureMatchEvidence {
+    const normalized = specification.normalized_value;
+    if (
+      normalized.type !== 'range' ||
+      normalized.min_value === undefined ||
+      normalized.max_value === undefined ||
+      normalized.unit !== CELSIUS_UNIT
+    ) {
+      return {
+        source: 'normalized_spec',
+        canonicalKey: specification.canonical_key,
+        candidateRange: null,
+        result: 'UNKNOWN',
+        rawRef: specification.raw_ref,
+      };
+    }
+
+    const candidateRange = {
+      minCelsius: normalized.min_value,
+      maxCelsius: normalized.max_value,
+      unit: CELSIUS_UNIT,
+    } as const;
+    let matches: boolean;
+    if (constraint.kind === 'range') {
+      matches =
+        normalized.min_value <= constraint.minCelsius &&
+        normalized.max_value >= constraint.maxCelsius;
+    } else if (constraint.kind === 'upper_bound') {
+      matches = normalized.max_value >= constraint.valueCelsius;
+    } else {
+      matches =
+        normalized.min_value <= constraint.valueCelsius &&
+        normalized.max_value >= constraint.valueCelsius;
+    }
+
+    return {
+      source: 'normalized_spec',
+      canonicalKey: specification.canonical_key,
+      candidateRange,
+      result: matches ? 'MATCH' : 'MISMATCH',
+      rawRef: specification.raw_ref,
+    };
+  }
+}

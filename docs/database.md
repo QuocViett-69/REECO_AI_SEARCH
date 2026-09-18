@@ -15,6 +15,17 @@ The committed migration creates the first PostgreSQL search foundation for REECO
 The migrations enable the `vector` extension and constrain `product_search_index.embedding` to
 `extensions.vector(1536)`. They do not create or backfill embeddings.
 
+## Migration history reconciliation
+
+The hosted project originally recorded `20260915081333_data_foundation_v1.sql` and
+`20260915081951_harden_rls_auto_enable.sql`. Earlier repository copies temporarily used versions
+`20260915034753` and `20260915082000` for those same logical migrations. A forensic audit confirmed the
+timestamp mismatch, and the repository migration identities now match the authoritative hosted history.
+
+The local `20260915081951` hardening SQL is a replay-safe revision of the historical direct-revoke SQL:
+it checks that `public.rls_auto_enable()` exists before revoking access. This revised file was not rerun
+on hosted. Final hosted convergence is owned by the later `20260916074530` migration.
+
 ## Semantic search database foundation
 
 The local Step 7 embedding contract uses Ollama at `http://127.0.0.1:11434` by default, model
@@ -37,8 +48,13 @@ or complete product objects. The backfill selects active products with non-empty
 whose model/dimension/version are already current, batches requests, and guards updates with the source
 content hash and index version read before embedding.
 
-The semantic migration exists in this repository but has not been deployed to hosted Supabase. No hosted
-embeddings have been generated. Semantic NestJS retrieval and hybrid search are not implemented.
+Hosted migrations `20260916074530_ensure_rls_auto_enable_reproducible.sql` and
+`20260916080205_step7_semantic_search_foundation.sql` are deployed. The hosted embedding column is
+`extensions.vector(1536)`, and all 42 searchable active products have current Ollama embeddings using
+`qwen3-embedding:4b` and version `ollama-qwen3-embedding-4b-1536-v1`. The service-role-only semantic RPC
+has been runtime-verified on English and Vietnamese queries. NestJS semantic retrieval, internal RRF
+fusion, and public hybrid search are implemented. The public endpoint falls back to keyword or semantic
+mode when exactly one retrieval source fails; both sources failing returns a sanitized HTTP 503.
 
 Local model loading can take significant time, especially on the first request. The Ollama client has a
 configurable 180-second default timeout and does not contact Ollama during backend startup.
@@ -66,7 +82,8 @@ privileges are revoked from `PUBLIC`, `anon`, `authenticated`, and `service_role
 This trigger is defense in depth, not a replacement for migration review. Migration authors must still
 explicitly enable RLS and define the intended grants and policies for every exposed table. The PGlite
 harness statically checks the event-trigger migration contract but does not runtime-test event-trigger
-behavior. A full runtime check requires Docker and a local Supabase stack.
+behavior. A hosted transaction test confirmed that the trigger enables RLS on a newly created `public`
+table; the transaction was rolled back and the probe table does not exist.
 
 ## Apply and import
 
@@ -112,8 +129,10 @@ npm run embeddings:backfill
 npm run embeddings:smoke
 ```
 
-`embeddings:validate` uses fixtures and does not contact a database or Ollama. A future database backfill
-must be opted into explicitly with `node scripts/create-embeddings/backfill.mjs --execute` and a
-server-side `DATABASE_URL`; do not run that command until the migration and operational target have been
-reviewed. Execute mode records only counters and sanitized product-level failure codes, never vectors,
-full search text, or credentials.
+`embeddings:validate` uses fixtures and does not contact a database or Ollama. Hosted execution is
+explicit: load the server-only application environment and run
+`node --env-file=apps/api/.env scripts/create-embeddings/backfill.mjs --execute`. The optional
+`--limit <positive integer>` uses the same active-only, idempotent, concurrency-guarded path for a bounded
+canary. Execute mode records counters, processed product IDs/models, and sanitized failure codes, never
+vectors, full search text, or credentials. The Step 7.3B hosted run completed a one-product canary, the
+remaining 41-product backfill, and an idempotency run with zero provider calls and zero database updates.

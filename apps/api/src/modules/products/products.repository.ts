@@ -22,9 +22,18 @@ export interface ProductRow {
   status: ProductStatus;
 }
 
+export interface ProductIdentityRow {
+  product_id: string;
+  model: string;
+}
+
 export interface ProductDocumentRow {
   product_id: string;
   search_document: ProductSearchDocument;
+}
+
+export interface ProductSpecificationRow extends ProductSpecification {
+  product_id: string;
 }
 
 export interface ProductRepositoryFilters {
@@ -82,15 +91,24 @@ export class ProductsRepository {
     return (data ?? []) as ProductRow[];
   }
 
+  async listActiveIdentityCatalog(): Promise<ProductIdentityRow[]> {
+    const { data, error } = await this.supabase
+      .getClient()
+      .from('products')
+      .select('product_id,model')
+      .eq('status', 'active')
+      .order('product_id', { ascending: true });
+    if (error) {
+      this.throwQueryError('load active product identity catalog', error);
+    }
+    return (data ?? []) as ProductIdentityRow[];
+  }
+
   async findByIdOrModel(
     productIdOrModel: string,
     activeOnly: boolean,
   ): Promise<ProductRow | null> {
-    const byId = await this.findOne(
-      'product_id',
-      productIdOrModel,
-      activeOnly,
-    );
+    const byId = await this.findOne('product_id', productIdOrModel, activeOnly);
     if (byId) return byId;
     return this.findOne('model', productIdOrModel, activeOnly);
   }
@@ -117,6 +135,23 @@ export class ProductsRepository {
       .order('specification_id', { ascending: true });
     if (error) this.throwQueryError('load product specifications', error);
     return (data ?? []) as ProductSpecification[];
+  }
+
+  async listSpecificationsByProductIds(
+    productIds: string[],
+  ): Promise<ProductSpecificationRow[]> {
+    if (productIds.length === 0) return [];
+    const { data, error } = await this.supabase
+      .getClient()
+      .from('product_specifications')
+      .select(
+        'specification_id,product_id,canonical_key,quantity_kind,normalized_value,raw_ref',
+      )
+      .in('product_id', productIds)
+      .order('product_id', { ascending: true })
+      .order('specification_id', { ascending: true });
+    if (error) this.throwQueryError('load product specifications by id', error);
+    return (data ?? []) as ProductSpecificationRow[];
   }
 
   async listMedia(

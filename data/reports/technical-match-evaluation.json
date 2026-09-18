@@ -1,0 +1,5324 @@
+{
+  "generated_at": "2026-09-18T01:56:16.007Z",
+  "purpose": "Step 7.6A internal technical evaluation; no public ranking effect",
+  "parser_version": "technical-query-v1",
+  "supported_protocols": ["SDI-12", "RS-485", "Modbus", "Modbus RTU"],
+  "operating_temperature_keys": [
+    "operating_temperature_range",
+    "operating_temperature_extended_duty_xd"
+  ],
+  "measurement_temperature_keys": [
+    "air_temperature_measurement_range",
+    "air_temperature_range",
+    "soil_temperature_range",
+    "temperature_measurement_range",
+    "temperature_measurement_operating_range"
+  ],
+  "normalized_temperature_value_types": ["range"],
+  "queries": [
+    {
+      "query": "CS655",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "CS655",
+        "identity": {
+          "productId": "CSI_CS655",
+          "model": "CS655",
+          "matchedField": "model"
+        },
+        "protocols": [],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "high",
+          "protocol": "none",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "keyword_rank": 1,
+          "semantic_rank": null,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CS511",
+          "model": "CS511",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_VWIRE305_XD",
+          "model": "VWIRE305-XD",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CS655",
+          "identityMatch": "exact",
+          "identityEvidence": [
+            {
+              "source": "products",
+              "field": "model",
+              "value": "CS655"
+            }
+          ],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR350_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS511",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_VWIRE305_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_METSENS500_DS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "CSI_CS655",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "CSI_CS655",
+        "identity": {
+          "productId": "CSI_CS655",
+          "model": "CS655",
+          "matchedField": "product_id"
+        },
+        "protocols": [],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "high",
+          "protocol": "none",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "keyword_rank": 1,
+          "semantic_rank": null,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CS511",
+          "model": "CS511",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CS301",
+          "model": "CS301",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CS655",
+          "identityMatch": "exact",
+          "identityEvidence": [
+            {
+              "source": "products",
+              "field": "product_id",
+              "value": "CSI_CS655"
+            }
+          ],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS511",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR350_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS301",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "AVW200-ST",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "AVW200-ST",
+        "identity": {
+          "productId": "CSI_AVW200_ST",
+          "model": "AVW200-ST",
+          "matchedField": "model"
+        },
+        "protocols": [],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "high",
+          "protocol": "none",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_AVW200_ST",
+          "model": "AVW200-ST",
+          "keyword_rank": 1,
+          "semantic_rank": 1,
+          "rrf_score": 0.03278688524590164
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_VWIRE305_XD",
+          "model": "VWIRE305-XD",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_AVW200_ST",
+          "identityMatch": "exact",
+          "identityEvidence": [
+            {
+              "source": "products",
+              "field": "model",
+              "value": "AVW200-ST"
+            }
+          ],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_VWIRE305_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE50G2",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_METSENS500_DS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "CR350-NA",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "CR350-NA",
+        "identity": {
+          "productId": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "matchedField": "model"
+        },
+        "protocols": [],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "high",
+          "protocol": "none",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "keyword_rank": 1,
+          "semantic_rank": 1,
+          "rrf_score": 0.03278688524590164
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_VWIRE305_XD",
+          "model": "VWIRE305-XD",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_BAROVUE10",
+          "model": "BaroVue10",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CSAT3B_NC",
+          "model": "CSAT3B-NC",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CR350_NA",
+          "identityMatch": "exact",
+          "identityEvidence": [
+            {
+              "source": "products",
+              "field": "model",
+              "value": "CR350-NA"
+            }
+          ],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_VWIRE305_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_BAROVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CSAT3B_NC",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE50G2",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "SDI-12",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "SDI-12",
+        "identity": null,
+        "protocols": ["SDI-12"],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "none",
+          "protocol": "high",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_rank": 1,
+          "semantic_rank": 1,
+          "rrf_score": 0.03278688524590164
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "keyword_rank": 7,
+          "semantic_rank": 3,
+          "rrf_score": 0.030798389007344232
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": 5,
+          "semantic_rank": 5,
+          "rrf_score": 0.03076923076923077
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_BAROVUE10",
+          "model": "BaroVue10",
+          "keyword_rank": 3,
+          "semantic_rank": 13,
+          "rrf_score": 0.029571646010002173
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": 16,
+          "semantic_rank": 2,
+          "rrf_score": 0.02928692699490662
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CR310_WIFI",
+          "model": "CR310-WIFI",
+          "keyword_rank": 6,
+          "semantic_rank": 12,
+          "rrf_score": 0.02904040404040404
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_RAINVUE10_MM",
+          "model": "RainVue10-MM",
+          "keyword_rank": 12,
+          "semantic_rank": 6,
+          "rrf_score": 0.02904040404040404
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_CLARIVUE10",
+          "model": "ClariVue10",
+          "keyword_rank": 4,
+          "semantic_rank": 15,
+          "rrf_score": 0.028958333333333336
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_AVW200_ST",
+          "model": "AVW200-ST",
+          "keyword_rank": 2,
+          "semantic_rank": 19,
+          "rrf_score": 0.02878726010616578
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_HYGROVUE10",
+          "model": "HygroVue10",
+          "keyword_rank": 10,
+          "semantic_rank": 11,
+          "rrf_score": 0.028370221327967807
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CLIMAVUE50G2",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR350_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_BAROVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_WIFI",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_RAINVUE10_MM",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLARIVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_AVW200_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_HYGROVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "Modbus",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "Modbus",
+        "identity": null,
+        "protocols": ["Modbus"],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "none",
+          "protocol": "high",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": 1,
+          "semantic_rank": 4,
+          "rrf_score": 0.032018442622950824
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": 4,
+          "semantic_rank": 1,
+          "rrf_score": 0.032018442622950824
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "keyword_rank": 3,
+          "semantic_rank": 2,
+          "rrf_score": 0.03200204813108039
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_NL241",
+          "model": "NL241",
+          "keyword_rank": 5,
+          "semantic_rank": 3,
+          "rrf_score": 0.03125763125763126
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CR310_WIFI",
+          "model": "CR310-WIFI",
+          "keyword_rank": 2,
+          "semantic_rank": 9,
+          "rrf_score": 0.030621785881252923
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_NL201_ST",
+          "model": "NL201-ST",
+          "keyword_rank": 6,
+          "semantic_rank": 6,
+          "rrf_score": 0.030303030303030304
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_RV50X",
+          "model": "RV50X",
+          "keyword_rank": 7,
+          "semantic_rank": 11,
+          "rrf_score": 0.02900988017658188
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_VWIRE305_XD",
+          "model": "VWIRE305-XD",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus ASCII",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR350_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus ASCII",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_NL241",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_WIFI",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus ASCII",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_NL201_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus TCP",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_RV50X",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_VWIRE305_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "Modbus RTU",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "Modbus RTU",
+        "identity": null,
+        "protocols": ["Modbus RTU"],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "none",
+          "protocol": "high",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": 1,
+          "semantic_rank": 4,
+          "rrf_score": 0.032018442622950824
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": 4,
+          "semantic_rank": 1,
+          "rrf_score": 0.032018442622950824
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "keyword_rank": 3,
+          "semantic_rank": 2,
+          "rrf_score": 0.03200204813108039
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CR310_WIFI",
+          "model": "CR310-WIFI",
+          "keyword_rank": 2,
+          "semantic_rank": 10,
+          "rrf_score": 0.0304147465437788
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_NL241",
+          "model": "NL241",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_RV50X",
+          "model": "RV50X",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_VWIRE305_XD",
+          "model": "VWIRE305-XD",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_NL201_ST",
+          "model": "NL201-ST",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus RTU",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR350_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus RTU",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_WIFI",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "Modbus RTU",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_NL241",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_RV50X",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_VWIRE305_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_NL201_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "Modbus RTU",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "RS-485",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "RS-485",
+        "identity": null,
+        "protocols": ["RS-485"],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "none",
+          "protocol": "high",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": 1,
+          "semantic_rank": 1,
+          "rrf_score": 0.03278688524590164
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "keyword_rank": 2,
+          "semantic_rank": 2,
+          "rrf_score": 0.03225806451612903
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": 3,
+          "semantic_rank": 3,
+          "rrf_score": 0.031746031746031744
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": 4,
+          "semantic_rank": 9,
+          "rrf_score": 0.030117753623188408
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_VWIRE305_XD",
+          "model": "VWIRE305-XD",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CSAT3B_NC",
+          "model": "CSAT3B-NC",
+          "keyword_rank": 5,
+          "semantic_rank": null,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_SUNSCOUT",
+          "model": "SunScout",
+          "keyword_rank": 6,
+          "semantic_rank": null,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_NL241",
+          "model": "NL241",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "RS-485",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR350_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "RS-485",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "RS-485",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "RS-485",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_VWIRE305_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CSAT3B_NC",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "RS-485",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SUNSCOUT",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "RS-485",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_NL241",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "RS-485",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "sensor with SDI-12",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "sensor with SDI-12",
+        "identity": null,
+        "protocols": ["SDI-12"],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "none",
+          "protocol": "high",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_RAINVUE10_MM",
+          "model": "RainVue10-MM",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_HYGROVUE10",
+          "model": "HygroVue10",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_SOILVUE10_5",
+          "model": "SoilVue10-5",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CLIMAVUE50G2",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_RAINVUE10_MM",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_HYGROVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_METSENS500_DS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SOILVUE10_5",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "cảm biến hỗ trợ SDI-12",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "cảm biến hỗ trợ SDI-12",
+        "identity": null,
+        "protocols": ["SDI-12"],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "none",
+          "protocol": "high",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_RAINVUE10_MM",
+          "model": "RainVue10-MM",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_HYGROVUE10",
+          "model": "HygroVue10",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_BAROVUE10",
+          "model": "BaroVue10",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_TEMPVUE50",
+          "model": "TempVue50",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_SOILVUE10_5",
+          "model": "SoilVue10-5",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE50G2",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_RAINVUE10_MM",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_HYGROVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_METSENS500_DS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_BAROVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE50",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SOILVUE10_5",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [
+            {
+              "queryProtocol": "SDI-12",
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "canonicalProtocol": "SDI-12",
+                  "relation": "supported"
+                }
+              ]
+            }
+          ],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "operates at -40°C",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "operates at -40°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "point",
+            "intent": "operating",
+            "valueCelsius": -40,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_EE181",
+          "model": "EE181",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_109",
+          "model": "109",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_CELL205_AT",
+          "model": "CELL205-AT",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -45,
+                    "maxCelsius": 50,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/SnowVue10.json",
+                    "spec_index": 13,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -55,
+                    "maxCelsius": 85,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/TEMP120-XD.json",
+                    "spec_index": 7,
+                    "source_rows": [11],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -25,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS120A_CS125_Master.json",
+                    "spec_index": 5,
+                    "source_rows": [12],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -25,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS120A_CS125_Master.json",
+                    "spec_index": 5,
+                    "source_rows": [12],
+                    "product_index": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_EE181",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/EE181.json",
+                    "spec_index": 9,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_109",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/109.json",
+                    "spec_index": 1,
+                    "source_rows": [3],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "spec_index": 3,
+                    "source_rows": [9],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CELL205_AT",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 80,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/Cell205.json",
+                    "spec_index": 8,
+                    "source_rows": [10],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "hoạt động ở -40°C",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "hoạt động ở -40°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "point",
+            "intent": "operating",
+            "valueCelsius": -40,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CELL205_AT",
+          "model": "CELL205-AT",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_109",
+          "model": "109",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_EE181",
+          "model": "EE181",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -45,
+                    "maxCelsius": 50,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/SnowVue10.json",
+                    "spec_index": 13,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CELL205_AT",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 80,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/Cell205.json",
+                    "spec_index": 8,
+                    "source_rows": [10],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_109",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/109.json",
+                    "spec_index": 1,
+                    "source_rows": [3],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -55,
+                    "maxCelsius": 85,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/TEMP120-XD.json",
+                    "spec_index": 7,
+                    "source_rows": [11],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -25,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS120A_CS125_Master.json",
+                    "spec_index": 5,
+                    "source_rows": [12],
+                    "product_index": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_EE181",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/EE181.json",
+                    "spec_index": 9,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -25,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS120A_CS125_Master.json",
+                    "spec_index": 5,
+                    "source_rows": [12],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/LWS.json",
+                    "spec_index": 11,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "operates at 60 C",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "operates at 60 C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "point",
+            "intent": "operating",
+            "valueCelsius": 60,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_EE181",
+          "model": "EE181",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_VWIRE305_XD",
+          "model": "VWIRE305-XD",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CS301",
+          "model": "CS301",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_CS511",
+          "model": "CS511",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -55,
+                    "maxCelsius": 85,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/TEMP120-XD.json",
+                    "spec_index": 7,
+                    "source_rows": [11],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_EE181",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/EE181.json",
+                    "spec_index": 9,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -25,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS120A_CS125_Master.json",
+                    "spec_index": 5,
+                    "source_rows": [12],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -25,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS120A_CS125_Master.json",
+                    "spec_index": 5,
+                    "source_rows": [12],
+                    "product_index": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/LWS.json",
+                    "spec_index": 11,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_VWIRE305_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_extended_duty_xd",
+                  "candidateRange": {
+                    "minCelsius": -55,
+                    "maxCelsius": 85,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/VWIRE305_XD.json",
+                    "spec_index": 29,
+                    "source_rows": [33],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS301",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS301.json",
+                    "spec_index": 13,
+                    "source_rows": [18],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS511",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": 0,
+                    "maxCelsius": 50,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS511_Specifications_SplitCells.json",
+                    "spec_index": 0,
+                    "source_rows": [3],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        }
+      ]
+    },
+    {
+      "query": "operating temperature -50 to 60°C",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "operating temperature -50 to 60°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "range",
+            "intent": "operating",
+            "minCelsius": -50,
+            "maxCelsius": 60,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": 1,
+          "semantic_rank": 5,
+          "rrf_score": 0.03177805800756621
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": 2,
+          "semantic_rank": 6,
+          "rrf_score": 0.03128054740957967
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_EE181",
+          "model": "EE181",
+          "keyword_rank": 6,
+          "semantic_rank": 3,
+          "rrf_score": 0.031024531024531024
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_SOILVUE10_5",
+          "model": "SoilVue10-5",
+          "keyword_rank": 3,
+          "semantic_rank": 11,
+          "rrf_score": 0.029957522915269395
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": 5,
+          "semantic_rank": 13,
+          "rrf_score": 0.029083245521601686
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_rank": 4,
+          "semantic_rank": 17,
+          "rrf_score": 0.028612012987012988
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": 7,
+          "semantic_rank": 15,
+          "rrf_score": 0.028258706467661692
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_109",
+          "model": "109",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -25,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS120A_CS125_Master.json",
+                    "spec_index": 5,
+                    "source_rows": [12],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -25,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS120A_CS125_Master.json",
+                    "spec_index": 5,
+                    "source_rows": [12],
+                    "product_index": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_EE181",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/EE181.json",
+                    "spec_index": 9,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_SOILVUE10_5",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/SoilVue10.json",
+                    "spec_index": 8,
+                    "source_rows": [10],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "spec_index": 3,
+                    "source_rows": [9],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE50G2",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/LWS.json",
+                    "spec_index": 11,
+                    "source_rows": [15],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_109",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/109.json",
+                    "spec_index": 1,
+                    "source_rows": [3],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -55,
+                    "maxCelsius": 85,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/TEMP120-XD.json",
+                    "spec_index": 7,
+                    "source_rows": [11],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "range",
+                "intent": "operating",
+                "minCelsius": -50,
+                "maxCelsius": 60,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "measure up to 70°C",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "measure up to 70°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "upper_bound",
+            "intent": "measurement",
+            "valueCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_109",
+          "model": "109",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_CS301",
+          "model": "CS301",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_CS120A_ST",
+          "model": "CS120A-ST",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_109",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "temperature_measurement_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/109.json",
+                    "spec_index": 4,
+                    "source_rows": [6],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "air_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "spec_index": 18,
+                    "source_rows": [42],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS301",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS120A_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "đo tới 70°C",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "đo tới 70°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "upper_bound",
+            "intent": "measurement",
+            "valueCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_109",
+          "model": "109",
+          "keyword_rank": null,
+          "semantic_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": null,
+          "semantic_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_TEMPVUE50",
+          "model": "TempVue50",
+          "keyword_rank": null,
+          "semantic_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_CS511",
+          "model": "CS511",
+          "keyword_rank": null,
+          "semantic_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_TEMP120_XD",
+          "model": "TEMP120-XD",
+          "keyword_rank": null,
+          "semantic_rank": 5,
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "keyword_rank": null,
+          "semantic_rank": 6,
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_CLARIVUE10",
+          "model": "ClariVue10",
+          "keyword_rank": null,
+          "semantic_rank": 7,
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "keyword_rank": null,
+          "semantic_rank": 8,
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
+          "keyword_rank": null,
+          "semantic_rank": 9,
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_CR310_WIFI",
+          "model": "CR310-WIFI",
+          "keyword_rank": null,
+          "semantic_rank": 10,
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_109",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "temperature_measurement_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/109.json",
+                    "spec_index": 4,
+                    "source_rows": [6],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE50",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MISMATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "temperature_measurement_range",
+                  "candidateRange": {
+                    "minCelsius": -40,
+                    "maxCelsius": 60,
+                    "unit": "°C"
+                  },
+                  "result": "MISMATCH",
+                  "rawRef": {
+                    "file": "data/raw/TempVue50.json",
+                    "spec_index": 6,
+                    "source_rows": [10],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": true
+        },
+        {
+          "productId": "CSI_CS511",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMP120_XD",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CS125_ST",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLARIVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_LWS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_NA",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CR310_WIFI",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "UNKNOWN",
+              "evidence": []
+            }
+          ],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "temperature sensor",
+      "hybrid_mode": "hybrid",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "temperature sensor",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "none"
+        }
+      },
+      "hybrid_top_candidates": [
+        {
+          "rank": 1,
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "keyword_rank": 4,
+          "semantic_rank": 1,
+          "rrf_score": 0.032018442622950824
+        },
+        {
+          "rank": 2,
+          "product_id": "CSI_109",
+          "model": "109",
+          "keyword_rank": 1,
+          "semantic_rank": 5,
+          "rrf_score": 0.03177805800756621
+        },
+        {
+          "rank": 3,
+          "product_id": "CSI_EE181",
+          "model": "EE181",
+          "keyword_rank": 2,
+          "semantic_rank": 4,
+          "rrf_score": 0.031754032258064516
+        },
+        {
+          "rank": 4,
+          "product_id": "CSI_HYGROVUE10",
+          "model": "HygroVue10",
+          "keyword_rank": 3,
+          "semantic_rank": 7,
+          "rrf_score": 0.030798389007344232
+        },
+        {
+          "rank": 5,
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "keyword_rank": 11,
+          "semantic_rank": 3,
+          "rrf_score": 0.029957522915269395
+        },
+        {
+          "rank": 6,
+          "product_id": "CSI_TEMPVUE50",
+          "model": "TempVue50",
+          "keyword_rank": 5,
+          "semantic_rank": 11,
+          "rrf_score": 0.02946912242686891
+        },
+        {
+          "rank": 7,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "keyword_rank": 13,
+          "semantic_rank": 8,
+          "rrf_score": 0.028404512489927477
+        },
+        {
+          "rank": 8,
+          "product_id": "CSI_CLARIVUE10",
+          "model": "ClariVue10",
+          "keyword_rank": 6,
+          "semantic_rank": 16,
+          "rrf_score": 0.028309409888357256
+        },
+        {
+          "rank": 9,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_rank": 12,
+          "semantic_rank": 10,
+          "rrf_score": 0.02817460317460317
+        },
+        {
+          "rank": 10,
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "keyword_rank": 17,
+          "semantic_rank": 6,
+          "rrf_score": 0.02813852813852814
+        }
+      ],
+      "technical_annotations": [
+        {
+          "productId": "CSI_TEMPVUE20_S",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_109",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_EE181",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_HYGROVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE40",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_TEMPVUE50",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_METSENS500_DS",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLARIVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_CLIMAVUE50G2",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_SNOWVUE10",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [],
+          "hardMismatch": false
+        }
+      ]
+    }
+  ],
+  "known_product_checks": [
+    {
+      "query": "operates at -40°C",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "operates at -40°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "point",
+            "intent": "operating",
+            "valueCelsius": -40,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "matches": [
+        {
+          "productId": "CSI_CS655",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "spec_index": 7,
+                    "source_rows": [12],
+                    "product_index": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_109",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "point",
+                "intent": "operating",
+                "valueCelsius": -40,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "operating_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/109.json",
+                    "spec_index": 1,
+                    "source_rows": [3],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        }
+      ]
+    },
+    {
+      "query": "measure up to 70°C",
+      "parsed_query": {
+        "parserVersion": "technical-query-v1",
+        "originalQuery": "measure up to 70°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "upper_bound",
+            "intent": "measurement",
+            "valueCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "matches": [
+        {
+          "productId": "CSI_CS655",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "soil_temperature_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "spec_index": 32,
+                    "source_rows": [59],
+                    "product_index": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        },
+        {
+          "productId": "CSI_109",
+          "identityMatch": "none",
+          "identityEvidence": [],
+          "protocolMatches": [],
+          "temperatureMatches": [
+            {
+              "constraint": {
+                "kind": "upper_bound",
+                "intent": "measurement",
+                "valueCelsius": 70,
+                "unit": "°C",
+                "confidence": "high"
+              },
+              "result": "MATCH",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "canonicalKey": "temperature_measurement_range",
+                  "candidateRange": {
+                    "minCelsius": -50,
+                    "maxCelsius": 70,
+                    "unit": "°C"
+                  },
+                  "result": "MATCH",
+                  "rawRef": {
+                    "file": "data/raw/109.json",
+                    "spec_index": 4,
+                    "source_rows": [6],
+                    "product_index": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "hardMismatch": false
+        }
+      ]
+    }
+  ],
+  "result": "PASS"
+}

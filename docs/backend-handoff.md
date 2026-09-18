@@ -1,5 +1,8 @@
 # Basic Backend Handoff for React
 
+This remains the implementation-oriented backend note. For the frozen Step 7.7 startup, endpoint,
+error, security, and UI readiness contract, use [`frontend-handoff.md`](./frontend-handoff.md).
+
 The React application should use `VITE_API_URL=http://localhost:3000/api/v1` and import response/request
 types plus Zod schemas from `@reeco/shared`. Product data must come through NestJS; the browser never
 receives `SUPABASE_SERVICE_ROLE_KEY` or `DATABASE_URL`.
@@ -21,14 +24,40 @@ tables from `specifications`, highlights from `important_specifications`, and li
 ## Search
 
 Call `POST /search` with `{ "query": string, "limit"?: number }`. Render `results` in returned order.
-`mode` is currently `keyword`. Read score values by name and tolerate `null`: future semantic, hybrid, and
-rerank phases will populate existing slots rather than replace the response shape. `matched_features` is
-currently empty.
+`mode` is `hybrid` when keyword and semantic retrieval both succeed, `keyword` when semantic retrieval
+is unavailable and keyword fallback succeeds, or `semantic` when keyword retrieval is unavailable and
+semantic fallback succeeds. Mode describes the retrieval path, not result quality. A source returning
+zero rows still succeeded and does not trigger fallback. Internal fallback names are not exposed.
 
-The backend contains a server-only local Ollama embedding provider, but it is not connected to this
-endpoint. Backend startup performs no Ollama request, so keyword search continues to run when Ollama is
-offline, the model is unloaded, or the model has not been pulled. The semantic database migration also
-has not been deployed to hosted Supabase and hosted embeddings have not been generated.
+Read score values by name. In hybrid mode, `keyword` is the raw keyword score or `0`, `semantic` is
+cosine similarity or `null`, and `hybrid` is the RRF score. Keyword fallback populates only `keyword`;
+semantic fallback uses keyword `0` and populates only `semantic`. The fields have different scales and
+must not be compared directly. `hybrid` remains the original RRF retrieval score even when structured
+technical evidence changes final ordering. `rerank` remains `null`. `matched_features` contains only
+positive structured evidence and may include stable labels such as `identity:model:CS655`,
+`protocol:SDI-12`, `operating-temperature:-40°C`, or
+`measurement-temperature:up-to-70°C`; it contains no generated explanation.
+
+The request `limit` is the final result count. The backend retrieves at least the configured candidate
+depth, applies deterministic technical ranking/filtering, batch-loads active summaries, drops
+candidates that have no active public summary, and then applies the final limit. Definitive numeric
+temperature mismatches may reduce the response below the requested limit; unknown evidence survives.
+Do not reorder results in React or attempt to sort them by `scores.hybrid`.
+
+The endpoint now uses the server-only local Ollama provider for semantic retrieval. If Ollama is
+offline, keyword fallback returns HTTP 200 with mode `keyword`. If keyword RPC fails while semantic
+retrieval succeeds, HTTP 200 uses mode `semantic`. Only failure of both retrieval paths returns a
+sanitized HTTP 503. Hosted migrations `20260916074530` and `20260916080205` are deployed, the hosted
+column is `extensions.vector(1536)`, and 42/42 searchable active products have current
+`qwen3-embedding:4b` embeddings at version `ollama-qwen3-embedding-4b-1536-v1`. RRF remains the Step
+7.5A baseline with configurable `SEARCH_RRF_K=60`.
+
+Step 7.6B integrates the Step 7.6A parser/evaluator into `SearchService`. An exact active identity is
+prioritized only when already retrieved. Confirmed protocol and numeric temperature matches are
+prioritized deterministically; protocol unknowns and numeric unknowns remain. Only definitive,
+high-confidence operating/measurement temperature mismatch is filtered. This is a lexicographic
+policy, not a score boost or model reranker. The public schema and modes are unchanged. There is still
+no AI reranker or explanation model.
 
 ## Compare 2 Products
 
@@ -76,7 +105,7 @@ The complete HTTP contract, examples, and error codes are in [`api-contract.md`]
 
 ## Local run
 
-Use Node.js 24 or newer. Copy `apps/api/.env.example` to `apps/api/.env`, fill server-only values, and run:
+Use Node.js 22 or newer (verified with Node.js 24). Copy `apps/api/.env.example` to `apps/api/.env`, fill server-only values, and run:
 
 ```powershell
 npm install

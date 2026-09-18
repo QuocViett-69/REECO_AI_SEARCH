@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -6,6 +6,7 @@ import postgres from 'postgres';
 import {
   embeddingConfig,
   emptyBackfillStats,
+  parseBackfillLimit,
   runEmbeddingBackfill,
 } from './lib.mjs';
 
@@ -17,8 +18,10 @@ const reportPath = path.join(
   'reports',
   'embedding-backfill-report.json',
 );
-const args = new Set(process.argv.slice(2));
+const rawArgs = process.argv.slice(2);
+const args = new Set(rawArgs);
 const execute = args.has('--execute');
+const limit = parseBackfillLimit(rawArgs);
 if (execute && args.has('--dry-run')) {
   throw new Error('Choose either --execute or --dry-run');
 }
@@ -31,12 +34,23 @@ const reportBase = {
   dimensions: config.dimensions,
   embedding_version: config.version,
   mode: execute ? 'execute' : 'dry-run',
+  limit: limit ?? null,
 };
 
 async function writeReport(report) {
   await mkdir(path.dirname(reportPath), { recursive: true });
   await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
   console.log(JSON.stringify(report, null, 2));
+}
+
+async function readHostedRuns() {
+  try {
+    const previous = JSON.parse(await readFile(reportPath, 'utf8'));
+    return Array.isArray(previous.hosted_runs) ? previous.hosted_runs : [];
+  } catch (error) {
+    if (error?.code === 'ENOENT' || error instanceof SyntaxError) return [];
+    throw error;
+  }
 }
 
 if (!execute) {
@@ -67,6 +81,7 @@ if (!execute) {
     findSearchableRows: () => sql`
       select
         search_index.product_id,
+        products.model,
         search_index.search_text,
         search_index.source_content_hash,
         search_index.index_version,
@@ -107,8 +122,31 @@ if (!execute) {
   };
 
   try {
-    const stats = await runEmbeddingBackfill({ repository, provider, config });
-    await writeReport({ ...reportBase, ...stats });
+    const stats = await runEmbeddingBackfill({
+      repository,
+      provider,
+      config,
+      limit,
+    });
+    const label =
+      limit !== undefined
+        ? 'canary'
+        : stats.attempted === 0
+          ? 'idempotency'
+          : 'full';
+    const hostedRuns = await readHostedRuns();
+    await writeReport({
+      ...reportBase,
+      hosted_runs: [
+        ...hostedRuns,
+        {
+          generated_at: reportBase.generated_at,
+          label,
+          limit: limit ?? null,
+          ...stats,
+        },
+      ],
+    });
   } finally {
     await sql.end();
   }

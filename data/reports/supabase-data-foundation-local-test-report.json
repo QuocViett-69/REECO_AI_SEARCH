@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T08:51:02.912Z",
+  "generated_at": "2026-09-18T02:11:44.881Z",
   "engine": "PGlite/PostgreSQL local compatibility test",
   "note": "The vector extension is replaced with real[] only in this local harness; committed Supabase migrations use extensions.vector. The conditional hardening migration is executed with rls_auto_enable absent. The RLS auto-enable and semantic-search migrations receive static contract checks only. PGlite does not runtime-test event-trigger or pgvector behavior.",
   "status": "passed",

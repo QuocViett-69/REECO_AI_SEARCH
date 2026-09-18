@@ -8,13 +8,28 @@ import {
   type ProductListQuery,
   type ProductListResponse,
   type ProductMedia,
+  type ProductSearchDocument,
+  type ProductSpecification,
   type ProductSummary,
 } from '@reeco/shared';
 import {
   ProductsRepository,
   type ProductDocumentRow,
+  type ProductIdentityRow,
   type ProductRow,
+  type ProductSpecificationRow,
 } from './products.repository';
+
+export interface ProductTechnicalEvidence {
+  product: ProductRow;
+  document: ProductSearchDocument | null;
+  specifications: ProductSpecification[];
+}
+
+export interface ProductTechnicalIdentity {
+  productId: string;
+  model: string;
+}
 
 @Injectable()
 export class ProductsService {
@@ -48,6 +63,48 @@ export class ProductsService {
       products.map((product) => [
         product.product_id,
         this.toSummary(product, documents, media),
+      ]),
+    );
+  }
+
+  async getActiveTechnicalIdentityCatalog(): Promise<
+    ProductTechnicalIdentity[]
+  > {
+    const identities =
+      await this.productsRepository.listActiveIdentityCatalog();
+    return identities.map((identity: ProductIdentityRow) => ({
+      productId: identity.product_id,
+      model: identity.model,
+    }));
+  }
+
+  async getTechnicalEvidenceByIds(
+    productIds: string[],
+  ): Promise<Map<string, ProductTechnicalEvidence>> {
+    const uniqueIds = [...new Set(productIds)];
+    if (uniqueIds.length === 0) return new Map();
+
+    const [products, documents, specifications] = await Promise.all([
+      this.productsRepository.listByIds(uniqueIds, true),
+      this.productsRepository.listDocuments(uniqueIds),
+      this.productsRepository.listSpecificationsByProductIds(uniqueIds),
+    ]);
+    const documentsById = new Map(
+      documents.map((document) => [
+        document.product_id,
+        document.search_document,
+      ]),
+    );
+    const specificationsById = this.groupSpecifications(specifications);
+
+    return new Map(
+      products.map((product) => [
+        product.product_id,
+        {
+          product,
+          document: documentsById.get(product.product_id) ?? null,
+          specifications: specificationsById.get(product.product_id) ?? [],
+        },
       ]),
     );
   }
@@ -158,5 +215,18 @@ export class ProductsService {
       image_url: primaryMedia?.image_url ?? null,
       status: product.status,
     });
+  }
+
+  private groupSpecifications(
+    specifications: ProductSpecificationRow[],
+  ): Map<string, ProductSpecification[]> {
+    const grouped = new Map<string, ProductSpecification[]>();
+    for (const specification of specifications) {
+      const { product_id: productId, ...publicSpecification } = specification;
+      const productSpecifications = grouped.get(productId) ?? [];
+      productSpecifications.push(publicSpecification);
+      grouped.set(productId, productSpecifications);
+    }
+    return grouped;
   }
 }

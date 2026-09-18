@@ -14,6 +14,10 @@ export interface AppConfiguration {
     timeoutMs: number;
     batchSize: number;
   };
+  search: {
+    retrievalLimit: number;
+    rrfK: number;
+  };
 }
 
 export function configuration(): AppConfiguration {
@@ -33,6 +37,10 @@ export function configuration(): AppConfiguration {
         process.env.EMBEDDING_VERSION ?? 'ollama-qwen3-embedding-4b-1536-v1',
       timeoutMs: Number(process.env.OLLAMA_EMBEDDING_TIMEOUT_MS ?? 180000),
       batchSize: Number(process.env.EMBEDDING_BATCH_SIZE ?? 8),
+    },
+    search: {
+      retrievalLimit: Number(process.env.SEARCH_RETRIEVAL_LIMIT ?? 20),
+      rrfK: Number(process.env.SEARCH_RRF_K ?? 60),
     },
   };
 }

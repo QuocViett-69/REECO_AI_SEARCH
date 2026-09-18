@@ -132,7 +132,7 @@ export const SearchResultSchema = z
 export const SearchResponseSchema = z
   .object({
     query: z.string().min(1),
-    mode: z.literal('keyword'),
+    mode: z.enum(['keyword', 'semantic', 'hybrid']),
     results: z.array(SearchResultSchema),
   })
   .strict();
@@ -143,9 +143,7 @@ export type AdminProductSummary = z.infer<typeof AdminProductSummarySchema>;
 export type Pagination = z.infer<typeof PaginationSchema>;
 export type ProductListResponse = z.infer<typeof ProductListResponseSchema>;
 export type ProductListQuery = z.infer<typeof ProductListQuerySchema>;
-export type ProductSpecification = z.infer<
-  typeof ProductSpecificationSchema
->;
+export type ProductSpecification = z.infer<typeof ProductSpecificationSchema>;
 export type ProductMedia = z.infer<typeof ProductMediaSchema>;
 export type ProductDetail = z.infer<typeof ProductDetailSchema>;
 export type SearchRequest = z.infer<typeof SearchRequestSchema>;

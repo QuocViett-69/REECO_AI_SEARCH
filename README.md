@@ -2,7 +2,9 @@
 
 REECO product search application with a React frontend, NestJS API, shared Zod contracts, and a Supabase PostgreSQL data foundation.
 
-The Basic Backend phase includes public product browsing, PostgreSQL full-text search, authenticated admin product access, and an idempotent product import pipeline.
+The frozen backend MVP includes public product browsing, hybrid/technical search, authenticated admin
+product access, and an idempotent product import pipeline. See
+[`docs/frontend-handoff.md`](./docs/frontend-handoff.md) for the frontend integration contract.
 
 ## Tech Stack
 
@@ -28,6 +30,7 @@ The Basic Backend phase includes public product browsing, PostgreSQL full-text s
 
 - Node.js 22 or newer
 - npm 10 or newer
+- Ollama with `qwen3-embedding:4b`
 
 ## Install
 
@@ -35,23 +38,29 @@ The Basic Backend phase includes public product browsing, PostgreSQL full-text s
 npm install
 ```
 
-## Run frontend
+## Run locally
+
+Copy `apps/api/.env.example` to `apps/api/.env` and configure the Supabase URL, service-role key, and
+database connection string. Copy `apps/web/.env.example` to `apps/web/.env`; its default
+`VITE_API_URL` targets the local API. Never expose backend secrets through a `VITE_` variable.
+
+Confirm the embedding model exists:
 
 ```bash
-npm run dev:web
+ollama list
+ollama pull qwen3-embedding:4b
 ```
 
-Frontend default: http://localhost:5173
-
-## Run backend
-
-Copy `apps/api/.env.example` to `apps/api/.env` and configure the Supabase URL, service-role key, and database connection string. Use the Supabase Session Pooler connection string for `DATABASE_URL` when the development machine does not have IPv6 connectivity.
+Run Ollama if it is not already active, then start the API and web app in separate terminals:
 
 ```bash
 npm run dev:api
+npm run dev:web
 ```
 
 Backend default: http://localhost:3000
+
+Frontend default: http://localhost:5173
 
 Health endpoint: http://localhost:3000/api/v1/health
 
