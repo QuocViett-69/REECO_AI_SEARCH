@@ -13,6 +13,7 @@ import {
   type HybridSearchMode,
 } from './hybrid-search.service';
 import { TechnicalMatchService } from './technical-match.service';
+import { RerankerService } from './reranker.service';
 import type { ParsedTechnicalQuery } from './technical-query-parser.service';
 import { TechnicalQueryParserService } from './technical-query-parser.service';
 import {
@@ -31,6 +32,7 @@ export class SearchService {
     private readonly technicalQueryParser: TechnicalQueryParserService,
     private readonly technicalMatch: TechnicalMatchService,
     private readonly technicalRanking: TechnicalRankingService,
+    private readonly reranker: RerankerService,
   ) {}
 
   async search(request: SearchRequest): Promise<SearchResponse> {
@@ -70,9 +72,14 @@ export class SearchService {
       request.query,
       identityCatalog,
     );
-    const rankedCandidates = await this.applyTechnicalPolicy(
+    const technicallyRankedCandidates = await this.applyTechnicalPolicy(
       parsedQuery,
       hybridResult.candidates,
+    );
+    const rankedCandidates = await this.reranker.rerank(
+      request.query,
+      parsedQuery,
+      technicallyRankedCandidates,
     );
 
     const summaries = await this.productsService.getPublicSummariesByIds(

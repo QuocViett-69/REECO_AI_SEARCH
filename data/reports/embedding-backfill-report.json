@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T08:42:28.716Z",
+  "generated_at": "2026-09-20T08:33:37.391Z",
   "provider": "ollama",
   "model": "qwen3-embedding:4b",
   "dimensions": 1536,
@@ -623,6 +623,55 @@
       "embedded": 0,
       "failed": 0,
       "skipped_current": 86,
+      "concurrent_source_changed": 0,
+      "remaining_missing_or_stale": 0,
+      "provider_calls": 0,
+      "database_update_calls": 0,
+      "database_updates": 0,
+      "embedded_products": [],
+      "failures": []
+    },
+    {
+      "generated_at": "2026-09-20T08:31:10.164Z",
+      "label": "full",
+      "limit": null,
+      "searchable_rows": 89,
+      "current_before": 86,
+      "attempted": 3,
+      "embedded": 3,
+      "failed": 0,
+      "skipped_current": 86,
+      "concurrent_source_changed": 0,
+      "remaining_missing_or_stale": 0,
+      "provider_calls": 1,
+      "database_update_calls": 3,
+      "database_updates": 3,
+      "embedded_products": [
+        {
+          "product_id": "CSI_43347",
+          "model": "43347"
+        },
+        {
+          "product_id": "CSI_CR1000XE_XT_CC",
+          "model": "CR1000Xe-XT-CC"
+        },
+        {
+          "product_id": "CSI_CS451",
+          "model": "CS451"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "generated_at": "2026-09-20T08:33:37.391Z",
+      "label": "idempotency",
+      "limit": null,
+      "searchable_rows": 89,
+      "current_before": 89,
+      "attempted": 0,
+      "embedded": 0,
+      "failed": 0,
+      "skipped_current": 89,
       "concurrent_source_changed": 0,
       "remaining_missing_or_stale": 0,
       "provider_calls": 0,

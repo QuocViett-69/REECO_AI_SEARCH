@@ -3,16 +3,16 @@
   "validation_status": "passed",
   "blockers": 0,
   "input_fingerprints": {
-    "product_master": "76291b0a8eaf7ad2ae3cfe13975fa36e0be8dc17945e333665a2a2117e9fafe9",
-    "normalized_specifications": "1215ff90738379ef710aff385f7bd00f40795aa636b4ac546318a21bdd0561f4",
-    "enriched_products": "df3eabfa3e46db87d780f95f8d45b115f934e15d52cba5aaf9bbedf47acc1964",
+    "product_master": "41c8abfe7e9d082863437171268ed5993cdcd9eda937755197a912dd99d2b3dc",
+    "normalized_specifications": "9803838521cfe44ba1f752931cf890b7fa3c7475ed14d512bb65858105d8600e",
+    "enriched_products": "1e6988bc27aa31d1063b74f1509a6f3d2070fb40a25b589a2b175c187d043fdc",
     "semantic_vocabulary": "bc0f7ce6d8b3535199fa9e0affe7812e327e7471d0675bc21d2647d8c6f50c24"
   },
   "checks": {
-    "master_products": 91,
-    "active_products": 86,
-    "search_documents": 86,
-    "skipped_review_products": 5,
+    "master_products": 89,
+    "active_products": 89,
+    "search_documents": 89,
+    "skipped_review_products": 0,
     "status_partition_valid": true,
     "active_review_id_overlap": 0,
     "active_without_search_document": 0,
@@ -29,48 +29,28 @@
     "missing_content_hash": 0,
     "hash_mismatch": 0,
     "upstream_mutation": 0,
-    "zod_validation_passed": 86,
+    "zod_validation_passed": 89,
     "zod_validation_failed": 0
   },
   "metrics": {
-    "average_search_text_length": 1105.33,
+    "average_search_text_length": 1090.89,
     "min_search_text_length": 171,
     "max_search_text_length": 8531,
-    "average_measurements_per_product": 1.06,
-    "average_capabilities_per_product": 1.07,
-    "average_aliases_per_product": 4.57,
-    "products_without_applications": 76,
-    "products_without_measurements": 41,
-    "products_without_protocols": 29,
-    "important_specification_count": 479,
-    "en_keyword_count": 1022,
-    "vi_keyword_count": 775
+    "average_measurements_per_product": 1.03,
+    "average_capabilities_per_product": 1.04,
+    "average_aliases_per_product": 4.55,
+    "products_without_applications": 79,
+    "products_without_measurements": 43,
+    "products_without_protocols": 30,
+    "important_specification_count": 487,
+    "en_keyword_count": 1076,
+    "vi_keyword_count": 819
   },
-  "skipped_review_products": [
-    {
-      "product_id": "CSI_43347",
-      "model": "43347"
-    },
-    {
-      "product_id": "CSI_5103",
-      "model": "5103"
-    },
-    {
-      "product_id": "CSI_CS451",
-      "model": "CS451"
-    },
-    {
-      "product_id": "CSI_CR1000XE_ST_CC",
-      "model": "CR1000Xe-ST-CC"
-    },
-    {
-      "product_id": "CSI_CPEC310",
-      "model": "CPEC310"
-    }
-  ],
+  "skipped_review_products": [],
   "coverage_details": {
     "product_ids_without_applications": [
       "CSI_109",
+      "CSI_43347",
       "CSI_TEMPVUE20_S",
       "CSI_TEMPVUE50",
       "CSI_EE181",
@@ -86,6 +66,7 @@
       "CSI_CS120A_ST",
       "CSI_CS511",
       "CSI_CLARIVUE10",
+      "CSI_CS451",
       "CSI_CS616",
       "CSI_CS650",
       "CSI_CS655",
@@ -94,6 +75,7 @@
       "CSI_AM16_32B_ST",
       "CSI_ASPEN10_CELL_ST",
       "CSI_AVW200_ST",
+      "CSI_CR1000XE_XT_CC",
       "CSI_CR310_NA",
       "CSI_CR310_WIFI",
       "CSI_CR350_NA",
@@ -148,9 +130,11 @@
       "CSI_WINDSONIC1"
     ],
     "product_ids_without_measurements": [
+      "CSI_CS451",
       "CSI_AM16_32B_ST",
       "CSI_ASPEN10_CELL_ST",
       "CSI_AVW200_ST",
+      "CSI_CR1000XE_XT_CC",
       "CSI_CR350_NA",
       "CSI_CELL205_AT",
       "CSI_RV50X",
@@ -192,6 +176,7 @@
     ],
     "product_ids_without_protocols": [
       "CSI_109",
+      "CSI_43347",
       "CSI_EE181",
       "CSI_52202",
       "CSI_CS301",

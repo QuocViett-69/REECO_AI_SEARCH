@@ -1,0 +1,2869 @@
+{
+  "schema_version": "1.0",
+  "evaluation_id": "explanation-evaluation-v1",
+  "generated_at": "2026-09-21T09:11:29.350Z",
+  "benchmark_id": "search-benchmark-v1.1",
+  "evidence_version": "grounded-evidence-v1",
+  "template_version": "template-explanation-v1",
+  "future_prompt_version": "grounded-explanation-prompt-v1",
+  "model_discovery": {
+    "installed_ollama_models": [
+      {
+        "name": "qwen3-embedding:4b",
+        "type": "embedding",
+        "suitable_for_generation": false
+      }
+    ],
+    "suitable_local_generative_model_available": false,
+    "llm_evaluation_run": false
+  },
+  "selection_policy": "Deterministic 40-pair category/language sample from frozen real baseline results; four technical cases select the first retrieved result with UNKNOWN evidence. No relevance labels enter providers.",
+  "frozen_search_result_order_sha256": "b80dfa46e37f4fac4fe9da27801fe6ab607b116b1f6ddefb32ca7e25c05646e8",
+  "summary": {
+    "pair_count": 40,
+    "english_cases": 30,
+    "vietnamese_cases": 10,
+    "exact_identity_cases": 5,
+    "protocol_cases": 11,
+    "numeric_cases": 9,
+    "unknown_cases": 4,
+    "semantic_context_cases": 2,
+    "automatic_safety_passes": 40,
+    "automatic_safety_failures": 0
+  },
+  "latency_ms": {
+    "one_explanation": {
+      "p50": 0.0237,
+      "p95": 0.1069,
+      "max": 0.5906,
+      "mean": 0.047
+    },
+    "top_3_sequential_template": {
+      "p50": 0.0026,
+      "p95": 0.0069,
+      "max": 0.0385
+    },
+    "top_5_sequential_template": {
+      "p50": 0.0033,
+      "p95": 0.0059,
+      "max": 1.4123
+    }
+  },
+  "cases": [
+    {
+      "case_id": "ex001",
+      "query_id": "q001",
+      "query": "CS655",
+      "category": "exact_identity",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CS655",
+      "model": "CS655",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "CS655",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "product_name": "12cm Water Content Reflectometer Plus (-50 to +70C)**"
+        },
+        "identity": {
+          "exact_match": true,
+          "matched_value": "CS655"
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "identity:model:CS655"
+        ],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Exact model match: CS655.",
+      "template_latency_ms": 0.1885,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex002",
+      "query_id": "q003",
+      "query": "43347",
+      "category": "exact_identity",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_43347",
+      "model": "43347",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "43347",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_43347",
+          "model": "43347",
+          "product_name": "RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated"
+        },
+        "identity": {
+          "exact_match": true,
+          "matched_value": "43347"
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "identity:model:43347"
+        ],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Exact model match: 43347.",
+      "template_latency_ms": 0.0162,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex003",
+      "query_id": "q004",
+      "query": "CR1000Xe-XT-CC",
+      "category": "exact_identity",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "model": "CR1000Xe-XT-CC",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "CR1000Xe-XT-CC",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CR1000XE_XT_CC",
+          "model": "CR1000Xe-XT-CC",
+          "product_name": "CR1000Xe Measurement and Control Datalogger (XT-CC)"
+        },
+        "identity": {
+          "exact_match": true,
+          "matched_value": "CR1000Xe-XT-CC"
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "identity:model:CR1000Xe-XT-CC"
+        ],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Exact model match: CR1000Xe-XT-CC.",
+      "template_latency_ms": 0.0085,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex004",
+      "query_id": "q005",
+      "query": "CS451",
+      "category": "exact_identity",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CS451",
+      "model": "CS451",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "CS451",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CS451",
+          "model": "CS451",
+          "product_name": "Stainless-Steel Pressure Transducer"
+        },
+        "identity": {
+          "exact_match": true,
+          "matched_value": "CS451"
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "identity:model:CS451"
+        ],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Exact model match: CS451.",
+      "template_latency_ms": 0.0204,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex005",
+      "query_id": "q011",
+      "query": "TempVue20-S",
+      "category": "exact_identity",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_TEMPVUE20_S",
+      "model": "TempVue20-S",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "TempVue20-S",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_TEMPVUE20_S",
+          "model": "TempVue20-S",
+          "product_name": "TempVue™20"
+        },
+        "identity": {
+          "exact_match": true,
+          "matched_value": "TempVue20-S"
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "identity:model:TempVue20-S"
+        ],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Exact model match: TempVue20-S.",
+      "template_latency_ms": 0.0444,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex006",
+      "query_id": "q021",
+      "query": "data logger",
+      "category": "product_type",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "model": "CR6-NA-ST-CC",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "data logger",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CR6_NA_ST_CC",
+          "model": "CR6-NA-ST-CC",
+          "product_name": "CR6 Datalogger -NA No Additional Coms -ST -40 t"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": {
+          "category": "Measurement Devices",
+          "category_key": "measurement_devices",
+          "subcategory": "Data Loggers",
+          "subcategory_key": "data_loggers",
+          "device_type": "Data Logger",
+          "device_type_key": "data_logger"
+        },
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Its confirmed device type is Data Logger.",
+      "template_latency_ms": 0.0216,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex007",
+      "query_id": "q022",
+      "query": "cellular modem router",
+      "category": "product_type",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CELL205_AT",
+      "model": "CELL205-AT",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "cellular modem router",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CELL205_AT",
+          "model": "CELL205-AT",
+          "product_name": "4G LTE Cat1 Cellular Module for North America (-4"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": {
+          "status": "CONTEXT_ONLY",
+          "category": "Communications",
+          "device_type": "Cellular Modem / Router"
+        }
+      },
+      "template_explanation": "The product is contextually related to the query as a Cellular Modem / Router.",
+      "template_latency_ms": 0.0265,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex008",
+      "query_id": "q024",
+      "query": "all-in-one weather sensor",
+      "category": "product_type",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CLIMAVUE40",
+      "model": "ClimaVue40",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "all-in-one weather sensor",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "product_name": "Compact Digital RS-485 Modbus RTU Weather Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": {
+          "category": "Sensors",
+          "category_key": "sensors",
+          "subcategory": "All-in-One Weather Sensors",
+          "subcategory_key": "all_in_one_weather_sensors",
+          "device_type": "All-in-One Weather Sensor",
+          "device_type_key": "all_in_one_weather_sensor"
+        },
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Its confirmed device type is All-in-One Weather Sensor.",
+      "template_latency_ms": 0.5906,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex009",
+      "query_id": "q028",
+      "query": "air temperature sensor",
+      "category": "product_type",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_43347",
+      "model": "43347",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "air temperature sensor",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_43347",
+          "model": "43347",
+          "product_name": "RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": {
+          "category": "Sensors",
+          "category_key": "sensors",
+          "subcategory": "Air Temperature Sensors",
+          "subcategory_key": "air_temperature_sensors",
+          "device_type": "Air Temperature Sensor",
+          "device_type_key": "air_temperature_sensor"
+        },
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Its confirmed device type is Air Temperature Sensor.",
+      "template_latency_ms": 0.0479,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex010",
+      "query_id": "q036",
+      "query": "SDI-12 sensor",
+      "category": "protocol",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CLIMAVUE50G2",
+      "model": "ClimaVue50G2",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "SDI-12 sensor",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "product_name": "G2 Compact Digital SDI-12 Weather Sensor (-50 to"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "protocol:SDI-12"
+        ],
+        "protocols": [
+          {
+            "protocol": "SDI-12",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "SDI-12",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence confirms support for SDI-12.",
+      "template_latency_ms": 0.0206,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex011",
+      "query_id": "q037",
+      "query": "cảm biến SDI-12",
+      "category": "protocol",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_HYGROVUE10",
+      "model": "HygroVue10",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "cảm biến SDI-12",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_HYGROVUE10",
+          "model": "HygroVue10",
+          "product_name": "Digital Temperature/RH Sensor w/M12 Connector w/o"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "protocol:SDI-12"
+        ],
+        "protocols": [
+          {
+            "protocol": "SDI-12",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "SDI-12",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Có bằng chứng cấu trúc xác nhận hỗ trợ SDI-12.",
+      "template_latency_ms": 0.0221,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex012",
+      "query_id": "q039",
+      "query": "RS-485 device",
+      "category": "protocol",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CLIMAVUE40",
+      "model": "ClimaVue40",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "RS-485 device",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "product_name": "Compact Digital RS-485 Modbus RTU Weather Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "protocol:RS-485"
+        ],
+        "protocols": [
+          {
+            "protocol": "RS-485",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "RS-485",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence confirms support for RS-485.",
+      "template_latency_ms": 0.0316,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex013",
+      "query_id": "q042",
+      "query": "Modbus device",
+      "category": "protocol",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_NL241",
+      "model": "NL241",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "Modbus device",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_NL241",
+          "model": "NL241",
+          "product_name": "NL241"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "protocol:Modbus"
+        ],
+        "protocols": [
+          {
+            "protocol": "Modbus",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "Modbus",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence confirms support for Modbus.",
+      "template_latency_ms": 0.0194,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex014",
+      "query_id": "q045",
+      "query": "Modbus RTU sensor",
+      "category": "protocol",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_METEOPV",
+      "model": "MeteoPV",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "Modbus RTU sensor",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_METEOPV",
+          "model": "MeteoPV",
+          "product_name": "MeteoPV"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "protocol:Modbus RTU"
+        ],
+        "protocols": [
+          {
+            "protocol": "Modbus RTU",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "Modbus RTU",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence confirms support for Modbus RTU.",
+      "template_latency_ms": 0.0338,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex015",
+      "query_id": "q046",
+      "query": "cảm biến Modbus RTU",
+      "category": "protocol",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_MS80SH",
+      "model": "MS-80SH",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "cảm biến Modbus RTU",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_MS80SH",
+          "model": "MS-80SH",
+          "product_name": "MS-80SH"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "protocol:Modbus RTU"
+        ],
+        "protocols": [
+          {
+            "protocol": "Modbus RTU",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "Modbus RTU",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Có bằng chứng cấu trúc xác nhận hỗ trợ Modbus RTU.",
+      "template_latency_ms": 0.0204,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex016",
+      "query_id": "q051",
+      "query": "operates at -40°C",
+      "category": "technical_numeric",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_SNOWVUE10",
+      "model": "SnowVue10",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "operates at -40°C",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "product_name": "Digital Snow Depth Sensor (-45 to +50C) w/o Cable"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "operating-temperature:-40°C"
+        ],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "operating_temperature",
+            "requested": {
+              "kind": "point",
+              "intent": "operating",
+              "valueCelsius": -40,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "MATCH",
+            "evidence": [
+              {
+                "canonical_key": "operating_temperature_range",
+                "candidate_range": {
+                  "minCelsius": -45,
+                  "maxCelsius": 50,
+                  "unit": "°C"
+                },
+                "status": "MATCH",
+                "raw_ref": {
+                  "file": "data/raw/SnowVue10.json",
+                  "spec_index": 13,
+                  "source_rows": [
+                    15
+                  ],
+                  "product_index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [
+          {
+            "canonical_key": "operating_temperature_range",
+            "value": {
+              "minCelsius": -45,
+              "maxCelsius": 50,
+              "unit": "°C"
+            },
+            "unit": "°C",
+            "evidence_reason": "Confirms operating_temperature constraint",
+            "raw_ref": {
+              "file": "data/raw/SnowVue10.json",
+              "spec_index": 13,
+              "source_rows": [
+                15
+              ],
+              "product_index": 0
+            }
+          }
+        ],
+        "semantic_context": null
+      },
+      "template_explanation": "Its -45 to 50°C temperature range covers the requested -40°C.",
+      "template_latency_ms": 0.0502,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex017",
+      "query_id": "q052",
+      "query": "operates at 60°C",
+      "category": "technical_numeric",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "model": "CR6-NA-ST-CC",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "operates at 60°C",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CR6_NA_ST_CC",
+          "model": "CR6-NA-ST-CC",
+          "product_name": "CR6 Datalogger -NA No Additional Coms -ST -40 t"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "operating-temperature:60°C"
+        ],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "operating_temperature",
+            "requested": {
+              "kind": "point",
+              "intent": "operating",
+              "valueCelsius": 60,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "MATCH",
+            "evidence": [
+              {
+                "canonical_key": "operating_temperature_range",
+                "candidate_range": {
+                  "minCelsius": -40,
+                  "maxCelsius": 70,
+                  "unit": "°C"
+                },
+                "status": "MATCH",
+                "raw_ref": {
+                  "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                  "spec_index": 6,
+                  "source_rows": [
+                    9
+                  ],
+                  "product_index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [
+          {
+            "canonical_key": "operating_temperature_range",
+            "value": {
+              "minCelsius": -40,
+              "maxCelsius": 70,
+              "unit": "°C"
+            },
+            "unit": "°C",
+            "evidence_reason": "Confirms operating_temperature constraint",
+            "raw_ref": {
+              "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+              "spec_index": 6,
+              "source_rows": [
+                9
+              ],
+              "product_index": 0
+            }
+          }
+        ],
+        "semantic_context": null
+      },
+      "template_explanation": "Its -40 to 70°C temperature range covers the requested 60°C.",
+      "template_latency_ms": 0.0465,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex018",
+      "query_id": "q054",
+      "query": "operating temperature -50 to 70°C",
+      "category": "technical_numeric",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_109",
+      "model": "109",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "operating temperature -50 to 70°C",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_109",
+          "model": "109",
+          "product_name": "Temperature Sensor (-50 to +70C)"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "temperature",
+            "label_en": "Temperature",
+            "label_vi": "Nhiệt độ"
+          }
+        ],
+        "matched_features": [
+          "operating-temperature:-50..70°C"
+        ],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "operating_temperature",
+            "requested": {
+              "kind": "range",
+              "intent": "operating",
+              "minCelsius": -50,
+              "maxCelsius": 70,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "MATCH",
+            "evidence": [
+              {
+                "canonical_key": "operating_temperature_range",
+                "candidate_range": {
+                  "minCelsius": -50,
+                  "maxCelsius": 70,
+                  "unit": "°C"
+                },
+                "status": "MATCH",
+                "raw_ref": {
+                  "file": "data/raw/109.json",
+                  "spec_index": 1,
+                  "source_rows": [
+                    3
+                  ],
+                  "product_index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [
+          {
+            "canonical_key": "operating_temperature_range",
+            "value": {
+              "minCelsius": -50,
+              "maxCelsius": 70,
+              "unit": "°C"
+            },
+            "unit": "°C",
+            "evidence_reason": "Confirms operating_temperature constraint",
+            "raw_ref": {
+              "file": "data/raw/109.json",
+              "spec_index": 1,
+              "source_rows": [
+                3
+              ],
+              "product_index": 0
+            }
+          }
+        ],
+        "semantic_context": null
+      },
+      "template_explanation": "Its -50 to 70°C temperature range covers the requested -50 to 70°C. Relevant documented measurements: Temperature.",
+      "template_latency_ms": 0.065,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex019",
+      "query_id": "q056",
+      "query": "hoạt động ở -40°C",
+      "category": "technical_numeric",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_SNOWVUE10",
+      "model": "SnowVue10",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "hoạt động ở -40°C",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "product_name": "Digital Snow Depth Sensor (-45 to +50C) w/o Cable"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "operating-temperature:-40°C"
+        ],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "operating_temperature",
+            "requested": {
+              "kind": "point",
+              "intent": "operating",
+              "valueCelsius": -40,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "MATCH",
+            "evidence": [
+              {
+                "canonical_key": "operating_temperature_range",
+                "candidate_range": {
+                  "minCelsius": -45,
+                  "maxCelsius": 50,
+                  "unit": "°C"
+                },
+                "status": "MATCH",
+                "raw_ref": {
+                  "file": "data/raw/SnowVue10.json",
+                  "spec_index": 13,
+                  "source_rows": [
+                    15
+                  ],
+                  "product_index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [
+          {
+            "canonical_key": "operating_temperature_range",
+            "value": {
+              "minCelsius": -45,
+              "maxCelsius": 50,
+              "unit": "°C"
+            },
+            "unit": "°C",
+            "evidence_reason": "Confirms operating_temperature constraint",
+            "raw_ref": {
+              "file": "data/raw/SnowVue10.json",
+              "spec_index": 13,
+              "source_rows": [
+                15
+              ],
+              "product_index": 0
+            }
+          }
+        ],
+        "semantic_context": null
+      },
+      "template_explanation": "Dải nhiệt độ -45 đến 50°C bao phủ yêu cầu -40°C.",
+      "template_latency_ms": 0.0246,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex020",
+      "query_id": "q060",
+      "query": "measure up to 70°C",
+      "category": "technical_numeric",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_BLACKGLOBE",
+      "model": "BLACKGLOBE",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "measure up to 70°C",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_BLACKGLOBE",
+          "model": "BLACKGLOBE",
+          "product_name": "BlackGlobe Temperature Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "measurement-temperature:up-to-70°C"
+        ],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "measurement_temperature",
+            "requested": {
+              "kind": "upper_bound",
+              "intent": "measurement",
+              "valueCelsius": 70,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "MATCH",
+            "evidence": [
+              {
+                "canonical_key": "temperature_measurement_range",
+                "candidate_range": {
+                  "minCelsius": -5,
+                  "maxCelsius": 95,
+                  "unit": "°C"
+                },
+                "status": "MATCH",
+                "raw_ref": {
+                  "file": "data/raw/CSI_BLACKGLOBE.json",
+                  "spec_index": 3,
+                  "source_rows": [
+                    5
+                  ],
+                  "product_index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [
+          {
+            "canonical_key": "temperature_measurement_range",
+            "value": {
+              "minCelsius": -5,
+              "maxCelsius": 95,
+              "unit": "°C"
+            },
+            "unit": "°C",
+            "evidence_reason": "Confirms measurement_temperature constraint",
+            "raw_ref": {
+              "file": "data/raw/CSI_BLACKGLOBE.json",
+              "spec_index": 3,
+              "source_rows": [
+                5
+              ],
+              "product_index": 0
+            }
+          }
+        ],
+        "semantic_context": null
+      },
+      "template_explanation": "Its -5 to 95°C temperature range covers the requested 70°C.",
+      "template_latency_ms": 0.0333,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex021",
+      "query_id": "q062",
+      "query": "đo tới 60°C",
+      "category": "technical_numeric",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_BLACKGLOBE",
+      "model": "BLACKGLOBE",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "đo tới 60°C",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_BLACKGLOBE",
+          "model": "BLACKGLOBE",
+          "product_name": "BlackGlobe Temperature Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "measurement-temperature:up-to-60°C"
+        ],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "measurement_temperature",
+            "requested": {
+              "kind": "upper_bound",
+              "intent": "measurement",
+              "valueCelsius": 60,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "MATCH",
+            "evidence": [
+              {
+                "canonical_key": "temperature_measurement_range",
+                "candidate_range": {
+                  "minCelsius": -5,
+                  "maxCelsius": 95,
+                  "unit": "°C"
+                },
+                "status": "MATCH",
+                "raw_ref": {
+                  "file": "data/raw/CSI_BLACKGLOBE.json",
+                  "spec_index": 3,
+                  "source_rows": [
+                    5
+                  ],
+                  "product_index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [
+          {
+            "canonical_key": "temperature_measurement_range",
+            "value": {
+              "minCelsius": -5,
+              "maxCelsius": 95,
+              "unit": "°C"
+            },
+            "unit": "°C",
+            "evidence_reason": "Confirms measurement_temperature constraint",
+            "raw_ref": {
+              "file": "data/raw/CSI_BLACKGLOBE.json",
+              "spec_index": 3,
+              "source_rows": [
+                5
+              ],
+              "product_index": 0
+            }
+          }
+        ],
+        "semantic_context": null
+      },
+      "template_explanation": "Dải nhiệt độ -5 đến 95°C bao phủ yêu cầu 60°C.",
+      "template_latency_ms": 0.0169,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex022",
+      "query_id": "q066",
+      "query": "measure soil moisture and salinity",
+      "category": "semantic",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_SOILVUE10_5",
+      "model": "SoilVue10-5",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "measure soil moisture and salinity",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_SOILVUE10_5",
+          "model": "SoilVue10-5",
+          "product_name": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "volumetric_water_content",
+            "label_en": "Volumetric Water Content",
+            "label_vi": "Hàm lượng nước thể tích"
+          }
+        ],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Relevant documented measurements: Volumetric Water Content.",
+      "template_latency_ms": 0.0138,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex023",
+      "query_id": "q067",
+      "query": "đo độ ẩm đất",
+      "category": "semantic",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_HS2_12",
+      "model": "HS2-12",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "đo độ ẩm đất",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_HS2_12",
+          "model": "HS2-12",
+          "product_name": "HS2 HydroSense II Handheld Soil Water Content Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "volumetric_water_content",
+            "label_en": "Volumetric Water Content",
+            "label_vi": "Hàm lượng nước thể tích"
+          }
+        ],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Các phép đo liên quan được ghi nhận: Hàm lượng nước thể tích.",
+      "template_latency_ms": 0.016,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex024",
+      "query_id": "q068",
+      "query": "monitor air temperature and humidity",
+      "category": "semantic",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CLIMAVUE40",
+      "model": "ClimaVue40",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "monitor air temperature and humidity",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "product_name": "Compact Digital RS-485 Modbus RTU Weather Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "air_temperature",
+            "label_en": "Air Temperature",
+            "label_vi": "Nhiệt độ không khí"
+          },
+          {
+            "key": "relative_humidity",
+            "label_en": "Relative Humidity",
+            "label_vi": "Độ ẩm tương đối"
+          }
+        ],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Relevant documented measurements: Air Temperature, Relative Humidity.",
+      "template_latency_ms": 0.0116,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex025",
+      "query_id": "q069",
+      "query": "đo nhiệt độ và độ ẩm không khí",
+      "category": "semantic",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_EE181",
+      "model": "EE181",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "đo nhiệt độ và độ ẩm không khí",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_EE181",
+          "model": "EE181",
+          "product_name": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "relative_humidity",
+            "label_en": "Relative Humidity",
+            "label_vi": "Độ ẩm tương đối"
+          }
+        ],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [
+          {
+            "key": "measure_temperature",
+            "label_en": "Measure Temperature",
+            "label_vi": "Đo nhiệt độ"
+          }
+        ],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Các phép đo liên quan được ghi nhận: Độ ẩm tương đối. Năng lực liên quan được ghi nhận: Đo nhiệt độ.",
+      "template_latency_ms": 0.0504,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex026",
+      "query_id": "q070",
+      "query": "measure rainfall",
+      "category": "semantic",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_TB4",
+      "model": "TB4",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "measure rainfall",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_TB4",
+          "model": "TB4",
+          "product_name": "TB4"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "precipitation",
+            "label_en": "Precipitation",
+            "label_vi": "Lượng mưa"
+          }
+        ],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Relevant documented measurements: Precipitation.",
+      "template_latency_ms": 0.1069,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex027",
+      "query_id": "q071",
+      "query": "đo lượng mưa",
+      "category": "semantic",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_52202",
+      "model": "52202",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "đo lượng mưa",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_52202",
+          "model": "52202",
+          "product_name": "RM Young Heated Rain Gage w/6.3 Orifice"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [
+          {
+            "key": "measure_precipitation",
+            "label_en": "Measure Precipitation",
+            "label_vi": "Đo lượng mưa"
+          }
+        ],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Năng lực liên quan được ghi nhận: Đo lượng mưa.",
+      "template_latency_ms": 0.0459,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex028",
+      "query_id": "q081",
+      "query": "soil moisture sensor with SDI-12",
+      "category": "mixed_constraint",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_SOILVUE10_5",
+      "model": "SoilVue10-5",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "soil moisture sensor with SDI-12",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_SOILVUE10_5",
+          "model": "SoilVue10-5",
+          "product_name": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "volumetric_water_content",
+            "label_en": "Volumetric Water Content",
+            "label_vi": "Hàm lượng nước thể tích"
+          }
+        ],
+        "matched_features": [
+          "protocol:SDI-12"
+        ],
+        "protocols": [
+          {
+            "protocol": "SDI-12",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "SDI-12",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence confirms support for SDI-12. Relevant documented measurements: Volumetric Water Content.",
+      "template_latency_ms": 0.0254,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex029",
+      "query_id": "q082",
+      "query": "cảm biến độ ẩm đất hỗ trợ SDI-12",
+      "category": "mixed_constraint",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CS655",
+      "model": "CS655",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "cảm biến độ ẩm đất hỗ trợ SDI-12",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "product_name": "12cm Water Content Reflectometer Plus (-50 to +70C)**"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "volumetric_water_content",
+            "label_en": "Volumetric Water Content",
+            "label_vi": "Hàm lượng nước thể tích"
+          }
+        ],
+        "matched_features": [
+          "protocol:SDI-12"
+        ],
+        "protocols": [
+          {
+            "protocol": "SDI-12",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "SDI-12",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Có bằng chứng cấu trúc xác nhận hỗ trợ SDI-12. Các phép đo liên quan được ghi nhận: Hàm lượng nước thể tích.",
+      "template_latency_ms": 0.0132,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex030",
+      "query_id": "q083",
+      "query": "weather sensor with Modbus RTU",
+      "category": "mixed_constraint",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_METEOPV",
+      "model": "MeteoPV",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "weather sensor with Modbus RTU",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_METEOPV",
+          "model": "MeteoPV",
+          "product_name": "MeteoPV"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [
+          "protocol:Modbus RTU"
+        ],
+        "protocols": [
+          {
+            "protocol": "Modbus RTU",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "Modbus RTU",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence confirms support for Modbus RTU.",
+      "template_latency_ms": 0.0293,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex031",
+      "query_id": "q085",
+      "query": "data logger with MQTT",
+      "category": "mixed_constraint",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CR350_NA",
+      "model": "CR350-NA",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "data logger with MQTT",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CR350_NA",
+          "model": "CR350-NA",
+          "product_name": "CR350 Datalogger (-40 to +70C) -NA No Additional Co"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": {
+          "category": "Measurement Devices",
+          "category_key": "measurement_devices",
+          "subcategory": "Data Loggers",
+          "subcategory_key": "data_loggers",
+          "device_type": "Data Logger",
+          "device_type_key": "data_logger"
+        },
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Its confirmed device type is Data Logger.",
+      "template_latency_ms": 0.0385,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex032",
+      "query_id": "q088",
+      "query": "cảm biến mực nước SDI-12",
+      "category": "mixed_constraint",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_RANGEVUE30",
+      "model": "RangeVue30",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "cảm biến mực nước SDI-12",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_RANGEVUE30",
+          "model": "RangeVue30",
+          "product_name": "Cảm biến radar đo mực nước RangeVue™30"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [
+          {
+            "key": "water_level",
+            "label_en": "Water Level",
+            "label_vi": "Mực nước"
+          }
+        ],
+        "matched_features": [
+          "protocol:SDI-12"
+        ],
+        "protocols": [
+          {
+            "protocol": "SDI-12",
+            "status": "MATCH",
+            "evidence": [
+              {
+                "source": "product_document",
+                "canonical_protocol": "SDI-12",
+                "relation": "supported"
+              }
+            ]
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Có bằng chứng cấu trúc xác nhận hỗ trợ SDI-12. Các phép đo liên quan được ghi nhận: Mực nước.",
+      "template_latency_ms": 0.0082,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex033",
+      "query_id": "q091",
+      "query": "unknown-model-999",
+      "category": "negative_or_ambiguous",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_BLACKGLOBE",
+      "model": "BLACKGLOBE",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "unknown-model-999",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_BLACKGLOBE",
+          "model": "BLACKGLOBE",
+          "product_name": "BlackGlobe Temperature Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "No specific structured evidence confirms why BLACKGLOBE matches this query.",
+      "template_latency_ms": 0.0179,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex034",
+      "query_id": "q096",
+      "query": "sensor",
+      "category": "negative_or_ambiguous",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_SNOWVUE10",
+      "model": "SnowVue10",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "sensor",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_SNOWVUE10",
+          "model": "SnowVue10",
+          "product_name": "Digital Snow Depth Sensor (-45 to +50C) w/o Cable"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": {
+          "status": "CONTEXT_ONLY",
+          "category": "Sensors",
+          "device_type": "Snow Water Equivalent / Snow Depth Sensor"
+        }
+      },
+      "template_explanation": "The product is contextually related to the query as a Snow Water Equivalent / Snow Depth Sensor.",
+      "template_latency_ms": 0.026,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex035",
+      "query_id": "q097",
+      "query": "industrial thing",
+      "category": "negative_or_ambiguous",
+      "language": "en",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_BLACKGLOBE",
+      "model": "BLACKGLOBE",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "industrial thing",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_BLACKGLOBE",
+          "model": "BLACKGLOBE",
+          "product_name": "BlackGlobe Temperature Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "No specific structured evidence confirms why BLACKGLOBE matches this query.",
+      "template_latency_ms": 0.0137,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex036",
+      "query_id": "q098",
+      "query": "thiết bị đo",
+      "category": "negative_or_ambiguous",
+      "language": "vi",
+      "selection": "top_result",
+      "search_result_rank": 1,
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "model": "CR6-NA-ST-CC",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "thiết bị đo",
+        "language": "vi",
+        "product": {
+          "product_id": "CSI_CR6_NA_ST_CC",
+          "model": "CR6-NA-ST-CC",
+          "product_name": "CR6 Datalogger -NA No Additional Coms -ST -40 t"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Không có bằng chứng cấu trúc cụ thể để giải thích mức độ phù hợp của CR6-NA-ST-CC.",
+      "template_latency_ms": 0.0207,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex037",
+      "query_id": "q045",
+      "query": "Modbus RTU sensor",
+      "category": "protocol",
+      "language": "en",
+      "selection": "unknown_evidence",
+      "search_result_rank": 6,
+      "product_id": "CSI_CLIMAVUE40",
+      "model": "ClimaVue40",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "Modbus RTU sensor",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "product_name": "Compact Digital RS-485 Modbus RTU Weather Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [
+          {
+            "protocol": "Modbus RTU",
+            "status": "UNKNOWN",
+            "evidence": []
+          }
+        ],
+        "technical_constraints": [],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Available structured evidence does not confirm Modbus RTU support.",
+      "template_latency_ms": 0.0237,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex038",
+      "query_id": "q051",
+      "query": "operates at -40°C",
+      "category": "technical_numeric",
+      "language": "en",
+      "selection": "unknown_evidence",
+      "search_result_rank": 12,
+      "product_id": "CSI_43347",
+      "model": "43347",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "operates at -40°C",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_43347",
+          "model": "43347",
+          "product_name": "RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "operating_temperature",
+            "requested": {
+              "kind": "point",
+              "intent": "operating",
+              "valueCelsius": -40,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "UNKNOWN",
+            "evidence": []
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence is insufficient to confirm the -40°C temperature requirement.",
+      "template_latency_ms": 0.0379,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex039",
+      "query_id": "q060",
+      "query": "measure up to 70°C",
+      "category": "technical_numeric",
+      "language": "en",
+      "selection": "unknown_evidence",
+      "search_result_rank": 3,
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "model": "CR6-NA-ST-CC",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "measure up to 70°C",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_CR6_NA_ST_CC",
+          "model": "CR6-NA-ST-CC",
+          "product_name": "CR6 Datalogger -NA No Additional Coms -ST -40 t"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "measurement_temperature",
+            "requested": {
+              "kind": "upper_bound",
+              "intent": "measurement",
+              "valueCelsius": 70,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "UNKNOWN",
+            "evidence": []
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence is insufficient to confirm the 70°C temperature requirement.",
+      "template_latency_ms": 0.0207,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    },
+    {
+      "case_id": "ex040",
+      "query_id": "q100",
+      "query": "operates at -200°C",
+      "category": "negative_or_ambiguous",
+      "language": "en",
+      "selection": "unknown_evidence",
+      "search_result_rank": 1,
+      "product_id": "CSI_BLACKGLOBE",
+      "model": "BLACKGLOBE",
+      "evidence": {
+        "evidence_version": "grounded-evidence-v1",
+        "query": "operates at -200°C",
+        "language": "en",
+        "product": {
+          "product_id": "CSI_BLACKGLOBE",
+          "model": "BLACKGLOBE",
+          "product_name": "BlackGlobe Temperature Sensor"
+        },
+        "identity": {
+          "exact_match": false,
+          "matched_value": null
+        },
+        "taxonomy": null,
+        "measurements": [],
+        "matched_features": [],
+        "protocols": [],
+        "technical_constraints": [
+          {
+            "type": "operating_temperature",
+            "requested": {
+              "kind": "point",
+              "intent": "operating",
+              "valueCelsius": -200,
+              "unit": "°C",
+              "confidence": "high"
+            },
+            "status": "UNKNOWN",
+            "evidence": []
+          }
+        ],
+        "capabilities": [],
+        "applications": [],
+        "specifications": [],
+        "semantic_context": null
+      },
+      "template_explanation": "Structured evidence is insufficient to confirm the -200°C temperature requirement.",
+      "template_latency_ms": 0.0093,
+      "automatic_validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      },
+      "human_review": {
+        "grounded": null,
+        "correct": null,
+        "useful": null,
+        "concise": null,
+        "review_notes": ""
+      }
+    }
+  ]
+}

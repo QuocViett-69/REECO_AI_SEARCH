@@ -1,27 +1,27 @@
 {
   "schema_version": "1.2",
-  "input_fingerprint_sha256": "5032f3b0aa07d2073829df83b215080a6d5ecfd7f8d755165965a29639332638",
+  "input_fingerprint_sha256": "dcb6e434e1b77c6f867216ddc2d936af60e0a561e1ed596f3065a8feffaa3f25",
   "normalization_engine_status": "passed",
   "technical_normalization_status": "LOCKED",
   "validation_status": "passed",
   "dataset_coverage": {
-    "master_products": 91,
-    "eligible_products": 86,
-    "normalized_products": 86,
-    "upstream_blocked_products": 5
+    "master_products": 89,
+    "eligible_products": 89,
+    "normalized_products": 89,
+    "upstream_blocked_products": 0
   },
   "summary": {
-    "master_product_count": 91,
-    "active_product_count": 86,
-    "products_normalized": 86,
-    "products_skipped": 5,
-    "total_specifications": 3202,
-    "normalized_successfully": 988,
-    "kept_as_text": 2214,
+    "master_product_count": 89,
+    "active_product_count": 89,
+    "products_normalized": 89,
+    "products_skipped": 0,
+    "total_specifications": 3277,
+    "normalized_successfully": 1012,
+    "kept_as_text": 2265,
     "parse_warning_count": 0,
     "actionable_parse_warning_count": 0,
-    "intentionally_kept_as_text_count": 2214,
-    "unknown_unit_count": 19,
+    "intentionally_kept_as_text_count": 2265,
+    "unknown_unit_count": 20,
     "unknown_protocol_count": 0,
     "invalid_range_count": 0,
     "missing_raw_reference_count": 0,
@@ -32,60 +32,24 @@
     "normalized_without_raw_ref_count": 0,
     "normalized_value_not_supported_by_raw_count": 0,
     "canonical_key_conflict_count": 0,
-    "protocol_facet_count": 201,
-    "supported_protocol_facet_value_count": 408,
+    "protocol_facet_count": 207,
+    "supported_protocol_facet_value_count": 450,
     "unsupported_protocol_facet_count": 3,
     "unsupported_protocol_facet_value_count": 3,
-    "dual_unit_values_parsed": 202,
-    "canonical_key_assigned": 3202,
-    "quantity_kind_assigned": 1294,
+    "dual_unit_values_parsed": 209,
+    "canonical_key_assigned": 3277,
+    "quantity_kind_assigned": 1327,
     "blocking_error_count": 0
   },
   "type_counts": {
-    "number": 597,
-    "range": 287,
+    "number": 614,
+    "range": 290,
     "boolean": 4,
-    "protocol": 94,
+    "protocol": 98,
     "list": 6,
-    "text": 2214
+    "text": 2265
   },
-  "skipped_products": [
-    {
-      "product_id": "CSI_43347",
-      "model": "43347",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_identity_conflict"
-    },
-    {
-      "product_id": "CSI_5103",
-      "model": "5103",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    },
-    {
-      "product_id": "CSI_CS451",
-      "model": "CS451",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "multiple_raw_records_match_without_variant_evidence"
-    },
-    {
-      "product_id": "CSI_CR1000XE_ST_CC",
-      "model": "CR1000Xe-ST-CC",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "meaningful_model_suffix_mismatch"
-    },
-    {
-      "product_id": "CSI_CPEC310",
-      "model": "CPEC310",
-      "status": "review",
-      "reason": "product_status_not_active",
-      "mapping_reason": "raw_record_not_found"
-    }
-  ],
+  "skipped_products": [],
   "diagnostics": {
     "actionable_parse_warnings": [],
     "intentionally_kept_as_text": [
@@ -183,6 +147,86 @@
         },
         "reasons": [
           "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_43347",
+        "name_raw": "Probe Tip Material",
+        "value_raw": "Stainless steel",
+        "raw_ref": {
+          "file": "data/raw/43347.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_43347",
+        "name_raw": "Sensing Element",
+        "value_raw": "HY-CAL 1000 Ω Platinum RTD",
+        "raw_ref": {
+          "file": "data/raw/43347.json",
+          "product_index": 0,
+          "spec_index": 6,
+          "source_rows": [
+            8
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_43347",
+        "name_raw": "Accuracy",
+        "value_raw": "±0.3°C at 0°C",
+        "raw_ref": {
+          "file": "data/raw/43347.json",
+          "product_index": 0,
+          "spec_index": 8,
+          "source_rows": [
+            10
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_43347",
+        "name_raw": "Accuracy",
+        "value_raw": "±0.1°C with NIST calibration",
+        "raw_ref": {
+          "file": "data/raw/43347.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            11
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_43347",
+        "name_raw": "Temperature Coefficient",
+        "value_raw": "0.00375 Ω/Ω/°C",
+        "raw_ref": {
+          "file": "data/raw/43347.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            12
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
         ]
       },
       {
@@ -5722,6 +5766,355 @@
         ]
       },
       {
+        "product_id": "CSI_CS451",
+        "name_raw": "Water-Level Resolution",
+        "value_raw": "0.0035% FS",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            6
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Dry Storage Temperature Range",
+        "value_raw": "-40° to +100°C | WARNING: Sensor could be damaged if encased in frozen ice.",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 4,
+          "source_rows": [
+            8,
+            9
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Operating Temperature Range",
+        "value_raw": "0° to 60°C | WARNING: Sensor could be damaged if encased in frozen ice.",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            10,
+            11
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Overpressure",
+        "value_raw": "2 x pressure range",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            13
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Cable Type",
+        "value_raw": "Hytrel Jacket, five conductor, 26 AWG",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            15
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "NPT Fitting",
+        "value_raw": "1/4-in. NPS",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            16
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Top Cone Material",
+        "value_raw": "Delrin",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 11,
+          "source_rows": [
+            17
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Body Material",
+        "value_raw": "316L stainless steel",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 12,
+          "source_rows": [
+            18
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Element Material",
+        "value_raw": "316L stainless steel",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 13,
+          "source_rows": [
+            19
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Ingress Protection",
+        "value_raw": "Exceeds IP68",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 14,
+          "source_rows": [
+            26
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Cable Outer Diameter",
+        "value_raw": "0.589 cm (0.232 in.) nominal | 0.599 cm (0.236 in.) maximum",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 16,
+          "source_rows": [
+            28,
+            29
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Cable Weight",
+        "value_raw": "0.0421 kg/m (0.0283 lb/ft)",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 18,
+          "source_rows": [
+            31
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Weight",
+        "value_raw": "0.17 kg (0.37 lb) without cable",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 19,
+          "source_rows": [
+            32
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "Measurement/Communication",
+        "value_raw": "8 mA (1 s measurement)",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 21,
+          "source_rows": [
+            38
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "0 to 5.1 m (16.7 ft)",
+        "value_raw": "0 to 7.25 psig | 0 to 50 kPa",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 23,
+          "source_rows": [
+            45,
+            46
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "0 to 10.2 m (33.4 ft)",
+        "value_raw": "0 to 14.5 psig | 0 to 100 kPa",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 24,
+          "source_rows": [
+            47,
+            48
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "0 to 20.4 m (67 ft)",
+        "value_raw": "0 to 200 kPa | 0 to 29 psig",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 25,
+          "source_rows": [
+            49,
+            50
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "0 to 50.9 m (167 ft)",
+        "value_raw": "0 to 500 kPa | 0 to 72.5 psig",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 26,
+          "source_rows": [
+            51,
+            52
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "0 to 102 m (334.5 ft)",
+        "value_raw": "0 to 1000 kPa | 0 to 145 psig",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 27,
+          "source_rows": [
+            53,
+            54
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "High Accuracy Option",
+        "value_raw": "±0.05% full-scale-range TEB | The high accuracy (±0.05% full-scale range) option is not available for the 0 to 2.9 psig range option. | Total Error Band (TEB) includes the combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1.",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 28,
+          "source_rows": [
+            58,
+            59,
+            60
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CS451",
+        "name_raw": "SDI-12",
+        "value_raw": "60 m (200 ft) | 10 sensors connected to a single port | ~457 m (1500 ft) | 1 sensor connected to a single port",
+        "raw_ref": {
+          "file": "data/raw/CS451.json",
+          "product_index": 0,
+          "spec_index": 29,
+          "source_rows": [
+            62,
+            63,
+            64,
+            65
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
         "product_id": "CSI_RANGEVUE30",
         "name_raw": "Product Type",
         "value_raw": "SDI-12 Radar Water-Level Sensor",
@@ -9751,6 +10144,406 @@
           "spec_index": 47,
           "source_rows": [
             60
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Configuration",
+        "value_raw": "-55 to +85°C Campbell Calibration",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 0,
+          "source_rows": [
+            3
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Temperature Version",
+        "value_raw": "Extended",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 1,
+          "source_rows": [
+            4
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Calibration Type",
+        "value_raw": "Campbell Calibration",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 2,
+          "source_rows": [
+            5
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Operating Humidity",
+        "value_raw": "0–100% RH, non-condensing environment",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 5,
+          "source_rows": [
+            9
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Case Material",
+        "value_raw": "Anodized aluminum",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 7,
+          "source_rows": [
+            11
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Analog Inputs",
+        "value_raw": "16 single-ended or 8 differential (individually configured). Two analog inputs can measure 4 to 20 mA or 0 to 20 mA natively",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 8,
+          "source_rows": [
+            12
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Pulse Counters",
+        "value_raw": "10 (P1 to P2 and C1 to C8)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 9,
+          "source_rows": [
+            13
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Voltage Excitation Terminals",
+        "value_raw": "4 (VX1 to VX4)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            14
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Maximum Source/Sink Current",
+        "value_raw": "±40 mA (voltage excitation) | 50 mA (regulated 3.3 or 5 V)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 11,
+          "source_rows": [
+            15
+          ]
+        },
+        "reasons": [
+          "complex_numeric_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Data Storage Slots",
+        "value_raw": "microSD",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 15,
+          "source_rows": [
+            21
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Switched 12 Volt",
+        "value_raw": "2 terminals, plus CS I/O pin 8",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 16,
+          "source_rows": [
+            22
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Digital I/O",
+        "value_raw": "8 terminals (C1 to C8) configurable for digital input and output. Includes status high/low, pulse width modulation, external interrupt, edge timing, switch closure pulse counting, high-frequency pulse counting, plus UART, RS-232, RS-485, SDM, SDI-12, I2C, and SPI serial-communications functions. Terminals are configurable in pairs for 5 V or 3.3 V logic for some functions.",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 17,
+          "source_rows": [
+            23
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "ADC",
+        "value_raw": "24-bit",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 19,
+          "source_rows": [
+            25
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Analog Voltage Accuracy Note",
+        "value_raw": "Accuracy specifications do not include sensor or measurement noise",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 20,
+          "source_rows": [
+            27
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Analog Voltage Accuracy - Extended Temperature",
+        "value_raw": "±(0.08% of measurement + offset) at -55° to +85°C (extended temperature range)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 21,
+          "source_rows": [
+            28
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Analog Voltage Accuracy - Standard Temperature",
+        "value_raw": "±(0.06% of measurement + offset) at -40° to +70°C",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 22,
+          "source_rows": [
+            29
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Analog Voltage Accuracy - 0° to 40°C",
+        "value_raw": "±(0.04% of measurement + offset) at 0° to 40°C",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 23,
+          "source_rows": [
+            30
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Power Requirements",
+        "value_raw": "10 to 36 Vdc input",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 24,
+          "source_rows": [
+            32
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Real-Time Clock Accuracy",
+        "value_raw": "±3 min. per year (optional GPS connection to ±10 µs)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 25,
+          "source_rows": [
+            33
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Idle Current Drain, Average",
+        "value_raw": "< 2.0 mA (@ 12 Vdc)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 26,
+          "source_rows": [
+            34
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Active Current Drain, Average - 20 Hz",
+        "value_raw": "57 mA (20 Hz scan @ 12 Vdc)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 27,
+          "source_rows": [
+            35
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Active Current Drain, Average - 1 Hz @ 24 Vdc",
+        "value_raw": "1.1 mA (1 Hz scan @ 24 Vdc)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 28,
+          "source_rows": [
+            36
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Active Current Drain, Average - 1 Hz @ 12 Vdc",
+        "value_raw": "2 mA (1 Hz scan @ 12 Vdc)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 29,
+          "source_rows": [
+            37
+          ]
+        },
+        "reasons": [
+          "descriptive_or_unstructured_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Data Storage",
+        "value_raw": "4 MB SRAM + 72 MB flash (storage expansion of up to 16 GB with removable microSD flash memory card)",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 31,
+          "source_rows": [
+            40
+          ]
+        },
+        "reasons": [
+          "complex_range_expression_kept_as_text"
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "name_raw": "Dimensions",
+        "value_raw": "23.8 x 10.1 x 6.2 cm (9.4 x 4.0 x 2.4 in.) | Additional clearance required for cables and wires",
+        "raw_ref": {
+          "file": "data/raw/CR1000Xe-XT-CC.json",
+          "product_index": 0,
+          "spec_index": 32,
+          "source_rows": [
+            42
           ]
         },
         "reasons": [
@@ -35748,41 +36541,26 @@
         ]
       }
     ],
-    "upstream_missing_raw": [
-      {
-        "product_id": "CSI_5103",
-        "model": "5103",
-        "reason": "raw_record_not_found"
-      },
-      {
-        "product_id": "CSI_CPEC310",
-        "model": "CPEC310",
-        "reason": "raw_record_not_found"
-      }
-    ],
-    "variant_mismatch": [
-      {
-        "product_id": "CSI_CR1000XE_ST_CC",
-        "model": "CR1000Xe-ST-CC",
-        "reason": "meaningful_model_suffix_mismatch"
-      }
-    ],
-    "ambiguous_variant": [
-      {
-        "product_id": "CSI_CS451",
-        "model": "CS451",
-        "reason": "multiple_raw_records_match_without_variant_evidence",
-        "policy": "generic_product_requires_variant_policy"
-      }
-    ],
-    "identity_conflict": [
+    "upstream_missing_raw": [],
+    "variant_mismatch": [],
+    "ambiguous_variant": [],
+    "identity_conflict": [],
+    "unknown_units": [
       {
         "product_id": "CSI_43347",
-        "model": "43347",
-        "reason": "raw_identity_conflict"
-      }
-    ],
-    "unknown_units": [
+        "name_raw": "Temperature Coefficient",
+        "value_raw": "0.00375 Ω/Ω/°C",
+        "raw_ref": {
+          "file": "data/raw/43347.json",
+          "product_index": 0,
+          "spec_index": 10,
+          "source_rows": [
+            12
+          ]
+        },
+        "unit_raw": "Ω/Ω/°C",
+        "reason": "unknown_unit_in_numeric_value"
+      },
       {
         "product_id": "CSI_105E",
         "name_raw": "Typical Output",
@@ -36083,6 +36861,7 @@
   "blocking_errors": [],
   "outputs": [
     "data/normalized/specifications/CSI_109.json",
+    "data/normalized/specifications/CSI_43347.json",
     "data/normalized/specifications/CSI_TEMPVUE20_S.json",
     "data/normalized/specifications/CSI_TEMPVUE50.json",
     "data/normalized/specifications/CSI_EE181.json",
@@ -36100,6 +36879,7 @@
     "data/normalized/specifications/CSI_CS120A_ST.json",
     "data/normalized/specifications/CSI_CS511.json",
     "data/normalized/specifications/CSI_CLARIVUE10.json",
+    "data/normalized/specifications/CSI_CS451.json",
     "data/normalized/specifications/CSI_RANGEVUE30.json",
     "data/normalized/specifications/CSI_CS616.json",
     "data/normalized/specifications/CSI_CS650.json",
@@ -36110,6 +36890,7 @@
     "data/normalized/specifications/CSI_AM16_32B_ST.json",
     "data/normalized/specifications/CSI_ASPEN10_CELL_ST.json",
     "data/normalized/specifications/CSI_AVW200_ST.json",
+    "data/normalized/specifications/CSI_CR1000XE_XT_CC.json",
     "data/normalized/specifications/CSI_CR310_NA.json",
     "data/normalized/specifications/CSI_CR310_WIFI.json",
     "data/normalized/specifications/CSI_CR350_NA.json",

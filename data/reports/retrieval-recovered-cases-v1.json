@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "report_id": "retrieval-recovered-cases-v1",
+  "generated_at": "2026-09-21T08:30:45.889Z",
+  "benchmark_id": "search-benchmark-v1.1",
+  "experimental_strategy": "strategy_b",
+  "summary": {
+    "recovered_cases": 2,
+    "affected_queries_with_any_recovery": 2
+  },
+  "cases": [
+    {
+      "query_id": "q058",
+      "query": "nhiệt độ hoạt động -30 đến 60°C",
+      "product_id": "CSI_LWS",
+      "relevance": 3,
+      "baseline_status": "outside_final_top_20",
+      "experiment_status": "rank_9",
+      "recovered_by": "canonical_semantic",
+      "canonical_concepts": [
+        "measurement:temperature"
+      ]
+    },
+    {
+      "query_id": "q059",
+      "query": "nhiệt độ hoạt động -10 tới 45°C",
+      "product_id": "CSI_CS120A_ST",
+      "relevance": 3,
+      "baseline_status": "outside_final_top_20",
+      "experiment_status": "rank_11",
+      "recovered_by": "canonical_semantic",
+      "canonical_concepts": [
+        "measurement:temperature"
+      ]
+    }
+  ]
+}

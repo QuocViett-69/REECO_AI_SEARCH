@@ -6,25 +6,25 @@
   },
   "products": [
     {
-      "product_id": null,
+      "product_id": "CSI_43347",
       "manufacturer": "Campbell Scientific",
-      "model": null,
-      "product_name_en": null,
+      "model": "43347",
+      "product_name_en": "RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated",
       "identity_source": {
-        "model": "manual_review",
-        "product_name_en": "manual_review"
+        "model": "user_confirmed",
+        "product_name_en": "canonical_master"
       },
       "taxonomy": {
-        "category": null,
-        "subcategory": null,
-        "device_type": null
+        "category": "Sensors",
+        "subcategory": "Air Temperature Sensors",
+        "device_type": "Air Temperature Sensor"
       },
       "specifications": [
         {
           "section": null,
           "name_en": "Model Number",
           "name_vi": "Mã model",
-          "value_raw": "41342",
+          "value_raw": "43347",
           "source_rows": [
             2
           ]
@@ -135,11 +135,10 @@
         ]
       },
       "validation": {
-        "status": "needs_review",
+        "status": "validated",
         "warnings": [
-          "Worksheet explicitly lists Model Number as 41342, while the source filename, datasheet filename, and order form reference 43347; model identity was not guessed and was set to null pending manual review.",
-          "Product name was not found explicitly in the worksheet.",
-          "No explicit specification section labels were found in the worksheet; section was set to null for all specifications."
+          "Canonical model 43347 was confirmed by the user; worksheet value 41342 is treated as a source typo.",
+          "No explicit specification section labels were found in the worksheet; section remains null."
         ]
       }
     }

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "report_id": "reranker-bge-smoke-v1",
+  "generated_at": "2026-09-21T04:17:59.739Z",
+  "result": "PASS",
+  "model": "BAAI/bge-reranker-v2-m3",
+  "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+  "cache_location": "E:\\ModelCache\\huggingface\\hub\\models--BAAI--bge-reranker-v2-m3\\snapshots\\953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+  "download_seconds": 357.273,
+  "runtime": {
+    "type": "ready",
+    "model_id": "BAAI/bge-reranker-v2-m3",
+    "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "model_path": "E:\\ModelCache\\huggingface\\hub\\models--BAAI--bge-reranker-v2-m3\\snapshots\\953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "cold_load_ms": 4146.872,
+    "batch_size": 4,
+    "max_length": 512,
+    "torch_version": "2.11.0+cu128"
+  },
+  "cases": [
+    {
+      "language": "en",
+      "query": "soil moisture sensor",
+      "relevant_product_id": "CSI_CS655",
+      "unrelated_product_id": "CSI_CELL205_AT",
+      "relevant_score": 3.982421875,
+      "unrelated_score": -10.6875,
+      "inference_ms": 463.591
+    },
+    {
+      "language": "vi",
+      "query": "cảm biến độ ẩm đất",
+      "relevant_product_id": "CSI_CS655",
+      "unrelated_product_id": "CSI_CELL205_AT",
+      "relevant_score": 0.77978515625,
+      "unrelated_score": -10.2890625,
+      "inference_ms": 18.946
+    }
+  ]
+}

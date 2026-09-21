@@ -1,22 +1,22 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-09-18T08:29:41.875Z",
-  "validation_status": "failed",
+  "generated_at": "2026-09-20T08:29:42.747Z",
+  "validation_status": "passed",
   "summary": {
-    "actual_product_count": 91,
-    "unique_product_id_count": 91,
-    "unique_model_count": 91,
-    "active_count": 86,
-    "review_count": 5,
+    "actual_product_count": 89,
+    "unique_product_id_count": 89,
+    "unique_model_count": 89,
+    "active_count": 89,
+    "review_count": 0,
     "raw_file_count": 97,
-    "raw_product_record_count": 140,
-    "raw_unique_product_id_count": 137,
-    "matched_raw_count": 87,
-    "unmatched_raw_count": 4,
+    "raw_product_record_count": 138,
+    "raw_unique_product_id_count": 135,
+    "matched_raw_count": 89,
+    "unmatched_raw_count": 0,
     "taxonomy_conflict_count": 0,
-    "true_identity_conflict_count": 1,
-    "ambiguous_raw_match_count": 1,
-    "blocking_errors": 5
+    "true_identity_conflict_count": 0,
+    "ambiguous_raw_match_count": 0,
+    "blocking_errors": 0
   },
   "checks": {
     "duplicate_product_ids": {
@@ -62,13 +62,6 @@
           ]
         },
         {
-          "product_id": "CSI_5103",
-          "fields": [
-            "product_url",
-            "image_url"
-          ]
-        },
-        {
           "product_id": "CSI_METSENS500_DS",
           "fields": [
             "product_url"
@@ -84,13 +77,6 @@
           "product_id": "CSI_CLARIVUE10",
           "fields": [
             "product_url"
-          ]
-        },
-        {
-          "product_id": "CSI_CS451",
-          "fields": [
-            "product_url",
-            "image_url"
           ]
         },
         {
@@ -115,13 +101,6 @@
           "product_id": "CSI_SNOWVUE10",
           "fields": [
             "product_url"
-          ]
-        },
-        {
-          "product_id": "CSI_CR1000XE_ST_CC",
-          "fields": [
-            "product_url",
-            "image_url"
           ]
         },
         {
@@ -170,13 +149,6 @@
           "product_id": "CSI_PS84_CR",
           "fields": [
             "product_url"
-          ]
-        },
-        {
-          "product_id": "CSI_CPEC310",
-          "fields": [
-            "product_url",
-            "image_url"
           ]
         },
         {
@@ -296,105 +268,16 @@
       "items": []
     },
     "true_identity_conflicts": {
-      "passed": false,
-      "items": [
-        {
-          "product_id": "CSI_43347",
-          "field": "model",
-          "master_value": "43347",
-          "raw_value": "41342",
-          "raw_record_key": "43347.json#0",
-          "reason": "raw_identity_requires_review"
-        }
-      ]
+      "passed": true,
+      "items": []
     },
     "products_not_matching_raw": {
-      "passed": false,
-      "items": [
-        {
-          "product_id": "CSI_5103",
-          "reason": "raw_record_not_found",
-          "candidates": []
-        },
-        {
-          "product_id": "CSI_CS451",
-          "reason": "multiple_raw_records_match_without_variant_evidence",
-          "candidates": [
-            {
-              "raw_file": "CS451.json",
-              "raw_index": 0,
-              "raw_record_key": "CS451.json#0",
-              "raw_product_id": "CSI_CS451_HA",
-              "raw_model": "CS451-HA"
-            },
-            {
-              "raw_file": "CS451.json",
-              "raw_index": 1,
-              "raw_record_key": "CS451.json#1",
-              "raw_product_id": "CSI_CS451_WN",
-              "raw_model": "CS451-WN"
-            },
-            {
-              "raw_file": "CS451.json",
-              "raw_index": 2,
-              "raw_record_key": "CS451.json#2",
-              "raw_product_id": "CSI_CS451_NN",
-              "raw_model": "CS451-NN"
-            }
-          ]
-        },
-        {
-          "product_id": "CSI_CR1000XE_ST_CC",
-          "reason": "meaningful_model_suffix_mismatch",
-          "candidates": [
-            {
-              "raw_file": "CR1000Xe-XT-CC.json",
-              "raw_index": 0,
-              "raw_record_key": "CR1000Xe-XT-CC.json#0",
-              "raw_product_id": "CSI_CR1000XE_XT_CC",
-              "raw_model": "CR1000Xe-XT-CC"
-            }
-          ]
-        },
-        {
-          "product_id": "CSI_CPEC310",
-          "reason": "raw_record_not_found",
-          "candidates": []
-        }
-      ]
+      "passed": true,
+      "items": []
     },
     "ambiguous_raw_matches": {
-      "passed": false,
-      "items": [
-        {
-          "product_id": "CSI_CS451",
-          "candidate_count": 3,
-          "match_method": "filename_alias",
-          "candidates": [
-            {
-              "raw_file": "CS451.json",
-              "raw_index": 0,
-              "raw_record_key": "CS451.json#0",
-              "raw_product_id": "CSI_CS451_HA",
-              "raw_model": "CS451-HA"
-            },
-            {
-              "raw_file": "CS451.json",
-              "raw_index": 1,
-              "raw_record_key": "CS451.json#1",
-              "raw_product_id": "CSI_CS451_WN",
-              "raw_model": "CS451-WN"
-            },
-            {
-              "raw_file": "CS451.json",
-              "raw_index": 2,
-              "raw_record_key": "CS451.json#2",
-              "raw_product_id": "CSI_CS451_NN",
-              "raw_model": "CS451-NN"
-            }
-          ]
-        }
-      ]
+      "passed": true,
+      "items": []
     },
     "duplicate_raw_targets": {
       "passed": true,
@@ -539,9 +422,8 @@
         "product_id": "CSI_43347",
         "raw_record_key": "43347.json#0",
         "warnings": [
-          "Worksheet explicitly lists Model Number as 41342, while the source filename, datasheet filename, and order form reference 43347; model identity was not guessed and was set to null pending manual review.",
-          "Product name was not found explicitly in the worksheet.",
-          "No explicit specification section labels were found in the worksheet; section was set to null for all specifications."
+          "Canonical model 43347 was confirmed by the user; worksheet value 41342 is treated as a source typo.",
+          "No explicit specification section labels were found in the worksheet; section remains null."
         ]
       },
       {
@@ -699,6 +581,13 @@
         "raw_record_key": "AVW200_ST_XT.json#0",
         "warnings": [
           "Product name was not found explicitly in the worksheet."
+        ]
+      },
+      {
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "raw_record_key": "CR1000Xe-XT-CC.json#0",
+        "warnings": [
+          "Product name was not found explicitly in the worksheet or supplied Product Master."
         ]
       },
       {
@@ -930,7 +819,7 @@
       },
       {
         "product_id": "CSI_43347",
-        "verified": "No"
+        "verified": "Yes"
       },
       {
         "product_id": "CSI_TEMPVUE20_S",
@@ -958,10 +847,6 @@
       },
       {
         "product_id": "CSI_RAINVUE10_MM",
-        "verified": "No"
-      },
-      {
-        "product_id": "CSI_5103",
         "verified": "No"
       },
       {
@@ -1006,7 +891,7 @@
       },
       {
         "product_id": "CSI_CS451",
-        "verified": "No"
+        "verified": "Yes"
       },
       {
         "product_id": "CSI_RANGEVUE30",
@@ -1049,8 +934,8 @@
         "verified": "No"
       },
       {
-        "product_id": "CSI_CR1000XE_ST_CC",
-        "verified": "No"
+        "product_id": "CSI_CR1000XE_XT_CC",
+        "verified": "Yes"
       },
       {
         "product_id": "CSI_CR310_NA",
@@ -1114,10 +999,6 @@
       },
       {
         "product_id": "CSI_PS84_CR",
-        "verified": "No"
-      },
-      {
-        "product_id": "CSI_CPEC310",
         "verified": "No"
       },
       {
@@ -1308,15 +1189,11 @@
       "raw_file": "43347.json",
       "raw_index": 0,
       "raw_record_key": "43347.json#0",
-      "raw_product_id": null,
-      "raw_model": null,
-      "match_method": "filename_alias",
-      "match_evidence": {
-        "canonical_model": "43347",
-        "raw_json_file": "43347.json",
-        "raw_source_file": "43347 Rtd Temperature Probe(2).xlsx"
-      },
-      "unresolved_reason": "raw_identity_conflict"
+      "raw_product_id": "CSI_43347",
+      "raw_model": "43347",
+      "match_method": "exact_product_id",
+      "match_evidence": null,
+      "unresolved_reason": null
     },
     {
       "product_id": "CSI_TEMPVUE20_S",
@@ -1394,17 +1271,6 @@
       "match_method": "exact_product_id",
       "match_evidence": null,
       "unresolved_reason": null
-    },
-    {
-      "product_id": "CSI_5103",
-      "raw_file": null,
-      "raw_index": null,
-      "raw_record_key": null,
-      "raw_product_id": null,
-      "raw_model": null,
-      "match_method": null,
-      "match_evidence": null,
-      "unresolved_reason": "raw_record_not_found"
     },
     {
       "product_id": "CSI_CSAT3B_NC",
@@ -1518,14 +1384,14 @@
     },
     {
       "product_id": "CSI_CS451",
-      "raw_file": null,
-      "raw_index": null,
-      "raw_record_key": null,
-      "raw_product_id": null,
-      "raw_model": null,
-      "match_method": "filename_alias",
+      "raw_file": "CS451.json",
+      "raw_index": 0,
+      "raw_record_key": "CS451.json#0",
+      "raw_product_id": "CSI_CS451",
+      "raw_model": "CS451",
+      "match_method": "exact_product_id",
       "match_evidence": null,
-      "unresolved_reason": "multiple_raw_records_match_without_variant_evidence"
+      "unresolved_reason": null
     },
     {
       "product_id": "CSI_RANGEVUE30",
@@ -1638,15 +1504,15 @@
       "unresolved_reason": null
     },
     {
-      "product_id": "CSI_CR1000XE_ST_CC",
-      "raw_file": null,
-      "raw_index": null,
-      "raw_record_key": null,
-      "raw_product_id": null,
-      "raw_model": null,
-      "match_method": null,
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "raw_file": "CR1000Xe-XT-CC.json",
+      "raw_index": 0,
+      "raw_record_key": "CR1000Xe-XT-CC.json#0",
+      "raw_product_id": "CSI_CR1000XE_XT_CC",
+      "raw_model": "CR1000Xe-XT-CC",
+      "match_method": "exact_product_id",
       "match_evidence": null,
-      "unresolved_reason": "meaningful_model_suffix_mismatch"
+      "unresolved_reason": null
     },
     {
       "product_id": "CSI_CR310_NA",
@@ -1827,17 +1693,6 @@
       "match_method": "exact_product_id",
       "match_evidence": null,
       "unresolved_reason": null
-    },
-    {
-      "product_id": "CSI_CPEC310",
-      "raw_file": null,
-      "raw_index": null,
-      "raw_record_key": null,
-      "raw_product_id": null,
-      "raw_model": null,
-      "match_method": null,
-      "match_evidence": null,
-      "unresolved_reason": "raw_record_not_found"
     },
     {
       "product_id": "CSI_SUNSCOUT",

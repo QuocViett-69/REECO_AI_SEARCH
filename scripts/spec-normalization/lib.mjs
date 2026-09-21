@@ -1202,6 +1202,7 @@ const scanRepositorySpecificationSources = async (
     'dist',
     'data/raw',
     'data/normalized',
+    'data/evaluation',
   ]);
   const sourceExtensions = new Set(['.xlsx', '.xls', '.csv', '.tsv', '.pdf']);
   const entries = await readdir(directory, { withFileTypes: true });

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T08:45:15.614Z",
+  "generated_at": "2026-09-20T08:32:16.195Z",
   "purpose": "Step 7.6B public technical-ranking POST /api/v1/search smoke",
   "endpoint": "POST /api/v1/search",
   "request_limit": 10,
@@ -267,36 +267,36 @@
       "http_status": 200,
       "mode": "hybrid",
       "result_ids": [
-        "CSI_METSENS500_DS",
         "CSI_CLIMAVUE50G2",
+        "CSI_METSENS500_DS",
         "CSI_TEMPVUE20_S",
-        "CSI_CR310_NA",
         "CSI_CR6_NA_ST_CC",
+        "CSI_CR310_NA",
+        "CSI_CR1000XE_XT_CC",
         "CSI_CS230",
         "CSI_BAROVUE10",
         "CSI_CR350_NA",
-        "CSI_CR310_WIFI",
         "CSI_CLARIVUE10"
       ],
       "top_5": [
         {
           "rank": 1,
-          "product_id": "CSI_METSENS500_DS",
-          "model": "MetSENS500-DS",
-          "keyword_score": 0.473684,
-          "semantic_score": 0.670921406804871,
-          "hybrid_score": 0.030886196246139225,
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "keyword_score": 0.166667,
+          "semantic_score": 0.708519958059785,
+          "hybrid_score": 0.030834914611005692,
           "matched_features": [
             "protocol:SDI-12"
           ]
         },
         {
           "rank": 2,
-          "product_id": "CSI_CLIMAVUE50G2",
-          "model": "ClimaVue50G2",
-          "keyword_score": 0.166667,
-          "semantic_score": 0.708519958059785,
-          "hybrid_score": 0.030834914611005692,
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "keyword_score": 0.473684,
+          "semantic_score": 0.670921406804871,
+          "hybrid_score": 0.030679156908665108,
           "matched_features": [
             "protocol:SDI-12"
           ]
@@ -314,22 +314,22 @@
         },
         {
           "rank": 4,
-          "product_id": "CSI_CR310_NA",
-          "model": "CR310-NA",
+          "product_id": "CSI_CR6_NA_ST_CC",
+          "model": "CR6-NA-ST-CC",
           "keyword_score": 0.0909091,
-          "semantic_score": 0.692406849281343,
-          "hybrid_score": 0.029386529386529386,
+          "semantic_score": 0.711674984245802,
+          "hybrid_score": 0.02921395544346364,
           "matched_features": [
             "protocol:SDI-12"
           ]
         },
         {
           "rank": 5,
-          "product_id": "CSI_CR6_NA_ST_CC",
-          "model": "CR6-NA-ST-CC",
+          "product_id": "CSI_CR310_NA",
+          "model": "CR310-NA",
           "keyword_score": 0.0909091,
-          "semantic_score": 0.711674984245802,
-          "hybrid_score": 0.02938045560996381,
+          "semantic_score": 0.692406849281343,
+          "hybrid_score": 0.029206349206349208,
           "matched_features": [
             "protocol:SDI-12"
           ]

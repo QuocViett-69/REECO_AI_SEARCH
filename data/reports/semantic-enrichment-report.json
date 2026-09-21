@@ -1,25 +1,25 @@
 {
   "schema_version": "1.0",
-  "input_fingerprint_sha256": "83d7ecda5a321d40fed392a918557fea79ff38624b75884a68408bd02b3be898",
+  "input_fingerprint_sha256": "b6fb41fcf4badcc745d78352195667bf371338438763a73f12b44694f5e06905",
   "validation_status": "passed",
   "summary": {
-    "total_master_products": 91,
-    "active_products": 86,
-    "enriched_products": 86,
-    "skipped_products": 5,
+    "total_master_products": 89,
+    "active_products": 89,
+    "enriched_products": 89,
+    "skipped_products": 0,
     "products_with_name_vi": 12,
-    "products_requiring_translation_review": 74,
+    "products_requiring_translation_review": 77,
     "measurement_concepts": 27,
-    "total_measurement_assignments": 91,
+    "total_measurement_assignments": 92,
     "application_concepts": 8,
     "total_application_assignments": 11,
-    "supported_protocol_assignments": 273,
+    "supported_protocol_assignments": 306,
     "unsupported_protocol_assignments": 3,
     "capability_concepts": 28,
-    "capability_assignments": 92,
-    "aliases": 240,
-    "en_keywords": 1022,
-    "vi_keywords": 775,
+    "capability_assignments": 93,
+    "aliases": 249,
+    "en_keywords": 1076,
+    "vi_keywords": 819,
     "enrichment_without_evidence_count": 0,
     "unknown_measurement_count": 0,
     "unknown_application_count": 0,
@@ -28,48 +28,22 @@
     "protocol_relation_conflict_count": 0,
     "alias_collision_count": 0,
     "duplicate_keyword_count": 0,
-    "translation_review_count": 74,
+    "translation_review_count": 77,
     "invalid_raw_ref_count": 0,
     "unsupported_semantic_claim_count": 0,
     "duplicate_product_artifact_count": 0,
     "blockers": 0
   },
-  "skipped_products": [
-    {
-      "product_id": "CSI_43347",
-      "model": "43347",
-      "status": "review",
-      "reason": "product_status_review"
-    },
-    {
-      "product_id": "CSI_5103",
-      "model": "5103",
-      "status": "review",
-      "reason": "product_status_review"
-    },
-    {
-      "product_id": "CSI_CS451",
-      "model": "CS451",
-      "status": "review",
-      "reason": "product_status_review"
-    },
-    {
-      "product_id": "CSI_CR1000XE_ST_CC",
-      "model": "CR1000Xe-ST-CC",
-      "status": "review",
-      "reason": "product_status_review"
-    },
-    {
-      "product_id": "CSI_CPEC310",
-      "model": "CPEC310",
-      "status": "review",
-      "reason": "product_status_review"
-    }
-  ],
+  "skipped_products": [],
   "translation_review": [
     {
       "product_id": "CSI_109",
       "name_en": "Temperature Sensor (-50 to +70C)",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_43347",
+      "name_en": "RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated",
       "reason": "conservative_translation_not_available"
     },
     {
@@ -133,6 +107,11 @@
       "reason": "conservative_translation_not_available"
     },
     {
+      "product_id": "CSI_CS451",
+      "name_en": "Stainless-Steel Pressure Transducer",
+      "reason": "conservative_translation_not_available"
+    },
+    {
       "product_id": "CSI_CS616",
       "name_en": "Water Content Reflectometer (0 to +70C)**",
       "reason": "conservative_translation_not_available"
@@ -175,6 +154,11 @@
     {
       "product_id": "CSI_AVW200_ST",
       "name_en": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+      "reason": "conservative_translation_not_available"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "name_en": "CR1000Xe Measurement and Control Datalogger (XT-CC)",
       "reason": "conservative_translation_not_available"
     },
     {
@@ -453,6 +437,7 @@
   },
   "outputs": [
     "data/enriched/products/CSI_109.json",
+    "data/enriched/products/CSI_43347.json",
     "data/enriched/products/CSI_TEMPVUE20_S.json",
     "data/enriched/products/CSI_TEMPVUE50.json",
     "data/enriched/products/CSI_EE181.json",
@@ -470,6 +455,7 @@
     "data/enriched/products/CSI_CS120A_ST.json",
     "data/enriched/products/CSI_CS511.json",
     "data/enriched/products/CSI_CLARIVUE10.json",
+    "data/enriched/products/CSI_CS451.json",
     "data/enriched/products/CSI_RANGEVUE30.json",
     "data/enriched/products/CSI_CS616.json",
     "data/enriched/products/CSI_CS650.json",
@@ -480,6 +466,7 @@
     "data/enriched/products/CSI_AM16_32B_ST.json",
     "data/enriched/products/CSI_ASPEN10_CELL_ST.json",
     "data/enriched/products/CSI_AVW200_ST.json",
+    "data/enriched/products/CSI_CR1000XE_XT_CC.json",
     "data/enriched/products/CSI_CR310_NA.json",
     "data/enriched/products/CSI_CR310_WIFI.json",
     "data/enriched/products/CSI_CR350_NA.json",

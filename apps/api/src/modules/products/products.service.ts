@@ -78,6 +78,20 @@ export class ProductsService {
     }));
   }
 
+  async getSearchDocumentsByIds(
+    productIds: string[],
+  ): Promise<Map<string, ProductSearchDocument>> {
+    const documents = await this.productsRepository.listDocuments([
+      ...new Set(productIds),
+    ]);
+    return new Map(
+      documents.map((document) => [
+        document.product_id,
+        document.search_document,
+      ]),
+    );
+  }
+
   async getTechnicalEvidenceByIds(
     productIds: string[],
   ): Promise<Map<string, ProductTechnicalEvidence>> {

@@ -139,6 +139,7 @@ function createSearchService(
       },
     },
     ranking = new TechnicalRankingService(),
+    reranker = { rerank: async (_query, _parsed, baseline) => baseline },
   } = {},
 ) {
   return new SearchService(
@@ -147,6 +148,7 @@ function createSearchService(
     parser,
     matcher,
     ranking,
+    reranker,
   );
 }
 
@@ -657,6 +659,54 @@ test('returns an empty success without catalog or technical DB work', async () =
       matcherCalls: 0,
     },
   );
+});
+
+test('successful reranking stays schema-compatible and keeps raw logits private', async () => {
+  const productsService = {
+    getActiveTechnicalIdentityCatalog: async () => [],
+    getPublicSummariesByIds: async (ids) =>
+      new Map(ids.map((id) => [id, summary(id)])),
+  };
+  const service = createSearchService(
+    {
+      search: async () =>
+        hybridResult('hybrid', [candidate('A'), candidate('B')]),
+    },
+    productsService,
+    {
+      reranker: {
+        rerank: async (_query, _parsed, baseline) => [...baseline].reverse(),
+      },
+    },
+  );
+  const response = await service.search({ query: 'sensor', limit: 10 });
+  assert.deepEqual(
+    response.results.map((result) => result.product_id),
+    ['B', 'A'],
+  );
+  assert.equal(response.mode, 'hybrid');
+  assert.equal(response.results[0].scores.rerank, null);
+  assert.equal(SearchResponseSchema.safeParse(response).success, true);
+});
+
+test('reranker fallback preserves SearchResponse baseline order', async () => {
+  const productsService = {
+    getActiveTechnicalIdentityCatalog: async () => [],
+    getPublicSummariesByIds: async (ids) =>
+      new Map(ids.map((id) => [id, summary(id)])),
+  };
+  const baseline = [candidate('A'), candidate('B')];
+  const service = createSearchService(
+    { search: async () => hybridResult('hybrid', baseline) },
+    productsService,
+    { reranker: { rerank: async (_query, _parsed, ranked) => ranked } },
+  );
+  const response = await service.search({ query: 'sensor', limit: 10 });
+  assert.deepEqual(
+    response.results.map((result) => result.product_id),
+    ['A', 'B'],
+  );
+  assert.equal(SearchResponseSchema.safeParse(response).success, true);
 });
 
 test('public HTTP boundary returns fallback 200, both-fail 503, and validation 400', async (t) => {

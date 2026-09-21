@@ -1,0 +1,732 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_CR1000XE_XT_CC",
+  "model": "CR1000Xe-XT-CC",
+  "raw_record_ref": {
+    "file": "data/raw/CR1000Xe-XT-CC.json",
+    "product_index": 0,
+    "raw_record_key": "CR1000Xe-XT-CC.json#0",
+    "raw_product_id": "CSI_CR1000XE_XT_CC",
+    "raw_model": "CR1000Xe-XT-CC"
+  },
+  "variants": [],
+  "specifications": [
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "CONFIGURATION",
+      "name_raw": "Configuration",
+      "value_raw": "-55 to +85°C Campbell Calibration",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "configuration"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "CONFIGURATION",
+      "name_raw": "Temperature Version",
+      "value_raw": "Extended",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "temperature_version",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "CONFIGURATION",
+      "name_raw": "Calibration Type",
+      "value_raw": "Campbell Calibration",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "calibration_type"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Operating Temperature Range",
+      "value_raw": "-55° to +85°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -55,
+        "max_value": 85,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "operating_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Storage Temperature Range",
+      "value_raw": "-60° to +85°C",
+      "type": "range",
+      "normalized": {
+        "type": "range",
+        "min_value": -60,
+        "max_value": 85,
+        "unit": "°C",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "storage_temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Operating Humidity",
+      "value_raw": "0–100% RH, non-condensing environment",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "operating_humidity"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Maximum Scan Rate",
+      "value_raw": "1000 Hz",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 1000,
+        "unit": "Hz",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "maximum_scan_rate"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Case Material",
+      "value_raw": "Anodized aluminum",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "case_material"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Analog Inputs",
+      "value_raw": "16 single-ended or 8 differential (individually configured). Two analog inputs can measure 4 to 20 mA or 0 to 20 mA natively",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "analog_inputs"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Pulse Counters",
+      "value_raw": "10 (P1 to P2 and C1 to C8)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          13
+        ]
+      },
+      "canonical_key": "pulse_counters"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Voltage Excitation Terminals",
+      "value_raw": "4 (VX1 to VX4)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          14
+        ]
+      },
+      "canonical_key": "voltage_excitation_terminals",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "GENERAL SPECIFICATIONS",
+      "name_raw": "Maximum Source/Sink Current",
+      "value_raw": "±40 mA (voltage excitation) | 50 mA (regulated 3.3 or 5 V)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 11,
+        "source_rows": [
+          15
+        ]
+      },
+      "canonical_key": "maximum_source_per_sink_current",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "COMMUNICATIONS",
+      "name_raw": "Communications Ports",
+      "value_raw": "USB-C | Ethernet | RS-232 | RS-485 | CS I/O | RS-422 | CPI",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "RS-232",
+          "RS-422",
+          "RS-485",
+          "Ethernet",
+          "USB",
+          "CS I/O",
+          "CPI"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "RS-232",
+          "RS-422",
+          "RS-485",
+          "Ethernet",
+          "USB",
+          "CS I/O",
+          "CPI"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          17
+        ]
+      },
+      "canonical_key": "communications_ports"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "COMMUNICATIONS",
+      "name_raw": "Internet Protocols",
+      "value_raw": "Ethernet | PPP | RNDIS | ICMP/Ping | Auto-IP (APIPA) | IPv4 | IPv6 | UDP | TCP | TLS (v1.2) | DNS | DHCP | SLAAC | Telnet | HTTP(S) | SFTP | FTP(S) | POP3/TLS | NTP | SMTP/TLS | SNMPv3 | CS I/O IP | MQTT(S)",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Ethernet",
+          "IPv4",
+          "IPv6",
+          "ICMP",
+          "PPP",
+          "RNDIS",
+          "Auto-IP",
+          "UDP",
+          "TCP",
+          "TLS",
+          "DNS",
+          "DHCP",
+          "SLAAC",
+          "Telnet",
+          "HTTP",
+          "FTP",
+          "POP3",
+          "NTP",
+          "SMTP",
+          "MQTT",
+          "CS I/O"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Ethernet",
+          "IPv4",
+          "IPv6",
+          "ICMP",
+          "PPP",
+          "RNDIS",
+          "Auto-IP",
+          "UDP",
+          "TCP",
+          "TLS",
+          "DNS",
+          "DHCP",
+          "SLAAC",
+          "Telnet",
+          "HTTP",
+          "FTP",
+          "POP3",
+          "NTP",
+          "SMTP",
+          "MQTT",
+          "CS I/O"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 13,
+        "source_rows": [
+          18
+        ]
+      },
+      "canonical_key": "internet_protocols"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "COMMUNICATIONS",
+      "name_raw": "Communications Protocols",
+      "value_raw": "CPI | PakBus | SDM | SDI-12 | Modbus | TCP | DNP3 outstation | UDP | NTCIP | NMEA 0183 | I2C | SPI | CampbellCloud HTTPS/MQTTS | and others",
+      "type": "protocol",
+      "normalized": {
+        "type": "protocol",
+        "values": [
+          "Modbus",
+          "SDI-12",
+          "UDP",
+          "TCP",
+          "HTTPS",
+          "PakBus",
+          "DNP3",
+          "CPI"
+        ]
+      },
+      "facets": {
+        "supported_protocols": [
+          "Modbus",
+          "SDI-12",
+          "UDP",
+          "TCP",
+          "HTTPS",
+          "PakBus",
+          "DNP3",
+          "CPI"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 14,
+        "source_rows": [
+          19
+        ]
+      },
+      "canonical_key": "communications_protocols"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "DATA STORAGE / I/O",
+      "name_raw": "Data Storage Slots",
+      "value_raw": "microSD",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 15,
+        "source_rows": [
+          21
+        ]
+      },
+      "canonical_key": "data_storage_slots"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "DATA STORAGE / I/O",
+      "name_raw": "Switched 12 Volt",
+      "value_raw": "2 terminals, plus CS I/O pin 8",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "CS I/O"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          22
+        ]
+      },
+      "canonical_key": "switched_12_volt",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "DATA STORAGE / I/O",
+      "name_raw": "Digital I/O",
+      "value_raw": "8 terminals (C1 to C8) configurable for digital input and output. Includes status high/low, pulse width modulation, external interrupt, edge timing, switch closure pulse counting, high-frequency pulse counting, plus UART, RS-232, RS-485, SDM, SDI-12, I2C, and SPI serial-communications functions. Terminals are configurable in pairs for 5 V or 3.3 V logic for some functions.",
+      "type": "text",
+      "normalized": null,
+      "facets": {
+        "supported_protocols": [
+          "SDI-12",
+          "RS-232",
+          "RS-485"
+        ],
+        "unsupported_protocols": []
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 17,
+        "source_rows": [
+          23
+        ]
+      },
+      "canonical_key": "digital_io"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "DATA STORAGE / I/O",
+      "name_raw": "Input Limits",
+      "value_raw": "±5 V",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 5,
+        "unit": "V",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 18,
+        "source_rows": [
+          24
+        ]
+      },
+      "canonical_key": "input_limits"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "DATA STORAGE / I/O",
+      "name_raw": "ADC",
+      "value_raw": "24-bit",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 19,
+        "source_rows": [
+          25
+        ]
+      },
+      "canonical_key": "adc"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "ANALOG VOLTAGE ACCURACY",
+      "name_raw": "Analog Voltage Accuracy Note",
+      "value_raw": "Accuracy specifications do not include sensor or measurement noise",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          27
+        ]
+      },
+      "canonical_key": "analog_voltage_accuracy_note",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "ANALOG VOLTAGE ACCURACY",
+      "name_raw": "Analog Voltage Accuracy - Extended Temperature",
+      "value_raw": "±(0.08% of measurement + offset) at -55° to +85°C (extended temperature range)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 21,
+        "source_rows": [
+          28
+        ]
+      },
+      "canonical_key": "analog_voltage_accuracy_extended_temperature",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "ANALOG VOLTAGE ACCURACY",
+      "name_raw": "Analog Voltage Accuracy - Standard Temperature",
+      "value_raw": "±(0.06% of measurement + offset) at -40° to +70°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 22,
+        "source_rows": [
+          29
+        ]
+      },
+      "canonical_key": "analog_voltage_accuracy_standard_temperature",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "ANALOG VOLTAGE ACCURACY",
+      "name_raw": "Analog Voltage Accuracy - 0° to 40°C",
+      "value_raw": "±(0.04% of measurement + offset) at 0° to 40°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 23,
+        "source_rows": [
+          30
+        ]
+      },
+      "canonical_key": "analog_voltage_accuracy_0_to_40_c",
+      "quantity_kind": "voltage"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "POWER / CLOCK",
+      "name_raw": "Power Requirements",
+      "value_raw": "10 to 36 Vdc input",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 24,
+        "source_rows": [
+          32
+        ]
+      },
+      "canonical_key": "power_requirements",
+      "quantity_kind": "power"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "POWER / CLOCK",
+      "name_raw": "Real-Time Clock Accuracy",
+      "value_raw": "±3 min. per year (optional GPS connection to ±10 µs)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 25,
+        "source_rows": [
+          33
+        ]
+      },
+      "canonical_key": "real_time_clock_accuracy",
+      "quantity_kind": "time"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "POWER / CLOCK",
+      "name_raw": "Idle Current Drain, Average",
+      "value_raw": "< 2.0 mA (@ 12 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 26,
+        "source_rows": [
+          34
+        ]
+      },
+      "canonical_key": "idle_current_drain_average",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "POWER / CLOCK",
+      "name_raw": "Active Current Drain, Average - 20 Hz",
+      "value_raw": "57 mA (20 Hz scan @ 12 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 27,
+        "source_rows": [
+          35
+        ]
+      },
+      "canonical_key": "active_current_drain_average_20_hz",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "POWER / CLOCK",
+      "name_raw": "Active Current Drain, Average - 1 Hz @ 24 Vdc",
+      "value_raw": "1.1 mA (1 Hz scan @ 24 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 28,
+        "source_rows": [
+          36
+        ]
+      },
+      "canonical_key": "active_current_drain_average_1_hz_24_vdc",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "POWER / CLOCK",
+      "name_raw": "Active Current Drain, Average - 1 Hz @ 12 Vdc",
+      "value_raw": "2 mA (1 Hz scan @ 12 Vdc)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 29,
+        "source_rows": [
+          37
+        ]
+      },
+      "canonical_key": "active_current_drain_average_1_hz_12_vdc",
+      "quantity_kind": "current"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "MEMORY / STORAGE",
+      "name_raw": "Battery-Backed SRAM for CPU Usage and Final Storage",
+      "value_raw": "4 MB",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 4,
+        "unit": "MB",
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 30,
+        "source_rows": [
+          39
+        ]
+      },
+      "canonical_key": "battery_backed_sram_for_cpu_usage_and_final_storage"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "MEMORY / STORAGE",
+      "name_raw": "Data Storage",
+      "value_raw": "4 MB SRAM + 72 MB flash (storage expansion of up to 16 GB with removable microSD flash memory card)",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 31,
+        "source_rows": [
+          40
+        ]
+      },
+      "canonical_key": "data_storage"
+    },
+    {
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "section": "PHYSICAL",
+      "name_raw": "Dimensions",
+      "value_raw": "23.8 x 10.1 x 6.2 cm (9.4 x 4.0 x 2.4 in.) | Additional clearance required for cables and wires",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/CR1000Xe-XT-CC.json",
+        "product_index": 0,
+        "spec_index": 32,
+        "source_rows": [
+          42
+        ]
+      },
+      "canonical_key": "physical_dimensions"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "schema_version": "1.0",
+  "report_id": "retrieval-regressions-v1",
+  "generated_at": "2026-09-21T08:30:45.889Z",
+  "benchmark_id": "search-benchmark-v1.1",
+  "experimental_strategy": "strategy_b",
+  "summary": {
+    "events": 21,
+    "relevant_candidates_lost": 11,
+    "precision_at_5_regressions": 1,
+    "ndcg_regressions": 9,
+    "exact_identity_regressions": 0,
+    "protocol_regressions": 0,
+    "numeric_hard_mismatch_leaks": 0
+  },
+  "negative_queries": [
+    {
+      "query_id": "q091",
+      "query": "unknown-model-999",
+      "expanded": false,
+      "baseline_top_5": [
+        "CSI_BLACKGLOBE",
+        "CSI_CLIMAVUE40",
+        "CSI_CR350_NA",
+        "CSI_CR310_NA",
+        "CSI_COM220_AU"
+      ],
+      "experiment_top_5": [
+        "CSI_BLACKGLOBE",
+        "CSI_CLIMAVUE40",
+        "CSI_CR350_NA",
+        "CSI_CR310_NA",
+        "CSI_COM220_AU"
+      ],
+      "overlap": 1
+    },
+    {
+      "query_id": "q092",
+      "query": "CSI_DOES_NOT_EXIST",
+      "expanded": false,
+      "baseline_top_5": [
+        "CSI_BLACKGLOBE",
+        "CSI_CS511",
+        "CSI_CS301",
+        "CSI_CR350_NA",
+        "CSI_CR310_NA"
+      ],
+      "experiment_top_5": [
+        "CSI_BLACKGLOBE",
+        "CSI_CS511",
+        "CSI_CS301",
+        "CSI_CR350_NA",
+        "CSI_CR310_NA"
+      ],
+      "overlap": 1
+    },
+    {
+      "query_id": "q093",
+      "query": "CS65",
+      "expanded": false,
+      "baseline_top_5": [
+        "CSI_CS506",
+        "CSI_CS120A_ST",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS511",
+        "CSI_CS125_ST"
+      ],
+      "experiment_top_5": [
+        "CSI_CS506",
+        "CSI_CS120A_ST",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS511",
+        "CSI_CS125_ST"
+      ],
+      "overlap": 1
+    },
+    {
+      "query_id": "q094",
+      "query": "CPEC310",
+      "expanded": false,
+      "baseline_top_5": [
+        "CSI_CPEC306_DW",
+        "CSI_CR310_NA",
+        "CSI_LWS",
+        "CSI_BLACKGLOBE",
+        "CSI_CS301"
+      ],
+      "experiment_top_5": [
+        "CSI_CPEC306_DW",
+        "CSI_CR310_NA",
+        "CSI_LWS",
+        "CSI_BLACKGLOBE",
+        "CSI_CS301"
+      ],
+      "overlap": 1
+    },
+    {
+      "query_id": "q095",
+      "query": "5103",
+      "expanded": false,
+      "baseline_top_5": [
+        "CSI_SNOWVUE10",
+        "CSI_VWIRE305_XD",
+        "CSI_BAROVUE10",
+        "CSI_CR310_NA",
+        "CSI_COM320_AU"
+      ],
+      "experiment_top_5": [
+        "CSI_SNOWVUE10",
+        "CSI_VWIRE305_XD",
+        "CSI_BAROVUE10",
+        "CSI_CR310_NA",
+        "CSI_COM320_AU"
+      ],
+      "overlap": 1
+    },
+    {
+      "query_id": "q099",
+      "query": "PROFINET sensor",
+      "expanded": false,
+      "baseline_top_5": [
+        "CSI_CLIMAVUE40",
+        "CSI_CS241DM",
+        "CSI_CS120A_ST",
+        "CSI_43347",
+        "CSI_METSENS300_D2"
+      ],
+      "experiment_top_5": [
+        "CSI_CLIMAVUE40",
+        "CSI_CS241DM",
+        "CSI_CS120A_ST",
+        "CSI_43347",
+        "CSI_METSENS300_D2"
+      ],
+      "overlap": 1
+    },
+    {
+      "query_id": "q100",
+      "query": "operates at -200°C",
+      "expanded": false,
+      "baseline_top_5": [
+        "CSI_BLACKGLOBE",
+        "CSI_43347",
+        "CSI_BAROVUE10",
+        "CSI_CR310_NA",
+        "CSI_TEMPVUE20_S"
+      ],
+      "experiment_top_5": [
+        "CSI_BLACKGLOBE",
+        "CSI_43347",
+        "CSI_BAROVUE10",
+        "CSI_CR310_NA",
+        "CSI_TEMPVUE20_S"
+      ],
+      "overlap": 1
+    }
+  ],
+  "broad_sensor": {
+    "baseline_top_5": [
+      "CSI_SNOWVUE10",
+      "CSI_CLIMAVUE40",
+      "CSI_CLIMAVUE50G2",
+      "CSI_BLACKGLOBE",
+      "CSI_CS120A_ST"
+    ],
+    "experiment_top_5": [
+      "CSI_SNOWVUE10",
+      "CSI_CLIMAVUE40",
+      "CSI_CLIMAVUE50G2",
+      "CSI_BLACKGLOBE",
+      "CSI_CS120A_ST"
+    ],
+    "expanded": false
+  },
+  "cases": [
+    {
+      "type": "NDCG_AT_5_REGRESSION",
+      "query_id": "q028",
+      "query": "air temperature sensor",
+      "delta": -0.306574
+    },
+    {
+      "type": "NDCG_AT_10_REGRESSION",
+      "query_id": "q028",
+      "query": "air temperature sensor",
+      "delta": -0.306574
+    },
+    {
+      "type": "PRECISION_AT_5_REGRESSION",
+      "query_id": "q031",
+      "query": "solar radiation sensor",
+      "delta": -0.2
+    },
+    {
+      "type": "NDCG_AT_5_REGRESSION",
+      "query_id": "q031",
+      "query": "solar radiation sensor",
+      "delta": -0.264068
+    },
+    {
+      "type": "NDCG_AT_10_REGRESSION",
+      "query_id": "q031",
+      "query": "solar radiation sensor",
+      "delta": -0.045661
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q058",
+      "query": "nhiệt độ hoạt động -30 đến 60°C",
+      "product_id": "CSI_RV50X",
+      "relevance": 3
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q059",
+      "query": "nhiệt độ hoạt động -10 tới 45°C",
+      "product_id": "CSI_CS310",
+      "relevance": 3
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q059",
+      "query": "nhiệt độ hoạt động -10 tới 45°C",
+      "product_id": "CSI_NL241",
+      "relevance": 3
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q059",
+      "query": "nhiệt độ hoạt động -10 tới 45°C",
+      "product_id": "CSI_NR01",
+      "relevance": 3
+    },
+    {
+      "type": "NDCG_AT_10_REGRESSION",
+      "query_id": "q066",
+      "query": "measure soil moisture and salinity",
+      "delta": -0.020061
+    },
+    {
+      "type": "NDCG_AT_5_REGRESSION",
+      "query_id": "q067",
+      "query": "đo độ ẩm đất",
+      "delta": -0.029448
+    },
+    {
+      "type": "NDCG_AT_10_REGRESSION",
+      "query_id": "q067",
+      "query": "đo độ ẩm đất",
+      "delta": -0.047924
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q081",
+      "query": "soil moisture sensor with SDI-12",
+      "product_id": "CSI_CS610",
+      "relevance": 1
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q081",
+      "query": "soil moisture sensor with SDI-12",
+      "product_id": "CSI_TEMPVUE20_S",
+      "relevance": 1
+    },
+    {
+      "type": "NDCG_AT_5_REGRESSION",
+      "query_id": "q081",
+      "query": "soil moisture sensor with SDI-12",
+      "delta": -0.026436
+    },
+    {
+      "type": "NDCG_AT_10_REGRESSION",
+      "query_id": "q081",
+      "query": "soil moisture sensor with SDI-12",
+      "delta": -0.024002
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q082",
+      "query": "cảm biến độ ẩm đất hỗ trợ SDI-12",
+      "product_id": "CSI_METSENS500_DS",
+      "relevance": 1
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q082",
+      "query": "cảm biến độ ẩm đất hỗ trợ SDI-12",
+      "product_id": "CSI_TEMPVUE20_S",
+      "relevance": 1
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q084",
+      "query": "cảm biến thời tiết RS-485",
+      "product_id": "CSI_HYGROVUE10",
+      "relevance": 1
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q087",
+      "query": "rain sensor with SDI-12",
+      "product_id": "CSI_TEMPVUE20_S",
+      "relevance": 1
+    },
+    {
+      "type": "RELEVANT_CANDIDATE_LOST",
+      "query_id": "q088",
+      "query": "cảm biến mực nước SDI-12",
+      "product_id": "CSI_RAINVUE10_MM",
+      "relevance": 1
+    }
+  ]
+}

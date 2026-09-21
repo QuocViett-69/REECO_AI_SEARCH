@@ -1,0 +1,713 @@
+{
+  "schema_version": "1.0",
+  "report_id": "explanation-grounding-v1",
+  "generated_at": "2026-09-21T09:11:29.350Z",
+  "evidence_version": "grounded-evidence-v1",
+  "template_version": "template-explanation-v1",
+  "summary": {
+    "pair_count": 40,
+    "english_cases": 30,
+    "vietnamese_cases": 10,
+    "exact_identity_cases": 5,
+    "protocol_cases": 11,
+    "numeric_cases": 9,
+    "unknown_cases": 4,
+    "semantic_context_cases": 2,
+    "automatic_safety_passes": 40,
+    "automatic_safety_failures": 0
+  },
+  "violations": {
+    "unsupported_protocol_claims": 0,
+    "unsupported_model_claims": 0,
+    "numeric_contradictions": 0,
+    "unknown_as_match": 0,
+    "wrong_language": 0,
+    "empty_explanations": 0,
+    "technical_term_changes": 0
+  },
+  "provider_input_policy": "Only the grounded evidence pack is passed to the provider; benchmark relevance, judgments, reviewer notes, scores, vectors, and database internals are excluded.",
+  "semantic_context_policy": "CONTEXT_ONLY may describe contextual relation and taxonomy, but cannot assert protocol, numeric, identity, or compatibility facts.",
+  "mismatch_policy": "MISMATCH is retained as negative evidence and can never be rendered as MATCH.",
+  "cases": [
+    {
+      "case_id": "ex001",
+      "query_id": "q001",
+      "product_id": "CSI_CS655",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex002",
+      "query_id": "q003",
+      "product_id": "CSI_43347",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex003",
+      "query_id": "q004",
+      "product_id": "CSI_CR1000XE_XT_CC",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex004",
+      "query_id": "q005",
+      "product_id": "CSI_CS451",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex005",
+      "query_id": "q011",
+      "product_id": "CSI_TEMPVUE20_S",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex006",
+      "query_id": "q021",
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex007",
+      "query_id": "q022",
+      "product_id": "CSI_CELL205_AT",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex008",
+      "query_id": "q024",
+      "product_id": "CSI_CLIMAVUE40",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex009",
+      "query_id": "q028",
+      "product_id": "CSI_43347",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex010",
+      "query_id": "q036",
+      "product_id": "CSI_CLIMAVUE50G2",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex011",
+      "query_id": "q037",
+      "product_id": "CSI_HYGROVUE10",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex012",
+      "query_id": "q039",
+      "product_id": "CSI_CLIMAVUE40",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex013",
+      "query_id": "q042",
+      "product_id": "CSI_NL241",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex014",
+      "query_id": "q045",
+      "product_id": "CSI_METEOPV",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex015",
+      "query_id": "q046",
+      "product_id": "CSI_MS80SH",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex016",
+      "query_id": "q051",
+      "product_id": "CSI_SNOWVUE10",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex017",
+      "query_id": "q052",
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex018",
+      "query_id": "q054",
+      "product_id": "CSI_109",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex019",
+      "query_id": "q056",
+      "product_id": "CSI_SNOWVUE10",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex020",
+      "query_id": "q060",
+      "product_id": "CSI_BLACKGLOBE",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex021",
+      "query_id": "q062",
+      "product_id": "CSI_BLACKGLOBE",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex022",
+      "query_id": "q066",
+      "product_id": "CSI_SOILVUE10_5",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex023",
+      "query_id": "q067",
+      "product_id": "CSI_HS2_12",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex024",
+      "query_id": "q068",
+      "product_id": "CSI_CLIMAVUE40",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex025",
+      "query_id": "q069",
+      "product_id": "CSI_EE181",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex026",
+      "query_id": "q070",
+      "product_id": "CSI_TB4",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex027",
+      "query_id": "q071",
+      "product_id": "CSI_52202",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex028",
+      "query_id": "q081",
+      "product_id": "CSI_SOILVUE10_5",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex029",
+      "query_id": "q082",
+      "product_id": "CSI_CS655",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex030",
+      "query_id": "q083",
+      "product_id": "CSI_METEOPV",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex031",
+      "query_id": "q085",
+      "product_id": "CSI_CR350_NA",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex032",
+      "query_id": "q088",
+      "product_id": "CSI_RANGEVUE30",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex033",
+      "query_id": "q091",
+      "product_id": "CSI_BLACKGLOBE",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex034",
+      "query_id": "q096",
+      "product_id": "CSI_SNOWVUE10",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex035",
+      "query_id": "q097",
+      "product_id": "CSI_BLACKGLOBE",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex036",
+      "query_id": "q098",
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex037",
+      "query_id": "q045",
+      "product_id": "CSI_CLIMAVUE40",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex038",
+      "query_id": "q051",
+      "product_id": "CSI_43347",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex039",
+      "query_id": "q060",
+      "product_id": "CSI_CR6_NA_ST_CC",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "case_id": "ex040",
+      "query_id": "q100",
+      "product_id": "CSI_BLACKGLOBE",
+      "validation": {
+        "violations": {
+          "unsupported_protocol_claims": 0,
+          "unsupported_model_claims": 0,
+          "numeric_contradictions": 0,
+          "unknown_as_match": 0,
+          "wrong_language": 0,
+          "empty_explanations": 0,
+          "technical_term_changes": 0
+        },
+        "pass": true
+      }
+    }
+  ]
+}

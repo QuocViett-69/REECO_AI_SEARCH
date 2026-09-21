@@ -7,6 +7,7 @@ User Query
 → Deterministic Technical Query Parser
 → Batch Structured Evidence Matching
 → Deterministic Technical Ranking/Filtering
+→ Optional Protected Top-5 BGE Reranking
 → Batch Public-Product Hydration
 → SearchResponse
 ```
@@ -26,7 +27,7 @@ Current implementation status:
 - Structured identity/protocol/temperature evidence matcher: implemented internally in Step 7.6A.
 - Celsius temperature constraint evaluator: implemented internally in Step 7.6A.
 - Public deterministic technical ranking/filter integration: implemented in Step 7.6B.
-- Reranker: not implemented.
+- Protected Top-5 BGE reranker: implemented behind `RERANKER_ENABLED=false` by default.
 - Search explanation: not implemented.
 
 The Step 7.3A contract is Ollama `qwen3-embedding:4b`, 1536 dimensions, version
@@ -90,7 +91,8 @@ injected. Protocol unknowns are retained and protocol mismatches are not hard-fi
 `measurement-temperature:up-to-70°C`. Unknown, missing, unsupported, semantic-only, and negative
 evidence create no feature. The same policy runs in hybrid, keyword-fallback, and semantic-fallback
 modes without changing the public mode. The RRF formula and `SEARCH_RRF_K=60` baseline are unchanged.
-An LLM/cross-encoder reranker and generated explanation remain unimplemented.
+A generated explanation remains unimplemented. The optional cross-encoder runtime is documented in
+[`reranker-runtime.md`](./reranker-runtime.md); it never changes retrieval mode or public score semantics.
 
 Step 7.7 freezes this behavior for frontend integration; it adds no ranking stage or public search
 field. See [`frontend-handoff.md`](./frontend-handoff.md) for client behavior and example fixtures.

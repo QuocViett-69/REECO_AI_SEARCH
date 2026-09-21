@@ -1,0 +1,254 @@
+{
+  "schema_version": "1.2",
+  "product_id": "CSI_43347",
+  "model": "43347",
+  "raw_record_ref": {
+    "file": "data/raw/43347.json",
+    "product_index": 0,
+    "raw_record_key": "43347.json#0",
+    "raw_product_id": "CSI_43347",
+    "raw_model": "43347"
+  },
+  "variants": [],
+  "specifications": [
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Model Number",
+      "value_raw": "43347",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 43347,
+        "unit": null,
+        "qualifier": null
+      },
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          2
+        ]
+      },
+      "canonical_key": "model_number"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Probe Tip Material",
+      "value_raw": "Stainless steel",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 1,
+        "source_rows": [
+          3
+        ]
+      },
+      "canonical_key": "probe_tip_material"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Probe Tip Sheath Diameter",
+      "value_raw": "0.478 cm (0.188 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 0.478,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 0.188,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 2,
+        "source_rows": [
+          4
+        ]
+      },
+      "canonical_key": "probe_tip_sheath_diameter",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Stainless Steel Sheath Length",
+      "value_raw": "6.12 cm (2.41 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 6.12,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 2.41,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 3,
+        "source_rows": [
+          5
+        ]
+      },
+      "canonical_key": "stainless_steel_sheath_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Total Probe Tip Length",
+      "value_raw": "10.08 cm (3.97 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 10.08,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 3.97,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 4,
+        "source_rows": [
+          6
+        ]
+      },
+      "canonical_key": "total_probe_tip_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Overall Length",
+      "value_raw": "17.8 cm (7 in.)",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 17.8,
+        "unit": "cm",
+        "qualifier": null,
+        "alternate": {
+          "value": 7,
+          "unit": "in"
+        }
+      },
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 5,
+        "source_rows": [
+          7
+        ]
+      },
+      "canonical_key": "overall_length",
+      "quantity_kind": "length"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Sensing Element",
+      "value_raw": "HY-CAL 1000 Ω Platinum RTD",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      },
+      "canonical_key": "sensing_element"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Temperature Range",
+      "value_raw": "±50°C",
+      "type": "number",
+      "normalized": {
+        "type": "number",
+        "value": 50,
+        "unit": "°C",
+        "qualifier": "±"
+      },
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      },
+      "canonical_key": "temperature_range",
+      "quantity_kind": "temperature"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Accuracy",
+      "value_raw": "±0.3°C at 0°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 8,
+        "source_rows": [
+          10
+        ]
+      },
+      "canonical_key": "accuracy"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Accuracy",
+      "value_raw": "±0.1°C with NIST calibration",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 9,
+        "source_rows": [
+          11
+        ]
+      },
+      "canonical_key": "accuracy"
+    },
+    {
+      "product_id": "CSI_43347",
+      "section": null,
+      "name_raw": "Temperature Coefficient",
+      "value_raw": "0.00375 Ω/Ω/°C",
+      "type": "text",
+      "normalized": null,
+      "raw_ref": {
+        "file": "data/raw/43347.json",
+        "product_index": 0,
+        "spec_index": 10,
+        "source_rows": [
+          12
+        ]
+      },
+      "canonical_key": "temperature_coefficient",
+      "quantity_kind": "temperature"
+    }
+  ]
+}

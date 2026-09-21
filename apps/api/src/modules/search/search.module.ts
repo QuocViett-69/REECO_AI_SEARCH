@@ -4,6 +4,7 @@ import { EmbeddingsModule } from '../embeddings/embeddings.module';
 import { ProductsModule } from '../products/products.module';
 import { HybridSearchService } from './hybrid-search.service';
 import { KeywordSearchService } from './keyword-search.service';
+import { RerankerService } from './reranker.service';
 import { SearchScoreService } from './search-score.service';
 import { SearchController } from './search.controller';
 import { SearchService } from './search.service';
@@ -24,6 +25,7 @@ import { TechnicalRankingService } from './technical-ranking.service';
     TechnicalQueryParserService,
     TechnicalMatchService,
     TechnicalRankingService,
+    RerankerService,
   ],
 })
 export class SearchModule {}

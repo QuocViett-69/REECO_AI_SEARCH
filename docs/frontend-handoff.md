@@ -114,7 +114,7 @@ Render results in the returned order. Do not re-sort them by a score:
 - An empty successful source is still a success. A valid no-match search returns `200` with
   `results: []`.
 - `keyword` is the raw keyword score or `0`; `semantic` is cosine similarity or `null`; `hybrid` is
-  the original RRF score or `null`; `rerank` is currently always `null`.
+  the original RRF score or `null`; `rerank` remains `null` because BGE logits stay internal.
 - These score fields have different scales. They are diagnostic contract fields, not percentages or a
   user-facing relevance grade.
 - Technical ranking may change final order without rewriting `scores.hybrid`.
@@ -219,7 +219,8 @@ embeddings.
 Not production-complete: eight known source-data validation blockers remain; admin role authorization
 is not hardened; local semantic search depends on Ollama; Celsius-only technical temperature parsing
 and a reviewed protocol/key subset are intentional v1 limits; there is no fuzzy typo correction,
-AI/cross-encoder reranker, generated explanation, compare endpoint, or product mutation API.
+generated explanation, compare endpoint, or product mutation API. The optional protected Top-5
+cross-encoder is backend-only and does not change the frozen response schema.
 
 Use [`api-contract.md`](./api-contract.md) as the detailed endpoint reference and import shared Zod
 schemas/types from `@reeco/shared` wherever practical.

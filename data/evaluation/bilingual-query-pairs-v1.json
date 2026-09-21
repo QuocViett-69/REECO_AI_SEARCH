@@ -1,0 +1,769 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "bilingual-query-pairs-v1",
+  "generated_at": "2026-09-21T08:30:45.889Z",
+  "benchmark_id": "search-benchmark-v1.1",
+  "pair_count": 16,
+  "limitation": "Only actual frozen benchmark queries with reviewed equivalent intent/constraints are paired; no translated query or judgment was invented to reach an arbitrary target count.",
+  "summary": {
+    "baseline": {
+      "top_5_overlap": 0.661706,
+      "top_10_overlap": 0.684399,
+      "recall_difference": 0.131073,
+      "ndcg_at_5_difference": 0.072119,
+      "ndcg_at_10_difference": 0.048772
+    },
+    "strategy_a": {
+      "top_5_overlap": 0.646825,
+      "top_10_overlap": 0.693869,
+      "recall_difference": 0.131073,
+      "ndcg_at_5_difference": 0.069136,
+      "ndcg_at_10_difference": 0.048688
+    },
+    "strategy_b": {
+      "top_5_overlap": 0.631944,
+      "top_10_overlap": 0.703776,
+      "recall_difference": 0.133228,
+      "ndcg_at_5_difference": 0.072629,
+      "ndcg_at_10_difference": 0.054075
+    }
+  },
+  "pairs": [
+    {
+      "pair_id": "bp01",
+      "left": {
+        "query_id": "q036",
+        "query": "SDI-12 sensor",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q037",
+        "query": "cảm biến SDI-12",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0.73913,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0.73913,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0.73913,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        }
+      }
+    },
+    {
+      "pair_id": "bp02",
+      "left": {
+        "query_id": "q036",
+        "query": "SDI-12 sensor",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q038",
+        "query": "thiết bị hỗ trợ SDI 12",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.481481,
+          "final_top_10_overlap": 0.428571,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.317292,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.481481,
+          "final_top_10_overlap": 0.428571,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.317292,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.481481,
+          "final_top_10_overlap": 0.428571,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.317292,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        }
+      }
+    },
+    {
+      "pair_id": "bp03",
+      "left": {
+        "query_id": "q039",
+        "query": "RS-485 device",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q040",
+        "query": "cảm biến RS485",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.6,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0.464146,
+          "ndcg_at_5_difference": 0.112461,
+          "ndcg_at_10_difference": 0.092443
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.6,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0.464146,
+          "ndcg_at_5_difference": 0.112461,
+          "ndcg_at_10_difference": 0.092443
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.6,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0.464146,
+          "ndcg_at_5_difference": 0.112461,
+          "ndcg_at_10_difference": 0.092443
+        }
+      }
+    },
+    {
+      "pair_id": "bp04",
+      "left": {
+        "query_id": "q039",
+        "query": "RS-485 device",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q041",
+        "query": "thiết bị giao tiếp RS 485",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        }
+      }
+    },
+    {
+      "pair_id": "bp05",
+      "left": {
+        "query_id": "q042",
+        "query": "Modbus device",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q043",
+        "query": "thiết bị Modbus",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0.222222,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.818182,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.039526,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0.222222,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.818182,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.039526,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0.222222,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.818182,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.039526,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        }
+      }
+    },
+    {
+      "pair_id": "bp06",
+      "left": {
+        "query_id": "q044",
+        "query": "Modbus compatible sensor",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q043",
+        "query": "thiết bị Modbus",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.481481,
+          "final_top_10_overlap": 0.428571,
+          "final_top_5_overlap": 0.111111,
+          "relevant_recall_at_20_difference": 0.567978,
+          "ndcg_at_5_difference": 0.141066,
+          "ndcg_at_10_difference": 0.129766
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.481481,
+          "final_top_10_overlap": 0.428571,
+          "final_top_5_overlap": 0.111111,
+          "relevant_recall_at_20_difference": 0.567978,
+          "ndcg_at_5_difference": 0.141066,
+          "ndcg_at_10_difference": 0.129766
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.481481,
+          "final_top_10_overlap": 0.428571,
+          "final_top_5_overlap": 0.111111,
+          "relevant_recall_at_20_difference": 0.567978,
+          "ndcg_at_5_difference": 0.141066,
+          "ndcg_at_10_difference": 0.129766
+        }
+      }
+    },
+    {
+      "pair_id": "bp07",
+      "left": {
+        "query_id": "q045",
+        "query": "Modbus RTU sensor",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q046",
+        "query": "cảm biến Modbus RTU",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0.75,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 1,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.247464,
+          "ndcg_at_10_difference": 0.210026
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0.75,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 1,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.247464,
+          "ndcg_at_10_difference": 0.210026
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0.75,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 1,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.247464,
+          "ndcg_at_10_difference": 0.210026
+        }
+      }
+    },
+    {
+      "pair_id": "bp08",
+      "left": {
+        "query_id": "q045",
+        "query": "Modbus RTU sensor",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q047",
+        "query": "thiết bị hỗ trợ Modbus RTU",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0.681195,
+          "ndcg_at_5_difference": 0.247464,
+          "ndcg_at_10_difference": 0.122332
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0.681195,
+          "ndcg_at_5_difference": 0.247464,
+          "ndcg_at_10_difference": 0.122332
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0.681195,
+          "ndcg_at_5_difference": 0.247464,
+          "ndcg_at_10_difference": 0.122332
+        }
+      }
+    },
+    {
+      "pair_id": "bp09",
+      "left": {
+        "query_id": "q051",
+        "query": "operates at -40°C",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q056",
+        "query": "hoạt động ở -40°C",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.7,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.027027,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.7,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.027027,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.7,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.027027,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        }
+      }
+    },
+    {
+      "pair_id": "bp10",
+      "left": {
+        "query_id": "q066",
+        "query": "measure soil moisture and salinity",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q067",
+        "query": "đo độ ẩm đất",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.666667,
+          "final_candidate_top_20_overlap": 0.666667,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0.000918
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.666667,
+          "final_candidate_top_20_overlap": 0.666667,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0.000918
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 1,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.029448,
+          "ndcg_at_10_difference": 0.028781
+        }
+      }
+    },
+    {
+      "pair_id": "bp11",
+      "left": {
+        "query_id": "q068",
+        "query": "monitor air temperature and humidity",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q069",
+        "query": "đo nhiệt độ và độ ẩm không khí",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.047737,
+          "ndcg_at_10_difference": 0.057059
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0.05571
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0.090044
+        }
+      }
+    },
+    {
+      "pair_id": "bp12",
+      "left": {
+        "query_id": "q070",
+        "query": "measure rainfall",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q071",
+        "query": "đo lượng mưa",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 1,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 1,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.818182,
+          "final_candidate_top_20_overlap": 0.818182,
+          "final_top_10_overlap": 1,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        }
+      }
+    },
+    {
+      "pair_id": "bp13",
+      "left": {
+        "query_id": "q072",
+        "query": "monitor river water level",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q073",
+        "query": "quan trắc mực nước",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.013532,
+          "ndcg_at_10_difference": 0.013532
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.538462,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.013532,
+          "ndcg_at_10_difference": 0.013532
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.818182,
+          "final_candidate_top_20_overlap": 0.818182,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 1,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.013532,
+          "ndcg_at_10_difference": 0.013532
+        }
+      }
+    },
+    {
+      "pair_id": "bp14",
+      "left": {
+        "query_id": "q074",
+        "query": "measure wind speed and direction",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q075",
+        "query": "đo tốc độ và hướng gió",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0.25,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.122278,
+          "ndcg_at_10_difference": 0.045535
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0.25,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.122278,
+          "ndcg_at_10_difference": 0.045535
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0.25,
+          "semantic_top_20_overlap": 0.904762,
+          "final_candidate_top_20_overlap": 0.904762,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.122278,
+          "ndcg_at_10_difference": 0.045535
+        }
+      }
+    },
+    {
+      "pair_id": "bp15",
+      "left": {
+        "query_id": "q076",
+        "query": "solar radiation monitoring",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q077",
+        "query": "đo bức xạ mặt trời",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.221909,
+          "ndcg_at_10_difference": 0.108738
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.221909,
+          "ndcg_at_10_difference": 0.108738
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 0,
+          "semantic_top_20_overlap": 0.6,
+          "final_candidate_top_20_overlap": 0.6,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0.221909,
+          "ndcg_at_10_difference": 0.108738
+        }
+      }
+    },
+    {
+      "pair_id": "bp16",
+      "left": {
+        "query_id": "q081",
+        "query": "soil moisture sensor with SDI-12",
+        "language": "en"
+      },
+      "right": {
+        "query_id": "q082",
+        "query": "cảm biến độ ẩm đất hỗ trợ SDI-12",
+        "language": "vi"
+      },
+      "basis": "Frozen benchmark queries share reviewed meaning/constraints; each side retains its own frozen judgments.",
+      "strategies": {
+        "baseline": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_a": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.73913,
+          "final_candidate_top_20_overlap": 0.73913,
+          "final_top_10_overlap": 0.818182,
+          "final_top_5_overlap": 0.666667,
+          "relevant_recall_at_20_difference": 0,
+          "ndcg_at_5_difference": 0,
+          "ndcg_at_10_difference": 0
+        },
+        "strategy_b": {
+          "keyword_top_20_overlap": 1,
+          "semantic_top_20_overlap": 0.666667,
+          "final_candidate_top_20_overlap": 0.666667,
+          "final_top_10_overlap": 0.666667,
+          "final_top_5_overlap": 0.428571,
+          "relevant_recall_at_20_difference": 0.034483,
+          "ndcg_at_5_difference": 0.026436,
+          "ndcg_at_10_difference": 0.024002
+        }
+      }
+    }
+  ]
+}

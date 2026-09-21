@@ -14,79 +14,12 @@
     "extractable_missing_product_sources_found": 0
   },
   "summary": {
-    "upstream_blocked_products": 5,
-    "raw_record_not_found": 2,
-    "variant_mismatch": 1,
-    "ambiguous_variant": 1,
-    "identity_conflict": 1,
+    "upstream_blocked_products": 0,
+    "raw_record_not_found": 0,
+    "variant_mismatch": 0,
+    "ambiguous_variant": 0,
+    "identity_conflict": 0,
     "new_raw_records_extracted": 0
   },
-  "products": [
-    {
-      "product_id": "CSI_43347",
-      "model": "43347",
-      "status": "review",
-      "blocker": "identity_conflict",
-      "resolution": "Resolve the conflicting model identity in the source/raw record before activation."
-    },
-    {
-      "product_id": "CSI_5103",
-      "model": "5103",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    },
-    {
-      "product_id": "CSI_CS451",
-      "model": "CS451",
-      "status": "review",
-      "blocker": "ambiguous_variant",
-      "policy": "generic_product_requires_variant_policy",
-      "existing_raw_candidates": [
-        {
-          "file": "data/raw/CS451.json",
-          "product_index": 0,
-          "product_id": "CSI_CS451_HA",
-          "model": "CS451-HA"
-        },
-        {
-          "file": "data/raw/CS451.json",
-          "product_index": 1,
-          "product_id": "CSI_CS451_WN",
-          "model": "CS451-WN"
-        },
-        {
-          "file": "data/raw/CS451.json",
-          "product_index": 2,
-          "product_id": "CSI_CS451_NN",
-          "model": "CS451-NN"
-        }
-      ],
-      "resolution": "Provide a generic CS451 source/raw record or an explicit canonical variant policy; do not select HA, WN, or NN implicitly."
-    },
-    {
-      "product_id": "CSI_CR1000XE_ST_CC",
-      "model": "CR1000Xe-ST-CC",
-      "status": "review",
-      "blocker": "variant_mismatch",
-      "existing_raw_candidates": [
-        {
-          "file": "data/raw/CR1000Xe-XT-CC.json",
-          "product_index": 0,
-          "product_id": "CSI_CR1000XE_XT_CC",
-          "model": "CR1000Xe-XT-CC"
-        }
-      ],
-      "resolution": "Provide repository source evidence or a separate raw record for the exact ST variant; XT must not be reused."
-    },
-    {
-      "product_id": "CSI_CPEC310",
-      "model": "CPEC310",
-      "status": "review",
-      "blocker": "raw_record_not_found",
-      "repository_source_found": false,
-      "resolution": "No specification source exists in the repository; provide an evidence-backed source or raw record."
-    }
-  ]
+  "products": []
 }

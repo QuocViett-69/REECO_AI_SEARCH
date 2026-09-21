@@ -1,0 +1,767 @@
+{
+  "schema_version": "1.0",
+  "report_id": "search-failure-cases-v1",
+  "generated_at": "2026-09-20T09:00:33.410Z",
+  "benchmark_id": "search-benchmark-v1",
+  "summary": {
+    "case_count": 60,
+    "by_type": {
+      "keyword_semantic_top1_divergence": 25,
+      "protocol_top5_without_explicit_support": 2,
+      "suggested_positive_missing_at_10": 31,
+      "verified_relevant_miss_at_5": 2
+    },
+    "interpretation": "Observed baseline cases only. No ranking changes were made."
+  },
+  "cases": [
+    {
+      "severity": "low",
+      "type": "verified_relevant_miss_at_5",
+      "query_id": "q021",
+      "query": "data logger",
+      "recall_at_5": 0.6
+    },
+    {
+      "severity": "low",
+      "type": "verified_relevant_miss_at_5",
+      "query_id": "q022",
+      "query": "cellular modem router",
+      "recall_at_5": 0.8333333333333334
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q036",
+      "query": "SDI-12 sensor",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 16,
+      "sample_product_ids": [
+        "CSI_ASPEN10_CELL_ST",
+        "CSI_AVW200_ST",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CR310_NA",
+        "CSI_CR310_WIFI",
+        "CSI_CR350_NA",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS451",
+        "CSI_CS650",
+        "CSI_CS655"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q036",
+      "query": "SDI-12 sensor",
+      "keyword_top1": "CSI_RAINVUE10_MM",
+      "semantic_top1": "CSI_CLIMAVUE50G2"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q037",
+      "query": "cảm biến SDI-12",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 16,
+      "sample_product_ids": [
+        "CSI_ASPEN10_CELL_ST",
+        "CSI_AVW200_ST",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CR310_NA",
+        "CSI_CR310_WIFI",
+        "CSI_CR350_NA",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS451",
+        "CSI_CS456",
+        "CSI_CS655"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q037",
+      "query": "cảm biến SDI-12",
+      "keyword_top1": "CSI_BAROVUE10",
+      "semantic_top1": "CSI_METSENS300_D2"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q038",
+      "query": "thiết bị hỗ trợ SDI 12",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 16,
+      "sample_product_ids": [
+        "CSI_ASPEN10_CELL_ST",
+        "CSI_CLARIVUE10",
+        "CSI_CR310_WIFI",
+        "CSI_CR350_NA",
+        "CSI_CS451",
+        "CSI_CS456",
+        "CSI_CS650",
+        "CSI_CS655",
+        "CSI_LEVELVUEB10_15",
+        "CSI_MS80SH"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q039",
+      "query": "RS-485 device",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 6,
+      "sample_product_ids": [
+        "CSI_CS140",
+        "CSI_CSAT3B_NC",
+        "CSI_LEVELVUEB10_15",
+        "CSI_METEOPV",
+        "CSI_SKYVUE8",
+        "CSI_SUNSCOUT"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q040",
+      "query": "cảm biến RS485",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 6,
+      "sample_product_ids": [
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CSAT3B_NC",
+        "CSI_LEVELVUEB10_15",
+        "CSI_METEOPV",
+        "CSI_SKYVUE8",
+        "CSI_SUNSCOUT"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q041",
+      "query": "thiết bị giao tiếp RS 485",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 6,
+      "sample_product_ids": [
+        "CSI_CS125_ST",
+        "CSI_CS140",
+        "CSI_CSAT3B_NC",
+        "CSI_LEVELVUEB10_15",
+        "CSI_SKYVUE8",
+        "CSI_SUNSCOUT"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q042",
+      "query": "Modbus device",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 3,
+      "sample_product_ids": [
+        "CSI_CR310_WIFI",
+        "CSI_CR350_NA",
+        "CSI_LEVELVUEB10_15"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q042",
+      "query": "Modbus device",
+      "keyword_top1": "CSI_NL241",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q043",
+      "query": "thiết bị Modbus",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 3,
+      "sample_product_ids": [
+        "CSI_CR350_NA",
+        "CSI_METEOPV",
+        "CSI_MS80SH"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q043",
+      "query": "thiết bị Modbus",
+      "keyword_top1": "CSI_RV50X",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q044",
+      "query": "Modbus compatible sensor",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 5,
+      "sample_product_ids": [
+        "CSI_CR310_WIFI",
+        "CSI_CR350_NA",
+        "CSI_LEVELVUEB10_15",
+        "CSI_NL201_ST",
+        "CSI_RV50X"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q044",
+      "query": "Modbus compatible sensor",
+      "keyword_top1": "CSI_TEMPVUE20_S",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q045",
+      "query": "Modbus RTU sensor",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 1,
+      "sample_product_ids": [
+        "CSI_CR310_WIFI"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q046",
+      "query": "cảm biến Modbus RTU",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 1,
+      "sample_product_ids": [
+        "CSI_CR310_WIFI"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q046",
+      "query": "cảm biến Modbus RTU",
+      "keyword_top1": "CSI_TEMPVUE20_S",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q047",
+      "query": "thiết bị hỗ trợ Modbus RTU",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 1,
+      "sample_product_ids": [
+        "CSI_CR310_WIFI"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "protocol_top5_without_explicit_support",
+      "query_id": "q048",
+      "query": "MQTT data logger",
+      "protocol": "MQTT",
+      "product_ids": [
+        "CSI_CLIMAVUE40"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q048",
+      "query": "MQTT data logger",
+      "keyword_top1": "CSI_ASPEN10_CELL_ST",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q049",
+      "query": "DNP3 logger",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 1,
+      "sample_product_ids": [
+        "CSI_RV50X"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q049",
+      "query": "DNP3 logger",
+      "keyword_top1": "CSI_CR350_NA",
+      "semantic_top1": "CSI_CR310_NA"
+    },
+    {
+      "severity": "inspect",
+      "type": "protocol_top5_without_explicit_support",
+      "query_id": "q050",
+      "query": "cảm biến giao tiếp USB",
+      "protocol": "USB",
+      "product_ids": [
+        "CSI_WINDSONIC1",
+        "CSI_43347",
+        "CSI_METSENS300_D2",
+        "CSI_CS120A_ST",
+        "CSI_METSENS200_D2"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q050",
+      "query": "cảm biến giao tiếp USB",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 25,
+      "sample_product_ids": [
+        "CSI_CELL205_AT",
+        "CSI_CELL210_V",
+        "CSI_CELL215_IT1A",
+        "CSI_CELL220_IT1A",
+        "CSI_CELL225_IT1A",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CR310_NA",
+        "CSI_CR310_WIFI",
+        "CSI_CR350_NA",
+        "CSI_CR6_NA_ST_CC"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q051",
+      "query": "operates at -40°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 27,
+      "sample_product_ids": [
+        "CSI_CELL210_V",
+        "CSI_CELL215_IT1A",
+        "CSI_CELL220_IT1A",
+        "CSI_CELL225_IT1A",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CS230",
+        "CSI_CS301",
+        "CSI_CS310",
+        "CSI_CS650",
+        "CSI_CS655"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q052",
+      "query": "operates at 60°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 33,
+      "sample_product_ids": [
+        "CSI_109",
+        "CSI_CELL205_AT",
+        "CSI_CELL210_V",
+        "CSI_CELL215_IT1A",
+        "CSI_CELL220_IT1A",
+        "CSI_CELL225_IT1A",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CS230",
+        "CSI_CS310",
+        "CSI_CS616"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q053",
+      "query": "operating temperature -40 to 60°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 26,
+      "sample_product_ids": [
+        "CSI_CELL205_AT",
+        "CSI_CELL210_V",
+        "CSI_CELL215_IT1A",
+        "CSI_CELL220_IT1A",
+        "CSI_CELL225_IT1A",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CS230",
+        "CSI_CS241DM",
+        "CSI_CS301",
+        "CSI_CS310"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q053",
+      "query": "operating temperature -40 to 60°C",
+      "keyword_top1": "CSI_CS120A_ST",
+      "semantic_top1": "CSI_43347"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q054",
+      "query": "operating temperature -50 to 70°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 3,
+      "sample_product_ids": [
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CS230",
+        "CSI_SN500SS"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q054",
+      "query": "operating temperature -50 to 70°C",
+      "keyword_top1": "CSI_WINDSONIC1",
+      "semantic_top1": "CSI_BLACKGLOBE"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q055",
+      "query": "operating temperature -20 to 50°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 35,
+      "sample_product_ids": [
+        "CSI_CELL205_AT",
+        "CSI_CELL210_V",
+        "CSI_CELL215_IT1A",
+        "CSI_CELL220_IT1A",
+        "CSI_CELL225_IT1A",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS230",
+        "CSI_CS241DM",
+        "CSI_CS301"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q055",
+      "query": "operating temperature -20 to 50°C",
+      "keyword_top1": "CSI_AM16_32B_ST",
+      "semantic_top1": "CSI_BLACKGLOBE"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q056",
+      "query": "hoạt động ở -40°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 27,
+      "sample_product_ids": [
+        "CSI_CELL210_V",
+        "CSI_CELL220_IT1A",
+        "CSI_CLIMAVUE40",
+        "CSI_CS230",
+        "CSI_CS241DM",
+        "CSI_CS301",
+        "CSI_CS310",
+        "CSI_CS650",
+        "CSI_CS655",
+        "CSI_LEVELVUEB10_15"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q057",
+      "query": "hoạt động tại 50°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 39,
+      "sample_product_ids": [
+        "CSI_AM16_32B_ST",
+        "CSI_AVW200_ST",
+        "CSI_CELL210_V",
+        "CSI_CELL220_IT1A",
+        "CSI_CLIMAVUE40",
+        "CSI_CPEC306_DW",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS230",
+        "CSI_CS301"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q058",
+      "query": "nhiệt độ hoạt động -30 đến 60°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 29,
+      "sample_product_ids": [
+        "CSI_CELL205_AT",
+        "CSI_CELL210_V",
+        "CSI_CELL215_IT1A",
+        "CSI_CELL220_IT1A",
+        "CSI_CELL225_IT1A",
+        "CSI_CLIMAVUE40",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS241DM",
+        "CSI_CS301"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q059",
+      "query": "nhiệt độ hoạt động -10 tới 45°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 35,
+      "sample_product_ids": [
+        "CSI_AM16_32B_ST",
+        "CSI_AVW200_ST",
+        "CSI_CELL210_V",
+        "CSI_CELL220_IT1A",
+        "CSI_CLIMAVUE40",
+        "CSI_CPEC306_DW",
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CR6_NA_ST_CC",
+        "CSI_CS120A_ST",
+        "CSI_CS301"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q060",
+      "query": "measure up to 70°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 6,
+      "sample_product_ids": [
+        "CSI_CS650",
+        "CSI_CS655",
+        "CSI_HYGROVUE10",
+        "CSI_METSENS300_D2",
+        "CSI_METSENS500_DS",
+        "CSI_METSENS550_D2"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q060",
+      "query": "measure up to 70°C",
+      "keyword_top1": "CSI_CR6_NA_ST_CC",
+      "semantic_top1": "CSI_BLACKGLOBE"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q061",
+      "query": "measure up to 50°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 6,
+      "sample_product_ids": [
+        "CSI_CS650",
+        "CSI_CS655",
+        "CSI_HMP60",
+        "CSI_HYGROVUE10",
+        "CSI_METSENS300_D2",
+        "CSI_METSENS550_D2"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q061",
+      "query": "measure up to 50°C",
+      "keyword_top1": "CSI_CR6_NA_ST_CC",
+      "semantic_top1": "CSI_BLACKGLOBE"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q062",
+      "query": "đo tới 60°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 5,
+      "sample_product_ids": [
+        "CSI_CLIMAVUE50G2",
+        "CSI_HYGROVUE10",
+        "CSI_METSENS300_D2",
+        "CSI_METSENS500_DS",
+        "CSI_METSENS550_D2"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q063",
+      "query": "đo đến 40°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 8,
+      "sample_product_ids": [
+        "CSI_CLIMAVUE50G2",
+        "CSI_CS650",
+        "CSI_CS655",
+        "CSI_HMP60",
+        "CSI_HYGROVUE10",
+        "CSI_METSENS300_D2",
+        "CSI_METSENS500_DS",
+        "CSI_METSENS550_D2"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q064",
+      "query": "operates at -55°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 2,
+      "sample_product_ids": [
+        "CSI_CR1000XE_XT_CC",
+        "CSI_CS230"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q065",
+      "query": "operating temperature 0 to 40°C",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 40,
+      "sample_product_ids": [
+        "CSI_109",
+        "CSI_AM16_32B_ST",
+        "CSI_AVW200_ST",
+        "CSI_CELL205_AT",
+        "CSI_CELL210_V",
+        "CSI_CELL215_IT1A",
+        "CSI_CELL220_IT1A",
+        "CSI_CELL225_IT1A",
+        "CSI_CPEC306_DW",
+        "CSI_CR1000XE_XT_CC"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q065",
+      "query": "operating temperature 0 to 40°C",
+      "keyword_top1": "CSI_CLARIVUE10",
+      "semantic_top1": "CSI_43347"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q067",
+      "query": "đo độ ẩm đất",
+      "keyword_top1": "CSI_HS2_12",
+      "semantic_top1": "CSI_TCAV"
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q068",
+      "query": "monitor air temperature and humidity",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 4,
+      "sample_product_ids": [
+        "CSI_HMP60",
+        "CSI_METSENS300_D2",
+        "CSI_METSENS500_DS",
+        "CSI_METSENS550_D2"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "suggested_positive_missing_at_10",
+      "query_id": "q069",
+      "query": "đo nhiệt độ và độ ẩm không khí",
+      "note": "Suggested labels are not verified ground truth.",
+      "missing_count": 4,
+      "sample_product_ids": [
+        "CSI_HYGROVUE5",
+        "CSI_METSENS300_D2",
+        "CSI_METSENS500_DS",
+        "CSI_METSENS550_D2"
+      ]
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q069",
+      "query": "đo nhiệt độ và độ ẩm không khí",
+      "keyword_top1": "CSI_EE181",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q071",
+      "query": "đo lượng mưa",
+      "keyword_top1": "CSI_52202",
+      "semantic_top1": "CSI_TB4"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q074",
+      "query": "measure wind speed and direction",
+      "keyword_top1": "CSI_CSAT3B_NC",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q075",
+      "query": "đo tốc độ và hướng gió",
+      "keyword_top1": "CSI_CSAT3B_NC",
+      "semantic_top1": "CSI_WINDSONIC1"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q084",
+      "query": "cảm biến thời tiết RS-485",
+      "keyword_top1": "CSI_CS125_ST",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q085",
+      "query": "data logger with MQTT",
+      "keyword_top1": "CSI_CR350_NA",
+      "semantic_top1": "CSI_CR310_WIFI"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q088",
+      "query": "cảm biến mực nước SDI-12",
+      "keyword_top1": "CSI_RANGEVUE30",
+      "semantic_top1": "CSI_CS456"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q089",
+      "query": "wind sensor with RS-485",
+      "keyword_top1": "CSI_CSAT3B_NC",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q096",
+      "query": "sensor",
+      "keyword_top1": "CSI_HS2_12",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    },
+    {
+      "severity": "inspect",
+      "type": "keyword_semantic_top1_divergence",
+      "query_id": "q098",
+      "query": "thiết bị đo",
+      "keyword_top1": "CSI_ASPEN10_CELL_ST",
+      "semantic_top1": "CSI_CLIMAVUE40"
+    }
+  ]
+}
