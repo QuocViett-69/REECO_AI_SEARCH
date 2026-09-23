@@ -13,12 +13,13 @@ import {
   WifiOff,
 } from 'lucide-react';
 
+import { FavoriteButton } from '../commerce/FavoriteButton';
+import { AddToCartButton } from '../commerce/AddToCartButton';
+import { formatPrice, getProductPrice } from '../../services/commercialService';
+
 // ─── Parse a matched_feature string into a human-readable chip ────────────────
 function parseFeatureChip(feature) {
   if (!feature) return null;
-  // e.g. "identity:model:CS655" → "Model: CS655"
-  // e.g. "protocol:SDI-12" → "Protocol: SDI-12"
-  // e.g. "operating-temperature:-40°C" → "Temp: -40°C"
   const parts = feature.split(':');
   if (parts.length >= 2) {
     const type = parts[0];
@@ -138,7 +139,6 @@ export function SearchResults({
             </div>
           ))
         ) : searchError ? (
-          // ── Error state ─────────────────────────────────────────────────────
           <div className="state-empty" style={{ margin: '40px auto', textAlign: 'center' }}>
             <div className="state-icon">
               {searchError.error === 'unavailable' ? (
@@ -166,6 +166,7 @@ export function SearchResults({
           filteredResults.map((p) => {
             const inCompare = isInCompare(p.model);
             const features = p.matched_features || [];
+            const price = p.price ?? getProductPrice(p.product_id, p.model);
 
             return (
               <article key={p.model} className="product-result-card" data-model={p.model}>
@@ -189,15 +190,38 @@ export function SearchResults({
                   </div>
 
                   <div className="product-result-main">
-                    <div className="product-result-breadcrumb">
-                      <span>{p.category}</span>
-                      <ChevronRight size={14} />
-                      <span>{p.subcategory}</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                      <div className="product-result-breadcrumb">
+                        <span>{p.category}</span>
+                        <ChevronRight size={14} />
+                        <span>{p.subcategory}</span>
+                      </div>
+                      <FavoriteButton product={p} />
                     </div>
                     <div className="product-result-model">{p.model}</div>
                     <div className="product-result-name">{p.name}</div>
                     <div className="product-result-tags">
                       <span className="product-result-tag">{p.deviceType}</span>
+                    </div>
+
+                    {/* Commercial Price & Availability */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 10 }}>
+                      <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-1, #fff)' }}>
+                        {formatPrice(price, p.currency || 'USD')}
+                      </div>
+                      <span
+                        style={{
+                          fontSize: 11,
+                          padding: '2px 8px',
+                          borderRadius: 4,
+                          background: 'rgba(0, 200, 115, 0.08)',
+                          color: '#00c873',
+                          border: '1px solid rgba(0, 200, 115, 0.2)',
+                          fontWeight: 500,
+                        }}
+                      >
+                        Available for order
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -221,9 +245,10 @@ export function SearchResults({
                 )}
 
                 <div className="product-result-actions">
+                  <AddToCartButton product={p} />
                   <button
                     type="button"
-                    className="btn btn-primary view-detail-btn"
+                    className="btn btn-secondary view-detail-btn"
                     onClick={() => onViewDetail(p.model)}
                   >
                     <Eye size={16} /> View Details

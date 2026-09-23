@@ -291,7 +291,7 @@ function AppInner() {
 
         {/* ── Profile ────────────────────────────────────────────────────────────── */}
         {currentPage === 'account-profile' && (
-          <ProfilePage />
+          <ProfilePage onNavigate={handleNavigate} />
         )}
 
         {/* ── Admin: Orders ──────────────────────────────────────────────────────── */}

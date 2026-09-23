@@ -361,33 +361,106 @@ export function ProductDetail({
         </div>
       )}
 
-      {/* ── Resources ────────────────────────────────────────────────────────── */}
+      {/* ── Resources / Official Resources ───────────────────────────────────── */}
       {currentTab === 'resources' && (
         <div className="tab-content active">
           <div className="content-section">
-            <h3>Resources</h3>
-            <ul>
+            <h3 style={{ marginBottom: 16 }}>Official Resources</h3>
+            <p style={{ color: 'var(--text-3, #888)', fontSize: 13, marginBottom: 20 }}>
+              Authorized technical documentation, brochures, and calibration manuals for {product.model}.
+            </p>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+              {/* Product Webpage / Datasheet */}
+              {productUrl && (
+                <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ fontSize: 20, marginBottom: 8 }}>📄</div>
+                    <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>Product Datasheet &amp; Specs</div>
+                    <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Official Campbell Scientific specification sheet</div>
+                  </div>
+                  <a
+                    href={productUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
+                  >
+                    <span>Open Datasheet</span> <ExternalLink size={13} />
+                  </a>
+                </div>
+              )}
+
+              {/* User Manual */}
+              <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: 20, marginBottom: 8 }}>📘</div>
+                  <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>User &amp; Operation Manual</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Comprehensive wiring, SDI-12 programming, and calibration guide</div>
+                </div>
+                <a
+                  href={`https://s.campbellsci.com/documents/us/manuals/${product.model.toLowerCase().replace(/[^a-z0-9]/g, '')}.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
+                >
+                  <span>Open Manual</span> <ExternalLink size={13} />
+                </a>
+              </div>
+
+              {/* Installation & Mounting Guide */}
+              <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: 20, marginBottom: 8 }}>🛠</div>
+                  <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>Installation Guide</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Field installation, sensor depth alignment &amp; station setup</div>
+                </div>
+                <a
+                  href={productUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
+                >
+                  <span>Open Guide</span> <ExternalLink size={13} />
+                </a>
+              </div>
+
+              {/* Media links if any */}
               {(product.media || [])
-                .filter((m) => m.product_url)
+                .filter((m) => m.product_url && m.product_url !== productUrl)
                 .map((m, i) => (
-                  <li key={i}>
-                    <a href={m.product_url} target="_blank" rel="noreferrer"
-                      style={{ color: 'var(--primary-accent)', fontWeight: 600 }}>
-                      {m.metadata?.title || `Resource ${i + 1}`}
+                  <div key={i} className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div>
+                      <div style={{ fontSize: 20, marginBottom: 8 }}>💻</div>
+                      <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>{m.metadata?.title || 'Firmware / Software'}</div>
+                      <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Authorized support download</div>
+                    </div>
+                    <a
+                      href={m.product_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary"
+                      style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
+                    >
+                      <span>Open Resource</span> <ExternalLink size={13} />
                     </a>
-                  </li>
+                  </div>
                 ))}
-            </ul>
+            </div>
           </div>
         </div>
       )}
 
       {/* ── E. You May Also Need (AI Recommendations) ─────────────────────────── */}
-      {product.product_id && (
-        <div className="detail-recommendations">
-          <RecommendationRow productId={product.product_id} onViewDetail={onSelectProduct} />
-        </div>
-      )}
+      <div className="detail-recommendations">
+        <RecommendationRow
+          productId={product.product_id || product.id}
+          model={product.model}
+          onViewDetail={onSelectProduct}
+        />
+      </div>
     </section>
   );
 }

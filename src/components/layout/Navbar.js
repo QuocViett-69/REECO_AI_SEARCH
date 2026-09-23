@@ -6,17 +6,27 @@ import {
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { useFavorite } from '../../context/FavoriteContext';
+import { notificationService } from '../../services/notificationService';
 
 export function Navbar({ currentPage, onNavigate, compareCount }) {
   const { user, isAuthenticated, isAdmin, logout } = useAuth();
   const { cartCount, cartItems, cartSubtotal } = useCart();
   const { favoriteCount } = useFavorite();
+  const [unreadNotifCount, setUnreadNotifCount] = useState(0);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [cartPreviewOpen, setCartPreviewOpen] = useState(false);
   const accountRef = useRef(null);
   const cartRef = useRef(null);
+
+  useEffect(() => {
+    if (user && user.username) {
+      setUnreadNotifCount(notificationService.getUnreadCount(user.username));
+    } else {
+      setUnreadNotifCount(0);
+    }
+  }, [user, currentPage]);
 
   useEffect(() => {
     const handler = e => {
@@ -127,6 +137,7 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
                 className={`nav-icon-btn ${currentPage === 'account-notifications' ? 'active' : ''}`}
                 onClick={() => nav('account-notifications')} aria-label="Notifications" title="Notifications">
                 <Bell size={18} />
+                {unreadNotifCount > 0 && <span className="nav-badge">{unreadNotifCount}</span>}
               </button>
             )}
 
