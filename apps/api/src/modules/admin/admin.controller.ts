@@ -1,7 +1,9 @@
 import {
+  Body,
   Controller,
   Get,
   Param,
+  Patch,
   Query,
   UseGuards,
 } from '@nestjs/common';
@@ -31,5 +33,13 @@ export class AdminController {
   @Get(':productId')
   get(@Param('productId') productId: string): Promise<ProductDetail> {
     return this.productsService.getAdmin(productId);
+  }
+
+  @Patch(':productId')
+  update(
+    @Param('productId') productId: string,
+    @Body() updates: Record<string, any>,
+  ): Promise<ProductDetail> {
+    return this.productsService.updateAdmin(productId, updates);
   }
 }

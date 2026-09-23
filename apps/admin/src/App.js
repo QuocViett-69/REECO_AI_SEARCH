@@ -4,11 +4,13 @@ import { DashboardView } from './components/dashboard/DashboardView';
 import { ProductManagementView } from './components/products/ProductManagementView';
 import { AdminProductDetailView } from './components/detail/AdminProductDetailView';
 import { ProductImportView } from './components/import/ProductImportView';
+import { LoginView } from './components/auth/LoginView';
 import { ToastContainer } from './components/common/Toast';
-import { getAdminProductsApi } from './services/api';
+import { getAdminProductsApi, getStoredUser, logoutAdminApi } from './services/api';
 import './index.css';
 
 export function App() {
+  const [currentUser, setCurrentUser] = useState(() => getStoredUser());
   const [currentTab, setCurrentTab] = useState('dashboard');
   const [selectedProductId, setSelectedProductId] = useState(null);
 
@@ -21,7 +23,14 @@ export function App() {
   const [stats, setStats] = useState({ totalProducts: 0, activeProducts: 0 });
 
   // Recent import results from the last POST /admin/import
-  const [lastImportReport, setLastImportReport] = useState(null);
+  const [lastImportReport, setLastImportReport] = useState(() => {
+    try {
+      const raw = localStorage.getItem('reeco_admin_last_import');
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  });
 
   const [toasts, setToasts] = useState([]);
 
@@ -35,6 +44,7 @@ export function App() {
 
   // ─── Load admin products from API ───────────────────────────────────────────
   const loadProducts = useCallback(async () => {
+    if (!currentUser) return;
     setProductsLoading(true);
     setProductsError(null);
     const result = await getAdminProductsApi({ limit: 100 });
@@ -42,6 +52,8 @@ export function App() {
       setProductsError(result.message || 'Không thể tải sản phẩm.');
       if (result.error === 'unauthorized') {
         showToast('error', 'Phiên đăng nhập hết hạn. Vui lòng đăng nhập lại.');
+        setCurrentUser(null);
+        logoutAdminApi();
       }
     } else if (result && result.items) {
       const mapped = result.items.map((p) => ({
@@ -60,11 +72,24 @@ export function App() {
       });
     }
     setProductsLoading(false);
-  }, [showToast]);
+  }, [currentUser, showToast]);
 
   useEffect(() => {
-    loadProducts();
-  }, [loadProducts]);
+    if (currentUser) {
+      loadProducts();
+    }
+  }, [currentUser, loadProducts]);
+
+  const handleLoginSuccess = (user) => {
+    setCurrentUser(user);
+    showToast('success', `Chào mừng ${user.email} quay trở lại!`);
+  };
+
+  const handleLogout = () => {
+    logoutAdminApi();
+    setCurrentUser(null);
+    showToast('info', 'Đã đăng xuất thành công.');
+  };
 
   const handleSelectTab = (tab) => {
     setCurrentTab(tab);
@@ -85,15 +110,30 @@ export function App() {
   // Called by ProductImportView when import completes (success or error)
   const handleImportComplete = (report) => {
     setLastImportReport(report);
+    try {
+      localStorage.setItem('reeco_admin_last_import', JSON.stringify(report));
+    } catch {
+      // ignore
+    }
     if (report.success) {
       showToast('success', 'Import hoàn tất! Đang cập nhật danh sách sản phẩm...');
       loadProducts(); // Refresh product list after successful import
     }
   };
 
+  // Auth Guard: If not logged in, render LoginView
+  if (!currentUser) {
+    return <LoginView onLoginSuccess={handleLoginSuccess} />;
+  }
+
   return (
     <div className="admin-app">
-      <Sidebar currentTab={currentTab} onSelectTab={handleSelectTab} />
+      <Sidebar
+        currentTab={currentTab}
+        onSelectTab={handleSelectTab}
+        currentUser={currentUser}
+        onLogout={handleLogout}
+      />
 
       {currentTab === 'dashboard' && (
         <DashboardView
@@ -130,3 +170,4 @@ export function App() {
 }
 
 export default App;
+
