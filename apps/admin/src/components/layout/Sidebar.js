@@ -1,7 +1,7 @@
 import React from 'react';
-import { LayoutDashboard, FileUp, Package, ExternalLink } from 'lucide-react';
+import { LayoutDashboard, FileUp, Package, ExternalLink, LogOut, User } from 'lucide-react';
 
-export function Sidebar({ currentTab, onSelectTab }) {
+export function Sidebar({ currentTab, onSelectTab, currentUser, onLogout }) {
   return (
     <aside className="sidebar">
       <div className="logo" style={{ cursor: 'pointer' }} onClick={() => onSelectTab('dashboard')}>
@@ -36,18 +36,61 @@ export function Sidebar({ currentTab, onSelectTab }) {
         Product Management
       </button>
 
-      <div style={{ marginTop: 'auto', paddingTop: '20px', borderTop: '1px solid var(--bg-gray)' }}>
+      <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--bg-gray)' }}>
+        {currentUser && (
+          <div
+            style={{
+              padding: '8px 12px',
+              borderRadius: '8px',
+              background: 'rgba(255, 255, 255, 0.05)',
+              marginBottom: '12px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
+            <User size={16} style={{ color: 'var(--text-light)', flexShrink: 0 }} />
+            <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontSize: '12px', color: 'var(--text-main)' }}>
+              {currentUser.email}
+            </div>
+          </div>
+        )}
+
         <a
-          href="http://localhost:3000"
+          href="http://localhost:5173"
           target="_blank"
           rel="noreferrer"
           className="nav-item"
-          style={{ textDecoration: 'none', fontSize: '13px', color: 'var(--text-light)' }}
+          style={{ textDecoration: 'none', fontSize: '13px', color: 'var(--text-light)', marginBottom: '6px' }}
         >
           <ExternalLink size={16} />
           Customer Search UI
         </a>
+
+        {onLogout && (
+          <button
+            type="button"
+            className="nav-item"
+            onClick={onLogout}
+            style={{
+              width: '100%',
+              background: 'none',
+              border: 'none',
+              color: '#ef4444',
+              cursor: 'pointer',
+              fontSize: '13px',
+              textAlign: 'left',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
+            <LogOut size={16} />
+            Đăng xuất
+          </button>
+        )}
       </div>
     </aside>
   );
 }
+
