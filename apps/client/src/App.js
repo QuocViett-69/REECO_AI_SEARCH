@@ -9,18 +9,43 @@ import { ProductCompare } from './components/compare/ProductCompare';
 import { ProductSelectorModal } from './components/common/ProductSelectorModal';
 import { ToastContainer } from './components/common/Toast';
 import { searchProductsApi } from './services/api';
+
+// Auth & Contexts
+import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
+import { FavoriteProvider } from './context/FavoriteContext';
+
+// Commerce Pages
+import { LoginPage } from './components/auth/LoginPage';
+import { CartPage } from './components/commerce/CartPage';
+import { CheckoutPage } from './components/commerce/CheckoutPage';
+import { OrderSuccessPage } from './components/commerce/OrderSuccessPage';
+
+// Account Pages
+import { FavoriteList } from './components/account/FavoriteList';
+import { AccountDashboard } from './components/account/AccountDashboard';
+import { OrderList } from './components/account/OrderList';
+import { OrderDetail } from './components/account/OrderDetail';
+import { NotificationCenter } from './components/account/NotificationCenter';
+import { ProfilePage } from './components/account/ProfilePage';
+
+// Admin
+import { AdminOrders } from './components/admin/AdminOrders';
+
 import './index.css';
 
-export function App() {
+function AppInner() {
   const [currentPage, setCurrentPage] = useState('search');
   const [previousPage, setPreviousPage] = useState('search');
   const [currentDetailModel, setCurrentDetailModel] = useState(null);
+  const [currentOrderId, setCurrentOrderId] = useState(null);
+  const [orderSuccessId, setOrderSuccessId] = useState(null);
 
   // Search State
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [searchMode, setSearchMode] = useState(null); // 'hybrid' | 'keyword' | 'semantic'
-  const [searchError, setSearchError] = useState(null); // null | { type, message }
+  const [searchMode, setSearchMode] = useState(null);
+  const [searchError, setSearchError] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
@@ -34,19 +59,30 @@ export function App() {
 
   const showToast = useCallback((type, title, desc) => {
     const id = Date.now() + Math.random();
-    setToasts((prev) => [...prev, { id, type, title, desc }]);
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((t) => t.id !== id));
-    }, 3000);
+    setToasts(prev => [...prev, { id, type, title, desc }]);
+    setTimeout(() => setToasts(prev => prev.filter(t => t.id !== id)), 3000);
   }, []);
 
-  // Welcome toast on load
   useEffect(() => {
     const timer = setTimeout(() => {
       showToast('info', 'Welcome', 'Describe what you need to find the right Campbell product');
     }, 500);
     return () => clearTimeout(timer);
   }, [showToast]);
+
+  // Navigate handler — supports "order-success:ID" and "account-order:ID" patterns
+  const handleNavigate = useCallback((page) => {
+    if (page.startsWith('order-success:')) {
+      setOrderSuccessId(page.replace('order-success:', ''));
+      setCurrentPage('order-success');
+    } else if (page.startsWith('account-order:')) {
+      setCurrentOrderId(page.replace('account-order:', ''));
+      setCurrentPage('account-order-detail');
+    } else {
+      setCurrentPage(page);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   // Search Handler
   const handleRunSearch = async (query) => {
@@ -59,9 +95,7 @@ export function App() {
     setCurrentPage('search');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Call Backend API — returns { query, mode, results } or { error, message }
     const response = await searchProductsApi(query);
-
     if (response && response.error) {
       setSearchResults([]);
       setSearchError(response);
@@ -98,24 +132,20 @@ export function App() {
 
   const handleToggleCompare = (model) => {
     if (isInCompare(model)) {
-      setCompareList((prev) => prev.filter((m) => m !== model));
+      setCompareList(prev => prev.filter(m => m !== model));
       showToast('info', 'Removed from compare', `${model} removed`);
     } else {
       if (compareList.length >= 2) {
-        showToast(
-          'error',
-          'Compare limit reached',
-          'You can compare up to 2 products. Remove one before adding another.'
-        );
+        showToast('error', 'Compare limit reached', 'You can compare up to 2 products. Remove one before adding another.');
         return;
       }
-      setCompareList((prev) => [...prev, model]);
+      setCompareList(prev => [...prev, model]);
       showToast('success', 'Added to compare', `${model} added · ${compareList.length + 1}/2 selected`);
     }
   };
 
   const handleRemoveFromCompare = (model) => {
-    setCompareList((prev) => prev.filter((m) => m !== model));
+    setCompareList(prev => prev.filter(m => m !== model));
     showToast('info', 'Removed from compare', `${model} removed`);
   };
 
@@ -124,24 +154,14 @@ export function App() {
     showToast('info', 'Compare cleared', 'All products removed');
   };
 
-  const handleOpenAddModal = (slot) => {
-    setModalSlot(slot);
-    setModalOpen(true);
-  };
-
-  const handleOpenReplaceModal = (slot) => {
-    setModalSlot(slot);
-    setModalOpen(true);
-  };
+  const handleOpenAddModal = (slot) => { setModalSlot(slot); setModalOpen(true); };
+  const handleOpenReplaceModal = (slot) => { setModalSlot(slot); setModalOpen(true); };
 
   const handleSelectProductInModal = (model) => {
     const otherSlot = 1 - modalSlot;
     if (compareList[otherSlot] === model) {
-      // Swap
       const updated = [...compareList];
-      const temp = updated[modalSlot];
-      updated[modalSlot] = updated[otherSlot];
-      updated[otherSlot] = temp;
+      const temp = updated[modalSlot]; updated[modalSlot] = updated[otherSlot]; updated[otherSlot] = temp;
       setCompareList(updated);
     } else {
       const updated = [...compareList];
@@ -158,15 +178,12 @@ export function App() {
 
       <Navbar
         currentPage={currentPage}
-        onNavigate={(page) => {
-          setCurrentPage(page);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onNavigate={handleNavigate}
         compareCount={compareList.length}
       />
 
       <main className="main">
-        {/* Search Page */}
+        {/* ── Search Page ────────────────────────────────────────────────────────── */}
         {currentPage === 'search' && (
           <section className="page active" id="page-search">
             {!hasSearched ? (
@@ -187,7 +204,7 @@ export function App() {
           </section>
         )}
 
-        {/* Products Page */}
+        {/* ── Products Page ──────────────────────────────────────────────────────── */}
         {currentPage === 'products' && (
           <ProductCatalog
             onViewDetail={handleViewDetail}
@@ -196,7 +213,7 @@ export function App() {
           />
         )}
 
-        {/* Detail Page */}
+        {/* ── Product Detail ─────────────────────────────────────────────────────── */}
         {currentPage === 'detail' && (
           <ProductDetail
             model={currentDetailModel}
@@ -205,10 +222,11 @@ export function App() {
             onToggleCompare={handleToggleCompare}
             isInCompare={isInCompare}
             onSelectProduct={handleViewDetail}
+            onNavigate={handleNavigate}
           />
         )}
 
-        {/* Compare Page */}
+        {/* ── Compare Page ───────────────────────────────────────────────────────── */}
         {currentPage === 'compare' && (
           <ProductCompare
             compareList={compareList}
@@ -216,10 +234,70 @@ export function App() {
             onOpenReplaceModal={handleOpenReplaceModal}
             onRemoveFromCompare={handleRemoveFromCompare}
             onClearCompare={handleClearCompare}
-            onNavigate={(page) => {
-              setCurrentPage(page);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onNavigate={handleNavigate}
+          />
+        )}
+
+        {/* ── Login ──────────────────────────────────────────────────────────────── */}
+        {currentPage === 'login' && (
+          <LoginPage onNavigate={handleNavigate} returnTo="account" />
+        )}
+
+        {/* ── Favorites ──────────────────────────────────────────────────────────── */}
+        {currentPage === 'favorites' && (
+          <FavoriteList onNavigate={handleNavigate} onViewDetail={handleViewDetail} />
+        )}
+
+        {/* ── Cart ───────────────────────────────────────────────────────────────── */}
+        {currentPage === 'cart' && (
+          <CartPage onNavigate={handleNavigate} />
+        )}
+
+        {/* ── Checkout ───────────────────────────────────────────────────────────── */}
+        {currentPage === 'checkout' && (
+          <CheckoutPage onNavigate={handleNavigate} />
+        )}
+
+        {/* ── Order Success ──────────────────────────────────────────────────────── */}
+        {currentPage === 'order-success' && (
+          <OrderSuccessPage orderId={orderSuccessId} onNavigate={handleNavigate} />
+        )}
+
+        {/* ── Account Dashboard ──────────────────────────────────────────────────── */}
+        {currentPage === 'account' && (
+          <AccountDashboard onNavigate={handleNavigate} />
+        )}
+
+        {/* ── Order History ──────────────────────────────────────────────────────── */}
+        {currentPage === 'account-orders' && (
+          <OrderList
+            onNavigate={handleNavigate}
+            onViewOrder={(id) => { setCurrentOrderId(id); setCurrentPage('account-order-detail'); window.scrollTo({ top: 0 }); }}
+          />
+        )}
+
+        {/* ── Order Detail ───────────────────────────────────────────────────────── */}
+        {currentPage === 'account-order-detail' && (
+          <OrderDetail
+            orderId={currentOrderId}
+            onBack={() => { setCurrentPage('account-orders'); window.scrollTo({ top: 0 }); }}
+          />
+        )}
+
+        {/* ── Notifications ──────────────────────────────────────────────────────── */}
+        {currentPage === 'account-notifications' && (
+          <NotificationCenter onNavigate={handleNavigate} />
+        )}
+
+        {/* ── Profile ────────────────────────────────────────────────────────────── */}
+        {currentPage === 'account-profile' && (
+          <ProfilePage onNavigate={handleNavigate} />
+        )}
+
+        {/* ── Admin: Orders ──────────────────────────────────────────────────────── */}
+        {(currentPage === 'admin' || currentPage === 'admin-orders') && (
+          <AdminOrders
+            onViewOrder={(id) => { setCurrentOrderId(id); setCurrentPage('account-order-detail'); window.scrollTo({ top: 0 }); }}
           />
         )}
       </main>
@@ -234,6 +312,18 @@ export function App() {
 
       <ToastContainer toasts={toasts} />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <AuthProvider>
+      <CartProvider>
+        <FavoriteProvider>
+          <AppInner />
+        </FavoriteProvider>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 

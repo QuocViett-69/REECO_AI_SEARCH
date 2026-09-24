@@ -32,6 +32,11 @@ function normalizeProduct(p) {
     deviceType: p.device_type || 'Hardware',
     image: p.image_url || null,
     status: p.status,
+    // ── Commercial fields (product_commercial join) ──────────────────────────
+    price: p.price ?? null,
+    currency: p.currency || 'USD',
+    availability: p.availability_status || p.availability || 'available_for_order',
+    is_purchasable: p.is_purchasable !== false,
   };
 }
 
@@ -73,7 +78,6 @@ function normalizeProductDetail(data) {
     category: p.category || 'Uncategorized',
     subcategory: p.subcategory || p.device_type || 'General',
     deviceType: p.device_type || 'Hardware',
-    // protocols is the joined string for display; keep array separately
     protocol: protocols,
     supported_protocols: data.supported_protocols || [],
     unsupported_protocols: data.unsupported_protocols || [],
@@ -89,6 +93,11 @@ function normalizeProductDetail(data) {
     media: data.media || [],
     specifications: data.specifications || [],
     important_specifications: data.important_specifications || [],
+    // ── Commercial fields ─────────────────────────────────────────────────────
+    price: p.price ?? data.commercial?.price ?? null,
+    currency: p.currency || data.commercial?.currency || 'USD',
+    availability: p.availability_status || data.commercial?.availability_status || 'available_for_order',
+    is_purchasable: p.is_purchasable !== false,
   };
 }
 
@@ -179,5 +188,20 @@ export async function searchProductsApi(query, limit = 10) {
       error: 'network_error',
       message: 'Could not connect to the search server.',
     };
+  }
+}
+
+// ─── GET /products/:id/recommendations ────────────────────────────────────────
+// Powered by backend AI recommendation logic. Frontend consumes only.
+export async function getProductRecommendationsApi(productIdOrModel) {
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/products/${encodeURIComponent(productIdOrModel)}/recommendations`
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    return (data.recommendations || data.results || []).map(normalizeProduct);
+  } catch {
+    return [];
   }
 }

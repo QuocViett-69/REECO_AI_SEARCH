@@ -12,8 +12,14 @@ import {
   Activity,
   Globe,
   Zap,
+  Minus,
+  Plus,
+  ShoppingCart,
 } from 'lucide-react';
 import { getProductDetailApi } from '../../services/api';
+import { FavoriteButton } from '../commerce/FavoriteButton';
+import { RecommendationRow } from '../commerce/RecommendationRow';
+import { useCart } from '../../context/CartContext';
 
 // ─── Format normalized spec value for display ─────────────────────────────────
 function formatSpecValue(val) {
@@ -39,17 +45,22 @@ export function ProductDetail({
   onBack,
   onToggleCompare,
   isInCompare,
+  onSelectProduct,
+  onNavigate,
 }) {
   const [activeTab, setActiveTab] = useState('overview');
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [qty, setQty] = useState(1);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     setIsLoading(true);
     setError(null);
     setProduct(null);
     setActiveTab('overview');
+    setQty(1);
 
     getProductDetailApi(model)
       .then((data) => {
@@ -204,23 +215,50 @@ export function ProductDetail({
             ))}
           </div>
 
-          <div className="detail-actions">
-            <button
-              type="button"
-              className={`btn ${inCompare ? 'btn-added' : 'btn-primary'}`}
-              onClick={() => onToggleCompare(product.model)}
-            >
+          {/* ── B. Commerce Purchase Panel ──────────────────────────────────── */}
+          <div className="commerce-panel">
+            <div className="commerce-panel__price-row">
+              {product.price != null ? (
+                <div className="commerce-panel__price">
+                  ${product.price.toLocaleString()}
+                  <span className="commerce-panel__currency">{product.currency || 'USD'}</span>
+                </div>
+              ) : (
+                <div style={{ fontSize: 14, color: 'var(--text-3)' }}>Price available on order</div>
+              )}
+              <div className="availability-badge availability-badge--lg">
+                <Tag size={12} /> Available for order
+              </div>
+            </div>
+
+            <div className="commerce-panel__qty">
+              <span style={{ fontSize: 13, color: 'var(--text-2)', marginRight: 8 }}>Qty:</span>
+              <div className="qty-selector">
+                <button type="button" className="qty-btn" onClick={() => setQty(q => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Decrease"><Minus size={14} /></button>
+                <span className="qty-display" aria-live="polite">{qty}</span>
+                <button type="button" className="qty-btn" onClick={() => setQty(q => q + 1)} aria-label="Increase"><Plus size={14} /></button>
+              </div>
+            </div>
+
+            <div className="commerce-panel__actions">
+              <button type="button" className="btn btn-cart" onClick={() => addToCart({ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }, qty)}>
+                <ShoppingCart size={16} /> Add to Cart
+              </button>
+              <button type="button" className="btn btn-primary" onClick={() => { addToCart({ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }, qty); if (onNavigate) onNavigate('checkout'); }}>
+                Buy Now
+              </button>
+              <FavoriteButton product={{ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }} size="lg" />
+            </div>
+
+            <button type="button" className={`btn ${inCompare ? 'btn-added' : 'btn-secondary'}`} onClick={() => onToggleCompare(product.model)} style={{ marginTop: 8 }}>
               {inCompare ? <Check size={16} /> : <GitCompare size={16} />}
               <span>{inCompare ? 'In Compare' : 'Add to Compare'}</span>
             </button>
-            <a
-              href={productUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-secondary"
-              style={{ textDecoration: 'none' }}
-            >
-              <ExternalLink size={16} /> View on Website
+          </div>
+
+          <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
+            <a href={productUrl} target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ textDecoration: 'none', fontSize: 13 }}>
+              <ExternalLink size={15} /> View on Website
             </a>
           </div>
         </div>
@@ -402,33 +440,106 @@ export function ProductDetail({
         </div>
       )}
 
-      {/* ── Resources ────────────────────────────────────────────────────────── */}
+      {/* ── Resources / Official Resources ───────────────────────────────────── */}
       {currentTab === 'resources' && (
         <div className="tab-content active">
           <div className="content-section">
-            <h3>Resources</h3>
-            <ul>
+            <h3 style={{ marginBottom: 16 }}>Official Resources</h3>
+            <p style={{ color: 'var(--text-3, #888)', fontSize: 13, marginBottom: 20 }}>
+              Authorized technical documentation, brochures, and calibration manuals for {product.model}.
+            </p>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+              {/* Product Webpage / Datasheet */}
+              {productUrl && (
+                <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ fontSize: 20, marginBottom: 8 }}>📄</div>
+                    <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>Product Datasheet &amp; Specs</div>
+                    <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Official Campbell Scientific specification sheet</div>
+                  </div>
+                  <a
+                    href={productUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
+                  >
+                    <span>Open Datasheet</span> <ExternalLink size={13} />
+                  </a>
+                </div>
+              )}
+
+              {/* User Manual */}
+              <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: 20, marginBottom: 8 }}>📘</div>
+                  <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>User &amp; Operation Manual</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Comprehensive wiring, SDI-12 programming, and calibration guide</div>
+                </div>
+                <a
+                  href={`https://s.campbellsci.com/documents/us/manuals/${product.model.toLowerCase().replace(/[^a-z0-9]/g, '')}.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
+                >
+                  <span>Open Manual</span> <ExternalLink size={13} />
+                </a>
+              </div>
+
+              {/* Installation & Mounting Guide */}
+              <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: 20, marginBottom: 8 }}>🛠</div>
+                  <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>Installation Guide</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Field installation, sensor depth alignment &amp; station setup</div>
+                </div>
+                <a
+                  href={productUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
+                >
+                  <span>Open Guide</span> <ExternalLink size={13} />
+                </a>
+              </div>
+
+              {/* Media links if any */}
               {(product.media || [])
-                .filter((m) => m.product_url)
+                .filter((m) => m.product_url && m.product_url !== productUrl)
                 .map((m, i) => (
-                  <li key={i}>
+                  <div key={i} className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div>
+                      <div style={{ fontSize: 20, marginBottom: 8 }}>💻</div>
+                      <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>{m.metadata?.title || 'Firmware / Software'}</div>
+                      <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Authorized support download</div>
+                    </div>
                     <a
                       href={m.product_url}
                       target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        color: 'var(--primary-accent)',
-                        fontWeight: 600,
-                      }}
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary"
+                      style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
                     >
-                      {m.metadata?.title || `Resource ${i + 1}`}
+                      <span>Open Resource</span> <ExternalLink size={13} />
                     </a>
-                  </li>
+                  </div>
                 ))}
-            </ul>
+            </div>
           </div>
         </div>
       )}
+
+      {/* ── E. You May Also Need (AI Recommendations) ─────────────────────────── */}
+      <div className="detail-recommendations">
+        <RecommendationRow
+          productId={product.product_id || product.id}
+          model={product.model}
+          onViewDetail={onSelectProduct}
+        />
+      </div>
     </section>
   );
 }

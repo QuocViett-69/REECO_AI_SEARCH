@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Search, Eye, GitCompare, Check, SearchX, Loader } from 'lucide-react';
+import { Search, Eye, GitCompare, Check, SearchX, Loader, Tag } from 'lucide-react';
 import { getProductsApi } from '../../services/api';
+import { FavoriteButton } from '../commerce/FavoriteButton';
+import { AddToCartButton } from '../commerce/AddToCartButton';
 
 export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
   const [allProducts, setAllProducts] = useState([]);
@@ -207,22 +209,34 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
                     <span>{p.subcategory}</span>
                   </div>
 
+                  {/* Commercial info — no stock quantity */}
+                  <div className="product-card-commerce">
+                    {p.price != null ? (
+                      <div className="product-card-price">
+                        ${p.price.toLocaleString()}
+                        <span className="product-card-currency">{p.currency || 'USD'}</span>
+                      </div>
+                    ) : null}
+                    <div className="availability-badge">
+                      <Tag size={11} /> Available for order
+                    </div>
+                  </div>
+
                   <div className="product-card-actions">
-                    <button
-                      type="button"
-                      className="btn btn-primary view-detail-btn"
-                      onClick={() => onViewDetail(p.model)}
-                    >
+                    <button type="button" className="btn btn-primary view-detail-btn"
+                      onClick={() => onViewDetail(p.model)}>
                       <Eye size={15} /> Details
                     </button>
-                    <button
-                      type="button"
+                    <button type="button"
                       className={`btn btn-secondary compare-btn ${inCompare ? 'btn-added' : ''}`}
-                      onClick={() => onToggleCompare(p.model)}
-                    >
+                      onClick={() => onToggleCompare(p.model)}>
                       {inCompare ? <Check size={15} /> : <GitCompare size={15} />}
                       {inCompare ? 'In Compare' : 'Compare'}
                     </button>
+                  </div>
+                  <div className="product-card-secondary-actions">
+                    <AddToCartButton product={p} size="sm" />
+                    <FavoriteButton product={p} size="sm" />
                   </div>
                 </div>
               </div>
