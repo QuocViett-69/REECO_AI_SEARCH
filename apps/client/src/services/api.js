@@ -4,6 +4,7 @@ const API_BASE_URL =
 // ─── Format a normalized spec value to human-readable string ──────────────────
 function formatSpecValue(val) {
   if (!val) return '';
+  if (val.value_raw) return val.value_raw;
   if (val.type === 'range') {
     const min = val.min_value ?? val.min ?? '';
     const max = val.max_value ?? val.max ?? '';
@@ -148,14 +149,13 @@ export async function getProductDetailApi(productIdOrModel) {
 }
 
 // ─── POST /search ────────────────────────────────────────────────────────────────
-// Returns { query, mode, results } — results contain real scores and matched_features.
-// Do NOT fabricate percentage scores or generate explanation text from these fields.
-export async function searchProductsApi(query, limit = 10) {
+// The API generates explanations from product evidence; the client only displays them.
+export async function searchProductsApi(query, limit = 10, context = null) {
   try {
     const res = await fetch(`${API_BASE_URL}/search`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query, limit }),
+      body: JSON.stringify({ query, limit, explain: true, ...(context && { context }) }),
     });
     if (res.status === 400) {
       const errData = await res.json().catch(() => ({}));
@@ -175,10 +175,13 @@ export async function searchProductsApi(query, limit = 10) {
     const data = await res.json();
     return {
       query: data.query,
+      resolved_query: data.resolved_query || data.query,
+      context_applied: data.context_applied || false,
       mode: data.mode, // 'hybrid' | 'keyword' | 'semantic'
       results: (data.results || []).map((r) => ({
         ...normalizeProduct(r),
         matched_features: r.matched_features || [],
+        explanation: r.explanation || null,
         scores: r.scores || {},
       })),
     };

@@ -292,6 +292,7 @@ export class ProductsRepository {
         'specification_id,product_id,canonical_key,quantity_kind,normalized_value,raw_ref',
       )
       .in('product_id', productIds)
+      .neq('normalized_value->>type', 'text')
       .order('product_id', { ascending: true })
       .order('specification_id', { ascending: true });
     if (error) this.throwQueryError('load product specifications by id', error);

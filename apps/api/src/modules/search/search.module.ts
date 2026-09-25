@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { SupabaseModule } from '../../database/supabase/supabase.module';
 import { EmbeddingsModule } from '../embeddings/embeddings.module';
 import { ProductsModule } from '../products/products.module';
+import { ExplanationService } from './explanation.service';
 import { HybridSearchService } from './hybrid-search.service';
 import { KeywordSearchService } from './keyword-search.service';
 import { RerankerService } from './reranker.service';
@@ -26,6 +27,7 @@ import { TechnicalRankingService } from './technical-ranking.service';
     TechnicalMatchService,
     TechnicalRankingService,
     RerankerService,
+    ExplanationService,
   ],
 })
 export class SearchModule {}

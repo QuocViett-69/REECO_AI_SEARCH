@@ -66,7 +66,8 @@
     "search:retrieval:experiment": "npm run build:shared && npm run build:api && node --env-file=apps/api/.env scripts/search-evaluation/retrieval/evaluate-retrieval.mjs",
     "search:retrieval:test": "node --test scripts/search-evaluation/retrieval/query-normalizer.test.mjs",
     "search:explanation:evaluate": "npm run build:shared && npm run build:api && node --env-file=apps/api/.env scripts/search-evaluation/explanation/evaluate.mjs",
-    "search:explanation:test": "node --test scripts/search-evaluation/explanation/grounded-explanation.test.mjs",
+    "search:explanation:test": "npm run build:shared && npm run build:api && node --test scripts/search-evaluation/explanation/grounded-explanation.test.mjs scripts/search/explanation-runtime.test.mjs",
+    "search:conversation:test": "npm run build:shared && npm run build:api && node --test scripts/search/conversation-query.test.mjs",
     "lint": "npm run lint --workspaces --if-present",
     "format": "prettier --write ."
   },

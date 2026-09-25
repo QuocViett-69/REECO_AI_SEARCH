@@ -258,7 +258,9 @@ export class ProductsService {
       capabilities: document?.capabilities ?? [],
       supported_protocols: document?.supported_protocols ?? [],
       unsupported_protocols: document?.unsupported_protocols ?? [],
-      specifications,
+      specifications: specifications.sort(
+        (left, right) => left.raw_ref.spec_index - right.raw_ref.spec_index,
+      ),
       important_specifications: document?.important_specifications ?? [],
       aliases: document?.aliases ?? [],
       variants: document?.variants ?? [],

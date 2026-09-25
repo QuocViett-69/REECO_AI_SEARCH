@@ -6,6 +6,7 @@ import { classifyDelta, queryMetrics } from './harness.mjs';
 
 const root = path.resolve(import.meta.dirname, '..', '..', '..');
 const featureOff = process.argv.includes('--feature-off');
+const reportId = process.env.RERANKER_EVALUATION_REPORT_ID ?? 'reranker-runtime-integration-v1';
 process.env.RERANKER_ENABLED = String(!featureOff);
 process.env.RERANKER_BASE_URL ??= 'http://127.0.0.1:8011';
 process.env.RERANKER_TIMEOUT_MS ??= '350';
@@ -126,7 +127,7 @@ if (featureOff) {
   const e2eLatencies = records.map((record) => record.end_to_end_ms);
   const report = {
     schema_version: '1.0',
-    report_id: 'reranker-runtime-integration-v1',
+    report_id: reportId,
     generated_at: new Date().toISOString(),
     benchmark_id: benchmark.benchmark_id,
     model: { id: process.env.RERANKER_MODEL, revision: process.env.RERANKER_MODEL_REVISION },
@@ -160,6 +161,6 @@ if (featureOff) {
     query_results: records,
     hosted_database_mutation: false,
   };
-  await writeFile(path.join(root, 'data', 'reports', 'reranker-runtime-integration-v1.json'), `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+  await writeFile(path.join(root, 'data', 'reports', `${reportId}.json`), `${JSON.stringify(report, null, 2)}\n`, 'utf8');
   process.stdout.write(`${JSON.stringify({ metrics, deltas, opportunity: report.opportunity, safety: report.safety, latency_ms: report.latency_ms, q068: report.q068 }, null, 2)}\n`);
 }

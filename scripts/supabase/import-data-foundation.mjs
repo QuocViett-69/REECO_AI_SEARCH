@@ -164,17 +164,19 @@ async function loadSourceData() {
 
   const specifications = specificationDocuments
     .flatMap((document) => document.specifications)
-    .filter(
-      (specification) =>
-        activeIds.has(specification.product_id) &&
-        specification.normalized !== null,
-    )
+    .filter((specification) => activeIds.has(specification.product_id))
     .map((specification) => ({
       product_id: specification.product_id,
       source_key: specificationSourceKey(specification),
       canonical_key: specification.canonical_key,
       quantity_kind: specification.quantity_kind ?? null,
-      normalized_value: specification.normalized,
+      normalized_value: {
+        ...(specification.normalized ?? {
+          type: 'text',
+          value: String(specification.value_raw),
+        }),
+        value_raw: String(specification.value_raw),
+      },
       raw_ref: specification.raw_ref,
     }));
 
@@ -619,6 +621,7 @@ async function validateDatabase(sql, data) {
     products: expectedProductIds.size,
     active: expectedActiveIds.size,
     review: expectedReviewIds.size,
+    product_specifications: data.specifications.length,
     product_documents: expectedDocumentIds.size,
     product_search_index: expectedDocumentIds.size,
   };
@@ -627,6 +630,8 @@ async function validateDatabase(sql, data) {
     active: sameStringSets(databaseActiveIds, expectedActiveIds),
     review: sameStringSets(databaseReviewIds, expectedReviewIds),
     product_documents: sameStringSets(databaseDocumentIds, expectedDocumentIds),
+    product_specifications:
+      specificationRows.length === data.specifications.length,
     product_search_index: sameStringSets(
       databaseSearchIndexIds,
       expectedDocumentIds,

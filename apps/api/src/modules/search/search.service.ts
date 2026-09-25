@@ -1,4 +1,4 @@
-import { Injectable, ServiceUnavailableException } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger, ServiceUnavailableException } from '@nestjs/common';
 import {
   SearchResponseSchema,
   type SearchRequest,
@@ -6,6 +6,8 @@ import {
 } from '@reeco/shared';
 import { configuration } from '../../config/configuration';
 import { ProductsService } from '../products/products.service';
+import { hasTechnicalConstraint, hasUnsupportedNegativeConstraint, resolveConversationQuery } from './conversation-query';
+import { ExplanationService } from './explanation.service';
 import {
   HybridSearchError,
   HybridSearchService,
@@ -23,6 +25,7 @@ import {
 
 @Injectable()
 export class SearchService {
+  private readonly logger = new Logger(SearchService.name);
   private readonly configuredRetrievalLimit =
     configuration().search.retrievalLimit;
 
@@ -33,9 +36,18 @@ export class SearchService {
     private readonly technicalMatch: TechnicalMatchService,
     private readonly technicalRanking: TechnicalRankingService,
     private readonly reranker: RerankerService,
+    private readonly explanation: ExplanationService,
   ) {}
 
   async search(request: SearchRequest): Promise<SearchResponse> {
+    if (hasUnsupportedNegativeConstraint(request.query)) {
+      throw new BadRequestException('Negative search constraints are not supported');
+    }
+    const resolution = resolveConversationQuery(request.query, request.context);
+    const searchQuery = resolution.query;
+    const retrievalQuery = resolution.applied && hasTechnicalConstraint(request.query)
+      ? request.context!.base_query
+      : searchQuery;
     const retrievalLimit = Math.min(
       100,
       Math.max(1, this.configuredRetrievalLimit, request.limit),
@@ -43,7 +55,7 @@ export class SearchService {
     let hybridResult: Awaited<ReturnType<HybridSearchService['search']>>;
     try {
       hybridResult = await this.hybridSearch.search(
-        request.query,
+        retrievalQuery,
         retrievalLimit,
       );
     } catch (error) {
@@ -58,9 +70,16 @@ export class SearchService {
       throw error;
     }
 
-    if (hybridResult.candidates.length === 0) {
+    const scopedCandidates = resolution.applied && request.context
+      ? hybridResult.candidates.filter((candidate) =>
+          request.context!.product_ids.includes(candidate.productId),
+        )
+      : hybridResult.candidates;
+
+    if (scopedCandidates.length === 0) {
       return SearchResponseSchema.parse({
         query: request.query,
+        ...(request.context && { resolved_query: searchQuery, context_applied: resolution.applied }),
         mode: this.mapMode(hybridResult.mode),
         results: [],
       });
@@ -69,15 +88,16 @@ export class SearchService {
     const identityCatalog =
       await this.productsService.getActiveTechnicalIdentityCatalog();
     const parsedQuery = this.technicalQueryParser.parse(
-      request.query,
+      searchQuery,
       identityCatalog,
     );
     const technicallyRankedCandidates = await this.applyTechnicalPolicy(
       parsedQuery,
-      hybridResult.candidates,
+      scopedCandidates,
+      resolution.applied,
     );
     const rankedCandidates = await this.reranker.rerank(
-      request.query,
+      searchQuery,
       parsedQuery,
       technicallyRankedCandidates,
     );
@@ -109,14 +129,52 @@ export class SearchService {
 
     return SearchResponseSchema.parse({
       query: request.query,
+      ...(request.context && { resolved_query: searchQuery, context_applied: resolution.applied }),
       mode: this.mapMode(hybridResult.mode),
-      results,
+      results: request.explain
+        ? await this.withExplanations(searchQuery, parsedQuery, results)
+        : results,
     });
+  }
+
+  private async withExplanations(
+    query: string,
+    parsedQuery: ParsedTechnicalQuery,
+    results: SearchResponse['results'],
+  ): Promise<SearchResponse['results']> {
+    if (results.length === 0) return results;
+    const ids = results.map((item) => item.product_id);
+    try {
+      const [documents, matches] = await Promise.all([
+        this.productsService.getSearchDocumentsByIds(ids),
+        this.hasApplicableTechnicalSignal(parsedQuery)
+          ? this.technicalMatch.evaluate(parsedQuery, ids)
+          : Promise.resolve([]),
+      ]);
+      const matchesById = new Map(matches.map((item) => [item.productId, item]));
+      return results.map((result) => {
+        const document = documents.get(result.product_id);
+        return document
+          ? {
+              ...result,
+              explanation: this.explanation.explain(
+                query,
+                document,
+                matchesById.get(result.product_id),
+              ),
+            }
+          : result;
+      });
+    } catch {
+      this.logger.warn('Search explanations unavailable; returning ranked results');
+      return results;
+    }
   }
 
   private async applyTechnicalPolicy(
     parsedQuery: ParsedTechnicalQuery,
     candidates: HybridSearchCandidate[],
+    confirmedOnly = false,
   ): Promise<TechnicalRankedCandidate[]> {
     if (!this.hasApplicableTechnicalSignal(parsedQuery)) {
       return this.technicalRanking.preserve(candidates);
@@ -125,7 +183,18 @@ export class SearchService {
       parsedQuery,
       candidates.map((candidate) => candidate.productId),
     );
-    return this.technicalRanking.rank(candidates, matches);
+    const allowed = confirmedOnly
+      ? new Set(matches.filter((match) =>
+          match.protocolMatches.every((item) => item.result === 'MATCH') &&
+          match.temperatureMatches
+            .filter((item) => item.constraint.confidence === 'high')
+            .every((item) => item.result === 'MATCH'),
+        ).map((match) => match.productId))
+      : null;
+    return this.technicalRanking.rank(
+      allowed ? candidates.filter((item) => allowed.has(item.productId)) : candidates,
+      matches,
+    );
   }
 
   private hasApplicableTechnicalSignal(

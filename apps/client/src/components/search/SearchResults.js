@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Search,
   ChevronRight,
@@ -69,16 +69,30 @@ function ModeLabel({ mode }) {
 
 export function SearchResults({
   query,
+  resolvedQuery,
+  conversationTurns = [],
   results,
   mode,
   searchError,
   isLoading,
   onEditSearch,
+  onFollowUp,
   onViewDetail,
   onToggleCompare,
   isInCompare,
 }) {
   const [filterCategory, setFilterCategory] = useState('All');
+  const [followUp, setFollowUp] = useState('');
+
+  useEffect(() => setFilterCategory('All'), [query]);
+
+  const submitFollowUp = (event) => {
+    event.preventDefault();
+    const next = followUp.trim();
+    if (!next || isLoading) return;
+    setFollowUp('');
+    onFollowUp(next);
+  };
 
   const categories = Array.from(new Set(results.map((p) => p.category).filter(Boolean)));
 
@@ -127,6 +141,38 @@ export function SearchResults({
         )}
       </div>
 
+      {conversationTurns.length > 0 && (
+        <section className="conversation-panel" aria-label="Search conversation">
+          <div className="conversation-turns">
+            {conversationTurns.slice(-3).map((turn, index) => (
+              <div className="conversation-turn" key={`${index}-${turn.text}`}>
+                <span>You</span> {turn.text}
+              </div>
+            ))}
+          </div>
+          {resolvedQuery && resolvedQuery !== query && (
+            <div className="conversation-context">Searching for: {resolvedQuery}</div>
+          )}
+          <form className="conversation-form" onSubmit={submitFollowUp}>
+            <label htmlFor="search-follow-up">Refine the starting results</label>
+            <div className="conversation-input-row">
+              <input
+                id="search-follow-up"
+                type="text"
+                value={followUp}
+                onChange={(event) => setFollowUp(event.target.value)}
+                placeholder="Try: and supports SDI-12, or what about Modbus?"
+                maxLength={500}
+                disabled={isLoading}
+              />
+              <button type="submit" disabled={isLoading || !followUp.trim()}>
+                <Search size={16} /> Search
+              </button>
+            </div>
+          </form>
+        </section>
+      )}
+
       <div className="results-list">
         {isLoading ? (
           [1, 2, 3].map((n) => (
@@ -159,8 +205,16 @@ export function SearchResults({
           </div>
         ) : filteredResults.length === 0 ? (
           <div className="state-empty" style={{ margin: '40px auto', textAlign: 'center' }}>
-            <div className="state-title">No products found</div>
-            <div className="state-desc">Try choosing "All" category or editing your search query.</div>
+            <div className="state-title">
+              {results.length === 0 && conversationTurns.length > 1
+                ? 'No confirmed matches in the starting results'
+                : 'No products found'}
+            </div>
+            <div className="state-desc">
+              {results.length === 0 && conversationTurns.length > 1
+                ? 'Try another follow-up or start a new search.'
+                : 'Try choosing "All" category or editing your search query.'}
+            </div>
           </div>
         ) : (
           filteredResults.map((p) => {
@@ -233,21 +287,29 @@ export function SearchResults({
                   </div>
                 </div>
 
-                {/* ── Matched Features (only when backend returns evidence) ── */}
-                {features.length > 0 && (
+                {(p.explanation || features.length > 0) && (
                   <div className="ai-explanation">
                     <div className="label">
                       <Check size={14} />
-                      Matched features
+                      {p.explanation ? 'Why this result' : 'Matched features'}
                     </div>
-                    <div className="matched-specs">
-                      {features.slice(0, 5).map((f) => (
-                        <div key={f} className="matched-spec">
-                          <Check size={13} />
-                          {parseFeatureChip(f)}
-                        </div>
-                      ))}
-                    </div>
+                    {p.explanation && <div className="text">{p.explanation.text}</div>}
+                    {(p.explanation?.evidence?.length > 0 || (!p.explanation && features.length > 0)) && (
+                      <div className="matched-specs">
+                        {p.explanation?.evidence?.map((item, index) => (
+                          <div key={`${item.field}-${index}`} className="matched-spec" title={item.source}>
+                            <Check size={13} />
+                            {item.field.replaceAll('_', ' ')}: {item.value}
+                          </div>
+                        ))}
+                        {!p.explanation && features.slice(0, 5).map((f) => (
+                          <div key={f} className="matched-spec">
+                            <Check size={13} />
+                            {parseFeatureChip(f)}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
 

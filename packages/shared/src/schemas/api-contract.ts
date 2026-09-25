@@ -68,7 +68,12 @@ export const ProductSpecificationSchema = z
     specification_id: z.number().int().positive(),
     canonical_key: z.string().min(1),
     quantity_kind: NullableTextSchema,
-    normalized_value: NormalizedValueSchema,
+    normalized_value: z
+      .union([
+        NormalizedValueSchema,
+        z.object({ type: z.literal('text'), value: z.string().min(1) }),
+      ])
+      .and(z.object({ value_raw: z.string().min(1).optional() })),
     raw_ref: RawSpecificationReferenceSchema,
   })
   .strict();
@@ -105,6 +110,15 @@ export const SearchRequestSchema = z
   .object({
     query: z.string().trim().min(1).max(500),
     limit: z.number().int().min(1).max(100).default(10),
+    explain: z.boolean().optional(),
+    context: z
+      .object({
+        base_query: z.string().trim().min(1).max(500),
+        previous_query: z.string().trim().min(1).max(500),
+        product_ids: z.array(z.string().min(1)).min(1).max(5),
+      })
+      .strict()
+      .optional(),
   })
   .strict();
 
@@ -128,12 +142,28 @@ export const SearchResultSchema = z
     image_url: z.string().url().nullable(),
     matched_features: z.array(z.string()),
     scores: SearchScoresSchema,
+    explanation: z
+      .object({
+        text: z.string().min(1),
+        language: z.enum(['en', 'vi']),
+        evidence: z.array(
+          z.object({
+            source: z.enum(['products', 'product_document', 'normalized_spec']),
+            field: z.string().min(1),
+            value: z.string().min(1),
+          }).strict(),
+        ),
+      })
+      .strict()
+      .optional(),
   })
   .strict();
 
 export const SearchResponseSchema = z
   .object({
     query: z.string().min(1),
+    resolved_query: z.string().min(1).optional(),
+    context_applied: z.boolean().optional(),
     mode: z.enum(['keyword', 'semantic', 'hybrid']),
     results: z.array(SearchResultSchema),
   })

@@ -24,6 +24,7 @@ import { useCart } from '../../context/CartContext';
 // ─── Format normalized spec value for display ─────────────────────────────────
 function formatSpecValue(val) {
   if (!val) return '—';
+  if (val.value_raw) return val.value_raw;
   if (val.type === 'range') {
     const min = val.min_value ?? '';
     const max = val.max_value ?? '';
@@ -113,11 +114,10 @@ export function ProductDetail({
   // ── Tabs: only show tabs that have real data ──────────────────────────────────
   const hasOverview = true;
   const hasTechnical =
-    (product.important_specifications || []).length > 0 || protocols.length > 0;
+    (product.specifications || []).length > 0 || protocols.length > 0;
   const hasCapabilities =
     (product.measurements || []).length > 0 ||
     (product.capabilities || []).length > 0;
-  const hasSpecs = (product.specifications || []).length > 0;
   const hasVariants = (product.variants || []).length > 1;
   const hasResources =
     (product.media || []).filter((m) => m.product_url).length > 0;
@@ -127,7 +127,6 @@ export function ProductDetail({
     hasTechnical && 'technical',
     hasCapabilities && 'capabilities',
     hasVariants && 'variants',
-    hasSpecs && 'specs',
     hasResources && 'resources',
   ].filter(Boolean);
 
@@ -332,11 +331,11 @@ export function ProductDetail({
                 <strong>Supported Protocols:</strong> {protocols.join(', ')}
               </div>
             )}
-            {(product.important_specifications || []).length > 0 ? (
+            {(product.specifications || []).length > 0 ? (
               <table className="spec-table">
                 <tbody>
-                  {product.important_specifications.map((spec) => (
-                    <tr key={spec.canonical_key}>
+                  {product.specifications.map((spec) => (
+                    <tr key={spec.specification_id}>
                       <td>{spec.canonical_key.replace(/_/g, ' ')}</td>
                       <td>{formatSpecValue(spec.normalized_value)}</td>
                     </tr>
@@ -410,30 +409,6 @@ export function ProductDetail({
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      )}
-
-      {currentTab === 'specs' && (
-        <div className="tab-content active">
-          <div className="content-section">
-            <h3>Specifications</h3>
-            {(product.specifications || []).length > 0 ? (
-              <table className="spec-table">
-                <tbody>
-                  {product.specifications.map((spec) => (
-                    <tr key={spec.specification_id || spec.canonical_key}>
-                      <td>{spec.canonical_key.replace(/_/g, ' ')}</td>
-                      <td>{formatSpecValue(spec.normalized_value)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <p style={{ color: 'var(--text-3)', fontSize: 13 }}>
-                Thông số kỹ thuật chưa có trong cơ sở dữ liệu.
-              </p>
-            )}
           </div>
         </div>
       )}

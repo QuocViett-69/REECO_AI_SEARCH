@@ -17,7 +17,7 @@ Current implementation status:
 - Keyword database foundation: implemented.
 - Semantic database foundation: implemented in Step 7.2 and deployed to hosted Supabase in Step 7.3B.
 - Local Ollama provider, embedding service, and backfill tooling: implemented in Step 7.3A.
-- Hosted embeddings: 42/42 searchable active products current in Step 7.3B.
+- Hosted embeddings: 89/89 searchable active products after the data refresh.
 - Service-role semantic RPC: runtime-verified in Step 7.3B.
 - NestJS semantic retrieval adapter: implemented and runtime-verified in Step 7.4.
 - Internal hybrid retrieval with Reciprocal Rank Fusion: implemented and runtime-verified in Step 7.5A.
@@ -28,7 +28,8 @@ Current implementation status:
 - Celsius temperature constraint evaluator: implemented internally in Step 7.6A.
 - Public deterministic technical ranking/filter integration: implemented in Step 7.6B.
 - Protected Top-5 BGE reranker: implemented behind `RERANKER_ENABLED=false` by default.
-- Search explanation: not implemented.
+- Optional grounded search explanation: deterministic bilingual text with catalog evidence, returned when `explain: true` and displayed by the client. No generative model is configured.
+- Conversational refinements: the client sends the first five result IDs plus the first and previous resolved queries. Clear follow-ups are scoped to those products, and requested technical constraints require confirmed evidence. Technical follow-ups retrieve from the starting query so supported products are not lost when the new terms change retrieval ranking. The resolved query is visible; independent searches reset the browser-held context. Negative conditions are not supported as follow-ups.
 
 The Step 7.3A contract is Ollama `qwen3-embedding:4b`, 1536 dimensions, version
 `ollama-qwen3-embedding-4b-1536-v1`, and a default endpoint of `http://127.0.0.1:11434`. Only
@@ -36,7 +37,7 @@ The Step 7.3A contract is Ollama `qwen3-embedding:4b`, 1536 dimensions, version
 180-second default timeout so a local cold model load is not mistaken for a quick provider failure.
 
 Hosted migrations `20260916074530` and `20260916080205` are deployed. The hosted column is
-`extensions.vector(1536)`, and all 42 searchable active rows use model `qwen3-embedding:4b`, dimension
+`extensions.vector(1536)`, and all 89 searchable active rows use model `qwen3-embedding:4b`, dimension
 1536, and version `ollama-qwen3-embedding-4b-1536-v1`. The database RPC has been smoke-tested through
 the service-role context. `SemanticSearchService` provides the internal query-to-embedding-to-RPC
 adapter with validated candidates and safe errors. `SearchService` calls `HybridSearchService` once per
@@ -91,7 +92,7 @@ injected. Protocol unknowns are retained and protocol mismatches are not hard-fi
 `measurement-temperature:up-to-70°C`. Unknown, missing, unsupported, semantic-only, and negative
 evidence create no feature. The same policy runs in hybrid, keyword-fallback, and semantic-fallback
 modes without changing the public mode. The RRF formula and `SEARCH_RRF_K=60` baseline are unchanged.
-A generated explanation remains unimplemented. The optional cross-encoder runtime is documented in
+A deterministic grounded explanation is available on request; an LLM generator remains unconfigured. The optional cross-encoder runtime is documented in
 [`reranker-runtime.md`](./reranker-runtime.md); it never changes retrieval mode or public score semantics.
 
 Step 7.7 freezes this behavior for frontend integration; it adds no ranking stage or public search

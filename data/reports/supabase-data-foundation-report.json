@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T08:31:01.915Z",
+  "generated_at": "2026-09-25T03:09:44.944Z",
   "mode": "import",
   "index_version": "fts-v1",
   "source_validation": {
@@ -9,7 +9,7 @@
     "skipped_review": 0,
     "product_documents": 89,
     "product_search_index": 89,
-    "product_specifications": 1012,
+    "product_specifications": 3277,
     "product_media": 89,
     "duplicate_product_id": 0,
     "duplicate_model": 0,
@@ -25,15 +25,15 @@
   "source_status": "passed",
   "import_status": "completed",
   "import_stats": {
-    "products_changed": 3,
+    "products_changed": 0,
     "products_removed": 0,
-    "specifications_changed": 24,
+    "specifications_changed": 3277,
     "specifications_removed": 0,
-    "documents_changed": 3,
+    "documents_changed": 0,
     "documents_removed": 0,
-    "media_changed": 3,
+    "media_changed": 0,
     "media_removed": 0,
-    "search_index_changed": 3,
+    "search_index_changed": 0,
     "search_index_removed": 0
   },
   "validation": {
@@ -42,6 +42,7 @@
       "products": 89,
       "active": 89,
       "review": 0,
+      "product_specifications": 3277,
       "product_documents": 89,
       "product_search_index": 89
     },
@@ -49,7 +50,7 @@
       "product_documents": 89,
       "product_media": 89,
       "product_search_index": 89,
-      "product_specifications": 1012,
+      "product_specifications": 3277,
       "products": 89
     },
     "checks": {
@@ -82,6 +83,7 @@
       "active": true,
       "review": true,
       "product_documents": true,
+      "product_specifications": true,
       "product_search_index": true,
       "stale_database_product_ids": true,
       "review_products_indexed": true,

@@ -724,6 +724,85 @@ html, body {
           gap: 14px;
         }
 
+        .conversation-panel {
+          margin-bottom: 24px;
+          padding: 18px;
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-xl);
+        }
+
+        .conversation-turns {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-bottom: 14px;
+        }
+
+        .conversation-turn {
+          max-width: 100%;
+          padding: 7px 11px;
+          border-radius: 12px;
+          background: var(--primary-soft);
+          color: var(--text);
+          overflow-wrap: anywhere;
+          font-size: 13px;
+        }
+
+        .conversation-turn span {
+          font-weight: 700;
+          margin-right: 4px;
+        }
+
+        .conversation-context {
+          margin-bottom: 12px;
+          color: var(--text-3);
+          font-size: 12px;
+          overflow-wrap: anywhere;
+        }
+
+        .conversation-form label {
+          display: block;
+          margin-bottom: 8px;
+          color: var(--text-2);
+          font-size: 13px;
+          font-weight: 600;
+        }
+
+        .conversation-input-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        .conversation-input-row input {
+          flex: 1 1 250px;
+          min-width: 0;
+          padding: 10px 12px;
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          background: var(--surface);
+          color: var(--text);
+        }
+
+        .conversation-input-row button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          padding: 10px 14px;
+          border-radius: 8px;
+          background: var(--primary-accent);
+          color: white;
+          font-weight: 600;
+          cursor: pointer;
+        }
+
+        .conversation-input-row button:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
         .product-result-card {
           background: var(--surface);
           border: 1px solid var(--border);

@@ -112,13 +112,16 @@ async function loadData() {
   );
   const specifications = specificationDocuments
     .flatMap((document) => document.specifications)
-    .filter(
-      (specification) =>
-        activeIds.has(specification.product_id) &&
-        specification.normalized !== null,
-    )
+    .filter((specification) => activeIds.has(specification.product_id))
     .map((specification) => ({
       ...specification,
+      normalized: {
+        ...(specification.normalized ?? {
+          type: 'text',
+          value: String(specification.value_raw),
+        }),
+        value_raw: String(specification.value_raw),
+      },
       source_key: sha256(
         canonicalJson({
           canonical_key: specification.canonical_key,
@@ -495,6 +498,12 @@ async function main() {
           rows.length <= 5 &&
           rows.every((row) => data.activeIds.has(row.product_id)),
       );
+    const specimen105E = (
+      await database.query(
+        `select normalized_value from public.product_specifications
+         where product_id = 'CSI_105E' and canonical_key = 'operating_temperature_range'`,
+      )
+    ).rows;
 
     const assertions = {
       source_status_partition:
@@ -517,6 +526,14 @@ async function main() {
         databaseSearchIndexIds,
         data.documentIds,
       ),
+      all_source_specifications_imported:
+        validation.product_specifications === data.specifications.length,
+      text_specification_preserved:
+        specimen105E.length === 1 &&
+        specimen105E[0].normalized_value.type === 'text' &&
+        specimen105E[0].normalized_value.value_raw ===
+          specimen105E[0].normalized_value.value &&
+        specimen105E[0].normalized_value.value.includes('TPE outer jacket'),
       active_products_indexed: activeWithoutSearchIndex.length === 0,
       non_active_products_not_indexed: nonActiveSearchIndexIds.length === 0,
       review_products_indexed:
