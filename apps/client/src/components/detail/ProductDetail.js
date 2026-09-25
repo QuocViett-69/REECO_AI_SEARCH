@@ -162,19 +162,19 @@ export function ProductDetail({
           </div>
 
           <div className="detail-badges">
-            <span className="badge badge-primary">
+            <span className="badge badge-category">
               <Folder size={14} /> {product.category}
             </span>
-            <span className="badge badge-success">
+            <span className="badge badge-subcategory">
               <Tag size={14} /> {product.subcategory}
             </span>
             {protocols.map((pr) => (
-              <span key={pr} className="badge badge-neutral">
+              <span key={pr} className="badge badge-protocol">
                 <Radio size={14} /> {pr}
               </span>
             ))}
             {(product.measurements || []).map((m) => (
-              <span key={m.key} className="badge badge-neutral" style={{ background: 'rgba(59,130,246,0.1)', color: '#3b82f6' }}>
+              <span key={m.key} className="badge badge-measurement">
                 <Activity size={14} /> {m.label_en}
               </span>
             ))}
@@ -233,7 +233,7 @@ export function ProductDetail({
                 <h4 style={{ marginTop: 20, marginBottom: 10, fontSize: 14, fontWeight: 600 }}>Applications</h4>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {product.applications.map((a) => (
-                    <span key={a.key} className="badge badge-neutral" style={{ padding: '4px 12px' }}>
+                    <span key={a.key} className="badge badge-application">
                       <Globe size={13} /> {a.label_en}
                     </span>
                   ))}

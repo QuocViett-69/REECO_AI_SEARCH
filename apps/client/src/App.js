@@ -48,6 +48,26 @@ export function App() {
     return () => clearTimeout(timer);
   }, [showToast]);
 
+  const isHomeLocked = currentPage === 'search' && !hasSearched;
+
+  // Lock scroll completely on Home page to fit 100vh viewport
+  useEffect(() => {
+    if (isHomeLocked) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.height = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.height = '';
+    };
+  }, [isHomeLocked]);
+
   // Search Handler
   const handleRunSearch = async (query) => {
     if (!query) return;
@@ -152,16 +172,26 @@ export function App() {
     showToast('success', 'Product selected', `${model} added to comparison`);
   };
 
+  const handleNavigate = (page) => {
+    if (page === 'search' || page === 'home') {
+      setCurrentPage('search');
+      setHasSearched(false);
+      setSearchError(null);
+      setSearchMode(null);
+      setSearchQuery('');
+    } else {
+      setCurrentPage(page);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="app-container">
+    <div className={`app-container ${isHomeLocked ? 'is-home-locked' : ''}`}>
       <BackgroundEffects />
 
       <Navbar
         currentPage={currentPage}
-        onNavigate={(page) => {
-          setCurrentPage(page);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onNavigate={handleNavigate}
         compareCount={compareList.length}
       />
 
@@ -170,7 +200,7 @@ export function App() {
         {currentPage === 'search' && (
           <section className="page active" id="page-search">
             {!hasSearched ? (
-              <SearchHero onSearch={handleRunSearch} />
+              <SearchHero onSearch={handleRunSearch} onViewDetail={handleViewDetail} />
             ) : (
               <SearchResults
                 query={searchQuery}
