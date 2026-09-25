@@ -41,3 +41,34 @@ test('numeric claim cites only a confirmed structured range', () => {
   assert.match(explanation.text, /-50–70°C.*-40°C/u);
   assert.deepEqual(explanation.evidence, [{ source: 'normalized_spec', field: 'operating_temperature_range', value: '-50–70°C' }]);
 });
+
+test('local LLM rewrites grounded text and falls back on invented model details', async () => {
+  const priorEnabled = process.env.LLM_EXPLANATION_ENABLED;
+  const priorModel = process.env.LLM_MODEL;
+  const priorFetch = globalThis.fetch;
+  process.env.LLM_EXPLANATION_ENABLED = 'true';
+  process.env.LLM_MODEL = 'test-model';
+  const llmService = new ExplanationService();
+  const match = { productId: document.product_id, identityMatch: 'none', protocolMatches: [{ queryProtocol: 'SDI-12', result: 'MATCH', evidence: [{ source: 'product_document', canonicalProtocol: 'SDI-12', relation: 'supported' }] }], temperatureMatches: [] };
+  const input = [{ document, match }];
+  try {
+    globalThis.fetch = async () => ({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text: `${document.model} supports SDI-12 as confirmed by product data.` }] }) } }) });
+    const [rewritten] = await llmService.explainMany('sensor supporting SDI-12', input);
+    assert.equal(rewritten.text, `${document.model} supports SDI-12 as confirmed by product data.`);
+    assert.equal(rewritten.evidence[0].value, document.model);
+
+    globalThis.fetch = async () => ({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text: `The model ${document.model} supports Modbus 999.` }] }) } }) });
+    const [rejected] = await llmService.explainMany('sensor supporting SDI-12', input);
+    assert.equal(rejected.text, llmService.explain('sensor supporting SDI-12', document, match).text);
+
+    globalThis.fetch = async () => { throw new Error('offline'); };
+    const [fallback] = await llmService.explainMany('sensor supporting SDI-12', input);
+    assert.equal(fallback.text, llmService.explain('sensor supporting SDI-12', document, match).text);
+  } finally {
+    globalThis.fetch = priorFetch;
+    if (priorEnabled === undefined) delete process.env.LLM_EXPLANATION_ENABLED;
+    else process.env.LLM_EXPLANATION_ENABLED = priorEnabled;
+    if (priorModel === undefined) delete process.env.LLM_MODEL;
+    else process.env.LLM_MODEL = priorModel;
+  }
+});

@@ -26,6 +26,11 @@ export interface AppConfiguration {
     model: string;
     revision: string;
   };
+  explanation: {
+    llmEnabled: boolean;
+    model: string;
+    timeoutMs: number;
+  };
 }
 
 const rerankerModel = 'BAAI/bge-reranker-v2-m3';
@@ -80,6 +85,14 @@ export function configuration(): AppConfiguration {
       ),
       model,
       revision,
+    },
+    explanation: {
+      llmEnabled: process.env.LLM_EXPLANATION_ENABLED?.toLowerCase() === 'true',
+      model: process.env.LLM_MODEL ?? '',
+      timeoutMs: positiveInteger(
+        'LLM_EXPLANATION_TIMEOUT_MS',
+        process.env.LLM_EXPLANATION_TIMEOUT_MS ?? '20000',
+      ),
     },
   };
 }

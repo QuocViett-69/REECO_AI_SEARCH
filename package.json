@@ -10,6 +10,7 @@
     "dev:api": "npm run start:dev --workspace=@reeco/api",
     "dev:admin": "npm run start --workspace=@reeco/admin",
     "dev:client": "npm run start --workspace=@reeco/client",
+    "staging:local": "node scripts/staging/local.mjs",
     "build:shared": "npm run build --workspace=@reeco/shared",
     "build:api": "npm run build --workspace=@reeco/api",
     "build:admin": "npm run build --workspace=@reeco/admin",

@@ -2,7 +2,7 @@
 
 ## Status
 
-STEP 9.4A is an offline foundation. Search ranking, retrieval, reranking, SearchResponse, frontend, and Supabase data remain unchanged.
+The offline benchmark evaluates deterministic templates. The search API also has an optional local Ollama rewrite when `LLM_EXPLANATION_ENABLED=true` and `LLM_MODEL` is configured. Retrieval, ranking, and Supabase data are unchanged.
 
 ## Contract
 
@@ -12,9 +12,9 @@ The deterministic builder preserves MATCH, UNKNOWN, and MISMATCH. A protocol or 
 
 ## Providers
 
-`ExplanationProvider.generate({ query, product, evidence, language })` is the boundary. `DeterministicTemplateExplanationProvider` (template-explanation-v1) is the evaluated fallback and safety reference. `LLMGroundedExplanationProvider` exists as an unconfigured boundary; it fails closed without an approved generator.
+The offline evaluator uses `ExplanationProvider.generate({ query, product, evidence, language })`. `DeterministicTemplateExplanationProvider` (template-explanation-v1) is its evaluated provider; its `LLMGroundedExplanationProvider` boundary remains unconfigured. The API runtime uses `ExplanationService` and the optional Ollama rewrite described below.
 
-No suitable local generative model is installed. `qwen3-embedding:4b` is embedding-only, and the BGE reranker is not a generator. No model was downloaded.
+The runtime uses the locally installed `qwen3:4b-instruct-2507-q4_K_M` through Ollama `/api/chat`. It sends one batch for up to three results with specific evidence and retains the original evidence. Exact-model-only and taxonomy-only explanations use templates. Model errors, timeouts, malformed output, new numeric or named terms, and lost uncertainty or negation fall back to templates. These checks reduce unsupported claims; they are not a proof of factual correctness.
 
 ## Language and style
 
@@ -24,8 +24,6 @@ English and Vietnamese are selected deterministically from the benchmark languag
 
 The frozen real search output supplies 40 query/product pairs: 30 English and 10 Vietnamese. It includes 5 exact identity, 11 protocol, 9 numeric, and 4 UNKNOWN cases. Automatic safety violations: 0. Template p50/p95: 0.0237/0.1069 ms.
 
-## Future runtime design (not implemented)
+## Runtime limits
 
-Generate explanations only when requested. For Top-N, prefer one bounded batch or controlled concurrency after measuring a future approved generator; do not assume five sequential generations are acceptable. The persistent cache is deliberately deferred. A future cache key must include normalized query/version, product ID, evidence content/version, model revision, and prompt/template version—never product ID alone.
-
-Suggested local models for a later approved experiment: `qwen3:4b` (official Ollama artifact 2.5 GB; estimated practical budget 6–8 GB RAM/VRAM) or `qwen3:8b` (official artifact 5.2 GB; estimated practical budget 10–12 GB RAM/VRAM). `gemma3:4b` is a 3.3 GB multilingual alternative. These memory budgets are planning estimates, not vendor guarantees. Model choice and download require explicit approval. Sources: https://ollama.com/library/qwen3/tags and https://ollama.com/library/gemma3.
+The LLM runs only when `explain: true` is requested and the feature flag is enabled. At most three results are rewritten in one call with a 20-second timeout by default. There is no persistent cache. The offline benchmark above measures templates, not LLM latency or factual quality; local smoke tests cover actual Ollama responses.

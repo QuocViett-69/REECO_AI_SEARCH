@@ -80,7 +80,7 @@ export function SearchHero({ onSearch, onViewDetail }) {
         {/* 2. Editorial Subhead */}
         <p className="origin-hero-subhead">
           <strong>Campbell AI is your personal technical instrument advisor.</strong>
-          <span>Search 40+ precision sensors, dataloggers, and telemetry systems to match your application—all in one place.</span>
+          <span>Search precision sensors, dataloggers, and telemetry systems to match your application—all in one place.</span>
         </p>
 
         {/* 3. Frosted Capsule Search Bar with Circle Arrow Up Button */}

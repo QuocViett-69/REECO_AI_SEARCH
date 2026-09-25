@@ -152,18 +152,15 @@ export class SearchService {
           : Promise.resolve([]),
       ]);
       const matchesById = new Map(matches.map((item) => [item.productId, item]));
-      return results.map((result) => {
+      const explainable = results.flatMap((result) => {
         const document = documents.get(result.product_id);
-        return document
-          ? {
-              ...result,
-              explanation: this.explanation.explain(
-                query,
-                document,
-                matchesById.get(result.product_id),
-              ),
-            }
-          : result;
+        return document ? [{ productId: result.product_id, document, match: matchesById.get(result.product_id) }] : [];
+      });
+      const generated = await this.explanation.explainMany(query, explainable);
+      const explanationsById = new Map(explainable.map((item, index) => [item.productId, generated[index]]));
+      return results.map((result) => {
+        const explanation = explanationsById.get(result.product_id);
+        return explanation ? { ...result, explanation } : result;
       });
     } catch {
       this.logger.warn('Search explanations unavailable; returning ranked results');

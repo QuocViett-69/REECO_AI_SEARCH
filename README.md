@@ -76,6 +76,18 @@ npm run dev:admin        # http://localhost:5174
 
 Health endpoint: http://localhost:3000/api/v1/health
 
+## Local staging demo
+
+With `apps/api/.env` configured and Ollama running, start the production builds on separate local ports:
+
+To use the installed Qwen model for search explanations, set `LLM_EXPLANATION_ENABLED=true` and `LLM_MODEL=qwen3:4b-instruct-2507-q4_K_M` in `apps/api/.env`. Search requests must include `explain: true`. The API uses catalog-backed explanations if Ollama is unavailable or its response fails validation. Leave the flag off to use templates only.
+
+```bash
+npm run staging:local
+```
+
+Customer UI: http://127.0.0.1:4173 · Admin UI: http://127.0.0.1:4174 · API health: http://127.0.0.1:3100/api/v1/health. Press Ctrl+C to stop. This uses the Supabase project configured in `apps/api/.env`. Admin imports and edits are blocked in local staging, so the shared data stays read-only. The admin UI still has demo-only client login; do not use this environment to validate admin authentication or expose it publicly.
+
 ## Import and validate Supabase data
 
 Apply the migrations in `supabase/migrations` to the target Supabase project first, then run:
