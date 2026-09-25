@@ -169,7 +169,14 @@ export function SearchResults({
             const price = p.price ?? getProductPrice(p.product_id, p.model);
 
             return (
-              <article key={p.model} className="product-result-card" data-model={p.model}>
+              <article
+                key={p.model}
+                className="product-result-card"
+                data-model={p.model}
+                onClick={() => onViewDetail(p.model)}
+                style={{ cursor: 'pointer' }}
+                title={`Bấm để xem chi tiết ${p.model}`}
+              >
                 <div className="product-result-top">
                   <div className="product-result-img">
                     {p.image ? (
@@ -244,7 +251,7 @@ export function SearchResults({
                   </div>
                 )}
 
-                <div className="product-result-actions">
+                <div className="product-result-actions" onClick={(e) => e.stopPropagation()}>
                   <AddToCartButton product={p} />
                   <button
                     type="button"
@@ -256,7 +263,10 @@ export function SearchResults({
                   <button
                     type="button"
                     className={`btn btn-secondary compare-btn ${inCompare ? 'btn-added' : ''}`}
-                    onClick={() => onToggleCompare(p.model)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleCompare(p.model);
+                    }}
                   >
                     {inCompare ? <Check size={16} /> : <GitCompare size={16} />}
                     {inCompare ? 'In Compare' : 'Add to Compare'}

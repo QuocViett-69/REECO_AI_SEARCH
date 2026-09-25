@@ -55,7 +55,12 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
       <nav className="nav">
         <div className="nav-inner">
           {/* Brand */}
-          <div className="nav-brand" onClick={() => nav('search')} style={{ cursor: 'pointer' }}>
+          <div
+            className="nav-brand"
+            onClick={() => nav('home')}
+            style={{ cursor: 'pointer' }}
+            title="Quay lại trang chủ Campbell AI Search"
+          >
             <div className="nav-brand-mark"><Sparkles size={18} /></div>
             <div className="nav-brand-text">Campbell <span>AI Search</span></div>
           </div>

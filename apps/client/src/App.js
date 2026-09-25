@@ -70,9 +70,28 @@ function AppInner() {
     return () => clearTimeout(timer);
   }, [showToast]);
 
+  const isHomeLocked = currentPage === 'search' && !hasSearched;
+
+  useEffect(() => {
+    document.documentElement.style.overflow = isHomeLocked ? 'hidden' : '';
+    document.body.style.overflow = isHomeLocked ? 'hidden' : '';
+    document.body.style.height = isHomeLocked ? '100vh' : '';
+    return () => {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+    };
+  }, [isHomeLocked]);
+
   // Navigate handler — supports "order-success:ID" and "account-order:ID" patterns
   const handleNavigate = useCallback((page) => {
-    if (page.startsWith('order-success:')) {
+    if (page === 'search' || page === 'home') {
+      setCurrentPage('search');
+      setHasSearched(false);
+      setSearchError(null);
+      setSearchMode(null);
+      setSearchQuery('');
+    } else if (page.startsWith('order-success:')) {
       setOrderSuccessId(page.replace('order-success:', ''));
       setCurrentPage('order-success');
     } else if (page.startsWith('account-order:')) {
@@ -173,7 +192,7 @@ function AppInner() {
   };
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${isHomeLocked ? 'is-home-locked' : ''}`}>
       <BackgroundEffects />
 
       <Navbar
@@ -187,7 +206,7 @@ function AppInner() {
         {currentPage === 'search' && (
           <section className="page active" id="page-search">
             {!hasSearched ? (
-              <SearchHero onSearch={handleRunSearch} />
+              <SearchHero onSearch={handleRunSearch} onViewDetail={handleViewDetail} />
             ) : (
               <SearchResults
                 query={searchQuery}

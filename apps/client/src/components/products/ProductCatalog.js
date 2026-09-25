@@ -172,7 +172,13 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
           filtered.map((p) => {
             const inCompare = isInCompare(p.model);
             return (
-              <div key={p.model} className="product-card" data-model={p.model}>
+              <div
+                key={p.model}
+                className="product-card"
+                data-model={p.model}
+                onClick={() => onViewDetail(p.model)}
+                title={`Bấm để xem chi tiết ${p.model}`}
+              >
                 <div className="product-card-img">
                   {p.image ? (
                     <img
@@ -205,8 +211,8 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
                     {p.name}
                   </div>
                   <div className="product-card-meta">
-                    <span>{p.category}</span>
-                    <span>{p.subcategory}</span>
+                    {p.category && <span className="product-tag-cat">{p.category}</span>}
+                    {p.subcategory && <span className="product-tag-subcat">{p.subcategory}</span>}
                   </div>
 
                   {/* Commercial info — no stock quantity */}
@@ -222,21 +228,24 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
                     </div>
                   </div>
 
-                  <div className="product-card-actions">
+                  <div className="product-card-actions" onClick={(e) => e.stopPropagation()}>
                     <button type="button" className="btn btn-primary view-detail-btn"
                       onClick={() => onViewDetail(p.model)}>
                       <Eye size={15} /> Details
                     </button>
                     <button type="button"
                       className={`btn btn-secondary compare-btn ${inCompare ? 'btn-added' : ''}`}
-                      onClick={() => onToggleCompare(p.model)}>
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onToggleCompare(p.model);
+                      }}>
                       {inCompare ? <Check size={15} /> : <GitCompare size={15} />}
                       {inCompare ? 'In Compare' : 'Compare'}
                     </button>
                   </div>
-                  <div className="product-card-secondary-actions">
-                    <AddToCartButton product={p} size="sm" />
-                    <FavoriteButton product={p} size="sm" />
+                  <div className="product-card-secondary-actions" onClick={(e) => e.stopPropagation()}>
+                    <AddToCartButton product={p} />
+                    <FavoriteButton product={p} />
                   </div>
                 </div>
               </div>
