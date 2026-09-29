@@ -13,17 +13,20 @@ const measurements: Requirement[] = [
   { key: 'barometric_pressure', en: 'air pressure', vi: 'áp suất không khí', pattern: /\b(?:barometric|atmospheric|air) pressure\b|\bap suat (?:khong khi|khi quyen)\b/u },
   { key: 'turbidity', en: 'turbidity', vi: 'độ đục', pattern: /\bturbidity\b|\bdo duc\b/u },
   { key: 'soil_electrical_conductivity', en: 'soil electrical conductivity', vi: 'độ dẫn điện đất', pattern: /\b(?:electrical conductivity|do dan dien)\b/u },
+  { key: 'precipitation', en: 'rainfall', vi: 'lượng mưa', pattern: /\brain(?:fall)?\b|\bprecipitation\b|\bluong mua\b/u },
 ];
 const roles: Requirement[] = [
   { key: 'soil', en: 'soil sensor', vi: 'cảm biến đất', pattern: /\bsoil sensors?\b|\bcam bien dat\b/u },
-  { key: 'logger', en: 'data logger', vi: 'bộ ghi dữ liệu', pattern: /\bdata\s*loggers?\b|\bbo ghi du lieu\b|\bthu thap du lieu\b/u },
+  { key: 'logger', en: 'data logger', vi: 'bộ ghi dữ liệu', pattern: /\bdata\s*log{1,2}ers?\b|\bbo ghi du lieu\b|\bthu thap du lieu\b/u },
   { key: 'cellular', en: 'cellular communication', vi: 'truyền thông cellular', pattern: /\bcellular\b|\bmobile network\b|\btruyen (?:thong|du lieu) (?:qua mang )?di dong\b/u },
   { key: 'vibrating', en: 'vibrating wire reader', vi: 'thiết bị đọc vibrating wire', pattern: /\bvibrating wire\b|\bday rung\b/u },
-  { key: 'power', en: 'power supply', vi: 'nguồn cấp', pattern: /\bpower suppl(?:y|ies)\b|\bnguon (?:cap|dien)\b|\bcap nguon\b/u },
+  { key: 'reader', en: 'analyzer', vi: 'thiết bị đọc/phân tích', pattern: /\b(?:reader|analy[sz]er)\b|\binspect and read\b|\bthiet bi doc\b/u },
+  { key: 'power', en: 'power supply', vi: 'nguồn cấp', pattern: /^power$|\bpower suppl(?:y|ies)\b|\bnguon (?:cap|dien)\b|\bcap nguon\b/u },
   { key: 'communication', en: 'communication equipment', vi: 'thiết bị truyền dữ liệu', pattern: /\bcommunication\b|\btruyen du lieu\b/u },
   { key: 'weather', en: 'weather instrument', vi: 'thiết bị thời tiết', pattern: /\bweather\b|\bthoi tiet\b/u },
   { key: 'water', en: 'water monitoring instrument', vi: 'thiết bị quan trắc nước', pattern: /\bhydrolog(?:y|ical)\b/u },
   { key: 'wireless', en: 'wireless communication', vi: 'truyền thông không dây', pattern: /\bwireless\b|\bkhong day\b/u },
+  { key: 'waterquality', en: 'water quality measurement', vi: 'đo chất lượng nước', pattern: /\bwater quality\b|\bchat luong nuoc\b/u },
 ];
 
 export function parseSearchIntent(query: string) {
@@ -61,13 +64,14 @@ export function matchSearchIntent(intent: SearchIntent, document: ProductSearchD
   for (const item of intent.measurements) {
     const measurement = document.measurements.find(entry => entry.key === item.key);
     const capability = document.capabilities.find(entry => entry.key === `measure_${item.key}`);
-    if (!measurement && !capability) return null;
-    evidence.push({ source: 'product_document', field: measurement ? 'measurements' : 'capabilities', value: `${item.en} / ${item.vi}` });
+    const rainGauge = item.key === 'precipitation' && /\brain ga[u]?ge\b|\bprecipitation sensor\b/iu.test(document.taxonomy.device_type);
+    if (!measurement && !capability && !rainGauge) return null;
+    evidence.push({ source: 'product_document', field: measurement ? 'measurements' : capability ? 'capabilities' : 'taxonomy.device_type', value: measurement || capability ? `${item.en} / ${item.vi}` : document.taxonomy.device_type });
   }
   if (intent.target) {
     const field = temperatureTargetEvidence(document, intent.target);
     if (!field) return null;
-    evidence.push({ source: 'product_document', field, value: `${intent.target.en} / ${intent.target.vi}` });
+    evidence.push({ source: 'product_document', field, value: field === 'taxonomy.device_type' ? document.taxonomy.device_type : `${intent.target.en} / ${intent.target.vi}` });
   }
   const type = normalize(document.taxonomy.device_type);
   const communicationOption = document.variants?.find(v => v.model === document.model)?.distinguishing_specifications.find(s => s.name_en === 'Communication Option');
@@ -76,9 +80,11 @@ export function matchSearchIntent(intent: SearchIntent, document: ProductSearchD
       : role.key === 'logger' ? /\bdata logger\b/u.test(type)
       : role.key === 'cellular' ? /\bcellular\b/u.test(type) || document.supported_protocols.some(p => /^(?:cellular|lte|[345]g)$/iu.test(p))
       : role.key === 'vibrating' ? /\bvibrating wire\b/u.test(`${type} ${normalize(document.name_en)}`)
+      : role.key === 'reader' ? /\b(?:reader|analy[sz]er)\b/u.test(`${type} ${normalize(document.name_en)}`)
       : role.key === 'communication' ? /\b(?:communication|modem|radio|transmitter)\b/u.test(type)
       : role.key === 'weather' ? /\b(?:weather|air|humidity|barometric|wind|precipitation|rain)\b/u.test(type)
       : role.key === 'water' ? /\b(?:water|turbidity|oxygen)\b/u.test(type)
+      : role.key === 'waterquality' ? /\b(?:water quality|turbidity|dissolved oxygen)\b/u.test(type)
       : role.key === 'wireless' ? communicationOption
         ? /wi[ -]?fi|cellular|radio/iu.test(communicationOption.value_raw)
         : /\b(?:wireless|cellular|radio)\b/iu.test(`${type} ${document.name_en}`) || document.supported_protocols.includes('Wi-Fi')

@@ -3,7 +3,7 @@ import type { ProductSpecification } from '@reeco/shared';
 export const normalizeSpecificationText = (text: string): string => text.normalize('NFKC')
   .toLowerCase().replace(/[‐‑–—_-]/gu, ' ').replace(/\s+/gu, ' ').trim();
 
-// Literal catalog evidence only; this does not infer unit conversions or numeric inequalities.
+// ponytail: literal spec evidence; add unit-aware interval matching when inequalities are required.
 export function specificationTerms(query: string): string[] {
   const text = normalizeSpecificationText(query);
   return [...new Set([

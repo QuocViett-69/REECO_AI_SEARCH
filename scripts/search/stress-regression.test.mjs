@@ -5,11 +5,39 @@ import test from 'node:test';
 const require = createRequire(import.meta.url);
 const fromDist = name => require(`../../apps/api/dist/modules/search/${name}.js`);
 const { specificationTerms, specificationEvidence } = fromDist('specification-query');
-const { parseSearchIntent } = fromDist('search-intent');
+const { parseSearchIntent, matchSearchIntent } = fromDist('search-intent');
 const { hasUnsupportedNegativeConstraint } = fromDist('conversation-query');
 const { TechnicalQueryParserService } = fromDist('technical-query-parser.service');
 const { ProductsRepository } = require('../../apps/api/dist/modules/products/products.repository.js');
 const { suggestModels } = fromDist('model-suggestions');
+const { KeywordSearchService } = fromDist('keyword-search.service');
+
+test('sparse keyword prose supplements canonical intent and preserves original ordering', async () => {
+  for (const query of ['datalogger có wifi', 'data loger wifi', 'bộ ghi dữ liệu']) {
+    const queries = [];
+    const row = { product_id: 'catalog-id', model: 'TEST', rank: 0.25 };
+    const keyword = new KeywordSearchService({ getClient: () => ({ rpc: async (_, args) => {
+      queries.push(args.query_text);
+      return { data: args.query_text === '"data logger"' ? [row] : [] };
+    } }) }, { getActiveTechnicalIdentityCatalog: async () => [] });
+    assert.deepEqual(await keyword.search(query, 40), [row]);
+    assert.deepEqual(queries, [query, '"data logger"']);
+  }
+  let calls = 0;
+  const rows = [{ product_id: 'original', rank: 0.8 }];
+  const keyword = new KeywordSearchService({ getClient: () => ({ rpc: async () => { calls++; return { data: rows }; } }) }, {});
+  assert.equal(await keyword.search('bộ ghi dữ liệu', 1), rows);
+  assert.equal(calls, 1);
+  const extra = { product_id: 'additional', rank: 0.2 };
+  const sparse = new KeywordSearchService({ getClient: () => ({ rpc: async (_, args) => ({
+    data: args.query_text === '"data logger"' ? [...rows, extra] : rows,
+  }) }) }, { getActiveTechnicalIdentityCatalog: async () => [] });
+  assert.deepEqual(await sparse.search('datalogger with Wi-Fi', 40), [...rows, extra]);
+  const unavailable = new KeywordSearchService({ getClient: () => ({ rpc: async (_, args) =>
+    args.query_text === '"data logger"' ? { data: null, error: { message: 'unavailable' } } : { data: rows },
+  }) }, { getActiveTechnicalIdentityCatalog: async () => [] });
+  assert.deepEqual(await unavailable.search('datalogger with Wi-Fi', 40), rows);
+});
 
 test('model suggestions use the catalog and never collapse an ambiguous prefix to exact identity', () => {
   const catalog = [{ productId: 'a', model: 'ZX450' }, { productId: 'b', model: 'ZX455' }, { productId: 'c', model: 'RainTest10-MM' }];
@@ -48,6 +76,17 @@ test('soil water wording and weather lists retain each independent requirement',
   const parser = new TechnicalQueryParserService();
   assert.deepEqual(parser.parse('cellular because Wi-Fi is unavailable').protocols, []);
   assert.deepEqual(parser.parse('datalogger with Wi-Fi').protocols, ['Wi-Fi']);
+  assert.deepEqual(parseSearchIntent('monitor rainfall').measurements.map(m => m.key), ['precipitation']);
+  assert.deepEqual(parseSearchIntent('đo chất lượng nước').roles.map(r => r.key), ['waterquality']);
+  assert.deepEqual(parseSearchIntent('data loger with USB').roles.map(r => r.key), ['logger']);
+  assert.deepEqual(parseSearchIntent('power').roles.map(r => r.key), ['power']);
+  assert.deepEqual(parseSearchIntent('low power soil sensor').roles.map(r => r.key), ['soil']);
+  const reader = parseSearchIntent('vibrating wire field reader');
+  const doc = type => ({ measurements: [], capabilities: [], name_en: type, taxonomy: { device_type: type } });
+  assert.equal(matchSearchIntent(reader, doc('Vibrating Wire Data Logger')), null);
+  assert.ok(matchSearchIntent(reader, doc('Vibrating Wire Analyzer')));
+  const evidence = matchSearchIntent(parseSearchIntent('soil temperature'), { measurements: [], capabilities: [], taxonomy: { device_type: 'Soil Temperature Sensor' } });
+  assert.deepEqual(evidence, [{ source: 'product_document', field: 'taxonomy.device_type', value: 'Soil Temperature Sensor' }]);
 });
 
 test('batch specification reads include text and paginate past the server cap', async () => {

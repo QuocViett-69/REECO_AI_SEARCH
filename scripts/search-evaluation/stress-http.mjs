@@ -1,16 +1,41 @@
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
-import { cases } from './stress-cases.mjs';
+import { cases, judgmentsFor } from './stress-cases.mjs';
 import { percentile } from './metrics.mjs';
 
-process.env.RERANKER_ENABLED = 'false';
+const rerankerEnabled = process.argv.includes('--reranker');
+const semanticUnavailable = process.argv.includes('--semantic-unavailable');
+const selectedIds = process.argv.find(a => a.startsWith('--cases='))?.slice(8).split(',');
+const selectedCases = selectedIds ? cases.filter(c => selectedIds.includes(c.id)) : cases;
+process.env.RERANKER_ENABLED = String(rerankerEnabled);
 process.env.LLM_EXPLANATION_ENABLED = 'false';
 const require = createRequire(import.meta.url);
 const { NestFactory } = require('@nestjs/core');
 const { AppModule } = require('../../apps/api/dist/app.module.js');
 const { SearchResponseSchema } = require('../../packages/shared/dist/index.js');
 const app = await NestFactory.create(AppModule, { logger: ['error'] });
+if (semanticUnavailable) {
+  const { SemanticSearchService } = require('../../apps/api/dist/modules/search/semantic-search.service.js');
+  app.get(SemanticSearchService).search = async () => { throw new Error('Injected semantic outage'); };
+}
+const rerankerRequests = [];
+if (rerankerEnabled) {
+  const { RerankerService } = require('../../apps/api/dist/modules/search/reranker.service.js');
+  const reranker = app.get(RerankerService);
+  const request = reranker.request.bind(reranker);
+  reranker.request = async (query, candidates) => {
+    const started = performance.now();
+    try {
+      const response = await request(query, candidates);
+      rerankerRequests.push({ query, response, elapsed_ms: performance.now() - started });
+      return response;
+    } catch (error) {
+      rerankerRequests.push({ query, error: error.name, elapsed_ms: performance.now() - started });
+      throw error;
+    }
+  };
+}
 app.setGlobalPrefix('api/v1');
 await app.listen(0, '127.0.0.1');
 const url = `${await app.getUrl()}/api/v1/search`;
@@ -18,8 +43,8 @@ const catalog = JSON.parse(await readFile(new URL('../../output/search-stress/ca
 const ids = new Set(catalog.map(row => row.product.product_id));
 const records = [];
 try {
-  for (let offset = 0; offset < cases.length; offset += 4) {
-    await Promise.all(cases.slice(offset, offset + 4).map(async c => {
+  for (let offset = 0; offset < selectedCases.length; offset += 4) {
+    await Promise.all(selectedCases.slice(offset, offset + 4).map(async c => {
       const started = performance.now();
       try {
         const response = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' },
@@ -34,11 +59,17 @@ try {
         records.push({ id: c.id, query: c.query, status: response.status, elapsed_ms: performance.now() - started, body });
       } catch (error) { records.push({ id: c.id, query: c.query, error: error.message, elapsed_ms: performance.now() - started }); }
     }));
-    if (offset % 20 === 0) console.log(`HTTP ${Math.min(offset + 4, cases.length)}/${cases.length}`);
+    if (offset % 20 === 0) console.log(`HTTP ${Math.min(offset + 4, selectedCases.length)}/${selectedCases.length}`);
   }
 } finally { await app.close(); }
-const report = { concurrency: 4, request_count: records.length, reranker_enabled: false, llm_rewrite: false,
+for (const r of records) {
+  const c = cases.find(c => c.id === r.id);
+  const judgments = judgmentsFor(c.intent, catalog);
+  r.hit1 = judgments.length ? Number(judgments.some(j => j.product_id === r.body?.results?.[0]?.product_id)) : null;
+}
+const report = { concurrency: 4, request_count: records.length, semantic_unavailable: semanticUnavailable, reranker_enabled: rerankerEnabled, llm_rewrite: false,
+  reranker_requests: rerankerRequests,
   errors: records.filter(r => r.error).length, latency_ms: { p50: percentile(records.map(r => r.elapsed_ms), 50), p95: percentile(records.map(r => r.elapsed_ms), 95) }, records };
-await writeFile(new URL('../../output/search-stress/http.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
+await writeFile(new URL(`../../output/search-stress/http${semanticUnavailable ? '-fallback' : rerankerEnabled ? '-reranker' : ''}.json`, import.meta.url), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, records: undefined }, null, 2));
-if (report.errors) process.exitCode = 1;
+if (report.errors || records.some(r => r.hit1 === 0)) process.exitCode = 1;

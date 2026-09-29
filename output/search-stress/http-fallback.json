@@ -1,0 +1,620 @@
+{
+  "concurrency": 4,
+  "request_count": 7,
+  "semantic_unavailable": true,
+  "reranker_enabled": false,
+  "llm_rewrite": false,
+  "reranker_requests": [],
+  "errors": 0,
+  "latency_ms": {
+    "p50": 7788.504999999999,
+    "p95": 16608.6568
+  },
+  "records": [
+    {
+      "id": "C07",
+      "query": "bộ ghi dữ liệu",
+      "status": 200,
+      "elapsed_ms": 3888.0838,
+      "body": {
+        "query": "bộ ghi dữ liệu",
+        "mode": "keyword",
+        "results": [
+          {
+            "product_id": "CSI_ASPEN10_CELL_ST",
+            "model": "Aspen10-CELL-ST",
+            "name_en": "Aspen10 Edge Device for a Single Sensor -CEL",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger / Edge Device",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14446",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Aspen10-CELL-ST: dữ liệu xác nhận bộ ghi dữ liệu.",
+              "language": "vi",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger / Edge Device"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CR1000XE_XT_CC",
+            "model": "CR1000Xe-XT-CC",
+            "name_en": "CR1000Xe Measurement and Control Datalogger (XT-CC)",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/15120",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR1000Xe-XT-CC: dữ liệu xác nhận bộ ghi dữ liệu.",
+              "language": "vi",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CR310_NA",
+            "model": "CR310-NA",
+            "name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11631",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR310-NA: dữ liệu xác nhận bộ ghi dữ liệu.",
+              "language": "vi",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CR310_WIFI",
+            "model": "CR310-WIFI",
+            "name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/9350",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR310-WIFI: dữ liệu xác nhận bộ ghi dữ liệu.",
+              "language": "vi",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CR350_NA",
+            "model": "CR350-NA",
+            "name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR350-NA: dữ liệu xác nhận bộ ghi dữ liệu.",
+              "language": "vi",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "F06",
+      "query": "datalogger with Wi-Fi",
+      "status": 200,
+      "elapsed_ms": 7788.504999999999,
+      "body": {
+        "query": "datalogger with Wi-Fi",
+        "mode": "keyword",
+        "results": [
+          {
+            "product_id": "CSI_CR310_WIFI",
+            "model": "CR310-WIFI",
+            "name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/9350",
+            "matched_features": [
+              "protocol:Wi-Fi"
+            ],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR310-WIFI: product data confirms data logger. Product data confirms support for Wi-Fi.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                },
+                {
+                  "source": "product_document",
+                  "field": "supported_protocols",
+                  "value": "Wi-Fi"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "B05",
+      "query": "data logger",
+      "status": 200,
+      "elapsed_ms": 13803.954600000001,
+      "body": {
+        "query": "data logger",
+        "mode": "keyword",
+        "results": [
+          {
+            "product_id": "CSI_CRVW3_NE",
+            "model": "CRVW3-NE",
+            "name_en": "CRVW3 Vibrating-Wire Data Logger",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Vibrating Wire Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8218",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.169846,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CRVW3-NE: product data confirms data logger.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Vibrating Wire Data Logger"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CR6_NA_ST_CC",
+            "model": "CR6-NA-ST-CC",
+            "name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/11919",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0913371,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR6-NA-ST-CC: product data confirms data logger.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CR350_NA",
+            "model": "CR350-NA",
+            "name_en": "CR350 Datalogger (-40 to +70C) -NA No Additional Co",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/13645",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0910593,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR350-NA: product data confirms data logger.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CR310_NA",
+            "model": "CR310-NA",
+            "name_en": "CR310 Datalogger (-40 to +70C) -NA No Additional Co",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11631",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0910533,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR310-NA: product data confirms data logger.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_ASPEN10_CELL_ST",
+            "model": "Aspen10-CELL-ST",
+            "name_en": "Aspen10 Edge Device for a Single Sensor -CEL",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger / Edge Device",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14446",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Aspen10-CELL-ST: product data confirms data logger.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger / Edge Device"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "E04",
+      "query": "Wi-Fi datalogger",
+      "status": 200,
+      "elapsed_ms": 16608.6568,
+      "body": {
+        "query": "Wi-Fi datalogger",
+        "mode": "keyword",
+        "results": [
+          {
+            "product_id": "CSI_CR310_WIFI",
+            "model": "CR310-WIFI",
+            "name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/9350",
+            "matched_features": [
+              "protocol:Wi-Fi"
+            ],
+            "scores": {
+              "keyword": 0.00181488,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR310-WIFI: product data confirms data logger. Product data confirms support for Wi-Fi.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                },
+                {
+                  "source": "product_document",
+                  "field": "supported_protocols",
+                  "value": "Wi-Fi"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "L06",
+      "query": "power",
+      "status": 200,
+      "elapsed_ms": 2117.252999999997,
+      "body": {
+        "query": "power",
+        "mode": "keyword",
+        "results": [
+          {
+            "product_id": "CSI_PS24_W_CH150",
+            "model": "PS24-w/CH150",
+            "name_en": "PS24-w/CH150",
+            "name_vi": null,
+            "category": "Power",
+            "device_type": "Power Supply / Charge Regulator",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/9884",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.333333,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "PS24-w/CH150: product data confirms power supply.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.category",
+                  "value": "Power"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_PS84_CR",
+            "model": "PS84-CR",
+            "name_en": "PS84 84 Ah Power Supply with CH200 Regulator and 14 x 16 in. Enclosure",
+            "name_vi": null,
+            "category": "Power",
+            "device_type": "Power Supply / Charge Regulator",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/1449",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.333333,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "PS84-CR: product data confirms power supply.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.category",
+                  "value": "Power"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_PS150",
+            "model": "PS150",
+            "name_en": "12 V Power Supply with Charging Regulator and 7 Ah Sealed Rechargeable Battery",
+            "name_vi": null,
+            "category": "Power",
+            "device_type": "Power Supply / Charge Regulator",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/5178",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.285714,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "PS150: product data confirms power supply.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.category",
+                  "value": "Power"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_PS200",
+            "model": "PS200",
+            "name_en": "Smart 12 V Power Supply with Charging Regulator and 7 Ah Rechargeable Battery",
+            "name_vi": null,
+            "category": "Power",
+            "device_type": "Power Supply / Charge Regulator",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3815",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.285714,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "PS200: product data confirms power supply.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.category",
+                  "value": "Power"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "J06",
+      "query": "data loger wifi",
+      "status": 200,
+      "elapsed_ms": 6191.972099999999,
+      "body": {
+        "query": "data loger wifi",
+        "mode": "keyword",
+        "results": [
+          {
+            "product_id": "CSI_CR310_WIFI",
+            "model": "CR310-WIFI",
+            "name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/9350",
+            "matched_features": [
+              "protocol:Wi-Fi"
+            ],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR310-WIFI: product data confirms data logger. Product data confirms support for Wi-Fi.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                },
+                {
+                  "source": "product_document",
+                  "field": "supported_protocols",
+                  "value": "Wi-Fi"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "K03",
+      "query": "datalogger có wifi",
+      "status": 200,
+      "elapsed_ms": 9172.7196,
+      "body": {
+        "query": "datalogger có wifi",
+        "mode": "keyword",
+        "results": [
+          {
+            "product_id": "CSI_CR310_WIFI",
+            "model": "CR310-WIFI",
+            "name_en": "CR310 Datalogger (-40 to +70C) -WIFI w/Wireless M",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/9350",
+            "matched_features": [
+              "protocol:Wi-Fi"
+            ],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CR310-WIFI: product data confirms data logger. Product data confirms support for Wi-Fi.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Data Logger"
+                },
+                {
+                  "source": "product_document",
+                  "field": "supported_protocols",
+                  "value": "Wi-Fi"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    }
+  ]
+}

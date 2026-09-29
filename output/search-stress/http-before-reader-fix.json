@@ -1,0 +1,723 @@
+{
+  "concurrency": 4,
+  "request_count": 5,
+  "semantic_unavailable": false,
+  "reranker_enabled": true,
+  "llm_rewrite": false,
+  "reranker_requests": [
+    {
+      "query": "remote monitoring using cellular communication",
+      "response": {
+        "results": [
+          {
+            "product_id": "CSI_CELL225_IT1A",
+            "score": -4.7265625
+          },
+          {
+            "product_id": "CSI_CELL215_IT1A",
+            "score": -4.890625
+          },
+          {
+            "product_id": "CSI_CELL210_V",
+            "score": -4.90625
+          },
+          {
+            "product_id": "CSI_CELL205_AT",
+            "score": -4.91796875
+          },
+          {
+            "product_id": "CSI_CELL220_IT1A",
+            "score": -4.96875
+          }
+        ],
+        "model": "BAAI/bge-reranker-v2-m3",
+        "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+        "latency_ms": 307.873
+      },
+      "elapsed_ms": 314.70019999999977
+    },
+    {
+      "query": "weather sensor measuring temperature humidity pressure",
+      "response": {
+        "results": [
+          {
+            "product_id": "CSI_CLIMAVUE50G2",
+            "score": 4.03125
+          },
+          {
+            "product_id": "CSI_METSENS500_DS",
+            "score": 3.8515625
+          },
+          {
+            "product_id": "CSI_METSENS300_D2",
+            "score": 3.7421875
+          },
+          {
+            "product_id": "CSI_METSENS550_D2",
+            "score": 3.53515625
+          }
+        ],
+        "model": "BAAI/bge-reranker-v2-m3",
+        "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+        "latency_ms": 215.471
+      },
+      "elapsed_ms": 219.48090000000047
+    },
+    {
+      "query": "soil moisture sensor with SDI-12",
+      "response": {
+        "results": [
+          {
+            "product_id": "CSI_SOILVUE10_5",
+            "score": 4.3984375
+          },
+          {
+            "product_id": "CSI_CS655",
+            "score": 3.7578125
+          },
+          {
+            "product_id": "CSI_CS650",
+            "score": 3.640625
+          }
+        ],
+        "model": "BAAI/bge-reranker-v2-m3",
+        "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+        "latency_ms": 292.352
+      },
+      "elapsed_ms": 300.3770000000004
+    },
+    {
+      "query": "vibrating wire field reader",
+      "response": {
+        "results": [
+          {
+            "product_id": "CSI_CRVW3_NE",
+            "score": 1.076171875
+          },
+          {
+            "product_id": "CSI_AVW200_ST",
+            "score": 0.366943359375
+          },
+          {
+            "product_id": "CSI_VWANALYZER",
+            "score": -0.0836181640625
+          }
+        ],
+        "model": "BAAI/bge-reranker-v2-m3",
+        "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+        "latency_ms": 191.103
+      },
+      "elapsed_ms": 196.9849000000013
+    }
+  ],
+  "errors": 0,
+  "latency_ms": {
+    "p50": 5499.6232,
+    "p95": 7468.8119
+  },
+  "records": [
+    {
+      "id": "Q03",
+      "query": "remote monitoring using cellular communication",
+      "status": 200,
+      "elapsed_ms": 3953.6924,
+      "body": {
+        "query": "remote monitoring using cellular communication",
+        "mode": "hybrid",
+        "results": [
+          {
+            "product_id": "CSI_CELL225_IT1A",
+            "model": "CELL225-IT1A",
+            "name_en": "4G LTE CAT-1 Cellular Module for Japan",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12128",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": 0.547354698181215,
+              "hybrid": 0.014925373134328358,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CELL225-IT1A: product data confirms cellular communication, communication equipment.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CELL215_IT1A",
+            "model": "CELL215-IT1A",
+            "name_en": "4G LTE CAT-1 Cellular Module for EMEA Countries",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11192",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": 0.551564043946783,
+              "hybrid": 0.015151515151515152,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CELL215-IT1A: product data confirms cellular communication, communication equipment.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CELL210_V",
+            "model": "CELL210-V",
+            "name_en": "4G LTE CAT-1 Cellular Module for Verizon",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11185",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": 0.553657306112617,
+              "hybrid": 0.015384615384615385,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CELL210-V: product data confirms cellular communication, communication equipment.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CELL205_AT",
+            "model": "CELL205-AT",
+            "name_en": "4G LTE Cat1 Cellular Module for North America (-4",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11178",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": 0.570750917464827,
+              "hybrid": 0.015873015873015872,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CELL205-AT: product data confirms cellular communication, communication equipment.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CELL220_IT1A",
+            "model": "CELL220-IT1A",
+            "name_en": "4G LTE CAT-1 Cellular Module for Australia and New Zealand",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12127",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": 0.531938758945582,
+              "hybrid": 0.014492753623188406,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CELL220-IT1A: product data confirms cellular communication, communication equipment.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Cellular Modem / Router"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "Q02",
+      "query": "weather sensor measuring temperature humidity pressure",
+      "status": 200,
+      "elapsed_ms": 4066.8412000000003,
+      "body": {
+        "query": "weather sensor measuring temperature humidity pressure",
+        "mode": "hybrid",
+        "results": [
+          {
+            "product_id": "CSI_CLIMAVUE50G2",
+            "model": "ClimaVue50G2",
+            "name_en": "G2 Compact Digital SDI-12 Weather Sensor (-50 to",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "All-in-One Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.473684,
+              "semantic": 0.752018713483782,
+              "hybrid": 0.03252247488101534,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "ClimaVue50G2: product data confirms relative humidity, air pressure, air temperature, weather instrument.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "relative humidity / độ ẩm không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "air pressure / áp suất không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "air temperature / nhiệt độ không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "All-in-One Weather Sensor"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_METSENS500_DS",
+            "model": "MetSENS500-DS",
+            "name_en": "MetSENS500-DS",
+            "name_vi": "MetSENS500-DS",
+            "category": "Sensors",
+            "device_type": "All-in-One Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11230",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.411765,
+              "semantic": 0.696290384396457,
+              "hybrid": 0.03076923076923077,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "MetSENS500-DS: product data confirms relative humidity, air pressure, air temperature, weather instrument.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "relative humidity / độ ẩm không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "air pressure / áp suất không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "air temperature / nhiệt độ không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "All-in-One Weather Sensor"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_METSENS300_D2",
+            "model": "MetSENS300-D2",
+            "name_en": "MetSENS300-D2",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Compact Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11229",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.411765,
+              "semantic": 0.671580811048728,
+              "hybrid": 0.029709507042253523,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "MetSENS300-D2: product data confirms relative humidity, air pressure, air temperature, weather instrument.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "relative humidity / độ ẩm không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "air pressure / áp suất không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "air temperature / nhiệt độ không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Compact Weather Sensor"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_METSENS550_D2",
+            "model": "MetSENS550-D2",
+            "name_en": "MetSENS550-D2",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Compact Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11231",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.411765,
+              "semantic": 0.674946885548071,
+              "hybrid": 0.02964426877470356,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "MetSENS550-D2: product data confirms relative humidity, air pressure, air temperature, weather instrument.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "relative humidity / độ ẩm không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "air pressure / áp suất không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "air temperature / nhiệt độ không khí"
+                },
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Compact Weather Sensor"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "Q04",
+      "query": "device for measuring turbidity in water",
+      "status": 200,
+      "elapsed_ms": 5499.6232,
+      "body": {
+        "query": "device for measuring turbidity in water",
+        "mode": "hybrid",
+        "results": [
+          {
+            "product_id": "CSI_CLARIVUE10",
+            "model": "ClariVue10",
+            "name_en": "ClariVUE™ 10",
+            "name_vi": "Cảm biến độ đục ClariVUE™ 10",
+            "category": "Sensors",
+            "device_type": "Turbidity Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13165",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.333333,
+              "semantic": 0.723421970574197,
+              "hybrid": 0.03278688524590164,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "ClariVue10: product data confirms turbidity.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "turbidity / độ đục"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "Q01",
+      "query": "soil moisture sensor with SDI-12",
+      "status": 200,
+      "elapsed_ms": 7010.561500000001,
+      "body": {
+        "query": "soil moisture sensor with SDI-12",
+        "mode": "hybrid",
+        "results": [
+          {
+            "product_id": "CSI_SOILVUE10_5",
+            "model": "SoilVue10-5",
+            "name_en": "SoilVue10 TDR Soil Moisture Profile Sensor, 0.5m",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11468",
+            "matched_features": [
+              "protocol:SDI-12"
+            ],
+            "scores": {
+              "keyword": 0.230769,
+              "semantic": 0.722087989226828,
+              "hybrid": 0.03252247488101534,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "SoilVue10-5: product data confirms soil moisture. Product data confirms support for SDI-12.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "soil moisture / độ ẩm đất"
+                },
+                {
+                  "source": "product_document",
+                  "field": "supported_protocols",
+                  "value": "SDI-12"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CS655",
+            "model": "CS655",
+            "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "matched_features": [
+              "protocol:SDI-12"
+            ],
+            "scores": {
+              "keyword": 0.166667,
+              "semantic": 0.697676845761909,
+              "hybrid": 0.03149801587301587,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CS655: product data confirms soil moisture. Product data confirms support for SDI-12.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "soil moisture / độ ẩm đất"
+                },
+                {
+                  "source": "product_document",
+                  "field": "supported_protocols",
+                  "value": "SDI-12"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_CS650",
+            "model": "CS650",
+            "name_en": "30CM Water Content Reflectometer plus",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+            "matched_features": [
+              "protocol:SDI-12"
+            ],
+            "scores": {
+              "keyword": 0.166667,
+              "semantic": 0.691180307198746,
+              "hybrid": 0.03149801587301587,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CS650: product data confirms soil moisture. Product data confirms support for SDI-12.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "soil moisture / độ ẩm đất"
+                },
+                {
+                  "source": "product_document",
+                  "field": "supported_protocols",
+                  "value": "SDI-12"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    },
+    {
+      "id": "Q05",
+      "query": "vibrating wire field reader",
+      "status": 200,
+      "elapsed_ms": 7468.8119,
+      "body": {
+        "query": "vibrating wire field reader",
+        "mode": "hybrid",
+        "results": [
+          {
+            "product_id": "CSI_CRVW3_NE",
+            "model": "CRVW3-NE",
+            "name_en": "CRVW3 Vibrating-Wire Data Logger",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Vibrating Wire Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8218",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": 0.647295301388078,
+              "hybrid": 0.015625,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CRVW3-NE: product data confirms vibrating wire reader.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Vibrating Wire Data Logger"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_AVW200_ST",
+            "model": "AVW200-ST",
+            "name_en": "AVW200 2-Channel Vibrating Wire Spectrum Analyzer",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Vibrating Wire Analyzer",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4132",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": 0.684185126895193,
+              "hybrid": 0.015873015873015872,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "AVW200-ST: product data confirms vibrating wire reader.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Vibrating Wire Analyzer"
+                }
+              ]
+            }
+          },
+          {
+            "product_id": "CSI_VWANALYZER",
+            "model": "VWANALYZER",
+            "name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Vibrating Wire Analyzer",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/8029",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": 0.705565200085231,
+              "hybrid": 0.01639344262295082,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "VWANALYZER: product data confirms vibrating wire reader.",
+              "language": "en",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "taxonomy.device_type",
+                  "value": "Vibrating Wire Analyzer"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "hit1": 1
+    }
+  ]
+}

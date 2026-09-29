@@ -11,7 +11,7 @@ B04|cellular gateway|cellular
 B05|data logger|logger
 B06|rain gauge|rain
 B07|turbidity sensor|turbidity
-B08|vibrating wire analyzer|vibrating
+B08|vibrating wire analyzer|vibrating&reader
 B09|barometric pressure sensor|pressure
 B10|solar radiation sensor|solar
 C01|cảm biến đo độ ẩm đất|moisture
@@ -101,7 +101,7 @@ K04|thiết bị cellular gateway cho trạm quan trắc|cellular
 K05|weather sensor đo humidity|weather&humidity
 K06|water sensor đo turbidity|turbidity
 K07|sensor nhiệt độ operating -50°C|operating:-50
-K08|vibrating wire thiết bị đọc|vibrating
+K08|vibrating wire thiết bị đọc|vibrating&reader
 L01|sensor|sensor
 L02|temperature|temperature
 L03|water sensor|broadwater
@@ -123,7 +123,7 @@ N04|soil sensor but not temperature sensor|negative
 O01|Tôi đang xây dựng một trạm quan trắc ở vùng nông nghiệp và cần một thiết bị có thể đo lượng nước trong đất, nhiệt độ đất và ưu tiên giao tiếp SDI-12 để kết nối với hệ thống hiện tại|moisture&soiltemperature&protocol:SDI-12
 O02|Our field station is located far away and we need to send measurement data over a cellular network because Wi-Fi is unavailable|cellular
 O03|Tôi cần thiết bị đo nhiều thông số thời tiết ngoài trời thay vì phải lắp nhiều cảm biến rời|multiweather
-O04|We need an instrument to inspect and read vibrating wire sensors during field maintenance|vibrating
+O04|We need an instrument to inspect and read vibrating wire sensors during field maintenance|vibrating&reader
 P01|CS655 soil moisture|model:CS655
 P02|CS655 SDI-12|model:CS655
 P03|RV50X cellular gateway|model:RV50X
@@ -134,7 +134,7 @@ Q01|soil moisture sensor with SDI-12|moisture&protocol:SDI-12
 Q02|weather sensor measuring temperature humidity pressure|airtemperature&humidity&pressure
 Q03|remote monitoring using cellular communication|cellular
 Q04|device for measuring turbidity in water|turbidity
-Q05|vibrating wire field reader|vibrating
+Q05|vibrating wire field reader|vibrating&reader
 `.trim().split('\n').map(line => {
   const [id, query, intent] = line.split('|');
   return { id, query, intent, language: /[ăâđêôơư\u1ea0-\u1ef9]/iu.test(query) ? 'vi/mixed' : 'en' };
@@ -151,6 +151,9 @@ export function judgmentsFor(intent, catalog) {
     const soil = /soil/u.test(type);
     const weather = /weather|air temperature|humidity|barometric|wind|precipitation|rain/u.test(type);
     const logger = /data logger/u.test(type);
+    const option = d.variants.find(v => v.model === d.model)?.distinguishing_specifications.find(s => s.name_en === 'Communication Option');
+    const wireless = option ? /wi[ -]?fi|cellular|radio/iu.test(option.value_raw)
+      : /\b(?:wireless|cellular|radio)\b/iu.test(`${type} ${d.name_en}`) || d.supported_protocols.includes('Wi-Fi');
     const communication = /communication|modem|\bradio\b|transmitter/u.test(type);
     const water = /water|turbidity|oxygen/u.test(type) && !soil;
     const matches = rule => {
@@ -169,8 +172,9 @@ export function judgmentsFor(intent, catalog) {
         multiweather: /weather/u.test(type) && d.measurements.length >= 3,
         cellular: /cellular/u.test(type), logger, communication, power: d.taxonomy.category_key === 'power',
         vibrating: /vibrating wire/iu.test(`${type} ${d.name_en}`),
+        reader: /\b(?:reader|analy[sz]er)\b/iu.test(`${type} ${d.name_en}`),
         wifi: d.supported_protocols.includes('Wi-Fi') && !d.variants.some(v => v.model === d.model && v.distinguishing_specifications.some(s => s.name_en === 'Communication Option' && !/^wi[ -]?fi$/iu.test(s.value_raw))),
-        wirelesslogger: logger && (/wireless|wi.fi|cellular|radio/iu.test(d.name_en) || d.supported_protocols.includes('Wi-Fi')),
+        wirelesslogger: logger && wireless,
         adc: specs.some(s => {
           const text = norm(`${s.canonical_key.replaceAll('_', ' ')} ${s.normalized_value.value_raw ?? ''}`);
           return /24[ -]?bit/u.test(text) && /\badc\b|analog.to.digital|a\/d|a per d converter/u.test(text);

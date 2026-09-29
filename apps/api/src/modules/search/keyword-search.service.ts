@@ -8,6 +8,7 @@ import { SupabaseService } from '../../database/supabase/supabase.service';
 import { ProductsService } from '../products/products.service';
 import { specificationTerms, specificationEvidence } from './specification-query';
 import { suggestModels } from './model-suggestions';
+import { parseSearchIntent } from './search-intent';
 
 export interface KeywordSearchRow {
   product_id: string;
@@ -31,7 +32,21 @@ export class KeywordSearchService {
         result_limit: limit,
       });
     if (error) this.throwQueryError(error);
-    const rows = (data ?? []) as KeywordSearchRow[];
+    let rows = (data ?? []) as KeywordSearchRow[];
+    if (rows.length < limit) {
+      const intent = parseSearchIntent(query);
+      const concepts = [...intent.measurements, ...intent.roles, ...(intent.target ? [intent.target] : [])];
+      const expanded = [...new Set(concepts.map(item => `"${item.en}"`))].join(' OR ');
+      if (expanded && !concepts.some(item => item.en.toLowerCase() === query.trim().toLowerCase())) {
+        // Fill sparse lexical retrieval with canonical concepts; public filters still enforce every requirement.
+        const fallback = await this.supabase.getClient().rpc('search_products_keyword', {
+          query_text: expanded, result_limit: limit,
+        });
+        if (fallback.error && !rows.length) this.throwQueryError(fallback.error);
+        const ids = new Set(rows.map(row => row.product_id));
+        rows = [...rows, ...((fallback.data ?? []) as KeywordSearchRow[]).filter(row => !ids.has(row.product_id))].slice(0, limit);
+      }
+    }
     const terms = specificationTerms(query);
     if (terms.length === 0) {
       if (!/^[a-z0-9\s_-]{4,40}$/iu.test(query)) return rows;
