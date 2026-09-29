@@ -21,24 +21,24 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
               display: 'inline-flex',
               padding: 20,
               borderRadius: '50%',
-              background: 'rgba(255, 68, 68, 0.08)',
-              color: '#ff6b6b',
+              background: 'rgba(217, 48, 37, 0.06)',
+              color: '#d93025',
               marginBottom: 20,
             }}
           >
             <Heart size={48} />
           </div>
-          <h2 style={{ fontSize: 24, fontWeight: 600, color: 'var(--text-1, #fff)', marginBottom: 8 }}>
+          <h2 style={{ fontSize: 24, fontWeight: 600, color: '#111827', marginBottom: 8 }}>
             No Saved Favorites Yet
           </h2>
-          <p style={{ color: 'var(--text-3, #888)', fontSize: 14, maxWidth: 420, margin: '0 auto 28px' }}>
+          <p style={{ color: '#6b7280', fontSize: 14, maxWidth: 420, margin: '0 auto 28px' }}>
             Bookmark measurement instruments, loggers, and probes while browsing to review them later.
           </p>
           <button
             type="button"
             className="btn btn-primary"
             onClick={() => onNavigate && onNavigate('products')}
-            style={{ padding: '12px 28px', fontSize: 15 }}
+            style={{ padding: '12px 28px', fontSize: 15, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
           >
             Browse Products
           </button>
@@ -60,7 +60,7 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
               gap: 6,
               background: 'none',
               border: 'none',
-              color: 'var(--text-3, #888)',
+              color: '#6b7280',
               cursor: 'pointer',
               fontSize: 13,
               marginBottom: 8,
@@ -68,7 +68,7 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
           >
             <ArrowLeft size={14} /> Back to Catalog
           </button>
-          <h1 style={{ fontSize: 28, fontWeight: 700, color: 'var(--text-1, #fff)', margin: 0 }}>
+          <h1 style={{ fontSize: 28, fontWeight: 700, color: '#111827', margin: 0 }}>
             My Favorites ({favorites.length})
           </h1>
         </div>
@@ -91,6 +91,7 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
               padding: 20,
               borderRadius: 14,
               position: 'relative',
+              transition: 'box-shadow 0.2s',
             }}
           >
             {/* Remove Favorite Button */}
@@ -101,9 +102,9 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
                 position: 'absolute',
                 top: 16,
                 right: 16,
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                color: '#ff6b6b',
+                background: '#f9fafb',
+                border: '1px solid #e5e7eb',
+                color: '#d93025',
                 width: 32,
                 height: 32,
                 borderRadius: '50%',
@@ -124,8 +125,8 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
                 width: '100%',
                 height: 140,
                 borderRadius: 8,
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.06)',
+                background: '#f9fafb',
+                border: '1px solid #e5e7eb',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -140,13 +141,13 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
                   style={{ maxWidth: '85%', maxHeight: '85%', objectFit: 'contain' }}
                 />
               ) : (
-                <div style={{ fontSize: 12, color: 'var(--text-3, #666)' }}>No Image</div>
+                <div style={{ fontSize: 12, color: '#93979f' }}>No Image</div>
               )}
             </div>
 
             {/* Model & Availability */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-              <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent, #00d2ff)' }}>
+              <span style={{ fontSize: 13, fontWeight: 700, color: '#0069e0' }}>
                 {item.model}
               </span>
               <span
@@ -154,9 +155,9 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
                   fontSize: 11,
                   padding: '2px 8px',
                   borderRadius: 4,
-                  background: 'rgba(0, 200, 115, 0.08)',
-                  color: '#00c873',
-                  border: '1px solid rgba(0, 200, 115, 0.2)',
+                  background: 'rgba(15, 149, 84, 0.08)',
+                  color: '#0f9554',
+                  border: '1px solid rgba(15, 149, 84, 0.2)',
                 }}
               >
                 {item.availability_label || 'Available for order'}
@@ -168,7 +169,7 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
               style={{
                 fontSize: 15,
                 fontWeight: 600,
-                color: 'var(--text-1, #fff)',
+                color: '#111827',
                 margin: '0 0 12px',
                 flexGrow: 1,
                 lineHeight: 1.4,
@@ -178,7 +179,7 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
             </h3>
 
             {/* Price */}
-            <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-1, #fff)', marginBottom: 16 }}>
+            <div style={{ fontSize: 18, fontWeight: 700, color: '#111827', marginBottom: 16 }}>
               {formatPrice(item.price, item.currency)}
             </div>
 
@@ -195,6 +196,11 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: 6,
+                  background: '#fff',
+                  color: '#111827',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: 9999,
+                  cursor: 'pointer',
                 }}
               >
                 <Eye size={14} /> View
@@ -211,6 +217,11 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: 6,
+                  background: '#111827',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: 9999,
+                  cursor: 'pointer',
                 }}
               >
                 <ShoppingCart size={14} /> Add to Cart
