@@ -100,25 +100,10 @@ export class ExplanationService {
 
   private isGroundedRewrite(text: string, original: Explanation, model: string): boolean {
     const candidate = text.trim();
-    if (candidate.length < 10 || candidate.length > 400 || /[\r\n]|original|input text|verified fact|văn bản gốc/iu.test(candidate)) return false;
-    const tokens = (value: string): string[] => value.match(/-?\d+(?:[.,]\d+)?(?:[\p{L}°]+)?/gu) ?? [];
-    const allowedFacts = `${model} ${original.text} ${original.evidence.map((item) => item.value).join(' ')}`;
-    const allowed = new Set(tokens(allowedFacts).map((value) => value.toLowerCase()));
-    if (tokens(candidate).some((value) => !allowed.has(value.toLowerCase()))) return false;
-    const candidateTokens = new Set(tokens(candidate).map((value) => value.toLowerCase()));
-    if (tokens(original.text).some((value) => !candidateTokens.has(value.toLowerCase()))) return false;
-    if (original.evidence.some((item) => /protocols$/u.test(item.field) && !candidate.includes(item.value))) return false;
-    const namedTerms = (value: string): string[] => value.match(/\b[A-Z][A-Za-z]+(?:[- ][A-Z0-9]+)*\b/gu) ?? [];
-    const allowedNames = new Set(namedTerms(allowedFacts).map((value) => value.toLowerCase()));
-    if (namedTerms(candidate).some((value) => !allowedNames.has(value.toLowerCase()) && !['the', 'this', 'product', 'model', 'catalog'].includes(value.toLowerCase()))) return false;
-    const uncertainty = /does not confirm|cannot confirm|no more specific evidence|chưa|không đủ|không có bằng chứng/iu;
-    const unsupported = /unsupported|không hỗ trợ/iu;
-    if (uncertainty.test(original.text) && !uncertainty.test(candidate)) return false;
-    if (unsupported.test(original.text) && !unsupported.test(candidate)) return false;
-    const target = parseTemperatureTarget(original.text);
-    if (target && parseTemperatureTarget(candidate)?.key !== target.key) return false;
-    if (original.language === 'vi' && !isVietnamese(candidate)) return false;
-    return true;
+    // Token checks cannot establish entailment (e.g. "waterproof" adds no number).
+    // Accept only the verified statement, optionally prefixed with its catalog model.
+    const verified = [original.text, `${model}: ${original.text}`, `${model}. ${original.text}`];
+    return verified.includes(candidate);
   }
 
   explain(
@@ -161,6 +146,7 @@ export class ExplanationService {
       evidence.push(...intentEvidence);
       const labels = [...intent.measurements, ...(intent.target ? [intent.target] : []), ...intent.roles].map(item => vi ? item.vi : item.en);
       if (labels.length) sentences.push(vi ? `${document.model}: dữ liệu xác nhận ${labels.join(', ')}.` : `${document.model}: product data confirms ${labels.join(', ')}.`);
+      if (intent.specifications.length) sentences.push(vi ? 'Thông số phù hợp được trích nguyên văn bên dưới.' : 'Matching specifications are quoted below.');
       if (intent.outdoor) sentences.push(vi ? 'Thông số bảo vệ môi trường được trích nguyên văn bên dưới; áp dụng các giới hạn lắp đặt và sử dụng nêu trong đó.' : 'The environmental protection specification is quoted below, including installation limits, exclusions and certification status.');
     } else if (target && targetField) {
       add(
@@ -174,8 +160,11 @@ export class ExplanationService {
         const support = protocol.evidence.find((item) => item.relation === 'supported');
         if (!support) continue;
         add(
-          vi ? `Dữ liệu sản phẩm xác nhận hỗ trợ ${protocol.queryProtocol}.` : `Product data confirms support for ${protocol.queryProtocol}.`,
-          { source: 'product_document', field: 'supported_protocols', value: support.canonicalProtocol },
+          (vi ? `Dữ liệu sản phẩm xác nhận hỗ trợ ${protocol.queryProtocol}.` : `Product data confirms support for ${protocol.queryProtocol}.`)
+            + (intent.constrained ? '' : vi ? ' Chưa xác nhận phù hợp với toàn bộ mục đích sử dụng được yêu cầu.' : ' This does not confirm suitability for the full requested use case.'),
+          support.source === 'normalized_spec'
+            ? { source: 'normalized_spec', field: support.canonicalKey!, value: support.value ?? support.canonicalProtocol }
+            : { source: 'product_document', field: 'supported_protocols', value: support.canonicalProtocol },
         );
       } else if (protocol.result === 'UNKNOWN') {
         add(vi ? `Chưa có dữ liệu xác nhận hỗ trợ ${protocol.queryProtocol}.` : `Available data does not confirm support for ${protocol.queryProtocol}.`);
@@ -240,16 +229,8 @@ export class ExplanationService {
 
     if (sentences.length === 0) {
       const type = document.taxonomy.device_type;
-      const relevantType = query
-        .normalize('NFC')
-        .toLocaleLowerCase()
-        .match(/[\p{L}]{4,}/gu)
-        ?.filter((word) => !['sensor', 'device', 'product'].includes(word))
-        .some((word) => type.toLocaleLowerCase().includes(word));
       add(
-        relevantType
-          ? (vi ? `Danh mục sản phẩm ghi nhận đây là ${type}.` : `The catalog classifies this as ${type}.`)
-          : (vi ? `Danh mục ghi nhận đây là ${type}; chưa có bằng chứng cụ thể hơn cho truy vấn.` : `The catalog classifies this as ${type}; no more specific evidence confirms the query.`),
+        vi ? `Danh mục ghi nhận đây là ${type}; chưa có bằng chứng cụ thể hơn cho truy vấn.` : `The catalog classifies this as ${type}; no more specific evidence confirms the query.`,
         { source: 'product_document', field: 'taxonomy.device_type', value: type },
       );
     }

@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import type { ProductSpecification, ProductSearchDocument } from '@reeco/shared';
 import { ProductsService } from '../products/products.service';
+import { specificationEvidence } from './specification-query';
 import {
   CELSIUS_UNIT,
   MEASUREMENT_TEMPERATURE_KEYS,
@@ -21,9 +22,11 @@ export interface IdentityMatchEvidence {
 }
 
 export interface ProtocolMatchEvidence {
-  source: 'product_document';
+  source: 'product_document' | 'normalized_spec';
   canonicalProtocol: string;
   relation: 'supported' | 'unsupported';
+  canonicalKey?: string;
+  value?: string;
 }
 
 export interface ProtocolMatchEvaluation {
@@ -82,7 +85,7 @@ export class TechnicalMatchService {
           ? this.identityEvidence(parsedQuery, evidence.product)
           : [];
       const protocolMatches = parsedQuery.protocols.map((protocol) =>
-        this.evaluateProtocol(protocol, evidence?.document ?? null),
+        this.evaluateProtocol(protocol, evidence?.document ?? null, evidence?.specifications ?? []),
       );
       const temperatureMatches = parsedQuery.temperatureConstraints.map(
         (constraint) =>
@@ -128,6 +131,7 @@ export class TechnicalMatchService {
       model?: string;
       variants?: ProductSearchDocument['variants'];
     } | null,
+    specifications: ProductSpecification[] = [],
   ): ProtocolMatchEvaluation {
     if (!document) {
       return { queryProtocol, result: 'UNKNOWN', evidence: [] };
@@ -172,6 +176,13 @@ export class TechnicalMatchService {
           },
         ],
       };
+    }
+
+    if (queryProtocol === 'CANbus') {
+      const spec = specificationEvidence(['canbus'], specifications)?.[0];
+      if (spec) return { queryProtocol, result: 'MATCH', evidence: [{ source: 'normalized_spec',
+        canonicalProtocol: queryProtocol, relation: 'supported', canonicalKey: spec.canonical_key,
+        value: spec.normalized_value.value_raw }] };
     }
 
     return { queryProtocol, result: 'UNKNOWN', evidence: [] };

@@ -110,6 +110,20 @@ test('parses exact active catalog identity without fuzzy matching', () => {
   assert.equal(parser.parse('CS65', catalog).identity, null);
 });
 
+test('recognizes bounded model identifiers inside descriptions without prefix collisions', () => {
+  const parser = new TechnicalQueryParserService();
+  assert.equal(parser.parse('CS655 soil moisture', catalog).identity?.productId, 'CSI_CS655');
+  assert.equal(parser.parse('sensor CS655 SDI-12', catalog).identity?.productId, 'CSI_CS655');
+  assert.equal(parser.parse('CS6555 soil moisture', catalog).identity, null);
+  assert.equal(parser.parse('CS655 and AVW200-ST', catalog).identity, null);
+  assert.equal(parser.parse('operating temperature 109°C', [{ productId: 'p', model: '109' }]).identity, null);
+});
+
+test('preserves technical interfaces across spacing and hyphen variants', () => {
+  const parser = new TechnicalQueryParserService();
+  assert.deepEqual(parser.parse('SDI12 rs232 USB CANbus CPI').protocols, ['SDI-12', 'RS-232', 'USB', 'CANbus', 'CPI']);
+});
+
 test('does not claim identity when safe separator normalization is ambiguous', () => {
   const parser = new TechnicalQueryParserService();
   const ambiguousCatalog = [

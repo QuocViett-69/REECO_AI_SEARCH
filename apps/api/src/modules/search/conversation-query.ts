@@ -2,11 +2,11 @@ import type { SearchRequest } from '@reeco/shared';
 
 const alternative = /^(?:what about|how about|thế còn|còn)(?:\s|$)/iu;
 const continuation = /^(?:and|also|with|only|does it support|do they support|can it|what about|how about|thế còn|còn|và|với|chỉ|thêm|có hỗ trợ|có loại|loại nào|nó|chúng)(?:\s|$)/iu;
-const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?485|Modbus|Wi[\s‐‑–—-]?Fi)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|deg(?:rees?)?\s*C|C\b)/iu;
+const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?(?:485|232)|USB|CAN[\s-]?bus|CPI|Modbus|Wi[\s‐‑–—-]?Fi)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|deg(?:rees?)?\s*C|C\b)/iu;
 
 export const hasTechnicalConstraint = (query: string): boolean => shortConstraint.test(query);
 export const hasUnsupportedNegativeConstraint = (query: string): boolean =>
-  /\b(?:without|exclude|does\s+not\s+support|doesn't\s+support)\b|\bno\s+(?:modbus|sdi|rs)\b|không\s+(?:hỗ trợ|dùng)/iu.test(query);
+  /\b(?:without|exclude|does\s+not\s+support|doesn't\s+support|but\s+not)\b|\bnon[-\s]+\p{L}|\bno\s+(?:modbus|sdi|rs)\b|không\s+(?:hỗ trợ|dùng)/iu.test(query);
 
 export function resolveConversationQuery(
   query: string,

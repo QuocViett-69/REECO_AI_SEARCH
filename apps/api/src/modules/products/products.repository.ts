@@ -286,19 +286,26 @@ export class ProductsRepository {
     canonicalKeys?: string[],
   ): Promise<ProductSpecificationRow[]> {
     if (productIds.length === 0) return [];
-    let query = this.supabase
-      .getClient()
-      .from('product_specifications')
-      .select(
-        'specification_id,product_id,canonical_key,quantity_kind,normalized_value,raw_ref',
-      )
-      .in('product_id', productIds);
-    query = canonicalKeys ? query.in('canonical_key', canonicalKeys) : query.neq('normalized_value->>type', 'text');
-    const { data, error } = await query
-      .order('product_id', { ascending: true })
-      .order('specification_id', { ascending: true });
-    if (error) this.throwQueryError('load product specifications by id', error);
-    return (data ?? []) as ProductSpecificationRow[];
+    const rows: ProductSpecificationRow[] = [];
+    // PostgREST caps result sets; never silently drop evidence past the first page.
+    for (let offset = 0; ; offset += 500) {
+      let query = this.supabase
+        .getClient()
+        .from('product_specifications')
+        .select(
+          'specification_id,product_id,canonical_key,quantity_kind,normalized_value,raw_ref',
+        )
+        .in('product_id', productIds);
+      if (canonicalKeys) query = query.in('canonical_key', canonicalKeys);
+      const { data, error } = await query
+        .order('product_id', { ascending: true })
+        .order('specification_id', { ascending: true })
+        .range(offset, offset + 499);
+      if (error) this.throwQueryError('load product specifications by id', error);
+      const page = (data ?? []) as ProductSpecificationRow[];
+      rows.push(...page);
+      if (page.length < 500) return rows;
+    }
   }
 
   async listMedia(

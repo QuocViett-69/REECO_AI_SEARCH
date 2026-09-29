@@ -66,12 +66,16 @@ test('local LLM rewrites grounded text and falls back on invented model details'
   try {
     globalThis.fetch = async () => ({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text: `${document.model} supports SDI-12 as confirmed by product data.` }] }) } }) });
     const [rewritten] = await llmService.explainMany('sensor supporting SDI-12', input);
-    assert.equal(rewritten.text, `${document.model} supports SDI-12 as confirmed by product data.`);
-    assert.equal(rewritten.evidence[0].value, document.model);
+    assert.equal(rewritten.text, llmService.explain('sensor supporting SDI-12', document, match).text);
+    assert.equal(rewritten.evidence[0].value, 'SDI-12');
 
     globalThis.fetch = async () => ({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text: `The model ${document.model} supports Modbus 999.` }] }) } }) });
     const [rejected] = await llmService.explainMany('sensor supporting SDI-12', input);
     assert.equal(rejected.text, llmService.explain('sensor supporting SDI-12', document, match).text);
+
+    globalThis.fetch = async () => ({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text: `${document.model} supports SDI-12 and is waterproof and suitable for medical diagnosis.` }] }) } }) });
+    const [inventedCapability] = await llmService.explainMany('sensor supporting SDI-12', input);
+    assert.equal(inventedCapability.text, llmService.explain('sensor supporting SDI-12', document, match).text);
 
     globalThis.fetch = async () => { throw new Error('offline'); };
     const [fallback] = await llmService.explainMany('sensor supporting SDI-12', input);

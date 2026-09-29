@@ -112,7 +112,12 @@ export class TechnicalQueryParserService {
         ['product_id', product.productId],
         ['model', product.model],
       ] as const) {
-        if (this.identityKey(value) !== queryKey) continue;
+        const key = this.identityKey(value);
+        // Catalog identifiers may appear beside intent words. Numeric-only model names
+        // require the whole query so temperatures and other quantities cannot select them.
+        const pattern = [...key].map(char => char.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&')).join('[\\s_-]*');
+        const embedded = /[A-Z]/u.test(key) && new RegExp(`(?<![\\p{L}\\p{N}_-])${pattern}(?![\\p{L}\\p{N}_-])`, 'iu').test(query);
+        if (key !== queryKey && !embedded) continue;
         const existing = matches.get(product.productId);
         if (existing) {
           existing.matchedFields.add(field);
@@ -151,10 +156,16 @@ export class TechnicalQueryParserService {
     const normalized = query
       .normalize('NFC')
       .replace(/[‐‑–—]/gu, '-')
-      .toLocaleLowerCase('en-US');
+      .toLocaleLowerCase('en-US')
+      // An unavailable transport describes the site, not a requested product feature.
+      .replace(/\b(?:wi[\s-]?fi|rs[\s-]?(?:232|485)|sdi[\s-]?12|usb|canbus|cpi)\s+(?:is\s+)?(?:unavailable|not available)\b/giu, '');
     const protocols: ParsedTechnicalProtocol[] = [];
     if (/\bsdi[\s-]?12\b/iu.test(normalized)) protocols.push('SDI-12');
     if (/\brs[\s-]?485\b/iu.test(normalized)) protocols.push('RS-485');
+    if (/\brs[\s-]?232\b/iu.test(normalized)) protocols.push('RS-232');
+    if (/\busb\b/iu.test(normalized)) protocols.push('USB');
+    if (/\bcan[\s-]?bus\b/iu.test(normalized)) protocols.push('CANbus');
+    if (/\bcpi\b/iu.test(normalized)) protocols.push('CPI');
     if (/\bwi[\s-]?fi\b/iu.test(normalized)) protocols.push('Wi-Fi');
     if (/\bmodbus\s+rtu\b/iu.test(normalized)) {
       protocols.push('Modbus RTU');

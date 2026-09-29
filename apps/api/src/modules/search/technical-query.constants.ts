@@ -6,6 +6,10 @@ export const SUPPORTED_TECHNICAL_PROTOCOLS = [
   'Modbus',
   'Modbus RTU',
   'Wi-Fi',
+  'RS-232',
+  'USB',
+  'CANbus',
+  'CPI',
 ] as const;
 
 export const OPERATING_TEMPERATURE_KEYS = [

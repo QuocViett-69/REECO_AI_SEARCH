@@ -97,7 +97,9 @@ export class SearchService {
       const ids = scopedCandidates.map((item) => item.productId);
       [documents, environmentalSpecifications] = await Promise.all([
         this.productsService.getSearchDocumentsByIds(ids),
-        intent.outdoor ? this.productsService.getEnvironmentalSpecificationsByIds(ids) : Promise.resolve(environmentalSpecifications),
+        intent.specifications.length > 0
+          ? this.productsService.getTechnicalEvidenceByIds(ids).then(rows => new Map([...rows].map(([id, row]) => [id, row.specifications])))
+          : intent.outdoor ? this.productsService.getEnvironmentalSpecificationsByIds(ids) : Promise.resolve(environmentalSpecifications),
       ]);
       scopedCandidates = scopedCandidates.filter((candidate) => {
         const document = documents!.get(candidate.productId);
