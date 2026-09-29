@@ -229,23 +229,19 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
                   </div>
 
                   <div className="product-card-actions" onClick={(e) => e.stopPropagation()}>
-                    <button type="button" className="btn btn-primary view-detail-btn"
-                      onClick={() => onViewDetail(p.model)}>
-                      <Eye size={15} /> Details
-                    </button>
+                    <AddToCartButton product={p} className="add-cart-btn" />
+                    
                     <button type="button"
                       className={`btn btn-secondary compare-btn ${inCompare ? 'btn-added' : ''}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         onToggleCompare(p.model);
-                      }}>
-                      {inCompare ? <Check size={15} /> : <GitCompare size={15} />}
-                      {inCompare ? 'In Compare' : 'Compare'}
+                      }}
+                      title={inCompare ? 'Remove from Compare' : 'Add to Compare'}>
+                      {inCompare ? <Check size={16} /> : <GitCompare size={16} />}
                     </button>
-                  </div>
-                  <div className="product-card-secondary-actions" onClick={(e) => e.stopPropagation()}>
-                    <AddToCartButton product={p} />
-                    <FavoriteButton product={p} />
+                    
+                    <FavoriteButton product={p} className="favorite-btn" size={16} />
                   </div>
                 </div>
               </div>

@@ -57,15 +57,16 @@ export function NotificationCenter({ onNavigate }) {
     return (
       <div className="page-container" style={{ maxWidth: 600, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
         <div className="glass-card" style={{ padding: 40, borderRadius: 16 }}>
-          <Bell size={40} style={{ color: 'var(--text-3, #777)', marginBottom: 16 }} />
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#fff', marginBottom: 8 }}>Authentication Required</h2>
-          <p style={{ color: 'var(--text-3, #888)', fontSize: 14, marginBottom: 20 }}>
+          <Bell size={40} style={{ color: '#93979f', marginBottom: 16 }} />
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Authentication Required</h2>
+          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>
             Sign in to view commercial notifications and delivery status alerts.
           </p>
           <button
             type="button"
             className="btn btn-primary"
             onClick={() => onNavigate && onNavigate('login')}
+            style={{ padding: '10px 24px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
           >
             Sign In
           </button>
@@ -106,7 +107,7 @@ export function NotificationCenter({ onNavigate }) {
           gap: 6,
           background: 'none',
           border: 'none',
-          color: 'var(--text-3, #888)',
+          color: '#6b7280',
           cursor: 'pointer',
           fontSize: 13,
           marginBottom: 16,
@@ -118,7 +119,7 @@ export function NotificationCenter({ onNavigate }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <h1 style={{ fontSize: 24, fontWeight: 700, color: 'var(--text-1, #fff)', margin: 0 }}>
+            <h1 style={{ fontSize: 24, fontWeight: 700, color: '#111827', margin: 0 }}>
               Notifications
             </h1>
             {unreadCount > 0 && (
@@ -128,16 +129,16 @@ export function NotificationCenter({ onNavigate }) {
                   fontWeight: 700,
                   padding: '2px 8px',
                   borderRadius: 12,
-                  background: 'rgba(0, 210, 255, 0.15)',
-                  color: 'var(--accent, #00d2ff)',
-                  border: '1px solid rgba(0, 210, 255, 0.3)',
+                  background: 'rgba(0, 105, 224, 0.08)',
+                  color: '#0069e0',
+                  border: '1px solid rgba(0, 105, 224, 0.2)',
                 }}
               >
                 {unreadCount} unread
               </span>
             )}
           </div>
-          <p style={{ fontSize: 13, color: 'var(--text-3, #888)', margin: '4px 0 0' }}>
+          <p style={{ fontSize: 13, color: '#6b7280', margin: '4px 0 0' }}>
             Daily fulfillment logs, payment authorizations, and delivery milestones
           </p>
         </div>
@@ -147,7 +148,7 @@ export function NotificationCenter({ onNavigate }) {
             type="button"
             className="btn btn-secondary"
             onClick={handleMarkAllRead}
-            style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, padding: '8px 14px' }}
+            style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, padding: '8px 14px', background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer' }}
           >
             <CheckCheck size={15} /> Mark All as Read
           </button>
@@ -155,7 +156,7 @@ export function NotificationCenter({ onNavigate }) {
       </div>
 
       {loading ? (
-        <div className="glass-card" style={{ padding: 40, textAlign: 'center', color: 'var(--text-3, #888)' }}>
+        <div className="glass-card" style={{ padding: 40, textAlign: 'center', color: '#6b7280' }}>
           Loading notifications...
         </div>
       ) : notifications.length === 0 ? (
@@ -165,20 +166,21 @@ export function NotificationCenter({ onNavigate }) {
               width: 56,
               height: 56,
               borderRadius: '50%',
-              background: 'rgba(255,255,255,0.03)',
+              background: '#f9fafb',
+              border: '1px solid #e5e7eb',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'var(--text-3, #666)',
+              color: '#93979f',
               marginBottom: 16,
             }}
           >
             <Bell size={28} />
           </div>
-          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#fff', marginBottom: 6 }}>
+          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 6 }}>
             You're all caught up
           </h3>
-          <p style={{ color: 'var(--text-3, #888)', fontSize: 14, margin: 0 }}>
+          <p style={{ color: '#6b7280', fontSize: 14, margin: 0 }}>
             There are no unread notifications for your account.
           </p>
         </div>
@@ -187,7 +189,7 @@ export function NotificationCenter({ onNavigate }) {
           {notifications.map((notif) => {
             const typeConfig = NOTIFICATION_TYPES[notif.type] || {
               label: notif.type,
-              color: '#00d2ff',
+              color: '#0069e0',
             };
 
             let TypeIcon = Package;
@@ -207,8 +209,8 @@ export function NotificationCenter({ onNavigate }) {
                   justifyContent: 'space-between',
                   gap: 16,
                   cursor: notif.order_id ? 'pointer' : 'default',
-                  border: notif.is_read ? '1px solid rgba(255,255,255,0.05)' : '1px solid rgba(0, 210, 255, 0.25)',
-                  background: notif.is_read ? 'rgba(255,255,255,0.01)' : 'rgba(0, 210, 255, 0.04)',
+                  border: notif.is_read ? '1px solid #e5e7eb' : '1px solid rgba(0, 105, 224, 0.3)',
+                  background: notif.is_read ? '#ffffff' : 'rgba(0, 105, 224, 0.02)',
                   transition: 'border-color 0.2s, background 0.2s',
                 }}
                 onClick={() => handleNotificationClick(notif)}
@@ -221,8 +223,8 @@ export function NotificationCenter({ onNavigate }) {
                       height: 8,
                       borderRadius: '50%',
                       marginTop: 6,
-                      background: notif.is_read ? 'transparent' : 'var(--accent, #00d2ff)',
-                      border: notif.is_read ? '1px solid rgba(255,255,255,0.2)' : 'none',
+                      background: notif.is_read ? 'transparent' : '#0069e0',
+                      border: notif.is_read ? '1px solid #e5e7eb' : 'none',
                       flexShrink: 0,
                     }}
                   />
@@ -233,7 +235,7 @@ export function NotificationCenter({ onNavigate }) {
                       width: 36,
                       height: 36,
                       borderRadius: 8,
-                      background: `${typeConfig.color}18`,
+                      background: `${typeConfig.color}15`,
                       color: typeConfig.color,
                       display: 'flex',
                       alignItems: 'center',
@@ -251,7 +253,7 @@ export function NotificationCenter({ onNavigate }) {
                         style={{
                           fontSize: 14,
                           fontWeight: notif.is_read ? 600 : 700,
-                          color: notif.is_read ? 'var(--text-1, #eee)' : '#fff',
+                          color: notif.is_read ? '#535862' : '#111827',
                         }}
                       >
                         {notif.title}
@@ -270,11 +272,11 @@ export function NotificationCenter({ onNavigate }) {
                       </span>
                     </div>
 
-                    <div style={{ fontSize: 13, color: 'var(--text-2, #bbb)', lineHeight: 1.5, marginBottom: 6 }}>
+                    <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.5, marginBottom: 6 }}>
                       {notif.message}
                     </div>
 
-                    <div style={{ fontSize: 11, color: 'var(--text-3, #777)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ fontSize: 11, color: '#93979f', display: 'flex', alignItems: 'center', gap: 6 }}>
                       <Clock size={12} />
                       <span>{getRelativeTime(notif.created_at)}</span>
                     </div>
@@ -282,7 +284,7 @@ export function NotificationCenter({ onNavigate }) {
                 </div>
 
                 {notif.order_id && (
-                  <div style={{ display: 'flex', alignItems: 'center', color: 'var(--accent, #00d2ff)', fontSize: 12, fontWeight: 600, flexShrink: 0, marginTop: 4 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', color: '#0069e0', fontSize: 12, fontWeight: 600, flexShrink: 0, marginTop: 4 }}>
                     <span>Track</span>
                     <ChevronRight size={14} />
                   </div>

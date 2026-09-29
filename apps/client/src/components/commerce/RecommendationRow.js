@@ -33,14 +33,14 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
 
   if (loading) {
     return (
-      <div style={{ marginTop: 36, paddingTop: 28, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+      <div style={{ marginTop: 36, paddingTop: 28, borderTop: '1px solid #e5e7eb' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-          <Sparkles size={18} color="var(--accent, #00d2ff)" />
-          <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-1, #fff)', margin: 0 }}>
+          <Sparkles size={18} color="#0069e0" />
+          <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827', margin: 0 }}>
             You may also need
           </h3>
         </div>
-        <div style={{ fontSize: 13, color: 'var(--text-3, #888)' }}>Loading recommendations...</div>
+        <div style={{ fontSize: 13, color: '#6b7280' }}>Loading recommendations...</div>
       </div>
     );
   }
@@ -67,13 +67,13 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
   };
 
   return (
-    <div style={{ marginTop: 36, paddingTop: 28, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+    <div style={{ marginTop: 36, paddingTop: 28, borderTop: '1px solid #e5e7eb' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 18 }}>
-        <Sparkles size={18} color="var(--accent, #00d2ff)" />
-        <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-1, #fff)', margin: 0 }}>
+        <Sparkles size={18} color="#0069e0" />
+        <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827', margin: 0 }}>
           You may also need
         </h3>
-        <span style={{ fontSize: 11, background: 'rgba(0, 210, 255, 0.1)', color: 'var(--accent, #00d2ff)', padding: '2px 8px', borderRadius: 4, fontWeight: 600 }}>
+        <span style={{ fontSize: 11, background: 'rgba(0, 105, 224, 0.08)', color: '#0069e0', padding: '2px 8px', borderRadius: 4, fontWeight: 600 }}>
           AI Recommended
         </span>
       </div>
@@ -85,26 +85,26 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
           return (
             <div
               key={item.model}
-              className="glass-card"
               style={{
                 padding: 16,
                 borderRadius: 12,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                border: '1px solid rgba(255,255,255,0.07)',
+                background: '#ffffff',
+                border: '1px solid #e5e7eb',
               }}
             >
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent, #00d2ff)' }}>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: '#0069e0' }}>
                     {item.model}
                   </span>
                   <span
                     style={{
                       fontSize: 11,
-                      color: 'var(--text-2, #ccc)',
-                      background: 'rgba(255,255,255,0.06)',
+                      color: '#535862',
+                      background: '#f3f4f6',
                       padding: '2px 8px',
                       borderRadius: 4,
                       maxWidth: 150,
@@ -118,11 +118,11 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
                   </span>
                 </div>
 
-                <h4 style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-1, #fff)', margin: '0 0 8px', lineHeight: 1.4 }}>
+                <h4 style={{ fontSize: 13, fontWeight: 600, color: '#111827', margin: '0 0 8px', lineHeight: 1.4 }}>
                   {item.name}
                 </h4>
 
-                <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--text-1, #fff)', marginBottom: 14 }}>
+                <div style={{ fontSize: 16, fontWeight: 700, color: '#111827', marginBottom: 14 }}>
                   {formatPrice(item.price, item.currency)}
                 </div>
               </div>
@@ -130,7 +130,6 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                 <button
                   type="button"
-                  className="btn btn-secondary"
                   onClick={() => onViewDetail && onViewDetail(item.model)}
                   style={{
                     padding: '8px 10px',
@@ -139,6 +138,12 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: 4,
+                    background: '#ffffff',
+                    color: '#111827',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: 9999,
+                    cursor: 'pointer',
+                    fontWeight: 500,
                   }}
                 >
                   <Eye size={13} /> View
@@ -146,7 +151,6 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
 
                 <button
                   type="button"
-                  className={`btn ${isAdded ? 'btn-success' : 'btn-primary'}`}
                   onClick={() => handleAddToCart(item)}
                   style={{
                     padding: '8px 10px',
@@ -155,6 +159,13 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: 4,
+                    background: isAdded ? '#0f9554' : '#111827',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: 9999,
+                    cursor: 'pointer',
+                    fontWeight: 500,
+                    transition: 'background 0.2s',
                   }}
                 >
                   {isAdded ? <Check size={13} /> : <ShoppingCart size={13} />}

@@ -32,18 +32,7 @@ export function AddToCartButton({
       type="button"
       className={`btn ${justAdded ? 'btn-success' : 'btn-primary'} ${className}`}
       onClick={handleClick}
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 6,
-        padding: '8px 14px',
-        fontSize: 13,
-        fontWeight: 600,
-        borderRadius: 6,
-        transition: 'all 0.2s ease',
-        ...style,
-      }}
+      style={style}
       title="Add to shopping cart"
     >
       {justAdded ? (

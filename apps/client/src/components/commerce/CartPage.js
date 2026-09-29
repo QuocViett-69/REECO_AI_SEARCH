@@ -9,30 +9,30 @@ export function CartPage({ onNavigate }) {
   if (items.length === 0) {
     return (
       <div className="page-container" style={{ maxWidth: 800, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: '60px 20px', borderRadius: 16 }}>
+        <div style={{ padding: '60px 20px', borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb' }}>
           <div
             style={{
               display: 'inline-flex',
               padding: 20,
               borderRadius: '50%',
-              background: 'rgba(255,255,255,0.03)',
-              color: 'var(--text-3, #777)',
+              background: '#f3f4f6',
+              color: '#93979f',
               marginBottom: 20,
             }}
           >
             <ShoppingCart size={48} />
           </div>
-          <h2 style={{ fontSize: 24, fontWeight: 600, color: 'var(--text-1, #fff)', marginBottom: 8 }}>
+          <h2 style={{ fontSize: 24, fontWeight: 600, color: '#111827', marginBottom: 8 }}>
             Your Cart is Empty
           </h2>
-          <p style={{ color: 'var(--text-3, #888)', fontSize: 14, maxWidth: 420, margin: '0 auto 28px' }}>
+          <p style={{ color: '#6b7280', fontSize: 14, maxWidth: 420, margin: '0 auto 28px' }}>
             Explore our curated catalog of Campbell Scientific measurement sensors and dataloggers.
           </p>
           <button
             type="button"
             className="btn btn-primary"
             onClick={() => onNavigate && onNavigate('products')}
-            style={{ padding: '12px 28px', fontSize: 15 }}
+            style={{ padding: '12px 28px', fontSize: 15, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
           >
             Browse Products
           </button>
@@ -46,10 +46,10 @@ export function CartPage({ onNavigate }) {
       {/* Top Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
         <div>
-          <h1 style={{ fontSize: 28, fontWeight: 700, color: 'var(--text-1, #fff)', margin: '0 0 6px' }}>
+          <h1 style={{ fontSize: 28, fontWeight: 700, color: '#111827', margin: '0 0 6px' }}>
             Shopping Cart
           </h1>
-          <p style={{ fontSize: 14, color: 'var(--text-3, #888)', margin: 0 }}>
+          <p style={{ fontSize: 14, color: '#6b7280', margin: 0 }}>
             {cartCount} {cartCount === 1 ? 'item' : 'items'} ready for ordering from authorized manufacturers
           </p>
         </div>
@@ -59,7 +59,7 @@ export function CartPage({ onNavigate }) {
           style={{
             background: 'none',
             border: 'none',
-            color: 'var(--text-3, #888)',
+            color: '#6b7280',
             cursor: 'pointer',
             fontSize: 13,
             display: 'flex',
@@ -79,7 +79,6 @@ export function CartPage({ onNavigate }) {
             return (
               <div
                 key={item.product_id}
-                className="glass-card"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '100px 1fr auto',
@@ -87,6 +86,8 @@ export function CartPage({ onNavigate }) {
                   padding: 20,
                   borderRadius: 12,
                   alignItems: 'center',
+                  background: '#ffffff',
+                  border: '1px solid #e5e7eb',
                 }}
               >
                 {/* Product Image */}
@@ -95,8 +96,8 @@ export function CartPage({ onNavigate }) {
                     width: 100,
                     height: 100,
                     borderRadius: 8,
-                    background: 'rgba(255,255,255,0.02)',
-                    border: '1px solid rgba(255,255,255,0.06)',
+                    background: '#f9fafb',
+                    border: '1px solid #e5e7eb',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -110,7 +111,7 @@ export function CartPage({ onNavigate }) {
                       style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }}
                     />
                   ) : (
-                    <div style={{ fontSize: 11, color: 'var(--text-3, #666)' }}>No Image</div>
+                    <div style={{ fontSize: 11, color: '#93979f' }}>No Image</div>
                   )}
                 </div>
 
@@ -121,7 +122,7 @@ export function CartPage({ onNavigate }) {
                       style={{
                         fontSize: 12,
                         fontWeight: 700,
-                        color: 'var(--accent, #00d2ff)',
+                        color: '#0069e0',
                         letterSpacing: 0.5,
                       }}
                     >
@@ -132,9 +133,9 @@ export function CartPage({ onNavigate }) {
                         fontSize: 11,
                         padding: '2px 8px',
                         borderRadius: 4,
-                        background: 'rgba(0, 200, 115, 0.08)',
-                        color: '#00c873',
-                        border: '1px solid rgba(0, 200, 115, 0.2)',
+                        background: 'rgba(15, 149, 84, 0.08)',
+                        color: '#0f9554',
+                        border: '1px solid rgba(15, 149, 84, 0.2)',
                       }}
                     >
                       {item.availability_label || 'Available for order'}
@@ -144,7 +145,7 @@ export function CartPage({ onNavigate }) {
                     style={{
                       fontSize: 16,
                       fontWeight: 600,
-                      color: 'var(--text-1, #fff)',
+                      color: '#111827',
                       margin: '0 0 8px',
                       cursor: 'pointer',
                     }}
@@ -152,14 +153,14 @@ export function CartPage({ onNavigate }) {
                   >
                     {item.name}
                   </h3>
-                  <div style={{ fontSize: 14, color: 'var(--text-2, #ccc)', fontWeight: 500 }}>
+                  <div style={{ fontSize: 14, color: '#535862', fontWeight: 500 }}>
                     Unit Price: {formatPrice(item.price, item.currency)}
                   </div>
                 </div>
 
                 {/* Quantity & Actions */}
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 12 }}>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-1, #fff)' }}>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: '#111827' }}>
                     {formatPrice(lineTotal, item.currency)}
                   </div>
 
@@ -168,8 +169,8 @@ export function CartPage({ onNavigate }) {
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      background: 'rgba(255,255,255,0.04)',
-                      border: '1px solid rgba(255,255,255,0.12)',
+                      background: '#f9fafb',
+                      border: '1px solid #e5e7eb',
                       borderRadius: 6,
                       padding: 2,
                     }}
@@ -180,7 +181,7 @@ export function CartPage({ onNavigate }) {
                       style={{
                         background: 'none',
                         border: 'none',
-                        color: 'var(--text-2, #ccc)',
+                        color: '#535862',
                         padding: '4px 8px',
                         cursor: 'pointer',
                         display: 'flex',
@@ -196,7 +197,7 @@ export function CartPage({ onNavigate }) {
                         textAlign: 'center',
                         fontSize: 14,
                         fontWeight: 600,
-                        color: '#fff',
+                        color: '#111827',
                       }}
                     >
                       {item.quantity}
@@ -207,7 +208,7 @@ export function CartPage({ onNavigate }) {
                       style={{
                         background: 'none',
                         border: 'none',
-                        color: 'var(--text-2, #ccc)',
+                        color: '#535862',
                         padding: '4px 8px',
                         cursor: 'pointer',
                         display: 'flex',
@@ -225,7 +226,7 @@ export function CartPage({ onNavigate }) {
                     style={{
                       background: 'none',
                       border: 'none',
-                      color: 'var(--text-3, #777)',
+                      color: '#93979f',
                       fontSize: 12,
                       cursor: 'pointer',
                       display: 'flex',
@@ -233,8 +234,8 @@ export function CartPage({ onNavigate }) {
                       gap: 4,
                       transition: 'color 0.2s',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#ff6b6b')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-3, #777)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#d93025')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#93979f')}
                   >
                     <Trash2 size={12} /> Remove
                   </button>
@@ -246,34 +247,34 @@ export function CartPage({ onNavigate }) {
 
         {/* Order Summary Box */}
         <div
-          className="glass-card"
           style={{
             padding: 24,
             borderRadius: 16,
             position: 'sticky',
             top: 90,
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: '#ffffff',
+            border: '1px solid #e5e7eb',
           }}
         >
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--text-1, #fff)', margin: '0 0 16px' }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: '#111827', margin: '0 0 16px' }}>
             Order Summary
           </h2>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10, fontSize: 14, color: 'var(--text-3, #888)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10, fontSize: 14, color: '#6b7280' }}>
             <span>Subtotal ({cartCount} items)</span>
-            <span style={{ color: 'var(--text-1, #fff)', fontWeight: 600 }}>{formatPrice(cartSubtotal)}</span>
+            <span style={{ color: '#111827', fontWeight: 600 }}>{formatPrice(cartSubtotal)}</span>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, fontSize: 14, color: 'var(--text-3, #888)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, fontSize: 14, color: '#6b7280' }}>
             <span>Fulfillment</span>
-            <span style={{ color: '#00c873', fontWeight: 500 }}>Official Manufacturer Import</span>
+            <span style={{ color: '#0f9554', fontWeight: 500 }}>Official Manufacturer Import</span>
           </div>
 
-          <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', margin: '16px 0' }} />
+          <div style={{ height: 1, background: '#e5e7eb', margin: '16px 0' }} />
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 24, fontSize: 18, fontWeight: 700, color: 'var(--text-1, #fff)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 24, fontSize: 18, fontWeight: 700, color: '#111827' }}>
             <span>Estimated Total</span>
-            <span style={{ color: 'var(--accent, #00d2ff)' }}>{formatPrice(cartSubtotal)}</span>
+            <span style={{ color: '#0069e0' }}>{formatPrice(cartSubtotal)}</span>
           </div>
 
           <button
@@ -289,7 +290,11 @@ export function CartPage({ onNavigate }) {
               alignItems: 'center',
               justifyContent: 'center',
               gap: 8,
-              borderRadius: 8,
+              borderRadius: 9999,
+              background: '#111827',
+              color: '#ffffff',
+              border: 'none',
+              cursor: 'pointer',
               marginBottom: 12,
             }}
           >
@@ -309,21 +314,25 @@ export function CartPage({ onNavigate }) {
               alignItems: 'center',
               justifyContent: 'center',
               gap: 6,
-              borderRadius: 8,
+              borderRadius: 9999,
+              background: '#ffffff',
+              color: '#111827',
+              border: '1px solid #e5e7eb',
+              cursor: 'pointer',
             }}
           >
             <ArrowLeft size={14} /> Continue Shopping
           </button>
 
           {/* Guarantees */}
-          <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 10, fontSize: 12, color: 'var(--text-3, #777)' }}>
+          <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 10, fontSize: 12, color: '#6b7280' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <ShieldCheck size={16} color="#00c873" />
+              <ShieldCheck size={16} color="#0f9554" />
               <span>Direct manufacturer warranty included</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <Truck size={16} color="var(--accent, #00d2ff)" />
-              <span>Full import customs & logistics handled by REECO</span>
+              <Truck size={16} color="#0069e0" />
+              <span>Full import customs &amp; logistics handled by REECO</span>
             </div>
           </div>
         </div>

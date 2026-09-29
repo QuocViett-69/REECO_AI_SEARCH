@@ -82,6 +82,14 @@ html, body {
           overflow: hidden;
         }
 
+        /* ── Glass Card (Light Mode Utility) ── */
+        .glass-card {
+          background: #ffffff;
+          border: 1px solid #e5e7eb;
+          border-radius: 16px;
+          box-shadow: 0 2px 8px rgba(0, 60, 140, 0.04), 0 1px 2px rgba(0, 60, 140, 0.02);
+        }
+
         .ambient-sun-glow {
           position: absolute;
           top: -150px;
@@ -1432,23 +1440,36 @@ html, body {
           transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .product-card-actions .view-detail-btn {
+        .product-card-actions .add-cart-btn {
           background: #111827;
           color: #ffffff;
           border: none;
         }
 
-        .product-card-actions .view-detail-btn:hover {
+        .product-card-actions .add-cart-btn:hover {
           background: #374151;
         }
 
-        .product-card-actions .compare-btn {
+        .product-card-actions .add-cart-btn.btn-success {
+          background: #0f9554;
+        }
+
+        .product-card-actions .compare-btn,
+        .product-card-actions .favorite-btn {
+          flex: 0 0 40px;
+          width: 40px;
+          height: 40px;
+          padding: 0;
           background: #ffffff;
           color: #111827;
           border: 1px solid #e5e7eb;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        .product-card-actions .compare-btn:hover {
+        .product-card-actions .compare-btn:hover,
+        .product-card-actions .favorite-btn:hover {
           background: #f9fafb;
           border-color: #d1d5db;
         }
@@ -1457,6 +1478,12 @@ html, body {
           background: #f3f4f6;
           color: #111827;
           border-color: #e5e7eb;
+        }
+
+        .product-card-actions .favorite-btn.btn-added {
+          color: #ff6b6b;
+          background: rgba(255, 107, 107, 0.08);
+          border-color: rgba(255, 107, 107, 0.2);
         }
 
         /* ============ PRODUCT DETAIL (Geniestudio Daylight Studio) ============ */
@@ -3900,6 +3927,31 @@ html, body {
         .commerce-panel__actions .btn-primary {
             flex: 1;
             justify-content: center;
+        }
+
+        .commerce-panel__actions .favorite-btn {
+            flex: 0 0 42px;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            color: #111827;
+        }
+        
+        .commerce-panel__actions .favorite-btn:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        .commerce-panel__actions .favorite-btn.btn-added {
+            color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.08);
+            border-color: rgba(255, 107, 107, 0.2);
         }
 
         /* Quantity Selector */
