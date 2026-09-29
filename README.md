@@ -78,13 +78,19 @@ Health endpoint: http://localhost:3000/api/v1/health
 
 ## Local staging demo
 
-With `apps/api/.env` configured and Ollama running, start the production builds on separate local ports:
+Each time you start the local demo:
 
-To use the installed Qwen model for search explanations, set `LLM_EXPLANATION_ENABLED=true` and `LLM_MODEL=qwen3:4b-instruct-2507-q4_K_M` in `apps/api/.env`. Search requests must include `explain: true`. The API uses catalog-backed explanations if Ollama is unavailable or its response fails validation. Leave the flag off to use templates only.
+1. Check that Ollama is running with `ollama ls`. If it cannot connect, open the Ollama desktop app or run `ollama serve` in a separate terminal.
+2. From the project root, run the command below and leave that terminal open. It builds and starts the client, admin, and API.
+3. Open http://127.0.0.1:4173 and search for `sensor supporting SDI-12`. The explanation appears under **Why this result**.
 
 ```bash
 npm run staging:local
 ```
+
+To use the installed Qwen model for search explanations, set `LLM_EXPLANATION_ENABLED=true` and `LLM_MODEL=qwen3:4b-instruct-2507-q4_K_M` in `apps/api/.env`. Search requests must include `explain: true`. The API uses catalog-backed explanations if Ollama is unavailable or its response fails validation. Leave the flag off to use templates only.
+
+The models load on demand; you do not need to run `ollama run` or download them again at each startup. The reranker is disabled by default and does not need its own service for this demo.
 
 Customer UI: http://127.0.0.1:4173 · Admin UI: http://127.0.0.1:4174 · API health: http://127.0.0.1:3100/api/v1/health. Press Ctrl+C to stop. This uses the Supabase project configured in `apps/api/.env`. Admin imports and edits are blocked in local staging, so the shared data stays read-only. The admin UI still has demo-only client login; do not use this environment to validate admin authentication or expose it publicly.
 
@@ -98,6 +104,8 @@ npm run supabase:validate
 ```
 
 The import is transactional and idempotent. Its latest validation report is written to `data/reports/supabase-data-foundation-report.json`.
+
+Run `npm run supabase:audit-specifications` to compare every live specification with its normalized artifact and referenced raw row. This read-only check reports missing/changed rows, suspect character encoding, and repeated keys in `data/reports/supabase-specification-audit.json`. Repeated keys can hold valid values for different conditions; the client groups them without discarding those values.
 
 ## Build
 

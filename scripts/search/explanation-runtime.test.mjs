@@ -10,6 +10,18 @@ const { ExplanationService } = require(path.join(root, 'apps/api/dist/modules/se
 const document = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_CS655.json'), 'utf8'));
 const service = new ExplanationService();
 
+test('water temperature explanation names the measured medium and cites catalog evidence', async () => {
+  const waterSensor = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_TEMPVUE50.json'), 'utf8'));
+  const soilSensor = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_TCAV.json'), 'utf8'));
+  const query = 'tôi muốn mua một cảm biến đo nhiệt độ nước';
+  const confirmed = service.explain(query, waterSensor);
+  const unconfirmed = service.explain(query, soilSensor);
+  assert.match(confirmed.text, /nhiệt độ nước/u);
+  assert.equal(confirmed.evidence[0].field, 'measurements');
+  assert.match(unconfirmed.text, /chưa có dữ liệu xác nhận/iu);
+  assert.equal(unconfirmed.evidence.length, 0);
+});
+
 test('protocol confirmation requires supporting catalog evidence', () => {
   const base = { productId: document.product_id, identityMatch: 'none', protocolMatches: [], temperatureMatches: [] };
   const unknown = service.explain('sensor with SDI-12', document, {

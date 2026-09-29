@@ -2,7 +2,7 @@ import type { SearchRequest } from '@reeco/shared';
 
 const alternative = /^(?:what about|how about|thế còn|còn)(?:\s|$)/iu;
 const continuation = /^(?:and|also|with|only|does it support|do they support|can it|what about|how about|thế còn|còn|và|với|chỉ|thêm|có hỗ trợ|có loại|loại nào|nó|chúng)(?:\s|$)/iu;
-const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?485|Modbus)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|deg(?:rees?)?\s*C|C\b)/iu;
+const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?485|Modbus|Wi[\s‐‑–—-]?Fi)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|deg(?:rees?)?\s*C|C\b)/iu;
 
 export const hasTechnicalConstraint = (query: string): boolean => shortConstraint.test(query);
 export const hasUnsupportedNegativeConstraint = (query: string): boolean =>

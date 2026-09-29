@@ -9,31 +9,7 @@ import {
   Loader,
 } from 'lucide-react';
 import { getProductDetailApi } from '../../services/api';
-
-// ─── Format normalized spec value ─────────────────────────────────────────────
-function formatSpecValue(val) {
-  if (!val) return null;
-  if (val.type === 'range') {
-    const min = val.min_value ?? '';
-    const max = val.max_value ?? '';
-    const unit = val.unit || '';
-    return `${min} – ${max} ${unit}`.trim();
-  }
-  if (val.type === 'number' || val.type === 'quantity') {
-    return `${val.value ?? ''} ${val.unit || ''}`.trim();
-  }
-  if (val.type === 'boolean') return val.value ? 'Yes' : 'No';
-  return String(val.value ?? '');
-}
-
-// ─── Build a spec map { canonical_key → displayValue } from specs array ───────
-function buildSpecMap(specifications) {
-  const map = {};
-  (specifications || []).forEach((spec) => {
-    map[spec.canonical_key] = formatSpecValue(spec.normalized_value);
-  });
-  return map;
-}
+import { buildSpecMap } from '../../services/specifications';
 
 export function ProductCompare({
   compareList,
@@ -256,8 +232,8 @@ export function ProductCompare({
                   return (
                     <div key={key} className={`compare-row ${diff ? 'highlight-diff' : ''}`}>
                       <div className="label">{key.replace(/_/g, ' ')}</div>
-                      <div className={`val-a ${!valA ? 'val-missing' : ''}`}>{valA || '—'}</div>
-                      <div className={`val-b ${!valB ? 'val-missing' : ''}`}>{valB || '—'}</div>
+                      <div className={`val-a ${!valA ? 'val-missing' : ''}`} style={{ whiteSpace: 'pre-line' }}>{valA || '—'}</div>
+                      <div className={`val-b ${!valB ? 'val-missing' : ''}`} style={{ whiteSpace: 'pre-line' }}>{valB || '—'}</div>
                     </div>
                   );
                 })}

@@ -155,6 +155,7 @@ export class TechnicalQueryParserService {
     const protocols: ParsedTechnicalProtocol[] = [];
     if (/\bsdi[\s-]?12\b/iu.test(normalized)) protocols.push('SDI-12');
     if (/\brs[\s-]?485\b/iu.test(normalized)) protocols.push('RS-485');
+    if (/\bwi[\s-]?fi\b/iu.test(normalized)) protocols.push('Wi-Fi');
     if (/\bmodbus\s+rtu\b/iu.test(normalized)) {
       protocols.push('Modbus RTU');
     } else if (!/\bmodbus\s+(?:ascii|tcp)\b/iu.test(normalized)) {

@@ -115,7 +115,7 @@ export function SearchResults({
         {!isLoading && !searchError && (
           <div className="results-meta">
             <h2>
-              <strong>{filteredResults.length}</strong> matching products
+              <strong>{filteredResults.length}</strong> products found
               <ModeLabel mode={mode} />
             </h2>
             <div className="results-filters">
@@ -267,7 +267,7 @@ export function SearchResults({
 
                     {/* Commercial Price & Availability */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 10 }}>
-                      <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-1, #fff)' }}>
+                      <div style={{ fontSize: 18, fontWeight: 700, color: '#171e2d' }}>
                         {formatPrice(price, p.currency || 'USD')}
                       </div>
                       <span

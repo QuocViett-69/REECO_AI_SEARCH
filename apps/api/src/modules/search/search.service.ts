@@ -3,6 +3,8 @@ import {
   SearchResponseSchema,
   type SearchRequest,
   type SearchResponse,
+  type ProductSearchDocument,
+  type ProductSpecification,
 } from '@reeco/shared';
 import { configuration } from '../../config/configuration';
 import { ProductsService } from '../products/products.service';
@@ -18,6 +20,7 @@ import { TechnicalMatchService } from './technical-match.service';
 import { RerankerService } from './reranker.service';
 import type { ParsedTechnicalQuery } from './technical-query-parser.service';
 import { TechnicalQueryParserService } from './technical-query-parser.service';
+import { parseSearchIntent, matchSearchIntent } from './search-intent';
 import {
   TechnicalRankingService,
   type TechnicalRankedCandidate,
@@ -40,6 +43,17 @@ export class SearchService {
   ) {}
 
   async search(request: SearchRequest): Promise<SearchResponse> {
+    try {
+      return await this.searchOnce(request);
+    } catch (error) {
+      if (!(error instanceof ServiceUnavailableException)) throw error;
+      // Search is read-only. One bounded retry covers transient database/retrieval failures.
+      this.logger.warn('Search dependency unavailable; retrying once');
+      return this.searchOnce(request);
+    }
+  }
+
+  private async searchOnce(request: SearchRequest): Promise<SearchResponse> {
     if (hasUnsupportedNegativeConstraint(request.query)) {
       throw new BadRequestException('Negative search constraints are not supported');
     }
@@ -70,11 +84,26 @@ export class SearchService {
       throw error;
     }
 
-    const scopedCandidates = resolution.applied && request.context
+    let scopedCandidates = resolution.applied && request.context
       ? hybridResult.candidates.filter((candidate) =>
           request.context!.product_ids.includes(candidate.productId),
         )
       : hybridResult.candidates;
+
+    const intent = parseSearchIntent(searchQuery);
+    let documents: Map<string, ProductSearchDocument> | undefined;
+    let environmentalSpecifications = new Map<string, ProductSpecification[]>();
+    if (intent.constrained && scopedCandidates.length > 0) {
+      const ids = scopedCandidates.map((item) => item.productId);
+      [documents, environmentalSpecifications] = await Promise.all([
+        this.productsService.getSearchDocumentsByIds(ids),
+        intent.outdoor ? this.productsService.getEnvironmentalSpecificationsByIds(ids) : Promise.resolve(environmentalSpecifications),
+      ]);
+      scopedCandidates = scopedCandidates.filter((candidate) => {
+        const document = documents!.get(candidate.productId);
+        return document && matchSearchIntent(intent, document, environmentalSpecifications.get(candidate.productId)) !== null;
+      });
+    }
 
     if (scopedCandidates.length === 0) {
       return SearchResponseSchema.parse({
@@ -94,7 +123,6 @@ export class SearchService {
     const technicallyRankedCandidates = await this.applyTechnicalPolicy(
       parsedQuery,
       scopedCandidates,
-      resolution.applied,
     );
     const rankedCandidates = await this.reranker.rerank(
       searchQuery,
@@ -106,7 +134,10 @@ export class SearchService {
       rankedCandidates.map((ranked) => ranked.candidate.productId),
     );
 
-    const results = rankedCandidates
+    const identityCandidates = parsedQuery.identity
+      ? rankedCandidates.filter(item => item.candidate.productId === parsedQuery.identity!.productId)
+      : rankedCandidates;
+    const results = identityCandidates
       .flatMap((ranked) => {
         const candidate = ranked.candidate;
         const product = summaries.get(candidate.productId);
@@ -132,7 +163,7 @@ export class SearchService {
       ...(request.context && { resolved_query: searchQuery, context_applied: resolution.applied }),
       mode: this.mapMode(hybridResult.mode),
       results: request.explain
-        ? await this.withExplanations(searchQuery, parsedQuery, results)
+        ? await this.withExplanations(searchQuery, parsedQuery, results, documents, environmentalSpecifications)
         : results,
     });
   }
@@ -141,12 +172,14 @@ export class SearchService {
     query: string,
     parsedQuery: ParsedTechnicalQuery,
     results: SearchResponse['results'],
+    knownDocuments?: Map<string, ProductSearchDocument>,
+    environmentalSpecifications = new Map<string, ProductSpecification[]>(),
   ): Promise<SearchResponse['results']> {
     if (results.length === 0) return results;
     const ids = results.map((item) => item.product_id);
     try {
       const [documents, matches] = await Promise.all([
-        this.productsService.getSearchDocumentsByIds(ids),
+        knownDocuments ?? this.productsService.getSearchDocumentsByIds(ids),
         this.hasApplicableTechnicalSignal(parsedQuery)
           ? this.technicalMatch.evaluate(parsedQuery, ids)
           : Promise.resolve([]),
@@ -154,7 +187,7 @@ export class SearchService {
       const matchesById = new Map(matches.map((item) => [item.productId, item]));
       const explainable = results.flatMap((result) => {
         const document = documents.get(result.product_id);
-        return document ? [{ productId: result.product_id, document, match: matchesById.get(result.product_id) }] : [];
+        return document ? [{ productId: result.product_id, document, match: matchesById.get(result.product_id), specifications: environmentalSpecifications.get(result.product_id) }] : [];
       });
       const generated = await this.explanation.explainMany(query, explainable);
       const explanationsById = new Map(explainable.map((item, index) => [item.productId, generated[index]]));
@@ -171,7 +204,6 @@ export class SearchService {
   private async applyTechnicalPolicy(
     parsedQuery: ParsedTechnicalQuery,
     candidates: HybridSearchCandidate[],
-    confirmedOnly = false,
   ): Promise<TechnicalRankedCandidate[]> {
     if (!this.hasApplicableTechnicalSignal(parsedQuery)) {
       return this.technicalRanking.preserve(candidates);
@@ -180,16 +212,14 @@ export class SearchService {
       parsedQuery,
       candidates.map((candidate) => candidate.productId),
     );
-    const allowed = confirmedOnly
-      ? new Set(matches.filter((match) =>
+    const allowed = new Set(matches.filter((match) =>
           match.protocolMatches.every((item) => item.result === 'MATCH') &&
           match.temperatureMatches
             .filter((item) => item.constraint.confidence === 'high')
             .every((item) => item.result === 'MATCH'),
-        ).map((match) => match.productId))
-      : null;
+        ).map((match) => match.productId));
     return this.technicalRanking.rank(
-      allowed ? candidates.filter((item) => allowed.has(item.productId)) : candidates,
+      candidates.filter((item) => allowed.has(item.productId)),
       matches,
     );
   }

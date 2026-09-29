@@ -283,16 +283,18 @@ export class ProductsRepository {
 
   async listSpecificationsByProductIds(
     productIds: string[],
+    canonicalKeys?: string[],
   ): Promise<ProductSpecificationRow[]> {
     if (productIds.length === 0) return [];
-    const { data, error } = await this.supabase
+    let query = this.supabase
       .getClient()
       .from('product_specifications')
       .select(
         'specification_id,product_id,canonical_key,quantity_kind,normalized_value,raw_ref',
       )
-      .in('product_id', productIds)
-      .neq('normalized_value->>type', 'text')
+      .in('product_id', productIds);
+    query = canonicalKeys ? query.in('canonical_key', canonicalKeys) : query.neq('normalized_value->>type', 'text');
+    const { data, error } = await query
       .order('product_id', { ascending: true })
       .order('specification_id', { ascending: true });
     if (error) this.throwQueryError('load product specifications by id', error);

@@ -20,25 +20,7 @@ import { getProductDetailApi } from '../../services/api';
 import { FavoriteButton } from '../commerce/FavoriteButton';
 import { RecommendationRow } from '../commerce/RecommendationRow';
 import { useCart } from '../../context/CartContext';
-
-// ─── Format normalized spec value for display ─────────────────────────────────
-function formatSpecValue(val) {
-  if (!val) return '—';
-  if (val.value_raw) return val.value_raw;
-  if (val.type === 'range') {
-    const min = val.min_value ?? '';
-    const max = val.max_value ?? '';
-    const unit = val.unit || '';
-    return `${min} – ${max} ${unit}`.trim();
-  }
-  if (val.type === 'number' || val.type === 'quantity') {
-    return `${val.value ?? ''} ${val.unit || ''}`.trim();
-  }
-  if (val.type === 'boolean') {
-    return val.value ? 'Yes' : 'No';
-  }
-  return String(val.value ?? '—');
-}
+import { groupSpecifications } from '../../services/specifications';
 
 export function ProductDetail({
   model,
@@ -334,10 +316,10 @@ export function ProductDetail({
             {(product.specifications || []).length > 0 ? (
               <table className="spec-table">
                 <tbody>
-                  {product.specifications.map((spec) => (
-                    <tr key={spec.specification_id}>
+                  {groupSpecifications(product.specifications).map((spec) => (
+                    <tr key={spec.canonical_key}>
                       <td>{spec.canonical_key.replace(/_/g, ' ')}</td>
-                      <td>{formatSpecValue(spec.normalized_value)}</td>
+                      <td>{spec.values.map((value, index) => <div key={index}>{value}</div>)}</td>
                     </tr>
                   ))}
                 </tbody>

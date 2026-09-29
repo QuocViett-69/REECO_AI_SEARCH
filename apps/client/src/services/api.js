@@ -1,24 +1,7 @@
+import { groupSpecifications } from './specifications';
+
 const API_BASE_URL =
   process.env.REACT_APP_API_URL || 'http://localhost:3000/api/v1';
-
-// ─── Format a normalized spec value to human-readable string ──────────────────
-function formatSpecValue(val) {
-  if (!val) return '';
-  if (val.value_raw) return val.value_raw;
-  if (val.type === 'range') {
-    const min = val.min_value ?? val.min ?? '';
-    const max = val.max_value ?? val.max ?? '';
-    const unit = val.unit || '';
-    return `${min} – ${max} ${unit}`.trim();
-  }
-  if (val.type === 'number' || val.type === 'quantity') {
-    return `${val.value ?? ''} ${val.unit || ''}`.trim();
-  }
-  if (val.type === 'boolean') {
-    return val.value ? 'Yes' : 'No';
-  }
-  return String(val.value ?? '');
-}
 
 // ─── Normalize a product summary row from backend into UI shape ────────────────
 function normalizeProduct(p) {
@@ -51,10 +34,10 @@ function normalizeProductDetail(data) {
   // Build specs map from specifications array using correct field names
   const specs = {};
   if (Array.isArray(data.specifications) && data.specifications.length > 0) {
-    data.specifications.forEach((spec) => {
+    groupSpecifications(data.specifications).forEach((spec) => {
       const group = spec.quantity_kind || 'General';
       if (!specs[group]) specs[group] = {};
-      specs[group][spec.canonical_key] = formatSpecValue(spec.normalized_value);
+      specs[group][spec.canonical_key] = spec.values.join('\n');
     });
   }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import type { ProductSpecification } from '@reeco/shared';
+import type { ProductSpecification, ProductSearchDocument } from '@reeco/shared';
 import { ProductsService } from '../products/products.service';
 import {
   CELSIUS_UNIT,
@@ -125,9 +125,18 @@ export class TechnicalMatchService {
     document: {
       supported_protocols: string[];
       unsupported_protocols: string[];
+      model?: string;
+      variants?: ProductSearchDocument['variants'];
     } | null,
   ): ProtocolMatchEvaluation {
     if (!document) {
+      return { queryProtocol, result: 'UNKNOWN', evidence: [] };
+    }
+
+    // Family-wide wireless compatibility does not establish the selected communication option.
+    const selected = document.variants?.find(variant => variant.model === document.model);
+    const option = selected?.distinguishing_specifications.find(spec => spec.name_en === 'Communication Option');
+    if (queryProtocol === 'Wi-Fi' && option && !/^wi[\s-]?fi$/iu.test(option.value_raw)) {
       return { queryProtocol, result: 'UNKNOWN', evidence: [] };
     }
 

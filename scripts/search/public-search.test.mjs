@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import test from 'node:test';
@@ -219,6 +220,25 @@ test('maps hybrid candidates and all score slots without fabricating features', 
   assert.deepEqual(SearchResponseSchema.parse(response), response);
 });
 
+test('water temperature search excludes soil and black globe sensors', async () => {
+  const models = ['TEMPVUE50', 'TCAV', 'BLACKGLOBE'];
+  const documents = await Promise.all(models.map(async (model) => JSON.parse(await readFile(
+    path.join(projectRoot, 'data', 'search-documents', `CSI_${model}.json`), 'utf8',
+  ))));
+  const byId = new Map(documents.map((document) => [document.product_id, document]));
+  const products = {
+    getSearchDocumentsByIds: async (ids) => new Map(ids.map((id) => [id, byId.get(id)])),
+    getActiveTechnicalIdentityCatalog: async () => [],
+    getPublicSummariesByIds: async (ids) => new Map(ids.map((id) => [id, summary(id)])),
+  };
+  const service = createSearchService(
+    { search: async () => hybridResult('hybrid', documents.map((document) => candidate(document.product_id))) },
+    products,
+  );
+  const response = await service.search({ query: 'tôi muốn mua một cảm biến đo nhiệt độ nước', limit: 10 });
+  assert.deepEqual(response.results.map((result) => result.product_id), [documents[0].product_id]);
+});
+
 test('maps keyword fallback to public keyword mode and preserves ordering', async () => {
   const candidates = [
     candidate('B', { keywordScore: 0.8 }),
@@ -430,7 +450,7 @@ test('integrates exact identity priority with one parse and unchanged RRF score'
   const response = await service.search({ query: 'CS655', limit: 10 });
   assert.deepEqual(
     response.results.map((result) => result.product_id),
-    ['CSI_CS655', 'OTHER'],
+    ['CSI_CS655'],
   );
   assert.equal(response.results[0].scores.hybrid, 0.01);
   assert.deepEqual(response.results[0].matched_features, [
@@ -532,13 +552,13 @@ test('applies protocol priority in keyword and semantic fallback modes', async (
     assert.equal(response.mode, publicMode);
     assert.deepEqual(
       response.results.map((result) => result.product_id),
-      ['MATCH', 'UNKNOWN'],
+      ['MATCH'],
     );
     assert.deepEqual(response.results[0].matched_features, ['protocol:SDI-12']);
   }
 });
 
-test('filters numeric hard mismatch before limit and retains UNKNOWN', async () => {
+test('requires confirmed numeric evidence before applying the result limit', async () => {
   const productsService = {
     getActiveTechnicalIdentityCatalog: async () => [],
     getPublicSummariesByIds: async (ids) =>
@@ -611,13 +631,13 @@ test('filters numeric hard mismatch before limit and retains UNKNOWN', async () 
   });
   assert.deepEqual(
     response.results.map((result) => result.product_id),
-    ['MATCH', 'UNKNOWN'],
+    ['MATCH'],
   );
   assert.equal(response.results[0].scores.hybrid, 0.02);
   assert.deepEqual(response.results[0].matched_features, [
     'operating-temperature:-40°C',
   ]);
-  assert.deepEqual(response.results[1].matched_features, []);
+  assert.equal(response.results.length, 1);
 });
 
 test('returns an empty success without catalog or technical DB work', async () => {
@@ -800,6 +820,7 @@ test('public HTTP boundary returns fallback 200, both-fail 503, and validation 4
   assert.deepEqual(retrievalCalls, [
     'keyword fallback',
     'semantic fallback',
+    'both fail',
     'both fail',
   ]);
 });

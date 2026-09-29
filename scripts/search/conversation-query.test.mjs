@@ -27,6 +27,9 @@ test('adds refinements and replaces alternatives without carrying the previous f
 });
 
 test('understands a short Vietnamese protocol follow-up and enforces query length', () => {
+  assert.deepEqual(resolveConversationQuery('Wi-Fi', {
+    base_query: 'datalogger', previous_query: 'datalogger',
+  }), { query: 'datalogger Wi-Fi', applied: true });
   assert.deepEqual(resolveConversationQuery('có hỗ trợ SDI-12 không?', {
     base_query: 'soil moisture sensor', previous_query: 'soil moisture sensor',
   }), { query: 'soil moisture sensor SDI-12', applied: true });
@@ -48,6 +51,10 @@ test('follow-up keeps the starting product scope and requires confirmed support'
     } },
     {
       getActiveTechnicalIdentityCatalog: async () => [],
+      getSearchDocumentsByIds: async (ids) => new Map(ids.map(id => [id, {
+        measurements: [{ key: 'volumetric_water_content' }], capabilities: [],
+        taxonomy: { device_type: 'Soil Moisture Sensor' },
+      }])),
       getPublicSummariesByIds: async () => new Map(['A', 'B', 'C'].map((id) => [id, {
         product_id: id, model: id, name_en: id, name_vi: null,
         category: null, device_type: null, image_url: null,

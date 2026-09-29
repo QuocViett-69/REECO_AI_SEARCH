@@ -5,6 +5,7 @@ export const SUPPORTED_TECHNICAL_PROTOCOLS = [
   'RS-485',
   'Modbus',
   'Modbus RTU',
+  'Wi-Fi',
 ] as const;
 
 export const OPERATING_TEMPERATURE_KEYS = [

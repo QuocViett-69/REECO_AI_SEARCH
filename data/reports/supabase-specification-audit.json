@@ -1,0 +1,107 @@
+{
+  "checked_at": "2026-09-28T12:47:38.409Z",
+  "scope": "All live product specifications versus normalized artifacts and referenced raw rows; not a vendor review of every numeric fact.",
+  "summary": {
+    "products": 89,
+    "active_products": 89,
+    "specifications": 3277,
+    "source_mismatches": 0,
+    "suspect_characters": 0,
+    "repeated_key_products": 7,
+    "repeated_key_groups": 11
+  },
+  "errors": [],
+  "suspect_characters": [],
+  "repeated_key_groups": [
+    {
+      "product_id": "CSI_CS650",
+      "canonical_key": "precision_d2aa46e8",
+      "values": [
+        "±0.02°C",
+        "±0.5°C (for full temperature range)"
+      ]
+    },
+    {
+      "product_id": "CSI_CS655",
+      "canonical_key": "precision_d2aa46e8",
+      "values": [
+        "±0.02°C",
+        "±0.5°C (for full temperature range)"
+      ]
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "canonical_key": "measurement_range",
+      "values": [
+        "-40 to +70°C",
+        "0 to 100% RH"
+      ]
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "canonical_key": "reported_resolution",
+      "values": [
+        "0.001°C",
+        "0.001% RH"
+      ]
+    },
+    {
+      "product_id": "CSI_43347",
+      "canonical_key": "accuracy",
+      "values": [
+        "±0.3°C at 0°C",
+        "±0.1°C with NIST calibration"
+      ]
+    },
+    {
+      "product_id": "CSI_52202",
+      "canonical_key": "measurement_uncertainty",
+      "values": [
+        "2% for up to 25 mm/h (1 in./h)",
+        "3% for up to 50 mm/h (2 in./h)"
+      ]
+    },
+    {
+      "product_id": "CSI_52202",
+      "canonical_key": "compliance_with_standards",
+      "values": [
+        "2015/863/EU RoHS Phthalates Amendment",
+        "2011/65/EU RoHS Directive"
+      ]
+    },
+    {
+      "product_id": "CSI_BAROVUE10",
+      "canonical_key": "current_consumption",
+      "values": [
+        "200 µA, sleep mode",
+        "<5 mA, active"
+      ]
+    },
+    {
+      "product_id": "CSI_BLACKGLOBE",
+      "canonical_key": "worst_case_accuracy",
+      "values": [
+        "±0.3°C from -3°C to 90°C",
+        "±0.7°C from -5°C to 95°C"
+      ]
+    },
+    {
+      "product_id": "CSI_BLACKGLOBE",
+      "canonical_key": "interchangeability_error",
+      "values": [
+        "±0.10°C from 0°C to 70°C",
+        "±0.14°C at -5°C",
+        "±0.25°C at 85°C",
+        "±0.35°C at 95°C"
+      ]
+    },
+    {
+      "product_id": "CSI_HYGROVUE5",
+      "canonical_key": "accuracy",
+      "values": [
+        "±0.4°C (over the range -40° to +70°C) | ±0.3°C (over the range 20° to 60°C)",
+        "±3% (at 25°C, over the range 80 to 100% RH) | ±1.8% (at 25°C, over the range 0 to 80% RH)"
+      ]
+    }
+  ]
+}

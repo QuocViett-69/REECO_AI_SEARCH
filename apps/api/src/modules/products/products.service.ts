@@ -188,6 +188,10 @@ export class ProductsService {
     );
   }
 
+  async getEnvironmentalSpecificationsByIds(productIds: string[]): Promise<Map<string, ProductSpecification[]>> {
+    return this.groupSpecifications(await this.productsRepository.listSpecificationsByProductIds(productIds, ['ingress_protection']));
+  }
+
   private async list(
     query: ProductListQuery,
     activeOnly: boolean,

@@ -1,7 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
-import type { ProductSearchDocument, SearchResponse } from '@reeco/shared';
+import type { ProductSearchDocument, ProductSpecification, SearchResponse } from '@reeco/shared';
 import { configuration } from '../../config/configuration';
 import type { TechnicalMatchResult } from './technical-match.service';
+import { parseTemperatureTarget, temperatureTargetEvidence } from './temperature-target';
+import { parseSearchIntent, matchSearchIntent } from './search-intent';
 
 type Explanation = NonNullable<SearchResponse['results'][number]['explanation']>;
 type Evidence = Explanation['evidence'][number];
@@ -16,10 +18,12 @@ export class ExplanationService {
 
   async explainMany(
     query: string,
-    items: { document: ProductSearchDocument; match?: TechnicalMatchResult }[],
+    items: { document: ProductSearchDocument; match?: TechnicalMatchResult; specifications?: ProductSpecification[] }[],
   ): Promise<Explanation[]> {
-    const explanations = items.map(({ document, match }) => this.explain(query, document, match));
+    const explanations = items.map(({ document, match, specifications }) => this.explain(query, document, match, specifications));
     if (!this.config.explanation.llmEnabled || !this.config.explanation.model) return explanations;
+    // Keep all requested facts and numeric limits intact without an extra model round trip.
+    if (parseSearchIntent(query).constrained || items.some(item => item.match?.temperatureMatches.length)) return explanations;
 
     // ponytail: only the first three evidence-backed results use the local model; raise this if measured latency allows it.
     const eligible = explanations
@@ -111,6 +115,8 @@ export class ExplanationService {
     const unsupported = /unsupported|không hỗ trợ/iu;
     if (uncertainty.test(original.text) && !uncertainty.test(candidate)) return false;
     if (unsupported.test(original.text) && !unsupported.test(candidate)) return false;
+    const target = parseTemperatureTarget(original.text);
+    if (target && parseTemperatureTarget(candidate)?.key !== target.key) return false;
     if (original.language === 'vi' && !isVietnamese(candidate)) return false;
     return true;
   }
@@ -119,10 +125,25 @@ export class ExplanationService {
     query: string,
     document: ProductSearchDocument,
     match?: TechnicalMatchResult,
+    specifications: ProductSpecification[] = [],
   ): Explanation {
     const vi = isVietnamese(query);
     const sentences: string[] = [];
     const evidence: Evidence[] = [];
+    const intent = parseSearchIntent(query);
+    const intentEvidence = intent.constrained ? matchSearchIntent(intent, document, specifications) : [];
+    if (intent.constrained && intentEvidence === null) {
+      return { text: vi ? `Chưa có dữ liệu xác nhận ${document.model} đáp ứng đầy đủ yêu cầu.` : `Available data does not confirm that ${document.model} meets all requested requirements.`, language: vi ? 'vi' : 'en', evidence: [] };
+    }
+    const target = parseTemperatureTarget(query);
+    const targetField = target && temperatureTargetEvidence(document, target);
+    if (target && !targetField) {
+      return {
+        text: vi ? `Chưa có dữ liệu xác nhận ${document.model} đo ${target.vi}.` : `Available data does not confirm that ${document.model} measures ${target.en}.`,
+        language: vi ? 'vi' : 'en',
+        evidence: [],
+      };
+    }
     const add = (text: string, source?: Evidence): void => {
       if (sentences.length >= 3) return;
       sentences.push(text);
@@ -133,6 +154,18 @@ export class ExplanationService {
       add(
         vi ? `Khớp chính xác model ${document.model}.` : `Exact model match: ${document.model}.`,
         { source: 'products', field: 'model', value: document.model },
+      );
+    }
+
+    if (intentEvidence?.length) {
+      evidence.push(...intentEvidence);
+      const labels = [...intent.measurements, ...(intent.target ? [intent.target] : []), ...intent.roles].map(item => vi ? item.vi : item.en);
+      if (labels.length) sentences.push(vi ? `${document.model}: dữ liệu xác nhận ${labels.join(', ')}.` : `${document.model}: product data confirms ${labels.join(', ')}.`);
+      if (intent.outdoor) sentences.push(vi ? 'Thông số bảo vệ môi trường được trích nguyên văn bên dưới; áp dụng các giới hạn lắp đặt và sử dụng nêu trong đó.' : 'The environmental protection specification is quoted below, including installation limits, exclusions and certification status.');
+    } else if (target && targetField) {
+      add(
+        vi ? `${document.model} có đo ${target.vi}, đúng đại lượng bạn đang tìm.` : `${document.model} measures ${target.en}, the measurement you requested.`,
+        { source: 'product_document', field: targetField, value: targetField === 'taxonomy.device_type' ? document.taxonomy.device_type : (vi ? target.vi : target.en) },
       );
     }
 
@@ -170,6 +203,17 @@ export class ExplanationService {
         );
       } else if (temperature.result === 'UNKNOWN') {
         add(vi ? `Chưa đủ dữ liệu để xác nhận yêu cầu nhiệt độ ${request}.` : `Available data cannot confirm the ${request} temperature requirement.`);
+      }
+    }
+
+    if (targetField && !match?.temperatureMatches.length) {
+      const range = document.important_specifications.find((item) =>
+        /^(?:temperature_measurement_range|measurement_temperature_range)$/u.test(item.canonical_key) && item.normalized_value.type === 'range');
+      const value = range?.normalized_value;
+      if (range && value?.type === 'range' && value.min_value !== undefined && value.max_value !== undefined && value.unit === '°C') {
+        const text = `${value.min_value}–${value.max_value}°C`;
+        add(vi ? `Dải đo nhiệt độ: ${text}.` : `Temperature measurement range: ${text}.`,
+          { source: 'normalized_spec', field: range.canonical_key, value: text });
       }
     }
 

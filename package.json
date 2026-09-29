@@ -33,6 +33,7 @@
     "validate:search-documents": "node scripts/search-documents/validate.mjs",
     "supabase:import": "node scripts/supabase/import-data-foundation.mjs",
     "supabase:validate": "node scripts/supabase/import-data-foundation.mjs --validate-only",
+    "supabase:audit-specifications": "node scripts/supabase/audit-specifications.mjs",
     "supabase:dry-run": "node scripts/supabase/import-data-foundation.mjs --dry-run",
     "supabase:test:local": "node scripts/supabase/test-data-foundation-local.mjs",
     "embeddings:test": "npm run build:api && node --test scripts/create-embeddings/*.test.mjs",
@@ -69,6 +70,7 @@
     "search:explanation:evaluate": "npm run build:shared && npm run build:api && node --env-file=apps/api/.env scripts/search-evaluation/explanation/evaluate.mjs",
     "search:explanation:test": "npm run build:shared && npm run build:api && node --test scripts/search-evaluation/explanation/grounded-explanation.test.mjs scripts/search/explanation-runtime.test.mjs",
     "search:conversation:test": "npm run build:shared && npm run build:api && node --test scripts/search/conversation-query.test.mjs",
+    "search:intent:test": "npm run build:shared && npm run build:api && node --test scripts/search/intent-search.test.mjs scripts/search/public-search.test.mjs scripts/search/conversation-query.test.mjs scripts/search/technical-match.test.mjs scripts/search/explanation-runtime.test.mjs scripts/search/reranker-runtime.test.mjs",
     "lint": "npm run lint --workspaces --if-present",
     "format": "prettier --write ."
   },
