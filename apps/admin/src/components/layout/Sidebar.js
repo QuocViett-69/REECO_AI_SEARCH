@@ -1,5 +1,15 @@
 import React from 'react';
-import { LayoutDashboard, FileUp, Package, ExternalLink, LogOut, User } from 'lucide-react';
+import {
+  LayoutDashboard,
+  FileUp,
+  Package,
+  ExternalLink,
+  LogOut,
+  User,
+  Users,
+  ShoppingBag,
+  BarChart3,
+} from 'lucide-react';
 
 export function Sidebar({ currentTab, onSelectTab, currentUser, onLogout }) {
   return (
@@ -20,6 +30,15 @@ export function Sidebar({ currentTab, onSelectTab, currentUser, onLogout }) {
 
       <button
         type="button"
+        className={`nav-item ${currentTab === 'products' || currentTab === 'detail' ? 'active' : ''}`}
+        onClick={() => onSelectTab('products')}
+      >
+        <Package size={18} />
+        Product Management
+      </button>
+
+      <button
+        type="button"
         className={`nav-item ${currentTab === 'import' ? 'active' : ''}`}
         onClick={() => onSelectTab('import')}
       >
@@ -29,11 +48,29 @@ export function Sidebar({ currentTab, onSelectTab, currentUser, onLogout }) {
 
       <button
         type="button"
-        className={`nav-item ${currentTab === 'products' || currentTab === 'detail' ? 'active' : ''}`}
-        onClick={() => onSelectTab('products')}
+        className={`nav-item ${currentTab === 'users' ? 'active' : ''}`}
+        onClick={() => onSelectTab('users')}
       >
-        <Package size={18} />
-        Product Management
+        <Users size={18} />
+        User Management
+      </button>
+
+      <button
+        type="button"
+        className={`nav-item ${currentTab === 'orders' ? 'active' : ''}`}
+        onClick={() => onSelectTab('orders')}
+      >
+        <ShoppingBag size={18} />
+        Order Management
+      </button>
+
+      <button
+        type="button"
+        className={`nav-item ${currentTab === 'reports' ? 'active' : ''}`}
+        onClick={() => onSelectTab('reports')}
+      >
+        <BarChart3 size={18} />
+        Reports & Analytics
       </button>
 
       <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--bg-gray)' }}>

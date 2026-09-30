@@ -107,6 +107,25 @@ The import is transactional and idempotent. Its latest validation report is writ
 
 Run `npm run supabase:audit-specifications` to compare every live specification with its normalized artifact and referenced raw row. This read-only check reports missing/changed rows, suspect character encoding, and repeated keys in `data/reports/supabase-specification-audit.json`. Repeated keys can hold valid values for different conditions; the client groups them without discarding those values.
 
+## VNPay Sandbox Integration
+
+The application integrates with the VNPay Sandbox payment gateway:
+
+- **Create Payment URL**: `POST /api/v1/payments/vnpay/create-url` (Requires authentication, body: `{ order_id }`). Validates order ownership, VNPay payment method, and status (`PENDING_PAYMENT` or `PAYMENT_FAILED`). Generates a strictly numeric `vnp_TxnRef`, stores it in `orders.vnpay_txn_ref`, resets `PAYMENT_FAILED` to `PENDING_PAYMENT`, and returns `{ payment_url, txn_ref, order_id }`.
+- **Verify Payment Callback**: `GET /api/v1/payments/vnpay/verify`. Verifies HMAC-SHA512 checksum, locates order by `vnp_TxnRef`, verifies `vnp_Amount / 100 == total`. Transitions successful orders to `PROCESSING` with `PAID` status, recording status history and notifications. Idempotent: repeated calls for an already `PAID` order return cached state without duplicating notifications.
+- **VNPay IPN (Webhook)**: `GET /api/v1/payments/vnpay/ipn`. Shares the underlying validation and update logic with `verify`, responding in standard VNPay IPN format (`{ RspCode, Message }`):
+  - `00`: Confirm Success
+  - `01`: Order not found
+  - `02`: Order already confirmed (Idempotency)
+  - `04`: Invalid amount
+  - `97`: Checksum failed
+  - `99`: Unknown error
+
+Run VNPay automated test suite:
+```bash
+node --test --env-file=apps/api/.env scripts/payments/vnpay.test.mjs
+```
+
 ## Build
 
 ```bash
@@ -118,3 +137,4 @@ npm run build
 ```bash
 npm run lint
 ```
+

@@ -20,6 +20,7 @@ import { LoginPage } from './components/auth/LoginPage';
 import { CartPage } from './components/commerce/CartPage';
 import { CheckoutPage } from './components/commerce/CheckoutPage';
 import { OrderSuccessPage } from './components/commerce/OrderSuccessPage';
+import { VnpayReturnPage } from './components/commerce/VnpayReturnPage';
 
 // Account Pages
 import { FavoriteList } from './components/account/FavoriteList';
@@ -35,11 +36,76 @@ import { AdminOrders } from './components/admin/AdminOrders';
 import './index.css';
 
 function AppInner() {
-  const [currentPage, setCurrentPage] = useState('search');
+  const [currentPage, setCurrentPage] = useState(() => {
+    if (
+      typeof window !== 'undefined' &&
+      (window.location.search.includes('vnp_') ||
+        window.location.pathname.includes('vnpay-return'))
+    ) {
+      return 'vnpay-return';
+    }
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        const saved = sessionStorage.getItem('reeco_current_page');
+        if (saved) return saved;
+      }
+    } catch {}
+    return 'search';
+  });
   const [previousPage, setPreviousPage] = useState('search');
-  const [currentDetailModel, setCurrentDetailModel] = useState(null);
-  const [currentOrderId, setCurrentOrderId] = useState(null);
-  const [orderSuccessId, setOrderSuccessId] = useState(null);
+  const [currentDetailModel, setCurrentDetailModel] = useState(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        return sessionStorage.getItem('reeco_current_detail_model') || null;
+      }
+    } catch {}
+    return null;
+  });
+  const [currentOrderId, setCurrentOrderId] = useState(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        return sessionStorage.getItem('reeco_current_order_id') || null;
+      }
+    } catch {}
+    return null;
+  });
+  const [orderSuccessId, setOrderSuccessId] = useState(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        return sessionStorage.getItem('reeco_order_success_id') || null;
+      }
+    } catch {}
+    return null;
+  });
+
+  // Sync state to sessionStorage
+  useEffect(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined' && currentPage) {
+        sessionStorage.setItem('reeco_current_page', currentPage);
+      }
+    } catch {}
+  }, [currentPage]);
+
+  useEffect(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        if (currentOrderId) {
+          sessionStorage.setItem('reeco_current_order_id', currentOrderId);
+        }
+      }
+    } catch {}
+  }, [currentOrderId]);
+
+  useEffect(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        if (orderSuccessId) {
+          sessionStorage.setItem('reeco_order_success_id', orderSuccessId);
+        }
+      }
+    } catch {}
+  }, [orderSuccessId]);
 
   // Search State
   const [searchQuery, setSearchQuery] = useState('');
@@ -89,6 +155,11 @@ function AppInner() {
   const handleNavigate = useCallback((page) => {
     if (page === 'search' || page === 'home') {
       setCurrentPage('search');
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.setItem('reeco_current_page', 'search');
+        }
+      } catch {}
       setHasSearched(false);
       setSearchError(null);
       setSearchMode(null);
@@ -96,12 +167,31 @@ function AppInner() {
       setResolvedQuery('');
       setConversationTurns([]);
     } else if (page.startsWith('order-success:')) {
-      setOrderSuccessId(page.replace('order-success:', ''));
+      const id = page.replace('order-success:', '');
+      setOrderSuccessId(id);
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.setItem('reeco_order_success_id', id);
+          sessionStorage.setItem('reeco_current_page', 'order-success');
+        }
+      } catch {}
       setCurrentPage('order-success');
     } else if (page.startsWith('account-order:')) {
-      setCurrentOrderId(page.replace('account-order:', ''));
+      const id = page.replace('account-order:', '');
+      setCurrentOrderId(id);
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.setItem('reeco_current_order_id', id);
+          sessionStorage.setItem('reeco_current_page', 'account-order-detail');
+        }
+      } catch {}
       setCurrentPage('account-order-detail');
     } else {
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.setItem('reeco_current_page', page);
+        }
+      } catch {}
       setCurrentPage(page);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -303,6 +393,11 @@ function AppInner() {
         {/* ── Order Success ──────────────────────────────────────────────────────── */}
         {currentPage === 'order-success' && (
           <OrderSuccessPage orderId={orderSuccessId} onNavigate={handleNavigate} />
+        )}
+
+        {/* ── VNPay Return ───────────────────────────────────────────────────────── */}
+        {currentPage === 'vnpay-return' && (
+          <VnpayReturnPage onNavigate={handleNavigate} />
         )}
 
         {/* ── Account Dashboard ──────────────────────────────────────────────────── */}

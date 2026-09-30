@@ -6,27 +6,19 @@ import {
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { useFavorite } from '../../context/FavoriteContext';
-import { notificationService } from '../../services/notificationService';
+import { useUnreadNotificationCount } from '../../services/notificationService';
 
 export function Navbar({ currentPage, onNavigate, compareCount }) {
   const { user, isAuthenticated, isAdmin, logout } = useAuth();
   const { cartCount, cartItems, cartSubtotal } = useCart();
   const { favoriteCount } = useFavorite();
-  const [unreadNotifCount, setUnreadNotifCount] = useState(0);
+  const unreadNotifCount = useUnreadNotificationCount(30000);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [cartPreviewOpen, setCartPreviewOpen] = useState(false);
   const accountRef = useRef(null);
   const cartRef = useRef(null);
-
-  useEffect(() => {
-    if (user && user.username) {
-      setUnreadNotifCount(notificationService.getUnreadCount(user.username));
-    } else {
-      setUnreadNotifCount(0);
-    }
-  }, [user, currentPage]);
 
   useEffect(() => {
     const handler = e => {

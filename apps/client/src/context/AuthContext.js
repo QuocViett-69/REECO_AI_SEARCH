@@ -10,8 +10,25 @@ export { DEMO_CREDENTIALS };
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     try {
-      const stored = localStorage.getItem(AUTH_STORAGE_KEY);
-      return stored ? JSON.parse(stored) : null;
+      const stored =
+        (typeof localStorage !== 'undefined' && localStorage.getItem(AUTH_STORAGE_KEY)) ||
+        (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(AUTH_STORAGE_KEY));
+      if (stored) return JSON.parse(stored);
+
+      const isLoggedOut =
+        typeof sessionStorage !== 'undefined' && sessionStorage.getItem('reeco_logged_out') === '1';
+      if (!isLoggedOut) {
+        const defaultCustomer = DEMO_CREDENTIALS.customer;
+        return {
+          username: defaultCustomer.username,
+          role: defaultCustomer.role,
+          name: defaultCustomer.name,
+          email: defaultCustomer.email,
+          company: defaultCustomer.company,
+          token: `demo-token-customer-${Date.now()}`,
+        };
+      }
+      return null;
     } catch {
       return null;
     }
@@ -20,15 +37,33 @@ export function AuthProvider({ children }) {
   const [authError, setAuthError] = useState(null);
 
   useEffect(() => {
-    if (user) {
-      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));
-    } else {
-      localStorage.removeItem(AUTH_STORAGE_KEY);
-    }
+    try {
+      if (user) {
+        const serialized = JSON.stringify(user);
+        if (typeof localStorage !== 'undefined') localStorage.setItem(AUTH_STORAGE_KEY, serialized);
+        if (typeof sessionStorage !== 'undefined') sessionStorage.setItem(AUTH_STORAGE_KEY, serialized);
+        if (user.token) {
+          if (typeof localStorage !== 'undefined') localStorage.setItem('reeco_auth_token', user.token);
+          if (typeof sessionStorage !== 'undefined') sessionStorage.setItem('reeco_auth_token', user.token);
+        }
+      } else {
+        if (typeof localStorage !== 'undefined') {
+          localStorage.removeItem(AUTH_STORAGE_KEY);
+          localStorage.removeItem('reeco_auth_token');
+        }
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.removeItem(AUTH_STORAGE_KEY);
+          sessionStorage.removeItem('reeco_auth_token');
+        }
+      }
+    } catch {}
   }, [user]);
 
   const login = async (role, username, password) => {
     setAuthError(null);
+    try {
+      if (typeof sessionStorage !== 'undefined') sessionStorage.removeItem('reeco_logged_out');
+    } catch {}
     const result = authenticateUser(role, username, password);
 
     if (result.success) {
@@ -41,6 +76,9 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
+    try {
+      if (typeof sessionStorage !== 'undefined') sessionStorage.setItem('reeco_logged_out', '1');
+    } catch {}
     setUser(null);
     setAuthError(null);
   };
