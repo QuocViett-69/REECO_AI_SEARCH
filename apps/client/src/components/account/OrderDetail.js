@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { orderService, ORDER_STATUSES, SHIPPING_METHODS } from '../../services/orderService';
-import { BANK_TRANSFER_INFO } from '../../services/paymentService';
+import { paymentService, getPaymentMethodLabel } from '../../services/paymentService';
 import { formatPrice } from '../../services/commercialService';
 import {
   ArrowLeft,
@@ -11,7 +11,7 @@ import {
   Truck,
   ShieldCheck,
   CreditCard,
-  Building2,
+  Banknote,
   AlertCircle,
   Calendar,
   MapPin,
@@ -40,6 +40,8 @@ export function OrderDetail({ orderId, onBack }) {
   const [order, setOrder] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [payError, setPayError] = useState(null);
+  const [isRedirecting, setIsRedirecting] = useState(false);
 
   useEffect(() => {
     if (!orderId || !user) {
@@ -55,6 +57,18 @@ export function OrderDetail({ orderId, onBack }) {
     }
     setLoading(false);
   }, [orderId, user]);
+
+  const handlePayWithVnpay = async () => {
+    setPayError(null);
+    setIsRedirecting(true);
+    try {
+      const { payment_url } = await paymentService.createVnpayPaymentUrl(order);
+      window.location.assign(payment_url);
+    } catch (err) {
+      setIsRedirecting(false);
+      setPayError(err.message);
+    }
+  };
 
   if (loading) {
     return (
@@ -334,7 +348,7 @@ export function OrderDetail({ orderId, onBack }) {
           {/* Payment Details */}
           <div className="glass-card" style={{ padding: 20, borderRadius: 14 }}>
             <h3 style={{ fontSize: 14, fontWeight: 600, color: '#111827', margin: '0 0 12px', display: 'flex', alignItems: 'center', gap: 6 }}>
-              {order.payment_method === 'mastercard' ? <CreditCard size={16} color="#0069e0" /> : <Building2 size={16} color="#0069e0" />}
+              {order.payment_method === 'cod' ? <Banknote size={16} color="#0069e0" /> : <CreditCard size={16} color="#0069e0" />}
               <span>Payment Details</span>
             </h3>
 
@@ -342,7 +356,7 @@ export function OrderDetail({ orderId, onBack }) {
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ color: '#6b7280' }}>Method:</span>
                 <span style={{ fontWeight: 600, color: '#111827' }}>
-                  {order.payment_method === 'mastercard' ? 'Mastercard / VNPay' : 'Bank Transfer'}
+                  {getPaymentMethodLabel(order.payment_method)}
                 </span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
@@ -357,12 +371,24 @@ export function OrderDetail({ orderId, onBack }) {
                 </span>
               </div>
 
-              {order.payment_method === 'bank_transfer' && order.payment_status !== 'PAID' && (
+              {order.payment_method === 'cod' && order.payment_status !== 'PAID' && (
                 <div style={{ marginTop: 10, padding: 10, borderRadius: 8, background: '#f9fafb', border: '1px solid #e5e7eb', fontSize: 12, lineHeight: 1.5 }}>
-                  <div style={{ color: '#0069e0', fontWeight: 600, marginBottom: 4 }}>Bank Transfer Instructions:</div>
-                  <div>Bank: {BANK_TRANSFER_INFO.bankName}</div>
-                  <div>Account: {BANK_TRANSFER_INFO.accountNumber}</div>
-                  <div>Ref: <code>{order.order_code}</code></div>
+                  Please prepare <strong>{formatPrice(order.total, order.currency)}</strong> in cash to pay the courier on delivery.
+                </div>
+              )}
+
+              {order.payment_method === 'vnpay' && order.payment_status !== 'PAID' && order.status !== 'CANCELLED' && (
+                <div style={{ marginTop: 10 }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    disabled={isRedirecting}
+                    onClick={handlePayWithVnpay}
+                    style={{ width: '100%', padding: '10px', fontSize: 13, fontWeight: 600, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: isRedirecting ? 'wait' : 'pointer' }}
+                  >
+                    {isRedirecting ? 'Redirecting to VNPay...' : 'Pay with VNPay'}
+                  </button>
+                  {payError && <div style={{ marginTop: 6, fontSize: 12, color: '#d93025' }}>{payError}</div>}
                 </div>
               )}
             </div>

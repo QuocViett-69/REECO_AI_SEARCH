@@ -1,9 +1,10 @@
 // ─── Order Service & State Machine ─────────────────────────────────────────────
 // Supports sequential Order IDs (1001, 1002, 1003...), item snapshots,
-// shipping calculation ($10 Standard vs $30 Express), customer ownership isolation,
+// shipping calculation (250,000 VND Standard vs 750,000 VND Express), customer ownership isolation,
 // and admin status transitions.
 
 import { paymentService } from './paymentService.js';
+import { CURRENCY, getProductPrice } from './commercialService.js';
 import { notificationService } from './notificationService.js';
 
 const ORDERS_STORAGE_KEY = 'reeco_orders_store';
@@ -13,7 +14,7 @@ export const SHIPPING_METHODS = {
   standard: {
     id: 'standard',
     name: 'Standard Delivery',
-    fee: 10,
+    fee: 250_000,
     deliveryDaysMin: 7,
     deliveryDaysMax: 10,
     description: 'Estimated delivery: 7–10 business days via Authorized Logistics',
@@ -21,7 +22,7 @@ export const SHIPPING_METHODS = {
   express: {
     id: 'express',
     name: 'Express Air Freight',
-    fee: 30,
+    fee: 750_000,
     deliveryDaysMin: 2,
     deliveryDaysMax: 3,
     description: 'Estimated delivery: 2–3 business days via Priority Air Cargo',
@@ -121,13 +122,13 @@ class OrderService {
         customer_phone: '+84 908 123 456',
         status: 'PROCESSING',
         payment_status: 'PAID',
-        payment_method: 'mastercard',
+        payment_method: 'vnpay',
         payment_provider: 'VNPAY_SANDBOX',
         shipping_method: 'standard',
-        shipping_fee: 10,
-        subtotal: 1040,
-        total: 1050,
-        currency: 'USD',
+        shipping_fee: 250_000,
+        subtotal: 26_420_000,
+        total: 26_670_000,
+        currency: CURRENCY,
         shipping_address: '128 Nguyen Van Thu, Da Kao Ward, District 1',
         city: 'Ho Chi Minh City',
         province: 'Ho Chi Minh',
@@ -142,9 +143,9 @@ class OrderService {
             product_id: 'CSI_CS655',
             model: 'CS655',
             product_name: '12cm Water Content Reflectometer Plus (-50 to +70C)',
-            unit_price: 520,
+            unit_price: 13_210_000,
             quantity: 2,
-            line_total: 1040,
+            line_total: 26_420_000,
             image: 'https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/4883',
           },
         ],
@@ -162,7 +163,7 @@ class OrderService {
     items,
     shippingInfo,
     shippingMethod = 'standard',
-    paymentMethod = 'bank_transfer',
+    paymentMethod = 'cod',
   }) {
     if (!customer || !customer.username) {
       throw new Error('Authenticated customer information is required to place an order.');
@@ -186,7 +187,7 @@ class OrderService {
 
     // Calculate Subtotal & Snapshots
     const itemSnapshots = items.map((item) => {
-      const unitPrice = item.price || 450;
+      const unitPrice = item.price || getProductPrice(item.product_id || item.id, item.model);
       const qty = Math.max(1, parseInt(item.quantity, 10) || 1);
       return {
         product_id: item.product_id || item.id,
@@ -208,9 +209,11 @@ class OrderService {
     const now = new Date();
     const estimatedDelivery = calculateEstimatedDelivery(now, shippingMethod);
 
-    // Initial payment state
-    const initialPaymentStatus = paymentMethod === 'mastercard' ? 'PENDING_PAYMENT' : 'PENDING_PAYMENT';
-    const initialOrderStatus = 'PENDING_PAYMENT';
+    // COD orders go straight to processing and are paid on delivery;
+    // VNPay orders wait for a verified VNPay return.
+    const isCod = paymentMethod === 'cod';
+    const initialPaymentStatus = isCod ? 'COD_PENDING' : 'PENDING_PAYMENT';
+    const initialOrderStatus = isCod ? 'PROCESSING' : 'PENDING_PAYMENT';
 
     const newOrder = {
       id: `ord_${sequentialId}`,
@@ -227,7 +230,7 @@ class OrderService {
       shipping_fee: shippingFee,
       subtotal,
       total,
-      currency: 'USD',
+      currency: CURRENCY,
       shipping_address: address.trim(),
       city: city.trim(),
       province: (province || '').trim(),
@@ -339,8 +342,10 @@ class OrderService {
     order.status = newStatus;
     order.updated_at = new Date().toISOString();
 
-    // If order transitions to PROCESSING or FORWARDED, automatically ensure payment is confirmed
-    if (newStatus === 'PROCESSING' || newStatus === 'FORWARDED_TO_MANUFACTURER' || newStatus === 'SHIPPED') {
+    // COD is collected on delivery; other methods are confirmed once the order moves forward
+    if (order.payment_method === 'cod') {
+      if (newStatus === 'DELIVERED') order.payment_status = 'PAID';
+    } else if (newStatus === 'PROCESSING' || newStatus === 'FORWARDED_TO_MANUFACTURER' || newStatus === 'SHIPPED') {
       order.payment_status = 'PAID';
     }
 
@@ -372,6 +377,8 @@ class OrderService {
     if (orderIndex === -1) return { error: 'not_found' };
 
     const order = all[orderIndex];
+    // Reloading the VNPay return page must not confirm or notify twice
+    if (order.payment_status === 'PAID') return { success: true, order, duplicate: true };
     order.payment_status = 'PAID';
     order.status = 'PROCESSING';
     order.updated_at = new Date().toISOString();
@@ -394,6 +401,27 @@ class OrderService {
       });
     } catch {}
 
+    return { success: true, order };
+  }
+
+  // ── VNPay returned an unsuccessful (but authentic) result ─────────────────────
+  markPaymentFailed(orderId, paymentDetails = {}) {
+    const all = this.getStoredOrders();
+    const numericId = parseInt(String(orderId).replace(/\D/g, ''), 10);
+    const order = all.find(
+      (o) => o.order_id === numericId || o.id === orderId || o.order_code === orderId
+    );
+    if (!order) return { error: 'not_found' };
+    if (order.payment_status === 'PAID') return { success: true, order };
+
+    order.status = 'PAYMENT_FAILED';
+    order.payment_status = 'FAILED';
+    order.updated_at = new Date().toISOString();
+    order.payment_attempts = [
+      ...(order.payment_attempts || []),
+      { failed_at: order.updated_at, ...paymentDetails },
+    ];
+    this.saveStoredOrders(all);
     return { success: true, order };
   }
 }

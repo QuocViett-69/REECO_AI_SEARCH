@@ -1,171 +1,93 @@
-// ─── Payment Service & VNPay Sandbox Abstraction ──────────────────────────────
-// Architecture: PaymentService -> PaymentProvider -> VNPaySandboxProvider
+// ─── Payment Service ──────────────────────────────────────────────────────────
+// Two methods: Cash on Delivery and VNPay (sandbox). VNPay URLs are signed by
+// the API (/payments/vnpay/*) so the hash secret never reaches the browser.
 
-export const BANK_TRANSFER_INFO = {
-  bankName: 'Techcombank (Vietnam Technological and Commercial Joint Stock Bank)',
-  accountName: 'CONG TY CO PHAN CONG NGHE VA THIET BI REECO',
-  accountNumber: '19036888999018',
-  branch: 'Tan Binh Branch - HCMC',
-  swiftCode: 'VTCBVNVX',
+const API_BASE_URL =
+  process.env.REACT_APP_API_URL || 'http://localhost:3000/api/v1';
+
+export const PAYMENT_METHODS = {
+  cod: {
+    id: 'cod',
+    name: 'Cash on Delivery (COD)',
+    description: 'Pay in cash when the order is delivered to you.',
+    provider: 'COD',
+  },
+  vnpay: {
+    id: 'vnpay',
+    name: 'VNPay',
+    description: 'ATM card, Visa / Mastercard, QR code or bank app via VNPay (sandbox).',
+    provider: 'VNPAY_SANDBOX',
+  },
 };
 
-// Abstract Base Payment Provider
-class PaymentProvider {
-  createPaymentUrl(_payment) {
-    throw new Error('createPaymentUrl must be implemented by subclass');
-  }
-  verifyCallback(_params) {
-    throw new Error('verifyCallback must be implemented by subclass');
-  }
+export const VNPAY_RETURN_PATH = '/payment/vnpay-return';
+
+// Orders created before COD/VNPay-only checkout may still hold old method ids.
+export function getPaymentMethodLabel(method) {
+  if (method === 'mastercard') return PAYMENT_METHODS.vnpay.name;
+  if (method === 'bank_transfer') return 'Bank Transfer';
+  return PAYMENT_METHODS[method]?.name || method;
 }
 
-// VNPay Sandbox Provider Implementation
-export class VNPaySandboxProvider extends PaymentProvider {
-  constructor(config = {}) {
-    super();
-    this.tmnCode = config.tmnCode || 'REECO001';
-    this.hashSecret = config.hashSecret || 'SANDBOX_HASH_SECRET_REECO';
-    this.vnpUrl = config.vnpUrl || 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
-  }
+// VNPay response codes shown to customers (vnp_ResponseCode).
+const VNPAY_MESSAGES = {
+  '07': 'Payment was deducted but flagged as suspicious. Please contact support.',
+  '09': 'Your card/account is not registered for Internet Banking.',
+  10: 'Card/account verification failed more than 3 times.',
+  11: 'The payment session expired. Please try again.',
+  12: 'Your card/account is locked.',
+  13: 'Incorrect OTP. Please try again.',
+  24: 'Payment was cancelled.',
+  51: 'Insufficient account balance.',
+  65: 'Daily transaction limit exceeded.',
+  75: 'The bank is under maintenance.',
+  79: 'Incorrect payment password entered too many times.',
+};
 
-  createPaymentUrl(payment) {
-    const { orderId, amount, orderInfo, returnUrl, ipnUrl } = payment;
-    const date = new Date();
-    const createDate = date.toISOString().replace(/[-:T.Z]/g, '').slice(0, 14);
-
-    // Convert amount to VND multiplier if needed (Standard VNPay Sandbox uses VND integer)
-    // For demo USD, we normalize: 1 USD ~ 25,400 VND or standard integer amount
-    const amountInCents = Math.round(amount * 100);
-
-    const vnpParams = {
-      vnp_Version: '2.1.0',
-      vnp_Command: 'pay',
-      vnp_TmnCode: this.tmnCode,
-      vnp_Locale: 'vn',
-      vnp_CurrCode: 'VND',
-      vnp_TxnRef: `REECO_${orderId}_${Date.now()}`,
-      vnp_OrderInfo: orderInfo || `Thanh toan don hang REECO #${orderId}`,
-      vnp_OrderType: 'other',
-      vnp_Amount: amountInCents,
-      vnp_ReturnUrl: returnUrl || (typeof window !== 'undefined' ? window.location?.origin : 'http://localhost:3000'),
-      vnp_IpAddr: '127.0.0.1',
-      vnp_CreateDate: createDate,
-      vnp_IpnUrl: ipnUrl || '',
-    };
-
-    const searchParams = new URLSearchParams(vnpParams);
-    // Deterministic mock signature for sandbox
-    const signature = `mock_sig_${orderId}_${amountInCents}`;
-    searchParams.set('vnp_SecureHash', signature);
-
-    return {
-      paymentUrl: `${this.vnpUrl}?${searchParams.toString()}`,
-      transactionRef: vnpParams.vnp_TxnRef,
-      provider: 'VNPAY_SANDBOX',
-    };
-  }
-
-  verifyCallback(params) {
-    if (!params) return { success: false, code: '99', message: 'No callback parameters provided' };
-
-    const responseCode = params.vnp_ResponseCode || params.responseCode;
-    const txnRef = params.vnp_TxnRef || params.transactionRef;
-
-    // In VNPay responseCode '00' indicates successful transaction
-    if (responseCode === '00' || responseCode === 'SUCCESS') {
-      return {
-        success: true,
-        code: '00',
-        message: 'Giao dich thanh cong qua VNPay Sandbox',
-        transactionId: params.vnp_TransactionNo || `VNP_${Date.now()}`,
-        transactionRef: txnRef,
-        provider: 'VNPAY_SANDBOX',
-      };
-    }
-
-    return {
-      success: false,
-      code: responseCode || '97',
-      message: 'Giao dich khong thanh cong hoac bi huy bo boi nguoi dung',
-      transactionRef: txnRef,
-      provider: 'VNPAY_SANDBOX',
-    };
-  }
+export function getVnpayMessage(code) {
+  return VNPAY_MESSAGES[code] || 'VNPay payment was not successful.';
 }
 
-// Payment Service Orchestrator
 class PaymentService {
-  constructor() {
-    this.providers = {
-      vnpay: new VNPaySandboxProvider(),
-    };
-    this.processedCallbacks = new Set();
-  }
-
-  createPayment({ orderId, amount, method, customer }) {
+  createPayment({ orderId, amount, method }) {
     if (!orderId || !amount) {
       throw new Error('orderId and amount are required to initialize payment');
     }
-
-    if (method === 'bank_transfer') {
-      return {
-        status: 'PENDING_PAYMENT',
-        method: 'bank_transfer',
-        provider: 'MANUAL_BANK_TRANSFER',
-        amount,
-        bankDetails: {
-          ...BANK_TRANSFER_INFO,
-          transferReference: `REECO-${orderId}`,
-        },
-      };
-    }
-
-    if (method === 'mastercard' || method === 'vnpay') {
-      const vnpayProvider = this.providers.vnpay;
-      const paymentIntent = vnpayProvider.createPaymentUrl({
-        orderId,
-        amount,
-        orderInfo: `Thanh toan don hang REECO #${orderId} - Khach hang: ${customer?.name || 'Customer'}`,
-      });
-
-      return {
-        status: 'PENDING_PAYMENT',
-        method: 'mastercard',
-        provider: 'VNPAY_SANDBOX',
-        amount,
-        paymentUrl: paymentIntent.paymentUrl,
-        transactionRef: paymentIntent.transactionRef,
-      };
-    }
-
-    throw new Error(`Unsupported payment method: ${method}`);
-  }
-
-  verifyPaymentCallback(params) {
-    const callbackKey = `${params.vnp_TxnRef || params.transactionRef}_${params.vnp_ResponseCode || params.responseCode}`;
-
-    // Idempotency check: Repeated callbacks must not create duplicate transitions
-    const isDuplicate = this.processedCallbacks.has(callbackKey);
-    if (!isDuplicate) {
-      this.processedCallbacks.add(callbackKey);
-    }
-
-    const verification = this.providers.vnpay.verifyCallback(params);
+    const selected = PAYMENT_METHODS[method];
+    if (!selected) throw new Error(`Unsupported payment method: ${method}`);
     return {
-      ...verification,
-      isDuplicate,
-      payment: {
-        status: verification.success ? 'PAID' : 'FAILED',
-        provider: 'VNPAY_SANDBOX',
-        transactionId: verification.transactionId || null,
-        transactionRef: verification.transactionRef || null,
-      },
-      error: verification.success ? null : 'payment_failed',
+      status: 'PENDING_PAYMENT',
+      method: selected.id,
+      provider: selected.provider,
+      amount,
     };
   }
 
-  verifyVNPayCallback(params) {
-    return this.verifyPaymentCallback(params);
+  async createVnpayPaymentUrl(order) {
+    if (order.currency && order.currency !== 'VND') {
+      throw new Error('VNPay only accepts orders priced in VND. Please place a new order.');
+    }
+    const res = await fetch(`${API_BASE_URL}/payments/vnpay/create-url`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ order_id: String(order.order_id), amount_vnd: order.total }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(
+        res.status === 503
+          ? 'VNPay is not configured on the server yet.'
+          : data.message || 'Could not start VNPay payment.'
+      );
+    }
+    return data; // { payment_url, txn_ref, amount_vnd }
+  }
+
+  // search: the query string VNPay appended to the return URL.
+  async verifyVnpayReturn(search) {
+    const res = await fetch(`${API_BASE_URL}/payments/vnpay/verify${search}`);
+    if (!res.ok) throw new Error('Could not verify VNPay payment.');
+    return res.json(); // { valid, success, order_id, transaction_no, response_code, ... }
   }
 }
 

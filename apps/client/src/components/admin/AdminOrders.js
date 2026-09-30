@@ -20,6 +20,7 @@ import {
   Building2,
   MapPin,
 } from 'lucide-react';
+import { getPaymentMethodLabel } from '../../services/paymentService';
 
 export function AdminOrders({ onViewOrder }) {
   const { user, isAuthenticated } = useAuth();
@@ -296,7 +297,7 @@ export function AdminOrders({ onViewOrder }) {
                   <span>Payment Information</span>
                 </h3>
                 <div style={{ fontSize: 13, color: 'var(--text-2, #ccc)', lineHeight: 1.6 }}>
-                  <div><strong>Method:</strong> {selectedOrder.payment_method}</div>
+                  <div><strong>Method:</strong> {getPaymentMethodLabel(selectedOrder.payment_method)}</div>
                   <div>
                     <strong>Status:</strong>{' '}
                     <span style={{ color: selectedOrder.payment_status === 'PAID' ? '#00c873' : '#ffb020', fontWeight: 700 }}>

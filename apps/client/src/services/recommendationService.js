@@ -73,7 +73,7 @@ class RecommendationService {
         name: item.model,
         image: null,
         price: getProductPrice(item.model, item.model),
-        currency: 'USD',
+        currency: 'VND',
         reason: item.reason,
         type: item.type,
       }));
@@ -90,7 +90,7 @@ class RecommendationService {
       name: fallbackModel,
       image: null,
       price: getProductPrice(fallbackModel, fallbackModel),
-      currency: 'USD',
+      currency: 'VND',
       reason: 'Complementary instrument for Campbell stations',
       type: 'complementary',
     }));
@@ -106,7 +106,7 @@ class RecommendationService {
         name: item.name || item.name_en || model,
         image: item.image || item.image_url || null,
         price,
-        currency: 'USD',
+        currency: 'VND',
         reason: item.reason || 'Compatible accessory',
         type: item.type || 'compatible',
       };

@@ -55,7 +55,7 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
         name: item.name,
         image: item.image,
         price: item.price,
-        currency: item.currency || 'USD',
+        currency: item.currency || 'VND',
       },
       1
     );

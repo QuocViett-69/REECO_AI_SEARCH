@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
 import { orderService, SHIPPING_METHODS } from '../../services/orderService';
-import { BANK_TRANSFER_INFO } from '../../services/paymentService';
+import { paymentService, PAYMENT_METHODS } from '../../services/paymentService';
 import { formatPrice } from '../../services/commercialService';
 import {
   Lock,
   ArrowLeft,
   Truck,
   CreditCard,
-  Building2,
+  Banknote,
   CheckCircle2,
   AlertCircle,
   ShieldCheck,
@@ -48,13 +48,10 @@ export function CheckoutPage({ onNavigate }) {
   });
 
   const [shippingMethod, setShippingMethod] = useState('standard');
-  const [paymentMethod, setPaymentMethod] = useState('bank_transfer');
+  const [paymentMethod, setPaymentMethod] = useState('cod');
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
-
-  // VNPay Sandbox Simulation Modal
-  const [vnpayModal, setVnpayModal] = useState(null);
 
   // Sync user defaults when auth loads
   useEffect(() => {
@@ -114,7 +111,7 @@ export function CheckoutPage({ onNavigate }) {
   }
 
   // If cart is empty
-  if (items.length === 0 && !vnpayModal) {
+  if (items.length === 0) {
     return (
       <div className="page-container" style={{ maxWidth: 600, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
         <div style={{ padding: 40, borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb' }}>
@@ -163,7 +160,7 @@ export function CheckoutPage({ onNavigate }) {
     return Object.keys(errors).length === 0;
   };
 
-  const handlePlaceOrder = (e) => {
+  const handlePlaceOrder = async (e) => {
     e.preventDefault();
     setServerError(null);
 
@@ -182,45 +179,21 @@ export function CheckoutPage({ onNavigate }) {
         paymentMethod,
       });
 
-      if (paymentMethod === 'mastercard') {
-        // Open VNPay Sandbox Payment Gateway simulator
-        setVnpayModal({
-          order,
-          paymentUrl: order.payment_intent.paymentUrl,
-        });
-        setIsSubmitting(false);
-      } else {
-        // Bank transfer order created
-        clearCart();
-        setIsSubmitting(false);
-        if (onNavigate) {
-          onNavigate(`account-order:${order.order_id}`);
-        }
+      if (paymentMethod === 'vnpay') {
+        // The cart is cleared only after VNPay confirms payment (see VnpayReturnPage)
+        const { payment_url } = await paymentService.createVnpayPaymentUrl(order);
+        window.location.assign(payment_url);
+        return;
+      }
+
+      clearCart();
+      setIsSubmitting(false);
+      if (onNavigate) {
+        onNavigate(`account-order:${order.order_id}`);
       }
     } catch (err) {
       setIsSubmitting(false);
       setServerError(err.message || 'Failed to place order. Please try again.');
-    }
-  };
-
-  const handleVNPaySimulatePayment = (success = true) => {
-    if (!vnpayModal) return;
-    const { order } = vnpayModal;
-
-    if (success) {
-      orderService.markOrderAsPaid(order.order_id, {
-        provider: 'VNPAY_SANDBOX',
-        vnp_TransactionNo: `VNP_${Date.now()}`,
-        vnp_ResponseCode: '00',
-      });
-      clearCart();
-      setVnpayModal(null);
-      if (onNavigate) {
-        onNavigate(`account-order:${order.order_id}`);
-      }
-    } else {
-      setVnpayModal(null);
-      setServerError('VNPay Sandbox payment was cancelled by user.');
     }
   };
 
@@ -441,7 +414,7 @@ export function CheckoutPage({ onNavigate }) {
                           <span style={{ fontWeight: 600, color: '#111827', fontSize: 14 }}>{method.name}</span>
                         </div>
                         <span style={{ fontWeight: 700, color: '#0069e0', fontSize: 15 }}>
-                          ${method.fee}
+                          {formatPrice(method.fee)}
                         </span>
                       </div>
                       <span style={{ fontSize: 12, color: '#6b7280', paddingLeft: 24 }}>
@@ -461,56 +434,35 @@ export function CheckoutPage({ onNavigate }) {
               </h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 16 }}>
-                {/* Bank Transfer */}
-                <label style={paymentCardStyle(paymentMethod === 'bank_transfer')}>
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="bank_transfer"
-                    checked={paymentMethod === 'bank_transfer'}
-                    onChange={() => setPaymentMethod('bank_transfer')}
-                    style={{ marginTop: 4, accentColor: '#0069e0' }}
-                  />
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, color: '#111827', marginBottom: 4 }}>
-                      <Building2 size={16} color="#0069e0" />
-                      <span>Bank Transfer (Corporate / Wire Transfer)</span>
-                    </div>
-                    <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5 }}>
-                      Transfer directly to REECO corporate account. Order is confirmed upon receipt.
-                    </div>
-
-                    {paymentMethod === 'bank_transfer' && (
-                      <div style={{ marginTop: 12, padding: 12, borderRadius: 8, background: '#f9fafb', border: '1px solid #e5e7eb', fontSize: 12, color: '#535862', lineHeight: 1.6 }}>
-                        <div>• <strong>Bank:</strong> {BANK_TRANSFER_INFO.bankName}</div>
-                        <div>• <strong>Account Name:</strong> {BANK_TRANSFER_INFO.accountName}</div>
-                        <div>• <strong>Account Number:</strong> <code style={{ color: '#0069e0' }}>{BANK_TRANSFER_INFO.accountNumber}</code></div>
-                        <div>• <strong>Transfer Reference:</strong> <code style={{ color: '#0f9554' }}>REECO-[Order ID]</code> (Generated upon placing order)</div>
+                {Object.values(PAYMENT_METHODS).map((method) => {
+                  const Icon = method.id === 'cod' ? Banknote : CreditCard;
+                  return (
+                    <label key={method.id} style={paymentCardStyle(paymentMethod === method.id)}>
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value={method.id}
+                        checked={paymentMethod === method.id}
+                        onChange={() => setPaymentMethod(method.id)}
+                        style={{ marginTop: 4, accentColor: '#0069e0' }}
+                      />
+                      <div style={{ flex: 1 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, color: '#111827', marginBottom: 4 }}>
+                          <Icon size={16} color="#0069e0" />
+                          <span>{method.name}</span>
+                        </div>
+                        <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5 }}>
+                          {method.description}
+                        </div>
+                        {method.id === 'vnpay' && paymentMethod === 'vnpay' && (
+                          <div style={{ marginTop: 10, fontSize: 12, color: '#535862' }}>
+                            You will be redirected to VNPay to complete payment. The amount is charged in VND.
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                </label>
-
-                {/* Mastercard / VNPay */}
-                <label style={paymentCardStyle(paymentMethod === 'mastercard')}>
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="mastercard"
-                    checked={paymentMethod === 'mastercard'}
-                    onChange={() => setPaymentMethod('mastercard')}
-                    style={{ marginTop: 4, accentColor: '#0069e0' }}
-                  />
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, color: '#111827', marginBottom: 4 }}>
-                      <CreditCard size={16} color="#0069e0" />
-                      <span>Mastercard / Visa via VNPay Sandbox</span>
-                    </div>
-                    <div style={{ fontSize: 12, color: '#6b7280' }}>
-                      Secure online gateway processing via VNPay Sandbox environment.
-                    </div>
-                  </div>
-                </label>
+                    </label>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -585,7 +537,7 @@ export function CheckoutPage({ onNavigate }) {
               }}
             >
               <PackageCheck size={18} />
-              <span>{isSubmitting ? 'Processing Order...' : 'Place Official Order'}</span>
+              <span>{isSubmitting ? (paymentMethod === 'vnpay' ? 'Redirecting to VNPay...' : 'Processing Order...') : (paymentMethod === 'vnpay' ? 'Pay with VNPay' : 'Place Order (COD)')}</span>
             </button>
 
             {/* Trust Assurances */}
@@ -603,71 +555,6 @@ export function CheckoutPage({ onNavigate }) {
         </div>
       </form>
 
-      {/* VNPay Sandbox Simulator Modal */}
-      {vnpayModal && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0,0,0,0.5)',
-            backdropFilter: 'blur(6px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
-            padding: 20,
-          }}
-        >
-          <div style={{ maxWidth: 480, width: '100%', padding: 32, borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb', boxShadow: '0 24px 60px rgba(0,0,0,0.12)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-              <div style={{ padding: 10, borderRadius: 10, background: 'rgba(0, 105, 224, 0.08)', color: '#0069e0' }}>
-                <CreditCard size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827', margin: 0 }}>VNPay Sandbox Gateway</h3>
-                <span style={{ fontSize: 12, color: '#6b7280' }}>Order #{vnpayModal.order.order_id}</span>
-              </div>
-            </div>
-
-            <p style={{ fontSize: 13, color: '#535862', lineHeight: 1.6, marginBottom: 20 }}>
-              You are testing the <strong>VNPay Sandbox</strong> payment flow. In production, this redirects to VNPay's secure gateway.
-            </p>
-
-            <div style={{ padding: 14, borderRadius: 8, background: '#f9fafb', border: '1px solid #e5e7eb', marginBottom: 24, fontSize: 13 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                <span style={{ color: '#6b7280' }}>Order Total:</span>
-                <span style={{ color: '#0069e0', fontWeight: 700 }}>{formatPrice(vnpayModal.order.total)}</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#6b7280' }}>Merchant Code:</span>
-                <span style={{ color: '#111827' }}>REECO001</span>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: 10 }}>
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={() => handleVNPaySimulatePayment(false)}
-                style={{ flex: 1, padding: '10px', background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer' }}
-              >
-                Simulate Cancel
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={() => handleVNPaySimulatePayment(true)}
-                style={{ flex: 1, padding: '10px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
-              >
-                Simulate Success
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

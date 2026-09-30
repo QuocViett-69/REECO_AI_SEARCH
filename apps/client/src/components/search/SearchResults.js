@@ -268,7 +268,7 @@ export function SearchResults({
                     {/* Commercial Price & Availability */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 10 }}>
                       <div style={{ fontSize: 18, fontWeight: 700, color: '#171e2d' }}>
-                        {formatPrice(price, p.currency || 'USD')}
+                        {formatPrice(price, p.currency)}
                       </div>
                       <span
                         style={{

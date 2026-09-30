@@ -21,6 +21,7 @@ import { FavoriteButton } from '../commerce/FavoriteButton';
 import { RecommendationRow } from '../commerce/RecommendationRow';
 import { useCart } from '../../context/CartContext';
 import { groupSpecifications } from '../../services/specifications';
+import { formatPrice } from '../../services/commercialService';
 
 export function ProductDetail({
   model,
@@ -200,8 +201,7 @@ export function ProductDetail({
             <div className="commerce-panel__price-row">
               {product.price != null ? (
                 <div className="commerce-panel__price">
-                  ${product.price.toLocaleString()}
-                  <span className="commerce-panel__currency">{product.currency || 'USD'}</span>
+                  {formatPrice(product.price, product.currency)}
                 </div>
               ) : (
                 <div style={{ fontSize: 14, color: 'var(--text-3)' }}>Price available on order</div>

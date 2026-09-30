@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
-import { getProductPrice, enrichProductWithCommercial } from '../services/commercialService';
+import { getProductPrice, enrichProductWithCommercial, parseStoredItems, CURRENCY } from '../services/commercialService';
 
 const FavoriteContext = createContext(null);
 
@@ -16,7 +16,7 @@ export function FavoriteProvider({ children }) {
   const [favorites, setFavorites] = useState(() => {
     try {
       const stored = localStorage.getItem(GUEST_FAVORITES_KEY);
-      return stored ? JSON.parse(stored) : [];
+      return stored ? parseStoredItems(stored) : [];
     } catch {
       return [];
     }
@@ -27,10 +27,10 @@ export function FavoriteProvider({ children }) {
     if (isAuthenticated && user) {
       const userKey = `reeco_favorites_${user.username}`;
       const savedUserFavorites = localStorage.getItem(userKey);
-      const userFavItems = savedUserFavorites ? JSON.parse(savedUserFavorites) : [];
+      const userFavItems = savedUserFavorites ? parseStoredItems(savedUserFavorites) : [];
 
       const guestFavsRaw = localStorage.getItem(GUEST_FAVORITES_KEY);
-      const guestFavItems = guestFavsRaw ? JSON.parse(guestFavsRaw) : [];
+      const guestFavItems = guestFavsRaw ? parseStoredItems(guestFavsRaw) : [];
 
       if (guestFavItems.length > 0) {
         // Merge guest favorites into customer favorites
@@ -52,7 +52,7 @@ export function FavoriteProvider({ children }) {
       // Guest mode
       try {
         const stored = localStorage.getItem(GUEST_FAVORITES_KEY);
-        setFavorites(stored ? JSON.parse(stored) : []);
+        setFavorites(stored ? parseStoredItems(stored) : []);
       } catch {
         setFavorites([]);
       }
@@ -90,7 +90,7 @@ export function FavoriteProvider({ children }) {
           device_type: enriched.deviceType || enriched.device_type || 'Hardware',
           image: enriched.image || enriched.image_url || null,
           price: enriched.price || getProductPrice(productId, enriched.model),
-          currency: enriched.currency || 'USD',
+          currency: enriched.currency || CURRENCY,
           availability_label: enriched.availability_label || 'Available for order',
         },
       ];

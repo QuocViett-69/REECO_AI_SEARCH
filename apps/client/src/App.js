@@ -20,6 +20,8 @@ import { LoginPage } from './components/auth/LoginPage';
 import { CartPage } from './components/commerce/CartPage';
 import { CheckoutPage } from './components/commerce/CheckoutPage';
 import { OrderSuccessPage } from './components/commerce/OrderSuccessPage';
+import { VnpayReturnPage } from './components/commerce/VnpayReturnPage';
+import { VNPAY_RETURN_PATH } from './services/paymentService';
 
 // Account Pages
 import { FavoriteList } from './components/account/FavoriteList';
@@ -34,8 +36,15 @@ import { AdminOrders } from './components/admin/AdminOrders';
 
 import './index.css';
 
+// VNPay sends the browser back to VNPAY_RETURN_PATH?vnp_...; capture it once, then clean the URL.
+const vnpayReturnSearch =
+  typeof window !== 'undefined' && window.location.pathname === VNPAY_RETURN_PATH
+    ? window.location.search
+    : null;
+if (vnpayReturnSearch !== null) window.history.replaceState(null, '', '/');
+
 function AppInner() {
-  const [currentPage, setCurrentPage] = useState('search');
+  const [currentPage, setCurrentPage] = useState(vnpayReturnSearch !== null ? 'vnpay-return' : 'search');
   const [previousPage, setPreviousPage] = useState('search');
   const [currentDetailModel, setCurrentDetailModel] = useState(null);
   const [currentOrderId, setCurrentOrderId] = useState(null);
@@ -303,6 +312,11 @@ function AppInner() {
         {/* ── Order Success ──────────────────────────────────────────────────────── */}
         {currentPage === 'order-success' && (
           <OrderSuccessPage orderId={orderSuccessId} onNavigate={handleNavigate} />
+        )}
+
+        {/* ── VNPay Return ───────────────────────────────────────────────────────── */}
+        {currentPage === 'vnpay-return' && (
+          <VnpayReturnPage search={vnpayReturnSearch} onNavigate={handleNavigate} />
         )}
 
         {/* ── Account Dashboard ──────────────────────────────────────────────────── */}

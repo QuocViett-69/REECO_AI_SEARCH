@@ -31,6 +31,12 @@ export interface AppConfiguration {
     model: string;
     timeoutMs: number;
   };
+  vnpay: {
+    tmnCode: string;
+    hashSecret: string;
+    payUrl: string;
+    returnUrl: string;
+  };
 }
 
 const rerankerModel = 'BAAI/bge-reranker-v2-m3';
@@ -93,6 +99,16 @@ export function configuration(): AppConfiguration {
         'LLM_EXPLANATION_TIMEOUT_MS',
         process.env.LLM_EXPLANATION_TIMEOUT_MS ?? '20000',
       ),
+    },
+    vnpay: {
+      tmnCode: process.env.VNPAY_TMN_CODE ?? '',
+      hashSecret: process.env.VNPAY_HASH_SECRET ?? '',
+      payUrl:
+        process.env.VNPAY_PAY_URL ??
+        'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html',
+      returnUrl:
+        process.env.VNPAY_RETURN_URL ??
+        'http://localhost:5173/payment/vnpay-return',
     },
   };
 }

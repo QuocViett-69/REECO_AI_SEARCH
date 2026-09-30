@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
-import { getProductPrice, enrichProductWithCommercial } from '../services/commercialService';
+import { getProductPrice, enrichProductWithCommercial, parseStoredItems, CURRENCY } from '../services/commercialService';
 
 const CartContext = createContext(null);
 
@@ -16,7 +16,7 @@ export function CartProvider({ children }) {
   const [items, setItems] = useState(() => {
     try {
       const stored = localStorage.getItem(GUEST_CART_KEY);
-      return stored ? JSON.parse(stored) : [];
+      return stored ? parseStoredItems(stored) : [];
     } catch {
       return [];
     }
@@ -27,11 +27,11 @@ export function CartProvider({ children }) {
     if (isAuthenticated && user) {
       const userKey = `reeco_cart_${user.username}`;
       const savedUserCart = localStorage.getItem(userKey);
-      const userCartItems = savedUserCart ? JSON.parse(savedUserCart) : [];
+      const userCartItems = savedUserCart ? parseStoredItems(savedUserCart) : [];
 
       // Check if there are guest items to merge
       const guestCartRaw = localStorage.getItem(GUEST_CART_KEY);
-      const guestItems = guestCartRaw ? JSON.parse(guestCartRaw) : [];
+      const guestItems = guestCartRaw ? parseStoredItems(guestCartRaw) : [];
 
       if (guestItems.length > 0) {
         // Merge guest items into customer cart
@@ -56,7 +56,7 @@ export function CartProvider({ children }) {
       // Guest mode
       try {
         const stored = localStorage.getItem(GUEST_CART_KEY);
-        setItems(stored ? JSON.parse(stored) : []);
+        setItems(stored ? parseStoredItems(stored) : []);
       } catch {
         setItems([]);
       }
@@ -95,7 +95,7 @@ export function CartProvider({ children }) {
           device_type: enriched.deviceType || enriched.device_type || 'Hardware',
           image: enriched.image || enriched.image_url || null,
           price: enriched.price || getProductPrice(productId, enriched.model),
-          currency: enriched.currency || 'USD',
+          currency: enriched.currency || CURRENCY,
           availability_label: enriched.availability_label || 'Available for order',
           quantity: qty,
         },

@@ -3,6 +3,7 @@ import { Search, Eye, GitCompare, Check, SearchX, Loader, Tag } from 'lucide-rea
 import { getProductsApi } from '../../services/api';
 import { FavoriteButton } from '../commerce/FavoriteButton';
 import { AddToCartButton } from '../commerce/AddToCartButton';
+import { formatPrice } from '../../services/commercialService';
 
 export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
   const [allProducts, setAllProducts] = useState([]);
@@ -219,8 +220,7 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
                   <div className="product-card-commerce">
                     {p.price != null ? (
                       <div className="product-card-price">
-                        ${p.price.toLocaleString()}
-                        <span className="product-card-currency">{p.currency || 'USD'}</span>
+                        {formatPrice(p.price, p.currency)}
                       </div>
                     ) : null}
                     <div className="availability-badge">

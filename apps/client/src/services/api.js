@@ -1,4 +1,5 @@
 import { groupSpecifications } from './specifications';
+import { isSearchMockEnabled, mockSearch } from './mocks/searchMock';
 
 const API_BASE_URL =
   process.env.REACT_APP_API_URL || 'http://localhost:3000/api/v1';
@@ -18,7 +19,7 @@ function normalizeProduct(p) {
     status: p.status,
     // ── Commercial fields (product_commercial join) ──────────────────────────
     price: p.price ?? null,
-    currency: p.currency || 'USD',
+    currency: p.currency || 'VND',
     availability: p.availability_status || p.availability || 'available_for_order',
     is_purchasable: p.is_purchasable !== false,
   };
@@ -79,7 +80,7 @@ function normalizeProductDetail(data) {
     important_specifications: data.important_specifications || [],
     // ── Commercial fields ─────────────────────────────────────────────────────
     price: p.price ?? data.commercial?.price ?? null,
-    currency: p.currency || data.commercial?.currency || 'USD',
+    currency: p.currency || data.commercial?.currency || 'VND',
     availability: p.availability_status || data.commercial?.availability_status || 'available_for_order',
     is_purchasable: p.is_purchasable !== false,
   };
@@ -135,11 +136,17 @@ export async function getProductDetailApi(productIdOrModel) {
 // The API generates explanations from product evidence; the client only displays them.
 export async function searchProductsApi(query, limit = 10, context = null) {
   try {
-    const res = await fetch(`${API_BASE_URL}/search`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query, limit, explain: true, ...(context && { context }) }),
-    });
+    const res = isSearchMockEnabled
+      ? await mockSearch(query, limit, context).then(({ status, body }) => ({
+          status,
+          ok: status >= 200 && status < 300,
+          json: async () => body,
+        }))
+      : await fetch(`${API_BASE_URL}/search`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query, limit, explain: true, ...(context && { context }) }),
+        });
     if (res.status === 400) {
       const errData = await res.json().catch(() => ({}));
       return {

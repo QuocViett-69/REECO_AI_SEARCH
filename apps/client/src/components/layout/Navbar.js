@@ -7,6 +7,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { useFavorite } from '../../context/FavoriteContext';
 import { notificationService } from '../../services/notificationService';
+import { formatPrice } from '../../services/commercialService';
 
 export function Navbar({ currentPage, onNavigate, compareCount }) {
   const { user, isAuthenticated, isAdmin, logout } = useAuth();
@@ -120,13 +121,13 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
                               <div className="cart-drawer__item-model">{item.model}</div>
                               <div style={{ fontSize: 11, color: 'var(--text-3)' }}>×{item.quantity}</div>
                             </div>
-                            <div style={{ fontSize: 13, fontWeight: 700, flexShrink: 0 }}>${((item.price || 0) * item.quantity).toLocaleString()}</div>
+                            <div style={{ fontSize: 13, fontWeight: 700, flexShrink: 0 }}>{formatPrice((item.price || 0) * item.quantity, item.currency)}</div>
                           </div>
                         ))}
                         {cartItems.length > 3 && <div className="cart-drawer__more">+{cartItems.length - 3} more</div>}
                       </div>
                       <div className="cart-drawer__footer">
-                        <div className="cart-drawer__subtotal"><span>Subtotal</span><span>${cartSubtotal.toLocaleString()}</span></div>
+                        <div className="cart-drawer__subtotal"><span>Subtotal</span><span>{formatPrice(cartSubtotal)}</span></div>
                         <button type="button" className="btn btn-secondary" style={{ width: '100%', marginBottom: 6 }} onClick={() => nav('cart')}>View Cart</button>
                         <button type="button" className="btn btn-primary" style={{ width: '100%' }} onClick={() => nav('checkout')}>Checkout</button>
                       </div>

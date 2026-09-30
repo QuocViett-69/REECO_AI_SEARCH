@@ -1,7 +1,7 @@
-import { getProductPrice, getCommercialData, formatPrice } from './services/commercialService';
+import { getProductPrice, getCommercialData, formatPrice, parseStoredItems } from './services/commercialService';
 import { DEMO_CREDENTIALS, authenticateUser } from './services/authService';
 import { orderService, SHIPPING_METHODS, ORDER_STATUSES, calculateEstimatedDelivery } from './services/orderService';
-import { paymentService, BANK_TRANSFER_INFO } from './services/paymentService';
+import { paymentService, getPaymentMethodLabel } from './services/paymentService';
 import { notificationService, NOTIFICATION_TYPES } from './services/notificationService';
 import { recommendationService } from './services/recommendationService';
 
@@ -15,10 +15,10 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
       name: 'Soil Water Content Reflectometer',
     };
 
-    test('price is correctly determined and formatted for CS655 ($520)', () => {
+    test('price is correctly determined and formatted for CS655 (13.210.000 ₫)', () => {
       const price = getProductPrice(sampleProduct.product_id, sampleProduct.model);
-      expect(price).toBe(520);
-      expect(formatPrice(price)).toBe('$520');
+      expect(price).toBe(13_210_000);
+      expect(formatPrice(price)).toMatch(/^13\.210\.000\s₫$/);
     });
 
     test('availability is displayed as "Available for order" and purchasable', () => {
@@ -63,9 +63,9 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
 
   // ── 3. Part 2: Shipping & Delivery Calculation ──────────────────────────────
   describe('Part 2 - Shipping Methods & Delivery Estimation', () => {
-    test('Standard shipping fee is $10 and delivery is 7–10 days', () => {
+    test('Standard shipping fee is 250,000 VND and delivery is 7–10 days', () => {
       const standard = SHIPPING_METHODS.standard;
-      expect(standard.fee).toBe(10);
+      expect(standard.fee).toBe(250_000);
       expect(standard.deliveryDaysMin).toBe(7);
       expect(standard.deliveryDaysMax).toBe(10);
 
@@ -75,9 +75,9 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
       expect(est.from < est.to).toBe(true);
     });
 
-    test('Express shipping fee is $30 and delivery is 2–3 days', () => {
+    test('Express shipping fee is 750,000 VND and delivery is 2–3 days', () => {
       const express = SHIPPING_METHODS.express;
-      expect(express.fee).toBe(30);
+      expect(express.fee).toBe(750_000);
       expect(express.deliveryDaysMin).toBe(2);
       expect(express.deliveryDaysMax).toBe(3);
 
@@ -110,8 +110,8 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
     };
 
     const mockItems = [
-      { product_id: 'CSI_CS655', model: 'CS655', product_name: 'Water Content Reflectometer', price: 520, quantity: 2 },
-      { product_id: 'CSI_CR300', model: 'CR300', product_name: 'Compact Measurement Datalogger', price: 680, quantity: 1 },
+      { product_id: 'CSI_CS655', model: 'CS655', product_name: 'Water Content Reflectometer', price: 13_210_000, quantity: 2 },
+      { product_id: 'CSI_CR300', model: 'CR300', product_name: 'Compact Measurement Datalogger', price: 17_270_000, quantity: 1 },
     ];
 
     test('creates order with sequential order ID incrementing', () => {
@@ -120,7 +120,7 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
         items: mockItems,
         shippingInfo: mockShippingInfo,
         shippingMethod: 'standard',
-        paymentMethod: 'bank_transfer',
+        paymentMethod: 'cod',
       });
 
       const order2 = orderService.createOrder({
@@ -128,7 +128,7 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
         items: mockItems,
         shippingInfo: mockShippingInfo,
         shippingMethod: 'express',
-        paymentMethod: 'mastercard',
+        paymentMethod: 'vnpay',
       });
 
       expect(typeof order1.order_id).toBe('number');
@@ -143,12 +143,13 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
         items: mockItems,
         shippingInfo: mockShippingInfo,
         shippingMethod: 'standard',
-        paymentMethod: 'bank_transfer',
+        paymentMethod: 'cod',
       });
 
-      expect(order.subtotal).toBe(1720); // 520*2 + 680
-      expect(order.shipping_fee).toBe(10);
-      expect(order.total).toBe(1730);
+      expect(order.subtotal).toBe(43_690_000); // 13,210,000*2 + 17,270,000
+      expect(order.shipping_fee).toBe(250_000);
+      expect(order.total).toBe(43_940_000);
+      expect(order.currency).toBe('VND');
     });
 
     test('creates immutable order item snapshots with historical unit price', () => {
@@ -157,14 +158,14 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
         items: mockItems,
         shippingInfo: mockShippingInfo,
         shippingMethod: 'standard',
-        paymentMethod: 'bank_transfer',
+        paymentMethod: 'cod',
       });
 
       expect(order.items.length).toBe(2);
       expect(order.items[0].model).toBe('CS655');
-      expect(order.items[0].unit_price).toBe(520);
+      expect(order.items[0].unit_price).toBe(13_210_000);
       expect(order.items[0].quantity).toBe(2);
-      expect(order.items[0].line_total).toBe(1040);
+      expect(order.items[0].line_total).toBe(26_420_000);
     });
   });
 
@@ -219,50 +220,63 @@ describe('REECO Customer Commerce - Part 1, Part 2 & Part 3 Suite', () => {
     });
   });
 
-  // ── 6. Part 2: Payment Gateway & VNPay Flow ─────────────────────────────────
-  describe('Part 2 - Payment Gateway & VNPay Sandbox Flow', () => {
-    test('creates payment intent with correct VNPay URL structure', () => {
-      const intent = paymentService.createPayment({
-        orderId: 1005,
-        amount: 1050,
-        method: 'mastercard',
-        customer: { name: 'Hai Tran', email: 'haitran@example.com' },
-      });
+  // ── 6. Part 2: Payment Methods (COD + VNPay) ────────────────────────────
+  describe('Part 2 - Payment Methods: COD & VNPay Sandbox', () => {
+    const customer = { username: 'haitran', role: 'customer' };
+    const items = [{ product_id: 'CSI_CS655', model: 'CS655', price: 13_210_000, currency: 'VND', quantity: 1 }];
+    const shippingInfo = {
+      fullName: 'Hai Tran', email: 'haitran@example.com', phone: '+84 908 123 456',
+      address: '128 Nguyen Van Thu', city: 'Ho Chi Minh City',
+    };
 
-      expect(intent.provider).toBe('VNPAY_SANDBOX');
-      expect(intent.amount).toBe(1050);
-      expect(intent.paymentUrl).toContain('sandbox.vnpayment.vn');
-      expect(intent.paymentUrl).toContain('REECO_1005');
+    test('only COD and VNPay are accepted', () => {
+      expect(paymentService.createPayment({ orderId: 1, amount: 10, method: 'cod' }).provider).toBe('COD');
+      expect(paymentService.createPayment({ orderId: 1, amount: 10, method: 'vnpay' }).provider).toBe('VNPAY_SANDBOX');
+      expect(() => paymentService.createPayment({ orderId: 1, amount: 10, method: 'bank_transfer' })).toThrow();
+      expect(() => paymentService.createPayment({ orderId: 1, amount: 10, method: 'mastercard' })).toThrow();
     });
 
-    test('verifies VNPay callback and handles repeated callbacks idempotently', () => {
-      const vnpParams = {
-        vnp_TxnRef: 'REECO_1005_9999',
-        vnp_Amount: '105000',
-        vnp_ResponseCode: '00',
-        vnp_TransactionNo: 'VNP_TEST_99999',
-      };
+    test('COD order is processed immediately and paid on delivery', () => {
+      const order = orderService.createOrder({ customer, items, shippingInfo, paymentMethod: 'cod' });
+      expect(order.status).toBe('PROCESSING');
+      expect(order.payment_status).toBe('COD_PENDING');
 
-      const firstCallback = paymentService.verifyVNPayCallback(vnpParams);
-      expect(firstCallback.success).toBe(true);
-      expect(firstCallback.isDuplicate).toBe(false);
-      expect(firstCallback.payment.status).toBe('PAID');
-
-      const duplicateCallback = paymentService.verifyVNPayCallback(vnpParams);
-      expect(duplicateCallback.success).toBe(true);
-      expect(duplicateCallback.isDuplicate).toBe(true);
+      const admin = { username: 'reeco', role: 'admin' };
+      expect(orderService.updateOrderStatus(order.order_id, 'SHIPPED', admin).order.payment_status).toBe('COD_PENDING');
+      expect(orderService.updateOrderStatus(order.order_id, 'DELIVERED', admin).order.payment_status).toBe('PAID');
     });
 
-    test('handles failed VNPay transactions correctly without false success', () => {
-      const vnpFailedParams = {
-        vnp_TxnRef: 'REECO_1006_9999',
-        vnp_Amount: '50000',
-        vnp_ResponseCode: '24',
-      };
+    test('VNPay order waits for payment, and confirming twice is idempotent', () => {
+      const order = orderService.createOrder({ customer, items, shippingInfo, paymentMethod: 'vnpay' });
+      expect(order.status).toBe('PENDING_PAYMENT');
+      expect(order.payment_status).toBe('PENDING_PAYMENT');
 
-      const failedResult = paymentService.verifyVNPayCallback(vnpFailedParams);
-      expect(failedResult.success).toBe(false);
-      expect(failedResult.payment.status).toBe('FAILED');
+      const first = orderService.markOrderAsPaid(order.order_id, { vnp_ResponseCode: '00' });
+      expect(first.order.payment_status).toBe('PAID');
+      expect(first.duplicate).toBeUndefined();
+      expect(orderService.markOrderAsPaid(order.order_id, { vnp_ResponseCode: '00' }).duplicate).toBe(true);
+    });
+
+    test('failed VNPay payment marks order failed but never downgrades a paid order', () => {
+      const order = orderService.createOrder({ customer, items, shippingInfo, paymentMethod: 'vnpay' });
+      const failed = orderService.markPaymentFailed(order.order_id, { vnp_ResponseCode: '24' });
+      expect(failed.order.status).toBe('PAYMENT_FAILED');
+      expect(failed.order.payment_status).toBe('FAILED');
+
+      orderService.markOrderAsPaid(order.order_id);
+      expect(orderService.markPaymentFailed(order.order_id).order.payment_status).toBe('PAID');
+    });
+
+    test('cart items saved in USD are re-priced in VND', () => {
+      const [item] = parseStoredItems(JSON.stringify([{ product_id: 'CSI_CS655', model: 'CS655', price: 520, currency: 'USD', quantity: 1 }]));
+      expect(item.price).toBe(13_210_000);
+      expect(item.currency).toBe('VND');
+    });
+
+    test('legacy payment method ids still render a label', () => {
+      expect(getPaymentMethodLabel('mastercard')).toBe('VNPay');
+      expect(getPaymentMethodLabel('bank_transfer')).toBe('Bank Transfer');
+      expect(getPaymentMethodLabel('cod')).toBe('Cash on Delivery (COD)');
     });
   });
 
