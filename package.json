@@ -36,6 +36,7 @@
     "supabase:audit-specifications": "node scripts/supabase/audit-specifications.mjs",
     "supabase:dry-run": "node scripts/supabase/import-data-foundation.mjs --dry-run",
     "supabase:test:local": "node scripts/supabase/test-data-foundation-local.mjs",
+    "demo:seed": "node --env-file=apps/api/.env scripts/demo/seed-demo.mjs",
     "embeddings:test": "npm run build:api && node --test scripts/create-embeddings/*.test.mjs",
     "embeddings:smoke": "npm run build:api && node scripts/create-embeddings/smoke.mjs",
     "embeddings:backfill": "npm run build:api && node scripts/create-embeddings/backfill.mjs",
