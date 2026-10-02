@@ -17,6 +17,21 @@ import { FavoriteButton } from '../commerce/FavoriteButton';
 import { AddToCartButton } from '../commerce/AddToCartButton';
 import { formatPrice, getProductPrice } from '../../services/commercialService';
 
+const evidenceLabels = {
+  model: ['Model', 'Model'],
+  measurements: ['Measures', 'Đại lượng đo'],
+  capabilities: ['Capabilities', 'Khả năng'],
+  applications: ['Applications', 'Ứng dụng'],
+  'taxonomy.device_type': ['Device type', 'Loại thiết bị'],
+  'taxonomy.category': ['Category', 'Danh mục'],
+  supported_protocols: ['Supported interface', 'Giao tiếp hỗ trợ'],
+  unsupported_protocols: ['Unsupported interface', 'Giao tiếp không hỗ trợ'],
+  operating_temperature_range: ['Operating range', 'Dải hoạt động'],
+  temperature_measurement_range: ['Measurement range', 'Dải đo'],
+  measurement_temperature_range: ['Measurement range', 'Dải đo'],
+  ingress_protection: ['Environmental protection', 'Bảo vệ môi trường'],
+};
+
 // ─── Parse a matched_feature string into a human-readable chip ────────────────
 function parseFeatureChip(feature) {
   if (!feature) return null;
@@ -292,6 +307,13 @@ export function SearchResults({
                     <div className="label">
                       <Check size={14} />
                       {p.explanation ? 'Why this result' : 'Matched features'}
+                      {p.explanation?.source && (
+                        <span className="explanation-source">
+                          {p.explanation.language === 'vi'
+                            ? p.explanation.source === 'llm' ? 'AI hỗ trợ diễn đạt' : 'Dựa trên dữ liệu'
+                            : p.explanation.source === 'llm' ? 'AI-assisted wording' : 'Product evidence'}
+                        </span>
+                      )}
                     </div>
                     {p.explanation && <div className="text">{p.explanation.text}</div>}
                     {(p.explanation?.evidence?.length > 0 || (!p.explanation && features.length > 0)) && (
@@ -299,7 +321,7 @@ export function SearchResults({
                         {p.explanation?.evidence?.map((item, index) => (
                           <div key={`${item.field}-${index}`} className="matched-spec" title={item.source}>
                             <Check size={13} />
-                            {item.field.replaceAll('_', ' ')}: {item.value}
+                            {evidenceLabels[item.field]?.[p.explanation.language === 'vi' ? 1 : 0] || item.field.replaceAll('_', ' ')}: {item.value}
                           </div>
                         ))}
                         {!p.explanation && features.slice(0, 5).map((f) => (

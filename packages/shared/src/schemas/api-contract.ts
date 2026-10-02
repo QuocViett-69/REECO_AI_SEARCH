@@ -146,6 +146,7 @@ export const SearchResultSchema = z
       .object({
         text: z.string().min(1),
         language: z.enum(['en', 'vi']),
+        source: z.enum(['rule', 'llm']).optional(),
         evidence: z.array(
           z.object({
             source: z.enum(['products', 'product_document', 'normalized_spec']),

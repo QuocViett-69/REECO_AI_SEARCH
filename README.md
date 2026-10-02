@@ -122,6 +122,7 @@ The application integrates with the VNPay Sandbox payment gateway:
   - `99`: Unknown error
 
 Run VNPay automated test suite:
+
 ```bash
 node --test --env-file=apps/api/.env scripts/payments/vnpay.test.mjs
 ```
@@ -138,7 +139,6 @@ npm run build
 npm run lint
 ```
 
-
 ## Orders/payment merge setup
 
 Apply `supabase/migrations/20261001000000_commerce_foundation.sql` and run
@@ -150,11 +150,17 @@ Login requires a real Supabase token; generated demo tokens are rejected.
 Configure `VNPAY_TMN_CODE`, `VNPAY_HASH_SECRET`, and `VNPAY_RETURN_URL` on the API.
 
 Offline merge checks (no database writes):
+
 ```bash
 npm run build
 npm run test:client -- --runInBand
 node --test scripts/payments/vnpay-signing.test.mjs scripts/payments/merge-regression.test.mjs
 ```
+
 The payment and notification integration suites write test rows; run them only
 against a disposable/test database. API lint currently reports explicit `any`
 types in the added order/notification modules and one existing admin controller.
+
+VD:
+
+"bây giờ hồ cá tôi đang bị bẩn tôi muốn cải thiện chất lượng nước nên dùng thiết bị gì"

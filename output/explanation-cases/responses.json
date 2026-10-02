@@ -1,0 +1,494 @@
+[
+  {
+    "id": "TC-WATER-001",
+    "language": "vi",
+    "query": "Hồ cá của tôi đang bị bẩn và nước ngày càng đục, tôi nên dùng thiết bị gì để theo dõi chất lượng nước?",
+    "status": 200,
+    "latencyMs": 7035,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Hồ cá của tôi đang bị bẩn và nước ngày càng đục, tôi nên dùng thiết bị gì để theo dõi chất lượng nước?",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_CLARIVUE10",
+          "model": "ClariVue10",
+          "name_en": "ClariVUE™ 10",
+          "name_vi": "Cảm biến độ đục ClariVUE™ 10",
+          "category": "Sensors",
+          "device_type": "Turbidity Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13165",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.488408062336448,
+            "hybrid": 0.01639344262295082,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "ClariVue10 đo độ đục: nếu nước hồ bị đục, số đo giúp theo dõi tình trạng nước và so sánh trước/sau xử lý. Cảm biến không lọc hoặc làm sạch nước; “nước bẩn” chưa đủ để xác định nguyên nhân. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Turbidity Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ đục"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS511",
+          "model": "CS511",
+          "name_en": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Dissolved Oxygen Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/5553",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.379124199621809,
+            "hybrid": 0.015873015873015872,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS511 đo oxy hòa tan, giúp kiểm tra thêm một chỉ số của nước hồ. Nước bẩn không đồng nghĩa thiếu oxy; thiết bị này không làm sạch nước hoặc cấp oxy. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Dissolved Oxygen Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Oxy hòa tan"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-WATER-001",
+    "language": "en",
+    "query": "My fish pond is getting dirty and the water is becoming increasingly turbid. What device should I use to monitor water quality?",
+    "status": 200,
+    "latencyMs": 7071,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "My fish pond is getting dirty and the water is becoming increasingly turbid. What device should I use to monitor water quality?",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_CLARIVUE10",
+          "model": "ClariVue10",
+          "name_en": "ClariVUE™ 10",
+          "name_vi": "Cảm biến độ đục ClariVUE™ 10",
+          "category": "Sensors",
+          "device_type": "Turbidity Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13165",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.538847973920886,
+            "hybrid": 0.01639344262295082,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "ClariVue10 measures turbidity: if the water is cloudy, readings help track its condition before and after treatment. The sensor does not filter or clean water; dirty water alone does not establish the cause. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Turbidity Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Turbidity"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS511",
+          "model": "CS511",
+          "name_en": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Dissolved Oxygen Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/5553",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.411523911811211,
+            "hybrid": 0.015873015873015872,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS511 measures dissolved oxygen, providing another pond-water indicator. Dirty water does not establish low oxygen; this device does not clean or aerate water. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Dissolved Oxygen Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Dissolved Oxygen"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-WATER-002",
+    "language": "vi",
+    "query": "Tôi muốn biết nước trong hồ có đang trở nên đục hơn theo thời gian hay không, nên dùng cảm biến nào?",
+    "status": 200,
+    "latencyMs": 1118,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Tôi muốn biết nước trong hồ có đang trở nên đục hơn theo thời gian hay không, nên dùng cảm biến nào?",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_CLARIVUE10",
+          "model": "ClariVue10",
+          "name_en": "ClariVUE™ 10",
+          "name_vi": "Cảm biến độ đục ClariVUE™ 10",
+          "category": "Sensors",
+          "device_type": "Turbidity Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13165",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.588236629962921,
+            "hybrid": 0.01639344262295082,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "ClariVue10 đo độ đục: nếu nước hồ bị đục, số đo giúp theo dõi tình trạng nước và so sánh trước/sau xử lý. Cảm biến không lọc hoặc làm sạch nước; “nước bẩn” chưa đủ để xác định nguyên nhân. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ đục"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CRS451_WN",
+          "model": "CRS451-WN",
+          "name_en": "CRS451 Stainless-Steel Water-Level Recording Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Water Level Recording Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3583",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.518251180648804,
+            "hybrid": 0.016129032258064516,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Danh mục ghi nhận đây là Water Level Recording Sensor; chưa có bằng chứng cụ thể hơn cho truy vấn.",
+            "language": "vi",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Water Level Recording Sensor"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS456",
+          "model": "CS456",
+          "name_en": "CS456",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Water-Level Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/8854",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.503468588097948,
+            "hybrid": 0.015873015873015872,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Danh mục ghi nhận đây là Water-Level Sensor; chưa có bằng chứng cụ thể hơn cho truy vấn.",
+            "language": "vi",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Water-Level Sensor"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_RANGEVUE30",
+          "model": "RangeVue30",
+          "name_en": "RangeVue™30",
+          "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+          "category": "Sensors",
+          "device_type": "Water Level, Stage, and Flow Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.487721652524374,
+            "hybrid": 0.015625,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Danh mục ghi nhận đây là Water Level, Stage, and Flow Sensor; chưa có bằng chứng cụ thể hơn cho truy vấn.",
+            "language": "vi",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Water Level, Stage, and Flow Sensor"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS511",
+          "model": "CS511",
+          "name_en": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Dissolved Oxygen Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/5553",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.468417145391204,
+            "hybrid": 0.015384615384615385,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS511 đo oxy hòa tan, giúp kiểm tra thêm một chỉ số của nước hồ. Nước bẩn không đồng nghĩa thiếu oxy; thiết bị này không làm sạch nước hoặc cấp oxy. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Oxy hòa tan"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-WATER-002",
+    "language": "en",
+    "query": "I want to know whether the water in my pond is becoming more turbid over time. Which sensor should I use?",
+    "status": 200,
+    "latencyMs": 1012,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "I want to know whether the water in my pond is becoming more turbid over time. Which sensor should I use?",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_CLARIVUE10",
+          "model": "ClariVue10",
+          "name_en": "ClariVUE™ 10",
+          "name_vi": "Cảm biến độ đục ClariVUE™ 10",
+          "category": "Sensors",
+          "device_type": "Turbidity Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/13165",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.667301416624142,
+            "hybrid": 0.01639344262295082,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "ClariVue10 measures turbidity: if the water is cloudy, readings help track its condition before and after treatment. The sensor does not filter or clean water; dirty water alone does not establish the cause. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Turbidity"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS456",
+          "model": "CS456",
+          "name_en": "CS456",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Water-Level Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/8854",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.541962058708302,
+            "hybrid": 0.016129032258064516,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "The catalog classifies this as Water-Level Sensor; no more specific evidence confirms the query.",
+            "language": "en",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Water-Level Sensor"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CRS451_WN",
+          "model": "CRS451-WN",
+          "name_en": "CRS451 Stainless-Steel Water-Level Recording Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Water Level Recording Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3583",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.535828066764413,
+            "hybrid": 0.015873015873015872,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "The catalog classifies this as Water Level Recording Sensor; no more specific evidence confirms the query.",
+            "language": "en",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Water Level Recording Sensor"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "name_en": "Meter Phytos 31 Leaf Wetness Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Leaf Wetness Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/238",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.535757750309024,
+            "hybrid": 0.015625,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "The catalog classifies this as Leaf Wetness Sensor; no more specific evidence confirms the query.",
+            "language": "en",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Leaf Wetness Sensor"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_RANGEVUE30",
+          "model": "RangeVue30",
+          "name_en": "RangeVue™30",
+          "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+          "category": "Sensors",
+          "device_type": "Water Level, Stage, and Flow Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.520640707206982,
+            "hybrid": 0.015384615384615385,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "The catalog classifies this as Water Level, Stage, and Flow Sensor; no more specific evidence confirms the query.",
+            "language": "en",
+            "source": "rule",
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Water Level, Stage, and Flow Sensor"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
