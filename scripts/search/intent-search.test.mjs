@@ -39,6 +39,61 @@ const makeService = search => new SearchService({ search }, products, new Techni
 const service = makeService(async () => ({ mode: 'hybrid', candidates }));
 const soil = ['HS2-12', 'SoilVue10-5', 'CS616', 'CS650', 'CS655'];
 const soilMulti = ['CS650', 'CS655', 'SoilVue10-5'];
+test('bilingual use cases, system components, contextual absence and scoped explanations', async () => {
+  for (const query of [
+    'Nước hồ ngày càng đục, tôi nên dùng cảm biến nào?',
+    'My pond water is becoming turbid. Which sensor should I use?',
+  ]) {
+    const response = await service.search({ query, limit: 10, explain: true });
+    assert.deepEqual(response.results.map(p => p.model), ['ClariVue10']);
+  }
+  for (const query of [
+    'Tôi muốn hệ thống theo dõi độ ẩm đất, lượng mưa và nhiệt độ từ xa',
+    'I want a system to monitor soil moisture and rainfall remotely',
+  ]) {
+    const response = await service.search({ query, limit: 10, explain: true });
+    assert.ok(response.results.some(p => /Data Logger/u.test(p.device_type)));
+    assert.ok(response.results.some(p => /Rain|Precipitation/u.test(p.device_type)));
+    assert.ok(response.guidance.components.some(c => c.query === 'communication equipment'));
+    assert.ok(response.guidance.components.every(c => c.models.every(model => response.results.some(p => p.model === model))));
+  }
+  const logger = await service.search({ query: 'I have soil-moisture and rainfall sensors. Which datalogger can connect them?', limit: 10, explain: true });
+  assert.ok(logger.results.length);
+  assert.ok(logger.results.every(p => /Data Logger/u.test(p.device_type)));
+  assert.ok(logger.results.some(p => p.explanation.evidence.some(e => e.source === 'normalized_spec')));
+  const unattended = await service.search({ query: 'I need rainfall monitoring without personnel on site', limit: 5 });
+  assert.ok(unattended.results.length);
+  const unclear = await service.search({ query: 'Why is this product suitable for my application?', limit: 5, explain: true });
+  assert.equal(unclear.guidance.needs_clarification, true);
+  assert.deepEqual(unclear.results, []);
+  const scoped = await service.search({ query: 'Which requirements does this product satisfy?', limit: 5, explain: true,
+    context: { base_query: 'soil moisture with SDI-12', previous_query: 'soil moisture with SDI-12', product_ids: ['CSI_CS655', 'CSI_TCAV'] } });
+  assert.equal(scoped.context_applied, true);
+  assert.deepEqual(scoped.results.map(p => p.model), ['CS655', 'TCAV']);
+  assert.match(scoped.results[1].explanation.text, /does not confirm|unconfirmed/u);
+  const comparison = await service.search({ query: 'Why is a soil-moisture sensor more appropriate than a weather sensor when deciding when to irrigate?', limit: 10, explain: true });
+  assert.ok(comparison.results.length);
+  assert.ok(comparison.results.every(p => /Soil/u.test(p.device_type)));
+  const networks = await service.search({ query: 'Should I use Ethernet, Wi-Fi or cellular for my monitoring station?', limit: 10, explain: true });
+  assert.match(networks.guidance.text, /alternatives/u);
+  assert.ok(networks.guidance.components.find(c => c.label === 'Ethernet').models.every(model => [...documents.values()].find(d => d.model === model).supported_protocols.includes('Ethernet')));
+  const zones = await service.search({ query: 'What system can compare soil moisture across different soil zones?', limit: 10, explain: true });
+  assert.ok(zones.guidance.components.some(c => c.query === 'data logger'));
+  const selectedLogger = await service.search({ query: 'Why is this product suitable for my application?', limit: 5, explain: true,
+    context: { base_query: 'I want a system to monitor soil moisture and rainfall remotely', previous_query: 'I want a system to monitor soil moisture and rainfall remotely', product_ids: ['CSI_CR310_NA'] } });
+  assert.equal(selectedLogger.results.length, 1);
+  assert.match(selectedLogger.results[0].explanation.text, /is a data logger/u);
+  assert.ok(selectedLogger.results[0].explanation.evidence.some(item => item.field === 'taxonomy.device_type'));
+  for (const query of ['Tôi muốn biết sau mỗi trận mưa, độ ẩm đất thay đổi như thế nào', 'I want to remotely monitor the overall environmental conditions of a farm']) {
+    const result = await service.search({ query, limit: 10, explain: true });
+    assert.ok(result.guidance.components.some(item => item.query === 'data logger'));
+  }
+  const ambiguous = await service.search({ query: 'I want a system to monitor soil moisture, rainfall and temperature', limit: 10, explain: true });
+  assert.equal(ambiguous.guidance.components.find(item => item.query === 'temperature sensor').needs_clarification, true);
+  assert.deepEqual(ambiguous.guidance.components.find(item => item.query === 'temperature sensor').models, []);
+  const impossible = await service.search({ query: 'I want a system to monitor soil moisture and rainfall operating at -200°C', limit: 10, explain: true });
+  assert.deepEqual(impossible.results, []);
+});
 const cases = [
   ['CS655', ['CS655']],
   ['soil moisture sensor', soil],

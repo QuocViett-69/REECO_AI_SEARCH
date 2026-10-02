@@ -168,6 +168,7 @@ export async function searchProductsApi(query, limit = 10, context = null) {
       resolved_query: data.resolved_query || data.query,
       context_applied: data.context_applied || false,
       mode: data.mode, // 'hybrid' | 'keyword' | 'semantic'
+      guidance: data.guidance || null,
       results: (data.results || []).map((r) => ({
         ...normalizeProduct(r),
         matched_features: r.matched_features || [],

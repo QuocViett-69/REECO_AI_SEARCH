@@ -116,6 +116,7 @@ function AppInner() {
   const [resolvedQuery, setResolvedQuery] = useState('');
   const [conversationTurns, setConversationTurns] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [searchGuidance, setSearchGuidance] = useState(null);
   const [searchMode, setSearchMode] = useState(null);
   const [searchError, setSearchError] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
@@ -167,6 +168,7 @@ function AppInner() {
       setHasSearched(false);
       setSearchError(null);
       setSearchMode(null);
+      setSearchGuidance(null);
       setSearchQuery('');
       setResolvedQuery('');
       setConversationTurns([]);
@@ -202,13 +204,13 @@ function AppInner() {
   }, []);
 
   // Search Handler
-  const handleRunSearch = async (query, followUp = false) => {
+  const handleRunSearch = async (query, followUp = false, selectedProductIds = null) => {
     if (!query) return;
     const context = followUp && conversationTurns[0]?.product_ids?.length > 0
       ? {
           base_query: conversationTurns[0].resolved_query,
           previous_query: conversationTurns[conversationTurns.length - 1].resolved_query,
-          product_ids: conversationTurns[0].product_ids,
+          product_ids: selectedProductIds || conversationTurns[0].product_ids,
         }
       : null;
     setSearchQuery(query);
@@ -216,6 +218,7 @@ function AppInner() {
     setIsSearching(true);
     setSearchError(null);
     setSearchMode(null);
+    setSearchGuidance(null);
     setCurrentPage('search');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -225,6 +228,7 @@ function AppInner() {
       setSearchError(response);
     } else if (response && response.results) {
       setSearchResults(response.results);
+      setSearchGuidance(response.guidance);
       setSearchMode(response.mode);
       setResolvedQuery(response.resolved_query);
       const turn = { text: query, resolved_query: response.resolved_query };
@@ -232,7 +236,9 @@ function AppInner() {
       const scope = firstProduct?.matched_features?.some((item) => item.startsWith('identity:'))
         ? [firstProduct.product_id]
         : response.results.slice(0, 5).map((item) => item.product_id);
-      setConversationTurns(prev => context && response.context_applied ? [...prev, turn] : [{ ...turn, product_ids: scope }]);
+      setConversationTurns(prev => context && response.context_applied
+        ? [...prev.map((item, index) => selectedProductIds && index === 0 ? { ...item, product_ids: selectedProductIds } : item), turn]
+        : [{ ...turn, product_ids: scope }]);
     } else {
       setSearchResults([]);
     }
@@ -240,6 +246,7 @@ function AppInner() {
   };
 
   const handleEditSearch = () => {
+    setSearchGuidance(null);
     setHasSearched(false);
     setSearchError(null);
     setSearchMode(null);
@@ -323,6 +330,7 @@ function AppInner() {
               <SearchHero onSearch={handleRunSearch} onViewDetail={handleViewDetail} />
             ) : (
               <SearchResults
+                guidance={searchGuidance}
                 query={searchQuery}
                 resolvedQuery={resolvedQuery}
                 conversationTurns={conversationTurns}
@@ -332,6 +340,8 @@ function AppInner() {
                 isLoading={isSearching}
                 onEditSearch={handleEditSearch}
                 onFollowUp={(query) => handleRunSearch(query, true)}
+                onExplainProduct={(product) => handleRunSearch(product.explanation?.language === 'vi'
+                  ? 'Tại sao sản phẩm này phù hợp với nhu cầu của tôi?' : 'Why is this product suitable for my application?', true, [product.product_id])}
                 onViewDetail={handleViewDetail}
                 onToggleCompare={handleToggleCompare}
                 isInCompare={isInCompare}

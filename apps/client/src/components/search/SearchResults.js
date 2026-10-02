@@ -86,12 +86,14 @@ export function SearchResults({
   query,
   resolvedQuery,
   conversationTurns = [],
+  guidance,
   results,
   mode,
   searchError,
   isLoading,
   onEditSearch,
   onFollowUp,
+  onExplainProduct,
   onViewDetail,
   onToggleCompare,
   isInCompare,
@@ -185,6 +187,23 @@ export function SearchResults({
               </button>
             </div>
           </form>
+        </section>
+      )}
+
+      {guidance && !isLoading && !searchError && (
+        <section className="conversation-panel" aria-label={guidance.language === 'vi' ? 'Giải thích nhu cầu' : 'Search guidance'}>
+          <p>{guidance.text}</p>
+          {guidance.components?.length > 0 && (
+            <ul>
+              {guidance.components.map(component => (
+                <li key={component.query}>
+                  <strong>{component.label}:</strong> {component.models.length ? component.models.join(', ') : component.needs_clarification
+                    ? guidance.language === 'vi' ? 'Cần làm rõ đại lượng hoặc môi trường đo' : 'Clarify the measurement or medium'
+                    : guidance.language === 'vi' ? 'Chưa có ứng viên được xác nhận trong kết quả' : 'No confirmed candidate in these results'}
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       )}
 
@@ -316,6 +335,11 @@ export function SearchResults({
                       )}
                     </div>
                     {p.explanation && <div className="text">{p.explanation.text}</div>}
+                    {onExplainProduct && p.explanation && (
+                      <button type="button" className="filter-chip" disabled={isLoading} onClick={(event) => { event.stopPropagation(); onExplainProduct(p); }}>
+                        {p.explanation.language === 'vi' ? 'Giải thích model này theo nhu cầu' : 'Explain this model for my needs'}
+                      </button>
+                    )}
                     {(p.explanation?.evidence?.length > 0 || (!p.explanation && features.length > 0)) && (
                       <div className="matched-specs">
                         {p.explanation?.evidence?.map((item, index) => (

@@ -18,10 +18,12 @@ export class ExplanationService {
 
   async explainMany(
     query: string,
-    items: { document: ProductSearchDocument; match?: TechnicalMatchResult; specifications?: ProductSpecification[] }[],
+    items: { document: ProductSearchDocument; match?: TechnicalMatchResult; specifications?: ProductSpecification[]; query?: string }[],
   ): Promise<Explanation[]> {
-    const explanations = items.map(({ document, match, specifications }) => this.explain(query, document, match, specifications));
-    if (!this.config.explanation.llmEnabled || !this.config.explanation.model) return explanations;
+    const explanations = items.map(({ document, match, specifications, query: requirement }) => this.explain(requirement ?? query, document, match, specifications));
+    const enabled = this.config.explanation.llmEnabled && !!this.config.explanation.model;
+    for (const explanation of explanations) explanation.generation = { status: enabled ? 'not_applicable' : 'disabled', ...(enabled && { model: this.config.explanation.model }) };
+    if (!enabled) return explanations;
     // ponytail: only the first three evidence-backed results use the local model; raise this if measured latency allows it.
     const eligible = explanations
       .map((explanation, index) => ({ explanation, index, options: this.wordingOptions(explanation, items[index]!.document.model) }))
@@ -29,16 +31,18 @@ export class ExplanationService {
       .filter(({ options }) => options.length > 1)
       .slice(0, 3);
     if (eligible.length === 0) return explanations;
-
+    const started = performance.now();
+    for (const entry of eligible) entry.explanation.generation = { status: 'invalid_response', model: this.config.explanation.model };
     try {
       const response = await fetch(`${this.config.embedding.baseUrl.replace(/\/$/u, '')}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        signal: AbortSignal.timeout(Math.min(this.config.explanation.timeoutMs, 3000)),
+        signal: AbortSignal.timeout(this.config.explanation.timeoutMs),
         body: JSON.stringify({
           model: this.config.explanation.model,
           stream: false,
           think: false,
+          keep_alive: '10m',
           format: {
             type: 'object',
             properties: {
@@ -91,6 +95,7 @@ export class ExplanationService {
             ...original,
             text,
             source: 'llm',
+            generation: { status: 'accepted', model: this.config.explanation.model, latency_ms: Math.round(performance.now() - started) },
             evidence: text.includes(model) && !original.evidence.some((item) => item.field === 'model')
               ? [{ source: 'products', field: 'model', value: model }, ...original.evidence]
               : original.evidence,
@@ -98,8 +103,16 @@ export class ExplanationService {
         }
       }
     } catch (error) {
+      for (const entry of eligible) explanations[entry.index]!.generation = {
+        status: error instanceof Error && /timeout|abort/iu.test(error.name + error.message) ? 'timeout'
+          : error instanceof SyntaxError || error instanceof Error && /response has no/iu.test(error.message) ? 'invalid_response' : 'unavailable',
+        model: this.config.explanation.model, latency_ms: Math.round(performance.now() - started),
+      };
       this.logger.warn(`Local LLM explanation unavailable: ${error instanceof Error ? error.message : 'unknown error'}`);
     }
+    this.logger.log(JSON.stringify({ event: 'explanation_generation', model: this.config.explanation.model, attempted: eligible.length,
+      accepted: explanations.filter(item => item.source === 'llm').length, latency_ms: Math.round(performance.now() - started),
+      statuses: eligible.map(entry => explanations[entry.index]!.generation?.status) }));
     return explanations;
   }
 
@@ -114,7 +127,11 @@ export class ExplanationService {
       .replace(`${model}: product data confirms `, `Catalog evidence confirms that ${model} meets the request for `)
       .replace('Dải hoạt động ', 'Nhiệt độ vận hành được ghi nhận là ')
       .replace('The documented operating range ', 'The documented operating temperature range ');
-    return [...new Set([text, natural])];
+    const contextual = natural.replace('giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh', 'cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh')
+      .replace('providing readings to monitor conditions before deciding on adjustments', 'providing data for monitoring conditions and considering adjustments')
+      .replace('nếu nước hồ bị đục', 'khi cần theo dõi nước đục')
+      .replace('if the water is cloudy', 'when monitoring cloudy water');
+    return [...new Set([text, natural, contextual])];
   }
 
   explain(
@@ -174,6 +191,29 @@ export class ExplanationService {
     if (unknown.length) {
       add(vi ? `Chưa có dữ liệu xác nhận ${unknown.join(', ')}; chưa thể kết luận đáp ứng toàn bộ yêu cầu.` : `Available data does not confirm ${unknown.join(', ')}; suitability for the full request is unconfirmed.`);
     }
+    const normalized = query.normalize('NFD').replace(/[\u0300-\u036f]/gu, '').replace(/đ/giu, 'd').toLowerCase();
+    const specNeeds = [
+      { requested: /\b(?:outdoors?|ngoai troi|buried|chon.*dat)\b/u.test(normalized), vi: 'lắp đặt ngoài trời/chôn đất', en: 'outdoor/buried installation', keys: /operating_temperature|ingress|protection|soil_suitability/u },
+      { requested: /\b(?:memory|bo nho|stored|luu.*du lieu|du lieu.*luu)\b/u.test(normalized), vi: 'lưu dữ liệu', en: 'data storage', keys: /^(?:data_storage_memory|memory_data_storage|data_memory|data_retention)$/u },
+      { requested: /\b(?:(?:\d+|two|ten|hai|muoi) (?:sensors?|cam bien)|analog|digital|connect.*sensor|sensor.*connect|ket noi.*cam bien|cam bien.*ket noi)\b/u.test(normalized), vi: 'kết nối cảm biến', en: 'sensor connections', keys: /^(?:analog_measurement_terminals|analog_inputs|analog_input_channels|single_ended_terminals|differential_terminals|digital_io_terminals|sdi_12|input_channels)$/u },
+      { requested: /\b(?:average|maximum|trung binh|cuc dai)\b/u.test(normalized), vi: 'tính trung bình/lưu cực đại', en: 'average/maximum processing', keys: /processing|statistical|calculation|programming/u },
+      { requested: /\b(?:low power|power consumption|dien thap|tieu thu dien|off.grid|khong co dien)\b/u.test(normalized), vi: 'điện năng/nguồn cấp', en: 'power requirements', keys: /power_consumption|current_drain|power_supply|supply_voltage|quiescent/u },
+      { requested: /\b(?:continuous|lien tuc|months?|thang|maintenance|bao tri|kiem tra thuong xuyen|24\/7)\b/u.test(normalized), vi: 'vận hành liên tục và bảo trì', en: 'continuous operation and maintenance', keys: /maintenance|measurement_time|sampling|scan_rate|biofouling/u },
+    ].filter(item => item.requested);
+    for (const need of specNeeds) {
+      const relevant = specifications.filter(spec => need.keys.test(spec.canonical_key)).slice(0, need.keys.source.includes('analog') || need.keys.source.includes('ingress') ? 2 : 1);
+      for (const spec of relevant) {
+        const raw = spec.normalized_value.value_raw ?? (spec.normalized_value.type === 'text' ? spec.normalized_value.value : undefined);
+        if (!raw) continue;
+        add(vi ? `Thông số liên quan ${need.vi}: ${raw}.` : `Evidence relevant to ${need.en}: ${raw}.`, { source: 'normalized_spec', field: spec.canonical_key, value: raw });
+      }
+      add(vi ? `Chưa xác nhận đáp ứng đầy đủ yêu cầu ${need.vi}; cần đối chiếu cấu hình thực tế.` : `The full ${need.en} requirement remains unconfirmed; check the actual configuration.`);
+    }
+    if (/\b(?:\d+|two|ten|hai|muoi) (?:sensors?|cam bien)\b/u.test(normalized)) add(vi ? 'Số cảm biến chưa xác định số kênh cần dùng: cần loại tín hiệu, số dây và cách chia sẻ bus. Chưa đủ căn cứ chọn bộ ghi công suất lớn chỉ từ số lượng cảm biến.' : 'Sensor count alone does not determine required channels: signal types, wiring and bus sharing are needed. The count alone does not establish a need for a high-capacity logger.');
+    if (/\b(?:memory|bo nho)\b/u.test(normalized)) add(vi ? 'Ước tính dung lượng cần bằng số bản ghi nhân kích thước bản ghi; cần biết số đại lượng, định dạng và thời gian lưu. Thông số bộ nhớ riêng lẻ chưa chứng minh lưu đủ vài tháng.' : 'Estimate required storage as record count multiplied by record size; specify variables, format and retention period. Memory size alone does not establish months of retention.');
+    if (/\b(?:internet.*lost|network goes down|mat ket noi|mang.*mat)\b/u.test(normalized)) add(vi ? 'Cần xác nhận dữ liệu được lưu cục bộ và cơ chế gửi lại khi có mạng; mất kết nối không tự chứng minh dữ liệu bị mất hay được bảo toàn.' : 'Confirm local storage and retransmission after connectivity returns; a lost connection alone does not establish data loss or preservation.');
+    if (/\b(?:solar radiation|anh sang mat troi)\b/u.test(normalized)) add(vi ? 'Để biết lượng bức xạ theo ngày cần ghi và tích phân số đo theo thời gian; dữ liệu hiện có chưa xác nhận cấu hình tính tổng ngày.' : 'Daily radiation requires recording and integrating readings over time; the daily-total configuration remains unconfirmed.');
+    if (/\b(?:remote|remotely|tu xa|from home|tu nha|gui du lieu|nhan du lieu)\b/u.test(normalized) && /modem|communication|radio/iu.test(document.taxonomy.device_type)) add(vi ? 'Truy cập từ xa cần đường truyền và nơi nhận dữ liệu. Chưa xác nhận vùng phủ, hạ tầng hoặc mức tiêu thụ điện của cấu hình triển khai; không có Internet tại trạm chưa đủ để chọn radio hay mạng di động.' : 'Remote access requires a transport link and a data destination. Coverage, infrastructure and deployed power consumption remain unconfirmed; no Internet at the station alone does not establish whether radio or cellular is appropriate.');
     if (intent.outdoor && confirmed.includes(vi ? 'sử dụng ngoài trời khắc nghiệt' : 'harsh outdoor use')) {
       add(vi ? 'Áp dụng các giới hạn lắp đặt, sử dụng và chứng nhận trong thông số bảo vệ môi trường bên dưới.' : 'The environmental protection specification below includes installation limits, exclusions and certification status.');
     }
@@ -237,7 +277,7 @@ export class ExplanationService {
       }
     }
 
-    if (sentences.length === 0) {
+    if (sentences.length === 0 || evidence.length === 0 && !intent.constrained) {
       const normalizedQuery = query.normalize('NFC').toLocaleLowerCase();
       const groups = [
         ['measurements', document.measurements],
@@ -284,16 +324,16 @@ export class ExplanationService {
 
   private useCaseExplanation(query: string, document: ProductSearchDocument, vi: boolean): { text: string; evidence: Evidence[] } | undefined {
     const text = query.normalize('NFD').replace(/[\u0300-\u036f]/gu, '').replace(/đ/giu, 'd').toLowerCase();
-    if (!/\b(?:muon|can|nen dung|cai thien|theo doi|giam sat|kiem tra|want|need|improve|monitor|check)\b/u.test(text)) return;
+    if (!/\b(?:muon|can|nen|chon|vi sao|tai sao|lam sao|cai thien|theo doi|giam sat|kiem tra|want|need|improve|monitor|check|which|why|how|should)\b/u.test(text)) return;
     const intent = parseSearchIntent(query);
     const water = /\b(?:ho ca|nuoc|water|pond|aquarium)\b/u.test(text);
     const soil = /\b(?:dat|soil|tuoi|irrigation)\b/u.test(text);
     const air = /\b(?:khong khi|air|thoi tiet|weather)\b/u.test(text);
     const selected = document.measurements.filter(item =>
-      intent.measurements.some(request => request.key === item.key)
-      || water && /^(?:turbidity|dissolved_oxygen|water_temperature)$/u.test(item.key)
+      intent.measurements.some(request => request.key === item.key) || intent.target?.key === item.key
+      || !intent.measurements.length && !intent.target && (water && /^(?:turbidity|dissolved_oxygen|water_temperature)$/u.test(item.key)
       || soil && /^(?:volumetric_water_content|soil_temperature|soil_electrical_conductivity)$/u.test(item.key)
-      || air && /^(?:air_temperature|relative_humidity|barometric_pressure|wind_speed|wind_direction|precipitation)$/u.test(item.key));
+      || air && /^(?:air_temperature|relative_humidity|barometric_pressure|wind_speed|wind_direction|precipitation)$/u.test(item.key)));
     const evidence: Evidence[] = selected.map(item => ({ source: 'product_document', field: 'measurements', value: vi ? item.label_vi : item.label_en }));
     const sentences: string[] = [];
     if (selected.some(item => item.key === 'turbidity') && water) {
@@ -307,12 +347,24 @@ export class ExplanationService {
       const labels = other.map(item => (vi ? item.label_vi : item.label_en).toLocaleLowerCase()).join(', ');
       sentences.push(vi ? `${document.model} đo ${labels}, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh.` : `${document.model} measures ${labels}, providing readings to monitor conditions before deciding on adjustments.`);
       if (/\b(?:cai thien|tuoi|dieu khien|improve|irrigation|control)\b/u.test(text)) sentences.push(vi ? 'Khả năng đo không xác nhận thiết bị tự xử lý vấn đề hoặc điều khiển hệ thống.' : 'Measurement capability does not establish automatic treatment or system control.');
+      if (other.some(item => item.key === 'volumetric_water_content')) {
+        sentences.push(vi ? 'Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất.' : 'Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil.');
+        if (/\b(?:irrigat\w*|tuoi)\b/u.test(text)) sentences.push(vi ? 'Nếu muốn tự đóng/ngắt tưới cần thêm bộ điều khiển và cấu hình ngưỡng.' : 'Automatic irrigation switching requires a controller and configured thresholds.');
+      }
+      if (other.some(item => item.key === 'precipitation')) sentences.push(vi ? 'Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu.' : 'This measures rainfall at the installation point, complementing forecasts; measuring rainfall alone does not establish a need for an entire weather station. Tracking it over time requires data-recording configuration.');
+      if (other.some(item => item.key === 'wind_speed')) {
+        sentences.push(vi ? 'Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt.' : 'Wind readings support assessing conditions at the installation point.');
+        if (/\b(?:spray\w*|phun thuoc)\b/u.test(text)) sentences.push(vi ? 'Chưa xác nhận điều kiện an toàn phun thuốc.' : 'Safe spraying conditions are not established.');
+        if (/\b(?:peak|maximum|cuc dai)\b/u.test(text)) sentences.push(vi ? 'Ghi cực đại cần đối chiếu tốc độ lấy mẫu và cấu hình bộ ghi.' : 'Recording peaks requires checking sampling rate and logger configuration.');
+      }
     }
-    if (!sentences.length && intent.roles.length && matchSearchIntent(intent, document)) {
+    const roleIntent = { ...intent, measurements: [], target: undefined, specifications: [], outdoor: false };
+    const roleMatch = intent.roles.some(role => matchSearchIntent({ ...roleIntent, roles: [role] }, document));
+    if (!sentences.length && (intent.system || roleMatch)) {
       const type = document.taxonomy.device_type;
       if (/data logger/iu.test(type)) sentences.push(vi ? `${document.model} là bộ ghi dữ liệu, hỗ trợ phần ghi nhận số liệu trong nhu cầu theo dõi của bạn. Cần kiểm tra cảm biến và giao thức tương thích; bộ ghi không thay thế cảm biến đo.` : `${document.model} is a data logger for recording monitoring data. Check compatible sensors and protocols; a logger does not replace a measurement sensor.`);
       else if (/modem|radio|communication/iu.test(type)) sentences.push(vi ? `${document.model} là thiết bị truyền thông, liên quan đến phần truyền dữ liệu của hệ thống. Cần xác nhận giao thức, mạng và thiết bị kết nối phù hợp; khả năng truyền dữ liệu không xác nhận khả năng đo hoặc xử lý vấn đề.` : `${document.model} is communication equipment for the data-transfer part of a system. Confirm compatible protocols, networks and connected devices; communication does not establish measurement or treatment capabilities.`);
-      else sentences.push(vi ? `${document.model} thuộc loại ${type}, khớp nhóm chức năng bạn yêu cầu. Điều này chưa xác nhận thiết bị đáp ứng mục tiêu cuối cùng; cần đối chiếu thông số và cấu hình hệ thống.` : `${document.model} is a ${type}, matching the requested equipment role. This does not establish that it achieves the end goal; check specifications and system configuration.`);
+      else if (roleMatch) sentences.push(vi ? `${document.model} thuộc loại ${type}, khớp nhóm chức năng bạn yêu cầu. Điều này chưa xác nhận thiết bị đáp ứng mục tiêu cuối cùng; cần đối chiếu thông số và cấu hình hệ thống.` : `${document.model} is a ${type}, matching the requested equipment role. This does not establish that it achieves the end goal; check specifications and system configuration.`);
       if (sentences.length) evidence.push({ source: 'product_document', field: 'taxonomy.device_type', value: type });
     }
     if (!sentences.length) return;

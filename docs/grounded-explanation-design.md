@@ -2,7 +2,7 @@
 
 ## Status
 
-The offline benchmark evaluates deterministic templates. The search API also has an optional local Ollama rewrite when `LLM_EXPLANATION_ENABLED=true` and `LLM_MODEL` is configured. Retrieval, ranking, and Supabase data are unchanged.
+The offline benchmark evaluates deterministic templates. The search API also has optional local Ollama wording selection when `LLM_EXPLANATION_ENABLED=true` and `LLM_MODEL` is configured. System queries are decomposed into measurement, logging, communication and power components using the existing retrieval pipeline. Database data is unchanged.
 
 ## Contract
 
@@ -14,11 +14,15 @@ The deterministic builder preserves MATCH, UNKNOWN, and MISMATCH. A protocol or 
 
 The offline evaluator uses `ExplanationProvider.generate({ query, product, evidence, language })`. `DeterministicTemplateExplanationProvider` (template-explanation-v1) is its evaluated provider; its `LLMGroundedExplanationProvider` boundary remains unconfigured. The API runtime uses `ExplanationService` and the optional Ollama rewrite described below.
 
-The runtime uses the locally installed `qwen3:4b-instruct-2507-q4_K_M` through Ollama `/api/chat`. It sends one batch for up to three results with specific evidence and retains the original evidence. Exact-model-only and taxonomy-only explanations use templates. Model errors, timeouts, malformed output, new numeric or named terms, and lost uncertainty or negation fall back to templates. These checks reduce unsupported claims; they are not a proof of factual correctness.
+The runtime uses the locally installed `qwen3:4b-instruct-2507-q4_K_M` through Ollama `/api/chat`. One batch covers up to three eligible results. The model selects integer indices from prebuilt wording alternatives; it cannot supply arbitrary explanation text. Original evidence and missing requirements remain attached. Exact-model-only and taxonomy-only explanations use templates. Errors, timeouts and invalid indices fall back to templates. These checks reduce unsupported claims; they are not a proof of factual correctness.
+
+Each explanation exposes `generation.status`: disabled, not_applicable, accepted, timeout, unavailable or invalid_response, with model and latency when attempted. `source=llm` means a validated wording choice was used; enabling the flag alone does not establish this.
+
+Search guidance distinguishes component candidates from confirmed system compatibility. Ambiguous temperature media and explanation questions without a model or prior requirements ask for clarification. The product explanation button sends the selected product ID, including products outside the first five results. Selected-model explanations retain partial matches and explicitly identify missing requirements.
 
 ## Language and style
 
-English and Vietnamese are selected deterministically from the benchmark language, with a deterministic mixed-query fallback. Model and protocol identifiers remain unchanged. Output is limited to one to three factual sentences and does not expose ranks, RRF, or similarity.
+English and Vietnamese are selected deterministically from the query. Model and protocol identifiers remain unchanged. Explanations connect confirmed measurements or device roles to the requested application, include relevant raw specifications where available, and preserve limits such as monitoring versus treatment. They do not expose ranks, RRF, or similarity.
 
 ## Evaluation
 

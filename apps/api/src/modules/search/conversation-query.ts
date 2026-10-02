@@ -5,6 +5,7 @@ const continuation = /^(?:and|also|with|only|does it support|do they support|can
 const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?(?:485|232)|USB|CAN[\s-]?bus|CPI|Modbus|Wi[\s‐‑–—-]?Fi)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|deg(?:rees?)?\s*C|C\b)/iu;
 
 export const hasTechnicalConstraint = (query: string): boolean => shortConstraint.test(query);
+export const isExplanationQuestion = (query: string): boolean => /\b(?:this (?:product|device)|the other one|my (?:application|requirements|query|use case)|recommended this)|(?:sản phẩm này|thiết bị này|sản phẩm còn lại|nhu cầu của tôi|yêu cầu của tôi|câu hỏi của tôi|trường hợp (?:sử dụng )?của tôi)/iu.test(query);
 
 export interface SearchExclusions {
   protocols: string[];
@@ -28,7 +29,8 @@ export function parseNegativeConstraints(query: string): { query: string; exclus
   cleaned = cleaned.replace(/\s+/gu, ' ').trim();
   cleaned = cleaned.replace(/^(?:and|but|also)\s+|\s+(?:and|but|also)$|^(?:and|but|also)$/giu, '').trim();
   const marker = /\b(?:without|excluding|exclude|does\s+not\s+support|doesn't\s+support|but\s+not)\b|\bnon[-\s]+\p{L}|\bno\s+(?:modbus|sdi|rs)\b|kh\s*\u00f4ng\s+(?:ho tro|dung|co|h\u1ed7 tr\u1ee3|d\u00f9ng)\b/iu;
-  const unsupported = marker.test(cleaned);
+  // Contextual absence is a deployment need, not a product exclusion.
+  const unsupported = marker.test(cleaned.replace(/\bwithout\s+(?:personnel|visiting|having to visit|staff|an? (?:internet|grid) connection)\b/giu, ''));
   return { query: cleaned, exclusions: { protocols: [...protocols], cellular, temperature }, unsupported };
 }
 
@@ -40,6 +42,7 @@ export function resolveConversationQuery(
 ): { query: string; applied: boolean } {
   const turn = query.normalize('NFC').trim();
   if (!context) return { query: turn, applied: false };
+  if (isExplanationQuestion(turn)) return { query: context.previous_query, applied: true };
   const negative = parseNegativeConstraints(turn);
   if (negative.unsupported || negative.exclusions.protocols.length > 0 || negative.exclusions.cellular || negative.exclusions.temperature) {
     return { query: turn, applied: false };

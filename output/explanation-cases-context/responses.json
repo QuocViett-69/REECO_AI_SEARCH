@@ -1,0 +1,2882 @@
+[
+  {
+    "id": "TC-EXPLAIN-001",
+    "language": "vi",
+    "query": "Tại sao sản phẩm này phù hợp với nhu cầu của tôi?",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 2497,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Tại sao sản phẩm này phù hợp với nhu cầu của tôi?",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS655 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS655 hỗ trợ SDI-12. CS655 đo nhiệt độ đất, hàm lượng nước thể tích, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1676
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12. CS650 đo nhiệt độ đất, hàm lượng nước thể tích, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1676
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-001",
+    "language": "en",
+    "query": "Why is this product suitable for my application?",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 3147,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Why is this product suitable for my application?",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12. CS655 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 2305
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Catalog evidence confirms that CS650 meets the request for soil moisture, soil temperature. CS650 supports SDI-12. CS650 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 2305
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-002",
+    "language": "vi",
+    "query": "Những thông số kỹ thuật nào của sản phẩm khiến nó phù hợp với yêu cầu của tôi?",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 8342,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Những thông số kỹ thuật nào của sản phẩm khiến nó phù hợp với yêu cầu của tôi?",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: dữ liệu xác nhận độ ẩm đất, nhiệt độ đất. Dữ liệu sản phẩm xác nhận hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 3431
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 3431
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-002",
+    "language": "en",
+    "query": "Which technical specifications make this product suitable for my requirements?",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 4406,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Which technical specifications make this product suitable for my requirements?",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12. CS655 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1523
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Catalog evidence confirms that CS650 meets the request for soil moisture, soil temperature. CS650 supports SDI-12. CS650 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1523
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-003",
+    "language": "vi",
+    "query": "Giải thích tại sao bạn đề xuất sản phẩm này thay vì sản phẩm còn lại.",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 5388,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Giải thích tại sao bạn đề xuất sản phẩm này thay vì sản phẩm còn lại.",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS655 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS655 hỗ trợ SDI-12. CS655 đo nhiệt độ đất, hàm lượng nước thể tích, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 4907
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12. CS650 đo nhiệt độ đất, hàm lượng nước thể tích, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 4907
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-003",
+    "language": "en",
+    "query": "Explain why you recommended this product instead of the other one.",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 4197,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Explain why you recommended this product instead of the other one.",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12. CS655 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 2203
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS650: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12. CS650 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 2203
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-004",
+    "language": "vi",
+    "query": "Yêu cầu nào trong câu hỏi của tôi được sản phẩm này đáp ứng?",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 2561,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Yêu cầu nào trong câu hỏi của tôi được sản phẩm này đáp ứng?",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: dữ liệu xác nhận độ ẩm đất, nhiệt độ đất. Dữ liệu sản phẩm xác nhận hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1549
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1549
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-004",
+    "language": "en",
+    "query": "Which requirements from my query does this product satisfy?",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 2579,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Which requirements from my query does this product satisfy?",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12. CS655 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 2015
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS650: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12. CS650 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 2015
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-005",
+    "language": "vi",
+    "query": "Có yêu cầu nào của tôi mà sản phẩm này không đáp ứng không?",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 2561,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Có yêu cầu nào của tôi mà sản phẩm này không đáp ứng không?",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: dữ liệu xác nhận độ ẩm đất, nhiệt độ đất. Dữ liệu sản phẩm xác nhận hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1311
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1311
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-005",
+    "language": "en",
+    "query": "Are there any requirements from my query that this product does not satisfy?",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 8052,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Are there any requirements from my query that this product does not satisfy?",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 2809
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Catalog evidence confirms that CS650 meets the request for soil moisture, soil temperature. CS650 supports SDI-12.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 2809
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-006",
+    "language": "vi",
+    "query": "Nếu tôi sử dụng thiết bị này ngoài trời lâu dài thì có phù hợp không? Vì sao?",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 7027,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Nếu tôi sử dụng thiết bị này ngoài trời lâu dài thì có phù hợp không? Vì sao?",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: dữ liệu xác nhận độ ẩm đất, nhiệt độ đất. Thông số liên quan lắp đặt ngoài trời/chôn đất: -50° to +70°C. Thông số liên quan lắp đặt ngoài trời/chôn đất: Short rods are easy to install in hard soil. Suitable for soils with higher electrical conductivity.. Chưa xác nhận đáp ứng đầy đủ yêu cầu lắp đặt ngoài trời/chôn đất; cần đối chiếu cấu hình thực tế. Dữ liệu sản phẩm xác nhận hỗ trợ SDI-12. CS655 đo nhiệt độ đất, hàm lượng nước thể tích, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 3013
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-50° to +70°C"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "soil_suitability",
+                "value": "Short rods are easy to install in hard soil. Suitable for soils with higher electrical conductivity."
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. Thông số liên quan lắp đặt ngoài trời/chôn đất: -50° to +70°C. Thông số liên quan lắp đặt ngoài trời/chôn đất: Long rods with large sensing volume (> 6 L) are suitable for soils with low to moderate electrical conductivity.. Chưa xác nhận đáp ứng đầy đủ yêu cầu lắp đặt ngoài trời/chôn đất; cần đối chiếu cấu hình thực tế. CS650 hỗ trợ SDI-12. CS650 đo nhiệt độ đất, hàm lượng nước thể tích, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 3013
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-50° to +70°C"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "soil_suitability",
+                "value": "Long rods with large sensing volume (> 6 L) are suitable for soils with low to moderate electrical conductivity."
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-006",
+    "language": "en",
+    "query": "Is this device suitable for long-term outdoor use? Why?",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 3767,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Is this device suitable for long-term outdoor use? Why?",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Evidence relevant to outdoor/buried installation: -50° to +70°C. Evidence relevant to outdoor/buried installation: Short rods are easy to install in hard soil. Suitable for soils with higher electrical conductivity.. The full outdoor/buried installation requirement remains unconfirmed; check the actual configuration. Product data confirms support for SDI-12. CS655 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 3294
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-50° to +70°C"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "soil_suitability",
+                "value": "Short rods are easy to install in hard soil. Suitable for soils with higher electrical conductivity."
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Catalog evidence confirms that CS650 meets the request for soil moisture, soil temperature. Evidence relevant to outdoor/buried installation: -50° to +70°C. Evidence relevant to outdoor/buried installation: Long rods with large sensing volume (> 6 L) are suitable for soils with low to moderate electrical conductivity.. The full outdoor/buried installation requirement remains unconfirmed; check the actual configuration. CS650 supports SDI-12. CS650 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 3294
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-50° to +70°C"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "soil_suitability",
+                "value": "Long rods with large sensing volume (> 6 L) are suitable for soils with low to moderate electrical conductivity."
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-007",
+    "language": "vi",
+    "query": "Giải thích các ưu điểm của thiết bị này đối với trường hợp sử dụng của tôi.",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 6150,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Giải thích các ưu điểm của thiết bị này đối với trường hợp sử dụng của tôi.",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: dữ liệu xác nhận độ ẩm đất, nhiệt độ đất. Dữ liệu sản phẩm xác nhận hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 5675
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 5675
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-007",
+    "language": "en",
+    "query": "Explain the advantages of this device for my use case.",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 7441,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Explain the advantages of this device for my use case.",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 6950
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Catalog evidence confirms that CS650 meets the request for soil moisture, soil temperature. CS650 supports SDI-12.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 6950
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-008",
+    "language": "vi",
+    "query": "Hạn chế của thiết bị này trong trường hợp của tôi là gì?",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 11398,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Hạn chế của thiết bị này trong trường hợp của tôi là gì?",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: dữ liệu xác nhận độ ẩm đất, nhiệt độ đất. Dữ liệu sản phẩm xác nhận hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 10073
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 10073
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-008",
+    "language": "en",
+    "query": "What are the limitations of this device for my use case?",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 8932,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "What are the limitations of this device for my use case?",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 8166
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Catalog evidence confirms that CS650 meets the request for soil moisture, soil temperature. CS650 supports SDI-12.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 8166
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-009",
+    "language": "vi",
+    "query": "Thông số nào ảnh hưởng nhiều nhất đến việc lựa chọn thiết bị này?",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 8059,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Thông số nào ảnh hưởng nhiều nhất đến việc lựa chọn thiết bị này?",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS655 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS655 hỗ trợ SDI-12. CS655 đo nhiệt độ đất, hàm lượng nước thể tích, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 7476
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12. CS650 đo nhiệt độ đất, hàm lượng nước thể tích, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 7476
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-009",
+    "language": "en",
+    "query": "Which specification had the greatest impact on selecting this device?",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 6615,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Which specification had the greatest impact on selecting this device?",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12. CS655 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 6135
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Catalog evidence confirms that CS650 meets the request for soil moisture, soil temperature. CS650 supports SDI-12. CS650 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 6135
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-010",
+    "language": "vi",
+    "query": "Nếu bỏ qua yếu tố giá, tại sao thiết bị này phù hợp về mặt kỹ thuật?",
+    "context": {
+      "base_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "previous_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 6125,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Nếu bỏ qua yếu tố giá, tại sao thiết bị này phù hợp về mặt kỹ thuật?",
+      "resolved_query": "cảm biến đo độ ẩm đất và nhiệt độ đất hỗ trợ SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS655 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS655 hỗ trợ SDI-12. CS655 đo nhiệt độ đất, hàm lượng nước thể tích, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 5633
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS650 đáp ứng yêu cầu về độ ẩm đất, nhiệt độ đất. CS650 hỗ trợ SDI-12. CS650 đo nhiệt độ đất, hàm lượng nước thể tích, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 5633
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hàm lượng nước thể tích"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-EXPLAIN-010",
+    "language": "en",
+    "query": "Ignoring price, why is this device technically suitable?",
+    "context": {
+      "base_query": "soil moisture and soil temperature sensor with SDI-12",
+      "previous_query": "soil moisture and soil temperature sensor with SDI-12",
+      "product_ids": [
+        "CSI_CS655",
+        "CSI_CS650"
+      ]
+    },
+    "status": 200,
+    "latencyMs": 6120,
+    "checks": {
+      "response_ok": true,
+      "nonempty": true,
+      "explanation_present": true,
+      "evidence_present": true,
+      "language_correct": true
+    },
+    "body": {
+      "query": "Ignoring price, why is this device technically suitable?",
+      "resolved_query": "soil moisture and soil temperature sensor with SDI-12",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+        "language": "en"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CS655",
+          "model": "CS655",
+          "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS655: product data confirms soil moisture, soil temperature. Product data confirms support for SDI-12. CS655 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 5616
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS655"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS650",
+          "model": "CS650",
+          "name_en": "30CM Water Content Reflectometer plus",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Soil Moisture, Temperature, and EC Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Catalog evidence confirms that CS650 meets the request for soil moisture, soil temperature. CS650 supports SDI-12. CS650 measures soil temperature, volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 5616
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS650"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil moisture / độ ẩm đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil temperature / nhiệt độ đất"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Soil Temperature"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Volumetric Water Content"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

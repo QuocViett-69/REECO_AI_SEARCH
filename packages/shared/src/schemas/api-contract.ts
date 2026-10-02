@@ -147,6 +147,10 @@ export const SearchResultSchema = z
         text: z.string().min(1),
         language: z.enum(['en', 'vi']),
         source: z.enum(['rule', 'llm']).optional(),
+        generation: z.object({
+          status: z.enum(['disabled', 'not_applicable', 'accepted', 'timeout', 'unavailable', 'invalid_response']),
+          model: z.string().optional(), latency_ms: z.number().nonnegative().optional(),
+        }).strict().optional(),
         evidence: z.array(
           z.object({
             source: z.enum(['products', 'product_document', 'normalized_spec']),
@@ -166,6 +170,11 @@ export const SearchResponseSchema = z
     resolved_query: z.string().min(1).optional(),
     context_applied: z.boolean().optional(),
     mode: z.enum(['keyword', 'semantic', 'hybrid']),
+    guidance: z.object({
+      text: z.string().min(1), language: z.enum(['vi', 'en']),
+      needs_clarification: z.boolean().optional(),
+      components: z.array(z.object({ label: z.string(), query: z.string(), models: z.array(z.string()), needs_clarification: z.boolean().optional() }).strict()).optional(),
+    }).strict().optional(),
     results: z.array(SearchResultSchema),
   })
   .strict();

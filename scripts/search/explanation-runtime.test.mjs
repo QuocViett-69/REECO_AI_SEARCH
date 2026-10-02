@@ -111,6 +111,8 @@ test('local LLM selects verified wording and falls back on invented model detail
     assert.equal(offered.query, 'sensor supporting SDI-12');
     assert.equal(selected.text, offered.items[0].options[1]);
     assert.equal(selected.source, 'llm');
+    assert.equal(selected.generation.status, 'accepted');
+    assert.ok(selected.generation.latency_ms >= 0);
     assert.notEqual(selected.text, llmService.explain('sensor supporting SDI-12', document, match).text);
     assert.match(selected.text, /SDI-12.*does not confirm suitability/u);
     assert.equal(selected.evidence.find(item => item.field === 'model').value, document.model);
@@ -120,6 +122,7 @@ test('local LLM selects verified wording and falls back on invented model detail
     assert.equal(rewritten.text, llmService.explain('sensor supporting SDI-12', document, match).text);
     assert.equal(rewritten.evidence[0].value, 'SDI-12');
     assert.equal(rewritten.source, 'rule');
+    assert.equal(rewritten.generation.status, 'invalid_response');
 
     globalThis.fetch = async () => ({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text: `The model ${document.model} supports Modbus 999.` }] }) } }) });
     const [rejected] = await llmService.explainMany('sensor supporting SDI-12', input);
@@ -133,6 +136,9 @@ test('local LLM selects verified wording and falls back on invented model detail
     const [fallback] = await llmService.explainMany('sensor supporting SDI-12', input);
     assert.equal(fallback.text, llmService.explain('sensor supporting SDI-12', document, match).text);
     assert.equal(fallback.source, 'rule');
+    assert.equal(fallback.generation.status, 'unavailable');
+    globalThis.fetch = async () => { throw new DOMException('Timed out', 'TimeoutError'); };
+    assert.equal((await llmService.explainMany('sensor supporting SDI-12', input))[0].generation.status, 'timeout');
   } finally {
     globalThis.fetch = priorFetch;
     if (priorEnabled === undefined) delete process.env.LLM_EXPLANATION_ENABLED;
