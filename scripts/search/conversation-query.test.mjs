@@ -4,9 +4,20 @@ import path from 'node:path';
 import test from 'node:test';
 
 const require = createRequire(import.meta.url);
-const { resolveConversationQuery } = require(path.resolve(import.meta.dirname, '../../apps/api/dist/modules/search/conversation-query.js'));
+const { parseNegativeConstraints, resolveConversationQuery } = require(path.resolve(import.meta.dirname, '../../apps/api/dist/modules/search/conversation-query.js'));
 const { SearchService } = require(path.resolve(import.meta.dirname, '../../apps/api/dist/modules/search/search.service.js'));
 const context = { base_query: 'soil moisture sensor', previous_query: 'soil moisture sensor SDI-12' };
+
+test('parses supported exclusions without making them positive requirements', () => {
+  assert.deepEqual(parseNegativeConstraints('soil moisture sensor without SDI-12'), {
+    query: 'soil moisture sensor', exclusions: { protocols: ['SDI-12'], cellular: false, temperature: false }, unsupported: false,
+  });
+  assert.deepEqual(parseNegativeConstraints('datalogger without Wi-Fi').exclusions.protocols, ['Wi-Fi']);
+  assert.deepEqual(parseNegativeConstraints('non-cellular communication device').exclusions, { protocols: [], cellular: true, temperature: false });
+  assert.equal(parseNegativeConstraints('soil sensor but not temperature sensor').exclusions.temperature, true);
+  assert.equal(parseNegativeConstraints('soil sensor without PROFINET').unsupported, true);
+  assert.equal(parseNegativeConstraints('soil moisture sensor kh\u00f4ng h\u1ed7 tr\u1ee3 SDI-12').exclusions.protocols[0], 'SDI-12');
+});
 
 test('keeps independent searches independent', () => {
   assert.deepEqual(resolveConversationQuery('wind speed sensor', context), { query: 'wind speed sensor', applied: false });
@@ -53,6 +64,7 @@ test('follow-up keeps the starting product scope and requires confirmed support'
       getActiveTechnicalIdentityCatalog: async () => [],
       getSearchDocumentsByIds: async (ids) => new Map(ids.map(id => [id, {
         measurements: [{ key: 'volumetric_water_content' }], capabilities: [],
+        supported_protocols: id === 'A' ? ['Modbus'] : [],
         taxonomy: { device_type: 'Soil Moisture Sensor' },
       }])),
       getPublicSummariesByIds: async () => new Map(['A', 'B', 'C'].map((id) => [id, {
@@ -60,15 +72,15 @@ test('follow-up keeps the starting product scope and requires confirmed support'
         category: null, device_type: null, image_url: null,
       }])),
     },
-    { parse: () => ({
-      identity: null, protocols: ['Modbus'], temperatureConstraints: [],
-      confidence: { identity: 'none', protocol: 'high', temperature: 'none' },
+    { parse: (query) => ({
+      identity: null, protocols: query.includes('Modbus') ? ['Modbus'] : [], temperatureConstraints: [],
+      confidence: { identity: 'none', protocol: query.includes('Modbus') ? 'high' : 'none', temperature: 'none' },
     }) },
     { evaluate: async (_query, ids) => ids.map((productId) => ({
       productId, protocolMatches: [{ result: productId === 'A' ? 'MATCH' : 'UNKNOWN' }],
       temperatureMatches: [], hardMismatch: false,
     })) },
-    { rank: (items) => items.map((item) => ({ candidate: item, matchedFeatures: [] })) },
+    { rank: (items) => items.map((item) => ({ candidate: item, matchedFeatures: [] })), preserve: (items) => items.map((item) => ({ candidate: item, matchedFeatures: [] })) },
     { rerank: async (_query, _parsed, items) => items },
     { explain: () => { throw new Error('Not requested'); } },
   );
@@ -79,8 +91,9 @@ test('follow-up keeps the starting product scope and requires confirmed support'
   assert.equal(response.resolved_query, 'soil moisture sensor SDI-12 Modbus');
   assert.deepEqual(searchedQueries, ['soil moisture sensor']);
   assert.deepEqual(response.results.map((item) => item.product_id), ['A']);
-  await assert.rejects(service.search({
+  const excluded = await service.search({
     query: 'and without Modbus', limit: 10,
     context: { ...context, product_ids: ['A', 'B'] },
-  }), /Negative search constraints are not supported/);
+  });
+  assert.deepEqual(excluded.results.map((item) => item.product_id), ['B']);
 });

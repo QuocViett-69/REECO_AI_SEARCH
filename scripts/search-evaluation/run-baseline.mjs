@@ -21,7 +21,8 @@ const { TechnicalMatchService } = require(path.join(root, 'apps', 'api', 'dist',
 const { ProductsService } = require(path.join(root, 'apps', 'api', 'dist', 'modules', 'products', 'products.service.js'));
 const { EmbeddingsService } = require(path.join(root, 'apps', 'api', 'dist', 'modules', 'embeddings', 'embeddings.service.js'));
 
-const benchmarkPath = path.join(root, 'data', 'evaluation', 'search-benchmark-v1.json');
+const reviewed = process.argv.includes('--reviewed');
+const benchmarkPath = path.join(root, 'data', 'evaluation', reviewed ? 'search-benchmark-v1.1.json' : 'search-benchmark-v1.json');
 const benchmark = JSON.parse(await readFile(benchmarkPath, 'utf8'));
 const searchDocuments = new Map();
 const searchDocumentFiles = (await readdir(path.join(root, 'data', 'search-documents')))
@@ -213,7 +214,7 @@ for (const result of numericQueries) {
 
 const latencies = queryResults.map((item) => item.latency_ms);
 const baseline = {
-  schema_version: '1.0', report_id: 'search-baseline-v1', generated_at: new Date().toISOString(),
+  schema_version: '1.0', report_id: reviewed ? 'search-baseline-v1.2' : 'search-baseline-v1', generated_at: new Date().toISOString(),
   benchmark_id: benchmark.benchmark_id,
   catalog_snapshot: benchmark.catalog_snapshot,
   execution: {
@@ -278,7 +279,7 @@ for (const result of queryResults) {
   }
 }
 const failureReport = {
-  schema_version: '1.0', report_id: 'search-failure-cases-v1', generated_at: new Date().toISOString(),
+  schema_version: '1.0', report_id: reviewed ? 'search-failure-cases-v1.2' : 'search-failure-cases-v1', generated_at: new Date().toISOString(),
   benchmark_id: benchmark.benchmark_id, summary: {
     case_count: failures.length,
     by_type: Object.fromEntries([...new Set(failures.map((item) => item.type))].sort().map((type) => [type, failures.filter((item) => item.type === type).length])),
@@ -298,8 +299,10 @@ const csvColumns = ['query_id', 'query', 'language', 'category', 'review_reason'
 const csv = [csvColumns.join(','), ...reviewRows.map((row) => csvColumns.map((column) => csvCell(row[column])).join(','))].join('\r\n') + '\r\n';
 
 await mkdir(path.join(root, 'data', 'reports'), { recursive: true });
-await writeFile(path.join(root, 'data', 'evaluation', 'search-benchmark-review.json'), `${JSON.stringify(review, null, 2)}\n`, 'utf8');
-await writeFile(path.join(root, 'data', 'evaluation', 'search-benchmark-review.csv'), csv, 'utf8');
-await writeFile(path.join(root, 'data', 'reports', 'search-baseline-v1.json'), `${JSON.stringify(baseline, null, 2)}\n`, 'utf8');
-await writeFile(path.join(root, 'data', 'reports', 'search-failure-cases-v1.json'), `${JSON.stringify(failureReport, null, 2)}\n`, 'utf8');
+if (!reviewed) {
+  await writeFile(path.join(root, 'data', 'evaluation', 'search-benchmark-review.json'), `${JSON.stringify(review, null, 2)}\n`, 'utf8');
+  await writeFile(path.join(root, 'data', 'evaluation', 'search-benchmark-review.csv'), csv, 'utf8');
+}
+await writeFile(path.join(root, 'data', 'reports', reviewed ? 'search-baseline-v1.2.json' : 'search-baseline-v1.json'), `${JSON.stringify(baseline, null, 2)}\n`, 'utf8');
+await writeFile(path.join(root, 'data', 'reports', reviewed ? 'search-failure-cases-v1.2.json' : 'search-failure-cases-v1.json'), `${JSON.stringify(failureReport, null, 2)}\n`, 'utf8');
 console.log(JSON.stringify({ verified_relevance_metrics: baseline.verified_relevance_metrics, safety_and_operational_metrics: baseline.safety_and_operational_metrics, failure_summary: failureReport.summary, review_summary: review.summary }, null, 2));

@@ -74,6 +74,21 @@ for (const [query, allowed] of cases) test(`catalog evidence: ${query}`, async (
   }
 });
 
+for (const [query, excluded] of [
+  ['soil moisture sensor without SDI-12', document => document.supported_protocols.includes('SDI-12')],
+  ['datalogger without Wi-Fi', document => {
+    const option = document.variants?.find(variant => variant.model === document.model)?.distinguishing_specifications.find(specification => specification.name_en === 'Communication Option')?.value_raw;
+    return document.supported_protocols.includes('Wi-Fi') && (!option || /^wi[ -]?fi$/iu.test(option));
+  }],
+  ['non-cellular communication device', document => /\b(?:cellular|lte|[345]g)\b/iu.test(document.taxonomy.device_type + ' ' + document.supported_protocols.join(' '))],
+  ['soil sensor but not temperature sensor', document => /temperature/iu.test(document.taxonomy.device_type + ' ' + document.measurements.map(item => item.key).join(' '))],
+  ['c\u1ea3m bi\u1ebfn \u0111\u1ed9 \u1ea9m \u0111\u1ea5t kh\u00f4ng h\u1ed7 tr\u1ee3 SDI-12', document => document.supported_protocols.includes('SDI-12')],
+]) test('applies exclusion from product evidence', async () => {
+  const response = await service.search({ query, limit: 100 });
+  assert.ok(response.results.length > 0);
+  for (const result of response.results) assert.equal(excluded(documents.get(result.product_id)), false, result.model);
+});
+
 test('all requirements must hold even with a high semantic score; empty is preferable to inventing capability', async () => {
   const response = await service.search({ query: 'soil moisture sensor with Wi-Fi', limit: 10 });
   assert.deepEqual(response.results, []);

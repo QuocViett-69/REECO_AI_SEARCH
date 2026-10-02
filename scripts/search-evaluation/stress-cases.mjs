@@ -116,10 +116,10 @@ M03|coffee machine|outofdomain
 M04|blood pressure monitor|outofdomain
 M05|car GPS navigation|outofdomain
 M06|home wifi router|outofdomain
-N01|soil moisture sensor without SDI-12|negative
-N02|datalogger without Wi-Fi|negative
-N03|non-cellular communication device|negative
-N04|soil sensor but not temperature sensor|negative
+N01|soil moisture sensor without SDI-12|moisture&notprotocol:SDI-12
+N02|datalogger without Wi-Fi|logger&notprotocol:Wi-Fi
+N03|non-cellular communication device|communication&notcellular
+N04|soil sensor but not temperature sensor|soil&nottemperature
 O01|Tôi đang xây dựng một trạm quan trắc ở vùng nông nghiệp và cần một thiết bị có thể đo lượng nước trong đất, nhiệt độ đất và ưu tiên giao tiếp SDI-12 để kết nối với hệ thống hiện tại|moisture&soiltemperature&protocol:SDI-12
 O02|Our field station is located far away and we need to send measurement data over a cellular network because Wi-Fi is unavailable|cellular
 O03|Tôi cần thiết bị đo nhiều thông số thời tiết ngoài trời thay vì phải lắp nhiều cảm biến rời|multiweather
@@ -142,7 +142,7 @@ Q05|vibrating wire field reader|vibrating&reader
 
 const norm = s => s.toLowerCase().replace(/[‐‑–—-]/gu, ' ').replace(/\s+/gu, ' ');
 export function judgmentsFor(intent, catalog) {
-  if (['negative', 'ambiguous', 'outofdomain'].includes(intent)) return [];
+  if (['ambiguous', 'outofdomain'].includes(intent)) return [];
   return catalog.flatMap(({ document: d, specifications: specs }) => {
     if (!d) return [];
     const type = norm(d.taxonomy.device_type);
@@ -156,10 +156,18 @@ export function judgmentsFor(intent, catalog) {
       : /\b(?:wireless|cellular|radio)\b/iu.test(`${type} ${d.name_en}`) || d.supported_protocols.includes('Wi-Fi');
     const communication = /communication|modem|\bradio\b|transmitter/u.test(type);
     const water = /water|turbidity|oxygen/u.test(type) && !soil;
+    const supports = protocol => d.supported_protocols.some(item => protocol === 'Modbus'
+      ? item === 'Modbus' || item.startsWith('Modbus ') : item === protocol);
     const matches = rule => {
       if (rule.startsWith('model:')) return d.model === rule.slice(6);
       if (rule.startsWith('prefix:')) return d.model.startsWith(rule.slice(7));
       if (rule.startsWith('protocol:')) return d.supported_protocols.includes(rule.slice(9));
+      if (rule.startsWith('notprotocol:')) {
+        const protocol = rule.slice(12);
+        return !supports(protocol) || protocol === 'Wi-Fi' && option && !/^wi[ -]?fi$/iu.test(option.value_raw);
+      }
+      if (rule === 'notcellular') return !/\b(?:cellular|lte|[345]g)\b/iu.test(type + ' ' + d.supported_protocols.join(' '));
+      if (rule === 'nottemperature') return !/temperature/iu.test(type + ' ' + d.measurements.map(m => m.key).join(' '));
       if (rule.startsWith('spec:')) return new RegExp(`(^|[^a-z0-9.])${rule.slice(5).replace(/[.*+?^${}()|[\]\\]/gu, '\\$&')}($|[^a-z0-9.])`, 'u').test(raw);
       if (rule.startsWith('operating:')) return specs.some(s => ['operating_temperature_range', 'operating_temperature_extended_duty_xd'].includes(s.canonical_key) && s.normalized_value.unit === '°C' && s.normalized_value.min_value <= Number(rule.slice(10)) && s.normalized_value.max_value >= Number(rule.slice(10)));
       return ({

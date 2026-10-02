@@ -8,7 +8,7 @@ import {
 } from '@reeco/shared';
 import { configuration } from '../../config/configuration';
 import { ProductsService } from '../products/products.service';
-import { hasTechnicalConstraint, hasUnsupportedNegativeConstraint, resolveConversationQuery } from './conversation-query';
+import { hasTechnicalConstraint, parseNegativeConstraints, resolveConversationQuery } from './conversation-query';
 import { ExplanationService } from './explanation.service';
 import {
   HybridSearchError,
@@ -54,10 +54,16 @@ export class SearchService {
   }
 
   private async searchOnce(request: SearchRequest): Promise<SearchResponse> {
-    if (hasUnsupportedNegativeConstraint(request.query)) {
+    const negative = parseNegativeConstraints(request.query);
+    if (negative.unsupported) {
       throw new BadRequestException('Negative search constraints are not supported');
     }
-    const resolution = resolveConversationQuery(request.query, request.context);
+    if (!negative.query && !request.context) {
+      throw new BadRequestException('A positive search term is required with exclusions');
+    }
+    const resolution = negative.query
+      ? resolveConversationQuery(negative.query, request.context)
+      : { query: request.context?.previous_query ?? '', applied: !!request.context };
     const searchQuery = resolution.query;
     const retrievalQuery = resolution.applied && hasTechnicalConstraint(request.query)
       ? request.context!.base_query
@@ -93,7 +99,8 @@ export class SearchService {
     const intent = parseSearchIntent(searchQuery);
     let documents: Map<string, ProductSearchDocument> | undefined;
     let environmentalSpecifications = new Map<string, ProductSpecification[]>();
-    if (intent.constrained && scopedCandidates.length > 0) {
+    const hasExclusions = negative.exclusions.protocols.length > 0 || negative.exclusions.cellular || negative.exclusions.temperature;
+    if ((intent.constrained || hasExclusions) && scopedCandidates.length > 0) {
       const ids = scopedCandidates.map((item) => item.productId);
       [documents, environmentalSpecifications] = await Promise.all([
         this.productsService.getSearchDocumentsByIds(ids),
@@ -103,7 +110,18 @@ export class SearchService {
       ]);
       scopedCandidates = scopedCandidates.filter((candidate) => {
         const document = documents!.get(candidate.productId);
-        return document && matchSearchIntent(intent, document, environmentalSpecifications.get(candidate.productId)) !== null;
+        if (!document || matchSearchIntent(intent, document, environmentalSpecifications.get(candidate.productId)) === null) return false;
+        const communicationOption = document.variants?.find((variant) => variant.model === document.model)
+          ?.distinguishing_specifications.find((specification) => specification.name_en === 'Communication Option')?.value_raw;
+        const cellular = /\b(?:cellular|lte|[345]g)\b/iu.test(document.taxonomy.device_type + ' ' + (document.supported_protocols ?? []).join(' '));
+        const temperature = /temperature/iu.test(document.taxonomy.device_type + ' ' + (document.measurements ?? []).map((item) => item.key).join(' ') + ' ' + (document.capabilities ?? []).map((item) => item.key).join(' '));
+        const excludedProtocol = negative.exclusions.protocols.some((protocol) => {
+          if (protocol === 'Wi-Fi' && communicationOption && !/^wi[\s-]?fi$/iu.test(communicationOption)) return false;
+          return (document.supported_protocols ?? []).some((supported) => protocol === 'Modbus'
+            ? supported === 'Modbus' || supported.startsWith('Modbus ')
+            : supported === protocol);
+        });
+        return !(excludedProtocol || negative.exclusions.cellular && cellular || negative.exclusions.temperature && temperature);
       });
     }
 

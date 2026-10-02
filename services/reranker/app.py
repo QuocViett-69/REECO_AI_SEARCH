@@ -12,7 +12,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 MODEL_ID = "BAAI/bge-reranker-v2-m3"
 MODEL_REVISION = "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e"
-BATCH_SIZE = 4
+BATCH_SIZE = 5
 MAX_LENGTH = 512
 
 
@@ -49,33 +49,38 @@ class ModelRuntime:
         self.model = AutoModelForSequenceClassification.from_pretrained(
             model_source, dtype=dtype, **common
         ).to(self.device).eval()
-        self.score("warmup", ["warmup"])
+        self.score("warmup", ["warmup"] * BATCH_SIZE)
         self.loaded = True
 
     def score(self, query: str, documents: list[str]) -> tuple[list[float], float]:
         started = perf_counter()
         scores = []
-        with self._lock, torch.inference_mode():
-            for offset in range(0, len(documents), BATCH_SIZE):
-                batch = documents[offset : offset + BATCH_SIZE]
-                encoded = self.tokenizer(
-                    [query] * len(batch),
-                    batch,
-                    padding=True,
-                    truncation=True,
-                    max_length=MAX_LENGTH,
-                    return_tensors="pt",
-                )
-                encoded = {key: value.to(self.device) for key, value in encoded.items()}
-                scores.extend(
-                    self.model(**encoded, return_dict=True)
-                    .logits.view(-1)
-                    .float()
-                    .cpu()
-                    .tolist()
-                )
-            if self.device == "cuda":
-                torch.cuda.synchronize()
+        if not self._lock.acquire(blocking=False):
+            raise RuntimeError("RERANKER_BUSY")
+        try:
+            with torch.inference_mode():
+                for offset in range(0, len(documents), BATCH_SIZE):
+                    batch = documents[offset : offset + BATCH_SIZE]
+                    encoded = self.tokenizer(
+                        [query] * len(batch),
+                        batch,
+                        padding=True,
+                        truncation=True,
+                        max_length=MAX_LENGTH,
+                        return_tensors="pt",
+                    )
+                    encoded = {key: value.to(self.device) for key, value in encoded.items()}
+                    scores.extend(
+                        self.model(**encoded, return_dict=True)
+                        .logits.view(-1)
+                        .float()
+                        .cpu()
+                        .tolist()
+                    )
+                if self.device == "cuda":
+                    torch.cuda.synchronize()
+        finally:
+            self._lock.release()
         return scores, round((perf_counter() - started) * 1000, 3)
 
 
@@ -113,9 +118,14 @@ def create_app(runtime=None):
         ids = [candidate.product_id for candidate in request.candidates]
         if len(set(ids)) != len(ids):
             raise HTTPException(status_code=422, detail="candidate IDs must be unique")
-        scores, latency_ms = runtime.score(
-            request.query, [candidate.document for candidate in request.candidates]
-        )
+        try:
+            scores, latency_ms = runtime.score(
+                request.query, [candidate.document for candidate in request.candidates]
+            )
+        except RuntimeError as error:
+            if str(error) == "RERANKER_BUSY":
+                raise HTTPException(status_code=503, detail="reranker busy") from error
+            raise
         ranked = sorted(
             zip(request.candidates, scores, range(len(scores))),
             key=lambda item: (-item[1], item[2]),

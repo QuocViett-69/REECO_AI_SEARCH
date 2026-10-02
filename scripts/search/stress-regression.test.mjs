@@ -71,8 +71,8 @@ test('soil water wording and weather lists retain each independent requirement',
     assert.equal(intent.target.key, 'air_temperature');
     assert.deepEqual(intent.measurements.map(m => m.key), ['relative_humidity', 'barometric_pressure']);
   }
-  assert.ok(hasUnsupportedNegativeConstraint('non-cellular communication device'));
-  assert.ok(hasUnsupportedNegativeConstraint('soil sensor but not temperature sensor'));
+  assert.equal(hasUnsupportedNegativeConstraint('non-cellular communication device'), false);
+  assert.equal(hasUnsupportedNegativeConstraint('soil sensor but not temperature sensor'), false);
   const parser = new TechnicalQueryParserService();
   assert.deepEqual(parser.parse('cellular because Wi-Fi is unavailable').protocols, []);
   assert.deepEqual(parser.parse('datalogger with Wi-Fi').protocols, ['Wi-Fi']);

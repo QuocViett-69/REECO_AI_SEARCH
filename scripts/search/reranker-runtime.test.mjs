@@ -192,6 +192,7 @@ test('unknown, duplicate, missing, timeout, and unavailable responses fallback',
     unavailable: async () => {
       throw new TypeError('fetch failed');
     },
+    busy: async () => ({ ok: false, status: 503 }),
   };
   for (const [name, mockFetch] of Object.entries(cases)) {
     await t.test(name, async () => {

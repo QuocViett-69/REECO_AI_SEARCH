@@ -3,7 +3,7 @@ from threading import Event
 
 from fastapi.testclient import TestClient
 
-from app import MODEL_ID, MODEL_REVISION, create_app
+from app import MODEL_ID, MODEL_REVISION, ModelRuntime, create_app
 
 
 class FakeRuntime:
@@ -90,6 +90,24 @@ class ServiceTest(unittest.TestCase):
                 503,
             )
             ready.set()
+
+    def test_rejects_queued_inference_when_model_is_busy(self):
+        runtime = ModelRuntime()
+        runtime.loaded = True
+        runtime._lock.acquire()
+        try:
+            with TestClient(create_app(runtime)) as client:
+                response = client.post(
+                    "/rerank",
+                    json={
+                        "query": "sensor",
+                        "candidates": [{"product_id": "A", "document": "soil sensor"}],
+                    },
+                )
+            self.assertEqual(response.status_code, 503)
+            self.assertEqual(response.json()["detail"], "reranker busy")
+        finally:
+            runtime._lock.release()
 
 
 if __name__ == "__main__":

@@ -50,7 +50,7 @@ try {
         const response = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ query: c.query, limit: 5, explain: true }), signal: AbortSignal.timeout(120000) });
         const body = await response.json();
-        assert.equal(response.status, c.intent === 'negative' ? 400 : 200);
+        assert.equal(response.status, 200);
         if (response.ok) {
           SearchResponseSchema.parse(body);
           assert.ok(body.results.every(r => ids.has(r.product_id)));
