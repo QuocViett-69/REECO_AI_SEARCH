@@ -44,3 +44,25 @@ export function authenticateUser(role, username, password) {
     },
   };
 }
+
+export async function signInUser(role, username, password) {
+  const result = authenticateUser(role, username, password);
+  if (!result.success) return result;
+  const url = process.env.REACT_APP_SUPABASE_URL;
+  const key = process.env.REACT_APP_SUPABASE_ANON_KEY;
+  if (!url || !key) return { success: false, message: 'Supabase login is not configured.' };
+  try {
+    const response = await fetch(`${url}/auth/v1/token?grant_type=password`, {
+      method: 'POST',
+      headers: { apikey: key, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: result.user.email, password }),
+    });
+    const data = await response.json();
+    if (!response.ok || !data.access_token || data.user?.app_metadata?.role !== role) {
+      return { success: false, message: 'Invalid credentials or role.' };
+    }
+    return { success: true, user: { ...result.user, id: data.user.id, token: data.access_token } };
+  } catch {
+    return { success: false, message: 'Unable to connect to login service.' };
+  }
+}

@@ -32,7 +32,7 @@ export function LoginView({ onLoginSuccess }) {
   const handleQuickDevLogin = async () => {
     setLoading(true);
     setError(null);
-    const res = await loginAdminApi('admin@reeco.vn', 'admin123');
+    const res = await loginAdminApi('admin@reeco.vn', 'ilovereeco');
     setLoading(false);
 
     if (res.success) {

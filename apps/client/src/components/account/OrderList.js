@@ -1,39 +1,51 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { orderService, ORDER_STATUSES } from '../../services/orderService';
-import { formatPrice } from '../../services/commercialService';
+import { orderService, ORDER_STATUSES, formatCurrency } from '../../services/orderService';
 import {
   Package,
   ArrowLeft,
   ChevronRight,
-  Clock,
-  CheckCircle2,
-  Truck,
-  ExternalLink,
   ShoppingBag,
+  AlertCircle,
+  RefreshCw,
 } from 'lucide-react';
 
 export function OrderList({ onNavigate, onViewOrder }) {
   const { user, isAuthenticated } = useAuth();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchOrders = useCallback(async () => {
+    if (!isAuthenticated || !user) {
+      setLoading(false);
+      return;
+    }
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await orderService.getMyOrders();
+      const list = res?.items || res?.data || (Array.isArray(res) ? res : []);
+      setOrders(list);
+    } catch (err) {
+      setError(err.message || 'Không thể tải danh sách đơn hàng.');
+    } finally {
+      setLoading(false);
+    }
+  }, [isAuthenticated, user]);
 
   useEffect(() => {
-    if (user && user.username) {
-      const customerOrders = orderService.getCustomerOrders(user.username);
-      setOrders(customerOrders);
-    }
-    setLoading(false);
-  }, [user]);
+    fetchOrders();
+  }, [fetchOrders]);
 
   if (!isAuthenticated || !user) {
     return (
       <div className="page-container" style={{ maxWidth: 600, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
         <div className="glass-card" style={{ padding: 40, borderRadius: 16 }}>
           <Package size={40} style={{ color: '#93979f', marginBottom: 16 }} />
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Authentication Required</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Sign In Required</h2>
           <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>
-            Please sign in to view your order history and tracking information.
+            Please sign in to view your order history and track shipments.
           </p>
           <button
             type="button"
@@ -41,7 +53,7 @@ export function OrderList({ onNavigate, onViewOrder }) {
             onClick={() => onNavigate && onNavigate('login')}
             style={{ padding: '10px 24px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
           >
-            Sign In
+            Sign In Now
           </button>
         </div>
       </div>
@@ -65,7 +77,7 @@ export function OrderList({ onNavigate, onViewOrder }) {
           marginBottom: 16,
         }}
       >
-        <ArrowLeft size={14} /> Back to Account Dashboard
+        <ArrowLeft size={14} /> Back to Account
       </button>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
@@ -74,7 +86,7 @@ export function OrderList({ onNavigate, onViewOrder }) {
             My Orders
           </h1>
           <p style={{ fontSize: 13, color: '#6b7280', margin: 0 }}>
-            Track Campbell Scientific commercial orders and import statuses
+            Track commercial orders status and shipping progress
           </p>
         </div>
         <button
@@ -87,16 +99,48 @@ export function OrderList({ onNavigate, onViewOrder }) {
         </button>
       </div>
 
-      {loading ? (
-        <div className="glass-card" style={{ padding: 40, textAlign: 'center', color: '#6b7280' }}>
-          Loading orders...
+      {/* 1. Loading state */}
+      {loading && (
+        <div className="glass-card" style={{ padding: 48, textAlign: 'center', color: '#6b7280' }}>
+          <div
+            style={{
+              width: 36,
+              height: 36,
+              border: '3px solid #e5e7eb',
+              borderTopColor: '#0069e0',
+              borderRadius: '50%',
+              margin: '0 auto 16px',
+              animation: 'spin 1s linear infinite',
+            }}
+          />
+          <div>Loading orders from system...</div>
         </div>
-      ) : orders.length === 0 ? (
+      )}
+
+      {/* 2. Error state */}
+      {!loading && error && (
+        <div className="glass-card" style={{ padding: 36, borderRadius: 16, textAlign: 'center' }}>
+          <AlertCircle size={40} color="#d93025" style={{ marginBottom: 12 }} />
+          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Unable to load orders</h3>
+          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>{error}</p>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={fetchOrders}
+            style={{ padding: '8px 20px', fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
+          >
+            <RefreshCw size={14} /> Retry
+          </button>
+        </div>
+      )}
+
+      {/* 3. Empty data state */}
+      {!loading && !error && orders.length === 0 && (
         <div className="glass-card" style={{ padding: 48, borderRadius: 16, textAlign: 'center' }}>
           <Package size={48} style={{ color: '#93979f', marginBottom: 16 }} />
           <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 8 }}>No orders placed yet</h3>
           <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 24 }}>
-            You haven't placed any commercial orders with REECO yet.
+            Explore scientific measurement and precision sensors by Campbell Scientific.
           </p>
           <button
             type="button"
@@ -104,10 +148,13 @@ export function OrderList({ onNavigate, onViewOrder }) {
             onClick={() => onNavigate && onNavigate('products')}
             style={{ padding: '10px 24px', fontSize: 14, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
           >
-            Explore Campbell Products
+            Explore Products
           </button>
         </div>
-      ) : (
+      )}
+
+      {/* 4. Data list state */}
+      {!loading && !error && orders.length > 0 && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {orders.map((order) => {
             const statusConfig = ORDER_STATUSES[order.status] || {
@@ -119,10 +166,12 @@ export function OrderList({ onNavigate, onViewOrder }) {
               day: 'numeric',
               year: 'numeric',
             });
+            const itemCount = order.order_items?.length || order.items?.length || 0;
+            const targetId = order.id || order.order_code;
 
             return (
               <div
-                key={order.id || order.order_id}
+                key={order.id || order.order_code}
                 className="glass-card"
                 style={{
                   padding: 20,
@@ -136,9 +185,9 @@ export function OrderList({ onNavigate, onViewOrder }) {
                 }}
                 onClick={() => {
                   if (onViewOrder) {
-                    onViewOrder(order.order_id);
+                    onViewOrder(targetId);
                   } else if (onNavigate) {
-                    onNavigate(`account-order:${order.order_id}`);
+                    onNavigate(`account-order:${targetId}`);
                   }
                 }}
               >
@@ -160,7 +209,7 @@ export function OrderList({ onNavigate, onViewOrder }) {
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
                       <span style={{ fontSize: 16, fontWeight: 700, color: '#111827' }}>
-                        #{order.order_id}
+                        {order.order_code || `REECO-${order.order_number}` || `#${order.id}`}
                       </span>
                       <span
                         style={{
@@ -176,12 +225,16 @@ export function OrderList({ onNavigate, onViewOrder }) {
                         {statusConfig.label}
                       </span>
                     </div>
-                    <div style={{ fontSize: 12, color: '#6b7280', display: 'flex', gap: 12 }}>
-                      <span>Date: {dateStr}</span>
+                    <div style={{ fontSize: 12, color: '#6b7280', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                      <span>Ordered: {dateStr}</span>
                       <span>•</span>
-                      <span>{order.items?.length || 0} {(order.items?.length === 1) ? 'item' : 'items'}</span>
-                      <span>•</span>
-                      <span>Delivery: {order.estimated_delivery?.display || 'In transit'}</span>
+                      <span>{itemCount} {itemCount === 1 ? 'item' : 'items'}</span>
+                      {order.estimated_delivery_from && (
+                        <>
+                          <span>•</span>
+                          <span>Est. Delivery: {order.estimated_delivery_from} → {order.estimated_delivery_to}</span>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -190,7 +243,7 @@ export function OrderList({ onNavigate, onViewOrder }) {
                   <div style={{ textAlign: 'right' }}>
                     <div style={{ fontSize: 11, color: '#93979f', textTransform: 'uppercase' }}>Total</div>
                     <div style={{ fontSize: 16, fontWeight: 700, color: '#0069e0' }}>
-                      {formatPrice(order.total, order.currency)}
+                      {formatCurrency(order.total)}
                     </div>
                   </div>
                   <button
@@ -211,13 +264,13 @@ export function OrderList({ onNavigate, onViewOrder }) {
                     onClick={(e) => {
                       e.stopPropagation();
                       if (onViewOrder) {
-                        onViewOrder(order.order_id);
+                        onViewOrder(targetId);
                       } else if (onNavigate) {
-                        onNavigate(`account-order:${order.order_id}`);
+                        onNavigate(`account-order:${targetId}`);
                       }
                     }}
                   >
-                    <span>View Order</span>
+                    <span>Details</span>
                     <ChevronRight size={14} />
                   </button>
                 </div>

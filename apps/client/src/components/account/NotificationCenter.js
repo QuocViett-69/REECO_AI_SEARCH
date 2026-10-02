@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { notificationService, NOTIFICATION_TYPES } from '../../services/notificationService';
-import { orderService } from '../../services/orderService';
 import {
   Bell,
   ArrowLeft,
@@ -12,6 +11,8 @@ import {
   Sparkles,
   ChevronRight,
   Clock,
+  AlertCircle,
+  RefreshCw,
 } from 'lucide-react';
 
 function getRelativeTime(isoString) {
@@ -25,42 +26,73 @@ function getRelativeTime(isoString) {
 
   if (diffMinutes < 1) return 'Just now';
   if (diffMinutes < 60) return `${diffMinutes}m ago`;
-  if (diffHours === 1) return '1 hour ago';
-  if (diffHours < 24) return `${diffHours} hours ago`;
+  if (diffHours === 1) return '1h ago';
+  if (diffHours < 24) return `${diffHours}h ago`;
   if (diffDays === 1) return 'Yesterday';
-  if (diffDays < 7) return `${diffDays} days ago`;
+  if (diffDays < 7) return `${diffDays}d ago`;
   return past.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
+const NOTIF_TAB_KEY = 'reeco_notifications_tab';
+
 export function NotificationCenter({ onNavigate }) {
   const { user, isAuthenticated } = useAuth();
-  const [notifications, setNotifications] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const loadNotifications = () => {
-    if (user && user.username) {
-      // Run daily notification job simulator check
-      const userOrders = orderService.getCustomerOrders(user.username);
-      notificationService.runDailyNotificationJob(user.username, userOrders);
-
-      const list = notificationService.getNotifications(user.username);
-      setNotifications(list);
+  const [notifications, setNotifications] = useState(() => {
+    return notificationService.getCachedNotifications();
+  });
+  const [activeTab, setActiveTab] = useState(() => {
+    try {
+      return sessionStorage.getItem(NOTIF_TAB_KEY) || 'all';
+    } catch {
+      return 'all';
     }
-    setLoading(false);
+  });
+  const [loading, setLoading] = useState(() => {
+    return notificationService.getCachedNotifications().length === 0;
+  });
+  const [error, setError] = useState(null);
+
+  const loadNotifications = useCallback(async () => {
+    if (!isAuthenticated || !user) {
+      setLoading(false);
+      return;
+    }
+    // Only show full loading spinner if cache is empty
+    if (notificationService.getCachedNotifications().length === 0) {
+      setLoading(true);
+    }
+    setError(null);
+    try {
+      const list = await notificationService.getMyNotifications();
+      setNotifications(Array.isArray(list) ? list : []);
+    } catch (err) {
+      if (notificationService.getCachedNotifications().length === 0) {
+        setError(err.message || 'Unable to load notifications.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [isAuthenticated, user]);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    try {
+      sessionStorage.setItem(NOTIF_TAB_KEY, tab);
+    } catch {}
   };
 
   useEffect(() => {
     loadNotifications();
-  }, [user]);
+  }, [loadNotifications]);
 
   if (!isAuthenticated || !user) {
     return (
       <div className="page-container" style={{ maxWidth: 600, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
         <div className="glass-card" style={{ padding: 40, borderRadius: 16 }}>
           <Bell size={40} style={{ color: '#93979f', marginBottom: 16 }} />
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Authentication Required</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Sign In Required</h2>
           <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>
-            Sign in to view commercial notifications and delivery status alerts.
+            Please sign in to view order notifications and delivery updates.
           </p>
           <button
             type="button"
@@ -68,33 +100,41 @@ export function NotificationCenter({ onNavigate }) {
             onClick={() => onNavigate && onNavigate('login')}
             style={{ padding: '10px 24px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
           >
-            Sign In
+            Sign In Now
           </button>
         </div>
       </div>
     );
   }
 
-  const handleMarkAsRead = (id) => {
-    notificationService.markAsRead(id);
-    loadNotifications();
+  const handleMarkAsRead = async (id) => {
+    try {
+      await notificationService.markAsRead(id);
+      setNotifications((prev) =>
+        prev.map((n) => (n.id === id ? { ...n, read_at: new Date().toISOString() } : n))
+      );
+    } catch {}
   };
 
-  const handleMarkAllRead = () => {
-    notificationService.markAllAsRead(user.username);
-    loadNotifications();
+  const handleMarkAllRead = async () => {
+    try {
+      await notificationService.markAllAsRead();
+      setNotifications((prev) =>
+        prev.map((n) => ({ ...n, read_at: n.read_at || new Date().toISOString() }))
+      );
+    } catch {}
   };
 
-  const handleNotificationClick = (notif) => {
-    if (!notif.is_read) {
-      notificationService.markAsRead(notif.id);
+  const handleNotificationClick = async (notif) => {
+    if (!notif.read_at) {
+      await handleMarkAsRead(notif.id);
     }
     if (notif.order_id && onNavigate) {
       onNavigate(`account-order:${notif.order_id}`);
     }
   };
 
-  const unreadCount = notifications.filter((n) => !n.is_read).length;
+  const unreadCount = notifications.filter((n) => !n.read_at).length;
 
   return (
     <div className="page-container" style={{ maxWidth: 840, margin: '40px auto', padding: '0 20px' }}>
@@ -113,7 +153,7 @@ export function NotificationCenter({ onNavigate }) {
           marginBottom: 16,
         }}
       >
-        <ArrowLeft size={14} /> Back to Account Dashboard
+        <ArrowLeft size={14} /> Back to Account
       </button>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
@@ -139,7 +179,7 @@ export function NotificationCenter({ onNavigate }) {
             )}
           </div>
           <p style={{ fontSize: 13, color: '#6b7280', margin: '4px 0 0' }}>
-            Daily fulfillment logs, payment authorizations, and delivery milestones
+            Notifications on new orders, shipping status updates, and payment confirmations
           </p>
         </div>
 
@@ -150,16 +190,84 @@ export function NotificationCenter({ onNavigate }) {
             onClick={handleMarkAllRead}
             style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, padding: '8px 14px', background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer' }}
           >
-            <CheckCheck size={15} /> Mark All as Read
+            <CheckCheck size={15} /> Mark all as read
           </button>
         )}
       </div>
 
-      {loading ? (
-        <div className="glass-card" style={{ padding: 40, textAlign: 'center', color: '#6b7280' }}>
-          Loading notifications...
+      {/* Filter Tabs */}
+      <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
+        <button
+          type="button"
+          onClick={() => handleTabChange('all')}
+          style={{
+            padding: '6px 14px',
+            borderRadius: 20,
+            fontSize: 13,
+            fontWeight: 600,
+            border: activeTab === 'all' ? '1px solid #111827' : '1px solid #e5e7eb',
+            background: activeTab === 'all' ? '#111827' : '#fff',
+            color: activeTab === 'all' ? '#fff' : '#6b7280',
+            cursor: 'pointer',
+          }}
+        >
+          All ({notifications.length})
+        </button>
+        <button
+          type="button"
+          onClick={() => handleTabChange('unread')}
+          style={{
+            padding: '6px 14px',
+            borderRadius: 20,
+            fontSize: 13,
+            fontWeight: 600,
+            border: activeTab === 'unread' ? '1px solid #0069e0' : '1px solid #e5e7eb',
+            background: activeTab === 'unread' ? '#0069e0' : '#fff',
+            color: activeTab === 'unread' ? '#fff' : '#6b7280',
+            cursor: 'pointer',
+          }}
+        >
+          Unread ({unreadCount})
+        </button>
+      </div>
+
+      {/* 1. Loading state */}
+      {loading && (
+        <div className="glass-card" style={{ padding: 48, textAlign: 'center', color: '#6b7280' }}>
+          <div
+            style={{
+              width: 36,
+              height: 36,
+              border: '3px solid #e5e7eb',
+              borderTopColor: '#0069e0',
+              borderRadius: '50%',
+              margin: '0 auto 16px',
+              animation: 'spin 1s linear infinite',
+            }}
+          />
+          <div>Loading notifications...</div>
         </div>
-      ) : notifications.length === 0 ? (
+      )}
+
+      {/* 2. Error state */}
+      {!loading && error && (
+        <div className="glass-card" style={{ padding: 36, borderRadius: 16, textAlign: 'center' }}>
+          <AlertCircle size={40} color="#d93025" style={{ marginBottom: 12 }} />
+          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Unable to load notifications</h3>
+          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>{error}</p>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={loadNotifications}
+            style={{ padding: '8px 20px', fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
+          >
+            <RefreshCw size={14} /> Retry
+          </button>
+        </div>
+      )}
+
+      {/* 3. Empty data state */}
+      {!loading && !error && (activeTab === 'unread' ? notifications.filter(n => !n.read_at).length === 0 : notifications.length === 0) && (
         <div className="glass-card" style={{ padding: 48, borderRadius: 16, textAlign: 'center' }}>
           <div
             style={{
@@ -178,15 +286,19 @@ export function NotificationCenter({ onNavigate }) {
             <Bell size={28} />
           </div>
           <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 6 }}>
-            You're all caught up
+            {activeTab === 'unread' ? 'No unread notifications' : 'No notifications yet'}
           </h3>
           <p style={{ color: '#6b7280', fontSize: 14, margin: 0 }}>
-            There are no unread notifications for your account.
+            {activeTab === 'unread' ? 'You have caught up with all order updates.' : 'All order updates and notifications will appear here.'}
           </p>
         </div>
-      ) : (
+      )}
+
+      {/* 4. Data state */}
+      {!loading && !error && (activeTab === 'unread' ? notifications.filter(n => !n.read_at) : notifications).length > 0 && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          {notifications.map((notif) => {
+          {(activeTab === 'unread' ? notifications.filter(n => !n.read_at) : notifications).map((notif) => {
+            const isRead = Boolean(notif.read_at);
             const typeConfig = NOTIFICATION_TYPES[notif.type] || {
               label: notif.type,
               color: '#0069e0',
@@ -194,8 +306,7 @@ export function NotificationCenter({ onNavigate }) {
 
             let TypeIcon = Package;
             if (notif.type === 'PAYMENT_UPDATED') TypeIcon = CreditCard;
-            else if (notif.type === 'DELIVERY_UPDATED') TypeIcon = Truck;
-            else if (notif.type === 'DAILY_ORDER_UPDATE') TypeIcon = Sparkles;
+            else if (notif.type === 'ORDER_STATUS_CHANGED') TypeIcon = Truck;
 
             return (
               <div
@@ -209,8 +320,8 @@ export function NotificationCenter({ onNavigate }) {
                   justifyContent: 'space-between',
                   gap: 16,
                   cursor: notif.order_id ? 'pointer' : 'default',
-                  border: notif.is_read ? '1px solid #e5e7eb' : '1px solid rgba(0, 105, 224, 0.3)',
-                  background: notif.is_read ? '#ffffff' : 'rgba(0, 105, 224, 0.02)',
+                  border: isRead ? '1px solid #e5e7eb' : '1px solid rgba(0, 105, 224, 0.3)',
+                  background: isRead ? '#ffffff' : 'rgba(0, 105, 224, 0.02)',
                   transition: 'border-color 0.2s, background 0.2s',
                 }}
                 onClick={() => handleNotificationClick(notif)}
@@ -223,8 +334,8 @@ export function NotificationCenter({ onNavigate }) {
                       height: 8,
                       borderRadius: '50%',
                       marginTop: 6,
-                      background: notif.is_read ? 'transparent' : '#0069e0',
-                      border: notif.is_read ? '1px solid #e5e7eb' : 'none',
+                      background: isRead ? 'transparent' : '#0069e0',
+                      border: isRead ? '1px solid #e5e7eb' : 'none',
                       flexShrink: 0,
                     }}
                   />
@@ -252,8 +363,8 @@ export function NotificationCenter({ onNavigate }) {
                       <span
                         style={{
                           fontSize: 14,
-                          fontWeight: notif.is_read ? 600 : 700,
-                          color: notif.is_read ? '#535862' : '#111827',
+                          fontWeight: isRead ? 600 : 700,
+                          color: isRead ? '#535862' : '#111827',
                         }}
                       >
                         {notif.title}

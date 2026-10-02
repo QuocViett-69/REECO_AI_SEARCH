@@ -1,209 +1,196 @@
-// ─── Notification Service & Daily Scheduled Notification Simulator ────────────
-// Implements in-app notifications for order state transitions, delivery updates,
-// payment confirmations, and scheduled daily updates (Asia/Ho_Chi_Minh).
+// ─── Notification Service & Real-time Hook ─────────────────────────────────────
+// Client API integration via apiFetch with polling hook for Navbar integration.
 
-const NOTIFICATIONS_STORAGE_KEY = 'reeco_notifications_store';
-const LAST_DAILY_CHECK_KEY = 'reeco_last_daily_notification_check';
+import { useState, useEffect, useCallback } from 'react';
+import { apiFetch, getAuthToken } from './apiFetch.js';
 
 export const NOTIFICATION_TYPES = {
-  ORDER_STATUS_CHANGED: { label: 'Order Status Update', color: '#00d2ff' },
+  ORDER_CREATED: { label: 'New Order', color: '#ffb020' },
+  ORDER_STATUS_CHANGED: { label: 'Status Update', color: '#00d2ff' },
   PAYMENT_UPDATED: { label: 'Payment Confirmed', color: '#00c873' },
-  DELIVERY_UPDATED: { label: 'Delivery Schedule Update', color: '#ffb020' },
-  DAILY_ORDER_UPDATE: { label: 'Daily Fulfillment Digest', color: '#8b5cf6' },
 };
 
-class NotificationService {
-  constructor() {
-    this.initDefaultNotificationsIfEmpty();
-  }
+const NOTIFICATIONS_CACHE_KEY = 'reeco_notifications_cache';
+const UNREAD_COUNT_CACHE_KEY = 'reeco_unread_count_cache';
+const LAST_FETCH_KEY = 'reeco_notifications_last_fetch';
 
-  getStoredNotifications() {
+class NotificationService {
+  /**
+   * Lấy danh sách thông báo đã lưu trong session
+   * @returns {Array}
+   */
+  getCachedNotifications() {
     try {
-      if (typeof localStorage === 'undefined') return [];
-      const raw = localStorage.getItem(NOTIFICATIONS_STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
+      if (typeof sessionStorage === 'undefined') return [];
+      const cached = sessionStorage.getItem(NOTIFICATIONS_CACHE_KEY);
+      return cached ? JSON.parse(cached) : [];
     } catch {
       return [];
     }
   }
 
-  saveStoredNotifications(notifs) {
+  /**
+   * Lấy số lượng chưa đọc đã lưu trong session
+   * @returns {number}
+   */
+  getCachedUnreadCount() {
     try {
-      if (typeof localStorage === 'undefined') return;
-      localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, JSON.stringify(notifs));
-    } catch {}
-  }
-
-  initDefaultNotificationsIfEmpty() {
-    try {
-      if (typeof localStorage === 'undefined') return;
-      const existing = this.getStoredNotifications();
-      if (existing.length === 0) {
-        const now = new Date();
-        const pastDate1 = new Date(now.getTime() - 2 * 60 * 60 * 1000); // 2 hours ago
-        const pastDate2 = new Date(now.getTime() - 24 * 60 * 60 * 1000); // 1 day ago
-        const pastDate3 = new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000); // 3 days ago
-
-        const initialNotifs = [
-          {
-            id: 'notif_1001_01',
-            customer_id: 'haitran',
-            type: 'ORDER_STATUS_CHANGED',
-            title: 'Order #1001 Status Changed to Processing',
-            message: 'Your commercial order #1001 is currently processing at REECO and calibration specs are being prepared.',
-            order_id: 1001,
-            is_read: false,
-            created_at: pastDate1.toISOString(),
-          },
-          {
-            id: 'notif_1001_02',
-            customer_id: 'haitran',
-            type: 'PAYMENT_UPDATED',
-            title: 'Payment for Order #1001 Confirmed',
-            message: 'Payment of $1,050 for order #1001 has been successfully authorized and verified via VNPay Sandbox.',
-            order_id: 1001,
-            is_read: false,
-            created_at: pastDate2.toISOString(),
-          },
-          {
-            id: 'notif_1001_03',
-            customer_id: 'haitran',
-            type: 'DELIVERY_UPDATED',
-            title: 'Estimated Delivery Calculated for Order #1001',
-            message: 'Factory logistics schedule confirmed. Expected delivery window: Standard 7–10 business days.',
-            order_id: 1001,
-            is_read: true,
-            created_at: pastDate3.toISOString(),
-          },
-        ];
-
-        this.saveStoredNotifications(initialNotifs);
-      }
-    } catch {}
-  }
-
-  // ── Retrieve Customer Notifications (Authorized to own customer ID only) ─────
-  getNotifications(customerId) {
-    if (!customerId) return [];
-    const all = this.getStoredNotifications();
-    return all
-      .filter((n) => n.customer_id === customerId)
-      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-  }
-
-  getUnreadCount(customerId) {
-    if (!customerId) return 0;
-    const notifs = this.getNotifications(customerId);
-    return notifs.filter((n) => !n.is_read).length;
-  }
-
-  // ── Mark Notification as Read ────────────────────────────────────────────────
-  markAsRead(notificationId) {
-    const all = this.getStoredNotifications();
-    const idx = all.findIndex((n) => n.id === notificationId);
-    if (idx !== -1) {
-      all[idx].is_read = true;
-      this.saveStoredNotifications(all);
-      return { success: true, notification: all[idx] };
+      if (typeof sessionStorage === 'undefined') return 0;
+      const cached = sessionStorage.getItem(UNREAD_COUNT_CACHE_KEY);
+      return cached !== null ? Number(cached) : 0;
+    } catch {
+      return 0;
     }
-    return { success: false, error: 'not_found' };
   }
 
-  // ── Mark All as Read for Customer ────────────────────────────────────────────
-  markAllAsRead(customerId) {
-    if (!customerId) return { success: false };
-    const all = this.getStoredNotifications();
-    let updatedCount = 0;
-    const updated = all.map((n) => {
-      if (n.customer_id === customerId && !n.is_read) {
-        updatedCount++;
-        return { ...n, is_read: true };
+  setCachedNotifications(list) {
+    try {
+      if (typeof sessionStorage === 'undefined') return;
+      sessionStorage.setItem(NOTIFICATIONS_CACHE_KEY, JSON.stringify(list || []));
+      sessionStorage.setItem(LAST_FETCH_KEY, String(Date.now()));
+    } catch {}
+  }
+
+  setCachedUnreadCount(count) {
+    try {
+      if (typeof sessionStorage === 'undefined') return;
+      sessionStorage.setItem(UNREAD_COUNT_CACHE_KEY, String(count || 0));
+    } catch {}
+  }
+
+  /**
+   * Lấy danh sách thông báo của người dùng hiện tại
+   * @param {boolean} [unreadOnly=false]
+   * @returns {Promise<Array>}
+   */
+  async getMyNotifications(unreadOnly = false) {
+    const query = unreadOnly ? '?unread_only=true' : '';
+    const res = await apiFetch(`/notifications/me${query}`);
+    const list = Array.isArray(res) ? res : (Array.isArray(res?.items) ? res.items : []);
+    if (!unreadOnly) {
+      this.setCachedNotifications(list);
+      const unreadCount =
+        typeof res?.unread_count === 'number'
+          ? res.unread_count
+          : list.filter((n) => !n.read_at).length;
+      this.setCachedUnreadCount(unreadCount);
+    }
+    return list;
+  }
+
+  /**
+   * Alias tương thích ngược
+   */
+  async getNotifications(customerIdOrUnreadOnly = false) {
+    const unreadOnly = typeof customerIdOrUnreadOnly === 'boolean' ? customerIdOrUnreadOnly : false;
+    return await this.getMyNotifications(unreadOnly);
+  }
+
+  /**
+   * Đếm số lượng thông báo chưa đọc
+   * @returns {Promise<number>}
+   */
+  async getUnreadCount() {
+    try {
+      const res = await apiFetch('/notifications/me?unread_only=true');
+      if (typeof res?.unread_count === 'number') {
+        this.setCachedUnreadCount(res.unread_count);
+        return res.unread_count;
       }
-      return n;
+      const list = Array.isArray(res) ? res : (Array.isArray(res?.items) ? res.items : []);
+      const count = list.length;
+      this.setCachedUnreadCount(count);
+      return count;
+    } catch {
+      return this.getCachedUnreadCount();
+    }
+  }
+
+  /**
+   * Đánh dấu 1 thông báo là đã đọc
+   * @param {string} notificationId
+   */
+  async markAsRead(notificationId) {
+    try {
+      const cached = this.getCachedNotifications();
+      const updated = cached.map((n) =>
+        n.id === notificationId ? { ...n, read_at: new Date().toISOString() } : n
+      );
+      this.setCachedNotifications(updated);
+      const newCount = Math.max(0, this.getCachedUnreadCount() - 1);
+      this.setCachedUnreadCount(newCount);
+    } catch {}
+
+    return await apiFetch(`/notifications/${encodeURIComponent(notificationId)}/read`, {
+      method: 'PATCH',
     });
-    this.saveStoredNotifications(updated);
-    return { success: true, updatedCount };
   }
 
-  // ── Create Notification with Duplicate Prevention ────────────────────────────
-  createNotification({ customer_id, type, title, message, order_id = null }) {
-    if (!customer_id || !title || !message) {
-      throw new Error('customer_id, title, and message are required.');
-    }
-
-    const all = this.getStoredNotifications();
-
-    // Duplicate check: prevent identical title + message for the same customer within 1 hour
-    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
-    const isDuplicate = all.some(
-      (n) =>
-        n.customer_id === customer_id &&
-        n.title === title &&
-        n.created_at > oneHourAgo
-    );
-
-    if (isDuplicate) {
-      return { duplicate: true, message: 'Notification already sent recently.' };
-    }
-
-    const newNotif = {
-      id: `notif_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
-      customer_id,
-      type: type || 'ORDER_STATUS_CHANGED',
-      title: title.trim(),
-      message: message.trim(),
-      order_id: order_id ? parseInt(String(order_id).replace(/\D/g, ''), 10) : null,
-      is_read: false,
-      created_at: new Date().toISOString(),
-    };
-
-    all.unshift(newNotif);
-    this.saveStoredNotifications(all);
-
-    return { success: true, notification: newNotif };
-  }
-
-  // ── Scheduled Daily Notification Job Simulator ───────────────────────────────
-  // Default timezone: Asia/Ho_Chi_Minh
-  runDailyNotificationJob(customerId, orders = []) {
-    if (!customerId || !orders || orders.length === 0) return { checked: 0, created: 0 };
-
-    let createdCount = 0;
-    const now = new Date();
-    const todayKey = now.toISOString().split('T')[0];
-    const userDailyKey = `${LAST_DAILY_CHECK_KEY}_${customerId}_${todayKey}`;
-
-    // Check if daily job already ran today for this customer
+  /**
+   * Đánh dấu tất cả thông báo của chính mình là đã đọc
+   */
+  async markAllAsRead() {
     try {
-      if (typeof localStorage !== 'undefined') {
-        const lastRan = localStorage.getItem(userDailyKey);
-        if (lastRan) return { checked: orders.length, created: 0, reason: 'already_ran_today' };
-      }
+      const cached = this.getCachedNotifications();
+      const updated = cached.map((n) => ({ ...n, read_at: n.read_at || new Date().toISOString() }));
+      this.setCachedNotifications(updated);
+      this.setCachedUnreadCount(0);
     } catch {}
 
-    orders.forEach((order) => {
-      // If order is active (not DELIVERED or CANCELLED)
-      if (['PROCESSING', 'FORWARDED_TO_MANUFACTURER', 'SHIPPED'].includes(order.status)) {
-        const res = this.createNotification({
-          customer_id: customerId,
-          type: 'DAILY_ORDER_UPDATE',
-          title: `Daily Update: Order #${order.order_id} is ${order.status.replace(/_/g, ' ')}`,
-          message: `Your Campbell Scientific order #${order.order_id} is in progress. Estimated delivery window: ${order.estimated_delivery?.display || 'In logistics queue'}.`,
-          order_id: order.order_id,
-        });
-        if (res.success) createdCount++;
-      }
+    return await apiFetch('/notifications/read-all', {
+      method: 'POST',
     });
-
-    try {
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem(userDailyKey, todayKey);
-      }
-    } catch {}
-
-    return { checked: orders.length, created: createdCount };
   }
 }
 
 export const notificationService = new NotificationService();
+
+/**
+ * Custom hook polling số lượng thông báo chưa đọc mỗi 30 giây
+ * Cung cấp cho Navbar hoặc các component cần hiển thị badge
+ * Khởi tạo tức thì từ sessionStorage cache để tránh layout shift / chớp giật
+ * @param {number} [pollInterval=30000] Chu kỳ polling (mặc định 30s)
+ * @returns {number} unreadCount
+ */
+export function useUnreadNotificationCount(pollInterval = 30000) {
+  const [unreadCount, setUnreadCount] = useState(() => {
+    return notificationService.getCachedUnreadCount();
+  });
+
+  const fetchCount = useCallback(async () => {
+    const token = getAuthToken();
+    if (!token) {
+      setUnreadCount(0);
+      return;
+    }
+    try {
+      const count = await notificationService.getUnreadCount();
+      setUnreadCount(count);
+    } catch {
+      // ignore network errors during poll
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchCount();
+
+    if (!pollInterval || pollInterval <= 0) return;
+
+    const timer = setInterval(() => {
+      fetchCount();
+    }, pollInterval);
+
+    // Refresh khi window focus
+    const onFocus = () => fetchCount();
+    window.addEventListener('focus', onFocus);
+
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('focus', onFocus);
+    };
+  }, [fetchCount, pollInterval]);
+
+  return unreadCount;
+}
+
 export default notificationService;

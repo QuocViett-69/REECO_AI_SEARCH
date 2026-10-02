@@ -4,15 +4,62 @@ import { DashboardView } from './components/dashboard/DashboardView';
 import { ProductManagementView } from './components/products/ProductManagementView';
 import { AdminProductDetailView } from './components/detail/AdminProductDetailView';
 import { ProductImportView } from './components/import/ProductImportView';
+import { UserManagementView } from './components/users/UserManagementView';
+import { OrderManagementView } from './components/orders/OrderManagementView';
+import { ReportsAnalyticsView } from './components/reports/ReportsAnalyticsView';
 import { LoginView } from './components/auth/LoginView';
 import { ToastContainer } from './components/common/Toast';
 import { getAdminProductsApi, getStoredUser, logoutAdminApi } from './services/api';
 import './index.css';
 
+const VALID_TABS = ['dashboard', 'products', 'import', 'users', 'orders', 'reports', 'detail'];
+
+const getInitialTab = () => {
+  try {
+    // 1. Prioritize URL hash (e.g. #users, #orders, #reports)
+    const hash = window.location.hash.replace('#', '').trim();
+    if (hash) {
+      const tabName = hash.split('?')[0];
+      if (VALID_TABS.includes(tabName)) {
+        return tabName;
+      }
+    }
+    // 2. Query param ?tab=users
+    const params = new URLSearchParams(window.location.search);
+    const tabParam = params.get('tab');
+    if (VALID_TABS.includes(tabParam)) {
+      return tabParam;
+    }
+    // 3. Saved in localStorage
+    const saved = localStorage.getItem('reeco_admin_active_tab');
+    if (VALID_TABS.includes(saved)) {
+      return saved;
+    }
+  } catch {
+    // ignore
+  }
+  return 'dashboard';
+};
+
+const getInitialProductId = () => {
+  try {
+    const hash = window.location.hash.replace('#', '').trim();
+    if (hash.startsWith('detail')) {
+      const query = hash.split('?')[1] || '';
+      const params = new URLSearchParams(query);
+      const id = params.get('id');
+      if (id) return id;
+    }
+    return localStorage.getItem('reeco_admin_selected_product') || null;
+  } catch {
+    return null;
+  }
+};
+
 export function App() {
   const [currentUser, setCurrentUser] = useState(() => getStoredUser());
-  const [currentTab, setCurrentTab] = useState('dashboard');
-  const [selectedProductId, setSelectedProductId] = useState(null);
+  const [currentTab, setCurrentTab] = useState(getInitialTab);
+  const [selectedProductId, setSelectedProductId] = useState(getInitialProductId);
 
   // Products from API
   const [products, setProducts] = useState([]);
@@ -41,6 +88,43 @@ export function App() {
       setToasts((prev) => prev.filter((t) => t.id !== id));
     }, 4000);
   }, []);
+
+  // Sync hash and storage when tab or selectedProductId changes
+  useEffect(() => {
+    if (currentUser) {
+      if (currentTab === 'detail' && selectedProductId) {
+        window.location.hash = `detail?id=${encodeURIComponent(selectedProductId)}`;
+      } else if (window.location.hash.replace('#', '') !== currentTab) {
+        window.location.hash = currentTab;
+      }
+    }
+
+    const handleHashChange = () => {
+      const raw = window.location.hash.replace('#', '').trim();
+      if (!raw) return;
+      const [tabName, query] = raw.split('?');
+      if (VALID_TABS.includes(tabName)) {
+        setCurrentTab(tabName);
+        try {
+          localStorage.setItem('reeco_admin_active_tab', tabName);
+        } catch {}
+
+        if (tabName === 'detail') {
+          const p = new URLSearchParams(query || '');
+          const id = p.get('id');
+          if (id) {
+            setSelectedProductId(id);
+            try {
+              localStorage.setItem('reeco_admin_selected_product', id);
+            } catch {}
+          }
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [currentUser, currentTab, selectedProductId]);
 
   // ─── Load admin products from API ───────────────────────────────────────────
   const loadProducts = useCallback(async () => {
@@ -88,23 +172,39 @@ export function App() {
   const handleLogout = () => {
     logoutAdminApi();
     setCurrentUser(null);
+    try {
+      localStorage.removeItem('reeco_admin_active_tab');
+      localStorage.removeItem('reeco_admin_selected_product');
+    } catch {}
+    window.location.hash = '';
     showToast('info', 'Đã đăng xuất thành công.');
   };
 
   const handleSelectTab = (tab) => {
     setCurrentTab(tab);
+    try {
+      localStorage.setItem('reeco_admin_active_tab', tab);
+      if (tab !== 'detail') {
+        localStorage.removeItem('reeco_admin_selected_product');
+      }
+    } catch {}
+    window.location.hash = tab;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleViewDetail = (model) => {
     setSelectedProductId(model);
     setCurrentTab('detail');
+    try {
+      localStorage.setItem('reeco_admin_active_tab', 'detail');
+      localStorage.setItem('reeco_admin_selected_product', model);
+    } catch {}
+    window.location.hash = `detail?id=${encodeURIComponent(model)}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleBackToProducts = () => {
-    setCurrentTab('products');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    handleSelectTab('products');
   };
 
   // Called by ProductImportView when import completes (success or error)
@@ -163,6 +263,12 @@ export function App() {
       {currentTab === 'import' && (
         <ProductImportView onImportComplete={handleImportComplete} />
       )}
+
+      {currentTab === 'users' && <UserManagementView />}
+
+      {currentTab === 'orders' && <OrderManagementView />}
+
+      {currentTab === 'reports' && <ReportsAnalyticsView />}
 
       <ToastContainer toasts={toasts} />
     </div>

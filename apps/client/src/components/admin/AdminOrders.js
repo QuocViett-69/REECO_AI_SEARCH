@@ -32,18 +32,22 @@ export function AdminOrders({ onViewOrder }) {
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [actionError, setActionError] = useState(null);
 
-  const loadOrders = () => {
+  const loadOrders = async () => {
     if (user && user.role === 'admin') {
-      const res = orderService.getAllOrdersForAdmin(user, {
-        search: searchQuery,
-        status: statusFilter,
-      });
-      if (res.orders) {
-        setOrders(res.orders);
-        if (selectedOrder) {
-          const updated = res.orders.find((o) => o.order_id === selectedOrder.order_id);
-          if (updated) setSelectedOrder(updated);
+      try {
+        const res = await orderService.getAllOrdersForAdmin(user, {
+          search: searchQuery,
+          status: statusFilter,
+        });
+        if (res.orders) {
+          setOrders(res.orders);
+          if (selectedOrder) {
+            const updated = res.orders.find((o) => (o.order_id === selectedOrder.order_id || o.id === selectedOrder.id));
+            if (updated) setSelectedOrder(updated);
+          }
         }
+      } catch (err) {
+        console.error('Failed to load admin orders', err);
       }
     }
   };
@@ -75,21 +79,22 @@ export function AdminOrders({ onViewOrder }) {
     setActionError(null);
   };
 
-  const handleUpdateStatus = (e) => {
+  const handleUpdateStatus = async (e) => {
     e.preventDefault();
     setActionError(null);
     setSaveSuccess(false);
 
     if (!selectedOrder) return;
 
-    const res = orderService.updateOrderStatus(selectedOrder.order_id, editStatus, user);
-    if (res.error) {
-      setActionError(res.message);
-    } else {
-      setSelectedOrder(res.order);
+    try {
+      const orderId = selectedOrder.id || selectedOrder.order_id || selectedOrder.order_code;
+      const res = await orderService.updateOrderStatus(orderId, editStatus, 'Admin update');
+      setSelectedOrder(res?.order || res);
       setSaveSuccess(true);
-      loadOrders();
+      await loadOrders();
       setTimeout(() => setSaveSuccess(false), 3000);
+    } catch (err) {
+      setActionError(err.message || 'Cập nhật trạng thái thất bại');
     }
   };
 

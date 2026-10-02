@@ -4,7 +4,7 @@ import { AdminModule } from './modules/admin/admin.module';
 import { EmbeddingsModule } from './modules/embeddings/embeddings.module';
 import { HealthModule } from './modules/health/health.module';
 import { ImportsModule } from './modules/imports/imports.module';
-import { PaymentsModule } from './modules/payments/payments.module';
+import { OrdersModule } from './modules/orders/orders.module';
 import { ProductsModule } from './modules/products/products.module';
 import { SearchModule } from './modules/search/search.module';
 
@@ -13,11 +13,11 @@ import { SearchModule } from './modules/search/search.module';
     SupabaseModule,
     HealthModule,
     ProductsModule,
+    OrdersModule,
     AdminModule,
     ImportsModule,
     SearchModule,
     EmbeddingsModule,
-    PaymentsModule,
   ],
 })
 export class AppModule {}

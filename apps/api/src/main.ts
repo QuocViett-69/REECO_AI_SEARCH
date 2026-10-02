@@ -30,7 +30,7 @@ async function bootstrap() {
       .filter(Boolean),
     credentials: true,
     allowedHeaders: ['Authorization', 'Content-Type'],
-    methods: ['GET', 'POST', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
   });
 
   const port = Number(process.env.PORT ?? 3000);

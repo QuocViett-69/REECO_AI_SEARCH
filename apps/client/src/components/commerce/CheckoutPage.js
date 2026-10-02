@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
-import { orderService, SHIPPING_METHODS } from '../../services/orderService';
-import { paymentService, PAYMENT_METHODS } from '../../services/paymentService';
-import { formatPrice } from '../../services/commercialService';
+import { orderService, SHIPPING_METHODS, formatCurrency } from '../../services/orderService';
+import { paymentService } from '../../services/paymentService';
 import {
   Lock,
   ArrowLeft,
   Truck,
   CreditCard,
-  Banknote,
+  Building2,
   CheckCircle2,
   AlertCircle,
   ShieldCheck,
   PackageCheck,
-  ExternalLink,
+  Banknote,
 } from 'lucide-react';
 
 /* ── Shared inline style helpers ─────────────────────────────────── */
@@ -30,30 +29,59 @@ const inputStyle = (hasError) => ({
   outline: 'none',
 });
 
+const CHECKOUT_DRAFT_KEY = 'reeco_checkout_draft';
+const ACTIVE_PAYMENT_KEY = 'reeco_active_payment';
+
 export function CheckoutPage({ onNavigate }) {
   const { items, cartCount, cartSubtotal, clearCart } = useCart();
   const { user, isAuthenticated } = useAuth();
 
-  // Form State
-  const [formData, setFormData] = useState({
-    fullName: user?.name || '',
-    email: user?.email || '',
-    phone: '+84 908 123 456',
-    address: '128 Nguyen Van Thu, Da Kao Ward, District 1',
-    city: 'Ho Chi Minh City',
-    province: 'Ho Chi Minh',
-    country: 'Vietnam',
-    postalCode: '700000',
-    notes: '',
+  // Form State with session persistence
+  const [formData, setFormData] = useState(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        const saved = sessionStorage.getItem(CHECKOUT_DRAFT_KEY);
+        if (saved) return JSON.parse(saved);
+      }
+    } catch {}
+    return {
+      fullName: user?.name || '',
+      email: user?.email || '',
+      phone: '+84 908 123 456',
+      address: '128 Nguyễn Văn Thủ, Phường Đa Kao, Quận 1',
+      city: 'Hồ Chí Minh',
+      province: 'Hồ Chí Minh',
+      country: 'Vietnam',
+      postalCode: '700000',
+      notes: '',
+    };
   });
 
-  const [shippingMethod, setShippingMethod] = useState('standard');
-  const [paymentMethod, setPaymentMethod] = useState('cod');
+  const [shippingMethod, setShippingMethod] = useState(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        const saved = sessionStorage.getItem('reeco_shipping_method');
+        if (saved) return saved;
+      }
+    } catch {}
+    return 'standard';
+  });
+
+  const [paymentMethod, setPaymentMethod] = useState(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        const saved = sessionStorage.getItem('reeco_payment_method');
+        if (saved) return saved;
+      }
+    } catch {}
+    return 'vnpay';
+  });
+
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  // Sync user defaults when auth loads
+  // Sync user defaults when auth loads if not already in session draft
   useEffect(() => {
     if (user) {
       setFormData((prev) => ({
@@ -64,7 +92,18 @@ export function CheckoutPage({ onNavigate }) {
     }
   }, [user]);
 
-  // If unauthenticated, redirect to login with returnTo="checkout"
+  // Persist form inputs, shipping, and payment method in session storage
+  useEffect(() => {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        sessionStorage.setItem(CHECKOUT_DRAFT_KEY, JSON.stringify(formData));
+        sessionStorage.setItem('reeco_shipping_method', shippingMethod);
+        sessionStorage.setItem('reeco_payment_method', paymentMethod);
+      }
+    } catch {}
+  }, [formData, shippingMethod, paymentMethod]);
+
+  // If unauthenticated, redirect to login
   if (!isAuthenticated || !user) {
     return (
       <div className="page-container" style={{ maxWidth: 540, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
@@ -82,10 +121,10 @@ export function CheckoutPage({ onNavigate }) {
             <Lock size={36} />
           </div>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#111827', marginBottom: 8 }}>
-            Login Required for Checkout
+            Sign In Required for Checkout
           </h2>
           <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 24 }}>
-            Please sign in to your customer account to complete your commercial order. Your cart items will be preserved.
+            Please sign in to your account to complete your commercial order. Your shopping cart will be preserved.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
             <button
@@ -94,15 +133,15 @@ export function CheckoutPage({ onNavigate }) {
               onClick={() => onNavigate && onNavigate('cart')}
               style={{ padding: '12px 20px', background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer' }}
             >
-              Return to Cart
+              Back to Cart
             </button>
             <button
               type="button"
               className="btn btn-primary"
               onClick={() => onNavigate && onNavigate('login')}
-              style={{ padding: '12px 28px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
+              style={{ padding: '12px 24px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
             >
-              Sign In to Checkout
+              Sign In Now
             </button>
           </div>
         </div>
@@ -110,22 +149,23 @@ export function CheckoutPage({ onNavigate }) {
     );
   }
 
-  // If cart is empty
-  if (items.length === 0) {
+  // Cart empty guard
+  if (!items || items.length === 0) {
     return (
-      <div className="page-container" style={{ maxWidth: 600, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
+      <div className="page-container" style={{ maxWidth: 540, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
         <div style={{ padding: 40, borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#111827', marginBottom: 8 }}>
+          <AlertCircle size={40} color="#d93025" style={{ marginBottom: 16 }} />
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#111827', marginBottom: 8 }}>
             Your Cart is Empty
           </h2>
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 24 }}>
-            There are no items to checkout.
+          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>
+            You do not have any items in your shopping cart to proceed to checkout.
           </p>
           <button
             type="button"
             className="btn btn-primary"
             onClick={() => onNavigate && onNavigate('products')}
-            style={{ padding: '12px 28px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
+            style={{ padding: '12px 24px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
           >
             Browse Products
           </button>
@@ -147,14 +187,14 @@ export function CheckoutPage({ onNavigate }) {
 
   const validateForm = () => {
     const errors = {};
-    if (!formData.fullName.trim()) errors.fullName = 'Full name is required';
-    if (!formData.email.trim()) errors.email = 'Email address is required';
+    if (!formData.fullName.trim()) errors.fullName = 'Please enter your full name';
+    if (!formData.email.trim()) errors.email = 'Please enter your email address';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errors.email = 'Please provide a valid email format';
+      errors.email = 'Invalid email address format';
     }
-    if (!formData.phone.trim()) errors.phone = 'Phone number is required';
-    if (!formData.address.trim()) errors.address = 'Street address is required';
-    if (!formData.city.trim()) errors.city = 'City is required';
+    if (!formData.phone.trim()) errors.phone = 'Please enter your phone number';
+    if (!formData.address.trim()) errors.address = 'Please enter your delivery address';
+    if (!formData.city.trim()) errors.city = 'Please enter city / province';
 
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -168,32 +208,75 @@ export function CheckoutPage({ onNavigate }) {
       return;
     }
 
+    // Prevent double submission
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
     try {
-      const order = orderService.createOrder({
-        customer: user,
-        items,
-        shippingInfo: formData,
-        shippingMethod,
-        paymentMethod,
-      });
+      const orderPayload = {
+        items: items.map((item) => ({
+          product_id: item.product_id || item.id,
+          quantity: Math.max(1, parseInt(item.quantity, 10) || 1),
+        })),
+        shipping_method: shippingMethod,
+        payment_method: paymentMethod,
+        customer_name: formData.fullName.trim(),
+        customer_email: formData.email.trim(),
+        customer_phone: formData.phone.trim(),
+        shipping_address: formData.address.trim(),
+        city: formData.city.trim(),
+        province: formData.province?.trim() || formData.city.trim(),
+        country: formData.country?.trim() || 'Vietnam',
+        postal_code: formData.postalCode?.trim() || undefined,
+        notes: formData.notes?.trim() || undefined,
+      };
 
+      const order = await orderService.createOrder(orderPayload);
+
+      // Save active order session for payment return & order success
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.setItem(
+            ACTIVE_PAYMENT_KEY,
+            JSON.stringify({
+              orderId: order.id,
+              orderCode: order.order_code || order.order_number,
+              totalAmount: order.total_amount,
+              paymentMethod,
+              createdAt: new Date().toISOString(),
+            })
+          );
+          sessionStorage.setItem('reeco_last_order_id', order.id);
+          sessionStorage.setItem('reeco_order_success_id', order.id);
+          sessionStorage.setItem('reeco_current_order_id', order.id);
+        }
+      } catch {}
+
+      // VNPay flow: create order -> create vnpay payment url -> redirect
       if (paymentMethod === 'vnpay') {
-        // The cart is cleared only after VNPay confirms payment (see VnpayReturnPage)
-        const { payment_url } = await paymentService.createVnpayPaymentUrl(order);
-        window.location.assign(payment_url);
-        return;
-      }
-
-      clearCart();
-      setIsSubmitting(false);
-      if (onNavigate) {
-        onNavigate(`account-order:${order.order_id}`);
+        const vnpayRes = await paymentService.createVnpayPaymentUrl(order.id);
+        clearCart();
+        try {
+          if (typeof sessionStorage !== 'undefined') sessionStorage.removeItem(CHECKOUT_DRAFT_KEY);
+        } catch {}
+        if (vnpayRes && vnpayRes.payment_url) {
+          window.location.href = vnpayRes.payment_url;
+          return;
+        }
+        throw new Error('Failed to obtain payment URL from VNPay');
+      } else {
+        clearCart();
+        try {
+          if (typeof sessionStorage !== 'undefined') sessionStorage.removeItem(CHECKOUT_DRAFT_KEY);
+        } catch {}
+        setIsSubmitting(false);
+        if (onNavigate) {
+          onNavigate(`order-success:${order.id || order.order_code}`);
+        }
       }
     } catch (err) {
       setIsSubmitting(false);
-      setServerError(err.message || 'Failed to place order. Please try again.');
+      setServerError(err.message || 'Unable to place order. Please review your details.');
     }
   };
 
@@ -224,6 +307,7 @@ export function CheckoutPage({ onNavigate }) {
     border: isSelected ? '1.5px solid #0069e0' : '1px solid #e5e7eb',
     background: isSelected ? 'rgba(0, 105, 224, 0.04)' : '#ffffff',
     cursor: 'pointer',
+    transition: 'all 0.2s',
   });
 
   return (
@@ -248,42 +332,43 @@ export function CheckoutPage({ onNavigate }) {
 
       <div style={{ marginBottom: 28 }}>
         <h1 style={{ fontSize: 28, fontWeight: 700, color: '#111827', margin: '0 0 6px' }}>
-          Checkout &amp; Order Placement
+          Checkout
         </h1>
-        <p style={{ fontSize: 14, color: '#6b7280', margin: 0 }}>
-          Direct import and commercial order processing for authorized Campbell Scientific products
+        <p style={{ color: '#6b7280', fontSize: 14, margin: 0 }}>
+          Enter shipping details and choose a secure payment method
         </p>
       </div>
 
+      {/* Server / Validation Error Banner */}
       {serverError && (
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            padding: '14px 16px',
-            borderRadius: 8,
-            background: 'rgba(217, 48, 37, 0.06)',
-            border: '1px solid rgba(217, 48, 37, 0.2)',
+            padding: '14px 18px',
+            borderRadius: 10,
+            background: 'rgba(217, 48, 37, 0.08)',
+            border: '1px solid #d93025',
             color: '#d93025',
             fontSize: 14,
             marginBottom: 24,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
           }}
         >
-          <AlertCircle size={18} />
-          <span>{serverError}</span>
+          <AlertCircle size={20} flexShrink={0} />
+          <div style={{ flex: 1 }}>{serverError}</div>
         </div>
       )}
 
       <form onSubmit={handlePlaceOrder}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 28, alignItems: 'start' }}>
-          {/* Left Column: Information Steps */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 32, alignItems: 'start' }}>
+          {/* Left Column: Checkout Steps */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            {/* Step 1: Customer Information */}
+            {/* Step 1: Customer & Shipping Information */}
             <div style={{ padding: 24, borderRadius: 14, background: '#ffffff', border: '1px solid #e5e7eb' }}>
               <h2 style={{ fontSize: 18, fontWeight: 600, color: '#111827', margin: '0 0 18px', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <StepBadge n={1} />
-                Customer &amp; Delivery Information
+                Recipient &amp; Shipping Address
               </h2>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
@@ -295,7 +380,7 @@ export function CheckoutPage({ onNavigate }) {
                     type="text"
                     value={formData.fullName}
                     onChange={(e) => handleInputChange('fullName', e.target.value)}
-                    placeholder="e.g. Hai Tran"
+                    placeholder="John Doe"
                     style={inputStyle(formErrors.fullName)}
                   />
                   {formErrors.fullName && <div style={{ color: '#d93025', fontSize: 12, marginTop: 4 }}>{formErrors.fullName}</div>}
@@ -303,13 +388,13 @@ export function CheckoutPage({ onNavigate }) {
 
                 <div>
                   <label style={{ display: 'block', fontSize: 12, color: '#535862', marginBottom: 6, fontWeight: 600 }}>
-                    Email Address *
+                    Notification Email *
                   </label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    placeholder="e.g. haitran@example.com"
+                    placeholder="name@example.com"
                     style={inputStyle(formErrors.email)}
                   />
                   {formErrors.email && <div style={{ color: '#d93025', fontSize: 12, marginTop: 4 }}>{formErrors.email}</div>}
@@ -333,7 +418,7 @@ export function CheckoutPage({ onNavigate }) {
 
                 <div>
                   <label style={{ display: 'block', fontSize: 12, color: '#535862', marginBottom: 6, fontWeight: 600 }}>
-                    City *
+                    City / Province *
                   </label>
                   <input
                     type="text"
@@ -348,13 +433,13 @@ export function CheckoutPage({ onNavigate }) {
 
               <div style={{ marginBottom: 16 }}>
                 <label style={{ display: 'block', fontSize: 12, color: '#535862', marginBottom: 6, fontWeight: 600 }}>
-                  Street Address &amp; Delivery Destination *
+                  Detailed Street Address *
                 </label>
                 <input
                   type="text"
                   value={formData.address}
                   onChange={(e) => handleInputChange('address', e.target.value)}
-                  placeholder="Street address, building, station location"
+                  placeholder="Street number, street name, ward, district"
                   style={inputStyle(formErrors.address)}
                 />
                 {formErrors.address && <div style={{ color: '#d93025', fontSize: 12, marginTop: 4 }}>{formErrors.address}</div>}
@@ -362,7 +447,7 @@ export function CheckoutPage({ onNavigate }) {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 16 }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: 12, color: '#535862', marginBottom: 6 }}>Province / State</label>
+                  <label style={{ display: 'block', fontSize: 12, color: '#535862', marginBottom: 6 }}>District</label>
                   <input type="text" value={formData.province} onChange={(e) => handleInputChange('province', e.target.value)} style={inputStyle(false)} />
                 </div>
                 <div>
@@ -377,13 +462,13 @@ export function CheckoutPage({ onNavigate }) {
 
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: '#535862', marginBottom: 6 }}>
-                  Order &amp; Technical Calibration Notes (Optional)
+                  Order &amp; Calibration Notes (Optional)
                 </label>
                 <textarea
                   rows={2}
                   value={formData.notes}
                   onChange={(e) => handleInputChange('notes', e.target.value)}
-                  placeholder="Specify calibration certificate, custom cable length, or station deployment details"
+                  placeholder="Calibration certificate requests, custom cable lengths, or delivery instructions"
                   style={{ ...inputStyle(false), resize: 'vertical' }}
                 />
               </div>
@@ -414,7 +499,7 @@ export function CheckoutPage({ onNavigate }) {
                           <span style={{ fontWeight: 600, color: '#111827', fontSize: 14 }}>{method.name}</span>
                         </div>
                         <span style={{ fontWeight: 700, color: '#0069e0', fontSize: 15 }}>
-                          {formatPrice(method.fee)}
+                          {formatCurrency(method.fee)}
                         </span>
                       </div>
                       <span style={{ fontSize: 12, color: '#6b7280', paddingLeft: 24 }}>
@@ -434,35 +519,47 @@ export function CheckoutPage({ onNavigate }) {
               </h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 16 }}>
-                {Object.values(PAYMENT_METHODS).map((method) => {
-                  const Icon = method.id === 'cod' ? Banknote : CreditCard;
-                  return (
-                    <label key={method.id} style={paymentCardStyle(paymentMethod === method.id)}>
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value={method.id}
-                        checked={paymentMethod === method.id}
-                        onChange={() => setPaymentMethod(method.id)}
-                        style={{ marginTop: 4, accentColor: '#0069e0' }}
-                      />
-                      <div style={{ flex: 1 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, color: '#111827', marginBottom: 4 }}>
-                          <Icon size={16} color="#0069e0" />
-                          <span>{method.name}</span>
-                        </div>
-                        <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5 }}>
-                          {method.description}
-                        </div>
-                        {method.id === 'vnpay' && paymentMethod === 'vnpay' && (
-                          <div style={{ marginTop: 10, fontSize: 12, color: '#535862' }}>
-                            You will be redirected to VNPay to complete payment. The amount is charged in VND.
-                          </div>
-                        )}
-                      </div>
-                    </label>
-                  );
-                })}
+                {/* VNPay */}
+                <label style={paymentCardStyle(paymentMethod === 'vnpay')}>
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="vnpay"
+                    checked={paymentMethod === 'vnpay'}
+                    onChange={() => setPaymentMethod('vnpay')}
+                    style={{ marginTop: 4, accentColor: '#0069e0' }}
+                  />
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, color: '#111827', marginBottom: 4 }}>
+                      <CreditCard size={18} color="#0069e0" />
+                      <span>Online Payment via VNPAY Sandbox</span>
+                    </div>
+                    <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5 }}>
+                      Supports domestic ATM cards, VNPAY-QR code scanning, and international Visa/Mastercard via VNPay Sandbox gateway.
+                    </div>
+                  </div>
+                </label>
+
+                {/* COD */}
+                <label style={paymentCardStyle(paymentMethod === 'cod')}>
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="cod"
+                    checked={paymentMethod === 'cod'}
+                    onChange={() => setPaymentMethod('cod')}
+                    style={{ marginTop: 4, accentColor: '#0069e0' }}
+                  />
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, color: '#111827', marginBottom: 4 }}>
+                      <Banknote size={18} color="#0f9554" />
+                      <span>Cash on Delivery (COD)</span>
+                    </div>
+                    <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5 }}>
+                      Pay directly in cash to the courier upon delivery at the registered shipping address.
+                    </div>
+                  </div>
+                </label>
               </div>
             </div>
           </div>
@@ -479,19 +576,19 @@ export function CheckoutPage({ onNavigate }) {
             }}
           >
             <h2 style={{ fontSize: 18, fontWeight: 600, color: '#111827', margin: '0 0 16px' }}>
-              Order Breakdown ({cartCount} {cartCount === 1 ? 'item' : 'items'})
+              Order Summary ({cartCount} {cartCount === 1 ? 'item' : 'items'})
             </h2>
 
             {/* Items List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 16, maxHeight: 220, overflowY: 'auto', paddingRight: 4 }}>
               {items.map((item) => (
-                <div key={item.product_id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 13 }}>
+                <div key={item.product_id || item.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 13 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' }}>
-                    <span style={{ fontWeight: 700, color: '#0069e0', fontSize: 12 }}>{item.model}</span>
+                    <span style={{ fontWeight: 700, color: '#0069e0', fontSize: 12 }}>{item.model || item.product_name}</span>
                     <span style={{ color: '#93979f', whiteSpace: 'nowrap' }}>×{item.quantity}</span>
                   </div>
                   <span style={{ fontWeight: 600, color: '#111827' }}>
-                    {formatPrice(item.price * item.quantity, item.currency)}
+                    {formatCurrency(item.price * item.quantity)}
                   </span>
                 </div>
               ))}
@@ -500,20 +597,36 @@ export function CheckoutPage({ onNavigate }) {
             <div style={{ height: 1, background: '#e5e7eb', margin: '12px 0' }} />
 
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 14, color: '#6b7280' }}>
-              <span>Products Subtotal</span>
-              <span style={{ color: '#111827', fontWeight: 600 }}>{formatPrice(cartSubtotal)}</span>
+              <span>Subtotal</span>
+              <span style={{ color: '#111827', fontWeight: 600 }}>{formatCurrency(cartSubtotal)}</span>
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 14, color: '#6b7280' }}>
               <span>Shipping ({selectedShipping.name})</span>
-              <span style={{ color: '#111827', fontWeight: 600 }}>{formatPrice(shippingFee)}</span>
+              <span style={{ color: '#111827', fontWeight: 600 }}>{formatCurrency(shippingFee)}</span>
             </div>
 
             <div style={{ height: 1, background: '#e5e7eb', margin: '14px 0' }} />
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20, fontSize: 18, fontWeight: 700, color: '#111827' }}>
-              <span>Final Total</span>
-              <span style={{ color: '#0069e0' }}>{formatPrice(totalAmount)}</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10, fontSize: 18, fontWeight: 700, color: '#111827' }}>
+              <span>Total Amount</span>
+              <span style={{ color: '#0069e0' }}>{formatCurrency(totalAmount)}</span>
+            </div>
+
+            {/* Note required by spec */}
+            <div
+              style={{
+                fontSize: 12,
+                color: '#6b7280',
+                fontStyle: 'italic',
+                marginBottom: 18,
+                textAlign: 'center',
+                padding: '6px 8px',
+                borderRadius: 6,
+                background: '#f9fafb',
+              }}
+            >
+              * Final total verified by server
             </div>
 
             <button
@@ -530,31 +643,31 @@ export function CheckoutPage({ onNavigate }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 8,
-                cursor: isSubmitting ? 'wait' : 'pointer',
+                cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                opacity: isSubmitting ? 0.7 : 1,
                 background: '#111827',
                 color: '#fff',
                 border: 'none',
               }}
             >
               <PackageCheck size={18} />
-              <span>{isSubmitting ? (paymentMethod === 'vnpay' ? 'Redirecting to VNPay...' : 'Processing Order...') : (paymentMethod === 'vnpay' ? 'Pay with VNPay' : 'Place Order (COD)')}</span>
+              <span>{isSubmitting ? 'Processing Order...' : 'Place Order'}</span>
             </button>
 
             {/* Trust Assurances */}
             <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 8, fontSize: 12, color: '#6b7280' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                 <ShieldCheck size={14} color="#0f9554" />
-                <span>Authorized Campbell Scientific Reseller</span>
+                <span>Authorized commercial distributor</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                 <Truck size={14} color="#0069e0" />
-                <span>Customs and factory import fully insured</span>
+                <span>Full transit insurance &amp; official import</span>
               </div>
             </div>
           </div>
         </div>
       </form>
-
     </div>
   );
 }

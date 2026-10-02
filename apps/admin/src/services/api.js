@@ -1,11 +1,52 @@
-const API_BASE_URL =
-  process.env.REACT_APP_API_URL || 'http://localhost:3000/api/v1';
+export function getApiBaseUrl() {
+  if (typeof window !== 'undefined' && window.location) {
+    const port = window.location.port;
+    const hostname = window.location.hostname || '127.0.0.1';
+    // If running in local staging (Customer UI 4173 or Admin UI 4174)
+    if (port === '4173' || port === '4174') {
+      return `http://${hostname}:3100/api/v1`;
+    }
+    // If running in development (5173 or 5174)
+    if (port === '5173' || port === '5174') {
+      return `http://${hostname}:3000/api/v1`;
+    }
+  }
+  return process.env.REACT_APP_API_URL || 'http://localhost:3000/api/v1';
+}
+
+const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+// ─── Check if JWT token is expired (or close to expiring) ───────────────────────
+export function isJwtExpired(token) {
+  try {
+    if (!token || typeof token !== 'string') return true;
+    if (!token.startsWith('ey') || token.split('.').length !== 3) return false;
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split('')
+        .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+        .join('')
+    );
+    const parsed = JSON.parse(jsonPayload);
+    if (!parsed.exp) return false;
+    // Check if expired or expiring within 60 seconds
+    return parsed.exp * 1000 < Date.now() + 60000;
+  } catch {
+    return true;
+  }
+}
 
 // ─── Get the Supabase or local access token from localStorage ──────────────────
 export function getAuthToken() {
   try {
     const localToken = localStorage.getItem('admin_access_token');
-    if (localToken) return localToken;
+    if (localToken && !isJwtExpired(localToken)) return localToken;
+    if (localToken && isJwtExpired(localToken)) {
+      localStorage.removeItem('admin_access_token');
+    }
 
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
@@ -13,7 +54,9 @@ export function getAuthToken() {
         const raw = localStorage.getItem(key);
         if (raw) {
           const parsed = JSON.parse(raw);
-          return parsed?.access_token || null;
+          if (parsed?.access_token && !isJwtExpired(parsed.access_token)) {
+            return parsed.access_token;
+          }
         }
       }
     }
@@ -21,6 +64,11 @@ export function getAuthToken() {
     // ignore
   }
   return null;
+}
+
+export async function ensureAdminToken(forceRefresh = false) {
+  if (forceRefresh) localStorage.removeItem('admin_access_token');
+  return getAuthToken();
 }
 
 export function getStoredUser() {
@@ -62,12 +110,30 @@ export function clearAuthSession() {
 }
 
 export async function loginAdminApi(email, password) {
-  if (email && password) {
-    const token = `reeco_admin_token_${Date.now()}`;
-    const user = { email, role: 'admin', loggedInAt: new Date().toISOString() };
-    setAuthSession(token, user);
-    return { success: true, token, user };
+  try {
+    const authRes = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_ANON_KEY,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (authRes.ok) {
+      const data = await authRes.json();
+      if (!data.access_token || data.user?.app_metadata?.role !== 'admin') {
+        return { success: false, message: 'Admin access required.' };
+      }
+      const token = data.access_token;
+      const user = { email: data.user?.email || email, role: 'admin', loggedInAt: new Date().toISOString() };
+      setAuthSession(token, user);
+      return { success: true, token, user };
+    }
+  } catch (err) {
+    console.warn('Supabase login warning:', err);
   }
+
   return { success: false, message: 'Email hoặc mật khẩu không hợp lệ.' };
 }
 
@@ -76,10 +142,52 @@ export function logoutAdminApi() {
 }
 
 // ─── Build Bearer auth headers ────────────────────────────────────────────────
-function authHeaders() {
-  const token = getAuthToken();
+export async function getAuthHeaders() {
+  const token = await ensureAdminToken();
   if (!token) return {};
   return { Authorization: `Bearer ${token}` };
+}
+
+// ─── Helper: resilient fetch that tries staging (3100) or dev (3000) ───────────
+export async function safeFetch(path, options = {}) {
+  const primaryBase = getApiBaseUrl();
+  const secondaryBase = primaryBase.includes(':3100')
+    ? primaryBase.replace(':3100', ':3000')
+    : primaryBase.replace(':3000', ':3100');
+
+  let token = await ensureAdminToken();
+  const headers = { ...(options.headers || {}) };
+  if (!headers['Authorization'] && token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
+  const primaryUrl = `${primaryBase}${path.startsWith('/') ? '' : '/'}${path}`;
+  try {
+    let res = await fetch(primaryUrl, { ...options, headers });
+    if (res.status === 401 && !options._retried) {
+      const freshToken = await ensureAdminToken(true);
+      if (freshToken) {
+        headers['Authorization'] = `Bearer ${freshToken}`;
+        res = await fetch(primaryUrl, { ...options, headers, _retried: true });
+      }
+    }
+    return res;
+  } catch (err) {
+    const secondaryUrl = `${secondaryBase}${path.startsWith('/') ? '' : '/'}${path}`;
+    try {
+      let res = await fetch(secondaryUrl, { ...options, headers });
+      if (res.status === 401 && !options._retried) {
+        const freshToken = await ensureAdminToken(true);
+        if (freshToken) {
+          headers['Authorization'] = `Bearer ${freshToken}`;
+          res = await fetch(secondaryUrl, { ...options, headers, _retried: true });
+        }
+      }
+      return res;
+    } catch {
+      throw err;
+    }
+  }
 }
 
 // ─── Helper: handle common admin error codes ──────────────────────────────────
@@ -103,19 +211,16 @@ export async function getAdminProductsApi(params = {}) {
     if (params.device_type) queryParams.set('device_type', params.device_type);
 
     // 1. Try Admin API endpoint
-    const adminUrl = `${API_BASE_URL}/admin/products?${queryParams.toString()}`;
-    const adminRes = await fetch(adminUrl, {
-      headers: { ...authHeaders() },
-    });
-
+    const adminPath = `/admin/products?${queryParams.toString()}`;
+    const adminRes = await safeFetch(adminPath);
     if (adminRes.ok) {
       const data = await adminRes.json();
       return { items: data.items || [], pagination: data.pagination || {} };
     }
 
-    // 2. Try Public API endpoint (queries real Supabase Database)
-    const publicUrl = `${API_BASE_URL}/products?${queryParams.toString()}`;
-    const publicRes = await fetch(publicUrl);
+    // 2. Try Public API endpoint
+    const publicPath = `/products?${queryParams.toString()}`;
+    const publicRes = await safeFetch(publicPath);
     if (publicRes.ok) {
       const data = await publicRes.json();
       return { items: data.items || [], pagination: data.pagination || {} };
@@ -131,15 +236,10 @@ export async function getAdminProductsApi(params = {}) {
 // ─── GET /admin/products/:productId ───────────────────────────────────────────
 export async function getAdminProductDetailApi(productIdOrModel) {
   try {
-    const adminRes = await fetch(
-      `${API_BASE_URL}/admin/products/${encodeURIComponent(productIdOrModel)}`,
-      { headers: { ...authHeaders() } }
-    );
+    const adminRes = await safeFetch(`/admin/products/${encodeURIComponent(productIdOrModel)}`);
     if (adminRes.ok) return await adminRes.json();
 
-    const publicRes = await fetch(
-      `${API_BASE_URL}/products/${encodeURIComponent(productIdOrModel)}`
-    );
+    const publicRes = await safeFetch(`/products/${encodeURIComponent(productIdOrModel)}`);
     if (publicRes.ok) return await publicRes.json();
 
     return handleAdminError(adminRes.status);
@@ -152,17 +252,13 @@ export async function getAdminProductDetailApi(productIdOrModel) {
 // ─── PATCH /admin/products/:productId ──────────────────────────────────────────
 export async function updateAdminProductApi(productIdOrModel, updates) {
   try {
-    const res = await fetch(
-      `${API_BASE_URL}/admin/products/${encodeURIComponent(productIdOrModel)}`,
-      {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          ...authHeaders(),
-        },
-        body: JSON.stringify(updates),
-      }
-    );
+    const res = await safeFetch(`/admin/products/${encodeURIComponent(productIdOrModel)}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updates),
+    });
 
     if (res.ok) {
       return await res.json();
@@ -177,11 +273,10 @@ export async function updateAdminProductApi(productIdOrModel, updates) {
 // ─── POST /admin/import ───────────────────────────────────────────────────────
 export async function triggerAdminImport() {
   try {
-    const res = await fetch(`${API_BASE_URL}/admin/import`, {
+    const res = await safeFetch('/admin/import', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...authHeaders(),
       },
     });
 
@@ -200,11 +295,93 @@ export async function triggerAdminImport() {
 // ─── GET /health ──────────────────────────────────────────────────────────────
 export async function checkApiHealth() {
   try {
-    const res = await fetch(`${API_BASE_URL}/health`);
+    const res = await safeFetch('/health');
     if (!res.ok) return false;
     const data = await res.json();
     return data.status === 'ok';
   } catch {
     return false;
+  }
+}
+
+// ─── GET /admin/orders ────────────────────────────────────────────────────────
+export async function getAdminOrdersApi(params = {}) {
+  try {
+    const queryParams = new URLSearchParams();
+    if (params.search) queryParams.set('search', params.search);
+    if (params.status && params.status !== 'ALL') queryParams.set('status', params.status);
+    if (params.page) queryParams.set('page', params.page);
+    if (params.page_size || params.limit) queryParams.set('page_size', params.page_size || params.limit);
+
+    const res = await safeFetch(`/admin/orders?${queryParams.toString()}`);
+    if (res.ok) {
+      return await res.json();
+    }
+    return handleAdminError(res.status);
+  } catch (error) {
+    console.warn('API getAdminOrders failed:', error.message);
+    return { error: 'network_error', message: 'Không thể kết nối đến server.' };
+  }
+}
+
+// ─── GET /admin/orders/:orderId ───────────────────────────────────────────────
+export async function getAdminOrderDetailApi(orderId) {
+  try {
+    const res = await safeFetch(`/admin/orders/${encodeURIComponent(orderId)}`);
+    if (res.ok) {
+      return await res.json();
+    }
+    return handleAdminError(res.status);
+  } catch (error) {
+    console.warn('API getAdminOrderDetail failed:', error.message);
+    return { error: 'network_error', message: 'Không thể kết nối đến server.' };
+  }
+}
+
+// ─── PATCH /admin/orders/:orderId/status ──────────────────────────────────────
+export async function updateAdminOrderStatusApi(orderId, status, note = '') {
+  try {
+    const res = await safeFetch(`/admin/orders/${encodeURIComponent(orderId)}/status`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ status, note }),
+    });
+
+    const data = await res.json().catch(() => null);
+    if (res.ok) {
+      return { success: true, data };
+    }
+    if (res.status === 409) {
+      return {
+        error: 'conflict',
+        statusCode: 409,
+        message: data?.message || 'Trạng thái chuyển đổi không hợp lệ.',
+        allowed_statuses: data?.allowed_statuses || [],
+      };
+    }
+    return {
+      ...handleAdminError(res.status),
+      statusCode: res.status,
+      message: data?.message || `Lỗi server (${res.status}).`,
+    };
+  } catch (error) {
+    console.warn('API updateAdminOrderStatus failed:', error.message);
+    return { error: 'network_error', message: 'Không thể kết nối đến server.' };
+  }
+}
+
+// ─── GET /admin/orders/stats ──────────────────────────────────────────────────
+export async function getAdminOrderStatsApi() {
+  try {
+    const res = await safeFetch('/admin/orders/stats');
+    if (res.ok) {
+      return await res.json();
+    }
+    return handleAdminError(res.status);
+  } catch (error) {
+    console.warn('API getAdminOrderStats failed:', error.message);
+    return { error: 'network_error', message: 'Không thể kết nối đến server.' };
   }
 }
