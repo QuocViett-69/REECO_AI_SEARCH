@@ -66,6 +66,16 @@ export function getAuthToken() {
   return null;
 }
 
+export class ApiError extends Error {
+  constructor(message, status, data) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+    this.statusCode = status;
+    this.data = data;
+  }
+}
+
 export async function apiFetch(endpoint, options = {}) {
   const url = endpoint.startsWith('http')
     ? endpoint
@@ -76,17 +86,30 @@ export async function apiFetch(endpoint, options = {}) {
     ...(options.headers || {}),
   };
 
-  const token = getAuthToken();
-  if (token && !headers['Authorization']) {
-    headers['Authorization'] = `Bearer ${token}`;
+  if (options.auth !== false) {
+    const token = getAuthToken();
+    if (token && !headers['Authorization']) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+  }
+
+  // Remove body if GET or HEAD
+  let body = options.body;
+  if (body && (options.method === 'GET' || options.method === 'HEAD')) {
+    body = undefined;
   }
 
   const config = {
     ...options,
     headers,
+    body: body ? (typeof body === 'string' ? body : JSON.stringify(body)) : undefined,
   };
 
   const response = await fetch(url, config);
+
+  if (response.status === 401 && typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+  }
 
   let data = null;
   const contentType = response.headers.get('content-type');
@@ -100,13 +123,11 @@ export async function apiFetch(endpoint, options = {}) {
     const errorMsg =
       (typeof data === 'object' && (data?.message || data?.error)) ||
       `Yêu cầu thất bại (HTTP ${response.status})`;
-    const error = new Error(
+    throw new ApiError(
       Array.isArray(errorMsg) ? errorMsg.join(', ') : errorMsg,
+      response.status,
+      data
     );
-    error.status = response.status;
-    error.statusCode = response.status;
-    error.data = data;
-    throw error;
   }
 
   return data;

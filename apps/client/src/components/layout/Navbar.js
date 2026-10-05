@@ -153,8 +153,7 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
                   <div className="nav-dropdown" role="menu">
                     {isAdmin ? (
                       <>
-                        <button type="button" className="nav-dropdown-item" role="menuitem" onClick={() => nav('admin')}><Shield size={14} /> Admin Dashboard</button>
-                        <button type="button" className="nav-dropdown-item" role="menuitem" onClick={() => nav('admin-orders')}>All Orders</button>
+                        <a href={process.env.REACT_APP_ADMIN_URL || 'http://localhost:5174'} className="nav-dropdown-item" role="menuitem"><Shield size={14} /> Admin Dashboard</a>
                         <div className="nav-dropdown-divider" />
                       </>
                     ) : (

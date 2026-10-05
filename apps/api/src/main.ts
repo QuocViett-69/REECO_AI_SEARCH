@@ -11,6 +11,7 @@ async function bootstrap() {
   ]) {
     if (existsSync(envPath)) {
       process.loadEnvFile(envPath);
+      console.log('Loaded env from', envPath, 'SUPABASE_URL:', process.env.SUPABASE_URL);
       break;
     }
   }
@@ -24,10 +25,10 @@ async function bootstrap() {
     });
   }
   app.enableCors({
-    origin: (process.env.CORS_ORIGIN ?? 'http://localhost:5173')
-      .split(',')
-      .map((origin) => origin.trim())
-      .filter(Boolean),
+    origin: [
+      process.env.CLIENT_APP_URL ?? 'http://localhost:5173',
+      process.env.ADMIN_APP_URL ?? 'http://localhost:5174',
+    ].filter(Boolean),
     credentials: true,
     allowedHeaders: ['Authorization', 'Content-Type'],
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],

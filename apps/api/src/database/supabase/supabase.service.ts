@@ -4,11 +4,13 @@ import {
   type SupabaseClient,
   type User,
 } from '@supabase/supabase-js';
+import { configuration } from '../../config/configuration';
 
 @Injectable()
 export class SupabaseService {
-  readonly url = process.env.SUPABASE_URL;
-  readonly serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  private readonly config = configuration().supabase;
+  readonly url = this.config.url;
+  readonly serviceRoleKey = this.config.serviceRoleKey;
   private readonly client: SupabaseClient | null;
 
   constructor() {

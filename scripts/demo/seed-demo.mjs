@@ -151,7 +151,10 @@ async function main() {
   console.log(`done. demo password for all accounts: ${DEMO_PASSWORD}`);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+import { fileURLToPath } from 'url';
+import { resolve } from 'path';
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   main().catch((error) => {
     console.error(error.message ?? error);
     process.exit(1);

@@ -32,7 +32,7 @@ import { NotificationCenter } from './components/account/NotificationCenter';
 import { ProfilePage } from './components/account/ProfilePage';
 
 // Admin
-import { AdminOrders } from './components/admin/AdminOrders';
+
 
 import './index.css';
 
@@ -445,12 +445,6 @@ function AppInner() {
           <ProfilePage onNavigate={handleNavigate} />
         )}
 
-        {/* ── Admin: Orders ──────────────────────────────────────────────────────── */}
-        {(currentPage === 'admin' || currentPage === 'admin-orders') && (
-          <AdminOrders
-            onViewOrder={(id) => { setCurrentOrderId(id); setCurrentPage('account-order-detail'); window.scrollTo({ top: 0 }); }}
-          />
-        )}
       </main>
 
       <ProductSelectorModal

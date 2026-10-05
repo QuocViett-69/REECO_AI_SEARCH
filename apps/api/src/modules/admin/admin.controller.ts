@@ -14,13 +14,16 @@ import {
   type ProductListResponse,
 } from '@reeco/shared';
 import { SupabaseAuthGuard } from '../../auth/supabase-auth.guard';
+import { RolesGuard } from '../../auth/roles.guard';
+import { Roles } from '../../auth/roles.decorator';
 import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
 import { ProductsService } from '../products/products.service';
 
 @Controller('admin/products')
-@UseGuards(SupabaseAuthGuard)
+@UseGuards(SupabaseAuthGuard, RolesGuard)
+@Roles('admin')
 export class AdminController {
-  constructor(private readonly productsService: ProductsService) {}
+  constructor(private readonly productsService: ProductsService) { }
 
   @Get()
   list(

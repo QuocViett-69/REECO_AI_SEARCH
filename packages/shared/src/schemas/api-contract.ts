@@ -192,3 +192,22 @@ export type SearchRequest = z.infer<typeof SearchRequestSchema>;
 export type SearchScores = z.infer<typeof SearchScoresSchema>;
 export type SearchResult = z.infer<typeof SearchResultSchema>;
 export type SearchResponse = z.infer<typeof SearchResponseSchema>;
+
+export const AdminProductUpdateSchema = z.object({
+  product_name_en: z.string().optional(),
+  name_vi: z.string().nullable().optional(),
+  category: z.string().nullable().optional(),
+  subcategory: z.string().nullable().optional(),
+  device_type: z.string().nullable().optional(),
+  status: ProductStatusSchema.optional(),
+  product_url: z.string().optional(),
+  supported_protocols: z.array(z.string()).optional(),
+  specifications: z.array(
+    z.object({
+      canonical_key: z.string(),
+      value: z.string(),
+    }).strict()
+  ).optional(),
+}).strict();
+
+export type AdminProductUpdate = z.infer<typeof AdminProductUpdateSchema>;

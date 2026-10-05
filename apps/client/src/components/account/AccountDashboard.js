@@ -140,14 +140,13 @@ export function AccountDashboard({ onNavigate }) {
 
         <div style={{ display: 'flex', gap: 10 }}>
           {user.role === 'admin' && (
-            <button
-              type="button"
+            <a
+              href={process.env.REACT_APP_ADMIN_URL || 'http://localhost:5174'}
               className="btn btn-primary"
-              onClick={() => onNavigate && onNavigate('admin-orders')}
-              style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, padding: '8px 16px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
+              style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, padding: '8px 16px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer', textDecoration: 'none' }}
             >
-              <Shield size={14} /> Order Admin
-            </button>
+              <Shield size={14} /> Admin Dashboard
+            </a>
           )}
           <button
             type="button"
