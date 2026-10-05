@@ -82,6 +82,11 @@ const errors = [];
 const plannedNewRawFiles = new Set();
 
 for (const family of stagingReport.families) {
+  // output_file comes from a report on disk and later names files written under data/raw;
+  // a bare file name is the only accepted form (same rule as stage.mjs).
+  if (path.basename(family.output_file ?? '') !== family.output_file) {
+    throw new Error(`Unsafe staged output path: ${family.output_file}`);
+  }
   const stagedDocument = await readJson(
     path.join(stagedDirectory, family.output_file),
   );

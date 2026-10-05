@@ -13,12 +13,17 @@ import {
   type ProductListQuery,
   type ProductListResponse,
 } from '@reeco/shared';
+import { AdminGuard } from '../../auth/admin.guard';
 import { SupabaseAuthGuard } from '../../auth/supabase-auth.guard';
 import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
 import { ProductsService } from '../products/products.service';
+import {
+  AdminProductUpdateSchema,
+  type AdminProductUpdate,
+} from './admin-product-update.schema';
 
 @Controller('admin/products')
-@UseGuards(SupabaseAuthGuard)
+@UseGuards(SupabaseAuthGuard, AdminGuard)
 export class AdminController {
   constructor(private readonly productsService: ProductsService) {}
 
@@ -38,7 +43,8 @@ export class AdminController {
   @Patch(':productId')
   update(
     @Param('productId') productId: string,
-    @Body() updates: Record<string, any>,
+    @Body(new ZodValidationPipe(AdminProductUpdateSchema))
+    updates: AdminProductUpdate,
   ): Promise<ProductDetail> {
     return this.productsService.updateAdmin(productId, updates);
   }

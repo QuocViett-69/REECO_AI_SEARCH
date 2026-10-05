@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { X, Check, Loader } from 'lucide-react';
+import '../../styles/studio/compare-login-admin.css';
+import React, { useState, useEffect, useRef } from 'react';
+import { Check, CircleNotch, MagnifyingGlass, X } from '@phosphor-icons/react';
 import { getProductsApi } from '../../services/api';
+import { sizedImage } from '../../services/images';
 
 export function ProductSelectorModal({
   isOpen,
@@ -13,6 +15,9 @@ export function ProductSelectorModal({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
+  const dialogRef = useRef(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -23,16 +28,49 @@ export function ProductSelectorModal({
         if (result && result.items) {
           setProducts(result.items);
         } else {
-          setError('Không thể tải danh sách sản phẩm.');
+          setError('Could not load the product list.');
         }
       })
-      .catch(() => setError('Lỗi kết nối API.'))
+      .catch(() => setError('Could not connect to the product API.'))
       .finally(() => setIsLoading(false));
+  }, [isOpen]);
+
+  // Escape closes; Tab stays inside the dialog; focus returns to the opener on close
+  useEffect(() => {
+    if (!isOpen) return undefined;
+    const opener = document.activeElement;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onCloseRef.current();
+        return;
+      }
+      if (e.key !== 'Tab' || !dialogRef.current) return;
+      const focusables = dialogRef.current.querySelectorAll(
+        'button:not(:disabled), input, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      if (opener && typeof opener.focus === 'function' && document.contains(opener)) opener.focus();
+    };
   }, [isOpen]);
 
   if (!isOpen) return null;
 
   const otherModel = compareList[1 - modalSlot];
+  const currentModel = compareList[modalSlot];
 
   const filtered = products.filter((p) => {
     if (!search) return true;
@@ -45,90 +83,106 @@ export function ProductSelectorModal({
 
   return (
     <div
-      className="modal-overlay open"
+      className="st-overlay cx-overlay"
       id="productModal"
       onClick={(e) => {
-        if (e.target.classList.contains('modal-overlay')) onClose();
+        if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="modal">
-        <div className="modal-header">
-          <h3>Select a product</h3>
-          <button type="button" className="modal-close" onClick={onClose}>
-            <X size={18} />
+      <div
+        className="st-modal cx-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cx-modal-title"
+        aria-describedby="cx-modal-sub"
+        ref={dialogRef}
+      >
+        <div className="st-modal__head">
+          <div>
+            <h2 className="st-modal__title" id="cx-modal-title">
+              {currentModel ? `Replace ${currentModel}` : 'Choose a product'}
+            </h2>
+            <p className="cx-modal__sub" id="cx-modal-sub">
+              {otherModel
+                ? `It will be compared with ${otherModel}.`
+                : 'Pick the instrument to put in this column.'}
+            </p>
+          </div>
+          <button type="button" className="st-btn st-btn--ghost st-btn--icon" onClick={onClose} aria-label="Close">
+            <X size={18} aria-hidden="true" />
           </button>
         </div>
 
-        {/* Search box */}
-        <div style={{ padding: '0 16px 12px' }}>
-          <input
-            type="text"
-            placeholder="Search by model or name..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '8px 12px',
-              borderRadius: 8,
-              border: '1px solid var(--border, #ccc)',
-              fontSize: 14,
-              boxSizing: 'border-box',
-            }}
-            autoFocus
-          />
+        <div className="cx-modal__search">
+          <label className="st-search">
+            <MagnifyingGlass size={18} aria-hidden="true" />
+            <span className="sr-only">Search products</span>
+            <input
+              type="search"
+              placeholder="Model or name"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              autoFocus
+            />
+          </label>
         </div>
 
-        <div className="modal-body">
+        <div className="st-modal__body cx-modal__body">
           {isLoading ? (
-            <div style={{ textAlign: 'center', padding: '32px', color: 'var(--text-3)' }}>
-              <Loader size={24} className="spin" />
-              <div style={{ marginTop: 8 }}>Loading products...</div>
+            <div className="st-loading" role="status">
+              <CircleNotch size={20} className="spin" aria-hidden="true" />
+              Loading products
             </div>
           ) : error ? (
-            <div style={{ textAlign: 'center', padding: '32px', color: 'var(--danger, red)' }}>
+            <p className="st-note st-note--error" role="alert">
               {error}
-            </div>
+            </p>
           ) : filtered.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '32px', color: 'var(--text-3)' }}>
-              No products found.
-            </div>
+            <p className="cx-modal__none" role="status">
+              No products match "{search}". Check the model spelling.
+            </p>
           ) : (
-            filtered.map((p) => {
-              const selected = compareList[modalSlot] === p.model;
-              const disabled = otherModel && otherModel === p.model;
+            <ul className="cx-options">
+              {filtered.map((p) => {
+                const selected = compareList[modalSlot] === p.model;
+                const disabled = Boolean(otherModel && otherModel === p.model);
 
-              return (
-                <div
-                  key={p.model}
-                  className={`modal-product-item ${selected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
-                  onClick={() => {
-                    if (!disabled) {
-                      onSelectProduct(p.model);
-                    }
-                  }}
-                >
-                  <div className="img">
-                    {p.image ? (
-                      <img
-                        src={p.image}
-                        alt={p.model}
-                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                        onError={(e) => { e.target.style.display = 'none'; }}
-                      />
-                    ) : (
-                      <span style={{ fontSize: 10, fontWeight: 700 }}>{p.model.slice(0, 4)}</span>
-                    )}
-                  </div>
-                  <div className="info">
-                    <div className="model">{p.model}</div>
-                    <div className="name">{p.name}</div>
-                  </div>
-                  <div className="check">
-                    {selected && <Check size={18} />}
-                  </div>
-                </div>
-              );
-            })
+                return (
+                  <li key={p.model}>
+                    <button
+                      type="button"
+                      className={`cx-option ${selected ? 'is-selected' : ''}`}
+                      disabled={disabled}
+                      aria-current={selected ? 'true' : undefined}
+                      onClick={() => {
+                        if (!disabled) {
+                          onSelectProduct(p.model);
+                        }
+                      }}
+                    >
+                      <span className="st-thumb">
+                        {p.image ? (
+                          <img
+                            src={sizedImage(p.image, 160)}
+                            alt=""
+                            loading="lazy"
+                            onError={(e) => { e.target.hidden = true; }}
+                          />
+                        ) : (
+                          <span className="st-thumb__fallback">{p.model.slice(0, 4)}</span>
+                        )}
+                      </span>
+                      <span className="cx-option__text">
+                        <span className="cx-option__model">{p.model}</span>
+                        <span className="cx-option__name">{p.name}</span>
+                      </span>
+                      {selected && <Check size={18} className="cx-option__check" aria-label="Current selection" />}
+                      {disabled && <span className="st-tag">In compare</span>}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           )}
         </div>
       </div>

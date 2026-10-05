@@ -1,14 +1,37 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { orderService, ORDER_STATUSES, formatCurrency } from '../../services/orderService';
+import { orderService, formatCurrency } from '../../services/orderService';
+import { sizedImage } from '../../services/images';
 import {
-  Package,
+  ArrowClockwise,
   ArrowLeft,
-  ChevronRight,
-  ShoppingBag,
-  AlertCircle,
-  RefreshCw,
-} from 'lucide-react';
+  CaretRight,
+  CircleNotch,
+  Package,
+  SignIn,
+  WarningCircle,
+} from '@phosphor-icons/react';
+import { OrderStatusBadge } from './orderStatusBadge';
+import '../../styles/studio/account.css';
+
+// Orders come from the API: identified by UUID, shown by their REECO-#### code.
+function orderLabel(order) {
+  if (order.order_code) return order.order_code;
+  if (order.order_number) return `REECO-${order.order_number}`;
+  return `#${order.id}`;
+}
+
+function formatDeliveryRange(from, to) {
+  if (!from) return null;
+  const start = new Date(from);
+  const end = to ? new Date(to) : null;
+  if (Number.isNaN(start.getTime())) return to ? `${from} – ${to}` : from;
+  const short = { month: 'short', day: 'numeric' };
+  if (!end || Number.isNaN(end.getTime())) {
+    return start.toLocaleDateString('en-US', { ...short, year: 'numeric' });
+  }
+  return `${start.toLocaleDateString('en-US', short)} – ${end.toLocaleDateString('en-US', { ...short, year: 'numeric' })}`;
+}
 
 export function OrderList({ onNavigate, onViewOrder }) {
   const { user, isAuthenticated } = useAuth();
@@ -28,7 +51,7 @@ export function OrderList({ onNavigate, onViewOrder }) {
       const list = res?.items || res?.data || (Array.isArray(res) ? res : []);
       setOrders(list);
     } catch (err) {
-      setError(err.message || 'Không thể tải danh sách đơn hàng.');
+      setError(err.message || 'Your orders could not be loaded.');
     } finally {
       setLoading(false);
     }
@@ -40,244 +63,142 @@ export function OrderList({ onNavigate, onViewOrder }) {
 
   if (!isAuthenticated || !user) {
     return (
-      <div className="page-container" style={{ maxWidth: 600, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: 40, borderRadius: 16 }}>
-          <Package size={40} style={{ color: '#93979f', marginBottom: 16 }} />
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Sign In Required</h2>
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>
-            Please sign in to view your order history and track shipments.
-          </p>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => onNavigate && onNavigate('login')}
-            style={{ padding: '10px 24px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
-          >
-            Sign In Now
-          </button>
+      <div className="st-page st-page--narrow ac-page">
+        <div className="st-state">
+          <div className="st-orb st-orb--live" aria-hidden="true">
+            <span className="st-orb__icon"><SignIn size={20} /></span>
+          </div>
+          <h1 className="st-state__title">Sign in to see your orders</h1>
+          <p className="st-state__desc">Your order history and delivery tracking appear here once you sign in.</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn st-btn--primary" onClick={() => onNavigate && onNavigate('login')}>
+              Sign in
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
+  const openOrder = (order) => {
+    const targetId = order.id || order.order_code;
+    if (onViewOrder) {
+      onViewOrder(targetId);
+    } else if (onNavigate) {
+      onNavigate(`account-order:${targetId}`);
+    }
+  };
+
   return (
-    <div className="page-container" style={{ maxWidth: 900, margin: '40px auto', padding: '0 20px' }}>
-      <button
-        type="button"
-        onClick={() => onNavigate && onNavigate('account')}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 6,
-          background: 'none',
-          border: 'none',
-          color: '#6b7280',
-          cursor: 'pointer',
-          fontSize: 13,
-          marginBottom: 16,
-        }}
-      >
-        <ArrowLeft size={14} /> Back to Account
+    <div className="st-page ac-page">
+      <button type="button" className="st-back" onClick={() => onNavigate && onNavigate('account')}>
+        <ArrowLeft size={16} aria-hidden="true" /> Back to account
       </button>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-        <div>
-          <h1 style={{ fontSize: 24, fontWeight: 700, color: '#111827', margin: '0 0 4px' }}>
-            My Orders
-          </h1>
-          <p style={{ fontSize: 13, color: '#6b7280', margin: 0 }}>
-            Track commercial orders status and shipping progress
-          </p>
+      <header className="st-header st-header--plain">
+        <div className="st-header__title">
+          <h1>My orders</h1>
         </div>
-        <button
-          type="button"
-          className="btn btn-secondary"
-          onClick={() => onNavigate && onNavigate('products')}
-          style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, padding: '8px 16px', background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer' }}
-        >
-          <ShoppingBag size={14} /> Browse Catalog
-        </button>
-      </div>
-
-      {/* 1. Loading state */}
-      {loading && (
-        <div className="glass-card" style={{ padding: 48, textAlign: 'center', color: '#6b7280' }}>
-          <div
-            style={{
-              width: 36,
-              height: 36,
-              border: '3px solid #e5e7eb',
-              borderTopColor: '#0069e0',
-              borderRadius: '50%',
-              margin: '0 auto 16px',
-              animation: 'spin 1s linear infinite',
-            }}
-          />
-          <div>Loading orders from system...</div>
-        </div>
-      )}
-
-      {/* 2. Error state */}
-      {!loading && error && (
-        <div className="glass-card" style={{ padding: 36, borderRadius: 16, textAlign: 'center' }}>
-          <AlertCircle size={40} color="#d93025" style={{ marginBottom: 12 }} />
-          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Unable to load orders</h3>
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>{error}</p>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={fetchOrders}
-            style={{ padding: '8px 20px', fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
-          >
-            <RefreshCw size={14} /> Retry
+        <div className="st-header__aside">
+          <p>Track your Campbell Scientific orders from payment to delivery.</p>
+          <button type="button" className="st-btn st-btn--sm" onClick={() => onNavigate && onNavigate('products')}>
+            Browse products
           </button>
         </div>
-      )}
+      </header>
 
-      {/* 3. Empty data state */}
-      {!loading && !error && orders.length === 0 && (
-        <div className="glass-card" style={{ padding: 48, borderRadius: 16, textAlign: 'center' }}>
-          <Package size={48} style={{ color: '#93979f', marginBottom: 16 }} />
-          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 8 }}>No orders placed yet</h3>
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 24 }}>
-            Explore scientific measurement and precision sensors by Campbell Scientific.
-          </p>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => onNavigate && onNavigate('products')}
-            style={{ padding: '10px 24px', fontSize: 14, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
-          >
-            Explore Products
-          </button>
+      {loading ? (
+        <div className="st-loading" role="status">
+          <CircleNotch size={20} className="spin" aria-hidden="true" /> Loading orders
         </div>
-      )}
-
-      {/* 4. Data list state */}
-      {!loading && !error && orders.length > 0 && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      ) : error ? (
+        <div className="st-state" role="alert">
+          <div className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><WarningCircle size={20} /></span>
+          </div>
+          <h2 className="st-state__title">Orders could not load</h2>
+          <p className="st-state__desc">{error}</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn st-btn--primary" onClick={fetchOrders}>
+              <ArrowClockwise size={16} aria-hidden="true" /> Try again
+            </button>
+          </div>
+        </div>
+      ) : orders.length === 0 ? (
+        <div className="st-state">
+          <div className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><Package size={20} /></span>
+          </div>
+          <h2 className="st-state__title">No orders yet</h2>
+          <p className="st-state__desc">When you order from REECO, each order and its delivery progress shows up here.</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn st-btn--primary" onClick={() => onNavigate && onNavigate('products')}>
+              Browse products
+            </button>
+          </div>
+        </div>
+      ) : (
+        <ul className="ac-orders">
           {orders.map((order) => {
-            const statusConfig = ORDER_STATUSES[order.status] || {
-              label: order.status,
-              color: '#6b7280',
-            };
             const dateStr = new Date(order.created_at).toLocaleDateString('en-US', {
               month: 'short',
               day: 'numeric',
               year: 'numeric',
             });
-            const itemCount = order.order_items?.length || order.items?.length || 0;
-            const targetId = order.id || order.order_code;
+            const items = order.order_items || order.items || [];
+            const itemCount = items.length;
+            const first = items[0];
+            const firstImage = first?.image_url || first?.image;
+            const models = items.map((item) => item.model || item.product_id).join(', ');
+            const label = orderLabel(order);
+            const delivery = formatDeliveryRange(order.estimated_delivery_from, order.estimated_delivery_to);
 
             return (
-              <div
-                key={order.id || order.order_code}
-                className="glass-card"
-                style={{
-                  padding: 20,
-                  borderRadius: 14,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: 16,
-                  transition: 'box-shadow 0.2s',
-                  cursor: 'pointer',
-                }}
-                onClick={() => {
-                  if (onViewOrder) {
-                    onViewOrder(targetId);
-                  } else if (onNavigate) {
-                    onNavigate(`account-order:${targetId}`);
-                  }
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                  <div
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 10,
-                      background: 'rgba(0, 105, 224, 0.08)',
-                      color: '#0069e0',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <Package size={22} />
-                  </div>
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
-                      <span style={{ fontSize: 16, fontWeight: 700, color: '#111827' }}>
-                        {order.order_code || `REECO-${order.order_number}` || `#${order.id}`}
-                      </span>
-                      <span
-                        style={{
-                          fontSize: 11,
-                          fontWeight: 600,
-                          padding: '2px 8px',
-                          borderRadius: 4,
-                          background: `${statusConfig.color}15`,
-                          color: statusConfig.color,
-                          border: `1px solid ${statusConfig.color}30`,
-                        }}
-                      >
-                        {statusConfig.label}
-                      </span>
-                    </div>
-                    <div style={{ fontSize: 12, color: '#6b7280', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                      <span>Ordered: {dateStr}</span>
-                      <span>•</span>
-                      <span>{itemCount} {itemCount === 1 ? 'item' : 'items'}</span>
-                      {order.estimated_delivery_from && (
-                        <>
-                          <span>•</span>
-                          <span>Est. Delivery: {order.estimated_delivery_from} → {order.estimated_delivery_to}</span>
-                        </>
-                      )}
-                    </div>
-                  </div>
+              <li key={order.id || order.order_code} className="ac-order" onClick={() => openOrder(order)}>
+                <span className="st-thumb st-thumb--lg" aria-hidden="true">
+                  {firstImage ? <img src={sizedImage(firstImage, 200)} alt="" /> : <Package size={22} />}
+                </span>
+
+                <div>
+                  <h2 className="ac-order__id">{label}</h2>
+                  <p className="ac-order__items" title={models}>
+                    {dateStr}, {itemCount} {itemCount === 1 ? 'item' : 'items'}
+                    {models ? `: ${models}` : ''}
+                  </p>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                  <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: 11, color: '#93979f', textTransform: 'uppercase' }}>Total</div>
-                    <div style={{ fontSize: 16, fontWeight: 700, color: '#0069e0' }}>
-                      {formatCurrency(order.total)}
-                    </div>
-                  </div>
+                <div className="ac-order__cell ac-order__status">
+                  <span className="ac-order__label">Status</span>
+                  <OrderStatusBadge status={order.status} />
+                </div>
+
+                <div className="ac-order__cell ac-order__delivery">
+                  <span className="ac-order__label">Estimated delivery</span>
+                  <span>{delivery || 'Not scheduled yet'}</span>
+                </div>
+
+                <div className="ac-order__cell ac-order__money">
+                  <span className="ac-order__label">Total</span>
+                  <span className="ac-order__total">{formatCurrency(Number(order.total))}</span>
+                </div>
+
+                <div className="ac-order__end">
                   <button
                     type="button"
-                    className="btn btn-secondary"
-                    style={{
-                      padding: '8px 14px',
-                      fontSize: 12,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 4,
-                      background: '#fff',
-                      color: '#111827',
-                      border: '1px solid #e5e7eb',
-                      borderRadius: 9999,
-                      cursor: 'pointer',
-                    }}
+                    className="st-btn st-btn--icon st-btn--sm"
+                    aria-label={`View order ${label}`}
                     onClick={(e) => {
                       e.stopPropagation();
-                      if (onViewOrder) {
-                        onViewOrder(targetId);
-                      } else if (onNavigate) {
-                        onNavigate(`account-order:${targetId}`);
-                      }
+                      openOrder(order);
                     }}
                   >
-                    <span>Details</span>
-                    <ChevronRight size={14} />
+                    <CaretRight size={14} aria-hidden="true" />
                   </button>
                 </div>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       )}
     </div>
   );

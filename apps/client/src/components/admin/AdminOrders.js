@@ -3,24 +3,21 @@ import { useAuth } from '../../context/AuthContext';
 import { orderService, ORDER_STATUSES, SHIPPING_METHODS } from '../../services/orderService';
 import { formatPrice } from '../../services/commercialService';
 import {
-  Shield,
-  Search,
-  Filter,
-  Package,
-  CheckCircle2,
-  Clock,
-  Truck,
-  ExternalLink,
-  ChevronRight,
   ArrowLeft,
-  AlertCircle,
-  Save,
-  User,
-  CreditCard,
-  Building2,
-  MapPin,
-} from 'lucide-react';
+  CaretRight,
+  CheckCircle,
+  FloppyDisk,
+  MagnifyingGlass,
+  Shield,
+  WarningCircle,
+} from '@phosphor-icons/react';
 import { getPaymentMethodLabel } from '../../services/paymentService';
+import {
+  OrderStatusBadge,
+  PaymentStatusBadge,
+  getOrderStatusBadge,
+} from '../account/orderStatusBadge';
+import '../../styles/studio/compare-login-admin.css';
 
 export function AdminOrders({ onViewOrder }) {
   const { user, isAuthenticated } = useAuth();
@@ -31,18 +28,27 @@ export function AdminOrders({ onViewOrder }) {
   const [editStatus, setEditStatus] = useState('');
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [actionError, setActionError] = useState(null);
+  const [allOrders, setAllOrders] = useState([]);
+  const [inlineNotice, setInlineNotice] = useState(null);
+
+  const orderKey = (o) => o.id || o.order_id || o.order_code;
+  // API rows carry order_code / order_number; older local rows carry order_id
+  const orderLabel = (o) => o.order_id || o.order_number || o.order_code || o.id;
+  const sameOrder = (a, b) => Boolean(a && b) && ((a.id && a.id === b.id) || (a.order_id && a.order_id === b.order_id));
 
   const loadOrders = async () => {
     if (user && user.role === 'admin') {
       try {
-        const res = await orderService.getAllOrdersForAdmin(user, {
-          search: searchQuery,
-          status: statusFilter,
-        });
+        // One unfiltered call feeds the summary figures; the filtered one feeds the table
+        const [everything, res] = await Promise.all([
+          orderService.getAllOrdersForAdmin(user, {}),
+          orderService.getAllOrdersForAdmin(user, { search: searchQuery, status: statusFilter }),
+        ]);
+        if (everything.orders) setAllOrders(everything.orders);
         if (res.orders) {
           setOrders(res.orders);
           if (selectedOrder) {
-            const updated = res.orders.find((o) => (o.order_id === selectedOrder.order_id || o.id === selectedOrder.id));
+            const updated = res.orders.find((o) => sameOrder(o, selectedOrder));
             if (updated) setSelectedOrder(updated);
           }
         }
@@ -58,14 +64,14 @@ export function AdminOrders({ onViewOrder }) {
 
   if (!isAuthenticated || !user || user.role !== 'admin') {
     return (
-      <div className="page-container" style={{ maxWidth: 600, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: 40, borderRadius: 16 }}>
-          <Shield size={44} color="#ff6b6b" style={{ marginBottom: 16 }} />
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#fff', marginBottom: 8 }}>
-            Admin Access Required
-          </h2>
-          <p style={{ color: 'var(--text-3, #888)', fontSize: 14, marginBottom: 20 }}>
-            You must be logged in as an administrator (<code>reeco</code> / <code>ilovereeco</code>) to access the order management portal.
+      <div className="st-page st-page--narrow ad-page">
+        <div className="st-state">
+          <span className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><Shield size={20} /></span>
+          </span>
+          <h2 className="st-state__title">Admin access required</h2>
+          <p className="st-state__desc">
+            Sign in with an administrator account to manage orders.
           </p>
         </div>
       </div>
@@ -87,375 +93,318 @@ export function AdminOrders({ onViewOrder }) {
     if (!selectedOrder) return;
 
     try {
-      const orderId = selectedOrder.id || selectedOrder.order_id || selectedOrder.order_code;
-      const res = await orderService.updateOrderStatus(orderId, editStatus, 'Admin update');
+      const res = await orderService.updateOrderStatus(orderKey(selectedOrder), editStatus, 'Admin update');
       setSelectedOrder(res?.order || res);
       setSaveSuccess(true);
       await loadOrders();
       setTimeout(() => setSaveSuccess(false), 3000);
     } catch (err) {
-      setActionError(err.message || 'Cập nhật trạng thái thất bại');
+      setActionError(err.message || 'Could not update the order status.');
     }
   };
 
+  // Status changes straight from the table row, without opening the order
+  const handleInlineStatus = async (order, status) => {
+    if (status === order.status) return;
+    try {
+      await orderService.updateOrderStatus(orderKey(order), status, 'Admin update');
+      setInlineNotice({ tone: 'ok', text: `Order #${orderLabel(order)} moved to ${getOrderStatusBadge(status).label.toLowerCase()}.` });
+      await loadOrders();
+    } catch (err) {
+      setInlineNotice({ tone: 'error', text: err.message || 'Could not update the order status.' });
+    }
+    setTimeout(() => setInlineNotice(null), 3000);
+  };
+
+  const countOf = (statuses) => allOrders.filter((o) => statuses.includes(o.status)).length;
+  const figures = [
+    { label: 'All orders', value: allOrders.length, accent: 'lilac' },
+    { label: 'Awaiting payment', value: countOf(['PENDING_PAYMENT']), accent: 'sun' },
+    { label: 'In fulfillment', value: countOf(['PAID', 'PROCESSING', 'FORWARDED_TO_MANUFACTURER', 'SHIPPED']), accent: 'sky' },
+    { label: 'Delivered', value: countOf(['DELIVERED']), accent: 'coral' },
+  ];
+  const statusTabs = Object.keys(ORDER_STATUSES)
+    .map((key) => ({ key, count: countOf([key]) }))
+    .filter((tab) => tab.count > 0 || tab.key === statusFilter);
+
   return (
-    <div className="page-container" style={{ maxWidth: 1200, margin: '40px auto', padding: '0 20px' }}>
-      {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ padding: 10, borderRadius: 10, background: 'rgba(0, 210, 255, 0.15)', color: 'var(--accent, #00d2ff)' }}>
-            <Shield size={24} />
-          </div>
-          <div>
-            <h1 style={{ fontSize: 24, fontWeight: 700, color: '#fff', margin: 0 }}>
-              Admin Order Management
-            </h1>
-            <p style={{ fontSize: 13, color: 'var(--text-3, #888)', margin: 0 }}>
-              Commercial operations, fulfillment state machine, and status updates
-            </p>
-          </div>
+    <div className="st-page ad-page">
+      <header className="st-header ad-header">
+        <div className="st-header__title">
+          <h1>Orders</h1>
         </div>
-      </div>
+        <div className="st-header__aside">
+          <p>Review commercial orders, move them through fulfillment and keep customers up to date.</p>
+        </div>
+      </header>
+
+      <dl className="ad-figures">
+        {figures.map((f) => (
+          <div key={f.label} className={`ad-figure ad-figure--${f.accent}`}>
+            <dt>{f.label}</dt>
+            <dd>{f.value}</dd>
+          </div>
+        ))}
+      </dl>
 
       {selectedOrder ? (
-        /* ── Admin Order Detail & Status Editor View ── */
-        <div>
-          <button
-            type="button"
-            onClick={() => setSelectedOrder(null)}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 6,
-              background: 'none',
-              border: 'none',
-              color: 'var(--text-3, #888)',
-              cursor: 'pointer',
-              fontSize: 13,
-              marginBottom: 20,
-            }}
-          >
-            <ArrowLeft size={14} /> Back to All Orders
+        /* ── Admin order detail and status editor ── */
+        <div className="ad-detail">
+          <button type="button" className="st-back" onClick={() => setSelectedOrder(null)}>
+            <ArrowLeft size={16} aria-hidden="true" /> Back to all orders
           </button>
 
           {saveSuccess && (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                padding: '12px 16px',
-                borderRadius: 8,
-                background: 'rgba(0, 200, 115, 0.15)',
-                border: '1px solid rgba(0, 200, 115, 0.3)',
-                color: '#00c873',
-                fontSize: 14,
-                marginBottom: 20,
-              }}
-            >
-              <CheckCircle2 size={16} />
-              <span>Order status successfully updated to <strong>{ORDER_STATUSES[editStatus]?.label || editStatus}</strong>.</span>
-            </div>
+            <p className="st-note ad-note" role="status">
+              <CheckCircle size={18} aria-hidden="true" />
+              <span>
+                Order status updated to <strong>{getOrderStatusBadge(editStatus).label}</strong>.
+              </span>
+            </p>
           )}
 
           {actionError && (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                padding: '12px 16px',
-                borderRadius: 8,
-                background: 'rgba(255, 68, 68, 0.15)',
-                border: '1px solid rgba(255, 68, 68, 0.3)',
-                color: '#ff6b6b',
-                fontSize: 14,
-                marginBottom: 20,
-              }}
-            >
-              <AlertCircle size={16} />
+            <p className="st-note st-note--error ad-note" role="alert">
+              <WarningCircle size={18} aria-hidden="true" />
               <span>{actionError}</span>
-            </div>
+            </p>
           )}
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 24, alignItems: 'start' }}>
-            {/* Left: Order Info & Status Update */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-              {/* Status Update Card */}
-              <div className="glass-card" style={{ padding: 24, borderRadius: 16, border: '1px solid rgba(0, 210, 255, 0.25)' }}>
-                <h2 style={{ fontSize: 16, fontWeight: 600, color: '#fff', margin: '0 0 16px' }}>
-                  Update Fulfillment Status
-                </h2>
+          <div className="ad-detail__head">
+            <div>
+              <h2 className="st-heading">Order #{orderLabel(selectedOrder)}</h2>
+              <p className="st-caption">{selectedOrder.customer_name}, {selectedOrder.city}</p>
+            </div>
+            <OrderStatusBadge status={selectedOrder.status} />
+          </div>
 
-                <form onSubmit={handleUpdateStatus} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+          <div className="ad-split">
+            <div className="ad-split__main">
+              <section className="st-panel ad-status" aria-labelledby="ad-status-title">
+                <h3 className="st-label" id="ad-status-title">Update fulfillment status</h3>
+                <form onSubmit={handleUpdateStatus} className="ad-status__form">
                   <select
+                    className="st-select"
                     value={editStatus}
                     onChange={(e) => setEditStatus(e.target.value)}
-                    style={{
-                      flex: 1,
-                      padding: '10px 14px',
-                      borderRadius: 8,
-                      background: 'rgba(0,0,0,0.4)',
-                      border: '1px solid rgba(255,255,255,0.15)',
-                      color: '#fff',
-                      fontSize: 14,
-                    }}
+                    aria-labelledby="ad-status-title"
                   >
-                    {Object.entries(ORDER_STATUSES).map(([key, config]) => (
-                      <option key={key} value={key} style={{ background: '#111', color: '#fff' }}>
-                        {config.label} ({key})
+                    {Object.keys(ORDER_STATUSES).map((key) => (
+                      <option key={key} value={key}>
+                        {getOrderStatusBadge(key).label}
                       </option>
                     ))}
                   </select>
-
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '10px 20px', fontSize: 14 }}
-                  >
-                    <Save size={16} /> Save Status
+                  <button type="submit" className="st-btn st-btn--primary">
+                    <FloppyDisk size={16} aria-hidden="true" /> Save status
                   </button>
                 </form>
-              </div>
+              </section>
 
-              {/* Order Items Snapshot */}
-              <div className="glass-card" style={{ padding: 24, borderRadius: 16 }}>
-                <h2 style={{ fontSize: 16, fontWeight: 600, color: '#fff', margin: '0 0 16px' }}>
-                  Order Snapshot Products (#{selectedOrder.order_id})
-                </h2>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <section className="ad-items" aria-labelledby="ad-items-title">
+                <h3 className="st-subheading" id="ad-items-title">
+                  Ordered products <span className="st-muted">({selectedOrder.items?.length || 0})</span>
+                </h3>
+                <ul className="ad-items__list">
                   {selectedOrder.items?.map((item, idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        padding: '12px 14px',
-                        borderRadius: 8,
-                        background: 'rgba(255,255,255,0.02)',
-                        border: '1px solid rgba(255,255,255,0.06)',
-                      }}
-                    >
-                      <div>
-                        <div style={{ fontWeight: 700, color: 'var(--accent, #00d2ff)' }}>{item.model}</div>
-                        <div style={{ fontSize: 12, color: 'var(--text-2, #ccc)' }}>{item.product_name}</div>
-                        <div style={{ fontSize: 11, color: 'var(--text-3, #888)', marginTop: 2 }}>
+                    <li key={idx} className="ad-item">
+                      <span className="st-thumb">
+                        {item.image ? (
+                          <img src={item.image} alt="" />
+                        ) : (
+                          <span className="st-thumb__fallback">{(item.model || '').slice(0, 4)}</span>
+                        )}
+                      </span>
+                      <div className="ad-item__info">
+                        <div className="ad-item__model">{item.model}</div>
+                        <div className="ad-item__name">{item.product_name}</div>
+                        <div className="ad-item__qty st-num">
                           {formatPrice(item.unit_price, selectedOrder.currency)} × {item.quantity}
                         </div>
                       </div>
-                      <div style={{ fontWeight: 700, color: '#fff', fontSize: 15 }}>
+                      <div className="ad-item__total st-num">
                         {formatPrice(item.line_total, selectedOrder.currency)}
                       </div>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
 
-                <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: 'var(--text-3, #888)', marginBottom: 6 }}>
-                    <span>Subtotal:</span>
-                    <span style={{ color: '#fff' }}>{formatPrice(selectedOrder.subtotal, selectedOrder.currency)}</span>
+                <div className="st-sum ad-sum">
+                  <div className="st-sum__row">
+                    <span>Subtotal</span>
+                    <span>{formatPrice(selectedOrder.subtotal, selectedOrder.currency)}</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: 'var(--text-3, #888)', marginBottom: 10 }}>
-                    <span>Shipping Fee:</span>
-                    <span style={{ color: '#fff' }}>{formatPrice(selectedOrder.shipping_fee, selectedOrder.currency)}</span>
+                  <div className="st-sum__row">
+                    <span>Shipping fee</span>
+                    <span>{formatPrice(selectedOrder.shipping_fee, selectedOrder.currency)}</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 16, fontWeight: 700, color: '#fff', paddingTop: 8, borderTop: '1px dashed rgba(255,255,255,0.1)' }}>
-                    <span>Total:</span>
-                    <span style={{ color: 'var(--accent, #00d2ff)' }}>{formatPrice(selectedOrder.total, selectedOrder.currency)}</span>
+                  <div className="st-sum__total">
+                    <span>Total</span>
+                    <strong>{formatPrice(selectedOrder.total, selectedOrder.currency)}</strong>
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
 
-            {/* Right: Customer & Fulfillment Info */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-              <div className="glass-card" style={{ padding: 20, borderRadius: 14 }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: '#fff', margin: '0 0 12px', display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <User size={16} color="var(--accent, #00d2ff)" />
-                  <span>Customer Profile</span>
-                </h3>
-                <div style={{ fontSize: 13, color: 'var(--text-2, #ccc)', lineHeight: 1.6 }}>
-                  <div><strong>Name:</strong> {selectedOrder.customer_name}</div>
-                  <div><strong>Username:</strong> <code>{selectedOrder.customer_id}</code></div>
-                  <div><strong>Email:</strong> {selectedOrder.customer_email}</div>
-                  <div><strong>Phone:</strong> {selectedOrder.customer_phone}</div>
-                </div>
-              </div>
+            <aside className="ad-split__aside">
+              <section aria-labelledby="ad-cust-title">
+                <h3 className="ad-aside-title" id="ad-cust-title">Customer</h3>
+                <dl className="st-dl">
+                  <div><dt>Name</dt><dd>{selectedOrder.customer_name}</dd></div>
+                  <div><dt>Username</dt><dd className="st-mono">{selectedOrder.customer_id}</dd></div>
+                  <div><dt>Email</dt><dd>{selectedOrder.customer_email}</dd></div>
+                  <div><dt>Phone</dt><dd>{selectedOrder.customer_phone}</dd></div>
+                </dl>
+              </section>
 
-              <div className="glass-card" style={{ padding: 20, borderRadius: 14 }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: '#fff', margin: '0 0 12px', display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <MapPin size={16} color="var(--accent, #00d2ff)" />
-                  <span>Shipping &amp; Delivery</span>
-                </h3>
-                <div style={{ fontSize: 13, color: 'var(--text-2, #ccc)', lineHeight: 1.6 }}>
-                  <div><strong>Method:</strong> {selectedOrder.shipping_method} (${selectedOrder.shipping_fee})</div>
-                  <div><strong>Destination:</strong> {selectedOrder.shipping_address}, {selectedOrder.city}</div>
-                  <div><strong>Estimated:</strong> {selectedOrder.estimated_delivery?.display}</div>
-                </div>
-              </div>
-
-              <div className="glass-card" style={{ padding: 20, borderRadius: 14 }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: '#fff', margin: '0 0 12px', display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <CreditCard size={16} color="var(--accent, #00d2ff)" />
-                  <span>Payment Information</span>
-                </h3>
-                <div style={{ fontSize: 13, color: 'var(--text-2, #ccc)', lineHeight: 1.6 }}>
-                  <div><strong>Method:</strong> {getPaymentMethodLabel(selectedOrder.payment_method)}</div>
+              <section aria-labelledby="ad-ship-title">
+                <h3 className="ad-aside-title" id="ad-ship-title">Shipping and delivery</h3>
+                <dl className="st-dl">
                   <div>
-                    <strong>Status:</strong>{' '}
-                    <span style={{ color: selectedOrder.payment_status === 'PAID' ? '#00c873' : '#ffb020', fontWeight: 700 }}>
-                      {selectedOrder.payment_status}
-                    </span>
+                    <dt>Method</dt>
+                    <dd>
+                      {SHIPPING_METHODS[selectedOrder.shipping_method]?.name || selectedOrder.shipping_method}{' '}
+                      ({formatPrice(selectedOrder.shipping_fee, selectedOrder.currency)})
+                    </dd>
                   </div>
-                </div>
-              </div>
-            </div>
+                  <div><dt>Destination</dt><dd>{selectedOrder.shipping_address}, {selectedOrder.city}</dd></div>
+                  <div><dt>Estimated</dt><dd>{selectedOrder.estimated_delivery?.display}</dd></div>
+                </dl>
+              </section>
+
+              <section aria-labelledby="ad-pay-title">
+                <h3 className="ad-aside-title" id="ad-pay-title">Payment</h3>
+                <dl className="st-dl">
+                  <div><dt>Method</dt><dd>{getPaymentMethodLabel(selectedOrder.payment_method)}</dd></div>
+                  <div><dt>Status</dt><dd><PaymentStatusBadge status={selectedOrder.payment_status} /></dd></div>
+                </dl>
+              </section>
+            </aside>
           </div>
         </div>
       ) : (
-        /* ── Admin Order Table / List View ── */
+        /* ── Admin order table ── */
         <div>
-          {/* Filter and Search Bar */}
-          <div
-            className="glass-card"
-            style={{
-              padding: 16,
-              borderRadius: 14,
-              marginBottom: 20,
-              display: 'flex',
-              gap: 16,
-              alignItems: 'center',
-              flexWrap: 'wrap',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flex: 1, minWidth: 240, background: 'rgba(0,0,0,0.3)', padding: '8px 12px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.08)' }}>
-              <Search size={16} color="var(--text-3, #888)" />
+          <div className="ad-toolbar">
+            <div className="st-tabs ad-filters" role="group" aria-label="Filter by status">
+              <button
+                type="button"
+                className="st-tab"
+                aria-pressed={statusFilter === 'ALL'}
+                onClick={() => setStatusFilter('ALL')}
+              >
+                All <span className="st-tab__count">{allOrders.length}</span>
+              </button>
+              {statusTabs.map((tab) => (
+                <button
+                  key={tab.key}
+                  type="button"
+                  className="st-tab"
+                  aria-pressed={statusFilter === tab.key}
+                  onClick={() => setStatusFilter(statusFilter === tab.key ? 'ALL' : tab.key)}
+                >
+                  {getOrderStatusBadge(tab.key).label} <span className="st-tab__count">{tab.count}</span>
+                </button>
+              ))}
+            </div>
+            <label className="st-search ad-search">
+              <MagnifyingGlass size={17} aria-hidden="true" />
+              <span className="sr-only">Search orders</span>
               <input
-                type="text"
-                placeholder="Search by Order ID, customer, email..."
+                type="search"
+                placeholder="Order ID, name or email"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                style={{ background: 'none', border: 'none', color: '#fff', outline: 'none', width: '100%', fontSize: 13 }}
               />
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <Filter size={16} color="var(--text-3, #888)" />
-              <select
-                value={statusFilter}
-                onChange={(e) => setStatusFilter(e.target.value)}
-                style={{
-                  padding: '8px 12px',
-                  borderRadius: 8,
-                  background: 'rgba(0,0,0,0.3)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  color: '#fff',
-                  fontSize: 13,
-                }}
-              >
-                <option value="ALL" style={{ background: '#111' }}>All Statuses</option>
-                {Object.entries(ORDER_STATUSES).map(([key, config]) => (
-                  <option key={key} value={key} style={{ background: '#111' }}>
-                    {config.label}
-                  </option>
-                ))}
-              </select>
-            </div>
+            </label>
           </div>
 
-          {/* Orders Table */}
+          {inlineNotice && (
+            <p
+              className={`st-note ad-note ${inlineNotice.tone === 'error' ? 'st-note--error' : ''}`}
+              role={inlineNotice.tone === 'error' ? 'alert' : 'status'}
+            >
+              {inlineNotice.tone === 'error' ? <WarningCircle size={18} aria-hidden="true" /> : <CheckCircle size={18} aria-hidden="true" />}
+              <span>{inlineNotice.text}</span>
+            </p>
+          )}
+
           {orders.length === 0 ? (
-            <div className="glass-card" style={{ padding: 40, borderRadius: 16, textAlign: 'center' }}>
-              <Package size={40} style={{ color: 'var(--text-3, #555)', marginBottom: 12 }} />
-              <h3 style={{ fontSize: 16, color: '#fff', margin: '0 0 6px' }}>No orders found</h3>
-              <p style={{ color: 'var(--text-3, #888)', fontSize: 13, margin: 0 }}>
-                Try adjusting your search query or status filter.
-              </p>
+            <div className="st-state">
+              <span className="st-orb st-orb--stone" aria-hidden="true" />
+              <h2 className="st-state__title">No orders match</h2>
+              <p className="st-state__desc">Try a different search, or show every status.</p>
+              <div className="st-state__actions">
+                <button
+                  type="button"
+                  className="st-btn"
+                  onClick={() => { setSearchQuery(''); setStatusFilter('ALL'); }}
+                >
+                  Show all orders
+                </button>
+              </div>
             </div>
           ) : (
-            <div className="glass-card" style={{ borderRadius: 14, overflow: 'hidden' }}>
-              <div style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: 13 }}>
-                  <thead>
-                    <tr style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.08)', color: 'var(--text-3, #888)', textTransform: 'uppercase', fontSize: 11, letterSpacing: 0.5 }}>
-                      <th style={{ padding: '14px 16px' }}>Order ID</th>
-                      <th style={{ padding: '14px 16px' }}>Customer</th>
-                      <th style={{ padding: '14px 16px' }}>Total</th>
-                      <th style={{ padding: '14px 16px' }}>Payment</th>
-                      <th style={{ padding: '14px 16px' }}>Status</th>
-                      <th style={{ padding: '14px 16px', textAlign: 'right' }}>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {orders.map((order) => {
-                      const statusConfig = ORDER_STATUSES[order.status] || {
-                        label: order.status,
-                        color: '#888',
-                      };
-                      return (
-                        <tr
-                          key={order.id || order.order_id}
-                          style={{
-                            borderBottom: '1px solid rgba(255,255,255,0.04)',
-                            transition: 'background 0.2s',
-                          }}
-                          className="table-row-hover"
+            <div className="st-table-wrap">
+              <table className="st-table st-table--hover ad-table">
+                <caption className="sr-only">All customer orders</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Order</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col" className="ad-table__right">Total</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Fulfillment</th>
+                    <th scope="col" className="ad-table__action">
+                      <span className="sr-only">Actions</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {orders.map((order) => (
+                    <tr key={order.id || order.order_id}>
+                      <td data-label="Order" className="ad-table__id">#{orderLabel(order)}</td>
+                      <td data-label="Customer">
+                        <div className="ad-table__name">{order.customer_name}</div>
+                        <div className="ad-table__email">{order.customer_email}</div>
+                      </td>
+                      <td data-label="Total" className="ad-table__right st-num">
+                        {formatPrice(order.total, order.currency)}
+                      </td>
+                      <td data-label="Payment">
+                        <PaymentStatusBadge status={order.payment_status} />
+                      </td>
+                      <td data-label="Fulfillment">
+                        <label className="ad-inline">
+                          <span className="sr-only">Status of order #{orderLabel(order)}</span>
+                          <span className={`ad-inline__dot ad-inline__dot--${getOrderStatusBadge(order.status).tone}`} aria-hidden="true" />
+                          <select
+                            className="ad-inline__select"
+                            value={order.status}
+                            onChange={(e) => handleInlineStatus(order, e.target.value)}
+                          >
+                            {Object.keys(ORDER_STATUSES).map((key) => (
+                              <option key={key} value={key}>
+                                {getOrderStatusBadge(key).label}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                      </td>
+                      <td className="ad-table__action">
+                        <button
+                          type="button"
+                          className="st-btn st-btn--sm"
+                          onClick={() => handleSelectOrder(order)}
+                          aria-label={`Manage order #${orderLabel(order)}`}
                         >
-                          <td style={{ padding: '14px 16px', fontWeight: 700, color: 'var(--accent, #00d2ff)' }}>
-                            #{order.order_id}
-                          </td>
-                          <td style={{ padding: '14px 16px' }}>
-                            <div style={{ fontWeight: 600, color: '#fff' }}>{order.customer_name}</div>
-                            <div style={{ fontSize: 11, color: 'var(--text-3, #888)' }}>{order.customer_email}</div>
-                          </td>
-                          <td style={{ padding: '14px 16px', fontWeight: 700, color: '#fff' }}>
-                            {formatPrice(order.total, order.currency)}
-                          </td>
-                          <td style={{ padding: '14px 16px' }}>
-                            <span
-                              style={{
-                                fontSize: 11,
-                                fontWeight: 700,
-                                color: order.payment_status === 'PAID' ? '#00c873' : '#ffb020',
-                              }}
-                            >
-                              {order.payment_status}
-                            </span>
-                          </td>
-                          <td style={{ padding: '14px 16px' }}>
-                            <span
-                              style={{
-                                fontSize: 11,
-                                fontWeight: 600,
-                                padding: '3px 8px',
-                                borderRadius: 4,
-                                background: `${statusConfig.color}20`,
-                                color: statusConfig.color,
-                                border: `1px solid ${statusConfig.color}40`,
-                              }}
-                            >
-                              {statusConfig.label}
-                            </span>
-                          </td>
-                          <td style={{ padding: '14px 16px', textAlign: 'right' }}>
-                            <button
-                              type="button"
-                              className="btn btn-secondary"
-                              onClick={() => handleSelectOrder(order)}
-                              style={{ padding: '6px 12px', fontSize: 12, display: 'inline-flex', alignItems: 'center', gap: 4 }}
-                            >
-                              <span>Manage</span>
-                              <ChevronRight size={14} />
-                            </button>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
+                          Open <CaretRight size={14} aria-hidden="true" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>

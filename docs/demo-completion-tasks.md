@@ -195,6 +195,8 @@ Viết bằng Zod (giống style `api-contract.ts`), export trong `schemas/index
 
 ### 0.3 API: guard, decorator, khung module
 
+> **Trạng thái hiện tại (theo code):** quyền admin được kiểm tra bằng `apps/api/src/auth/admin.guard.ts` (`AdminGuard`, đọc `user.app_metadata.role`), gắn cùng `SupabaseAuthGuard` cho mọi controller `/admin/*` (`admin/products`, `admin/import`, `admin/orders`). **Chưa có** `roles.guard.ts`, `@Roles()`, `@CurrentUser()` hay module `auth-api`, và **không có** `POST /api/v1/auth/login`: cả Client lẫn Admin đăng nhập trực tiếp bằng Supabase password grant (`/auth/v1/token?grant_type=password`) với anon key, rồi gửi access token cho API. Các tiêu chí ở §0.6 dùng `POST /auth/login` vì thế không áp dụng như viết; kiểm tra 200/403 bằng token lấy từ Supabase.
+
 - `apps/api/src/auth/roles.guard.ts` + `roles.decorator.ts` (`@Roles('admin')`) + `current-user.decorator.ts` (`@CurrentUser()`). Role đọc từ **`user.app_metadata.role`** (người dùng không tự sửa được field này; **không** dùng `user_metadata` để xét quyền). Không có role → coi là `customer`.
 - Tạo khung module rỗng và đăng ký hết trong `app.module.ts`: `AuthApiModule` (`modules/auth-api`), `OrdersModule` (`modules/orders`), `NotificationsModule` (`modules/notifications`). Sau Task 0 **không ai sửa `app.module.ts` nữa**.
 - Làm luôn `POST /api/v1/auth/login` (thật): gọi `supabase.auth.signInWithPassword` bằng một client riêng `persistSession: false`, trả về `AuthSession`. Sai mật khẩu → 401 với message tiếng Việt/Anh rõ ràng.
@@ -377,6 +379,7 @@ Mỗi lần đổi trạng thái (admin, hủy, thanh toán) phải: cập nhậ
 ### 3.5 Sản phẩm (backend + admin UI)
 
 - Backend `admin.controller.ts`: validate body `PATCH /admin/products/:productId` bằng `AdminProductUpdateSchema` (từ shared) qua Zod pipe; thêm `@Roles('admin')` cho **mọi** route admin (`admin/products`, `admin/import`).
+  > **Trạng thái hiện tại:** đã làm theo cách khác — `AdminProductUpdateSchema` nằm ở `apps/api/src/modules/admin/admin-product-update.schema.ts` (strict, `product_url` chỉ nhận http(s)), và mọi route admin dùng `AdminGuard` thay cho `@Roles('admin')`.
 - Thêm `PUT /admin/products/:productId/price` body `{ price_vnd }` (số nguyên ≥ 0) → upsert `product_prices`. Trả giá trong `GET /admin/products/:productId` (thêm field `price_vnd` — chỉ thêm, không đổi field cũ).
 - `AdminProductDetailView.js`: sửa thông tin + sửa giá, hiện lỗi validate từ server theo từng field.
 - Import view: hiển thị báo cáo từ response API (bỏ lưu `reeco_admin_last_import` trong localStorage nếu không cần).

@@ -1,5 +1,5 @@
 import { getProductPrice, getCommercialData, formatPrice } from './services/commercialService';
-import { DEMO_CREDENTIALS, authenticateUser } from './services/authService';
+import { DEMO_CREDENTIALS, resolveAccount } from './services/authService';
 import { recommendationService } from './services/recommendationService';
 
 describe('REECO Customer Commerce - Commercial, Pricing & Auth Suite', () => {
@@ -49,12 +49,13 @@ describe('REECO Customer Commerce - Commercial, Pricing & Auth Suite', () => {
       expect(cred.role).toBe('admin');
     });
 
-    test('role mismatch or invalid password fails authentication check', () => {
-      expect(authenticateUser('customer', 'wronguser', 'ilovereeco').success).toBe(false);
-      expect(authenticateUser('customer', 'haitran', 'wrongpass').success).toBe(false);
-      expect(authenticateUser('customer', 'reeco', 'ilovereeco').success).toBe(false);
-      expect(authenticateUser('customer', 'haitran', 'ilovereeco').success).toBe(true);
-      expect(authenticateUser('admin', 'reeco', 'ilovereeco').success).toBe(true);
+    test('usernames resolve only for their own role; Supabase checks passwords', () => {
+      expect(resolveAccount('customer', 'wronguser').success).toBe(false);
+      expect(resolveAccount('customer', 'reeco').success).toBe(false);
+      expect(resolveAccount('customer', '').success).toBe(false);
+      expect(resolveAccount('customer', 'haitran').account.email).toBe('haitran@example.com');
+      expect(resolveAccount('admin', 'reeco').account.email).toBe('admin@reeco.vn');
+      expect(resolveAccount('admin', 'Admin@Reeco.vn').account.username).toBe('reeco');
     });
   });
 

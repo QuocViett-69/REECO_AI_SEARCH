@@ -21,6 +21,7 @@ export const ORDER_STATUS = {
   PENDING_PAYMENT: 'PENDING_PAYMENT',
   PAID: 'PAID',
   PROCESSING: 'PROCESSING',
+  FORWARDED_TO_MANUFACTURER: 'FORWARDED_TO_MANUFACTURER',
   SHIPPED: 'SHIPPED',
   DELIVERED: 'DELIVERED',
   CANCELLED: 'CANCELLED',
@@ -36,14 +37,21 @@ export const PAYMENT_STATUS = {
   FAILED: 'FAILED',
 } as const;
 
-export type PaymentStatusType = (typeof PAYMENT_STATUS)[keyof typeof PAYMENT_STATUS];
+export type PaymentStatusType =
+  (typeof PAYMENT_STATUS)[keyof typeof PAYMENT_STATUS];
 
 // Allowed statuses for cancellation
-export const CANCELLABLE_STATUSES: OrderStatusType[] = [
+export const CANCELLABLE_STATUSES: readonly string[] = [
   ORDER_STATUS.PENDING_PAYMENT,
   ORDER_STATUS.PAYMENT_FAILED,
   ORDER_STATUS.PAID,
   ORDER_STATUS.PROCESSING,
+];
+
+// A VNPay result may only change an order that is still waiting for payment
+export const AWAITING_PAYMENT_STATUSES: readonly string[] = [
+  ORDER_STATUS.PENDING_PAYMENT,
+  ORDER_STATUS.PAYMENT_FAILED,
 ];
 
 // Workflow transitions

@@ -1,8 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  Sparkles, Search, Package, GitCompare, Menu, X,
-  Heart, ShoppingCart, User, Bell, Shield, ChevronDown, Minus, Plus,
-} from 'lucide-react';
+  ArrowsLeftRight,
+  Bell,
+  CaretDown,
+  CloudSun,
+  Heart,
+  List,
+  MagnifyingGlass,
+  Minus,
+  Package,
+  Plus,
+  Shield,
+  ShoppingCart,
+  User,
+  X,
+} from '@phosphor-icons/react';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { useFavorite } from '../../context/FavoriteContext';
@@ -51,17 +63,16 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
           <div
             className="nav-brand"
             onClick={() => nav('home')}
-            style={{ cursor: 'pointer' }}
-            title="Quay lại trang chủ Campbell AI Search"
+            title="Back to Campbell AI Search home"
           >
-            <div className="nav-brand-mark"><Sparkles size={18} /></div>
+            <div className="nav-brand-mark"><CloudSun size={18} weight="fill" /></div>
             <div className="nav-brand-text">Campbell <span>AI Search</span></div>
           </div>
 
           {/* Main Links */}
           <div className="nav-menu" id="navMenu">
             <button type="button" className={`nav-link ${currentPage === 'search' ? 'active' : ''}`} onClick={() => nav('search')}>
-              <Search size={16} /> AI Search
+              <MagnifyingGlass size={16} /> AI Search
             </button>
             <button type="button" className={`nav-link ${currentPage === 'products' ? 'active' : ''}`} onClick={() => nav('products')}>
               <Package size={16} /> Products
@@ -70,7 +81,7 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
 
           {/* Compare */}
           <button type="button" className={`nav-compare-btn ${compareCount === 0 ? 'empty' : ''}`} onClick={() => nav('compare')}>
-            <GitCompare size={16} />
+            <ArrowsLeftRight size={16} />
             <span>Compare</span>
             <span className="count" id="compareCount">{compareCount}</span>
           </button>
@@ -107,21 +118,21 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
                         {cartItems.slice(0, 3).map(item => (
                           <div key={item.product_id} className="cart-drawer__item">
                             <div className="cart-drawer__item-img">
-                              {item.image ? <img src={item.image} alt={item.model} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> : <span style={{ fontSize: 10, fontWeight: 700 }}>{item.model}</span>}
+                              {item.image ? <img src={item.image} alt={item.model} /> : <span className="cart-drawer__item-fallback">{item.model}</span>}
                             </div>
                             <div className="cart-drawer__item-info">
                               <div className="cart-drawer__item-model">{item.model}</div>
-                              <div style={{ fontSize: 11, color: 'var(--text-3)' }}>×{item.quantity}</div>
+                              <div className="cart-drawer__item-qty">Qty {item.quantity}</div>
                             </div>
-                            <div style={{ fontSize: 13, fontWeight: 700, flexShrink: 0 }}>{formatPrice((item.price || 0) * item.quantity, item.currency)}</div>
+                            <div className="cart-drawer__item-price">{formatPrice((item.price || 0) * item.quantity, item.currency)}</div>
                           </div>
                         ))}
                         {cartItems.length > 3 && <div className="cart-drawer__more">+{cartItems.length - 3} more</div>}
                       </div>
                       <div className="cart-drawer__footer">
                         <div className="cart-drawer__subtotal"><span>Subtotal</span><span>{formatPrice(cartSubtotal)}</span></div>
-                        <button type="button" className="btn btn-secondary" style={{ width: '100%', marginBottom: 6 }} onClick={() => nav('cart')}>View Cart</button>
-                        <button type="button" className="btn btn-primary" style={{ width: '100%' }} onClick={() => nav('checkout')}>Checkout</button>
+                        <button type="button" className="st-btn st-btn--block" onClick={() => nav('cart')}>View cart</button>
+                        <button type="button" className="st-btn st-btn--primary st-btn--block" onClick={() => nav('checkout')}>Checkout</button>
                       </div>
                     </>
                   )}
@@ -147,7 +158,7 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
                   onClick={() => setAccountOpen(v => !v)} aria-label="Account menu" aria-expanded={accountOpen}>
                   {isAdmin ? <Shield size={15} /> : <User size={15} />}
                   <span className="nav-account-name">{user.name || user.username}</span>
-                  <ChevronDown size={14} />
+                  <CaretDown size={14} />
                 </button>
                 {accountOpen && (
                   <div className="nav-dropdown" role="menu">
@@ -166,7 +177,7 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
                         <div className="nav-dropdown-divider" />
                       </>
                     )}
-                    <button type="button" className="nav-dropdown-item nav-dropdown-item--danger" role="menuitem" onClick={handleLogout}>Sign Out</button>
+                    <button type="button" className="nav-dropdown-item nav-dropdown-item--danger" role="menuitem" onClick={handleLogout}>Sign out</button>
                   </div>
                 )}
               </div>
@@ -179,16 +190,16 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
 
           {/* Mobile Toggle */}
           <button type="button" className="menu-toggle" onClick={() => setMobileMenuOpen(p => !p)} aria-label="Toggle menu">
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileMenuOpen ? <X size={20} /> : <List size={20} />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
       <div className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
-        <button type="button" className={`nav-link ${currentPage === 'search' ? 'active' : ''}`} onClick={() => nav('search')}><Search size={16} /> AI Search</button>
+        <button type="button" className={`nav-link ${currentPage === 'search' ? 'active' : ''}`} onClick={() => nav('search')}><MagnifyingGlass size={16} /> AI Search</button>
         <button type="button" className={`nav-link ${currentPage === 'products' ? 'active' : ''}`} onClick={() => nav('products')}><Package size={16} /> Products</button>
-        <button type="button" className={`nav-link ${currentPage === 'compare' ? 'active' : ''}`} onClick={() => nav('compare')}><GitCompare size={16} /> Compare ({compareCount})</button>
+        <button type="button" className={`nav-link ${currentPage === 'compare' ? 'active' : ''}`} onClick={() => nav('compare')}><ArrowsLeftRight size={16} /> Compare ({compareCount})</button>
         <button type="button" className={`nav-link ${currentPage === 'favorites' ? 'active' : ''}`} onClick={() => nav('favorites')}><Heart size={16} /> Favorites {favoriteCount > 0 && `(${favoriteCount})`}</button>
         <button type="button" className={`nav-link ${currentPage === 'cart' ? 'active' : ''}`} onClick={() => nav('cart')}><ShoppingCart size={16} /> Cart {cartCount > 0 && `(${cartCount})`}</button>
         <div className="mobile-nav-divider" />
@@ -196,12 +207,12 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
           isAdmin ? (
             <>
               <button type="button" className="nav-link" onClick={() => nav('admin')}><Shield size={16} /> Admin Panel</button>
-              <button type="button" className="nav-link" style={{ color: 'var(--danger)' }} onClick={handleLogout}>Sign Out</button>
+              <button type="button" className="nav-link nav-link--danger" onClick={handleLogout}>Sign out</button>
             </>
           ) : (
             <>
               <button type="button" className="nav-link" onClick={() => nav('account')}><User size={16} /> My Account</button>
-              <button type="button" className="nav-link" style={{ color: 'var(--danger)' }} onClick={handleLogout}>Sign Out</button>
+              <button type="button" className="nav-link nav-link--danger" onClick={handleLogout}>Sign out</button>
             </>
           )
         ) : (

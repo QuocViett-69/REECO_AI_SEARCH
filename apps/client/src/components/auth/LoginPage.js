@@ -1,6 +1,19 @@
-import React, { useState } from 'react';
+import '../../styles/studio/compare-login-admin.css';
+import React, { useRef, useState } from 'react';
 import { useAuth, DEMO_CREDENTIALS } from '../../context/AuthContext';
-import { Lock, User, Shield, CheckCircle2, AlertCircle, ArrowLeft } from 'lucide-react';
+import { PaperCutStation } from '../common/PaperCutStation';
+import {
+  ArrowLeft,
+  Key,
+  Shield,
+  User,
+  WarningCircle,
+} from '@phosphor-icons/react';
+
+const ROLES = [
+  { value: 'customer', label: 'Customer', icon: User },
+  { value: 'admin', label: 'Admin', icon: Shield },
+];
 
 export function LoginPage({ onNavigate, returnTo = 'account' }) {
   const { login, isAuthenticated, user, logout } = useAuth();
@@ -9,6 +22,7 @@ export function LoginPage({ onNavigate, returnTo = 'account' }) {
   const [password, setPassword] = useState(DEMO_CREDENTIALS.customer.password);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const roleRefs = useRef({});
 
   const handleRoleChange = (role) => {
     setSelectedRole(role);
@@ -20,6 +34,18 @@ export function LoginPage({ onNavigate, returnTo = 'account' }) {
       setUsername(DEMO_CREDENTIALS.admin.username);
       setPassword(DEMO_CREDENTIALS.admin.password);
     }
+  };
+
+  // Radio group keyboard pattern: arrows move and select
+  const handleRoleKeyDown = (e) => {
+    if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key))
+      return;
+    e.preventDefault();
+    const index = ROLES.findIndex((r) => r.value === selectedRole);
+    const step = e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 1;
+    const next = ROLES[(index + step + ROLES.length) % ROLES.length].value;
+    handleRoleChange(next);
+    roleRefs.current[next]?.focus();
   };
 
   const handleSubmit = async (e) => {
@@ -39,264 +65,197 @@ export function LoginPage({ onNavigate, returnTo = 'account' }) {
     }
   };
 
+  const aside = (
+    <aside className="lg-aside">
+      <div className="lg-aside__copy">
+        <p className="lg-aside__title">
+          Find the instrument your station needs.
+        </p>
+        <p className="lg-aside__desc">
+          Sensors, dataloggers and telemetry from Campbell Scientific, supplied
+          in Vietnam by REECO.
+        </p>
+      </div>
+      <PaperCutStation className="lg-aside__art" />
+    </aside>
+  );
+
   if (isAuthenticated && user) {
     return (
-      <div className="login-container" style={{ maxWidth: 460, margin: '60px auto', padding: 32 }}>
-        <div className="glass-card" style={{ padding: 32, textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', padding: 12, borderRadius: '50%', background: 'rgba(0, 200, 115, 0.1)', color: '#00c873', marginBottom: 16 }}>
-            <CheckCircle2 size={36} />
-          </div>
-          <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--text-1, #fff)', marginBottom: 8 }}>
-            Logged in as {user.name}
-          </h2>
-          <p style={{ color: 'var(--text-3, #888)', fontSize: 14, marginBottom: 24 }}>
-            Role: <span style={{ textTransform: 'uppercase', color: 'var(--accent, #00d2ff)', fontWeight: 600 }}>{user.role}</span> ({user.username})
-          </p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => onNavigate && onNavigate('products')}
-            >
-              Browse Products
-            </button>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={logout}
-            >
-              Log Out
-            </button>
+      <section className="page active st-page lg-page">
+        <div className="lg-split">
+          {aside}
+          <div className="lg-main">
+            <div className="lg-form-wrap">
+              <h1 className="st-heading lg-title">Signed in as {user.name}</h1>
+              <p className="lg-desc">
+                <span className="st-tag">
+                  {user.role === 'admin' ? 'Admin' : 'Customer'}
+                </span>
+                <span className="st-mono">{user.username}</span>
+              </p>
+              <div className="lg-done__actions">
+                <button
+                  type="button"
+                  className="st-btn st-btn--primary st-btn--lg"
+                  onClick={() => onNavigate && onNavigate('products')}
+                >
+                  Browse products
+                </button>
+                <button
+                  type="button"
+                  className="st-btn st-btn--lg"
+                  onClick={logout}
+                >
+                  Sign out
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 
   return (
-    <div className="login-container" style={{ maxWidth: 460, margin: '50px auto', padding: '0 20px' }}>
-      <button
-        type="button"
-        onClick={() => onNavigate && onNavigate('search')}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 8,
-          background: 'none',
-          border: 'none',
-          color: 'var(--text-3, #888)',
-          cursor: 'pointer',
-          fontSize: 14,
-          marginBottom: 20,
-        }}
-      >
-        <ArrowLeft size={16} /> Back to Search
-      </button>
+    <section className="page active st-page lg-page">
+      <div className="lg-split">
+        {aside}
 
-      <div className="glass-card" style={{ padding: 36, borderRadius: 16, border: '1px solid rgba(255,255,255,0.08)' }}>
-        <div style={{ textAlign: 'center', marginBottom: 28 }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              padding: 12,
-              borderRadius: 12,
-              background: 'rgba(0, 210, 255, 0.1)',
-              color: 'var(--accent, #00d2ff)',
-              marginBottom: 12,
-            }}
-          >
-            <Lock size={28} />
-          </div>
-          <h1 style={{ fontSize: 24, fontWeight: 700, color: 'var(--text-1, #fff)', margin: '0 0 8px' }}>
-            Sign In to REECO
-          </h1>
-          <p style={{ fontSize: 13, color: 'var(--text-3, #888)', margin: 0 }}>
-            Commercial Customer & Technical Partner Access
-          </p>
-        </div>
-
-        {error && (
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 10,
-              padding: '12px 14px',
-              borderRadius: 8,
-              background: 'rgba(255, 68, 68, 0.1)',
-              border: '1px solid rgba(255, 68, 68, 0.25)',
-              color: '#ff6b6b',
-              fontSize: 13,
-              marginBottom: 20,
-            }}
-          >
-            <AlertCircle size={16} />
-            <span>{error}</span>
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit}>
-          {/* Role Selection */}
-          <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--text-2, #ccc)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 0.5 }}>
-              Select Role
-            </label>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-              <label
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  padding: '10px 14px',
-                  borderRadius: 8,
-                  border: selectedRole === 'customer' ? '1px solid var(--accent, #00d2ff)' : '1px solid rgba(255,255,255,0.08)',
-                  background: selectedRole === 'customer' ? 'rgba(0, 210, 255, 0.08)' : 'rgba(255,255,255,0.02)',
-                  cursor: 'pointer',
-                  color: selectedRole === 'customer' ? '#fff' : 'var(--text-3, #888)',
-                  fontSize: 13,
-                  fontWeight: 500,
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                <input
-                  type="radio"
-                  name="role"
-                  value="customer"
-                  checked={selectedRole === 'customer'}
-                  onChange={() => handleRoleChange('customer')}
-                  style={{ accentColor: 'var(--accent, #00d2ff)' }}
-                />
-                <User size={16} />
-                <span>Customer</span>
-              </label>
-
-              <label
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  padding: '10px 14px',
-                  borderRadius: 8,
-                  border: selectedRole === 'admin' ? '1px solid var(--accent, #00d2ff)' : '1px solid rgba(255,255,255,0.08)',
-                  background: selectedRole === 'admin' ? 'rgba(0, 210, 255, 0.08)' : 'rgba(255,255,255,0.02)',
-                  cursor: 'pointer',
-                  color: selectedRole === 'admin' ? '#fff' : 'var(--text-3, #888)',
-                  fontSize: 13,
-                  fontWeight: 500,
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                <input
-                  type="radio"
-                  name="role"
-                  value="admin"
-                  checked={selectedRole === 'admin'}
-                  onChange={() => handleRoleChange('admin')}
-                  style={{ accentColor: 'var(--accent, #00d2ff)' }}
-                />
-                <Shield size={16} />
-                <span>Admin</span>
-              </label>
-            </div>
-          </div>
-
-          {/* Username Input */}
-          <div style={{ marginBottom: 18 }}>
-            <label
-              htmlFor="username"
-              style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--text-2, #ccc)', marginBottom: 6 }}
-            >
-              Username
-            </label>
-            <input
-              id="username"
-              type="text"
-              className="search-input"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter username"
-              required
-              style={{
-                width: '100%',
-                padding: '12px 14px',
-                borderRadius: 8,
-                background: 'rgba(0,0,0,0.3)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                color: '#fff',
-                fontSize: 14,
-                boxSizing: 'border-box',
-              }}
-            />
-          </div>
-
-          {/* Password Input (Masked type="password") */}
-          <div style={{ marginBottom: 24 }}>
-            <label
-              htmlFor="password"
-              style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--text-2, #ccc)', marginBottom: 6 }}
-            >
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              className="search-input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter password"
-              required
-              style={{
-                width: '100%',
-                padding: '12px 14px',
-                borderRadius: 8,
-                background: 'rgba(0,0,0,0.3)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                color: '#fff',
-                fontSize: 14,
-                boxSizing: 'border-box',
-              }}
-            />
-          </div>
-
-          {/* Submit Button */}
+        <div className="lg-main">
           <button
-            type="submit"
-            className="btn btn-primary"
-            disabled={isLoading}
-            style={{
-              width: '100%',
-              padding: '12px',
-              fontSize: 15,
-              fontWeight: 600,
-              borderRadius: 8,
-              cursor: isLoading ? 'wait' : 'pointer',
-            }}
+            type="button"
+            className="st-back lg-back"
+            onClick={() => onNavigate && onNavigate('search')}
           >
-            {isLoading ? 'Authenticating...' : 'Sign In'}
+            <ArrowLeft size={16} /> Back to search
           </button>
-        </form>
 
-        {/* Demo Credentials Helper Box */}
-        <div
-          style={{
-            marginTop: 24,
-            padding: '12px 14px',
-            borderRadius: 8,
-            background: 'rgba(255,255,255,0.02)',
-            border: '1px dashed rgba(255,255,255,0.1)',
-            fontSize: 12,
-            color: 'var(--text-3, #777)',
-            lineHeight: 1.6,
-          }}
-        >
-          <div style={{ fontWeight: 600, color: 'var(--text-2, #aaa)', marginBottom: 4 }}>
-            Demo Access Credentials:
+          <div className="lg-form-wrap">
+            <h1 className="st-heading lg-title">Sign in to REECO</h1>
+            <p className="lg-desc">
+              For commercial customers and technical partners.
+            </p>
+
+            <form className="lg-form" onSubmit={handleSubmit}>
+              {error && (
+                <div className="st-note st-note--error" role="alert">
+                  <WarningCircle size={16} />
+                  <span>{error}</span>
+                </div>
+              )}
+
+              <div className="st-field">
+                <span className="st-label" id="lg-role-label">
+                  Sign in as
+                </span>
+                <div
+                  className="st-tabs lg-roles"
+                  role="radiogroup"
+                  aria-labelledby="lg-role-label"
+                  onKeyDown={handleRoleKeyDown}
+                >
+                  {ROLES.map(({ value, label, icon: Icon }) => {
+                    const checked = selectedRole === value;
+                    return (
+                      <button
+                        key={value}
+                        ref={(el) => {
+                          roleRefs.current[value] = el;
+                        }}
+                        type="button"
+                        role="radio"
+                        className="st-tab lg-role"
+                        aria-checked={checked}
+                        tabIndex={checked ? 0 : -1}
+                        onClick={() => handleRoleChange(value)}
+                      >
+                        <Icon size={15} aria-hidden="true" />
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="st-field">
+                <label className="st-label" htmlFor="username">
+                  Username
+                </label>
+                <div className="st-input-icon">
+                  <User size={18} aria-hidden="true" />
+                  <input
+                    id="username"
+                    type="text"
+                    className="st-input"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Enter username"
+                    autoComplete="username"
+                    aria-invalid={error ? 'true' : undefined}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="st-field">
+                <label className="st-label" htmlFor="password">
+                  Password
+                </label>
+                <div className="st-input-icon">
+                  <Key size={18} aria-hidden="true" />
+                  <input
+                    id="password"
+                    type="password"
+                    className="st-input"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter password"
+                    autoComplete="current-password"
+                    aria-invalid={error ? 'true' : undefined}
+                    required
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="st-btn st-btn--primary st-btn--lg st-btn--block lg-submit"
+                disabled={isLoading}
+                aria-busy={isLoading}
+              >
+                {isLoading ? 'Signing in...' : 'Sign in'}
+              </button>
+            </form>
+
+            {/* Demo hints exist only in development builds (the password is empty in production) */}
+            {DEMO_CREDENTIALS.customer.password && (
+              <div className="lg-demo">
+                <p className="lg-demo__title">
+                  <Shield size={14} aria-hidden="true" /> Demo accounts
+                </p>
+                <dl className="lg-demo__list">
+                  <div>
+                    <dt>Customer</dt>
+                    <dd className="st-mono">
+                      {DEMO_CREDENTIALS.customer.username} /{' '}
+                      {DEMO_CREDENTIALS.customer.password}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Admin</dt>
+                    <dd className="st-mono">
+                      {DEMO_CREDENTIALS.admin.username} /{' '}
+                      {DEMO_CREDENTIALS.admin.password}
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            )}
           </div>
-          <div>• <strong>Customer:</strong> <code>haitran</code> / <code>ilovereeco</code></div>
-          <div>• <strong>Admin:</strong> <code>reeco</code> / <code>ilovereeco</code></div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -21,11 +21,12 @@ product access, and an idempotent product import pipeline. See
 - `apps/api`: NestJS backend (port 3000)
 - `apps/client`: Customer-facing React frontend — CRA, port 5173
 - `apps/admin`: Admin React frontend — CRA, port 5174
-- `packages/shared`: shared TypeScript types and constants
+- `packages/shared`: shared Zod schemas, TypeScript types and constants (used by the API)
+- `services/reranker`: optional Python BGE reranker service (`npm run reranker:serve`, off by default)
 - `supabase`: versioned database migrations and RLS policies
 - `scripts`: product processing, import, validation, and local database tooling
 - `data`: source datasets, processed artifacts, and validation reports
-- `docs`: architecture, API contract, and backend handoff notes
+- `docs`: architecture, API contract ([`docs/api-contract.md`](./docs/api-contract.md)), and handoff notes
 
 ## Requirements
 
@@ -92,7 +93,7 @@ To use the installed Qwen model for search explanations, set `LLM_EXPLANATION_EN
 
 The models load on demand; you do not need to run `ollama run` or download them again at each startup. The reranker is disabled by default and does not need its own service for this demo.
 
-Customer UI: http://127.0.0.1:4173 · Admin UI: http://127.0.0.1:4174 · API health: http://127.0.0.1:3100/api/v1/health. Press Ctrl+C to stop. This uses the Supabase project configured in `apps/api/.env`. Admin imports and edits are blocked in local staging, so the shared data stays read-only. The admin UI still has demo-only client login; do not use this environment to validate admin authentication or expose it publicly.
+Customer UI: http://127.0.0.1:4173 · Admin UI: http://127.0.0.1:4174 · API health: http://127.0.0.1:3100/api/v1/health. Press Ctrl+C to stop. This uses the Supabase project configured in `apps/api/.env`. Admin imports and edits are blocked in local staging (`LOCAL_STAGING_READ_ONLY=true` rejects every non-GET `/admin/*` request with 403), so the shared product data stays read-only; orders and payments are not blocked. Do not expose this environment publicly.
 
 ## Import and validate Supabase data
 
@@ -112,11 +113,11 @@ Run `npm run supabase:audit-specifications` to compare every live specification 
 The application integrates with the VNPay Sandbox payment gateway:
 
 - **Create Payment URL**: `POST /api/v1/payments/vnpay/create-url` (Requires authentication, body: `{ order_id }`). Validates order ownership, VNPay payment method, and status (`PENDING_PAYMENT` or `PAYMENT_FAILED`). Generates a strictly numeric `vnp_TxnRef`, stores it in `orders.vnpay_txn_ref`, resets `PAYMENT_FAILED` to `PENDING_PAYMENT`, and returns `{ payment_url, txn_ref, order_id }`.
-- **Verify Payment Callback**: `GET /api/v1/payments/vnpay/verify`. Verifies HMAC-SHA512 checksum, locates order by `vnp_TxnRef`, verifies `vnp_Amount / 100 == total`. Transitions successful orders to `PROCESSING` with `PAID` status, recording status history and notifications. Idempotent: repeated calls for an already `PAID` order return cached state without duplicating notifications.
+- **Verify Payment Callback**: `GET /api/v1/payments/vnpay/verify`. Verifies HMAC-SHA512 checksum, locates order by `vnp_TxnRef`, verifies `vnp_Amount / 100 == total`. Transitions successful orders to `PROCESSING` with `PAID` status, recording status history and notifications. Idempotent: repeated calls for an already `PAID` order return cached state without duplicating notifications. Only orders in `PENDING_PAYMENT` or `PAYMENT_FAILED` are updated: for any other status (for example `CANCELLED`) nothing is written and the response is `success: false, code: "ORDER_NOT_AWAITING_PAYMENT"`.
 - **VNPay IPN (Webhook)**: `GET /api/v1/payments/vnpay/ipn`. Shares the underlying validation and update logic with `verify`, responding in standard VNPay IPN format (`{ RspCode, Message }`):
   - `00`: Confirm Success
   - `01`: Order not found
-  - `02`: Order already confirmed (Idempotency)
+  - `02`: Order already confirmed (Idempotency), or the order is no longer awaiting payment (for example cancelled) — the result is ignored and logged for manual reconciliation
   - `04`: Invalid amount
   - `97`: Checksum failed
   - `99`: Unknown error
@@ -159,7 +160,12 @@ node --test scripts/payments/vnpay-signing.test.mjs scripts/payments/merge-regre
 
 The payment and notification integration suites write test rows; run them only
 against a disposable/test database. API lint currently reports explicit `any`
-types in the added order/notification modules and one existing admin controller.
+types in the order/notification modules.
+
+All `/admin/*` API routes require a Supabase token whose `app_metadata.role` is
+`admin` (403 otherwise). `POST /api/v1/search` is rate limited per IP
+(`SEARCH_RATE_LIMIT_PER_MINUTE`, default 60). See
+[`docs/api-contract.md`](./docs/api-contract.md) for every route.
 
 VD:
 

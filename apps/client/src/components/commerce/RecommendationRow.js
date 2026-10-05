@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { recommendationService } from '../../services/recommendationService';
 import { formatPrice } from '../../services/commercialService';
-import { Sparkles, ShoppingCart, Eye, Plus, Check } from 'lucide-react';
+import { ArrowUpRight, Check, ShoppingCart } from '@phosphor-icons/react';
 import { useCart } from '../../context/CartContext';
+
+// What the relationship means to a buyer; the orb tint follows it.
+const RELATION = {
+  compatible: { label: 'Works with this', orb: 'st-orb--violet' },
+  compatible_sensor: { label: 'Compatible sensor', orb: 'st-orb--violet' },
+  complementary: { label: 'Pairs well', orb: 'st-orb--ember' },
+  alternative: { label: 'Alternative', orb: '' },
+};
 
 export function RecommendationRow({ productId, model, onViewDetail }) {
   const { addToCart } = useCart();
@@ -33,15 +41,12 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
 
   if (loading) {
     return (
-      <div style={{ marginTop: 36, paddingTop: 28, borderTop: '1px solid #e5e7eb' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-          <Sparkles size={18} color="#0069e0" />
-          <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827', margin: 0 }}>
-            You may also need
-          </h3>
+      <section className="rc" aria-busy="true">
+        <div className="rc__head">
+          <h2 className="st-heading">You may also need</h2>
         </div>
-        <div style={{ fontSize: 13, color: '#6b7280' }}>Loading recommendations...</div>
-      </div>
+        <p className="rc__loading" role="status">Loading recommendations</p>
+      </section>
     );
   }
 
@@ -67,116 +72,54 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
   };
 
   return (
-    <div style={{ marginTop: 36, paddingTop: 28, borderTop: '1px solid #e5e7eb' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 18 }}>
-        <Sparkles size={18} color="#0069e0" />
-        <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827', margin: 0 }}>
-          You may also need
-        </h3>
-        <span style={{ fontSize: 11, background: 'rgba(0, 105, 224, 0.08)', color: '#0069e0', padding: '2px 8px', borderRadius: 4, fontWeight: 600 }}>
-          AI Recommended
-        </span>
+    <section className="rc" aria-labelledby="rc-title">
+      <div className="rc__head">
+        <h2 id="rc-title" className="st-heading">You may also need</h2>
+        <p>Picked by the AI from technical compatibility with {model}.</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 16 }}>
+      <ul className="rc__grid">
         {recommendations.map((item) => {
           const isAdded = !!addedMap[item.model];
+          const relation = RELATION[item.type] || RELATION.compatible;
 
           return (
-            <div
-              key={item.model}
-              style={{
-                padding: 16,
-                borderRadius: 12,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                background: '#ffffff',
-                border: '1px solid #e5e7eb',
-              }}
-            >
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: '#0069e0' }}>
-                    {item.model}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 11,
-                      color: '#535862',
-                      background: '#f3f4f6',
-                      padding: '2px 8px',
-                      borderRadius: 4,
-                      maxWidth: 150,
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                    }}
-                    title={item.reason}
+            <li key={item.model} className="rc__item">
+              <div className="rc__item-top">
+                <span className="st-tag st-tag--outline">{relation.label}</span>
+                <span className={`st-orb ${relation.orb}`} aria-hidden="true" />
+              </div>
+              <h3 className="rc__model">{item.model}</h3>
+              {item.name && item.name !== item.model && <p className="rc__reason">{item.name}</p>}
+              <p className="rc__reason">{item.reason}</p>
+
+              <div className="rc__foot">
+                <span className="rc__price">{formatPrice(item.price, item.currency)}</span>
+                <div className="rc__actions" role="group" aria-label={`Actions for ${item.model}`}>
+                  <button
+                    type="button"
+                    className={`st-btn st-btn--primary st-btn--sm ${isAdded ? 'is-added' : ''}`}
+                    onClick={() => handleAddToCart(item)}
                   >
-                    {item.reason}
-                  </span>
-                </div>
-
-                <h4 style={{ fontSize: 13, fontWeight: 600, color: '#111827', margin: '0 0 8px', lineHeight: 1.4 }}>
-                  {item.name}
-                </h4>
-
-                <div style={{ fontSize: 16, fontWeight: 700, color: '#111827', marginBottom: 14 }}>
-                  {formatPrice(item.price, item.currency)}
+                    {isAdded ? <Check size={15} /> : <ShoppingCart size={15} />}
+                    <span>{isAdded ? 'Added' : 'Add to cart'}</span>
+                  </button>
+                  <button
+                    type="button"
+                    className="st-btn st-btn--sm st-btn--icon"
+                    onClick={() => onViewDetail && onViewDetail(item.model)}
+                    aria-label={`View ${item.model}`}
+                    title={`View ${item.model}`}
+                  >
+                    <ArrowUpRight size={15} />
+                  </button>
                 </div>
               </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                <button
-                  type="button"
-                  onClick={() => onViewDetail && onViewDetail(item.model)}
-                  style={{
-                    padding: '8px 10px',
-                    fontSize: 12,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 4,
-                    background: '#ffffff',
-                    color: '#111827',
-                    border: '1px solid #e5e7eb',
-                    borderRadius: 9999,
-                    cursor: 'pointer',
-                    fontWeight: 500,
-                  }}
-                >
-                  <Eye size={13} /> View
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => handleAddToCart(item)}
-                  style={{
-                    padding: '8px 10px',
-                    fontSize: 12,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 4,
-                    background: isAdded ? '#0f9554' : '#111827',
-                    color: '#ffffff',
-                    border: 'none',
-                    borderRadius: 9999,
-                    cursor: 'pointer',
-                    fontWeight: 500,
-                    transition: 'background 0.2s',
-                  }}
-                >
-                  {isAdded ? <Check size={13} /> : <ShoppingCart size={13} />}
-                  <span>{isAdded ? 'Added!' : 'Add to Cart'}</span>
-                </button>
-              </div>
-            </div>
+            </li>
           );
         })}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }
 

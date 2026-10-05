@@ -8,8 +8,27 @@ import {
 } from '@nestjs/common';
 import type { User } from '@supabase/supabase-js';
 import * as crypto from 'crypto';
-import { formatVnpDate } from '../payments/vnpay.service';
+import { AWAITING_PAYMENT_STATUSES } from './orders.constants';
 import { OrdersRepository } from './orders.repository';
+import type { OrderRow, OrderWithItems } from './orders.types';
+
+// Constant-time comparison of two hex digests, so the check does not leak how many
+// leading characters of a forged signature were right.
+function safeEqualHex(a: string, b: string): boolean {
+  const left = Buffer.from(a, 'hex');
+  const right = Buffer.from(b, 'hex');
+  return left.length === right.length && crypto.timingSafeEqual(left, right);
+}
+
+// VNPay expects yyyyMMddHHmmss in Vietnam time (GMT+7), regardless of the server's timezone.
+export function formatVnpDate(date: Date): string {
+  const vn = new Date(date.getTime() + 7 * 60 * 60 * 1000);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return (
+    `${vn.getUTCFullYear()}${pad(vn.getUTCMonth() + 1)}${pad(vn.getUTCDate())}` +
+    `${pad(vn.getUTCHours())}${pad(vn.getUTCMinutes())}${pad(vn.getUTCSeconds())}`
+  );
+}
 
 export interface VNPayUrlResult {
   payment_url: string;
@@ -22,7 +41,7 @@ export interface VNPayVerifyResult {
   is_already_paid?: boolean;
   message: string;
   code?: string;
-  order?: any;
+  order?: OrderWithItems | null;
 }
 
 export interface VNPayIpnResponse {
@@ -37,17 +56,22 @@ export class VNPayService {
   constructor(private readonly ordersRepository: OrdersRepository) {}
 
   private get tmnCode(): string {
-    if (!process.env.VNPAY_TMN_CODE) throw new ServiceUnavailableException('VNPay is not configured');
+    if (!process.env.VNPAY_TMN_CODE)
+      throw new ServiceUnavailableException('VNPay is not configured');
     return process.env.VNPAY_TMN_CODE;
   }
 
   private get hashSecret(): string {
-    if (!process.env.VNPAY_HASH_SECRET) throw new ServiceUnavailableException('VNPay is not configured');
+    if (!process.env.VNPAY_HASH_SECRET)
+      throw new ServiceUnavailableException('VNPay is not configured');
     return process.env.VNPAY_HASH_SECRET;
   }
 
   private get payUrl(): string {
-    return process.env.VNPAY_PAY_URL || 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
+    return (
+      process.env.VNPAY_PAY_URL ||
+      'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html'
+    );
   }
 
   private get returnUrl(): string {
@@ -60,7 +84,7 @@ export class VNPayService {
   /**
    * Sắp xếp tham số theo chuẩn VNPay (thay %20 bằng +)
    */
-  sortObject(obj: Record<string, any>): Record<string, string> {
+  sortObject(obj: Record<string, unknown>): Record<string, string> {
     const sorted: Record<string, string> = {};
     const str: string[] = [];
     for (const key in obj) {
@@ -70,7 +94,10 @@ export class VNPayService {
     }
     str.sort();
     for (const key of str) {
-      sorted[key] = encodeURIComponent(String(obj[key] ?? '')).replace(/%20/g, '+');
+      sorted[key] = encodeURIComponent(String(obj[key] ?? '')).replace(
+        /%20/g,
+        '+',
+      );
     }
     return sorted;
   }
@@ -85,9 +112,11 @@ export class VNPayService {
   /**
    * Tính hash SHA-512 cho các tham số VNPay theo chuẩn official Node.js VNPay
    */
-  calculateSignature(params: Record<string, any>): string {
+  calculateSignature(params: Record<string, unknown>): string {
     const sorted = this.sortObject(params);
-    const signData = Object.entries(sorted).map(([key, value]) => `${key}=${value}`).join('&');
+    const signData = Object.entries(sorted)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&');
     return crypto
       .createHmac('sha512', this.hashSecret)
       .update(Buffer.from(signData, 'utf-8'))
@@ -97,9 +126,10 @@ export class VNPayService {
   /**
    * Kiểm tra tính hợp lệ của chữ ký phản hồi từ VNPay
    */
-  verifySignature(queryParams: Record<string, any>): boolean {
+  verifySignature(queryParams: Record<string, unknown>): boolean {
     const rawHash = queryParams['vnp_SecureHash'];
-    if (typeof rawHash !== 'string' || !/^[a-fA-F0-9]{128}$/.test(rawHash)) return false;
+    if (typeof rawHash !== 'string' || !/^[a-fA-F0-9]{128}$/.test(rawHash))
+      return false;
     const secureHash = rawHash.toLowerCase();
 
     const cleanParams: Record<string, string> = {};
@@ -118,20 +148,24 @@ export class VNPayService {
     }
 
     const sortedParams = this.sortObject(cleanParams);
-    const signData = Object.entries(sortedParams).map(([key, value]) => `${key}=${value}`).join('&');
+    const signData = Object.entries(sortedParams)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&');
     const hash = crypto
       .createHmac('sha512', this.hashSecret)
       .update(Buffer.from(signData, 'utf-8'))
       .digest('hex')
       .toLowerCase();
 
-    if (hash === secureHash) return true;
+    if (safeEqualHex(hash, secureHash)) return true;
 
     // Biến thể dự phòng: encodeURIComponent thông thường không thay thế dấu +
     const sortedKeys = Object.keys(cleanParams).sort();
     const signParts1: string[] = [];
     for (const key of sortedKeys) {
-      signParts1.push(`${encodeURIComponent(key)}=${encodeURIComponent(cleanParams[key] ?? '')}`);
+      signParts1.push(
+        `${encodeURIComponent(key)}=${encodeURIComponent(cleanParams[key] ?? '')}`,
+      );
     }
     const hash1 = crypto
       .createHmac('sha512', this.hashSecret)
@@ -139,7 +173,7 @@ export class VNPayService {
       .digest('hex')
       .toLowerCase();
 
-    return hash1 === secureHash;
+    return safeEqualHex(hash1, secureHash);
   }
 
   /**
@@ -202,7 +236,12 @@ export class VNPayService {
     );
 
     // 6. Xây dựng URL thanh toán VNPay
-    const createDate = this.getVietnamDateTime();
+    const now = new Date();
+    const createDate = this.getVietnamDateTime(now);
+    // The payment link stops working after 15 minutes, as VNPay recommends
+    const expireDate = this.getVietnamDateTime(
+      new Date(now.getTime() + 15 * 60 * 1000),
+    );
     const amountInVnpUnits = Math.round(Number(order.total) * 100);
 
     const vnpParams: Record<string, string> = {
@@ -218,17 +257,22 @@ export class VNPayService {
       vnp_ReturnUrl: this.returnUrl,
       vnp_IpAddr: ipAddr || '127.0.0.1',
       vnp_CreateDate: createDate,
+      vnp_ExpireDate: expireDate,
     };
 
     const sortedParams = this.sortObject(vnpParams);
-    const signData = Object.entries(sortedParams).map(([key, value]) => `${key}=${value}`).join('&');
+    const signData = Object.entries(sortedParams)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&');
     const secureHash = crypto
       .createHmac('sha512', this.hashSecret)
       .update(Buffer.from(signData, 'utf-8'))
       .digest('hex');
 
     sortedParams['vnp_SecureHash'] = secureHash;
-    const paymentUrl = `${this.payUrl}?${Object.entries(sortedParams).map(([key, value]) => `${key}=${value}`).join('&')}`;
+    const paymentUrl = `${this.payUrl}?${Object.entries(sortedParams)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&')}`;
 
     return {
       payment_url: paymentUrl,
@@ -247,7 +291,7 @@ export class VNPayService {
    * - Trả response kèm order
    */
   async verifyPayment(
-    queryParams: Record<string, any>,
+    queryParams: Record<string, unknown>,
   ): Promise<VNPayVerifyResult> {
     const txnRef = queryParams['vnp_TxnRef'];
     const vnpAmountRaw = queryParams['vnp_Amount'];
@@ -293,13 +337,23 @@ export class VNPayService {
       };
     }
 
-    // 5. Cập nhật trạng thái thanh toán
-    if (responseCode === '00' && queryParams['vnp_TransactionStatus'] === '00') {
+    // 5. Chỉ đơn còn chờ thanh toán mới được cập nhật; đơn đã hủy/đã xử lý thì giữ nguyên
+    if (!AWAITING_PAYMENT_STATUSES.includes(order.status)) {
+      return this.notAwaitingPayment(order, txnRef, responseCode);
+    }
+
+    // 6. Cập nhật trạng thái thanh toán
+    if (
+      responseCode === '00' &&
+      queryParams['vnp_TransactionStatus'] === '00'
+    ) {
       // Thanh toán thành công -> PROCESSING / PAID
       const updatedOrder = await this.ordersRepository.recordPaymentSuccess(
         order,
         String(transactionNo || `VNP${Date.now()}`),
       );
+      if (!updatedOrder)
+        return this.notAwaitingPayment(order, txnRef, responseCode);
 
       return {
         success: true,
@@ -313,10 +367,12 @@ export class VNPayService {
         String(responseCode || '99'),
         transactionNo ? String(transactionNo) : undefined,
       );
+      if (!updatedOrder)
+        return this.notAwaitingPayment(order, txnRef, responseCode);
 
       return {
         success: false,
-        code: responseCode,
+        code: String(responseCode),
         message: `Giao dịch thanh toán không thành công (Mã phản hồi VNPay: ${responseCode}).`,
         order: updatedOrder,
       };
@@ -328,7 +384,9 @@ export class VNPayService {
    * - Dùng chung logic kiểm tra và cập nhật với verify
    * - Trả định dạng chuẩn VNPay IPN: { RspCode, Message }
    */
-  async processIpn(queryParams: Record<string, any>): Promise<VNPayIpnResponse> {
+  async processIpn(
+    queryParams: Record<string, unknown>,
+  ): Promise<VNPayIpnResponse> {
     const txnRef = queryParams['vnp_TxnRef'];
     const vnpAmountRaw = queryParams['vnp_Amount'];
     const responseCode = queryParams['vnp_ResponseCode'];
@@ -362,24 +420,56 @@ export class VNPayService {
       return { RspCode: '02', Message: 'Order already confirmed' };
     }
 
-    // 5. Cập nhật kết quả thanh toán
+    // 5. Đơn không còn chờ thanh toán (đã hủy/đã xử lý): VNPay quy ước trả 02
+    if (!AWAITING_PAYMENT_STATUSES.includes(order.status)) {
+      this.notAwaitingPayment(order, txnRef, responseCode);
+      return { RspCode: '02', Message: 'Order already confirmed' };
+    }
+
+    // 6. Cập nhật kết quả thanh toán
     try {
-      if (responseCode === '00' && queryParams['vnp_TransactionStatus'] === '00') {
-        await this.ordersRepository.recordPaymentSuccess(
-          order,
-          String(transactionNo || `VNP${Date.now()}`),
-        );
-      } else {
-        await this.ordersRepository.recordPaymentFailure(
-          order,
-          String(responseCode || '99'),
-          transactionNo ? String(transactionNo) : undefined,
-        );
+      const updated =
+        responseCode === '00' && queryParams['vnp_TransactionStatus'] === '00'
+          ? await this.ordersRepository.recordPaymentSuccess(
+              order,
+              String(transactionNo || `VNP${Date.now()}`),
+            )
+          : await this.ordersRepository.recordPaymentFailure(
+              order,
+              String(responseCode || '99'),
+              transactionNo ? String(transactionNo) : undefined,
+            );
+      if (!updated) {
+        this.notAwaitingPayment(order, txnRef, responseCode);
+        return { RspCode: '02', Message: 'Order already confirmed' };
       }
       return { RspCode: '00', Message: 'Confirm Success' };
-    } catch (err: any) {
-      this.logger.error(`IPN: Exception updating order: ${err.message}`);
+    } catch (err: unknown) {
+      this.logger.error(
+        `IPN: Exception updating order: ${err instanceof Error ? err.message : String(err)}`,
+      );
       return { RspCode: '99', Message: 'Unknown error' };
     }
+  }
+
+  /**
+   * A VNPay result arrived for an order that is no longer waiting for payment (cancelled,
+   * already processed, or changed concurrently). The order is left as is and the event is
+   * logged so a successful charge can be reconciled by hand.
+   */
+  private notAwaitingPayment(
+    order: OrderRow,
+    txnRef: unknown,
+    responseCode: unknown,
+  ) {
+    this.logger.warn(
+      `VNPay result ${String(responseCode)} for txnRef ${String(txnRef)} ignored: order ${order.order_code} is ${order.status}`,
+    );
+    return {
+      success: false,
+      code: 'ORDER_NOT_AWAITING_PAYMENT',
+      message: `Đơn hàng ${order.order_code} không còn chờ thanh toán (trạng thái: ${order.status}). Nếu bạn đã bị trừ tiền, REECO sẽ liên hệ để hoàn tiền.`,
+      order,
+    };
   }
 }

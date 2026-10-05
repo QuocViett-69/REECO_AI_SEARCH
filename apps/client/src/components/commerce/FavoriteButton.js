@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFavorite } from '../../context/FavoriteContext';
-import { Heart } from 'lucide-react';
+import { Heart } from '@phosphor-icons/react';
 
 export function FavoriteButton({ product, className = '', style = {}, size = 16, showLabel = false }) {
   const { isFavorite, toggleFavorite } = useFavorite();
@@ -17,7 +17,8 @@ export function FavoriteButton({ product, className = '', style = {}, size = 16,
   return (
     <button
       type="button"
-      className={`btn btn-secondary favorite-btn ${active ? 'btn-added' : ''} ${className}`}
+      className={`st-btn st-fav ${active ? 'is-on' : ''} ${className}`}
+      aria-pressed={active}
       onClick={handleClick}
       style={style}
       title={active ? 'Remove from favorites' : 'Add to favorites'}
@@ -25,9 +26,7 @@ export function FavoriteButton({ product, className = '', style = {}, size = 16,
     >
       <Heart
         size={size}
-        fill={active ? 'currentColor' : 'none'}
-        stroke="currentColor"
-        className={active ? 'icon-active' : ''}
+        weight={active ? 'fill' : 'bold'}
       />
       {showLabel && (
         <span>

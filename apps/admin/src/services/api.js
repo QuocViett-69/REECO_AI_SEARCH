@@ -21,7 +21,8 @@ const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
 export function isJwtExpired(token) {
   try {
     if (!token || typeof token !== 'string') return true;
-    if (!token.startsWith('ey') || token.split('.').length !== 3) return false;
+    // Admin sessions are always Supabase JWTs; anything else is not a usable token.
+    if (!token.startsWith('ey') || token.split('.').length !== 3) return true;
     const base64Url = token.split('.')[1];
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     const jsonPayload = decodeURIComponent(
@@ -31,7 +32,7 @@ export function isJwtExpired(token) {
         .join('')
     );
     const parsed = JSON.parse(jsonPayload);
-    if (!parsed.exp) return false;
+    if (!parsed.exp) return true;
     // Check if expired or expiring within 60 seconds
     return parsed.exp * 1000 < Date.now() + 60000;
   } catch {
@@ -71,18 +72,18 @@ export async function ensureAdminToken(forceRefresh = false) {
   return getAuthToken();
 }
 
+// The stored profile only counts while its session token is still valid.
 export function getStoredUser() {
+  if (!getAuthToken()) {
+    clearAuthSession();
+    return null;
+  }
   try {
     const raw = localStorage.getItem('admin_user');
-    if (raw) return JSON.parse(raw);
+    return raw ? JSON.parse(raw) : null;
   } catch {
-    // ignore
+    return null;
   }
-  const token = getAuthToken();
-  if (token) {
-    return { email: 'admin@reeco.vn', role: 'admin' };
-  }
-  return null;
 }
 
 export function setAuthSession(token, user) {
@@ -155,7 +156,8 @@ export async function safeFetch(path, options = {}) {
     ? primaryBase.replace(':3100', ':3000')
     : primaryBase.replace(':3000', ':3100');
 
-  let token = await ensureAdminToken();
+  // There is no refresh token flow: a 401 is returned to the caller, which signs out.
+  const token = await ensureAdminToken();
   const headers = { ...(options.headers || {}) };
   if (!headers['Authorization'] && token) {
     headers['Authorization'] = `Bearer ${token}`;
@@ -163,27 +165,12 @@ export async function safeFetch(path, options = {}) {
 
   const primaryUrl = `${primaryBase}${path.startsWith('/') ? '' : '/'}${path}`;
   try {
-    let res = await fetch(primaryUrl, { ...options, headers });
-    if (res.status === 401 && !options._retried) {
-      const freshToken = await ensureAdminToken(true);
-      if (freshToken) {
-        headers['Authorization'] = `Bearer ${freshToken}`;
-        res = await fetch(primaryUrl, { ...options, headers, _retried: true });
-      }
-    }
-    return res;
+    return await fetch(primaryUrl, { ...options, headers });
   } catch (err) {
+    // Network failure only: try the other local API port (dev 3000 / staging 3100)
     const secondaryUrl = `${secondaryBase}${path.startsWith('/') ? '' : '/'}${path}`;
     try {
-      let res = await fetch(secondaryUrl, { ...options, headers });
-      if (res.status === 401 && !options._retried) {
-        const freshToken = await ensureAdminToken(true);
-        if (freshToken) {
-          headers['Authorization'] = `Bearer ${freshToken}`;
-          res = await fetch(secondaryUrl, { ...options, headers, _retried: true });
-        }
-      }
-      return res;
+      return await fetch(secondaryUrl, { ...options, headers });
     } catch {
       throw err;
     }
@@ -210,22 +197,13 @@ export async function getAdminProductsApi(params = {}) {
     if (params.subcategory) queryParams.set('subcategory', params.subcategory);
     if (params.device_type) queryParams.set('device_type', params.device_type);
 
-    // 1. Try Admin API endpoint
-    const adminPath = `/admin/products?${queryParams.toString()}`;
-    const adminRes = await safeFetch(adminPath);
+    // Admin data only. Falling back to the public catalog would hide 401/403 and show
+    // public rows (active products only) as if they were the admin view.
+    const adminRes = await safeFetch(`/admin/products?${queryParams.toString()}`);
     if (adminRes.ok) {
       const data = await adminRes.json();
       return { items: data.items || [], pagination: data.pagination || {} };
     }
-
-    // 2. Try Public API endpoint
-    const publicPath = `/products?${queryParams.toString()}`;
-    const publicRes = await safeFetch(publicPath);
-    if (publicRes.ok) {
-      const data = await publicRes.json();
-      return { items: data.items || [], pagination: data.pagination || {} };
-    }
-
     return handleAdminError(adminRes.status);
   } catch (error) {
     console.warn('API getAdminProducts failed:', error.message);
@@ -238,10 +216,6 @@ export async function getAdminProductDetailApi(productIdOrModel) {
   try {
     const adminRes = await safeFetch(`/admin/products/${encodeURIComponent(productIdOrModel)}`);
     if (adminRes.ok) return await adminRes.json();
-
-    const publicRes = await safeFetch(`/products/${encodeURIComponent(productIdOrModel)}`);
-    if (publicRes.ok) return await publicRes.json();
-
     return handleAdminError(adminRes.status);
   } catch (error) {
     console.warn('API getAdminProductDetail failed:', error.message);
@@ -280,7 +254,7 @@ export async function triggerAdminImport() {
       },
     });
 
-    if (res.status === 201) {
+    if (res.ok) {
       const data = await res.json();
       return { success: true, report: data.report || data };
     }

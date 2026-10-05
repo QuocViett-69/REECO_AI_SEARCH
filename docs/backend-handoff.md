@@ -3,9 +3,10 @@
 This remains the implementation-oriented backend note. For the frozen Step 7.7 startup, endpoint,
 error, security, and UI readiness contract, use [`frontend-handoff.md`](./frontend-handoff.md).
 
-The React applications use `REACT_APP_API_URL=http://localhost:3000/api/v1` and import response/request
-types plus Zod schemas from `@reeco/shared`. Product data must come through NestJS; the browser never
-receives `SUPABASE_SERVICE_ROLE_KEY` or `DATABASE_URL`.
+The React applications use `REACT_APP_API_URL=http://localhost:3000/api/v1`. They are plain JavaScript
+CRA apps and do not import `@reeco/shared`; its Zod schemas are the reference for the search and
+product payloads (the API validates its own responses with them). Product data must come through
+NestJS; the browser never receives `SUPABASE_SERVICE_ROLE_KEY` or `DATABASE_URL`.
 
 ## Product List
 
@@ -23,7 +24,9 @@ tables from `specifications`, highlights from `important_specifications`, and li
 
 ## Search
 
-Call `POST /search` with `{ "query": string, "limit"?: number }`. Render `results` in returned order.
+Call `POST /search` with `{ "query": string, "limit"?: number, "explain"?: boolean, "context"?: {...} }`
+(the client sends `explain: true`; see [`api-contract.md`](./api-contract.md#post-search) for
+`explanation`, `guidance`, `resolved_query`, `context_applied`, and the `429` rate limit). Render `results` in returned order.
 `mode` is `hybrid` when keyword and semantic retrieval both succeed, `keyword` when semantic retrieval
 is unavailable and keyword fallback succeeds, or `semantic` when keyword retrieval is unavailable and
 semantic fallback succeeds. Mode describes the retrieval path, not result quality. A source returning
@@ -36,7 +39,8 @@ must not be compared directly. `hybrid` remains the original RRF retrieval score
 technical evidence changes final ordering. `rerank` remains `null`. `matched_features` contains only
 positive structured evidence and may include stable labels such as `identity:model:CS655`,
 `protocol:SDI-12`, `operating-temperature:-40°C`, or
-`measurement-temperature:up-to-70°C`; it contains no generated explanation.
+`measurement-temperature:up-to-70°C`. Explanations, when requested, are in the separate
+`explanation` field.
 
 The request `limit` is the final result count. The backend retrieves at least the configured candidate
 depth, applies deterministic technical ranking/filtering, batch-loads active summaries, drops
@@ -47,17 +51,24 @@ Do not reorder results in React or attempt to sort them by `scores.hybrid`.
 The endpoint now uses the server-only local Ollama provider for semantic retrieval. If Ollama is
 offline, keyword fallback returns HTTP 200 with mode `keyword`. If keyword RPC fails while semantic
 retrieval succeeds, HTTP 200 uses mode `semantic`. Only failure of both retrieval paths returns a
-sanitized HTTP 503. Hosted migrations `20260916074530` and `20260916080205` are deployed, the hosted
-column is `extensions.vector(1536)`, and 42/42 searchable active products have current
-`qwen3-embedding:4b` embeddings at version `ollama-qwen3-embedding-4b-1536-v1`. RRF remains the Step
+sanitized HTTP 503. Hosted migrations `20260916074530` and `20260916080205` are deployed and the hosted
+column is `extensions.vector(1536)`. At the Step 7.5 handoff, 42/42 searchable active products had
+current `qwen3-embedding:4b` embeddings at version `ollama-qwen3-embedding-4b-1536-v1`; the product
+master has since grown to 89 active products, so run `npm run embeddings:backfill -- --execute` after
+each import. RRF remains the Step
 7.5A baseline with configurable `SEARCH_RRF_K=60`.
 
 Step 7.6B integrates the Step 7.6A parser/evaluator into `SearchService`. An exact active identity is
 prioritized only when already retrieved. Confirmed protocol and numeric temperature matches are
 prioritized deterministically; protocol unknowns and numeric unknowns remain. Only definitive,
 high-confidence operating/measurement temperature mismatch is filtered. This is a lexicographic
-policy, not a score boost or model reranker. The public schema and modes are unchanged. There is still
-no AI reranker or explanation model.
+policy, not a score boost or model reranker. The public schema and modes are unchanged.
+
+Later steps added an optional protected Top-5 BGE reranker (`RERANKER_ENABLED`, default `false`; see
+[`reranker-runtime.md`](./reranker-runtime.md)), grounded rule-based explanations with optional local
+Ollama wording selection (`explain: true`; see
+[`grounded-explanation-design.md`](./grounded-explanation-design.md)), multi-component `guidance`, and
+follow-up `context`.
 
 ## Compare 2 Products
 
@@ -79,12 +90,14 @@ comparison and `specifications` for an expanded table.
 
 ## Admin Product Management
 
-Obtain the Supabase Auth access token from the existing browser session and call `GET /admin/products`
+Sign in through the admin login screen (Supabase email/password) and call `GET /admin/products`
 with `Authorization: Bearer <access-token>`. It uses the same filters/response wrapper as the public list,
 but includes active and review products. Call `GET /admin/products/:productId` for admin detail.
 
-The current backend validates a Supabase user token but the project has no separate admin-role claim or
-allowlist. Until that authorization model is added, do not provision ordinary non-admin Supabase users.
+`PATCH /admin/products/:productId` edits the whitelisted editor fields (strict schema; see
+[`api-contract.md`](./api-contract.md)). Every `/admin/*` route requires a valid Supabase token
+(`401` otherwise) and `app_metadata.role === "admin"` (`AdminGuard`, `403` otherwise). Customers are
+ordinary Supabase users without that role.
 
 ## Admin Import
 
@@ -99,7 +112,8 @@ request runs. Show `409` as “an import is already running”; show a generic r
   `SearchResponseSchema` from `@reeco/shared` during integration/development.
 - Do not call Supabase database tables from React and never add service-role/database credentials to
   a `REACT_APP_*` variable.
-- Public pages do not need a token. Only `/admin/*` API calls attach the Supabase access token.
+- Public product/search calls do not need a token. `/orders`, `/notifications`,
+  `POST /payments/vnpay/create-url`, and `/admin/*` calls attach the Supabase access token.
 
 The complete HTTP contract, examples, and error codes are in [`api-contract.md`](./api-contract.md).
 

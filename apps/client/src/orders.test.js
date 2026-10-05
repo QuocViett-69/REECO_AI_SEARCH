@@ -189,9 +189,10 @@ describe('Task 2: Orders & Payments API Test Suite', () => {
     });
 
     test('getAllOrdersForAdmin calls GET /admin/orders with query parameters', async () => {
+      // Shape returned by GET /admin/orders (orders.repository listAdminOrders)
       const mockAdminRes = {
-        data: [{ id: '1', order_code: 'REECO-1001' }],
-        pagination: { total: 1, page: 1, page_size: 20 },
+        items: [{ id: '1', order_code: 'REECO-1001' }],
+        total: 1,
       };
       apiFetch.mockResolvedValueOnce(mockAdminRes);
 
@@ -209,7 +210,11 @@ describe('Task 2: Orders & Payments API Test Suite', () => {
       expect(apiFetch).toHaveBeenCalledWith(
         expect.stringContaining('status=PROCESSING')
       );
+      expect(apiFetch).toHaveBeenCalledWith(
+        expect.stringContaining('page_size=100')
+      );
       expect(result.orders.length).toBe(1);
+      expect(result.pagination.total).toBe(1);
     });
 
     test('updateOrderStatus calls PATCH /admin/orders/:orderId/status', async () => {
