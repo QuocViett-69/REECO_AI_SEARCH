@@ -8,9 +8,11 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-const DEMO_PASSWORD = 'ilovereeco';
+// Override with DEMO_PASSWORD for any shared or deployed project. The default matches the
+// password prefilled by the client's development build.
+export const DEMO_PASSWORD = process.env.DEMO_PASSWORD || 'ilovereeco';
 
-const DEMO_USERS = [
+export const DEMO_USERS = [
   {
     email: 'haitran@example.com',
     role: 'customer',
@@ -78,14 +80,14 @@ export function priceFor(productId, model) {
 
 const dryRun = process.argv.includes('--dry-run');
 
-function createAdminClient() {
+export function createAdminClient() {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) throw new Error('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required');
   return createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
 }
 
-async function findUserByEmail(supabase, email) {
+export async function findUserByEmail(supabase, email) {
   for (let page = 1; ; page++) {
     const { data, error } = await supabase.auth.admin.listUsers({ page, perPage: 200 });
     if (error) throw error;
@@ -148,7 +150,9 @@ async function main() {
   const supabase = createAdminClient();
   await seedUsers(supabase);
   await seedPrices(supabase);
-  console.log(`done. demo password for all accounts: ${DEMO_PASSWORD}`);
+  console.log(
+    `done. demo accounts use ${process.env.DEMO_PASSWORD ? 'the DEMO_PASSWORD value' : 'the default development password'}.`,
+  );
 }
 
 import { fileURLToPath } from 'url';

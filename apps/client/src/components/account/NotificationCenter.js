@@ -2,18 +2,18 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { notificationService, NOTIFICATION_TYPES } from '../../services/notificationService';
 import {
-  Bell,
+  ArrowClockwise,
   ArrowLeft,
-  CheckCheck,
-  Package,
+  Bell,
+  Check,
+  Checks,
+  CircleNotch,
   CreditCard,
+  Package,
   Truck,
-  Sparkles,
-  ChevronRight,
-  Clock,
-  AlertCircle,
-  RefreshCw,
-} from 'lucide-react';
+  WarningCircle,
+} from '@phosphor-icons/react';
+import '../../styles/studio/account.css';
 
 function getRelativeTime(isoString) {
   if (!isoString) return 'Just now';
@@ -26,38 +26,56 @@ function getRelativeTime(isoString) {
 
   if (diffMinutes < 1) return 'Just now';
   if (diffMinutes < 60) return `${diffMinutes}m ago`;
-  if (diffHours === 1) return '1h ago';
-  if (diffHours < 24) return `${diffHours}h ago`;
+  if (diffHours === 1) return '1 hour ago';
+  if (diffHours < 24) return `${diffHours} hours ago`;
   if (diffDays === 1) return 'Yesterday';
-  if (diffDays < 7) return `${diffDays}d ago`;
+  if (diffDays < 7) return `${diffDays} days ago`;
   return past.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
+// Inbox sections: the day a notification arrived, relative to today.
+function dayGroup(isoString) {
+  if (!isoString) return 'Today';
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+  const created = new Date(isoString);
+  const days = Math.floor((startOfToday - new Date(created).setHours(0, 0, 0, 0)) / 86400000);
+  if (days <= 0) return 'Today';
+  if (days === 1) return 'Yesterday';
+  if (days < 7) return 'Earlier this week';
+  return 'Older';
+}
+
+const DAY_GROUPS = ['Today', 'Yesterday', 'Earlier this week', 'Older'];
+
+const TYPE_ICONS = {
+  ORDER_CREATED: Package,
+  ORDER_STATUS_CHANGED: Truck,
+  PAYMENT_UPDATED: CreditCard,
+};
+
+// The chosen tab survives a page refresh within the session.
 const NOTIF_TAB_KEY = 'reeco_notifications_tab';
 
 export function NotificationCenter({ onNavigate }) {
   const { user, isAuthenticated } = useAuth();
-  const [notifications, setNotifications] = useState(() => {
-    return notificationService.getCachedNotifications();
-  });
-  const [activeTab, setActiveTab] = useState(() => {
+  // Start from the session cache so the inbox paints immediately, then refresh from the API.
+  const [notifications, setNotifications] = useState(() => notificationService.getCachedNotifications());
+  const [loading, setLoading] = useState(() => notificationService.getCachedNotifications().length === 0);
+  const [error, setError] = useState(null);
+  const [filter, setFilter] = useState(() => {
     try {
       return sessionStorage.getItem(NOTIF_TAB_KEY) || 'all';
     } catch {
       return 'all';
     }
   });
-  const [loading, setLoading] = useState(() => {
-    return notificationService.getCachedNotifications().length === 0;
-  });
-  const [error, setError] = useState(null);
 
   const loadNotifications = useCallback(async () => {
     if (!isAuthenticated || !user) {
       setLoading(false);
       return;
     }
-    // Only show full loading spinner if cache is empty
     if (notificationService.getCachedNotifications().length === 0) {
       setLoading(true);
     }
@@ -67,41 +85,38 @@ export function NotificationCenter({ onNavigate }) {
       setNotifications(Array.isArray(list) ? list : []);
     } catch (err) {
       if (notificationService.getCachedNotifications().length === 0) {
-        setError(err.message || 'Unable to load notifications.');
+        setError(err.message || 'Notifications could not be loaded.');
       }
     } finally {
       setLoading(false);
     }
   }, [isAuthenticated, user]);
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    try {
-      sessionStorage.setItem(NOTIF_TAB_KEY, tab);
-    } catch {}
-  };
-
   useEffect(() => {
     loadNotifications();
   }, [loadNotifications]);
 
+  const changeFilter = (next) => {
+    setFilter(next);
+    try {
+      sessionStorage.setItem(NOTIF_TAB_KEY, next);
+    } catch {}
+  };
+
   if (!isAuthenticated || !user) {
     return (
-      <div className="page-container" style={{ maxWidth: 600, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: 40, borderRadius: 16 }}>
-          <Bell size={40} style={{ color: '#93979f', marginBottom: 16 }} />
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Sign In Required</h2>
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>
-            Please sign in to view order notifications and delivery updates.
-          </p>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => onNavigate && onNavigate('login')}
-            style={{ padding: '10px 24px', background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
-          >
-            Sign In Now
-          </button>
+      <div className="st-page st-page--narrow ac-page">
+        <div className="st-state">
+          <div className="st-orb st-orb--live" aria-hidden="true">
+            <span className="st-orb__icon"><Bell size={20} /></span>
+          </div>
+          <h1 className="st-state__title">Sign in to see notifications</h1>
+          <p className="st-state__desc">Order, payment and shipping updates appear here.</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn st-btn--primary" onClick={() => onNavigate && onNavigate('login')}>
+              Sign in
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -119,9 +134,7 @@ export function NotificationCenter({ onNavigate }) {
   const handleMarkAllRead = async () => {
     try {
       await notificationService.markAllAsRead();
-      setNotifications((prev) =>
-        prev.map((n) => ({ ...n, read_at: n.read_at || new Date().toISOString() }))
-      );
+      setNotifications((prev) => prev.map((n) => ({ ...n, read_at: n.read_at || new Date().toISOString() })));
     } catch {}
   };
 
@@ -135,275 +148,151 @@ export function NotificationCenter({ onNavigate }) {
   };
 
   const unreadCount = notifications.filter((n) => !n.read_at).length;
+  const visible = filter === 'unread' ? notifications.filter((n) => !n.read_at) : notifications;
+  const groups = DAY_GROUPS.map((label) => ({
+    label,
+    items: visible.filter((n) => dayGroup(n.created_at) === label),
+  })).filter((group) => group.items.length > 0);
 
   return (
-    <div className="page-container" style={{ maxWidth: 840, margin: '40px auto', padding: '0 20px' }}>
-      <button
-        type="button"
-        onClick={() => onNavigate && onNavigate('account')}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 6,
-          background: 'none',
-          border: 'none',
-          color: '#6b7280',
-          cursor: 'pointer',
-          fontSize: 13,
-          marginBottom: 16,
-        }}
-      >
-        <ArrowLeft size={14} /> Back to Account
+    <div className="st-page st-page--mid ac-page">
+      <button type="button" className="st-back" onClick={() => onNavigate && onNavigate('account')}>
+        <ArrowLeft size={16} aria-hidden="true" /> Back to account
       </button>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <h1 style={{ fontSize: 24, fontWeight: 700, color: '#111827', margin: 0 }}>
-              Notifications
-            </h1>
+      <header className="st-header st-header--plain ac-header--stack">
+        <div className="st-header__title">
+          <h1 className="ac-title--long">Notifications</h1>
+        </div>
+        <div className="st-header__aside">
+          <p>
+            {unreadCount > 0
+              ? `${unreadCount} unread. New orders, shipping updates and payment confirmations.`
+              : 'New orders, shipping updates and payment confirmations.'}
+          </p>
+        </div>
+      </header>
+
+      {loading ? (
+        <div className="st-loading" role="status">
+          <CircleNotch size={20} className="spin" aria-hidden="true" /> Loading notifications
+        </div>
+      ) : error ? (
+        <div className="st-state" role="alert">
+          <div className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><WarningCircle size={20} /></span>
+          </div>
+          <h2 className="st-state__title">Notifications could not load</h2>
+          <p className="st-state__desc">{error}</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn st-btn--primary" onClick={loadNotifications}>
+              <ArrowClockwise size={16} aria-hidden="true" /> Try again
+            </button>
+          </div>
+        </div>
+      ) : notifications.length === 0 ? (
+        <div className="st-state">
+          <div className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><Bell size={20} /></span>
+          </div>
+          <h2 className="st-state__title">No notifications yet</h2>
+          <p className="st-state__desc">Updates about your orders will arrive here.</p>
+        </div>
+      ) : (
+        <>
+          <div className="ac-inbox-bar">
+            <div className="st-tabs" role="group" aria-label="Show">
+              <button type="button" className="st-tab" aria-pressed={filter === 'all'} onClick={() => changeFilter('all')}>
+                All <span className="st-tab__count">{notifications.length}</span>
+              </button>
+              <button type="button" className="st-tab" aria-pressed={filter === 'unread'} onClick={() => changeFilter('unread')}>
+                Unread <span className="st-tab__count">{unreadCount}</span>
+              </button>
+            </div>
             {unreadCount > 0 && (
-              <span
-                style={{
-                  fontSize: 12,
-                  fontWeight: 700,
-                  padding: '2px 8px',
-                  borderRadius: 12,
-                  background: 'rgba(0, 105, 224, 0.08)',
-                  color: '#0069e0',
-                  border: '1px solid rgba(0, 105, 224, 0.2)',
-                }}
-              >
-                {unreadCount} unread
-              </span>
+              <button type="button" className="st-btn st-btn--sm" onClick={handleMarkAllRead}>
+                <Checks size={14} aria-hidden="true" /> Mark all as read
+              </button>
             )}
           </div>
-          <p style={{ fontSize: 13, color: '#6b7280', margin: '4px 0 0' }}>
-            Notifications on new orders, shipping status updates, and payment confirmations
-          </p>
-        </div>
 
-        {unreadCount > 0 && (
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={handleMarkAllRead}
-            style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, padding: '8px 14px', background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer' }}
-          >
-            <CheckCheck size={15} /> Mark all as read
-          </button>
-        )}
-      </div>
-
-      {/* Filter Tabs */}
-      <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
-        <button
-          type="button"
-          onClick={() => handleTabChange('all')}
-          style={{
-            padding: '6px 14px',
-            borderRadius: 20,
-            fontSize: 13,
-            fontWeight: 600,
-            border: activeTab === 'all' ? '1px solid #111827' : '1px solid #e5e7eb',
-            background: activeTab === 'all' ? '#111827' : '#fff',
-            color: activeTab === 'all' ? '#fff' : '#6b7280',
-            cursor: 'pointer',
-          }}
-        >
-          All ({notifications.length})
-        </button>
-        <button
-          type="button"
-          onClick={() => handleTabChange('unread')}
-          style={{
-            padding: '6px 14px',
-            borderRadius: 20,
-            fontSize: 13,
-            fontWeight: 600,
-            border: activeTab === 'unread' ? '1px solid #0069e0' : '1px solid #e5e7eb',
-            background: activeTab === 'unread' ? '#0069e0' : '#fff',
-            color: activeTab === 'unread' ? '#fff' : '#6b7280',
-            cursor: 'pointer',
-          }}
-        >
-          Unread ({unreadCount})
-        </button>
-      </div>
-
-      {/* 1. Loading state */}
-      {loading && (
-        <div className="glass-card" style={{ padding: 48, textAlign: 'center', color: '#6b7280' }}>
-          <div
-            style={{
-              width: 36,
-              height: 36,
-              border: '3px solid #e5e7eb',
-              borderTopColor: '#0069e0',
-              borderRadius: '50%',
-              margin: '0 auto 16px',
-              animation: 'spin 1s linear infinite',
-            }}
-          />
-          <div>Loading notifications...</div>
-        </div>
-      )}
-
-      {/* 2. Error state */}
-      {!loading && error && (
-        <div className="glass-card" style={{ padding: 36, borderRadius: 16, textAlign: 'center' }}>
-          <AlertCircle size={40} color="#d93025" style={{ marginBottom: 12 }} />
-          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 8 }}>Unable to load notifications</h3>
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>{error}</p>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={loadNotifications}
-            style={{ padding: '8px 20px', fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
-          >
-            <RefreshCw size={14} /> Retry
-          </button>
-        </div>
-      )}
-
-      {/* 3. Empty data state */}
-      {!loading && !error && (activeTab === 'unread' ? notifications.filter(n => !n.read_at).length === 0 : notifications.length === 0) && (
-        <div className="glass-card" style={{ padding: 48, borderRadius: 16, textAlign: 'center' }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: '50%',
-              background: '#f9fafb',
-              border: '1px solid #e5e7eb',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#93979f',
-              marginBottom: 16,
-            }}
-          >
-            <Bell size={28} />
-          </div>
-          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 6 }}>
-            {activeTab === 'unread' ? 'No unread notifications' : 'No notifications yet'}
-          </h3>
-          <p style={{ color: '#6b7280', fontSize: 14, margin: 0 }}>
-            {activeTab === 'unread' ? 'You have caught up with all order updates.' : 'All order updates and notifications will appear here.'}
-          </p>
-        </div>
-      )}
-
-      {/* 4. Data state */}
-      {!loading && !error && (activeTab === 'unread' ? notifications.filter(n => !n.read_at) : notifications).length > 0 && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          {(activeTab === 'unread' ? notifications.filter(n => !n.read_at) : notifications).map((notif) => {
-            const isRead = Boolean(notif.read_at);
-            const typeConfig = NOTIFICATION_TYPES[notif.type] || {
-              label: notif.type,
-              color: '#0069e0',
-            };
-
-            let TypeIcon = Package;
-            if (notif.type === 'PAYMENT_UPDATED') TypeIcon = CreditCard;
-            else if (notif.type === 'ORDER_STATUS_CHANGED') TypeIcon = Truck;
-
-            return (
-              <div
-                key={notif.id}
-                className="glass-card"
-                style={{
-                  padding: '16px 20px',
-                  borderRadius: 12,
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  justifyContent: 'space-between',
-                  gap: 16,
-                  cursor: notif.order_id ? 'pointer' : 'default',
-                  border: isRead ? '1px solid #e5e7eb' : '1px solid rgba(0, 105, 224, 0.3)',
-                  background: isRead ? '#ffffff' : 'rgba(0, 105, 224, 0.02)',
-                  transition: 'border-color 0.2s, background 0.2s',
-                }}
-                onClick={() => handleNotificationClick(notif)}
-              >
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
-                  {/* Status Indicator Dot */}
-                  <div
-                    style={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: '50%',
-                      marginTop: 6,
-                      background: isRead ? 'transparent' : '#0069e0',
-                      border: isRead ? '1px solid #e5e7eb' : 'none',
-                      flexShrink: 0,
-                    }}
-                  />
-
-                  {/* Icon */}
-                  <div
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 8,
-                      background: `${typeConfig.color}15`,
-                      color: typeConfig.color,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <TypeIcon size={18} />
-                  </div>
-
-                  {/* Content */}
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                      <span
-                        style={{
-                          fontSize: 14,
-                          fontWeight: isRead ? 600 : 700,
-                          color: isRead ? '#535862' : '#111827',
-                        }}
-                      >
-                        {notif.title}
-                      </span>
-                      <span
-                        style={{
-                          fontSize: 10,
-                          fontWeight: 600,
-                          padding: '1px 6px',
-                          borderRadius: 4,
-                          background: `${typeConfig.color}15`,
-                          color: typeConfig.color,
-                        }}
-                      >
-                        {typeConfig.label}
-                      </span>
-                    </div>
-
-                    <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.5, marginBottom: 6 }}>
-                      {notif.message}
-                    </div>
-
-                    <div style={{ fontSize: 11, color: '#93979f', display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <Clock size={12} />
-                      <span>{getRelativeTime(notif.created_at)}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {notif.order_id && (
-                  <div style={{ display: 'flex', alignItems: 'center', color: '#0069e0', fontSize: 12, fontWeight: 600, flexShrink: 0, marginTop: 4 }}>
-                    <span>Track</span>
-                    <ChevronRight size={14} />
-                  </div>
-                )}
+          {groups.length === 0 ? (
+            <div className="st-state">
+              <div className="st-orb st-orb--stone" aria-hidden="true">
+                <span className="st-orb__icon"><Checks size={20} /></span>
               </div>
-            );
-          })}
-        </div>
+              <h2 className="st-state__title">No unread notifications</h2>
+              <p className="st-state__desc">You've caught up with every order update. Show all to see past notifications.</p>
+              <div className="st-state__actions">
+                <button type="button" className="st-btn" onClick={() => changeFilter('all')}>
+                  Show all
+                </button>
+              </div>
+            </div>
+          ) : (
+            groups.map((group) => (
+              <section key={group.label} className="ac-day" aria-label={group.label}>
+                <h2 className="ac-day__label">
+                  {group.label} <span>{group.items.length}</span>
+                </h2>
+                <ul className="ac-notes">
+                  {group.items.map((notif) => {
+                    const isRead = Boolean(notif.read_at);
+                    const typeConfig = NOTIFICATION_TYPES[notif.type] || { label: notif.type };
+                    const typeLabel = typeConfig.label
+                      ? typeConfig.label.charAt(0).toUpperCase() + typeConfig.label.slice(1).toLowerCase()
+                      : '';
+                    const TypeIcon = TYPE_ICONS[notif.type] || Package;
+
+                    return (
+                      <li key={notif.id} className={`ac-note ${isRead ? 'is-read' : 'is-unread'}`}>
+                        <span className="ac-note__icon" aria-hidden="true">
+                          <span className="ac-icon"><TypeIcon size={18} /></span>
+                          {!isRead && <span className="ac-note__dot" />}
+                        </span>
+
+                        <button type="button" className="ac-note__main" onClick={() => handleNotificationClick(notif)}>
+                          <span className="ac-note__title">
+                            {!isRead && <span className="sr-only">Unread: </span>}
+                            {notif.title}
+                          </span>
+                          <span className="ac-note__msg">{notif.message}</span>
+                          <span className="ac-note__meta">
+                            {typeLabel && <span>{typeLabel}</span>}
+                            <span>{getRelativeTime(notif.created_at)}</span>
+                          </span>
+                        </button>
+
+                        <span className="ac-note__actions">
+                          {!isRead && (
+                            <button
+                              type="button"
+                              className="st-btn st-btn--icon st-btn--sm"
+                              onClick={() => handleMarkAsRead(notif.id)}
+                              aria-label={`Mark "${notif.title}" as read`}
+                              title="Mark as read"
+                            >
+                              <Check size={14} aria-hidden="true" />
+                            </button>
+                          )}
+                          {notif.order_id && (
+                            <button
+                              type="button"
+                              className="st-btn st-btn--sm"
+                              onClick={() => handleNotificationClick(notif)}
+                            >
+                              Track order
+                            </button>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            ))
+          )}
+        </>
       )}
     </div>
   );

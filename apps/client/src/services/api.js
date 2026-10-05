@@ -184,18 +184,3 @@ export async function searchProductsApi(query, limit = 10, context = null) {
     };
   }
 }
-
-// ─── GET /products/:id/recommendations ────────────────────────────────────────
-// Powered by backend AI recommendation logic. Frontend consumes only.
-export async function getProductRecommendationsApi(productIdOrModel) {
-  try {
-    const res = await fetch(
-      `${API_BASE_URL}/products/${encodeURIComponent(productIdOrModel)}/recommendations`
-    );
-    if (!res.ok) return [];
-    const data = await res.json();
-    return (data.recommendations || data.results || []).map(normalizeProduct);
-  } catch {
-    return [];
-  }
-}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp } from '@phosphor-icons/react';
 import { Floating, FloatingElement } from '../fancy/ParallaxFloating';
 
 const FEATURED_PRODUCTS = [

@@ -14,56 +14,39 @@ export function getApiBaseUrl() {
 
 const API_BASE_URL = getApiBaseUrl();
 
+// A JWT whose `exp` has passed is never sent; non-JWT values are left to the API to reject.
+function isExpiredJwt(token) {
+  const payload = token.split('.')[1];
+  if (!payload) return false;
+  try {
+    const { exp } = JSON.parse(atob(payload.replace(/-/g, '+').replace(/_/g, '/')));
+    return typeof exp === 'number' && exp * 1000 <= Date.now();
+  } catch {
+    return false;
+  }
+}
+
+function readToken(storage) {
+  if (!storage) return null;
+  const direct = storage.getItem('reeco_auth_token');
+  if (direct) return direct;
+  const user = storage.getItem('reeco_auth_user');
+  if (!user) return null;
+  const parsed = JSON.parse(user);
+  return parsed?.token || parsed?.access_token || null;
+}
+
+// Only this app's own session token. The admin app keeps its token under different keys
+// on the same origin; reading those would let one app act with the other's identity.
 export function getAuthToken() {
   try {
-    // 1. Direct tokens from sessionStorage or localStorage
-    const sessionToken = typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('reeco_auth_token') : null;
-    if (sessionToken) return sessionToken;
-
-    if (typeof localStorage !== 'undefined') {
-      const directToken = localStorage.getItem('reeco_auth_token');
-      if (directToken) return directToken;
-
-      const adminToken = localStorage.getItem('admin_access_token');
-      if (adminToken) return adminToken;
-    }
-
-    // 2. Auth user objects
-    if (typeof sessionStorage !== 'undefined') {
-      const sessionUser = sessionStorage.getItem('reeco_auth_user');
-      if (sessionUser) {
-        const parsed = JSON.parse(sessionUser);
-        if (parsed?.token) return parsed.token;
-        if (parsed?.access_token) return parsed.access_token;
-      }
-    }
-
-    if (typeof localStorage !== 'undefined') {
-      const authUser = localStorage.getItem('reeco_auth_user');
-      if (authUser) {
-        const parsed = JSON.parse(authUser);
-        if (parsed?.token) return parsed.token;
-        if (parsed?.access_token) return parsed.access_token;
-      }
-
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && key.startsWith('sb-') && key.endsWith('-auth-token')) {
-          const raw = localStorage.getItem(key);
-          if (raw) {
-            const parsed = JSON.parse(raw);
-            return parsed?.access_token || parsed?.currentSession?.access_token || null;
-          }
-        }
-      }
-    }
-
-    // Fallback demo customer token for client so orders & notifications always work
-    return null;
+    const token =
+      readToken(typeof sessionStorage !== 'undefined' ? sessionStorage : null) ||
+      readToken(typeof localStorage !== 'undefined' ? localStorage : null);
+    return token && !isExpiredJwt(token) ? token : null;
   } catch {
-    // ignore
+    return null;
   }
-  return null;
 }
 
 export class ApiError extends Error {

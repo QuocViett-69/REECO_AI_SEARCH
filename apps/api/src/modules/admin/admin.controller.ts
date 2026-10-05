@@ -18,6 +18,10 @@ import { RolesGuard } from '../../auth/roles.guard';
 import { Roles } from '../../auth/roles.decorator';
 import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
 import { ProductsService } from '../products/products.service';
+import {
+  AdminProductUpdateSchema,
+  type AdminProductUpdate,
+} from './admin-product-update.schema';
 
 @Controller('admin/products')
 @UseGuards(SupabaseAuthGuard, RolesGuard)
@@ -41,7 +45,8 @@ export class AdminController {
   @Patch(':productId')
   update(
     @Param('productId') productId: string,
-    @Body() updates: Record<string, any>,
+    @Body(new ZodValidationPipe(AdminProductUpdateSchema))
+    updates: AdminProductUpdate,
   ): Promise<ProductDetail> {
     return this.productsService.updateAdmin(productId, updates);
   }

@@ -1,7 +1,6 @@
 import {
   Body,
   Controller,
-  ForbiddenException,
   Get,
   HttpCode,
   HttpStatus,
@@ -12,8 +11,13 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import type { User } from '@supabase/supabase-js';
+import { AdminGuard } from '../../auth/admin.guard';
 import { SupabaseAuthGuard } from '../../auth/supabase-auth.guard';
-import { UpdateOrderStatusDto } from './dto/create-order.dto';
+import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
+import {
+  UpdateOrderStatusSchema,
+  type UpdateOrderStatusDto,
+} from './dto/create-order.dto';
 import { OrdersService } from './orders.service';
 
 interface RequestWithUser {
@@ -21,26 +25,16 @@ interface RequestWithUser {
 }
 
 @Controller('admin/orders')
-@UseGuards(SupabaseAuthGuard)
+@UseGuards(SupabaseAuthGuard, AdminGuard)
 export class AdminOrdersController {
   constructor(private readonly ordersService: OrdersService) {}
-
-  /**
-   * Đảm bảo chỉ người dùng có quyền admin (app_metadata.role === 'admin') mới được thao tác
-   */
-  private ensureAdmin(user: User) {
-    if (user.app_metadata?.role !== 'admin') {
-      throw new ForbiddenException('Chỉ quản trị viên (Admin) mới có quyền truy cập');
-    }
-  }
 
   /**
    * GET /admin/orders/stats
    * Trả AdminOrderStats (doanh thu = tổng total của đơn payment_status = PAID)
    */
   @Get('stats')
-  async getOrderStats(@Req() req: RequestWithUser) {
-    this.ensureAdmin(req.user);
+  async getOrderStats() {
     return await this.ordersService.getAdminOrderStats();
   }
 
@@ -50,13 +44,11 @@ export class AdminOrdersController {
    */
   @Get()
   async listOrders(
-    @Req() req: RequestWithUser,
     @Query('search') search?: string,
     @Query('status') status?: string,
     @Query('page') page?: string,
     @Query('page_size') pageSize?: string,
   ) {
-    this.ensureAdmin(req.user);
     return await this.ordersService.listAdminOrders({
       search,
       status,
@@ -74,7 +66,6 @@ export class AdminOrdersController {
     @Req() req: RequestWithUser,
     @Param('orderId') orderId: string,
   ) {
-    this.ensureAdmin(req.user);
     return await this.ordersService.getOrderById(req.user, orderId);
   }
 
@@ -88,9 +79,9 @@ export class AdminOrdersController {
   async updateOrderStatus(
     @Req() req: RequestWithUser,
     @Param('orderId') orderId: string,
-    @Body() dto: UpdateOrderStatusDto,
+    @Body(new ZodValidationPipe(UpdateOrderStatusSchema))
+    dto: UpdateOrderStatusDto,
   ) {
-    this.ensureAdmin(req.user);
     return await this.ordersService.updateOrderStatusByAdmin(
       req.user,
       orderId,

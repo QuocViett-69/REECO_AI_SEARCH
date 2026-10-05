@@ -40,7 +40,7 @@ export const missingRawManifestPath = path.join(
 const VARIANT_RAW_CANDIDATES = {
   CSI_AM16_32B_ST: [{ file: 'AM16_32B-XT.json', product_index: 0 }],
   CSI_ASPEN10_CELL_ST: [{ file: 'Aspen10-CELL-XT.json', product_index: 0 }],
-  CSI_CR1000XE_ST_CC: [{ file: 'CR1000Xe-XT-CC.json', product_index: 0 }],
+  CSI_CR1000XE_XT_CC: [{ file: 'CR1000Xe-XT-CC.json', product_index: 0 }],
   CSI_CR6_NA_ST_CC: [{ file: 'CR6-NA-XT-CC.json', product_index: 0 }],
 };
 

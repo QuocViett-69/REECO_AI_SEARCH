@@ -1,16 +1,14 @@
-import {
-  BadRequestException,
-  Injectable,
-  Logger,
-} from '@nestjs/common';
+import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import type { User } from '@supabase/supabase-js';
+import type { NotificationRow } from '../orders/orders.types';
 import {
   CreateNotificationParams,
   NotificationsRepository,
+  type NotificationItem,
 } from './notifications.repository';
 
 export interface MyNotificationsResult {
-  items: any[];
+  items: NotificationItem[];
   unread_count: number;
   total: number;
 }
@@ -24,11 +22,13 @@ export class NotificationsService {
   ) {}
 
   /**
-   * Tạo thông báo mới (Exported để các module khác như OrdersModule / PaymentsModule sử dụng)
+   * Tạo thông báo mới (Exported để các module khác như OrdersModule sử dụng)
    */
-  async create(params: CreateNotificationParams): Promise<any> {
+  async create(params: CreateNotificationParams): Promise<NotificationRow> {
     if (!params.customer_id) {
-      throw new BadRequestException('Mã khách hàng customer_id không được để trống');
+      throw new BadRequestException(
+        'Mã khách hàng customer_id không được để trống',
+      );
     }
     if (!params.title || !params.title.trim()) {
       throw new BadRequestException('Tiêu đề thông báo không được để trống');
@@ -62,7 +62,7 @@ export class NotificationsService {
    * PATCH /notifications/:id/read
    * Đánh dấu 1 thông báo là đã đọc (chỉ của chính mình)
    */
-  async markAsRead(user: User, id: string): Promise<any> {
+  async markAsRead(user: User, id: string): Promise<NotificationRow> {
     if (!id || !id.trim()) {
       throw new BadRequestException('ID thông báo không hợp lệ');
     }

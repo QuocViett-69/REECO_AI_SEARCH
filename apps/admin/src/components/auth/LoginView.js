@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { Lock, Mail, Eye, EyeOff, ArrowRight, Loader2 } from 'lucide-react';
 import { loginAdminApi } from '../../services/api';
 
+// Demo admin for the quick-login button. CRA inlines NODE_ENV, so this is empty in production.
+const DEV_LOGIN = {
+  email: 'admin@reeco.vn',
+  password: process.env.NODE_ENV === 'development' ? 'ilovereeco' : '',
+};
+
 export function LoginView({ onLoginSuccess }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,14 +31,16 @@ export function LoginView({ onLoginSuccess }) {
     if (res.success) {
       onLoginSuccess(res.user);
     } else {
-      setError(res.message || 'Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.');
+      setError(
+        res.message || 'Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.',
+      );
     }
   };
 
   const handleQuickDevLogin = async () => {
     setLoading(true);
     setError(null);
-    const res = await loginAdminApi('admin@reeco.vn', 'ilovereeco');
+    const res = await loginAdminApi(DEV_LOGIN.email, DEV_LOGIN.password);
     setLoading(false);
 
     if (res.success) {
@@ -94,7 +102,13 @@ export function LoginView({ onLoginSuccess }) {
             />
             Campbell Admin
           </div>
-          <p style={{ fontSize: '14px', color: 'var(--text-light, #777777)', margin: 0 }}>
+          <p
+            style={{
+              fontSize: '14px',
+              color: 'var(--text-light, #777777)',
+              margin: 0,
+            }}
+          >
             Đăng nhập hệ thống quản lý sản phẩm
           </p>
         </div>
@@ -256,27 +270,36 @@ export function LoginView({ onLoginSuccess }) {
           </button>
         </form>
 
-        {/* Quick Dev Login */}
-        <div style={{ marginTop: '24px', paddingTop: '18px', borderTop: '1px solid var(--bg-gray, #eeeeee)', textAlign: 'center' }}>
-          <button
-            type="button"
-            onClick={handleQuickDevLogin}
-            disabled={loading}
+        {/* Quick Dev Login: development builds only; production bundles carry no password */}
+        {DEV_LOGIN.password && (
+          <div
             style={{
-              background: 'var(--bg-body, #f4f5f7)',
-              border: '1px solid #dddddd',
-              borderRadius: '6px',
-              padding: '8px 16px',
-              color: 'var(--text-light, #777777)',
-              fontSize: '12px',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.2s',
+              marginTop: '24px',
+              paddingTop: '18px',
+              borderTop: '1px solid var(--bg-gray, #eeeeee)',
+              textAlign: 'center',
             }}
           >
-            ⚡ Đăng nhập nhanh (Chế độ Dev)
-          </button>
-        </div>
+            <button
+              type="button"
+              onClick={handleQuickDevLogin}
+              disabled={loading}
+              style={{
+                background: 'var(--bg-body, #f4f5f7)',
+                border: '1px solid #dddddd',
+                borderRadius: '6px',
+                padding: '8px 16px',
+                color: 'var(--text-light, #777777)',
+                fontSize: '12px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+            >
+              ⚡ Đăng nhập nhanh (Chế độ Dev)
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
