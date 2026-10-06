@@ -52,7 +52,7 @@ cp apps/client/.env.example apps/client/.env
 cp apps/admin/.env.example apps/admin/.env
 ```
 
-Both use `REACT_APP_*` environment variables (CRA runtime requirement). Never expose backend secrets through a `REACT_APP_` variable.
+Both use `REACT_APP_*` environment variables (CRA runtime requirement). Ensure `REACT_APP_API_URL` (pointing to the NestJS API) and `REACT_APP_ADMIN_URL` (pointing to the admin frontend) are properly set in `apps/client/.env`. Never expose backend secrets through a `REACT_APP_` variable.
 
 Confirm the embedding model exists:
 
@@ -142,13 +142,35 @@ npm run lint
 
 ## Orders/payment merge setup
 
-Apply `supabase/migrations/20261001000000_commerce_foundation.sql` and run
-`npm run demo:seed` against your chosen demo database before using checkout.
+Initialize your local Supabase instance and seed the demo data:
+```bash
+supabase start
+supabase db reset
+npm run demo:seed
+```
+
 Configure both frontend apps from their `.env.example`: `REACT_APP_SUPABASE_URL`
 and `REACT_APP_SUPABASE_ANON_KEY` must use a public anon/publishable key,
 never a service-role key. Restart/rebuild after changing these values.
-Login requires a real Supabase token; generated demo tokens are rejected.
-Configure `VNPAY_TMN_CODE`, `VNPAY_HASH_SECRET`, and `VNPAY_RETURN_URL` on the API.
+Configure `VNPAY_TMN_CODE`, `VNPAY_HASH_SECRET`, and `VNPAY_RETURN_URL` on the API (use placeholder sandbox values, never commit real secrets).
+
+Start the services (in separate terminals):
+```bash
+# Backend API (port 3000)
+npm run dev:api
+
+# Customer frontend (port 5173)
+npm run dev:client
+
+# Admin frontend (port 5174)
+npm run dev:admin
+```
+
+Demo Accounts:
+| Email | Password | Role |
+| :--- | :--- | :--- |
+| haitran@example.com | ilovereeco | customer |
+| admin@reeco.vn | ilovereeco | admin |
 
 Offline merge checks (no database writes):
 

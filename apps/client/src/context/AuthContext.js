@@ -1,23 +1,28 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { DEMO_CREDENTIALS, signInUser } from '../services/authService';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { loginUser, registerUser, refreshSession, updateMe } from '../services/authService';
 
 const AuthContext = createContext(null);
 
-const AUTH_STORAGE_KEY = 'reeco_auth_user';
-
-export { DEMO_CREDENTIALS };
+const AUTH_STORAGE_KEY = 'reeco_auth_session';
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
+  const [session, setSession] = useState(() => {
     try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.removeItem('reeco_auth_user');
+        localStorage.removeItem('reeco_auth_token');
+      }
+      if (typeof sessionStorage !== 'undefined') {
+        sessionStorage.removeItem('reeco_auth_user');
+        sessionStorage.removeItem('reeco_auth_token');
+      }
+
       const stored =
         (typeof localStorage !== 'undefined' && localStorage.getItem(AUTH_STORAGE_KEY)) ||
         (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(AUTH_STORAGE_KEY));
       if (stored) {
-        const saved = JSON.parse(stored);
-        if (saved?.token && !saved.token.startsWith('demo-token-')) return saved;
+        return JSON.parse(stored);
       }
-
       return null;
     } catch {
       return null;
@@ -26,53 +31,109 @@ export function AuthProvider({ children }) {
 
   const [authError, setAuthError] = useState(null);
 
-  useEffect(() => {
+  const saveSession = useCallback((newSession) => {
+    setSession(newSession);
     try {
-      if (user) {
-        const serialized = JSON.stringify(user);
-        if (typeof localStorage !== 'undefined') localStorage.setItem(AUTH_STORAGE_KEY, serialized);
-        if (typeof sessionStorage !== 'undefined') sessionStorage.setItem(AUTH_STORAGE_KEY, serialized);
-        if (user.token) {
-          if (typeof localStorage !== 'undefined') localStorage.setItem('reeco_auth_token', user.token);
-          if (typeof sessionStorage !== 'undefined') sessionStorage.setItem('reeco_auth_token', user.token);
+      if (newSession) {
+        if (typeof localStorage !== 'undefined') {
+          localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newSession));
         }
       } else {
         if (typeof localStorage !== 'undefined') {
           localStorage.removeItem(AUTH_STORAGE_KEY);
-          localStorage.removeItem('reeco_auth_token');
         }
         if (typeof sessionStorage !== 'undefined') {
           sessionStorage.removeItem(AUTH_STORAGE_KEY);
-          sessionStorage.removeItem('reeco_auth_token');
         }
       }
     } catch {}
-  }, [user]);
+  }, []);
 
-  const login = async (role, username, password) => {
+  const logout = useCallback(() => {
+    saveSession(null);
+    setAuthError(null);
+  }, [saveSession]);
+
+  useEffect(() => {
+    const handleUnauthorized = () => logout();
+    window.addEventListener('reeco:unauthorized', handleUnauthorized);
+    return () => window.removeEventListener('reeco:unauthorized', handleUnauthorized);
+  }, [logout]);
+
+  useEffect(() => {
+    if (!session?.expires_at || !session?.refresh_token) return;
+
+    const checkRefresh = async () => {
+      const now = Math.floor(Date.now() / 1000);
+      if (session.expires_at - now < 60) {
+        try {
+          const newSession = await refreshSession(session.refresh_token);
+          saveSession(newSession);
+        } catch {
+          logout();
+        }
+      }
+    };
+
+    const intervalId = setInterval(checkRefresh, 30000); // Check every 30s
+    return () => clearInterval(intervalId);
+  }, [session, saveSession, logout]);
+
+  // Sync state if another tab modifies storage or apiFetch interceptor refreshes it
+  useEffect(() => {
+    const handleStorage = (e) => {
+      if (e.key === AUTH_STORAGE_KEY) {
+        if (e.newValue) {
+          try {
+            setSession(JSON.parse(e.newValue));
+          } catch {}
+        } else {
+          setSession(null);
+        }
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
+  }, []);
+
+  const login = async (email, password) => {
     setAuthError(null);
     try {
-      if (typeof sessionStorage !== 'undefined') sessionStorage.removeItem('reeco_logged_out');
-    } catch {}
-    const result = await signInUser(role, username, password);
-
-    if (result.success) {
-      setUser(result.user);
+      const result = await loginUser(email, password);
+      if (result.user.role === 'admin') {
+        return { success: true, user: result.user, isAdminRedirect: true };
+      }
+      saveSession(result);
       return { success: true, user: result.user };
+    } catch (err) {
+      setAuthError(err.message || 'Login failed');
+      return { success: false, message: err.message || 'Login failed' };
     }
-
-    setAuthError(result.message);
-    return { success: false, message: result.message };
   };
 
-  const logout = () => {
-    try {
-      if (typeof sessionStorage !== 'undefined') sessionStorage.setItem('reeco_logged_out', '1');
-    } catch {}
-    setUser(null);
+  const register = async (data) => {
     setAuthError(null);
+    try {
+      const result = await registerUser(data);
+      saveSession(result);
+      return { success: true, user: result.user };
+    } catch (err) {
+      setAuthError(err.message || 'Registration failed');
+      return { success: false, message: err.message || 'Registration failed' };
+    }
   };
 
+  const updateProfile = async (data) => {
+    try {
+      const updatedUser = await updateMe(data);
+      saveSession({ ...session, user: updatedUser });
+      return { success: true, user: updatedUser };
+    } catch (err) {
+      return { success: false, message: err.message || 'Update failed' };
+    }
+  };
+
+  const user = session?.user || null;
   const isAuthenticated = !!user;
   const isCustomer = user?.role === 'customer';
   const isAdmin = user?.role === 'admin';
@@ -88,6 +149,8 @@ export function AuthProvider({ children }) {
         authError,
         login,
         logout,
+        register,
+        updateProfile,
       }}
     >
       {children}

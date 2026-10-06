@@ -36,6 +36,7 @@ export {
   AuthSessionSchema,
   LoginRequestSchema,
   MeSchema,
+  RefreshRequestSchema,
   RegisterRequestSchema,
   UpdateMeRequestSchema,
 } from './schemas/auth';
@@ -43,6 +44,7 @@ export type {
   AuthSession,
   LoginRequest,
   Me,
+  RefreshRequest,
   RegisterRequest,
   UpdateMeRequest,
 } from './schemas/auth';

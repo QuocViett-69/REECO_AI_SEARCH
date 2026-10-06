@@ -28,12 +28,16 @@ function isExpiredJwt(token) {
 
 function readToken(storage) {
   if (!storage) return null;
-  const direct = storage.getItem('reeco_auth_token');
-  if (direct) return direct;
-  const user = storage.getItem('reeco_auth_user');
-  if (!user) return null;
-  const parsed = JSON.parse(user);
-  return parsed?.token || parsed?.access_token || null;
+  const session = storage.getItem('reeco_auth_session');
+  if (session) {
+    try {
+      const parsed = JSON.parse(session);
+      return parsed?.access_token || null;
+    } catch {
+      return null;
+    }
+  }
+  return null;
 }
 
 // Only this app's own session token. The admin app keeps its token under different keys
@@ -88,10 +92,48 @@ export async function apiFetch(endpoint, options = {}) {
     body: body ? (typeof body === 'string' ? body : JSON.stringify(body)) : undefined,
   };
 
-  const response = await fetch(url, config);
+  let response = await fetch(url, config);
 
   if (response.status === 401 && typeof window !== 'undefined') {
-    window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+    let sessionStr = null;
+    try {
+      sessionStr = localStorage.getItem('reeco_auth_session') || sessionStorage.getItem('reeco_auth_session');
+    } catch {}
+
+    if (sessionStr && !options._isRetry) {
+      try {
+        const session = JSON.parse(sessionStr);
+        if (session.refresh_token) {
+          const refreshRes = await fetch(`${API_BASE_URL}/auth/refresh`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ refresh_token: session.refresh_token })
+          });
+
+          if (refreshRes.ok) {
+            const newSession = await refreshRes.json();
+            if (localStorage.getItem('reeco_auth_session')) {
+              localStorage.setItem('reeco_auth_session', JSON.stringify(newSession));
+            } else if (sessionStorage.getItem('reeco_auth_session')) {
+              sessionStorage.setItem('reeco_auth_session', JSON.stringify(newSession));
+            }
+
+            // Retry original request
+            config.headers['Authorization'] = `Bearer ${newSession.access_token}`;
+            config._isRetry = true;
+            response = await fetch(url, config);
+          } else {
+            window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+          }
+        } else {
+          window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+        }
+      } catch {
+        window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+      }
+    } else {
+      window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+    }
   }
 
   let data = null;

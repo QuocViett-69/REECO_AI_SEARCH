@@ -14,12 +14,13 @@ import { searchProductsApi } from './services/api';
 import { IconContext } from '@phosphor-icons/react';
 
 // Auth & Contexts
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { FavoriteProvider } from './context/FavoriteContext';
 
 // Commerce Pages
 import { LoginPage } from './components/auth/LoginPage';
+import { RegisterPage } from './components/auth/RegisterPage';
 import { CartPage } from './components/commerce/CartPage';
 import { CheckoutPage } from './components/commerce/CheckoutPage';
 import { OrderSuccessPage } from './components/commerce/OrderSuccessPage';
@@ -34,22 +35,14 @@ import { OrderDetail } from './components/account/OrderDetail';
 import { NotificationCenter } from './components/account/NotificationCenter';
 import { ProfilePage } from './components/account/ProfilePage';
 
-// Admin
-
-
-
 // ─── URLs ─────────────────────────────────────────────────────────────────────
-// Components navigate with page names (onNavigate('products'), 'detail:CS655',
-// 'account-order:REECO-1001', ...). These helpers translate between those names and URLs,
-// so components keep their API while every page has its own address.
-
-// Models can contain "/" (e.g. AM16/32B-ST): keep the slashes, encode each part
 const modelPath = (model) => String(model).split('/').map(encodeURIComponent).join('/');
 
 const PAGE_PATHS = {
   products: '/products',
   compare: '/compare',
   login: '/login',
+  register: '/register',
   favorites: '/favorites',
   cart: '/cart',
   checkout: '/checkout',
@@ -74,7 +67,6 @@ export function pathForPage(page) {
   return PAGE_PATHS[page] || '/';
 }
 
-// Page name for a URL: drives the navbar's active link, the home/theme switch and titles
 export function pageForPath(pathname) {
   if (pathname === '/') return 'home';
   if (pathname === '/search') return 'search';
@@ -94,6 +86,7 @@ const PAGE_TITLES = {
   detail: 'Product',
   compare: 'Compare',
   login: 'Sign in',
+  register: 'Register',
   favorites: 'Favorites',
   cart: 'Cart',
   checkout: 'Checkout',
@@ -107,7 +100,7 @@ const PAGE_TITLES = {
   'admin-orders': 'Orders admin',
 };
 
-// ─── Route wrappers: read URL parameters and hand them to the page components ──
+// ─── Route wrappers ──
 function ProductDetailRoute({ onNavigate, ...props }) {
   const params = useParams();
   const location = useLocation();
@@ -119,7 +112,6 @@ function ProductDetailRoute({ onNavigate, ...props }) {
       key={model}
       model={model}
       previousPage={from === 'search' ? 'search' : 'products'}
-      // Back returns to wherever the visitor came from inside the app, else to Products
       onBack={() => (from ? navigate(-1) : navigate('/products'))}
       onNavigate={onNavigate}
       {...props}
@@ -143,25 +135,44 @@ function VnpayReturnRoute({ onNavigate }) {
   return <VnpayReturnPage search={location.search} onNavigate={onNavigate} />;
 }
 
+function ProtectedRoute({ children }) {
+  const { isAuthenticated } = useAuth();
+  const location = useLocation();
+  if (!isAuthenticated) {
+    const redirectUrl = `${location.pathname}${location.search}`;
+    return <Navigate to={`/login?redirect=${encodeURIComponent(redirectUrl)}`} replace />;
+  }
+  return children;
+}
+
+function NotFoundPage() {
+  const navigate = useNavigate();
+  return (
+    <div style={{ textAlign: 'center', padding: '5rem 1rem' }}>
+      <h1>404 - Page Not Found</h1>
+      <p style={{ marginTop: '1rem', marginBottom: '2rem' }}>The page you are looking for does not exist.</p>
+      <button className="st-btn st-btn--primary" onClick={() => navigate('/')}>
+        Go to Homepage
+      </button>
+    </div>
+  );
+}
+
 function AppInner() {
   const location = useLocation();
   const navigate = useNavigate();
   const page = pageForPath(location.pathname);
   const isHomeLocked = page === 'home';
 
-  // Search State (the chat thread lives here so it survives visits to product pages)
   const [conversationTurns, setConversationTurns] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-  // Chat thread on the AI Search page: one entry per question, newest last
   const [searchThread, setSearchThread] = useState([]);
   const autoSearchedQuery = useRef(null);
 
-  // Compare State
   const [compareList, setCompareList] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalSlot, setModalSlot] = useState(0);
 
-  // Toast State
   const [toasts, setToasts] = useState([]);
 
   const showToast = useCallback((type, title, desc) => {
@@ -188,7 +199,6 @@ function AppInner() {
     };
   }, [isHomeLocked]);
 
-  // Each page starts at the top, and the tab title names it
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [location.pathname]);
@@ -204,15 +214,12 @@ function AppInner() {
     autoSearchedQuery.current = null;
   }, []);
 
-  // Navigate by page name (see pathForPage). "detail:" remembers where the visitor came
-  // from so the product page can label and handle its Back button.
   const handleNavigate = useCallback((target) => {
     if (target === 'search' || target === 'home') resetSearch();
     const state = target && target.startsWith('detail:') ? { from: page } : undefined;
     navigate(pathForPage(target), state ? { state } : undefined);
   }, [navigate, page, resetSearch]);
 
-  // Search Handler
   const handleRunSearch = async (query, followUp = false, selectedProductIds = null) => {
     if (!query) return;
     const context = followUp && conversationTurns[0]?.product_ids?.length > 0
@@ -223,7 +230,6 @@ function AppInner() {
         }
       : null;
     setIsSearching(true);
-    // A new search starts a fresh thread at /search?q=...; a follow-up is appended to it
     const turnId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     const pendingTurn = { id: turnId, query, status: 'loading' };
     setSearchThread((prev) => (followUp ? [...prev, pendingTurn] : [pendingTurn]));
@@ -259,8 +265,6 @@ function AppInner() {
     setIsSearching(false);
   };
 
-  // Opening /search?q=... directly (shared link, refresh, Back/Forward to another query)
-  // runs that search when the current thread is not already about it.
   const urlQuery = page === 'search' ? (new URLSearchParams(location.search).get('q') || '').trim() : '';
   useEffect(() => {
     if (page !== 'search') return;
@@ -276,10 +280,8 @@ function AppInner() {
     navigate('/');
   };
 
-  // View Detail
   const handleViewDetail = (model) => handleNavigate(`detail:${model}`);
 
-  // Compare Handlers
   const isInCompare = (model) => compareList.includes(model);
 
   const handleToggleCompare = (model) => {
@@ -324,7 +326,6 @@ function AppInner() {
     showToast('success', 'Product selected', `${model} added to comparison`);
   };
 
-  // VNPay may return to any path with vnp_* parameters; send those to the return page
   if (location.search.includes('vnp_') && location.pathname !== VNPAY_RETURN_PATH) {
     return <Navigate to={`${VNPAY_RETURN_PATH}${location.search}`} replace />;
   }
@@ -337,7 +338,6 @@ function AppInner() {
       <BackgroundEffects />
 
       <Navbar
-        // The home hero is the AI Search entry, so its nav link shows as active there
         currentPage={page === 'home' ? 'search' : page}
         onNavigate={handleNavigate}
         compareCount={compareList.length}
@@ -345,59 +345,24 @@ function AppInner() {
 
       <main className="main">
         <Routes>
-          <Route
-            path="/"
-            element={(
-              <section className="page active" id="page-search">
-                <SearchHero onSearch={handleRunSearch} onViewDetail={handleViewDetail} />
-              </section>
-            )}
-          />
-          <Route
-            path="/search"
-            element={(
-              <section className="page active" id="page-search">
-                <SearchResults
-                  thread={searchThread}
-                  isLoading={isSearching}
-                  onEditSearch={handleEditSearch}
-                  onFollowUp={(query) => handleRunSearch(query, true)}
-                  onViewDetail={handleViewDetail}
-                  {...commerceProps}
-                />
-              </section>
-            )}
-          />
+          <Route path="/" element={<section className="page active" id="page-search"><SearchHero onSearch={handleRunSearch} onViewDetail={handleViewDetail} /></section>} />
+          <Route path="/search" element={<section className="page active" id="page-search"><SearchResults thread={searchThread} isLoading={isSearching} onEditSearch={handleEditSearch} onFollowUp={(query) => handleRunSearch(query, true)} onViewDetail={handleViewDetail} {...commerceProps} /></section>} />
           <Route path="/products" element={<ProductCatalog onViewDetail={handleViewDetail} {...commerceProps} />} />
-          <Route
-            path="/products/*"
-            element={<ProductDetailRoute onSelectProduct={handleViewDetail} onNavigate={handleNavigate} {...commerceProps} />}
-          />
-          <Route
-            path="/compare"
-            element={(
-              <ProductCompare
-                compareList={compareList}
-                onOpenAddModal={handleOpenAddModal}
-                onOpenReplaceModal={handleOpenReplaceModal}
-                onRemoveFromCompare={handleRemoveFromCompare}
-                onClearCompare={handleClearCompare}
-                onNavigate={handleNavigate}
-              />
-            )}
-          />
+          <Route path="/products/*" element={<ProductDetailRoute onSelectProduct={handleViewDetail} onNavigate={handleNavigate} {...commerceProps} />} />
+          <Route path="/compare" element={<ProductCompare compareList={compareList} onOpenAddModal={handleOpenAddModal} onOpenReplaceModal={handleOpenReplaceModal} onRemoveFromCompare={handleRemoveFromCompare} onClearCompare={handleClearCompare} onNavigate={handleNavigate} />} />
           <Route path="/login" element={<LoginPage onNavigate={handleNavigate} returnTo="account" />} />
-          <Route path="/favorites" element={<FavoriteList onNavigate={handleNavigate} onViewDetail={handleViewDetail} />} />
+          <Route path="/register" element={<RegisterPage onNavigate={handleNavigate} />} />
+          <Route path="/favorites" element={<ProtectedRoute><FavoriteList onNavigate={handleNavigate} onViewDetail={handleViewDetail} /></ProtectedRoute>} />
           <Route path="/cart" element={<CartPage onNavigate={handleNavigate} />} />
-          <Route path="/checkout" element={<CheckoutPage onNavigate={handleNavigate} />} />
-          <Route path="/orders/:orderId/success" element={<OrderSuccessRoute onNavigate={handleNavigate} />} />
+          <Route path="/checkout" element={<ProtectedRoute><CheckoutPage onNavigate={handleNavigate} /></ProtectedRoute>} />
+          <Route path="/orders/:orderId/success" element={<ProtectedRoute><OrderSuccessRoute onNavigate={handleNavigate} /></ProtectedRoute>} />
           <Route path={VNPAY_RETURN_PATH} element={<VnpayReturnRoute onNavigate={handleNavigate} />} />
-          <Route path="/account" element={<AccountDashboard onNavigate={handleNavigate} />} />
-          <Route path="/account/orders" element={<OrderList onNavigate={handleNavigate} onViewOrder={viewOrder} />} />
-          <Route path="/account/orders/:orderId" element={<OrderDetailRoute />} />
-          <Route path="/account/notifications" element={<NotificationCenter onNavigate={handleNavigate} />} />
-          <Route path="/account/profile" element={<ProfilePage onNavigate={handleNavigate} />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/account" element={<ProtectedRoute><AccountDashboard onNavigate={handleNavigate} /></ProtectedRoute>} />
+          <Route path="/account/orders" element={<ProtectedRoute><OrderList onNavigate={handleNavigate} onViewOrder={viewOrder} /></ProtectedRoute>} />
+          <Route path="/account/orders/:orderId" element={<ProtectedRoute><OrderDetailRoute /></ProtectedRoute>} />
+          <Route path="/account/notifications" element={<ProtectedRoute><NotificationCenter onNavigate={handleNavigate} /></ProtectedRoute>} />
+          <Route path="/account/profile" element={<ProtectedRoute><ProfilePage onNavigate={handleNavigate} /></ProtectedRoute>} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 
@@ -416,7 +381,6 @@ function AppInner() {
   );
 }
 
-// Phosphor icons app-wide: bold strokes hold up next to the heavy UI type at small sizes.
 const ICON_DEFAULTS = { weight: 'bold' };
 
 export function App() {
