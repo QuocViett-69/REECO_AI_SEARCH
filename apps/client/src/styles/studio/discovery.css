@@ -356,7 +356,7 @@
 }
 
 .theme-shop .res-source--ai {
-  background: #e1eeee;
+  background: var(--st-wash);
 }
 
 .theme-shop .res-explain {
@@ -461,7 +461,7 @@
       var(--st-cream) 0 58%,
       transparent 58.2%
     ),
-    linear-gradient(160deg, #fbfaf7 0%, #f1eee8 100%);
+    linear-gradient(160deg, #fffdf6 0%, #f3efe0 100%);
 }
 
 /* Campbell photos ship on white; multiply melts the white into the disc */
@@ -473,7 +473,7 @@
 
 .theme-shop .pdp-plate .st-plate__fallback {
   font-size: 48px;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   color: var(--st-sand-deep);
 }
 
@@ -503,7 +503,7 @@
   font-size: clamp(40px, 4.6vw, 64px);
   font-weight: 500;
   line-height: 0.98;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   overflow-wrap: anywhere;
 }
 
@@ -568,7 +568,7 @@
   font-size: clamp(28px, 2.6vw, 36px);
   font-weight: 500;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -865,7 +865,7 @@
   font-size: 36px;
   font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.03em;
   overflow-wrap: anywhere;
 }
 

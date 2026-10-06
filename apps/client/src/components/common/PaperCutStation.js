@@ -3,9 +3,9 @@ import React, { useId } from 'react';
 // Cut-paper illustration of a Campbell field station: a datalogger enclosure on a mast,
 // a cup anemometer and wind vane, a solar panel, a soil probe under the hill, a rain
 // cloud and the sun. Flat fills, ink outlines, nothing photographic.
-const INK = '#27251e';
+const INK = '#222222';
 
-export function PaperCutStation({ className = '', title, sun = '#f0c95b', ink = INK }) {
+export function PaperCutStation({ className = '', title, sun = '#ffdd00', ink = INK }) {
   const decorative = !title;
   const groundId = `pc-ground-${useId().replace(/:/g, '')}`;
   return (
@@ -40,9 +40,9 @@ export function PaperCutStation({ className = '', title, sun = '#f0c95b', ink = 
 
       <g clipPath={`url(#${groundId})`}>
       {/* Back hill */}
-      <path d="M-10 300C60 236 150 222 236 244c70 18 132 6 214-40v186H-10z" fill="#6aa7cf" />
+      <path d="M-10 300C60 236 150 222 236 244c70 18 132 6 214-40v186H-10z" fill="#f7d046" />
       {/* Front hill */}
-      <path d="M-10 318c90-60 190-74 300-50 60 13 110 8 160-10v132H-10z" fill="#016a71" />
+      <path d="M-10 318c90-60 190-74 300-50 60 13 110 8 160-10v132H-10z" fill="#d8573f" />
 
       {/* Soil probe under the hill */}
       <path d="M110 300v54M126 300v54" strokeWidth="3" />
@@ -60,8 +60,8 @@ export function PaperCutStation({ className = '', title, sun = '#f0c95b', ink = 
       <path d="M311 170l12 44M335 164l12 44" stroke="#ffffff" strokeWidth="2.5" transform="rotate(-14 333 183)" />
 
       {/* Datalogger enclosure */}
-      <rect x="226" y="214" width="72" height="56" rx="12" fill="#e07a66" />
-      <circle cx="246" cy="242" r="7" fill="#ffffff" />
+      <rect x="226" y="214" width="72" height="56" rx="12" fill="#ffffff" />
+      <circle cx="246" cy="242" r="7" fill="#d8573f" />
       <path d="M262 236h22M262 250h14" />
 
       {/* Crossarm */}
@@ -69,15 +69,15 @@ export function PaperCutStation({ className = '', title, sun = '#f0c95b', ink = 
 
       {/* Wind vane */}
       <path d="M318 122v-18M300 104h44" />
-      <path d="M344 104l-14-10v20z" fill="#e07a66" />
+      <path d="M344 104l-14-10v20z" fill="#d8573f" />
       <path d="M300 104l-10-8M300 104l-10 8" />
 
       {/* Cup anemometer: the hub spins */}
       <g className="pc-station__rotor" style={{ transformOrigin: '206px 96px' }}>
         <path d="M206 96l-28-10M206 96l26-12M206 96l2 28" />
-        <circle cx="176" cy="85" r="10" fill="#f0c95b" />
-        <circle cx="234" cy="82" r="10" fill="#f0c95b" />
-        <circle cx="208" cy="126" r="10" fill="#f0c95b" />
+        <circle cx="176" cy="85" r="10" fill="#ffdd00" />
+        <circle cx="234" cy="82" r="10" fill="#ffdd00" />
+        <circle cx="208" cy="126" r="10" fill="#ffdd00" />
       </g>
       <path d="M206 122V96" />
       <circle cx="206" cy="96" r="6" fill={ink} />

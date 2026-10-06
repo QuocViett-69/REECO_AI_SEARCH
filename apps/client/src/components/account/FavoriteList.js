@@ -96,7 +96,7 @@ export function FavoriteList({ onNavigate, onViewDetail }) {
                 <span className="ac-fav__price">{formatPrice(item.price, item.currency)}</span>
                 <button
                   type="button"
-                  className="st-btn st-btn--primary st-btn--sm"
+                  className="st-btn st-btn--primary st-btn--buy st-btn--sm"
                   onClick={() => handleAddToCart(item)}
                 >
                   <ShoppingCart size={14} aria-hidden="true" /> Add to cart

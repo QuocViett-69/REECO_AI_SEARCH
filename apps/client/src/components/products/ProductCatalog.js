@@ -13,6 +13,7 @@ import { AddToCartButton } from '../commerce/AddToCartButton';
 import { formatPrice } from '../../services/commercialService';
 import { sizedImage } from '../../services/images';
 import '../../styles/studio/discovery.css';
+import '../../styles/studio/products-cafe.css';
 
 function countBy(items, key) {
   const counts = new Map();
@@ -69,6 +70,12 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
     return true;
   });
 
+  // One product from each of the first categories, for the hero polaroids
+  const polaroids = categories
+    .map(([name]) => allProducts.find((p) => p.category === name && p.image))
+    .filter(Boolean)
+    .slice(0, 4);
+
   const isFiltered = Boolean(term || category || subcategory);
   const clearFilters = () => {
     setSearchTerm('');
@@ -82,18 +89,40 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
   };
 
   return (
-    <section className="page active st-page" id="page-products">
-      <header className="st-header cat-header">
-        <div className="st-header__title">
-          <h1>Products</h1>
-        </div>
-        <div className="st-header__aside">
-          <p>
-            {allProducts.length > 0
-              ? `${allProducts.length} Campbell Scientific instruments for weather, soil and water stations: sensors, dataloggers, communications and power.`
-              : 'Campbell Scientific sensors, dataloggers, communications and power.'}
-          </p>
-        </div>
+    <section className="page active st-page cat-page" id="page-products">
+      {/* Sky hero: blue eyebrow, bold headline, a row of blue-check category facts and a
+          few product sheets floating in the margins (decorative, wide screens only) */}
+      <header className="cat-hero">
+        <p className="cat-hero__label">
+          Campbell Scientific{allProducts.length > 0 ? ` · ${allProducts.length} instruments` : ''}
+        </p>
+        <h1 className="cat-hero__title">Products</h1>
+        <p className="cat-hero__lede">
+          Sensors, dataloggers, communications and power for weather, soil and water stations.
+        </p>
+        {categories.length > 0 && (
+          <ul className="cat-hero__facts">
+            {categories.slice(0, 3).map(([name, count]) => (
+              <li key={name}>
+                <span className="cat-hero__check" aria-hidden="true"><Check size={12} weight="bold" /></span>
+                {name} <span className="cat-hero__count">{count}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {polaroids.length > 0 && (
+          <div className="cat-hero__polaroids" aria-hidden="true">
+            {polaroids.map((p, index) => (
+              <figure key={p.model} className={`cat-polaroid cat-polaroid--${index + 1}`}>
+                <figcaption>
+                  <span>Model no</span>
+                  {p.model}
+                </figcaption>
+                <img src={sizedImage(p.image, 320)} alt="" loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        )}
       </header>
 
       <div className="cat-toolbar">
@@ -191,6 +220,20 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
             const inCompare = isInCompare(p.model);
             return (
               <li key={p.model} className="cat-tile" data-model={p.model}>
+                {/* Invoice-sheet layout: model number header, product photo, then a
+                    two-column type / price block and the actions */}
+                <div className="cat-tile__head">
+                  <div>
+                    <span className="cat-tile__eyebrow">Model no</span>
+                    <h2 className="cat-tile__model">
+                      <button type="button" className="cat-tile__link" onClick={() => onViewDetail(p.model)}>
+                        {p.model}
+                      </button>
+                    </h2>
+                  </div>
+                  {p.category && <span className="cat-tile__chip">{p.category}</span>}
+                </div>
+
                 <div className="st-plate cat-tile__plate">
                   {p.image ? (
                     <img
@@ -207,38 +250,39 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
                   <div className="st-plate__fallback" style={{ display: p.image ? 'none' : 'flex' }}>
                     {p.model}
                   </div>
-
                 </div>
 
                 <div className="cat-tile__body">
-                  <h2 className="cat-tile__model">
-                    <button type="button" className="cat-tile__link" onClick={() => onViewDetail(p.model)}>
-                      {p.model}
-                    </button>
-                  </h2>
                   <p className="cat-tile__name" title={p.name}>
                     {p.name}
                   </p>
-                  <p className="cat-tile__type">{p.subcategory}</p>
 
-                  <div className="cat-tile__foot">
-                    <span className="cat-tile__price">
-                      {p.price != null ? formatPrice(p.price, p.currency) : 'On request'}
-                    </span>
-                    <div className="cat-tile__actions" role="group" aria-label={`Actions for ${p.model}`}>
-                      <AddToCartButton product={p} className="st-btn--icon st-btn--sm" showLabel={false} size={15} />
-                      <button
-                        type="button"
-                        className={`st-btn st-btn--icon st-btn--sm ${inCompare ? 'is-on' : ''}`}
-                        onClick={() => onToggleCompare(p.model)}
-                        aria-pressed={inCompare}
-                        aria-label={inCompare ? `Remove ${p.model} from compare` : `Add ${p.model} to compare`}
-                        title={inCompare ? 'Remove from compare' : 'Add to compare'}
-                      >
-                        {inCompare ? <Check size={15} /> : <ArrowsLeftRight size={15} />}
-                      </button>
-                      <FavoriteButton product={p} className="st-btn--icon st-btn--sm" size={15} />
+                  <dl className="cat-tile__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd className="cat-tile__type">{p.subcategory || '—'}</dd>
                     </div>
+                    <div>
+                      <dt>Price</dt>
+                      <dd className="cat-tile__price">
+                        {p.price != null ? formatPrice(p.price, p.currency) : 'On request'}
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <div className="cat-tile__actions" role="group" aria-label={`Actions for ${p.model}`}>
+                    <AddToCartButton product={p} className="st-btn--sm cat-tile__buy" label="Add to cart" size={15} />
+                    <button
+                      type="button"
+                      className={`st-btn st-btn--icon st-btn--sm ${inCompare ? 'is-on' : ''}`}
+                      onClick={() => onToggleCompare(p.model)}
+                      aria-pressed={inCompare}
+                      aria-label={inCompare ? `Remove ${p.model} from compare` : `Add ${p.model} to compare`}
+                      title={inCompare ? 'Remove from compare' : 'Add to compare'}
+                    >
+                      {inCompare ? <Check size={15} /> : <ArrowsLeftRight size={15} />}
+                    </button>
+                    <FavoriteButton product={p} className="st-btn--icon st-btn--sm" size={15} />
                   </div>
                 </div>
               </li>

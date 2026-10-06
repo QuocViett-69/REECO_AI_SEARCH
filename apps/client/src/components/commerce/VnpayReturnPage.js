@@ -198,7 +198,7 @@ export function VnpayReturnPage({ search: returnSearch, onNavigate }) {
           {order && (
             <button
               type="button"
-              className="st-btn st-btn--primary st-btn--lg"
+              className="st-btn st-btn--primary st-btn--buy st-btn--lg"
               disabled={retrying}
               onClick={handleRetryPayment}
             >

@@ -334,11 +334,12 @@ function AppInner() {
   const commerceProps = { onToggleCompare: handleToggleCompare, isInCompare };
 
   return (
-    <div className={`app-container ${isHomeLocked ? 'is-home-locked' : 'theme-shop'}`}>
+    <div className={`app-container ${isHomeLocked ? 'is-home-locked' : 'theme-shop'} page-${page}`}>
       <BackgroundEffects />
 
       <Navbar
-        currentPage={page === 'home' ? 'search' : page}
+        // The home hero is the AI Search entry, so its nav link shows as active there
+        currentPage={page === 'home' ? 'search' : page === 'detail' ? 'products' : page}
         onNavigate={handleNavigate}
         compareCount={compareList.length}
       />

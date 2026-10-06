@@ -300,6 +300,117 @@ function FitPanel({ id, product, fit, onClose }) {
   );
 }
 
+// Recommendations are grouped by how closely they fit: the best match leads as a
+// feature card, the next two are strong alternatives, the rest are related options.
+const TIERS = [
+  { key: 'best', level: 3, label: 'Best match', meter: 'Closest fit', hint: 'Closest to everything you asked for' },
+  { key: 'strong', level: 2, label: 'Strong alternatives', meter: 'Strong fit', hint: 'Also meet your main requirement' },
+  { key: 'more', level: 1, label: 'Also worth a look', meter: 'Related', hint: 'Related options to compare' },
+];
+
+function tierFor(index) {
+  if (index === 0) return TIERS[0];
+  if (index <= 2) return TIERS[1];
+  return TIERS[2];
+}
+
+// Three bars, filled up to the tier's level
+function MatchMeter({ level, label }) {
+  const name = TIERS.find((tier) => tier.level === level)?.meter;
+  return (
+    <span className={`res-meter res-meter--${level}`} role="img" aria-label={`Match level: ${name}`}>
+      <span className="res-meter__bars" aria-hidden="true"><i /><i /><i /></span>
+      {label && <span className="res-meter__label">{name}</span>}
+    </span>
+  );
+}
+
+function PickCard({ product: p, rank, tier, isBest, fit, fitId, onToggleFit, onViewDetail, onToggleCompare, isInCompare }) {
+  const inCompare = isInCompare ? isInCompare(p.model) : false;
+  const price = p.price ?? getProductPrice(p.product_id, p.model);
+  const priceLabel = price != null ? formatPrice(price, p.currency) : 'Price on request';
+  const reasons = matchReasons(p);
+  const compact = tier.key === 'more';
+
+  return (
+    <li className={`res-row res-row--${tier.key} ${isBest ? 'res-row--best' : ''}`} data-model={p.model}>
+      <ProductPlate product={p} width={isBest ? 640 : 320} />
+      <div className="res-row__body">
+        <div className="res-row__top">
+          {isBest ? (
+            <p className="res-row__flag"><SealCheck size={14} aria-hidden="true" /> Best match</p>
+          ) : (
+            <p className="res-row__rank">#{rank}</p>
+          )}
+          <MatchMeter level={tier.level} label />
+        </div>
+        <p className="res-row__path">{p.subcategory || p.deviceType}</p>
+        <h2 className="res-row__model">
+          <button type="button" className="res-link" onClick={() => onViewDetail(p.model)}>
+            {p.model}
+          </button>
+        </h2>
+        <p className="res-row__name">{p.name}</p>
+        {p.explanation?.text && (
+          <p className="res-row__explain">
+            {p.explanation.text} <ExplanationSource explanation={p.explanation} />
+          </p>
+        )}
+        {reasons.length > 0 && (
+          <ul className="res-reasons" aria-label="Why it matches">
+            {reasons.map((reason, i) => (
+              <li key={`${reason.label}-${i}`} className="st-tag" title={reason.title}>
+                <Check size={13} aria-hidden="true" /> {reason.label}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <div className="res-row__buy">
+        <span className="res-row__price">{priceLabel}</span>
+        <div className="res-actions" role="group" aria-label={`Actions for ${p.model}`}>
+          <AddToCartButton
+            product={{ ...p, price }}
+            className={compact ? 'st-btn--icon st-btn--sm' : isBest ? '' : 'st-btn--sm'}
+            showLabel={!compact}
+            label="Add to cart"
+            size={compact ? 15 : 16}
+          />
+          {onToggleCompare && (
+            <button
+              type="button"
+              className={`st-btn st-btn--icon st-btn--sm ${inCompare ? 'is-on' : ''}`}
+              onClick={() => onToggleCompare(p.model)}
+              aria-pressed={inCompare}
+              aria-label={inCompare ? `Remove ${p.model} from compare` : `Add ${p.model} to compare`}
+              title={inCompare ? 'Remove from compare' : 'Add to compare'}
+            >
+              {inCompare ? <Check size={15} /> : <ArrowsLeftRight size={15} />}
+            </button>
+          )}
+          <FavoriteButton product={{ ...p, price }} className="st-btn--icon st-btn--sm" size={15} />
+        </div>
+        <button
+          type="button"
+          className={`st-btn st-btn--ghost st-btn--sm res-explain ${fit ? 'is-open' : ''}`}
+          aria-expanded={Boolean(fit)}
+          aria-controls={fitId}
+          onClick={(event) => {
+            event.stopPropagation();
+            onToggleFit();
+          }}
+        >
+          <ChatCircleText size={15} aria-hidden="true" />
+          {fit ? 'Hide explanation' : compact ? 'Why this model?' : 'Explain this model for my needs'}
+          <CaretDown size={13} aria-hidden="true" className="res-explain__caret" />
+        </button>
+      </div>
+
+      {fit && <FitPanel id={fitId} product={p} fit={fit} onClose={onToggleFit} />}
+    </li>
+  );
+}
+
 // One question and Campbell AI's answer: the explanation first, then the products it
 // recommends, best match on top.
 function ChatTurn({
@@ -427,89 +538,43 @@ function ChatTurn({
                     )}
                   </div>
 
-                  <ol className="res-list">
-                    {visible.map((p, index) => {
-                      const inCompare = isInCompare ? isInCompare(p.model) : false;
-                      const price = p.price ?? getProductPrice(p.product_id, p.model);
-                      const priceLabel = price != null ? formatPrice(price, p.currency) : 'Price on request';
-                      const reasons = matchReasons(p);
-                      const isBest = index === 0 && !filterCategory;
-                      const fitKey = p.product_id || p.model;
-                      const fit = fits[fitKey];
-                      const fitId = `fit-${turn.id}-${fitKey}`.replace(/[^a-zA-Z0-9_-]/g, '-');
-
-                      return (
-                        <li key={p.product_id || p.model} className={`res-row ${isBest ? 'res-row--best' : ''}`} data-model={p.model}>
-                          <ProductPlate product={p} width={isBest ? 480 : 320} />
-                          <div className="res-row__body">
-                            {isBest ? (
-                              <p className="res-row__flag"><SealCheck size={14} aria-hidden="true" /> Best match</p>
-                            ) : (
-                              <p className="res-row__rank">#{index + 1}</p>
-                            )}
-                            <p className="res-row__path">{p.subcategory || p.deviceType}</p>
-                            <h2 className="res-row__model">
-                              <button type="button" className="res-link" onClick={() => onViewDetail(p.model)}>
-                                {p.model}
-                              </button>
-                            </h2>
-                            <p className="res-row__name">{p.name}</p>
-                            {p.explanation?.text && (
-                              <p className="res-row__explain">
-                                {p.explanation.text} <ExplanationSource explanation={p.explanation} />
-                              </p>
-                            )}
-                            {reasons.length > 0 && (
-                              <ul className="res-reasons" aria-label="Why it matches">
-                                {reasons.map((reason, i) => (
-                                  <li key={`${reason.label}-${i}`} className="st-tag" title={reason.title}>
-                                    <Check size={13} aria-hidden="true" /> {reason.label}
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </div>
-                          <div className="res-row__buy">
-                            <span className="res-row__price">{priceLabel}</span>
-                            <div className="res-actions" role="group" aria-label={`Actions for ${p.model}`}>
-                              <AddToCartButton product={{ ...p, price }} className="st-btn--sm" label="Add to cart" size={15} />
-                              {onToggleCompare && (
-                                <button
-                                  type="button"
-                                  className={`st-btn st-btn--icon st-btn--sm ${inCompare ? 'is-on' : ''}`}
-                                  onClick={() => onToggleCompare(p.model)}
-                                  aria-pressed={inCompare}
-                                  aria-label={inCompare ? `Remove ${p.model} from compare` : `Add ${p.model} to compare`}
-                                  title={inCompare ? 'Remove from compare' : 'Add to compare'}
-                                >
-                                  {inCompare ? <Check size={15} /> : <ArrowsLeftRight size={15} />}
-                                </button>
-                              )}
-                              <FavoriteButton product={{ ...p, price }} className="st-btn--icon st-btn--sm" size={15} />
-                            </div>
-                            <button
-                              type="button"
-                              className={`st-btn st-btn--ghost st-btn--sm res-explain ${fit ? 'is-open' : ''}`}
-                              aria-expanded={Boolean(fit)}
-                              aria-controls={fitId}
-                              onClick={(event) => {
-                                event.stopPropagation();
-                                toggleFit(p);
-                              }}
-                            >
-                              <ChatCircleText size={15} aria-hidden="true" />
-                              {fit ? 'Hide explanation' : 'Explain this model for my needs'}
-                              <CaretDown size={13} aria-hidden="true" className="res-explain__caret" />
-                            </button>
-                          </div>
-
-                          {fit && (
-                            <FitPanel id={fitId} product={p} fit={fit} onClose={() => toggleFit(p)} />
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ol>
+                  {TIERS.map((tier) => {
+                    const picks = visible
+                      .map((p, index) => ({ p, index }))
+                      .filter(({ index }) => tierFor(index) === tier);
+                    if (picks.length === 0) return null;
+                    return (
+                      <section key={tier.key} className={`res-tier res-tier--${tier.key}`} aria-label={tier.label}>
+                        {tier.key !== 'best' && (
+                          <header className="res-tier__head">
+                            <MatchMeter level={tier.level} />
+                            <p className="res-tier__title">{tier.label}</p>
+                            <p className="res-tier__hint">{tier.hint}</p>
+                          </header>
+                        )}
+                        <ol className={`res-list res-list--${tier.key}`} start={picks[0].index + 1}>
+                          {picks.map(({ p, index }) => {
+                            const fitKey = p.product_id || p.model;
+                            return (
+                              <PickCard
+                                key={fitKey}
+                                product={p}
+                                rank={index + 1}
+                                tier={tier}
+                                isBest={tier.key === 'best' && !filterCategory}
+                                fit={fits[fitKey]}
+                                fitId={`fit-${turn.id}-${fitKey}`.replace(/[^a-zA-Z0-9_-]/g, '-')}
+                                onToggleFit={() => toggleFit(p)}
+                                onViewDetail={onViewDetail}
+                                onToggleCompare={onToggleCompare}
+                                isInCompare={isInCompare}
+                              />
+                            );
+                          })}
+                        </ol>
+                      </section>
+                    );
+                  })}
                 </section>
               )}
             </>
@@ -598,20 +663,22 @@ export function SearchResults({
       </ol>
 
       <form className="chat-composer" onSubmit={submit}>
-        <label htmlFor="search-follow-up" className="sr-only">Ask a follow-up question</label>
-        <input
-          id="search-follow-up"
-          type="text"
-          value={draft}
-          onChange={(event) => setDraft(event.target.value)}
-          placeholder="Ask a follow-up, e.g. and supports Modbus"
-          maxLength={500}
-          disabled={busy}
-          autoComplete="off"
-        />
-        <button type="submit" disabled={busy || !draft.trim()} aria-label="Send">
-          <ArrowUp size={18} />
-        </button>
+        <div className="chat-composer__box">
+          <label htmlFor="search-follow-up" className="sr-only">Ask a follow-up question</label>
+          <input
+            id="search-follow-up"
+            type="text"
+            value={draft}
+            onChange={(event) => setDraft(event.target.value)}
+            placeholder="Ask a follow-up, e.g. and supports Modbus"
+            maxLength={500}
+            disabled={busy}
+            autoComplete="off"
+          />
+          <button type="submit" disabled={busy || !draft.trim()} aria-label="Send">
+            <ArrowUp size={18} />
+          </button>
+        </div>
       </form>
       <p className="chat-composer__hint">Campbell AI answers from Campbell Scientific product data. Check the specifications before ordering.</p>
     </div>

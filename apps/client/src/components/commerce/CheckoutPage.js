@@ -478,7 +478,7 @@ export function CheckoutPage({ onNavigate }) {
 
               <button
                 type="submit"
-                className="st-btn st-btn--primary st-btn--lg st-btn--block"
+                className="st-btn st-btn--primary st-btn--buy st-btn--lg st-btn--block"
                 disabled={isSubmitting}
                 aria-busy={isSubmitting || undefined}
               >

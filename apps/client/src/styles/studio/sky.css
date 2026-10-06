@@ -1,0 +1,232 @@
+/* ============ Sky layer: paper on frosted glass ============
+   Loaded last (index.js). Every page except the home hero sits on a blue sky with soft
+   clouds; white cards float on it like paper invoices. Near-black ink, midnight pill
+   buttons, hairline cool-gray edges, and electric blue only as punctuation (eyebrows,
+   checks, focus rings). The home page keeps its own look and only takes the typeface. */
+
+/* ── Tokens: the café palette is remapped here so every page stylesheet follows ── */
+.theme-shop,
+.is-home-locked {
+  --sky-font: 'Open Runde', 'Inter', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.theme-shop {
+  --sky-ink: #1e1e1e;
+  --sky-midnight: #0d111b;
+  --sky-smoke: #666666;
+  --sky-slate: #3d4f63;
+  --sky-mist: #ccd1da;
+  --sky-snow: #f7fafc;
+  --sky-blue: #0098f2;
+  --sky-ice: #cfeafa;
+  --sky-glass: rgba(255, 255, 255, 0.72);
+  --sky-lift: rgba(0, 0, 0, 0.05) 0 1.78px 8px 0, rgba(0, 0, 0, 0.04) 0 0.89px 2.67px 0, rgba(13, 17, 27, 0.06) 0 18px 40px -12px;
+  --sky-lift-raised: rgba(0, 0, 0, 0.06) 0 2px 10px 0, rgba(0, 0, 0, 0.05) 0 1px 3px 0, rgba(13, 17, 27, 0.14) 0 28px 56px -16px;
+  --sky-btn-shadow: rgb(36, 38, 40) 0 0 0 1px, rgba(27, 28, 29, 0.48) 0 1px 2px 0;
+
+  --st-canvas: var(--sky-snow);
+  --st-cream: var(--sky-snow);
+  --st-line: #e3e7ee;
+  --st-sand: #eef2f7;
+  --st-sand-deep: var(--sky-mist);
+  --st-mist: var(--sky-mist);
+  --st-ink: var(--sky-ink);
+  --st-charcoal: var(--sky-ink);
+  --st-gray: var(--sky-smoke);
+  --st-gray-light: #8d8d8d;
+  --st-accent: var(--sky-midnight);
+  --st-accent-deep: #1f2636;
+  --st-cta: var(--sky-midnight);
+  --st-cta-deep: #1f2636;
+  --st-buy: var(--sky-midnight);
+  --st-buy-deep: #1f2636;
+  --st-blush: #f6d2f4;
+  --st-marigold: var(--sky-blue);
+  --st-wash: var(--sky-ice);
+  --st-sky: var(--sky-blue);
+  --st-sun: var(--sky-blue);
+  --st-navy: var(--sky-midnight);
+  --st-move: var(--sky-midnight);
+  --st-shadow: var(--sky-lift);
+  --st-shadow-raised: var(--sky-lift-raised);
+  --st-display: var(--sky-font);
+  --st-sans: var(--sky-font);
+  --st-mono: var(--sky-font);
+}
+
+/* ── Sky backdrop: soft blue sky with drifting clouds along the edges and floor ──
+   Drawn in CSS (stacked radial gradients) on a fixed layer behind the page, so white
+   cards on every page float on the sky. */
+html:has(.theme-shop),
+body:has(.theme-shop) {
+  background-color: #a3cff0;
+}
+
+.app-container.theme-shop {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(180deg, #9ccbee 0%, #a8d3f2 55%, #b9dcf5 100%);
+}
+
+.app-container.theme-shop::before,
+.app-container.theme-shop::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Cloud banks: big puffs hugging the bottom corners and rising up the sides */
+.app-container.theme-shop::before {
+  background:
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85) 55%, rgba(255, 255, 255, 0) 100%) -6vw 62vh / 34vw 30vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8) 55%, rgba(255, 255, 255, 0) 100%) -10vw 78vh / 44vw 34vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75) 55%, rgba(255, 255, 255, 0) 100%) 14vw 92vh / 36vw 22vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.7) 55%, rgba(255, 255, 255, 0) 100%) 38vw 98vh / 30vw 16vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75) 55%, rgba(255, 255, 255, 0) 100%) 58vw 90vh / 36vw 22vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8) 55%, rgba(255, 255, 255, 0) 100%) 72vw 70vh / 44vw 36vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85) 55%, rgba(255, 255, 255, 0) 100%) 84vw 50vh / 28vw 26vw no-repeat;
+  filter: blur(6px);
+}
+
+/* Small wisps drifting in the open sky */
+.app-container.theme-shop::after {
+  background:
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 100%) 92vw 30vh / 14vw 7vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 100%) 86vw 34vh / 10vw 5vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 100%) 4vw 40vh / 12vw 6vw no-repeat,
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 100%) 30vw 18vh / 16vw 4vw no-repeat;
+  filter: blur(2px);
+}
+
+/* ── Type: semibold display with tight tracking ── */
+.theme-shop {
+  font-family: var(--sky-font);
+}
+
+.theme-shop h1,
+.theme-shop .st-display,
+.theme-shop .st-header h1 {
+  font-weight: 600;
+  line-height: 1.13;
+  letter-spacing: -0.03em;
+  color: var(--sky-ink);
+}
+
+.theme-shop h2,
+.theme-shop h3,
+.theme-shop .st-heading,
+.theme-shop .pdp-summary h1,
+.theme-shop #pdp-model {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.theme-shop .st-header__aside p,
+.theme-shop .st-lede {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-slate);
+}
+
+/* ── Buttons: ghost pills on white, midnight pill for the main action ── */
+.theme-shop .st-btn {
+  border-color: var(--sky-mist);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.theme-shop .st-btn:hover {
+  border-color: var(--sky-ink);
+}
+
+.theme-shop .st-btn--primary,
+.theme-shop .st-btn--buy {
+  border-color: var(--sky-midnight);
+  background: var(--sky-midnight);
+  color: #ffffff;
+  box-shadow: var(--sky-btn-shadow);
+}
+
+.theme-shop .st-btn--primary:hover,
+.theme-shop .st-btn--buy:hover {
+  border-color: #1f2636;
+  background: #1f2636;
+  color: #ffffff;
+}
+
+/* ── Tabs: translucent pills, midnight when selected ── */
+.theme-shop .st-tab[aria-pressed='true'],
+.theme-shop .st-tab[aria-selected='true'] {
+  background: var(--sky-midnight);
+  border-color: var(--sky-midnight);
+  color: #ffffff;
+}
+
+/* ── Fields: white pills with a blue focus ring ── */
+.theme-shop input:focus-visible,
+.theme-shop select:focus-visible,
+.theme-shop textarea:focus-visible,
+.theme-shop .st-input:focus,
+.theme-shop .st-select:focus {
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 0 3px rgba(0, 152, 242, 0.18);
+  outline: none;
+}
+
+/* ── Header: no band, just the frosted-glass pill floating over the sky ── */
+.theme-shop .nav {
+  background: transparent;
+}
+
+.theme-shop .nav-inner {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: var(--sky-lift);
+}
+
+/* ── Footer: the sky deepens into a dusk-blue panel instead of a black slab, so the
+   white cloud, sun and paper-cut station still read on it ── */
+.theme-shop .st-footer {
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(180deg, #0f6cbd 0%, #0b4f8f 100%);
+  color: #ffffff;
+}
+
+.theme-shop .st-footer__lede {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.theme-shop .st-footer__cta {
+  border: 0;
+  background: #ffffff;
+  color: var(--sky-ink);
+  box-shadow: 0 8px 24px -8px rgba(5, 30, 60, 0.45);
+}
+
+.theme-shop .st-footer__cta span {
+  background: var(--sky-midnight);
+  color: #ffffff;
+}
+
+.theme-shop .st-footer__bar {
+  border-top-color: rgba(255, 255, 255, 0.24);
+}
+
+.theme-shop .st-footer__bar,
+.theme-shop .st-footer__links button {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.theme-shop .st-footer__links button:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+/* ── Home: keeps its own look, only the typeface follows the rest of the site ── */
+.app-container.is-home-locked,
+.app-container.is-home-locked *:not(code, pre, kbd) {
+  font-family: var(--sky-font);
+}

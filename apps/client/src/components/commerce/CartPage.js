@@ -152,7 +152,7 @@ export function CartPage({ onNavigate }) {
             <div className="cm-summary__actions">
               <button
                 type="button"
-                className="st-btn st-btn--primary st-btn--lg st-btn--block"
+                className="st-btn st-btn--primary st-btn--buy st-btn--lg st-btn--block"
                 onClick={() => onNavigate && onNavigate('checkout')}
               >
                 Proceed to checkout

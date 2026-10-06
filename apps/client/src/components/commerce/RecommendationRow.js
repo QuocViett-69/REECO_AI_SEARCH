@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { recommendationService } from '../../services/recommendationService';
-import { formatPrice } from '../../services/commercialService';
-import { ArrowUpRight, Check, ShoppingCart } from '@phosphor-icons/react';
+import { IconArrowUpRight, IconCheck, Seal } from '../common/SkyIcons';
 import { useCart } from '../../context/CartContext';
 
-// What the relationship means to a buyer; the orb tint follows it.
+// What the relationship means to a buyer; the stamp's colour and glyph follow it.
 const RELATION = {
-  compatible: { label: 'Works with this', orb: 'st-orb--violet' },
-  compatible_sensor: { label: 'Compatible sensor', orb: 'st-orb--violet' },
-  complementary: { label: 'Pairs well', orb: 'st-orb--ember' },
-  alternative: { label: 'Alternative', orb: '' },
+  compatible: { label: 'Works with this', tone: 'iris', glyph: 'plus' },
+  compatible_sensor: { label: 'Compatible sensor', tone: 'iris', glyph: 'wave' },
+  complementary: { label: 'Pairs well', tone: 'leaf', glyph: 'plus' },
+  alternative: { label: 'Alternative', tone: 'blue', glyph: 'bolt' },
 };
 
 export function RecommendationRow({ productId, model, onViewDetail }) {
@@ -87,21 +86,20 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
             <li key={item.model} className="rc__item">
               <div className="rc__item-top">
                 <span className="st-tag st-tag--outline">{relation.label}</span>
-                <span className={`st-orb ${relation.orb}`} aria-hidden="true" />
+                <Seal glyph={relation.glyph} tone={relation.tone} size={30} />
               </div>
               <h3 className="rc__model">{item.model}</h3>
               {item.name && item.name !== item.model && <p className="rc__reason">{item.name}</p>}
               <p className="rc__reason">{item.reason}</p>
 
               <div className="rc__foot">
-                <span className="rc__price">{formatPrice(item.price, item.currency)}</span>
                 <div className="rc__actions" role="group" aria-label={`Actions for ${item.model}`}>
                   <button
                     type="button"
-                    className={`st-btn st-btn--primary st-btn--sm ${isAdded ? 'is-added' : ''}`}
+                    className={`st-btn st-btn--primary st-btn--buy st-btn--sm ${isAdded ? 'is-added' : ''}`}
                     onClick={() => handleAddToCart(item)}
                   >
-                    {isAdded ? <Check size={15} /> : <ShoppingCart size={15} />}
+                    {isAdded ? <IconCheck size={15} /> : null}
                     <span>{isAdded ? 'Added' : 'Add to cart'}</span>
                   </button>
                   <button
@@ -111,7 +109,7 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
                     aria-label={`View ${item.model}`}
                     title={`View ${item.model}`}
                   >
-                    <ArrowUpRight size={15} />
+                    <IconArrowUpRight size={15} />
                   </button>
                 </div>
               </div>

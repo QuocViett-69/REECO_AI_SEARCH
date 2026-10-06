@@ -251,7 +251,7 @@ export function OrderDetail({ orderId, onBack }) {
               {canRepay && (
                 <button
                   type="button"
-                  className="st-btn st-btn--primary"
+                  className="st-btn st-btn--primary st-btn--buy"
                   disabled={isRepaying}
                   aria-busy={isRepaying}
                   onClick={handleRepayVNPay}

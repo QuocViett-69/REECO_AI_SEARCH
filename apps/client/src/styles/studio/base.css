@@ -10,38 +10,48 @@
 .theme-shop,
 .is-home-locked .nav,
 .is-home-locked .mobile-nav {
-  /* Palette (Perplexity-style "parchment"): warm off-white canvas, soft-paper cards with
-     pencil-line borders, warm ink text, one deep teal for active and selected states.
+  /* Palette (Buy Me a Coffee-style "café paper"): cream paper canvas, pure white cards
+     that rest on it with one soft shadow, black ink text. Selected states are ink; the
+     buying action is terracotta; a marigold wash only highlights (prices, badges).
      --st-cream is the quiet inner surface inside cards (inputs, tags, totals). */
-  --st-canvas: #faf8f5;
-  --st-cream: #f3f1ec;
-  --st-white: #fdfbfa;
-  --st-line: #e3e1dc;
-  --st-sand: #ebe8e2;
-  --st-sand-deep: #d1d1cd;
-  --st-ink: #27251e;
-  --st-gray: #72706b;
-  --st-gray-light: #92918b;
-  --st-mist: #d1d1cd;
-  --st-accent: #016a71;
-  --st-accent-deep: #01555b;
+  --st-canvas: #faf8f0;
+  --st-cream: #f6f2e4;
+  --st-white: #ffffff;
+  --st-line: #e5e7eb;
+  --st-sand: #efebdd;
+  --st-sand-deep: #dcdcd6;
+  --st-ink: #000000;
+  --st-charcoal: #222222;
+  --st-gray: #717171;
+  --st-gray-light: #9a9a9a;
+  --st-mist: #dcdcd6;
+  --st-accent: #000000;
+  --st-accent-deep: #222222;
   --st-on-accent: #ffffff;
-  /* The one filled button style: warm ink with parchment text */
-  --st-cta: #27251e;
-  --st-cta-deep: #000000;
-  --st-on-cta: #faf8f5;
-  /* Decorative colours (illustrations, stickers, small dots), softened for paper */
+  /* Filled buttons are ink pills; buying actions (.st-btn--buy) are terracotta */
+  --st-cta: #000000;
+  --st-cta-deep: #222222;
+  --st-on-cta: #ffffff;
+  --st-buy: #d8573f;
+  --st-buy-deep: #c04a33;
+  --st-blush: #f5d5cf;
+  --st-marigold: #ffdd00;
+  --st-wash: #fff3b0;
+  /* Decorative colours (illustrations, stickers, small dots) */
   --st-sky: #6aa7cf;
-  --st-coral: #e07a66;
-  --st-coral-deep: #c9624e;
-  --st-sun: #f0c95b;
-  --st-navy: #27251e;
+  --st-coral: #d8573f;
+  --st-coral-deep: #c04a33;
+  --st-sun: #ffdd00;
+  --st-navy: #222222;
+  /* The one elevation recipe: a card resting on paper */
+  --st-shadow: rgba(0, 0, 0, 0.15) 0 0 2px 0, rgba(0, 0, 0, 0.04) 0 8px 40px 0, rgba(0, 0, 0, 0.05) 0 2px 5px 0;
+  --st-shadow-raised: rgba(0, 0, 0, 0.15) 0 0 2px 0, rgba(0, 0, 0, 0.08) 0 14px 48px 0, rgba(0, 0, 0, 0.06) 0 3px 8px 0;
 
   /* Status dots stay small; the text beside them is always ink */
   --st-ok: #2f8f5b;
   --st-wait: #c9971a;
   --st-stop: #c23a26;
-  --st-move: #016a71;
+  --st-move: #222222;
 
   /* Aliases kept for page stylesheets */
   --st-eggshell: var(--st-white);
@@ -55,15 +65,15 @@
   --st-ember: var(--st-coral);
   --st-btn-line: var(--st-ink);
   --st-whisper: none;
-  --st-lift: 6px 6px 0 var(--st-ink);
+  --st-lift: var(--st-shadow-raised);
   --st-inset: none;
 
-  --st-display: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --st-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --st-mono: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --st-display: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --st-sans: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --st-mono: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
 
-  --st-r-card: 50px;
-  --st-r-mid: 32px;
+  --st-r-card: 32px;
+  --st-r-mid: 24px;
   --st-r-small: 10px;
 
   --st-gutter: 40px;
@@ -72,7 +82,7 @@
   --st-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
   font-family: var(--st-sans);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
@@ -105,14 +115,14 @@
 }
 
 body:has(.theme-shop) {
-  background-color: #faf8f5;
+  background-color: #faf8f0;
 }
 
 /* The page's own scrollbar would leave a strip of root background beside the full-bleed
    navy footer, so it is hidden; wheel, trackpad and keyboard scrolling are unaffected.
    Inner scrollers (tab rows, tables) keep their scrollbars. */
 html:has(.theme-shop) {
-  background-color: #faf8f5;
+  background-color: #faf8f0;
   scrollbar-width: none;
 }
 
@@ -212,7 +222,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
   font-size: clamp(40px, 5.5vw, 72px);
   font-weight: 500;
   line-height: 0.95;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.035em;
   color: var(--st-ink);
   overflow-wrap: anywhere;
 }
@@ -237,7 +247,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
   font-size: clamp(30px, 3.4vw, 40px);
   font-weight: 500;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   color: var(--st-ink);
 }
 
@@ -976,7 +986,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
   font-size: 40px;
   font-weight: 500;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   color: var(--st-ink);
 }
 
@@ -1146,7 +1156,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
   font-family: var(--st-display);
   font-size: 40px;
   font-weight: 500;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -1969,7 +1979,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
   font-family: var(--st-display);
   font-size: 40px;
   font-weight: 500;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   line-height: 1;
 }
 
@@ -2012,7 +2022,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
   font-size: clamp(36px, 4.4vw, 56px);
   font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.035em;
 }
 
 .theme-shop .st-footer__lede {

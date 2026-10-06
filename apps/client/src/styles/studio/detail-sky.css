@@ -1,0 +1,879 @@
+/* ============ Product detail: paper invoice on the sky ============
+   The photo rests on a small stack of paper sheets; the summary beside it reads like an
+   invoice (model no → category / maker as the FROM / TO block → line items →
+   actions). Details follow in a frosted tab bar over one white sheet. Icons are the sky
+   set (components/common/SkyIcons): blue check discs and scalloped colour seals.
+   Tokens (--sky-*) live in sky.css. */
+
+.theme-shop .sd-page {
+  --sd-radius: 16px;
+  max-width: 1320px;
+  padding-left: 32px;
+  padding-right: 32px;
+  color: var(--sky-ink);
+}
+
+/* ── Seal and check colours ── */
+.sky-check { color: var(--sky-blue); flex-shrink: 0; }
+.sky-seal { flex-shrink: 0; }
+.sky-seal--blue { color: var(--sky-blue, #0098f2); }
+.sky-seal--iris { color: #6c56fc; }
+.sky-seal--leaf { color: #5d9c06; }
+.sky-seal--coral { color: #ff6363; }
+.sky-seal--ink { color: #1e1e1e; }
+
+/* ── Shared bits ── */
+.sd-page .sd-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.62;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--sky-smoke);
+}
+
+.sd-page .sd-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 100px;
+  background: var(--sky-snow);
+  border: 1px solid #e3e7ee;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--sky-ink);
+}
+
+.sd-page .sd-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--sky-mist);
+  text-underline-offset: 4px;
+}
+
+.sd-page .sd-link:hover {
+  text-decoration-color: var(--sky-ink);
+}
+
+.sd-page .sd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 22px;
+  border: 1px solid var(--sky-mist);
+  border-radius: 100px;
+  background: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sd-page .sd-btn:hover {
+  border-color: var(--sky-ink);
+}
+
+.sd-page .sd-btn--primary {
+  border-color: var(--sky-midnight);
+  background: var(--sky-midnight);
+  color: #ffffff;
+  box-shadow: var(--sky-btn-shadow);
+}
+
+.sd-page .sd-btn--primary:hover {
+  border-color: #1f2636;
+  background: #1f2636;
+}
+
+/* ── Top: glass back pill and breadcrumb ── */
+.sd-page .sd-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 0 28px;
+}
+
+.sd-page .sd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  background: var(--sky-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+  cursor: pointer;
+}
+
+.sd-page .sd-back:hover {
+  background: #ffffff;
+}
+
+.sd-page .sd-crumbs {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sky-slate);
+}
+
+.sd-page .sd-crumbs span + span::before {
+  content: '/';
+  margin-right: 8px;
+  opacity: 0.5;
+}
+
+/* ── Stage: photo stack + invoice ── */
+.sd-page .sd-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 48px;
+}
+
+.sd-page .sd-gallery {
+  position: sticky;
+  top: 112px;
+  padding: 24px 28px 28px 20px;
+}
+
+.sd-page .sd-sheet {
+  position: absolute;
+  inset: 24px 28px 28px 20px;
+  border-radius: var(--sd-radius);
+  background: #fbfbfa;
+  box-shadow: var(--sky-lift);
+}
+
+.sd-page .sd-sheet--far { transform: rotate(-5deg) translate(-10px, 8px); }
+.sd-page .sd-sheet--near { transform: rotate(3deg) translate(12px, 4px); background: #ffffff; }
+
+.sd-page .sd-photo {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border-radius: var(--sd-radius);
+  background: #ffffff;
+  box-shadow: var(--sky-lift-raised);
+}
+
+.sd-page .sd-photo figcaption {
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--sky-mist);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.sd-page .sd-photo__plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background: var(--sky-snow);
+}
+
+.sd-page .sd-photo__plate img {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.sd-page .sd-photo__fallback {
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--sky-smoke);
+}
+
+.sd-page .sd-invoice {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  border-radius: var(--sd-radius);
+  background: #ffffff;
+  box-shadow: var(--sky-lift);
+}
+
+.sd-page .sd-invoice__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sd-page .sd-model {
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.sd-page .sd-status {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 100px;
+  background: rgba(93, 156, 6, 0.1);
+  font-size: 13px;
+  font-weight: 500;
+  color: #3f6c03;
+}
+
+.sd-page .sd-status__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 888px;
+  background: #5d9c06;
+}
+
+.sd-page .sd-name {
+  margin-top: -12px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--sky-smoke);
+}
+
+/* FROM / TO block */
+.sd-page .sd-parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  border-top: 1px solid var(--sky-mist);
+  border-bottom: 1px solid var(--sky-mist);
+}
+
+.sd-page .sd-parties > div {
+  min-width: 0;
+  padding: 20px 0;
+}
+
+.sd-page .sd-parties > div + div {
+  padding-left: 24px;
+  border-left: 1px solid var(--sky-mist);
+}
+
+.sd-page .sd-parties dd {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin: 10px 0 0;
+}
+
+.sd-page .sd-parties dd .sky-seal {
+  margin-bottom: 8px;
+}
+
+.sd-page .sd-parties strong {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.sd-page .sd-parties dd span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sky-smoke);
+}
+
+/* Line items */
+.sd-page .sd-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+}
+
+.sd-page .sd-lines > div {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+}
+
+.sd-page .sd-lines dt {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--sky-smoke);
+}
+
+.sd-page .sd-lines dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+
+/* Actions */
+.sd-page .sd-buy {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 10px;
+}
+
+.sd-page .sd-qty {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 4px;
+  border: 1px solid var(--sky-mist);
+  border-radius: 100px;
+}
+
+.sd-page .sd-qty button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 888px;
+  background: transparent;
+  color: var(--sky-ink);
+  cursor: pointer;
+}
+
+.sd-page .sd-qty button:hover:not(:disabled) {
+  background: var(--sky-snow);
+}
+
+.sd-page .sd-qty button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.sd-page .sd-qty span {
+  min-width: 28px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.sd-page .sd-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.sd-page .sd-secondary .sd-link {
+  margin-left: auto;
+}
+
+.sd-page .sd-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--sky-mist);
+  border-radius: 100px;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+  cursor: pointer;
+}
+
+.sd-page .sd-chip-btn:hover {
+  border-color: var(--sky-ink);
+}
+
+.sd-page .sd-chip-btn.is-on {
+  border-color: var(--sky-midnight);
+  background: var(--sky-midnight);
+  color: #ffffff;
+}
+
+.sd-page .sd-chip-btn--fav.is-on {
+  border-color: #f6d2f4;
+  background: #fdf0fc;
+  color: var(--sky-ink);
+}
+
+.sd-page .sd-chip-btn--fav.is-on svg {
+  color: #ff6363;
+}
+
+/* ── Assurances: blue-check row floating on the sky ── */
+.sd-page .sd-assure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 36px;
+  margin: 56px 0 64px;
+  list-style: none;
+}
+
+.sd-page .sd-assure li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.sd-page .sd-assure .sky-check {
+  border-radius: 888px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85);
+}
+
+/* ── Info: glass tab bar over one white sheet ── */
+.sd-page .sd-tabs {
+  display: inline-flex;
+  max-width: 100%;
+  gap: 4px;
+  padding: 6px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  background: var(--sky-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.sd-page .sd-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.sd-page .sd-tab {
+  flex-shrink: 0;
+  height: 38px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 100px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+  cursor: pointer;
+}
+
+.sd-page .sd-tab:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.sd-page .sd-tab[aria-selected='true'] {
+  background: var(--sky-midnight);
+  color: #ffffff;
+  box-shadow: var(--sky-btn-shadow);
+}
+
+.sd-page .sd-panel {
+  padding: 40px;
+  border-radius: 32px;
+  background: #ffffff;
+  box-shadow: var(--sky-lift);
+}
+
+.sd-page .sd-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+.sd-page .sd-lead {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+
+.sd-page .sd-lead strong {
+  font-weight: 600;
+}
+
+.sd-page .sd-apps {
+  margin-top: 28px;
+}
+
+.sd-page .sd-apps ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  list-style: none;
+}
+
+.sd-page .sd-facts {
+  margin: 0;
+  border-top: 1px solid var(--sky-mist);
+}
+
+.sd-page .sd-facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--sky-mist);
+  font-size: 15px;
+}
+
+.sd-page .sd-facts dt {
+  color: var(--sky-smoke);
+  font-weight: 500;
+}
+
+.sd-page .sd-facts dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.sd-page .sd-note {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--sky-smoke);
+}
+
+/* Spec and variant tables: invoice line items */
+.sd-page .sd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.sd-page .sd-table thead th {
+  padding: 0 16px 12px 0;
+  border-bottom: 1px solid var(--sky-mist);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--sky-smoke);
+}
+
+.sd-page .sd-table tbody th,
+.sd-page .sd-table tbody td {
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid #e3e7ee;
+  text-align: left;
+  vertical-align: top;
+}
+
+.sd-page .sd-table tbody th {
+  width: 36%;
+  font-weight: 500;
+  color: var(--sky-smoke);
+}
+
+.sd-page .sd-table tbody td {
+  font-weight: 500;
+  color: var(--sky-ink);
+}
+
+.sd-page .sd-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.sd-page .sd-hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--sky-blue);
+}
+
+/* Capabilities: seal + label cards */
+.sd-page .sd-caps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  list-style: none;
+}
+
+.sd-page .sd-caps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--sd-radius);
+  background: var(--sky-snow);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Documents: seal, title, open link */
+.sd-page .sd-docs {
+  list-style: none;
+}
+
+.sd-page .sd-docs li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e3e7ee;
+}
+
+.sd-page .sd-docs li:last-child {
+  border-bottom: 0;
+}
+
+.sd-page .sd-docs__title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.sd-page .sd-docs__desc {
+  font-size: 14px;
+  color: var(--sky-smoke);
+}
+
+/* ── Loading and empty states ── */
+.sd-page .sd-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 160px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sd-page .sd-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(13, 17, 27, 0.15);
+  border-top-color: var(--sky-midnight);
+  border-radius: 888px;
+  animation: sd-spin 0.8s linear infinite;
+}
+
+@keyframes sd-spin {
+  to { transform: rotate(360deg); }
+}
+
+.sd-page .sd-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 520px;
+  margin: 96px auto;
+  padding: 48px 32px;
+  border-radius: 32px;
+  background: #ffffff;
+  box-shadow: var(--sky-lift);
+  text-align: center;
+}
+
+.sd-page .sd-empty h1 {
+  font-size: 24px;
+}
+
+/* ── Recommendations: paper sheets with a relation stamp ── */
+.sd-page .rc {
+  margin-top: 96px;
+}
+
+.sd-page .rc__head p {
+  color: var(--sky-slate);
+  font-weight: 500;
+}
+
+.sd-page .rc__grid {
+  gap: 24px;
+}
+
+.sd-page .rc__item {
+  min-height: 0;
+  padding: 24px;
+  border-radius: var(--sd-radius);
+  outline: none;
+  box-shadow: var(--sky-lift);
+  transition: transform 0.35s var(--st-ease-out), box-shadow 0.35s var(--st-ease-out);
+}
+
+.sd-page .rc__item:hover,
+.sd-page .rc__item:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--sky-lift-raised);
+}
+
+.sd-page .rc__item-top {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--sky-mist);
+}
+
+.sd-page .rc__item-top .st-tag {
+  border: 0;
+  padding: 0;
+  background: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--sky-smoke);
+}
+
+.sd-page .rc__model {
+  margin-top: 16px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.sd-page .rc__reason {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sky-smoke);
+}
+
+.sd-page .rc__foot {
+  border-top: 1px solid var(--sky-mist);
+  margin-top: 20px;
+  padding-top: 16px;
+}
+
+/* No price on these sheets: the actions take the full footer, cart button widest */
+.sd-page .rc__actions {
+  flex: 1;
+}
+
+.sd-page .rc__actions .st-btn--buy {
+  flex: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .sd-page .sd-stage {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sd-page .sd-gallery {
+    position: relative;
+    top: 0;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .sd-page .sd-overview {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-shop .sd-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .sd-page .sd-top {
+    padding: 12px 0 16px;
+  }
+
+  .sd-page .sd-gallery {
+    padding: 12px;
+  }
+
+  .sd-page .sd-sheet {
+    inset: 12px;
+  }
+
+  .sd-page .sd-invoice {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .sd-page .sd-invoice__head {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sd-page .sd-parties {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-page .sd-parties > div + div {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--sky-mist);
+  }
+
+  .sd-page .sd-lines > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .sd-page .sd-buy {
+    grid-template-columns: auto 1fr;
+  }
+
+  .sd-page .sd-buy .sd-btn:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .sd-page .sd-assure {
+    justify-content: flex-start;
+    margin: 36px 0 40px;
+  }
+
+  .sd-page .sd-panel {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .sd-page .sd-lead {
+    font-size: 18px;
+  }
+
+  .sd-page .sd-table tbody th {
+    width: 44%;
+  }
+
+  .sd-page .sd-docs li {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .sd-page .sd-docs .sd-link {
+    grid-column: 2;
+  }
+}

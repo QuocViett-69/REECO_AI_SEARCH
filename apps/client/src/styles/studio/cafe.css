@@ -1,0 +1,1105 @@
+/* ============ Café paper layer ============
+   Loaded after every page stylesheet (index.js), so it restyles the shared pieces of all
+   pages except the home hero in one place, in the spirit of Buy Me a Coffee:
+   - cream paper canvas; white cards rest on it with one soft three-layer shadow
+     instead of pencil-line outlines
+   - bold, tightly tracked headlines over small-caps labels, centred page headers
+   - pill controls: hairline ghost buttons, ink filled buttons, terracotta only for buying
+   Tokens live in base.css. */
+
+/* ── Cards rest on the paper ── */
+.theme-shop .st-panel,
+.theme-shop .st-card,
+.theme-shop .st-state,
+.theme-shop .st-table-wrap,
+.theme-shop .res-answer,
+.theme-shop .pdp-stage,
+.theme-shop .pdp-panel,
+.theme-shop .rc__item,
+.theme-shop .res-row,
+.theme-shop .cm-line,
+.theme-shop .cm-step,
+.theme-shop .cm-moment,
+.theme-shop .cm-celebrate,
+.theme-shop .ac-figure,
+.theme-shop .ac-detail__main > section,
+.theme-shop .cx-slot,
+.theme-shop .cx-section,
+.theme-shop .lg-main,
+.theme-shop .ad-figure,
+.theme-shop .ad-items,
+.theme-shop .ad-split__aside > section {
+  outline: none;
+  background-color: var(--st-white);
+  box-shadow: var(--st-shadow);
+}
+
+.theme-shop .rc__item:hover,
+.theme-shop .rc__item:focus-within,
+.theme-shop .res-row:hover,
+.theme-shop .res-row:focus-within,
+.theme-shop .cx-slot:hover {
+  box-shadow: var(--st-shadow-raised);
+}
+
+/* The best AI match keeps a clear edge: ink ring over the paper shadow */
+.theme-shop .res-row--best,
+.theme-shop .res-row--best:hover {
+  box-shadow: 0 0 0 2px var(--st-ink), var(--st-shadow-raised);
+}
+
+/* ── Type: bold display, small-caps labels ── */
+.theme-shop h1,
+.theme-shop h2,
+.theme-shop h3 {
+  font-family: var(--st-display);
+}
+
+.theme-shop .st-display,
+.theme-shop .st-header h1 {
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.theme-shop .st-heading,
+.theme-shop .pdp-summary h1,
+.theme-shop #pdp-model {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* ── Page headers: centred stack like a café section opener ── */
+.theme-shop .st-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 64px 0 48px;
+  text-align: center;
+}
+
+.theme-shop .st-header__title {
+  justify-content: center;
+}
+
+.theme-shop .st-header__aside {
+  align-items: center;
+  max-width: 600px;
+  padding-bottom: 0;
+}
+
+.theme-shop .st-header__aside p,
+.theme-shop .st-lede {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--st-charcoal);
+}
+
+/* ── Buttons: ghost pill, ink pill, terracotta for buying ── */
+.theme-shop .st-btn {
+  border: 1px solid var(--st-line);
+  background: var(--st-white);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.theme-shop .st-btn:hover {
+  border-color: var(--st-ink);
+  background: var(--st-white);
+  transform: none;
+}
+
+.theme-shop .st-btn--sm {
+  border-width: 1px;
+}
+
+.theme-shop .st-btn--primary {
+  border-color: var(--st-cta);
+  background: var(--st-cta);
+  color: var(--st-on-cta);
+}
+
+.theme-shop .st-btn--primary:hover {
+  border-color: var(--st-cta-deep);
+  background: var(--st-cta-deep);
+}
+
+.theme-shop .st-btn--buy,
+.theme-shop .st-btn--primary.st-btn--buy {
+  border-color: var(--st-buy);
+  background: var(--st-buy);
+  color: #ffffff;
+}
+
+.theme-shop .st-btn--buy:hover,
+.theme-shop .st-btn--primary.st-btn--buy:hover {
+  border-color: var(--st-buy-deep);
+  background: var(--st-buy-deep);
+}
+
+.theme-shop .st-btn--buy:disabled:hover {
+  background: var(--st-buy);
+}
+
+.theme-shop .st-btn--ghost,
+.theme-shop .st-btn--ghost:hover {
+  border-color: transparent;
+}
+
+.theme-shop .st-btn.is-on,
+.theme-shop .st-btn.is-added {
+  border-color: var(--st-ink);
+  background: var(--st-ink);
+  color: #ffffff;
+}
+
+.theme-shop .st-fav.is-on {
+  border-color: var(--st-blush);
+  background: #fdf1ee;
+  color: var(--st-ink);
+}
+
+.theme-shop .st-fav.is-on svg {
+  color: var(--st-buy);
+}
+
+/* ── Tabs and chips: hairline pills, ink when selected ── */
+.theme-shop .st-tab {
+  border: 1px solid var(--st-line);
+  font-weight: 500;
+}
+
+.theme-shop .st-tab:hover {
+  border-color: var(--st-ink);
+}
+
+.theme-shop .st-tab[aria-pressed='true'],
+.theme-shop .st-tab[aria-selected='true'] {
+  border-color: var(--st-ink);
+  background: var(--st-ink);
+  color: #ffffff;
+}
+
+.theme-shop .st-tab__count {
+  background: var(--st-canvas);
+  color: var(--st-gray);
+}
+
+.theme-shop .st-tab[aria-pressed='true'] .st-tab__count,
+.theme-shop .st-tab[aria-selected='true'] .st-tab__count {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* ── Fields: cream wells with hairline edges, ink on focus ── */
+.theme-shop .st-input,
+.theme-shop .st-select,
+.theme-shop .st-textarea,
+.theme-shop .st-search input {
+  border: 1px solid var(--st-line);
+  background-color: var(--st-canvas);
+}
+
+.theme-shop .st-input:focus,
+.theme-shop .st-select:focus,
+.theme-shop .st-textarea:focus,
+.theme-shop .st-search input:focus {
+  border-color: var(--st-ink);
+  background-color: var(--st-white);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.theme-shop .st-search svg {
+  color: var(--st-gray);
+}
+
+/* ── Prices read bold ── */
+.theme-shop .pdp-buy__price,
+.theme-shop .ac-fav__price {
+  font-weight: 700;
+}
+
+/* ── Product photos melt into cream plates ── */
+.theme-shop .st-plate {
+  background: var(--st-canvas);
+}
+
+.theme-shop .st-plate img {
+  mix-blend-mode: multiply;
+}
+
+/* ── Toasts and modals float like the support popovers ── */
+.theme-shop .toast,
+.theme-shop .st-modal {
+  box-shadow: var(--st-shadow-raised);
+}
+
+/* ── Header (shared with home): quiet pills, marigold count once something waits ── */
+:is(.theme-shop, .is-home-locked) .nav-link.active {
+  background: var(--st-sand);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-compare-btn,
+:is(.theme-shop, .is-home-locked) .nav-compare-btn.empty {
+  border: 1px solid var(--st-line);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-compare-btn:hover {
+  border-color: var(--st-ink);
+  background: var(--st-white) !important;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-compare-btn .count {
+  background: var(--st-marigold);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-compare-btn.empty .count {
+  background: var(--st-canvas);
+}
+
+/* ── Floating layers: drawer, mobile menu, toasts, modals rest like support popovers ── */
+:is(.theme-shop, .is-home-locked) .cart-drawer,
+:is(.theme-shop, .is-home-locked) .mobile-nav {
+  border: 1px solid var(--st-line);
+  box-shadow: var(--st-shadow-raised);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn:not(.st-btn--primary) {
+  border-color: var(--st-line);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn:not(.st-btn--primary):hover:not(:disabled) {
+  border-color: var(--st-ink);
+}
+
+.theme-shop .toast {
+  border: 1px solid var(--st-blush);
+  box-shadow: var(--st-shadow-raised);
+}
+
+.theme-shop .st-modal {
+  border: none;
+  border-radius: 32px;
+  box-shadow: var(--st-shadow-raised);
+}
+
+.theme-shop .st-qty {
+  border: 1px solid var(--st-line);
+}
+
+/* ── Compare: most rows differ, so a dot marks a difference instead of a wash ── */
+.theme-shop .cx-row.is-diff {
+  margin: 0;
+  padding: 16px 0;
+  border-top-color: var(--st-line);
+  border-radius: 0;
+  background: none;
+}
+
+.theme-shop .cx-row.is-diff + .cx-row.is-diff {
+  margin-top: 0;
+}
+
+.theme-shop .cx-row.is-diff dd {
+  font-weight: 600;
+}
+
+/* ── Chosen tiles stay white with an ink ring; a solid ink slab is too heavy on paper ── */
+.theme-shop .cm-choice,
+.theme-shop .cx-option {
+  border: 1px solid var(--st-line);
+  background: var(--st-canvas);
+}
+
+.theme-shop .cm-choice:hover,
+.theme-shop .cx-option:hover:not(:disabled) {
+  border-color: var(--st-ink);
+}
+
+.theme-shop .cm-choice.is-selected,
+.theme-shop .cx-option.is-selected {
+  border-color: var(--st-ink);
+  background: var(--st-white);
+  color: var(--st-ink);
+  box-shadow: inset 0 0 0 1px var(--st-ink), var(--st-shadow);
+  transform: none;
+}
+
+.theme-shop .cx-option.is-selected .cx-option__model,
+.theme-shop .cx-option.is-selected .cx-option__check {
+  color: var(--st-ink);
+}
+
+.theme-shop .cm-choice:has(input:focus-visible) {
+  outline-color: var(--st-ink);
+}
+
+.theme-shop .cm-choice__name {
+  font-weight: 600;
+}
+
+.theme-shop .cm-choice.is-selected .st-note {
+  background: var(--st-cream);
+}
+
+/* ── Hovers are a sand wash, not an ink fill ── */
+:is(.theme-shop, .is-home-locked) .nav-dropdown-item:hover,
+:is(.theme-shop, .is-home-locked) .mobile-nav .nav-link.active,
+.theme-shop .res-answer__model:hover {
+  background: var(--st-sand);
+  color: var(--st-ink);
+}
+
+.theme-shop ::selection {
+  background: var(--st-marigold);
+  color: var(--st-ink);
+}
+
+/* ── Product names in lists read bold, like card titles on the paper ── */
+.theme-shop .res-row__model,
+.theme-shop .cx-slot__model {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* ── Footer: the arrow chip picks up the marigold ── */
+.theme-shop .st-footer__cta span {
+  background: var(--st-marigold);
+  color: var(--st-ink);
+}
+
+/* ── Big numbers (dashboard figures, order totals) carry the bold display voice ── */
+.theme-shop .ac-figure dd,
+.theme-shop .ad-figure dd,
+.theme-shop .st-sum__total strong,
+.theme-shop .st-sum__total dd,
+.theme-shop .st-sum__total > span:last-child {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.theme-shop .ac-figure dt {
+  color: var(--st-charcoal);
+}
+
+/* Status and account tags: hairline pills */
+.theme-shop .st-tag {
+  border-color: var(--st-line);
+  outline-color: var(--st-line);
+}
+
+/* ── Type hierarchy: titles and model names bold, section headings semibold ── */
+.theme-shop .st-state__title,
+.theme-shop .st-modal__title,
+.theme-shop .st-footer__title,
+.theme-shop .st-sum__total strong,
+.theme-shop .pdp-model,
+.theme-shop .pdp-buy__price,
+.theme-shop .rc__model,
+.theme-shop .cm-line__heading,
+.theme-shop .cm-line__total,
+.theme-shop .cm-moment__title,
+.theme-shop .cm-celebrate__title,
+.theme-shop .ac-link__count,
+.theme-shop .ac-id__name,
+.theme-shop .ac-order__id,
+.theme-shop .ac-eta__value,
+.theme-shop .ac-item__model,
+.theme-shop .ac-fav__title,
+.theme-shop .cx-slot__model,
+.theme-shop .lg-aside__title {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.theme-shop .st-heading,
+.theme-shop .st-subheading,
+.theme-shop .cm-step__num,
+.theme-shop .ac-day__label,
+.theme-shop .ac-aside-title,
+.theme-shop .ad-aside-title,
+.theme-shop .cx-add__label,
+.theme-shop .cx-section__title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Match reasons wrap inside narrow rows instead of being cut off */
+.theme-shop .res-reasons .st-tag {
+  max-width: 100%;
+  height: auto;
+  min-height: 30px;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  /* The dashboard's decorative orbs would push the figures below the fold */
+  .theme-shop .ac-hero__art {
+    display: none;
+  }
+}
+
+/* Modals are white sheets; their list rows sit on the cream */
+.theme-shop .st-modal {
+  background: var(--st-white);
+}
+
+.theme-shop .st-modal .cx-option:not(.is-selected) {
+  background: var(--st-canvas);
+}
+
+/* Unread notifications: the blush-edged supporter card */
+.theme-shop .ac-note.is-unread {
+  border: 1px solid var(--st-blush);
+  outline: none;
+  background: var(--st-white);
+  box-shadow: var(--st-shadow);
+}
+
+/* ══════════════════════════ AI Search chat ══════════════════════════
+   A café conversation: the question is a sand bubble, Campbell AI answers on a white
+   card with a marigold "from product data" label, picks follow as paper cards, and the
+   composer floats over a cream fade at the bottom of the screen. */
+.theme-shop .chat {
+  max-width: 880px;
+}
+
+.theme-shop .chat-head {
+  padding: 28px 0 16px;
+  border-bottom: 1px solid var(--st-line);
+}
+
+.theme-shop .chat-head__title {
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  color: var(--st-charcoal);
+}
+
+.theme-shop .chat-head__title .st-orb {
+  --size: 28px;
+}
+
+.theme-shop .chat-thread {
+  gap: 56px;
+  padding: 36px 0 24px;
+}
+
+.theme-shop .chat-turn {
+  gap: 22px;
+}
+
+/* The question: a sand bubble with one tucked corner */
+.theme-shop .chat-bubble {
+  padding: 14px 22px;
+  border-radius: 24px 24px 6px 24px;
+  background: var(--st-sand);
+  color: var(--st-ink);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Campbell AI: small avatar and a bold name, the answer underneath */
+.theme-shop .chat-ai {
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.theme-shop .chat-ai__avatar {
+  --size: 32px;
+  margin-top: 0;
+}
+
+.theme-shop .chat-ai__body {
+  gap: 16px;
+}
+
+.theme-shop .chat-ai__name {
+  padding-top: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.theme-shop .chat .res-answer {
+  padding: 22px 26px 24px;
+  border-radius: 6px 24px 24px 24px;
+  background: var(--st-white);
+  box-shadow: var(--st-shadow);
+}
+
+.theme-shop .chat .res-answer__who {
+  margin-bottom: 12px;
+}
+
+.theme-shop .chat .res-answer__basis {
+  padding: 5px 12px;
+  background: var(--st-wash);
+  color: var(--st-ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.theme-shop .chat .res-answer__text {
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: var(--st-charcoal);
+}
+
+/* Section label above the picks */
+.theme-shop .chat-picks {
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.theme-shop .chat-picks__title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  color: var(--st-charcoal);
+}
+
+.theme-shop .chat .res-list {
+  gap: 14px;
+}
+
+/* Product picks: paper cards; the best match wears a buttercup edge and badge */
+.theme-shop .res-row {
+  gap: 22px;
+  padding: 12px 24px 12px 12px;
+  border-radius: 24px;
+}
+
+.theme-shop .res-row .st-plate {
+  border-radius: 16px;
+  background: var(--st-canvas);
+}
+
+.theme-shop .res-row--best,
+.theme-shop .res-row--best:hover {
+  box-shadow: 0 0 0 2px #f7d046, var(--st-shadow-raised);
+}
+
+.theme-shop .res-row__flag {
+  padding: 4px 12px;
+  background: var(--st-marigold);
+  color: var(--st-ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theme-shop .res-row__rank {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--st-gray-light);
+}
+
+.theme-shop .res-row__path {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--st-gray);
+}
+
+.theme-shop .res-row__model {
+  font-size: 22px;
+}
+
+.theme-shop .res-row__name {
+  font-size: 15px;
+  color: var(--st-charcoal);
+}
+
+.theme-shop .res-row__explain {
+  font-size: 14px;
+  color: var(--st-gray);
+}
+
+.theme-shop .res-row__price {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.theme-shop .res-row .res-explain {
+  padding: 6px 14px;
+  border: 1px solid var(--st-line);
+  border-radius: 9999px;
+  background: var(--st-white);
+  font-weight: 600;
+}
+
+.theme-shop .res-row .res-explain:hover,
+.theme-shop .res-row .res-explain.is-open {
+  border-color: var(--st-ink);
+  background: var(--st-white);
+}
+
+.theme-shop .res-fit {
+  border-radius: 18px;
+  background: var(--st-canvas);
+  outline: 1px solid var(--st-line);
+  outline-offset: -1px;
+}
+
+.theme-shop .res-fit__icon {
+  background: var(--st-marigold);
+  color: var(--st-ink);
+}
+
+/* Composer: a white pill floating over a cream fade, so cards slide away beneath it */
+.theme-shop .chat-composer {
+  display: block;
+  bottom: 0;
+  margin-top: 0;
+  padding: 36px 0 20px;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(to bottom, rgba(250, 248, 240, 0) 0%, var(--st-canvas) 45%);
+  box-shadow: none;
+}
+
+.theme-shop .chat-composer:focus-within {
+  border-color: transparent;
+}
+
+.theme-shop .chat-composer__box {
+  display: flex;
+  align-items: center;
+  padding: 8px 8px 8px 26px;
+  border: 1px solid var(--st-line);
+  border-radius: 9999px;
+  background: var(--st-white);
+  box-shadow: var(--st-shadow-raised);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-shop .chat-composer__box:focus-within {
+  border-color: var(--st-ink);
+  box-shadow: 0 0 0 4px rgba(255, 221, 0, 0.35), var(--st-shadow-raised);
+}
+
+.theme-shop .chat-composer button {
+  background: var(--st-ink);
+  color: #ffffff;
+}
+
+.theme-shop .chat-composer button:hover:not(:disabled) {
+  background: var(--st-charcoal);
+}
+
+.theme-shop .chat-composer button:disabled {
+  background: var(--st-sand);
+  color: var(--st-gray-light);
+}
+
+.theme-shop .chat-composer__hint {
+  margin-top: 0;
+  padding-bottom: 8px;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .theme-shop .chat-thread {
+    gap: 40px;
+  }
+
+  .theme-shop .chat-bubble {
+    font-size: 16px;
+  }
+
+  .theme-shop .chat .res-answer {
+    padding: 18px 18px 20px;
+  }
+
+  .theme-shop .chat .res-answer__text {
+    font-size: 16px;
+  }
+
+  .theme-shop .chat-composer {
+    padding: 28px 0 12px;
+  }
+
+  .theme-shop .chat-composer__box {
+    padding-left: 18px;
+  }
+
+  .theme-shop .res-row {
+    padding: 10px 14px 14px 10px;
+  }
+}
+
+/* ══════════════════ AI Search picks, grouped by match level ══════════════════
+   Best match: a wide feature card on a marigold wash. Strong alternatives: two
+   portrait cards side by side. Also worth a look: slim rows. A three-bar meter repeats
+   the level on every card and in each group's header. */
+.theme-shop .res-tier {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theme-shop .res-tier + .res-tier {
+  margin-top: 18px;
+}
+
+.theme-shop .res-tier__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 0 4px;
+}
+
+.theme-shop .res-tier__title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  color: var(--st-charcoal);
+}
+
+.theme-shop .res-tier__hint {
+  font-size: 13px;
+  color: var(--st-gray);
+}
+
+.theme-shop .res-tier__head::after {
+  content: '';
+  flex: 1;
+  min-width: 24px;
+  height: 1px;
+  background: var(--st-line);
+}
+
+/* Match meter: three rising bars */
+.theme-shop .res-meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.theme-shop .res-meter__bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+}
+
+.theme-shop .res-meter__bars i {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--st-sand-deep);
+}
+
+.theme-shop .res-meter__bars i:nth-child(1) { height: 6px; }
+.theme-shop .res-meter__bars i:nth-child(2) { height: 10px; }
+.theme-shop .res-meter__bars i:nth-child(3) { height: 14px; }
+
+.theme-shop .res-meter--1 .res-meter__bars i:nth-child(-n + 1),
+.theme-shop .res-meter--2 .res-meter__bars i:nth-child(-n + 2),
+.theme-shop .res-meter--3 .res-meter__bars i {
+  background: var(--st-ink);
+}
+
+.theme-shop .res-meter__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--st-charcoal);
+}
+
+.theme-shop .res-row__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  margin-bottom: 6px;
+}
+
+.theme-shop .res-row__top .res-row__flag,
+.theme-shop .res-row__top .res-row__rank {
+  margin: 0;
+}
+
+/* ── Level 3: the feature card ── */
+.theme-shop .res-row--best {
+  grid-template-columns: 232px minmax(0, 1fr);
+  grid-template-areas: 'plate body' 'plate buy' 'fit fit';
+  align-items: start;
+  gap: 18px 28px;
+  padding: 16px 28px 16px 16px;
+  border-radius: 28px;
+  background: linear-gradient(120deg, #fff8d6 0%, #ffffff 46%);
+}
+
+.theme-shop .res-row--best .st-plate {
+  width: 232px;
+  border-radius: 20px;
+  background: var(--st-white);
+}
+
+.theme-shop .res-row--best .res-row__model {
+  font-size: 32px;
+  letter-spacing: -0.03em;
+}
+
+.theme-shop .res-row--best .res-row__name {
+  font-size: 16px;
+}
+
+.theme-shop .res-row--best .res-row__price {
+  font-size: 26px;
+}
+
+.theme-shop .res-row--best > .st-plate {
+  grid-area: plate;
+  align-self: center;
+}
+
+.theme-shop .res-row--best .res-row__body {
+  grid-area: body;
+  padding-top: 8px;
+}
+
+.theme-shop .res-row--best .res-fit {
+  grid-area: fit;
+}
+
+/* Price and actions sit in one bar under the details */
+.theme-shop .res-row--best .res-row__buy {
+  grid-area: buy;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.theme-shop .res-row--best .res-row__price {
+  margin-right: auto;
+}
+
+.theme-shop .res-row--best .res-explain {
+  align-self: center;
+}
+
+/* ── Level 2: portrait cards, two across ── */
+.theme-shop .chat .res-list--strong {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.theme-shop .res-row--strong {
+  grid-template-columns: 96px minmax(0, 1fr);
+  /* details take the spare height so both cards' price bars line up */
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  gap: 16px 16px;
+  padding: 14px 16px 16px 14px;
+}
+
+.theme-shop .res-row--strong .st-plate {
+  width: 96px;
+  border-radius: 16px;
+}
+
+.theme-shop .res-row--strong .res-row__model {
+  font-size: 22px;
+}
+
+.theme-shop .res-row--strong .res-row__name {
+  font-size: 14px;
+}
+
+.theme-shop .res-row--strong .res-row__explain {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.theme-shop .res-row--strong .res-row__buy {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--st-line);
+}
+
+.theme-shop .res-row--strong .res-row__price {
+  font-size: 18px;
+}
+
+.theme-shop .res-row--strong .res-explain {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  justify-content: center;
+}
+
+/* ── Level 1: slim rows ── */
+.theme-shop .chat .res-list--more {
+  gap: 8px;
+}
+
+.theme-shop .res-row--more {
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  gap: 16px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 0 2px 0, rgba(0, 0, 0, 0.03) 0 4px 16px 0;
+}
+
+.theme-shop .res-row--more .st-plate {
+  width: 64px;
+  border-radius: 14px;
+}
+
+.theme-shop .res-row--more .res-row__top {
+  margin-bottom: 2px;
+}
+
+.theme-shop .res-row--more .res-row__path,
+.theme-shop .res-row--more .res-row__explain,
+.theme-shop .res-row--more .res-reasons {
+  display: none;
+}
+
+.theme-shop .res-row--more .res-row__model {
+  font-size: 17px;
+}
+
+.theme-shop .res-row--more .res-row__name {
+  font-size: 13px;
+  color: var(--st-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.theme-shop .res-row--more .res-row__buy {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 4px 12px;
+}
+
+.theme-shop .res-row--more .res-row__price {
+  font-size: 15px;
+  text-align: right;
+}
+
+.theme-shop .res-row--more .res-explain {
+  grid-column: 1 / -1;
+  justify-self: end;
+  height: 30px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+@media (max-width: 860px) {
+  .theme-shop .res-row--best {
+    grid-template-columns: 160px minmax(0, 1fr);
+    grid-template-areas: 'plate body' 'buy buy' 'fit fit';
+    padding: 14px 18px 18px 14px;
+  }
+
+  .theme-shop .res-row--best .st-plate {
+    width: 160px;
+  }
+
+  .theme-shop .chat .res-list--strong {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-shop .res-row--best {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'plate' 'body' 'buy' 'fit';
+    gap: 14px;
+    padding: 12px 14px 16px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #fff8d6 0%, #ffffff 40%);
+  }
+
+  .theme-shop .res-row--best .st-plate {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .theme-shop .res-row--best .res-row__model {
+    font-size: 26px;
+  }
+
+  .theme-shop .res-row--best .res-row__price {
+    font-size: 22px;
+  }
+
+  .theme-shop .res-row--strong {
+    grid-template-columns: 80px minmax(0, 1fr);
+    padding: 10px 12px 14px 10px;
+    border-radius: 22px;
+  }
+
+  .theme-shop .res-row--strong .st-plate {
+    width: 80px;
+  }
+
+  .theme-shop .res-row--strong .res-row__buy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 12px 0 0;
+  }
+
+  .theme-shop .res-row--strong .res-row__price {
+    flex-basis: 100%;
+  }
+
+  /* Answers use the full width; the avatar sits above them */
+  .theme-shop .chat-ai {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .theme-shop .res-row--more {
+    grid-template-columns: 56px minmax(0, 1fr);
+    padding: 8px 12px 10px 8px;
+  }
+
+  .theme-shop .res-row--more .st-plate {
+    width: 56px;
+  }
+
+  .theme-shop .res-row--more .res-row__buy {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 4px;
+  }
+
+  .theme-shop .res-tier__hint {
+    display: none;
+  }
+}

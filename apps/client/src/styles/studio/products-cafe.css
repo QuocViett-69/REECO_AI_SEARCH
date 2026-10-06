@@ -1,0 +1,518 @@
+/* ============ Products page: paper on the sky ============
+   Product sheets float on the shared sky (sky.css, which also holds the --sky-* tokens)
+   like paper invoices: white 16px cards, a frosted-glass toolbar, and electric blue used
+   only as punctuation (eyebrow, checkmarks). Primary actions are midnight pills. */
+
+.page-products .cat-page {
+  max-width: 1680px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-family: var(--sky-font);
+  color: var(--sky-ink);
+}
+
+.page-products .cat-page button,
+.page-products .cat-page input,
+.page-products .cat-page select {
+  font-family: inherit;
+}
+
+/* ── Hero: blue eyebrow → headline → lede → blue-check facts ── */
+.page-products .cat-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px 0 72px;
+  text-align: center;
+}
+
+.page-products .cat-hero__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--sky-blue);
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: var(--sky-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.page-products .cat-hero__title {
+  font-size: clamp(48px, 6vw, 64px);
+  font-weight: 600;
+  line-height: 1.13;
+  letter-spacing: -0.03em;
+  color: var(--sky-ink);
+}
+
+.page-products .cat-hero__lede {
+  max-width: 520px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--sky-slate);
+}
+
+.page-products .cat-hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  margin-top: 12px;
+  list-style: none;
+}
+
+.page-products .cat-hero__facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+}
+
+.page-products .cat-hero__check {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 888px;
+  background: var(--sky-blue);
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85);
+}
+
+.page-products .cat-hero__count {
+  color: var(--sky-slate);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Product sheets drifting in the hero margins */
+.page-products .cat-hero__polaroids {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.page-products .cat-polaroid {
+  position: absolute;
+  width: 150px;
+  margin: 0;
+  padding: 14px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: var(--sky-lift);
+}
+
+.page-products .cat-polaroid figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--sky-mist);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-products .cat-polaroid figcaption span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sky-smoke);
+}
+
+.page-products .cat-polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.page-products .cat-polaroid--1 { left: 0; top: 48px; transform: rotate(-8deg); }
+.page-products .cat-polaroid--2 { left: 10%; bottom: -12px; width: 124px; transform: rotate(5deg); }
+.page-products .cat-polaroid--3 { right: 0; top: 32px; transform: rotate(7deg); }
+.page-products .cat-polaroid--4 { right: 10%; bottom: -20px; width: 124px; transform: rotate(-4deg); }
+
+/* ── Toolbar: frosted-glass bar with pill search and pill categories ── */
+.page-products .cat-page .cat-toolbar {
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 32px;
+  background: var(--sky-glass);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: var(--sky-lift);
+}
+
+.page-products .cat-page .st-search input,
+.page-products .cat-page .cat-select .st-select {
+  height: 48px;
+  border: 1px solid var(--sky-mist);
+  border-radius: 100px;
+  background: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+}
+
+.page-products .cat-page .st-search input::placeholder {
+  color: #8d8d8d;
+}
+
+.page-products .cat-page .st-search input:focus,
+.page-products .cat-page .cat-select .st-select:focus {
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 0 3px rgba(0, 152, 242, 0.18);
+}
+
+.page-products .cat-page .st-search svg {
+  color: var(--sky-smoke);
+}
+
+.page-products .cat-page .st-tab {
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+}
+
+.page-products .cat-page .st-tab:hover {
+  border-color: var(--sky-mist);
+  background: #ffffff;
+}
+
+.page-products .cat-page .st-tab[aria-pressed='true'] {
+  background: var(--sky-midnight);
+  border-color: var(--sky-midnight);
+  color: #ffffff;
+  box-shadow: var(--sky-btn-shadow);
+}
+
+.page-products .cat-page .st-tab__count {
+  background: var(--sky-snow);
+  color: var(--sky-smoke);
+}
+
+.page-products .cat-page .st-tab[aria-pressed='true'] .st-tab__count {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.page-products .cat-page .cat-status {
+  font-size: 14px;
+  color: var(--sky-ink);
+}
+
+/* ── Product sheets: white paper invoices floating on the sky ── */
+.page-products .cat-page .cat-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.page-products .cat-page .cat-tile {
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  outline: none;
+  box-shadow: var(--sky-lift);
+  transition: transform 0.35s var(--st-ease-out), box-shadow 0.35s var(--st-ease-out);
+}
+
+/* Every other sheet sits a touch askew, like a loose stack of paper */
+.page-products .cat-page .cat-tile:nth-child(4n + 1) { transform: rotate(-0.6deg); }
+.page-products .cat-page .cat-tile:nth-child(4n + 3) { transform: rotate(0.6deg); }
+
+.page-products .cat-page .cat-tile:hover,
+.page-products .cat-page .cat-tile:focus-within {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow: var(--sky-lift-raised);
+}
+
+.page-products .cat-page .cat-tile__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--sky-mist);
+}
+
+.page-products .cat-page .cat-tile__head > div {
+  min-width: 0;
+}
+
+.page-products .cat-page .cat-tile__eyebrow,
+.page-products .cat-page .cat-tile__meta dt {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.62;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--sky-smoke);
+}
+
+.page-products .cat-page .cat-tile__model {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.page-products .cat-page .cat-tile__link {
+  color: var(--sky-ink);
+}
+
+.page-products .cat-page .cat-tile__link::after {
+  border-radius: 16px;
+}
+
+.page-products .cat-page .cat-tile__link:focus-visible::after {
+  outline: 3px solid var(--sky-blue);
+  outline-offset: 4px;
+}
+
+.page-products .cat-page .cat-tile__chip {
+  flex-shrink: 0;
+  max-width: 45%;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--sky-ice);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #075985;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-products .cat-page .cat-tile__plate {
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  background: var(--sky-snow);
+}
+
+.page-products .cat-page .cat-tile__plate img {
+  width: 70%;
+  height: 78%;
+  mix-blend-mode: multiply;
+  transition: transform 0.5s var(--st-ease);
+}
+
+.page-products .cat-page .cat-tile:hover .cat-tile__plate img {
+  transform: scale(1.04);
+}
+
+.page-products .cat-page .cat-tile__body {
+  gap: 14px;
+  padding: 0;
+}
+
+.page-products .cat-page .cat-tile__name {
+  min-height: 2.8em;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-smoke);
+}
+
+/* Type / price as the sheet's two-column FROM / TO block */
+.page-products .cat-page .cat-tile__meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin: 0;
+  border-top: 1px solid var(--sky-mist);
+}
+
+.page-products .cat-page .cat-tile__meta > div {
+  min-width: 0;
+  padding-top: 12px;
+}
+
+.page-products .cat-page .cat-tile__meta > div + div {
+  padding-left: 16px;
+  border-left: 1px solid var(--sky-mist);
+  text-align: right;
+}
+
+.page-products .cat-page .cat-tile__meta dd {
+  margin: 0;
+}
+
+.page-products .cat-page .cat-tile__type {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sky-ink);
+}
+
+.page-products .cat-page .cat-tile__price {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--sky-ink);
+}
+
+/* Actions: midnight pill for the cart, ghost circles for compare and favourite */
+.page-products .cat-page .cat-tile__actions {
+  gap: 8px;
+  margin-top: auto;
+}
+
+.page-products .cat-page .cat-tile__actions .st-btn {
+  border: 1px solid var(--sky-mist);
+  border-radius: 100px;
+  background: #ffffff;
+  color: var(--sky-ink);
+}
+
+.page-products .cat-page .cat-tile__actions .st-btn:hover {
+  border-color: var(--sky-ink);
+  background: #ffffff;
+}
+
+.page-products .cat-page .cat-tile__actions .cat-tile__buy {
+  flex: 1;
+  border: 0;
+  background: var(--sky-midnight);
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  box-shadow: var(--sky-btn-shadow);
+}
+
+.page-products .cat-page .cat-tile__actions .cat-tile__buy:hover {
+  border: 0;
+  background: #1f2636;
+}
+
+.page-products .cat-page .cat-tile__actions .st-btn.is-on,
+.page-products .cat-page .cat-tile__actions .cat-tile__buy.is-added {
+  border-color: var(--sky-midnight);
+  background: var(--sky-midnight);
+  color: #ffffff;
+}
+
+.page-products .cat-page .cat-tile__actions .st-fav.is-on {
+  border-color: #f6d2f4;
+  background: #fdf0fc;
+  color: var(--sky-ink);
+}
+
+.page-products .cat-page .cat-tile__actions .st-fav.is-on svg {
+  color: #ff6363;
+}
+
+.page-products .cat-page .cat-tile__skeleton-plate {
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+}
+
+.page-products .cat-page .st-state {
+  border-radius: 32px;
+  background: #ffffff;
+  box-shadow: var(--sky-lift);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1180px) {
+  .page-products .cat-polaroid--2,
+  .page-products .cat-polaroid--4 {
+    display: none;
+  }
+
+  .page-products .cat-page .cat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .page-products .cat-hero__polaroids {
+    display: none;
+  }
+
+  .page-products .cat-hero {
+    padding: 48px 0 40px;
+  }
+
+  .page-products .cat-page .cat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-products .cat-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .page-products .cat-hero {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 32px 0 28px;
+    text-align: left;
+  }
+
+  .page-products .cat-hero__lede {
+    font-size: 16px;
+  }
+
+  .page-products .cat-hero__facts {
+    justify-content: flex-start;
+    gap: 10px 18px;
+  }
+
+  .page-products .cat-page .cat-toolbar {
+    padding: 10px;
+    border-radius: 24px;
+  }
+
+  .page-products .cat-page .cat-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .page-products .cat-page .cat-tile,
+  .page-products .cat-page .cat-tile:nth-child(n) {
+    padding: 16px;
+    transform: none;
+  }
+
+  .page-products .cat-page .cat-tile__model {
+    font-size: 20px;
+  }
+
+  .page-products .cat-page .cat-tile__foot,
+  .page-products .cat-page .cat-tile__actions {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}

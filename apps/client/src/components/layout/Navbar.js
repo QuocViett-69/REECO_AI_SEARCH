@@ -132,7 +132,7 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
                       <div className="cart-drawer__footer">
                         <div className="cart-drawer__subtotal"><span>Subtotal</span><span>{formatPrice(cartSubtotal)}</span></div>
                         <button type="button" className="st-btn st-btn--block" onClick={() => nav('cart')}>View cart</button>
-                        <button type="button" className="st-btn st-btn--primary st-btn--block" onClick={() => nav('checkout')}>Checkout</button>
+                        <button type="button" className="st-btn st-btn--primary st-btn--buy st-btn--block" onClick={() => nav('checkout')}>Checkout</button>
                       </div>
                     </>
                   )}

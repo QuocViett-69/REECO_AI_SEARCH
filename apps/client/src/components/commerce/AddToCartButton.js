@@ -30,7 +30,7 @@ export function AddToCartButton({
   return (
     <button
       type="button"
-      className={`st-btn st-btn--primary ${justAdded ? 'is-added' : ''} ${className}`}
+      className={`st-btn st-btn--primary st-btn--buy ${justAdded ? 'is-added' : ''} ${className}`}
       onClick={handleClick}
       style={style}
       title="Add to shopping cart"

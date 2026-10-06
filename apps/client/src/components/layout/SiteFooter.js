@@ -26,7 +26,7 @@ export function SiteFooter({ onNavigate }) {
             <span aria-hidden="true"><ArrowUpRight size={18} /></span>
           </button>
         </div>
-        <PaperCutStation className="st-footer__art" sun="#f0c95b" ink="#ffffff" />
+        <PaperCutStation className="st-footer__art" sun="#ffdd00" ink="#ffffff" />
       </div>
 
       <div className="st-footer__bar">
