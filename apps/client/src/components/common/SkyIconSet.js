@@ -246,6 +246,3 @@ export const CloudSun = makeIcon('CloudSun', (f, c) => (
     <path d="M16 4.5v-1M20.5 8.5h1M19.4 5.1l.7-.7M13.3 5.6a3.5 3.5 0 0 1 6 2.9" />
   </>
 ));
-
-/* Phosphor's context provider is a no-op here; defaults come from the props above */
-export const IconContext = React.createContext({});

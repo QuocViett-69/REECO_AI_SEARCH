@@ -56,10 +56,7 @@
   gap: 12px 24px;
   align-items: start;
   padding: 14px 28px 14px 14px;
-  border-radius: var(--st-r-card);
-  background: var(--st-white);
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -70,7 +67,6 @@
   justify-content: center;
   width: 132px;
   height: 132px;
-  border-radius: 38px;
   background: var(--st-cream);
   overflow: hidden;
   cursor: pointer;
@@ -96,9 +92,7 @@
 
 .theme-shop .cm-line__heading {
   font-size: 30px;
-  font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.025em;
 }
 
 .theme-shop .cm-line__model {
@@ -131,8 +125,6 @@
   grid-area: total;
   padding-top: 14px;
   font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
@@ -222,10 +214,7 @@
   grid-template-columns: 76px minmax(0, 1fr);
   gap: 20px;
   padding: 32px 36px 36px 28px;
-  border-radius: var(--st-r-card);
-  background: var(--st-white);
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -238,8 +227,6 @@
   border-radius: 50%;
   background: var(--st-cream);
   font-size: 36px;
-  font-weight: 500;
-  letter-spacing: -0.025em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -316,21 +303,8 @@
   gap: 14px;
   padding: 22px 24px;
   border-radius: var(--st-r-mid);
-  border: 2px solid transparent;
-  background: var(--st-cream);
   cursor: pointer;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.35s var(--st-ease);
-}
-
-.theme-shop .cm-choice:hover {
-  border-color: var(--st-ink);
-}
-
-.theme-shop .cm-choice.is-selected {
-  background: var(--st-accent);
-  border-color: var(--st-ink);
-  color: var(--st-on-accent);
-  transform: rotate(-0.6deg);
 }
 
 .theme-shop .cm-choice input {
@@ -380,7 +354,6 @@
   align-items: center;
   gap: 8px;
   font-size: 18px;
-  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
@@ -467,11 +440,8 @@
   gap: 16px;
   margin-top: 48px;
   padding: 64px 40px;
-  border-radius: 64px;
-  background: var(--st-white);
   text-align: center;
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -482,9 +452,7 @@
 
 .theme-shop .cm-moment__title {
   font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.03em;
 }
 
 .theme-shop .cm-moment__desc {
@@ -510,11 +478,8 @@
   gap: 32px;
   margin-top: 24px;
   padding: 72px 56px 56px 64px;
-  border-radius: 64px;
-  background: var(--st-white);
   overflow: hidden;
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -543,9 +508,7 @@
 
 .theme-shop .cm-celebrate__title {
   font-size: clamp(44px, 6vw, 80px);
-  font-weight: 500;
   line-height: 0.95;
-  letter-spacing: -0.035em;
 }
 
 .theme-shop .cm-celebrate__desc {

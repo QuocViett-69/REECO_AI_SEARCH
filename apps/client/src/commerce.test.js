@@ -1,5 +1,4 @@
 import { getProductPrice, getCommercialData, formatPrice } from './services/commercialService';
-import { DEMO_CREDENTIALS, resolveAccount } from './services/authService';
 import { recommendationService } from './services/recommendationService';
 
 describe('REECO Customer Commerce - Commercial, Pricing & Auth Suite', () => {

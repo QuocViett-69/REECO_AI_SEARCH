@@ -11,7 +11,6 @@ import { ProductCompare } from './components/compare/ProductCompare';
 import { ProductSelectorModal } from './components/common/ProductSelectorModal';
 import { ToastContainer } from './components/common/Toast';
 import { searchProductsApi } from './services/api';
-import { IconContext } from './components/common/SkyIconSet';
 
 // Auth & Contexts
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -382,21 +381,17 @@ function AppInner() {
   );
 }
 
-const ICON_DEFAULTS = { weight: 'bold' };
-
 export function App() {
   return (
-    <IconContext.Provider value={ICON_DEFAULTS}>
-      <AuthProvider>
-        <CartProvider>
-          <FavoriteProvider>
-            <BrowserRouter>
-              <AppInner />
-            </BrowserRouter>
-          </FavoriteProvider>
-        </CartProvider>
-      </AuthProvider>
-    </IconContext.Provider>
+    <AuthProvider>
+      <CartProvider>
+        <FavoriteProvider>
+          <BrowserRouter>
+            <AppInner />
+          </BrowserRouter>
+        </FavoriteProvider>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 

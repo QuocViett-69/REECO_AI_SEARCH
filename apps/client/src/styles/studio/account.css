@@ -15,18 +15,7 @@
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  border-radius: 16px;
-  background: var(--st-cream);
-  color: var(--st-ink);
 }
-
-.theme-shop .ac-icon--lilac { background: var(--st-accent);
-  color: var(--st-on-accent);
-}
-.theme-shop .ac-icon--sky { background: var(--st-sky); }
-.theme-shop .ac-icon--coral { background: var(--st-coral); }
-.theme-shop .ac-icon--sun { background: var(--st-sun); }
-.theme-shop .ac-icon--cream { background: var(--st-cream); }
 
 /* Headers whose title is one long word stack the description underneath */
 .theme-shop .ac-header--stack {
@@ -74,11 +63,9 @@
   height: 36px;
   padding: 0 16px;
   border-radius: 50px;
-  background: var(--st-white);
   font-size: 15px;
   overflow-wrap: anywhere;
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -102,26 +89,6 @@
   position: absolute;
 }
 
-.theme-shop .ac-hero__sticker--a {
-  --size: clamp(150px, 18vw, 260px);
-  left: 0;
-  top: 0;
-}
-
-.theme-shop .ac-hero__sticker--b {
-  --size: clamp(100px, 12vw, 176px);
-  right: 0;
-  top: 22%;
-  transform: rotate(12deg);
-}
-
-.theme-shop .ac-hero__sticker--c {
-  --size: clamp(70px, 8vw, 116px);
-  left: 46%;
-  bottom: 0;
-  transform: rotate(-8deg);
-}
-
 /* Figures: four stickers, one colour each, big numbers */
 .theme-shop .ac-figures {
   display: grid;
@@ -134,46 +101,24 @@
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  gap: 8px;
-  min-height: 200px;
-  padding: 28px 32px;
-  border-radius: 40px;
-  background: var(--st-white);
   overflow: hidden;
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
 .theme-shop .ac-figure::after {
   content: '';
   position: absolute;
-  top: 28px;
-  right: 28px;
-  width: 22px;
-  height: 22px;
   border-radius: 50%;
   background: var(--tone, var(--st-accent));
-  box-shadow: 0 0 0 2px var(--st-ink);
 }
-
-.theme-shop .ac-figure--lilac { --tone: var(--st-accent); }
-.theme-shop .ac-figure--sky { --tone: var(--st-sky); }
-.theme-shop .ac-figure--sun { --tone: var(--st-sun); }
-.theme-shop .ac-figure--coral { --tone: var(--st-coral); }
 
 .theme-shop .ac-figure dt {
   margin-top: auto;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--st-ink);
 }
 
 .theme-shop .ac-figure dd {
-  font-size: 56px;
-  font-weight: 500;
   line-height: 0.95;
-  letter-spacing: -0.035em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -221,9 +166,7 @@
   gap: 16px;
   width: 100%;
   padding: 12px 20px 12px 12px;
-  border-radius: 32px;
   border: 2px solid transparent;
-  background: var(--st-cream);
   text-align: left;
   transition: border-color 0.2s ease, transform 0.35s var(--st-ease);
 }
@@ -245,8 +188,6 @@
 
 .theme-shop .ac-recent__id {
   font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
 }
 
 .theme-shop .ac-recent__sub {
@@ -294,9 +235,7 @@
   gap: 16px;
   width: 100%;
   padding: 12px 20px 12px 12px;
-  border-radius: 32px;
   border: 2px solid transparent;
-  background: var(--st-white);
   text-align: left;
   transition: border-color 0.2s ease, transform 0.35s var(--st-ease);
 }
@@ -324,8 +263,6 @@
 
 .theme-shop .ac-link__count {
   font-size: 30px;
-  font-weight: 500;
-  letter-spacing: -0.025em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -360,20 +297,15 @@
   height: 72px;
   border-radius: 50%;
   background: var(--st-white);
-  box-shadow: 0 0 0 2px var(--st-ink);
   font-size: 28px;
-  font-weight: 500;
   letter-spacing: -0.025em;
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
 .theme-shop .ac-id__name {
   font-size: 30px;
-  font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.03em;
 }
 
 .theme-shop .ac-rows {
@@ -388,16 +320,8 @@
   align-items: center;
   gap: 20px;
   padding: 14px 28px 14px 14px;
-  border-radius: 32px;
-  background: var(--st-white);
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
-}
-
-.theme-shop .ac-rows dt {
-  font-size: 15px;
-  color: var(--st-gray);
 }
 
 .theme-shop .ac-rows dd {
@@ -425,9 +349,7 @@
   align-items: center;
   gap: 24px;
   padding: 16px 20px 16px 16px;
-  border-radius: 40px;
   border: 2px solid transparent;
-  background: var(--st-white);
   cursor: pointer;
   transition: border-color 0.2s ease, transform 0.35s var(--st-ease);
 }
@@ -448,9 +370,7 @@
 
 .theme-shop .ac-order__id {
   font-size: 30px;
-  font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.025em;
 }
 
 .theme-shop .ac-order__items {
@@ -472,21 +392,9 @@
   font-weight: 500;
 }
 
-.theme-shop .ac-order__label {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--st-gray);
-}
-
 .theme-shop .ac-order__total {
   font-size: 18px;
   font-variant-numeric: tabular-nums;
-}
-
-.theme-shop .ac-order__end .st-btn {
-  background: var(--st-accent);
-  border-color: var(--st-accent);
-  color: var(--st-on-accent);
 }
 
 /* ══════════════════════════ Notifications ══════════════════════════ */
@@ -509,8 +417,6 @@
   gap: 10px;
   margin: 0 0 14px 8px;
   font-size: 30px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
 }
 
 .theme-shop .ac-day__label span {
@@ -521,11 +427,7 @@
   height: 30px;
   padding: 0 9px;
   border-radius: 50px;
-  background: var(--st-white);
-  font-size: 14px;
-  letter-spacing: 0;
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -542,9 +444,7 @@
   align-items: center;
   gap: 18px;
   padding: 16px 20px 16px 16px;
-  border-radius: 36px;
   border: 2px solid transparent;
-  background: var(--st-white);
   transition: border-color 0.2s ease;
 }
 
@@ -632,9 +532,7 @@
   gap: 18px;
   padding: 12px 28px 12px 12px;
   border-radius: 50px;
-  background: var(--st-white);
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -642,15 +540,8 @@
   --size: 72px;
 }
 
-.theme-shop .ac-eta__label {
-  font-size: 14px;
-  color: var(--st-gray);
-}
-
 .theme-shop .ac-eta__value {
   font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
 }
 
 .theme-shop .ac-ref {
@@ -675,10 +566,7 @@
 
 .theme-shop .ac-detail__main > section {
   padding: 40px;
-  border-radius: var(--st-r-card);
-  background: var(--st-white);
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -712,17 +600,11 @@
   left: 22px;
   top: 48px;
   bottom: 0;
-  width: 4px;
   border-radius: 4px;
-  background: var(--st-sand);
 }
 
 .theme-shop .ac-step:last-child::before {
   display: none;
-}
-
-.theme-shop .ac-step.is-done::before {
-  background: var(--st-ink);
 }
 
 .theme-shop .ac-step__mark {
@@ -734,24 +616,16 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--st-cream);
-  color: var(--st-gray);
   font-size: 16px;
-  font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 
 .theme-shop .ac-step.is-done .ac-step__mark {
-  background: var(--st-accent);
-  color: var(--st-on-accent);
   box-shadow: 0 0 0 2px var(--st-ink);
 }
 
 /* The current step is a small paper-cut sun rising over its hill */
 .theme-shop .ac-step.is-current .ac-step__mark {
-  overflow: hidden;
-  background: var(--st-sun);
-  box-shadow: inset 0 0 0 2px var(--st-ink);
   isolation: isolate;
 }
 
@@ -812,7 +686,6 @@
   height: 26px;
   min-height: 0;
   padding: 0 10px;
-  background: var(--st-sun);
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0;
@@ -837,8 +710,6 @@
   align-items: center;
   gap: 18px;
   padding: 12px 22px 12px 12px;
-  border-radius: 36px;
-  background: var(--st-cream);
 }
 
 .theme-shop .ac-item .st-thumb {
@@ -847,8 +718,6 @@
 
 .theme-shop .ac-item__model {
   font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
 }
 
 .theme-shop .ac-item__name {
@@ -864,7 +733,6 @@
 
 .theme-shop .ac-item__total {
   font-size: 18px;
-  font-weight: 500;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -888,8 +756,6 @@
   gap: 12px;
   margin-bottom: 20px;
   font-size: 26px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
 }
 
 .theme-shop .ac-aside-title svg {
@@ -945,21 +811,9 @@
   gap: 8px 16px;
 }
 
-.theme-shop .ac-kv dt {
-  font-size: 15px;
-  color: var(--st-gray);
-}
-
 .theme-shop .ac-kv dd {
   font-size: 16px;
   font-weight: 500;
-}
-
-.theme-shop .ac-pay {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 24px;
 }
 
 /* Order actions in the header: pay again (coral) and cancel */
@@ -1009,8 +863,6 @@
 .theme-shop .ac-history__item {
   position: relative;
   padding: 14px 20px 14px 44px;
-  border-radius: 24px;
-  background: var(--st-cream);
 }
 
 .theme-shop .ac-history__item::before {
@@ -1022,7 +874,6 @@
   height: 12px;
   border-radius: 50%;
   background: var(--st-gray-light);
-  box-shadow: 0 0 0 1.5px var(--st-ink);
 }
 
 .theme-shop .ac-history__item--green::before { background: var(--st-ok); }
@@ -1099,9 +950,7 @@
   display: flex;
   flex-direction: column;
   padding: 12px 12px 24px;
-  border-radius: var(--st-r-card);
   border: 2px solid transparent;
-  background: var(--st-white);
   transition: border-color 0.2s ease, transform 0.35s var(--st-ease);
 }
 
@@ -1112,7 +961,6 @@
 
 .theme-shop .ac-fav .st-plate {
   aspect-ratio: 5 / 4;
-  border-radius: 40px;
   background: var(--st-white);
   box-shadow: inset 0 0 0 2px var(--st-cream);
   cursor: pointer;
@@ -1137,9 +985,7 @@
 
 .theme-shop .ac-fav__title {
   font-size: 36px;
-  font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.03em;
 }
 
 .theme-shop .ac-fav__model {
@@ -1169,7 +1015,6 @@
 
 .theme-shop .ac-fav__price {
   font-size: 18px;
-  font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 

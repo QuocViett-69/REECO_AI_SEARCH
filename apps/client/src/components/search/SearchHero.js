@@ -100,7 +100,7 @@ export function SearchHero({ onSearch, onViewDetail }) {
               title="Tìm kiếm"
               id="searchBtn"
             >
-              <ArrowUp size={20} />
+              <ArrowUp size={20} weight="bold" />
             </button>
           </div>
         </form>

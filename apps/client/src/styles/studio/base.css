@@ -114,15 +114,10 @@
   font-family: inherit;
 }
 
-body:has(.theme-shop) {
-  background-color: #faf8f0;
-}
-
 /* The page's own scrollbar would leave a strip of root background beside the full-bleed
    navy footer, so it is hidden; wheel, trackpad and keyboard scrolling are unaffected.
    Inner scrollers (tab rows, tables) keep their scrollbars. */
 html:has(.theme-shop) {
-  background-color: #faf8f0;
   scrollbar-width: none;
 }
 
@@ -133,7 +128,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 
 .app-container.theme-shop {
   min-height: 100vh;
-  background: var(--st-canvas);
 }
 
 .theme-shop .bg-effects {
@@ -164,11 +158,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   line-height: inherit;
 }
 
-.theme-shop ::selection {
-  background: var(--st-accent);
-  color: var(--st-on-accent);
-}
-
 .theme-shop :focus-visible {
   outline: 3px solid var(--st-sky);
   outline-offset: 3px;
@@ -196,11 +185,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
 
 /* Giant header: the title fills the frame, a short description sits beside it */
 .theme-shop .st-header {
-  display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
-  align-items: end;
-  gap: 24px 48px;
-  padding: 48px 0 56px;
   margin-bottom: 8px;
 }
 
@@ -220,43 +205,26 @@ html:has(.theme-shop)::-webkit-scrollbar {
 .theme-shop .st-header h1 {
   font-family: var(--st-display);
   font-size: clamp(40px, 5.5vw, 72px);
-  font-weight: 500;
-  line-height: 0.95;
-  letter-spacing: -0.035em;
-  color: var(--st-ink);
   overflow-wrap: anywhere;
 }
 
 .theme-shop .st-header__aside {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 16px;
-  padding-bottom: 10px;
-}
-
-.theme-shop .st-header__aside p,
-.theme-shop .st-lede {
-  font-size: 20px;
-  line-height: 1.4;
-  color: var(--st-ink);
 }
 
 .theme-shop .st-heading {
   font-family: var(--st-display);
   font-size: clamp(30px, 3.4vw, 40px);
-  font-weight: 500;
   line-height: 1.05;
-  letter-spacing: -0.025em;
   color: var(--st-ink);
 }
 
 .theme-shop .st-subheading {
   font-family: var(--st-display);
   font-size: 30px;
-  font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.03em;
   color: var(--st-ink);
 }
 
@@ -266,34 +234,9 @@ html:has(.theme-shop)::-webkit-scrollbar {
   color: var(--st-gray);
 }
 
-.theme-shop .st-muted {
-  color: var(--st-gray);
-}
-
 .theme-shop .st-mono {
   font-variant-numeric: tabular-nums;
   font-weight: 500;
-}
-
-.theme-shop .st-rule {
-  height: 2px;
-  border: 0;
-  border-radius: 2px;
-  background: var(--st-sand);
-  margin: 40px 0;
-}
-
-.theme-shop .st-section {
-  margin-top: 112px;
-}
-
-.theme-shop .st-section__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px 24px;
-  margin-bottom: 28px;
 }
 
 /* ── Back link ── */
@@ -301,13 +244,8 @@ html:has(.theme-shop)::-webkit-scrollbar {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  height: 42px;
-  padding: 0 18px 0 6px;
-  border-radius: 50px;
   font-size: 15px;
-  font-weight: 500;
   color: var(--st-ink);
-  background: transparent;
   transition: background 0.2s ease;
 }
 
@@ -318,10 +256,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   border-radius: 50%;
   background: var(--st-white);
   transition: transform 0.35s var(--st-ease), background 0.2s ease;
-}
-
-.theme-shop .st-back:hover {
-  background: var(--st-white);
 }
 
 .theme-shop .st-back:hover svg {
@@ -339,22 +273,14 @@ html:has(.theme-shop)::-webkit-scrollbar {
   height: 46px;
   padding: 0 22px;
   border-radius: 50px;
-  border: 2px solid var(--st-ink);
-  background: var(--st-white);
   color: var(--st-ink);
   font-size: 15px;
-  font-weight: 500;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
   box-shadow: none;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.35s var(--st-ease);
-}
-
-.theme-shop .st-btn:hover {
-  background: var(--st-cream);
-  transform: translateY(-2px);
 }
 
 .theme-shop .st-btn:active {
@@ -369,16 +295,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 }
 
 /* Buying actions: coral fill with ink text (white on coral fails contrast) */
-.theme-shop .st-btn--primary {
-  background: var(--st-cta);
-  border-color: var(--st-cta);
-  color: var(--st-on-cta);
-}
-
-.theme-shop .st-btn--primary:hover {
-  background: var(--st-cta-deep);
-  border-color: var(--st-cta-deep);
-}
 
 .theme-shop .st-btn--primary:disabled:hover {
   background: var(--st-cta);
@@ -386,13 +302,11 @@ html:has(.theme-shop)::-webkit-scrollbar {
 
 .theme-shop .st-btn--ghost {
   background: transparent;
-  border-color: transparent;
   color: var(--st-ink);
 }
 
 .theme-shop .st-btn--ghost:hover {
   background: var(--st-white);
-  border-color: transparent;
 }
 
 .theme-shop .st-btn--danger {
@@ -404,7 +318,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   padding: 0 16px;
   font-size: 14px;
   gap: 6px;
-  border-width: 1.5px;
 }
 
 .theme-shop .st-btn--lg {
@@ -428,27 +341,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 
 .theme-shop .st-btn--icon.st-btn--lg {
   width: 58px;
-}
-
-.theme-shop .st-btn.is-on {
-  background: var(--st-accent);
-  border-color: var(--st-ink);
-  color: var(--st-on-accent);
-}
-
-.theme-shop .st-btn.is-added {
-  background: var(--st-accent);
-  border-color: var(--st-accent);
-  color: var(--st-on-accent);
-}
-
-.theme-shop .st-fav.is-on {
-  background: var(--st-white);
-  border-color: var(--st-ink);
-}
-
-.theme-shop .st-fav.is-on svg {
-  color: var(--st-coral);
 }
 
 .theme-shop .st-link {
@@ -485,12 +377,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   color: var(--st-ink);
 }
 
-.theme-shop .st-hint {
-  padding-left: 6px;
-  font-size: 14px;
-  color: var(--st-gray);
-}
-
 .theme-shop .st-error-text {
   padding-left: 6px;
   font-size: 14px;
@@ -504,7 +390,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   width: 100%;
   height: 54px;
   padding: 0 22px;
-  border: 1px solid var(--st-sand-deep);
   border-radius: 50px;
   background: var(--st-white);
   color: var(--st-ink);
@@ -541,13 +426,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 .theme-shop .st-select:hover,
 .theme-shop .st-textarea:hover {
   border-color: var(--st-gray-light);
-}
-
-.theme-shop .st-input:focus,
-.theme-shop .st-select:focus,
-.theme-shop .st-textarea:focus {
-  border-color: var(--st-accent);
-  box-shadow: 0 0 0 3px rgba(1, 106, 113, 0.12);
 }
 
 .theme-shop .st-input[aria-invalid='true'] {
@@ -589,7 +467,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 .theme-shop .st-search svg {
   position: absolute;
   left: 22px;
-  color: var(--st-ink);
   pointer-events: none;
 }
 
@@ -598,7 +475,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   height: 58px;
   padding: 0 24px 0 56px;
   border-radius: 50px;
-  border: 1px solid var(--st-sand-deep);
   background: var(--st-white);
   font-size: 16px;
   color: var(--st-ink);
@@ -608,25 +484,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 
 .theme-shop .st-search input::placeholder {
   color: var(--st-gray-light);
-}
-
-.theme-shop .st-search input:focus {
-  border-color: var(--st-accent);
-}
-
-.theme-shop .st-check {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  color: var(--st-ink);
-  cursor: pointer;
-}
-
-.theme-shop .st-check input {
-  width: 20px;
-  height: 20px;
-  accent-color: var(--st-accent-deep);
 }
 
 /* ── Tab pills / filter chips: green when on ── */
@@ -643,25 +500,12 @@ html:has(.theme-shop)::-webkit-scrollbar {
   height: 44px;
   padding: 0 18px;
   border-radius: 50px;
-  border: 2px solid transparent;
   background: var(--st-white);
   color: var(--st-ink);
   font-size: 15px;
-  font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.theme-shop .st-tab:hover {
-  border-color: var(--st-ink);
-}
-
-.theme-shop .st-tab[aria-pressed='true'],
-.theme-shop .st-tab[aria-selected='true'] {
-  background: var(--st-accent);
-  border-color: var(--st-ink);
-  color: var(--st-on-accent);
 }
 
 .theme-shop .st-tab__count {
@@ -672,16 +516,9 @@ html:has(.theme-shop)::-webkit-scrollbar {
   height: 24px;
   padding: 0 8px;
   border-radius: 50px;
-  background: var(--st-cream);
   font-size: 12px;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
-  color: var(--st-ink);
-}
-
-.theme-shop .st-tab[aria-pressed='true'] .st-tab__count,
-.theme-shop .st-tab[aria-selected='true'] .st-tab__count {
-  background: var(--st-white);
 }
 
 /* ── Tags and status ── */
@@ -703,11 +540,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   box-shadow: inset 0 0 0 1.5px var(--st-ink);
 }
 
-.theme-shop .st-tag--ink {
-  background: var(--st-ink);
-  color: var(--st-white);
-}
-
 .theme-shop .st-status {
   display: inline-flex;
   align-items: center;
@@ -715,40 +547,15 @@ html:has(.theme-shop)::-webkit-scrollbar {
   height: 32px;
   padding: 0 14px 0 10px;
   border-radius: 50px;
-  background: var(--st-cream);
   color: var(--st-ink);
   font-size: 14px;
-  font-weight: 500;
   white-space: nowrap;
 }
 
 .theme-shop .st-status::before {
   content: '';
-  width: 10px;
-  height: 10px;
   border-radius: 50%;
   background: var(--st-gray-light);
-  box-shadow: 0 0 0 1.5px var(--st-ink);
-}
-
-.theme-shop .st-status--green::before { background: var(--st-ok); }
-.theme-shop .st-status--amber::before { background: var(--st-sun); }
-.theme-shop .st-status--red::before { background: var(--st-coral); }
-.theme-shop .st-status--blue::before { background: var(--st-sky); }
-
-.theme-shop .st-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 22px;
-  height: 22px;
-  padding: 0 7px;
-  border-radius: 50px;
-  background: var(--st-accent);
-  color: var(--st-on-accent);
-  font-size: 12px;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
 }
 
 /* ── Surfaces: white stickers on the sky canvas ── */
@@ -757,22 +564,12 @@ html:has(.theme-shop)::-webkit-scrollbar {
   border-radius: var(--st-r-card);
   padding: 40px;
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
 .theme-shop .st-panel--lg {
   border-radius: 64px;
   padding: 48px;
-}
-
-.theme-shop .st-card {
-  background: var(--st-white);
-  border-radius: var(--st-r-mid);
-  padding: 24px;
-  /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
-  outline-offset: -1px;
 }
 
 /* Product photo plate. Campbell photos ship on white, so the plate is white too. */
@@ -783,7 +580,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   justify-content: center;
   aspect-ratio: 1 / 1;
   border-radius: 40px;
-  background: var(--st-white);
   overflow: hidden;
 }
 
@@ -808,7 +604,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   justify-content: center;
   width: 60px;
   height: 60px;
-  border-radius: 20px;
   background: var(--st-white);
   box-shadow: inset 0 0 0 1.5px var(--st-sand);
   overflow: hidden;
@@ -845,10 +640,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   height: var(--size);
   flex-shrink: 0;
   box-sizing: border-box;
-  border-radius: 50%;
-  border: var(--line) solid var(--st-ink);
-  background: var(--st-sun);
-  overflow: hidden;
   isolation: isolate;
   vertical-align: middle;
 }
@@ -881,10 +672,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   z-index: -2;
 }
 
-.theme-shop .st-orb--violet {
-  background: var(--st-sky);
-}
-
 .theme-shop .st-orb--violet::after {
   background: var(--st-white);
   width: 50%;
@@ -894,20 +681,12 @@ html:has(.theme-shop)::-webkit-scrollbar {
   border-radius: 50px;
 }
 
-.theme-shop .st-orb--ember {
-  background: var(--st-coral);
-}
-
 .theme-shop .st-orb--ember::before {
   background: var(--st-sun);
 }
 
 .theme-shop .st-orb--ember::after {
   background: var(--st-white);
-}
-
-.theme-shop .st-orb--stone {
-  background: var(--st-cream);
 }
 
 .theme-shop .st-orb--stone::before {
@@ -926,16 +705,8 @@ html:has(.theme-shop)::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44%;
-  height: 44%;
-  max-width: 64px;
-  max-height: 64px;
   min-width: 34px;
   min-height: 34px;
-  border-radius: 50%;
-  background: var(--st-white);
-  color: var(--st-ink);
-  box-shadow: 0 0 0 2px var(--st-ink);
 }
 
 /* The one orchestrated moment: the sun rises over the hill once, then rests */
@@ -969,24 +740,14 @@ html:has(.theme-shop)::-webkit-scrollbar {
   padding: 72px 32px;
   max-width: 640px;
   margin: 0 auto;
-  border-radius: var(--st-r-card);
   background: var(--st-white);
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
-}
-
-.theme-shop .st-state .st-orb {
-  --size: 132px;
-  margin-bottom: 12px;
 }
 
 .theme-shop .st-state__title {
   font-family: var(--st-display);
-  font-size: 40px;
-  font-weight: 500;
   line-height: 1.05;
-  letter-spacing: -0.025em;
   color: var(--st-ink);
 }
 
@@ -1058,61 +819,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   overflow-wrap: anywhere;
 }
 
-.theme-shop .st-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-  border-radius: var(--st-r-mid);
-  background: var(--st-white);
-  padding: 8px 12px;
-  /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
-  outline-offset: -1px;
-}
-
-.theme-shop .st-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: 15px;
-}
-
-.theme-shop .st-table th,
-.theme-shop .st-table td {
-  padding: 16px;
-  text-align: left;
-  vertical-align: top;
-  border-bottom: 2px solid var(--st-cream);
-}
-
-.theme-shop .st-table tbody tr:last-child th,
-.theme-shop .st-table tbody tr:last-child td {
-  border-bottom: 0;
-}
-
-.theme-shop .st-table thead th {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--st-gray);
-  white-space: nowrap;
-}
-
-.theme-shop .st-table tbody th {
-  font-weight: 400;
-  color: var(--st-gray);
-}
-
-.theme-shop .st-table--hover tbody tr:hover > * {
-  background: var(--st-cream);
-}
-
-.theme-shop .st-table--hover tbody tr:hover > *:first-child {
-  border-radius: 20px 0 0 20px;
-}
-
-.theme-shop .st-table--hover tbody tr:hover > *:last-child {
-  border-radius: 0 20px 20px 0;
-}
-
 .theme-shop .st-num {
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -1155,8 +861,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 .theme-shop .st-sum__total strong {
   font-family: var(--st-display);
   font-size: 40px;
-  font-weight: 500;
-  letter-spacing: -0.025em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -1167,7 +871,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   height: 46px;
   padding: 0 4px;
   border-radius: 50px;
-  border: 2px solid var(--st-ink);
   background: var(--st-white);
 }
 
@@ -1208,67 +911,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 .theme-shop .st-qty--sm button {
   width: 30px;
   height: 30px;
-}
-
-/* ── Steps: only where content is a real sequence (checkout, order progress) ── */
-.theme-shop .st-steps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-  counter-reset: st-step;
-}
-
-.theme-shop .st-steps li {
-  counter-increment: st-step;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--st-gray);
-}
-
-.theme-shop .st-steps li + li::before {
-  content: '';
-  width: 28px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--st-sand-deep);
-}
-
-.theme-shop .st-steps li > span::before {
-  content: counter(st-step);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  margin-right: 8px;
-  border-radius: 50%;
-  background: var(--st-white);
-  font-size: 13px;
-  font-variant-numeric: tabular-nums;
-}
-
-.theme-shop .st-steps li.is-current {
-  color: var(--st-ink);
-}
-
-.theme-shop .st-steps li.is-current > span::before {
-  background: var(--st-accent);
-  box-shadow: 0 0 0 2px var(--st-ink);
-  color: var(--st-on-accent);
-}
-
-.theme-shop .st-steps li.is-done {
-  color: var(--st-ink);
-}
-
-.theme-shop .st-steps li.is-done > span::before {
-  content: '✓';
-  background: var(--st-ink);
-  color: var(--st-white);
 }
 
 /* ── Notes ── */
@@ -1396,9 +1038,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 
 :is(.theme-shop, .is-home-locked) .nav-link.active {
   color: var(--st-ink);
-  background: var(--st-cream);
-  font-weight: 500;
-  box-shadow: inset 0 0 0 2px var(--st-ink);
 }
 
 :is(.theme-shop, .is-home-locked) .nav-compare-btn,
@@ -1408,7 +1047,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   padding: 0 6px 0 20px;
   gap: 10px;
   border-radius: 50px;
-  border: 2px solid var(--st-ink);
   background: var(--st-white) !important;
   color: var(--st-ink) !important;
   font-size: 15px;
@@ -1419,7 +1057,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 }
 
 :is(.theme-shop, .is-home-locked) .nav-compare-btn:hover {
-  background: var(--st-cream) !important;
   transform: none;
   box-shadow: none;
 }
@@ -1443,14 +1080,9 @@ html:has(.theme-shop)::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  background: var(--st-sky);
   color: var(--st-ink) !important;
   font-size: 13px;
   font-weight: 500;
-}
-
-:is(.theme-shop, .is-home-locked) .nav-compare-btn.empty .count {
-  background: var(--st-cream);
 }
 
 :is(.theme-shop, .is-home-locked) .nav-actions {
@@ -1617,11 +1249,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 
 :is(.theme-shop, .is-home-locked) .nav-dropdown-item svg {
   display: none;
-}
-
-:is(.theme-shop, .is-home-locked) .nav-dropdown-item:hover {
-  background: var(--st-accent);
-  color: var(--st-on-accent);
 }
 
 :is(.theme-shop, .is-home-locked) .nav-dropdown-item--danger,
@@ -1832,9 +1459,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
   left: 12px;
   right: 12px;
   background: var(--st-white);
-  border: 2px solid var(--st-ink);
   border-radius: 32px;
-  box-shadow: 6px 6px 0 var(--st-ink);
   padding: 12px;
   backdrop-filter: none;
 }
@@ -1847,9 +1472,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
 }
 
 :is(.theme-shop, .is-home-locked) .mobile-nav .nav-link.active {
-  background: var(--st-accent);
   box-shadow: none;
-  color: var(--st-on-accent);
 }
 
 :is(.theme-shop, .is-home-locked) .mobile-nav .nav-link--danger {
@@ -1881,11 +1504,9 @@ html:has(.theme-shop)::-webkit-scrollbar {
   width: 370px;
   max-width: calc(100vw - 32px);
   padding: 12px 22px 12px 12px;
-  border: 2px solid var(--st-ink);
   border-radius: 50px;
   background: var(--st-white);
   color: var(--st-ink);
-  box-shadow: 4px 4px 0 var(--st-ink);
   animation: st-toast-in 0.5s var(--st-ease);
 }
 
@@ -1959,10 +1580,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   width: 100%;
   max-width: 600px;
   max-height: min(760px, calc(100vh - 48px));
-  border-radius: var(--st-r-card);
-  border: 2px solid var(--st-ink);
-  background: var(--st-cream);
-  box-shadow: 8px 8px 0 var(--st-ink);
   overflow: hidden;
   animation: st-pop 0.4s var(--st-ease);
 }
@@ -1978,8 +1595,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
 .theme-shop .st-modal__title {
   font-family: var(--st-display);
   font-size: 40px;
-  font-weight: 500;
-  letter-spacing: -0.025em;
   line-height: 1;
 }
 
@@ -2001,9 +1616,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   overflow: hidden;
   margin: 0;
   padding: 80px var(--st-gutter) 36px;
-  border-radius: 0;
-  background: var(--st-navy);
-  color: var(--st-white);
 }
 
 .theme-shop .st-footer__inner {
@@ -2020,9 +1632,7 @@ html:has(.theme-shop)::-webkit-scrollbar {
 .theme-shop .st-footer__title {
   font-family: var(--st-display);
   font-size: clamp(36px, 4.4vw, 56px);
-  font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.035em;
 }
 
 .theme-shop .st-footer__lede {
@@ -2040,9 +1650,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   margin-top: 32px;
   padding: 0 8px 0 26px;
   border-radius: 50px;
-  border: 2px solid var(--st-ink);
-  background: var(--st-white);
-  color: var(--st-ink);
   font-size: 17px;
   font-weight: 500;
   transition: transform 0.35s var(--st-ease);
@@ -2055,7 +1662,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--st-sky);
 }
 
 .theme-shop .st-footer__cta:hover {
@@ -2093,14 +1699,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   border-radius: 50px;
   font-size: 15px;
   font-weight: 500;
-}
-
-.theme-shop .st-footer__links button {
-  color: var(--st-white);
-}
-
-.theme-shop .st-footer__links button:hover {
-  background: rgba(255, 255, 255, 0.14);
 }
 
 .theme-shop .st-footer :focus-visible {
@@ -2235,10 +1833,6 @@ html:has(.theme-shop)::-webkit-scrollbar {
   .theme-shop .st-header__aside p,
   .theme-shop .st-lede {
     font-size: 18px;
-  }
-
-  .theme-shop .st-section {
-    margin-top: 72px;
   }
 
   .theme-shop .st-panel,

@@ -1,63 +1,8 @@
 import React from 'react';
 
-/* Sky icon set: monoline 24px glyphs with round caps, plus the two filled marks of the
-   sky theme — the blue check disc and the scalloped colour seal (like a rubber stamp on
-   an invoice). Every icon is decorative unless a `title` is passed. */
-
-function Svg({ size = 20, title, children, viewBox = '0 0 24 24', ...rest }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={viewBox}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden={title ? undefined : true}
-      role={title ? 'img' : undefined}
-      focusable="false"
-      {...rest}
-    >
-      {title ? <title>{title}</title> : null}
-      {children}
-    </svg>
-  );
-}
-
-export const IconArrowLeft = (props) => (
-  <Svg {...props}><path d="M19 12H5M11 6l-6 6 6 6" /></Svg>
-);
-
-export const IconArrowUpRight = (props) => (
-  <Svg {...props}><path d="M7 17 17 7M8 7h9v9" /></Svg>
-);
-
-export const IconPlus = (props) => (
-  <Svg {...props}><path d="M12 5v14M5 12h14" /></Svg>
-);
-
-export const IconMinus = (props) => (
-  <Svg {...props}><path d="M5 12h14" /></Svg>
-);
-
-export const IconCheck = (props) => (
-  <Svg {...props}><path d="m5 12.5 4.5 4.5L19 7.5" /></Svg>
-);
-
-export const IconCompare = (props) => (
-  <Svg {...props}><path d="M4 8h13M13 4l4 4-4 4M20 16H7M11 12l-4 4 4 4" /></Svg>
-);
-
-export const IconHeart = ({ filled = false, ...props }) => (
-  <Svg {...props}>
-    <path
-      d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10Z"
-      fill={filled ? 'currentColor' : 'none'}
-    />
-  </Svg>
-);
+/* The two filled marks of the sky theme: the blue check disc and the scalloped colour
+   seal (like a rubber stamp on an invoice). Both are decorative. Line icons live in
+   SkyIconSet.js. */
 
 /* Filled blue disc with a white check — the theme's list bullet */
 export const CheckDisc = ({ size = 20, className = '' }) => (

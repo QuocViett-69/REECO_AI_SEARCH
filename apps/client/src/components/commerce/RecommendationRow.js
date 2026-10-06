@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { recommendationService } from '../../services/recommendationService';
-import { IconArrowUpRight, IconCheck, Seal } from '../common/SkyIcons';
+import { Seal } from '../common/SkyIcons';
+import { ArrowUpRight, Check } from '../common/SkyIconSet';
 import { useCart } from '../../context/CartContext';
 
 // What the relationship means to a buyer; the stamp's colour and glyph follow it.
@@ -99,7 +100,7 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
                     className={`st-btn st-btn--primary st-btn--buy st-btn--sm ${isAdded ? 'is-added' : ''}`}
                     onClick={() => handleAddToCart(item)}
                   >
-                    {isAdded ? <IconCheck size={15} /> : null}
+                    {isAdded ? <Check size={15} /> : null}
                     <span>{isAdded ? 'Added' : 'Add to cart'}</span>
                   </button>
                   <button
@@ -109,7 +110,7 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
                     aria-label={`View ${item.model}`}
                     title={`View ${item.model}`}
                   >
-                    <IconArrowUpRight size={15} />
+                    <ArrowUpRight size={15} />
                   </button>
                 </div>
               </div>

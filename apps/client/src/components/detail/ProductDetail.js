@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  CheckDisc,
-  IconArrowLeft,
-  IconArrowUpRight,
-  IconCheck,
-  IconCompare,
-  IconHeart,
-  IconMinus,
-  IconPlus,
-  Seal,
-} from '../common/SkyIcons';
+import { CheckDisc, Seal } from '../common/SkyIcons';
+import { ArrowLeft, ArrowUpRight, ArrowsLeftRight, Check, Heart, Minus, Plus } from '../common/SkyIconSet';
 import { getProductDetailApi } from '../../services/api';
 import { RecommendationRow } from '../commerce/RecommendationRow';
 import { useCart } from '../../context/CartContext';
@@ -86,7 +77,7 @@ export function ProductDetail({
           <Seal glyph="alert" tone="coral" size={48} />
           <h1>{error || 'Product not found'}</h1>
           <button type="button" className="sd-btn sd-btn--primary" onClick={onBack}>
-            <IconArrowLeft size={16} /> Go back
+            <ArrowLeft size={16} /> Go back
           </button>
         </div>
       </section>
@@ -175,7 +166,7 @@ export function ProductDetail({
     <section className="page active st-page sd-page" id="page-detail">
       <div className="sd-top">
         <button type="button" className="sd-back" onClick={onBack}>
-          <IconArrowLeft size={16} />
+          <ArrowLeft size={16} />
           {previousPage === 'search' ? 'Back to search results' : 'Back to products'}
         </button>
         <p className="sd-crumbs">
@@ -272,9 +263,9 @@ export function ProductDetail({
 
           <div className="sd-buy">
             <div className="sd-qty" role="group" aria-label="Quantity">
-              <button type="button" onClick={() => setQty((q) => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Decrease quantity"><IconMinus size={14} /></button>
+              <button type="button" onClick={() => setQty((q) => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Decrease quantity"><Minus size={14} /></button>
               <span aria-live="polite">{qty}</span>
-              <button type="button" onClick={() => setQty((q) => q + 1)} aria-label="Increase quantity"><IconPlus size={14} /></button>
+              <button type="button" onClick={() => setQty((q) => q + 1)} aria-label="Increase quantity"><Plus size={14} /></button>
             </div>
             <button
               type="button"
@@ -285,7 +276,7 @@ export function ProductDetail({
                 setTimeout(() => setJustAdded(false), 1500);
               }}
             >
-              {justAdded ? <><IconCheck size={16} /> Added</> : 'Add to cart'}
+              {justAdded ? <><Check size={16} /> Added</> : 'Add to cart'}
             </button>
             <button
               type="button"
@@ -306,7 +297,7 @@ export function ProductDetail({
               onClick={() => onToggleCompare(product.model)}
               aria-pressed={inCompare}
             >
-              {inCompare ? <IconCheck size={15} /> : <IconCompare size={15} />}
+              {inCompare ? <Check size={15} /> : <ArrowsLeftRight size={15} />}
               {inCompare ? 'In compare' : 'Compare'}
             </button>
             <button
@@ -315,11 +306,11 @@ export function ProductDetail({
               onClick={() => toggleFavorite(cartItem)}
               aria-pressed={favorite}
             >
-              <IconHeart size={15} filled={favorite} />
+              <Heart size={15} weight={favorite ? 'fill' : undefined} />
               {favorite ? 'Saved' : 'Save'}
             </button>
             <a href={productUrl} target="_blank" rel="noreferrer" className="sd-link">
-              campbellsci.com <IconArrowUpRight size={14} />
+              campbellsci.com <ArrowUpRight size={14} />
             </a>
           </div>
         </div>
@@ -479,7 +470,7 @@ export function ProductDetail({
                     <div className="sd-docs__desc">{desc}</div>
                   </div>
                   <a href={href} target="_blank" rel="noopener noreferrer" className="sd-link">
-                    {action} <IconArrowUpRight size={14} />
+                    {action} <ArrowUpRight size={14} />
                   </a>
                 </li>
               ))}

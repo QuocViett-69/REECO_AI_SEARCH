@@ -1,12 +1,9 @@
 /* ============ Storybook theme: discovery ============
-   Products catalog (cat-), AI search results (res-), product detail (pdp-) and the
-   recommendation row (rc-). Every product is a white sticker on the sky canvas; the AI's
+   Products catalog (cat-), AI search results (res-) and the recommendation row (rc-);
+   the product detail page has its own sheet (detail-sky.css). Every product is a white sticker on the sky canvas; the AI's
    best match is the one ocean-blue surface on the page. */
 
 /* ══════════════════════════ Catalog ══════════════════════════ */
-.theme-shop .cat-header {
-  padding-bottom: 40px;
-}
 
 .theme-shop .cat-toolbar {
   display: flex;
@@ -151,15 +148,6 @@
   color: var(--st-gray);
 }
 
-.theme-shop .cat-tile__foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-top: auto;
-  padding-top: 14px;
-}
-
 .theme-shop .cat-tile__price {
   min-width: 0;
   padding: 5px 10px;
@@ -240,7 +228,6 @@
   border-radius: var(--st-r-card);
   background: var(--st-white);
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -308,11 +295,6 @@
   /* pencil-line edge on parchment */
   outline: 1px solid var(--st-line);
   outline-offset: -1px;
-}
-
-.theme-shop .res-answer__model:hover {
-  background: var(--st-accent);
-  color: var(--st-on-accent);
 }
 
 .theme-shop .res-answer__basis {
@@ -426,390 +408,6 @@
   width: 24%;
 }
 
-/* ══════════════════════════ Product detail ══════════════════════════
-   One white stage: the photo on a pale-blue disc at left, everything needed to decide
-   and buy at right. Details follow in tabs. */
-.theme-shop .pdp-top {
-  padding: 16px 0 20px;
-}
-
-.theme-shop .pdp-stage {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: 16px;
-  padding: 16px;
-  border-radius: 56px;
-  background: var(--st-white);
-  /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
-  outline-offset: -1px;
-}
-
-.theme-shop .pdp-gallery {
-  position: relative;
-  min-width: 0;
-}
-
-.theme-shop .pdp-plate {
-  position: sticky;
-  top: 112px;
-  aspect-ratio: 1 / 1;
-  border-radius: 44px;
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      var(--st-cream) 0 58%,
-      transparent 58.2%
-    ),
-    linear-gradient(160deg, #fffdf6 0%, #f3efe0 100%);
-}
-
-/* Campbell photos ship on white; multiply melts the white into the disc */
-.theme-shop .pdp-plate img {
-  width: 70%;
-  height: 70%;
-  mix-blend-mode: multiply;
-}
-
-.theme-shop .pdp-plate .st-plate__fallback {
-  font-size: 48px;
-  letter-spacing: -0.03em;
-  color: var(--st-sand-deep);
-}
-
-.theme-shop .pdp-summary {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 32px 32px 28px 24px;
-}
-
-.theme-shop .pdp-path {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  font-size: 14px;
-}
-
-.theme-shop .pdp-path span {
-  padding: 5px 12px;
-  border-radius: 50px;
-  background: var(--st-cream);
-}
-
-.theme-shop .pdp-model {
-  margin-top: 20px;
-  font-family: var(--st-display);
-  font-size: clamp(40px, 4.6vw, 64px);
-  font-weight: 500;
-  line-height: 0.98;
-  letter-spacing: -0.03em;
-  overflow-wrap: anywhere;
-}
-
-.theme-shop .pdp-name {
-  margin-top: 12px;
-  max-width: 36ch;
-  font-size: 18px;
-  line-height: 1.45;
-  color: var(--st-gray);
-}
-
-/* Measures / protocols as labelled tag rows */
-.theme-shop .pdp-chips {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.theme-shop .pdp-chips > div {
-  display: grid;
-  grid-template-columns: 88px minmax(0, 1fr);
-  align-items: baseline;
-  gap: 12px;
-}
-
-.theme-shop .pdp-chips dt {
-  font-size: 14px;
-  color: var(--st-gray);
-}
-
-.theme-shop .pdp-chips dd {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.theme-shop .pdp-buy {
-  margin-top: 28px;
-  padding: 24px;
-  border-radius: 32px;
-  background: var(--st-cream);
-}
-
-.theme-shop .pdp-buy__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px 16px;
-}
-
-.theme-shop .pdp-buy__head .st-status {
-  background: var(--st-white);
-  /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
-  outline-offset: -1px;
-}
-
-.theme-shop .pdp-buy__price {
-  font-family: var(--st-display);
-  font-size: clamp(28px, 2.6vw, 36px);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  font-variant-numeric: tabular-nums;
-}
-
-.theme-shop .pdp-buy__row {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr);
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.theme-shop .pdp-buy__row .st-btn {
-  height: 52px;
-  font-size: 16px;
-}
-
-.theme-shop .pdp-buy__row .st-qty {
-  height: 52px;
-}
-
-.theme-shop .pdp-buy__row .st-qty button {
-  width: 40px;
-  height: 40px;
-}
-
-.theme-shop .pdp-buy__secondary {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.theme-shop .pdp-buy__secondary .st-link {
-  margin-left: auto;
-}
-
-.theme-shop .pdp-assure {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin-top: auto;
-  padding-top: 24px;
-  list-style: none;
-}
-
-.theme-shop .pdp-assure li {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 13px;
-  line-height: 1.4;
-  color: var(--st-gray);
-}
-
-.theme-shop .pdp-assure svg {
-  width: 36px;
-  height: 36px;
-  padding: 9px;
-  border-radius: 50%;
-  background: var(--st-cream);
-  color: var(--st-accent);
-}
-
-/* Tabs and their panel */
-.theme-shop .pdp-info-block {
-  margin-top: 72px;
-}
-
-.theme-shop .pdp-tabs {
-  margin-bottom: 16px;
-}
-
-.theme-shop .pdp-panel {
-  min-height: 160px;
-  padding: 40px;
-  border-radius: 48px;
-  background: var(--st-white);
-  /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
-  outline-offset: -1px;
-}
-
-.theme-shop .pdp-panel:focus-visible {
-  outline-offset: 4px;
-}
-
-.theme-shop .pdp-prose {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
-  gap: 48px;
-  align-items: start;
-}
-
-.theme-shop .pdp-prose__lead {
-  max-width: 46ch;
-  font-size: clamp(19px, 1.6vw, 22px);
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.015em;
-  color: var(--st-ink);
-}
-
-.theme-shop .pdp-prose__lead strong {
-  font-weight: 500;
-  padding: 0 6px;
-  border-radius: 6px;
-  background: var(--st-sun);
-}
-
-.theme-shop .pdp-prose__apps {
-  margin-top: 28px;
-}
-
-.theme-shop .pdp-prose h3 {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--st-gray);
-  margin-bottom: 12px;
-}
-
-.theme-shop .pdp-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-}
-
-.theme-shop .pdp-facts {
-  padding: 6px 22px;
-  border-radius: 28px;
-  background: var(--st-cream);
-}
-
-.theme-shop .pdp-facts > div {
-  grid-template-columns: minmax(96px, 0.8fr) minmax(0, 1.4fr);
-  border-top-color: var(--st-white);
-}
-
-.theme-shop .pdp-panel__note {
-  margin-bottom: 20px;
-  font-size: 15px;
-  color: var(--st-gray);
-}
-
-.theme-shop .pdp-panel .st-table-wrap {
-  padding: 0;
-  border-radius: 0;
-}
-
-.theme-shop .pdp-specs th[scope='row'] {
-  width: 36%;
-}
-
-.theme-shop .pdp-specs td {
-  font-weight: 500;
-}
-
-.theme-shop .pdp-specs td div + div {
-  margin-top: 4px;
-}
-
-.theme-shop .pdp-specs__hint {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 2px 10px;
-  border-radius: var(--st-r-small);
-  background: var(--st-accent);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--st-on-accent);
-}
-
-.theme-shop .pdp-caps {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  list-style: none;
-}
-
-.theme-shop .pdp-caps li {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 10px 20px 10px 10px;
-  border-radius: 50px;
-  background: var(--st-cream);
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.theme-shop .pdp-caps li svg {
-  flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  padding: 10px;
-  border-radius: 50%;
-  background: var(--st-white);
-  color: var(--st-accent);
-  /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
-  outline-offset: -1px;
-}
-
-.theme-shop .pdp-docs {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  list-style: none;
-}
-
-.theme-shop .pdp-docs li {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 18px;
-  padding: 12px 24px 12px 12px;
-  border-radius: 50px;
-  background: var(--st-cream);
-}
-
-.theme-shop .pdp-docs__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--st-white);
-  color: var(--st-accent);
-}
-
-.theme-shop .pdp-docs__title {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.theme-shop .pdp-docs__desc {
-  font-size: 14px;
-  color: var(--st-gray);
-}
-
 /* ══════════════════════════ Recommendations ══════════════════════════ */
 .theme-shop .rc {
   margin-top: 112px;
@@ -844,7 +442,6 @@
   border-radius: 50px;
   background: var(--st-white);
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
@@ -863,9 +460,7 @@
   margin-top: 28px;
   font-family: var(--st-display);
   font-size: 36px;
-  font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.03em;
   overflow-wrap: anywhere;
 }
 
@@ -883,12 +478,6 @@
   gap: 12px;
   margin-top: auto;
   padding-top: 28px;
-}
-
-.theme-shop .rc__price {
-  font-size: 17px;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
 }
 
 .theme-shop .rc__actions {
@@ -909,13 +498,6 @@
 }
 
 @media (max-width: 960px) {
-  .theme-shop .rc__head {
-    gap: 10px;
-  }
-
-  .theme-shop .rc__head p {
-    justify-self: start;
-  }
 
   .theme-shop .rc__grid {
     grid-template-columns: 1fr;
@@ -975,13 +557,6 @@
     font-size: 13px;
   }
 
-  .theme-shop .cat-tile__foot {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding-top: 10px;
-  }
-
   .theme-shop .cat-tile__price {
     align-self: flex-start;
   }
@@ -1019,16 +594,6 @@
 }
 
 /* Product detail on smaller screens */
-@media (max-width: 1080px) {
-  .theme-shop .pdp-assure {
-    grid-template-columns: 1fr;
-  }
-
-  .theme-shop .pdp-assure li {
-    flex-direction: row;
-    align-items: center;
-  }
-}
 
 @media (max-width: 960px) {
   .theme-shop .rc__head {
@@ -1039,111 +604,12 @@
   .theme-shop .rc__head p {
     justify-self: start;
   }
-
-  .theme-shop .pdp-stage {
-    grid-template-columns: 1fr;
-    border-radius: 44px;
-  }
-
-  .theme-shop .pdp-plate {
-    position: static;
-    aspect-ratio: 4 / 3;
-    border-radius: 34px;
-  }
-
-  .theme-shop .pdp-summary {
-    padding: 12px 12px 16px;
-  }
-
-  .theme-shop .pdp-prose {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
 }
 
 @media (max-width: 640px) {
-  .theme-shop .pdp-stage {
-    padding: 8px;
-    border-radius: 36px;
-  }
 
-  .theme-shop .pdp-plate {
-    aspect-ratio: 1 / 1;
-    border-radius: 28px;
-  }
-
-  .theme-shop .pdp-summary {
-    padding: 8px 8px 12px;
-  }
-
-  .theme-shop .pdp-model {
-    margin-top: 16px;
-  }
-
-  .theme-shop .pdp-name {
-    font-size: 16px;
-  }
-
-  .theme-shop .pdp-chips > div {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
-  .theme-shop .pdp-buy {
-    padding: 18px;
-    border-radius: 26px;
-  }
-
-  .theme-shop .pdp-buy__row {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-
-  .theme-shop .pdp-buy__now {
-    grid-column: 1 / -1;
-  }
-
-  .theme-shop .pdp-buy__secondary .st-link {
-    margin-left: 0;
-  }
-
-  .theme-shop .pdp-info-block,
   .theme-shop .rc {
     margin-top: 56px;
-  }
-
-  .theme-shop .pdp-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding: 2px;
-  }
-
-  .theme-shop .pdp-panel {
-    padding: 24px 18px;
-    border-radius: 32px;
-  }
-
-  .theme-shop .pdp-caps {
-    grid-template-columns: 1fr;
-  }
-
-  .theme-shop .pdp-docs li {
-    grid-template-columns: 44px minmax(0, 1fr);
-    border-radius: 30px;
-  }
-
-  .theme-shop .pdp-docs li .st-link {
-    grid-column: 2;
-    justify-self: start;
-  }
-
-  .theme-shop .pdp-docs__icon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .theme-shop .pdp-specs th[scope='row'] {
-    width: 42%;
   }
 }
 
@@ -1152,7 +618,6 @@
    left with the explanation first and the recommended products below it. The composer
    stays pinned to the bottom of the screen, like a chat app. */
 .theme-shop .chat {
-  max-width: 960px;
   padding-bottom: 8px;
 }
 
@@ -1161,33 +626,22 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px 0 8px;
 }
 
 .theme-shop .chat-head__title {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 17px;
-  font-weight: 500;
-}
-
-.theme-shop .chat-head__title .st-orb {
-  --size: 30px;
 }
 
 .theme-shop .chat-thread {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding: 24px 0 32px;
   list-style: none;
 }
 
 .theme-shop .chat-turn {
   display: flex;
   flex-direction: column;
-  gap: 18px;
   /* scrollIntoView lands below the pinned header */
   scroll-margin-top: 110px;
 }
@@ -1199,11 +653,6 @@
 
 .theme-shop .chat-bubble {
   max-width: min(640px, 85%);
-  padding: 14px 20px;
-  border-radius: 28px 28px 8px 28px;
-  background: var(--st-accent);
-  color: var(--st-on-accent);
-  font-size: 17px;
   line-height: 1.45;
   overflow-wrap: anywhere;
   animation: chat-in 0.35s var(--st-ease-out);
@@ -1211,28 +660,14 @@
 
 .theme-shop .chat-ai {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 14px;
   align-items: start;
-}
-
-.theme-shop .chat-ai__avatar {
-  --size: 40px;
-  margin-top: 2px;
 }
 
 .theme-shop .chat-ai__body {
   display: flex;
   flex-direction: column;
-  gap: 14px;
   min-width: 0;
   animation: chat-in 0.45s var(--st-ease-out);
-}
-
-.theme-shop .chat-ai__name {
-  padding-top: 8px;
-  font-size: 15px;
-  font-weight: 500;
 }
 
 @keyframes chat-in {
@@ -1330,12 +765,6 @@
 /* The explanation sits inside the AI answer, so it is lighter than a page card */
 .theme-shop .chat .res-answer {
   margin-top: 0;
-  padding: 22px 26px 24px;
-  border-radius: 8px 32px 32px 32px;
-}
-
-.theme-shop .chat .res-answer__text {
-  font-size: 18px;
 }
 
 .theme-shop .chat .res-resolved {
@@ -1351,7 +780,6 @@
 .theme-shop .chat-picks {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
 .theme-shop .chat-picks__head {
@@ -1367,14 +795,11 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 15px;
-  font-weight: 500;
 }
 
 .theme-shop .chat .res-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   margin: 0;
   list-style: none;
 }
@@ -1384,26 +809,14 @@
   display: grid;
   grid-template-columns: 112px minmax(0, 1fr) auto;
   align-items: center;
-  gap: 20px;
-  padding: 10px 22px 10px 10px;
-  border-radius: 32px;
   background: var(--st-white);
-  box-shadow: 0 0 0 2px transparent;
   transition: box-shadow 0.2s ease;
   /* pencil-line edge on parchment */
-  outline: 1px solid var(--st-line);
   outline-offset: -1px;
-}
-
-.theme-shop .res-row:hover,
-.theme-shop .res-row:focus-within {
-  box-shadow: 0 0 0 2px var(--st-ink);
 }
 
 .theme-shop .res-row .st-plate {
   width: 112px;
-  border-radius: 24px;
-  background: var(--st-cream);
 }
 
 .theme-shop .res-row .st-plate img {
@@ -1411,14 +824,6 @@
 }
 
 /* The best match leads, with a little more room and an accent edge */
-.theme-shop .res-row--best {
-  grid-template-columns: 148px minmax(0, 1fr) auto;
-  box-shadow: 0 0 0 2px var(--st-accent);
-}
-
-.theme-shop .res-row--best .st-plate {
-  width: 148px;
-}
 
 .theme-shop .res-row__flag {
   display: inline-flex;
@@ -1426,19 +831,11 @@
   gap: 6px;
   align-self: flex-start;
   margin-bottom: 6px;
-  padding: 3px 10px;
   border-radius: 50px;
-  background: var(--st-accent);
-  color: var(--st-on-accent);
-  font-size: 12px;
-  font-weight: 500;
 }
 
 .theme-shop .res-row__rank {
   margin-bottom: 4px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--st-gray-light);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1449,18 +846,10 @@
   padding: 8px 0;
 }
 
-.theme-shop .res-row__path {
-  font-size: 13px;
-  color: var(--st-gray);
-}
-
 .theme-shop .res-row__model {
   margin-top: 2px;
   font-family: var(--st-display);
-  font-size: 24px;
-  font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.035em;
 }
 
 .theme-shop .res-row .res-link::after {
@@ -1473,17 +862,13 @@
 
 .theme-shop .res-row__name {
   margin-top: 4px;
-  font-size: 15px;
   line-height: 1.4;
-  color: var(--st-ink);
 }
 
 .theme-shop .res-row__explain {
   margin-top: 8px;
   max-width: 62ch;
-  font-size: 14px;
   line-height: 1.5;
-  color: var(--st-gray);
 }
 
 .theme-shop .res-row .res-reasons {
@@ -1500,8 +885,6 @@
 }
 
 .theme-shop .res-row__price {
-  font-size: 17px;
-  font-weight: 500;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -1513,23 +896,9 @@
 /* Composer pinned to the bottom of the screen */
 .theme-shop .chat-composer {
   position: sticky;
-  bottom: 18px;
   z-index: 15;
-  display: flex;
   align-items: center;
-  margin-top: 8px;
-  padding: 8px 8px 8px 24px;
-  border-radius: 50px;
-  border: 1px solid var(--st-sand-deep);
-  background: var(--st-white);
-  box-shadow:
-    0 8px 24px -12px rgba(39, 37, 30, 0.18),
-    0 0 0 12px var(--st-canvas);
   transition: border-color 0.2s ease;
-}
-
-.theme-shop .chat-composer:focus-within {
-  border-color: var(--st-accent);
 }
 
 .theme-shop .chat-composer input {
@@ -1547,7 +916,6 @@
   color: var(--st-gray-light);
 }
 
-
 .theme-shop .chat-composer button {
   display: flex;
   align-items: center;
@@ -1556,25 +924,15 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--st-accent);
-  color: var(--st-on-accent);
   transition: background 0.2s ease;
 }
 
-.theme-shop .chat-composer button:hover:not(:disabled) {
-  background: var(--st-accent-deep);
-}
-
 .theme-shop .chat-composer button:disabled {
-  background: var(--st-cream);
-  color: var(--st-gray-light);
   cursor: not-allowed;
 }
 
 .theme-shop .chat-composer__hint {
-  margin-top: 14px;
   text-align: center;
-  font-size: 13px;
   color: var(--st-gray);
 }
 
@@ -1673,11 +1031,8 @@
 
 .theme-shop .chat .res-answer__basis {
   margin: 0;
-  padding: 4px 12px;
   border: 0;
   border-radius: 50px;
-  background: var(--st-cream);
-  font-size: 13px;
 }
 
 .theme-shop .chat .res-answer__who:not(:has(.res-answer__basis)) {
@@ -1704,8 +1059,6 @@
   z-index: 1;
   margin: 2px 2px 4px;
   padding: 18px 22px 20px;
-  border-radius: 24px;
-  background: var(--st-cream);
   animation: res-fit-open 0.3s var(--st-ease-out);
 }
 
@@ -1728,8 +1081,6 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--st-accent);
-  color: var(--st-on-accent);
 }
 
 .theme-shop .res-fit__title {

@@ -9,12 +9,8 @@
 
 /* ── Cards rest on the paper ── */
 .theme-shop .st-panel,
-.theme-shop .st-card,
 .theme-shop .st-state,
-.theme-shop .st-table-wrap,
 .theme-shop .res-answer,
-.theme-shop .pdp-stage,
-.theme-shop .pdp-panel,
 .theme-shop .rc__item,
 .theme-shop .res-row,
 .theme-shop .cm-line,
@@ -25,10 +21,7 @@
 .theme-shop .ac-detail__main > section,
 .theme-shop .cx-slot,
 .theme-shop .cx-section,
-.theme-shop .lg-main,
-.theme-shop .ad-figure,
-.theme-shop .ad-items,
-.theme-shop .ad-split__aside > section {
+.theme-shop .lg-main {
   outline: none;
   background-color: var(--st-white);
   box-shadow: var(--st-shadow);
@@ -42,31 +35,11 @@
   box-shadow: var(--st-shadow-raised);
 }
 
-/* The best AI match keeps a clear edge: ink ring over the paper shadow */
-.theme-shop .res-row--best,
-.theme-shop .res-row--best:hover {
-  box-shadow: 0 0 0 2px var(--st-ink), var(--st-shadow-raised);
-}
-
 /* ── Type: bold display, small-caps labels ── */
 .theme-shop h1,
 .theme-shop h2,
 .theme-shop h3 {
   font-family: var(--st-display);
-}
-
-.theme-shop .st-display,
-.theme-shop .st-header h1 {
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-}
-
-.theme-shop .st-heading,
-.theme-shop .pdp-summary h1,
-.theme-shop #pdp-model {
-  font-weight: 700;
-  letter-spacing: -0.025em;
 }
 
 /* ── Page headers: centred stack like a café section opener ── */
@@ -93,36 +66,21 @@
 .theme-shop .st-lede {
   font-size: 18px;
   line-height: 1.5;
-  color: var(--st-charcoal);
 }
 
 /* ── Buttons: ghost pill, ink pill, terracotta for buying ── */
 .theme-shop .st-btn {
   border: 1px solid var(--st-line);
   background: var(--st-white);
-  font-weight: 600;
-  letter-spacing: -0.01em;
 }
 
 .theme-shop .st-btn:hover {
-  border-color: var(--st-ink);
   background: var(--st-white);
   transform: none;
 }
 
 .theme-shop .st-btn--sm {
   border-width: 1px;
-}
-
-.theme-shop .st-btn--primary {
-  border-color: var(--st-cta);
-  background: var(--st-cta);
-  color: var(--st-on-cta);
-}
-
-.theme-shop .st-btn--primary:hover {
-  border-color: var(--st-cta-deep);
-  background: var(--st-cta-deep);
 }
 
 .theme-shop .st-btn--buy,
@@ -174,13 +132,6 @@
   border-color: var(--st-ink);
 }
 
-.theme-shop .st-tab[aria-pressed='true'],
-.theme-shop .st-tab[aria-selected='true'] {
-  border-color: var(--st-ink);
-  background: var(--st-ink);
-  color: #ffffff;
-}
-
 .theme-shop .st-tab__count {
   background: var(--st-canvas);
   color: var(--st-gray);
@@ -215,7 +166,6 @@
 }
 
 /* ── Prices read bold ── */
-.theme-shop .pdp-buy__price,
 .theme-shop .ac-fav__price {
   font-weight: 700;
 }
@@ -227,12 +177,6 @@
 
 .theme-shop .st-plate img {
   mix-blend-mode: multiply;
-}
-
-/* ── Toasts and modals float like the support popovers ── */
-.theme-shop .toast,
-.theme-shop .st-modal {
-  box-shadow: var(--st-shadow-raised);
 }
 
 /* ── Header (shared with home): quiet pills, marigold count once something waits ── */
@@ -365,24 +309,13 @@
   letter-spacing: -0.025em;
 }
 
-/* ── Footer: the arrow chip picks up the marigold ── */
-.theme-shop .st-footer__cta span {
-  background: var(--st-marigold);
-  color: var(--st-ink);
-}
-
 /* ── Big numbers (dashboard figures, order totals) carry the bold display voice ── */
 .theme-shop .ac-figure dd,
-.theme-shop .ad-figure dd,
 .theme-shop .st-sum__total strong,
 .theme-shop .st-sum__total dd,
 .theme-shop .st-sum__total > span:last-child {
   font-weight: 700;
   letter-spacing: -0.03em;
-}
-
-.theme-shop .ac-figure dt {
-  color: var(--st-charcoal);
 }
 
 /* Status and account tags: hairline pills */
@@ -396,8 +329,6 @@
 .theme-shop .st-modal__title,
 .theme-shop .st-footer__title,
 .theme-shop .st-sum__total strong,
-.theme-shop .pdp-model,
-.theme-shop .pdp-buy__price,
 .theme-shop .rc__model,
 .theme-shop .cm-line__heading,
 .theme-shop .cm-line__total,
@@ -420,7 +351,6 @@
 .theme-shop .cm-step__num,
 .theme-shop .ac-day__label,
 .theme-shop .ac-aside-title,
-.theme-shop .ad-aside-title,
 .theme-shop .cx-add__label,
 .theme-shop .cx-section__title {
   font-weight: 600;
