@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException, ServiceUnavailableException, ConflictException, BadRequestException, InternalServerErrorException } from '@nestjs/common';
+import { Injectable, UnauthorizedException, ConflictException, InternalServerErrorException } from '@nestjs/common';
 import { SupabaseService } from '../../database/supabase/supabase.service';
 import type { LoginRequest, RegisterRequest, RefreshRequest, UpdateMeRequest, AuthSession, Me } from '@reeco/shared';
 import { User } from '@supabase/supabase-js';
@@ -39,7 +39,7 @@ export class AuthService {
 
   async register(data: RegisterRequest): Promise<AuthSession> {
     const client = this.supabase.getClient();
-    const { data: userData, error } = await client.auth.admin.createUser({
+    const { error } = await client.auth.admin.createUser({
       email: data.email,
       password: data.password,
       email_confirm: true,

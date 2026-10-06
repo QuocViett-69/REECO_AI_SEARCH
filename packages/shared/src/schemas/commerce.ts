@@ -57,7 +57,8 @@ export const SHIPPING_METHODS: Record<ShippingMethod, {
   express: {
     id: 'express',
     name: 'Express Air Freight',
-    fee: 750000,
+    // Must match the fee the API charges (apps/api/src/modules/orders/orders.constants.ts)
+    fee: 500000,
     deliveryDaysMin: 2,
     deliveryDaysMax: 3,
     description: 'Express air freight: 2–3 business days',

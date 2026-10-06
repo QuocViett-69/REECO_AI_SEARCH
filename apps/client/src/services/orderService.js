@@ -2,9 +2,28 @@
 // Client API integration via apiFetch, with VND currency and strict server synchronization.
 
 import { apiFetch } from './apiFetch.js';
-import { SHIPPING_METHODS } from '@reeco/shared';
 
-export { SHIPPING_METHODS };
+// Kept in the client rather than imported from @reeco/shared: that package pulls in zod,
+// whose CommonJS entry (index.cjs) Create React App bundles as a static file, so the app
+// crashes on load. Keep the fees in step with apps/api/src/modules/orders/orders.constants.ts.
+export const SHIPPING_METHODS = {
+  standard: {
+    id: 'standard',
+    name: 'Standard Delivery',
+    fee: 250000,
+    deliveryDaysMin: 7,
+    deliveryDaysMax: 10,
+    description: 'Standard delivery: 7–10 business days',
+  },
+  express: {
+    id: 'express',
+    name: 'Express Air Freight',
+    fee: 500000,
+    deliveryDaysMin: 2,
+    deliveryDaysMax: 3,
+    description: 'Express air freight: 2–3 business days',
+  },
+};
 
 export const ORDER_STATUSES = {
   PENDING_PAYMENT: { label: 'Pending Payment', step: 1, color: '#ffb020' },
