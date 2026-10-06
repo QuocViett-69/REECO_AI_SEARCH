@@ -19,7 +19,7 @@ import {
   SignOut,
   User,
   WarningCircle,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 import { OrderStatusBadge } from './orderStatusBadge';
 import '../../styles/studio/account.css';
 

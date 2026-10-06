@@ -11,7 +11,7 @@ import {
   Warning,
   WifiSlash,
   X,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 
 import { FavoriteButton } from '../commerce/FavoriteButton';
 import { AddToCartButton } from '../commerce/AddToCartButton';

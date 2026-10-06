@@ -19,7 +19,8 @@ export class AuthService {
   }
 
   async login(credentials: LoginRequest): Promise<AuthSession> {
-    const client = this.supabase.getClient();
+    // Never sign in on the shared service-role client (see createSessionClient)
+    const client = this.supabase.createSessionClient();
     const { data, error } = await client.auth.signInWithPassword({
       email: credentials.email,
       password: credentials.password,
@@ -62,7 +63,7 @@ export class AuthService {
   }
 
   async refresh(data: RefreshRequest): Promise<AuthSession> {
-    const client = this.supabase.getClient();
+    const client = this.supabase.createSessionClient();
     const { data: refreshData, error } = await client.auth.refreshSession({
       refresh_token: data.refresh_token,
     });

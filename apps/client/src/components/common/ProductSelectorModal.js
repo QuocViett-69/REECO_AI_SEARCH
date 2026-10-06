@@ -1,6 +1,6 @@
 import '../../styles/studio/compare-login-admin.css';
 import React, { useState, useEffect, useRef } from 'react';
-import { Check, CircleNotch, MagnifyingGlass, X } from '@phosphor-icons/react';
+import { Check, CircleNotch, MagnifyingGlass, X } from './SkyIconSet';
 import { getProductsApi } from '../../services/api';
 import { sizedImage } from '../../services/images';
 

@@ -14,7 +14,7 @@ import {
   ShoppingCart,
   User,
   X,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { useFavorite } from '../../context/FavoriteContext';

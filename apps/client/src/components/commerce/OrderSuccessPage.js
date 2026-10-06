@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/studio/commerce.css';
-import { CircleNotch, Package, ShoppingBag, WarningCircle } from '@phosphor-icons/react';
+import { CircleNotch, Package, ShoppingBag, WarningCircle } from '../common/SkyIconSet';
 import { orderService, formatCurrency } from '../../services/orderService';
 import { PaperCutStation } from '../common/PaperCutStation';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../../context/CartContext';
-import { Check, ShoppingCart } from '@phosphor-icons/react';
+import { Check, ShoppingCart } from '../common/SkyIconSet';
 
 export function AddToCartButton({
   product,

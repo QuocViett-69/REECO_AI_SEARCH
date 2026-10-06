@@ -46,6 +46,7 @@ export function ProductDetail({
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [qty, setQty] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
   const { addToCart } = useCart();
   const { isFavorite, toggleFavorite } = useFavorite();
 
@@ -275,8 +276,16 @@ export function ProductDetail({
               <span aria-live="polite">{qty}</span>
               <button type="button" onClick={() => setQty((q) => q + 1)} aria-label="Increase quantity"><IconPlus size={14} /></button>
             </div>
-            <button type="button" className="sd-btn sd-btn--primary" onClick={() => addToCart(cartItem, qty)}>
-              Add to cart
+            <button
+              type="button"
+              className={`sd-btn sd-btn--primary ${justAdded ? 'is-added' : ''}`}
+              onClick={() => {
+                addToCart(cartItem, qty);
+                setJustAdded(true);
+                setTimeout(() => setJustAdded(false), 1500);
+              }}
+            >
+              {justAdded ? <><IconCheck size={16} /> Added</> : 'Add to cart'}
             </button>
             <button
               type="button"

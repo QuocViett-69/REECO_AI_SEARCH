@@ -9,7 +9,7 @@ import {
   Trash,
   WarningCircle,
   X,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 import { getProductDetailApi } from '../../services/api';
 import { buildSpecMap } from '../../services/specifications';
 import { sizedImage } from '../../services/images';

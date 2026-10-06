@@ -413,10 +413,16 @@
   background: #1f2636;
 }
 
-.page-products .cat-page .cat-tile__actions .st-btn.is-on,
-.page-products .cat-page .cat-tile__actions .cat-tile__buy.is-added {
+.page-products .cat-page .cat-tile__actions .st-btn.is-on {
   border-color: var(--sky-midnight);
   background: var(--sky-midnight);
+  color: #ffffff;
+}
+
+.page-products .cat-page .cat-tile__actions .cat-tile__buy.is-added,
+.page-products .cat-page .cat-tile__actions .cat-tile__buy.is-added:hover {
+  border-color: var(--sky-added);
+  background: var(--sky-added);
   color: #ffffff;
 }
 

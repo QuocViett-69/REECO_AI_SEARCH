@@ -2,8 +2,8 @@ import '../../styles/studio/compare-login-admin.css';
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { PaperCutStation } from '../common/PaperCutStation';
-import { ArrowLeft, Key, User, WarningCircle } from '@phosphor-icons/react';
-import { Link, useNavigate } from 'react-router-dom';
+import { ArrowLeft, Key, User, WarningCircle } from '../common/SkyIconSet';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 export function RegisterPage({ onNavigate }) {
   const { register, isAuthenticated } = useAuth();
@@ -42,7 +42,7 @@ export function RegisterPage({ onNavigate }) {
       if (redirect && redirect.startsWith('/')) {
         window.location.href = redirect;
       } else if (onNavigate) {
-        onNavigate('account/profile');
+        onNavigate('account-profile');
       } else {
         navigate('/account/profile');
       }
@@ -70,13 +70,9 @@ export function RegisterPage({ onNavigate }) {
     </aside>
   );
 
+  // Already signed in: redirect declaratively (navigating during render warns in React)
   if (isAuthenticated) {
-    if (onNavigate) {
-      onNavigate('account/profile');
-    } else {
-      navigate('/account/profile');
-    }
-    return null;
+    return <Navigate to="/account/profile" replace />;
   }
 
   return (

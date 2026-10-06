@@ -1,0 +1,350 @@
+/* ============ Account, orders and cart on the sky ============
+   Loaded last (index.js), after account.css and commerce.css. Brings the account area
+   (dashboard, orders, order detail, notifications, profile, favorites) and the cart /
+   checkout cards in line with the products and detail pages: white paper cards with a
+   16px radius and a soft lift instead of pencil outlines, small-caps eyebrow labels,
+   midnight pills, and colour seals in place of the cut-paper stickers and icon tiles.
+   Tokens (--sky-*) live in sky.css. */
+
+/* ── Seal shape shared by the stickers (.st-orb) and icon plates (.ac-icon) ── */
+.theme-shop {
+  --sky-seal-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0L58.8 5.9 69.1 3.8 75 12.6 85.4 14.6 87.4 25 96.2 30.9 94.1 41.2 100 50 94.1 58.8 96.2 69.1 87.4 75 85.4 85.4 75 87.4 69.1 96.2 58.8 94.1 50 100 41.2 94.1 30.9 96.2 25 87.4 14.6 85.4 12.6 75 3.8 69.1 5.9 58.8 0 50 5.9 41.2 3.8 30.9 12.6 25 14.6 14.6 25 12.6 30.9 3.8 41.2 5.9Z'/%3E%3C/svg%3E");
+  --sky-iris: #6c56fc;
+  --sky-leaf: #5d9c06;
+  --sky-coral: #ff6363;
+}
+
+/* The cut-paper landscape sticker becomes a flat colour seal with a white glyph */
+.theme-shop .st-orb {
+  border: 0;
+  border-radius: 0;
+  background: var(--sky-blue);
+  overflow: visible;
+  -webkit-mask: var(--sky-seal-mask) center / contain no-repeat;
+  mask: var(--sky-seal-mask) center / contain no-repeat;
+}
+
+.theme-shop .st-orb::before,
+.theme-shop .st-orb::after {
+  display: none;
+}
+
+.theme-shop .st-orb--violet { background: var(--sky-iris); }
+.theme-shop .st-orb--ember { background: var(--sky-coral); }
+.theme-shop .st-orb--stone { background: #e3e9f1; }
+
+.theme-shop .st-orb__icon {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+.theme-shop .st-orb--stone .st-orb__icon {
+  color: var(--sky-ink);
+}
+
+.theme-shop .st-state .st-orb {
+  --size: 72px;
+  margin-bottom: 4px;
+}
+
+/* Empty / error / loading states: one white sheet */
+.theme-shop .st-state {
+  border-radius: 32px;
+  outline: none;
+  box-shadow: var(--sky-lift);
+}
+
+.theme-shop .st-state__title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+/* Icon plates become small seals */
+.theme-shop .ac-icon {
+  border-radius: 0;
+  background: #e3e9f1;
+  color: var(--sky-ink);
+  -webkit-mask: var(--sky-seal-mask) center / contain no-repeat;
+  mask: var(--sky-seal-mask) center / contain no-repeat;
+}
+
+.theme-shop .ac-icon--lilac { background: var(--sky-midnight); color: #ffffff; }
+.theme-shop .ac-icon--sky { background: var(--sky-blue); color: #ffffff; }
+.theme-shop .ac-icon--coral { background: var(--sky-coral); color: #ffffff; }
+.theme-shop .ac-icon--sun { background: var(--sky-leaf); color: #ffffff; }
+.theme-shop .ac-icon--cream { background: #e3e9f1; color: var(--sky-ink); }
+
+/* ── Paper cards: 16px radius, soft lift, no pencil outline ── */
+.theme-shop .ac-figure,
+.theme-shop .ac-recent,
+.theme-shop .ac-link,
+.theme-shop .ac-order,
+.theme-shop .ac-note,
+.theme-shop .ac-detail__main > section,
+.theme-shop .ac-detail__aside > section,
+.theme-shop .ac-id,
+.theme-shop .ac-fav,
+.theme-shop .cm-line,
+.theme-shop .cm-step,
+.theme-shop .cm-moment,
+.theme-shop .cm-celebrate {
+  border-radius: 16px;
+  outline: none;
+  background: #ffffff;
+  box-shadow: var(--sky-lift);
+}
+
+.theme-shop .ac-link:hover,
+.theme-shop .ac-order:hover,
+.theme-shop .ac-fav:hover {
+  box-shadow: var(--sky-lift-raised);
+}
+
+/* Rows inside a card: flat snow wells with a hairline, not nested cards */
+.theme-shop .ac-recent__row,
+.theme-shop .ac-item,
+.theme-shop .ac-history__item {
+  border-radius: 12px;
+  outline: none;
+  background: var(--sky-snow);
+  box-shadow: none;
+}
+
+.theme-shop .ac-recent__row:hover {
+  background: #eef3f8;
+}
+
+.theme-shop .st-thumb,
+.theme-shop .ac-fav .st-plate,
+.theme-shop .cm-line__thumb {
+  border-radius: 12px;
+  outline: none;
+}
+
+/* ── Labels: 11px small caps, smoke ── */
+.theme-shop .ac-order__label,
+.theme-shop .ac-rows dt,
+.theme-shop .ac-kv dt,
+.theme-shop .ac-figure dt,
+.theme-shop .ac-eta__label,
+.theme-shop .ac-day__label span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--sky-smoke);
+}
+
+/* ── Headings and figures: semibold, tight ── */
+.theme-shop .ac-board__title,
+.theme-shop .ac-block__title,
+.theme-shop .ac-aside-title,
+.theme-shop .ac-id__name,
+.theme-shop .ac-order__id,
+.theme-shop .ac-recent__id,
+.theme-shop .ac-item__model {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.theme-shop .ac-board__title,
+.theme-shop .ac-block__title {
+  font-size: 24px;
+}
+
+.theme-shop .ac-figure {
+  min-height: 0;
+  padding: 24px;
+  gap: 16px;
+}
+
+.theme-shop .ac-figure dd {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+/* Tone dot: a small flat chip, no ink ring */
+.theme-shop .ac-figure::after {
+  top: 24px;
+  right: 24px;
+  width: 12px;
+  height: 12px;
+  box-shadow: none;
+}
+
+.theme-shop .ac-figure--lilac { --tone: var(--sky-midnight); }
+.theme-shop .ac-figure--sky { --tone: var(--sky-blue); }
+.theme-shop .ac-figure--sun { --tone: var(--sky-leaf); }
+.theme-shop .ac-figure--coral { --tone: var(--sky-coral); }
+
+/* ── Dashboard hero: glass chips, seals stamped on the right ── */
+.theme-shop .ac-hello__meta span,
+.theme-shop .ac-eta,
+.theme-shop .ac-day__label span {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: var(--sky-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* The three stickers become a loose stack of paper sheets with one blue stamp on top */
+.theme-shop .ac-hero__sticker--a,
+.theme-shop .ac-hero__sticker--b {
+  -webkit-mask: none;
+  mask: none;
+  border-radius: 16px;
+  background:
+    linear-gradient(var(--sky-mist), var(--sky-mist)) 22px 30px / 38% 8px no-repeat,
+    linear-gradient(#e3e9f1, #e3e9f1) 22px 54px / 62% 6px no-repeat,
+    repeating-linear-gradient(180deg, transparent 0 22px, #edf1f6 22px 23px) 22px 92px / calc(100% - 44px) 60% no-repeat,
+    #ffffff;
+  box-shadow: var(--sky-lift-raised);
+}
+
+.theme-shop .ac-hero__sticker--a {
+  --size: clamp(170px, 19vw, 260px);
+  height: calc(var(--size) * 1.2);
+  left: 6%;
+  top: 0;
+  transform: rotate(-6deg);
+}
+
+.theme-shop .ac-hero__sticker--b {
+  --size: clamp(150px, 17vw, 230px);
+  height: calc(var(--size) * 1.2);
+  right: 0;
+  top: 10%;
+  transform: rotate(5deg);
+}
+
+.theme-shop .ac-hero__sticker--c {
+  --size: clamp(64px, 7vw, 96px);
+  left: 44%;
+  bottom: 4%;
+  background: var(--sky-blue);
+  transform: rotate(-12deg);
+}
+
+/* ── Profile: avatar seal with white initials; detail rows are white sheets ── */
+.theme-shop .ac-rows > div {
+  border-radius: 16px;
+  outline: none;
+  background: #ffffff;
+  box-shadow: var(--sky-lift);
+}
+
+.theme-shop .ac-id__initials {
+  outline: none;
+  box-shadow: none;
+  font-weight: 600;
+}
+
+/* ── Order detail: progress steps as blue checks and numbered rings ── */
+.theme-shop .ac-step::before {
+  width: 2px;
+  background: var(--sky-mist);
+}
+
+.theme-shop .ac-step.is-done::before {
+  background: var(--sky-blue);
+}
+
+.theme-shop .ac-step__mark {
+  border: 1.5px solid var(--sky-mist);
+  background: #ffffff;
+  box-shadow: none;
+  color: var(--sky-smoke);
+  font-weight: 600;
+}
+
+.theme-shop .ac-step.is-done .ac-step__mark {
+  border-color: var(--sky-blue);
+  background: var(--sky-blue);
+  color: #ffffff;
+}
+
+.theme-shop .ac-step.is-current .ac-step__mark {
+  overflow: visible;
+  border-color: var(--sky-midnight);
+  background: var(--sky-midnight);
+  color: #ffffff;
+  background-image: radial-gradient(circle, #ffffff 0 4px, transparent 4.5px);
+  box-shadow: 0 0 0 5px rgba(0, 152, 242, 0.18);
+}
+
+.theme-shop .ac-step.is-current .ac-step__mark::before,
+.theme-shop .ac-step.is-current .ac-step__mark::after {
+  display: none;
+}
+
+.theme-shop .ac-step__title .st-tag {
+  border: 0;
+  background: var(--sky-ice);
+  color: #075985;
+}
+
+.theme-shop .ac-history__item::before {
+  box-shadow: none;
+}
+
+/* ── Order list cells and totals ── */
+.theme-shop .ac-order__total,
+.theme-shop .ac-item__total {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.theme-shop .ac-order__end .st-btn {
+  border-color: var(--sky-midnight);
+  background: var(--sky-midnight);
+  color: #ffffff;
+}
+
+/* Status pills: soft fill instead of an outlined chip */
+.theme-shop .st-status {
+  outline: none;
+  border: 0;
+  background: var(--sky-snow);
+  font-weight: 500;
+}
+
+.theme-shop .st-status--green { background: rgba(93, 156, 6, 0.12); color: #3f6c03; }
+.theme-shop .st-status--blue { background: rgba(0, 152, 242, 0.1); color: #075985; }
+.theme-shop .st-status--amber { background: rgba(217, 152, 0, 0.14); color: #7a5300; }
+.theme-shop .st-status--red { background: rgba(255, 99, 99, 0.14); color: #a8262a; }
+
+.theme-shop .st-status::before {
+  width: 8px;
+  height: 8px;
+  box-shadow: none;
+}
+
+.theme-shop .st-status--green::before { background: var(--sky-leaf); }
+.theme-shop .st-status--blue::before { background: var(--sky-blue); }
+.theme-shop .st-status--amber::before { background: #d99800; }
+.theme-shop .st-status--red::before { background: var(--sky-coral); }
+
+/* Back links: the same glass pill as the detail page */
+.theme-shop .st-back {
+  height: 40px;
+  padding: 0 16px 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  background: var(--sky-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-weight: 500;
+}
+
+.theme-shop .st-back:hover {
+  background: #ffffff;
+}

@@ -11,7 +11,7 @@ import {
   ShoppingCart,
   Trash,
   Truck,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 
 export function CartPage({ onNavigate }) {
   const { items, cartCount, cartSubtotal, updateQuantity, removeFromCart, clearCart } = useCart();

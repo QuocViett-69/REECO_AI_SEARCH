@@ -8,6 +8,7 @@ import App from './App';
 import './styles/studio/cafe.css';
 // Sky layer last: remaps the palette and puts every shop page on the sky
 import './styles/studio/sky.css';
+import './styles/studio/account-sky.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

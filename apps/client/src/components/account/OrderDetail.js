@@ -15,7 +15,7 @@ import {
   WarningCircle,
   X,
   XCircle,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 import { OrderStatusBadge, PaymentStatusBadge, getOrderStatusBadge } from './orderStatusBadge';
 import '../../styles/studio/account.css';
 
@@ -328,7 +328,7 @@ export function OrderDetail({ orderId, onBack }) {
               ) : (
                 <ol className="ac-history__list">
                   {statusHistory.map((h, idx) => {
-                    const badge = getOrderStatusBadge(h.status);
+                    const badge = getOrderStatusBadge(h.to_status || h.status);
                     const note = formatTimelineNote(h.note || h.reason);
                     return (
                       <li key={h.id || idx} className={`ac-history__item ac-history__item--${badge.tone}`}>

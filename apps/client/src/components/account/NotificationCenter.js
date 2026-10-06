@@ -12,7 +12,7 @@ import {
   Package,
   Truck,
   WarningCircle,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 import '../../styles/studio/account.css';
 
 function getRelativeTime(isoString) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight } from '@phosphor-icons/react';
+import { ArrowUpRight } from '../common/SkyIconSet';
 import { PaperCutStation } from '../common/PaperCutStation';
 
 // Closing band for every page except the home hero.

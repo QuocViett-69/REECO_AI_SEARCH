@@ -6,7 +6,7 @@ import {
   Package,
   ShoppingBag,
   X,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 import { verifyVnpayReturn, createVnpayPaymentUrl } from '../../services/paymentService';
 import { formatCurrency } from '../../services/orderService';
 import { PaperCutStation } from '../common/PaperCutStation';

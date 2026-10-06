@@ -2,7 +2,7 @@ import '../../styles/studio/compare-login-admin.css';
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { PaperCutStation } from '../common/PaperCutStation';
-import { ArrowLeft, Key, User, WarningCircle } from '@phosphor-icons/react';
+import { ArrowLeft, Key, User, WarningCircle } from '../common/SkyIconSet';
 import { Link } from 'react-router-dom';
 
 export function LoginPage({ onNavigate, returnTo = 'account' }) {

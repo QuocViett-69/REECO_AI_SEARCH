@@ -15,7 +15,7 @@ import {
   ShoppingCart,
   Truck,
   WarningCircle,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 
 const CHECKOUT_DRAFT_KEY = 'reeco_checkout_draft';
 const ACTIVE_PAYMENT_KEY = 'reeco_active_payment';

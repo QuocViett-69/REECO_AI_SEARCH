@@ -6,7 +6,7 @@ import {
   MagnifyingGlass,
   MagnifyingGlassMinus,
   Warning,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 import { getProductsApi } from '../../services/api';
 import { FavoriteButton } from '../commerce/FavoriteButton';
 import { AddToCartButton } from '../commerce/AddToCartButton';

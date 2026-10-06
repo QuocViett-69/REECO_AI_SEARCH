@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFavorite } from '../../context/FavoriteContext';
-import { Heart } from '@phosphor-icons/react';
+import { Heart } from '../common/SkyIconSet';
 
 export function FavoriteButton({ product, className = '', style = {}, size = 16, showLabel = false }) {
   const { isFavorite, toggleFavorite } = useFavorite();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Info, WarningCircle } from '@phosphor-icons/react';
+import { Check, Info, WarningCircle } from './SkyIconSet';
 
 export function ToastContainer({ toasts }) {
   if (!toasts || toasts.length === 0) return null;

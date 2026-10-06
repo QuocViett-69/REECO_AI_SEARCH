@@ -14,8 +14,7 @@ import {
   type ProductListResponse,
 } from '@reeco/shared';
 import { SupabaseAuthGuard } from '../../auth/supabase-auth.guard';
-import { RolesGuard } from '../../auth/roles.guard';
-import { Roles } from '../../auth/roles.decorator';
+import { AdminGuard } from '../../auth/admin.guard';
 import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
 import { ProductsService } from '../products/products.service';
 import {
@@ -24,8 +23,7 @@ import {
 } from './admin-product-update.schema';
 
 @Controller('admin/products')
-@UseGuards(SupabaseAuthGuard, RolesGuard)
-@Roles('admin')
+@UseGuards(SupabaseAuthGuard, AdminGuard)
 export class AdminController {
   constructor(private readonly productsService: ProductsService) { }
 

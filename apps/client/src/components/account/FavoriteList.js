@@ -8,7 +8,7 @@ import {
   Heart,
   ShoppingCart,
   X,
-} from '@phosphor-icons/react';
+} from '../common/SkyIconSet';
 import '../../styles/studio/account.css';
 
 export function FavoriteList({ onNavigate, onViewDetail }) {
