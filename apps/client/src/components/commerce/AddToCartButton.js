@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../../context/CartContext';
-import { ShoppingCart, Check } from 'lucide-react';
+import { Check, ShoppingCart } from '../common/SkyIconSet';
 
 export function AddToCartButton({
   product,
@@ -30,10 +30,11 @@ export function AddToCartButton({
   return (
     <button
       type="button"
-      className={`btn ${justAdded ? 'btn-success' : 'btn-primary'} ${className}`}
+      className={`st-btn st-btn--primary st-btn--buy ${justAdded ? 'is-added' : ''} ${className}`}
       onClick={handleClick}
       style={style}
       title="Add to shopping cart"
+      aria-label={showLabel ? undefined : justAdded ? `Added ${product.model || ''} to cart` : `Add ${product.model || ''} to cart`}
     >
       {justAdded ? (
         <>

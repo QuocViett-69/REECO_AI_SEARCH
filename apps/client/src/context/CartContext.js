@@ -10,7 +10,7 @@ export function CartProvider({ children }) {
   const { user, isAuthenticated } = useAuth();
 
   const getStorageKey = useCallback(() => {
-    return isAuthenticated && user ? `reeco_cart_${user.username}` : GUEST_CART_KEY;
+    return isAuthenticated && user ? `reeco_cart_${user.id}` : GUEST_CART_KEY;
   }, [isAuthenticated, user]);
 
   const [items, setItems] = useState(() => {
@@ -25,7 +25,7 @@ export function CartProvider({ children }) {
   // Load items when user changes (guest vs authenticated) & handle merge
   useEffect(() => {
     if (isAuthenticated && user) {
-      const userKey = `reeco_cart_${user.username}`;
+      const userKey = `reeco_cart_${user.id}`;
       const savedUserCart = localStorage.getItem(userKey);
       const userCartItems = savedUserCart ? parseStoredItems(savedUserCart) : [];
 

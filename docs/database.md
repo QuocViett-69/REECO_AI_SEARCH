@@ -3,8 +3,9 @@
 The committed migration creates the first PostgreSQL search foundation for REECO:
 
 - `products`: all Product Master rows in the current dataset. `status = 'active'` is the
-  search-eligibility rule. The current MVP snapshot is 50 total / 42 active / 8 review; these counts
-  are informational and are not validation constraints.
+  search-eligibility rule. The MVP snapshot at the time was 50 total / 42 active / 8 review; the
+  current product master holds 89 products, all active (`data/reports/product-master-report.json`).
+  These counts are informational and are not validation constraints.
 - `product_specifications`: normalized specification values for active products only.
 - `product_documents`: one complete Search Document per active product, guarded by `content_hash`.
 - `product_media`: primary image/product URLs with an extensible media type, position, and metadata shape.
@@ -136,3 +137,13 @@ explicit: load the server-only application environment and run
 canary. Execute mode records counters, processed product IDs/models, and sanitized failure codes, never
 vectors, full search text, or credentials. The Step 7.3B hosted run completed a one-product canary, the
 remaining 41-product backfill, and an idempotency run with zero provider calls and zero database updates.
+
+## Commerce tables
+
+Migration `20261001000000_commerce_foundation.sql` adds `product_prices` (VND), `orders`
+(`order_number` sequence from 1001, generated `order_code` `REECO-<n>`, status/payment CHECKs, amounts
+constrained to `total = subtotal + shipping_fee`, unique `vnpay_txn_ref`), `order_items`,
+`order_status_history` (`from_status`, `to_status`, `changed_by` uuid referencing `auth.users`, `note`),
+and `notifications` (`ORDER_CREATED`, `PAYMENT_UPDATED`, `ORDER_STATUS_CHANGED`, `read_at`). RLS is
+enabled on all of them with no policies and grants are revoked from `anon`/`authenticated`, so only the
+API (service role) reads or writes them.

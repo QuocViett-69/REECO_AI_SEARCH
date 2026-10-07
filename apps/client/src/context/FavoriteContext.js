@@ -10,7 +10,7 @@ export function FavoriteProvider({ children }) {
   const { user, isAuthenticated } = useAuth();
 
   const getStorageKey = useCallback(() => {
-    return isAuthenticated && user ? `reeco_favorites_${user.username}` : GUEST_FAVORITES_KEY;
+    return isAuthenticated && user ? `reeco_favorites_${user.id}` : GUEST_FAVORITES_KEY;
   }, [isAuthenticated, user]);
 
   const [favorites, setFavorites] = useState(() => {
@@ -25,7 +25,7 @@ export function FavoriteProvider({ children }) {
   // Load and merge favorites on authentication change
   useEffect(() => {
     if (isAuthenticated && user) {
-      const userKey = `reeco_favorites_${user.username}`;
+      const userKey = `reeco_favorites_${user.id}`;
       const savedUserFavorites = localStorage.getItem(userKey);
       const userFavItems = savedUserFavorites ? parseStoredItems(savedUserFavorites) : [];
 

@@ -46,10 +46,7 @@ export class NotificationsController {
    */
   @Patch(':id/read')
   @HttpCode(HttpStatus.OK)
-  async markAsRead(
-    @Req() req: RequestWithUser,
-    @Param('id') id: string,
-  ) {
+  async markAsRead(@Req() req: RequestWithUser, @Param('id') id: string) {
     return await this.notificationsService.markAsRead(req.user, id);
   }
 

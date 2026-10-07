@@ -14,8 +14,10 @@
 ### 1.2. Tài khoản đăng nhập
 | Vai trò | Tên tài khoản / Email | Mật khẩu | Mục đích |
 | :--- | :--- | :--- | :--- |
-| **Khách hàng** | `haitran` (hoặc `haitran@example.com`) | `ilovereeco` | Mua hàng, thanh toán, xem thông báo |
-| **Quản trị viên** | `admin@reeco.vn` (hoặc `reeco`) | `admin123` (hoặc `ilovereeco`) | Quản lý & chuyển trạng thái đơn hàng |
+| **Khách hàng** | `haitran` (hoặc `haitran@example.com`) | Mật khẩu demo — xem `scripts/demo/seed-demo.mjs` | Mua hàng, thanh toán, xem thông báo |
+| **Quản trị viên** | `admin@reeco.vn` (trên Client: `reeco`) | Mật khẩu demo — xem `scripts/demo/seed-demo.mjs` | Quản lý & chuyển trạng thái đơn hàng |
+
+> Hai tài khoản được tạo bằng `npm run demo:seed`. Ở bản chạy dev, form đăng nhập Client điền sẵn mật khẩu demo và Admin có nút "Đăng nhập nhanh"; bản build production không chứa mật khẩu.
 
 ### 1.3. Thông tin thẻ test VNPay Sandbox (Ngân hàng NCB)
 - **Ngân hàng**: NCB (Ngân hàng Quốc Dân)
@@ -55,7 +57,7 @@ journey
      > `"Cảm biến đo nhiệt độ không khí và độ ẩm ngoài trời độ chính xác cao"`
   2. Bấm **Enter** hoặc click biểu tượng Tìm kiếm.
 - **Lời thuyết trình**:
-  > *"Hệ thống REECO tích hợp mô hình Hybrid Search kết hợp Semantic Embedding và Re-ranking, cho phép người dùng mô tả nhu cầu trắc địa/khí tượng bằng tiếng Việt tự nhiên thay vì phải nhớ chính xác mã SKU kỹ thuật."*
+  > *"Hệ thống REECO dùng Hybrid Search kết hợp tìm theo từ khóa và Semantic Embedding (Re-ranking BGE là tùy chọn, mặc định tắt — `RERANKER_ENABLED=false`), cho phép người dùng mô tả nhu cầu trắc địa/khí tượng bằng tiếng Việt tự nhiên thay vì phải nhớ chính xác mã SKU kỹ thuật."*
 - **Kết quả hiển thị**:
   - Danh sách trả về các dòng cảm biến hàng đầu của Campbell Scientific (như `CS215`, `HMP155A`, `43347 RTD Sensor`).
   - Hiển thị đầy đủ nhãn giá niêm yết bằng VND (`₫`), thông số đo lường chính.
@@ -81,7 +83,7 @@ journey
   3. Tại trang giỏ hàng, điều chỉnh số lượng (ví dụ: tăng lên 2 chiếc), kiểm tra tổng tiền tạm tính tự động cập nhật.
   4. Bấm **"Login"** góc trên Navbar:
      - Chọn tab **Customer**.
-     - Nhập `haitran` / `ilovereeco`.
+     - Nhập `haitran` và mật khẩu demo (bản dev đã điền sẵn).
      - Bấm **Sign In**.
 - **Lời thuyết trình**:
   > *"Phiên đăng nhập của khách hàng được quản lý an toàn. Khách hàng 'Hai Tran' thuộc đơn vị Trạm Khí tượng Thủy văn đã đăng nhập thành công."*
@@ -122,16 +124,16 @@ journey
 ### Bước 5: Quản trị viên xử lý đơn hàng trên Admin Portal (4:30 – 5:30)
 - **Địa chỉ**: `http://localhost:5174/` (mở trên tab hoặc cửa sổ mới)
 - **Hành động**:
-  1. Đăng nhập tài khoản Admin: `admin@reeco.vn` / `admin123`.
+  1. Đăng nhập tài khoản Admin: `admin@reeco.vn` và mật khẩu demo (hoặc nút "Đăng nhập nhanh" ở bản dev).
   2. Điều hướng vào menu **"Order Management"** (`/orders`).
   3. Tìm đơn hàng mới nhất vừa đặt (ví dụ: `REECO-1011`):
      - Trạng thái hiện tại: `PROCESSING` (Đã thanh toán).
      - Payment Status: `PAID`.
   4. Bấm vào chi tiết đơn hàng hoặc nút hành động:
-     - Chuyển trạng thái sang **"DELIVERING"** (Đang giao hàng) kèm mã vận đơn `VNPOST-EXPRESS-88`.
+     - Chuyển trạng thái sang **"SHIPPED"** (Đã giao vận chuyển), ghi chú mã vận đơn `VNPOST-EXPRESS-88` trong ô ghi chú. Từ `PROCESSING` chỉ được chuyển sang `FORWARDED_TO_MANUFACTURER`, `SHIPPED` hoặc `CANCELLED`; chuyển sai sẽ bị API từ chối (409).
      - Hoặc cập nhật ghi chú đóng gói kiểm định CO/CQ.
 - **Lời thuyết trình**:
-  > *"Phía Admin Dashboard sử dụng cơ chế bảo mật Role-based Access Control (RBAC) đồng bộ qua Supabase Auth. Khi Admin thay đổi trạng thái đơn, hệ thống tự động lưu lịch sử Audit Log vào bảng `order_histories` và đồng thời phát sinh thông báo `ORDER_STATUS_CHANGED` cho khách hàng."*
+  > *"Mọi API quản trị yêu cầu token Supabase hợp lệ và vai trò admin (`app_metadata.role = admin`, kiểm tra bởi `AdminGuard`); tài khoản khách hàng gọi vào sẽ nhận 403. Khi Admin thay đổi trạng thái đơn, hệ thống lưu lịch sử vào bảng `order_status_history` và đồng thời phát sinh thông báo `ORDER_STATUS_CHANGED` cho khách hàng."*
 
 ---
 
@@ -142,7 +144,7 @@ journey
   2. Click vào quả chuông hoặc vào **My Account → Notifications**:
      - Xem thông báo mới nhất:
        - *"Thanh toán thành công đơn hàng #1011"* (`PAYMENT_UPDATED`).
-       - *"Cập nhật đơn hàng #1011: Đã chuyển sang trạng thái DELIVERING"* (`ORDER_STATUS_CHANGED`).
+       - *"Cập nhật đơn hàng #1011"*: đơn đã chuyển sang trạng thái `SHIPPED` (`ORDER_STATUS_CHANGED`).
   3. Bấm vào thông báo để chuyển thẳng đến màn hình **Order Details**:
      - Quan sát mục **Order Status History (Timeline)**:
        - 13:21: Khởi tạo đơn hàng mới.
@@ -170,6 +172,7 @@ journey
 | Tình huống | Nguyên nhân thường gặp | Cách khắc phục ngay lập tức |
 | :--- | :--- | :--- |
 | VNPay báo lỗi `code=70` | Sai chữ ký Hash Secret | Đã fix mã hóa ký tự space bằng dấu `+`. Kiểm tra lại file `apps/api/.env` có `VNPAY_HASH_SECRET`. |
-| Admin báo lỗi `401 Unauthorized` | Token dev admin hết hạn | Hệ thống đã có cơ chế tự động refresh token trong `api.js`. Chỉ cần F5 lại trang Admin. |
-| Không thấy quả chuông thông báo trên Client | Khách hàng chưa đăng nhập | Đăng nhập tài khoản demo `haitran` / `ilovereeco` hoặc kiểm tra `AuthContext`. |
+| Admin báo lỗi `401 Unauthorized` | Token admin hết hạn (không có cơ chế refresh token) | Admin tự đăng xuất; đăng nhập lại. |
+| Admin báo lỗi `403 Forbidden` | Đăng nhập bằng tài khoản không có vai trò admin | Dùng `admin@reeco.vn`; kiểm tra `app_metadata.role = admin` (tạo bởi `npm run demo:seed`). |
+| Không thấy quả chuông thông báo trên Client | Khách hàng chưa đăng nhập | Đăng nhập tài khoản demo `haitran` hoặc kiểm tra `AuthContext`. |
 | Thông báo chưa hiển thị ngay | Chu kỳ polling mặc định 30s | Bấm vào biểu tượng quả chuông hoặc F5 trang để kích hoạt nạp ngay từ API/Session Cache. |

@@ -4,23 +4,34 @@ import {
   Get,
   Param,
   Patch,
+  Put,
   Query,
   UseGuards,
 } from '@nestjs/common';
 import {
   ProductListQuerySchema,
-  type ProductDetail,
   type ProductListQuery,
   type ProductListResponse,
 } from '@reeco/shared';
 import { SupabaseAuthGuard } from '../../auth/supabase-auth.guard';
+import { AdminGuard } from '../../auth/admin.guard';
 import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
 import { ProductsService } from '../products/products.service';
+import { AdminService, type AdminProductDetail } from './admin.service';
+import {
+  AdminProductPriceUpdateSchema,
+  AdminProductUpdateSchema,
+  type AdminProductPriceUpdate,
+  type AdminProductUpdate,
+} from './admin-product-update.schema';
 
 @Controller('admin/products')
-@UseGuards(SupabaseAuthGuard)
+@UseGuards(SupabaseAuthGuard, AdminGuard)
 export class AdminController {
-  constructor(private readonly productsService: ProductsService) {}
+  constructor(
+    private readonly productsService: ProductsService,
+    private readonly adminService: AdminService,
+  ) {}
 
   @Get()
   list(
@@ -31,15 +42,25 @@ export class AdminController {
   }
 
   @Get(':productId')
-  get(@Param('productId') productId: string): Promise<ProductDetail> {
-    return this.productsService.getAdmin(productId);
+  get(@Param('productId') productId: string): Promise<AdminProductDetail> {
+    return this.adminService.getAdminProductDetail(productId);
   }
 
   @Patch(':productId')
   update(
     @Param('productId') productId: string,
-    @Body() updates: Record<string, any>,
-  ): Promise<ProductDetail> {
-    return this.productsService.updateAdmin(productId, updates);
+    @Body(new ZodValidationPipe(AdminProductUpdateSchema))
+    updates: AdminProductUpdate,
+  ): Promise<AdminProductDetail> {
+    return this.adminService.updateAdminProduct(productId, updates);
+  }
+
+  @Put(':productId/price')
+  setPrice(
+    @Param('productId') productId: string,
+    @Body(new ZodValidationPipe(AdminProductPriceUpdateSchema))
+    body: AdminProductPriceUpdate,
+  ): Promise<AdminProductDetail> {
+    return this.adminService.setProductPrice(productId, body.price_vnd);
   }
 }

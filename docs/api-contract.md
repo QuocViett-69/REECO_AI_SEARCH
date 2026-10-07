@@ -1,13 +1,20 @@
-# REECO Basic Backend API Contract
+# REECO Backend API Contract
 
-This endpoint behavior is frozen for the Step 7.7 backend MVP. Frontend setup, UI guidance, and
-schema-valid JSON fixtures are linked from [`frontend-handoff.md`](./frontend-handoff.md).
+The product and search behavior below was frozen for the Step 7.7 backend MVP; the commerce
+endpoints (orders, VNPay, notifications) and the admin authorization rules were added afterwards and
+are documented here from the current code. Frontend setup, UI guidance, and schema-valid JSON fixtures
+are linked from [`frontend-handoff.md`](./frontend-handoff.md).
 
 Base URL for local development: `http://localhost:3000/api/v1`.
 
 Requests and responses use JSON. Public product and search endpoints expose only
-`status = active`. Admin endpoints require `Authorization: Bearer <supabase-access-token>`.
-The current Basic Backend authenticates the token but does not yet enforce a separate admin role.
+`status = active`. Authenticated endpoints require `Authorization: Bearer <supabase-access-token>`;
+the API verifies the token with Supabase Auth on every request (`SupabaseAuthGuard`).
+
+Every `/admin/*` route additionally requires the admin role (`AdminGuard`,
+`apps/api/src/auth/admin.guard.ts`): the verified user's `app_metadata.role` must be `"admin"`.
+`app_metadata` can only be set with the service role (for the demo accounts, by
+`scripts/demo/seed-demo.mjs`); `user_metadata` never grants admin.
 
 ## Errors
 
@@ -32,14 +39,21 @@ Other common errors use this shape:
 }
 ```
 
-The API uses `400` for invalid input, `401` for a missing/invalid token, `404` for a missing
-or non-public product, `409` for an import already in progress, and `503` for missing backend
-configuration or an unavailable database/import process. Server errors never include Supabase keys,
-database credentials, or raw database error details.
+The API uses:
 
-The current API does not emit `403`: a valid Supabase token is authenticated but no admin role or
-allowlist is enforced yet. This is a pre-production authorization TODO. Unexpected server failures use
-`500`.
+| Status | Meaning                                                                                                                                                                    |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `400`  | Invalid query/body (Zod validation), or an unsupported search negation                                                                                                     |
+| `401`  | Missing, malformed, expired, or invalid Bearer token                                                                                                                       |
+| `403`  | Authenticated but not an admin on an `/admin/*` route (`AdminGuard`); also every non-GET `/admin/*` request when `LOCAL_STAGING_READ_ONLY=true`                            |
+| `404`  | Missing or non-public product; an order or notification that does not exist or belongs to someone else                                                                     |
+| `409`  | Import already in progress; an order that can no longer be cancelled; an invalid admin status transition; a VNPay link requested for an order that is not awaiting payment |
+| `429`  | `POST /search` rate limit exceeded (see below)                                                                                                                             |
+| `503`  | Missing backend configuration, or an unavailable database/retrieval/import process                                                                                         |
+
+Server errors never include Supabase keys, database credentials, or raw database error details
+(order creation failures return a fixed message and log the database error server-side).
+Unexpected server failures use `500`.
 
 ## GET `/health`
 
@@ -214,11 +228,25 @@ Request:
 ```json
 {
   "query": "soil moisture",
-  "limit": 10
+  "limit": 10,
+  "explain": true
 }
 ```
 
-`limit` defaults to `10` and must be between 1 and 100.
+| Field     | Type          | Notes                                                                                                                                                                                      |
+| --------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `query`   | string 1–500  | Required, trimmed                                                                                                                                                                          |
+| `limit`   | integer 1–100 | Optional, default `10`; final maximum result count                                                                                                                                         |
+| `explain` | boolean       | Optional; when `true` each result may carry an `explanation`                                                                                                                               |
+| `context` | object        | Optional follow-up context: `{ base_query, previous_query, product_ids }` (`product_ids`: 1–5 ids from earlier results). The client sends it for refinements such as "and supports Modbus" |
+
+Unknown body fields are rejected (`400`).
+
+**Rate limit.** `POST /search` is limited per client IP to `SEARCH_RATE_LIMIT_PER_MINUTE` requests per
+minute (default `60`; `0` disables it). Responses carry `RateLimit-Limit` and `RateLimit-Remaining`;
+over the limit the API answers `429` with a `Retry-After` header (seconds) and
+`{ "message": "Too many searches. Please wait a moment and try again." }`. The limit is kept in process
+memory (`apps/api/src/common/middleware/rate-limit.middleware.ts`), so it applies per API instance.
 
 Response:
 
@@ -247,6 +275,65 @@ Response:
 }
 ```
 
+Optional response fields:
+
+- `resolved_query`: the query actually searched after follow-up resolution (for example, a short
+  refinement appended to the previous query).
+- `context_applied`: `true` when the request `context` was used and results were limited to its
+  `product_ids`.
+- `results[].explanation` (only when `explain: true`):
+
+  ```json
+  {
+    "text": "SoilVue10-5: dữ liệu xác nhận độ ẩm đất.",
+    "language": "vi",
+    "source": "rule",
+    "generation": { "status": "disabled" },
+    "evidence": [
+      {
+        "source": "product_document",
+        "field": "measurements",
+        "value": "soil moisture / độ ẩm đất"
+      }
+    ]
+  }
+  ```
+
+  `text` is always built from product evidence by rules. When `LLM_EXPLANATION_ENABLED=true` and
+  `LLM_MODEL` is set, a local Ollama model may pick one of up to three prepared wordings for the first
+  three results; it never writes new claims. `source` is then `llm` and `generation.status` is
+  `accepted` (with `model` and `latency_ms`); otherwise `source` is `rule` and `generation.status` is
+  one of `disabled`, `not_applicable`, `timeout`, `unavailable`, `invalid_response`. `evidence[].source`
+  is `products`, `product_document`, or `normalized_spec`.
+
+- `guidance`: an overall answer for the request, present only in specific cases — a multi-instrument
+  system request (split into components such as sensor / data logger / communication / power), a
+  follow-up explanation question about selected products, a request with no product confirming all
+  requirements, or a comparison question:
+
+  ```json
+  {
+    "text": "Nhu cầu này cần phối hợp các thành phần bên dưới. ...",
+    "language": "vi",
+    "needs_clarification": false,
+    "components": [
+      {
+        "label": "độ ẩm đất",
+        "query": "soil moisture sensor",
+        "models": ["SoilVue10-5", "CS650"]
+      },
+      {
+        "label": "Truyền dữ liệu",
+        "query": "communication equipment",
+        "models": []
+      }
+    ]
+  }
+  ```
+
+  An empty `models` array means no confirmed candidate was found for that component;
+  `needs_clarification` asks the user to specify a measurement or medium.
+
 Public `mode` is one of `hybrid`, `keyword`, or `semantic` and describes the retrieval path, not a
 quality judgment:
 
@@ -261,7 +348,11 @@ or `0` when the candidate came only from semantic retrieval, `scores.semantic` i
 In semantic fallback, `scores.keyword` is `0` and only `scores.semantic` is populated. These fields use
 different scales and must not be compared directly. `scores.hybrid` remains the original RRF retrieval
 score after technical ordering and therefore technical-query results are not guaranteed to be globally
-sorted by it. `scores.rerank` remains `null`.
+sorted by it. `scores.rerank` remains `null` even when the optional reranker runs.
+
+When `RERANKER_ENABLED=true` (default `false`), the top results (at most 5) are reordered by the local
+BGE reranker service (`services/reranker`); an exact identity match stays first and any reranker
+failure or timeout keeps the original order.
 
 After retrieval, the server applies a deterministic structured technical policy. A retrieved exact
 active identity ranks first. Confirmed protocol matches rank before candidates without confirmed
@@ -278,11 +369,12 @@ filtering before the final limit, batch-loads active product summaries, drops an
 active public summary, and only then applies the final request limit. Definitive numeric mismatches are
 not backfilled merely to reach the limit. Errors: `400` for an invalid body and `503` only when both
 retrieval sources fail or required product data is unavailable. A successful single-source fallback
-returns `200`.
+returns `200`. A query with an unsupported negation (anything other than excluding a protocol, cellular,
+or temperature sensors) returns `400`.
 
 ## GET `/admin/products`
 
-- Auth: required Bearer token.
+- Auth: Bearer token of an admin user (`401` without a valid token, `403` for non-admins).
 - Query parameters: the same `page`, `limit`, `q`, `category`, `subcategory`, and `device_type`
   parameters as public `GET /products`.
 - Request body: none.
@@ -305,21 +397,60 @@ Sample review item:
 }
 ```
 
-Errors: `401` for missing/invalid token, `400` for invalid filters, and `503` for Supabase failure.
+Errors: `401` for missing/invalid token, `403` for non-admins, `400` for invalid filters, and `503`
+for Supabase failure.
 
 ## GET `/admin/products/:productId`
 
-- Auth: required Bearer token.
+- Auth: Bearer token of an admin user.
 - Path/query/body: same as public product detail.
-- Success: `200 OK` with the same `ProductDetail` contract.
+- Success: `200 OK` with the `ProductDetail` contract plus `price_vnd` (integer VND from
+  `product_prices`, or `null` when no price is stored). Unlike `product.price`, it is returned even when
+  the product is not purchasable (for example a review product).
 - Difference from public detail: active and review rows are visible. Review products currently have
   no search document or normalized-spec rows, so `taxonomy` is `null` and semantic/spec arrays are empty.
 
-Errors: `401`, `404`, or `503` as described above.
+Errors: `401`, `403`, `404`, or `503` as described above.
+
+## PATCH `/admin/products/:productId`
+
+- Auth: Bearer token of an admin user.
+- Success: `200 OK` with the updated `ProductDetail`.
+- Body (all fields optional; validated by
+  `apps/api/src/modules/admin/admin-product-update.schema.ts`, strict — any other key is rejected with
+  `400`, so columns such as `product_id` or `model` cannot be written):
+
+| Field                                    | Type                                                                                |
+| ---------------------------------------- | ----------------------------------------------------------------------------------- |
+| `product_name_en`                        | string 1–300                                                                        |
+| `name_vi`                                | string ≤300 or `null`                                                               |
+| `category`, `subcategory`, `device_type` | string ≤200 or `null`                                                               |
+| `status`                                 | `active` or `review`                                                                |
+| `product_url`                            | `""` or an `http(s)://` URL ≤500 (other schemes such as `javascript:` are rejected) |
+| `supported_protocols`                    | array of up to 30 strings                                                           |
+| `specifications`                         | array of up to 200 `{ canonical_key, value }`                                       |
+| `price_vnd`                              | integer 0–100,000,000,000; upserted into `product_prices` (same as the route below) |
+
+- Success body: the updated product in the same shape as `GET /admin/products/:productId` (includes `price_vnd`).
+- `400` body: `{ "message": "Request validation failed", "errors": [{ "path", "message" }] }`; `path` is the
+  field name (for example `product_url` or `specifications.0.value`), so the editor can show the error next
+  to that field.
+
+Errors: `400`, `401`, `403`, `404`, `503`.
+
+## PUT `/admin/products/:productId/price`
+
+- Auth: Bearer token of an admin user.
+- Body: `{ "price_vnd": <integer 0–100,000,000,000> }`, strict (any other key → `400`).
+- Effect: upserts the row in `product_prices` keyed by `product_id` (the path accepts the product id or
+  model). A product is purchasable only when it is `active` and `price_vnd > 0`.
+- Success: `200 OK` with the product in the `GET /admin/products/:productId` shape (includes `price_vnd`).
+
+Errors: `400`, `401`, `403`, `404`, `503` (database write failed).
 
 ## POST `/admin/import`
 
-- Auth: required Bearer token.
+- Auth: Bearer token of an admin user.
 - Query parameters: none.
 - Request body: none.
 - Success: `201 Created` after the existing transactional import script finishes.
@@ -337,10 +468,126 @@ Errors: `401`, `404`, or `503` as described above.
 }
 ```
 
-Errors: `401` for missing/invalid token, `409` if an import is already running, and `503` if the
-script/configuration is absent or the import/validation fails.
+Errors: `401` for missing/invalid token, `403` for non-admins, `409` if an import is already running,
+and `503` if the script/configuration is absent or the import/validation fails.
+
+## Orders
+
+All `/orders` routes require a Bearer token (any authenticated user is a customer). Bodies are
+validated with Zod schemas in `apps/api/src/modules/orders/dto/create-order.dto.ts`; invalid bodies
+return `400` with the standard validation error. Unknown keys are stripped, so a client cannot set
+totals, prices, status, or the owner.
+
+An order object is the `orders` row (`id` uuid, `order_number`, `order_code` such as `REECO-1001`,
+`customer_id`, `status`, `payment_method`, `payment_status`, `shipping_method`, `shipping_fee`,
+`subtotal`, `total`, `currency` `VND`, customer and address fields, `notes`,
+`estimated_delivery_from`/`_to`, `vnpay_txn_ref`, `vnpay_transaction_no`, `paid_at`, timestamps) with
+its `order_items` (`product_id`, `model`, `product_name`, `image_url`, `unit_price`, `quantity`,
+`line_total`). All amounts are integer VND.
+
+Order statuses (`orders.constants.ts`): `PENDING_PAYMENT`, `PAID`, `PROCESSING`,
+`FORWARDED_TO_MANUFACTURER`, `SHIPPED`, `DELIVERED`, `CANCELLED`, `PAYMENT_FAILED`. Payment statuses:
+`PENDING_PAYMENT`, `COD_PENDING`, `PAID`, `FAILED`.
+
+### POST `/orders`
+
+- Success: `201 Created` with the order and `items`.
+
+| Field                                         | Type                                                                                        |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `items`                                       | 1–50 × `{ product_id, quantity (integer 1–999) }`; duplicates are merged                    |
+| `payment_method`                              | `cod` or `vnpay` (required)                                                                 |
+| `shipping_method`                             | `standard` (250,000 VND, 3–5 days) or `express` (500,000 VND, 1–2 days); default `standard` |
+| `customer_name`                               | string 1–120                                                                                |
+| `customer_email`                              | email                                                                                       |
+| `customer_phone`                              | 6–20 characters of digits, spaces, `+ ( ) . -`                                              |
+| `shipping_address`                            | string 1–500                                                                                |
+| `city`                                        | string 1–120                                                                                |
+| `province`, `country`, `postal_code`, `notes` | optional strings (`country` defaults to `Vietnam`)                                          |
+
+Prices come from the `product_prices` table on the server; every product must be active and priced
+(`400` otherwise). `total = subtotal + shipping_fee`. COD orders start as `PROCESSING` /
+`COD_PENDING`; VNPay orders start as `PENDING_PAYMENT` / `PENDING_PAYMENT`. A status-history row and an
+`ORDER_CREATED` notification are recorded.
+
+### GET `/orders/me?page=&page_size=`
+
+Returns `{ items, total }` — the caller's orders with `order_items`, newest first. `page_size` defaults
+to 20, maximum 100.
+
+### GET `/orders/:orderId`
+
+`orderId` may be the uuid, the `order_number` (`1001`) or the `order_code` (`REECO-1001`). Returns the
+order for its owner or an admin; anyone else gets `404`.
+
+### POST `/orders/:orderId/cancel`
+
+Body: `{ "reason"?: string ≤500 }`. Allowed only from `PENDING_PAYMENT`, `PAYMENT_FAILED`, `PAID`, or
+`PROCESSING`; otherwise `409`. The update is conditional on the status that was checked, so if the
+order changed meanwhile (for example a VNPay callback) the API returns `409` instead of overwriting it.
+Returns the updated order.
+
+## Admin orders
+
+Admin only (`SupabaseAuthGuard` + `AdminGuard`).
+
+- `GET /admin/orders?search=&status=&page=&page_size=` → `{ items, total }`. `search` (≤100 characters)
+  matches order code/number, customer name, email, phone, or VNPay reference; `status` is applied only
+  when it is a known order status. `page_size` defaults to 20, maximum 100.
+- `GET /admin/orders/stats` → `{ totalOrders, totalRevenue, paidOrdersCount, averageOrderValue,
+processingCount, shippedCount, deliveredCount, pendingCount, cancelledCount, ordersByStatus, vnpayRevenue,
+codRevenue, dailyRevenueMap, topProducts }`. Revenue counts orders with `payment_status = PAID`.
+`ordersByStatus` maps every order status to its count (`0` included), so each number matches
+`GET /admin/orders?status=<status>` → `total`.
+- `GET /admin/orders/:orderId` → the order (same identifiers as above).
+- `PATCH /admin/orders/:orderId/status` with `{ "status": <order status>, "note"?: string ≤500 }`.
+  Allowed transitions:
+
+  | From                        | To                                                  |
+  | --------------------------- | --------------------------------------------------- |
+  | `PENDING_PAYMENT`           | `PAID`, `PAYMENT_FAILED`, `CANCELLED`               |
+  | `PAID`                      | `PROCESSING`, `CANCELLED`                           |
+  | `PROCESSING`                | `FORWARDED_TO_MANUFACTURER`, `SHIPPED`, `CANCELLED` |
+  | `FORWARDED_TO_MANUFACTURER` | `SHIPPED`, `CANCELLED`                              |
+  | `SHIPPED`                   | `DELIVERED`, `CANCELLED`                            |
+  | `PAYMENT_FAILED`            | `PENDING_PAYMENT`, `CANCELLED`                      |
+  | `DELIVERED`, `CANCELLED`    | —                                                   |
+
+  Any other transition returns `409` with `current_status`, `target_status`, and `allowed_statuses`.
+  Moving a COD order to `DELIVERED` also marks it paid. History and notifications are recorded.
+
+## VNPay (sandbox)
+
+- `POST /payments/vnpay/create-url` — Bearer token; body `{ "order_id": string }`. The caller must own
+  the order (or be admin), the order must use `vnpay` (`400` otherwise) and be `PENDING_PAYMENT` or
+  `PAYMENT_FAILED` (`409` otherwise). A new numeric `vnp_TxnRef` is stored on the order and a
+  `PAYMENT_FAILED` order returns to `PENDING_PAYMENT`. Returns `200`
+  `{ payment_url, txn_ref, order_id }`; the link expires after 15 minutes.
+- `GET /payments/vnpay/verify` — public; VNPay's browser return URL. Checks the HMAC-SHA512 signature
+  (`400` if invalid), finds the order by `vnp_TxnRef` (`404`), and checks the amount (`400` on
+  mismatch). Returns `{ success, message, code?, is_already_paid?, order }`:
+  - already paid → `success: true, is_already_paid: true`, nothing is written again;
+  - order not in `PENDING_PAYMENT`/`PAYMENT_FAILED` (for example cancelled) → nothing is written;
+    `success: false, code: "ORDER_NOT_AWAITING_PAYMENT"`, and the event is logged for manual refund;
+  - response code `00` with transaction status `00` → order becomes `PROCESSING` / `PAID`;
+  - otherwise → order becomes `PAYMENT_FAILED` / `FAILED` and `code` is the VNPay response code.
+    Payment writes are conditional on the order still awaiting payment, so a concurrent cancellation is
+    never overwritten.
+- `GET /payments/vnpay/ipn` — public; VNPay server-to-server callback with the same rules, answering
+  `{ RspCode, Message }`: `97` bad checksum, `01` order not found, `04` invalid amount, `02` already
+  confirmed or no longer awaiting payment, `00` success, `99` unexpected error.
+
+## Notifications
+
+Bearer token; every route touches only the caller's own rows.
+
+- `GET /notifications/me?unread_only=true|1` → `{ items, unread_count, total }`, newest first; each
+  item is the `notifications` row (`id`, `customer_id`, `type` — `ORDER_CREATED`, `PAYMENT_UPDATED` or
+  `ORDER_STATUS_CHANGED` —, `title`, `message`, `order_id`, `read_at`, `created_at`) plus `is_read`.
+- `PATCH /notifications/:id/read` → the notification marked read; `404` if it is not the caller's.
+- `POST /notifications/read-all` → `{ success: true, updated_count }`.
 
 ## No compare endpoint
 
-The Basic Backend intentionally has no `/compare` endpoint. Call product detail twice and compare the
+The backend intentionally has no `/compare` endpoint. Call product detail twice and compare the
 two stable `ProductDetail` payloads in the React application.

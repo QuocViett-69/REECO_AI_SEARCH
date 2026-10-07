@@ -3,6 +3,9 @@
 
 import { apiFetch } from './apiFetch.js';
 
+// Kept in the client rather than imported from @reeco/shared: that package pulls in zod,
+// whose CommonJS entry (index.cjs) Create React App bundles as a static file, so the app
+// crashes on load. Keep the fees in step with apps/api/src/modules/orders/orders.constants.ts.
 export const SHIPPING_METHODS = {
   standard: {
     id: 'standard',
@@ -146,16 +149,20 @@ class OrderService {
     if (filters.search) query.set('search', filters.search);
     if (filters.status && filters.status !== 'ALL') query.set('status', filters.status);
     if (filters.page) query.set('page', String(filters.page));
-    if (filters.pageSize || filters.page_size) {
-      query.set('page_size', String(filters.pageSize || filters.page_size));
-    }
+    // The API defaults to 20 rows; the admin page lists up to the API maximum of 100.
+    query.set('page_size', String(filters.pageSize || filters.page_size || 100));
 
     const qStr = query.toString();
     const res = await apiFetch(`/admin/orders${qStr ? `?${qStr}` : ''}`);
-    const orders = res?.data || (Array.isArray(res) ? res : []);
+    // GET /admin/orders returns { items, total }
+    const orders = res?.items || (Array.isArray(res) ? res : []);
     return {
       orders,
-      pagination: res?.pagination || { total: orders.length, page: 1, page_size: orders.length },
+      pagination: {
+        total: typeof res?.total === 'number' ? res.total : orders.length,
+        page: Number(filters.page) || 1,
+        page_size: Number(query.get('page_size')),
+      },
     };
   }
 

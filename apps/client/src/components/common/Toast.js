@@ -1,15 +1,15 @@
 import React from 'react';
-import { Check, Info, AlertCircle } from 'lucide-react';
+import { Check, Info, WarningCircle } from './SkyIconSet';
 
 export function ToastContainer({ toasts }) {
   if (!toasts || toasts.length === 0) return null;
 
   return (
-    <div className="toast-container" id="toastContainer">
+    <div className="toast-container" id="toastContainer" role="status" aria-live="polite">
       {toasts.map((toast) => {
         let Icon = Info;
         if (toast.type === 'success') Icon = Check;
-        if (toast.type === 'error') Icon = AlertCircle;
+        if (toast.type === 'error') Icon = WarningCircle;
 
         return (
           <div key={toast.id} className={`toast ${toast.type}`}>

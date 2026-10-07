@@ -1,0 +1,718 @@
+/* ============ Storybook theme: commerce ============
+   Cart, checkout, order placed and the VNPay return page. White sticker cards on the
+   sky canvas; the summary is the biggest sticker and stays in view. Coral appears only
+   on the buttons that spend money, green marks the choice you made. */
+
+/* ── Two-column frame: content left, sticky summary right ── */
+.theme-shop .cm-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 24px;
+  align-items: start;
+}
+
+.theme-shop .cm-aside {
+  position: sticky;
+  top: 104px;
+}
+
+.theme-shop .cm-alert {
+  margin-bottom: 24px;
+}
+
+/* Item count sticker beside the giant "Cart" title */
+.theme-shop .cm-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  height: 72px;
+  padding: 0 18px;
+  border-radius: 50px;
+  background: var(--st-accent);
+  box-shadow: inset 0 0 0 2px var(--st-ink);
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+  transform: rotate(-6deg);
+  color: var(--st-on-accent);
+}
+
+/* ── Cart lines: one white sticker per product ── */
+.theme-shop .cm-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.theme-shop .cm-line {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr) auto;
+  grid-template-areas:
+    'thumb info total'
+    'thumb controls controls';
+  gap: 12px 24px;
+  align-items: start;
+  padding: 14px 28px 14px 14px;
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .cm-line__thumb {
+  grid-area: thumb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 132px;
+  background: var(--st-cream);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s var(--st-ease);
+}
+
+.theme-shop .cm-line__thumb img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.theme-shop .cm-line__thumb:hover {
+  transform: rotate(-3deg) scale(1.03);
+}
+
+.theme-shop .cm-line__info {
+  grid-area: info;
+  min-width: 0;
+  padding-top: 12px;
+}
+
+.theme-shop .cm-line__heading {
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.theme-shop .cm-line__model {
+  color: var(--st-ink);
+  text-align: left;
+  overflow-wrap: anywhere;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.theme-shop .cm-line__model:hover {
+  border-bottom-color: var(--st-accent);
+}
+
+.theme-shop .cm-line__name {
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--st-ink);
+}
+
+.theme-shop .cm-line__unit {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--st-gray);
+  font-variant-numeric: tabular-nums;
+}
+
+.theme-shop .cm-line__total {
+  grid-area: total;
+  padding-top: 14px;
+  font-size: 22px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.theme-shop .cm-line__controls {
+  grid-area: controls;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 6px;
+}
+
+.theme-shop .cm-line__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Summary: the big white sticker ── */
+.theme-shop .cm-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 36px;
+}
+
+.theme-shop .cm-summary__title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.theme-shop .cm-summary__sum {
+  padding: 22px 24px;
+  border-radius: var(--st-r-mid);
+  background: var(--st-cream);
+}
+
+.theme-shop .cm-summary__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.theme-shop .cm-assurances {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.theme-shop .cm-assurances li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--st-ink);
+}
+
+.theme-shop .cm-assurances svg {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  border-radius: 50%;
+  background: var(--st-sky);
+  color: var(--st-ink);
+}
+
+.theme-shop .cm-assurances li + li svg {
+  background: var(--st-sun);
+}
+
+/* ── Checkout steps: a real sequence, so they are numbered ── */
+.theme-shop .cm-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.theme-shop .cm-step {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 20px;
+  padding: 32px 36px 36px 28px;
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .cm-step__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--st-cream);
+  font-size: 36px;
+  font-variant-numeric: tabular-nums;
+}
+
+.theme-shop .cm-step:focus-within .cm-step__num {
+  background: var(--st-accent);
+  box-shadow: inset 0 0 0 2px var(--st-ink);
+  color: var(--st-on-accent);
+}
+
+.theme-shop .cm-step__body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+  padding-top: 14px;
+}
+
+.theme-shop .cm-step__head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.theme-shop .cm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 14px;
+}
+
+.theme-shop .cm-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.theme-shop .cm-full {
+  grid-column: 1 / -1;
+}
+
+/* Inputs sit on a white card here, so they take the cream fill */
+.theme-shop .cm-step .st-input,
+.theme-shop .cm-step .st-textarea {
+  background: var(--st-cream);
+}
+
+.theme-shop .cm-step .st-input:focus,
+.theme-shop .cm-step .st-textarea:focus {
+  background: var(--st-white);
+}
+
+.theme-shop .cm-req {
+  margin-left: 3px;
+  color: var(--st-stop);
+}
+
+.theme-shop .cm-optional {
+  font-weight: 400;
+  color: var(--st-gray);
+}
+
+/* ── Radio tiles: cream when idle, green with an ink outline when chosen ── */
+.theme-shop .cm-choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.theme-shop .cm-choices--stack {
+  grid-template-columns: 1fr;
+}
+
+.theme-shop .cm-choice {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 24px;
+  border-radius: var(--st-r-mid);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.35s var(--st-ease);
+}
+
+.theme-shop .cm-choice input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.theme-shop .cm-choice:has(input:focus-visible) {
+  outline: 3px solid var(--st-sky);
+  outline-offset: 3px;
+}
+
+.theme-shop .cm-choice__dot {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--st-white);
+  box-shadow: inset 0 0 0 2px var(--st-ink);
+  transition: box-shadow 0.25s var(--st-ease);
+}
+
+.theme-shop .cm-choice.is-selected .cm-choice__dot {
+  box-shadow: inset 0 0 0 2px var(--st-ink), inset 0 0 0 7px var(--st-white), inset 0 0 0 24px var(--st-ink);
+}
+
+.theme-shop .cm-choice__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.theme-shop .cm-choice__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.theme-shop .cm-choice__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.theme-shop .cm-choice__price {
+  font-size: 18px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.theme-shop .cm-choice__desc {
+  font-size: 15px;
+  line-height: 1.45;
+  color: inherit;
+}
+
+.theme-shop .cm-choice.is-selected .st-note {
+  color: var(--st-ink);
+}
+
+.theme-shop .cm-choice .st-note {
+  margin-top: 8px;
+}
+
+/* ── Checkout summary item list ── */
+.theme-shop .cm-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.theme-shop .cm-item {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-shop .cm-item .st-thumb {
+  background: var(--st-cream);
+  box-shadow: none;
+}
+
+.theme-shop .cm-item .st-thumb img {
+  mix-blend-mode: multiply;
+}
+
+.theme-shop .cm-item__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.theme-shop .cm-item__model {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.theme-shop .cm-item__model span {
+  font-weight: 400;
+  color: var(--st-gray);
+}
+
+.theme-shop .cm-item__name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  color: var(--st-gray);
+}
+
+.theme-shop .cm-item__price {
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Quiet moments: empty cart, sign in to check out, payment problems ── */
+.theme-shop .cm-moment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+  padding: 64px 40px;
+  text-align: center;
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .cm-moment .st-orb {
+  --size: 152px;
+  margin-bottom: 12px;
+}
+
+.theme-shop .cm-moment__title {
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1;
+}
+
+.theme-shop .cm-moment__desc {
+  max-width: 44ch;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--st-gray);
+}
+
+.theme-shop .cm-moment__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* ── Celebration: order placed / payment received ── */
+.theme-shop .cm-celebrate {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  margin-top: 24px;
+  padding: 72px 56px 56px 64px;
+  overflow: hidden;
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .cm-celebrate__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  min-width: 0;
+}
+
+.theme-shop .cm-celebrate__ref {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 50px;
+  background: var(--st-accent);
+  box-shadow: inset 0 0 0 2px var(--st-ink);
+  font-size: 16px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  transform: rotate(-3deg);
+  color: var(--st-on-accent);
+}
+
+.theme-shop .cm-celebrate__title {
+  font-size: clamp(44px, 6vw, 80px);
+  line-height: 0.95;
+}
+
+.theme-shop .cm-celebrate__desc {
+  max-width: 40ch;
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.theme-shop .cm-celebrate__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.theme-shop .cm-celebrate__art {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--st-cream);
+  box-shadow: inset 0 0 0 3px var(--st-ink);
+  overflow: hidden;
+}
+
+/* Oversized and anchored low so the hills run off the edge of the cut circle */
+.theme-shop .cm-celebrate__art svg {
+  flex-shrink: 0;
+  width: 104%;
+  height: auto;
+  margin-bottom: -2%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-shop .cm-celebrate__art {
+    animation: cm-pop-in 0.9s var(--st-ease) both;
+  }
+
+  .theme-shop .cm-celebrate__ref {
+    animation: cm-stamp 0.7s var(--st-ease) 0.35s both;
+  }
+}
+
+@keyframes cm-pop-in {
+  from { opacity: 0; transform: scale(0.8) rotate(-8deg); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes cm-stamp {
+  from { opacity: 0; transform: scale(1.6) rotate(-12deg); }
+  to { opacity: 1; transform: rotate(-3deg); }
+}
+
+/* Server-confirmed order facts on the success and VNPay return pages */
+.theme-shop .cm-receipt {
+  max-width: 460px;
+  margin-top: 24px;
+  padding: 6px 22px;
+  border-radius: 28px;
+  background: var(--st-cream);
+}
+
+.theme-shop .cm-receipt > div {
+  border-top-color: var(--st-white);
+}
+
+.theme-shop .cm-receipt--center {
+  width: 100%;
+  margin: 8px auto 4px;
+  text-align: left;
+}
+
+.theme-shop .cm-moment__note {
+  width: 100%;
+  text-align: left;
+}
+
+.theme-shop .cm-verified {
+  font-size: 13px;
+  color: var(--st-gray);
+}
+
+/* ══════════════════════════ Responsive ══════════════════════════ */
+@media (max-width: 1080px) {
+  .theme-shop .cm-split {
+    grid-template-columns: minmax(0, 1fr) 360px;
+  }
+
+  .theme-shop .cm-summary {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 960px) {
+  .theme-shop .cm-split {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-shop .cm-aside {
+    position: static;
+  }
+
+  .theme-shop .cm-celebrate {
+    grid-template-columns: 1fr;
+    padding: 48px 32px 32px;
+  }
+
+  .theme-shop .cm-celebrate__art {
+    width: min(100%, 420px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-shop .cm-count {
+    min-width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .theme-shop .cm-line {
+    grid-template-columns: 88px minmax(0, 1fr);
+    grid-template-areas:
+      'thumb info'
+      'total total'
+      'controls controls';
+    gap: 12px 16px;
+    padding: 12px 16px 16px 12px;
+    border-radius: 36px;
+  }
+
+  .theme-shop .cm-line__thumb {
+    width: 88px;
+    height: 88px;
+    border-radius: 28px;
+  }
+
+  .theme-shop .cm-line__info {
+    padding-top: 4px;
+  }
+
+  .theme-shop .cm-line__heading {
+    font-size: 24px;
+  }
+
+  .theme-shop .cm-line__total {
+    padding: 0 4px;
+  }
+
+  .theme-shop .cm-step {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px 20px 28px;
+    border-radius: 36px;
+  }
+
+  .theme-shop .cm-step__num {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+
+  .theme-shop .cm-step__body {
+    padding-top: 0;
+  }
+
+  .theme-shop .cm-grid,
+  .theme-shop .cm-grid--3,
+  .theme-shop .cm-choices {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-shop .cm-summary {
+    padding: 24px 20px;
+    border-radius: 36px;
+  }
+
+  .theme-shop .cm-summary__sum {
+    padding: 18px;
+  }
+
+  .theme-shop .cm-moment {
+    margin-top: 16px;
+    padding: 48px 20px;
+    border-radius: 40px;
+  }
+
+  .theme-shop .cm-moment .st-orb {
+    --size: 120px;
+  }
+
+  .theme-shop .cm-celebrate {
+    margin-top: 8px;
+    padding: 36px 20px 20px;
+    border-radius: 40px;
+  }
+
+  .theme-shop .cm-celebrate__desc {
+    font-size: 18px;
+  }
+
+  .theme-shop .cm-celebrate__actions,
+  .theme-shop .cm-celebrate__actions .st-btn {
+    width: 100%;
+  }
+}

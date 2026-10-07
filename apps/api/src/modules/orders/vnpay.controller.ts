@@ -12,7 +12,11 @@ import {
 import type { User } from '@supabase/supabase-js';
 import type { Request } from 'express';
 import { SupabaseAuthGuard } from '../../auth/supabase-auth.guard';
-import { CreateVNPayUrlDto } from './dto/create-order.dto';
+import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
+import {
+  CreateVNPayUrlSchema,
+  type CreateVNPayUrlDto,
+} from './dto/create-order.dto';
 import { VNPayService } from './vnpay.service';
 
 interface RequestWithUser extends Request {
@@ -35,13 +39,15 @@ export class VNPayController {
   @HttpCode(HttpStatus.OK)
   async createPaymentUrl(
     @Req() req: RequestWithUser,
-    @Body() dto: CreateVNPayUrlDto,
+    @Body(new ZodValidationPipe(CreateVNPayUrlSchema)) dto: CreateVNPayUrlDto,
   ) {
     const rawIp =
       (req.headers['x-forwarded-for'] as string) ||
       req.socket?.remoteAddress ||
       '127.0.0.1';
-    const clientIp = (rawIp ? String(rawIp).split(',')[0] : '127.0.0.1')!.trim();
+    const clientIp = (
+      rawIp ? String(rawIp).split(',')[0] : '127.0.0.1'
+    )!.trim();
 
     return await this.vnPayService.createPaymentUrl(
       req.user,
@@ -60,7 +66,7 @@ export class VNPayController {
    */
   @Get('verify')
   @HttpCode(HttpStatus.OK)
-  async verifyPayment(@Query() query: Record<string, any>) {
+  async verifyPayment(@Query() query: Record<string, string>) {
     return await this.vnPayService.verifyPayment(query);
   }
 
@@ -72,7 +78,7 @@ export class VNPayController {
    */
   @Get('ipn')
   @HttpCode(HttpStatus.OK)
-  async handleIpn(@Query() query: Record<string, any>) {
+  async handleIpn(@Query() query: Record<string, string>) {
     return await this.vnPayService.processIpn(query);
   }
 }

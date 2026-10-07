@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import '../../styles/studio/commerce.css';
+import { CircleNotch, Package, ShoppingBag, WarningCircle } from '../common/SkyIconSet';
 import { orderService, formatCurrency } from '../../services/orderService';
-import {
-  CheckCircle2,
-  Package,
-  ShoppingBag,
-  AlertCircle,
-  Truck,
-  CreditCard,
-  Banknote,
-} from 'lucide-react';
+import { PaperCutStation } from '../common/PaperCutStation';
 
 export function OrderSuccessPage({ orderId, onNavigate }) {
   const effectiveOrderId =
@@ -18,6 +12,7 @@ export function OrderSuccessPage({ orderId, onNavigate }) {
         sessionStorage.getItem('reeco_last_order_id')
       : null);
 
+  // Show the order saved at checkout straight away, then refresh it from the server
   const [order, setOrder] = useState(() => {
     try {
       if (typeof sessionStorage !== 'undefined') {
@@ -39,7 +34,7 @@ export function OrderSuccessPage({ orderId, onNavigate }) {
   useEffect(() => {
     if (!effectiveOrderId) {
       setLoading(false);
-      return;
+      return undefined;
     }
 
     let isMounted = true;
@@ -65,9 +60,7 @@ export function OrderSuccessPage({ orderId, onNavigate }) {
         }
       })
       .finally(() => {
-        if (isMounted) {
-          setLoading(false);
-        }
+        if (isMounted) setLoading(false);
       });
 
     return () => {
@@ -75,61 +68,31 @@ export function OrderSuccessPage({ orderId, onNavigate }) {
     };
   }, [effectiveOrderId]);
 
-  // 1. Loading state
   if (loading) {
     return (
-      <div className="page-container" style={{ maxWidth: 640, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: 48, borderRadius: 16 }}>
-          <div
-            style={{
-              width: 36,
-              height: 36,
-              border: '3px solid #e5e7eb',
-              borderTopColor: '#0069e0',
-              borderRadius: '50%',
-              margin: '0 auto 16px',
-              animation: 'spin 1s linear infinite',
-            }}
-          />
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: '#111827', marginBottom: 6 }}>
-            Confirming order details...
-          </h2>
-          <p style={{ color: '#6b7280', fontSize: 14 }}>
-            Retrieving verified total and status from REECO server.
-          </p>
+      <div className="st-page">
+        <div className="st-loading" role="status">
+          <CircleNotch size={20} className="spin" aria-hidden="true" /> Confirming your order with REECO
         </div>
       </div>
     );
   }
 
-  // 2. Error state
   if (error) {
     return (
-      <div className="page-container" style={{ maxWidth: 640, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div style={{ padding: 40, borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb' }}>
-          <AlertCircle size={48} color="#d93025" style={{ marginBottom: 16 }} />
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#111827', marginBottom: 8 }}>
-            Unable to load order
-          </h2>
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 24 }}>
-            {error}
-          </p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => onNavigate && onNavigate('account-orders')}
-              style={{ padding: '10px 24px', fontSize: 14, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer' }}
-            >
-              View My Orders
+      <div className="st-page st-page--narrow">
+        <div className="st-state" role="alert">
+          <span className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><WarningCircle size={22} /></span>
+          </span>
+          <h1 className="st-state__title">Order details could not load</h1>
+          <p className="st-state__desc">{error}</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn st-btn--primary" onClick={() => onNavigate && onNavigate('account-orders')}>
+              View my orders
             </button>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => onNavigate && onNavigate('products')}
-              style={{ padding: '10px 24px', fontSize: 14, background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer' }}
-            >
-              Continue Shopping
+            <button type="button" className="st-btn" onClick={() => onNavigate && onNavigate('products')}>
+              Continue shopping
             </button>
           </div>
         </div>
@@ -137,126 +100,70 @@ export function OrderSuccessPage({ orderId, onNavigate }) {
     );
   }
 
-  // 3. Data state
   const targetId = order?.id || order?.order_code || orderId;
+  const orderCode = order
+    ? order.order_code || (order.order_number ? `REECO-${order.order_number}` : order.id)
+    : orderId;
+  const isPaid = order?.payment_status === 'PAID';
 
   return (
-    <div className="page-container" style={{ maxWidth: 640, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-      <div style={{ padding: 40, borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb', boxShadow: '0 4px 12px rgba(0,0,0,0.04)' }}>
-        <div
-          style={{
-            display: 'inline-flex',
-            padding: 16,
-            borderRadius: '50%',
-            background: 'rgba(15, 149, 84, 0.08)',
-            color: '#0f9554',
-            marginBottom: 20,
-          }}
-        >
-          <CheckCircle2 size={48} />
-        </div>
+    <div className="st-page">
+      <section className="cm-celebrate" role="status">
+        <div className="cm-celebrate__text">
+          {orderCode && <span className="cm-celebrate__ref">Order {String(orderCode).startsWith('REECO') ? orderCode : `#${orderCode}`}</span>}
+          <h1 className="cm-celebrate__title">Order placed.</h1>
+          <p className="cm-celebrate__desc">
+            Thank you for choosing REECO. Your order is recorded and ready for calibration and
+            dispatch, and you can follow every step from your account.
+          </p>
 
-        <h1 style={{ fontSize: 26, fontWeight: 700, color: '#111827', marginBottom: 8 }}>
-          Order Placed Successfully!
-        </h1>
-
-        <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 24, lineHeight: 1.6 }}>
-          Thank you for choosing REECO. Your order has been recorded in the system and is ready for calibration and dispatch.
-        </p>
-
-        {order && (
-          <div
-            style={{
-              padding: 20,
-              borderRadius: 12,
-              background: '#f9fafb',
-              border: '1px solid #e5e7eb',
-              marginBottom: 28,
-              textAlign: 'left',
-              fontSize: 13,
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#6b7280' }}>Order Code:</span>
-              <span style={{ fontWeight: 700, color: '#0069e0', fontSize: 14 }}>
-                {order.order_code || (order.order_number ? `REECO-${order.order_number}` : order.id)}
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#6b7280' }}>Total (server verified):</span>
-              <span style={{ fontWeight: 700, color: '#111827', fontSize: 15 }}>
-                {formatCurrency(order.total)}
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#6b7280' }}>Payment Method:</span>
-              <span style={{ fontWeight: 600, color: '#111827' }}>
-                {order.payment_method === 'cod' ? 'Cash on Delivery (COD)' : 'VNPay Sandbox'}
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#6b7280' }}>Payment Status:</span>
-              <span
-                style={{
-                  fontWeight: 700,
-                  color: order.payment_status === 'PAID' ? '#0f9554' : '#ffb020',
-                }}
-              >
-                {order.payment_status}
-              </span>
-            </div>
-          </div>
-        )}
-
-        <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          {targetId && (
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => onNavigate && onNavigate(`account-order:${targetId}`)}
-              style={{
-                padding: '12px 24px',
-                fontSize: 14,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                background: '#111827',
-                color: '#fff',
-                border: 'none',
-                borderRadius: 9999,
-                cursor: 'pointer',
-              }}
-            >
-              <Package size={16} />
-              <span>Track Order</span>
-            </button>
+          {order && (
+            <dl className="st-dl cm-receipt">
+              <div>
+                <dt>Total</dt>
+                <dd className="st-num">{formatCurrency(order.total)}</dd>
+              </div>
+              <div>
+                <dt>Payment method</dt>
+                <dd>{order.payment_method === 'cod' ? 'Cash on delivery (COD)' : 'VNPay'}</dd>
+              </div>
+              <div>
+                <dt>Payment status</dt>
+                <dd>
+                  <span className={`st-status ${isPaid ? 'st-status--green' : 'st-status--amber'}`}>
+                    {isPaid ? 'Paid' : order.payment_status === 'COD_PENDING' ? 'Pay on delivery' : 'Awaiting payment'}
+                  </span>
+                </dd>
+              </div>
+            </dl>
           )}
 
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={() => onNavigate && onNavigate('products')}
-            style={{
-              padding: '12px 24px',
-              fontSize: 14,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 6,
-              background: '#fff',
-              color: '#111827',
-              border: '1px solid #e5e7eb',
-              borderRadius: 9999,
-              cursor: 'pointer',
-            }}
-          >
-            <ShoppingBag size={16} />
-            <span>Continue Shopping</span>
-          </button>
+          <div className="cm-celebrate__actions">
+            {targetId && (
+              <button
+                type="button"
+                className="st-btn st-btn--primary st-btn--lg"
+                onClick={() => onNavigate && onNavigate(`account-order:${targetId}`)}
+              >
+                <Package size={18} aria-hidden="true" />
+                <span>Track order</span>
+              </button>
+            )}
+            <button
+              type="button"
+              className="st-btn st-btn--lg"
+              onClick={() => onNavigate && onNavigate('products')}
+            >
+              <ShoppingBag size={18} aria-hidden="true" />
+              <span>Continue shopping</span>
+            </button>
+          </div>
         </div>
-      </div>
+
+        <div className="cm-celebrate__art">
+          <PaperCutStation />
+        </div>
+      </section>
     </div>
   );
 }

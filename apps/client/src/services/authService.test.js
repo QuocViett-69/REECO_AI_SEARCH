@@ -1,21 +1,54 @@
-import { signInUser } from './authService';
+import { loginUser, registerUser, getMe } from './authService';
+import { apiFetch } from './apiFetch';
 
-test('login stores only a verified token with the requested role', async () => {
-  process.env.REACT_APP_SUPABASE_URL = 'https://example.test';
-  process.env.REACT_APP_SUPABASE_ANON_KEY = 'public-key';
-  const originalFetch = global.fetch;
-  try {
-    global.fetch = jest.fn().mockResolvedValue({ ok: true, json: async () => ({ access_token: 'verified-token', user: { id: 'customer', app_metadata: { role: 'customer' } } }) });
-    const result = await signInUser('customer', 'haitran', 'ilovereeco');
-    expect(result.user.token).toBe('verified-token');
-    expect(result.user.id).toBe('customer');
-    global.fetch.mockResolvedValue({ ok: true, json: async () => ({ access_token: 'token', user: { app_metadata: { role: 'admin' } } }) });
-    expect((await signInUser('customer', 'haitran', 'ilovereeco')).success).toBe(false);
-    global.fetch.mockResolvedValue({ ok: false, json: async () => ({}) });
-    expect((await signInUser('customer', 'haitran', 'ilovereeco')).success).toBe(false);
-  } finally {
-    global.fetch = originalFetch;
-    delete process.env.REACT_APP_SUPABASE_URL;
-    delete process.env.REACT_APP_SUPABASE_ANON_KEY;
-  }
+jest.mock('./apiFetch', () => ({
+  apiFetch: jest.fn(),
+}));
+
+describe('AuthService Suite', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test('loginUser correctly calls API and returns data', async () => {
+    apiFetch.mockResolvedValueOnce({
+      access_token: 'verified-token',
+      user: { id: 'customer', role: 'customer' }
+    });
+
+    const result = await loginUser('test@example.com', 'password123');
+    expect(apiFetch).toHaveBeenCalledWith('/auth/login', {
+      method: 'POST',
+      body: { email: 'test@example.com', password: 'password123' }
+    });
+    expect(result.access_token).toBe('verified-token');
+    expect(result.user.role).toBe('customer');
+  });
+
+  test('registerUser correctly calls API', async () => {
+    apiFetch.mockResolvedValueOnce({
+      access_token: 'new-token',
+      user: { id: 'new', role: 'customer' }
+    });
+
+    const data = { email: 'test@new.com', password: 'pwd', full_name: 'Test' };
+    const result = await registerUser(data);
+
+    expect(apiFetch).toHaveBeenCalledWith('/auth/register', {
+      method: 'POST',
+      body: data
+    });
+    expect(result.access_token).toBe('new-token');
+  });
+
+  test('getMe correctly calls API', async () => {
+    apiFetch.mockResolvedValueOnce({
+      user: { id: 'me', role: 'customer' }
+    });
+
+    const result = await getMe();
+
+    expect(apiFetch).toHaveBeenCalledWith('/auth/me', { method: 'GET' });
+    expect(result.user.id).toBe('me');
+  });
 });

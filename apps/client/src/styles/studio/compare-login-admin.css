@@ -1,0 +1,708 @@
+/* ============ Storybook theme: compare, product picker, login, admin ============
+   Builds on studio/base.css. cx- compare + picker, lg- login, ad- admin.
+   White stickers on cream, 50px corners, giant Inter 500 type, green for "on",
+   coral only for buying or saving, sky and sun as decoration. */
+
+/* ══════════════════════════ Compare ══════════════════════════ */
+.theme-shop .cx-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 20px;
+}
+
+.theme-shop .cx-sentinel {
+  height: 1px;
+}
+
+/* Product row sticks under the floating navbar while the specs scroll */
+.theme-shop .cx-products {
+  position: sticky;
+  top: 104px;
+  z-index: 5;
+  align-items: stretch;
+  padding: 8px 0 28px;
+  background: var(--st-canvas);
+  /* Track maths for centring the vs badge on the plates: (row - gaps) / total fr */
+  container-type: inline-size;
+  --cx-slot: calc((100cqw - 20px) / 2);
+  --cx-plate: calc((var(--cx-slot) - 24px) * 0.75);
+}
+
+/* Explicit placement: slot A, slot B, then the vs badge on the seam */
+.theme-shop .cx-products > :nth-child(1) { grid-column: 1; grid-row: 1; }
+.theme-shop .cx-products > :nth-child(2) { grid-column: 2; grid-row: 1; }
+
+/* A slot is one white sticker: plate on top, giant model name below */
+.theme-shop .cx-slot {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 12px 12px 28px;
+  border-radius: var(--st-r-card);
+  background: var(--st-white);
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .cx-slot__plate {
+  aspect-ratio: 4 / 3;
+  border-radius: 40px;
+  background: var(--st-cream);
+}
+
+.theme-shop .cx-slot__plate img {
+  width: 70%;
+  height: 70%;
+  mix-blend-mode: multiply;
+}
+
+.theme-shop .cx-slot__plate--status {
+  background: var(--st-cream);
+}
+
+.theme-shop .cx-slot__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background: var(--st-white);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--st-ink);
+  /* pencil-line edge on parchment */
+  outline: 1px solid var(--st-line);
+  outline-offset: -1px;
+}
+
+.theme-shop .cx-slot__status.is-error svg {
+  color: var(--st-stop);
+}
+
+.theme-shop .cx-slot__text {
+  padding: 24px 16px 0;
+  min-width: 0;
+}
+
+.theme-shop .cx-slot__type {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 4px 12px;
+  border-radius: var(--st-r-small);
+  background: var(--st-cream);
+  font-size: 14px;
+  color: var(--st-ink);
+}
+
+.theme-shop .cx-slot__model {
+  font-family: var(--st-display);
+  font-size: clamp(32px, 3.6vw, 48px);
+  line-height: 0.95;
+  color: var(--st-ink);
+  overflow-wrap: anywhere;
+}
+
+.theme-shop .cx-slot__name {
+  margin-top: 12px;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--st-gray);
+}
+
+.theme-shop .cx-slot__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding: 20px 16px 0;
+}
+
+/* Empty slot: a dashed cut-out waiting for a sticker */
+.theme-shop .cx-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  padding: 32px;
+  border-radius: var(--st-r-card);
+  border: 2.5px dashed var(--st-sand-deep);
+  background: transparent;
+  color: var(--st-ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.theme-shop .cx-add:hover {
+  border-color: var(--st-ink);
+  background: var(--st-white);
+}
+
+.theme-shop .cx-add__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--st-accent);
+  box-shadow: 0 0 0 2px var(--st-ink);
+  transition: transform 0.35s var(--st-ease);
+  color: var(--st-on-accent);
+}
+
+.theme-shop .cx-add:hover .cx-add__icon {
+  transform: rotate(90deg);
+}
+
+.theme-shop .cx-add__label {
+  font-size: 22px;
+}
+
+.theme-shop .cx-add__hint {
+  font-size: 15px;
+  color: var(--st-gray);
+}
+
+/* "vs" badge: a sun sticker on the seam between the two slots */
+.theme-shop .cx-vs {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: start;
+  align-self: start;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-left: -42px;
+  margin-top: calc(12px + var(--cx-plate) / 2 - 32px);
+  border-radius: 50%;
+  background: var(--st-sun);
+  box-shadow: 0 0 0 2.5px var(--st-ink), 0 0 0 8px var(--st-canvas);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--st-ink);
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+/* Compact sticky row once the product row is pinned under the navbar */
+.theme-shop .cx-products.is-stuck {
+  padding: 8px 0 12px;
+  align-items: center;
+}
+
+.theme-shop .cx-products.is-stuck .cx-slot__plate,
+.theme-shop .cx-products.is-stuck .cx-slot__type,
+.theme-shop .cx-products.is-stuck .cx-slot__name,
+.theme-shop .cx-products.is-stuck .cx-slot__actions,
+.theme-shop .cx-products.is-stuck .cx-vs {
+  display: none;
+}
+
+.theme-shop .cx-products.is-stuck .cx-slot {
+  padding: 14px 24px;
+  border-radius: 50px;
+}
+
+.theme-shop .cx-products.is-stuck .cx-slot__text {
+  padding: 0;
+}
+
+.theme-shop .cx-products.is-stuck .cx-slot__model {
+  font-size: 28px;
+  letter-spacing: -0.025em;
+}
+
+.theme-shop .cx-products.is-stuck .cx-add {
+  min-height: 0;
+  height: 60px;
+  flex-direction: row;
+  padding: 0 20px;
+}
+
+.theme-shop .cx-products.is-stuck .cx-add__icon,
+.theme-shop .cx-products.is-stuck .cx-add__hint {
+  display: none;
+}
+
+.theme-shop .cx-products.is-stuck .cx-add__label {
+  font-size: 16px;
+}
+
+/* Spec sections: each is one white 50px sticker */
+.theme-shop .cx-section {
+  margin-top: 28px;
+  padding: 36px 40px 24px;
+  border-radius: var(--st-r-card);
+  background: var(--st-white);
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .cx-section__title {
+  margin-bottom: 16px;
+  font-size: 40px;
+}
+
+.theme-shop .cx-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-shop .cx-row {
+  align-items: baseline;
+  padding: 16px 0;
+  border-top: 2px solid var(--st-cream);
+  font-size: 15px;
+}
+
+.theme-shop .cx-row:first-child {
+  border-top: 0;
+}
+
+/* Differing rows: a coral dot and a soft coral wash, like a highlighter swipe */
+
+.theme-shop .cx-row {
+  row-gap: 6px;
+}
+
+.theme-shop .cx-row dt {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--st-gray);
+}
+
+.theme-shop .cx-row.is-diff dt {
+  color: var(--st-ink);
+  font-weight: 500;
+}
+
+.theme-shop .cx-row dd {
+  color: var(--st-ink);
+  overflow-wrap: anywhere;
+}
+
+.theme-shop .cx-row dd.is-missing {
+  color: var(--st-gray-light);
+}
+
+.theme-shop .cx-row__mark {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--st-coral);
+  box-shadow: 0 0 0 1.5px var(--st-ink);
+  transform: translateY(-1px);
+}
+
+.theme-shop .cx-row__who {
+  display: none;
+}
+
+.theme-shop .cx-hint {
+  margin-top: 20px;
+}
+
+.theme-shop .cx-hint svg {
+  color: var(--st-sky);
+}
+
+/* Empty compare: two stickers overlapping like they were just slapped down */
+.theme-shop .cx-empty__orbs {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.theme-shop .cx-empty__orbs .st-orb {
+  --size: 112px;
+}
+
+.theme-shop .cx-empty__orbs .st-orb:first-child {
+  transform: rotate(-10deg);
+}
+
+.theme-shop .cx-empty__orbs .st-orb + .st-orb {
+  margin-left: -28px;
+  transform: rotate(8deg) translateY(10px);
+}
+
+.theme-shop .cx-empty.st-state .st-orb {
+  margin-bottom: 0;
+}
+
+/* ══════════════════════════ Product picker modal ══════════════════════════ */
+.theme-shop .cx-modal__sub {
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--st-gray);
+}
+
+.theme-shop .cx-modal__search {
+  padding: 0 36px 18px;
+}
+
+.theme-shop .cx-modal__body {
+  padding-top: 4px;
+}
+
+.theme-shop .cx-modal__none {
+  padding: 32px 0;
+  text-align: center;
+  font-size: 16px;
+  color: var(--st-gray);
+}
+
+.theme-shop .cx-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.theme-shop .cx-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 8px 18px 8px 8px;
+  border-radius: 32px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.theme-shop .cx-option:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.theme-shop .cx-option .st-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 24px;
+  box-shadow: none;
+  background: var(--st-white);
+}
+
+.theme-shop .cx-option.is-selected .st-thumb {
+  box-shadow: 0 0 0 1.5px var(--st-ink);
+}
+
+.theme-shop .cx-option__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.theme-shop .cx-option__model {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--st-ink);
+}
+
+.theme-shop .cx-option__name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: var(--st-gray);
+}
+
+.theme-shop .cx-option.is-selected .cx-option__name {
+  color: var(--st-on-accent);
+}
+
+.theme-shop .cx-option__check {
+  flex-shrink: 0;
+  color: var(--st-ink);
+}
+
+/* ══════════════════════════ Login ══════════════════════════ */
+.theme-shop .lg-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 20px;
+  min-height: calc(100vh - 140px);
+  padding-bottom: 40px;
+}
+
+.theme-shop .lg-aside {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 56px 48px 48px;
+  border-radius: 64px;
+  background: var(--st-sand);
+  overflow: hidden;
+}
+
+.theme-shop .lg-aside__title {
+  font-family: var(--st-display);
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 0.98;
+  color: var(--st-ink);
+}
+
+.theme-shop .lg-aside__desc {
+  margin-top: 20px;
+  max-width: 36ch;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--st-ink);
+}
+
+/* The station is its own cut-paper sticker inside the panel */
+.theme-shop .lg-aside__art {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  align-self: center;
+}
+
+.theme-shop .lg-main {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 48px 48px;
+  border-radius: 64px;
+  background: var(--st-white);
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .lg-back {
+  align-self: flex-start;
+  margin-left: -10px;
+}
+
+.theme-shop .lg-back svg {
+  background: var(--st-cream);
+}
+
+.theme-shop .lg-form-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 440px;
+  margin: auto;
+  padding-top: 32px;
+}
+
+.theme-shop .lg-title {
+  font-size: clamp(32px, 3vw, 40px);
+}
+
+.theme-shop .lg-desc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 17px;
+  color: var(--st-gray);
+}
+
+.theme-shop .lg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+/* Inputs sit on white here, so they take the cream fill instead */
+.theme-shop .lg-form .st-input {
+  background: var(--st-cream);
+}
+
+.theme-shop .lg-form .st-input:hover {
+  border-color: var(--st-sand-deep);
+}
+
+.theme-shop .lg-form .st-input:focus {
+  border-color: var(--st-accent);
+  background: var(--st-white);
+}
+
+.theme-shop .lg-submit {
+  margin-top: 8px;
+}
+
+.theme-shop .lg-done__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+/* ══════════════════════════ Responsive ══════════════════════════ */
+@media (max-width: 1080px) {
+
+  .theme-shop .lg-aside {
+    padding: 44px 36px 36px;
+  }
+
+  .theme-shop .lg-main {
+    padding: 24px 32px 40px;
+  }
+}
+
+@media (max-width: 860px) {
+  .theme-shop .cx-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 10px;
+  }
+
+  .theme-shop .cx-products {
+    top: 78px;
+    --cx-slot: calc((100cqw - 10px) / 2);
+    --cx-plate: calc(var(--cx-slot) - 16px);
+  }
+
+  .theme-shop .cx-vs {
+    grid-row: 1;
+    grid-column: 2;
+    width: 48px;
+    height: 48px;
+    margin-left: -29px;
+    margin-top: calc(8px + var(--cx-plate) / 2 - 24px);
+    font-size: 16px;
+    box-shadow: 0 0 0 2px var(--st-ink), 0 0 0 6px var(--st-canvas);
+  }
+
+  .theme-shop .cx-products.is-stuck .cx-slot {
+    padding: 12px 18px;
+  }
+
+  .theme-shop .cx-products.is-stuck .cx-slot__model {
+    font-size: 20px;
+  }
+
+  .theme-shop .cx-slot {
+    padding: 8px 8px 18px;
+    border-radius: 36px;
+  }
+
+  .theme-shop .cx-slot__plate {
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
+  }
+
+  .theme-shop .cx-slot__text {
+    padding: 16px 8px 0;
+  }
+
+  .theme-shop .cx-slot__type {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .theme-shop .cx-slot__model {
+    font-size: 34px;
+  }
+
+  .theme-shop .cx-slot__name {
+    font-size: 14px;
+  }
+
+  .theme-shop .cx-slot__actions {
+    padding: 14px 8px 0;
+  }
+
+  .theme-shop .cx-add {
+    min-height: 240px;
+    padding: 16px;
+    border-radius: 36px;
+  }
+
+  .theme-shop .cx-add__label {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .theme-shop .cx-section {
+    padding: 28px 22px 16px;
+    border-radius: 36px;
+  }
+
+  .theme-shop .cx-section__title {
+    font-size: 30px;
+  }
+
+  .theme-shop .cx-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    row-gap: 8px;
+  }
+
+  .theme-shop .cx-row dt {
+    grid-column: 1 / -1;
+    font-weight: 500;
+    color: var(--st-ink);
+  }
+
+  .theme-shop .cx-row.is-diff {
+    margin: 0 -12px;
+    padding: 14px 12px;
+  }
+
+  .theme-shop .cx-row__who {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--st-gray);
+  }
+
+  .theme-shop .lg-split {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .theme-shop .lg-aside {
+    order: 2;
+    border-radius: 48px;
+  }
+
+  .theme-shop .lg-main {
+    border-radius: 48px;
+  }
+
+  .theme-shop .lg-form-wrap {
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-shop .cx-modal__search {
+    padding: 0 24px 14px;
+  }
+
+  .theme-shop .cx-option {
+    padding-right: 12px;
+  }
+
+  .theme-shop .lg-aside {
+    padding: 36px 24px 24px;
+    border-radius: 40px;
+  }
+
+  .theme-shop .lg-main {
+    padding: 16px 20px 32px;
+    border-radius: 40px;
+  }
+}

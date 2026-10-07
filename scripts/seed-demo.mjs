@@ -24,8 +24,11 @@ const { AppModule } = await import(toUrl('app.module.js'));
 const { OrdersService } = await import(toUrl('modules/orders/orders.service.js'));
 const { SupabaseService } = await import(toUrl('database/supabase/supabase.service.js'));
 
+// The customer and admin are created by `npm run demo:seed` (scripts/demo/seed-demo.mjs);
+// their ids are looked up by email, so this works on any Supabase project.
+export const DEMO_ADMIN_EMAIL = 'admin@reeco.vn';
 export const DEMO_CUSTOMER_USER = {
-  id: '4b652479-40b3-4eb2-b7d3-aeefda7c5135',
+  id: null,
   email: 'haitran@example.com',
   name: 'Hai Tran',
   phone: '+84 908 123 456',
@@ -55,6 +58,24 @@ export async function seedDemoOrders(providedApp = null) {
   const client = supabaseService.getClient();
 
   console.log('─── Bắt đầu khởi tạo dữ liệu đơn hàng demo cho khách hàng haitran ───');
+
+  const { data: userPage, error: usersErr } = await client.auth.admin.listUsers({ perPage: 1000 });
+  if (usersErr) {
+    if (shouldCloseApp) await app.close();
+    throw new Error(`Không đọc được danh sách người dùng Supabase: ${usersErr.message}`);
+  }
+  const findUser = (email) => userPage.users.find((user) => user.email?.toLowerCase() === email);
+  const customer = findUser(DEMO_CUSTOMER_USER.email);
+  if (!customer) {
+    if (shouldCloseApp) await app.close();
+    throw new Error(`Chưa có tài khoản ${DEMO_CUSTOMER_USER.email}. Hãy chạy "npm run demo:seed" trước.`);
+  }
+  DEMO_CUSTOMER_USER.id = customer.id;
+  // Admin steps in the status history point at the demo admin when it exists
+  const adminId = findUser(DEMO_ADMIN_EMAIL)?.id ?? null;
+  const failOn = (label, { error }) => {
+    if (error) throw new Error(`${label}: ${error.message}`);
+  };
 
   // 1. Kiểm tra danh sách đơn demo-seed đã có của haitran
   const { data: existingSeedOrders, error: fetchErr } = await client
@@ -94,7 +115,7 @@ export async function seedDemoOrders(providedApp = null) {
         const txnNo = '14589230';
 
         // Cập nhật trạng thái thanh toán và vận chuyển
-        await client
+        failOn('Cập nhật đơn đã giao vận chuyển', await client
           .from('orders')
           .update({
             status: 'SHIPPED',
@@ -103,35 +124,36 @@ export async function seedDemoOrders(providedApp = null) {
             vnpay_transaction_no: txnNo,
             updated_at: shippedTime,
           })
-          .eq('id', createdOrder.id);
+          .eq('id', createdOrder.id));
 
-        // Ghi nhận lịch sử trạng thái theo đúng tiến trình
-        await client.from('order_status_history').insert([
+        // Ghi nhận lịch sử trạng thái theo đúng tiến trình. changed_by là uuid của auth.users:
+        // bước do VNPay/hệ thống thực hiện để null, bước bàn giao do admin thực hiện.
+        failOn('Ghi lịch sử trạng thái', await client.from('order_status_history').insert([
           {
             order_id: createdOrder.id,
-            status: 'PAID',
-            previous_status: 'PENDING_PAYMENT',
-            changed_by: 'vnpay',
+            from_status: 'PENDING_PAYMENT',
+            to_status: 'PAID',
+            changed_by: null,
             note: 'VNPay Sandbox xác nhận thanh toán thành công',
             created_at: paidTime,
           },
           {
             order_id: createdOrder.id,
-            status: 'PROCESSING',
-            previous_status: 'PAID',
-            changed_by: 'system',
+            from_status: 'PAID',
+            to_status: 'PROCESSING',
+            changed_by: null,
             note: 'Chuyển xử lý tại kho REECO',
             created_at: paidTime,
           },
           {
             order_id: createdOrder.id,
-            status: 'SHIPPED',
-            previous_status: 'PROCESSING',
-            changed_by: 'admin',
+            from_status: 'PROCESSING',
+            to_status: 'SHIPPED',
+            changed_by: adminId,
             note: 'Đơn hàng đã bàn giao đơn vị vận chuyển hàng không',
             created_at: shippedTime,
           },
-        ]);
+        ]));
       },
     },
     {
@@ -193,7 +215,9 @@ export async function seedDemoOrders(providedApp = null) {
     }
   }
 
-  console.log(`─── Hoàn tất: 3 đơn hàng demo cho haitran đã sẵn sàng ───`);
+  const ready = results.filter(Boolean).length;
+  console.log(`─── Hoàn tất: ${ready}/${orderConfigs.length} đơn hàng demo cho haitran đã sẵn sàng ───`);
+  if (ready < orderConfigs.length) process.exitCode = 1;
 
   if (shouldCloseApp) {
     await app.close();

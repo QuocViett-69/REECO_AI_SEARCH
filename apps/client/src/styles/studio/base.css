@@ -1,0 +1,1931 @@
+/* ============ Storybook theme: foundation ============
+   Every page except the home hero. App adds `.theme-shop` to .app-container whenever the
+   home page is not showing, so every rule here is scoped to it and the home keeps its look.
+
+   Parchment canvas, soft-paper cards with very round corners and hairline borders, Inter
+   headlines. Deep teal marks active and selected states; the only filled button is warm
+   ink; coral is kept for errors and differences; sky and sun only decorate. */
+
+/* The header is shared with the home page, so its subtree gets the tokens there too */
+.theme-shop,
+.is-home-locked .nav,
+.is-home-locked .mobile-nav {
+  /* Palette (Buy Me a Coffee-style "café paper"): cream paper canvas, pure white cards
+     that rest on it with one soft shadow, black ink text. Selected states are ink; the
+     buying action is terracotta; a marigold wash only highlights (prices, badges).
+     --st-cream is the quiet inner surface inside cards (inputs, tags, totals). */
+  --st-canvas: #faf8f0;
+  --st-cream: #f6f2e4;
+  --st-white: #ffffff;
+  --st-line: #e5e7eb;
+  --st-sand: #efebdd;
+  --st-sand-deep: #dcdcd6;
+  --st-ink: #000000;
+  --st-charcoal: #222222;
+  --st-gray: #717171;
+  --st-gray-light: #9a9a9a;
+  --st-mist: #dcdcd6;
+  --st-accent: #000000;
+  --st-accent-deep: #222222;
+  --st-on-accent: #ffffff;
+  /* Filled buttons are ink pills; buying actions (.st-btn--buy) are terracotta */
+  --st-cta: #000000;
+  --st-cta-deep: #222222;
+  --st-on-cta: #ffffff;
+  --st-buy: #d8573f;
+  --st-buy-deep: #c04a33;
+  --st-blush: #f5d5cf;
+  --st-marigold: #ffdd00;
+  --st-wash: #fff3b0;
+  /* Decorative colours (illustrations, stickers, small dots) */
+  --st-sky: #6aa7cf;
+  --st-coral: #d8573f;
+  --st-coral-deep: #c04a33;
+  --st-sun: #ffdd00;
+  --st-navy: #222222;
+  /* The one elevation recipe: a card resting on paper */
+  --st-shadow: rgba(0, 0, 0, 0.15) 0 0 2px 0, rgba(0, 0, 0, 0.04) 0 8px 40px 0, rgba(0, 0, 0, 0.05) 0 2px 5px 0;
+  --st-shadow-raised: rgba(0, 0, 0, 0.15) 0 0 2px 0, rgba(0, 0, 0, 0.08) 0 14px 48px 0, rgba(0, 0, 0, 0.06) 0 3px 8px 0;
+
+  /* Status dots stay small; the text beside them is always ink */
+  --st-ok: #2f8f5b;
+  --st-wait: #c9971a;
+  --st-stop: #c23a26;
+  --st-move: #222222;
+
+  /* Aliases kept for page stylesheets */
+  --st-eggshell: var(--st-white);
+  --st-taupe: var(--st-white);
+  --st-stone: var(--st-sand);
+  --st-stone-deep: var(--st-sand-deep);
+  --st-graphite: var(--st-ink);
+  --st-smoke: var(--st-gray);
+  --st-ash: var(--st-gray-light);
+  --st-violet: var(--st-sky);
+  --st-ember: var(--st-coral);
+  --st-btn-line: var(--st-ink);
+  --st-whisper: none;
+  --st-lift: var(--st-shadow-raised);
+  --st-inset: none;
+
+  --st-display: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --st-sans: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --st-mono: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --st-r-card: 32px;
+  --st-r-mid: 24px;
+  --st-r-small: 10px;
+
+  --st-gutter: 40px;
+  --st-max: 1280px;
+  --st-ease: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --st-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  font-family: var(--st-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--st-ink);
+}
+
+/* index.css types the old product pages through their ids; reclaim them */
+.theme-shop #page-products,
+.theme-shop #page-detail,
+.theme-shop #searchResults {
+  font-family: var(--st-sans);
+  color: var(--st-ink);
+  letter-spacing: 0;
+}
+
+.theme-shop #page-products button,
+.theme-shop #page-products input,
+.theme-shop #page-products select,
+.theme-shop #page-detail button,
+.theme-shop #page-detail input,
+.theme-shop #searchResults button,
+.theme-shop #searchResults input {
+  font-family: var(--st-sans);
+}
+
+.theme-shop #page-products h2 button,
+.theme-shop #page-detail h2 button,
+.theme-shop #searchResults h2 button {
+  font-family: inherit;
+}
+
+/* The page's own scrollbar would leave a strip of root background beside the full-bleed
+   navy footer, so it is hidden; wheel, trackpad and keyboard scrolling are unaffected.
+   Inner scrollers (tab rows, tables) keep their scrollbars. */
+html:has(.theme-shop) {
+  scrollbar-width: none;
+}
+
+html:has(.theme-shop)::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.app-container.theme-shop {
+  min-height: 100vh;
+}
+
+.theme-shop .bg-effects {
+  display: none;
+}
+
+.theme-shop .main {
+  max-width: none;
+  padding: 0 0 120px;
+}
+
+.theme-shop .page.active {
+  animation: none;
+}
+
+.theme-shop button,
+.theme-shop input,
+.theme-shop select,
+.theme-shop textarea {
+  font-family: var(--st-sans);
+  letter-spacing: 0;
+}
+
+/* Buttons used as links inside headings take the heading's type */
+.theme-shop button {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.theme-shop :focus-visible {
+  outline: 3px solid var(--st-sky);
+  outline-offset: 3px;
+}
+
+.theme-shop ::-webkit-scrollbar-thumb {
+  background: var(--st-sand-deep);
+  border-radius: 9999px;
+}
+
+/* ── Page frame ── */
+.theme-shop .st-page {
+  max-width: var(--st-max);
+  margin: 0 auto;
+  padding: 32px var(--st-gutter) 0;
+}
+
+.theme-shop .st-page--mid {
+  max-width: 1160px;
+}
+
+.theme-shop .st-page--narrow {
+  max-width: 960px;
+}
+
+/* Giant header: the title fills the frame, a short description sits beside it */
+.theme-shop .st-header {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+  margin-bottom: 8px;
+}
+
+.theme-shop .st-header--plain {
+  padding-bottom: 24px;
+}
+
+.theme-shop .st-header__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.theme-shop .st-display,
+.theme-shop .st-header h1 {
+  font-family: var(--st-display);
+  font-size: clamp(40px, 5.5vw, 72px);
+  overflow-wrap: anywhere;
+}
+
+.theme-shop .st-header__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.theme-shop .st-heading {
+  font-family: var(--st-display);
+  font-size: clamp(30px, 3.4vw, 40px);
+  line-height: 1.05;
+  color: var(--st-ink);
+}
+
+.theme-shop .st-subheading {
+  font-family: var(--st-display);
+  font-size: 30px;
+  line-height: 1.15;
+  color: var(--st-ink);
+}
+
+.theme-shop .st-caption {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--st-gray);
+}
+
+.theme-shop .st-mono {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* ── Back link ── */
+.theme-shop .st-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--st-ink);
+  transition: background 0.2s ease;
+}
+
+.theme-shop .st-back svg {
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  border-radius: 50%;
+  background: var(--st-white);
+  transition: transform 0.35s var(--st-ease), background 0.2s ease;
+}
+
+.theme-shop .st-back:hover svg {
+  transform: translateX(-3px);
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+}
+
+/* ── Buttons: white pill with ink outline; coral for buying; green when on ── */
+.theme-shop .st-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 22px;
+  border-radius: 50px;
+  color: var(--st-ink);
+  font-size: 15px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.35s var(--st-ease);
+}
+
+.theme-shop .st-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.theme-shop .st-btn:disabled,
+.theme-shop .st-btn[aria-disabled='true'] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Buying actions: coral fill with ink text (white on coral fails contrast) */
+
+.theme-shop .st-btn--primary:disabled:hover {
+  background: var(--st-cta);
+}
+
+.theme-shop .st-btn--ghost {
+  background: transparent;
+  color: var(--st-ink);
+}
+
+.theme-shop .st-btn--ghost:hover {
+  background: var(--st-white);
+}
+
+.theme-shop .st-btn--danger {
+  color: var(--st-stop);
+}
+
+.theme-shop .st-btn--sm {
+  height: 38px;
+  padding: 0 16px;
+  font-size: 14px;
+  gap: 6px;
+}
+
+.theme-shop .st-btn--lg {
+  height: 58px;
+  padding: 0 30px;
+  font-size: 17px;
+}
+
+.theme-shop .st-btn--block {
+  width: 100%;
+}
+
+.theme-shop .st-btn--icon {
+  width: 46px;
+  padding: 0;
+}
+
+.theme-shop .st-btn--icon.st-btn--sm {
+  width: 38px;
+}
+
+.theme-shop .st-btn--icon.st-btn--lg {
+  width: 58px;
+}
+
+.theme-shop .st-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--st-ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--st-gray-light);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease;
+  background: none;
+  cursor: pointer;
+}
+
+.theme-shop .st-link:hover {
+  border-bottom-color: var(--st-ink);
+}
+
+/* ── Form fields ── */
+.theme-shop .st-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.theme-shop .st-label {
+  padding-left: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--st-ink);
+}
+
+.theme-shop .st-error-text {
+  padding-left: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--st-stop);
+}
+
+.theme-shop .st-input,
+.theme-shop .st-select,
+.theme-shop .st-textarea {
+  width: 100%;
+  height: 54px;
+  padding: 0 22px;
+  border-radius: 50px;
+  background: var(--st-white);
+  color: var(--st-ink);
+  font-size: 16px;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.theme-shop .st-textarea {
+  height: auto;
+  min-height: 120px;
+  padding: 16px 22px;
+  border-radius: 28px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.theme-shop .st-select {
+  appearance: none;
+  padding-right: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 256 256'%3E%3Cpath fill='none' stroke='%232c2e2a' stroke-width='28' stroke-linecap='round' stroke-linejoin='round' d='M208 96l-80 80-80-80'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+  cursor: pointer;
+}
+
+.theme-shop .st-input::placeholder,
+.theme-shop .st-textarea::placeholder {
+  color: var(--st-gray-light);
+}
+
+.theme-shop .st-input:hover,
+.theme-shop .st-select:hover,
+.theme-shop .st-textarea:hover {
+  border-color: var(--st-gray-light);
+}
+
+.theme-shop .st-input[aria-invalid='true'] {
+  border-color: var(--st-coral);
+}
+
+.theme-shop .st-input:disabled {
+  background: var(--st-sand);
+  color: var(--st-gray);
+}
+
+.theme-shop .st-input-icon {
+  position: relative;
+  display: block;
+}
+
+.theme-shop .st-input-icon > svg {
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--st-ink);
+  pointer-events: none;
+}
+
+.theme-shop .st-input-icon .st-input {
+  padding-left: 52px;
+}
+
+/* Pill search well for filtering lists */
+.theme-shop .st-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 220px;
+}
+
+.theme-shop .st-search svg {
+  position: absolute;
+  left: 22px;
+  pointer-events: none;
+}
+
+.theme-shop .st-search input {
+  width: 100%;
+  height: 58px;
+  padding: 0 24px 0 56px;
+  border-radius: 50px;
+  background: var(--st-white);
+  font-size: 16px;
+  color: var(--st-ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.theme-shop .st-search input::placeholder {
+  color: var(--st-gray-light);
+}
+
+/* ── Tab pills / filter chips: green when on ── */
+.theme-shop .st-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.theme-shop .st-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 50px;
+  background: var(--st-white);
+  color: var(--st-ink);
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-shop .st-tab__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Tags and status ── */
+.theme-shop .st-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 4px 12px;
+  border-radius: var(--st-r-small);
+  background: var(--st-cream);
+  color: var(--st-ink);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.theme-shop .st-tag--outline {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--st-ink);
+}
+
+.theme-shop .st-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 14px 0 10px;
+  border-radius: 50px;
+  color: var(--st-ink);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.theme-shop .st-status::before {
+  content: '';
+  border-radius: 50%;
+  background: var(--st-gray-light);
+}
+
+/* ── Surfaces: white stickers on the sky canvas ── */
+.theme-shop .st-panel {
+  background: var(--st-white);
+  border-radius: var(--st-r-card);
+  padding: 40px;
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .st-panel--lg {
+  border-radius: 64px;
+  padding: 48px;
+}
+
+/* Product photo plate. Campbell photos ship on white, so the plate is white too. */
+.theme-shop .st-plate {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.theme-shop .st-plate img {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  transition: transform 0.6s var(--st-ease);
+}
+
+.theme-shop .st-plate__fallback {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--st-gray-light);
+  letter-spacing: -0.03em;
+}
+
+.theme-shop .st-thumb {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--st-white);
+  box-shadow: inset 0 0 0 1.5px var(--st-sand);
+  overflow: hidden;
+}
+
+.theme-shop .st-thumb img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.theme-shop .st-thumb--lg {
+  width: 96px;
+  height: 96px;
+  border-radius: 28px;
+}
+
+.theme-shop .st-thumb__fallback {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--st-gray-light);
+}
+
+/* ── Paper-cut sticker (keeps its old .st-orb class name) ──
+   A tiny cut-paper landscape inside an ink-outlined circle: yellow sky, green hill,
+   coral sun. Variants recut it: --violet is a sky-blue day with a white cloud,
+   --ember a coral dusk, --stone a quiet sand sticker for empty and error states. */
+.theme-shop .st-orb {
+  --size: 200px;
+  --line: max(2px, calc(var(--size) * 0.016));
+  position: relative;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  isolation: isolate;
+  vertical-align: middle;
+}
+
+/* The hill */
+.theme-shop .st-orb::before {
+  content: '';
+  position: absolute;
+  left: -25%;
+  right: -25%;
+  top: 60%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--st-accent);
+  box-shadow: 0 0 0 var(--line) var(--st-ink);
+  z-index: -1;
+}
+
+/* The sun */
+.theme-shop .st-orb::after {
+  content: '';
+  position: absolute;
+  width: 32%;
+  height: 32%;
+  left: 52%;
+  top: 18%;
+  border-radius: 50%;
+  background: var(--st-coral);
+  box-shadow: 0 0 0 var(--line) var(--st-ink);
+  z-index: -2;
+}
+
+.theme-shop .st-orb--violet::after {
+  background: var(--st-white);
+  width: 50%;
+  height: 24%;
+  left: 16%;
+  top: 22%;
+  border-radius: 50px;
+}
+
+.theme-shop .st-orb--ember::before {
+  background: var(--st-sun);
+}
+
+.theme-shop .st-orb--ember::after {
+  background: var(--st-white);
+}
+
+.theme-shop .st-orb--stone::before {
+  background: var(--st-sand);
+}
+
+.theme-shop .st-orb--stone::after {
+  background: var(--st-white);
+}
+
+.theme-shop .st-orb__icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 34px;
+}
+
+/* The one orchestrated moment: the sun rises over the hill once, then rests */
+@media (prefers-reduced-motion: no-preference) {
+  .theme-shop .st-orb--live::after {
+    animation: st-sunrise 1.6s var(--st-ease) both;
+  }
+
+  .theme-shop .st-orb--live::before {
+    animation: st-hill 1.1s var(--st-ease-out) both;
+  }
+}
+
+@keyframes st-sunrise {
+  from { transform: translateY(180%); }
+  to { transform: none; }
+}
+
+@keyframes st-hill {
+  from { transform: translateY(30%); }
+  to { transform: none; }
+}
+
+/* ── Empty, error and loading states ── */
+.theme-shop .st-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 72px 32px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--st-white);
+  /* pencil-line edge on parchment */
+  outline-offset: -1px;
+}
+
+.theme-shop .st-state__title {
+  font-family: var(--st-display);
+  line-height: 1.05;
+  color: var(--st-ink);
+}
+
+.theme-shop .st-state__desc {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--st-gray);
+  max-width: 44ch;
+}
+
+.theme-shop .st-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.theme-shop .st-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 120px 24px;
+  color: var(--st-ink);
+  font-size: 17px;
+}
+
+.theme-shop .st-skeleton {
+  display: block;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--st-white) 0%, var(--st-sand) 50%, var(--st-white) 100%);
+  background-size: 200% 100%;
+  animation: st-shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes st-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+/* ── Definition rows and tables ── */
+.theme-shop .st-dl {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-shop .st-dl > div {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) minmax(0, 1.6fr);
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 2px solid var(--st-cream);
+}
+
+.theme-shop .st-dl > div:first-child {
+  border-top: 0;
+}
+
+.theme-shop .st-dl dt {
+  font-size: 15px;
+  color: var(--st-gray);
+}
+
+.theme-shop .st-dl dd {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--st-ink);
+  overflow-wrap: anywhere;
+}
+
+.theme-shop .st-num {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Summary lines (subtotal / shipping / total) */
+.theme-shop .st-sum {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theme-shop .st-sum__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 16px;
+  color: var(--st-gray);
+}
+
+.theme-shop .st-sum__row span:last-child {
+  color: var(--st-ink);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.theme-shop .st-sum__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding-top: 20px;
+  margin-top: 6px;
+  border-top: 2px dashed var(--st-sand-deep);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.theme-shop .st-sum__total strong {
+  font-family: var(--st-display);
+  font-size: 40px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Quantity stepper ── */
+.theme-shop .st-qty {
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 4px;
+  border-radius: 50px;
+  background: var(--st-white);
+}
+
+.theme-shop .st-qty button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--st-ink);
+  transition: background 0.2s ease;
+}
+
+.theme-shop .st-qty button:hover:not(:disabled) {
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+}
+
+.theme-shop .st-qty button:disabled {
+  color: var(--st-sand-deep);
+  cursor: not-allowed;
+}
+
+.theme-shop .st-qty span {
+  min-width: 30px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.theme-shop .st-qty--sm {
+  height: 38px;
+  border-width: 1.5px;
+}
+
+.theme-shop .st-qty--sm button {
+  width: 30px;
+  height: 30px;
+}
+
+/* ── Notes ── */
+.theme-shop .st-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 22px;
+  border-radius: 28px;
+  background: var(--st-white);
+  color: var(--st-ink);
+  font-size: 15px;
+  line-height: 1.5;
+  /* pencil-line edge on parchment */
+  outline: 1px solid var(--st-line);
+  outline-offset: -1px;
+}
+
+.theme-shop .st-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.theme-shop .st-note--error {
+  background: #f8e5e0;
+  color: var(--st-ink);
+}
+
+.theme-shop .st-note--error svg {
+  color: var(--st-stop);
+}
+
+/* ══════════════════════════ Navbar: white pill pinned on a solid band ══════════════════════════
+   The band is the canvas colour and spans the full width, so content scrolls underneath
+   the header instead of showing around the pill. */
+:is(.theme-shop, .is-home-locked) .nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 12px var(--st-gutter);
+  margin-top: 0;
+  background: var(--st-canvas);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 0;
+  box-shadow: none;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-inner {
+  max-width: calc(var(--st-max) - 2 * var(--st-gutter));
+  height: 68px;
+  padding: 0 12px 0 13px;
+  gap: 20px;
+  justify-content: flex-start;
+  border-radius: 50px;
+  background: var(--st-white);
+  box-shadow: inset 0 0 0 1px var(--st-line), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-brand {
+  gap: 12px;
+  cursor: pointer;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+  box-shadow: none;
+  transition: transform 0.4s var(--st-ease);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-brand-mark svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  color: var(--st-on-accent);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-brand:hover .nav-brand-mark {
+  transform: rotate(-10deg) scale(1.06);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-brand-text {
+  font-family: var(--st-sans);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--st-ink);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-brand-text span {
+  color: var(--st-gray);
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-menu {
+  gap: 2px;
+  justify-content: flex-start;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-link {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--st-ink);
+  background: transparent;
+  box-shadow: none;
+  gap: 8px;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-link svg {
+  display: none;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-link:hover {
+  color: var(--st-ink);
+  background: var(--st-cream);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-link.active {
+  color: var(--st-ink);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-compare-btn,
+:is(.theme-shop, .is-home-locked) .nav-compare-btn.empty {
+  margin-left: auto;
+  height: 46px;
+  padding: 0 6px 0 20px;
+  gap: 10px;
+  border-radius: 50px;
+  background: var(--st-white) !important;
+  color: var(--st-ink) !important;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: none;
+  opacity: 1;
+  transform: none;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-compare-btn:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-compare-btn svg {
+  display: none;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-compare-btn span {
+  color: var(--st-ink) !important;
+  font-weight: 500;
+}
+
+/* The count doubles as the button's dot affordance: sky once something is waiting */
+:is(.theme-shop, .is-home-locked) .nav-compare-btn .count,
+:is(.theme-shop, .is-home-locked) .nav-compare-btn.empty .count {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  color: var(--st-ink) !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--st-ink);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  transition: background 0.2s ease;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-icon-btn:hover,
+:is(.theme-shop, .is-home-locked) .nav-icon-btn.active {
+  background: var(--st-cream);
+  color: var(--st-ink);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-badge {
+  position: absolute;
+  top: 3px;
+  right: 1px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow: 0 0 0 2px var(--st-white);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-login-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 7px 0 20px;
+  margin-left: 6px;
+  border-radius: 50px;
+  border: 0;
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-login-btn svg {
+  order: 2;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  border-radius: 50%;
+  background: var(--st-white);
+  color: var(--st-ink);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-login-btn:hover,
+:is(.theme-shop, .is-home-locked) .nav-login-btn.active {
+  background: var(--st-accent-deep);
+  color: var(--st-on-accent);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-account-wrap,
+:is(.theme-shop, .is-home-locked) .nav-cart-wrap {
+  position: relative;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-account-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 14px 0 5px;
+  margin-left: 6px;
+  border-radius: 50px;
+  border: 0;
+  background: var(--st-cream);
+  color: var(--st-ink);
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: none;
+  transition: background 0.2s ease;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-account-btn > svg:first-child {
+  width: 36px;
+  height: 36px;
+  padding: 9px;
+  border-radius: 50%;
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-account-btn:hover,
+:is(.theme-shop, .is-home-locked) .nav-account-btn.open {
+  background: var(--st-sand);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-account-btn > svg:last-child {
+  transition: transform 0.3s var(--st-ease);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-account-btn.open > svg:last-child {
+  transform: rotate(180deg);
+}
+
+/* Pop-overs are cut-paper stickers: ink outline and a hard offset shadow */
+:is(.theme-shop, .is-home-locked) .nav-dropdown,
+:is(.theme-shop, .is-home-locked) .cart-drawer {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  z-index: 60;
+  background: var(--st-white);
+  border: 2px solid var(--st-ink);
+  border-radius: 32px;
+  box-shadow: 6px 6px 0 var(--st-ink);
+  animation: st-pop 0.35s var(--st-ease);
+  transform-origin: top right;
+}
+
+@keyframes st-pop {
+  from { opacity: 0; transform: translateY(-6px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+:is(.theme-shop, .is-home-locked) .nav-dropdown {
+  min-width: 240px;
+  padding: 10px;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--st-ink);
+  text-align: left;
+  background: transparent;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-dropdown-item svg {
+  display: none;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-dropdown-item--danger,
+:is(.theme-shop, .is-home-locked) .nav-dropdown-item--danger:hover {
+  color: var(--st-stop);
+}
+
+:is(.theme-shop, .is-home-locked) .nav-dropdown-item--danger:hover {
+  background: #f8e5e0;
+}
+
+:is(.theme-shop, .is-home-locked) .nav-dropdown-divider {
+  height: 2px;
+  margin: 6px 10px;
+  border-radius: 2px;
+  background: var(--st-cream);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer {
+  width: 380px;
+  padding: 24px;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--st-ink);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--st-cream);
+  color: var(--st-ink);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__header button:hover {
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 0 16px;
+  color: var(--st-gray);
+  font-size: 15px;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__item {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px 8px 8px;
+  border-radius: 26px;
+  background: var(--st-cream);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__item-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: var(--st-white);
+  overflow: hidden;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__item-img img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__item-fallback {
+  font-size: 9px;
+  color: var(--st-gray-light);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__item-model {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--st-ink);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__item-qty {
+  font-size: 13px;
+  color: var(--st-gray);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__item-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--st-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__more {
+  padding: 4px 8px 0;
+  font-size: 14px;
+  color: var(--st-gray);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 18px;
+}
+
+/* Complete button styles here: on the home page (.is-home-locked) the general
+   .theme-shop .st-btn rules do not apply, and this drawer is shared by both. */
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 22px;
+  border-radius: 50px;
+  font-family: var(--st-sans);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn--primary,
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn--primary:hover:not(:disabled) {
+  background: var(--st-cta);
+  border: 2px solid var(--st-cta);
+  color: var(--st-on-cta);
+  box-shadow: none;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn--primary:hover:not(:disabled) {
+  background: var(--st-cta-deep);
+  border-color: var(--st-cta-deep);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn:not(.st-btn--primary),
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn:not(.st-btn--primary):hover:not(:disabled) {
+  background: var(--st-white);
+  border: 2px solid var(--st-ink);
+  color: var(--st-ink);
+  box-shadow: none;
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__footer .st-btn:not(.st-btn--primary):hover:not(:disabled) {
+  background: var(--st-cream);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 4px;
+  font-size: 16px;
+  color: var(--st-gray);
+}
+
+:is(.theme-shop, .is-home-locked) .cart-drawer__subtotal span:last-child {
+  color: var(--st-ink);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Mobile menu toggle: the accent circle */
+:is(.theme-shop, .is-home-locked) .menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+}
+
+:is(.theme-shop, .is-home-locked) .menu-toggle:hover {
+  background: var(--st-accent-deep);
+  color: var(--st-on-accent);
+}
+
+:is(.theme-shop, .is-home-locked) .mobile-nav {
+  top: 92px;
+  left: 12px;
+  right: 12px;
+  background: var(--st-white);
+  border-radius: 32px;
+  padding: 12px;
+  backdrop-filter: none;
+}
+
+:is(.theme-shop, .is-home-locked) .mobile-nav .nav-link {
+  width: 100%;
+  height: 52px;
+  justify-content: flex-start;
+  font-size: 17px;
+}
+
+:is(.theme-shop, .is-home-locked) .mobile-nav .nav-link.active {
+  box-shadow: none;
+}
+
+:is(.theme-shop, .is-home-locked) .mobile-nav .nav-link--danger {
+  color: var(--st-stop);
+}
+
+:is(.theme-shop, .is-home-locked) .mobile-nav-divider {
+  height: 2px;
+  margin: 8px 12px;
+  border-radius: 2px;
+  background: var(--st-cream);
+}
+
+/* ══════════════════════════ Toasts: stickers ══════════════════════════ */
+.theme-shop .toast-container {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.theme-shop .toast {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 370px;
+  max-width: calc(100vw - 32px);
+  padding: 12px 22px 12px 12px;
+  border-radius: 50px;
+  background: var(--st-white);
+  color: var(--st-ink);
+  animation: st-toast-in 0.5s var(--st-ease);
+}
+
+@keyframes st-toast-in {
+  from { opacity: 0; transform: translateY(16px) rotate(-2deg); }
+  to { opacity: 1; transform: none; }
+}
+
+.theme-shop .toast .toast-icon,
+.theme-shop .toast.info .toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--st-sky);
+  color: var(--st-ink);
+}
+
+.theme-shop .toast.success .toast-icon {
+  background: var(--st-accent);
+  color: var(--st-on-accent);
+}
+
+.theme-shop .toast.error .toast-icon {
+  background: var(--st-coral);
+  color: var(--st-ink);
+}
+
+.theme-shop .toast-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.theme-shop .toast-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--st-ink);
+}
+
+.theme-shop .toast-desc {
+  margin-top: 1px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--st-gray);
+}
+
+/* ══════════════════════════ Modal shell ══════════════════════════ */
+.theme-shop .st-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(39, 37, 30, 0.4);
+  animation: st-fade 0.2s ease;
+}
+
+@keyframes st-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.theme-shop .st-modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  max-height: min(760px, calc(100vh - 48px));
+  overflow: hidden;
+  animation: st-pop 0.4s var(--st-ease);
+}
+
+.theme-shop .st-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 36px 36px 18px;
+}
+
+.theme-shop .st-modal__title {
+  font-family: var(--st-display);
+  font-size: 40px;
+  line-height: 1;
+}
+
+.theme-shop .st-modal__body {
+  padding: 0 36px 36px;
+  overflow-y: auto;
+}
+
+.theme-shop .st-modal__foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 18px 36px 28px;
+}
+
+/* ══════════════════════════ Footer band: full-bleed navy ══════════════════════════ */
+.theme-shop .st-footer {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 80px var(--st-gutter) 36px;
+}
+
+.theme-shop .st-footer__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 40px;
+  max-width: calc(var(--st-max) - 2 * var(--st-gutter));
+  margin: 0 auto;
+}
+
+.theme-shop .st-footer__title {
+  font-family: var(--st-display);
+  font-size: clamp(36px, 4.4vw, 56px);
+  line-height: 1;
+}
+
+.theme-shop .st-footer__lede {
+  margin-top: 20px;
+  max-width: 42ch;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.theme-shop .st-footer__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  height: 58px;
+  margin-top: 32px;
+  padding: 0 8px 0 26px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: transform 0.35s var(--st-ease);
+}
+
+.theme-shop .st-footer__cta span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.theme-shop .st-footer__cta:hover {
+  transform: translateY(-3px) rotate(-1.5deg);
+}
+
+.theme-shop .st-footer__art {
+  justify-self: end;
+  width: min(100%, 440px);
+}
+
+.theme-shop .st-footer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: calc(var(--st-max) - 2 * var(--st-gutter));
+  margin: 56px auto 0;
+  padding-top: 22px;
+  border-top: 2px solid rgba(255, 255, 255, 0.28);
+  font-size: 15px;
+}
+
+.theme-shop .st-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+}
+
+.theme-shop .st-footer__links button {
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.theme-shop .st-footer :focus-visible {
+  outline-color: var(--st-white);
+}
+
+/* The anemometer on the paper-cut station turns in the wind */
+@media (prefers-reduced-motion: no-preference) {
+  .theme-shop .pc-station__rotor {
+    animation: st-spin 3.2s linear infinite;
+  }
+}
+
+@keyframes st-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ══════════════════════════ Home page: header floats over the sky ══════════════════════════
+   The home hero is locked to the viewport. Its sky fills the whole screen and the header
+   pill floats on top of it with a transparent band; the hero content is pushed down by the
+   header's height so nothing sits underneath the pill. */
+.app-container.is-home-locked {
+  --st-nav-h: 92px;
+}
+
+.app-container.is-home-locked .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  font-family: var(--st-sans);
+}
+
+.app-container.is-home-locked .main {
+  height: 100vh !important;
+}
+
+.app-container.is-home-locked .genie-hero-stage {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  padding-top: calc(var(--st-nav-h) + 16px);
+}
+
+/* Floating product cards keep clear of the header pill */
+.app-container.is-home-locked .hero-floating-products-container {
+  top: var(--st-nav-h);
+  height: calc(100% - var(--st-nav-h));
+}
+
+@media (max-width: 640px) {
+  .app-container.is-home-locked {
+    --st-nav-h: 78px;
+  }
+}
+
+/* ══════════════════════════ Responsive ══════════════════════════ */
+@media (max-width: 1080px) {
+  .theme-shop,
+  .is-home-locked .nav,
+  .is-home-locked .mobile-nav {
+    --st-gutter: 28px;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-account-name {
+    display: none;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-account-btn {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 860px) {
+  .theme-shop .st-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 32px 0 40px;
+  }
+
+  .theme-shop .st-header__aside {
+    padding-bottom: 0;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-menu {
+    display: none;
+  }
+
+  :is(.theme-shop, .is-home-locked) .menu-toggle {
+    display: flex;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-compare-btn span:not(.count) {
+    display: none;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-compare-btn,
+  :is(.theme-shop, .is-home-locked) .nav-compare-btn.empty {
+    padding: 0 5px;
+    border-width: 0;
+    background: transparent !important;
+  }
+
+  .theme-shop .st-footer__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-shop .st-footer__art {
+    justify-self: start;
+    width: min(100%, 340px);
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-shop,
+  .is-home-locked .nav,
+  .is-home-locked .mobile-nav {
+    --st-gutter: 16px;
+    font-size: 16px;
+  }
+
+  .theme-shop .st-page {
+    padding-top: 16px;
+  }
+
+  .theme-shop .st-display,
+  .theme-shop .st-header h1 {
+    font-size: 40px;
+  }
+
+  .theme-shop .st-header__aside p,
+  .theme-shop .st-lede {
+    font-size: 18px;
+  }
+
+  .theme-shop .st-panel,
+  .theme-shop .st-panel--lg {
+    padding: 28px 22px;
+    border-radius: 36px;
+  }
+
+  .theme-shop .st-state {
+    padding: 48px 20px;
+    border-radius: 36px;
+  }
+
+  .theme-shop .st-state__title {
+    font-size: 32px;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav {
+    padding: 8px;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-inner {
+    height: 62px;
+    padding: 0 8px 0 10px;
+    gap: 6px;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-brand-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-brand-text span {
+    display: none;
+  }
+
+  :is(.theme-shop, .is-home-locked) .nav-actions .nav-icon-btn:not(.nav-cart-wrap .nav-icon-btn),
+  :is(.theme-shop, .is-home-locked) .nav-account-wrap,
+  :is(.theme-shop, .is-home-locked) .nav-login-btn {
+    display: none;
+  }
+
+  :is(.theme-shop, .is-home-locked) .mobile-nav {
+    top: 78px;
+    left: 8px;
+    right: 8px;
+  }
+
+  :is(.theme-shop, .is-home-locked) .cart-drawer {
+    position: fixed;
+    top: 80px;
+    left: 8px;
+    right: 8px;
+    width: auto;
+  }
+
+  .theme-shop .st-dl > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .theme-shop .st-modal__head {
+    padding: 28px 24px 14px;
+  }
+
+  .theme-shop .st-modal__body {
+    padding: 0 24px 24px;
+  }
+
+  .theme-shop .st-modal__title {
+    font-size: 32px;
+  }
+
+  .theme-shop .toast-container {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .theme-shop .toast {
+    width: 100%;
+  }
+
+  .theme-shop .st-footer {
+    padding: 56px 20px 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-shop *,
+  .theme-shop *::before,
+  .theme-shop *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -44,24 +44,12 @@ const TECHNICAL_COMPATIBILITY_GRAPH = {
 
 class RecommendationService {
   /**
-   * Fetch AI recommendations for a specific product ID / model
-   * Integrates against GET /api/v1/products/:id/recommendations
+   * Recommendations for a product. The API has no recommendations endpoint yet, so this
+   * reads the local technical compatibility graph; `hydrateRecommendations` is ready for
+   * when GET /products/:id/recommendations exists.
    */
   async getProductRecommendations(productId, model) {
     const cleanModel = model ? String(model).trim() : '';
-
-    try {
-      // API call to backend AI recommendation endpoint
-      const response = await fetch(`/api/v1/products/${encodeURIComponent(productId || cleanModel)}/recommendations`);
-      if (response.ok) {
-        const data = await response.json();
-        if (data && Array.isArray(data.recommendations) && data.recommendations.length > 0) {
-          return this.hydrateRecommendations(data.recommendations);
-        }
-      }
-    } catch {
-      // Seamlessly fall back to technical compatibility matrix
-    }
 
     // Hydrate fallback from technical compatibility graph
     const compatibleList = TECHNICAL_COMPATIBILITY_GRAPH[cleanModel] || [];

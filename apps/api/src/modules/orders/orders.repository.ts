@@ -1,6 +1,13 @@
-import { Injectable, Logger, ServiceUnavailableException } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  Logger,
+  ServiceUnavailableException,
+} from '@nestjs/common';
 import { randomUUID } from 'crypto';
 import { SupabaseService } from '../../database/supabase/supabase.service';
+import { AWAITING_PAYMENT_STATUSES, ORDER_STATUS } from './orders.constants';
+import type { OrderRow, OrderUpdate, OrderWithItems } from './orders.types';
 
 export interface ProductPriceSnapshot {
   product_id: string;
@@ -47,12 +54,23 @@ export interface CreateOrderParams {
 export class OrdersRepository {
   private readonly logger = new Logger(OrdersRepository.name);
 
+  /** Side records (history, notifications) must not fail the order write, but must not vanish silently either. */
+  private warnIfFailed(
+    label: string,
+    result: { error: { message: string } | null },
+  ): void {
+    if (result.error)
+      this.logger.warn(`Failed to insert ${label}: ${result.error.message}`);
+  }
+
   constructor(private readonly supabase: SupabaseService) {}
 
   /**
    * Batch fetch product info, price in VND, and first image
    */
-  async getProductsAndPrices(productIds: string[]): Promise<Map<string, ProductPriceSnapshot>> {
+  async getProductsAndPrices(
+    productIds: string[],
+  ): Promise<Map<string, ProductPriceSnapshot>> {
     const client = this.supabase.getClient();
 
     // 1. Fetch products
@@ -63,7 +81,9 @@ export class OrdersRepository {
 
     if (prodErr) {
       this.logger.error(`Error querying products: ${prodErr.message}`);
-      throw new ServiceUnavailableException('Lỗi truy vấn danh mục sản phẩm từ cơ sở dữ liệu');
+      throw new ServiceUnavailableException(
+        'Lỗi truy vấn danh mục sản phẩm từ cơ sở dữ liệu',
+      );
     }
 
     // 2. Fetch prices
@@ -74,7 +94,9 @@ export class OrdersRepository {
 
     if (priceErr) {
       this.logger.error(`Error querying product_prices: ${priceErr.message}`);
-      throw new ServiceUnavailableException('Lỗi truy vấn bảng giá sản phẩm từ cơ sở dữ liệu');
+      throw new ServiceUnavailableException(
+        'Lỗi truy vấn bảng giá sản phẩm từ cơ sở dữ liệu',
+      );
     }
 
     // 3. Fetch primary images
@@ -107,7 +129,9 @@ export class OrdersRepository {
         model: p.model,
         product_name: p.product_name_en || p.model,
         status: p.status,
-        price_vnd: priceMap.has(p.product_id) ? priceMap.get(p.product_id)! : null,
+        price_vnd: priceMap.has(p.product_id)
+          ? priceMap.get(p.product_id)!
+          : null,
         image_url: imageMap.get(p.product_id) || null,
       });
     });
@@ -123,12 +147,12 @@ export class OrdersRepository {
    * 4. Insert into notifications
    * Rollback order if inserting items fails
    */
-  async createOrder(params: CreateOrderParams): Promise<any> {
+  async createOrder(params: CreateOrderParams): Promise<OrderWithItems> {
     const client = this.supabase.getClient();
     const orderId = randomUUID();
     const nowIso = new Date().toISOString();
 
-    const orderRecord: Record<string, any> = {
+    const orderRecord: Record<string, string | number | null | undefined> = {
       id: orderId,
       customer_id: params.customerId,
       status: params.status,
@@ -163,7 +187,10 @@ export class OrdersRepository {
 
     if (orderErr) {
       this.logger.error(`Failed to insert orders: ${orderErr.message}`);
-      throw new ServiceUnavailableException(`Không thể tạo đơn hàng: ${orderErr.message}`);
+      // Database details stay in the log; the client gets a stable message
+      throw new ServiceUnavailableException(
+        'Không thể tạo đơn hàng lúc này. Vui lòng thử lại sau.',
+      );
     }
 
     // 2. Insert order_items
@@ -184,31 +211,41 @@ export class OrdersRepository {
       .select();
 
     if (itemsErr) {
-      this.logger.error(`Failed to insert order_items, rolling back order: ${itemsErr.message}`);
+      this.logger.error(
+        `Failed to insert order_items, rolling back order: ${itemsErr.message}`,
+      );
       // Rollback inserted order
       await client.from('orders').delete().eq('id', orderId);
-      throw new ServiceUnavailableException(`Không thể lưu chi tiết sản phẩm đơn hàng: ${itemsErr.message}`);
+      throw new ServiceUnavailableException(
+        'Không thể lưu chi tiết sản phẩm đơn hàng. Vui lòng thử lại sau.',
+      );
     }
 
     // 3. Insert initial status history
-    await client.from('order_status_history').insert({
-      order_id: orderId,
-      from_status: null,
-      to_status: params.status,
-      changed_by: params.customerId,
-      note: 'Khởi tạo đơn hàng mới',
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'status history',
+      await client.from('order_status_history').insert({
+        order_id: orderId,
+        from_status: null,
+        to_status: params.status,
+        changed_by: params.customerId,
+        note: 'Khởi tạo đơn hàng mới',
+        created_at: nowIso,
+      }),
+    );
 
     // 4. Insert notification for customer
-    await client.from('notifications').insert({
-      customer_id: params.customerId,
-      type: 'ORDER_CREATED',
-      title: `Đơn hàng #${insertedOrder.order_number} đã được tạo`,
-      message: `Đơn hàng ${insertedOrder.order_code} của bạn đã được ghi nhận vào hệ thống REECO.`,
-      order_id: orderId,
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'notification',
+      await client.from('notifications').insert({
+        customer_id: params.customerId,
+        type: 'ORDER_CREATED',
+        title: `Đơn hàng #${insertedOrder.order_number} đã được tạo`,
+        message: `Đơn hàng ${insertedOrder.order_code} của bạn đã được ghi nhận vào hệ thống REECO.`,
+        order_id: orderId,
+        created_at: nowIso,
+      }),
+    );
 
     return {
       ...insertedOrder,
@@ -219,7 +256,11 @@ export class OrdersRepository {
   /**
    * Find orders for a customer with pagination
    */
-  async findByCustomerId(customerId: string, page = 1, pageSize = 20): Promise<{ items: any[]; total: number }> {
+  async findByCustomerId(
+    customerId: string,
+    page = 1,
+    pageSize = 20,
+  ): Promise<{ items: OrderWithItems[]; total: number }> {
     const client = this.supabase.getClient();
     const from = (page - 1) * pageSize;
     const to = from + pageSize - 1;
@@ -245,13 +286,18 @@ export class OrdersRepository {
   /**
    * Find a single order by UUID, order_number (e.g. 1001), or order_code (e.g. REECO-1001)
    */
-  async findOrderByIdentifier(identifier: string): Promise<any | null> {
+  async findOrderByIdentifier(
+    identifier: string,
+  ): Promise<OrderWithItems | null> {
     const client = this.supabase.getClient();
     let query = client
       .from('orders')
       .select('*, order_items(*), order_status_history(*)');
 
-    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(identifier);
+    const isUuid =
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+        identifier,
+      );
     const isNumeric = /^\d+$/.test(identifier);
 
     if (isUuid) {
@@ -265,7 +311,9 @@ export class OrdersRepository {
     const { data, error } = await query.maybeSingle();
 
     if (error) {
-      this.logger.error(`Error finding order by identifier ${identifier}: ${error.message}`);
+      this.logger.error(
+        `Error finding order by identifier ${identifier}: ${error.message}`,
+      );
       return null;
     }
 
@@ -275,7 +323,12 @@ export class OrdersRepository {
   /**
    * Cancel an order: update status, record history, and notify customer
    */
-  async cancelOrder(orderId: string, customerId: string, currentStatus: string, reason?: string): Promise<any> {
+  async cancelOrder(
+    orderId: string,
+    customerId: string,
+    currentStatus: string,
+    reason?: string,
+  ): Promise<OrderRow> {
     const client = this.supabase.getClient();
     const nowIso = new Date().toISOString();
 
@@ -286,33 +339,46 @@ export class OrdersRepository {
         updated_at: nowIso,
       })
       .eq('id', orderId)
+      // Only if nobody changed the order since it was checked (e.g. a VNPay callback)
+      .eq('status', currentStatus)
       .select()
-      .single();
+      .maybeSingle();
 
     if (error) {
       this.logger.error(`Error cancelling order: ${error.message}`);
       throw new ServiceUnavailableException('Không thể hủy đơn hàng');
     }
+    if (!data) {
+      throw new ConflictException(
+        'Trạng thái đơn hàng vừa thay đổi. Vui lòng tải lại và thử lại.',
+      );
+    }
 
     // Record status history
-    await client.from('order_status_history').insert({
-      order_id: orderId,
-      from_status: currentStatus,
-      to_status: 'CANCELLED',
-      changed_by: customerId,
-      note: reason || 'Khách hàng yêu cầu hủy đơn hàng',
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'status history',
+      await client.from('order_status_history').insert({
+        order_id: orderId,
+        from_status: currentStatus,
+        to_status: 'CANCELLED',
+        changed_by: customerId,
+        note: reason || 'Khách hàng yêu cầu hủy đơn hàng',
+        created_at: nowIso,
+      }),
+    );
 
     // Create notification
-    await client.from('notifications').insert({
-      customer_id: customerId,
-      type: 'ORDER_STATUS_CHANGED',
-      title: `Đơn hàng #${data.order_number} đã được hủy`,
-      message: `Đơn hàng ${data.order_code} đã được hủy thành công.`,
-      order_id: orderId,
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'notification',
+      await client.from('notifications').insert({
+        customer_id: customerId,
+        type: 'ORDER_STATUS_CHANGED',
+        title: `Đơn hàng #${data.order_number} đã được hủy`,
+        message: `Đơn hàng ${data.order_code} đã được hủy thành công.`,
+        order_id: orderId,
+        created_at: nowIso,
+      }),
+    );
 
     return data;
   }
@@ -325,7 +391,7 @@ export class OrdersRepository {
     status?: string;
     page?: number;
     pageSize?: number;
-  }): Promise<{ items: any[]; total: number }> {
+  }): Promise<{ items: OrderWithItems[]; total: number }> {
     const client = this.supabase.getClient();
     const page = Math.max(1, Number(params.page) || 1);
     const pageSize = Math.min(100, Math.max(1, Number(params.pageSize) || 20));
@@ -336,14 +402,19 @@ export class OrdersRepository {
       .from('orders')
       .select('*, order_items(*)', { count: 'exact' });
 
-    // Status filter
-    if (params.status && params.status !== 'ALL') {
+    // Status filter: only known statuses reach the query
+    if (
+      params.status &&
+      (Object.values(ORDER_STATUS) as string[]).includes(params.status)
+    ) {
       query = query.eq('status', params.status);
     }
 
     // Search filter
     if (params.search && params.search.trim()) {
-      const q = params.search.trim().replace(/"/g, '');
+      // The value is placed inside double quotes in a PostgREST or() filter; removing quotes
+      // and backslashes keeps it from closing the quote and adding filter conditions.
+      const q = params.search.trim().replace(/["\\]/g, '').slice(0, 100);
       const isNumeric = /^\d+$/.test(q);
       if (isNumeric) {
         query = query.or(
@@ -362,7 +433,9 @@ export class OrdersRepository {
 
     if (error) {
       this.logger.error(`Error querying admin orders: ${error.message}`);
-      throw new ServiceUnavailableException('Lỗi tải danh sách đơn hàng quản trị');
+      throw new ServiceUnavailableException(
+        'Lỗi tải danh sách đơn hàng quản trị',
+      );
     }
 
     return {
@@ -375,16 +448,16 @@ export class OrdersRepository {
    * Update order status by Admin with audit log and customer notification
    */
   async updateOrderStatusByAdmin(
-    order: any,
+    order: OrderRow,
     newStatus: string,
     adminId: string,
     note?: string,
     autoPaidCod = false,
-  ): Promise<any> {
+  ): Promise<OrderWithItems> {
     const client = this.supabase.getClient();
     const nowIso = new Date().toISOString();
 
-    const updatePayload: Record<string, any> = {
+    const updatePayload: OrderUpdate = {
       status: newStatus,
       updated_at: nowIso,
     };
@@ -404,45 +477,56 @@ export class OrdersRepository {
 
     if (error) {
       this.logger.error(`Error updating order status: ${error.message}`);
-      throw new ServiceUnavailableException('Không thể cập nhật trạng thái đơn hàng');
+      throw new ServiceUnavailableException(
+        'Không thể cập nhật trạng thái đơn hàng',
+      );
     }
 
     // Insert history
-    await client.from('order_status_history').insert({
-      order_id: order.id,
-      from_status: order.status,
-      to_status: newStatus,
-      changed_by: adminId,
-      note:
-        note ||
-        (autoPaidCod
-          ? 'Giao hàng thành công - Tự động xác nhận thanh toán COD'
-          : `Chuyển trạng thái sang ${newStatus}`),
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'status history',
+      await client.from('order_status_history').insert({
+        order_id: order.id,
+        from_status: order.status,
+        to_status: newStatus,
+        changed_by: adminId,
+        note:
+          note ||
+          (autoPaidCod
+            ? 'Giao hàng thành công - Tự động xác nhận thanh toán COD'
+            : `Chuyển trạng thái sang ${newStatus}`),
+        created_at: nowIso,
+      }),
+    );
 
     // Create notification: ORDER_STATUS_CHANGED
-    await client.from('notifications').insert({
-      customer_id: order.customer_id,
-      type: 'ORDER_STATUS_CHANGED',
-      title: `Cập nhật đơn hàng #${order.order_number}`,
-      message: `Đơn hàng ${order.order_code} đã được chuyển sang trạng thái: ${newStatus}`,
-      order_id: order.id,
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'notification',
+      await client.from('notifications').insert({
+        customer_id: order.customer_id,
+        type: 'ORDER_STATUS_CHANGED',
+        title: `Cập nhật đơn hàng #${order.order_number}`,
+        message: `Đơn hàng ${order.order_code} đã được chuyển sang trạng thái: ${newStatus}`,
+        order_id: order.id,
+        created_at: nowIso,
+      }),
+    );
 
     // If marked paid: create notification PAYMENT_UPDATED
     if (isMarkingPaid) {
-      await client.from('notifications').insert({
-        customer_id: order.customer_id,
-        type: 'PAYMENT_UPDATED',
-        title: `Thanh toán thành công đơn hàng #${order.order_number}`,
-        message: autoPaidCod
-          ? `Đơn hàng ${order.order_code} đã được xác nhận thanh toán tiền mặt (COD).`
-          : `Đơn hàng ${order.order_code} đã được xác nhận thanh toán thành công.`,
-        order_id: order.id,
-        created_at: nowIso,
-      });
+      this.warnIfFailed(
+        'notification',
+        await client.from('notifications').insert({
+          customer_id: order.customer_id,
+          type: 'PAYMENT_UPDATED',
+          title: `Thanh toán thành công đơn hàng #${order.order_number}`,
+          message: autoPaidCod
+            ? `Đơn hàng ${order.order_code} đã được xác nhận thanh toán tiền mặt (COD).`
+            : `Đơn hàng ${order.order_code} đã được xác nhận thanh toán thành công.`,
+          order_id: order.id,
+          created_at: nowIso,
+        }),
+      );
     }
 
     return data;
@@ -451,7 +535,7 @@ export class OrdersRepository {
   /**
    * Get Admin Order Stats: total, revenue (paid orders), counts, daily revenue, top products
    */
-  async getAdminOrderStats(): Promise<any> {
+  async getAdminOrderStats() {
     const client = this.supabase.getClient();
 
     const { data: orders, error: ordersErr } = await client
@@ -461,8 +545,12 @@ export class OrdersRepository {
       );
 
     if (ordersErr) {
-      this.logger.error(`Error fetching orders for stats: ${ordersErr.message}`);
-      throw new ServiceUnavailableException('Lỗi tải dữ liệu thống kê đơn hàng');
+      this.logger.error(
+        `Error fetching orders for stats: ${ordersErr.message}`,
+      );
+      throw new ServiceUnavailableException(
+        'Lỗi tải dữ liệu thống kê đơn hàng',
+      );
     }
 
     const allOrders = orders || [];
@@ -470,6 +558,11 @@ export class OrdersRepository {
     let paidOrdersCount = 0;
     let vnpayRevenue = 0;
     let codRevenue = 0;
+
+    // Every status starts at 0 so the dashboard can show (and link to) each one
+    const ordersByStatus: Record<string, number> = Object.fromEntries(
+      Object.values(ORDER_STATUS).map((status) => [status, 0]),
+    );
 
     let processingCount = 0;
     let shippedCount = 0;
@@ -480,7 +573,12 @@ export class OrdersRepository {
     const dailyRevenueMap: Record<string, number> = {};
     const productSalesMap: Record<
       string,
-      { model: string; name: string; totalQuantity: number; totalRevenue: number }
+      {
+        model: string;
+        name: string;
+        totalQuantity: number;
+        totalRevenue: number;
+      }
     > = {};
 
     for (const ord of allOrders) {
@@ -500,7 +598,8 @@ export class OrdersRepository {
 
         const dateKey = (ord.created_at || '').substring(0, 10);
         if (dateKey) {
-          dailyRevenueMap[dateKey] = (dailyRevenueMap[dateKey] || 0) + orderTotal;
+          dailyRevenueMap[dateKey] =
+            (dailyRevenueMap[dateKey] || 0) + orderTotal;
         }
 
         // Aggregate top products
@@ -519,6 +618,8 @@ export class OrdersRepository {
           productSalesMap[m].totalRevenue += Number(it.line_total) || 0;
         }
       }
+
+      ordersByStatus[ord.status] = (ordersByStatus[ord.status] || 0) + 1;
 
       switch (ord.status) {
         case 'PROCESSING':
@@ -556,6 +657,7 @@ export class OrdersRepository {
       deliveredCount,
       pendingCount,
       cancelledCount,
+      ordersByStatus,
       vnpayRevenue,
       codRevenue,
       dailyRevenueMap,
@@ -566,7 +668,7 @@ export class OrdersRepository {
   /**
    * Find order by VNPay Transaction Reference (vnp_TxnRef)
    */
-  async findOrderByTxnRef(txnRef: string): Promise<any | null> {
+  async findOrderByTxnRef(txnRef: string): Promise<OrderWithItems | null> {
     const client = this.supabase.getClient();
     const { data, error } = await client
       .from('orders')
@@ -575,7 +677,9 @@ export class OrdersRepository {
       .maybeSingle();
 
     if (error) {
-      this.logger.error(`Error querying order by vnpay_txn_ref: ${error.message}`);
+      this.logger.error(
+        `Error querying order by vnpay_txn_ref: ${error.message}`,
+      );
       return null;
     }
     return data;
@@ -589,11 +693,11 @@ export class OrdersRepository {
     orderId: string,
     txnRef: string,
     resetToPendingPayment = false,
-  ): Promise<any> {
+  ): Promise<OrderRow> {
     const client = this.supabase.getClient();
     const nowIso = new Date().toISOString();
 
-    const updatePayload: Record<string, any> = {
+    const updatePayload: OrderUpdate = {
       vnpay_txn_ref: txnRef,
       updated_at: nowIso,
     };
@@ -612,18 +716,23 @@ export class OrdersRepository {
 
     if (error) {
       this.logger.error(`Error updating order txn ref: ${error.message}`);
-      throw new ServiceUnavailableException('Không thể lưu mã giao dịch VNPay cho đơn hàng');
+      throw new ServiceUnavailableException(
+        'Không thể lưu mã giao dịch VNPay cho đơn hàng',
+      );
     }
 
     if (resetToPendingPayment) {
-      await client.from('order_status_history').insert({
-        order_id: orderId,
-        from_status: 'PAYMENT_FAILED',
-        to_status: 'PENDING_PAYMENT',
-        changed_by: data.customer_id,
-        note: `Khởi tạo lại thanh toán VNPay (Mã giao dịch: ${txnRef})`,
-        created_at: nowIso,
-      });
+      this.warnIfFailed(
+        'status history',
+        await client.from('order_status_history').insert({
+          order_id: orderId,
+          from_status: 'PAYMENT_FAILED',
+          to_status: 'PENDING_PAYMENT',
+          changed_by: data.customer_id,
+          note: `Khởi tạo lại thanh toán VNPay (Mã giao dịch: ${txnRef})`,
+          created_at: nowIso,
+        }),
+      );
     }
 
     return data;
@@ -635,7 +744,10 @@ export class OrdersRepository {
    * - Insert history: from order.status -> PROCESSING
    * - Insert notifications: ORDER_STATUS_CHANGED, PAYMENT_UPDATED
    */
-  async recordPaymentSuccess(order: any, vnpayTransactionNo: string): Promise<any> {
+  async recordPaymentSuccess(
+    order: OrderRow,
+    vnpayTransactionNo: string,
+  ): Promise<OrderWithItems | null> {
     const client = this.supabase.getClient();
     const nowIso = new Date().toISOString();
 
@@ -649,43 +761,57 @@ export class OrdersRepository {
         updated_at: nowIso,
       })
       .eq('id', order.id)
+      // Never revive an order that was cancelled or moved on meanwhile
+      .in('status', AWAITING_PAYMENT_STATUSES)
       .select('*, order_items(*)')
-      .single();
+      .maybeSingle();
 
     if (error) {
       this.logger.error(`Error recording payment success: ${error.message}`);
-      throw new ServiceUnavailableException('Không thể cập nhật trạng thái thanh toán thành công');
+      throw new ServiceUnavailableException(
+        'Không thể cập nhật trạng thái thanh toán thành công',
+      );
     }
+    if (!data) return null;
 
     // Insert history
-    await client.from('order_status_history').insert({
-      order_id: order.id,
-      from_status: order.status,
-      to_status: 'PROCESSING',
-      changed_by: order.customer_id,
-      note: `Thanh toán thành công qua cổng VNPay (Mã giao dịch: ${vnpayTransactionNo})`,
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'status history',
+      await client.from('order_status_history').insert({
+        order_id: order.id,
+        from_status: order.status,
+        to_status: 'PROCESSING',
+        changed_by: order.customer_id,
+        note: `Thanh toán thành công qua cổng VNPay (Mã giao dịch: ${vnpayTransactionNo})`,
+        created_at: nowIso,
+      }),
+    );
 
     // Notification ORDER_STATUS_CHANGED
-    await client.from('notifications').insert({
-      customer_id: order.customer_id,
-      type: 'ORDER_STATUS_CHANGED',
-      title: `Cập nhật đơn hàng #${order.order_number}`,
-      message: `Đơn hàng ${order.order_code} đã được chuyển sang trạng thái: PROCESSING`,
-      order_id: order.id,
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'notification',
+      await client.from('notifications').insert({
+        customer_id: order.customer_id,
+        type: 'ORDER_STATUS_CHANGED',
+        title: `Cập nhật đơn hàng #${order.order_number}`,
+        message: `Đơn hàng ${order.order_code} đã được chuyển sang trạng thái: PROCESSING`,
+        order_id: order.id,
+        created_at: nowIso,
+      }),
+    );
 
     // Notification PAYMENT_UPDATED
-    await client.from('notifications').insert({
-      customer_id: order.customer_id,
-      type: 'PAYMENT_UPDATED',
-      title: `Thanh toán thành công đơn hàng #${order.order_number}`,
-      message: `Đơn hàng ${order.order_code} đã được thanh toán thành công qua cổng VNPay.`,
-      order_id: order.id,
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'notification',
+      await client.from('notifications').insert({
+        customer_id: order.customer_id,
+        type: 'PAYMENT_UPDATED',
+        title: `Thanh toán thành công đơn hàng #${order.order_number}`,
+        message: `Đơn hàng ${order.order_code} đã được thanh toán thành công qua cổng VNPay.`,
+        order_id: order.id,
+        created_at: nowIso,
+      }),
+    );
 
     return data;
   }
@@ -697,14 +823,14 @@ export class OrdersRepository {
    * - Insert notifications: ORDER_STATUS_CHANGED
    */
   async recordPaymentFailure(
-    order: any,
+    order: OrderRow,
     responseCode: string,
     vnpayTransactionNo?: string,
-  ): Promise<any> {
+  ): Promise<OrderWithItems | null> {
     const client = this.supabase.getClient();
     const nowIso = new Date().toISOString();
 
-    const updatePayload: Record<string, any> = {
+    const updatePayload: OrderUpdate = {
       status: 'PAYMENT_FAILED',
       payment_status: 'FAILED',
       updated_at: nowIso,
@@ -717,33 +843,43 @@ export class OrdersRepository {
       .from('orders')
       .update(updatePayload)
       .eq('id', order.id)
+      .in('status', AWAITING_PAYMENT_STATUSES)
       .select('*, order_items(*)')
-      .single();
+      .maybeSingle();
 
     if (error) {
       this.logger.error(`Error recording payment failure: ${error.message}`);
-      throw new ServiceUnavailableException('Không thể cập nhật trạng thái thanh toán thất bại');
+      throw new ServiceUnavailableException(
+        'Không thể cập nhật trạng thái thanh toán thất bại',
+      );
     }
+    if (!data) return null;
 
     // Insert history
-    await client.from('order_status_history').insert({
-      order_id: order.id,
-      from_status: order.status,
-      to_status: 'PAYMENT_FAILED',
-      changed_by: order.customer_id,
-      note: `Thanh toán thất bại qua cổng VNPay (Mã lỗi: ${responseCode})`,
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'status history',
+      await client.from('order_status_history').insert({
+        order_id: order.id,
+        from_status: order.status,
+        to_status: 'PAYMENT_FAILED',
+        changed_by: order.customer_id,
+        note: `Thanh toán thất bại qua cổng VNPay (Mã lỗi: ${responseCode})`,
+        created_at: nowIso,
+      }),
+    );
 
     // Notification ORDER_STATUS_CHANGED
-    await client.from('notifications').insert({
-      customer_id: order.customer_id,
-      type: 'ORDER_STATUS_CHANGED',
-      title: `Thanh toán thất bại đơn hàng #${order.order_number}`,
-      message: `Giao dịch thanh toán cho đơn hàng ${order.order_code} qua cổng VNPay không thành công (Mã lỗi: ${responseCode}). Vui lòng thanh toán lại.`,
-      order_id: order.id,
-      created_at: nowIso,
-    });
+    this.warnIfFailed(
+      'notification',
+      await client.from('notifications').insert({
+        customer_id: order.customer_id,
+        type: 'ORDER_STATUS_CHANGED',
+        title: `Thanh toán thất bại đơn hàng #${order.order_number}`,
+        message: `Giao dịch thanh toán cho đơn hàng ${order.order_code} qua cổng VNPay không thành công (Mã lỗi: ${responseCode}). Vui lòng thanh toán lại.`,
+        order_id: order.id,
+        created_at: nowIso,
+      }),
+    );
 
     return data;
   }

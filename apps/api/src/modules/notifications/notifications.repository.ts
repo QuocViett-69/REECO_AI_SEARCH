@@ -5,6 +5,9 @@ import {
   ServiceUnavailableException,
 } from '@nestjs/common';
 import { SupabaseService } from '../../database/supabase/supabase.service';
+import type { NotificationRow } from '../orders/orders.types';
+
+export type NotificationItem = NotificationRow & { is_read: boolean };
 
 export interface CreateNotificationParams {
   customer_id: string;
@@ -23,7 +26,10 @@ export class NotificationsRepository {
   /**
    * Lấy danh sách notifications của một khách hàng (chỉ của chính mình)
    */
-  async findByCustomerId(customerId: string, unreadOnly = false): Promise<any[]> {
+  async findByCustomerId(
+    customerId: string,
+    unreadOnly = false,
+  ): Promise<NotificationItem[]> {
     const client = this.supabase.getClient();
     let query = client
       .from('notifications')
@@ -34,14 +40,16 @@ export class NotificationsRepository {
       query = query.is('read_at', null);
     }
 
-    const { data, error } = await query.order('created_at', { ascending: false });
+    const { data, error } = await query.order('created_at', {
+      ascending: false,
+    });
 
     if (error) {
       this.logger.error(`Error querying notifications: ${error.message}`);
       throw new ServiceUnavailableException('Lỗi tải danh sách thông báo');
     }
 
-    return (data || []).map((n) => ({
+    return ((data || []) as NotificationRow[]).map((n) => ({
       ...n,
       is_read: n.read_at !== null,
     }));
@@ -59,7 +67,9 @@ export class NotificationsRepository {
       .is('read_at', null);
 
     if (error) {
-      this.logger.error(`Error counting unread notifications: ${error.message}`);
+      this.logger.error(
+        `Error counting unread notifications: ${error.message}`,
+      );
       return 0;
     }
 
@@ -69,7 +79,7 @@ export class NotificationsRepository {
   /**
    * Đánh dấu 1 thông báo là đã đọc (yêu cầu đúng customer_id)
    */
-  async markAsRead(id: string, customerId: string): Promise<any> {
+  async markAsRead(id: string, customerId: string): Promise<NotificationRow> {
     const client = this.supabase.getClient();
     const nowIso = new Date().toISOString();
 
@@ -106,7 +116,9 @@ export class NotificationsRepository {
 
     if (error) {
       this.logger.error(`Error marking notification read: ${error.message}`);
-      throw new ServiceUnavailableException('Không thể cập nhật trạng thái đã đọc');
+      throw new ServiceUnavailableException(
+        'Không thể cập nhật trạng thái đã đọc',
+      );
     }
 
     return {
@@ -130,8 +142,12 @@ export class NotificationsRepository {
       .select();
 
     if (error) {
-      this.logger.error(`Error marking all notifications read: ${error.message}`);
-      throw new ServiceUnavailableException('Không thể đánh dấu đã đọc tất cả thông báo');
+      this.logger.error(
+        `Error marking all notifications read: ${error.message}`,
+      );
+      throw new ServiceUnavailableException(
+        'Không thể đánh dấu đã đọc tất cả thông báo',
+      );
     }
 
     return {
@@ -142,11 +158,13 @@ export class NotificationsRepository {
   /**
    * Tạo mới 1 thông báo
    */
-  async createNotification(params: CreateNotificationParams): Promise<any> {
+  async createNotification(
+    params: CreateNotificationParams,
+  ): Promise<NotificationRow> {
     const client = this.supabase.getClient();
     const nowIso = new Date().toISOString();
 
-    const record: Record<string, any> = {
+    const record: Partial<NotificationRow> = {
       customer_id: params.customer_id,
       type: params.type,
       title: params.title.trim(),

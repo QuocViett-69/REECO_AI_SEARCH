@@ -4,11 +4,13 @@ import {
   type SupabaseClient,
   type User,
 } from '@supabase/supabase-js';
+import { configuration } from '../../config/configuration';
 
 @Injectable()
 export class SupabaseService {
-  readonly url = process.env.SUPABASE_URL;
-  readonly serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  private readonly config = configuration().supabase;
+  readonly url = this.config.url;
+  readonly serviceRoleKey = this.config.serviceRoleKey;
   private readonly client: SupabaseClient | null;
 
   constructor() {
@@ -35,6 +37,26 @@ export class SupabaseService {
       );
     }
     return this.client;
+  }
+
+  /**
+   * A throwaway client for sign-in and token refresh. Those calls store the user's session
+   * on the client they run on; on the shared service-role client every later query would
+   * then run as that customer and hit row-level security (e.g. product_prices at checkout).
+   */
+  createSessionClient(): SupabaseClient {
+    if (!this.url || !this.serviceRoleKey) {
+      throw new ServiceUnavailableException(
+        'Supabase is not configured for the API server',
+      );
+    }
+    return createClient(this.url, this.serviceRoleKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+        detectSessionInUrl: false,
+      },
+    });
   }
 
   async getUser(accessToken: string): Promise<User | null> {

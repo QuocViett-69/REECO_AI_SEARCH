@@ -1,15 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import '../../styles/studio/compare-login-admin.css';
+import React, { useState, useEffect, useRef } from 'react';
 import {
-  GitCompare,
-  Search,
+  ArrowClockwise,
+  ArrowsLeftRight,
+  CircleNotch,
+  MagnifyingGlass,
   Plus,
-  RefreshCw,
+  Trash,
+  WarningCircle,
   X,
-  Trash2,
-  Loader,
-} from 'lucide-react';
+} from '../common/SkyIconSet';
 import { getProductDetailApi } from '../../services/api';
 import { buildSpecMap } from '../../services/specifications';
+import { sizedImage } from '../../services/images';
+
+function sentenceCase(key) {
+  const text = key.replace(/_/g, ' ');
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// Loads one slot's product detail. Ignores responses for a model that is no longer in the
+// slot, and reports a failed load (the API helper resolves null on error) instead of
+// leaving the slot on "Loading" forever.
+function useProductDetail(model) {
+  const [state, setState] = useState({ model: null, detail: null, status: 'idle' });
+  const [attempt, setAttempt] = useState(0);
+
+  useEffect(() => {
+    if (!model) {
+      setState({ model: null, detail: null, status: 'idle' });
+      return undefined;
+    }
+    let cancelled = false;
+    setState({ model, detail: null, status: 'loading' });
+    getProductDetailApi(model)
+      .then((data) => {
+        if (cancelled) return;
+        setState({ model, detail: data || null, status: data ? 'ready' : 'error' });
+      })
+      .catch(() => {
+        if (!cancelled) setState({ model, detail: null, status: 'error' });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [model, attempt]);
+
+  const current = state.model === model ? state : { model, detail: null, status: model ? 'loading' : 'idle' };
+  return { ...current, retry: () => setAttempt((n) => n + 1) };
+}
 
 export function ProductCompare({
   compareList,
@@ -19,55 +58,70 @@ export function ProductCompare({
   onClearCompare,
   onNavigate,
 }) {
-  const [detailA, setDetailA] = useState(null);
-  const [detailB, setDetailB] = useState(null);
-  const [loadingA, setLoadingA] = useState(false);
-  const [loadingB, setLoadingB] = useState(false);
+  const slotA = useProductDetail(compareList[0]);
+  const slotB = useProductDetail(compareList[1]);
+  const detailA = slotA.detail;
+  const detailB = slotB.detail;
 
-  // Fetch detail for slot A whenever compareList[0] changes
-  useEffect(() => {
-    if (!compareList[0]) { setDetailA(null); return; }
-    setLoadingA(true);
-    getProductDetailApi(compareList[0])
-      .then(setDetailA)
-      .catch(() => setDetailA(null))
-      .finally(() => setLoadingA(false));
-  }, [compareList[0]]); // eslint-disable-line react-hooks/exhaustive-deps
+  // The product row sticks under the navbar while the specs scroll; once it is stuck it
+  // switches to a compact layout so it doesn't cover the table.
+  const stickSentinel = useRef(null);
+  const [productsStuck, setProductsStuck] = useState(false);
+  const hasProducts = compareList.length > 0;
 
-  // Fetch detail for slot B whenever compareList[1] changes
   useEffect(() => {
-    if (!compareList[1]) { setDetailB(null); return; }
-    setLoadingB(true);
-    getProductDetailApi(compareList[1])
-      .then(setDetailB)
-      .catch(() => setDetailB(null))
-      .finally(() => setLoadingB(false));
-  }, [compareList[1]]); // eslint-disable-line react-hooks/exhaustive-deps
+    const sentinel = stickSentinel.current;
+    if (!sentinel || typeof IntersectionObserver === 'undefined') return undefined;
+    const navHeight = document.querySelector('.nav')?.offsetHeight || 0;
+    const observer = new IntersectionObserver(
+      ([entry]) => setProductsStuck(!entry.isIntersecting && entry.boundingClientRect.top < navHeight),
+      { rootMargin: `-${navHeight + 1}px 0px 0px 0px` },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [hasProducts]);
+
+  const header = (
+    <header className="st-header">
+      <div className="st-header__title">
+        <h1>Compare</h1>
+      </div>
+      <div className="st-header__aside">
+        <p>
+          Put two Campbell Scientific instruments side by side and see exactly where their
+          specifications part ways.
+        </p>
+        {compareList.length > 0 && (
+          <button type="button" className="st-btn st-btn--sm" onClick={onClearCompare}>
+            <Trash size={14} aria-hidden="true" /> Clear compare
+          </button>
+        )}
+      </div>
+    </header>
+  );
 
   if (compareList.length === 0) {
     return (
-      <section className="page active" id="page-compare">
-        <div className="compare-header">
-          <h1>Compare Products</h1>
-          <p>
-            Compare technical specifications and identify the key differences between two Campbell
-            Scientific products.
-          </p>
-        </div>
-
-        <div className="compare-empty">
-          <div className="compare-empty-icon">
-            <GitCompare size={36} />
+      <section className="page active st-page cx-page" id="page-compare">
+        {header}
+        <div className="st-state cx-empty">
+          <div className="cx-empty__orbs" aria-hidden="true">
+            <span className="st-orb st-orb--violet" />
+            <span className="st-orb st-orb--ember" />
           </div>
-          <h3>No products selected</h3>
-          <p>Add products from Search or Products to compare their specifications side by side.</p>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => onNavigate('search')}
-          >
-            <Search size={16} /> Start Searching
-          </button>
+          <h2 className="st-state__title">Nothing to compare yet</h2>
+          <p className="st-state__desc">
+            Add two products from search or the catalog, or pick them here, to line up their
+            specifications.
+          </p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn st-btn--primary" onClick={() => onOpenAddModal(0)}>
+              <Plus size={16} aria-hidden="true" /> Choose a product
+            </button>
+            <button type="button" className="st-btn" onClick={() => onNavigate('search')}>
+              <MagnifyingGlass size={16} aria-hidden="true" /> Search instruments
+            </button>
+          </div>
         </div>
       </section>
     );
@@ -81,178 +135,170 @@ export function ProductCompare({
   ).sort();
 
   const basicRows = [
+    { key: 'category', label: 'Category', a: detailA?.category, b: detailB?.category },
+    { key: 'subcategory', label: 'Subcategory', a: detailA?.subcategory, b: detailB?.subcategory },
+    { key: 'device_type', label: 'Device type', a: detailA?.deviceType, b: detailB?.deviceType },
     {
-      label: 'Category',
-      a: detailA?.category,
-      b: detailB?.category,
-    },
-    {
-      label: 'Subcategory',
-      a: detailA?.subcategory,
-      b: detailB?.subcategory,
-    },
-    {
-      label: 'Device Type',
-      a: detailA?.deviceType,
-      b: detailB?.deviceType,
-    },
-    {
-      label: 'Supported Protocols',
+      key: 'protocols',
+      label: 'Supported protocols',
       a: (detailA?.supported_protocols || []).join(', ') || '—',
       b: (detailB?.supported_protocols || []).join(', ') || '—',
     },
   ];
 
-  const renderSlot = (slot, detail, loading, model) => {
-    if (loading) {
+  const specRows = allCanonicalKeys.map((key) => ({
+    key,
+    label: sentenceCase(key),
+    a: specMapA[key],
+    b: specMapB[key],
+  }));
+
+  const bothReady = Boolean(detailA && detailB);
+
+  const renderSlot = (slot, state) => {
+    const model = compareList[slot];
+    const { detail, status, retry } = state;
+
+    if (!model) {
       return (
-        <div className="compare-slot filled">
-          <div className="compare-slot-label">{slot === 0 ? 'Product A' : 'Product B'}</div>
-          <div className="compare-slot-product" style={{ justifyContent: 'center', alignItems: 'center', display: 'flex', gap: 8 }}>
-            <Loader size={20} className="spin" /> Loading...
+        <div className="cx-slot">
+          <button type="button" className="cx-add" onClick={() => onOpenAddModal(slot)}>
+            <span className="cx-add__icon" aria-hidden="true">
+              <Plus size={20} />
+            </span>
+            <span className="cx-add__label">{slot === 0 ? 'Add a product' : 'Add a second product'}</span>
+            <span className="cx-add__hint">Pick from the catalog</span>
+          </button>
+        </div>
+      );
+    }
+
+    if (status === 'ready' && detail) {
+      return (
+        <div className="cx-slot">
+          <div className="st-plate cx-slot__plate">
+            {detail.image ? (
+              <img src={sizedImage(detail.image, 640)} alt="" />
+            ) : (
+              <span className="st-plate__fallback">{detail.model}</span>
+            )}
+          </div>
+          <div className="cx-slot__text">
+            <p className="cx-slot__type">{detail.subcategory || detail.deviceType}</p>
+            <h2 className="cx-slot__model">{detail.model}</h2>
+            <p className="cx-slot__name">{detail.name}</p>
+          </div>
+          <div className="cx-slot__actions">
+            <button
+              type="button"
+              className="st-btn st-btn--sm"
+              onClick={() => onOpenReplaceModal(slot)}
+              aria-label={`Replace ${detail.model}`}
+            >
+              <ArrowClockwise size={14} aria-hidden="true" /> Replace
+            </button>
+            <button
+              type="button"
+              className="st-btn st-btn--ghost st-btn--sm"
+              onClick={() => onRemoveFromCompare(model)}
+              aria-label={`Remove ${detail.model}`}
+            >
+              <X size={14} aria-hidden="true" /> Remove
+            </button>
           </div>
         </div>
       );
     }
-    if (detail) {
-      return (
-        <div className="compare-slot filled">
-          <div className="compare-slot-label">{slot === 0 ? 'Product A' : 'Product B'}</div>
-          <div className="compare-slot-product">
-            <div className="compare-slot-img">
-              {detail.image ? (
-                <img
-                  src={detail.image}
-                  alt={detail.model}
-                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                />
-              ) : (
-                <div className="img-placeholder">{detail.model}</div>
-              )}
-            </div>
-            <div className="compare-slot-info">
-              <div className="model">{detail.model}</div>
-              <div className="name">{detail.name}</div>
-            </div>
-            <div className="compare-slot-actions">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={() => onOpenReplaceModal(slot)}
-              >
-                <RefreshCw size={14} /> Replace
-              </button>
-              <button
-                type="button"
-                className="btn btn-ghost"
-                onClick={() => onRemoveFromCompare(model)}
-              >
-                <X size={14} /> Remove
-              </button>
-            </div>
-          </div>
-        </div>
-      );
-    }
-    // Slot selected but no data loaded yet
-    if (model) {
-      return (
-        <div className="compare-slot filled">
-          <div className="compare-slot-label">{slot === 0 ? 'Product A' : 'Product B'}</div>
-          <div className="compare-slot-product">
-            <div className="compare-slot-info">
-              <div className="model">{model}</div>
-              <div className="name" style={{ color: 'var(--text-3)', fontSize: 12 }}>Loading...</div>
-            </div>
-            <div className="compare-slot-actions">
-              <button type="button" className="btn btn-ghost" onClick={() => onRemoveFromCompare(model)}>
-                <X size={14} /> Remove
-              </button>
-            </div>
-          </div>
-        </div>
-      );
-    }
+
+    const failed = status === 'error';
     return (
-      <div className="compare-slot">
-        <div className="compare-slot-label">{slot === 0 ? 'Product A' : 'Product B'}</div>
-        <div className="compare-slot-empty" onClick={() => onOpenAddModal(slot)}>
-          <Plus size={20} />
-          <span>Select a product</span>
+      <div className="cx-slot" aria-busy={!failed}>
+        <div className="st-plate cx-slot__plate cx-slot__plate--status">
+          <div className={`cx-slot__status ${failed ? 'is-error' : ''}`} role="status">
+            {failed ? <WarningCircle size={18} aria-hidden="true" /> : <CircleNotch size={18} className="spin" aria-hidden="true" />}
+            {failed ? 'Could not load details' : 'Loading details'}
+          </div>
+        </div>
+        <div className="cx-slot__text">
+          <h2 className="cx-slot__model">{model}</h2>
+        </div>
+        <div className="cx-slot__actions">
+          {failed && (
+            <button type="button" className="st-btn st-btn--sm" onClick={retry}>
+              <ArrowClockwise size={14} aria-hidden="true" /> Try again
+            </button>
+          )}
+          <button
+            type="button"
+            className="st-btn st-btn--ghost st-btn--sm"
+            onClick={() => onRemoveFromCompare(model)}
+            aria-label={`Remove ${model}`}
+          >
+            <X size={14} aria-hidden="true" /> Remove
+          </button>
         </div>
       </div>
     );
   };
 
+  const renderRows = (rows) => {
+    return (
+      <dl className="cx-rows">
+        {rows.map((r) => {
+          const diff = r.a !== r.b;
+          return (
+            <div key={r.key} className={`cx-row cx-grid ${diff ? 'is-diff' : ''}`}>
+              <dt>
+                {diff && <span className="cx-row__mark" aria-hidden="true" />}
+                {r.label}
+                {diff && <span className="sr-only"> (differs)</span>}
+              </dt>
+              <dd className={!r.a || r.a === '—' ? 'is-missing' : undefined}>
+                <span className="cx-row__who">{detailA.model}</span>
+                {r.a || '—'}
+              </dd>
+              <dd className={!r.b || r.b === '—' ? 'is-missing' : undefined}>
+                <span className="cx-row__who">{detailB.model}</span>
+                {r.b || '—'}
+              </dd>
+            </div>
+          );
+        })}
+      </dl>
+    );
+  };
+
   return (
-    <section className="page active" id="page-compare">
-      <div className="compare-header">
-        <h1>Compare Products</h1>
-        <p>
-          Compare technical specifications and identify the key differences between two Campbell
-          Scientific products.
-        </p>
-      </div>
+    <section className="page active st-page cx-page" id="page-compare">
+      {header}
 
-      <div id="compareContent">
-        <div className="compare-selector">
-          {renderSlot(0, detailA, loadingA, compareList[0])}
-
-          <div className="compare-vs">
-            <div className="compare-vs-badge">VS</div>
-          </div>
-
-          {renderSlot(1, detailB, loadingB, compareList[1])}
+      <div className="cx-board" id="compareContent">
+        <div ref={stickSentinel} className="cx-sentinel" aria-hidden="true" />
+        <div className={`cx-grid cx-products ${productsStuck ? 'is-stuck' : ''}`}>
+          {renderSlot(0, slotA)}
+          {renderSlot(1, slotB)}
+          <span className="cx-vs" aria-hidden="true">vs</span>
         </div>
 
-        {/* Detailed Comparison Table — only when both details are loaded */}
-        {detailA && detailB && (
+        {bothReady ? (
           <>
-            <div className="compare-table">
-              <div className="compare-table-title">Basic Information</div>
-              {basicRows.map((r) => {
-                const diff = r.a !== r.b;
-                return (
-                  <div key={r.label} className={`compare-row ${diff ? 'highlight-diff' : ''}`}>
-                    <div className="label">{r.label}</div>
-                    <div className="val-a">{r.a || '—'}</div>
-                    <div className="val-b">{r.b || '—'}</div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {allCanonicalKeys.length > 0 && (
-              <div className="compare-table">
-                <div className="compare-table-title">Technical Specifications</div>
-                {allCanonicalKeys.map((key) => {
-                  const valA = specMapA[key];
-                  const valB = specMapB[key];
-                  const diff = valA !== valB;
-                  return (
-                    <div key={key} className={`compare-row ${diff ? 'highlight-diff' : ''}`}>
-                      <div className="label">{key.replace(/_/g, ' ')}</div>
-                      <div className={`val-a ${!valA ? 'val-missing' : ''}`} style={{ whiteSpace: 'pre-line' }}>{valA || '—'}</div>
-                      <div className={`val-b ${!valB ? 'val-missing' : ''}`} style={{ whiteSpace: 'pre-line' }}>{valB || '—'}</div>
-                    </div>
-                  );
-                })}
-              </div>
+            <section className="cx-section" aria-labelledby="cx-basic-title">
+              <h3 className="st-subheading cx-section__title" id="cx-basic-title">Basic information</h3>
+              {renderRows(basicRows)}
+            </section>
+            {specRows.length > 0 && (
+              <section className="cx-section" aria-labelledby="cx-spec-title">
+                <h3 className="st-subheading cx-section__title" id="cx-spec-title">Technical specifications</h3>
+                {renderRows(specRows)}
+              </section>
             )}
           </>
-        )}
-
-        {compareList.length > 0 && (
-          <div className="compare-actions-bar">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={onClearCompare}
-            >
-              <Trash2 size={16} /> Clear Compare
-            </button>
-          </div>
-        )}
+        ) : compareList.length < 2 ? (
+          <p className="st-note cx-hint">
+            <ArrowsLeftRight size={16} aria-hidden="true" />
+            Add one more product to see the specifications side by side.
+          </p>
+        ) : null}
       </div>
     </section>
   );

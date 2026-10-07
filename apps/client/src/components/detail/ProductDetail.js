@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import {
-  ArrowLeft,
-  ChevronRight,
-  Folder,
-  Tag,
-  Radio,
-  GitCompare,
-  Check,
-  ExternalLink,
-  Loader,
-  Activity,
-  Globe,
-  Zap,
-  Minus,
-  Plus,
-  ShoppingCart,
-} from 'lucide-react';
+import { CheckDisc, Seal } from '../common/SkyIcons';
+import { ArrowLeft, ArrowUpRight, ArrowsLeftRight, Check, Heart, Minus, Plus } from '../common/SkyIconSet';
 import { getProductDetailApi } from '../../services/api';
-import { FavoriteButton } from '../commerce/FavoriteButton';
 import { RecommendationRow } from '../commerce/RecommendationRow';
 import { useCart } from '../../context/CartContext';
+import { useFavorite } from '../../context/FavoriteContext';
 import { groupSpecifications } from '../../services/specifications';
-import { formatPrice } from '../../services/commercialService';
+import { sizedImage } from '../../services/images';
+import '../../styles/studio/discovery.css';
+import '../../styles/studio/detail-sky.css';
+
+const TAB_LABELS = {
+  overview: 'Overview',
+  technical: 'Specifications',
+  capabilities: 'Capabilities',
+  variants: 'Variants',
+  resources: 'Documents',
+};
+
+function sentenceCase(key) {
+  const text = key.replace(/_/g, ' ');
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
 
 export function ProductDetail({
   model,
@@ -37,7 +37,9 @@ export function ProductDetail({
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [qty, setQty] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
   const { addToCart } = useCart();
+  const { isFavorite, toggleFavorite } = useFavorite();
 
   useEffect(() => {
     setIsLoading(true);
@@ -51,21 +53,18 @@ export function ProductDetail({
         if (data) {
           setProduct(data);
         } else {
-          setError('Không tìm thấy sản phẩm này.');
+          setError(`No product with model ${model} was found.`);
         }
       })
-      .catch(() => setError('Lỗi kết nối API.'))
+      .catch(() => setError('Could not connect to the product API. Try again in a moment.'))
       .finally(() => setIsLoading(false));
   }, [model]);
 
   if (isLoading) {
     return (
-      <section className="page active">
-        <div className="state-empty" style={{ margin: '80px auto' }}>
-          <div className="state-icon">
-            <Loader size={36} className="spin" />
-          </div>
-          <div className="state-title">Đang tải sản phẩm...</div>
+      <section className="page active st-page sd-page" id="page-detail">
+        <div className="sd-loading" role="status">
+          <span className="sd-spinner" aria-hidden="true" /> Loading {model}
         </div>
       </section>
     );
@@ -73,16 +72,12 @@ export function ProductDetail({
 
   if (error || !product) {
     return (
-      <section className="page active">
-        <div className="state-empty" style={{ margin: '60px auto' }}>
-          <div className="state-title">{error || 'Product not found'}</div>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={onBack}
-            style={{ marginTop: 16 }}
-          >
-            <ArrowLeft size={16} /> Go Back
+      <section className="page active st-page sd-page" id="page-detail">
+        <div className="sd-empty" role="alert">
+          <Seal glyph="alert" tone="coral" size={48} />
+          <h1>{error || 'Product not found'}</h1>
+          <button type="button" className="sd-btn sd-btn--primary" onClick={onBack}>
+            <ArrowLeft size={16} /> Go back
           </button>
         </div>
       </section>
@@ -90,12 +85,9 @@ export function ProductDetail({
   }
 
   const inCompare = isInCompare(product.model);
-
-  // ── Protocols: supported_protocols is a string array ─────────────────────────
+  const favorite = isFavorite(product.product_id || product.id);
   const protocols = product.supported_protocols || [];
-
-  // ── Tabs: only show tabs that have real data ──────────────────────────────────
-  const hasOverview = true;
+  // Only show tabs that have real data
   const hasTechnical =
     (product.specifications || []).length > 0 || protocols.length > 0;
   const hasCapabilities =
@@ -106,284 +98,359 @@ export function ProductDetail({
     (product.media || []).filter((m) => m.product_url).length > 0;
 
   const tabs = [
-    hasOverview && 'overview',
+    'overview',
     hasTechnical && 'technical',
     hasCapabilities && 'capabilities',
     hasVariants && 'variants',
     hasResources && 'resources',
   ].filter(Boolean);
 
-  // Ensure activeTab is valid after product loads
-  const currentTab = tabs.includes(activeTab)
-    ? activeTab
-    : tabs[0] || 'overview';
+  const currentTab = tabs.includes(activeTab) ? activeTab : tabs[0];
 
-  // Product URL from media (if available)
   const productUrl =
     (product.media || []).find((m) => m.product_url)?.product_url ||
     `https://www.campbellsci.com/${product.model.toLowerCase()}`;
 
+  const cartItem = {
+    product_id: product.product_id,
+    model: product.model,
+    name: product.name,
+    image: product.image,
+    price: product.price,
+    currency: product.currency,
+  };
+
+  const resources = [
+    { glyph: 'doc', tone: 'iris', title: 'Datasheet and specifications', desc: 'Official Campbell Scientific product page', href: productUrl, action: 'Open datasheet' },
+    {
+      glyph: 'book',
+      tone: 'leaf',
+      title: 'User manual',
+      desc: 'Wiring, programming and calibration',
+      href: `https://s.campbellsci.com/documents/us/manuals/${product.model.toLowerCase().replace(/[^a-z0-9]/g, '')}.pdf`,
+      action: 'Open manual',
+    },
+    { glyph: 'plus', tone: 'coral', title: 'Installation guide', desc: 'Field installation and station setup', href: productUrl, action: 'Open guide' },
+    ...(product.media || [])
+      .filter((m) => m.product_url && m.product_url !== productUrl)
+      .map((m) => ({
+        glyph: 'down',
+        tone: 'blue',
+        title: m.metadata?.title || 'Firmware and software',
+        desc: 'Support download',
+        href: m.product_url,
+        action: 'Open download',
+      })),
+  ];
+
+  const handleTabKey = (e) => {
+    const index = tabs.indexOf(currentTab);
+    let next = null;
+    if (e.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+    if (e.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+    if (next) {
+      e.preventDefault();
+      setActiveTab(next);
+      document.getElementById(`pd-tab-${next}`)?.focus();
+    }
+  };
+
+  const measurements = product.measurements || [];
+  const assurances = [
+    'Direct manufacturer warranty included',
+    'Import customs & logistics handled by REECO',
+    'Pay with VNPay or cash on delivery',
+  ];
+
   return (
-    <section className="page active" id="page-detail">
-      <div className="detail-back" onClick={onBack}>
-        <ArrowLeft size={16} />
-        <span>
-          {previousPage === 'search' ? 'Back to search' : 'Back to products'}
-        </span>
+    <section className="page active st-page sd-page" id="page-detail">
+      <div className="sd-top">
+        <button type="button" className="sd-back" onClick={onBack}>
+          <ArrowLeft size={16} />
+          {previousPage === 'search' ? 'Back to search results' : 'Back to products'}
+        </button>
+        <p className="sd-crumbs">
+          <span>{product.category}</span>
+          <span>{product.subcategory}</span>
+        </p>
       </div>
 
-      <div className="detail-header">
-        <div className="detail-image">
-          {product.image ? (
-            <img
-              src={product.image}
-              alt={product.model}
-              style={{
-                maxWidth: '100%',
-                maxHeight: '320px',
-                objectFit: 'contain',
-                borderRadius: '8px',
-              }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-                const placeholder =
-                  e.target.parentElement.querySelector('.img-placeholder');
-                if (placeholder) placeholder.style.display = 'flex';
-              }}
-            />
-          ) : null}
-          <div
-            className="img-placeholder"
-            style={{
-              fontSize: '36px',
-              display: product.image ? 'none' : 'flex',
-            }}
-          >
-            {product.model}
-          </div>
+      {/* Stage: the photo on a stack of paper sheets, the product summary as an invoice */}
+      <section className="sd-stage" aria-labelledby="sd-model">
+        <div className="sd-gallery">
+          <span className="sd-sheet sd-sheet--far" aria-hidden="true" />
+          <span className="sd-sheet sd-sheet--near" aria-hidden="true" />
+          <figure className="sd-photo">
+            <figcaption>
+              <span className="sd-eyebrow">Product no</span>
+              {product.model}
+            </figcaption>
+            <div className="sd-photo__plate">
+              {product.image ? (
+                <img
+                  src={sizedImage(product.image, 1400)}
+                  alt={`${product.model} ${product.name}`}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    const placeholder = e.target.parentElement.querySelector('.sd-photo__fallback');
+                    if (placeholder) placeholder.style.display = 'flex';
+                  }}
+                />
+              ) : null}
+              <div className="sd-photo__fallback" style={{ display: product.image ? 'none' : 'flex' }}>
+                {product.model}
+              </div>
+            </div>
+          </figure>
         </div>
 
-        <div className="detail-info">
-          <div>
-            <div className="detail-breadcrumb">
-              <span>{product.category}</span>
-              <ChevronRight size={14} />
-              <span>{product.subcategory}</span>
+        <div className="sd-invoice">
+          <header className="sd-invoice__head">
+            <div>
+              <span className="sd-eyebrow">Model no</span>
+              <h1 className="sd-model" id="sd-model">{product.model}</h1>
             </div>
-            <div className="detail-model">{product.model}</div>
-            <div className="detail-name">{product.name}</div>
-          </div>
-
-          <div className="detail-badges">
-            <span className="badge badge-category">
-              <Folder size={14} /> {product.category}
+            <span className="sd-status">
+              <span className="sd-status__dot" aria-hidden="true" /> Available for order
             </span>
-            <span className="badge badge-subcategory">
-              <Tag size={14} /> {product.subcategory}
-            </span>
-            {protocols.map((pr) => (
-              <span key={pr} className="badge badge-protocol">
-                <Radio size={14} /> {pr}
-              </span>
-            ))}
-            {(product.measurements || []).map((m) => (
-              <span
-                key={m.key}
-                className="badge badge-measurement"
-              >
-                <Activity size={14} /> {m.label_en}
-              </span>
-            ))}
-          </div>
+          </header>
 
-          {/* ── B. Commerce Purchase Panel ──────────────────────────────────── */}
-          <div className="commerce-panel">
-            <div className="commerce-panel__price-row">
-              {product.price != null ? (
-                <div className="commerce-panel__price">
-                  {formatPrice(product.price, product.currency)}
+          <p className="sd-name">{product.name}</p>
+
+          <dl className="sd-parties">
+            <div>
+              <dt className="sd-eyebrow">Category</dt>
+              <dd>
+                <Seal glyph="bolt" tone="iris" size={36} />
+                <strong>{product.category}</strong>
+                <span>{product.subcategory}</span>
+              </dd>
+            </div>
+            <div>
+              <dt className="sd-eyebrow">Made by</dt>
+              <dd>
+                <Seal glyph="plus" tone="leaf" size={36} />
+                <strong>Campbell Scientific</strong>
+                <span>{product.deviceType}</span>
+              </dd>
+            </div>
+          </dl>
+
+          {(measurements.length > 0 || protocols.length > 0) && (
+            <dl className="sd-lines">
+              {measurements.length > 0 && (
+                <div>
+                  <dt>Measures</dt>
+                  <dd>
+                    {measurements.map((m) => (
+                      <span key={m.key} className="sd-tag">{m.label_en}</span>
+                    ))}
+                  </dd>
                 </div>
-              ) : (
-                <div style={{ fontSize: 14, color: 'var(--text-3)' }}>Price available on order</div>
               )}
-              <div className="availability-badge availability-badge--lg">
-                <Tag size={12} /> Available for order
-              </div>
-            </div>
+              {protocols.length > 0 && (
+                <div>
+                  <dt>Protocols</dt>
+                  <dd>
+                    {protocols.map((protocol) => (
+                      <span key={protocol} className="sd-tag">{protocol}</span>
+                    ))}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          )}
 
-            <div className="commerce-panel__qty">
-              <span style={{ fontSize: 13, color: 'var(--text-2)', marginRight: 8 }}>Qty:</span>
-              <div className="qty-selector">
-                <button type="button" className="qty-btn" onClick={() => setQty(q => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Decrease"><Minus size={14} /></button>
-                <span className="qty-display" aria-live="polite">{qty}</span>
-                <button type="button" className="qty-btn" onClick={() => setQty(q => q + 1)} aria-label="Increase"><Plus size={14} /></button>
-              </div>
+          <div className="sd-buy">
+            <div className="sd-qty" role="group" aria-label="Quantity">
+              <button type="button" onClick={() => setQty((q) => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Decrease quantity"><Minus size={14} /></button>
+              <span aria-live="polite">{qty}</span>
+              <button type="button" onClick={() => setQty((q) => q + 1)} aria-label="Increase quantity"><Plus size={14} /></button>
             </div>
-
-            <div className="commerce-panel__actions">
-              <button type="button" className="btn btn-cart" onClick={() => addToCart({ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }, qty)}>
-                <ShoppingCart size={16} /> Add to Cart
-              </button>
-              <button type="button" className="btn btn-primary" onClick={() => { addToCart({ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }, qty); if (onNavigate) onNavigate('checkout'); }}>
-                Buy Now
-              </button>
-              <FavoriteButton product={{ product_id: product.product_id, model: product.model, name: product.name, image: product.image, price: product.price, currency: product.currency }} size={20} />
-            </div>
-
-            <button type="button" className={`btn ${inCompare ? 'btn-added' : 'btn-secondary'}`} onClick={() => onToggleCompare(product.model)} style={{ marginTop: 8 }}>
-              {inCompare ? <Check size={16} /> : <GitCompare size={16} />}
-              <span>{inCompare ? 'In Compare' : 'Add to Compare'}</span>
+            <button
+              type="button"
+              className={`sd-btn sd-btn--primary ${justAdded ? 'is-added' : ''}`}
+              onClick={() => {
+                addToCart(cartItem, qty);
+                setJustAdded(true);
+                setTimeout(() => setJustAdded(false), 1500);
+              }}
+            >
+              {justAdded ? <><Check size={16} /> Added</> : 'Add to cart'}
+            </button>
+            <button
+              type="button"
+              className="sd-btn"
+              onClick={() => {
+                addToCart(cartItem, qty);
+                if (onNavigate) onNavigate('checkout');
+              }}
+            >
+              Buy now
             </button>
           </div>
 
-          <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
-            <a href={productUrl} target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ textDecoration: 'none', fontSize: 13 }}>
-              <ExternalLink size={15} /> View on Website
+          <div className="sd-secondary">
+            <button
+              type="button"
+              className={`sd-chip-btn ${inCompare ? 'is-on' : ''}`}
+              onClick={() => onToggleCompare(product.model)}
+              aria-pressed={inCompare}
+            >
+              {inCompare ? <Check size={15} /> : <ArrowsLeftRight size={15} />}
+              {inCompare ? 'In compare' : 'Compare'}
+            </button>
+            <button
+              type="button"
+              className={`sd-chip-btn sd-chip-btn--fav ${favorite ? 'is-on' : ''}`}
+              onClick={() => toggleFavorite(cartItem)}
+              aria-pressed={favorite}
+            >
+              <Heart size={15} weight={favorite ? 'fill' : undefined} />
+              {favorite ? 'Saved' : 'Save'}
+            </button>
+            <a href={productUrl} target="_blank" rel="noreferrer" className="sd-link">
+              campbellsci.com <ArrowUpRight size={14} />
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Detail Tabs */}
-      <div className="detail-tabs">
-        {tabs.map((tab) => (
-          <div
-            key={tab}
-            className={`detail-tab ${currentTab === tab ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
-          </div>
+      <ul className="sd-assure">
+        {assurances.map((text) => (
+          <li key={text}>
+            <CheckDisc size={20} /> {text}
+          </li>
         ))}
-      </div>
+      </ul>
 
-      {/* ── Overview ─────────────────────────────────────────────────────────── */}
-      {currentTab === 'overview' && (
-        <div className="tab-content active">
-          <div className="content-section">
-            <h3>Overview</h3>
-            <p>
-              The <strong>{product.model}</strong> is a{' '}
-              <strong>{product.deviceType.toLowerCase()}</strong> from Campbell
-              Scientific, designed for{' '}
-              <strong>{product.subcategory.toLowerCase()}</strong> applications.
-              {protocols.length > 0 && (
-                <>
-                  {' '}
-                  It supports <strong>{protocols.join(', ')}</strong>{' '}
-                  communication interface(s).
-                </>
-              )}
-            </p>
-            {(product.applications || []).length > 0 && (
-              <>
-                <h4
-                  style={{
-                    marginTop: 20,
-                    marginBottom: 10,
-                    fontSize: 14,
-                    fontWeight: 600,
-                  }}
-                >
-                  Applications
-                </h4>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                  {product.applications.map((a) => (
-                    <span
-                      key={a.key}
-                      className="badge badge-application"
-                    >
-                      <Globe size={13} /> {a.label_en}
-                    </span>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
+      <section className="sd-info" aria-label="Product information">
+        <div className="sd-tabs" role="tablist" aria-label="Product information" onKeyDown={handleTabKey}>
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              id={`pd-tab-${tab}`}
+              type="button"
+              role="tab"
+              aria-selected={currentTab === tab}
+              aria-controls="pd-panel"
+              tabIndex={currentTab === tab ? 0 : -1}
+              className="sd-tab"
+              onClick={() => setActiveTab(tab)}
+            >
+              {TAB_LABELS[tab]}
+            </button>
+          ))}
         </div>
-      )}
 
-      {/* ── Technical ─────────────────────────────────────────────────────────── */}
-      {currentTab === 'technical' && (
-        <div className="tab-content active">
-          <div className="content-section">
-            <h3>Technical Specifications</h3>
-            {protocols.length > 0 && (
-              <div style={{ marginBottom: 16 }}>
-                <strong>Supported Protocols:</strong> {protocols.join(', ')}
+        <div id="pd-panel" className="sd-panel" role="tabpanel" aria-labelledby={`pd-tab-${currentTab}`} tabIndex={0}>
+          {currentTab === 'overview' && (
+            <div className="sd-overview">
+              <div>
+                <p className="sd-lead">
+                  The <strong>{product.model}</strong> is a{' '}
+                  {product.deviceType.toLowerCase()} from Campbell Scientific, designed for{' '}
+                  {product.subcategory.toLowerCase()} applications.
+                  {protocols.length > 0 && <> It supports {protocols.join(', ')} communication.</>}
+                </p>
+                {(product.applications || []).length > 0 && (
+                  <div className="sd-apps">
+                    <h3 className="sd-eyebrow">Applications</h3>
+                    <ul>
+                      {product.applications.map((a) => (
+                        <li key={a.key} className="sd-tag">{a.label_en}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-            )}
-            {(product.specifications || []).length > 0 ? (
-              <table className="spec-table">
-                <tbody>
-                  {groupSpecifications(product.specifications).map((spec) => (
-                    <tr key={spec.canonical_key}>
-                      <td>{spec.canonical_key.replace(/_/g, ' ')}</td>
-                      <td>{spec.values.map((value, index) => <div key={index}>{value}</div>)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <p style={{ color: 'var(--text-3)', fontSize: 13 }}>
-                No key specifications available.
-              </p>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* ── Capabilities ─────────────────────────────────────────────────────── */}
-      {currentTab === 'capabilities' && (
-        <div className="tab-content active">
-          <div className="content-section">
-            <h3>Capabilities &amp; Measurements</h3>
-            <div className="benefits-list">
-              {(product.measurements || []).map((m) => (
-                <div key={m.key} className="benefit-item">
-                  <Activity size={16} />
-                  <span>Measures {m.label_en}</span>
+              <dl className="sd-facts">
+                <div>
+                  <dt>Model</dt>
+                  <dd>{product.model}</dd>
                 </div>
+                <div>
+                  <dt>Category</dt>
+                  <dd>{product.category}</dd>
+                </div>
+                <div>
+                  <dt>Type</dt>
+                  <dd>{product.deviceType}</dd>
+                </div>
+                <div>
+                  <dt>Manufacturer</dt>
+                  <dd>Campbell Scientific</dd>
+                </div>
+              </dl>
+            </div>
+          )}
+
+          {currentTab === 'technical' && (
+            <>
+              {protocols.length > 0 && (
+                <p className="sd-note">Supported protocols: {protocols.join(', ')}</p>
+              )}
+              {(product.specifications || []).length > 0 ? (
+                <table className="sd-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Specification</th>
+                      <th scope="col">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {groupSpecifications(product.specifications).map((spec) => (
+                      <tr key={spec.canonical_key}>
+                        <th scope="row">{sentenceCase(spec.canonical_key)}</th>
+                        <td>{spec.values.map((value, index) => <div key={index}>{value}</div>)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <p className="sd-note">No specifications are listed for this product yet.</p>
+              )}
+            </>
+          )}
+
+          {currentTab === 'capabilities' && (
+            <ul className="sd-caps">
+              {measurements.map((m) => (
+                <li key={m.key}>
+                  <Seal glyph="wave" tone="blue" size={32} />
+                  <span>Measures {m.label_en.toLowerCase()}</span>
+                </li>
               ))}
               {(product.capabilities || []).map((c) => (
-                <div key={c.key} className="benefit-item">
-                  <Zap size={16} />
+                <li key={c.key}>
+                  <Seal glyph="bolt" tone="iris" size={32} />
                   <span>{c.label_en || c.key}</span>
-                </div>
+                </li>
               ))}
-            </div>
-          </div>
-        </div>
-      )}
+            </ul>
+          )}
 
-      {/* ── Full Specs ───────────────────────────────────────────────────────── */}
-      {currentTab === 'variants' && (
-        <div className="tab-content active">
-          <div className="content-section">
-            <h3>Available Variants</h3>
-            <table className="spec-table">
+          {currentTab === 'variants' && (
+            <table className="sd-table">
               <thead>
                 <tr>
-                  <th>Model</th>
-                  <th>Name</th>
-                  <th>Configuration differences</th>
+                  <th scope="col">Model</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Differences</th>
                 </tr>
               </thead>
               <tbody>
                 {product.variants.map((variant) => (
                   <tr key={variant.product_id}>
-                    <td>
-                      <strong>{variant.model}</strong>
-                      {variant.is_representative ? ' (Representative)' : ''}
-                    </td>
+                    <th scope="row">
+                      {variant.model}
+                      {variant.is_representative ? <span className="sd-hint">Shown on this page</span> : null}
+                    </th>
                     <td>{variant.product_name_en || '—'}</td>
                     <td>
                       {(variant.distinguishing_specifications || []).length > 0
                         ? variant.distinguishing_specifications
-                            .map(
-                              (specification) =>
-                                `${specification.name_en}: ${specification.value_raw}`,
-                            )
+                            .map((specification) => `${specification.name_en}: ${specification.value_raw}`)
                             .join('; ')
                         : 'Same core specifications'}
                     </td>
@@ -391,110 +458,32 @@ export function ProductDetail({
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      )}
+          )}
 
-      {/* ── Resources / Official Resources ───────────────────────────────────── */}
-      {currentTab === 'resources' && (
-        <div className="tab-content active">
-          <div className="content-section">
-            <h3 style={{ marginBottom: 16 }}>Official Resources</h3>
-            <p style={{ color: 'var(--text-3, #888)', fontSize: 13, marginBottom: 20 }}>
-              Authorized technical documentation, brochures, and calibration manuals for {product.model}.
-            </p>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
-              {/* Product Webpage / Datasheet */}
-              {productUrl && (
-                <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          {currentTab === 'resources' && (
+            <ul className="sd-docs">
+              {resources.map(({ glyph, tone, title, desc, href, action }) => (
+                <li key={title}>
+                  <Seal glyph={glyph} tone={tone} size={40} />
                   <div>
-                    <div style={{ fontSize: 20, marginBottom: 8 }}>📄</div>
-                    <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>Product Datasheet &amp; Specs</div>
-                    <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Official Campbell Scientific specification sheet</div>
+                    <div className="sd-docs__title">{title}</div>
+                    <div className="sd-docs__desc">{desc}</div>
                   </div>
-                  <a
-                    href={productUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary"
-                    style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
-                  >
-                    <span>Open Datasheet</span> <ExternalLink size={13} />
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="sd-link">
+                    {action} <ArrowUpRight size={14} />
                   </a>
-                </div>
-              )}
-
-              {/* User Manual */}
-              <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ fontSize: 20, marginBottom: 8 }}>📘</div>
-                  <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>User &amp; Operation Manual</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Comprehensive wiring, SDI-12 programming, and calibration guide</div>
-                </div>
-                <a
-                  href={`https://s.campbellsci.com/documents/us/manuals/${product.model.toLowerCase().replace(/[^a-z0-9]/g, '')}.pdf`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                  style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
-                >
-                  <span>Open Manual</span> <ExternalLink size={13} />
-                </a>
-              </div>
-
-              {/* Installation & Mounting Guide */}
-              <div className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ fontSize: 20, marginBottom: 8 }}>🛠</div>
-                  <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>Installation Guide</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Field installation, sensor depth alignment &amp; station setup</div>
-                </div>
-                <a
-                  href={productUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                  style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
-                >
-                  <span>Open Guide</span> <ExternalLink size={13} />
-                </a>
-              </div>
-
-              {/* Media links if any */}
-              {(product.media || [])
-                .filter((m) => m.product_url && m.product_url !== productUrl)
-                .map((m, i) => (
-                  <div key={i} className="glass-card" style={{ padding: 18, borderRadius: 12, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                    <div>
-                      <div style={{ fontSize: 20, marginBottom: 8 }}>💻</div>
-                      <div style={{ fontWeight: 600, color: '#fff', fontSize: 14, marginBottom: 4 }}>{m.metadata?.title || 'Firmware / Software'}</div>
-                      <div style={{ fontSize: 12, color: 'var(--text-3, #888)', marginBottom: 16 }}>Authorized support download</div>
-                    </div>
-                    <a
-                      href={m.product_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-secondary"
-                      style={{ fontSize: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, textDecoration: 'none' }}
-                    >
-                      <span>Open Resource</span> <ExternalLink size={13} />
-                    </a>
-                  </div>
-                ))}
-            </div>
-          </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-      )}
+      </section>
 
-      {/* ── E. You May Also Need (AI Recommendations) ─────────────────────────── */}
-      <div className="detail-recommendations">
-        <RecommendationRow
-          productId={product.product_id || product.id}
-          model={product.model}
-          onViewDetail={onSelectProduct}
-        />
-      </div>
+      <RecommendationRow
+        productId={product.product_id || product.id}
+        model={product.model}
+        onViewDetail={onSelectProduct}
+      />
     </section>
   );
 }

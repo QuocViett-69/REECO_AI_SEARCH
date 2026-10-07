@@ -7,7 +7,10 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import type { User } from '@supabase/supabase-js';
-import { CreateOrderDto, UpdateOrderStatusDto } from './dto/create-order.dto';
+import type {
+  CreateOrderDto,
+  UpdateOrderStatusDto,
+} from './dto/create-order.dto';
 import {
   CANCELLABLE_STATUSES,
   ORDER_STATUS,
@@ -37,8 +40,14 @@ export class OrdersService {
       throw new BadRequestException('Đơn hàng phải chứa ít nhất 1 sản phẩm');
     }
 
-    if (!dto.customer_name?.trim() || !dto.customer_phone?.trim() || !dto.shipping_address?.trim()) {
-      throw new BadRequestException('Vui lòng cung cấp đầy đủ thông tin: Họ tên, số điện thoại và địa chỉ giao hàng');
+    if (
+      !dto.customer_name?.trim() ||
+      !dto.customer_phone?.trim() ||
+      !dto.shipping_address?.trim()
+    ) {
+      throw new BadRequestException(
+        'Vui lòng cung cấp đầy đủ thông tin: Họ tên, số điện thoại và địa chỉ giao hàng',
+      );
     }
 
     // 1. Gộp các dòng trùng product_id và kiểm tra số lượng
@@ -50,7 +59,9 @@ export class OrdersService {
       }
       const qty = Math.floor(Number(item.quantity) || 0);
       if (qty < 1 || qty > 999) {
-        throw new BadRequestException(`Số lượng cho sản phẩm "${pid}" phải nằm trong khoảng từ 1 đến 999`);
+        throw new BadRequestException(
+          `Số lượng cho sản phẩm "${pid}" phải nằm trong khoảng từ 1 đến 999`,
+        );
       }
       mergedItemsMap.set(pid, (mergedItemsMap.get(pid) || 0) + qty);
     }
@@ -58,27 +69,36 @@ export class OrdersService {
     // Kiểm tra sau khi gộp
     for (const [pid, totalQty] of mergedItemsMap.entries()) {
       if (totalQty > 999) {
-        throw new BadRequestException(`Tổng số lượng đặt cho sản phẩm "${pid}" vượt quá giới hạn 999`);
+        throw new BadRequestException(
+          `Tổng số lượng đặt cho sản phẩm "${pid}" vượt quá giới hạn 999`,
+        );
       }
     }
 
     const uniqueProductIds = Array.from(mergedItemsMap.keys());
 
     // 2. Lấy products + product_prices + product_media
-    const snapshotsMap = await this.ordersRepository.getProductsAndPrices(uniqueProductIds);
+    const snapshotsMap =
+      await this.ordersRepository.getProductsAndPrices(uniqueProductIds);
 
     // 3. Kiểm tra từng sản phẩm: tồn tại, active, và có giá
     for (const pid of uniqueProductIds) {
       const snap = snapshotsMap.get(pid);
       if (!snap) {
-        throw new BadRequestException(`Sản phẩm "${pid}" không tồn tại trong hệ thống`);
+        throw new BadRequestException(
+          `Sản phẩm "${pid}" không tồn tại trong hệ thống`,
+        );
       }
       if (snap.status !== 'active') {
         throw new BadRequestException(
           `Sản phẩm "${snap.model || pid}" hiện đang tạm ngừng kinh doanh (trạng thái: ${snap.status})`,
         );
       }
-      if (snap.price_vnd === null || snap.price_vnd === undefined || snap.price_vnd <= 0) {
+      if (
+        snap.price_vnd === null ||
+        snap.price_vnd === undefined ||
+        snap.price_vnd <= 0
+      ) {
         throw new BadRequestException(
           `Sản phẩm "${snap.model || pid}" chưa có biểu giá niêm yết trong cơ sở dữ liệu`,
         );
@@ -132,8 +152,12 @@ export class OrdersService {
 
     // 6. Phân bổ trạng thái theo phương thức thanh toán
     const isCod = dto.payment_method?.toLowerCase() === 'cod';
-    const initialStatus = isCod ? ORDER_STATUS.PROCESSING : ORDER_STATUS.PENDING_PAYMENT;
-    const initialPaymentStatus = isCod ? PAYMENT_STATUS.COD_PENDING : PAYMENT_STATUS.PENDING_PAYMENT;
+    const initialStatus = isCod
+      ? ORDER_STATUS.PROCESSING
+      : ORDER_STATUS.PENDING_PAYMENT;
+    const initialPaymentStatus = isCod
+      ? PAYMENT_STATUS.COD_PENDING
+      : PAYMENT_STATUS.PENDING_PAYMENT;
 
     // 7. Sinh số thứ tự đơn hàng
 

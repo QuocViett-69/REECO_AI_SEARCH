@@ -31,3 +31,20 @@ export type {
   SearchResult,
   SearchScores,
 } from './schemas/api-contract';
+
+export {
+  AuthSessionSchema,
+  LoginRequestSchema,
+  MeSchema,
+  RefreshRequestSchema,
+  RegisterRequestSchema,
+  UpdateMeRequestSchema,
+} from './schemas/auth';
+export type {
+  AuthSession,
+  LoginRequest,
+  Me,
+  RefreshRequest,
+  RegisterRequest,
+  UpdateMeRequest,
+} from './schemas/auth';

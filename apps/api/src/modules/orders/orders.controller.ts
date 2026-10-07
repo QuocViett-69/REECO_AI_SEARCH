@@ -12,7 +12,13 @@ import {
 } from '@nestjs/common';
 import type { User } from '@supabase/supabase-js';
 import { SupabaseAuthGuard } from '../../auth/supabase-auth.guard';
-import { CancelOrderDto, CreateOrderDto } from './dto/create-order.dto';
+import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
+import {
+  CancelOrderSchema,
+  CreateOrderSchema,
+  type CancelOrderDto,
+  type CreateOrderDto,
+} from './dto/create-order.dto';
 import { OrdersService } from './orders.service';
 
 interface RequestWithUser {
@@ -32,7 +38,7 @@ export class OrdersController {
   @HttpCode(HttpStatus.CREATED)
   async createOrder(
     @Req() req: RequestWithUser,
-    @Body() dto: CreateOrderDto,
+    @Body(new ZodValidationPipe(CreateOrderSchema)) dto: CreateOrderDto,
   ) {
     return await this.ordersService.createOrder(req.user, dto);
   }
@@ -75,7 +81,7 @@ export class OrdersController {
   async cancelOrder(
     @Req() req: RequestWithUser,
     @Param('orderId') orderId: string,
-    @Body() dto: CancelOrderDto,
+    @Body(new ZodValidationPipe(CancelOrderSchema)) dto: CancelOrderDto,
   ) {
     return await this.ordersService.cancelOrder(req.user, orderId, dto?.reason);
   }

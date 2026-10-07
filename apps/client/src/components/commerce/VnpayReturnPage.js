@@ -1,29 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { verifyVnpayReturn, createVnpayPaymentUrl } from '../../services/paymentService';
-import { formatCurrency } from '../../services/orderService';
+import React, { useEffect, useState } from 'react';
+import '../../styles/studio/commerce.css';
 import {
-  CheckCircle2,
-  XCircle,
-  AlertCircle,
-  RefreshCw,
+  ArrowClockwise,
+  CircleNotch,
   Package,
   ShoppingBag,
-  ArrowRight,
-  CreditCard,
-} from 'lucide-react';
+  X,
+} from '../common/SkyIconSet';
+import { verifyVnpayReturn, createVnpayPaymentUrl } from '../../services/paymentService';
+import { formatCurrency } from '../../services/orderService';
+import { PaperCutStation } from '../common/PaperCutStation';
 
+// VNPay redirects the browser here (VNPAY_RETURN_URL) with vnp_* query params.
+// The API checks the signature and updates the order; this page only reports the result.
 export function VnpayReturnPage({ search: returnSearch, onNavigate }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
   const [retrying, setRetrying] = useState(false);
+  const [retryError, setRetryError] = useState(null);
 
   useEffect(() => {
     async function verify() {
       try {
         const search = returnSearch ?? window.location.search ?? '';
         if (!search) {
-          // Check if we have a saved payment result in session
+          // A reload after the redirect has no query string; reuse the saved result
           try {
             const saved = sessionStorage.getItem('reeco_last_payment_result');
             if (saved) {
@@ -59,6 +61,7 @@ export function VnpayReturnPage({ search: returnSearch, onNavigate }) {
   }, [returnSearch]);
 
   const handleRetryPayment = async () => {
+    setRetryError(null);
     let orderId = result?.order?.id;
     if (!orderId && typeof sessionStorage !== 'undefined') {
       try {
@@ -68,7 +71,7 @@ export function VnpayReturnPage({ search: returnSearch, onNavigate }) {
       } catch {}
     }
     if (!orderId) {
-      alert('Order information not found for retry.');
+      setRetryError('Order information not found for retry.');
       return;
     }
 
@@ -78,37 +81,24 @@ export function VnpayReturnPage({ search: returnSearch, onNavigate }) {
       if (res && res.payment_url) {
         window.location.href = res.payment_url;
       } else {
-        alert('Failed to obtain payment URL from VNPay. Please try again later.');
+        setRetryError('Failed to obtain payment URL from VNPay. Please try again later.');
       }
     } catch (err) {
-      alert(err.message || 'Unable to re-initiate payment transaction.');
+      setRetryError(err.message || 'Unable to re-initiate payment transaction.');
     } finally {
       setRetrying(false);
     }
   };
 
-  // 1. Loading state
   if (loading) {
     return (
-      <div className="page-container" style={{ maxWidth: 600, margin: '80px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: 48, borderRadius: 16 }}>
-          <div
-            style={{
-              width: 48,
-              height: 48,
-              border: '3px solid #e5e7eb',
-              borderTopColor: '#0069e0',
-              borderRadius: '50%',
-              margin: '0 auto 20px',
-              animation: 'spin 1s linear infinite',
-            }}
-          />
-          <h2 style={{ fontSize: 20, fontWeight: 700, color: '#111827', marginBottom: 8 }}>
-            Verifying VNPay transaction...
-          </h2>
-          <p style={{ color: '#6b7280', fontSize: 14 }}>
-            Verifying checksum and updating order status. Please wait a moment.
-          </p>
+      <div className="st-page st-page--narrow">
+        <div className="cm-moment cm-moment--quiet" role="status" aria-live="polite">
+          <span className="st-orb st-orb--violet st-orb--live" aria-hidden="true">
+            <span className="st-orb__icon"><CircleNotch size={22} className="spin" /></span>
+          </span>
+          <h1 className="cm-moment__title">Verifying your VNPay payment...</h1>
+          <p className="cm-moment__desc">Checking the signature and updating your order. Please do not close this page.</p>
         </div>
       </div>
     );
@@ -116,217 +106,119 @@ export function VnpayReturnPage({ search: returnSearch, onNavigate }) {
 
   const order = result?.order;
   const isSuccess = result?.success && (order?.payment_status === 'PAID' || result?.is_already_paid);
+  const orderCode = order ? order.order_code || order.order_number || order.id : null;
+  const orderTarget = order ? order.id || order.order_code : null;
 
-  // 2. Error or Payment Failed state
-  if (error || !isSuccess) {
+  if (!error && isSuccess) {
     return (
-      <div className="page-container" style={{ maxWidth: 640, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div style={{ padding: 40, borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb', boxShadow: '0 4px 12px rgba(0,0,0,0.04)' }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              padding: 16,
-              borderRadius: '50%',
-              background: 'rgba(217, 48, 37, 0.08)',
-              color: '#d93025',
-              marginBottom: 20,
-            }}
-          >
-            <XCircle size={48} />
-          </div>
+      <div className="st-page">
+        <section className="cm-celebrate" role="status" aria-live="polite">
+          <div className="cm-celebrate__text">
+            {orderCode && <span className="cm-celebrate__ref">Order {orderCode}</span>}
+            <h1 className="cm-celebrate__title">Payment received.</h1>
+            <p className="cm-celebrate__desc">
+              {result?.message || 'Your transaction has been confirmed by the VNPay gateway.'}
+            </p>
 
-          <h1 style={{ fontSize: 24, fontWeight: 700, color: '#111827', marginBottom: 8 }}>
-            Payment Failed
-          </h1>
+            {order && (
+              <dl className="st-dl cm-receipt">
+                <div>
+                  <dt>Total paid</dt>
+                  <dd className="st-num">{formatCurrency(order.total)}</dd>
+                </div>
+                <div>
+                  <dt>Order status</dt>
+                  <dd>{order.status}</dd>
+                </div>
+                {order.vnpay_transaction_no && (
+                  <div>
+                    <dt>VNPay transaction</dt>
+                    <dd className="st-mono">{order.vnpay_transaction_no}</dd>
+                  </div>
+                )}
+              </dl>
+            )}
 
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20, lineHeight: 1.6 }}>
-            {error || result?.message || 'The VNPay transaction was cancelled or could not be completed.'}
-          </p>
-
-          {order && (
-            <div style={{ padding: 16, borderRadius: 10, background: '#f9fafb', border: '1px solid #e5e7eb', marginBottom: 28, textAlign: 'left', fontSize: 13 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                <span style={{ color: '#6b7280' }}>Order Code:</span>
-                <span style={{ fontWeight: 700, color: '#111827' }}>{order.order_code || order.order_number || order.id}</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                <span style={{ color: '#6b7280' }}>Amount:</span>
-                <span style={{ fontWeight: 700, color: '#0069e0' }}>{formatCurrency(order.total)}</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#6b7280' }}>Payment Status:</span>
-                <span style={{ fontWeight: 700, color: '#d93025' }}>{order.payment_status}</span>
-              </div>
+            <div className="cm-celebrate__actions">
+              {orderTarget && (
+                <button
+                  type="button"
+                  className="st-btn st-btn--primary st-btn--lg"
+                  onClick={() => onNavigate && onNavigate(`account-order:${orderTarget}`)}
+                >
+                  <Package size={18} aria-hidden="true" />
+                  <span>View order details</span>
+                </button>
+              )}
+              <button type="button" className="st-btn st-btn--lg" onClick={() => onNavigate && onNavigate('products')}>
+                <ShoppingBag size={18} aria-hidden="true" />
+                <span>Continue shopping</span>
+              </button>
             </div>
-          )}
-
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            {order && (
-              <button
-                type="button"
-                className="btn btn-primary"
-                disabled={retrying}
-                onClick={handleRetryPayment}
-                style={{
-                  padding: '12px 24px',
-                  fontSize: 14,
-                  fontWeight: 600,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  background: '#0069e0',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: 9999,
-                  cursor: retrying ? 'not-allowed' : 'pointer',
-                }}
-              >
-                <RefreshCw size={16} className={retrying ? 'animate-spin' : ''} />
-                <span>{retrying ? 'Initiating...' : 'Pay Again'}</span>
-              </button>
-            )}
-
-            {order && (
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={() => onNavigate && onNavigate(`account-order:${order.id || order.order_code}`)}
-                style={{
-                  padding: '12px 24px',
-                  fontSize: 14,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  background: '#fff',
-                  color: '#111827',
-                  border: '1px solid #e5e7eb',
-                  borderRadius: 9999,
-                  cursor: 'pointer',
-                }}
-              >
-                <Package size={16} />
-                <span>View Order Details</span>
-              </button>
-            )}
-
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => onNavigate && onNavigate('products')}
-              style={{
-                padding: '12px 24px',
-                fontSize: 14,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                background: '#fff',
-                color: '#111827',
-                border: '1px solid #e5e7eb',
-                borderRadius: 9999,
-                cursor: 'pointer',
-              }}
-            >
-              <ShoppingBag size={16} />
-              <span>Continue Shopping</span>
-            </button>
           </div>
-        </div>
+          <div className="cm-celebrate__art">
+            <PaperCutStation />
+          </div>
+        </section>
       </div>
     );
   }
 
-  // 3. Success state
   return (
-    <div className="page-container" style={{ maxWidth: 640, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-      <div style={{ padding: 40, borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb', boxShadow: '0 4px 12px rgba(0,0,0,0.04)' }}>
-        <div
-          style={{
-            display: 'inline-flex',
-            padding: 16,
-            borderRadius: '50%',
-            background: 'rgba(15, 149, 84, 0.08)',
-            color: '#0f9554',
-            marginBottom: 20,
-          }}
-        >
-          <CheckCircle2 size={48} />
-        </div>
-
-        <h1 style={{ fontSize: 24, fontWeight: 700, color: '#111827', marginBottom: 8 }}>
-          Payment Successful!
-        </h1>
-
-        <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 24 }}>
-          {result?.message || 'Your transaction has been successfully confirmed by the VNPay gateway.'}
+    <div className="st-page st-page--narrow">
+      <div className="cm-moment cm-moment--quiet" role="status" aria-live="polite">
+        <span className="st-orb st-orb--stone" aria-hidden="true">
+          <span className="st-orb__icon"><X size={22} /></span>
+        </span>
+        <h1 className="cm-moment__title">Payment not completed</h1>
+        <p className="cm-moment__desc">
+          {error || result?.message || 'The VNPay transaction was cancelled or could not be completed.'}
         </p>
 
         {order && (
-          <div style={{ padding: 20, borderRadius: 10, background: '#f9fafb', border: '1px solid #e5e7eb', marginBottom: 28, textAlign: 'left', fontSize: 13 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#6b7280' }}>Order Code:</span>
-              <span style={{ fontWeight: 700, color: '#111827' }}>{order.order_code || order.order_number}</span>
+          <dl className="st-dl cm-receipt cm-receipt--center">
+            <div>
+              <dt>Order</dt>
+              <dd>{orderCode}</dd>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#6b7280' }}>Total Paid:</span>
-              <span style={{ fontWeight: 700, color: '#0f9554', fontSize: 15 }}>{formatCurrency(order.total)}</span>
+            <div>
+              <dt>Amount</dt>
+              <dd className="st-num">{formatCurrency(order.total)}</dd>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#6b7280' }}>Order Status:</span>
-              <span style={{ fontWeight: 600, color: '#00d2ff' }}>{order.status}</span>
+            <div>
+              <dt>Payment status</dt>
+              <dd><span className="st-status st-status--red">{order.payment_status}</span></dd>
             </div>
-            {order.vnpay_transaction_no && (
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#6b7280' }}>VNPay Transaction No:</span>
-                <span style={{ fontFamily: 'monospace', color: '#535862' }}>{order.vnpay_transaction_no}</span>
-              </div>
-            )}
-          </div>
+          </dl>
         )}
 
-        <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+        {retryError && <p className="st-note st-note--error cm-moment__note" role="alert">{retryError}</p>}
+
+        <div className="cm-moment__actions">
           {order && (
             <button
               type="button"
-              className="btn btn-primary"
-              onClick={() => onNavigate && onNavigate(`account-order:${order.id || order.order_code}`)}
-              style={{
-                padding: '12px 24px',
-                fontSize: 14,
-                fontWeight: 600,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                background: '#111827',
-                color: '#fff',
-                border: 'none',
-                borderRadius: 9999,
-                cursor: 'pointer',
-              }}
+              className="st-btn st-btn--primary st-btn--buy st-btn--lg"
+              disabled={retrying}
+              onClick={handleRetryPayment}
             >
-              <Package size={16} />
-              <span>View Order Details</span>
+              <ArrowClockwise size={17} className={retrying ? 'spin' : undefined} aria-hidden="true" />
+              <span>{retrying ? 'Opening VNPay...' : 'Pay again'}</span>
             </button>
           )}
-
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={() => onNavigate && onNavigate('products')}
-            style={{
-              padding: '12px 24px',
-              fontSize: 14,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 6,
-              background: '#fff',
-              color: '#111827',
-              border: '1px solid #e5e7eb',
-              borderRadius: 9999,
-              cursor: 'pointer',
-            }}
-          >
-            <ShoppingBag size={16} />
-            <span>Continue Shopping</span>
+          {orderTarget && (
+            <button
+              type="button"
+              className="st-btn st-btn--lg"
+              onClick={() => onNavigate && onNavigate(`account-order:${orderTarget}`)}
+            >
+              <Package size={17} aria-hidden="true" />
+              <span>View order details</span>
+            </button>
+          )}
+          <button type="button" className="st-btn st-btn--lg" onClick={() => onNavigate && onNavigate('products')}>
+            <ShoppingBag size={17} aria-hidden="true" />
+            <span>Continue shopping</span>
           </button>
         </div>
       </div>

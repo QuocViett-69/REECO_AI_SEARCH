@@ -1,9 +1,27 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Search, Eye, GitCompare, Check, SearchX, Loader, Tag } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+  ArrowClockwise,
+  ArrowsLeftRight,
+  Check,
+  MagnifyingGlass,
+  MagnifyingGlassMinus,
+  Warning,
+} from '../common/SkyIconSet';
 import { getProductsApi } from '../../services/api';
 import { FavoriteButton } from '../commerce/FavoriteButton';
 import { AddToCartButton } from '../commerce/AddToCartButton';
 import { formatPrice } from '../../services/commercialService';
+import { sizedImage } from '../../services/images';
+import '../../styles/studio/discovery.css';
+import '../../styles/studio/products-cafe.css';
+
+function countBy(items, key) {
+  const counts = new Map();
+  items.forEach((item) => {
+    if (item[key]) counts.set(item[key], (counts.get(item[key]) || 0) + 1);
+  });
+  return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
 
 export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
   const [allProducts, setAllProducts] = useState([]);
@@ -12,19 +30,6 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('');
   const [subcategory, setSubcategory] = useState('');
-  const [isFading, setIsFading] = useState(false);
-  const filterTimeout = useRef(null);
-
-  // Gọi hàm này mỗi khi filter thay đổi để tạo hiệu ứng fade mượt
-  const applyFilter = useCallback((fn) => {
-    setIsFading(true);
-    if (filterTimeout.current) clearTimeout(filterTimeout.current);
-    filterTimeout.current = setTimeout(() => {
-      fn();
-      setIsFading(false);
-    }, 150);
-  }, []);
-
 
   const loadProducts = useCallback(async () => {
     setIsLoading(true);
@@ -34,10 +39,10 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
       if (result && result.items) {
         setAllProducts(result.items);
       } else {
-        setError('Không thể tải danh sách sản phẩm từ server.');
+        setError('The product server did not respond. Check that the API is running, then try again.');
       }
     } catch (e) {
-      setError('Lỗi kết nối đến API.');
+      setError('Could not connect to the product API. Check your connection, then try again.');
     } finally {
       setIsLoading(false);
     }
@@ -47,23 +52,15 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
     loadProducts();
   }, [loadProducts]);
 
-  // Dynamic categories & subcategories from API data
-  const categories = Array.from(
-    new Set(allProducts.map((p) => p.category).filter(Boolean))
-  ).sort();
+  const categories = countBy(allProducts, 'category');
+  const subcategories = countBy(
+    allProducts.filter((p) => !category || p.category === category),
+    'subcategory',
+  ).sort((a, b) => a[0].localeCompare(b[0]));
 
-  const subcategories = Array.from(
-    new Set(
-      allProducts
-        .filter((p) => !category || p.category === category)
-        .map((p) => p.subcategory)
-        .filter(Boolean)
-    )
-  ).sort();
-
+  const term = searchTerm.trim().toLowerCase();
   const filtered = allProducts.filter((p) => {
-    if (searchTerm) {
-      const term = searchTerm.toLowerCase();
+    if (term) {
       const matchModel = p.model.toLowerCase().includes(term);
       const matchName = (p.name || '').toLowerCase().includes(term);
       if (!matchModel && !matchName) return false;
@@ -73,182 +70,226 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
     return true;
   });
 
-  return (
-    <section className="page active" id="page-products">
-      <div className="page-head">
-        <h1>Products</h1>
-        <p>
-          Explore all <strong>{allProducts.length}</strong> Campbell Scientific products
-          {filtered.length !== allProducts.length && ` (Showing ${filtered.length})`}.
-        </p>
-      </div>
+  // One product from each of the first categories, for the hero polaroids
+  const polaroids = categories
+    .map(([name]) => allProducts.find((p) => p.category === name && p.image))
+    .filter(Boolean)
+    .slice(0, 4);
 
-      <div className="catalog-toolbar">
-        <div className="catalog-search">
-          <Search size={18} />
-          <input
-            type="text"
-            placeholder="Search by model or product name..."
-            value={searchTerm}
-            onChange={(e) => {
-              // Cập nhật giá trị input ngay lập tức, fade grid sau 150ms
-              const val = e.target.value;
-              setSearchTerm(val);
-              setIsFading(true);
-              if (filterTimeout.current) clearTimeout(filterTimeout.current);
-              filterTimeout.current = setTimeout(() => setIsFading(false), 150);
-            }}
-          />
+  const isFiltered = Boolean(term || category || subcategory);
+  const clearFilters = () => {
+    setSearchTerm('');
+    setCategory('');
+    setSubcategory('');
+  };
+
+  const selectCategory = (value) => {
+    setCategory(value);
+    setSubcategory('');
+  };
+
+  return (
+    <section className="page active st-page cat-page" id="page-products">
+      {/* Sky hero: blue eyebrow, bold headline, a row of blue-check category facts and a
+          few product sheets floating in the margins (decorative, wide screens only) */}
+      <header className="cat-hero">
+        <p className="cat-hero__label">
+          Campbell Scientific{allProducts.length > 0 ? ` · ${allProducts.length} instruments` : ''}
+        </p>
+        <h1 className="cat-hero__title">Products</h1>
+        <p className="cat-hero__lede">
+          Sensors, dataloggers, communications and power for weather, soil and water stations.
+        </p>
+        {categories.length > 0 && (
+          <ul className="cat-hero__facts">
+            {categories.slice(0, 3).map(([name, count]) => (
+              <li key={name}>
+                <span className="cat-hero__check" aria-hidden="true"><Check size={12} weight="bold" /></span>
+                {name} <span className="cat-hero__count">{count}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {polaroids.length > 0 && (
+          <div className="cat-hero__polaroids" aria-hidden="true">
+            {polaroids.map((p, index) => (
+              <figure key={p.model} className={`cat-polaroid cat-polaroid--${index + 1}`}>
+                <figcaption>
+                  <span>Model no</span>
+                  {p.model}
+                </figcaption>
+                <img src={sizedImage(p.image, 320)} alt="" loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <div className="cat-toolbar">
+        <div className="cat-toolbar__row">
+          <label className="st-search">
+            <MagnifyingGlass size={18} aria-hidden="true" />
+            <span className="sr-only">Search products</span>
+            <input
+              type="search"
+              placeholder="Search by model or name, e.g. CR1000X"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </label>
+
+          <label className="cat-select">
+            <span className="sr-only">Subcategory</span>
+            <select className="st-select" value={subcategory} onChange={(e) => setSubcategory(e.target.value)}>
+              <option value="">All subcategories ({subcategories.length})</option>
+              {subcategories.map(([name, count]) => (
+                <option key={name} value={name}>
+                  {name} ({count})
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
 
-        <select
-          className="catalog-select"
-          value={category}
-          onChange={(e) => {
-            const val = e.target.value;
-            applyFilter(() => {
-              setCategory(val);
-              setSubcategory('');
-            });
-          }}
-        >
-          <option value="">All Categories ({categories.length})</option>
-          {categories.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
+        <div className="st-tabs cat-tabs" role="group" aria-label="Category">
+          <button type="button" className="st-tab" aria-pressed={!category} onClick={() => selectCategory('')}>
+            All <span className="st-tab__count">{allProducts.length}</span>
+          </button>
+          {categories.map(([name, count]) => (
+            <button
+              key={name}
+              type="button"
+              className="st-tab"
+              aria-pressed={category === name}
+              onClick={() => selectCategory(category === name ? '' : name)}
+            >
+              {name} <span className="st-tab__count">{count}</span>
+            </button>
           ))}
-        </select>
-
-        <select
-          className="catalog-select"
-          value={subcategory}
-          onChange={(e) => {
-            const val = e.target.value;
-            applyFilter(() => setSubcategory(val));
-          }}
-        >
-          <option value="">All Subcategories ({subcategories.length})</option>
-          {subcategories.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
+        </div>
       </div>
 
-      <div
-        className="products-grid"
-        style={{
-          opacity: isFading ? 0 : 1,
-          transition: 'opacity 0.15s ease',
-        }}
-      >
-        {isLoading ? (
-          <div className="state-empty" style={{ gridColumn: '1 / -1' }}>
-            <div className="state-icon">
-              <Loader size={32} className="spin" />
-            </div>
-            <div className="state-title">Đang tải sản phẩm...</div>
-            <div className="state-desc">Đang kết nối đến API server.</div>
+      {isFiltered && !isLoading && (
+        <p className="cat-status" aria-live="polite">
+          Showing {filtered.length} of {allProducts.length}
+          <button type="button" className="st-link" onClick={clearFilters}>
+            Clear filters
+          </button>
+        </p>
+      )}
+
+      {isLoading ? (
+        <ul className="cat-grid" aria-busy="true" aria-label="Loading products">
+          {Array.from({ length: 8 }, (_, n) => (
+            <li key={n} className="cat-tile">
+              <span className="st-skeleton cat-tile__skeleton-plate" />
+              <span className="st-skeleton cat-tile__skeleton-line" />
+              <span className="st-skeleton cat-tile__skeleton-line cat-tile__skeleton-line--short" />
+            </li>
+          ))}
+        </ul>
+      ) : error ? (
+        <div className="st-state" role="alert">
+          <div className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><Warning size={20} /></span>
           </div>
-        ) : error ? (
-          <div className="state-empty" style={{ gridColumn: '1 / -1' }}>
-            <div className="state-icon">⚠️</div>
-            <div className="state-title">Không thể tải sản phẩm</div>
-            <div className="state-desc">{error}</div>
-            <button type="button" className="btn btn-primary" onClick={loadProducts} style={{ marginTop: 16 }}>
-              Thử lại
+          <h2 className="st-state__title">Products could not load</h2>
+          <p className="st-state__desc">{error}</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn st-btn--primary" onClick={loadProducts}>
+              <ArrowClockwise size={16} /> Try again
             </button>
           </div>
-        ) : filtered.length === 0 ? (
-          <div className="state-empty" style={{ gridColumn: '1 / -1' }}>
-            <div className="state-icon">
-              <SearchX size={32} />
-            </div>
-            <div className="state-title">No products found</div>
-            <div className="state-desc">Try adjusting your search or filters.</div>
+        </div>
+      ) : filtered.length === 0 ? (
+        <div className="st-state">
+          <div className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><MagnifyingGlassMinus size={20} /></span>
           </div>
-        ) : (
-          filtered.map((p) => {
+          <h2 className="st-state__title">No products match these filters</h2>
+          <p className="st-state__desc">Check the model number spelling, or clear the filters to see every product.</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn" onClick={clearFilters}>
+              Clear filters
+            </button>
+          </div>
+        </div>
+      ) : (
+        <ul className="cat-grid">
+          {filtered.map((p) => {
             const inCompare = isInCompare(p.model);
             return (
-              <div
-                key={p.model}
-                className="product-card"
-                data-model={p.model}
-                onClick={() => onViewDetail(p.model)}
-                title={`Bấm để xem chi tiết ${p.model}`}
-              >
-                <div className="product-card-img">
+              <li key={p.model} className="cat-tile" data-model={p.model}>
+                {/* Invoice-sheet layout: model number header, product photo, then a
+                    two-column type / price block and the actions */}
+                <div className="cat-tile__head">
+                  <div>
+                    <span className="cat-tile__eyebrow">Model no</span>
+                    <h2 className="cat-tile__model">
+                      <button type="button" className="cat-tile__link" onClick={() => onViewDetail(p.model)}>
+                        {p.model}
+                      </button>
+                    </h2>
+                  </div>
+                  {p.category && <span className="cat-tile__chip">{p.category}</span>}
+                </div>
+
+                <div className="st-plate cat-tile__plate">
                   {p.image ? (
                     <img
-                      src={p.image}
-                      alt={p.model}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                        padding: '8px',
-                      }}
+                      src={sizedImage(p.image, 640)}
+                      alt=""
+                      loading="lazy"
                       onError={(e) => {
                         e.target.style.display = 'none';
-                        const placeholder = e.target.parentElement.querySelector('.img-placeholder');
+                        const placeholder = e.target.parentElement.querySelector('.st-plate__fallback');
                         if (placeholder) placeholder.style.display = 'flex';
                       }}
                     />
                   ) : null}
-                  <div
-                    className="img-placeholder"
-                    style={{ display: p.image ? 'none' : 'flex' }}
-                  >
+                  <div className="st-plate__fallback" style={{ display: p.image ? 'none' : 'flex' }}>
                     {p.model}
                   </div>
                 </div>
 
-                <div className="product-card-body">
-                  <div className="product-card-model">{p.model}</div>
-                  <div className="product-card-name" title={p.name}>
+                <div className="cat-tile__body">
+                  <p className="cat-tile__name" title={p.name}>
                     {p.name}
-                  </div>
-                  <div className="product-card-meta">
-                    {p.category && <span className="product-tag-cat">{p.category}</span>}
-                    {p.subcategory && <span className="product-tag-subcat">{p.subcategory}</span>}
-                  </div>
+                  </p>
 
-                  {/* Commercial info — no stock quantity */}
-                  <div className="product-card-commerce">
-                    {p.price != null ? (
-                      <div className="product-card-price">
-                        {formatPrice(p.price, p.currency)}
-                      </div>
-                    ) : null}
-                    <div className="availability-badge">
-                      <Tag size={11} /> Available for order
+                  <dl className="cat-tile__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd className="cat-tile__type">{p.subcategory || '—'}</dd>
                     </div>
-                  </div>
+                    <div>
+                      <dt>Price</dt>
+                      <dd className="cat-tile__price">
+                        {p.price != null ? formatPrice(p.price, p.currency) : 'On request'}
+                      </dd>
+                    </div>
+                  </dl>
 
-                  <div className="product-card-actions" onClick={(e) => e.stopPropagation()}>
-                    <AddToCartButton product={p} className="add-cart-btn" />
-                    
-                    <button type="button"
-                      className={`btn btn-secondary compare-btn ${inCompare ? 'btn-added' : ''}`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onToggleCompare(p.model);
-                      }}
-                      title={inCompare ? 'Remove from Compare' : 'Add to Compare'}>
-                      {inCompare ? <Check size={16} /> : <GitCompare size={16} />}
+                  <div className="cat-tile__actions" role="group" aria-label={`Actions for ${p.model}`}>
+                    <AddToCartButton product={p} className="st-btn--sm cat-tile__buy" label="Add to cart" size={15} />
+                    <button
+                      type="button"
+                      className={`st-btn st-btn--icon st-btn--sm ${inCompare ? 'is-on' : ''}`}
+                      onClick={() => onToggleCompare(p.model)}
+                      aria-pressed={inCompare}
+                      aria-label={inCompare ? `Remove ${p.model} from compare` : `Add ${p.model} to compare`}
+                      title={inCompare ? 'Remove from compare' : 'Add to compare'}
+                    >
+                      {inCompare ? <Check size={15} /> : <ArrowsLeftRight size={15} />}
                     </button>
-                    
-                    <FavoriteButton product={p} className="favorite-btn" size={16} />
+                    <FavoriteButton product={p} className="st-btn--icon st-btn--sm" size={15} />
                   </div>
                 </div>
-              </div>
+              </li>
             );
-          })
-        )}
-      </div>
+          })}
+        </ul>
+      )}
     </section>
   );
 }

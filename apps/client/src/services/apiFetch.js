@@ -14,56 +14,53 @@ export function getApiBaseUrl() {
 
 const API_BASE_URL = getApiBaseUrl();
 
-export function getAuthToken() {
+// A JWT whose `exp` has passed is never sent; non-JWT values are left to the API to reject.
+function isExpiredJwt(token) {
+  const payload = token.split('.')[1];
+  if (!payload) return false;
   try {
-    // 1. Direct tokens from sessionStorage or localStorage
-    const sessionToken = typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('reeco_auth_token') : null;
-    if (sessionToken) return sessionToken;
-
-    if (typeof localStorage !== 'undefined') {
-      const directToken = localStorage.getItem('reeco_auth_token');
-      if (directToken) return directToken;
-
-      const adminToken = localStorage.getItem('admin_access_token');
-      if (adminToken) return adminToken;
-    }
-
-    // 2. Auth user objects
-    if (typeof sessionStorage !== 'undefined') {
-      const sessionUser = sessionStorage.getItem('reeco_auth_user');
-      if (sessionUser) {
-        const parsed = JSON.parse(sessionUser);
-        if (parsed?.token) return parsed.token;
-        if (parsed?.access_token) return parsed.access_token;
-      }
-    }
-
-    if (typeof localStorage !== 'undefined') {
-      const authUser = localStorage.getItem('reeco_auth_user');
-      if (authUser) {
-        const parsed = JSON.parse(authUser);
-        if (parsed?.token) return parsed.token;
-        if (parsed?.access_token) return parsed.access_token;
-      }
-
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && key.startsWith('sb-') && key.endsWith('-auth-token')) {
-          const raw = localStorage.getItem(key);
-          if (raw) {
-            const parsed = JSON.parse(raw);
-            return parsed?.access_token || parsed?.currentSession?.access_token || null;
-          }
-        }
-      }
-    }
-
-    // Fallback demo customer token for client so orders & notifications always work
-    return null;
+    const { exp } = JSON.parse(atob(payload.replace(/-/g, '+').replace(/_/g, '/')));
+    return typeof exp === 'number' && exp * 1000 <= Date.now();
   } catch {
-    // ignore
+    return false;
+  }
+}
+
+function readToken(storage) {
+  if (!storage) return null;
+  const session = storage.getItem('reeco_auth_session');
+  if (session) {
+    try {
+      const parsed = JSON.parse(session);
+      return parsed?.access_token || null;
+    } catch {
+      return null;
+    }
   }
   return null;
+}
+
+// Only this app's own session token. The admin app keeps its token under different keys
+// on the same origin; reading those would let one app act with the other's identity.
+export function getAuthToken() {
+  try {
+    const token =
+      readToken(typeof sessionStorage !== 'undefined' ? sessionStorage : null) ||
+      readToken(typeof localStorage !== 'undefined' ? localStorage : null);
+    return token && !isExpiredJwt(token) ? token : null;
+  } catch {
+    return null;
+  }
+}
+
+export class ApiError extends Error {
+  constructor(message, status, data) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+    this.statusCode = status;
+    this.data = data;
+  }
 }
 
 export async function apiFetch(endpoint, options = {}) {
@@ -76,17 +73,68 @@ export async function apiFetch(endpoint, options = {}) {
     ...(options.headers || {}),
   };
 
-  const token = getAuthToken();
-  if (token && !headers['Authorization']) {
-    headers['Authorization'] = `Bearer ${token}`;
+  if (options.auth !== false) {
+    const token = getAuthToken();
+    if (token && !headers['Authorization']) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+  }
+
+  // Remove body if GET or HEAD
+  let body = options.body;
+  if (body && (options.method === 'GET' || options.method === 'HEAD')) {
+    body = undefined;
   }
 
   const config = {
     ...options,
     headers,
+    body: body ? (typeof body === 'string' ? body : JSON.stringify(body)) : undefined,
   };
 
-  const response = await fetch(url, config);
+  let response = await fetch(url, config);
+
+  if (response.status === 401 && typeof window !== 'undefined') {
+    let sessionStr = null;
+    try {
+      sessionStr = localStorage.getItem('reeco_auth_session') || sessionStorage.getItem('reeco_auth_session');
+    } catch {}
+
+    if (sessionStr && !options._isRetry) {
+      try {
+        const session = JSON.parse(sessionStr);
+        if (session.refresh_token) {
+          const refreshRes = await fetch(`${API_BASE_URL}/auth/refresh`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ refresh_token: session.refresh_token })
+          });
+
+          if (refreshRes.ok) {
+            const newSession = await refreshRes.json();
+            if (localStorage.getItem('reeco_auth_session')) {
+              localStorage.setItem('reeco_auth_session', JSON.stringify(newSession));
+            } else if (sessionStorage.getItem('reeco_auth_session')) {
+              sessionStorage.setItem('reeco_auth_session', JSON.stringify(newSession));
+            }
+
+            // Retry original request
+            config.headers['Authorization'] = `Bearer ${newSession.access_token}`;
+            config._isRetry = true;
+            response = await fetch(url, config);
+          } else {
+            window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+          }
+        } else {
+          window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+        }
+      } catch {
+        window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+      }
+    } else {
+      window.dispatchEvent(new CustomEvent('reeco:unauthorized'));
+    }
+  }
 
   let data = null;
   const contentType = response.headers.get('content-type');
@@ -100,13 +148,11 @@ export async function apiFetch(endpoint, options = {}) {
     const errorMsg =
       (typeof data === 'object' && (data?.message || data?.error)) ||
       `Yêu cầu thất bại (HTTP ${response.status})`;
-    const error = new Error(
+    throw new ApiError(
       Array.isArray(errorMsg) ? errorMsg.join(', ') : errorMsg,
+      response.status,
+      data
     );
-    error.status = response.status;
-    error.statusCode = response.status;
-    error.data = data;
-    throw error;
   }
 
   return data;

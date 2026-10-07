@@ -1,43 +1,109 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { useAuth } from '../../context/AuthContext';
-import { orderService, ORDER_STATUSES, SHIPPING_METHODS, formatCurrency } from '../../services/orderService';
-import { createVnpayPaymentUrl } from '../../services/paymentService';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { orderService, SHIPPING_METHODS, formatCurrency } from '../../services/orderService';
+import { createVnpayPaymentUrl, getPaymentMethodLabel } from '../../services/paymentService';
+import { sizedImage } from '../../services/images';
 import {
+  ArrowClockwise,
   ArrowLeft,
-  Package,
-  CheckCircle2,
-  Clock,
-  Truck,
+  Check,
+  CircleNotch,
+  ClockCounterClockwise,
   CreditCard,
-  Building2,
-  AlertCircle,
   MapPin,
-  RefreshCw,
+  Money,
+  Package,
+  WarningCircle,
+  X,
   XCircle,
-  RotateCcw,
-} from 'lucide-react';
+} from '../common/SkyIconSet';
+import { OrderStatusBadge, PaymentStatusBadge, getOrderStatusBadge } from './orderStatusBadge';
+import '../../styles/studio/account.css';
+
+const TRACKING_STEPS = [
+  { key: 'PENDING_PAYMENT', label: 'Order placed', desc: 'Order registered in the REECO system' },
+  { key: 'PAID', label: 'Payment confirmed', desc: 'Payment verified and authorized' },
+  { key: 'PROCESSING', label: 'Processing at REECO', desc: 'Technical specs and import order prepared' },
+  { key: 'FORWARDED_TO_MANUFACTURER', label: 'Forwarded to manufacturer', desc: 'Submitted to the Campbell Scientific factory' },
+  { key: 'SHIPPED', label: 'Shipped from factory', desc: 'In international transit and customs' },
+  { key: 'DELIVERED', label: 'Delivered', desc: 'Received at the customer destination' },
+];
+
+// Orders can be cancelled until they are handed to the carrier.
+const CANCELLABLE_STATUSES = ['PENDING_PAYMENT', 'PAYMENT_FAILED', 'PAID', 'PROCESSING'];
+
+function getStepProgress(currentStatus) {
+  if (currentStatus === 'CANCELLED' || currentStatus === 'PAYMENT_FAILED') {
+    return -1;
+  }
+  const currentIndex = TRACKING_STEPS.findIndex((s) => s.key === currentStatus);
+  return currentIndex >= 0 ? currentIndex : 0;
+}
+
+function orderLabel(order) {
+  if (order.order_code) return order.order_code;
+  if (order.order_number) return `REECO-${order.order_number}`;
+  return `#${order.id}`;
+}
+
+function formatDeliveryRange(from, to) {
+  if (!from) return null;
+  const start = new Date(from);
+  const end = to ? new Date(to) : null;
+  if (Number.isNaN(start.getTime())) return to ? `${from} – ${to}` : from;
+  const short = { month: 'short', day: 'numeric' };
+  if (!end || Number.isNaN(end.getTime())) {
+    return start.toLocaleDateString('en-US', { ...short, year: 'numeric' });
+  }
+  return `${start.toLocaleDateString('en-US', short)} – ${end.toLocaleDateString('en-US', { ...short, year: 'numeric' })}`;
+}
+
+function formatDateTime(iso) {
+  return new Date(iso).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+}
+
+// Status history notes are written by the API in Vietnamese; show them in the page's language.
+function formatTimelineNote(note) {
+  if (!note) return null;
+  if (note.includes('Khởi tạo đơn hàng mới')) return 'New order created';
+  if (note.includes('Thanh toán thành công qua cổng VNPay')) {
+    return note.replace('Thanh toán thành công qua cổng VNPay (Mã giao dịch:', 'Paid through VNPay (transaction');
+  }
+  if (note.includes('Thanh toán thất bại')) {
+    return note.replace('Thanh toán thất bại qua cổng VNPay', 'VNPay payment failed');
+  }
+  if (note.includes('Cập nhật bởi Quản trị viên lúc')) {
+    return note.replace('Cập nhật bởi Quản trị viên lúc', 'Updated by an administrator at');
+  }
+  return note;
+}
+
+const money = (value) => formatCurrency(Number(value));
 
 export function OrderDetail({ orderId, onBack }) {
-  const { user } = useAuth();
+  // After a refresh the id comes back from the session, so the page can reload itself.
   const effectiveOrderId =
     orderId ||
     (typeof sessionStorage !== 'undefined'
-      ? sessionStorage.getItem('reeco_current_order_id') ||
-        sessionStorage.getItem('reeco_last_order_id')
+      ? sessionStorage.getItem('reeco_current_order_id') || sessionStorage.getItem('reeco_last_order_id')
       : null);
 
   const [order, setOrder] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Cancel Modal State
   const [cancelModalOpen, setCancelModalOpen] = useState(false);
   const [cancelReason, setCancelReason] = useState('');
   const [isCancelling, setIsCancelling] = useState(false);
   const [cancelError, setCancelError] = useState(null);
 
-  // Repay State
   const [isRepaying, setIsRepaying] = useState(false);
+  const [payError, setPayError] = useState(null);
 
   const fetchOrderDetail = useCallback(async () => {
     if (!effectiveOrderId) {
@@ -49,15 +115,14 @@ export function OrderDetail({ orderId, onBack }) {
     setError(null);
     try {
       const res = await orderService.getOrderById(effectiveOrderId);
-      const fetched = res?.order || res;
-      setOrder(fetched);
+      setOrder(res?.order || res);
       try {
-        if (typeof sessionStorage !== 'undefined' && effectiveOrderId) {
+        if (typeof sessionStorage !== 'undefined') {
           sessionStorage.setItem('reeco_current_order_id', effectiveOrderId);
         }
       } catch {}
     } catch (err) {
-      setError(err.message || 'Unable to load order details.');
+      setError(err.message || 'This order could not be loaded.');
     } finally {
       setLoading(false);
     }
@@ -67,7 +132,15 @@ export function OrderDetail({ orderId, onBack }) {
     fetchOrderDetail();
   }, [fetchOrderDetail]);
 
-  // Cancel order
+  const openCancel = () => {
+    setCancelError(null);
+    setCancelModalOpen(true);
+  };
+
+  const closeCancel = useCallback(() => {
+    if (!isCancelling) setCancelModalOpen(false);
+  }, [isCancelling]);
+
   const handleConfirmCancel = async () => {
     if (!order) return;
     setIsCancelling(true);
@@ -78,540 +151,408 @@ export function OrderDetail({ orderId, onBack }) {
       setCancelReason('');
       await fetchOrderDetail();
     } catch (err) {
-      setCancelError(err.message || 'Unable to cancel order.');
+      setCancelError(err.message || 'This order could not be cancelled.');
     } finally {
       setIsCancelling(false);
     }
   };
 
-  // Repay unpaid VNPay order
   const handleRepayVNPay = async () => {
     if (!order) return;
+    setPayError(null);
     setIsRepaying(true);
     try {
       const res = await createVnpayPaymentUrl(order.id);
       if (res && res.payment_url) {
         window.location.href = res.payment_url;
       } else {
-        alert('Failed to obtain payment URL from VNPay gateway.');
+        setPayError('VNPay did not return a payment link. Try again in a moment.');
+        setIsRepaying(false);
       }
     } catch (err) {
-      alert(err.message || 'Failed to initiate VNPay payment retry.');
-    } finally {
+      setPayError(err.message || 'The VNPay payment could not be started.');
       setIsRepaying(false);
     }
   };
 
-  const formatTimelineNote = (note) => {
-    if (!note) return null;
-    if (note.includes('Khởi tạo đơn hàng mới')) return 'New order initialized';
-    if (note.includes('Thanh toán thành công qua cổng VNPay')) {
-      return note.replace('Thanh toán thành công qua cổng VNPay (Mã giao dịch:', 'Payment successful via VNPay (Txn No:');
-    }
-    if (note.includes('Thanh toán thất bại')) {
-      return note.replace('Thanh toán thất bại qua cổng VNPay', 'Payment failed via VNPay');
-    }
-    if (note.includes('Cập nhật bởi Quản trị viên lúc')) {
-      return note.replace('Cập nhật bởi Quản trị viên lúc', 'Updated by Administrator at');
-    }
-    return note;
-  };
-
-  // 1. Loading state
   if (loading) {
     return (
-      <div className="page-container" style={{ maxWidth: 860, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: 48, borderRadius: 16 }}>
-          <div
-            style={{
-              width: 36,
-              height: 36,
-              border: '3px solid #e5e7eb',
-              borderTopColor: '#0069e0',
-              borderRadius: '50%',
-              margin: '0 auto 16px',
-              animation: 'spin 1s linear infinite',
-            }}
-          />
-          <div style={{ color: '#6b7280', fontSize: 14 }}>Loading order details...</div>
+      <div className="st-page st-page--narrow ac-page">
+        <div className="st-loading" role="status">
+          <CircleNotch size={20} className="spin" aria-hidden="true" /> Loading order details
         </div>
       </div>
     );
   }
 
-  // 2. Error state
   if (error || !order) {
     return (
-      <div className="page-container" style={{ maxWidth: 640, margin: '60px auto', padding: '0 20px', textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: 40, borderRadius: 16 }}>
-          <AlertCircle size={40} color="#d93025" style={{ marginBottom: 16 }} />
-          <h2 style={{ fontSize: 20, fontWeight: 700, color: '#111827', marginBottom: 8 }}>
-            Order Unavailable
-          </h2>
-          <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20 }}>
-            {error || 'Order could not be found in the system.'}
-          </p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={onBack}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer', padding: '8px 16px' }}
-            >
-              <ArrowLeft size={14} /> Back to list
+      <div className="st-page st-page--narrow ac-page">
+        <div className="st-state" role={error ? 'alert' : undefined}>
+          <div className="st-orb st-orb--stone" aria-hidden="true">
+            <span className="st-orb__icon"><WarningCircle size={20} /></span>
+          </div>
+          <h1 className="st-state__title">Order not available</h1>
+          <p className="st-state__desc">{error || 'This order could not be found.'}</p>
+          <div className="st-state__actions">
+            <button type="button" className="st-btn" onClick={onBack}>
+              <ArrowLeft size={16} aria-hidden="true" /> Back to my orders
             </button>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={fetchOrderDetail}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#111827', color: '#fff', border: 'none', borderRadius: 9999, cursor: 'pointer', padding: '8px 16px' }}
-            >
-              <RefreshCw size={14} /> Retry
-            </button>
+            {effectiveOrderId && (
+              <button type="button" className="st-btn st-btn--primary" onClick={fetchOrderDetail}>
+                <ArrowClockwise size={16} aria-hidden="true" /> Try again
+              </button>
+            )}
           </div>
         </div>
       </div>
     );
   }
 
-  // 3. Data state
-  const statusConfig = ORDER_STATUSES[order.status] || {
-    label: order.status,
-    color: '#6b7280',
-  };
-
-  const createdDateStr = new Date(order.created_at).toLocaleDateString('vi-VN', {
-    day: 'numeric',
-    month: 'numeric',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
-
+  const currentStepIdx = getStepProgress(order.status);
+  const isStopped = order.status === 'CANCELLED' || order.status === 'PAYMENT_FAILED';
+  const createdDateStr = formatDateTime(order.created_at);
   const shippingInfo = SHIPPING_METHODS[order.shipping_method] || SHIPPING_METHODS.standard;
   const itemsList = order.order_items || order.items || [];
-  const statusHistory = Array.isArray(order.order_status_history) ? order.order_status_history : [];
+  const itemCount = itemsList.length;
+  const statusHistory = Array.isArray(order.order_status_history)
+    ? [...order.order_status_history].sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+    : [];
+  const delivery = formatDeliveryRange(order.estimated_delivery_from, order.estimated_delivery_to);
+  const label = orderLabel(order);
 
-  // Điều kiện được hủy: đơn chưa bàn giao vận chuyển
-  const canCancel = ['PENDING_PAYMENT', 'PAYMENT_FAILED', 'PAID', 'PROCESSING'].includes(order.status);
-
-  // Điều kiện thanh toán lại: phương thức VNPay và chưa PAID
-  const canRepay =
-    order.payment_method === 'vnpay' &&
-    order.payment_status !== 'PAID' &&
-    order.status !== 'CANCELLED';
+  const canCancel = CANCELLABLE_STATUSES.includes(order.status);
+  const canRepay = order.payment_method === 'vnpay' && order.payment_status !== 'PAID' && order.status !== 'CANCELLED';
 
   return (
-    <div className="page-container" style={{ maxWidth: 940, margin: '40px auto', padding: '0 20px' }}>
-      {/* Back Button */}
-      <button
-        type="button"
-        onClick={onBack}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 6,
-          background: 'none',
-          border: 'none',
-          color: '#6b7280',
-          cursor: 'pointer',
-          fontSize: 13,
-          marginBottom: 20,
-        }}
-      >
-        <ArrowLeft size={14} /> Back to Orders
+    <div className="st-page ac-page">
+      <button type="button" className="st-back" onClick={onBack}>
+        <ArrowLeft size={16} aria-hidden="true" /> Back to my orders
       </button>
 
-      {/* Header Bar */}
-      <div
-        className="glass-card"
-        style={{
-          padding: 24,
-          borderRadius: 16,
-          marginBottom: 24,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 16,
-        }}
-      >
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
-            <h1 style={{ fontSize: 24, fontWeight: 700, color: '#111827', margin: 0 }}>
-              {order.order_code || `REECO-${order.order_number}` || `#${order.id}`}
-            </h1>
-            <span
-              style={{
-                fontSize: 12,
-                fontWeight: 700,
-                padding: '3px 10px',
-                borderRadius: 6,
-                background: `${statusConfig.color}15`,
-                color: statusConfig.color,
-                border: `1px solid ${statusConfig.color}30`,
-              }}
-            >
-              {statusConfig.label}
-            </span>
-          </div>
-          <div style={{ fontSize: 13, color: '#6b7280' }}>
-            Placed on {createdDateStr} • Tracking code: <code>{order.order_code}</code>
-          </div>
+      <header className="st-header">
+        <div className="st-header__title">
+          <h1>{label}</h1>
+          <OrderStatusBadge status={order.status} />
         </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-          {/* Repay Button */}
-          {canRepay && (
-            <button
-              type="button"
-              className="btn btn-primary"
-              disabled={isRepaying}
-              onClick={handleRepayVNPay}
-              style={{
-                padding: '10px 18px',
-                fontSize: 13,
-                fontWeight: 600,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                background: '#0069e0',
-                color: '#fff',
-                border: 'none',
-                borderRadius: 9999,
-                cursor: isRepaying ? 'not-allowed' : 'pointer',
-              }}
-            >
-              <CreditCard size={15} />
-              <span>{isRepaying ? 'Initiating payment...' : 'Pay Again'}</span>
-            </button>
-          )}
-
-          {/* Cancel Order Button */}
-          {canCancel && (
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => {
-                setCancelError(null);
-                setCancelModalOpen(true);
-              }}
-              style={{
-                padding: '10px 18px',
-                fontSize: 13,
-                fontWeight: 600,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                background: '#fff',
-                color: '#d93025',
-                border: '1px solid #d93025',
-                borderRadius: 9999,
-                cursor: 'pointer',
-              }}
-            >
-              <XCircle size={15} />
-              <span>Cancel Order</span>
-            </button>
-          )}
-
-          {order.estimated_delivery_from && (
-            <div style={{ textAlign: 'right', paddingLeft: 8, borderLeft: '1px solid #e5e7eb' }}>
-              <div style={{ fontSize: 11, color: '#6b7280' }}>Estimated Delivery</div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#0069e0' }}>
-                {order.estimated_delivery_from} → {order.estimated_delivery_to}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Timeline from status_history */}
-      <div className="glass-card" style={{ padding: 28, borderRadius: 16, marginBottom: 24 }}>
-        <h2 style={{ fontSize: 16, fontWeight: 600, color: '#111827', margin: '0 0 20px', display: 'flex', alignItems: 'center', gap: 8 }}>
-          <Clock size={18} color="#0069e0" />
-          <span>Order Status Timeline</span>
-        </h2>
-
-        {statusHistory.length === 0 ? (
-          <div style={{ fontSize: 13, color: '#6b7280', fontStyle: 'italic' }}>
-            No status history recorded for this order yet.
-          </div>
-        ) : (
-          <div style={{ position: 'relative', paddingLeft: 12 }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-              {statusHistory.map((h, idx) => {
-                const hConfig = ORDER_STATUSES[h.status] || {
-                  label: h.status,
-                  color: '#0069e0',
-                };
-                const timeStr = new Date(h.created_at).toLocaleDateString('vi-VN', {
-                  day: 'numeric',
-                  month: 'numeric',
-                  year: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                });
-
-                return (
-                  <div key={h.id || idx} style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
-                    {/* Node indicator */}
-                    <div
-                      style={{
-                        width: 14,
-                        height: 14,
-                        borderRadius: '50%',
-                        background: hConfig.color,
-                        boxShadow: `0 0 0 4px ${hConfig.color}25`,
-                        marginTop: 4,
-                        flexShrink: 0,
-                      }}
-                    />
-
-                    {/* Content */}
-                    <div style={{ flex: 1, paddingBottom: 8, borderBottom: idx < statusHistory.length - 1 ? '1px dashed #f0f0f0' : 'none' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 2 }}>
-                        <span style={{ fontSize: 14, fontWeight: 700, color: '#111827' }}>
-                          {hConfig.label}
-                        </span>
-                        <span style={{ fontSize: 12, color: '#93979f' }}>
-                          {timeStr}
-                        </span>
-                      </div>
-                      {(h.note || h.reason) && (
-                        <div style={{ fontSize: 13, color: '#535862', marginTop: 2 }}>
-                          {formatTimelineNote(h.note || h.reason)}
-                        </div>
-                      )}
-                      {h.changed_by && (
-                        <div style={{ fontSize: 11, color: '#93979f', marginTop: 2 }}>
-                          Updated by: {h.changed_by}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
+        <div className="st-header__aside">
+          <div className="ac-eta">
+            <div className={`st-orb ${isStopped ? 'st-orb--stone' : 'st-orb--live'}`} aria-hidden="true" />
+            <div>
+              <p className="ac-eta__label">Estimated delivery</p>
+              <p className="ac-eta__value">{isStopped ? 'Not scheduled' : delivery || 'Pending schedule'}</p>
             </div>
           </div>
-        )}
-      </div>
-
-      {/* Main Order Content Split */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 24, alignItems: 'start' }}>
-        {/* Left: Product Snapshots */}
-        <div className="glass-card" style={{ padding: 24, borderRadius: 16 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 600, color: '#111827', margin: '0 0 16px', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Package size={18} color="#0069e0" />
-            <span>Ordered Items ({itemsList.length})</span>
-          </h2>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            {itemsList.map((item, idx) => {
-              const lineTotal = item.line_total || item.unit_price * item.quantity;
-              return (
-                <div
-                  key={item.id || idx}
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    padding: '12px 14px',
-                    borderRadius: 10,
-                    background: '#f9fafb',
-                    border: '1px solid #e5e7eb',
-                    gap: 12,
-                  }}
+          <p className="st-caption">
+            Placed {createdDateStr}. Tracking code <span className="ac-ref">{order.order_code || label}</span>
+          </p>
+          {(canRepay || canCancel) && (
+            <div className="ac-order-actions">
+              {canRepay && (
+                <button
+                  type="button"
+                  className="st-btn st-btn--primary st-btn--buy"
+                  disabled={isRepaying}
+                  aria-busy={isRepaying}
+                  onClick={handleRepayVNPay}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    {item.image_url && (
-                      <img
-                        src={item.image_url}
-                        alt={item.model || item.product_name}
-                        style={{ width: 44, height: 44, borderRadius: 6, objectFit: 'contain', background: '#ffffff', padding: 4, border: '1px solid #e5e7eb' }}
-                      />
-                    )}
-                    <div>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: '#0069e0' }}>
-                        {item.model || item.product_id}
-                      </div>
-                      <div style={{ fontSize: 12, color: '#535862', maxWidth: 360 }}>
-                        {item.product_name}
-                      </div>
-                      <div style={{ fontSize: 11, color: '#6b7280', marginTop: 2 }}>
-                        Unit price: {formatCurrency(item.unit_price)} × {item.quantity}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div style={{ fontSize: 15, fontWeight: 700, color: '#111827', textAlign: 'right' }}>
-                    {formatCurrency(lineTotal)}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Pricing Summary */}
-          <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid #e5e7eb' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 13, color: '#6b7280' }}>
-              <span>Subtotal</span>
-              <span style={{ color: '#111827', fontWeight: 600 }}>{formatCurrency(order.subtotal)}</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12, fontSize: 13, color: '#6b7280' }}>
-              <span>Shipping ({shippingInfo.name})</span>
-              <span style={{ color: '#111827', fontWeight: 600 }}>{formatCurrency(order.shipping_fee)}</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 17, fontWeight: 700, color: '#111827', paddingTop: 10, borderTop: '1px dashed #e5e7eb' }}>
-              <span>Total Amount</span>
-              <span style={{ color: '#0069e0' }}>{formatCurrency(order.total)}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right: Customer & Logistics info */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          {/* Shipping Destination */}
-          <div className="glass-card" style={{ padding: 20, borderRadius: 14 }}>
-            <h3 style={{ fontSize: 14, fontWeight: 600, color: '#111827', margin: '0 0 12px', display: 'flex', alignItems: 'center', gap: 6 }}>
-              <MapPin size={16} color="#0069e0" />
-              <span>Shipping Address</span>
-            </h3>
-            <div style={{ fontSize: 13, color: '#535862', lineHeight: 1.6 }}>
-              <div style={{ fontWeight: 600, color: '#111827' }}>{order.customer_name}</div>
-              <div>{order.customer_phone}</div>
-              <div style={{ marginTop: 4 }}>{order.shipping_address}</div>
-              <div>{order.city}{order.province ? `, ${order.province}` : ''}</div>
-              <div>{order.country || 'Vietnam'}</div>
-              {order.notes && (
-                <div style={{ marginTop: 8, padding: 8, borderRadius: 6, background: '#f9fafb', border: '1px solid #e5e7eb', fontSize: 12, color: '#6b7280' }}>
-                  <strong>Note:</strong> {order.notes}
-                </div>
+                  <CreditCard size={16} aria-hidden="true" />
+                  {isRepaying ? 'Opening VNPay…' : 'Pay again with VNPay'}
+                </button>
+              )}
+              {canCancel && (
+                <button type="button" className="st-btn st-btn--danger" onClick={openCancel}>
+                  <XCircle size={16} aria-hidden="true" /> Cancel order
+                </button>
               )}
             </div>
-          </div>
-
-          {/* Payment Details */}
-          <div className="glass-card" style={{ padding: 20, borderRadius: 14 }}>
-            <h3 style={{ fontSize: 14, fontWeight: 600, color: '#111827', margin: '0 0 12px', display: 'flex', alignItems: 'center', gap: 6 }}>
-              <CreditCard size={16} color="#0069e0" />
-              <span>Payment Details</span>
-            </h3>
-
-            <div style={{ fontSize: 13, color: '#535862', lineHeight: 1.6 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <span style={{ color: '#6b7280' }}>Method:</span>
-                <span style={{ fontWeight: 600, color: '#111827' }}>
-                  {order.payment_method === 'cod' ? 'Cash on Delivery (COD)' : 'VNPay Sandbox'}
-                </span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                <span style={{ color: '#6b7280' }}>Status:</span>
-                <span
-                  style={{
-                    fontWeight: 700,
-                    color: order.payment_status === 'PAID' ? '#0f9554' : '#d93025',
-                  }}
-                >
-                  {order.payment_status}
-                </span>
-              </div>
-
-              {order.vnpay_transaction_no && (
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6b7280' }}>
-                  <span>VNPay Txn Ref:</span>
-                  <span style={{ fontFamily: 'monospace' }}>{order.vnpay_transaction_no}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Confirmation Modal: Cancel Order */}
-      {cancelModalOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0,0,0,0.5)',
-            backdropFilter: 'blur(4px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
-            padding: 20,
-          }}
-        >
-          <div style={{ maxWidth: 480, width: '100%', padding: 28, borderRadius: 16, background: '#ffffff', border: '1px solid #e5e7eb', boxShadow: '0 20px 50px rgba(0,0,0,0.15)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-              <div style={{ padding: 10, borderRadius: 10, background: 'rgba(217, 48, 37, 0.08)', color: '#d93025' }}>
-                <XCircle size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827', margin: 0 }}>Confirm Order Cancellation</h3>
-                <span style={{ fontSize: 12, color: '#6b7280' }}>Order code: {order.order_code}</span>
-              </div>
-            </div>
-
-            <p style={{ fontSize: 13, color: '#535862', lineHeight: 1.6, marginBottom: 16 }}>
-              Are you sure you want to cancel this order? Once cancelled, this action cannot be undone.
+          )}
+          {payError && (
+            <p className="st-error-text" role="alert">
+              {payError}
             </p>
+          )}
+        </div>
+      </header>
 
-            {cancelError && (
-              <div style={{ padding: 10, borderRadius: 6, background: 'rgba(217, 48, 37, 0.08)', color: '#d93025', fontSize: 13, marginBottom: 14 }}>
-                {cancelError}
+      <div className="ac-detail">
+        <div className="ac-detail__main">
+          <section aria-labelledby="ac-timeline-title">
+            <h2 className="st-heading ac-block__title" id="ac-timeline-title">Delivery progress</h2>
+
+            {order.status === 'CANCELLED' ? (
+              <div className="st-note" role="status">
+                <WarningCircle size={18} aria-hidden="true" />
+                <span>This order has been cancelled.</span>
               </div>
+            ) : order.status === 'PAYMENT_FAILED' ? (
+              <div className="st-note st-note--error" role="status">
+                <WarningCircle size={18} aria-hidden="true" />
+                <span>The payment for this order did not go through. Pay again to continue.</span>
+              </div>
+            ) : (
+              <ol className="ac-timeline">
+                {TRACKING_STEPS.map((step, idx) => {
+                  const isPassed = idx <= currentStepIdx;
+                  const isCurrent = idx === currentStepIdx;
+                  const stateClass = isCurrent ? ' is-current' : isPassed ? ' is-done' : '';
+
+                  return (
+                    <li
+                      key={step.key}
+                      className={`ac-step${stateClass}`}
+                      aria-current={isCurrent ? 'step' : undefined}
+                    >
+                      <span className="ac-step__mark" aria-hidden="true">
+                        {isCurrent ? null : isPassed ? <Check size={14} weight="bold" /> : idx + 1}
+                      </span>
+                      <div>
+                        <div className="ac-step__title">
+                          {step.label}
+                          {isCurrent && <span className="st-tag">Now</span>}
+                        </div>
+                        <div className="ac-step__desc">{step.desc}</div>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
             )}
 
-            <div style={{ marginBottom: 20 }}>
-              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#535862', marginBottom: 6 }}>
-                Cancellation Reason (Optional)
-              </label>
-              <textarea
-                rows={2}
-                value={cancelReason}
-                onChange={(e) => setCancelReason(e.target.value)}
-                placeholder="e.g., Changed mind, wrong delivery address..."
-                style={{
-                  width: '100%',
-                  padding: '10px 12px',
-                  borderRadius: 6,
-                  border: '1px solid #e5e7eb',
-                  background: '#f9fafb',
-                  fontSize: 13,
-                  boxSizing: 'border-box',
-                  resize: 'vertical',
-                }}
-              />
+            <div className="ac-history">
+              <h3 className="ac-history__title">
+                <ClockCounterClockwise size={18} aria-hidden="true" /> Status history
+              </h3>
+              {statusHistory.length === 0 ? (
+                <p className="ac-history__empty">No status changes have been recorded for this order yet.</p>
+              ) : (
+                <ol className="ac-history__list">
+                  {statusHistory.map((h, idx) => {
+                    const badge = getOrderStatusBadge(h.to_status || h.status);
+                    const note = formatTimelineNote(h.note || h.reason);
+                    return (
+                      <li key={h.id || idx} className={`ac-history__item ac-history__item--${badge.tone}`}>
+                        <div className="ac-history__head">
+                          <span className="ac-history__status">{badge.label}</span>
+                          <time dateTime={h.created_at}>{formatDateTime(h.created_at)}</time>
+                        </div>
+                        {note && <p className="ac-history__note">{note}</p>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              )}
             </div>
+          </section>
 
-            <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end' }}>
-              <button
-                type="button"
-                className="btn btn-secondary"
-                disabled={isCancelling}
-                onClick={() => setCancelModalOpen(false)}
-                style={{ padding: '10px 18px', background: '#fff', color: '#111827', border: '1px solid #e5e7eb', borderRadius: 9999, cursor: 'pointer' }}
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-                disabled={isCancelling}
-                onClick={handleConfirmCancel}
-                style={{ padding: '10px 20px', background: '#d93025', color: '#fff', border: 'none', borderRadius: 9999, cursor: isCancelling ? 'not-allowed' : 'pointer' }}
-              >
-                {isCancelling ? 'Cancelling...' : 'Confirm Cancellation'}
-              </button>
+          <section aria-labelledby="ac-items-title">
+            <h2 className="st-heading ac-block__title" id="ac-items-title">
+              {itemCount} {itemCount === 1 ? 'product' : 'products'}
+            </h2>
+
+            <ul className="ac-items">
+              {itemsList.map((item, idx) => {
+                const image = item.image_url || item.image;
+                const lineTotal = item.line_total ?? Number(item.unit_price) * Number(item.quantity);
+                return (
+                  <li key={item.id || idx} className="ac-item">
+                    <span className="st-thumb st-thumb--lg" aria-hidden="true">
+                      {image ? <img src={sizedImage(image, 200)} alt="" /> : <Package size={24} />}
+                    </span>
+                    <div>
+                      <div className="ac-item__model">{item.model || item.product_id}</div>
+                      <div className="ac-item__name">{item.product_name}</div>
+                      <div className="ac-item__qty">
+                        {money(item.unit_price)} × {item.quantity}
+                      </div>
+                    </div>
+                    <div className="ac-item__total">{money(lineTotal)}</div>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="st-sum ac-summary">
+              <div className="st-sum__row">
+                <span>Subtotal</span>
+                <span>{money(order.subtotal)}</span>
+              </div>
+              <div className="st-sum__row">
+                <span>Shipping ({shippingInfo.name})</span>
+                <span>{money(order.shipping_fee)}</span>
+              </div>
+              <div className="st-sum__total">
+                <span>Order total</span>
+                <strong>{money(order.total)}</strong>
+              </div>
             </div>
-          </div>
+          </section>
         </div>
+
+        <aside className="ac-detail__aside">
+          <section className="st-panel" aria-labelledby="ac-ship-title">
+            <h2 className="ac-aside-title" id="ac-ship-title">
+              <MapPin size={18} aria-hidden="true" /> Shipping to
+            </h2>
+            <address className="ac-address">
+              <strong>{order.customer_name}</strong>
+              <span>{order.customer_phone}</span>
+              <span>{order.shipping_address}</span>
+              <span>
+                {[order.city, order.province].filter(Boolean).join(', ')}
+                {order.postal_code ? ` ${order.postal_code}` : ''}
+              </span>
+              <span>{order.country || 'Vietnam'}</span>
+            </address>
+            {order.notes && (
+              <p className="ac-panel-note">
+                <strong>Notes</strong>
+                <br />
+                {order.notes}
+              </p>
+            )}
+          </section>
+
+          <section className="st-panel" aria-labelledby="ac-pay-title">
+            <h2 className="ac-aside-title" id="ac-pay-title">
+              {order.payment_method === 'cod' ? (
+                <Money size={18} aria-hidden="true" />
+              ) : (
+                <CreditCard size={18} aria-hidden="true" />
+              )}
+              Payment
+            </h2>
+
+            <dl className="ac-kv">
+              <div>
+                <dt>Method</dt>
+                <dd>{getPaymentMethodLabel(order.payment_method)}</dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd>
+                  <PaymentStatusBadge status={order.payment_status} />
+                </dd>
+              </div>
+              {order.vnpay_transaction_no && (
+                <div>
+                  <dt>VNPay transaction</dt>
+                  <dd className="st-num">{order.vnpay_transaction_no}</dd>
+                </div>
+              )}
+            </dl>
+
+            {order.payment_method === 'cod' && order.payment_status !== 'PAID' && order.status !== 'CANCELLED' && (
+              <p className="ac-panel-note">
+                Prepare <strong>{money(order.total)}</strong> in cash to pay the courier on delivery.
+              </p>
+            )}
+
+            {canRepay && (
+              <p className="ac-panel-note">
+                This order is waiting for payment. Use <strong>Pay again with VNPay</strong> at the top of the page.
+              </p>
+            )}
+          </section>
+        </aside>
+      </div>
+
+      {cancelModalOpen && (
+        <CancelOrderDialog
+          orderLabel={label}
+          reason={cancelReason}
+          onReasonChange={setCancelReason}
+          error={cancelError}
+          isCancelling={isCancelling}
+          onClose={closeCancel}
+          onConfirm={handleConfirmCancel}
+        />
       )}
+    </div>
+  );
+}
+
+function CancelOrderDialog({ orderLabel: label, reason, onReasonChange, error, isCancelling, onClose, onConfirm }) {
+  const dialogRef = useRef(null);
+
+  // Escape closes; focus starts in the dialog and returns to the opener afterwards.
+  useEffect(() => {
+    const opener = document.activeElement;
+    dialogRef.current?.querySelector('textarea')?.focus();
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      if (opener && typeof opener.focus === 'function' && document.contains(opener)) opener.focus();
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="st-overlay"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div
+        className="st-modal ac-cancel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ac-cancel-title"
+        aria-describedby="ac-cancel-desc"
+        ref={dialogRef}
+      >
+        <div className="st-modal__head">
+          <div>
+            <h2 className="st-modal__title" id="ac-cancel-title">Cancel this order?</h2>
+            <p className="st-caption">Order {label}</p>
+          </div>
+          <button type="button" className="st-btn st-btn--icon st-btn--sm" onClick={onClose} aria-label="Close" disabled={isCancelling}>
+            <X size={16} aria-hidden="true" />
+          </button>
+        </div>
+
+        <div className="st-modal__body">
+          <p className="ac-cancel__desc" id="ac-cancel-desc">
+            Once an order is cancelled it can't be reopened. You can place a new order at any time.
+          </p>
+
+          {error && (
+            <p className="st-note st-note--error" role="alert">
+              <WarningCircle size={18} aria-hidden="true" />
+              <span>{error}</span>
+            </p>
+          )}
+
+          <label className="st-field">
+            <span className="st-label">Reason (optional)</span>
+            <textarea
+              className="st-textarea"
+              rows={3}
+              value={reason}
+              onChange={(e) => onReasonChange(e.target.value)}
+              placeholder="For example, wrong delivery address or no longer needed"
+            />
+          </label>
+        </div>
+
+        <div className="st-modal__foot">
+          <button type="button" className="st-btn" onClick={onClose} disabled={isCancelling}>
+            Keep order
+          </button>
+          <button
+            type="button"
+            className="st-btn ac-cancel__confirm"
+            onClick={onConfirm}
+            disabled={isCancelling}
+            aria-busy={isCancelling}
+          >
+            {isCancelling ? 'Cancelling…' : 'Cancel order'}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
