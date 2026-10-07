@@ -15,7 +15,7 @@
     "build:api": "npm run build --workspace=@reeco/api",
     "build:admin": "npm run build --workspace=@reeco/admin",
     "build:client": "npm run build --workspace=@reeco/client",
-    "test:admin": "npm run test --workspace=@reeco/admin -- --watchAll=false --passWithNoTests",
+    "test:admin": "npm run build:shared && npm run test --workspace=@reeco/admin -- --watchAll=false --passWithNoTests",
     "test:client": "npm run test --workspace=@reeco/client -- --watchAll=false --passWithNoTests",
     "test:api": "npm run build:shared && npm run build:api && node --test scripts/security/api-security.test.mjs scripts/payments/vnpay-signing.test.mjs scripts/payments/merge-regression.test.mjs",
     "test:commerce:live": "npm run build:shared && npm run build:api && node --env-file=apps/api/.env --test scripts/payments/vnpay.test.mjs scripts/notifications/notifications.test.mjs",

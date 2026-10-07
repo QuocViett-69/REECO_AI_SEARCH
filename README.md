@@ -40,10 +40,19 @@ product access, and an idempotent product import pipeline. See
 npm install
 ```
 
+Run `npm install` again after pulling: new dependencies are not installed by `git pull`, and the
+build fails with `Cannot find module` until they are.
+
 ## Run locally
 
 Copy `apps/api/.env.example` to `apps/api/.env` and configure the Supabase URL, service-role key, and
 database connection string.
+
+`DATABASE_URL` (used by `POST /admin/import` and the `supabase:*` scripts) must be the **Session
+pooler** string from Supabase → Connect, e.g.
+`postgresql://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.com:5432/postgres`.
+The direct host `db.<project-ref>.supabase.co` only has an IPv6 address, so on IPv4-only networks the
+import fails with `getaddrinfo ENOTFOUND`.
 
 For the CRA frontends:
 
@@ -149,9 +158,9 @@ supabase db reset
 npm run demo:seed
 ```
 
-Configure both frontend apps from their `.env.example`: `REACT_APP_SUPABASE_URL`
-and `REACT_APP_SUPABASE_ANON_KEY` must use a public anon/publishable key,
-never a service-role key. Restart/rebuild after changing these values.
+Configure both frontend apps from their `.env.example` (`REACT_APP_API_URL` is the only required value).
+Neither frontend talks to Supabase directly: they sign in through `POST /api/v1/auth/login`, so no
+Supabase key belongs in a `REACT_APP_` variable. Restart/rebuild after changing these values.
 Configure `VNPAY_TMN_CODE`, `VNPAY_HASH_SECRET`, and `VNPAY_RETURN_URL` on the API (use placeholder sandbox values, never commit real secrets).
 
 Start the services (in separate terminals):
@@ -169,16 +178,24 @@ npm run dev:admin
 Demo Accounts:
 | Email | Password | Role |
 | :--- | :--- | :--- |
-| haitran@example.com | ilovereeco | customer |
+| haitran@example.com | ilovereeco | client |
 | admin@reeco.vn | ilovereeco | admin |
 
 Offline merge checks (no database writes):
 
 ```bash
 npm run build
+npm run test:api
+npm run test:admin
 npm run test:client -- --runInBand
 node --test scripts/payments/vnpay-signing.test.mjs scripts/payments/merge-regression.test.mjs
 ```
+
+Admin app (http://localhost:5174): only accounts whose `app_metadata.role` is `admin` can sign in
+(`haitran@example.com` is refused). The session is kept in `localStorage['reeco_admin_session']` and
+refreshed through `POST /auth/refresh`; when that fails the app returns to `/login`. Pages are real URLs
+(`/`, `/products`, `/products/:productId`, `/orders`, `/orders/:orderId`, `/import`, …), so reloading
+or sharing a link opens the same page.
 
 The payment and notification integration suites write test rows; run them only
 against a disposable/test database. API lint currently reports explicit `any`
