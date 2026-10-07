@@ -4,6 +4,9 @@ import { z } from 'zod';
 // columns such as product_id or model can never be written through this route.
 const nullableText = z.string().trim().max(200).nullable();
 
+// product_prices.price_vnd is a bigint; this cap keeps it well inside JavaScript's safe integers.
+const MAX_PRICE_VND = 100_000_000_000;
+
 export const AdminProductUpdateSchema = z
   .object({
     product_name_en: z.string().trim().min(1).max(300),
@@ -12,6 +15,7 @@ export const AdminProductUpdateSchema = z
     subcategory: nullableText,
     device_type: nullableText,
     status: z.enum(['active', 'review']),
+    price_vnd: z.number().int().min(0).max(MAX_PRICE_VND),
     // Shown as a link on the product page, so only http(s) URLs (no javascript: or data:)
     product_url: z.union([
       z.literal(''),
@@ -36,3 +40,10 @@ export const AdminProductUpdateSchema = z
   .strict();
 
 export type AdminProductUpdate = z.infer<typeof AdminProductUpdateSchema>;
+
+// PUT /admin/products/:productId/price
+export const AdminProductPriceUpdateSchema = z
+  .object({ price_vnd: z.number().int().min(0).max(MAX_PRICE_VND) })
+  .strict();
+
+export type AdminProductPriceUpdate = z.infer<typeof AdminProductPriceUpdateSchema>;

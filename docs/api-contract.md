@@ -404,7 +404,9 @@ for Supabase failure.
 
 - Auth: Bearer token of an admin user.
 - Path/query/body: same as public product detail.
-- Success: `200 OK` with the same `ProductDetail` contract.
+- Success: `200 OK` with the `ProductDetail` contract plus `price_vnd` (integer VND from
+  `product_prices`, or `null` when no price is stored). Unlike `product.price`, it is returned even when
+  the product is not purchasable (for example a review product).
 - Difference from public detail: active and review rows are visible. Review products currently have
   no search document or normalized-spec rows, so `taxonomy` is `null` and semantic/spec arrays are empty.
 
@@ -427,8 +429,24 @@ Errors: `401`, `403`, `404`, or `503` as described above.
 | `product_url`                            | `""` or an `http(s)://` URL ≤500 (other schemes such as `javascript:` are rejected) |
 | `supported_protocols`                    | array of up to 30 strings                                                           |
 | `specifications`                         | array of up to 200 `{ canonical_key, value }`                                       |
+| `price_vnd`                              | integer 0–100,000,000,000; upserted into `product_prices` (same as the route below) |
+
+- Success body: the updated product in the same shape as `GET /admin/products/:productId` (includes `price_vnd`).
+- `400` body: `{ "message": "Request validation failed", "errors": [{ "path", "message" }] }`; `path` is the
+  field name (for example `product_url` or `specifications.0.value`), so the editor can show the error next
+  to that field.
 
 Errors: `400`, `401`, `403`, `404`, `503`.
+
+## PUT `/admin/products/:productId/price`
+
+- Auth: Bearer token of an admin user.
+- Body: `{ "price_vnd": <integer 0–100,000,000,000> }`, strict (any other key → `400`).
+- Effect: upserts the row in `product_prices` keyed by `product_id` (the path accepts the product id or
+  model). A product is purchasable only when it is `active` and `price_vnd > 0`.
+- Success: `200 OK` with the product in the `GET /admin/products/:productId` shape (includes `price_vnd`).
+
+Errors: `400`, `401`, `403`, `404`, `503` (database write failed).
 
 ## POST `/admin/import`
 

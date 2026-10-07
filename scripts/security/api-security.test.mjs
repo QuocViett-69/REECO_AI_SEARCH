@@ -12,7 +12,8 @@ const { SupabaseAuthGuard } = dist('auth/supabase-auth.guard.js');
 const { AdminController } = dist('modules/admin/admin.controller.js');
 const { ImportsController } = dist('modules/imports/imports.controller.js');
 const { AdminOrdersController } = dist('modules/orders/admin-orders.controller.js');
-const { AdminProductUpdateSchema } = dist('modules/admin/admin-product-update.schema.js');
+const { AdminProductUpdateSchema, AdminProductPriceUpdateSchema } = dist('modules/admin/admin-product-update.schema.js');
+const { AdminService } = dist('modules/admin/admin.service.js');
 const { createRateLimit } = dist('common/middleware/rate-limit.middleware.js');
 const { VNPayService } = dist('modules/orders/vnpay.service.js');
 const { CreateOrderSchema, UpdateOrderStatusSchema } = dist('modules/orders/dto/create-order.dto.js');
@@ -61,6 +62,63 @@ test('admin product updates accept only the editor fields', () => {
   }
   assert.equal(AdminProductUpdateSchema.safeParse({ status: 'deleted' }).success, false);
   assert.equal(AdminProductUpdateSchema.safeParse({ product_url: 'javascript:alert(1)' }).success, false);
+});
+
+test('admin price updates accept only a non-negative integer price_vnd', () => {
+  assert.equal(AdminProductPriceUpdateSchema.safeParse({ price_vnd: 13_210_000 }).success, true);
+  assert.equal(AdminProductPriceUpdateSchema.safeParse({ price_vnd: 0 }).success, true);
+  for (const bad of [{}, { price_vnd: -1 }, { price_vnd: 1.5 }, { price_vnd: '1000' }, { price_vnd: 1000, currency: 'USD' }]) {
+    assert.equal(AdminProductPriceUpdateSchema.safeParse(bad).success, false, JSON.stringify(bad));
+  }
+  // product_prices has no currency/availability columns, so PATCH must not accept them either
+  for (const field of ['currency', 'availability', 'purchasable']) {
+    assert.equal(AdminProductUpdateSchema.safeParse({ [field]: 'x' }).success, false, field);
+  }
+  assert.equal(AdminProductUpdateSchema.safeParse({ price_vnd: 5000 }).success, true);
+});
+
+function adminServiceWith({ priceRow = null, upsertError = null } = {}) {
+  const calls = [];
+  const detail = { product: { product_id: 'CSI_CS655', model: 'CS655' } };
+  const query = {
+    select() { return this; },
+    eq() { return this; },
+    maybeSingle: async () => ({ data: priceRow, error: null }),
+    upsert: async (row, options) => { calls.push({ row, options }); return { error: upsertError }; },
+  };
+  const supabase = { getClient: () => ({ from: (table) => { calls.push({ table }); return query; } }) };
+  const products = {
+    getAdmin: async () => detail,
+    updateAdmin: async (_id, updates) => { calls.push({ updateAdmin: updates }); return detail; },
+  };
+  return { service: new AdminService(supabase, products), calls };
+}
+
+test('admin product detail exposes the stored price_vnd', async () => {
+  const { service } = adminServiceWith({ priceRow: { price_vnd: '13210000' } });
+  const detail = await service.getAdminProductDetail('CS655');
+  assert.equal(detail.price_vnd, 13_210_000);
+  const { service: noPrice } = adminServiceWith();
+  assert.equal((await noPrice.getAdminProductDetail('CS655')).price_vnd, null);
+});
+
+test('setting a price upserts product_prices by product_id and surfaces write errors', async () => {
+  const { service, calls } = adminServiceWith({ priceRow: { price_vnd: 9_000_000 } });
+  await service.setProductPrice('CS655', 9_000_000);
+  const upsert = calls.find((call) => call.row);
+  assert.deepEqual(upsert.row, { product_id: 'CSI_CS655', price_vnd: 9_000_000 });
+  assert.deepEqual(upsert.options, { onConflict: 'product_id' });
+
+  const { service: failing } = adminServiceWith({ upsertError: { message: 'boom' } });
+  await assert.rejects(failing.setProductPrice('CS655', 1), /giá sản phẩm/);
+});
+
+test('PATCH with price_vnd saves the product fields and the price separately', async () => {
+  const { service, calls } = adminServiceWith({ priceRow: { price_vnd: 7_000_000 } });
+  const detail = await service.updateAdminProduct('CS655', { product_name_en: 'New name', price_vnd: 7_000_000 });
+  assert.deepEqual(calls.find((call) => call.updateAdmin).updateAdmin, { product_name_en: 'New name' });
+  assert.deepEqual(calls.find((call) => call.row).row, { product_id: 'CSI_CS655', price_vnd: 7_000_000 });
+  assert.equal(detail.price_vnd, 7_000_000);
 });
 
 test('search rate limit answers 429 after the per-minute budget', () => {
