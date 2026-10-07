@@ -65,10 +65,16 @@ Both use `REACT_APP_*` environment variables (CRA runtime requirement). Ensure `
 
 Confirm the embedding model exists:
 
-```bash
+````bash
 ollama list
 ollama pull qwen3-embedding:4b
-```
+``
+Invoke-RestMethod `
+  -Uri 'http://127.0.0.1:11434/api/chat' `
+  -Method Post `
+  -ContentType 'application/json' `
+  -Body '{"model":"qwen3:4b-instruct-2507-q4_K_M","stream":false,"keep_alive":"10m"}'
+
 
 Run Ollama if it is not already active, then start services in separate terminals:
 
@@ -82,7 +88,7 @@ npm run dev:client       # http://localhost:5173
 # Admin frontend
 npm run dev:admin        # http://localhost:5174
 
-```
+````
 
 Health endpoint: http://localhost:3000/api/v1/health
 
@@ -152,6 +158,7 @@ npm run lint
 ## Orders/payment merge setup
 
 Initialize your local Supabase instance and seed the demo data:
+
 ```bash
 supabase start
 supabase db reset
@@ -164,6 +171,7 @@ Supabase key belongs in a `REACT_APP_` variable. Restart/rebuild after changing 
 Configure `VNPAY_TMN_CODE`, `VNPAY_HASH_SECRET`, and `VNPAY_RETURN_URL` on the API (use placeholder sandbox values, never commit real secrets).
 
 Start the services (in separate terminals):
+
 ```bash
 # Backend API (port 3000)
 npm run dev:api
@@ -176,10 +184,11 @@ npm run dev:admin
 ```
 
 Demo Accounts:
-| Email | Password | Role |
-| :--- | :--- | :--- |
+
+| Email               | Password   | Role   |
+| :------------------ | :--------- | :----- |
 | haitran@example.com | ilovereeco | client |
-| admin@reeco.vn | ilovereeco | admin |
+| admin@reeco.vn      | ilovereeco | admin  |
 
 Offline merge checks (no database writes):
 
