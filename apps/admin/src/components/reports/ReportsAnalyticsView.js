@@ -11,7 +11,7 @@ import {
   BarChart3,
   Download,
 } from 'lucide-react';
-import { adminOrderService } from '../../services/adminOrderService';
+import { getOrderStats } from '../../services/ordersApi';
 
 export function ReportsAnalyticsView() {
   const [timeRange, setTimeRange] = useState('30d'); // 7d, 30d, all
@@ -20,9 +20,11 @@ export function ReportsAnalyticsView() {
 
   useEffect(() => {
     let mounted = true;
-    Promise.resolve(adminOrderService.getOrderStats()).then((res) => {
-      if (mounted && res) setStats(res);
-    });
+    getOrderStats()
+      .then((res) => {
+        if (mounted && res) setStats(res);
+      })
+      .catch((err) => console.warn('Order stats failed:', err.message));
     return () => {
       mounted = false;
     };

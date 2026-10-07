@@ -559,6 +559,11 @@ export class OrdersRepository {
     let vnpayRevenue = 0;
     let codRevenue = 0;
 
+    // Every status starts at 0 so the dashboard can show (and link to) each one
+    const ordersByStatus: Record<string, number> = Object.fromEntries(
+      Object.values(ORDER_STATUS).map((status) => [status, 0]),
+    );
+
     let processingCount = 0;
     let shippedCount = 0;
     let deliveredCount = 0;
@@ -614,6 +619,8 @@ export class OrdersRepository {
         }
       }
 
+      ordersByStatus[ord.status] = (ordersByStatus[ord.status] || 0) + 1;
+
       switch (ord.status) {
         case 'PROCESSING':
           processingCount++;
@@ -650,6 +657,7 @@ export class OrdersRepository {
       deliveredCount,
       pendingCount,
       cancelledCount,
+      ordersByStatus,
       vnpayRevenue,
       codRevenue,
       dailyRevenueMap,

@@ -535,8 +535,10 @@ Admin only (`SupabaseAuthGuard` + `AdminGuard`).
   matches order code/number, customer name, email, phone, or VNPay reference; `status` is applied only
   when it is a known order status. `page_size` defaults to 20, maximum 100.
 - `GET /admin/orders/stats` → `{ totalOrders, totalRevenue, paidOrdersCount, averageOrderValue,
-processingCount, shippedCount, deliveredCount, pendingCount, cancelledCount, vnpayRevenue,
+processingCount, shippedCount, deliveredCount, pendingCount, cancelledCount, ordersByStatus, vnpayRevenue,
 codRevenue, dailyRevenueMap, topProducts }`. Revenue counts orders with `payment_status = PAID`.
+`ordersByStatus` maps every order status to its count (`0` included), so each number matches
+`GET /admin/orders?status=<status>` → `total`.
 - `GET /admin/orders/:orderId` → the order (same identifiers as above).
 - `PATCH /admin/orders/:orderId/status` with `{ "status": <order status>, "note"?: string ≤500 }`.
   Allowed transitions:

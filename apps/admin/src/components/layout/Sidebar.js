@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
   FileUp,
@@ -6,73 +7,68 @@ import {
   ExternalLink,
   LogOut,
   User,
-  Users,
   ShoppingBag,
   BarChart3,
 } from 'lucide-react';
 
-export function Sidebar({ currentTab, onSelectTab, currentUser, onLogout }) {
+const GROUP_LABEL_STYLE = {
+  padding: '16px 12px 4px',
+  fontSize: '11px',
+  fontWeight: 700,
+  color: 'var(--text-light)',
+  textTransform: 'uppercase',
+  letterSpacing: '0.05em',
+};
+
+const NAV_GROUPS = [
+  {
+    label: 'CATALOG',
+    items: [
+      { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
+      { to: '/products', label: 'Products', icon: Package },
+      { to: '/import', label: 'Import', icon: FileUp },
+    ],
+  },
+  {
+    label: 'COMMERCE',
+    items: [
+      { to: '/orders', label: 'Orders', icon: ShoppingBag },
+    ],
+  },
+  {
+    label: 'ANALYTICS',
+    items: [{ to: '/reports', label: 'Reports', icon: BarChart3 }],
+  },
+];
+
+// The active item follows the URL, so /products/:id keeps "Products" highlighted.
+export function Sidebar({ currentUser, onLogout }) {
   return (
     <aside className="sidebar">
-      <div className="logo" style={{ cursor: 'pointer' }} onClick={() => onSelectTab('dashboard')}>
+      <Link to="/" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>
         <div className="logo-dot" />
-        Campbell Admin
-      </div>
+        REECO Admin Center
+      </Link>
 
-      <button
-        type="button"
-        className={`nav-item ${currentTab === 'dashboard' ? 'active' : ''}`}
-        onClick={() => onSelectTab('dashboard')}
-      >
-        <LayoutDashboard size={18} />
-        Dashboard
-      </button>
+      {NAV_GROUPS.map((group, index) => (
+        <React.Fragment key={group.label}>
+          <div style={index === 0 ? { ...GROUP_LABEL_STYLE, paddingTop: 8 } : GROUP_LABEL_STYLE}>{group.label}</div>
+          {group.items.map(({ to, label, icon: Icon, end }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={end}
+              className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <Icon size={18} />
+              {label}
+            </NavLink>
+          ))}
+        </React.Fragment>
+      ))}
 
-      <button
-        type="button"
-        className={`nav-item ${currentTab === 'products' || currentTab === 'detail' ? 'active' : ''}`}
-        onClick={() => onSelectTab('products')}
-      >
-        <Package size={18} />
-        Product Management
-      </button>
-
-      <button
-        type="button"
-        className={`nav-item ${currentTab === 'import' ? 'active' : ''}`}
-        onClick={() => onSelectTab('import')}
-      >
-        <FileUp size={18} />
-        Import Products
-      </button>
-
-      <button
-        type="button"
-        className={`nav-item ${currentTab === 'users' ? 'active' : ''}`}
-        onClick={() => onSelectTab('users')}
-      >
-        <Users size={18} />
-        User Management
-      </button>
-
-      <button
-        type="button"
-        className={`nav-item ${currentTab === 'orders' ? 'active' : ''}`}
-        onClick={() => onSelectTab('orders')}
-      >
-        <ShoppingBag size={18} />
-        Order Management
-      </button>
-
-      <button
-        type="button"
-        className={`nav-item ${currentTab === 'reports' ? 'active' : ''}`}
-        onClick={() => onSelectTab('reports')}
-      >
-        <BarChart3 size={18} />
-        Reports & Analytics
-      </button>
-
+      {/* User info & Footer */}
       <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--bg-gray)' }}>
         {currentUser && (
           <div
@@ -88,7 +84,7 @@ export function Sidebar({ currentTab, onSelectTab, currentUser, onLogout }) {
           >
             <User size={16} style={{ color: 'var(--text-light)', flexShrink: 0 }} />
             <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontSize: '12px', color: 'var(--text-main)' }}>
-              {currentUser.email}
+              {currentUser.email} (admin)
             </div>
           </div>
         )}
@@ -130,4 +126,3 @@ export function Sidebar({ currentTab, onSelectTab, currentUser, onLogout }) {
     </aside>
   );
 }
-
