@@ -179,19 +179,23 @@ function FitPanel({ id, product, fit, onClose }) {
               </div>
             </details>
           )}
-          {data.unconfirmed.length > 0 && (
-            <div className="res-fit__pending">
-              <p className="res-fit__label">{vi ? 'Chưa được xác nhận' : 'Not confirmed yet'}</p>
+          {[
+            ['matched', vi ? 'Yêu cầu đã xác nhận' : 'Confirmed requirements'],
+            ['unconfirmed', vi ? 'Chưa được xác nhận' : 'Not confirmed yet'],
+            ['mismatched', vi ? 'Không đáp ứng theo dữ liệu' : 'Requirements not met according to product data'],
+          ].map(([key, label]) => data[key]?.length > 0 && (
+            <div className="res-fit__pending" key={key}>
+              <p className="res-fit__label">{label}</p>
               <ul className="res-fit__list res-fit__list--open">
-                {data.unconfirmed.map((text, i) => (
+                {data[key].map((text, i) => (
                   <li key={`${text}-${i}`}>
-                    <Warning size={14} aria-hidden="true" />
+                    {key === 'matched' ? <Check size={14} aria-hidden="true" /> : <Warning size={14} aria-hidden="true" />}
                     <span>{text}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          )}
+          ))}
           {data.source && (
             <p className="res-fit__source">
               {data.source === 'llm'

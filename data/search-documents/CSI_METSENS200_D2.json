@@ -16,17 +16,131 @@
     {
       "key": "wind_speed",
       "label_en": "Wind Speed",
-      "label_vi": "Tốc độ gió"
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              28
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              30
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "wind_direction",
       "label_en": "Wind Direction",
-      "label_vi": "Hướng gió"
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 26,
+            "source_rows": [
+              31
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 27,
+            "source_rows": [
+              32
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 28,
+            "source_rows": [
+              33
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "compass_heading",
       "label_en": "Compass Heading",
-      "label_vi": "Hướng la bàn"
+      "label_vi": "Hướng la bàn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -34,17 +148,131 @@
     {
       "key": "measure_wind_speed",
       "label_en": "Measure Wind Speed",
-      "label_vi": "Đo tốc độ gió"
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              28
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              30
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_wind_direction",
       "label_en": "Measure Wind Direction",
-      "label_vi": "Đo hướng gió"
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 26,
+            "source_rows": [
+              31
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 27,
+            "source_rows": [
+              32
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 28,
+            "source_rows": [
+              33
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_compass_heading",
       "label_en": "Measure Compass Heading",
-      "label_vi": "Đo hướng la bàn"
+      "label_vi": "Đo hướng la bàn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_METSENS200_D2.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -225,6 +453,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +70 °C",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -245,6 +474,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0.01 to 60 m/s",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -265,6 +495,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "0° to 359°",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -284,6 +515,7 @@
         "unit": "°",
         "qualifier": "±"
       },
+      "value_raw": "±3°",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -303,6 +535,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0.01 m/s",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -322,6 +555,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "1°",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -341,6 +575,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "1°",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -361,6 +596,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "5 to 30 VDC",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -384,6 +620,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "0.5 kg (1.1 lb)",
       "raw_ref": {
         "file": "data/raw/CSI_METSENS200_D2.json",
         "product_index": 0,
@@ -421,14 +658,14 @@
     "Đo hướng gió",
     "Đo hướng la bàn"
   ],
-  "search_text_en": "MetSENS200-D2 | CSI_METSENS200_D2 | MetSENS200-DM | MetSENS200-DS | Sensors | Weather Sensors | Compact Weather Sensor | Wind Speed | Wind Direction | Compass Heading | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Weight: 0.5 kg",
-  "search_text_vi": "MetSENS200-D2 | CSI_METSENS200_D2 | MetSENS200-DM | MetSENS200-DS | Cảm biến | Cảm biến thời tiết | Cảm biến thời tiết nhỏ gọn | Tốc độ gió | Hướng gió | Hướng la bàn | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Weight: 0.5 kg",
-  "search_text": "MetSENS200-D2 | CSI_METSENS200_D2 | MetSENS200-DM | MetSENS200-DS | Sensors | Weather Sensors | Compact Weather Sensor | Wind Speed | Wind Direction | Compass Heading | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Weight: 0.5 kg | Cảm biến | Cảm biến thời tiết | Cảm biến thời tiết nhỏ gọn | Tốc độ gió | Hướng gió | Hướng la bàn | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn",
+  "search_text_en": "MetSENS200-D2 | CSI_METSENS200_D2 | MetSENS200-DM | MetSENS200-DS | Sensors | Weather Sensors | Compact Weather Sensor | Wind Speed | Wind Direction | Compass Heading | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to +70 °C | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0° to 359° | Compass Accuracy: ±3° | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Compass Resolution: 1° | Operating Voltage: 5 to 30 VDC | Weight: 0.5 kg (1.1 lb)",
+  "search_text_vi": "MetSENS200-D2 | CSI_METSENS200_D2 | MetSENS200-DM | MetSENS200-DS | Cảm biến | Cảm biến thời tiết | Cảm biến thời tiết nhỏ gọn | Tốc độ gió | Hướng gió | Hướng la bàn | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to +70 °C | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0° to 359° | Compass Accuracy: ±3° | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Compass Resolution: 1° | Operating Voltage: 5 to 30 VDC | Weight: 0.5 kg (1.1 lb)",
+  "search_text": "MetSENS200-D2 | CSI_METSENS200_D2 | MetSENS200-DM | MetSENS200-DS | Sensors | Weather Sensors | Compact Weather Sensor | Wind Speed | Wind Direction | Compass Heading | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | RS-232 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to +70 °C | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0° to 359° | Compass Accuracy: ±3° | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Compass Resolution: 1° | Operating Voltage: 5 to 30 VDC | Weight: 0.5 kg (1.1 lb) | Cảm biến | Cảm biến thời tiết | Cảm biến thời tiết nhỏ gọn | Tốc độ gió | Hướng gió | Hướng la bàn | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "e7dc891e9b65a70a0ac62ddba344f6c4b4968ddca9fd3e3b9b3be82bcdfa708a"
+  "content_hash": "b381a3964dce6fd623ad514deeb6cbde14556ee3f14678479b99eb304f0bebb3"
 }

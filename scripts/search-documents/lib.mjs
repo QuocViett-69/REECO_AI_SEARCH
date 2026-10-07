@@ -3,6 +3,7 @@ import { mkdir, readFile, readdir, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
+import { SemanticEvidenceSchema } from '../../packages/shared/dist/index.js';
 
 const scriptsDirectory = path.dirname(fileURLToPath(import.meta.url));
 export const projectRoot = path.resolve(scriptsDirectory, '..', '..');
@@ -117,6 +118,7 @@ const SemanticItemSchema = z.object({
   key: z.string().regex(/^[a-z0-9]+(?:_[a-z0-9]+)*$/u),
   label_en: z.string().min(1),
   label_vi: z.string().min(1),
+  evidence: z.array(SemanticEvidenceSchema).min(1).optional(),
 });
 const RawRefSchema = z.object({
   file: z.string().regex(/^data\/raw\/.+\.json$/u),
@@ -209,6 +211,7 @@ const SearchDocumentSchema = z.object({
       name: z.string().min(1),
       quantity_kind: z.string().min(1).nullable(),
       normalized_value: NormalizedValueSchema,
+      value_raw: z.string().optional(),
       raw_ref: RawRefSchema,
     }),
   ),
@@ -229,6 +232,7 @@ const SearchDocumentSchema = z.object({
 const importantSpecificationPriority = (specification) => {
   if (!specification.normalized || !specification.canonical_key) return null;
   const key = specification.canonical_key;
+  if (/measurement_description|measurements_made|reported_parameters|output_parameters|memory|input_channels|analog.*(?:inputs|terminals)|digital_io|measurement_depths|output_signal|communication_option/u.test(key)) return 12;
   if (key === 'measurement_range' || key === 'operating_temperature_range')
     return 10;
   if (/(?:measurement|measuring)_range$/u.test(key)) return 15;
@@ -272,6 +276,7 @@ const selectImportantSpecifications = (normalized) =>
       name: normalizeWhitespace(specification.name_raw),
       quantity_kind: specification.quantity_kind ?? null,
       normalized_value: specification.normalized,
+      value_raw: String(specification.value_raw ?? ''),
       raw_ref: specification.raw_ref,
     }));
 
@@ -298,10 +303,11 @@ const formatNormalizedValue = (normalized) => {
   return normalized.values.join(', ');
 };
 const compactSemanticItems = (items) =>
-  items.map(({ key, label_en, label_vi }) => ({
+  items.map(({ key, label_en, label_vi, evidence }) => ({
     key,
     label_en: normalizeWhitespace(label_en),
     label_vi: normalizeWhitespace(label_vi),
+    evidence,
   }));
 const ontologyLabelMap = (ontology, group) =>
   new Map(ontology.taxonomy[group].map((item) => [item.key, item.label_vi]));
@@ -335,7 +341,7 @@ const buildSearchText = ({ document, ontology, language }) => {
       : document.search_keywords_vi;
   const specificationPhrases = document.important_specifications.map(
     (specification) =>
-      `${specification.name}: ${formatNormalizedValue(specification.normalized_value)}`,
+      `${specification.name}: ${normalizeWhitespace(specification.value_raw || formatNormalizedValue(specification.normalized_value))}`,
   );
   const variantPhrases = document.variants.flatMap((variant) => [
     variant.model,

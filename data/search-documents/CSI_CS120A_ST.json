@@ -16,7 +16,26 @@
     {
       "key": "visibility",
       "label_en": "Visibility",
-      "label_vi": "Tầm nhìn"
+      "label_vi": "Tầm nhìn",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS120A Atmospheric Visibility Sensor -ST -25 t"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +43,26 @@
     {
       "key": "measure_visibility",
       "label_en": "Measure Visibility",
-      "label_vi": "Đo tầm nhìn"
+      "label_vi": "Đo tầm nhìn",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS120A Atmospheric Visibility Sensor -ST -25 t"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 0,
+            "spec_index": 7,
+            "source_rows": [
+              16
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -50,6 +88,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-25° to +60°C",
       "raw_ref": {
         "file": "data/raw/CS120A_CS125_Master.json",
         "product_index": 0,
@@ -70,6 +109,7 @@
         "unit": "%",
         "qualifier": null
       },
+      "value_raw": "0 to 100%",
       "raw_ref": {
         "file": "data/raw/CS120A_CS125_Master.json",
         "product_index": 0,
@@ -90,6 +130,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "7 to 30 Vdc",
       "raw_ref": {
         "file": "data/raw/CS120A_CS125_Master.json",
         "product_index": 0,
@@ -123,14 +164,14 @@
     "RS-485",
     "Đo tầm nhìn"
   ],
-  "search_text_en": "CS120A-ST | CS120A Atmospheric Visibility Sensor -ST -25 t | CSI_CS120A_ST | Sensors | Visibility Sensors | Visibility Sensor | Visibility | Measure Visibility | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC | meteorological optical range | MOR",
-  "search_text_vi": "CS120A-ST | CSI_CS120A_ST | CS120A Atmospheric Visibility Sensor -ST -25 t | Cảm biến | Cảm biến tầm nhìn | Tầm nhìn | Đo tầm nhìn | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC",
-  "search_text": "CS120A-ST | CS120A Atmospheric Visibility Sensor -ST -25 t | CSI_CS120A_ST | Sensors | Visibility Sensors | Visibility Sensor | Visibility | Measure Visibility | RS-232 | RS-485 | Operating Temperature Range: -25 to 60 °C | Operating Humidity Range: 0 to 100 % | Electronics Supply Voltage: 7 to 30 V DC | meteorological optical range | MOR | Cảm biến | Cảm biến tầm nhìn | Tầm nhìn | Đo tầm nhìn",
+  "search_text_en": "CS120A-ST | CS120A Atmospheric Visibility Sensor -ST -25 t | CSI_CS120A_ST | Sensors | Visibility Sensors | Visibility Sensor | Visibility | Measure Visibility | RS-232 | RS-485 | Operating Temperature Range: -25° to +60°C | Operating Humidity Range: 0 to 100% | Electronics Supply Voltage: 7 to 30 Vdc | meteorological optical range | MOR",
+  "search_text_vi": "CS120A-ST | CSI_CS120A_ST | CS120A Atmospheric Visibility Sensor -ST -25 t | Cảm biến | Cảm biến tầm nhìn | Tầm nhìn | Đo tầm nhìn | RS-232 | RS-485 | Operating Temperature Range: -25° to +60°C | Operating Humidity Range: 0 to 100% | Electronics Supply Voltage: 7 to 30 Vdc",
+  "search_text": "CS120A-ST | CS120A Atmospheric Visibility Sensor -ST -25 t | CSI_CS120A_ST | Sensors | Visibility Sensors | Visibility Sensor | Visibility | Measure Visibility | RS-232 | RS-485 | Operating Temperature Range: -25° to +60°C | Operating Humidity Range: 0 to 100% | Electronics Supply Voltage: 7 to 30 Vdc | meteorological optical range | MOR | Cảm biến | Cảm biến tầm nhìn | Tầm nhìn | Đo tầm nhìn",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "4d0fa46dfc8a88cb552a0b4540ca4b56491cdff0963477e8b24917c3f2f61192"
+  "content_hash": "360aacd4e7b230925218c1d27e3debd3e7af360d7d072ba1c2731c4bb2e8d7bf"
 }

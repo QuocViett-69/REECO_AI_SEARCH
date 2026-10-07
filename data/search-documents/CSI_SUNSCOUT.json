@@ -17,12 +17,40 @@
     {
       "key": "solar_resource_assessment",
       "label_en": "Solar Resource Assessment",
-      "label_vi": "Đánh giá tài nguyên mặt trời"
+      "label_vi": "Đánh giá tài nguyên mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/SunScout.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "solar_project_monitoring",
       "label_en": "Solar Project Monitoring",
-      "label_vi": "Giám sát dự án điện mặt trời"
+      "label_vi": "Giám sát dự án điện mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/SunScout.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "capabilities": [],
@@ -65,5 +93,5 @@
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "0d67fae186078e7278c9822ce1d72003001d9d17cf8ef136b57eff0499eb28c8"
+  "content_hash": "a65d3ce7fec35017cbb429052e92848bb4c15802898ee8cd8bbf006b1c24233c"
 }

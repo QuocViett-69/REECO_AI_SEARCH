@@ -12,9 +12,49 @@
     "device_type": "Water Level, Stage, and Flow Sensor",
     "device_type_key": "water_level_stage_and_flow_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "water_level_resolution",
+          "raw_ref": {
+            "file": "data/raw/CS451.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "water_level_resolution",
+          "raw_ref": {
+            "file": "data/raw/CS451.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "supported_protocols": [
     "RS-232",
     "SDI-12"
@@ -115,6 +155,7 @@
         "unit": "°C",
         "qualifier": "±"
       },
+      "value_raw": "±0.2°C",
       "raw_ref": {
         "file": "data/raw/CS451.json",
         "product_index": 0,
@@ -134,6 +175,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0.006°C",
       "raw_ref": {
         "file": "data/raw/CS451.json",
         "product_index": 0,
@@ -154,6 +196,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "6 to 18 Vdc",
       "raw_ref": {
         "file": "data/raw/CS451.json",
         "product_index": 0,
@@ -177,6 +220,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "21.34 mm (0.84 in.)",
       "raw_ref": {
         "file": "data/raw/CS451.json",
         "product_index": 0,
@@ -193,25 +237,30 @@
     "Sensors",
     "Water Level, Stage, and Flow Sensors",
     "Water Level, Stage, and Flow Sensor",
+    "Water Level",
+    "stage",
     "RS-232",
     "SDI-12",
+    "Measure Water Level",
     "CSI_CS451"
   ],
   "search_keywords_vi": [
     "CS451",
     "Cảm biến",
     "Cảm biến mực nước, cao trình và lưu lượng",
+    "Mực nước",
     "RS-232",
-    "SDI-12"
+    "SDI-12",
+    "Đo mực nước"
   ],
-  "search_text_en": "CS451 | Stainless-Steel Pressure Transducer | CSI_CS451 | CS451-HA | CS451-WN | CS451-NN | Sensors | Water Level, Stage, and Flow Sensors | Water Level, Stage, and Flow Sensor | RS-232 | SDI-12 | Distance: 2.3 cm (0.9 in.) | Distance from black line etched on housing to end of standard nose cone | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | Distance: 9.9 cm (3.9 in.) | Distance from black line etched on housing to end of weighted nose cone | 0 to 2.0 m (6.7 ft): 0 to 2.9 psig | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | 0 to 20 kPa | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | Total Error Band (TEB) includes the combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1. | Distance: 2.54 cm (1 in.) | Distance from black line etched on housing to end of NPT fitting | NPT Fitting: 2.72 cm (1.07 in.) | Temperature Accuracy: ± 0.2 °C | Worst-Case Temperature Resolution: 0.006 °C | Power Requirements: 6 to 18 V DC | Diameter: 21.34 mm",
-  "search_text_vi": "CS451 | CSI_CS451 | Stainless-Steel Pressure Transducer | CS451-HA | CS451-WN | CS451-NN | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | RS-232 | SDI-12 | Distance: 2.3 cm (0.9 in.) | Distance from black line etched on housing to end of standard nose cone | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | Distance: 9.9 cm (3.9 in.) | Distance from black line etched on housing to end of weighted nose cone | 0 to 2.0 m (6.7 ft): 0 to 2.9 psig | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | 0 to 20 kPa | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | Total Error Band (TEB) includes the combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1. | Distance: 2.54 cm (1 in.) | Distance from black line etched on housing to end of NPT fitting | NPT Fitting: 2.72 cm (1.07 in.) | Temperature Accuracy: ± 0.2 °C | Worst-Case Temperature Resolution: 0.006 °C | Power Requirements: 6 to 18 V DC | Diameter: 21.34 mm",
-  "search_text": "CS451 | Stainless-Steel Pressure Transducer | CSI_CS451 | CS451-HA | CS451-WN | CS451-NN | Sensors | Water Level, Stage, and Flow Sensors | Water Level, Stage, and Flow Sensor | RS-232 | SDI-12 | Distance: 2.3 cm (0.9 in.) | Distance from black line etched on housing to end of standard nose cone | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | Distance: 9.9 cm (3.9 in.) | Distance from black line etched on housing to end of weighted nose cone | 0 to 2.0 m (6.7 ft): 0 to 2.9 psig | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | 0 to 20 kPa | Standard Accuracy Option: ±0.1% full-scale-range TEB | Total Error Band (TEB) includes the combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1. | Distance: 2.54 cm (1 in.) | Distance from black line etched on housing to end of NPT fitting | NPT Fitting: 2.72 cm (1.07 in.) | Temperature Accuracy: ± 0.2 °C | Worst-Case Temperature Resolution: 0.006 °C | Power Requirements: 6 to 18 V DC | Diameter: 21.34 mm | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng",
+  "search_text_en": "CS451 | Stainless-Steel Pressure Transducer | CSI_CS451 | CS451-HA | CS451-WN | CS451-NN | Sensors | Water Level, Stage, and Flow Sensors | Water Level, Stage, and Flow Sensor | Water Level | Measure Water Level | RS-232 | SDI-12 | Distance: 2.3 cm (0.9 in.) | Distance from black line etched on housing to end of standard nose cone | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | Distance: 9.9 cm (3.9 in.) | Distance from black line etched on housing to end of weighted nose cone | 0 to 2.0 m (6.7 ft): 0 to 2.9 psig | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | 0 to 20 kPa | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | Total Error Band (TEB) includes the combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1. | Distance: 2.54 cm (1 in.) | Distance from black line etched on housing to end of NPT fitting | NPT Fitting: 2.72 cm (1.07 in.) | Temperature Accuracy: ±0.2°C | Worst-Case Temperature Resolution: 0.006°C | Power Requirements: 6 to 18 Vdc | Diameter: 21.34 mm (0.84 in.) | stage",
+  "search_text_vi": "CS451 | CSI_CS451 | Stainless-Steel Pressure Transducer | CS451-HA | CS451-WN | CS451-NN | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Mực nước | Đo mực nước | RS-232 | SDI-12 | Distance: 2.3 cm (0.9 in.) | Distance from black line etched on housing to end of standard nose cone | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | Distance: 9.9 cm (3.9 in.) | Distance from black line etched on housing to end of weighted nose cone | 0 to 2.0 m (6.7 ft): 0 to 2.9 psig | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | 0 to 20 kPa | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | Total Error Band (TEB) includes the combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1. | Distance: 2.54 cm (1 in.) | Distance from black line etched on housing to end of NPT fitting | NPT Fitting: 2.72 cm (1.07 in.) | Temperature Accuracy: ±0.2°C | Worst-Case Temperature Resolution: 0.006°C | Power Requirements: 6 to 18 Vdc | Diameter: 21.34 mm (0.84 in.)",
+  "search_text": "CS451 | Stainless-Steel Pressure Transducer | CSI_CS451 | CS451-HA | CS451-WN | CS451-NN | Sensors | Water Level, Stage, and Flow Sensors | Water Level, Stage, and Flow Sensor | Water Level | Measure Water Level | RS-232 | SDI-12 | Distance: 2.3 cm (0.9 in.) | Distance from black line etched on housing to end of standard nose cone | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | Distance: 9.9 cm (3.9 in.) | Distance from black line etched on housing to end of weighted nose cone | 0 to 2.0 m (6.7 ft): 0 to 2.9 psig | The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | 0 to 20 kPa | Standard Accuracy Option: ±0.1% full-scale-range TEB | Total Error Band (TEB) includes the combined errors due to nonlinearity, hysteresis, nonrepeatability, and thermal effects over the compensated temperature range, per ISA S51.1. | Distance: 2.54 cm (1 in.) | Distance from black line etched on housing to end of NPT fitting | NPT Fitting: 2.72 cm (1.07 in.) | Temperature Accuracy: ±0.2°C | Worst-Case Temperature Resolution: 0.006°C | Power Requirements: 6 to 18 Vdc | Diameter: 21.34 mm (0.84 in.) | stage | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Mực nước | Đo mực nước",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "d6899b4ae16442f04fd6dc880de33d7154ea6ea1063ab7a168544fa6ee18cc78"
+  "content_hash": "03f5f44ec59a29104ecd7f5527ea45a216600aef45213e8c2940145ed186bb58"
 }

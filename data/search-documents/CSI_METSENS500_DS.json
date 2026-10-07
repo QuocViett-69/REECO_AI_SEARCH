@@ -16,71 +16,661 @@
     {
       "key": "air_temperature",
       "label_en": "Air Temperature",
-      "label_vi": "Nhiệt độ không khí"
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 24,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 25,
+            "source_rows": [
+              28
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 26,
+            "source_rows": [
+              29
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "relative_humidity",
       "label_en": "Relative Humidity",
-      "label_vi": "Độ ẩm tương đối"
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 27,
+            "source_rows": [
+              30
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 28,
+            "source_rows": [
+              31
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 29,
+            "source_rows": [
+              32
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "barometric_pressure",
       "label_en": "Barometric Pressure",
-      "label_vi": "Áp suất khí quyển"
+      "label_vi": "Áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 30,
+            "source_rows": [
+              33
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 31,
+            "source_rows": [
+              34
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 32,
+            "source_rows": [
+              35
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "wind_speed",
       "label_en": "Wind Speed",
-      "label_vi": "Tốc độ gió"
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 33,
+            "source_rows": [
+              36
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 34,
+            "source_rows": [
+              37
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 36,
+            "source_rows": [
+              39
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "wind_direction",
       "label_en": "Wind Direction",
-      "label_vi": "Hướng gió"
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 37,
+            "source_rows": [
+              40
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 38,
+            "source_rows": [
+              41
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 39,
+            "source_rows": [
+              42
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "compass_heading",
       "label_en": "Compass Heading",
-      "label_vi": "Hướng la bàn"
+      "label_vi": "Hướng la bàn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [
     {
       "key": "meteorological_monitoring",
       "label_en": "Meteorological Monitoring",
-      "label_vi": "Giám sát khí tượng"
+      "label_vi": "Giám sát khí tượng",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 4,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
     }
   ],
   "capabilities": [
     {
       "key": "measure_air_temperature",
       "label_en": "Measure Air Temperature",
-      "label_vi": "Đo nhiệt độ không khí"
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 24,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 25,
+            "source_rows": [
+              28
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 26,
+            "source_rows": [
+              29
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_relative_humidity",
       "label_en": "Measure Relative Humidity",
-      "label_vi": "Đo độ ẩm tương đối"
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 27,
+            "source_rows": [
+              30
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 28,
+            "source_rows": [
+              31
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 29,
+            "source_rows": [
+              32
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_barometric_pressure",
       "label_en": "Measure Barometric Pressure",
-      "label_vi": "Đo áp suất khí quyển"
+      "label_vi": "Đo áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 30,
+            "source_rows": [
+              33
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 31,
+            "source_rows": [
+              34
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 32,
+            "source_rows": [
+              35
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_wind_speed",
       "label_en": "Measure Wind Speed",
-      "label_vi": "Đo tốc độ gió"
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 33,
+            "source_rows": [
+              36
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 34,
+            "source_rows": [
+              37
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 36,
+            "source_rows": [
+              39
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_wind_direction",
       "label_en": "Measure Wind Direction",
-      "label_vi": "Đo hướng gió"
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 37,
+            "source_rows": [
+              40
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 38,
+            "source_rows": [
+              41
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_accuracy",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 39,
+            "source_rows": [
+              42
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_compass_heading",
       "label_en": "Measure Compass Heading",
-      "label_vi": "Đo hướng la bàn"
+      "label_vi": "Đo hướng la bàn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/MetSENS500.json",
+            "product_index": 2,
+            "spec_index": 5,
+            "source_rows": [
+              8
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -261,6 +851,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +70 °C",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -281,6 +872,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +70 °C",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -301,6 +893,7 @@
         "unit": "%",
         "qualifier": null
       },
+      "value_raw": "0 to 100%",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -321,6 +914,7 @@
         "unit": "hPa",
         "qualifier": null
       },
+      "value_raw": "300 to 1100 hPa",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -341,6 +935,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0.01 to 60 m/s",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -361,6 +956,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "0° to 359°",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -380,6 +976,7 @@
         "unit": "°",
         "qualifier": "±"
       },
+      "value_raw": "±3°",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -399,6 +996,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0.1 °C",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -418,6 +1016,7 @@
         "unit": "hPa",
         "qualifier": null
       },
+      "value_raw": "0.1 hPa",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -437,6 +1036,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0.01 m/s",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -456,6 +1056,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "1°",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -475,6 +1076,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "1°",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -495,6 +1097,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "5 to 30 VDC",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -514,6 +1117,7 @@
         "unit": "mm",
         "qualifier": null
       },
+      "value_raw": "222 mm",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -533,6 +1137,7 @@
         "unit": "mm",
         "qualifier": null
       },
+      "value_raw": "142 mm",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -556,6 +1161,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "0.7 kg (1.5 lb)",
       "raw_ref": {
         "file": "data/raw/MetSENS500.json",
         "product_index": 2,
@@ -609,14 +1215,14 @@
     "Đo hướng gió",
     "Đo hướng la bàn"
   ],
-  "search_text_en": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg | ambient temperature | RH | weather monitoring",
-  "search_text_vi": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg",
-  "search_text": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to 70 °C | Air Temperature Range: -40 to 70 °C | Relative Humidity Range: 0 to 100 % | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0 to 359 ° | Compass Accuracy: ± 3 ° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Compass Resolution: 1 ° | Operating Voltage: 5 to 30 V DC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg | ambient temperature | RH | weather monitoring | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng",
+  "search_text_en": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to +70 °C | Air Temperature Range: -40 to +70 °C | Relative Humidity Range: 0 to 100% | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0° to 359° | Compass Accuracy: ±3° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Compass Resolution: 1° | Operating Voltage: 5 to 30 VDC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg (1.5 lb) | ambient temperature | RH | weather monitoring",
+  "search_text_vi": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to +70 °C | Air Temperature Range: -40 to +70 °C | Relative Humidity Range: 0 to 100% | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0° to 359° | Compass Accuracy: ±3° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Compass Resolution: 1° | Operating Voltage: 5 to 30 VDC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg (1.5 lb)",
+  "search_text": "MetSENS500-DS | CSI_METSENS500_DS | MetSENS500-D2 | MetSENS500-DM | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Wind Speed | Wind Direction | Compass Heading | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Wind Speed | Measure Wind Direction | Measure Compass Heading | Meteorological Monitoring | SDI-12 | Communication Configuration: RS-232 digital output | Primary Digital Interface: Serial RS-232 | Default Communication Settings: 9600 baud; 8 data bits; even parity; 1 stop bit | Replacement Cable: METSENSCBL3 RS-232 Replacement Cable | Signal / Data Wiring: Green: RS-232 RXD; White: RS-232 TXD; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C (odd); White → C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialFlush(); Scan(); SerialOut(); SerialIn(); SplitStr() | Cable Length Options: 5 m (17 ft), 15 m (50 ft), 46 m (150 ft), or user specified | Communication Configuration: RS-485 Modbus output | Primary Digital Interface: Modbus RTU over RS-485 | Default Communication Settings: 19200 baud; 8 data bits; even parity; 1 stop bit | Default Address: Modbus address 41 | Replacement Cable: METSENSCBL2 RS-485 Replacement Cable | Signal / Data Wiring: Green: RS-485 A-; White: RS-485 B+; Red: 12 VDC; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → A- / C (odd); White → B+ / C (even); Red → 12V; Black/Clear → G | CRBasic Programming: SerialOpen() followed by ModbusClient() | Communication Configuration: SDI-12 digital output | Primary Digital Interface: SDI-12 | Default Communication Settings: SDI-12 protocol | Default Address: SDI-12 address 0 | Replacement Cable: METSENSCBL1 SDI-12 Replacement Cable | Signal / Data Wiring: Green: SDI-12 signal; Red: power; Black: power and signal ground; Clear: shield | Direct Data Logger Connection: Green → C / SDI-12 / U configured for SDI-12; Red → 12V; Black/Clear → G | CRBasic Programming: SDI12Recorder() | Operating Temperature Range: -40 to +70 °C | Air Temperature Range: -40 to +70 °C | Relative Humidity Range: 0 to 100% | Barometric Pressure Range: 300 to 1100 hPa | Wind Speed Range: 0.01 to 60 m/s | Wind Direction Range: 0° to 359° | Compass Accuracy: ±3° | Air Temperature Resolution: 0.1 °C | Barometric Pressure Resolution: 0.1 hPa | Wind Speed Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Compass Resolution: 1° | Operating Voltage: 5 to 30 VDC | Overall Height: 222 mm | Maximum Diameter: 142 mm | Weight: 0.7 kg (1.5 lb) | ambient temperature | RH | weather monitoring | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Tốc độ gió | Hướng gió | Hướng la bàn | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo tốc độ gió | Đo hướng gió | Đo hướng la bàn | Giám sát khí tượng",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "5ff73e42acedfb9f6d3426f7ad40b3c5cce8be105281e992ba3dd200eff63215"
+  "content_hash": "bc206ab536970097979c620a19fb69b51d7314ef1846ea0fcfc2dbbd68288b10"
 }

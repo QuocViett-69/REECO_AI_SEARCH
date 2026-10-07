@@ -696,6 +696,12 @@
       ]
     },
     {
+      "key": "precipitation_intensity",
+      "label_en": "Precipitation Intensity",
+      "label_vi": "Cường độ mưa",
+      "aliases": []
+    },
+    {
       "key": "precipitation_electrical_conductivity",
       "label_en": "Precipitation Electrical Conductivity",
       "label_vi": "Độ dẫn điện của nước mưa",
@@ -833,6 +839,39 @@
       "label_en": "Tilt",
       "label_vi": "Độ nghiêng",
       "aliases": []
+    },
+    {
+      "key": "photosynthetic_photon_flux_density",
+      "label_en": "Photosynthetic Photon Flux Density",
+      "label_vi": "Mật độ thông lượng photon quang hợp",
+      "aliases": [
+        "PPFD",
+        "PAR"
+      ]
+    },
+    {
+      "key": "soil_heat_flux",
+      "label_en": "Soil Heat Flux",
+      "label_vi": "Thông lượng nhiệt đất",
+      "aliases": []
+    },
+    {
+      "key": "fuel_moisture",
+      "label_en": "Fuel Moisture",
+      "label_vi": "Độ ẩm vật liệu cháy",
+      "aliases": []
+    },
+    {
+      "key": "background_luminance",
+      "label_en": "Background Luminance",
+      "label_vi": "Độ chói nền",
+      "aliases": []
+    },
+    {
+      "key": "cloud_base_height",
+      "label_en": "Cloud Base Height",
+      "label_vi": "Độ cao chân mây",
+      "aliases": []
     }
   ],
   "applications": [
@@ -928,6 +967,12 @@
       "key": "heated_precipitation_measurement",
       "label_en": "Heated Precipitation Measurement",
       "label_vi": "Đo lượng mưa có gia nhiệt",
+      "aliases": []
+    },
+    {
+      "key": "measure_precipitation_intensity",
+      "label_en": "Measure Precipitation Intensity",
+      "label_vi": "Đo cường độ mưa",
       "aliases": []
     },
     {
@@ -1055,6 +1100,36 @@
       "label_en": "Measure Snow Depth",
       "label_vi": "Đo độ sâu tuyết",
       "aliases": []
+    },
+    {
+      "key": "measure_background_luminance",
+      "label_en": "Measure Background Luminance",
+      "label_vi": "Đo độ chói nền",
+      "aliases": []
+    },
+    {
+      "key": "measure_photosynthetic_photon_flux_density",
+      "label_en": "Measure Photosynthetic Photon Flux Density",
+      "label_vi": "Đo mật độ thông lượng photon quang hợp",
+      "aliases": []
+    },
+    {
+      "key": "measure_fuel_moisture",
+      "label_en": "Measure Fuel Moisture",
+      "label_vi": "Đo độ ẩm vật liệu cháy",
+      "aliases": []
+    },
+    {
+      "key": "measure_soil_heat_flux",
+      "label_en": "Measure Soil Heat Flux",
+      "label_vi": "Đo thông lượng nhiệt đất",
+      "aliases": []
+    },
+    {
+      "key": "measure_cloud_base_height",
+      "label_en": "Measure Cloud Base Height",
+      "label_vi": "Đo độ cao chân mây",
+      "aliases": []
     }
   ],
   "protocols": [
@@ -1140,6 +1215,10 @@
       "visibility": [
         "meteorological optical range",
         "MOR"
+      ],
+      "photosynthetic_photon_flux_density": [
+        "PPFD",
+        "PAR"
       ]
     },
     "applications": {

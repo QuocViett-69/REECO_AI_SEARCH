@@ -14,27 +14,175 @@
   },
   "measurements": [
     {
-      "key": "temperature",
-      "label_en": "Temperature",
-      "label_vi": "Nhiệt độ"
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              21
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_accuracy",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 17,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "relative_humidity",
       "label_en": "Relative Humidity",
-      "label_vi": "Độ ẩm tương đối"
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              30,
+              31,
+              32,
+              33,
+              34
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
   "capabilities": [
     {
-      "key": "measure_temperature",
-      "label_en": "Measure Temperature",
-      "label_vi": "Đo nhiệt độ"
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              21
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_accuracy",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 17,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_relative_humidity",
       "label_en": "Measure Relative Humidity",
-      "label_vi": "Đo độ ẩm tương đối"
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              27
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/EE181.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              30,
+              31,
+              32,
+              33,
+              34
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -57,12 +205,77 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40° to +60°C",
       "raw_ref": {
         "file": "data/raw/EE181.json",
         "product_index": 0,
         "spec_index": 9,
         "source_rows": [
           15
+        ]
+      }
+    },
+    {
+      "canonical_key": "measurement_description",
+      "name": "Measurement Description",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "list",
+        "values": [
+          "Temperature",
+          "relative humidity"
+        ]
+      },
+      "value_raw": "Temperature | relative humidity",
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 0,
+        "source_rows": [
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "canonical_key": "output_signal_range_65fa0d2b",
+      "name": "Output Signal Range",
+      "quantity_kind": "temperature",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 1,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "value_raw": "0 to 1 Vdc",
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 16,
+        "source_rows": [
+          23
+        ]
+      }
+    },
+    {
+      "canonical_key": "output_signal_range_c496baf8",
+      "name": "Output Signal Range",
+      "quantity_kind": "relative_humidity",
+      "normalized_value": {
+        "type": "range",
+        "min_value": 0,
+        "max_value": 1,
+        "unit": "V DC",
+        "qualifier": null
+      },
+      "value_raw": "0 to 1 Vdc",
+      "raw_ref": {
+        "file": "data/raw/EE181.json",
+        "product_index": 0,
+        "spec_index": 20,
+        "source_rows": [
+          28
         ]
       }
     },
@@ -77,6 +290,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40° to +60°C",
       "raw_ref": {
         "file": "data/raw/EE181.json",
         "product_index": 0,
@@ -97,6 +311,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40° to +80°C",
       "raw_ref": {
         "file": "data/raw/EE181.json",
         "product_index": 0,
@@ -116,6 +331,7 @@
         "unit": "mA",
         "qualifier": "<"
       },
+      "value_raw": "< 1.2 mA",
       "raw_ref": {
         "file": "data/raw/EE181.json",
         "product_index": 0,
@@ -139,6 +355,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "2.1 cm (0.83 in.)",
       "raw_ref": {
         "file": "data/raw/EE181.json",
         "product_index": 0,
@@ -163,6 +380,7 @@
         },
         "condition": "with 5 m cable"
       },
+      "value_raw": "290 g (10.2 oz) with 5 m cable",
       "raw_ref": {
         "file": "data/raw/EE181.json",
         "product_index": 0,
@@ -179,11 +397,11 @@
     "Sensors",
     "Air Temperature and Relative Humidity Sensors",
     "Air Temperature and Relative Humidity Sensor",
-    "Temperature",
-    "temperature measurement",
+    "Air Temperature",
+    "ambient temperature",
     "Relative Humidity",
     "RH",
-    "Measure Temperature",
+    "Measure Air Temperature",
     "Measure Relative Humidity",
     "CSI_EE181"
   ],
@@ -191,19 +409,19 @@
     "EE181",
     "Cảm biến",
     "Cảm biến nhiệt độ không khí và độ ẩm tương đối",
-    "Nhiệt độ",
+    "Nhiệt độ không khí",
     "Độ ẩm tương đối",
-    "Đo nhiệt độ",
+    "Đo nhiệt độ không khí",
     "Đo độ ẩm tương đối"
   ],
-  "search_text_en": "EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | CSI_EE181 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Temperature | Relative Humidity | Measure Temperature | Measure Relative Humidity | Operating Temperature Range: -40 to 60 °C | Measurement Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm | Weight: 290 g | temperature measurement | RH",
-  "search_text_vi": "EE181 | CSI_EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ | Độ ẩm tương đối | Đo nhiệt độ | Đo độ ẩm tương đối | Operating Temperature Range: -40 to 60 °C | Measurement Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm | Weight: 290 g",
-  "search_text": "EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | CSI_EE181 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Temperature | Relative Humidity | Measure Temperature | Measure Relative Humidity | Operating Temperature Range: -40 to 60 °C | Measurement Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm | Weight: 290 g | temperature measurement | RH | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ | Độ ẩm tương đối | Đo nhiệt độ | Đo độ ẩm tương đối",
+  "search_text_en": "EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | CSI_EE181 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Air Temperature | Relative Humidity | Measure Air Temperature | Measure Relative Humidity | Operating Temperature Range: -40° to +60°C | Measurement Description: Temperature | relative humidity | Output Signal Range: 0 to 1 Vdc | Measurement Range: -40° to +60°C | Storage Temperature Range: -40° to +80°C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm (0.83 in.) | Weight: 290 g (10.2 oz) with 5 m cable | ambient temperature | RH",
+  "search_text_vi": "EE181 | CSI_EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ không khí | Độ ẩm tương đối | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Operating Temperature Range: -40° to +60°C | Measurement Description: Temperature | relative humidity | Output Signal Range: 0 to 1 Vdc | Measurement Range: -40° to +60°C | Storage Temperature Range: -40° to +80°C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm (0.83 in.) | Weight: 290 g (10.2 oz) with 5 m cable",
+  "search_text": "EE181 | E+E Temperature/RH Sensor (-40 to +60C) w/o Cable | CSI_EE181 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Air Temperature | Relative Humidity | Measure Air Temperature | Measure Relative Humidity | Operating Temperature Range: -40° to +60°C | Measurement Description: Temperature | Output Signal Range: 0 to 1 Vdc | Measurement Range: -40° to +60°C | Storage Temperature Range: -40° to +80°C | Average Current Consumption: < 1.2 mA | Sensor Diameter: 2.1 cm (0.83 in.) | Weight: 290 g (10.2 oz) with 5 m cable | ambient temperature | RH | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ không khí | Độ ẩm tương đối | Đo nhiệt độ không khí | Đo độ ẩm tương đối",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "0ad8fcaec08a9bb5acd5392b5024fb2226e4697bc5c876708aee0476d50464c6"
+  "content_hash": "1aa466cbdc531367fce445ec0498d889cc49d3d09dfa61acab01d705c1393130"
 }

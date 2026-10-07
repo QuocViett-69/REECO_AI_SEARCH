@@ -12,9 +12,59 @@
     "device_type": "Quantum Sensor",
     "device_type_key": "quantum_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "photosynthetic_photon_flux_density",
+      "label_en": "Photosynthetic Photon Flux Density",
+      "label_vi": "Mật độ thông lượng photon quang hợp",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS310 Quantum Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS310.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_photosynthetic_photon_flux_density",
+      "label_en": "Measure Photosynthetic Photon Flux Density",
+      "label_vi": "Đo mật độ thông lượng photon quang hợp",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS310 Quantum Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS310.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "supported_protocols": [],
   "unsupported_protocols": [],
   "aliases": [
@@ -43,6 +93,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40° to +70°C",
       "raw_ref": {
         "file": "data/raw/CSI_CS310.json",
         "product_index": 0,
@@ -66,6 +117,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "2.4 cm (0.9 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_CS310.json",
         "product_index": 0,
@@ -89,6 +141,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "3.5 cm (1.4 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_CS310.json",
         "product_index": 0,
@@ -105,22 +158,28 @@
     "Sensors",
     "Solar Radiation Sensors",
     "Quantum Sensor",
+    "Photosynthetic Photon Flux Density",
+    "PPFD",
+    "PAR",
+    "Measure Photosynthetic Photon Flux Density",
     "CSI_CS310"
   ],
   "search_keywords_vi": [
     "CS310",
     "Cảm biến",
     "Cảm biến bức xạ mặt trời",
-    "Cảm biến lượng tử"
+    "Cảm biến lượng tử",
+    "Mật độ thông lượng photon quang hợp",
+    "Đo mật độ thông lượng photon quang hợp"
   ],
-  "search_text_en": "CS310 | CS310 Quantum Sensor | CSI_CS310 | Sensors | Solar Radiation Sensors | Quantum Sensor | Operating Temperature Range: -40 to 70 °C | Diameter: 2.4 cm | Height: 3.5 cm",
-  "search_text_vi": "CS310 | CSI_CS310 | CS310 Quantum Sensor | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến lượng tử | Operating Temperature Range: -40 to 70 °C | Diameter: 2.4 cm | Height: 3.5 cm",
-  "search_text": "CS310 | CS310 Quantum Sensor | CSI_CS310 | Sensors | Solar Radiation Sensors | Quantum Sensor | Operating Temperature Range: -40 to 70 °C | Diameter: 2.4 cm | Height: 3.5 cm | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến lượng tử",
+  "search_text_en": "CS310 | CS310 Quantum Sensor | CSI_CS310 | Sensors | Solar Radiation Sensors | Quantum Sensor | Photosynthetic Photon Flux Density | Measure Photosynthetic Photon Flux Density | Operating Temperature Range: -40° to +70°C | Diameter: 2.4 cm (0.9 in.) | Height: 3.5 cm (1.4 in.) | PPFD | PAR",
+  "search_text_vi": "CS310 | CSI_CS310 | CS310 Quantum Sensor | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến lượng tử | Mật độ thông lượng photon quang hợp | Đo mật độ thông lượng photon quang hợp | Operating Temperature Range: -40° to +70°C | Diameter: 2.4 cm (0.9 in.) | Height: 3.5 cm (1.4 in.)",
+  "search_text": "CS310 | CS310 Quantum Sensor | CSI_CS310 | Sensors | Solar Radiation Sensors | Quantum Sensor | Photosynthetic Photon Flux Density | Measure Photosynthetic Photon Flux Density | Operating Temperature Range: -40° to +70°C | Diameter: 2.4 cm (0.9 in.) | Height: 3.5 cm (1.4 in.) | PPFD | PAR | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến lượng tử | Mật độ thông lượng photon quang hợp | Đo mật độ thông lượng photon quang hợp",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "db49148c353212d495b86a61b43dbd3dcd93334b21be430afe1ce301ddc6c5a2"
+  "content_hash": "2061ada77f77ee17c22e7b207c1b64f743c25615b26bc5632bce18525d18d617"
 }

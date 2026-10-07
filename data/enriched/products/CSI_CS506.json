@@ -12,10 +12,36 @@
     "device_type": "Fuel Moisture Sensor",
     "device_type_key": "fuel_moisture_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "fuel_moisture",
+      "label_en": "Fuel Moisture",
+      "label_vi": "Độ ẩm vật liệu cháy",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS506 Fuel Moisture Sensor"
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_fuel_moisture",
+      "label_en": "Measure Fuel Moisture",
+      "label_vi": "Đo độ ẩm vật liệu cháy",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS506 Fuel Moisture Sensor"
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "CS506",
@@ -61,12 +87,16 @@
       "Sensors",
       "Fuel Moisture Sensors",
       "Fuel Moisture Sensor",
+      "Fuel Moisture",
+      "Measure Fuel Moisture",
       "CSI_CS506"
     ],
     "vi": [
       "CS506",
       "Cảm biến",
-      "Cảm biến độ ẩm nhiên liệu"
+      "Cảm biến độ ẩm nhiên liệu",
+      "Độ ẩm vật liệu cháy",
+      "Đo độ ẩm vật liệu cháy"
     ]
   }
 }

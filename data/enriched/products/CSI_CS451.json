@@ -12,7 +12,27 @@
     "device_type": "Water Level, Stage, and Flow Sensor",
     "device_type_key": "water_level_stage_and_flow_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "water_level_resolution",
+          "raw_ref": {
+            "file": "data/raw/CS451.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [
     {
@@ -54,7 +74,27 @@
       ]
     }
   ],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "water_level_resolution",
+          "raw_ref": {
+            "file": "data/raw/CS451.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "CS451",
@@ -100,16 +140,21 @@
       "Sensors",
       "Water Level, Stage, and Flow Sensors",
       "Water Level, Stage, and Flow Sensor",
+      "Water Level",
+      "stage",
       "RS-232",
       "SDI-12",
+      "Measure Water Level",
       "CSI_CS451"
     ],
     "vi": [
       "CS451",
       "Cảm biến",
       "Cảm biến mực nước, cao trình và lưu lượng",
+      "Mực nước",
       "RS-232",
-      "SDI-12"
+      "SDI-12",
+      "Đo mực nước"
     ]
   }
 }

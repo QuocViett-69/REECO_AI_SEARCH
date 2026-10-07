@@ -16,7 +16,33 @@
     {
       "key": "water_level",
       "label_en": "Water Level",
-      "label_vi": "Mực nước"
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +50,33 @@
     {
       "key": "measure_water_level",
       "label_en": "Measure Water Level",
-      "label_vi": "Đo mực nước"
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/CSI_LEVELVUEB10_15.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -108,6 +160,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +60 °C",
       "raw_ref": {
         "file": "data/raw/CSI_LEVELVUEB10_15.json",
         "product_index": 0,
@@ -128,6 +181,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +80 °C",
       "raw_ref": {
         "file": "data/raw/CSI_LEVELVUEB10_15.json",
         "product_index": 0,
@@ -151,6 +205,7 @@
           "unit": "ft"
         }
       },
+      "value_raw": "±2.1 mm (0.007 ft)",
       "raw_ref": {
         "file": "data/raw/CSI_LEVELVUEB10_15.json",
         "product_index": 0,
@@ -171,6 +226,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "11.5 to 16.5 VDC",
       "raw_ref": {
         "file": "data/raw/CSI_LEVELVUEB10_15.json",
         "product_index": 0,
@@ -190,6 +246,7 @@
         "unit": "mA",
         "qualifier": null
       },
+      "value_raw": "5 mA",
       "raw_ref": {
         "file": "data/raw/CSI_LEVELVUEB10_15.json",
         "product_index": 0,
@@ -213,6 +270,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "7.5 kg (16.5 lb)",
       "raw_ref": {
         "file": "data/raw/CSI_LEVELVUEB10_15.json",
         "product_index": 0,
@@ -247,14 +305,14 @@
     "SDI-12",
     "Đo mực nước"
   ],
-  "search_text_en": "LevelVueB10-15 | CSI_LEVELVUEB10_15 | LevelVueB10-30 | Sensors | Water Level Sensors | Water-Level Continuous Flow Bubbler | Water Level | Measure Water Level | Modbus | RS-485 | SDI-12 | Pressure Range: 0 to 15 psi | Water Depth Range: 0 to 10.54 m (34.6 ft) | Resolution: ±2.1 mm (0.007 ft) | RS-485 Default Configuration: 19200 bps; 8 data bits; even parity; 1 stop bit | Pressure Range: 0 to 30 psi | Water Depth Range: 0 to 21 m (69.2 ft) | Resolution: ±4.26 mm (0.014 ft) | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Resolution: ± 2.1 mm | Input Voltage Range: 11.5 to 16.5 V DC | Current – Standby: 5 mA | Enclosure Weight: 7.5 kg | stage",
-  "search_text_vi": "LevelVueB10-15 | CSI_LEVELVUEB10_15 | LevelVueB10-30 | Cảm biến | Cảm biến mực nước | Thiết bị sủi khí dòng liên tục đo mực nước | Mực nước | Đo mực nước | Modbus | RS-485 | SDI-12 | Pressure Range: 0 to 15 psi | Water Depth Range: 0 to 10.54 m (34.6 ft) | Resolution: ±2.1 mm (0.007 ft) | RS-485 Default Configuration: 19200 bps; 8 data bits; even parity; 1 stop bit | Pressure Range: 0 to 30 psi | Water Depth Range: 0 to 21 m (69.2 ft) | Resolution: ±4.26 mm (0.014 ft) | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Resolution: ± 2.1 mm | Input Voltage Range: 11.5 to 16.5 V DC | Current – Standby: 5 mA | Enclosure Weight: 7.5 kg",
-  "search_text": "LevelVueB10-15 | CSI_LEVELVUEB10_15 | LevelVueB10-30 | Sensors | Water Level Sensors | Water-Level Continuous Flow Bubbler | Water Level | Measure Water Level | Modbus | RS-485 | SDI-12 | Pressure Range: 0 to 15 psi | Water Depth Range: 0 to 10.54 m (34.6 ft) | Resolution: ±2.1 mm (0.007 ft) | RS-485 Default Configuration: 19200 bps; 8 data bits; even parity; 1 stop bit | Pressure Range: 0 to 30 psi | Water Depth Range: 0 to 21 m (69.2 ft) | Resolution: ±4.26 mm (0.014 ft) | Operating Temperature Range: -40 to 60 °C | Storage Temperature Range: -40 to 80 °C | Resolution: ± 2.1 mm | Input Voltage Range: 11.5 to 16.5 V DC | Current – Standby: 5 mA | Enclosure Weight: 7.5 kg | stage | Cảm biến | Cảm biến mực nước | Thiết bị sủi khí dòng liên tục đo mực nước | Mực nước | Đo mực nước",
+  "search_text_en": "LevelVueB10-15 | CSI_LEVELVUEB10_15 | LevelVueB10-30 | Sensors | Water Level Sensors | Water-Level Continuous Flow Bubbler | Water Level | Measure Water Level | Modbus | RS-485 | SDI-12 | Pressure Range: 0 to 15 psi | Water Depth Range: 0 to 10.54 m (34.6 ft) | Resolution: ±2.1 mm (0.007 ft) | RS-485 Default Configuration: 19200 bps; 8 data bits; even parity; 1 stop bit | Pressure Range: 0 to 30 psi | Water Depth Range: 0 to 21 m (69.2 ft) | Resolution: ±4.26 mm (0.014 ft) | Operating Temperature Range: -40 to +60 °C | Storage Temperature Range: -40 to +80 °C | Input Voltage Range: 11.5 to 16.5 VDC | Current – Standby: 5 mA | Enclosure Weight: 7.5 kg (16.5 lb) | stage",
+  "search_text_vi": "LevelVueB10-15 | CSI_LEVELVUEB10_15 | LevelVueB10-30 | Cảm biến | Cảm biến mực nước | Thiết bị sủi khí dòng liên tục đo mực nước | Mực nước | Đo mực nước | Modbus | RS-485 | SDI-12 | Pressure Range: 0 to 15 psi | Water Depth Range: 0 to 10.54 m (34.6 ft) | Resolution: ±2.1 mm (0.007 ft) | RS-485 Default Configuration: 19200 bps; 8 data bits; even parity; 1 stop bit | Pressure Range: 0 to 30 psi | Water Depth Range: 0 to 21 m (69.2 ft) | Resolution: ±4.26 mm (0.014 ft) | Operating Temperature Range: -40 to +60 °C | Storage Temperature Range: -40 to +80 °C | Input Voltage Range: 11.5 to 16.5 VDC | Current – Standby: 5 mA | Enclosure Weight: 7.5 kg (16.5 lb)",
+  "search_text": "LevelVueB10-15 | CSI_LEVELVUEB10_15 | LevelVueB10-30 | Sensors | Water Level Sensors | Water-Level Continuous Flow Bubbler | Water Level | Measure Water Level | Modbus | RS-485 | SDI-12 | Pressure Range: 0 to 15 psi | Water Depth Range: 0 to 10.54 m (34.6 ft) | Resolution: ±2.1 mm (0.007 ft) | RS-485 Default Configuration: 19200 bps; 8 data bits; even parity; 1 stop bit | Pressure Range: 0 to 30 psi | Water Depth Range: 0 to 21 m (69.2 ft) | Resolution: ±4.26 mm (0.014 ft) | Operating Temperature Range: -40 to +60 °C | Storage Temperature Range: -40 to +80 °C | Input Voltage Range: 11.5 to 16.5 VDC | Current – Standby: 5 mA | Enclosure Weight: 7.5 kg (16.5 lb) | stage | Cảm biến | Cảm biến mực nước | Thiết bị sủi khí dòng liên tục đo mực nước | Mực nước | Đo mực nước",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "5ddd11c45efbd3bd379ec89acfd7b35753e5872911034cecc199bf3565b79899"
+  "content_hash": "821a76bf8b9b7e77fe39eb186e20d374c7ddc7471c15bf67d8b5b1c0e6bfb993"
 }

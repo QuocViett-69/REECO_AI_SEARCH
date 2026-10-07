@@ -18,6 +18,25 @@ const measurements: Requirement[] = [
   { key: 'wind_speed', en: 'wind speed', vi: 'tốc độ gió', pattern: /\b(?:wind speed|strong winds|peak wind|toc do.*gio|gio manh|gio cuc dai)\b/u },
   { key: 'wind_direction', en: 'wind direction', vi: 'hướng gió', pattern: /\b(?:wind.*direction|huong gio)\b/u },
   { key: 'solar_radiation', en: 'solar radiation', vi: 'bức xạ mặt trời', pattern: /\b(?:solar radiation|anh sang mat troi|buc xa mat troi)\b/u },
+  { key: 'leaf_wetness', en: 'leaf wetness', vi: 'độ ướt lá', pattern: /\b(?:leaf wetness|wet leaves|do uot la|la bi uot|la uot)\b/u },
+  { key: 'water_level', en: 'water level', vi: 'mực nước', pattern: /\b(?:water level|water stage|muc nuoc)\b/u },
+  { key: 'net_radiation', en: 'net radiation', vi: 'bức xạ thuần', pattern: /\b(?:net radiation|net radiometer|buc xa thuan)\b/u },
+  { key: 'photosynthetic_photon_flux_density', en: 'photosynthetic photon flux density', vi: 'mật độ thông lượng photon quang hợp', pattern: /\b(?:ppfd|photosynthetic photon flux density|photon quang hop|buc xa quang hop)\b/u },
+  { key: 'soil_heat_flux', en: 'soil heat flux', vi: 'thông lượng nhiệt đất', pattern: /\b(?:soil heat flux|thong luong nhiet dat|dong nhiet dat)\b/u },
+  { key: 'fuel_moisture', en: 'fuel moisture', vi: 'độ ẩm vật liệu cháy', pattern: /\b(?:fuel moisture|do am vat lieu chay)\b/u },
+  { key: 'background_luminance', en: 'background luminance', vi: 'độ chói nền', pattern: /\b(?:background luminance|do choi nen)\b/u },
+  { key: 'cloud_base_height', en: 'cloud base height', vi: 'độ cao chân mây', pattern: /\b(?:cloud base heights?|do cao chan may)\b/u },
+  { key: 'snow_depth', en: 'snow depth', vi: 'độ sâu tuyết', pattern: /\b(?:snow depth|do sau tuyet)\b/u },
+  { key: 'visibility', en: 'visibility', vi: 'tầm nhìn', pattern: /\b(?:visibility|tam nhin)\b/u },
+  { key: 'dielectric_permittivity', en: 'dielectric permittivity', vi: 'hằng số điện môi', pattern: /\b(?:dielectric permittivity|hang so dien moi)\b/u },
+  { key: 'precipitation_intensity', en: 'precipitation intensity', vi: 'cường độ mưa', pattern: /\b(?:precipitation intensity|rainfall intensity|cuong do mua)\b/u },
+  { key: 'precipitation_electrical_conductivity', en: 'precipitation electrical conductivity', vi: 'độ dẫn điện nước mưa', pattern: /\b(?:precipitation electrical conductivity|do dan dien (?:cua )?nuoc mua)\b/u },
+  { key: 'compass_heading', en: 'compass heading', vi: 'hướng la bàn', pattern: /\b(?:compass heading|huong la ban)\b/u },
+  { key: 'lightning_distance', en: 'lightning distance', vi: 'khoảng cách sét', pattern: /\b(?:lightning distance|khoang cach set)\b/u },
+  { key: 'lightning_strike_count', en: 'lightning strike count', vi: 'số lần sét đánh', pattern: /\b(?:lightning strike count|so lan set danh)\b/u },
+  { key: 'tilt', en: 'tilt', vi: 'độ nghiêng', pattern: /\b(?:tilt|do nghieng)\b/u },
+  { key: 'distance', en: 'distance measurement', vi: 'đo khoảng cách', pattern: /\b(?:distance|do khoang cach|khoang cach)\b/u },
+  { key: 'present_weather', en: 'present weather', vi: 'thời tiết hiện tại', pattern: /\b(?:present weather|thoi tiet hien tai)\b/u },
 ];
 const roles: Requirement[] = [
   { key: 'soil', en: 'soil sensor', vi: 'cảm biến đất', pattern: /\bsoil sensors?\b|\bcam bien dat\b/u },
@@ -37,6 +56,14 @@ const roles: Requirement[] = [
 export function parseSearchIntent(query: string) {
   const text = normalize(query);
   const requested = measurements.filter(item => item.pattern.test(text));
+  if (requested.some(item => item.key === 'lightning_distance') && !/\b(?:target|muc tieu)\b/u.test(text)) {
+    const distance = requested.findIndex(item => item.key === 'distance');
+    if (distance >= 0) requested.splice(distance, 1);
+  }
+  if (requested.some(item => item.key === 'precipitation_electrical_conductivity')) {
+    const soilEC = requested.findIndex(item => item.key === 'soil_electrical_conductivity');
+    if (soilEC >= 0 && !/\b(?:soil|dat)\b/u.test(text)) requested.splice(soilEC, 1);
+  }
   const soilNeed = /\b(?:irrigat\w*|soil.*(?:dry|wet)|water stress|water infiltrat.*soil|tuoi|dat.*(?:kho|uot)|nuoc tham.*dat)\b/u.test(text);
   if (soilNeed && !requested.some(item => item.key === 'volumetric_water_content')) requested.push(measurements[0]!);
   if (/\bdo am\b/u.test(text) && /\bdat\b/u.test(text) && !/\bkhong khi\b/u.test(text) && !requested.some(item => item.key === 'volumetric_water_content')) requested.push(measurements[0]!);
@@ -129,13 +156,15 @@ export function matchSearchIntent(intent: SearchIntent, document: ProductSearchD
   const literalEvidence = specificationEvidence(intent.specifications, specifications);
   if (!literalEvidence) return null;
   evidence.push(...literalEvidence.map(spec => ({ source: 'normalized_spec' as const, field: spec.canonical_key,
-    value: spec.normalized_value.value_raw ?? (spec.normalized_value.type === 'text' ? spec.normalized_value.value : '') })));
+    value: spec.normalized_value.value_raw ?? (spec.normalized_value.type === 'text' ? spec.normalized_value.value : ''), raw_ref: spec.raw_ref })));
   for (const item of intent.measurements) {
     const measurement = document.measurements.find(entry => entry.key === item.key);
     const capability = document.capabilities.find(entry => entry.key === `measure_${item.key}`);
     const rainGauge = item.key === 'precipitation' && /\brain ga[u]?ge\b|\bprecipitation sensor\b/iu.test(document.taxonomy.device_type);
     if (!measurement && !capability && !rainGauge) return null;
-    evidence.push({ source: 'product_document', field: measurement ? 'measurements' : capability ? 'capabilities' : 'taxonomy.device_type', value: measurement || capability ? `${item.en} / ${item.vi}` : document.taxonomy.device_type });
+    const raw = (measurement ?? capability)?.evidence?.find(entry => entry.source === 'normalized_spec');
+    evidence.push({ source: 'product_document', field: measurement ? 'measurements' : capability ? 'capabilities' : 'taxonomy.device_type', value: measurement || capability ? `${item.en} / ${item.vi}` : document.taxonomy.device_type,
+      ...(raw?.source === 'normalized_spec' && { raw_ref: raw.raw_ref }) });
   }
   if (intent.target) {
     const field = temperatureTargetEvidence(document, intent.target);
@@ -151,7 +180,7 @@ export function matchSearchIntent(intent: SearchIntent, document: ProductSearchD
       : role.key === 'vibrating' ? /\bvibrating wire\b/u.test(`${type} ${normalize(document.name_en)}`)
       : role.key === 'reader' ? /\b(?:reader|analy[sz]er)\b/u.test(`${type} ${normalize(document.name_en)}`)
       : role.key === 'communication' ? /\b(?:communication|modem|radio|transmitter)\b/u.test(type)
-      : role.key === 'weather' ? /\b(?:weather|air|humidity|barometric|wind|precipitation|rain)\b/u.test(type)
+      : role.key === 'weather' ? /\b(?:weather|air|humidity|barometric|wind|precipitation|rain|visibility|ceilometer|luminance)\b/u.test(type)
       : role.key === 'water' ? /\b(?:water|turbidity|oxygen)\b/u.test(type)
       : role.key === 'waterquality' ? /\b(?:water quality|turbidity|dissolved oxygen)\b/u.test(type)
       : role.key === 'ethernet' ? document.supported_protocols.includes('Ethernet') || /\bethernet\b/u.test(type)

@@ -12,9 +12,35 @@
     "device_type": "Soil Temperature Sensor",
     "device_type_key": "soil_temperature_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "soil_temperature",
+      "label_en": "Soil Temperature",
+      "label_vi": "Nhiệt độ đất",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Type E Thermocouple Burial Probe"
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_soil_temperature",
+      "label_en": "Measure Soil Temperature",
+      "label_vi": "Đo nhiệt độ đất",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Type E Thermocouple Burial Probe"
+        }
+      ]
+    }
+  ],
   "supported_protocols": [],
   "unsupported_protocols": [],
   "aliases": [
@@ -46,6 +72,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "0.8 cm (0.3 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_105E.json",
         "product_index": 0,
@@ -70,6 +97,7 @@
         },
         "condition": "with 3.05 m (10 ft) cable"
       },
+      "value_raw": "90 g (0.2 lb) with 3.05 m (10 ft) cable",
       "raw_ref": {
         "file": "data/raw/CSI_105E.json",
         "product_index": 0,
@@ -86,22 +114,26 @@
     "Sensors",
     "Temperature Sensors (Air/Soil/Water)",
     "Soil Temperature Sensor",
+    "Soil Temperature",
+    "Measure Soil Temperature",
     "CSI_105E"
   ],
   "search_keywords_vi": [
     "105E",
     "Cảm biến",
     "Cảm biến nhiệt độ không khí, đất và nước",
-    "Cảm biến nhiệt độ đất"
+    "Cảm biến nhiệt độ đất",
+    "Nhiệt độ đất",
+    "Đo nhiệt độ đất"
   ],
-  "search_text_en": "105E | Type E Thermocouple Burial Probe | CSI_105E | Sensors | Temperature Sensors (Air/Soil/Water) | Soil Temperature Sensor | Probe Diameter: 0.8 cm | Weight: 90 g",
-  "search_text_vi": "105E | CSI_105E | Type E Thermocouple Burial Probe | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến nhiệt độ đất | Probe Diameter: 0.8 cm | Weight: 90 g",
-  "search_text": "105E | Type E Thermocouple Burial Probe | CSI_105E | Sensors | Temperature Sensors (Air/Soil/Water) | Soil Temperature Sensor | Probe Diameter: 0.8 cm | Weight: 90 g | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến nhiệt độ đất",
+  "search_text_en": "105E | Type E Thermocouple Burial Probe | CSI_105E | Sensors | Temperature Sensors (Air/Soil/Water) | Soil Temperature Sensor | Soil Temperature | Measure Soil Temperature | Probe Diameter: 0.8 cm (0.3 in.) | Weight: 90 g (0.2 lb) with 3.05 m (10 ft) cable",
+  "search_text_vi": "105E | CSI_105E | Type E Thermocouple Burial Probe | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến nhiệt độ đất | Nhiệt độ đất | Đo nhiệt độ đất | Probe Diameter: 0.8 cm (0.3 in.) | Weight: 90 g (0.2 lb) with 3.05 m (10 ft) cable",
+  "search_text": "105E | Type E Thermocouple Burial Probe | CSI_105E | Sensors | Temperature Sensors (Air/Soil/Water) | Soil Temperature Sensor | Soil Temperature | Measure Soil Temperature | Probe Diameter: 0.8 cm (0.3 in.) | Weight: 90 g (0.2 lb) with 3.05 m (10 ft) cable | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến nhiệt độ đất | Nhiệt độ đất | Đo nhiệt độ đất",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "cbb2f54423013490713e27055f6f171f9c93d019ad348a9d1ccd97077f38ea20"
+  "content_hash": "f9666b5a9cd3ee2504e162af83314c8d2e6e5eb64bbc10b279ecfbe6bf43a6cc"
 }

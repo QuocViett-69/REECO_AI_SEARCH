@@ -16,7 +16,45 @@
     {
       "key": "volumetric_water_content",
       "label_en": "Volumetric Water Content",
-      "label_vi": "Hàm lượng nước thể tích"
+      "label_vi": "Hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_HS2_12.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              5
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "volumetric_water_content_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_HS2_12.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              32
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "volumetric_water_content_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_HS2_12.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              33
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +62,45 @@
     {
       "key": "measure_volumetric_water_content",
       "label_en": "Measure Volumetric Water Content",
-      "label_vi": "Đo hàm lượng nước thể tích"
+      "label_vi": "Đo hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_HS2_12.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              5
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "volumetric_water_content_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_HS2_12.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              32
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "volumetric_water_content_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_HS2_12.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              33
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -203,6 +279,7 @@
         "unit": "%",
         "qualifier": "<"
       },
+      "value_raw": "< 0.05%",
       "raw_ref": {
         "file": "data/raw/CSI_HS2_12.json",
         "product_index": 0,
@@ -226,6 +303,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "5 mm (0.14 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_HS2_12.json",
         "product_index": 0,
@@ -249,6 +327,7 @@
           "unit": "oz"
         }
       },
+      "value_raw": "340 g (12 oz)",
       "raw_ref": {
         "file": "data/raw/CSI_HS2_12.json",
         "product_index": 0,
@@ -272,6 +351,7 @@
           "unit": "oz"
         }
       },
+      "value_raw": "450 g (15.9 oz)",
       "raw_ref": {
         "file": "data/raw/CSI_HS2_12.json",
         "product_index": 0,
@@ -301,14 +381,14 @@
     "Hàm lượng nước thể tích",
     "Đo hàm lượng nước thể tích"
   ],
-  "search_text_en": "HS2-12 | HS2 HydroSense II Handheld Soil Water Content Sensor | CSI_HS2_12 | HS2-20 | HS2-NS | Sensors | Soil Sensors | Handheld Soil Moisture Meter | Volumetric Water Content | Measure Volumetric Water Content | Configuration: CS659 Sensor & Rods | Weight: 340 g (12 oz) | -NOTE-: The CS659 and CS658 cannot share rods. | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 6.5 dS/m when using the CS659 12-cm probe.) | Volumetric Water Content Resolution: < 0.05% | Volumetric Water Content Range: 0% to 50% VWC | Cable Type: Spiral | Cable Length: 250 cm (98 in.) extended | Rod Diameter: 5 mm (0.14 in.) | Rod Length: 120 mm (4.7 in.) for the CS659 12-cm probe | Body Dimensions: 100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.) | Weight: 450 g (15.9 oz) | Configuration: CS658 Sensor & Rods | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 4 dS/m when using the CS658 20-cm probe.) | Rod Length: 200 mm (7.9 in.) for the CS658 20-cm probe | Configuration: No Sensor | Volumetric Water Content Resolution: < 0.05 % | Rod Diameter: 5 mm | Weight: 340 g | Weight: 450 g | VWC",
-  "search_text_vi": "HS2-12 | CSI_HS2_12 | HS2 HydroSense II Handheld Soil Water Content Sensor | HS2-20 | HS2-NS | Cảm biến | Cảm biến đất | Máy đo độ ẩm đất cầm tay | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích | Configuration: CS659 Sensor & Rods | Weight: 340 g (12 oz) | -NOTE-: The CS659 and CS658 cannot share rods. | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 6.5 dS/m when using the CS659 12-cm probe.) | Volumetric Water Content Resolution: < 0.05% | Volumetric Water Content Range: 0% to 50% VWC | Cable Type: Spiral | Cable Length: 250 cm (98 in.) extended | Rod Diameter: 5 mm (0.14 in.) | Rod Length: 120 mm (4.7 in.) for the CS659 12-cm probe | Body Dimensions: 100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.) | Weight: 450 g (15.9 oz) | Configuration: CS658 Sensor & Rods | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 4 dS/m when using the CS658 20-cm probe.) | Rod Length: 200 mm (7.9 in.) for the CS658 20-cm probe | Configuration: No Sensor | Volumetric Water Content Resolution: < 0.05 % | Rod Diameter: 5 mm | Weight: 340 g | Weight: 450 g",
-  "search_text": "HS2-12 | HS2 HydroSense II Handheld Soil Water Content Sensor | CSI_HS2_12 | HS2-20 | HS2-NS | Sensors | Soil Sensors | Handheld Soil Moisture Meter | Volumetric Water Content | Measure Volumetric Water Content | Configuration: CS659 Sensor & Rods | Weight: 340 g (12 oz) | -NOTE-: The CS659 and CS658 cannot share rods. | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 6.5 dS/m when using the CS659 12-cm probe.) | Volumetric Water Content Resolution: < 0.05% | Volumetric Water Content Range: 0% to 50% VWC | Cable Type: Spiral | Cable Length: 250 cm (98 in.) extended | Rod Diameter: 5 mm (0.14 in.) | Rod Length: 120 mm (4.7 in.) for the CS659 12-cm probe | Body Dimensions: 100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.) | Weight: 450 g (15.9 oz) | Configuration: CS658 Sensor & Rods | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 4 dS/m when using the CS658 20-cm probe.) | Rod Length: 200 mm (7.9 in.) for the CS658 20-cm probe | Configuration: No Sensor | Volumetric Water Content Resolution: < 0.05 % | Rod Diameter: 5 mm | Weight: 340 g | Weight: 450 g | VWC | Cảm biến | Cảm biến đất | Máy đo độ ẩm đất cầm tay | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích",
+  "search_text_en": "HS2-12 | HS2 HydroSense II Handheld Soil Water Content Sensor | CSI_HS2_12 | HS2-20 | HS2-NS | Sensors | Soil Sensors | Handheld Soil Moisture Meter | Volumetric Water Content | Measure Volumetric Water Content | Configuration: CS659 Sensor & Rods | Weight: 340 g (12 oz) | -NOTE-: The CS659 and CS658 cannot share rods. | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 6.5 dS/m when using the CS659 12-cm probe.) | Volumetric Water Content Resolution: < 0.05% | Volumetric Water Content Range: 0% to 50% VWC | Cable Type: Spiral | Cable Length: 250 cm (98 in.) extended | Rod Diameter: 5 mm (0.14 in.) | Rod Length: 120 mm (4.7 in.) for the CS659 12-cm probe | Body Dimensions: 100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.) | Weight: 450 g (15.9 oz) | Configuration: CS658 Sensor & Rods | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 4 dS/m when using the CS658 20-cm probe.) | Rod Length: 200 mm (7.9 in.) for the CS658 20-cm probe | Configuration: No Sensor | VWC",
+  "search_text_vi": "HS2-12 | CSI_HS2_12 | HS2 HydroSense II Handheld Soil Water Content Sensor | HS2-20 | HS2-NS | Cảm biến | Cảm biến đất | Máy đo độ ẩm đất cầm tay | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích | Configuration: CS659 Sensor & Rods | Weight: 340 g (12 oz) | -NOTE-: The CS659 and CS658 cannot share rods. | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 6.5 dS/m when using the CS659 12-cm probe.) | Volumetric Water Content Resolution: < 0.05% | Volumetric Water Content Range: 0% to 50% VWC | Cable Type: Spiral | Cable Length: 250 cm (98 in.) extended | Rod Diameter: 5 mm (0.14 in.) | Rod Length: 120 mm (4.7 in.) for the CS659 12-cm probe | Body Dimensions: 100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.) | Weight: 450 g (15.9 oz) | Configuration: CS658 Sensor & Rods | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 4 dS/m when using the CS658 20-cm probe.) | Rod Length: 200 mm (7.9 in.) for the CS658 20-cm probe | Configuration: No Sensor",
+  "search_text": "HS2-12 | HS2 HydroSense II Handheld Soil Water Content Sensor | CSI_HS2_12 | HS2-20 | HS2-NS | Sensors | Soil Sensors | Handheld Soil Moisture Meter | Volumetric Water Content | Measure Volumetric Water Content | Configuration: CS659 Sensor & Rods | Weight: 340 g (12 oz) | -NOTE-: The CS659 and CS658 cannot share rods. | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 6.5 dS/m when using the CS659 12-cm probe.) | Volumetric Water Content Resolution: < 0.05% | Volumetric Water Content Range: 0% to 50% VWC | Cable Type: Spiral | Cable Length: 250 cm (98 in.) extended | Rod Diameter: 5 mm (0.14 in.) | Rod Length: 120 mm (4.7 in.) for the CS659 12-cm probe | Body Dimensions: 100 x 92 x 40 mm (3.9 x 3.6 x 1.6 in.) | Weight: 450 g (15.9 oz) | Configuration: CS658 Sensor & Rods | Water Content Accuracy: 3% typical (Accuracy assumes solution EC of < 4 dS/m when using the CS658 20-cm probe.) | Rod Length: 200 mm (7.9 in.) for the CS658 20-cm probe | Configuration: No Sensor | VWC | Cảm biến | Cảm biến đất | Máy đo độ ẩm đất cầm tay | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "449534464597cf54fdde99f4d495ad53c091785b37b5226a307402b785c62c25"
+  "content_hash": "e983b42996c406d6a5b3daada2f264f65d356b50ee770a0541099142bb200ef0"
 }

@@ -12,7 +12,27 @@
     "device_type": "Water-Level Sensor",
     "device_type_key": "water_level_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "water_level_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS456.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [
     {
@@ -54,7 +74,27 @@
       ]
     }
   ],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "water_level_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS456.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "CS456",
@@ -87,8 +127,11 @@
       "Sensors",
       "Water Level, Stage, and Flow Sensors",
       "Water-Level Sensor",
+      "Water Level",
+      "stage",
       "RS-232",
       "SDI-12",
+      "Measure Water Level",
       "CSI_CS456"
     ],
     "vi": [
@@ -96,8 +139,10 @@
       "Cảm biến",
       "Cảm biến mực nước, cao trình và lưu lượng",
       "Cảm biến mực nước",
+      "Mực nước",
       "RS-232",
-      "SDI-12"
+      "SDI-12",
+      "Đo mực nước"
     ]
   }
 }

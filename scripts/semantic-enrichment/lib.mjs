@@ -214,7 +214,7 @@ const measurementDefinitions = [
     'Nhiệt độ',
     ['temperature measurement'],
     /\btemperature\b|\bthermocouple\b/iu,
-    /\btemperature\s*(?:\/\s*RH\s*)?sensor\b/iu,
+    /\btemperature\b[^.;|]{0,45}\b(?:sensor|probe|profiler)\b|\bthermocouple\b/iu,
   ],
   [
     'air_temperature',
@@ -238,7 +238,7 @@ const measurementDefinitions = [
     'Nhiệt độ đất',
     [],
     /\bsoil temperature\b|\bsoil\b[^|;]{0,100}\btemperature\b/iu,
-    /\bsoil temperature sensor\b/iu,
+    /\bsoil temperature sensor\b|\bthermocouple burial probe\b/iu,
   ],
   [
     'relative_humidity',
@@ -254,7 +254,7 @@ const measurementDefinitions = [
     'Áp suất khí quyển',
     [],
     /\bbarometric pressure\b/iu,
-    /\bbarometer\b/iu,
+    /\bbarometer\b|\bbarometric pressure sensor\b/iu,
   ],
   [
     'precipitation',
@@ -262,7 +262,7 @@ const measurementDefinitions = [
     'Lượng mưa',
     ['rainfall'],
     /\bprecipitation\b|\brainfall\b/iu,
-    /\b(?:rain gage|precipitation sensor)\b/iu,
+    /\b(?:rain ga[u]?ge|precipitation sensor)\b/iu,
   ],
   [
     'precipitation_intensity',
@@ -326,7 +326,7 @@ const measurementDefinitions = [
     'Mực nước',
     ['stage'],
     /\bwater[- ]level\b|\bstage\b/iu,
-    /\bwater level sensor\b/iu,
+    /\bwater[- ]level\b[^.;|]{0,45}\b(?:sensor|transducer)\b/iu,
   ],
   [
     'distance',
@@ -425,6 +425,11 @@ const measurementDefinitions = [
     /$a/iu,
   ],
   ['tilt', 'Tilt', 'Độ nghiêng', [], /(?:^|[,;| ])tilt(?:[,;| ]|$)/iu, /$a/iu],
+  ['photosynthetic_photon_flux_density', 'Photosynthetic Photon Flux Density', 'Mật độ thông lượng photon quang hợp', ['PPFD', 'PAR'], /\bphotosynthetic photon flux density\b|\bPPFD\b/iu, /\bquantum sensor\b/iu],
+  ['soil_heat_flux', 'Soil Heat Flux', 'Thông lượng nhiệt đất', [], /\bsoil heat flux\b/iu, /\bsoil heat flux plate\b/iu],
+  ['fuel_moisture', 'Fuel Moisture', 'Độ ẩm vật liệu cháy', [], /\bfuel moisture\b/iu, /\bfuel moisture sensor\b/iu],
+  ['background_luminance', 'Background Luminance', 'Độ chói nền', [], /\bbackground luminance\b/iu, /\bbackground luminance sensor\b/iu],
+  ['cloud_base_height', 'Cloud Base Height', 'Độ cao chân mây', [], /\bcloud base heights?\b/iu, /$a/iu],
 ].map(([key, labelEn, labelVi, aliases, specPattern, namePattern]) => ({
   key,
   label_en: labelEn,
@@ -503,6 +508,8 @@ const measurementAnchorNames = new Set([
   'measurements made',
   'measurement parameter',
   'measurement description',
+  'reported parameters',
+  'output parameters',
   'product type',
   'device classification',
 ]);
@@ -548,6 +555,7 @@ const semanticItem = (definition, evidence) => ({
 });
 
 const collectMeasurements = (product, normalized) => {
+  const explicitList = normalized.specifications.find(spec => spec.name_raw.toLowerCase() === 'measurements made');
   const result = [];
   for (const definition of measurementDefinitions) {
     const evidence = [];
@@ -566,6 +574,12 @@ const collectMeasurements = (product, normalized) => {
         !/measurement_temperature_note|measurement_performance_verification/u.test(
           canonicalKey,
         );
+      // Named ranges/accuracy establish the measured variable, not operating limits.
+      const isNamedMeasurement = /(?:range|accuracy|resolution|uncertainty)$/u.test(canonicalKey)
+        && !/operating|storage|^maximum_|overpressure|supply|response|compensat/u.test(canonicalKey)
+        && definition.key !== 'temperature';
+      const listed = !explicitList || definition.specPattern.test(explicitList.value_raw)
+        || definition.key === 'soil_electrical_conductivity' && /\bsoil\b/iu.test(product.product_name_en) && /electrical conductivity/iu.test(explicitList.value_raw);
       const isDirectMeasurementStatement =
         /\bmeasures?\b|\bmeasured using\b|\bfor [^.;|]{0,80} measurements\b/iu.test(
           String(specification.value_raw ?? ''),
@@ -574,12 +588,16 @@ const collectMeasurements = (product, normalized) => {
           String(specification.value_raw ?? ''),
         );
       if (
-        (isAnchor || isCanonicalMeasurement || isDirectMeasurementStatement) &&
-        definition.specPattern.test(combined) &&
+        (isAnchor || isCanonicalMeasurement || isDirectMeasurementStatement || isNamedMeasurement && listed) &&
+        (definition.specPattern.test(combined) || isAnchor && definition.namePattern.test(combined)
+          || isNamedMeasurement && canonicalKey.startsWith(`${definition.key}_`)) &&
         !(definition.key === 'distance' && /\blightning\b/iu.test(combined))
       ) {
         evidence.push(specificationEvidence(specification));
       }
+      if (isAnchor && definition.key === 'soil_electrical_conductivity'
+        && /\bsoil\b/iu.test(product.product_name_en)
+        && /\belectrical conductivity\b/iu.test(combined)) evidence.push(specificationEvidence(specification));
     }
     if (evidence.length > 0) result.push(semanticItem(definition, evidence));
   }

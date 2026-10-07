@@ -12,9 +12,35 @@
     "device_type": "Water Level Recording Sensor",
     "device_type_key": "water_level_recording_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CRS451 Stainless-Steel Water-Level Recording Sensor"
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CRS451 Stainless-Steel Water-Level Recording Sensor"
+        }
+      ]
+    }
+  ],
   "supported_protocols": [
     "HTTPS",
     "USB"
@@ -465,8 +491,11 @@
     "Sensors",
     "Water Level Sensors",
     "Water Level Recording Sensor",
+    "Water Level",
+    "stage",
     "HTTPS",
     "USB",
+    "Measure Water Level",
     "CSI_CRS451_WN"
   ],
   "search_keywords_vi": [
@@ -474,17 +503,19 @@
     "Cảm biến",
     "Cảm biến mực nước",
     "Cảm biến ghi mực nước",
+    "Mực nước",
     "HTTPS",
-    "USB"
+    "USB",
+    "Đo mực nước"
   ],
-  "search_text_en": "CRS451-WN | CRS451 Stainless-Steel Water-Level Recording Sensor | CSI_CRS451_WN | CRS451-NN | CRS451V-HA | CRS451V-WN | CRS451V-NN | CRS456 | CRS456-WN | CRS456-NN | Sensors | Water Level Sensors | Water Level Recording Sensor | HTTPS | USB | Model cơ sở: CRS451 | Mô tả cấu hình: w/Weighted Nose Cone | Nguồn chính: CRS451 brochure (03/19/2026) | Kiểu thông khí: Unvented | Tuổi thọ pin: 5 years (when logging interval is once per hour) | Vật liệu thân: 316L stainless steel | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 50 kPa | 0 to 7.25 psi | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 500 kPa | 0 to 72.5 psi | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs451.pdf | https://www.campbellsci.com/products/crs451 | Mô tả cấu hình: w/NPT Fitting | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | Model cơ sở: CRS451V | Mô tả cấu hình: Higher 0.05% Accuracy | Nguồn chính: CRS451V brochure (03/19/2026) | Kiểu thông khí: Vented | Tuổi thọ pin: 5 years (when logging interval is once per hour | approximately 40,000 measurements) | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 7.25 psi | 0 to 50 kPa | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451v-crs456vman.pdf | b_crs451v.pdf | https://www.campbellsci.com/products/crs451v | Model cơ sở: CRS456 | Mô tả cấu hình: Water Level Recording Sensor, Titanium | Nguồn chính: CRS456 brochure (03/19/2026) | Tuổi thọ pin: 5+ years (when logging interval is once per hour) | Vật liệu thân: Titanium | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 72.5 psi | 0 to 500 kPa | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs456.pdf | https://www.campbellsci.com/products/crs456",
-  "search_text_vi": "CRS451-WN | CSI_CRS451_WN | CRS451 Stainless-Steel Water-Level Recording Sensor | CRS451-NN | CRS451V-HA | CRS451V-WN | CRS451V-NN | CRS456 | CRS456-WN | CRS456-NN | Cảm biến | Cảm biến mực nước | Cảm biến ghi mực nước | HTTPS | USB | Model cơ sở: CRS451 | Mô tả cấu hình: w/Weighted Nose Cone | Nguồn chính: CRS451 brochure (03/19/2026) | Kiểu thông khí: Unvented | Tuổi thọ pin: 5 years (when logging interval is once per hour) | Vật liệu thân: 316L stainless steel | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 50 kPa | 0 to 7.25 psi | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 500 kPa | 0 to 72.5 psi | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs451.pdf | https://www.campbellsci.com/products/crs451 | Mô tả cấu hình: w/NPT Fitting | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | Model cơ sở: CRS451V | Mô tả cấu hình: Higher 0.05% Accuracy | Nguồn chính: CRS451V brochure (03/19/2026) | Kiểu thông khí: Vented | Tuổi thọ pin: 5 years (when logging interval is once per hour | approximately 40,000 measurements) | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 7.25 psi | 0 to 50 kPa | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451v-crs456vman.pdf | b_crs451v.pdf | https://www.campbellsci.com/products/crs451v | Model cơ sở: CRS456 | Mô tả cấu hình: Water Level Recording Sensor, Titanium | Nguồn chính: CRS456 brochure (03/19/2026) | Tuổi thọ pin: 5+ years (when logging interval is once per hour) | Vật liệu thân: Titanium | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 72.5 psi | 0 to 500 kPa | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs456.pdf | https://www.campbellsci.com/products/crs456",
-  "search_text": "CRS451-WN | CRS451 Stainless-Steel Water-Level Recording Sensor | CSI_CRS451_WN | CRS451-NN | CRS451V-HA | CRS451V-WN | CRS451V-NN | CRS456 | CRS456-WN | CRS456-NN | Sensors | Water Level Sensors | Water Level Recording Sensor | HTTPS | USB | Model cơ sở: CRS451 | Mô tả cấu hình: w/Weighted Nose Cone | Nguồn chính: CRS451 brochure (03/19/2026) | Kiểu thông khí: Unvented | Tuổi thọ pin: 5 years (when logging interval is once per hour) | Vật liệu thân: 316L stainless steel | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 50 kPa | 0 to 7.25 psi | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 500 kPa | 0 to 72.5 psi | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs451.pdf | https://www.campbellsci.com/products/crs451 | Mô tả cấu hình: w/NPT Fitting | Model cơ sở: CRS451V | Mô tả cấu hình: Higher 0.05% Accuracy | Nguồn chính: CRS451V brochure (03/19/2026) | Kiểu thông khí: Vented | Tuổi thọ pin: 5 years (when logging interval is once per hour | approximately 40,000 measurements) | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 7.25 psi | 0 to 50 kPa | crs451v-crs456vman.pdf | b_crs451v.pdf | https://www.campbellsci.com/products/crs451v | Model cơ sở: CRS456 | Mô tả cấu hình: Water Level Recording Sensor, Titanium | Nguồn chính: CRS456 brochure (03/19/2026) | Tuổi thọ pin: 5+ years (when logging interval is once per hour) | Vật liệu thân: Titanium | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 72.5 psi | 0 to 500 kPa | b_crs456.pdf | https://www.campbellsci.com/products/crs456 | Cảm biến | Cảm biến mực nước | Cảm biến ghi mực nước",
+  "search_text_en": "CRS451-WN | CRS451 Stainless-Steel Water-Level Recording Sensor | CSI_CRS451_WN | CRS451-NN | CRS451V-HA | CRS451V-WN | CRS451V-NN | CRS456 | CRS456-WN | CRS456-NN | Sensors | Water Level Sensors | Water Level Recording Sensor | Water Level | Measure Water Level | HTTPS | USB | Model cơ sở: CRS451 | Mô tả cấu hình: w/Weighted Nose Cone | Nguồn chính: CRS451 brochure (03/19/2026) | Kiểu thông khí: Unvented | Tuổi thọ pin: 5 years (when logging interval is once per hour) | Vật liệu thân: 316L stainless steel | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 50 kPa | 0 to 7.25 psi | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 500 kPa | 0 to 72.5 psi | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs451.pdf | https://www.campbellsci.com/products/crs451 | Mô tả cấu hình: w/NPT Fitting | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | Model cơ sở: CRS451V | Mô tả cấu hình: Higher 0.05% Accuracy | Nguồn chính: CRS451V brochure (03/19/2026) | Kiểu thông khí: Vented | Tuổi thọ pin: 5 years (when logging interval is once per hour | approximately 40,000 measurements) | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 7.25 psi | 0 to 50 kPa | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451v-crs456vman.pdf | b_crs451v.pdf | https://www.campbellsci.com/products/crs451v | Model cơ sở: CRS456 | Mô tả cấu hình: Water Level Recording Sensor, Titanium | Nguồn chính: CRS456 brochure (03/19/2026) | Tuổi thọ pin: 5+ years (when logging interval is once per hour) | Vật liệu thân: Titanium | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 72.5 psi | 0 to 500 kPa | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs456.pdf | https://www.campbellsci.com/products/crs456 | stage",
+  "search_text_vi": "CRS451-WN | CSI_CRS451_WN | CRS451 Stainless-Steel Water-Level Recording Sensor | CRS451-NN | CRS451V-HA | CRS451V-WN | CRS451V-NN | CRS456 | CRS456-WN | CRS456-NN | Cảm biến | Cảm biến mực nước | Cảm biến ghi mực nước | Mực nước | Đo mực nước | HTTPS | USB | Model cơ sở: CRS451 | Mô tả cấu hình: w/Weighted Nose Cone | Nguồn chính: CRS451 brochure (03/19/2026) | Kiểu thông khí: Unvented | Tuổi thọ pin: 5 years (when logging interval is once per hour) | Vật liệu thân: 316L stainless steel | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 50 kPa | 0 to 7.25 psi | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 500 kPa | 0 to 72.5 psi | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs451.pdf | https://www.campbellsci.com/products/crs451 | Mô tả cấu hình: w/NPT Fitting | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | Model cơ sở: CRS451V | Mô tả cấu hình: Higher 0.05% Accuracy | Nguồn chính: CRS451V brochure (03/19/2026) | Kiểu thông khí: Vented | Tuổi thọ pin: 5 years (when logging interval is once per hour | approximately 40,000 measurements) | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 7.25 psi | 0 to 50 kPa | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451v-crs456vman.pdf | b_crs451v.pdf | https://www.campbellsci.com/products/crs451v | Model cơ sở: CRS456 | Mô tả cấu hình: Water Level Recording Sensor, Titanium | Nguồn chính: CRS456 brochure (03/19/2026) | Tuổi thọ pin: 5+ years (when logging interval is once per hour) | Vật liệu thân: Titanium | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 72.5 psi | 0 to 500 kPa | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs456.pdf | https://www.campbellsci.com/products/crs456",
+  "search_text": "CRS451-WN | CRS451 Stainless-Steel Water-Level Recording Sensor | CSI_CRS451_WN | CRS451-NN | CRS451V-HA | CRS451V-WN | CRS451V-NN | CRS456 | CRS456-WN | CRS456-NN | Sensors | Water Level Sensors | Water Level Recording Sensor | Water Level | Measure Water Level | HTTPS | USB | Model cơ sở: CRS451 | Mô tả cấu hình: w/Weighted Nose Cone | Nguồn chính: CRS451 brochure (03/19/2026) | Kiểu thông khí: Unvented | Tuổi thọ pin: 5 years (when logging interval is once per hour) | Vật liệu thân: 316L stainless steel | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 50 kPa | 0 to 7.25 psi | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 500 kPa | 0 to 72.5 psi | Dải đo - Độ sâu nước ngọt 0 đến 102 m: Pressure: 0 to 1000 kPa | 0 to 145 psi | crs451-crs456man.pdf | b_crs451.pdf | https://www.campbellsci.com/products/crs451 | Mô tả cấu hình: w/NPT Fitting | Model cơ sở: CRS451V | Mô tả cấu hình: Higher 0.05% Accuracy | Nguồn chính: CRS451V brochure (03/19/2026) | Kiểu thông khí: Vented | Tuổi thọ pin: 5 years (when logging interval is once per hour | approximately 40,000 measurements) | Dải đo - Độ sâu nước ngọt 0 đến 5.1 m: Pressure: 0 to 7.25 psi | 0 to 50 kPa | crs451v-crs456vman.pdf | b_crs451v.pdf | https://www.campbellsci.com/products/crs451v | Model cơ sở: CRS456 | Mô tả cấu hình: Water Level Recording Sensor, Titanium | Nguồn chính: CRS456 brochure (03/19/2026) | Tuổi thọ pin: 5+ years (when logging interval is once per hour) | Vật liệu thân: Titanium | Dải đo - Độ sâu nước ngọt 0 đến 50.9 m: Pressure: 0 to 72.5 psi | 0 to 500 kPa | b_crs456.pdf | https://www.campbellsci.com/products/crs456 | stage | Cảm biến | Cảm biến mực nước | Cảm biến ghi mực nước | Mực nước | Đo mực nước",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "a72309a98a33ae9dccabfd035754cb22eedcf0c699e5d56c8ccc03a8c68d6551"
+  "content_hash": "e6532f4ba2ca56a71c5b00faa4053f8837b531cd1d91980e6b757f8fb7ff3706"
 }

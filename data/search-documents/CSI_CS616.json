@@ -16,7 +16,26 @@
     {
       "key": "volumetric_water_content",
       "label_en": "Volumetric Water Content",
-      "label_vi": "Hàm lượng nước thể tích"
+      "label_vi": "Hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Water Content Reflectometer (0 to +70C)**"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +43,26 @@
     {
       "key": "measure_volumetric_water_content",
       "label_en": "Measure Volumetric Water Content",
-      "label_vi": "Đo hàm lượng nước thể tích"
+      "label_vi": "Đo hàm lượng nước thể tích",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Water Content Reflectometer (0 to +70C)**"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CS616_CS650_CS655.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -47,6 +85,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0° to +70°C",
       "raw_ref": {
         "file": "data/raw/CS616_CS650_CS655.json",
         "product_index": 0,
@@ -70,6 +109,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "3.2 mm (0.13 in.)",
       "raw_ref": {
         "file": "data/raw/CS616_CS650_CS655.json",
         "product_index": 0,
@@ -93,6 +133,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "300 mm (11.8 in.)",
       "raw_ref": {
         "file": "data/raw/CS616_CS650_CS655.json",
         "product_index": 0,
@@ -121,14 +162,14 @@
     "Hàm lượng nước thể tích",
     "Đo hàm lượng nước thể tích"
   ],
-  "search_text_en": "CS616 | Water Content Reflectometer (0 to +70C)** | CSI_CS616 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Volumetric Water Content | Measure Volumetric Water Content | Operating Temperature Range: 0 to 70 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm | VWC",
-  "search_text_vi": "CS616 | CSI_CS616 | Water Content Reflectometer (0 to +70C)** | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích | Operating Temperature Range: 0 to 70 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm",
-  "search_text": "CS616 | Water Content Reflectometer (0 to +70C)** | CSI_CS616 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Volumetric Water Content | Measure Volumetric Water Content | Operating Temperature Range: 0 to 70 °C | Rod Diameter: 3.2 mm | Rod Length: 300 mm | VWC | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích",
+  "search_text_en": "CS616 | Water Content Reflectometer (0 to +70C)** | CSI_CS616 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Volumetric Water Content | Measure Volumetric Water Content | Operating Temperature Range: 0° to +70°C | Rod Diameter: 3.2 mm (0.13 in.) | Rod Length: 300 mm (11.8 in.) | VWC",
+  "search_text_vi": "CS616 | CSI_CS616 | Water Content Reflectometer (0 to +70C)** | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích | Operating Temperature Range: 0° to +70°C | Rod Diameter: 3.2 mm (0.13 in.) | Rod Length: 300 mm (11.8 in.)",
+  "search_text": "CS616 | Water Content Reflectometer (0 to +70C)** | CSI_CS616 | Sensors | Soil Moisture, Temperature, and EC Sensors | Soil Moisture, Temperature, and EC Sensor | Volumetric Water Content | Measure Volumetric Water Content | Operating Temperature Range: 0° to +70°C | Rod Diameter: 3.2 mm (0.13 in.) | Rod Length: 300 mm (11.8 in.) | VWC | Cảm biến | Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất | Hàm lượng nước thể tích | Đo hàm lượng nước thể tích",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "873e0e79595e04751567a7d111959843dd86d4d6a62909278b825a6347693282"
+  "content_hash": "3f485064f977270a4b6781f578fde094c2032747f12a6ead7dcfd5eea9b0918a"
 }

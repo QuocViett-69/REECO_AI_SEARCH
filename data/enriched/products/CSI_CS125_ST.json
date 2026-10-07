@@ -14,6 +14,55 @@
   },
   "measurements": [
     {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "accumulation_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 14,
+            "source_rows": [
+              46,
+              47,
+              48
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rain_intensity_range",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 16,
+            "source_rows": [
+              51,
+              52,
+              53
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "intensity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 17,
+            "source_rows": [
+              54,
+              55,
+              56
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "present_weather",
       "label_en": "Present Weather",
       "label_vi": "Thời tiết hiện tại",
@@ -97,6 +146,55 @@
     }
   ],
   "capabilities": [
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "accumulation_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 14,
+            "source_rows": [
+              46,
+              47,
+              48
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "rain_intensity_range",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 16,
+            "source_rows": [
+              51,
+              52,
+              53
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "intensity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CS120A_CS125_Master.json",
+            "product_index": 2,
+            "spec_index": 17,
+            "source_rows": [
+              54,
+              55,
+              56
+            ]
+          }
+        }
+      ]
+    },
     {
       "key": "measure_present_weather",
       "label_en": "Measure Present Weather",
@@ -186,12 +284,15 @@
       "Sensors",
       "Present Weather Sensors",
       "Present Weather Sensor",
+      "Precipitation",
+      "rainfall",
       "Present Weather",
       "Visibility",
       "meteorological optical range",
       "MOR",
       "RS-232",
       "RS-485",
+      "Measure Precipitation",
       "Measure Present Weather",
       "Measure Visibility",
       "CSI_CS125_ST"
@@ -200,10 +301,12 @@
       "CS125-ST",
       "Cảm biến",
       "Cảm biến thời tiết hiện tại",
+      "Lượng mưa",
       "Thời tiết hiện tại",
       "Tầm nhìn",
       "RS-232",
       "RS-485",
+      "Đo lượng mưa",
       "Đo thời tiết hiện tại",
       "Đo tầm nhìn"
     ]

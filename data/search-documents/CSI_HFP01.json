@@ -12,9 +12,35 @@
     "device_type": "Heat Flux Plate",
     "device_type_key": "heat_flux_plate"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "soil_heat_flux",
+      "label_en": "Soil Heat Flux",
+      "label_vi": "Thông lượng nhiệt đất",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "HFP01 Soil Heat Flux Plate"
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_soil_heat_flux",
+      "label_en": "Measure Soil Heat Flux",
+      "label_vi": "Đo thông lượng nhiệt đất",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "HFP01 Soil Heat Flux Plate"
+        }
+      ]
+    }
+  ],
   "supported_protocols": [],
   "unsupported_protocols": [],
   "aliases": [
@@ -72,6 +98,7 @@
         "unit": "W/m²",
         "qualifier": "±"
       },
+      "value_raw": "±2000 W m⁻²",
       "raw_ref": {
         "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
         "product_index": 0,
@@ -92,6 +119,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-30° to +70°C",
       "raw_ref": {
         "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
         "product_index": 0,
@@ -115,6 +143,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "80 mm (3.15 in.)",
       "raw_ref": {
         "file": "data/raw/HFP01_HFP01SC_Specifications_SplitCells.json",
         "product_index": 0,
@@ -131,22 +160,26 @@
     "Sensors",
     "Soil Sensors",
     "Heat Flux Plate",
+    "Soil Heat Flux",
+    "Measure Soil Heat Flux",
     "CSI_HFP01"
   ],
   "search_keywords_vi": [
     "HFP01",
     "Cảm biến",
     "Cảm biến đất",
-    "Tấm đo thông lượng nhiệt"
+    "Tấm đo thông lượng nhiệt",
+    "Thông lượng nhiệt đất",
+    "Đo thông lượng nhiệt đất"
   ],
-  "search_text_en": "HFP01 | HFP01 Soil Heat Flux Plate | CSI_HFP01 | HFP01SC | Sensors | Soil Sensors | Heat Flux Plate | Sensor Type: Thermopile | Expected Typical Accuracy: Within -15% to +5% in most common soils (12 hour totals) | Sensor Type: Thermopile with film heater | Expected Typical Accuracy: ±3% of reading | Measurement Range: ± 2000 W/m² | Temperature Range: -30 to 70 °C | Plate Diameter: 80 mm",
-  "search_text_vi": "HFP01 | CSI_HFP01 | HFP01 Soil Heat Flux Plate | HFP01SC | Cảm biến | Cảm biến đất | Tấm đo thông lượng nhiệt | Sensor Type: Thermopile | Expected Typical Accuracy: Within -15% to +5% in most common soils (12 hour totals) | Sensor Type: Thermopile with film heater | Expected Typical Accuracy: ±3% of reading | Measurement Range: ± 2000 W/m² | Temperature Range: -30 to 70 °C | Plate Diameter: 80 mm",
-  "search_text": "HFP01 | HFP01 Soil Heat Flux Plate | CSI_HFP01 | HFP01SC | Sensors | Soil Sensors | Heat Flux Plate | Sensor Type: Thermopile | Expected Typical Accuracy: Within -15% to +5% in most common soils (12 hour totals) | Sensor Type: Thermopile with film heater | Expected Typical Accuracy: ±3% of reading | Measurement Range: ± 2000 W/m² | Temperature Range: -30 to 70 °C | Plate Diameter: 80 mm | Cảm biến | Cảm biến đất | Tấm đo thông lượng nhiệt",
+  "search_text_en": "HFP01 | HFP01 Soil Heat Flux Plate | CSI_HFP01 | HFP01SC | Sensors | Soil Sensors | Heat Flux Plate | Soil Heat Flux | Measure Soil Heat Flux | Sensor Type: Thermopile | Expected Typical Accuracy: Within -15% to +5% in most common soils (12 hour totals) | Sensor Type: Thermopile with film heater | Expected Typical Accuracy: ±3% of reading | Measurement Range: ±2000 W m⁻² | Temperature Range: -30° to +70°C | Plate Diameter: 80 mm (3.15 in.)",
+  "search_text_vi": "HFP01 | CSI_HFP01 | HFP01 Soil Heat Flux Plate | HFP01SC | Cảm biến | Cảm biến đất | Tấm đo thông lượng nhiệt | Thông lượng nhiệt đất | Đo thông lượng nhiệt đất | Sensor Type: Thermopile | Expected Typical Accuracy: Within -15% to +5% in most common soils (12 hour totals) | Sensor Type: Thermopile with film heater | Expected Typical Accuracy: ±3% of reading | Measurement Range: ±2000 W m⁻² | Temperature Range: -30° to +70°C | Plate Diameter: 80 mm (3.15 in.)",
+  "search_text": "HFP01 | HFP01 Soil Heat Flux Plate | CSI_HFP01 | HFP01SC | Sensors | Soil Sensors | Heat Flux Plate | Soil Heat Flux | Measure Soil Heat Flux | Sensor Type: Thermopile | Expected Typical Accuracy: Within -15% to +5% in most common soils (12 hour totals) | Sensor Type: Thermopile with film heater | Expected Typical Accuracy: ±3% of reading | Measurement Range: ±2000 W m⁻² | Temperature Range: -30° to +70°C | Plate Diameter: 80 mm (3.15 in.) | Cảm biến | Cảm biến đất | Tấm đo thông lượng nhiệt | Thông lượng nhiệt đất | Đo thông lượng nhiệt đất",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "6572651c672e980bd6ed375f294d1380a6481a8de10cc8a9c89127d8deb0990d"
+  "content_hash": "f2e50bea63c89cb3005cad728f6e54c9aef8dd36a34bd32d8de0e86bdb8118b2"
 }

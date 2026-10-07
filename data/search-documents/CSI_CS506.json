@@ -12,9 +12,35 @@
     "device_type": "Fuel Moisture Sensor",
     "device_type_key": "fuel_moisture_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "fuel_moisture",
+      "label_en": "Fuel Moisture",
+      "label_vi": "Độ ẩm vật liệu cháy",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS506 Fuel Moisture Sensor"
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_fuel_moisture",
+      "label_en": "Measure Fuel Moisture",
+      "label_vi": "Đo độ ẩm vật liệu cháy",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS506 Fuel Moisture Sensor"
+        }
+      ]
+    }
+  ],
   "supported_protocols": [],
   "unsupported_protocols": [],
   "aliases": [
@@ -43,6 +69,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "5 to 18 Vdc",
       "raw_ref": {
         "file": "data/raw/CS506_Specifications_SplitCells.json",
         "product_index": 0,
@@ -59,21 +86,25 @@
     "Sensors",
     "Fuel Moisture Sensors",
     "Fuel Moisture Sensor",
+    "Fuel Moisture",
+    "Measure Fuel Moisture",
     "CSI_CS506"
   ],
   "search_keywords_vi": [
     "CS506",
     "Cảm biến",
-    "Cảm biến độ ẩm nhiên liệu"
+    "Cảm biến độ ẩm nhiên liệu",
+    "Độ ẩm vật liệu cháy",
+    "Đo độ ẩm vật liệu cháy"
   ],
-  "search_text_en": "CS506 | CS506 Fuel Moisture Sensor | CSI_CS506 | Sensors | Fuel Moisture Sensors | Fuel Moisture Sensor | Power Supply: 5 to 18 V DC",
-  "search_text_vi": "CS506 | CSI_CS506 | CS506 Fuel Moisture Sensor | Cảm biến | Cảm biến độ ẩm nhiên liệu | Power Supply: 5 to 18 V DC",
-  "search_text": "CS506 | CS506 Fuel Moisture Sensor | CSI_CS506 | Sensors | Fuel Moisture Sensors | Fuel Moisture Sensor | Power Supply: 5 to 18 V DC | Cảm biến | Cảm biến độ ẩm nhiên liệu",
+  "search_text_en": "CS506 | CS506 Fuel Moisture Sensor | CSI_CS506 | Sensors | Fuel Moisture Sensors | Fuel Moisture Sensor | Fuel Moisture | Measure Fuel Moisture | Power Supply: 5 to 18 Vdc",
+  "search_text_vi": "CS506 | CSI_CS506 | CS506 Fuel Moisture Sensor | Cảm biến | Cảm biến độ ẩm nhiên liệu | Độ ẩm vật liệu cháy | Đo độ ẩm vật liệu cháy | Power Supply: 5 to 18 Vdc",
+  "search_text": "CS506 | CS506 Fuel Moisture Sensor | CSI_CS506 | Sensors | Fuel Moisture Sensors | Fuel Moisture Sensor | Fuel Moisture | Measure Fuel Moisture | Power Supply: 5 to 18 Vdc | Cảm biến | Cảm biến độ ẩm nhiên liệu | Độ ẩm vật liệu cháy | Đo độ ẩm vật liệu cháy",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "d03bac5d51407be824f4e194a76cb2650d4ec6a4aa9984efd1d8555e103b8f85"
+  "content_hash": "709332910453cf31f65bf6cbb680ae1366785ce66b4d73ec8537435f75ca4399"
 }

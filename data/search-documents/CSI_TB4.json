@@ -16,7 +16,33 @@
     {
       "key": "precipitation",
       "label_en": "Precipitation",
-      "label_vi": "Lượng mưa"
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_TB4.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/CSI_TB4.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +50,33 @@
     {
       "key": "measure_precipitation",
       "label_en": "Measure Precipitation",
-      "label_vi": "Đo lượng mưa"
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_TB4.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/CSI_TB4.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -109,6 +161,7 @@
           "unit": "in/h"
         }
       },
+      "value_raw": "0 to 700 mm/h (0 to 27.6 in./h)",
       "raw_ref": {
         "file": "data/raw/CSI_TB4.json",
         "product_index": 0,
@@ -129,6 +182,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0 to 70 °C",
       "raw_ref": {
         "file": "data/raw/CSI_TB4.json",
         "product_index": 0,
@@ -149,6 +203,7 @@
         "unit": "%",
         "qualifier": null
       },
+      "value_raw": "0 to 100%",
       "raw_ref": {
         "file": "data/raw/CSI_TB4.json",
         "product_index": 0,
@@ -172,6 +227,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "20 cm (7.9 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_TB4.json",
         "product_index": 0,
@@ -195,6 +251,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "33 cm (13 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_TB4.json",
         "product_index": 0,
@@ -219,6 +276,7 @@
         },
         "condition": "with 7.62 m (25 ft) signal cable"
       },
+      "value_raw": "2 kg (4.4 lb) with 7.62 m (25 ft) signal cable",
       "raw_ref": {
         "file": "data/raw/CSI_TB4.json",
         "product_index": 0,
@@ -247,14 +305,14 @@
     "Lượng mưa",
     "Đo lượng mưa"
   ],
-  "search_text_en": "TB4 | CSI_TB4 | TB4MM | Sensors | Precipitation Sensors | Rain Gage | Precipitation | Measure Precipitation | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100 % | Orifice Diameter: 20 cm | Height: 33 cm | Weight: 2 kg | rainfall",
-  "search_text_vi": "TB4 | CSI_TB4 | TB4MM | Cảm biến | Cảm biến lượng mưa | Cảm biến đo mưa | Lượng mưa | Đo lượng mưa | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100 % | Orifice Diameter: 20 cm | Height: 33 cm | Weight: 2 kg",
-  "search_text": "TB4 | CSI_TB4 | TB4MM | Sensors | Precipitation Sensors | Rain Gage | Precipitation | Measure Precipitation | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100 % | Orifice Diameter: 20 cm | Height: 33 cm | Weight: 2 kg | rainfall | Cảm biến | Cảm biến lượng mưa | Cảm biến đo mưa | Lượng mưa | Đo lượng mưa",
+  "search_text_en": "TB4 | CSI_TB4 | TB4MM | Sensors | Precipitation Sensors | Rain Gage | Precipitation | Measure Precipitation | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h (0 to 27.6 in./h) | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100% | Orifice Diameter: 20 cm (7.9 in.) | Height: 33 cm (13 in.) | Weight: 2 kg (4.4 lb) with 7.62 m (25 ft) signal cable | rainfall",
+  "search_text_vi": "TB4 | CSI_TB4 | TB4MM | Cảm biến | Cảm biến lượng mưa | Cảm biến đo mưa | Lượng mưa | Đo lượng mưa | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h (0 to 27.6 in./h) | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100% | Orifice Diameter: 20 cm (7.9 in.) | Height: 33 cm (13 in.) | Weight: 2 kg (4.4 lb) with 7.62 m (25 ft) signal cable",
+  "search_text": "TB4 | CSI_TB4 | TB4MM | Sensors | Precipitation Sensors | Rain Gage | Precipitation | Measure Precipitation | Product Type: Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.254 mm (0.01 in.) | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Product Type: Metric Rain Gage with 8 in. Orifice | Rainfall per Tip: 0.2 mm (0.008 in.) | Rainfall Multiplier – Inches: 0.008 | Rainfall Multiplier – Millimeters: 0.2 | Measurement Range: 0 to 700 mm/h (0 to 27.6 in./h) | Operating Temperature Range: 0 to 70 °C | Humidity Range: 0 to 100% | Orifice Diameter: 20 cm (7.9 in.) | Height: 33 cm (13 in.) | Weight: 2 kg (4.4 lb) with 7.62 m (25 ft) signal cable | rainfall | Cảm biến | Cảm biến lượng mưa | Cảm biến đo mưa | Lượng mưa | Đo lượng mưa",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "f50e8ecd8a13ff65d2fd5eae0e88cfcb7b229756787a65b8f9893eea88738579"
+  "content_hash": "96895683411bf83d170eeea84ac0e58fc5b9321288e1dad8e4f7515a503f9c70"
 }

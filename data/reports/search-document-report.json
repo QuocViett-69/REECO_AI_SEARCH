@@ -5,8 +5,8 @@
   "input_fingerprints": {
     "product_master": "41c8abfe7e9d082863437171268ed5993cdcd9eda937755197a912dd99d2b3dc",
     "normalized_specifications": "9803838521cfe44ba1f752931cf890b7fa3c7475ed14d512bb65858105d8600e",
-    "enriched_products": "1e6988bc27aa31d1063b74f1509a6f3d2070fb40a25b589a2b175c187d043fdc",
-    "semantic_vocabulary": "bc0f7ce6d8b3535199fa9e0affe7812e327e7471d0675bc21d2647d8c6f50c24"
+    "enriched_products": "0470d95bf5d8f62c71a410bb8f9558a4d862865c40d373aadc924c8ff138ba23",
+    "semantic_vocabulary": "5cc9cf9a5c3375b7f03bb50b6497bf8a4e5aee8eee24c6dfe2facf8404e390b6"
   },
   "checks": {
     "master_products": 89,
@@ -33,18 +33,18 @@
     "zod_validation_failed": 0
   },
   "metrics": {
-    "average_search_text_length": 1090.89,
-    "min_search_text_length": 171,
-    "max_search_text_length": 8531,
-    "average_measurements_per_product": 1.03,
-    "average_capabilities_per_product": 1.04,
+    "average_search_text_length": 1126.99,
+    "min_search_text_length": 257,
+    "max_search_text_length": 8492,
+    "average_measurements_per_product": 1.29,
+    "average_capabilities_per_product": 1.3,
     "average_aliases_per_product": 4.55,
     "products_without_applications": 79,
-    "products_without_measurements": 43,
+    "products_without_measurements": 31,
     "products_without_protocols": 30,
-    "important_specification_count": 487,
-    "en_keyword_count": 1076,
-    "vi_keyword_count": 819
+    "important_specification_count": 498,
+    "en_keyword_count": 1139,
+    "vi_keyword_count": 865
   },
   "skipped_review_products": [],
   "coverage_details": {
@@ -130,7 +130,6 @@
       "CSI_WINDSONIC1"
     ],
     "product_ids_without_measurements": [
-      "CSI_CS451",
       "CSI_AM16_32B_ST",
       "CSI_ASPEN10_CELL_ST",
       "CSI_AVW200_ST",
@@ -147,7 +146,6 @@
       "CSI_PS200",
       "CSI_PS84_CR",
       "CSI_SUNSCOUT",
-      "CSI_105E",
       "CSI_CELL210_V",
       "CSI_CELL215_IT1A",
       "CSI_CELL220_IT1A",
@@ -155,21 +153,11 @@
       "CSI_COM220_AU",
       "CSI_COM320_AU",
       "CSI_CPEC306_DW",
-      "CSI_CRS451_WN",
-      "CSI_CS106_PF",
-      "CSI_CS140",
-      "CSI_CS230",
-      "CSI_CS310",
-      "CSI_CS456",
-      "CSI_CS506",
       "CSI_CS610",
-      "CSI_HFP01",
       "CSI_METEOPV",
       "CSI_PS24_W_CH150",
       "CSI_RF452",
       "CSI_RF500M",
-      "CSI_SKYVUE8",
-      "CSI_TE525",
       "CSI_TX326",
       "CSI_VOLT108_XD",
       "CSI_VWANALYZER"

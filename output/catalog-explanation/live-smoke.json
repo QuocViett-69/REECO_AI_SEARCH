@@ -1,0 +1,2422 @@
+[
+  {
+    "request": {
+      "query": "Tôi cần đo độ ướt lá"
+    },
+    "body": {
+      "query": "Tôi cần đo độ ướt lá",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "name_en": "Meter Phytos 31 Leaf Wetness Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Leaf Wetness Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/238",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.310345,
+            "semantic": 0.802768933112899,
+            "hybrid": 0.03278688524590164,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "LWS: dữ liệu xác nhận độ ướt lá. LWS đo độ ướt lá, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "độ ướt lá",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "leaf wetness / độ ướt lá",
+                    "raw_ref": {
+                      "file": "data/raw/LWS.json",
+                      "product_index": 0,
+                      "spec_index": 0,
+                      "source_rows": [
+                        3
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 984
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "LWS"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "leaf wetness / độ ướt lá",
+                "raw_ref": {
+                  "file": "data/raw/LWS.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ ướt lá",
+                "raw_ref": {
+                  "file": "data/raw/LWS.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "query": "I need to measure leaf wetness"
+    },
+    "body": {
+      "query": "I need to measure leaf wetness",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_LWS",
+          "model": "LWS",
+          "name_en": "Meter Phytos 31 Leaf Wetness Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Leaf Wetness Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/238",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.310345,
+            "semantic": 0.802768933112899,
+            "hybrid": 0.03278688524590164,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "LWS: product data confirms leaf wetness. LWS measures leaf wetness, providing readings to monitor conditions before deciding on adjustments. Installation suitability for your specific use case remains unconfirmed.",
+            "language": "en",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "leaf wetness",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "leaf wetness / độ ướt lá",
+                    "raw_ref": {
+                      "file": "data/raw/LWS.json",
+                      "product_index": 0,
+                      "spec_index": 0,
+                      "source_rows": [
+                        3
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "label": "installation and system compatibility",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 796
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "LWS"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "leaf wetness / độ ướt lá",
+                "raw_ref": {
+                  "file": "data/raw/LWS.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Leaf Wetness",
+                "raw_ref": {
+                  "file": "data/raw/LWS.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "query": "Tôi cần đo mật độ thông lượng photon quang hợp"
+    },
+    "body": {
+      "query": "Tôi cần đo mật độ thông lượng photon quang hợp",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_CS310",
+          "model": "CS310",
+          "name_en": "CS310 Quantum Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Quantum Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/12750",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.0909091,
+            "semantic": 0.774099399888015,
+            "hybrid": 0.03278688524590164,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS310: dữ liệu xác nhận mật độ thông lượng photon quang hợp. CS310 đo mật độ thông lượng photon quang hợp, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "mật độ thông lượng photon quang hợp",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "photosynthetic photon flux density / mật độ thông lượng photon quang hợp",
+                    "raw_ref": {
+                      "file": "data/raw/CSI_CS310.json",
+                      "product_index": 0,
+                      "spec_index": 1,
+                      "source_rows": [
+                        4
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1358
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS310"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "photosynthetic photon flux density / mật độ thông lượng photon quang hợp",
+                "raw_ref": {
+                  "file": "data/raw/CSI_CS310.json",
+                  "product_index": 0,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Mật độ thông lượng photon quang hợp",
+                "raw_ref": {
+                  "file": "data/raw/CSI_CS310.json",
+                  "product_index": 0,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "query": "Tôi cần đo thông lượng nhiệt đất"
+    },
+    "body": {
+      "query": "Tôi cần đo thông lượng nhiệt đất",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_HFP01",
+          "model": "HFP01",
+          "name_en": "HFP01 Soil Heat Flux Plate",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Heat Flux Plate",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/318",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.0909091,
+            "semantic": 0.752979330452153,
+            "hybrid": 0.03278688524590164,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "HFP01: dữ liệu xác nhận thông lượng nhiệt đất. HFP01 đo thông lượng nhiệt đất, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "thông lượng nhiệt đất",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "soil heat flux / thông lượng nhiệt đất"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 766
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "HFP01"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "soil heat flux / thông lượng nhiệt đất"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Thông lượng nhiệt đất"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "query": "Tôi cần đo mực nước"
+    },
+    "body": {
+      "query": "Tôi cần đo mực nước",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_CRS451_WN",
+          "model": "CRS451-WN",
+          "name_en": "CRS451 Stainless-Steel Water-Level Recording Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Water Level Recording Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/3583",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.235571,
+            "semantic": 0.682013758309126,
+            "hybrid": 0.03278688524590164,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CRS451-WN: dữ liệu xác nhận mực nước. CRS451-WN đo mực nước, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "mực nước",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "water level / mực nước"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1315
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CRS451-WN"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "water level / mực nước"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Mực nước"
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS456",
+          "model": "CS456",
+          "name_en": "CS456",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Water-Level Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/8854",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.230769,
+            "semantic": 0.676337744308044,
+            "hybrid": 0.03200204813108039,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, CS456 đáp ứng yêu cầu về mực nước. CS456 đo mực nước, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Thông số water level resolution: 0.0035% FS.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "mực nước",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "water level / mực nước",
+                    "raw_ref": {
+                      "file": "data/raw/CSI_CS456.json",
+                      "product_index": 0,
+                      "spec_index": 2,
+                      "source_rows": [
+                        6
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1315
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "CS456"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "water level / mực nước",
+                "raw_ref": {
+                  "file": "data/raw/CSI_CS456.json",
+                  "product_index": 0,
+                  "spec_index": 2,
+                  "source_rows": [
+                    6
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Mực nước",
+                "raw_ref": {
+                  "file": "data/raw/CSI_CS456.json",
+                  "product_index": 0,
+                  "spec_index": 2,
+                  "source_rows": [
+                    6
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "water_level_resolution",
+                "value": "0.0035% FS",
+                "raw_ref": {
+                  "file": "data/raw/CSI_CS456.json",
+                  "product_index": 0,
+                  "spec_index": 2,
+                  "source_rows": [
+                    6
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_RANGEVUE30",
+          "model": "RangeVue30",
+          "name_en": "RangeVue™30",
+          "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+          "category": "Sensors",
+          "device_type": "Water Level, Stage, and Flow Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.130435,
+            "semantic": 0.67702571242296,
+            "hybrid": 0.031754032258064516,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, RangeVue30 đáp ứng yêu cầu về mực nước. RangeVue30 đo mực nước, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "mực nước",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "water level / mực nước",
+                    "raw_ref": {
+                      "file": "data/raw/RangeVue15-30.json",
+                      "product_index": 1,
+                      "spec_index": 0,
+                      "source_rows": [
+                        3
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1315
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "RangeVue30"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "water level / mực nước",
+                "raw_ref": {
+                  "file": "data/raw/RangeVue15-30.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Mực nước",
+                "raw_ref": {
+                  "file": "data/raw/RangeVue15-30.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS451",
+          "model": "CS451",
+          "name_en": "Stainless-Steel Pressure Transducer",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Water Level, Stage, and Flow Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/1788",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.130435,
+            "semantic": 0.597471463228139,
+            "hybrid": 0.031024531024531024,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS451: dữ liệu xác nhận mực nước. CS451 đo mực nước, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Thông số water level resolution: 0.0035% FS.",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "mực nước",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "water level / mực nước",
+                    "raw_ref": {
+                      "file": "data/raw/CS451.json",
+                      "product_index": 0,
+                      "spec_index": 2,
+                      "source_rows": [
+                        6
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "water level / mực nước",
+                "raw_ref": {
+                  "file": "data/raw/CS451.json",
+                  "product_index": 0,
+                  "spec_index": 2,
+                  "source_rows": [
+                    6
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Mực nước",
+                "raw_ref": {
+                  "file": "data/raw/CS451.json",
+                  "product_index": 0,
+                  "spec_index": 2,
+                  "source_rows": [
+                    6
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "water_level_resolution",
+                "value": "0.0035% FS",
+                "raw_ref": {
+                  "file": "data/raw/CS451.json",
+                  "product_index": 0,
+                  "spec_index": 2,
+                  "source_rows": [
+                    6
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_LEVELVUEB10_15",
+          "model": "LevelVueB10-15",
+          "name_en": "LevelVueB10-15",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Water-Level Continuous Flow Bubbler",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11826",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0.285714,
+            "semantic": 0.66050720104705,
+            "hybrid": 0.031009615384615385,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "LevelVueB10-15: dữ liệu xác nhận mực nước. LevelVueB10-15 đo mực nước, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "mực nước",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "measurements",
+                    "value": "water level / mực nước",
+                    "raw_ref": {
+                      "file": "data/raw/CSI_LEVELVUEB10_15.json",
+                      "product_index": 0,
+                      "spec_index": 1,
+                      "source_rows": [
+                        4
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "water level / mực nước",
+                "raw_ref": {
+                  "file": "data/raw/CSI_LEVELVUEB10_15.json",
+                  "product_index": 0,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Mực nước",
+                "raw_ref": {
+                  "file": "data/raw/CSI_LEVELVUEB10_15.json",
+                  "product_index": 0,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "query": "Cảm biến khí tượng"
+    },
+    "body": {
+      "query": "Cảm biến khí tượng",
+      "mode": "hybrid",
+      "results": [
+        {
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "name_en": "Compact Digital RS-485 Modbus RTU Weather Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "All-in-One Weather Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.714164661542157,
+            "hybrid": 0.01639344262295082,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "ClimaVue40: dữ liệu xác nhận thiết bị thời tiết. ClimaVue40 đo nhiệt độ không khí, độ ẩm tương đối, lượng mưa, tốc độ gió, hướng gió, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Giao tiếp được ghi nhận: Modbus, RS-485. Thông số Operating Temperature Range: -50° to +60°C. Thông số Precipitation Resolution: 0.017 mm. Thông số Vapor Pressure Resolution: 0.01 kPa.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "All-in-One Weather Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 795
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "ClimaVue40"
+              },
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "All-in-One Weather Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ không khí",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ ẩm tương đối",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Tốc độ gió",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hướng gió",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "Modbus, RS-485"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-50° to +60°C",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 3,
+                  "source_rows": [
+                    9
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "precipitation_resolution",
+                "value": "0.017 mm",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 13,
+                  "source_rows": [
+                    32
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "vapor_pressure_resolution",
+                "value": "0.01 kPa",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 16,
+                  "source_rows": [
+                    38
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "name_en": "G2 Compact Digital SDI-12 Weather Sensor (-50 to",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "All-in-One Weather Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.685334222714042,
+            "hybrid": 0.016129032258064516,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, ClimaVue50G2 đáp ứng yêu cầu về thiết bị thời tiết. ClimaVue50G2 đo nhiệt độ không khí, độ ẩm tương đối, áp suất khí quyển, lượng mưa, tốc độ gió, hướng gió, bức xạ mặt trời, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Giao tiếp được ghi nhận: SDI-12. Thông số Precipitation Resolution: 0.017 mm. Thông số Vapor Pressure Measurement Range: 0 to 47 kPa. Thông số Vapor Pressure Resolution: 0.01 kPa.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "All-in-One Weather Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 795
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "ClimaVue50G2"
+              },
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "All-in-One Weather Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ không khí",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ ẩm tương đối",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Áp suất khí quyển",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Tốc độ gió",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hướng gió",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Bức xạ mặt trời",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "precipitation_resolution",
+                "value": "0.017 mm",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 21,
+                  "source_rows": [
+                    32
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "vapor_pressure_measurement_range",
+                "value": "0 to 47 kPa",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 23,
+                  "source_rows": [
+                    37
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "vapor_pressure_resolution",
+                "value": "0.01 kPa",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 24,
+                  "source_rows": [
+                    38
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CS125_ST",
+          "model": "CS125-ST",
+          "name_en": "CS125 Present Weather Sensor -ST -25 to +60C -1",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Present Weather Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8886",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.611409951976012,
+            "hybrid": 0.015873015873015872,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "CS125-ST: dữ liệu xác nhận thiết bị thời tiết. CS125-ST đo lượng mưa, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Giao tiếp được ghi nhận: RS-232, RS-485. Thông số Operating Temperature Range: -25° to +60°C. Thông số general per operational specifications accuracy: Up to 600 m (1968.5 ft): ±8% | 600 to 10,000 m (1968.5 to 32,808.4 ft): ±10% | 10,000 to 15,000 m (32,808.4 to 49,212.6 ft): ±15% | Above 15,000 m (49,212.6 ft): ±20%. Thông số general per operational specifications resolution: 1 m | 3.28 ft.",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "Present Weather Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Present Weather Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa",
+                "raw_ref": {
+                  "file": "data/raw/CS120A_CS125_Master.json",
+                  "product_index": 2,
+                  "spec_index": 14,
+                  "source_rows": [
+                    46,
+                    47,
+                    48
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "RS-232, RS-485"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-25° to +60°C",
+                "raw_ref": {
+                  "file": "data/raw/CS120A_CS125_Master.json",
+                  "product_index": 2,
+                  "spec_index": 5,
+                  "source_rows": [
+                    12
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "general_per_operational_specifications_accuracy",
+                "value": "Up to 600 m (1968.5 ft): ±8% | 600 to 10,000 m (1968.5 to 32,808.4 ft): ±10% | 10,000 to 15,000 m (32,808.4 to 49,212.6 ft): ±15% | Above 15,000 m (49,212.6 ft): ±20%",
+                "raw_ref": {
+                  "file": "data/raw/CS120A_CS125_Master.json",
+                  "product_index": 2,
+                  "spec_index": 9,
+                  "source_rows": [
+                    21,
+                    22,
+                    23,
+                    24
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "general_per_operational_specifications_resolution",
+                "value": "1 m | 3.28 ft",
+                "raw_ref": {
+                  "file": "data/raw/CS120A_CS125_Master.json",
+                  "product_index": 2,
+                  "spec_index": 10,
+                  "source_rows": [
+                    25,
+                    26
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_52202",
+          "model": "52202",
+          "name_en": "RM Young Heated Rain Gage w/6.3 Orifice",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Precipitation Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/1700",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.602993271772506,
+            "hybrid": 0.015625,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "52202: dữ liệu xác nhận thiết bị thời tiết. 52202 đo lượng mưa, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Thông số measurement uncertainty: 2% for up to 25 mm/h (1 in./h). Thông số operating temperature range: -20°C to +50°C, heated.",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "Precipitation Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Precipitation Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "measurement_uncertainty",
+                "value": "2% for up to 25 mm/h (1 in./h)",
+                "raw_ref": {
+                  "file": "data/raw/52202.json",
+                  "product_index": 0,
+                  "spec_index": 1,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-20°C to +50°C, heated",
+                "raw_ref": {
+                  "file": "data/raw/52202.json",
+                  "product_index": 0,
+                  "spec_index": 4,
+                  "source_rows": [
+                    6
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_BAROVUE10",
+          "model": "BaroVue10",
+          "name_en": "Digital Barometer -40 to +60C, 76cm (30 Inch)",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Barometric Pressure Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/13865",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.593359235907056,
+            "hybrid": 0.015384615384615385,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "BaroVue10: dữ liệu xác nhận thiết bị thời tiết. BaroVue10 đo áp suất khí quyển, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Giao tiếp được ghi nhận: RS-232, SDI-12. Thông số calibration uncertainty: ±0.15 hPa. Thông số Resolution: 0.1 hPa. Thông số uncertainty: ±0.3 hPa at 20°C.",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "Barometric Pressure Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Barometric Pressure Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Áp suất khí quyển"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "RS-232, SDI-12"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "calibration_uncertainty",
+                "value": "±0.15 hPa",
+                "raw_ref": {
+                  "file": "data/raw/BaroVue10.json",
+                  "product_index": 0,
+                  "spec_index": 11,
+                  "source_rows": [
+                    14
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "accuracy_resolution",
+                "value": "0.1 hPa",
+                "raw_ref": {
+                  "file": "data/raw/BaroVue10.json",
+                  "product_index": 0,
+                  "spec_index": 17,
+                  "source_rows": [
+                    20
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "uncertainty",
+                "value": "±0.3 hPa at 20°C",
+                "raw_ref": {
+                  "file": "data/raw/BaroVue10.json",
+                  "product_index": 0,
+                  "spec_index": 12,
+                  "source_rows": [
+                    15
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_METSENS550_D2",
+          "model": "MetSENS550-D2",
+          "name_en": "MetSENS550-D2",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Compact Weather Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11231",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.593278929366896,
+            "hybrid": 0.015151515151515152,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "MetSENS550-D2: dữ liệu xác nhận thiết bị thời tiết. MetSENS550-D2 đo nhiệt độ không khí, độ ẩm tương đối, áp suất khí quyển, lượng mưa, tốc độ gió, hướng gió, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Giao tiếp được ghi nhận: RS-232. Thông số Operating Temperature Range: -40 to +70 °C. Thông số Air Temperature Resolution: 0.1 °C. Thông số Barometric Pressure Resolution: 0.1 hPa.",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "Compact Weather Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Compact Weather Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ không khí",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 5,
+                  "source_rows": [
+                    8
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ ẩm tương đối",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Áp suất khí quyển",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Tốc độ gió",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 5,
+                  "source_rows": [
+                    8
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hướng gió",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 5,
+                  "source_rows": [
+                    8
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "RS-232"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-40 to +70 °C",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 16,
+                  "source_rows": [
+                    20
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "air_temperature_resolution",
+                "value": "0.1 °C",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 24,
+                  "source_rows": [
+                    28
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "barometric_pressure_resolution",
+                "value": "0.1 hPa",
+                "raw_ref": {
+                  "file": "data/raw/CSI_METSENS550_D2.json",
+                  "product_index": 0,
+                  "spec_index": 30,
+                  "source_rows": [
+                    34
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_METSENS500_DS",
+          "model": "MetSENS500-DS",
+          "name_en": "MetSENS500-DS",
+          "name_vi": "MetSENS500-DS",
+          "category": "Sensors",
+          "device_type": "All-in-One Weather Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11230",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.592596725179331,
+            "hybrid": 0.014925373134328358,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "MetSENS500-DS: dữ liệu xác nhận thiết bị thời tiết. MetSENS500-DS đo nhiệt độ không khí, độ ẩm tương đối, áp suất khí quyển, tốc độ gió, hướng gió, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Giao tiếp được ghi nhận: SDI-12. Thông số Operating Temperature Range: -40 to +70 °C. Thông số Air Temperature Resolution: 0.1 °C. Thông số Barometric Pressure Resolution: 0.1 hPa.",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "All-in-One Weather Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "All-in-One Weather Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ không khí",
+                "raw_ref": {
+                  "file": "data/raw/MetSENS500.json",
+                  "product_index": 2,
+                  "spec_index": 5,
+                  "source_rows": [
+                    8
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ ẩm tương đối",
+                "raw_ref": {
+                  "file": "data/raw/MetSENS500.json",
+                  "product_index": 2,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Áp suất khí quyển",
+                "raw_ref": {
+                  "file": "data/raw/MetSENS500.json",
+                  "product_index": 2,
+                  "spec_index": 1,
+                  "source_rows": [
+                    4
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Tốc độ gió",
+                "raw_ref": {
+                  "file": "data/raw/MetSENS500.json",
+                  "product_index": 2,
+                  "spec_index": 5,
+                  "source_rows": [
+                    8
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hướng gió",
+                "raw_ref": {
+                  "file": "data/raw/MetSENS500.json",
+                  "product_index": 2,
+                  "spec_index": 5,
+                  "source_rows": [
+                    8
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "SDI-12"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-40 to +70 °C",
+                "raw_ref": {
+                  "file": "data/raw/MetSENS500.json",
+                  "product_index": 2,
+                  "spec_index": 17,
+                  "source_rows": [
+                    20
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "air_temperature_resolution",
+                "value": "0.1 °C",
+                "raw_ref": {
+                  "file": "data/raw/MetSENS500.json",
+                  "product_index": 2,
+                  "spec_index": 25,
+                  "source_rows": [
+                    28
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "barometric_pressure_resolution",
+                "value": "0.1 hPa",
+                "raw_ref": {
+                  "file": "data/raw/MetSENS500.json",
+                  "product_index": 2,
+                  "spec_index": 31,
+                  "source_rows": [
+                    34
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_TB4",
+          "model": "TB4",
+          "name_en": "TB4",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Rain Gage",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10625",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.585229917343304,
+            "hybrid": 0.014705882352941176,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "TB4: dữ liệu xác nhận thiết bị thời tiết. TB4 đo lượng mưa, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Thông số Measurement Range: 0 to 700 mm/h (0 to 27.6 in./h). Thông số Operating Temperature Range: 0 to 70 °C. Thông số measurement uncertainty low rate: ±2% @ < 250 mm/h (9.8 in./h).",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "Rain Gage"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Rain Gage"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa",
+                "raw_ref": {
+                  "file": "data/raw/CSI_TB4.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "measurement_range",
+                "value": "0 to 700 mm/h (0 to 27.6 in./h)",
+                "raw_ref": {
+                  "file": "data/raw/CSI_TB4.json",
+                  "product_index": 0,
+                  "spec_index": 5,
+                  "source_rows": [
+                    8
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "0 to 70 °C",
+                "raw_ref": {
+                  "file": "data/raw/CSI_TB4.json",
+                  "product_index": 0,
+                  "spec_index": 8,
+                  "source_rows": [
+                    11
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "measurement_uncertainty_low_rate",
+                "value": "±2% @ < 250 mm/h (9.8 in./h)",
+                "raw_ref": {
+                  "file": "data/raw/CSI_TB4.json",
+                  "product_index": 0,
+                  "spec_index": 6,
+                  "source_rows": [
+                    9
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_TE525",
+          "model": "TE525",
+          "name_en": "TE525",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Tipping Bucket Rain Gage",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/10627",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.58516301468512,
+            "hybrid": 0.014492753623188406,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "TE525: dữ liệu xác nhận thiết bị thời tiết. TE525 đo lượng mưa, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Cấu hình TE525: Field Calibration Check – Expected Tips per 16 fl oz: 100 ± 3. Thông số Operating Temperature Range: 0 to +50 °C. Thông số resolution: 1 tip. Thông số measurement accuracy: 1.0% up to 50 mm/h (2 in./h).",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "Tipping Bucket Rain Gage"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Tipping Bucket Rain Gage"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa",
+                "raw_ref": {
+                  "file": "data/raw/CSI_TE525.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "variant_configuration",
+                "value": "Field Calibration Check – Expected Tips per 16 fl oz: 100 ± 3"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "0 to +50 °C",
+                "raw_ref": {
+                  "file": "data/raw/CSI_TE525.json",
+                  "product_index": 0,
+                  "spec_index": 3,
+                  "source_rows": [
+                    6
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "resolution",
+                "value": "1 tip",
+                "raw_ref": {
+                  "file": "data/raw/CSI_TE525.json",
+                  "product_index": 0,
+                  "spec_index": 5,
+                  "source_rows": [
+                    8
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "measurement_accuracy",
+                "value": "1.0% up to 50 mm/h (2 in./h)",
+                "raw_ref": {
+                  "file": "data/raw/CSI_TE525.json",
+                  "product_index": 0,
+                  "spec_index": 8,
+                  "source_rows": [
+                    11
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_WINDSONIC1",
+          "model": "WindSonic1",
+          "name_en": "WindSonic1",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "Ultrasonic Wind Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": 0.573109541720844,
+            "hybrid": 0.014084507042253521,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "WindSonic1: dữ liệu xác nhận thiết bị thời tiết. WindSonic1 đo tốc độ gió, hướng gió, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Giao tiếp được ghi nhận: RS-232. Thông số Operating Temperature Range: -35 to +70 °C. Thông số Wind Direction Accuracy: ±3°. Thông số Wind Direction Resolution: 1°.",
+            "language": "vi",
+            "source": "rule",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "Ultrasonic Wind Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "not_applicable",
+              "model": "qwen3:4b-instruct-2507-q4_K_M"
+            },
+            "evidence": [
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "Ultrasonic Wind Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Tốc độ gió",
+                "raw_ref": {
+                  "file": "data/raw/WindSonic1.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    2
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hướng gió",
+                "raw_ref": {
+                  "file": "data/raw/WindSonic1.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    2
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "RS-232"
+              },
+              {
+                "source": "normalized_spec",
+                "field": "operating_temperature_range",
+                "value": "-35 to +70 °C",
+                "raw_ref": {
+                  "file": "data/raw/WindSonic1.json",
+                  "product_index": 0,
+                  "spec_index": 8,
+                  "source_rows": [
+                    10
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "wind_direction_accuracy",
+                "value": "±3°",
+                "raw_ref": {
+                  "file": "data/raw/WindSonic1.json",
+                  "product_index": 0,
+                  "spec_index": 21,
+                  "source_rows": [
+                    23
+                  ]
+                }
+              },
+              {
+                "source": "normalized_spec",
+                "field": "wind_direction_resolution",
+                "value": "1°",
+                "raw_ref": {
+                  "file": "data/raw/WindSonic1.json",
+                  "product_index": 0,
+                  "spec_index": 22,
+                  "source_rows": [
+                    24
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "query": "Vì sao các model này phù hợp?",
+      "context": {
+        "base_query": "Tôi cần cảm biến thời tiết hỗ trợ Modbus",
+        "previous_query": "Tôi cần cảm biến thời tiết hỗ trợ Modbus",
+        "product_ids": [
+          "CSI_CLIMAVUE40",
+          "CSI_CLIMAVUE50G2"
+        ]
+      }
+    },
+    "body": {
+      "query": "Vì sao các model này phù hợp?",
+      "resolved_query": "Tôi cần cảm biến thời tiết hỗ trợ Modbus",
+      "context_applied": true,
+      "mode": "hybrid",
+      "guidance": {
+        "text": "Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+        "language": "vi"
+      },
+      "results": [
+        {
+          "product_id": "CSI_CLIMAVUE40",
+          "model": "ClimaVue40",
+          "name_en": "Compact Digital RS-485 Modbus RTU Weather Sensor",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "All-in-One Weather Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "Theo dữ liệu sản phẩm, ClimaVue40 đáp ứng yêu cầu về thiết bị thời tiết. ClimaVue40 hỗ trợ Modbus. ClimaVue40 đo nhiệt độ không khí, độ ẩm tương đối, lượng mưa, tốc độ gió, hướng gió, cung cấp số liệu để bạn theo dõi tình trạng và cân nhắc điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "All-in-One Weather Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "Modbus",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "supported_protocols",
+                    "value": "Modbus"
+                  }
+                ]
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1938
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "ClimaVue40"
+              },
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "All-in-One Weather Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "supported_protocols",
+                "value": "Modbus"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ không khí",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ ẩm tương đối",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Tốc độ gió",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hướng gió",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 0,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product_id": "CSI_CLIMAVUE50G2",
+          "model": "ClimaVue50G2",
+          "name_en": "G2 Compact Digital SDI-12 Weather Sensor (-50 to",
+          "name_vi": null,
+          "category": "Sensors",
+          "device_type": "All-in-One Weather Sensor",
+          "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+          "matched_features": [],
+          "scores": {
+            "keyword": 0,
+            "semantic": null,
+            "hybrid": null,
+            "rerank": null
+          },
+          "explanation": {
+            "text": "ClimaVue50G2: dữ liệu xác nhận thiết bị thời tiết. Chưa có dữ liệu xác nhận hỗ trợ Modbus. ClimaVue50G2 đo nhiệt độ không khí, độ ẩm tương đối, áp suất khí quyển, lượng mưa, tốc độ gió, hướng gió, bức xạ mặt trời, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Đây là số đo lượng mưa tại điểm lắp đặt, bổ sung cho dự báo; nếu chỉ cần đo mưa, chưa có căn cứ bắt buộc mua cả trạm thời tiết. Theo dõi theo thời gian cần cấu hình ghi dữ liệu. Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+            "language": "vi",
+            "source": "llm",
+            "requirements": [
+              {
+                "label": "thiết bị thời tiết",
+                "status": "confirmed",
+                "evidence": [
+                  {
+                    "source": "product_document",
+                    "field": "taxonomy.device_type",
+                    "value": "All-in-One Weather Sensor"
+                  }
+                ]
+              },
+              {
+                "label": "Modbus",
+                "status": "unconfirmed",
+                "evidence": []
+              },
+              {
+                "label": "cấu hình lắp đặt và tương thích hệ thống",
+                "status": "unconfirmed",
+                "evidence": []
+              }
+            ],
+            "generation": {
+              "status": "accepted",
+              "model": "qwen3:4b-instruct-2507-q4_K_M",
+              "latency_ms": 1938
+            },
+            "evidence": [
+              {
+                "source": "products",
+                "field": "model",
+                "value": "ClimaVue50G2"
+              },
+              {
+                "source": "product_document",
+                "field": "taxonomy.device_type",
+                "value": "All-in-One Weather Sensor"
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Nhiệt độ không khí",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Độ ẩm tương đối",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Áp suất khí quyển",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Lượng mưa",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Tốc độ gió",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Hướng gió",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              },
+              {
+                "source": "product_document",
+                "field": "measurements",
+                "value": "Bức xạ mặt trời",
+                "raw_ref": {
+                  "file": "data/raw/ClimaVue40&52G2.json",
+                  "product_index": 1,
+                  "spec_index": 0,
+                  "source_rows": [
+                    3
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

@@ -5,7 +5,7 @@ const continuation = /^(?:and|also|with|only|does it support|do they support|can
 const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?(?:485|232)|USB|CAN[\s-]?bus|CPI|Modbus|Wi[\s‐‑–—-]?Fi)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|deg(?:rees?)?\s*C|C\b)/iu;
 
 export const hasTechnicalConstraint = (query: string): boolean => shortConstraint.test(query);
-export const isExplanationQuestion = (query: string): boolean => /\b(?:this (?:product|device)|the other one|my (?:application|requirements|query|use case)|recommended this)|(?:sản phẩm này|thiết bị này|sản phẩm còn lại|nhu cầu của tôi|yêu cầu của tôi|câu hỏi của tôi|trường hợp (?:sử dụng )?của tôi)/iu.test(query);
+export const isExplanationQuestion = (query: string): boolean => /\b(?:this (?:product|device)|these (?:models|products|devices)|the other one|my (?:application|requirements|query|use case)|recommended this)|(?:(?:các|những) (?:model|sản phẩm|thiết bị) này|sản phẩm này|thiết bị này|sản phẩm còn lại|nhu cầu của tôi|yêu cầu của tôi|câu hỏi của tôi|trường hợp (?:sử dụng )?của tôi)/iu.test(query);
 
 export interface SearchExclusions {
   protocols: string[];

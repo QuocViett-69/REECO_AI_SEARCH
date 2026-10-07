@@ -48,6 +48,49 @@
               7
             ]
           }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "volumetric_water_content_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              23
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "volumetric_water_content_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "soil_electrical_conductivity",
+      "label_en": "Soil Electrical Conductivity",
+      "label_vi": "Độ dẫn điện của đất",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              7
+            ]
+          }
         }
       ]
     },
@@ -65,6 +108,30 @@
             "spec_index": 4,
             "source_rows": [
               7
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_dielectric_permittivity_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              25
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_dielectric_permittivity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              26
             ]
           }
         }
@@ -140,6 +207,49 @@
               7
             ]
           }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "volumetric_water_content_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              23
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "volumetric_water_content_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_soil_electrical_conductivity",
+      "label_en": "Measure Soil Electrical Conductivity",
+      "label_vi": "Đo độ dẫn điện của đất",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              7
+            ]
+          }
         }
       ]
     },
@@ -157,6 +267,30 @@
             "spec_index": 4,
             "source_rows": [
               7
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_dielectric_permittivity_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              25
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_dielectric_permittivity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_SOILVUE10_5.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              26
             ]
           }
         }
@@ -211,11 +345,14 @@
       "Soil Temperature",
       "Volumetric Water Content",
       "VWC",
+      "Soil Electrical Conductivity",
+      "soil EC",
       "Dielectric Permittivity",
       "permittivity",
       "SDI-12",
       "Measure Soil Temperature",
       "Measure Volumetric Water Content",
+      "Measure Soil Electrical Conductivity",
       "Measure Dielectric Permittivity",
       "CSI_SOILVUE10_5"
     ],
@@ -225,10 +362,12 @@
       "Cảm biến độ ẩm, nhiệt độ và độ dẫn điện của đất",
       "Nhiệt độ đất",
       "Hàm lượng nước thể tích",
+      "Độ dẫn điện của đất",
       "Hằng số điện môi",
       "SDI-12",
       "Đo nhiệt độ đất",
       "Đo hàm lượng nước thể tích",
+      "Đo độ dẫn điện của đất",
       "Đo hằng số điện môi"
     ]
   }

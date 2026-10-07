@@ -16,12 +16,38 @@
     {
       "key": "temperature",
       "label_en": "Temperature",
-      "label_vi": "Nhiệt độ"
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Digital Temperature/RH Sensor w/M12 Connector w/o"
+        }
+      ]
     },
     {
       "key": "relative_humidity",
       "label_en": "Relative Humidity",
-      "label_vi": "Độ ẩm tương đối"
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Digital Temperature/RH Sensor w/M12 Connector w/o"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_operating_range",
+          "raw_ref": {
+            "file": "data/raw/HygroVue10.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              37
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -29,12 +55,38 @@
     {
       "key": "measure_temperature",
       "label_en": "Measure Temperature",
-      "label_vi": "Đo nhiệt độ"
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Digital Temperature/RH Sensor w/M12 Connector w/o"
+        }
+      ]
     },
     {
       "key": "measure_relative_humidity",
       "label_en": "Measure Relative Humidity",
-      "label_vi": "Đo độ ẩm tương đối"
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Digital Temperature/RH Sensor w/M12 Connector w/o"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_operating_range",
+          "raw_ref": {
+            "file": "data/raw/HygroVue10.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              37
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -58,6 +110,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0.001 °C",
       "raw_ref": {
         "file": "data/raw/HygroVue10.json",
         "product_index": 0,
@@ -77,6 +130,7 @@
         "unit": "% RH",
         "qualifier": null
       },
+      "value_raw": "0.001% RH",
       "raw_ref": {
         "file": "data/raw/HygroVue10.json",
         "product_index": 0,
@@ -97,6 +151,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "7 to 28 VDC",
       "raw_ref": {
         "file": "data/raw/HygroVue10.json",
         "product_index": 0,
@@ -120,6 +175,7 @@
           "unit": "oz"
         }
       },
+      "value_raw": "50 g (1.8 oz)",
       "raw_ref": {
         "file": "data/raw/HygroVue10.json",
         "product_index": 0,
@@ -144,6 +200,7 @@
         },
         "condition": "with 5 m (16.4 ft) cable"
       },
+      "value_raw": "250 g (8.8 oz) with 5 m (16.4 ft) cable",
       "raw_ref": {
         "file": "data/raw/HygroVue10.json",
         "product_index": 0,
@@ -179,14 +236,14 @@
     "Đo nhiệt độ",
     "Đo độ ẩm tương đối"
   ],
-  "search_text_en": "HygroVue10 | Digital Temperature/RH Sensor w/M12 Connector w/o | CSI_HYGROVUE10 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Temperature | Relative Humidity | Measure Temperature | Measure Relative Humidity | SDI-12 | Reported resolution: 0.001 °C | Reported resolution: 0.001 % RH | Supply voltage: 7 to 28 V DC | Sensor body weight: 50 g | Weight: 250 g | temperature measurement | RH",
-  "search_text_vi": "HygroVue10 | CSI_HYGROVUE10 | Digital Temperature/RH Sensor w/M12 Connector w/o | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ | Độ ẩm tương đối | Đo nhiệt độ | Đo độ ẩm tương đối | SDI-12 | Reported resolution: 0.001 °C | Reported resolution: 0.001 % RH | Supply voltage: 7 to 28 V DC | Sensor body weight: 50 g | Weight: 250 g",
-  "search_text": "HygroVue10 | Digital Temperature/RH Sensor w/M12 Connector w/o | CSI_HYGROVUE10 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Temperature | Relative Humidity | Measure Temperature | Measure Relative Humidity | SDI-12 | Reported resolution: 0.001 °C | Reported resolution: 0.001 % RH | Supply voltage: 7 to 28 V DC | Sensor body weight: 50 g | Weight: 250 g | temperature measurement | RH | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ | Độ ẩm tương đối | Đo nhiệt độ | Đo độ ẩm tương đối",
+  "search_text_en": "HygroVue10 | Digital Temperature/RH Sensor w/M12 Connector w/o | CSI_HYGROVUE10 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Temperature | Relative Humidity | Measure Temperature | Measure Relative Humidity | SDI-12 | Reported resolution: 0.001 °C | Reported resolution: 0.001% RH | Supply voltage: 7 to 28 VDC | Sensor body weight: 50 g (1.8 oz) | Weight: 250 g (8.8 oz) with 5 m (16.4 ft) cable | temperature measurement | RH",
+  "search_text_vi": "HygroVue10 | CSI_HYGROVUE10 | Digital Temperature/RH Sensor w/M12 Connector w/o | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ | Độ ẩm tương đối | Đo nhiệt độ | Đo độ ẩm tương đối | SDI-12 | Reported resolution: 0.001 °C | Reported resolution: 0.001% RH | Supply voltage: 7 to 28 VDC | Sensor body weight: 50 g (1.8 oz) | Weight: 250 g (8.8 oz) with 5 m (16.4 ft) cable",
+  "search_text": "HygroVue10 | Digital Temperature/RH Sensor w/M12 Connector w/o | CSI_HYGROVUE10 | Sensors | Air Temperature and Relative Humidity Sensors | Air Temperature and Relative Humidity Sensor | Temperature | Relative Humidity | Measure Temperature | Measure Relative Humidity | SDI-12 | Reported resolution: 0.001 °C | Reported resolution: 0.001% RH | Supply voltage: 7 to 28 VDC | Sensor body weight: 50 g (1.8 oz) | Weight: 250 g (8.8 oz) with 5 m (16.4 ft) cable | temperature measurement | RH | Cảm biến | Cảm biến nhiệt độ không khí và độ ẩm tương đối | Nhiệt độ | Độ ẩm tương đối | Đo nhiệt độ | Đo độ ẩm tương đối",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "f9f1a734841b0a16cff470cec9697fe758c14ee1fe869f92d0b2ba74ee3c4478"
+  "content_hash": "b05cdcfa55f560e75b57e2bceccb667e15928bf80514ec25739ba898cc7a3a9a"
 }

@@ -16,7 +16,14 @@
     {
       "key": "temperature",
       "label_en": "Temperature",
-      "label_vi": "Nhiệt độ"
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated"
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +31,14 @@
     {
       "key": "measure_temperature",
       "label_en": "Measure Temperature",
-      "label_vi": "Đo nhiệt độ"
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated"
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -46,6 +60,7 @@
         "unit": "°C",
         "qualifier": "±"
       },
+      "value_raw": "±50°C",
       "raw_ref": {
         "file": "data/raw/43347.json",
         "product_index": 0,
@@ -69,6 +84,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "0.478 cm (0.188 in.)",
       "raw_ref": {
         "file": "data/raw/43347.json",
         "product_index": 0,
@@ -97,14 +113,14 @@
     "Nhiệt độ",
     "Đo nhiệt độ"
   ],
-  "search_text_en": "43347 | RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated | CSI_43347 | Sensors | Air Temperature Sensors | Air Temperature Sensor | Temperature | Measure Temperature | Temperature Range: ± 50 °C | Probe Tip Sheath Diameter: 0.478 cm | temperature measurement",
-  "search_text_vi": "43347 | CSI_43347 | RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ | Đo nhiệt độ | Temperature Range: ± 50 °C | Probe Tip Sheath Diameter: 0.478 cm",
-  "search_text": "43347 | RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated | CSI_43347 | Sensors | Air Temperature Sensors | Air Temperature Sensor | Temperature | Measure Temperature | Temperature Range: ± 50 °C | Probe Tip Sheath Diameter: 0.478 cm | temperature measurement | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ | Đo nhiệt độ",
+  "search_text_en": "43347 | RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated | CSI_43347 | Sensors | Air Temperature Sensors | Air Temperature Sensor | Temperature | Measure Temperature | Temperature Range: ±50°C | Probe Tip Sheath Diameter: 0.478 cm (0.188 in.) | temperature measurement",
+  "search_text_vi": "43347 | CSI_43347 | RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ | Đo nhiệt độ | Temperature Range: ±50°C | Probe Tip Sheath Diameter: 0.478 cm (0.188 in.)",
+  "search_text": "43347 | RM Young 1K RTD Temperature Sensor (-50 to +50C) Half Bridge/VX 4-Wire Resistance/IX Uncalibrated Calibrated | CSI_43347 | Sensors | Air Temperature Sensors | Air Temperature Sensor | Temperature | Measure Temperature | Temperature Range: ±50°C | Probe Tip Sheath Diameter: 0.478 cm (0.188 in.) | temperature measurement | Cảm biến | Cảm biến nhiệt độ không khí | Nhiệt độ | Đo nhiệt độ",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "8968367ca3bb0008c66594e919461db410eb1ddeee8b486abb4485d3f8f68225"
+  "content_hash": "ef7e6c4fa2f9f5b97f65f856091324aac8a3cbc6f4bcc1505bd2298fd9406a64"
 }

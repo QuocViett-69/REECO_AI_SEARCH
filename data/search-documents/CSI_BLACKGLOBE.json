@@ -16,7 +16,26 @@
     {
       "key": "temperature",
       "label_en": "Temperature",
-      "label_vi": "Nhiệt độ"
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "BlackGlobe Temperature Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_BLACKGLOBE.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +43,26 @@
     {
       "key": "measure_temperature",
       "label_en": "Measure Temperature",
-      "label_vi": "Đo nhiệt độ"
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "BlackGlobe Temperature Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_BLACKGLOBE.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -86,6 +124,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-5°C to +95°C",
       "raw_ref": {
         "file": "data/raw/CSI_BLACKGLOBE.json",
         "product_index": 0,
@@ -115,14 +154,14 @@
     "Nhiệt độ",
     "Đo nhiệt độ"
   ],
-  "search_text_en": "BLACKGLOBE | BlackGlobe Temperature Sensor | CSI_BLACKGLOBE | Sensors | Air Temperature Sensors | Black Globe Temperature Sensor | Temperature | Measure Temperature | Worst-Case Accuracy: ±0.3°C from -3°C to 90°C | Worst-Case Accuracy: ±0.7°C from -5°C to 95°C | Interchangeability Error: ±0.10°C from 0°C to 70°C | Interchangeability Error: ±0.14°C at -5°C | Interchangeability Error: ±0.25°C at 85°C | Interchangeability Error: ±0.35°C at 95°C | Temperature Measurement Range: -5 to 95 °C | temperature measurement",
-  "search_text_vi": "BLACKGLOBE | CSI_BLACKGLOBE | BlackGlobe Temperature Sensor | Cảm biến | Cảm biến nhiệt độ không khí | Cảm biến nhiệt độ cầu đen | Nhiệt độ | Đo nhiệt độ | Worst-Case Accuracy: ±0.3°C from -3°C to 90°C | Worst-Case Accuracy: ±0.7°C from -5°C to 95°C | Interchangeability Error: ±0.10°C from 0°C to 70°C | Interchangeability Error: ±0.14°C at -5°C | Interchangeability Error: ±0.25°C at 85°C | Interchangeability Error: ±0.35°C at 95°C | Temperature Measurement Range: -5 to 95 °C",
-  "search_text": "BLACKGLOBE | BlackGlobe Temperature Sensor | CSI_BLACKGLOBE | Sensors | Air Temperature Sensors | Black Globe Temperature Sensor | Temperature | Measure Temperature | Worst-Case Accuracy: ±0.3°C from -3°C to 90°C | Worst-Case Accuracy: ±0.7°C from -5°C to 95°C | Interchangeability Error: ±0.10°C from 0°C to 70°C | Interchangeability Error: ±0.14°C at -5°C | Interchangeability Error: ±0.25°C at 85°C | Interchangeability Error: ±0.35°C at 95°C | Temperature Measurement Range: -5 to 95 °C | temperature measurement | Cảm biến | Cảm biến nhiệt độ không khí | Cảm biến nhiệt độ cầu đen | Nhiệt độ | Đo nhiệt độ",
+  "search_text_en": "BLACKGLOBE | BlackGlobe Temperature Sensor | CSI_BLACKGLOBE | Sensors | Air Temperature Sensors | Black Globe Temperature Sensor | Temperature | Measure Temperature | Worst-Case Accuracy: ±0.3°C from -3°C to 90°C | Worst-Case Accuracy: ±0.7°C from -5°C to 95°C | Interchangeability Error: ±0.10°C from 0°C to 70°C | Interchangeability Error: ±0.14°C at -5°C | Interchangeability Error: ±0.25°C at 85°C | Interchangeability Error: ±0.35°C at 95°C | Temperature Measurement Range: -5°C to +95°C | temperature measurement",
+  "search_text_vi": "BLACKGLOBE | CSI_BLACKGLOBE | BlackGlobe Temperature Sensor | Cảm biến | Cảm biến nhiệt độ không khí | Cảm biến nhiệt độ cầu đen | Nhiệt độ | Đo nhiệt độ | Worst-Case Accuracy: ±0.3°C from -3°C to 90°C | Worst-Case Accuracy: ±0.7°C from -5°C to 95°C | Interchangeability Error: ±0.10°C from 0°C to 70°C | Interchangeability Error: ±0.14°C at -5°C | Interchangeability Error: ±0.25°C at 85°C | Interchangeability Error: ±0.35°C at 95°C | Temperature Measurement Range: -5°C to +95°C",
+  "search_text": "BLACKGLOBE | BlackGlobe Temperature Sensor | CSI_BLACKGLOBE | Sensors | Air Temperature Sensors | Black Globe Temperature Sensor | Temperature | Measure Temperature | Worst-Case Accuracy: ±0.3°C from -3°C to 90°C | Worst-Case Accuracy: ±0.7°C from -5°C to 95°C | Interchangeability Error: ±0.10°C from 0°C to 70°C | Interchangeability Error: ±0.14°C at -5°C | Interchangeability Error: ±0.25°C at 85°C | Interchangeability Error: ±0.35°C at 95°C | Temperature Measurement Range: -5°C to +95°C | temperature measurement | Cảm biến | Cảm biến nhiệt độ không khí | Cảm biến nhiệt độ cầu đen | Nhiệt độ | Đo nhiệt độ",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "5662823f433ba3aa364c5bf96a6862429e6265306f748be1e827a832a2a65639"
+  "content_hash": "2c2d3a0b6e4ae2d799ab074b6a41354589653bfedc56fc0193d83bbc992c5e7f"
 }

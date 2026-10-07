@@ -16,12 +16,40 @@
     {
       "key": "temperature",
       "label_en": "Temperature",
-      "label_vi": "Nhiệt độ"
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internal_temperature_measurement",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 17,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "turbidity",
       "label_en": "Turbidity",
-      "label_vi": "Độ đục"
+      "label_vi": "Độ đục",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "standards",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -29,12 +57,40 @@
     {
       "key": "measure_temperature",
       "label_en": "Measure Temperature",
-      "label_vi": "Đo nhiệt độ"
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "internal_temperature_measurement",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 17,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_turbidity",
       "label_en": "Measure Turbidity",
-      "label_vi": "Đo độ đục"
+      "label_vi": "Đo độ đục",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "standards",
+          "raw_ref": {
+            "file": "data/raw/Clari10_20.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -59,6 +115,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "−2 to 40 °C",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -79,6 +136,7 @@
         "unit": "FNU",
         "qualifier": null
       },
+      "value_raw": "0 to 4000 FNU",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -98,6 +156,7 @@
         "unit": "FNU",
         "qualifier": null
       },
+      "value_raw": "0.2 FNU",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -118,6 +177,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "9.6 to 18 VDC",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -137,6 +197,7 @@
         "unit": "µA",
         "qualifier": "<"
       },
+      "value_raw": "<300 µA",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -156,6 +217,7 @@
         "unit": "mA",
         "qualifier": "<"
       },
+      "value_raw": "<35 mA",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -179,6 +241,7 @@
           "unit": "ft"
         }
       },
+      "value_raw": "30 m (100 ft)",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -202,6 +265,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "3.0 cm (1.2 in)",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -225,6 +289,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "158.76 g (0.35 lb)",
       "raw_ref": {
         "file": "data/raw/Clari10_20.json",
         "product_index": 1,
@@ -261,14 +326,14 @@
     "Đo nhiệt độ",
     "Đo độ đục"
   ],
-  "search_text_en": "ClariVue10 | ClariVUE™ 10 | CSI_CLARIVUE10 | Sensors | Turbidity Sensors | Turbidity Sensor | Temperature | Turbidity | Measure Temperature | Measure Turbidity | SDI-12 | Operating temperature range: -2 to 40 °C | Measurement range: 0 to 4000 FNU | Resolution: 0.2 FNU | Power requirements: 9.6 to 18 V DC | Power consumption – Idle: < 300 µA | Power consumption – Measurement: < 35 mA | Maximum depth: 30 m | Diameter: 3 cm | Weight: 158.76 g | temperature measurement | turbidity measurement",
-  "search_text_vi": "ClariVue10 | Cảm biến độ đục ClariVUE™ 10 | CSI_CLARIVUE10 | ClariVUE™ 10 | Cảm biến | Cảm biến độ đục | Nhiệt độ | Độ đục | Đo nhiệt độ | Đo độ đục | SDI-12 | Operating temperature range: -2 to 40 °C | Measurement range: 0 to 4000 FNU | Resolution: 0.2 FNU | Power requirements: 9.6 to 18 V DC | Power consumption – Idle: < 300 µA | Power consumption – Measurement: < 35 mA | Maximum depth: 30 m | Diameter: 3 cm | Weight: 158.76 g",
-  "search_text": "ClariVue10 | ClariVUE™ 10 | CSI_CLARIVUE10 | Sensors | Turbidity Sensors | Turbidity Sensor | Temperature | Turbidity | Measure Temperature | Measure Turbidity | SDI-12 | Operating temperature range: -2 to 40 °C | Measurement range: 0 to 4000 FNU | Resolution: 0.2 FNU | Power requirements: 9.6 to 18 V DC | Power consumption – Idle: < 300 µA | Power consumption – Measurement: < 35 mA | Maximum depth: 30 m | Diameter: 3 cm | Weight: 158.76 g | temperature measurement | turbidity measurement | Cảm biến độ đục ClariVUE™ 10 | Cảm biến | Cảm biến độ đục | Nhiệt độ | Độ đục | Đo nhiệt độ | Đo độ đục",
+  "search_text_en": "ClariVue10 | ClariVUE™ 10 | CSI_CLARIVUE10 | Sensors | Turbidity Sensors | Turbidity Sensor | Temperature | Turbidity | Measure Temperature | Measure Turbidity | SDI-12 | Operating temperature range: −2 to 40 °C | Measurement range: 0 to 4000 FNU | Resolution: 0.2 FNU | Power requirements: 9.6 to 18 VDC | Power consumption – Idle: <300 µA | Power consumption – Measurement: <35 mA | Maximum depth: 30 m (100 ft) | Diameter: 3.0 cm (1.2 in) | Weight: 158.76 g (0.35 lb) | temperature measurement | turbidity measurement",
+  "search_text_vi": "ClariVue10 | Cảm biến độ đục ClariVUE™ 10 | CSI_CLARIVUE10 | ClariVUE™ 10 | Cảm biến | Cảm biến độ đục | Nhiệt độ | Độ đục | Đo nhiệt độ | Đo độ đục | SDI-12 | Operating temperature range: −2 to 40 °C | Measurement range: 0 to 4000 FNU | Resolution: 0.2 FNU | Power requirements: 9.6 to 18 VDC | Power consumption – Idle: <300 µA | Power consumption – Measurement: <35 mA | Maximum depth: 30 m (100 ft) | Diameter: 3.0 cm (1.2 in) | Weight: 158.76 g (0.35 lb)",
+  "search_text": "ClariVue10 | ClariVUE™ 10 | CSI_CLARIVUE10 | Sensors | Turbidity Sensors | Turbidity Sensor | Temperature | Turbidity | Measure Temperature | Measure Turbidity | SDI-12 | Operating temperature range: −2 to 40 °C | Measurement range: 0 to 4000 FNU | Resolution: 0.2 FNU | Power requirements: 9.6 to 18 VDC | Power consumption – Idle: <300 µA | Power consumption – Measurement: <35 mA | Maximum depth: 30 m (100 ft) | Diameter: 3.0 cm (1.2 in) | Weight: 158.76 g (0.35 lb) | temperature measurement | turbidity measurement | Cảm biến độ đục ClariVUE™ 10 | Cảm biến | Cảm biến độ đục | Nhiệt độ | Độ đục | Đo nhiệt độ | Đo độ đục",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "b8c0fdb573a4906f0ed3a4402882182f5b822ed764fe107337179e53f962331c"
+  "content_hash": "e338f252bab606748952cf80e0c53d46723b6017eeb2ce20ae328fa25d43dbba"
 }

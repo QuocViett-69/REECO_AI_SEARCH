@@ -43,6 +43,46 @@
   ],
   "important_specifications": [
     {
+      "canonical_key": "differential_input_channels",
+      "name": "Differential Input Channels",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 8,
+        "unit": null,
+        "qualifier": null
+      },
+      "value_raw": "8",
+      "raw_ref": {
+        "file": "data/raw/CSI_VOLT108_XD.json",
+        "product_index": 0,
+        "spec_index": 6,
+        "source_rows": [
+          8
+        ]
+      }
+    },
+    {
+      "canonical_key": "single_ended_input_channels",
+      "name": "Single-Ended Input Channels",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "number",
+        "value": 16,
+        "unit": null,
+        "qualifier": null
+      },
+      "value_raw": "16",
+      "raw_ref": {
+        "file": "data/raw/CSI_VOLT108_XD.json",
+        "product_index": 0,
+        "spec_index": 7,
+        "source_rows": [
+          9
+        ]
+      }
+    },
+    {
       "canonical_key": "voltage_per_current_excitation_channels",
       "name": "Voltage / Current Excitation Channels",
       "quantity_kind": "voltage",
@@ -52,6 +92,7 @@
         "unit": null,
         "qualifier": null
       },
+      "value_raw": "2",
       "raw_ref": {
         "file": "data/raw/CSI_VOLT108_XD.json",
         "product_index": 0,
@@ -71,6 +112,7 @@
         "unit": null,
         "qualifier": null
       },
+      "value_raw": "2",
       "raw_ref": {
         "file": "data/raw/CSI_VOLT108_XD.json",
         "product_index": 0,
@@ -91,6 +133,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "9.6 to 32 Vdc",
       "raw_ref": {
         "file": "data/raw/CSI_VOLT108_XD.json",
         "product_index": 0,
@@ -110,6 +153,7 @@
         "unit": "mA",
         "qualifier": "<"
       },
+      "value_raw": "<1 mA",
       "raw_ref": {
         "file": "data/raw/CSI_VOLT108_XD.json",
         "product_index": 0,
@@ -129,6 +173,7 @@
         "unit": "mA",
         "qualifier": null
       },
+      "value_raw": "20 mA",
       "raw_ref": {
         "file": "data/raw/CSI_VOLT108_XD.json",
         "product_index": 0,
@@ -148,6 +193,7 @@
         "unit": "mA",
         "qualifier": null
       },
+      "value_raw": "67 mA",
       "raw_ref": {
         "file": "data/raw/CSI_VOLT108_XD.json",
         "product_index": 0,
@@ -171,6 +217,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "0.8 kg (1.75 lb)",
       "raw_ref": {
         "file": "data/raw/CSI_VOLT108_XD.json",
         "product_index": 0,
@@ -199,14 +246,14 @@
     "RJ45",
     "USB"
   ],
-  "search_text_en": "VOLT108-XD | Granite™ Volt 108 Extended Duty (-XD) | CSI_VOLT108_XD | Granite™ Volt 108 | Sensors | Analog Input Modules | Analog Input Module | RJ45 | USB | Product Variant: Extended Duty (-XD) | Voltage / Current Excitation Channels: 2 | Number of Voltage / Current Excitation Outputs: 2 | Power Requirements: 9.6 to 32 V DC | Typical Current Drain – Sleep: < 1 mA | Typical Current Drain – Active 20 Hz Scan: 20 mA | Typical Current Drain – Active 1 kHz Scan: 67 mA | Weight: 0.8 kg",
-  "search_text_vi": "VOLT108-XD | CSI_VOLT108_XD | Granite™ Volt 108 Extended Duty (-XD) | Granite™ Volt 108 | Cảm biến | Mô-đun đầu vào tương tự | RJ45 | USB | Product Variant: Extended Duty (-XD) | Voltage / Current Excitation Channels: 2 | Number of Voltage / Current Excitation Outputs: 2 | Power Requirements: 9.6 to 32 V DC | Typical Current Drain – Sleep: < 1 mA | Typical Current Drain – Active 20 Hz Scan: 20 mA | Typical Current Drain – Active 1 kHz Scan: 67 mA | Weight: 0.8 kg",
-  "search_text": "VOLT108-XD | Granite™ Volt 108 Extended Duty (-XD) | CSI_VOLT108_XD | Granite™ Volt 108 | Sensors | Analog Input Modules | Analog Input Module | RJ45 | USB | Product Variant: Extended Duty (-XD) | Voltage / Current Excitation Channels: 2 | Number of Voltage / Current Excitation Outputs: 2 | Power Requirements: 9.6 to 32 V DC | Typical Current Drain – Sleep: < 1 mA | Typical Current Drain – Active 20 Hz Scan: 20 mA | Typical Current Drain – Active 1 kHz Scan: 67 mA | Weight: 0.8 kg | Cảm biến | Mô-đun đầu vào tương tự",
+  "search_text_en": "VOLT108-XD | Granite™ Volt 108 Extended Duty (-XD) | CSI_VOLT108_XD | Granite™ Volt 108 | Sensors | Analog Input Modules | Analog Input Module | RJ45 | USB | Product Variant: Extended Duty (-XD) | Differential Input Channels: 8 | Single-Ended Input Channels: 16 | Voltage / Current Excitation Channels: 2 | Number of Voltage / Current Excitation Outputs: 2 | Power Requirements: 9.6 to 32 Vdc | Typical Current Drain – Sleep: <1 mA | Typical Current Drain – Active 20 Hz Scan: 20 mA | Typical Current Drain – Active 1 kHz Scan: 67 mA | Weight: 0.8 kg (1.75 lb)",
+  "search_text_vi": "VOLT108-XD | CSI_VOLT108_XD | Granite™ Volt 108 Extended Duty (-XD) | Granite™ Volt 108 | Cảm biến | Mô-đun đầu vào tương tự | RJ45 | USB | Product Variant: Extended Duty (-XD) | Differential Input Channels: 8 | Single-Ended Input Channels: 16 | Voltage / Current Excitation Channels: 2 | Number of Voltage / Current Excitation Outputs: 2 | Power Requirements: 9.6 to 32 Vdc | Typical Current Drain – Sleep: <1 mA | Typical Current Drain – Active 20 Hz Scan: 20 mA | Typical Current Drain – Active 1 kHz Scan: 67 mA | Weight: 0.8 kg (1.75 lb)",
+  "search_text": "VOLT108-XD | Granite™ Volt 108 Extended Duty (-XD) | CSI_VOLT108_XD | Granite™ Volt 108 | Sensors | Analog Input Modules | Analog Input Module | RJ45 | USB | Product Variant: Extended Duty (-XD) | Differential Input Channels: 8 | Single-Ended Input Channels: 16 | Voltage / Current Excitation Channels: 2 | Number of Voltage / Current Excitation Outputs: 2 | Power Requirements: 9.6 to 32 Vdc | Typical Current Drain – Sleep: <1 mA | Typical Current Drain – Active 20 Hz Scan: 20 mA | Typical Current Drain – Active 1 kHz Scan: 67 mA | Weight: 0.8 kg (1.75 lb) | Cảm biến | Mô-đun đầu vào tương tự",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "d55c83162aef1d29c2bdbd013a4db1ecc969bf88d687090a6b6a502dbb168500"
+  "content_hash": "5b7d9ea81b8bfc7efb57bb1f688d08b599f42bba22d674f07633d03bb1063626"
 }

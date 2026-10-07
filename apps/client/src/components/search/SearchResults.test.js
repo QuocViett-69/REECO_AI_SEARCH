@@ -63,6 +63,11 @@ test('keeps the overview brief and reveals the complete explanation with evidenc
   const results = ['ClimaVue40', 'ClimaVue50G2', '52202'].map(model => ({
     product_id: model, model, name: model,
     explanation: { text: `${first} ${caveat}`, language: 'vi', source: 'rule',
+      requirements: [
+        { label: 'Lượng mưa', status: 'confirmed', evidence: [] },
+        { label: 'IP68', status: 'unconfirmed', evidence: [] },
+        { label: 'Modbus', status: 'mismatch', evidence: [] },
+      ],
       evidence: [{ field: 'measurements', value: 'Lượng mưa', source: 'product_document' }] },
   }));
   try {
@@ -79,6 +84,11 @@ test('keeps the overview brief and reveals the complete explanation with evidenc
     expect(panel.querySelector('.res-fit__summary').textContent).toBe(first + caveat);
     expect(panel.querySelector('.res-fit__evidence').open).toBe(false);
     expect(panel.textContent).toContain('Đại lượng đo: Lượng mưa');
+    expect(panel.textContent).toContain('Yêu cầu đã xác nhận');
+    expect(panel.textContent).toContain('Chưa được xác nhận');
+    expect(panel.textContent).toContain('Không đáp ứng theo dữ liệu');
+    expect(panel.textContent).toContain('IP68');
+    expect(panel.textContent).toContain('Modbus');
     await act(async () => panel.querySelector('.res-fit__close').click());
     expect(container.querySelector('.res-fit')).toBeNull();
     expect(button.getAttribute('aria-expanded')).toBe('false');

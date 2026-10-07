@@ -12,9 +12,49 @@
     "device_type": "Water-Level Sensor",
     "device_type_key": "water_level_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "water_level_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS456.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "water_level_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS456.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "supported_protocols": [
     "RS-232",
     "SDI-12"
@@ -232,6 +272,7 @@
         "unit": "°C",
         "qualifier": "±"
       },
+      "value_raw": "±0.2°C",
       "raw_ref": {
         "file": "data/raw/CSI_CS456.json",
         "product_index": 0,
@@ -251,6 +292,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0.006°C",
       "raw_ref": {
         "file": "data/raw/CSI_CS456.json",
         "product_index": 0,
@@ -271,6 +313,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "6 to 18 Vdc",
       "raw_ref": {
         "file": "data/raw/CSI_CS456.json",
         "product_index": 0,
@@ -294,6 +337,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "21.34 mm (0.84 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_CS456.json",
         "product_index": 0,
@@ -309,8 +353,11 @@
     "Sensors",
     "Water Level, Stage, and Flow Sensors",
     "Water-Level Sensor",
+    "Water Level",
+    "stage",
     "RS-232",
     "SDI-12",
+    "Measure Water Level",
     "CSI_CS456"
   ],
   "search_keywords_vi": [
@@ -318,17 +365,19 @@
     "Cảm biến",
     "Cảm biến mực nước, cao trình và lưu lượng",
     "Cảm biến mực nước",
+    "Mực nước",
     "RS-232",
-    "SDI-12"
+    "SDI-12",
+    "Đo mực nước"
   ],
-  "search_text_en": "CS456 | CSI_CS456 | CS456-HA | CS456-WN | CS456-NN | Sensors | Water Level, Stage, and Flow Sensors | Water-Level Sensor | RS-232 | SDI-12 | Output Options: SDI-12 (version 1.3) 1200 bps RS-232 9600 bps | NPT Fitting: 1/4-in. NPS | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting 2.3 cm (0.9 in.) Distance from black line etched on housing to end of standard nose cone | 0 to 2.0 m (6.7 ft): 0 to 20 kPa The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. 0 to 2.9 psig The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | High Accuracy Option: ±0.05% full-scale-range TEB The high accuracy (±0.05% full-scale range) option is not available for the 0 to 2.9 psig range option. | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | NPT Fitting: 2.72 cm (1.07 in.) | 0 to 2.0 m (6.7 ft): null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: null | NPT Fitting: null | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone null null null null | Distance: null null 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting null null | Standard & Weighted Nose Cone: null | Temperature Accuracy: ± 0.2 °C | Worst-Case Temperature Resolution: 0.006 °C | Power Requirements: 6 to 18 V DC | Diameter: 21.34 mm",
-  "search_text_vi": "CS456 | CSI_CS456 | CS456-HA | CS456-WN | CS456-NN | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Cảm biến mực nước | RS-232 | SDI-12 | Output Options: SDI-12 (version 1.3) 1200 bps RS-232 9600 bps | NPT Fitting: 1/4-in. NPS | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting 2.3 cm (0.9 in.) Distance from black line etched on housing to end of standard nose cone | 0 to 2.0 m (6.7 ft): 0 to 20 kPa The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. 0 to 2.9 psig The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | High Accuracy Option: ±0.05% full-scale-range TEB The high accuracy (±0.05% full-scale range) option is not available for the 0 to 2.9 psig range option. | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | NPT Fitting: 2.72 cm (1.07 in.) | 0 to 2.0 m (6.7 ft): null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: null | NPT Fitting: null | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone null null null null | Distance: null null 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting null null | Standard & Weighted Nose Cone: null | Temperature Accuracy: ± 0.2 °C | Worst-Case Temperature Resolution: 0.006 °C | Power Requirements: 6 to 18 V DC | Diameter: 21.34 mm",
-  "search_text": "CS456 | CSI_CS456 | CS456-HA | CS456-WN | CS456-NN | Sensors | Water Level, Stage, and Flow Sensors | Water-Level Sensor | RS-232 | SDI-12 | Output Options: SDI-12 (version 1.3) 1200 bps RS-232 9600 bps | NPT Fitting: 1/4-in. NPS | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting 2.3 cm (0.9 in.) Distance from black line etched on housing to end of standard nose cone | 0 to 2.0 m (6.7 ft): 0 to 20 kPa The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. 0 to 2.9 psig The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | High Accuracy Option: ±0.05% full-scale-range TEB The high accuracy (±0.05% full-scale range) option is not available for the 0 to 2.9 psig range option. | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | NPT Fitting: 2.72 cm (1.07 in.) | 0 to 2.0 m (6.7 ft): null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: null | NPT Fitting: null | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone null null null null | Distance: null null 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting null null | Standard & Weighted Nose Cone: null | Temperature Accuracy: ± 0.2 °C | Worst-Case Temperature Resolution: 0.006 °C | Power Requirements: 6 to 18 V DC | Diameter: 21.34 mm | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Cảm biến mực nước",
+  "search_text_en": "CS456 | CSI_CS456 | CS456-HA | CS456-WN | CS456-NN | Sensors | Water Level, Stage, and Flow Sensors | Water-Level Sensor | Water Level | Measure Water Level | RS-232 | SDI-12 | Output Options: SDI-12 (version 1.3) 1200 bps RS-232 9600 bps | NPT Fitting: 1/4-in. NPS | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting 2.3 cm (0.9 in.) Distance from black line etched on housing to end of standard nose cone | 0 to 2.0 m (6.7 ft): 0 to 20 kPa The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. 0 to 2.9 psig The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | High Accuracy Option: ±0.05% full-scale-range TEB The high accuracy (±0.05% full-scale range) option is not available for the 0 to 2.9 psig range option. | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | NPT Fitting: 2.72 cm (1.07 in.) | 0 to 2.0 m (6.7 ft): null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: null | NPT Fitting: null | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone null null null null | Distance: null null 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting null null | Standard & Weighted Nose Cone: null | Temperature Accuracy: ±0.2°C | Worst-Case Temperature Resolution: 0.006°C | Power Requirements: 6 to 18 Vdc | Diameter: 21.34 mm (0.84 in.) | stage",
+  "search_text_vi": "CS456 | CSI_CS456 | CS456-HA | CS456-WN | CS456-NN | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Cảm biến mực nước | Mực nước | Đo mực nước | RS-232 | SDI-12 | Output Options: SDI-12 (version 1.3) 1200 bps RS-232 9600 bps | NPT Fitting: 1/4-in. NPS | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting 2.3 cm (0.9 in.) Distance from black line etched on housing to end of standard nose cone | 0 to 2.0 m (6.7 ft): 0 to 20 kPa The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. 0 to 2.9 psig The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | High Accuracy Option: ±0.05% full-scale-range TEB The high accuracy (±0.05% full-scale range) option is not available for the 0 to 2.9 psig range option. | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | NPT Fitting: 2.72 cm (1.07 in.) | 0 to 2.0 m (6.7 ft): null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: null | NPT Fitting: null | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone null null null null | Distance: null null 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting null null | Standard & Weighted Nose Cone: null | Temperature Accuracy: ±0.2°C | Worst-Case Temperature Resolution: 0.006°C | Power Requirements: 6 to 18 Vdc | Diameter: 21.34 mm (0.84 in.)",
+  "search_text": "CS456 | CSI_CS456 | CS456-HA | CS456-WN | CS456-NN | Sensors | Water Level, Stage, and Flow Sensors | Water-Level Sensor | Water Level | Measure Water Level | RS-232 | SDI-12 | Output Options: SDI-12 (version 1.3) 1200 bps RS-232 9600 bps | NPT Fitting: 1/4-in. NPS | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting 2.3 cm (0.9 in.) Distance from black line etched on housing to end of standard nose cone | 0 to 2.0 m (6.7 ft): 0 to 20 kPa The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. 0 to 2.9 psig The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: ±0.1% full-scale-range TEB | High Accuracy Option: ±0.05% full-scale-range TEB The high accuracy (±0.05% full-scale range) option is not available for the 0 to 2.9 psig range option. | Standard & Weighted Nose Cone: 0.653 cm (0.257 in.) | NPT Fitting: 2.72 cm (1.07 in.) | 0 to 2.0 m (6.7 ft): null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. null The high accuracy (±0.05% FS) option is not available for the 0 to 2.9 psig range option. | Standard Accuracy Option: null | NPT Fitting: null | Distance: 9.9 cm (3.9 in.) Distance from black line etched on housing to end of weighted nose cone null null null null | Distance: null null 2.54 cm (1 in.) Distance from black line etched on housing to end of NPT fitting null null | Standard & Weighted Nose Cone: null | Temperature Accuracy: ±0.2°C | Worst-Case Temperature Resolution: 0.006°C | Power Requirements: 6 to 18 Vdc | Diameter: 21.34 mm (0.84 in.) | stage | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Cảm biến mực nước | Mực nước | Đo mực nước",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "031632c3e58163ecbdb00f240357d43643732f5a346b8d5cb189ccb0711551b3"
+  "content_hash": "6221d26fef65e9ce4c7565c8dc46489c2a5a9741d0e2feb40cbfe794bbf1850c"
 }

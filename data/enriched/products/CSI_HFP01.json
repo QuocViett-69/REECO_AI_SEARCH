@@ -12,10 +12,36 @@
     "device_type": "Heat Flux Plate",
     "device_type_key": "heat_flux_plate"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "soil_heat_flux",
+      "label_en": "Soil Heat Flux",
+      "label_vi": "Thông lượng nhiệt đất",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "HFP01 Soil Heat Flux Plate"
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_soil_heat_flux",
+      "label_en": "Measure Soil Heat Flux",
+      "label_vi": "Đo thông lượng nhiệt đất",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "HFP01 Soil Heat Flux Plate"
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "HFP01",
@@ -61,13 +87,17 @@
       "Sensors",
       "Soil Sensors",
       "Heat Flux Plate",
+      "Soil Heat Flux",
+      "Measure Soil Heat Flux",
       "CSI_HFP01"
     ],
     "vi": [
       "HFP01",
       "Cảm biến",
       "Cảm biến đất",
-      "Tấm đo thông lượng nhiệt"
+      "Tấm đo thông lượng nhiệt",
+      "Thông lượng nhiệt đất",
+      "Đo thông lượng nhiệt đất"
     ]
   }
 }

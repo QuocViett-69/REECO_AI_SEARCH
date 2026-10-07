@@ -16,7 +16,124 @@
     {
       "key": "wind_speed",
       "label_en": "Wind Speed",
-      "label_vi": "Tốc độ gió"
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_range",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              25
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_accuracy",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              26
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              27
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "wind_direction",
+      "label_en": "Wind Direction",
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              22
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_accuracy",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              23
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +141,124 @@
     {
       "key": "measure_wind_speed",
       "label_en": "Measure Wind Speed",
-      "label_vi": "Đo tốc độ gió"
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_range",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              25
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_accuracy",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              26
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              27
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_wind_direction",
+      "label_en": "Measure Wind Direction",
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              2
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              22
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_accuracy",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              23
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/WindSonic1.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              24
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -56,12 +290,33 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-35 to +70 °C",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
         "spec_index": 8,
         "source_rows": [
           10
+        ]
+      }
+    },
+    {
+      "canonical_key": "output_signal",
+      "name": "Output Signal",
+      "quantity_kind": null,
+      "normalized_value": {
+        "type": "protocol",
+        "values": [
+          "RS-232"
+        ]
+      },
+      "value_raw": "RS-232",
+      "raw_ref": {
+        "file": "data/raw/WindSonic1.json",
+        "product_index": 0,
+        "spec_index": 12,
+        "source_rows": [
+          14
         ]
       }
     },
@@ -81,6 +336,7 @@
         },
         "qualifier": "<"
       },
+      "value_raw": "<5% to 100% RH",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -101,6 +357,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +80 °C",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -121,6 +378,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0 to 60 m/s",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -140,6 +398,7 @@
         "unit": "°",
         "qualifier": "±"
       },
+      "value_raw": "±3°",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -159,6 +418,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "1°",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -178,6 +438,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0.01 m/s",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -198,6 +459,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "9 to 30 Vdc",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -217,6 +479,7 @@
         "unit": "Hz",
         "qualifier": null
       },
+      "value_raw": "1 Hz",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -240,6 +503,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "14.2 cm (5.6 in)",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -263,6 +527,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "0.5 kg (1.1 lb)",
       "raw_ref": {
         "file": "data/raw/WindSonic1.json",
         "product_index": 0,
@@ -279,8 +544,10 @@
     "Wind Sensors",
     "Ultrasonic Wind Sensor",
     "Wind Speed",
+    "Wind Direction",
     "RS-232",
     "Measure Wind Speed",
+    "Measure Wind Direction",
     "CSI_WINDSONIC1"
   ],
   "search_keywords_vi": [
@@ -289,17 +556,19 @@
     "Cảm biến gió",
     "Cảm biến gió siêu âm",
     "Tốc độ gió",
+    "Hướng gió",
     "RS-232",
-    "Đo tốc độ gió"
+    "Đo tốc độ gió",
+    "Đo hướng gió"
   ],
-  "search_text_en": "WindSonic1 | CSI_WINDSONIC1 | Sensors | Wind Sensors | Ultrasonic Wind Sensor | Wind Speed | Measure Wind Speed | RS-232 | Operating Temperature Range: -35 to 70 °C | Operating Humidity Range: 5 % to 100 % RH | Storage Temperature Range: -40 to 80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ± 3 ° | Wind Direction Resolution: 1 ° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 V DC | Default Output Frequency: 1 Hz | Diameter: 14.2 cm | Weight: 0.5 kg",
-  "search_text_vi": "WindSonic1 | CSI_WINDSONIC1 | Cảm biến | Cảm biến gió | Cảm biến gió siêu âm | Tốc độ gió | Đo tốc độ gió | RS-232 | Operating Temperature Range: -35 to 70 °C | Operating Humidity Range: 5 % to 100 % RH | Storage Temperature Range: -40 to 80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ± 3 ° | Wind Direction Resolution: 1 ° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 V DC | Default Output Frequency: 1 Hz | Diameter: 14.2 cm | Weight: 0.5 kg",
-  "search_text": "WindSonic1 | CSI_WINDSONIC1 | Sensors | Wind Sensors | Ultrasonic Wind Sensor | Wind Speed | Measure Wind Speed | RS-232 | Operating Temperature Range: -35 to 70 °C | Operating Humidity Range: 5 % to 100 % RH | Storage Temperature Range: -40 to 80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ± 3 ° | Wind Direction Resolution: 1 ° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 V DC | Default Output Frequency: 1 Hz | Diameter: 14.2 cm | Weight: 0.5 kg | Cảm biến | Cảm biến gió | Cảm biến gió siêu âm | Tốc độ gió | Đo tốc độ gió",
+  "search_text_en": "WindSonic1 | CSI_WINDSONIC1 | Sensors | Wind Sensors | Ultrasonic Wind Sensor | Wind Speed | Wind Direction | Measure Wind Speed | Measure Wind Direction | RS-232 | Operating Temperature Range: -35 to +70 °C | Output Signal: RS-232 | Operating Humidity Range: <5% to 100% RH | Storage Temperature Range: -40 to +80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ±3° | Wind Direction Resolution: 1° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 Vdc | Default Output Frequency: 1 Hz | Diameter: 14.2 cm (5.6 in) | Weight: 0.5 kg (1.1 lb)",
+  "search_text_vi": "WindSonic1 | CSI_WINDSONIC1 | Cảm biến | Cảm biến gió | Cảm biến gió siêu âm | Tốc độ gió | Hướng gió | Đo tốc độ gió | Đo hướng gió | RS-232 | Operating Temperature Range: -35 to +70 °C | Output Signal: RS-232 | Operating Humidity Range: <5% to 100% RH | Storage Temperature Range: -40 to +80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ±3° | Wind Direction Resolution: 1° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 Vdc | Default Output Frequency: 1 Hz | Diameter: 14.2 cm (5.6 in) | Weight: 0.5 kg (1.1 lb)",
+  "search_text": "WindSonic1 | CSI_WINDSONIC1 | Sensors | Wind Sensors | Ultrasonic Wind Sensor | Wind Speed | Wind Direction | Measure Wind Speed | Measure Wind Direction | RS-232 | Operating Temperature Range: -35 to +70 °C | Output Signal: RS-232 | Operating Humidity Range: <5% to 100% RH | Storage Temperature Range: -40 to +80 °C | Wind Speed Range: 0 to 60 m/s | Wind Direction Accuracy: ±3° | Wind Direction Resolution: 1° | Wind Speed Resolution: 0.01 m/s | Input Voltage: 9 to 30 Vdc | Default Output Frequency: 1 Hz | Diameter: 14.2 cm (5.6 in) | Weight: 0.5 kg (1.1 lb) | Cảm biến | Cảm biến gió | Cảm biến gió siêu âm | Tốc độ gió | Hướng gió | Đo tốc độ gió | Đo hướng gió",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "3c8f549d3cffc3a2ebe0995e64b4c5ab878b0f06b52514dadb4fa6cfce86967e"
+  "content_hash": "bad06e5b9ab0678bb8f7921e898a8d16447952f2da333511f71e9f063a6d56a2"
 }

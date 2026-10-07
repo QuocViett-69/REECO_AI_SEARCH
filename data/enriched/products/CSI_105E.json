@@ -12,10 +12,36 @@
     "device_type": "Soil Temperature Sensor",
     "device_type_key": "soil_temperature_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "soil_temperature",
+      "label_en": "Soil Temperature",
+      "label_vi": "Nhiệt độ đất",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Type E Thermocouple Burial Probe"
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_soil_temperature",
+      "label_en": "Measure Soil Temperature",
+      "label_vi": "Đo nhiệt độ đất",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Type E Thermocouple Burial Probe"
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "105E",
@@ -61,13 +87,17 @@
       "Sensors",
       "Temperature Sensors (Air/Soil/Water)",
       "Soil Temperature Sensor",
+      "Soil Temperature",
+      "Measure Soil Temperature",
       "CSI_105E"
     ],
     "vi": [
       "105E",
       "Cảm biến",
       "Cảm biến nhiệt độ không khí, đất và nước",
-      "Cảm biến nhiệt độ đất"
+      "Cảm biến nhiệt độ đất",
+      "Nhiệt độ đất",
+      "Đo nhiệt độ đất"
     ]
   }
 }

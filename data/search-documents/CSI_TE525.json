@@ -12,9 +12,49 @@
     "device_type": "Tipping Bucket Rain Gage",
     "device_type_key": "tipping_bucket_rain_gage"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_TE525.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_TE525.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "supported_protocols": [],
   "unsupported_protocols": [],
   "aliases": [
@@ -211,6 +251,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0 to +50 °C",
       "raw_ref": {
         "file": "data/raw/CSI_TE525.json",
         "product_index": 0,
@@ -231,6 +272,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +70 °C",
       "raw_ref": {
         "file": "data/raw/CSI_TE525.json",
         "product_index": 0,
@@ -254,6 +296,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "15.4 cm (6.06 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_TE525.json",
         "product_index": 0,
@@ -277,6 +320,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "24.1 cm (9.5 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_TE525.json",
         "product_index": 0,
@@ -300,6 +344,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "0.9 kg (2 lb)",
       "raw_ref": {
         "file": "data/raw/CSI_TE525.json",
         "product_index": 0,
@@ -315,22 +360,27 @@
     "Sensors",
     "Precipitation Sensors",
     "Tipping Bucket Rain Gage",
+    "Precipitation",
+    "rainfall",
+    "Measure Precipitation",
     "CSI_TE525"
   ],
   "search_keywords_vi": [
     "TE525",
     "Cảm biến",
     "Cảm biến lượng mưa",
-    "Cảm biến mưa gàu lật"
+    "Cảm biến mưa gàu lật",
+    "Lượng mưa",
+    "Đo lượng mưa"
   ],
-  "search_text_en": "TE525 | CSI_TE525 | TE525WS | TE525MM | Sensors | Precipitation Sensors | Tipping Bucket Rain Gage | Product Type: Tipping Bucket Rain Gage | Volume per Tip: 4.73 ml/tip (0.16 fl. oz/tip) | Rainfall per Tip: 0.01 in. (0.254 mm) | Funnel Collector Diameter: 15.4 cm (6.06 in.) | Height: 24.1 cm (9.5 in.) | Tipping Bucket Weight: 0.9 kg (2 lb) | CS705 Snowfall Adapter Compatibility: No direct compatibility | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Field Calibration Check – Expected Tips per 16 fl oz: 100 ± 3 | Product Type: Tipping Bucket Rain Gage with 8 in. Orifice | Volume per Tip: 8.24 ml/tip (0.28 fl. oz/tip) | Funnel Collector Diameter: 20.3 cm (8 in.) | Height: 26.7 cm (10.5 in.) | Tipping Bucket Weight: 1.0 kg (2.2 lb) | CS705 Snowfall Adapter Compatibility: Directly compatible | Field Calibration Check – Expected Tips per 16 fl oz: 57 ± 2 | Product Type: Metric Tipping Bucket Rain Gage | Rainfall per Tip: 0.1 mm (0.004 in.) | Funnel Collector Diameter: 24.5 cm (9.7 in.) | Height: 29.2 cm (11.5 in.) | Tipping Bucket Weight: 1.1 kg (2.4 lb) | Rainfall Multiplier – Inches: 0.00394 | Rainfall Multiplier – Millimeters: 0.1 | Operating Temperature Range: 0 to 50 °C | Storage Temperature Range: -40 to 70 °C | Funnel Collector Diameter: 15.4 cm | Height: 24.1 cm | Tipping Bucket Weight: 0.9 kg",
-  "search_text_vi": "TE525 | CSI_TE525 | TE525WS | TE525MM | Cảm biến | Cảm biến lượng mưa | Cảm biến mưa gàu lật | Product Type: Tipping Bucket Rain Gage | Volume per Tip: 4.73 ml/tip (0.16 fl. oz/tip) | Rainfall per Tip: 0.01 in. (0.254 mm) | Funnel Collector Diameter: 15.4 cm (6.06 in.) | Height: 24.1 cm (9.5 in.) | Tipping Bucket Weight: 0.9 kg (2 lb) | CS705 Snowfall Adapter Compatibility: No direct compatibility | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Field Calibration Check – Expected Tips per 16 fl oz: 100 ± 3 | Product Type: Tipping Bucket Rain Gage with 8 in. Orifice | Volume per Tip: 8.24 ml/tip (0.28 fl. oz/tip) | Funnel Collector Diameter: 20.3 cm (8 in.) | Height: 26.7 cm (10.5 in.) | Tipping Bucket Weight: 1.0 kg (2.2 lb) | CS705 Snowfall Adapter Compatibility: Directly compatible | Field Calibration Check – Expected Tips per 16 fl oz: 57 ± 2 | Product Type: Metric Tipping Bucket Rain Gage | Rainfall per Tip: 0.1 mm (0.004 in.) | Funnel Collector Diameter: 24.5 cm (9.7 in.) | Height: 29.2 cm (11.5 in.) | Tipping Bucket Weight: 1.1 kg (2.4 lb) | Rainfall Multiplier – Inches: 0.00394 | Rainfall Multiplier – Millimeters: 0.1 | Operating Temperature Range: 0 to 50 °C | Storage Temperature Range: -40 to 70 °C | Funnel Collector Diameter: 15.4 cm | Height: 24.1 cm | Tipping Bucket Weight: 0.9 kg",
-  "search_text": "TE525 | CSI_TE525 | TE525WS | TE525MM | Sensors | Precipitation Sensors | Tipping Bucket Rain Gage | Product Type: Tipping Bucket Rain Gage | Volume per Tip: 4.73 ml/tip (0.16 fl. oz/tip) | Rainfall per Tip: 0.01 in. (0.254 mm) | Funnel Collector Diameter: 15.4 cm (6.06 in.) | Height: 24.1 cm (9.5 in.) | Tipping Bucket Weight: 0.9 kg (2 lb) | CS705 Snowfall Adapter Compatibility: No direct compatibility | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Field Calibration Check – Expected Tips per 16 fl oz: 100 ± 3 | Product Type: Tipping Bucket Rain Gage with 8 in. Orifice | Volume per Tip: 8.24 ml/tip (0.28 fl. oz/tip) | Funnel Collector Diameter: 20.3 cm (8 in.) | Height: 26.7 cm (10.5 in.) | Tipping Bucket Weight: 1.0 kg (2.2 lb) | CS705 Snowfall Adapter Compatibility: Directly compatible | Field Calibration Check – Expected Tips per 16 fl oz: 57 ± 2 | Product Type: Metric Tipping Bucket Rain Gage | Rainfall per Tip: 0.1 mm (0.004 in.) | Funnel Collector Diameter: 24.5 cm (9.7 in.) | Height: 29.2 cm (11.5 in.) | Tipping Bucket Weight: 1.1 kg (2.4 lb) | Rainfall Multiplier – Inches: 0.00394 | Rainfall Multiplier – Millimeters: 0.1 | Operating Temperature Range: 0 to 50 °C | Storage Temperature Range: -40 to 70 °C | Funnel Collector Diameter: 15.4 cm | Height: 24.1 cm | Tipping Bucket Weight: 0.9 kg | Cảm biến | Cảm biến lượng mưa | Cảm biến mưa gàu lật",
+  "search_text_en": "TE525 | CSI_TE525 | TE525WS | TE525MM | Sensors | Precipitation Sensors | Tipping Bucket Rain Gage | Precipitation | Measure Precipitation | Product Type: Tipping Bucket Rain Gage | Volume per Tip: 4.73 ml/tip (0.16 fl. oz/tip) | Rainfall per Tip: 0.01 in. (0.254 mm) | Funnel Collector Diameter: 15.4 cm (6.06 in.) | Height: 24.1 cm (9.5 in.) | Tipping Bucket Weight: 0.9 kg (2 lb) | CS705 Snowfall Adapter Compatibility: No direct compatibility | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Field Calibration Check – Expected Tips per 16 fl oz: 100 ± 3 | Product Type: Tipping Bucket Rain Gage with 8 in. Orifice | Volume per Tip: 8.24 ml/tip (0.28 fl. oz/tip) | Funnel Collector Diameter: 20.3 cm (8 in.) | Height: 26.7 cm (10.5 in.) | Tipping Bucket Weight: 1.0 kg (2.2 lb) | CS705 Snowfall Adapter Compatibility: Directly compatible | Field Calibration Check – Expected Tips per 16 fl oz: 57 ± 2 | Product Type: Metric Tipping Bucket Rain Gage | Rainfall per Tip: 0.1 mm (0.004 in.) | Funnel Collector Diameter: 24.5 cm (9.7 in.) | Height: 29.2 cm (11.5 in.) | Tipping Bucket Weight: 1.1 kg (2.4 lb) | Rainfall Multiplier – Inches: 0.00394 | Rainfall Multiplier – Millimeters: 0.1 | Operating Temperature Range: 0 to +50 °C | Storage Temperature Range: -40 to +70 °C | rainfall",
+  "search_text_vi": "TE525 | CSI_TE525 | TE525WS | TE525MM | Cảm biến | Cảm biến lượng mưa | Cảm biến mưa gàu lật | Lượng mưa | Đo lượng mưa | Product Type: Tipping Bucket Rain Gage | Volume per Tip: 4.73 ml/tip (0.16 fl. oz/tip) | Rainfall per Tip: 0.01 in. (0.254 mm) | Funnel Collector Diameter: 15.4 cm (6.06 in.) | Height: 24.1 cm (9.5 in.) | Tipping Bucket Weight: 0.9 kg (2 lb) | CS705 Snowfall Adapter Compatibility: No direct compatibility | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Field Calibration Check – Expected Tips per 16 fl oz: 100 ± 3 | Product Type: Tipping Bucket Rain Gage with 8 in. Orifice | Volume per Tip: 8.24 ml/tip (0.28 fl. oz/tip) | Funnel Collector Diameter: 20.3 cm (8 in.) | Height: 26.7 cm (10.5 in.) | Tipping Bucket Weight: 1.0 kg (2.2 lb) | CS705 Snowfall Adapter Compatibility: Directly compatible | Field Calibration Check – Expected Tips per 16 fl oz: 57 ± 2 | Product Type: Metric Tipping Bucket Rain Gage | Rainfall per Tip: 0.1 mm (0.004 in.) | Funnel Collector Diameter: 24.5 cm (9.7 in.) | Height: 29.2 cm (11.5 in.) | Tipping Bucket Weight: 1.1 kg (2.4 lb) | Rainfall Multiplier – Inches: 0.00394 | Rainfall Multiplier – Millimeters: 0.1 | Operating Temperature Range: 0 to +50 °C | Storage Temperature Range: -40 to +70 °C",
+  "search_text": "TE525 | CSI_TE525 | TE525WS | TE525MM | Sensors | Precipitation Sensors | Tipping Bucket Rain Gage | Precipitation | Measure Precipitation | Product Type: Tipping Bucket Rain Gage | Volume per Tip: 4.73 ml/tip (0.16 fl. oz/tip) | Rainfall per Tip: 0.01 in. (0.254 mm) | Funnel Collector Diameter: 15.4 cm (6.06 in.) | Height: 24.1 cm (9.5 in.) | Tipping Bucket Weight: 0.9 kg (2 lb) | CS705 Snowfall Adapter Compatibility: No direct compatibility | Rainfall Multiplier – Inches: 0.01 | Rainfall Multiplier – Millimeters: 0.254 | Field Calibration Check – Expected Tips per 16 fl oz: 100 ± 3 | Product Type: Tipping Bucket Rain Gage with 8 in. Orifice | Volume per Tip: 8.24 ml/tip (0.28 fl. oz/tip) | Funnel Collector Diameter: 20.3 cm (8 in.) | Height: 26.7 cm (10.5 in.) | Tipping Bucket Weight: 1.0 kg (2.2 lb) | CS705 Snowfall Adapter Compatibility: Directly compatible | Field Calibration Check – Expected Tips per 16 fl oz: 57 ± 2 | Product Type: Metric Tipping Bucket Rain Gage | Rainfall per Tip: 0.1 mm (0.004 in.) | Funnel Collector Diameter: 24.5 cm (9.7 in.) | Height: 29.2 cm (11.5 in.) | Tipping Bucket Weight: 1.1 kg (2.4 lb) | Rainfall Multiplier – Inches: 0.00394 | Rainfall Multiplier – Millimeters: 0.1 | Operating Temperature Range: 0 to +50 °C | Storage Temperature Range: -40 to +70 °C | rainfall | Cảm biến | Cảm biến lượng mưa | Cảm biến mưa gàu lật | Lượng mưa | Đo lượng mưa",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "7c7d67891e43dec701636ebd4af8077b59576ebc31cc4e488cdc808f6b43cc27"
+  "content_hash": "a2b7a2bc9b49e9f2afe46016ae2e1231f2a0cba69c3d46ec8d5ac6cd506ddf86"
 }

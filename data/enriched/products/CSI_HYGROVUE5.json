@@ -14,6 +14,18 @@
   },
   "measurements": [
     {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "HygroVue5 Digital Temperature and Relative Humidity Sensor"
+        }
+      ]
+    },
+    {
       "key": "relative_humidity",
       "label_en": "Relative Humidity",
       "label_vi": "Độ ẩm tương đối",
@@ -29,6 +41,18 @@
               31
             ]
           }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_HYGROVUE5.json",
+            "product_index": 0,
+            "spec_index": 26,
+            "source_rows": [
+              37
+            ]
+          }
         }
       ]
     }
@@ -36,6 +60,18 @@
   "applications": [],
   "protocols": [],
   "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "HygroVue5 Digital Temperature and Relative Humidity Sensor"
+        }
+      ]
+    },
     {
       "key": "measure_relative_humidity",
       "label_en": "Measure Relative Humidity",
@@ -50,6 +86,18 @@
             "spec_index": 21,
             "source_rows": [
               31
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_HYGROVUE5.json",
+            "product_index": 0,
+            "spec_index": 26,
+            "source_rows": [
+              37
             ]
           }
         }
@@ -101,8 +149,11 @@
       "Sensors",
       "Temperature & Humidity Sensors",
       "Temperature and Relative Humidity Sensor",
+      "Temperature",
+      "temperature measurement",
       "Relative Humidity",
       "RH",
+      "Measure Temperature",
       "Measure Relative Humidity",
       "CSI_HYGROVUE5"
     ],
@@ -111,7 +162,9 @@
       "Cảm biến",
       "Cảm biến nhiệt độ và độ ẩm",
       "Cảm biến nhiệt độ và độ ẩm tương đối",
+      "Nhiệt độ",
       "Độ ẩm tương đối",
+      "Đo nhiệt độ",
       "Đo độ ẩm tương đối"
     ]
   }

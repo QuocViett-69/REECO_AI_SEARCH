@@ -16,7 +16,74 @@
     {
       "key": "temperature",
       "label_en": "Temperature",
-      "label_vi": "Nhiệt độ"
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_speed",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              45,
+              46
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_frequency_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              51,
+              52
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              54,
+              55
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "temperature_measurement_note",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 27,
+            "source_rows": [
+              60,
+              61
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_temperature_resistance_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 30,
+            "source_rows": [
+              67,
+              68
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +91,74 @@
     {
       "key": "measure_temperature",
       "label_en": "Measure Temperature",
-      "label_vi": "Đo nhiệt độ"
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_speed",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              45,
+              46
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_frequency_resolution",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              51,
+              52
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 25,
+            "source_rows": [
+              54,
+              55
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "temperature_measurement_note",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 27,
+            "source_rows": [
+              60,
+              61
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_temperature_resistance_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_CRVW3_NE.json",
+            "product_index": 0,
+            "spec_index": 30,
+            "source_rows": [
+              67,
+              68
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -512,5 +646,5 @@
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "c99bc8eb2029c3847a4857376ee6c966d9a91570e563a8fc8e5a22553d05da74"
+  "content_hash": "30e741541be13bf21e2f91aaf64d340403ffb7f0026994ed41790af0c968aab4"
 }

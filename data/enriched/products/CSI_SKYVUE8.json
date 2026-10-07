@@ -12,7 +12,65 @@
     "device_type": "LIDAR Ceilometer",
     "device_type_key": "lidar_ceilometer"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "humidity_range",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 29,
+            "source_rows": [
+              38
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "visibility",
+      "label_en": "Visibility",
+      "label_vi": "Tầm nhìn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_parameters",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "cloud_base_height",
+      "label_en": "Cloud Base Height",
+      "label_vi": "Độ cao chân mây",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_parameters",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [
     {
@@ -106,7 +164,65 @@
       ]
     }
   ],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "humidity_range",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 29,
+            "source_rows": [
+              38
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_visibility",
+      "label_en": "Measure Visibility",
+      "label_vi": "Đo tầm nhìn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_parameters",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_cloud_base_height",
+      "label_en": "Measure Cloud Base Height",
+      "label_vi": "Đo độ cao chân mây",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_parameters",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "SkyVue8",
@@ -152,11 +268,20 @@
       "Sensors",
       "Weather Sensors",
       "LIDAR Ceilometer",
+      "Relative Humidity",
+      "RH",
+      "Visibility",
+      "meteorological optical range",
+      "MOR",
+      "Cloud Base Height",
       "Ethernet",
       "RS-232",
       "RS-422",
       "RS-485",
       "USB",
+      "Measure Relative Humidity",
+      "Measure Visibility",
+      "Measure Cloud Base Height",
       "CSI_SKYVUE8"
     ],
     "vi": [
@@ -164,11 +289,17 @@
       "Cảm biến",
       "Cảm biến thời tiết",
       "Máy đo trần mây LIDAR",
+      "Độ ẩm tương đối",
+      "Tầm nhìn",
+      "Độ cao chân mây",
       "Ethernet",
       "RS-232",
       "RS-422",
       "RS-485",
-      "USB"
+      "USB",
+      "Đo độ ẩm tương đối",
+      "Đo tầm nhìn",
+      "Đo độ cao chân mây"
     ]
   }
 }

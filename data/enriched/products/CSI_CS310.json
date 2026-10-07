@@ -12,10 +12,60 @@
     "device_type": "Quantum Sensor",
     "device_type_key": "quantum_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "photosynthetic_photon_flux_density",
+      "label_en": "Photosynthetic Photon Flux Density",
+      "label_vi": "Mật độ thông lượng photon quang hợp",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS310 Quantum Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS310.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_photosynthetic_photon_flux_density",
+      "label_en": "Measure Photosynthetic Photon Flux Density",
+      "label_vi": "Đo mật độ thông lượng photon quang hợp",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS310 Quantum Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSI_CS310.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              4
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "CS310",
@@ -61,13 +111,19 @@
       "Sensors",
       "Solar Radiation Sensors",
       "Quantum Sensor",
+      "Photosynthetic Photon Flux Density",
+      "PPFD",
+      "PAR",
+      "Measure Photosynthetic Photon Flux Density",
       "CSI_CS310"
     ],
     "vi": [
       "CS310",
       "Cảm biến",
       "Cảm biến bức xạ mặt trời",
-      "Cảm biến lượng tử"
+      "Cảm biến lượng tử",
+      "Mật độ thông lượng photon quang hợp",
+      "Đo mật độ thông lượng photon quang hợp"
     ]
   }
 }

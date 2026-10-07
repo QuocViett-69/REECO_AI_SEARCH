@@ -16,27 +16,289 @@
     {
       "key": "air_temperature",
       "label_en": "Air Temperature",
-      "label_vi": "Nhiệt độ không khí"
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              42
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              44
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_sensor_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              45
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              46
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "relative_humidity",
       "label_en": "Relative Humidity",
-      "label_vi": "Độ ẩm tương đối"
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              49
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              50
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              51
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "precipitation",
       "label_en": "Precipitation",
-      "label_vi": "Lượng mưa"
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              30
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 13,
+            "source_rows": [
+              32
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              33
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "wind_speed",
       "label_en": "Wind Speed",
-      "label_vi": "Tốc độ gió"
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "horizontal_wind_speed_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 30,
+            "source_rows": [
+              63
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "horizontal_wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 31,
+            "source_rows": [
+              64
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "horizontal_wind_speed_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              65
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "wind_direction",
       "label_en": "Wind Direction",
-      "label_vi": "Hướng gió"
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 36,
+            "source_rows": [
+              76
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 37,
+            "source_rows": [
+              78
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 38,
+            "source_rows": [
+              79
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -44,27 +306,289 @@
     {
       "key": "measure_air_temperature",
       "label_en": "Measure Air Temperature",
-      "label_vi": "Đo nhiệt độ không khí"
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 18,
+            "source_rows": [
+              42
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              44
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_sensor_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              45
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 21,
+            "source_rows": [
+              46
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_relative_humidity",
       "label_en": "Measure Relative Humidity",
-      "label_vi": "Đo độ ẩm tương đối"
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 22,
+            "source_rows": [
+              49
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 23,
+            "source_rows": [
+              50
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 24,
+            "source_rows": [
+              51
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_precipitation",
       "label_en": "Measure Precipitation",
-      "label_vi": "Đo lượng mưa"
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 12,
+            "source_rows": [
+              30
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 13,
+            "source_rows": [
+              32
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              33
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_wind_speed",
       "label_en": "Measure Wind Speed",
-      "label_vi": "Đo tốc độ gió"
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "horizontal_wind_speed_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 30,
+            "source_rows": [
+              63
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "horizontal_wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 31,
+            "source_rows": [
+              64
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "horizontal_wind_speed_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 32,
+            "source_rows": [
+              65
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_wind_direction",
       "label_en": "Measure Wind Direction",
-      "label_vi": "Đo hướng gió"
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 36,
+            "source_rows": [
+              76
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 37,
+            "source_rows": [
+              78
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_uncertainty",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 0,
+            "spec_index": 38,
+            "source_rows": [
+              79
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -90,6 +614,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-50° to +60°C",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -110,6 +635,7 @@
         "unit": "%",
         "qualifier": null
       },
+      "value_raw": "0 to 100%",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -130,6 +656,7 @@
         "unit": "mm/h",
         "qualifier": null
       },
+      "value_raw": "0 to 1,500 mm/h",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -150,6 +677,7 @@
         "unit": "kPa",
         "qualifier": null
       },
+      "value_raw": "0 to 47 kPa",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -170,6 +698,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-50° to +60°C",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -190,6 +719,7 @@
         "unit": "kPa",
         "qualifier": null
       },
+      "value_raw": "1 to 120 kPa",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -210,6 +740,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0 to 60 m/s",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -230,6 +761,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "0° to 359°",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -250,6 +782,7 @@
         "unit": "km",
         "qualifier": null
       },
+      "value_raw": "0 to 40 km",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -269,6 +802,7 @@
         "unit": "mm",
         "qualifier": null
       },
+      "value_raw": "0.017 mm",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -288,6 +822,7 @@
         "unit": "kPa",
         "qualifier": null
       },
+      "value_raw": "0.01 kPa",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -307,6 +842,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0.1°C",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -326,6 +862,7 @@
         "unit": null,
         "qualifier": null
       },
+      "value_raw": "0.1",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -345,6 +882,7 @@
         "unit": "kPa",
         "qualifier": null
       },
+      "value_raw": "0.01 kPa",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -364,6 +902,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0.01 m/s",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -383,6 +922,7 @@
         "unit": "m/s",
         "qualifier": null
       },
+      "value_raw": "0.01 m/s",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -402,6 +942,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "1°",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -421,6 +962,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "0.1°",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 0,
@@ -471,14 +1013,14 @@
     "Đo tốc độ gió",
     "Đo hướng gió"
   ],
-  "search_text_en": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus | RS-485 | Operating Temperature Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Precipitation Range: 0 to 1500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50 to 60 °C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0 to 359 ° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Tilt Resolution: 0.1 ° | ambient temperature | RH | rainfall",
-  "search_text_vi": "ClimaVue40 | CSI_CLIMAVUE40 | Compact Digital RS-485 Modbus RTU Weather Sensor | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió | Modbus | RS-485 | Operating Temperature Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Precipitation Range: 0 to 1500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50 to 60 °C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0 to 359 ° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Tilt Resolution: 0.1 °",
-  "search_text": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus | RS-485 | Operating Temperature Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Precipitation Range: 0 to 1500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50 to 60 °C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0 to 359 ° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1 ° | Tilt Resolution: 0.1 ° | ambient temperature | RH | rainfall | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió",
+  "search_text_en": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1° | ambient temperature | RH | rainfall",
+  "search_text_vi": "ClimaVue40 | CSI_CLIMAVUE40 | Compact Digital RS-485 Modbus RTU Weather Sensor | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió | Modbus | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1°",
+  "search_text": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1° | ambient temperature | RH | rainfall | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "b24548c277fd28c4a5754145cb598a6d2e03a4f70eea6f09a81496842cdc8223"
+  "content_hash": "0689ff8222542784174338a06145cf82faad1d4556301b12b0182c8384ab9974"
 }

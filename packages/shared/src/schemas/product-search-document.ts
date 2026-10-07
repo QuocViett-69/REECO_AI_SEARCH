@@ -5,6 +5,7 @@ import {
   RawSpecificationReferenceSchema,
 } from './normalized-specification';
 import { ProductVariantSchema } from './product-variant';
+import { SemanticEvidenceSchema } from './semantic-enrichment';
 
 const SemanticKeySchema = z.string().regex(/^[a-z0-9]+(?:_[a-z0-9]+)*$/u);
 
@@ -21,6 +22,7 @@ export const SearchDocumentSemanticItemSchema = z.object({
   key: SemanticKeySchema,
   label_en: z.string().min(1),
   label_vi: z.string().min(1),
+  evidence: z.array(SemanticEvidenceSchema).min(1).optional(),
 });
 
 export const ImportantSearchSpecificationSchema = z.object({
@@ -28,6 +30,7 @@ export const ImportantSearchSpecificationSchema = z.object({
   name: z.string().min(1),
   quantity_kind: z.string().min(1).nullable(),
   normalized_value: NormalizedValueSchema,
+  value_raw: z.string().optional(),
   raw_ref: RawSpecificationReferenceSchema,
 });
 

@@ -40,6 +40,19 @@ const service = makeService(async () => ({ mode: 'hybrid', candidates }));
 const soil = ['HS2-12', 'SoilVue10-5', 'CS616', 'CS650', 'CS655'];
 const soilMulti = ['CS650', 'CS655', 'SoilVue10-5'];
 
+test('explaining these models retains the selected scope and reports missing protocol evidence', async () => {
+  for (const query of ['Vì sao các model này phù hợp?', 'Why are these models suitable?']) {
+    const base = 'Tôi cần cảm biến thời tiết hỗ trợ Modbus';
+    const response = await service.search({ query, limit: 10, explain: true, context: {
+      base_query: base, previous_query: base, product_ids: ['CSI_CLIMAVUE40', 'CSI_CLIMAVUE50G2'],
+    } });
+    assert.deepEqual(response.results.map(item => item.model), ['ClimaVue40', 'ClimaVue50G2']);
+    assert.equal(response.results[0].explanation.requirements.find(item => item.label === 'Modbus').status, 'confirmed');
+    assert.equal(response.results[1].explanation.requirements.find(item => item.label === 'Modbus').status, 'unconfirmed');
+    assert.equal(response.context_applied, true);
+  }
+});
+
 test('weather aliases filter unrelated leaf sensors and retain measurement evidence', async () => {
   for (const query of ['Cảm biến thời tiết', 'Cảm biến khí tượng', 'Khí tượng thủy văn', 'meteorological sensor']) {
     const response = await service.search({ query, limit: 30, explain: true });

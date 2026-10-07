@@ -16,57 +16,571 @@
     {
       "key": "air_temperature",
       "label_en": "Air Temperature",
-      "label_vi": "Nhiệt độ không khí"
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 26,
+            "source_rows": [
+              43
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 27,
+            "source_rows": [
+              44
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 28,
+            "source_rows": [
+              47
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "relative_humidity",
       "label_en": "Relative Humidity",
-      "label_vi": "Độ ẩm tương đối"
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 29,
+            "source_rows": [
+              49
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 30,
+            "source_rows": [
+              50
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 31,
+            "source_rows": [
+              52
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "barometric_pressure",
       "label_en": "Barometric Pressure",
-      "label_vi": "Áp suất khí quyển"
+      "label_vi": "Áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 33,
+            "source_rows": [
+              56
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 34,
+            "source_rows": [
+              57
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 35,
+            "source_rows": [
+              59
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "precipitation",
       "label_en": "Precipitation",
-      "label_vi": "Lượng mưa"
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 20,
+            "source_rows": [
+              31
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 21,
+            "source_rows": [
+              32
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 22,
+            "source_rows": [
+              34
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "precipitation_electrical_conductivity",
       "label_en": "Precipitation Electrical Conductivity",
-      "label_vi": "Độ dẫn điện của nước mưa"
+      "label_vi": "Độ dẫn điện của nước mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "wind_speed",
       "label_en": "Wind Speed",
-      "label_vi": "Tốc độ gió"
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 38,
+            "source_rows": [
+              68
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 39,
+            "source_rows": [
+              69
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "wind_direction",
       "label_en": "Wind Direction",
-      "label_vi": "Hướng gió"
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 41,
+            "source_rows": [
+              77
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 42,
+            "source_rows": [
+              78
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 43,
+            "source_rows": [
+              80
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "solar_radiation",
       "label_en": "Solar Radiation",
-      "label_vi": "Bức xạ mặt trời"
+      "label_vi": "Bức xạ mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "solar_radiation_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 44,
+            "source_rows": [
+              82
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "solar_radiation_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 45,
+            "source_rows": [
+              83
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "solar_radiation_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 46,
+            "source_rows": [
+              84
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "solar_radiation_spectral_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 47,
+            "source_rows": [
+              85
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "lightning_distance",
       "label_en": "Lightning Distance",
-      "label_vi": "Khoảng cách sét"
+      "label_vi": "Khoảng cách sét",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_average_distance_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 54,
+            "source_rows": [
+              100
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_average_distance_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 55,
+            "source_rows": [
+              101
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_average_distance_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 56,
+            "source_rows": [
+              103
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "lightning_strike_count",
       "label_en": "Lightning Strike Count",
-      "label_vi": "Số lần sét đánh"
+      "label_vi": "Số lần sét đánh",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_strike_count_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 51,
+            "source_rows": [
+              94
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_strike_count_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 52,
+            "source_rows": [
+              95
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_strike_count_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 53,
+            "source_rows": [
+              97
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "tilt",
       "label_en": "Tilt",
-      "label_vi": "Độ nghiêng"
+      "label_vi": "Độ nghiêng",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tilt_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 48,
+            "source_rows": [
+              88
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tilt_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 49,
+            "source_rows": [
+              89
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tilt_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 50,
+            "source_rows": [
+              91
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -74,57 +588,571 @@
     {
       "key": "measure_air_temperature",
       "label_en": "Measure Air Temperature",
-      "label_vi": "Đo nhiệt độ không khí"
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 26,
+            "source_rows": [
+              43
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 27,
+            "source_rows": [
+              44
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 28,
+            "source_rows": [
+              47
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_relative_humidity",
       "label_en": "Measure Relative Humidity",
-      "label_vi": "Đo độ ẩm tương đối"
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 29,
+            "source_rows": [
+              49
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 30,
+            "source_rows": [
+              50
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 31,
+            "source_rows": [
+              52
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_barometric_pressure",
       "label_en": "Measure Barometric Pressure",
-      "label_vi": "Đo áp suất khí quyển"
+      "label_vi": "Đo áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 33,
+            "source_rows": [
+              56
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 34,
+            "source_rows": [
+              57
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "barometric_pressure_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 35,
+            "source_rows": [
+              59
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_precipitation",
       "label_en": "Measure Precipitation",
-      "label_vi": "Đo lượng mưa"
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 20,
+            "source_rows": [
+              31
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 21,
+            "source_rows": [
+              32
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "precipitation_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 22,
+            "source_rows": [
+              34
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_precipitation_electrical_conductivity",
       "label_en": "Measure Precipitation Electrical Conductivity",
-      "label_vi": "Đo độ dẫn điện của nước mưa"
+      "label_vi": "Đo độ dẫn điện của nước mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_wind_speed",
       "label_en": "Measure Wind Speed",
-      "label_vi": "Đo tốc độ gió"
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 38,
+            "source_rows": [
+              68
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_speed_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 39,
+            "source_rows": [
+              69
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_wind_direction",
       "label_en": "Measure Wind Direction",
-      "label_vi": "Đo hướng gió"
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 41,
+            "source_rows": [
+              77
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 42,
+            "source_rows": [
+              78
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 43,
+            "source_rows": [
+              80
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_solar_radiation",
       "label_en": "Measure Solar Radiation",
-      "label_vi": "Đo bức xạ mặt trời"
+      "label_vi": "Đo bức xạ mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "solar_radiation_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 44,
+            "source_rows": [
+              82
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "solar_radiation_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 45,
+            "source_rows": [
+              83
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "solar_radiation_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 46,
+            "source_rows": [
+              84
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "solar_radiation_spectral_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 47,
+            "source_rows": [
+              85
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_lightning_distance",
       "label_en": "Measure Lightning Distance",
-      "label_vi": "Đo khoảng cách sét"
+      "label_vi": "Đo khoảng cách sét",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_average_distance_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 54,
+            "source_rows": [
+              100
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_average_distance_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 55,
+            "source_rows": [
+              101
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_average_distance_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 56,
+            "source_rows": [
+              103
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_lightning_strike_count",
       "label_en": "Measure Lightning Strike Count",
-      "label_vi": "Đo số lần sét đánh"
+      "label_vi": "Đo số lần sét đánh",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_strike_count_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 51,
+            "source_rows": [
+              94
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_strike_count_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 52,
+            "source_rows": [
+              95
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "lightning_strike_count_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 53,
+            "source_rows": [
+              97
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_tilt",
       "label_en": "Measure Tilt",
-      "label_vi": "Đo độ nghiêng"
+      "label_vi": "Đo độ nghiêng",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurements_made",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tilt_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 48,
+            "source_rows": [
+              88
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tilt_resolution",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 49,
+            "source_rows": [
+              89
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "tilt_accuracy",
+          "raw_ref": {
+            "file": "data/raw/ClimaVue40&52G2.json",
+            "product_index": 1,
+            "spec_index": 50,
+            "source_rows": [
+              91
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -149,6 +1177,7 @@
         "unit": "kPa",
         "qualifier": null
       },
+      "value_raw": "0 to 47 kPa",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -169,6 +1198,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-50° to +60°C",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -189,6 +1219,7 @@
         "unit": "%",
         "qualifier": null
       },
+      "value_raw": "0 to 100%",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -209,6 +1240,7 @@
         "unit": "hPa",
         "qualifier": null
       },
+      "value_raw": "10 to 1200 hPa",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -234,6 +1266,7 @@
           "unit": "mph"
         }
       },
+      "value_raw": "0 to 60 m/s (0 to 135 mph)",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -254,6 +1287,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "0° to 359°",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -274,6 +1308,7 @@
         "unit": "W/m²",
         "qualifier": null
       },
+      "value_raw": "0 to 1750 W m⁻²",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -294,6 +1329,7 @@
         "unit": "°",
         "qualifier": null
       },
+      "value_raw": "0° to 180°",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -314,6 +1350,7 @@
         "unit": "strikes",
         "qualifier": null
       },
+      "value_raw": "0 to 65,535 strikes",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -339,6 +1376,7 @@
           "unit": "mi"
         }
       },
+      "value_raw": "0 to 40 km (0 to 24.9 mi)",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -359,6 +1397,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40° to +60°C",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -378,6 +1417,7 @@
         "unit": "°C",
         "qualifier": "±"
       },
+      "value_raw": "±0.6°C",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -397,6 +1437,7 @@
         "unit": "°",
         "qualifier": "±"
       },
+      "value_raw": "±5°",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -416,6 +1457,7 @@
         "unit": "°",
         "qualifier": "±"
       },
+      "value_raw": "±1°",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -435,6 +1477,7 @@
         "unit": "mm",
         "qualifier": null
       },
+      "value_raw": "0.017 mm",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -454,6 +1497,7 @@
         "unit": "kPa",
         "qualifier": null
       },
+      "value_raw": "0.01 kPa",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -473,6 +1517,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0.1°C",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -492,6 +1537,7 @@
         "unit": null,
         "qualifier": null
       },
+      "value_raw": "0.001",
       "raw_ref": {
         "file": "data/raw/ClimaVue40&52G2.json",
         "product_index": 1,
@@ -566,14 +1612,14 @@
     "Đo số lần sét đánh",
     "Đo độ nghiêng"
   ],
-  "search_text_en": "ClimaVue50G2 | G2 Compact Digital SDI-12 Weather Sensor (-50 to | CSI_CLIMAVUE50G2 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Precipitation | Precipitation Electrical Conductivity | Wind Speed | Wind Direction | Solar Radiation | Lightning Distance | Lightning Strike Count | Tilt | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Precipitation | Measure Precipitation Electrical Conductivity | Measure Wind Speed | Measure Wind Direction | Measure Solar Radiation | Measure Lightning Distance | Measure Lightning Strike Count | Measure Tilt | SDI-12 | Vapor Pressure Measurement Range: 0 to 47 kPa | Air Temperature Measurement Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Barometric Pressure Measurement Range: 10 to 1200 hPa | Wind Speed Measurement Range: 0 to 60 m/s | Wind Direction Measurement Range: 0 to 359 ° | Solar Radiation Measurement Range: 0 to 1750 W/m² | Tilt Measurement Range: 0 to 180 ° | Lightning Strike Count Measurement Range: 0 to 65535 strikes | Lightning Average Distance Measurement Range: 0 to 40 km | Barometer Operating Temperature Range: -40 to 60 °C | Air Temperature Accuracy: ± 0.6 °C | Wind Direction Accuracy: ± 5 ° | Tilt Accuracy: ± 1 ° | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.001 | ambient temperature | RH | rainfall | precipitation EC | sun plus sky radiation",
-  "search_text_vi": "ClimaVue50G2 | CSI_CLIMAVUE50G2 | G2 Compact Digital SDI-12 Weather Sensor (-50 to | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Lượng mưa | Độ dẫn điện của nước mưa | Tốc độ gió | Hướng gió | Bức xạ mặt trời | Khoảng cách sét | Số lần sét đánh | Độ nghiêng | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo lượng mưa | Đo độ dẫn điện của nước mưa | Đo tốc độ gió | Đo hướng gió | Đo bức xạ mặt trời | Đo khoảng cách sét | Đo số lần sét đánh | Đo độ nghiêng | SDI-12 | Vapor Pressure Measurement Range: 0 to 47 kPa | Air Temperature Measurement Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Barometric Pressure Measurement Range: 10 to 1200 hPa | Wind Speed Measurement Range: 0 to 60 m/s | Wind Direction Measurement Range: 0 to 359 ° | Solar Radiation Measurement Range: 0 to 1750 W/m² | Tilt Measurement Range: 0 to 180 ° | Lightning Strike Count Measurement Range: 0 to 65535 strikes | Lightning Average Distance Measurement Range: 0 to 40 km | Barometer Operating Temperature Range: -40 to 60 °C | Air Temperature Accuracy: ± 0.6 °C | Wind Direction Accuracy: ± 5 ° | Tilt Accuracy: ± 1 ° | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.001",
-  "search_text": "ClimaVue50G2 | G2 Compact Digital SDI-12 Weather Sensor (-50 to | CSI_CLIMAVUE50G2 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Precipitation | Precipitation Electrical Conductivity | Wind Speed | Wind Direction | Solar Radiation | Lightning Distance | Lightning Strike Count | Tilt | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Precipitation | Measure Precipitation Electrical Conductivity | Measure Wind Speed | Measure Wind Direction | Measure Solar Radiation | Measure Lightning Distance | Measure Lightning Strike Count | Measure Tilt | SDI-12 | Vapor Pressure Measurement Range: 0 to 47 kPa | Air Temperature Measurement Range: -50 to 60 °C | Relative Humidity Measurement Range: 0 to 100 % | Barometric Pressure Measurement Range: 10 to 1200 hPa | Wind Speed Measurement Range: 0 to 60 m/s | Wind Direction Measurement Range: 0 to 359 ° | Solar Radiation Measurement Range: 0 to 1750 W/m² | Tilt Measurement Range: 0 to 180 ° | Lightning Strike Count Measurement Range: 0 to 65535 strikes | Lightning Average Distance Measurement Range: 0 to 40 km | Barometer Operating Temperature Range: -40 to 60 °C | Air Temperature Accuracy: ± 0.6 °C | Wind Direction Accuracy: ± 5 ° | Tilt Accuracy: ± 1 ° | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1 °C | Relative Humidity Resolution: 0.001 | ambient temperature | RH | rainfall | precipitation EC | sun plus sky radiation | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Lượng mưa | Độ dẫn điện của nước mưa | Tốc độ gió | Hướng gió | Bức xạ mặt trời | Khoảng cách sét | Số lần sét đánh | Độ nghiêng | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo lượng mưa | Đo độ dẫn điện của nước mưa | Đo tốc độ gió | Đo hướng gió | Đo bức xạ mặt trời | Đo khoảng cách sét | Đo số lần sét đánh | Đo độ nghiêng",
+  "search_text_en": "ClimaVue50G2 | G2 Compact Digital SDI-12 Weather Sensor (-50 to | CSI_CLIMAVUE50G2 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Precipitation | Precipitation Electrical Conductivity | Wind Speed | Wind Direction | Solar Radiation | Lightning Distance | Lightning Strike Count | Tilt | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Precipitation | Measure Precipitation Electrical Conductivity | Measure Wind Speed | Measure Wind Direction | Measure Solar Radiation | Measure Lightning Distance | Measure Lightning Strike Count | Measure Tilt | SDI-12 | Vapor Pressure Measurement Range: 0 to 47 kPa | Air Temperature Measurement Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Barometric Pressure Measurement Range: 10 to 1200 hPa | Wind Speed Measurement Range: 0 to 60 m/s (0 to 135 mph) | Wind Direction Measurement Range: 0° to 359° | Solar Radiation Measurement Range: 0 to 1750 W m⁻² | Tilt Measurement Range: 0° to 180° | Lightning Strike Count Measurement Range: 0 to 65,535 strikes | Lightning Average Distance Measurement Range: 0 to 40 km (0 to 24.9 mi) | Barometer Operating Temperature Range: -40° to +60°C | Air Temperature Accuracy: ±0.6°C | Wind Direction Accuracy: ±5° | Tilt Accuracy: ±1° | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.001 | ambient temperature | RH | rainfall | precipitation EC | sun plus sky radiation",
+  "search_text_vi": "ClimaVue50G2 | CSI_CLIMAVUE50G2 | G2 Compact Digital SDI-12 Weather Sensor (-50 to | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Lượng mưa | Độ dẫn điện của nước mưa | Tốc độ gió | Hướng gió | Bức xạ mặt trời | Khoảng cách sét | Số lần sét đánh | Độ nghiêng | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo lượng mưa | Đo độ dẫn điện của nước mưa | Đo tốc độ gió | Đo hướng gió | Đo bức xạ mặt trời | Đo khoảng cách sét | Đo số lần sét đánh | Đo độ nghiêng | SDI-12 | Vapor Pressure Measurement Range: 0 to 47 kPa | Air Temperature Measurement Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Barometric Pressure Measurement Range: 10 to 1200 hPa | Wind Speed Measurement Range: 0 to 60 m/s (0 to 135 mph) | Wind Direction Measurement Range: 0° to 359° | Solar Radiation Measurement Range: 0 to 1750 W m⁻² | Tilt Measurement Range: 0° to 180° | Lightning Strike Count Measurement Range: 0 to 65,535 strikes | Lightning Average Distance Measurement Range: 0 to 40 km (0 to 24.9 mi) | Barometer Operating Temperature Range: -40° to +60°C | Air Temperature Accuracy: ±0.6°C | Wind Direction Accuracy: ±5° | Tilt Accuracy: ±1° | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.001",
+  "search_text": "ClimaVue50G2 | G2 Compact Digital SDI-12 Weather Sensor (-50 to | CSI_CLIMAVUE50G2 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Barometric Pressure | Precipitation | Precipitation Electrical Conductivity | Wind Speed | Wind Direction | Solar Radiation | Lightning Distance | Lightning Strike Count | Tilt | Measure Air Temperature | Measure Relative Humidity | Measure Barometric Pressure | Measure Precipitation | Measure Precipitation Electrical Conductivity | Measure Wind Speed | Measure Wind Direction | Measure Solar Radiation | Measure Lightning Distance | Measure Lightning Strike Count | Measure Tilt | SDI-12 | Vapor Pressure Measurement Range: 0 to 47 kPa | Air Temperature Measurement Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Barometric Pressure Measurement Range: 10 to 1200 hPa | Wind Speed Measurement Range: 0 to 60 m/s (0 to 135 mph) | Wind Direction Measurement Range: 0° to 359° | Solar Radiation Measurement Range: 0 to 1750 W m⁻² | Tilt Measurement Range: 0° to 180° | Lightning Strike Count Measurement Range: 0 to 65,535 strikes | Lightning Average Distance Measurement Range: 0 to 40 km (0 to 24.9 mi) | Barometer Operating Temperature Range: -40° to +60°C | Air Temperature Accuracy: ±0.6°C | Wind Direction Accuracy: ±5° | Tilt Accuracy: ±1° | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.001 | ambient temperature | RH | rainfall | precipitation EC | sun plus sky radiation | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Áp suất khí quyển | Lượng mưa | Độ dẫn điện của nước mưa | Tốc độ gió | Hướng gió | Bức xạ mặt trời | Khoảng cách sét | Số lần sét đánh | Độ nghiêng | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo áp suất khí quyển | Đo lượng mưa | Đo độ dẫn điện của nước mưa | Đo tốc độ gió | Đo hướng gió | Đo bức xạ mặt trời | Đo khoảng cách sét | Đo số lần sét đánh | Đo độ nghiêng",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "87fd0ac032247206ab7ba0a6253d77af1ce40d1fd92bf38eb759251a07baefd8"
+  "content_hash": "55c3405ebff11fc1209ef13ad49b6419f80e1a2b12a81011271b667b226699ee"
 }

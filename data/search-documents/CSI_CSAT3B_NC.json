@@ -14,27 +14,147 @@
   },
   "measurements": [
     {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 34,
+            "source_rows": [
+              57,
+              58,
+              59
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "wind_speed",
       "label_en": "Wind Speed",
-      "label_vi": "Tốc độ gió"
+      "label_vi": "Tốc độ gió",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "wind_direction",
       "label_en": "Wind Direction",
-      "label_vi": "Hướng gió"
+      "label_vi": "Hướng gió",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              15,
+              16
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
   "capabilities": [
     {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 34,
+            "source_rows": [
+              57,
+              58,
+              59
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "measure_wind_speed",
       "label_en": "Measure Wind Speed",
-      "label_vi": "Đo tốc độ gió"
+      "label_vi": "Đo tốc độ gió",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_wind_direction",
       "label_en": "Measure Wind Direction",
-      "label_vi": "Đo hướng gió"
+      "label_vi": "Đo hướng gió",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              15,
+              16
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -578,6 +698,7 @@
         "unit": "°",
         "qualifier": "±"
       },
+      "value_raw": "±1°",
       "raw_ref": {
         "file": "data/raw/CSAT3B_CSAT3BH.json",
         "product_index": 0,
@@ -597,6 +718,7 @@
         "unit": "°C",
         "qualifier": "±"
       },
+      "value_raw": "±2°C",
       "raw_ref": {
         "file": "data/raw/CSAT3B_CSAT3BH.json",
         "product_index": 0,
@@ -620,6 +742,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "0.64 cm (0.25 in.)",
       "raw_ref": {
         "file": "data/raw/CSAT3B_CSAT3BH.json",
         "product_index": 0,
@@ -643,6 +766,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "0.84 cm (0.33 in.)",
       "raw_ref": {
         "file": "data/raw/CSAT3B_CSAT3BH.json",
         "product_index": 0,
@@ -666,6 +790,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "1.59 cm (0.63 in.)",
       "raw_ref": {
         "file": "data/raw/CSAT3B_CSAT3BH.json",
         "product_index": 0,
@@ -689,6 +814,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "1.45 kg (3.2 lb)",
       "raw_ref": {
         "file": "data/raw/CSAT3B_CSAT3BH.json",
         "product_index": 0,
@@ -705,12 +831,15 @@
     "Sensors",
     "Wind Speed and Wind Direction Sensors",
     "Wind Speed and Wind Direction Sensor",
+    "Relative Humidity",
+    "RH",
     "Wind Speed",
     "Wind Direction",
     "ASCII",
     "CPI",
     "RS-485",
     "USB",
+    "Measure Relative Humidity",
     "Measure Wind Speed",
     "Measure Wind Direction",
     "CSI_CSAT3B_NC"
@@ -719,23 +848,25 @@
     "CSAT3B-NC",
     "Cảm biến",
     "Cảm biến tốc độ và hướng gió",
+    "Độ ẩm tương đối",
     "Tốc độ gió",
     "Hướng gió",
     "ASCII",
     "CPI",
     "RS-485",
     "USB",
+    "Đo độ ẩm tương đối",
     "Đo tốc độ gió",
     "Đo hướng gió"
   ],
-  "search_text_en": "CSAT3B-NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | CSI_CSAT3B_NC | 3-Dimensional Sonic Anemometer | CSAT3B-SC | CSAT3BH-NC | CSAT3BH-SC | Sensors | Wind Speed and Wind Direction Sensors | Wind Speed and Wind Direction Sensor | Wind Speed | Wind Direction | Measure Wind Speed | Measure Wind Direction | ASCII | CPI | RS-485 | USB | Configuration Suffix: NC | Carrying Case: No Carrying Case | Filter Bandwidths: 5, 10, or 25 Hz | Anemometer Head Weight: 1.45 kg (3.2 lb) | Anemometer Dimensions: 60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.) | -NOTE-: Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170° | ux, uy: 1 mm s⁻¹ rms | uz: 0.5 mm s⁻¹ rms | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | -NOTE-: Used for data-logger-based data acquisition. | Cable Length: 7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period) | Address Range: 1 to 14 | Bus Clocks per Sample: ~200 | Baud Rate: 50 kbps to 1 Mbps | Cable Length: 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps) | Address Range: 1 to 120 | Bus Clocks per Sample: ~300 | -NOTE-: Used for configuration or PC-based data acquisition. | Baud Rate: 9.6 kbps to 115.2 kbps | Cable Length: 610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps) | Bus Clocks per Sample: ~500 (ASCII formatted) | Cable Length: 5 m (16.4 ft) maximum | Configuration Suffix: SC | Carrying Case: Sonic Carrying Case | Filter Bandwidths: 5, 10, 20, or 25 Hz | Anemometer Head Weight: 1.9 kg (4.2 lb) | Anemometer Dimensions: 63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.) | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 195 ms (with 20 Hz bandwidth filter) | Cable Length: 853 m (2800 ft) max (@ 50 kbps) | 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | -NOTE-: Used for anemometer configuration or PC-based data acquisition. | Inclinometer Accuracy: ± 1 ° | Board Temperature Accuracy: ± 2 °C | Transducer Diameter: 0.64 cm | Transducer Mounting Arm Diameter: 0.84 cm | Support Arm Diameter: 1.59 cm | Anemometer Head Weight: 1.45 kg",
-  "search_text_vi": "CSAT3B-NC | CSI_CSAT3B_NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | 3-Dimensional Sonic Anemometer | CSAT3B-SC | CSAT3BH-NC | CSAT3BH-SC | Cảm biến | Cảm biến tốc độ và hướng gió | Tốc độ gió | Hướng gió | Đo tốc độ gió | Đo hướng gió | ASCII | CPI | RS-485 | USB | Configuration Suffix: NC | Carrying Case: No Carrying Case | Filter Bandwidths: 5, 10, or 25 Hz | Anemometer Head Weight: 1.45 kg (3.2 lb) | Anemometer Dimensions: 60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.) | -NOTE-: Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170° | ux, uy: 1 mm s⁻¹ rms | uz: 0.5 mm s⁻¹ rms | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | -NOTE-: Used for data-logger-based data acquisition. | Cable Length: 7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period) | Address Range: 1 to 14 | Bus Clocks per Sample: ~200 | Baud Rate: 50 kbps to 1 Mbps | Cable Length: 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps) | Address Range: 1 to 120 | Bus Clocks per Sample: ~300 | -NOTE-: Used for configuration or PC-based data acquisition. | Baud Rate: 9.6 kbps to 115.2 kbps | Cable Length: 610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps) | Bus Clocks per Sample: ~500 (ASCII formatted) | Cable Length: 5 m (16.4 ft) maximum | Configuration Suffix: SC | Carrying Case: Sonic Carrying Case | Filter Bandwidths: 5, 10, 20, or 25 Hz | Anemometer Head Weight: 1.9 kg (4.2 lb) | Anemometer Dimensions: 63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.) | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 195 ms (with 20 Hz bandwidth filter) | Cable Length: 853 m (2800 ft) max (@ 50 kbps) | 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | -NOTE-: Used for anemometer configuration or PC-based data acquisition. | Inclinometer Accuracy: ± 1 ° | Board Temperature Accuracy: ± 2 °C | Transducer Diameter: 0.64 cm | Transducer Mounting Arm Diameter: 0.84 cm | Support Arm Diameter: 1.59 cm | Anemometer Head Weight: 1.45 kg",
-  "search_text": "CSAT3B-NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | CSI_CSAT3B_NC | 3-Dimensional Sonic Anemometer | CSAT3B-SC | CSAT3BH-NC | CSAT3BH-SC | Sensors | Wind Speed and Wind Direction Sensors | Wind Speed and Wind Direction Sensor | Wind Speed | Wind Direction | Measure Wind Speed | Measure Wind Direction | ASCII | CPI | RS-485 | USB | Configuration Suffix: NC | Carrying Case: No Carrying Case | Filter Bandwidths: 5, 10, or 25 Hz | Anemometer Head Weight: 1.45 kg (3.2 lb) | Anemometer Dimensions: 60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.) | -NOTE-: Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170° | ux, uy: 1 mm s⁻¹ rms | uz: 0.5 mm s⁻¹ rms | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | -NOTE-: Used for data-logger-based data acquisition. | Cable Length: 7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period) | Address Range: 1 to 14 | Bus Clocks per Sample: ~200 | Baud Rate: 50 kbps to 1 Mbps | Cable Length: 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps) | Address Range: 1 to 120 | Bus Clocks per Sample: ~300 | -NOTE-: Used for configuration or PC-based data acquisition. | Baud Rate: 9.6 kbps to 115.2 kbps | Cable Length: 610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps) | Bus Clocks per Sample: ~500 (ASCII formatted) | Cable Length: 5 m (16.4 ft) maximum | Configuration Suffix: SC | Carrying Case: Sonic Carrying Case | Filter Bandwidths: 5, 10, 20, or 25 Hz | Anemometer Head Weight: 1.9 kg (4.2 lb) | Anemometer Dimensions: 63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.) | 195 ms (with 20 Hz bandwidth filter) | Cable Length: 853 m (2800 ft) max (@ 50 kbps) | 122 m (400 ft) max (@ 250 kbps) | -NOTE-: Used for anemometer configuration or PC-based data acquisition. | Inclinometer Accuracy: ± 1 ° | Board Temperature Accuracy: ± 2 °C | Transducer Diameter: 0.64 cm | Transducer Mounting Arm Diameter: 0.84 cm | Support Arm Diameter: 1.59 cm | Anemometer Head Weight: 1.45 kg | Cảm biến | Cảm biến tốc độ và hướng gió | Tốc độ gió | Hướng gió | Đo tốc độ gió | Đo hướng gió",
+  "search_text_en": "CSAT3B-NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | CSI_CSAT3B_NC | 3-Dimensional Sonic Anemometer | CSAT3B-SC | CSAT3BH-NC | CSAT3BH-SC | Sensors | Wind Speed and Wind Direction Sensors | Wind Speed and Wind Direction Sensor | Relative Humidity | Wind Speed | Wind Direction | Measure Relative Humidity | Measure Wind Speed | Measure Wind Direction | ASCII | CPI | RS-485 | USB | Configuration Suffix: NC | Carrying Case: No Carrying Case | Filter Bandwidths: 5, 10, or 25 Hz | Anemometer Head Weight: 1.45 kg (3.2 lb) | Anemometer Dimensions: 60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.) | -NOTE-: Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170° | ux, uy: 1 mm s⁻¹ rms | uz: 0.5 mm s⁻¹ rms | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | -NOTE-: Used for data-logger-based data acquisition. | Cable Length: 7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period) | Address Range: 1 to 14 | Bus Clocks per Sample: ~200 | Baud Rate: 50 kbps to 1 Mbps | Cable Length: 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps) | Address Range: 1 to 120 | Bus Clocks per Sample: ~300 | -NOTE-: Used for configuration or PC-based data acquisition. | Baud Rate: 9.6 kbps to 115.2 kbps | Cable Length: 610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps) | Bus Clocks per Sample: ~500 (ASCII formatted) | Cable Length: 5 m (16.4 ft) maximum | Configuration Suffix: SC | Carrying Case: Sonic Carrying Case | Filter Bandwidths: 5, 10, 20, or 25 Hz | Anemometer Head Weight: 1.9 kg (4.2 lb) | Anemometer Dimensions: 63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.) | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 195 ms (with 20 Hz bandwidth filter) | Cable Length: 853 m (2800 ft) max (@ 50 kbps) | 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | -NOTE-: Used for anemometer configuration or PC-based data acquisition. | Inclinometer Accuracy: ±1° | Board Temperature Accuracy: ±2°C | Transducer Diameter: 0.64 cm (0.25 in.) | Transducer Mounting Arm Diameter: 0.84 cm (0.33 in.) | Support Arm Diameter: 1.59 cm (0.63 in.) | RH",
+  "search_text_vi": "CSAT3B-NC | CSI_CSAT3B_NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | 3-Dimensional Sonic Anemometer | CSAT3B-SC | CSAT3BH-NC | CSAT3BH-SC | Cảm biến | Cảm biến tốc độ và hướng gió | Độ ẩm tương đối | Tốc độ gió | Hướng gió | Đo độ ẩm tương đối | Đo tốc độ gió | Đo hướng gió | ASCII | CPI | RS-485 | USB | Configuration Suffix: NC | Carrying Case: No Carrying Case | Filter Bandwidths: 5, 10, or 25 Hz | Anemometer Head Weight: 1.45 kg (3.2 lb) | Anemometer Dimensions: 60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.) | -NOTE-: Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170° | ux, uy: 1 mm s⁻¹ rms | uz: 0.5 mm s⁻¹ rms | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | -NOTE-: Used for data-logger-based data acquisition. | Cable Length: 7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period) | Address Range: 1 to 14 | Bus Clocks per Sample: ~200 | Baud Rate: 50 kbps to 1 Mbps | Cable Length: 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps) | Address Range: 1 to 120 | Bus Clocks per Sample: ~300 | -NOTE-: Used for configuration or PC-based data acquisition. | Baud Rate: 9.6 kbps to 115.2 kbps | Cable Length: 610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps) | Bus Clocks per Sample: ~500 (ASCII formatted) | Cable Length: 5 m (16.4 ft) maximum | Configuration Suffix: SC | Carrying Case: Sonic Carrying Case | Filter Bandwidths: 5, 10, 20, or 25 Hz | Anemometer Head Weight: 1.9 kg (4.2 lb) | Anemometer Dimensions: 63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.) | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 195 ms (with 20 Hz bandwidth filter) | Cable Length: 853 m (2800 ft) max (@ 50 kbps) | 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | -NOTE-: Used for anemometer configuration or PC-based data acquisition. | Inclinometer Accuracy: ±1° | Board Temperature Accuracy: ±2°C | Transducer Diameter: 0.64 cm (0.25 in.) | Transducer Mounting Arm Diameter: 0.84 cm (0.33 in.) | Support Arm Diameter: 1.59 cm (0.63 in.)",
+  "search_text": "CSAT3B-NC | CSAT3B 3-D Sonic Anemometer w/Integrated Electroni | CSI_CSAT3B_NC | 3-Dimensional Sonic Anemometer | CSAT3B-SC | CSAT3BH-NC | CSAT3BH-SC | Sensors | Wind Speed and Wind Direction Sensors | Wind Speed and Wind Direction Sensor | Relative Humidity | Wind Speed | Wind Direction | Measure Relative Humidity | Measure Wind Speed | Measure Wind Direction | ASCII | CPI | RS-485 | USB | Configuration Suffix: NC | Carrying Case: No Carrying Case | Filter Bandwidths: 5, 10, or 25 Hz | Anemometer Head Weight: 1.45 kg (3.2 lb) | Anemometer Dimensions: 60.64 x 12.2 x 43.0 cm (23.87 x 4.8 x 16.9 in.) | -NOTE-: Accuracy specifications assume the following: | -40° to +50°C operating range | Wind speeds < 30 m s⁻¹ | Wind angles between ±170° | ux, uy: 1 mm s⁻¹ rms | uz: 0.5 mm s⁻¹ rms | Filtered Output (data-logger-prompted or unprompted to PC): 395 ms (with 10 Hz bandwidth filter) | 155 ms (with 25 Hz bandwidth filter) | 795 ms (with 5 Hz bandwidth filter) | -NOTE-: Used for data-logger-based data acquisition. | Cable Length: 7.6 m (25 ft) max (@ 10 µs bit period) | 76 m (250 ft) max (@ 1 ms bit period) | Address Range: 1 to 14 | Bus Clocks per Sample: ~200 | Baud Rate: 50 kbps to 1 Mbps | Cable Length: 122 m (400 ft) max (@ 250 kbps) | 15 m (50 ft) max (@ 1 Mbps) | 853 m (2800 ft) max (@ 50 kbps) | Address Range: 1 to 120 | Bus Clocks per Sample: ~300 | -NOTE-: Used for configuration or PC-based data acquisition. | Baud Rate: 9.6 kbps to 115.2 kbps | Cable Length: 610 m (2000 ft) max (@ 9.6 kbps) | 305 m (1000 ft) max (@ 115.2 kbps) | Bus Clocks per Sample: ~500 (ASCII formatted) | Cable Length: 5 m (16.4 ft) maximum | Configuration Suffix: SC | Carrying Case: Sonic Carrying Case | Filter Bandwidths: 5, 10, 20, or 25 Hz | Anemometer Head Weight: 1.9 kg (4.2 lb) | Anemometer Dimensions: 63.1 x 12.3 x 43.3 cm (24.8 x 4.9 x 17.0 in.) | 195 ms (with 20 Hz bandwidth filter) | Cable Length: 853 m (2800 ft) max (@ 50 kbps) | 122 m (400 ft) max (@ 250 kbps) | -NOTE-: Used for anemometer configuration or PC-based data acquisition. | Inclinometer Accuracy: ±1° | Board Temperature Accuracy: ±2°C | Transducer Diameter: 0.64 cm (0.25 in.) | Transducer Mounting Arm Diameter: 0.84 cm (0.33 in.) | Support Arm Diameter: 1.59 cm (0.63 in.) | RH | Cảm biến | Cảm biến tốc độ và hướng gió | Độ ẩm tương đối | Tốc độ gió | Hướng gió | Đo độ ẩm tương đối | Đo tốc độ gió | Đo hướng gió",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "e8f35896ed3c00f492d466363b859d2df19d045e76fbed3a1319f210dd7df620"
+  "content_hash": "391f82842e0d15610ea8c9786ba1b6d1b38dc6d498348c444e7d9244b95d9ca4"
 }

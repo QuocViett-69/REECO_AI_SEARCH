@@ -14,23 +14,161 @@
   },
   "measurements": [
     {
+      "key": "solar_radiation",
+      "label_en": "Solar Radiation",
+      "label_vi": "Bức xạ mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "pyranometer_range",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 27,
+            "source_rows": [
+              29
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "pyranometer_spectral_range",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 28,
+            "source_rows": [
+              30
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "net_radiation",
       "label_en": "Net Radiation",
-      "label_vi": "Bức xạ thuần"
+      "label_vi": "Bức xạ thuần",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "4Component Net Radiation Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [
     {
       "key": "energy_balance_studies",
       "label_en": "Energy Balance Studies",
-      "label_vi": "Nghiên cứu cân bằng năng lượng"
+      "label_vi": "Nghiên cứu cân bằng năng lượng",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "capabilities": [
     {
+      "key": "measure_solar_radiation",
+      "label_en": "Measure Solar Radiation",
+      "label_vi": "Đo bức xạ mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "pyranometer_range",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 27,
+            "source_rows": [
+              29
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "pyranometer_spectral_range",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 28,
+            "source_rows": [
+              30
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "measure_net_radiation",
       "label_en": "Measure Net Radiation",
-      "label_vi": "Đo bức xạ thuần"
+      "label_vi": "Đo bức xạ thuần",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "4Component Net Radiation Sensor"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/NR01.json",
+            "product_index": 0,
+            "spec_index": 5,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -53,6 +191,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +80 °C",
       "raw_ref": {
         "file": "data/raw/NR01.json",
         "product_index": 0,
@@ -72,6 +211,7 @@
         "unit": "mA",
         "qualifier": "~"
       },
+      "value_raw": "~140 mA",
       "raw_ref": {
         "file": "data/raw/NR01.json",
         "product_index": 0,
@@ -88,9 +228,12 @@
     "Sensors",
     "Solar Radiation Sensors",
     "Solar Radiation Sensor",
+    "Solar Radiation",
+    "sun plus sky radiation",
     "Net Radiation",
     "net radiometer",
     "Energy Balance Studies",
+    "Measure Solar Radiation",
     "Measure Net Radiation",
     "CSI_NR01"
   ],
@@ -98,18 +241,20 @@
     "NR01",
     "Cảm biến",
     "Cảm biến bức xạ mặt trời",
+    "Bức xạ mặt trời",
     "Bức xạ thuần",
     "Nghiên cứu cân bằng năng lượng",
+    "Đo bức xạ mặt trời",
     "Đo bức xạ thuần"
   ],
-  "search_text_en": "NR01 | 4Component Net Radiation Sensor | CSI_NR01 | Sensors | Solar Radiation Sensors | Solar Radiation Sensor | Net Radiation | Measure Net Radiation | Energy Balance Studies | Operating Temperature Range: -40 to 80 °C | Heater Current Drain: ~ 140 mA | net radiometer",
-  "search_text_vi": "NR01 | CSI_NR01 | 4Component Net Radiation Sensor | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ thuần | Đo bức xạ thuần | Nghiên cứu cân bằng năng lượng | Operating Temperature Range: -40 to 80 °C | Heater Current Drain: ~ 140 mA",
-  "search_text": "NR01 | 4Component Net Radiation Sensor | CSI_NR01 | Sensors | Solar Radiation Sensors | Solar Radiation Sensor | Net Radiation | Measure Net Radiation | Energy Balance Studies | Operating Temperature Range: -40 to 80 °C | Heater Current Drain: ~ 140 mA | net radiometer | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ thuần | Đo bức xạ thuần | Nghiên cứu cân bằng năng lượng",
+  "search_text_en": "NR01 | 4Component Net Radiation Sensor | CSI_NR01 | Sensors | Solar Radiation Sensors | Solar Radiation Sensor | Solar Radiation | Net Radiation | Measure Solar Radiation | Measure Net Radiation | Energy Balance Studies | Operating Temperature Range: -40 to +80 °C | Heater Current Drain: ~140 mA | sun plus sky radiation | net radiometer",
+  "search_text_vi": "NR01 | CSI_NR01 | 4Component Net Radiation Sensor | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ mặt trời | Bức xạ thuần | Đo bức xạ mặt trời | Đo bức xạ thuần | Nghiên cứu cân bằng năng lượng | Operating Temperature Range: -40 to +80 °C | Heater Current Drain: ~140 mA",
+  "search_text": "NR01 | 4Component Net Radiation Sensor | CSI_NR01 | Sensors | Solar Radiation Sensors | Solar Radiation Sensor | Solar Radiation | Net Radiation | Measure Solar Radiation | Measure Net Radiation | Energy Balance Studies | Operating Temperature Range: -40 to +80 °C | Heater Current Drain: ~140 mA | sun plus sky radiation | net radiometer | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ mặt trời | Bức xạ thuần | Đo bức xạ mặt trời | Đo bức xạ thuần | Nghiên cứu cân bằng năng lượng",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "ca722e08e58029b6ea4a5ba86c84a8c7e4d3939587fe6fd5ab9036fc7b84c135"
+  "content_hash": "1d4723e6a4c7a82c40fa29cb8733cc491fc1fb85e40e9d71b4c2584527230b89"
 }

@@ -12,9 +12,125 @@
     "device_type": "LIDAR Ceilometer",
     "device_type_key": "lidar_ceilometer"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "humidity_range",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 29,
+            "source_rows": [
+              38
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "visibility",
+      "label_en": "Visibility",
+      "label_vi": "Tầm nhìn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_parameters",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "cloud_base_height",
+      "label_en": "Cloud Base Height",
+      "label_vi": "Độ cao chân mây",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_parameters",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "humidity_range",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 29,
+            "source_rows": [
+              38
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_visibility",
+      "label_en": "Measure Visibility",
+      "label_vi": "Đo tầm nhìn",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_parameters",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "measure_cloud_base_height",
+      "label_en": "Measure Cloud Base Height",
+      "label_vi": "Đo độ cao chân mây",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "reported_parameters",
+          "raw_ref": {
+            "file": "data/raw/SkyVue.json",
+            "product_index": 0,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "supported_protocols": [
     "Ethernet",
     "RS-232",
@@ -330,6 +446,7 @@
         "unit": "% RH",
         "qualifier": null
       },
+      "value_raw": "0 to 100% RH",
       "raw_ref": {
         "file": "data/raw/SkyVue.json",
         "product_index": 0,
@@ -353,6 +470,7 @@
           "unit": "ft"
         }
       },
+      "value_raw": "5 m (16.4 ft)",
       "raw_ref": {
         "file": "data/raw/SkyVue.json",
         "product_index": 0,
@@ -376,6 +494,7 @@
           "unit": "ft"
         }
       },
+      "value_raw": "10.06 m (33 ft)",
       "raw_ref": {
         "file": "data/raw/SkyVue.json",
         "product_index": 0,
@@ -399,6 +518,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "18 kg (39.7 lb)",
       "raw_ref": {
         "file": "data/raw/SkyVue.json",
         "product_index": 0,
@@ -415,11 +535,20 @@
     "Sensors",
     "Weather Sensors",
     "LIDAR Ceilometer",
+    "Relative Humidity",
+    "RH",
+    "Visibility",
+    "meteorological optical range",
+    "MOR",
+    "Cloud Base Height",
     "Ethernet",
     "RS-232",
     "RS-422",
     "RS-485",
     "USB",
+    "Measure Relative Humidity",
+    "Measure Visibility",
+    "Measure Cloud Base Height",
     "CSI_SKYVUE8"
   ],
   "search_keywords_vi": [
@@ -427,20 +556,26 @@
     "Cảm biến",
     "Cảm biến thời tiết",
     "Máy đo trần mây LIDAR",
+    "Độ ẩm tương đối",
+    "Tầm nhìn",
+    "Độ cao chân mây",
     "Ethernet",
     "RS-232",
     "RS-422",
     "RS-485",
-    "USB"
+    "USB",
+    "Đo độ ẩm tương đối",
+    "Đo tầm nhìn",
+    "Đo độ cao chân mây"
   ],
-  "search_text_en": "SkyVue8 | SkyVue™8 | CSI_SKYVUE8 | SkyVue8M | SkyVue™8M | SkyVuePRO | SkyVue™PRO | Sensors | Weather Sensors | LIDAR Ceilometer | Ethernet | RS-232 | RS-422 | RS-485 | USB | Legacy / Alternate Model: CS136 | Product Type: LIDAR Ceilometer | Primary Application: Cloud base height and vertical visibility measurement for aviation and meteorological applications | Reported Parameters: Cloud base heights, sky condition, vertical visibility, raw backscatter profiles | Reporting Range: 0 to 8 km (0 to 26,250 ft) | Cloud Layers Reported: Up to four layers | Vertical Visibility: Reported when there is obscuration but no clouds detected | Dimensions: 737 × 294 × 240 mm (29.0 × 11.6 × 9.5 in.) including tilt base | Weight: 18 kg (39.7 lb) | Power Source: 115/230 VAC ±15% auto-switching, 50 to 60 Hz | Power / Current Consumption: 15 W minimum; up to 380 W with all heaters on; optional current-limited mode 250 W max. | Battery Backup: Internal 12 V, 7 Ah battery | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet option | Operating Temperature Range: -40 to +60 °C excluding battery | Extended / Battery Temperature Range: -50 to +60 °C available as a special | Maximum Wind Speed: 55 m/s (123 mph) | Standards / Guidance: ICAO, CAA, WMO; includes ICAO 9837, ICAO Annex 3, CAP 437, CAP 746 | Product Type: Tactical LIDAR Ceilometer | Primary Application: Quick tactical deployment for military or civilian aviation and meteorological applications | Reported Parameters: Cloud height, sky condition, vertical visibility, raw backscatter profiles | Cloud Layers Reported: Up to four layers; up to five layers in Sky Condition | Dimensions: 763 × 360 × 253 mm (30.0 × 14.2 × 10.0 in.) including base and handle | Weight: 18 kg (39.7 lb) excluding cables | Power Source: 10 to 40 VDC; DC power source only | Power / Current Consumption: 9 A at 12 VDC; 4.5 A at 24 VDC | Data Interfaces: RS-232 / RS-422* / RS-485* / Ethernet option | Operating Temperature Range: -40 to +60 °C | Maximum Wind Speed: 55 m/s (123 mph) when securely attached to ground without camouflage covers | Electrical Safety Compliance: EN 61010-1:2010 | Laser Safety Compliance: EN 60825-1:2014 | Standards / Guidance: ICAO, CAA, WMO requirements and recommendations | Legacy / Alternate Model: CS135 | Primary Application: Cloud height and vertical visibility measurement for meteorological, aviation, and long-term research applications | Mixing Layer Height Option: Available for air-quality applications | Reporting Range: 0 to 10 km (0 to 33,000 ft) | Vertical Visibility: Reported when no clouds selected | Dimensions: 100 × 32.7 × 28.1 cm (39.4 × 12.9 × 11.1 in.) including base | Weight: 32 kg (71 lb) without cables | Power Source: 115/230 VAC ±10%, 50 to 60 Hz | Power / Current Consumption: 470 W maximum | Battery Backup: Internal 12 VDC, 2 Ah battery backup | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet | Extended / Battery Temperature Range: -20 to +50 °C with standard battery | Electrical Safety Compliance: EN 61010-1 | Laser Safety Compliance: EN 60825-1:2001 | Standards / Guidance: CAA, WMO, ICAO; includes CAP 437, CAP 670, CAP 746 | Humidity Range: 0 to 100 % RH | Minimum Reporting Resolution: 5 m | Power Supply Cable Length: 10.06 m | Weight: 18 kg",
-  "search_text_vi": "SkyVue8 | CSI_SKYVUE8 | SkyVue™8 | SkyVue8M | SkyVue™8M | SkyVuePRO | SkyVue™PRO | Cảm biến | Cảm biến thời tiết | Máy đo trần mây LIDAR | Ethernet | RS-232 | RS-422 | RS-485 | USB | Legacy / Alternate Model: CS136 | Product Type: LIDAR Ceilometer | Primary Application: Cloud base height and vertical visibility measurement for aviation and meteorological applications | Reported Parameters: Cloud base heights, sky condition, vertical visibility, raw backscatter profiles | Reporting Range: 0 to 8 km (0 to 26,250 ft) | Cloud Layers Reported: Up to four layers | Vertical Visibility: Reported when there is obscuration but no clouds detected | Dimensions: 737 × 294 × 240 mm (29.0 × 11.6 × 9.5 in.) including tilt base | Weight: 18 kg (39.7 lb) | Power Source: 115/230 VAC ±15% auto-switching, 50 to 60 Hz | Power / Current Consumption: 15 W minimum; up to 380 W with all heaters on; optional current-limited mode 250 W max. | Battery Backup: Internal 12 V, 7 Ah battery | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet option | Operating Temperature Range: -40 to +60 °C excluding battery | Extended / Battery Temperature Range: -50 to +60 °C available as a special | Maximum Wind Speed: 55 m/s (123 mph) | Standards / Guidance: ICAO, CAA, WMO; includes ICAO 9837, ICAO Annex 3, CAP 437, CAP 746 | Product Type: Tactical LIDAR Ceilometer | Primary Application: Quick tactical deployment for military or civilian aviation and meteorological applications | Reported Parameters: Cloud height, sky condition, vertical visibility, raw backscatter profiles | Cloud Layers Reported: Up to four layers; up to five layers in Sky Condition | Dimensions: 763 × 360 × 253 mm (30.0 × 14.2 × 10.0 in.) including base and handle | Weight: 18 kg (39.7 lb) excluding cables | Power Source: 10 to 40 VDC; DC power source only | Power / Current Consumption: 9 A at 12 VDC; 4.5 A at 24 VDC | Data Interfaces: RS-232 / RS-422* / RS-485* / Ethernet option | Operating Temperature Range: -40 to +60 °C | Maximum Wind Speed: 55 m/s (123 mph) when securely attached to ground without camouflage covers | Electrical Safety Compliance: EN 61010-1:2010 | Laser Safety Compliance: EN 60825-1:2014 | Standards / Guidance: ICAO, CAA, WMO requirements and recommendations | Legacy / Alternate Model: CS135 | Primary Application: Cloud height and vertical visibility measurement for meteorological, aviation, and long-term research applications | Mixing Layer Height Option: Available for air-quality applications | Reporting Range: 0 to 10 km (0 to 33,000 ft) | Vertical Visibility: Reported when no clouds selected | Dimensions: 100 × 32.7 × 28.1 cm (39.4 × 12.9 × 11.1 in.) including base | Weight: 32 kg (71 lb) without cables | Power Source: 115/230 VAC ±10%, 50 to 60 Hz | Power / Current Consumption: 470 W maximum | Battery Backup: Internal 12 VDC, 2 Ah battery backup | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet | Extended / Battery Temperature Range: -20 to +50 °C with standard battery | Electrical Safety Compliance: EN 61010-1 | Laser Safety Compliance: EN 60825-1:2001 | Standards / Guidance: CAA, WMO, ICAO; includes CAP 437, CAP 670, CAP 746 | Humidity Range: 0 to 100 % RH | Minimum Reporting Resolution: 5 m | Power Supply Cable Length: 10.06 m | Weight: 18 kg",
-  "search_text": "SkyVue8 | SkyVue™8 | CSI_SKYVUE8 | SkyVue8M | SkyVue™8M | SkyVuePRO | SkyVue™PRO | Sensors | Weather Sensors | LIDAR Ceilometer | Ethernet | RS-232 | RS-422 | RS-485 | USB | Legacy / Alternate Model: CS136 | Product Type: LIDAR Ceilometer | Primary Application: Cloud base height and vertical visibility measurement for aviation and meteorological applications | Reported Parameters: Cloud base heights, sky condition, vertical visibility, raw backscatter profiles | Reporting Range: 0 to 8 km (0 to 26,250 ft) | Cloud Layers Reported: Up to four layers | Vertical Visibility: Reported when there is obscuration but no clouds detected | Dimensions: 737 × 294 × 240 mm (29.0 × 11.6 × 9.5 in.) including tilt base | Weight: 18 kg (39.7 lb) | Power Source: 115/230 VAC ±15% auto-switching, 50 to 60 Hz | Power / Current Consumption: 15 W minimum; up to 380 W with all heaters on; optional current-limited mode 250 W max. | Battery Backup: Internal 12 V, 7 Ah battery | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet option | Operating Temperature Range: -40 to +60 °C excluding battery | Extended / Battery Temperature Range: -50 to +60 °C available as a special | Maximum Wind Speed: 55 m/s (123 mph) | Standards / Guidance: ICAO, CAA, WMO; includes ICAO 9837, ICAO Annex 3, CAP 437, CAP 746 | Product Type: Tactical LIDAR Ceilometer | Primary Application: Quick tactical deployment for military or civilian aviation and meteorological applications | Reported Parameters: Cloud height, sky condition, vertical visibility, raw backscatter profiles | Cloud Layers Reported: Up to four layers; up to five layers in Sky Condition | Dimensions: 763 × 360 × 253 mm (30.0 × 14.2 × 10.0 in.) including base and handle | Weight: 18 kg (39.7 lb) excluding cables | Power Source: 10 to 40 VDC; DC power source only | Power / Current Consumption: 9 A at 12 VDC; 4.5 A at 24 VDC | Data Interfaces: RS-232 / RS-422* / RS-485* / Ethernet option | Operating Temperature Range: -40 to +60 °C | Maximum Wind Speed: 55 m/s (123 mph) when securely attached to ground without camouflage covers | Electrical Safety Compliance: EN 61010-1:2010 | Laser Safety Compliance: EN 60825-1:2014 | Standards / Guidance: ICAO, CAA, WMO requirements and recommendations | Legacy / Alternate Model: CS135 | Primary Application: Cloud height and vertical visibility measurement for meteorological, aviation, and long-term research applications | Mixing Layer Height Option: Available for air-quality applications | Reporting Range: 0 to 10 km (0 to 33,000 ft) | Vertical Visibility: Reported when no clouds selected | Dimensions: 100 × 32.7 × 28.1 cm (39.4 × 12.9 × 11.1 in.) including base | Weight: 32 kg (71 lb) without cables | Power Source: 115/230 VAC ±10%, 50 to 60 Hz | Power / Current Consumption: 470 W maximum | Battery Backup: Internal 12 VDC, 2 Ah battery backup | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet | Extended / Battery Temperature Range: -20 to +50 °C with standard battery | Electrical Safety Compliance: EN 61010-1 | Laser Safety Compliance: EN 60825-1:2001 | Standards / Guidance: CAA, WMO, ICAO; includes CAP 437, CAP 670, CAP 746 | Humidity Range: 0 to 100 % RH | Minimum Reporting Resolution: 5 m | Power Supply Cable Length: 10.06 m | Weight: 18 kg | Cảm biến | Cảm biến thời tiết | Máy đo trần mây LIDAR",
+  "search_text_en": "SkyVue8 | SkyVue™8 | CSI_SKYVUE8 | SkyVue8M | SkyVue™8M | SkyVuePRO | SkyVue™PRO | Sensors | Weather Sensors | LIDAR Ceilometer | Relative Humidity | Visibility | Cloud Base Height | Measure Relative Humidity | Measure Visibility | Measure Cloud Base Height | Ethernet | RS-232 | RS-422 | RS-485 | USB | Legacy / Alternate Model: CS136 | Product Type: LIDAR Ceilometer | Primary Application: Cloud base height and vertical visibility measurement for aviation and meteorological applications | Reported Parameters: Cloud base heights, sky condition, vertical visibility, raw backscatter profiles | Reporting Range: 0 to 8 km (0 to 26,250 ft) | Cloud Layers Reported: Up to four layers | Vertical Visibility: Reported when there is obscuration but no clouds detected | Dimensions: 737 × 294 × 240 mm (29.0 × 11.6 × 9.5 in.) including tilt base | Weight: 18 kg (39.7 lb) | Power Source: 115/230 VAC ±15% auto-switching, 50 to 60 Hz | Power / Current Consumption: 15 W minimum; up to 380 W with all heaters on; optional current-limited mode 250 W max. | Battery Backup: Internal 12 V, 7 Ah battery | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet option | Operating Temperature Range: -40 to +60 °C excluding battery | Extended / Battery Temperature Range: -50 to +60 °C available as a special | Maximum Wind Speed: 55 m/s (123 mph) | Standards / Guidance: ICAO, CAA, WMO; includes ICAO 9837, ICAO Annex 3, CAP 437, CAP 746 | Product Type: Tactical LIDAR Ceilometer | Primary Application: Quick tactical deployment for military or civilian aviation and meteorological applications | Reported Parameters: Cloud height, sky condition, vertical visibility, raw backscatter profiles | Cloud Layers Reported: Up to four layers; up to five layers in Sky Condition | Dimensions: 763 × 360 × 253 mm (30.0 × 14.2 × 10.0 in.) including base and handle | Weight: 18 kg (39.7 lb) excluding cables | Power Source: 10 to 40 VDC; DC power source only | Power / Current Consumption: 9 A at 12 VDC; 4.5 A at 24 VDC | Data Interfaces: RS-232 / RS-422* / RS-485* / Ethernet option | Operating Temperature Range: -40 to +60 °C | Maximum Wind Speed: 55 m/s (123 mph) when securely attached to ground without camouflage covers | Electrical Safety Compliance: EN 61010-1:2010 | Laser Safety Compliance: EN 60825-1:2014 | Standards / Guidance: ICAO, CAA, WMO requirements and recommendations | Legacy / Alternate Model: CS135 | Primary Application: Cloud height and vertical visibility measurement for meteorological, aviation, and long-term research applications | Mixing Layer Height Option: Available for air-quality applications | Reporting Range: 0 to 10 km (0 to 33,000 ft) | Vertical Visibility: Reported when no clouds selected | Dimensions: 100 × 32.7 × 28.1 cm (39.4 × 12.9 × 11.1 in.) including base | Weight: 32 kg (71 lb) without cables | Power Source: 115/230 VAC ±10%, 50 to 60 Hz | Power / Current Consumption: 470 W maximum | Battery Backup: Internal 12 VDC, 2 Ah battery backup | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet | Extended / Battery Temperature Range: -20 to +50 °C with standard battery | Electrical Safety Compliance: EN 61010-1 | Laser Safety Compliance: EN 60825-1:2001 | Standards / Guidance: CAA, WMO, ICAO; includes CAP 437, CAP 670, CAP 746 | Humidity Range: 0 to 100% RH | Minimum Reporting Resolution: 5 m (16.4 ft) | Power Supply Cable Length: 10.06 m (33 ft) | RH | meteorological optical range | MOR",
+  "search_text_vi": "SkyVue8 | CSI_SKYVUE8 | SkyVue™8 | SkyVue8M | SkyVue™8M | SkyVuePRO | SkyVue™PRO | Cảm biến | Cảm biến thời tiết | Máy đo trần mây LIDAR | Độ ẩm tương đối | Tầm nhìn | Độ cao chân mây | Đo độ ẩm tương đối | Đo tầm nhìn | Đo độ cao chân mây | Ethernet | RS-232 | RS-422 | RS-485 | USB | Legacy / Alternate Model: CS136 | Product Type: LIDAR Ceilometer | Primary Application: Cloud base height and vertical visibility measurement for aviation and meteorological applications | Reported Parameters: Cloud base heights, sky condition, vertical visibility, raw backscatter profiles | Reporting Range: 0 to 8 km (0 to 26,250 ft) | Cloud Layers Reported: Up to four layers | Vertical Visibility: Reported when there is obscuration but no clouds detected | Dimensions: 737 × 294 × 240 mm (29.0 × 11.6 × 9.5 in.) including tilt base | Weight: 18 kg (39.7 lb) | Power Source: 115/230 VAC ±15% auto-switching, 50 to 60 Hz | Power / Current Consumption: 15 W minimum; up to 380 W with all heaters on; optional current-limited mode 250 W max. | Battery Backup: Internal 12 V, 7 Ah battery | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet option | Operating Temperature Range: -40 to +60 °C excluding battery | Extended / Battery Temperature Range: -50 to +60 °C available as a special | Maximum Wind Speed: 55 m/s (123 mph) | Standards / Guidance: ICAO, CAA, WMO; includes ICAO 9837, ICAO Annex 3, CAP 437, CAP 746 | Product Type: Tactical LIDAR Ceilometer | Primary Application: Quick tactical deployment for military or civilian aviation and meteorological applications | Reported Parameters: Cloud height, sky condition, vertical visibility, raw backscatter profiles | Cloud Layers Reported: Up to four layers; up to five layers in Sky Condition | Dimensions: 763 × 360 × 253 mm (30.0 × 14.2 × 10.0 in.) including base and handle | Weight: 18 kg (39.7 lb) excluding cables | Power Source: 10 to 40 VDC; DC power source only | Power / Current Consumption: 9 A at 12 VDC; 4.5 A at 24 VDC | Data Interfaces: RS-232 / RS-422* / RS-485* / Ethernet option | Operating Temperature Range: -40 to +60 °C | Maximum Wind Speed: 55 m/s (123 mph) when securely attached to ground without camouflage covers | Electrical Safety Compliance: EN 61010-1:2010 | Laser Safety Compliance: EN 60825-1:2014 | Standards / Guidance: ICAO, CAA, WMO requirements and recommendations | Legacy / Alternate Model: CS135 | Primary Application: Cloud height and vertical visibility measurement for meteorological, aviation, and long-term research applications | Mixing Layer Height Option: Available for air-quality applications | Reporting Range: 0 to 10 km (0 to 33,000 ft) | Vertical Visibility: Reported when no clouds selected | Dimensions: 100 × 32.7 × 28.1 cm (39.4 × 12.9 × 11.1 in.) including base | Weight: 32 kg (71 lb) without cables | Power Source: 115/230 VAC ±10%, 50 to 60 Hz | Power / Current Consumption: 470 W maximum | Battery Backup: Internal 12 VDC, 2 Ah battery backup | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet | Extended / Battery Temperature Range: -20 to +50 °C with standard battery | Electrical Safety Compliance: EN 61010-1 | Laser Safety Compliance: EN 60825-1:2001 | Standards / Guidance: CAA, WMO, ICAO; includes CAP 437, CAP 670, CAP 746 | Humidity Range: 0 to 100% RH | Minimum Reporting Resolution: 5 m (16.4 ft) | Power Supply Cable Length: 10.06 m (33 ft)",
+  "search_text": "SkyVue8 | SkyVue™8 | CSI_SKYVUE8 | SkyVue8M | SkyVue™8M | SkyVuePRO | SkyVue™PRO | Sensors | Weather Sensors | LIDAR Ceilometer | Relative Humidity | Visibility | Cloud Base Height | Measure Relative Humidity | Measure Visibility | Measure Cloud Base Height | Ethernet | RS-232 | RS-422 | RS-485 | USB | Legacy / Alternate Model: CS136 | Product Type: LIDAR Ceilometer | Primary Application: Cloud base height and vertical visibility measurement for aviation and meteorological applications | Reported Parameters: Cloud base heights, sky condition, vertical visibility, raw backscatter profiles | Reporting Range: 0 to 8 km (0 to 26,250 ft) | Cloud Layers Reported: Up to four layers | Vertical Visibility: Reported when there is obscuration but no clouds detected | Dimensions: 737 × 294 × 240 mm (29.0 × 11.6 × 9.5 in.) including tilt base | Weight: 18 kg (39.7 lb) | Power Source: 115/230 VAC ±15% auto-switching, 50 to 60 Hz | Power / Current Consumption: 15 W minimum; up to 380 W with all heaters on; optional current-limited mode 250 W max. | Battery Backup: Internal 12 V, 7 Ah battery | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet option | Operating Temperature Range: -40 to +60 °C excluding battery | Extended / Battery Temperature Range: -50 to +60 °C available as a special | Maximum Wind Speed: 55 m/s (123 mph) | Standards / Guidance: ICAO, CAA, WMO; includes ICAO 9837, ICAO Annex 3, CAP 437, CAP 746 | Product Type: Tactical LIDAR Ceilometer | Primary Application: Quick tactical deployment for military or civilian aviation and meteorological applications | Reported Parameters: Cloud height, sky condition, vertical visibility, raw backscatter profiles | Cloud Layers Reported: Up to four layers; up to five layers in Sky Condition | Dimensions: 763 × 360 × 253 mm (30.0 × 14.2 × 10.0 in.) including base and handle | Weight: 18 kg (39.7 lb) excluding cables | Power Source: 10 to 40 VDC; DC power source only | Power / Current Consumption: 9 A at 12 VDC; 4.5 A at 24 VDC | Data Interfaces: RS-232 / RS-422* / RS-485* / Ethernet option | Operating Temperature Range: -40 to +60 °C | Maximum Wind Speed: 55 m/s (123 mph) when securely attached to ground without camouflage covers | Electrical Safety Compliance: EN 61010-1:2010 | Laser Safety Compliance: EN 60825-1:2014 | Standards / Guidance: ICAO, CAA, WMO requirements and recommendations | Legacy / Alternate Model: CS135 | Primary Application: Cloud height and vertical visibility measurement for meteorological, aviation, and long-term research applications | Mixing Layer Height Option: Available for air-quality applications | Reporting Range: 0 to 10 km (0 to 33,000 ft) | Vertical Visibility: Reported when no clouds selected | Dimensions: 100 × 32.7 × 28.1 cm (39.4 × 12.9 × 11.1 in.) including base | Weight: 32 kg (71 lb) without cables | Power Source: 115/230 VAC ±10%, 50 to 60 Hz | Power / Current Consumption: 470 W maximum | Battery Backup: Internal 12 VDC, 2 Ah battery backup | Data Interfaces: RS-232 / RS-422 / RS-485 / Ethernet | Extended / Battery Temperature Range: -20 to +50 °C with standard battery | Electrical Safety Compliance: EN 61010-1 | Laser Safety Compliance: EN 60825-1:2001 | Standards / Guidance: CAA, WMO, ICAO; includes CAP 437, CAP 670, CAP 746 | Humidity Range: 0 to 100% RH | Minimum Reporting Resolution: 5 m (16.4 ft) | Power Supply Cable Length: 10.06 m (33 ft) | RH | meteorological optical range | MOR | Cảm biến | Cảm biến thời tiết | Máy đo trần mây LIDAR | Độ ẩm tương đối | Tầm nhìn | Độ cao chân mây | Đo độ ẩm tương đối | Đo tầm nhìn | Đo độ cao chân mây",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "16833db68f7ce2a2bd920771ed6bb1e987eedb365787c0de96e535bf0faf8786"
+  "content_hash": "cd112361da363a98677a87fb63d51860559ee36439d157744bfd16c481fade11"
 }

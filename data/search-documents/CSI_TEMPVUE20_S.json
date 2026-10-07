@@ -16,7 +16,33 @@
     {
       "key": "air_temperature",
       "label_en": "Air Temperature",
-      "label_vi": "Nhiệt độ không khí"
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +50,33 @@
     {
       "key": "measure_air_temperature",
       "label_en": "Measure Air Temperature",
-      "label_vi": "Đo nhiệt độ không khí"
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              4
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_parameter",
+          "raw_ref": {
+            "file": "data/raw/TempVue20.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -161,6 +213,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0.01 °C",
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
@@ -180,6 +233,7 @@
         "unit": "µA",
         "qualifier": null
       },
+      "value_raw": "150 µA",
       "raw_ref": {
         "file": "data/raw/TempVue20.json",
         "product_index": 0,
@@ -220,5 +274,5 @@
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "f82c3f8ae51e71d9aaf4807d4e671a00514af2c8de3580f55179070b559c1252"
+  "content_hash": "4eb795ef8de8760fdf58697b1e343777e74e7618493517345918d58e37360f5d"
 }

@@ -16,7 +16,14 @@
     {
       "key": "precipitation",
       "label_en": "Precipitation",
-      "label_vi": "Lượng mưa"
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young Heated Rain Gage w/6.3 Orifice"
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,12 +31,26 @@
     {
       "key": "measure_precipitation",
       "label_en": "Measure Precipitation",
-      "label_vi": "Đo lượng mưa"
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young Heated Rain Gage w/6.3 Orifice"
+        }
+      ]
     },
     {
       "key": "heated_precipitation_measurement",
       "label_en": "Heated Precipitation Measurement",
-      "label_vi": "Đo lượng mưa có gia nhiệt"
+      "label_vi": "Đo lượng mưa có gia nhiệt",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "RM Young Heated Rain Gage w/6.3 Orifice"
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -52,6 +73,7 @@
         "unit": "%",
         "qualifier": null
       },
+      "value_raw": "0 to 100%",
       "raw_ref": {
         "file": "data/raw/52202.json",
         "product_index": 0,
@@ -75,6 +97,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "0.43 kg (0.95 lb)",
       "raw_ref": {
         "file": "data/raw/52202.json",
         "product_index": 0,
@@ -98,6 +121,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "16 cm (6.3 in.)",
       "raw_ref": {
         "file": "data/raw/52202.json",
         "product_index": 0,
@@ -121,6 +145,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "18.5 cm (7.3 in.)",
       "raw_ref": {
         "file": "data/raw/52202.json",
         "product_index": 0,
@@ -144,6 +169,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "30 cm (11.8 in.)",
       "raw_ref": {
         "file": "data/raw/52202.json",
         "product_index": 0,
@@ -167,6 +193,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "1.16 kg (2.55 lb)",
       "raw_ref": {
         "file": "data/raw/52202.json",
         "product_index": 0,
@@ -197,14 +224,14 @@
     "Đo lượng mưa",
     "Đo lượng mưa có gia nhiệt"
   ],
-  "search_text_en": "52202 | RM Young Heated Rain Gage w/6.3 Orifice | CSI_52202 | Sensors | Precipitation Sensors | Precipitation Sensor | Precipitation | Measure Precipitation | Heated Precipitation Measurement | Humidity Range: 0 to 100 % | Power Plug Weight: 0.43 kg | Orifice Diameter: 16 cm | Diameter: 18.5 cm | Height: 30 cm | Weight: 1.16 kg | rainfall",
-  "search_text_vi": "52202 | CSI_52202 | RM Young Heated Rain Gage w/6.3 Orifice | Cảm biến | Cảm biến lượng mưa | Lượng mưa | Đo lượng mưa | Đo lượng mưa có gia nhiệt | Humidity Range: 0 to 100 % | Power Plug Weight: 0.43 kg | Orifice Diameter: 16 cm | Diameter: 18.5 cm | Height: 30 cm | Weight: 1.16 kg",
-  "search_text": "52202 | RM Young Heated Rain Gage w/6.3 Orifice | CSI_52202 | Sensors | Precipitation Sensors | Precipitation Sensor | Precipitation | Measure Precipitation | Heated Precipitation Measurement | Humidity Range: 0 to 100 % | Power Plug Weight: 0.43 kg | Orifice Diameter: 16 cm | Diameter: 18.5 cm | Height: 30 cm | Weight: 1.16 kg | rainfall | Cảm biến | Cảm biến lượng mưa | Lượng mưa | Đo lượng mưa | Đo lượng mưa có gia nhiệt",
+  "search_text_en": "52202 | RM Young Heated Rain Gage w/6.3 Orifice | CSI_52202 | Sensors | Precipitation Sensors | Precipitation Sensor | Precipitation | Measure Precipitation | Heated Precipitation Measurement | Humidity Range: 0 to 100% | Power Plug Weight: 0.43 kg (0.95 lb) | Orifice Diameter: 16 cm (6.3 in.) | Diameter: 18.5 cm (7.3 in.) | Height: 30 cm (11.8 in.) | Weight: 1.16 kg (2.55 lb) | rainfall",
+  "search_text_vi": "52202 | CSI_52202 | RM Young Heated Rain Gage w/6.3 Orifice | Cảm biến | Cảm biến lượng mưa | Lượng mưa | Đo lượng mưa | Đo lượng mưa có gia nhiệt | Humidity Range: 0 to 100% | Power Plug Weight: 0.43 kg (0.95 lb) | Orifice Diameter: 16 cm (6.3 in.) | Diameter: 18.5 cm (7.3 in.) | Height: 30 cm (11.8 in.) | Weight: 1.16 kg (2.55 lb)",
+  "search_text": "52202 | RM Young Heated Rain Gage w/6.3 Orifice | CSI_52202 | Sensors | Precipitation Sensors | Precipitation Sensor | Precipitation | Measure Precipitation | Heated Precipitation Measurement | Humidity Range: 0 to 100% | Power Plug Weight: 0.43 kg (0.95 lb) | Orifice Diameter: 16 cm (6.3 in.) | Diameter: 18.5 cm (7.3 in.) | Height: 30 cm (11.8 in.) | Weight: 1.16 kg (2.55 lb) | rainfall | Cảm biến | Cảm biến lượng mưa | Lượng mưa | Đo lượng mưa | Đo lượng mưa có gia nhiệt",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "77be0e9b1a17af332d1a2ec50cd30a6256313bac17f4e62f54a607023a920d88"
+  "content_hash": "8eac823959b87c9fe3c65323bcfe131c0a2fd2c26621e8d313df020074a3674d"
 }

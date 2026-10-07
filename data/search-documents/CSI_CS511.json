@@ -16,7 +16,14 @@
     {
       "key": "dissolved_oxygen",
       "label_en": "Dissolved Oxygen",
-      "label_vi": "Oxy hòa tan"
+      "label_vi": "Oxy hòa tan",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)"
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +31,14 @@
     {
       "key": "measure_dissolved_oxygen",
       "label_en": "Measure Dissolved Oxygen",
-      "label_vi": "Đo oxy hòa tan"
+      "label_vi": "Đo oxy hòa tan",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C)"
+        }
+      ]
     }
   ],
   "supported_protocols": [],
@@ -47,6 +61,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0° to 50°C",
       "raw_ref": {
         "file": "data/raw/CS511_Specifications_SplitCells.json",
         "product_index": 0,
@@ -68,6 +83,7 @@
         "qualifier": null,
         "condition": "for O₂"
       },
+      "value_raw": "0.5 to 50 ppm (for O₂)",
       "raw_ref": {
         "file": "data/raw/CS511_Specifications_SplitCells.json",
         "product_index": 0,
@@ -87,6 +103,7 @@
         "unit": "%",
         "qualifier": "±"
       },
+      "value_raw": "±2%",
       "raw_ref": {
         "file": "data/raw/CS511_Specifications_SplitCells.json",
         "product_index": 0,
@@ -107,6 +124,7 @@
         "unit": "psig",
         "qualifier": null
       },
+      "value_raw": "0 to 100 psig",
       "raw_ref": {
         "file": "data/raw/CS511_Specifications_SplitCells.json",
         "product_index": 0,
@@ -130,6 +148,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "6.35 cm (2.5 in.)",
       "raw_ref": {
         "file": "data/raw/CS511_Specifications_SplitCells.json",
         "product_index": 0,
@@ -153,6 +172,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "5.72 cm (2.25 in.)",
       "raw_ref": {
         "file": "data/raw/CS511_Specifications_SplitCells.json",
         "product_index": 0,
@@ -180,14 +200,14 @@
     "Oxy hòa tan",
     "Đo oxy hòa tan"
   ],
-  "search_text_en": "CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | CSI_CS511 | Sensors | Dissolved Oxygen Sensors | Dissolved Oxygen Sensor | Dissolved Oxygen | Measure Dissolved Oxygen | Operating Temperature Range: 0 to 50 °C | Measurement Range: 0.5 to 50 ppm | Accuracy: ± 2 % | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm | Diameter: 5.72 cm",
-  "search_text_vi": "CS511 | CSI_CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | Cảm biến | Cảm biến oxy hòa tan | Oxy hòa tan | Đo oxy hòa tan | Operating Temperature Range: 0 to 50 °C | Measurement Range: 0.5 to 50 ppm | Accuracy: ± 2 % | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm | Diameter: 5.72 cm",
-  "search_text": "CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | CSI_CS511 | Sensors | Dissolved Oxygen Sensors | Dissolved Oxygen Sensor | Dissolved Oxygen | Measure Dissolved Oxygen | Operating Temperature Range: 0 to 50 °C | Measurement Range: 0.5 to 50 ppm | Accuracy: ± 2 % | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm | Diameter: 5.72 cm | Cảm biến | Cảm biến oxy hòa tan | Oxy hòa tan | Đo oxy hòa tan",
+  "search_text_en": "CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | CSI_CS511 | Sensors | Dissolved Oxygen Sensors | Dissolved Oxygen Sensor | Dissolved Oxygen | Measure Dissolved Oxygen | Operating Temperature Range: 0° to 50°C | Measurement Range: 0.5 to 50 ppm (for O₂) | Accuracy: ±2% | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm (2.5 in.) | Diameter: 5.72 cm (2.25 in.)",
+  "search_text_vi": "CS511 | CSI_CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | Cảm biến | Cảm biến oxy hòa tan | Oxy hòa tan | Đo oxy hòa tan | Operating Temperature Range: 0° to 50°C | Measurement Range: 0.5 to 50 ppm (for O₂) | Accuracy: ±2% | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm (2.5 in.) | Diameter: 5.72 cm (2.25 in.)",
+  "search_text": "CS511 | Sensorex DO6400 T Dissolved Oxygen Sensor (0 to +50C) | CSI_CS511 | Sensors | Dissolved Oxygen Sensors | Dissolved Oxygen Sensor | Dissolved Oxygen | Measure Dissolved Oxygen | Operating Temperature Range: 0° to 50°C | Measurement Range: 0.5 to 50 ppm (for O₂) | Accuracy: ±2% | Pressure: 0 to 100 psig | Minimum Submersion Depth: 6.35 cm (2.5 in.) | Diameter: 5.72 cm (2.25 in.) | Cảm biến | Cảm biến oxy hòa tan | Oxy hòa tan | Đo oxy hòa tan",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "e4e1b949e0f09e190339ecda577ecba5c8c392763aff8c156396ef55930bec7b"
+  "content_hash": "210cbf66dafd60e5c77535e2ebd4d8bc10ccd8674925d4364d62ed3b33bcd30a"
 }

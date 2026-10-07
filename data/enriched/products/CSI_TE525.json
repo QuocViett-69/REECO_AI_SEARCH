@@ -12,10 +12,50 @@
     "device_type": "Tipping Bucket Rain Gage",
     "device_type_key": "tipping_bucket_rain_gage"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "precipitation",
+      "label_en": "Precipitation",
+      "label_vi": "Lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_TE525.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_precipitation",
+      "label_en": "Measure Precipitation",
+      "label_vi": "Đo lượng mưa",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_TE525.json",
+            "product_index": 0,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "TE525",
@@ -48,13 +88,18 @@
       "Sensors",
       "Precipitation Sensors",
       "Tipping Bucket Rain Gage",
+      "Precipitation",
+      "rainfall",
+      "Measure Precipitation",
       "CSI_TE525"
     ],
     "vi": [
       "TE525",
       "Cảm biến",
       "Cảm biến lượng mưa",
-      "Cảm biến mưa gàu lật"
+      "Cảm biến mưa gàu lật",
+      "Lượng mưa",
+      "Đo lượng mưa"
     ]
   }
 }

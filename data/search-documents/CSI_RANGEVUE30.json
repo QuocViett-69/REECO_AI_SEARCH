@@ -16,31 +16,125 @@
     {
       "key": "water_level",
       "label_en": "Water Level",
-      "label_vi": "Mực nước"
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "distance",
       "label_en": "Distance",
-      "label_vi": "Khoảng cách"
+      "label_vi": "Khoảng cách",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [
     {
       "key": "water_level_monitoring",
       "label_en": "Water Level Monitoring",
-      "label_vi": "Giám sát mực nước"
+      "label_vi": "Giám sát mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 4,
+            "source_rows": [
+              7
+            ]
+          }
+        }
+      ]
     }
   ],
   "capabilities": [
     {
       "key": "measure_water_level",
       "label_en": "Measure Water Level",
-      "label_vi": "Đo mực nước"
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 0,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
     },
     {
       "key": "measure_distance",
       "label_en": "Measure Distance",
-      "label_vi": "Đo khoảng cách"
+      "label_vi": "Đo khoảng cách",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/RangeVue15-30.json",
+            "product_index": 1,
+            "spec_index": 6,
+            "source_rows": [
+              9
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -68,6 +162,7 @@
           "unit": "ft"
         }
       },
+      "value_raw": "Up to 30 m (98.4 ft)",
       "raw_ref": {
         "file": "data/raw/RangeVue15-30.json",
         "product_index": 1,
@@ -88,6 +183,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +80 °C",
       "raw_ref": {
         "file": "data/raw/RangeVue15-30.json",
         "product_index": 1,
@@ -108,6 +204,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +80 °C",
       "raw_ref": {
         "file": "data/raw/RangeVue15-30.json",
         "product_index": 1,
@@ -131,6 +228,7 @@
           "unit": "ft"
         }
       },
+      "value_raw": "1 mm (0.0033 ft)",
       "raw_ref": {
         "file": "data/raw/RangeVue15-30.json",
         "product_index": 1,
@@ -151,6 +249,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "8 to 32 VDC",
       "raw_ref": {
         "file": "data/raw/RangeVue15-30.json",
         "product_index": 1,
@@ -170,6 +269,7 @@
         "unit": "µW/cm²",
         "qualifier": "<"
       },
+      "value_raw": "<3 µW/cm²",
       "raw_ref": {
         "file": "data/raw/RangeVue15-30.json",
         "product_index": 1,
@@ -189,6 +289,7 @@
         "unit": "mW",
         "qualifier": null
       },
+      "value_raw": "200 mW",
       "raw_ref": {
         "file": "data/raw/RangeVue15-30.json",
         "product_index": 1,
@@ -212,6 +313,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "0.7 kg (1.5 lb)",
       "raw_ref": {
         "file": "data/raw/RangeVue15-30.json",
         "product_index": 1,
@@ -249,14 +351,14 @@
     "Đo mực nước",
     "Đo khoảng cách"
   ],
-  "search_text_en": "RangeVue30 | RangeVue™30 | CSI_RANGEVUE30 | Sensors | Water Level, Stage, and Flow Sensors | Water Level, Stage, and Flow Sensor | Water Level | Distance | Measure Water Level | Measure Distance | Water Level Monitoring | SDI-12 | Measurement Range: ≤ 30 m | Operating Temperature Range: -40 to 80 °C | Storage Temperature Range: -40 to 80 °C | Resolution: 1 mm | Input Voltage: 8 to 32 V DC | Maximum Power Density at 1 m: < 3 µW/cm² | Power Consumption – Maximum: 200 mW | Weight: 0.7 kg | stage",
-  "search_text_vi": "RangeVue30 | Cảm biến radar đo mực nước RangeVue™30 | CSI_RANGEVUE30 | RangeVue™30 | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Mực nước | Khoảng cách | Đo mực nước | Đo khoảng cách | Giám sát mực nước | SDI-12 | Measurement Range: ≤ 30 m | Operating Temperature Range: -40 to 80 °C | Storage Temperature Range: -40 to 80 °C | Resolution: 1 mm | Input Voltage: 8 to 32 V DC | Maximum Power Density at 1 m: < 3 µW/cm² | Power Consumption – Maximum: 200 mW | Weight: 0.7 kg",
-  "search_text": "RangeVue30 | RangeVue™30 | CSI_RANGEVUE30 | Sensors | Water Level, Stage, and Flow Sensors | Water Level, Stage, and Flow Sensor | Water Level | Distance | Measure Water Level | Measure Distance | Water Level Monitoring | SDI-12 | Measurement Range: ≤ 30 m | Operating Temperature Range: -40 to 80 °C | Storage Temperature Range: -40 to 80 °C | Resolution: 1 mm | Input Voltage: 8 to 32 V DC | Maximum Power Density at 1 m: < 3 µW/cm² | Power Consumption – Maximum: 200 mW | Weight: 0.7 kg | stage | Cảm biến radar đo mực nước RangeVue™30 | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Mực nước | Khoảng cách | Đo mực nước | Đo khoảng cách | Giám sát mực nước",
+  "search_text_en": "RangeVue30 | RangeVue™30 | CSI_RANGEVUE30 | Sensors | Water Level, Stage, and Flow Sensors | Water Level, Stage, and Flow Sensor | Water Level | Distance | Measure Water Level | Measure Distance | Water Level Monitoring | SDI-12 | Measurement Range: Up to 30 m (98.4 ft) | Operating Temperature Range: -40 to +80 °C | Storage Temperature Range: -40 to +80 °C | Resolution: 1 mm (0.0033 ft) | Input Voltage: 8 to 32 VDC | Maximum Power Density at 1 m: <3 µW/cm² | Power Consumption – Maximum: 200 mW | Weight: 0.7 kg (1.5 lb) | stage",
+  "search_text_vi": "RangeVue30 | Cảm biến radar đo mực nước RangeVue™30 | CSI_RANGEVUE30 | RangeVue™30 | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Mực nước | Khoảng cách | Đo mực nước | Đo khoảng cách | Giám sát mực nước | SDI-12 | Measurement Range: Up to 30 m (98.4 ft) | Operating Temperature Range: -40 to +80 °C | Storage Temperature Range: -40 to +80 °C | Resolution: 1 mm (0.0033 ft) | Input Voltage: 8 to 32 VDC | Maximum Power Density at 1 m: <3 µW/cm² | Power Consumption – Maximum: 200 mW | Weight: 0.7 kg (1.5 lb)",
+  "search_text": "RangeVue30 | RangeVue™30 | CSI_RANGEVUE30 | Sensors | Water Level, Stage, and Flow Sensors | Water Level, Stage, and Flow Sensor | Water Level | Distance | Measure Water Level | Measure Distance | Water Level Monitoring | SDI-12 | Measurement Range: Up to 30 m (98.4 ft) | Operating Temperature Range: -40 to +80 °C | Storage Temperature Range: -40 to +80 °C | Resolution: 1 mm (0.0033 ft) | Input Voltage: 8 to 32 VDC | Maximum Power Density at 1 m: <3 µW/cm² | Power Consumption – Maximum: 200 mW | Weight: 0.7 kg (1.5 lb) | stage | Cảm biến radar đo mực nước RangeVue™30 | Cảm biến | Cảm biến mực nước, cao trình và lưu lượng | Mực nước | Khoảng cách | Đo mực nước | Đo khoảng cách | Giám sát mực nước",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "3590be843b3784d3424c0200d79722c2bddd11d8ed074fe591fcc9082cc24310"
+  "content_hash": "3ab80725d867d200f731767938b4728fde16c3db9f8090573b970a48fa8ab6d7"
 }

@@ -14,6 +14,37 @@
   },
   "measurements": [
     {
+      "key": "air_temperature",
+      "label_en": "Air Temperature",
+      "label_vi": "Nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_HMP60.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              29
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_HMP60.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              30
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "relative_humidity",
       "label_en": "Relative Humidity",
       "label_vi": "Độ ẩm tương đối",
@@ -36,6 +67,37 @@
   "applications": [],
   "protocols": [],
   "capabilities": [
+    {
+      "key": "measure_air_temperature",
+      "label_en": "Measure Air Temperature",
+      "label_vi": "Đo nhiệt độ không khí",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_measurement_range",
+          "raw_ref": {
+            "file": "data/raw/CSI_HMP60.json",
+            "product_index": 0,
+            "spec_index": 19,
+            "source_rows": [
+              29
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "air_temperature_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSI_HMP60.json",
+            "product_index": 0,
+            "spec_index": 20,
+            "source_rows": [
+              30
+            ]
+          }
+        }
+      ]
+    },
     {
       "key": "measure_relative_humidity",
       "label_en": "Measure Relative Humidity",
@@ -101,8 +163,11 @@
       "Sensors",
       "Air Temperature and Relative Humidity Sensors",
       "Air Temperature and Relative Humidity Sensor",
+      "Air Temperature",
+      "ambient temperature",
       "Relative Humidity",
       "RH",
+      "Measure Air Temperature",
       "Measure Relative Humidity",
       "CSI_HMP60"
     ],
@@ -110,7 +175,9 @@
       "HMP60",
       "Cảm biến",
       "Cảm biến nhiệt độ không khí và độ ẩm tương đối",
+      "Nhiệt độ không khí",
       "Độ ẩm tương đối",
+      "Đo nhiệt độ không khí",
       "Đo độ ẩm tương đối"
     ]
   }

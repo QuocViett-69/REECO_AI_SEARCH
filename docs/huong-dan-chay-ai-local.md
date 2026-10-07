@@ -272,6 +272,34 @@ Model hiện **chọn giữa các explanation đã chuẩn bị theo bằng ch�
 
 Nếu không có results, cần xem query, dữ liệu, filter và guidance; không chỉ từ đó kết luận LLM lỗi. Nếu results thiếu explanation, xem warning backend về bước load/build explanation.
 
+### 8.1. Cập nhật nền tảng explanation theo model
+
+Danh mục và ví dụ cho từng model nằm trong [báo cáo explanation theo model](ai-search-explainable-theo-model.md). API trả `explanation.requirements` với các trạng thái `confirmed`, `unconfirmed`, `mismatch`; từng mục có bằng chứng riêng. Thiếu dữ liệu được giữ là chưa xác nhận, không tự kết luận thiết bị không hỗ trợ.
+
+Sau khi chỉnh dữ liệu hoặc quy tắc enrichment, chạy tại thư mục gốc:
+
+```powershell
+npm run build:semantic-enrichment
+npm run build:search-documents
+npm run validate:semantic-enrichment
+npm run validate:search-documents
+npm run search:catalog:audit
+npm run search:catalog:sync
+```
+
+Lệnh sync mặc định chỉ kiểm tra. Để áp dụng dữ liệu đã kiểm tra vào Supabase:
+
+```powershell
+npm run search:catalog:sync -- --execute
+npm run search:catalog:smoke -- --require-llm
+```
+
+Sync dùng API Supabase khi kết nối PostgreSQL trực tiếp không hoạt động. Nó kiểm tra dữ liệu remote trước khi cập nhật, giữ vector còn đúng với search text, tạo embedding trước khi ghi các nội dung thay đổi và không sửa giá, đơn hàng hoặc tài khoản. Thông số nguồn vẫn giữ các điều kiện, ghi chú và cảnh báo.
+
+Bản sao trước cập nhật nằm trong `output/explanation-sync-backup.json`; trạng thái đã đồng bộ nằm trong `output/explanation-sync-baseline.json`. Giữ file baseline để nhận biết những chỉnh sửa độc lập ở Supabase trong lần đồng bộ sau. Nếu dữ liệu remote khác baseline, script dừng để tránh ghi đè. Sau cập nhật code, build và khởi động lại staging theo các bước ở trên.
+
+Qwen được giới hạn tối đa ba kết quả đủ điều kiện và có giới hạn dung lượng prompt; explanation dài có thể dùng rule để giữ đầy đủ bằng chứng trong giới hạn context local.
+
 ## 9. Chạy BGE reranker local — tùy chọn
 
 BGE chạy bằng service Python riêng. Nó không nằm trong Ollama và không tự khởi động cùng `staging:local`. Chỉ làm phần này nếu muốn bật rerank.

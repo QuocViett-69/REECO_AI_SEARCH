@@ -131,6 +131,12 @@ export const SearchScoresSchema = z
   })
   .strict();
 
+const ExplanationEvidenceSchema = z.object({
+  source: z.enum(['products', 'product_document', 'normalized_spec']),
+  field: z.string().min(1), value: z.string().min(1),
+  raw_ref: RawSpecificationReferenceSchema.optional(),
+}).strict();
+
 export const SearchResultSchema = z
   .object({
     product_id: z.string().min(1),
@@ -147,17 +153,16 @@ export const SearchResultSchema = z
         text: z.string().min(1),
         language: z.enum(['en', 'vi']),
         source: z.enum(['rule', 'llm']).optional(),
+        requirements: z.array(z.object({
+          label: z.string().min(1),
+          status: z.enum(['confirmed', 'unconfirmed', 'mismatch']),
+          evidence: z.array(ExplanationEvidenceSchema),
+        }).strict()).optional(),
         generation: z.object({
           status: z.enum(['disabled', 'not_applicable', 'accepted', 'timeout', 'unavailable', 'invalid_response']),
           model: z.string().optional(), latency_ms: z.number().nonnegative().optional(),
         }).strict().optional(),
-        evidence: z.array(
-          z.object({
-            source: z.enum(['products', 'product_document', 'normalized_spec']),
-            field: z.string().min(1),
-            value: z.string().min(1),
-          }).strict(),
-        ),
+        evidence: z.array(ExplanationEvidenceSchema),
       })
       .strict()
       .optional(),

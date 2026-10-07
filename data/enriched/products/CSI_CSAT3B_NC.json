@@ -14,6 +14,27 @@
   },
   "measurements": [
     {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 34,
+            "source_rows": [
+              57,
+              58,
+              59
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "wind_speed",
       "label_en": "Wind Speed",
       "label_vi": "Tốc độ gió",
@@ -46,6 +67,19 @@
           "source": "product_master",
           "field": "product_name_en",
           "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              15,
+              16
+            ]
+          }
         }
       ]
     }
@@ -139,6 +173,27 @@
   ],
   "capabilities": [
     {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_accuracy",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 34,
+            "source_rows": [
+              57,
+              58,
+              59
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "measure_wind_speed",
       "label_en": "Measure Wind Speed",
       "label_vi": "Đo tốc độ gió",
@@ -171,6 +226,19 @@
           "source": "product_master",
           "field": "product_name_en",
           "value": "CSAT3B 3-D Sonic Anemometer w/Integrated Electroni"
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "wind_direction_range",
+          "raw_ref": {
+            "file": "data/raw/CSAT3B_CSAT3BH.json",
+            "product_index": 0,
+            "spec_index": 8,
+            "source_rows": [
+              15,
+              16
+            ]
+          }
         }
       ]
     }
@@ -220,12 +288,15 @@
       "Sensors",
       "Wind Speed and Wind Direction Sensors",
       "Wind Speed and Wind Direction Sensor",
+      "Relative Humidity",
+      "RH",
       "Wind Speed",
       "Wind Direction",
       "ASCII",
       "CPI",
       "RS-485",
       "USB",
+      "Measure Relative Humidity",
       "Measure Wind Speed",
       "Measure Wind Direction",
       "CSI_CSAT3B_NC"
@@ -234,12 +305,14 @@
       "CSAT3B-NC",
       "Cảm biến",
       "Cảm biến tốc độ và hướng gió",
+      "Độ ẩm tương đối",
       "Tốc độ gió",
       "Hướng gió",
       "ASCII",
       "CPI",
       "RS-485",
       "USB",
+      "Đo độ ẩm tương đối",
       "Đo tốc độ gió",
       "Đo hướng gió"
     ]

@@ -12,7 +12,20 @@
     "device_type": "Temperature Profiler",
     "device_type_key": "temperature_profiler"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "SDI-12 Temperature Profiler"
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [
     {
@@ -46,7 +59,20 @@
       ]
     }
   ],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "SDI-12 Temperature Profiler"
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "CS230",
@@ -92,7 +118,10 @@
       "Sensors",
       "Temperature Sensors (Air/Soil/Water)",
       "Temperature Profiler",
+      "Temperature",
+      "temperature measurement",
       "SDI-12",
+      "Measure Temperature",
       "CSI_CS230"
     ],
     "vi": [
@@ -100,7 +129,9 @@
       "Cảm biến",
       "Cảm biến nhiệt độ không khí, đất và nước",
       "Cảm biến hồ sơ nhiệt độ",
-      "SDI-12"
+      "Nhiệt độ",
+      "SDI-12",
+      "Đo nhiệt độ"
     ]
   }
 }

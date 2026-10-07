@@ -12,10 +12,36 @@
     "device_type": "Barometric Pressure Sensor",
     "device_type_key": "barometric_pressure_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "barometric_pressure",
+      "label_en": "Barometric Pressure",
+      "label_vi": "Áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS106 Barometric Pressure Sensor"
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_barometric_pressure",
+      "label_en": "Measure Barometric Pressure",
+      "label_vi": "Đo áp suất khí quyển",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CS106 Barometric Pressure Sensor"
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "CS106-PF",
@@ -61,12 +87,16 @@
       "Sensors",
       "Barometric Pressure Sensors",
       "Barometric Pressure Sensor",
+      "Barometric Pressure",
+      "Measure Barometric Pressure",
       "CSI_CS106_PF"
     ],
     "vi": [
       "CS106-PF",
       "Cảm biến",
-      "Cảm biến áp suất khí quyển"
+      "Cảm biến áp suất khí quyển",
+      "Áp suất khí quyển",
+      "Đo áp suất khí quyển"
     ]
   }
 }

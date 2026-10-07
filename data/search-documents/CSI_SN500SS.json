@@ -16,7 +16,33 @@
     {
       "key": "net_radiation",
       "label_en": "Net Radiation",
-      "label_vi": "Bức xạ thuần"
+      "label_vi": "Bức xạ thuần",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +50,33 @@
     {
       "key": "measure_net_radiation",
       "label_en": "Measure Net Radiation",
-      "label_vi": "Đo bức xạ thuần"
+      "label_vi": "Đo bức xạ thuần",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "measurement_description",
+          "raw_ref": {
+            "file": "data/raw/CSI_SN500SS.json",
+            "product_index": 0,
+            "spec_index": 4,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -62,6 +114,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-50 to +80 °C",
       "raw_ref": {
         "file": "data/raw/CSI_SN500SS.json",
         "product_index": 0,
@@ -82,6 +135,7 @@
         "unit": "%",
         "qualifier": null
       },
+      "value_raw": "0 to 100%",
       "raw_ref": {
         "file": "data/raw/CSI_SN500SS.json",
         "product_index": 0,
@@ -101,6 +155,7 @@
         "unit": "mA",
         "qualifier": null
       },
+      "value_raw": "0.6 mA",
       "raw_ref": {
         "file": "data/raw/CSI_SN500SS.json",
         "product_index": 0,
@@ -120,6 +175,7 @@
         "unit": "mA",
         "qualifier": null
       },
+      "value_raw": "63 mA",
       "raw_ref": {
         "file": "data/raw/CSI_SN500SS.json",
         "product_index": 0,
@@ -139,6 +195,7 @@
         "unit": "mA",
         "qualifier": null
       },
+      "value_raw": "1.5 mA",
       "raw_ref": {
         "file": "data/raw/CSI_SN500SS.json",
         "product_index": 0,
@@ -163,6 +220,7 @@
         },
         "condition": "with mounting rod and 5 m (16.4 ft) lead wire"
       },
+      "value_raw": "320 g (11.29 oz) with mounting rod and 5 m (16.4 ft) lead wire",
       "raw_ref": {
         "file": "data/raw/CSI_SN500SS.json",
         "product_index": 0,
@@ -192,14 +250,14 @@
     "SDI-12",
     "Đo bức xạ thuần"
   ],
-  "search_text_en": "SN500SS | CSI_SN500SS | Sensors | Solar Radiation Sensors | Net Radiometer | Net Radiation | Measure Net Radiation | SDI-12 | Sensor Configuration: Two thermopile pyranometers and two pyrgeometers | Operating Temperature Range: -50 to 80 °C | Operating Humidity Range: 0 to 100 % | Heater Current Drain – Heaters Off, Communication Disabled: 0.6 mA | Heater Current Drain – Heaters On, Communication Enabled: 63 mA | Heater Current Drain – Heaters Off, Communication Enabled: 1.5 mA | Weight: 320 g",
-  "search_text_vi": "SN500SS | CSI_SN500SS | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến bức xạ thuần | Bức xạ thuần | Đo bức xạ thuần | SDI-12 | Sensor Configuration: Two thermopile pyranometers and two pyrgeometers | Operating Temperature Range: -50 to 80 °C | Operating Humidity Range: 0 to 100 % | Heater Current Drain – Heaters Off, Communication Disabled: 0.6 mA | Heater Current Drain – Heaters On, Communication Enabled: 63 mA | Heater Current Drain – Heaters Off, Communication Enabled: 1.5 mA | Weight: 320 g",
-  "search_text": "SN500SS | CSI_SN500SS | Sensors | Solar Radiation Sensors | Net Radiometer | Net Radiation | Measure Net Radiation | SDI-12 | Sensor Configuration: Two thermopile pyranometers and two pyrgeometers | Operating Temperature Range: -50 to 80 °C | Operating Humidity Range: 0 to 100 % | Heater Current Drain – Heaters Off, Communication Disabled: 0.6 mA | Heater Current Drain – Heaters On, Communication Enabled: 63 mA | Heater Current Drain – Heaters Off, Communication Enabled: 1.5 mA | Weight: 320 g | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến bức xạ thuần | Bức xạ thuần | Đo bức xạ thuần",
+  "search_text_en": "SN500SS | CSI_SN500SS | Sensors | Solar Radiation Sensors | Net Radiometer | Net Radiation | Measure Net Radiation | SDI-12 | Sensor Configuration: Two thermopile pyranometers and two pyrgeometers | Operating Temperature Range: -50 to +80 °C | Operating Humidity Range: 0 to 100% | Heater Current Drain – Heaters Off, Communication Disabled: 0.6 mA | Heater Current Drain – Heaters On, Communication Enabled: 63 mA | Heater Current Drain – Heaters Off, Communication Enabled: 1.5 mA | Weight: 320 g (11.29 oz) with mounting rod and 5 m (16.4 ft) lead wire",
+  "search_text_vi": "SN500SS | CSI_SN500SS | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến bức xạ thuần | Bức xạ thuần | Đo bức xạ thuần | SDI-12 | Sensor Configuration: Two thermopile pyranometers and two pyrgeometers | Operating Temperature Range: -50 to +80 °C | Operating Humidity Range: 0 to 100% | Heater Current Drain – Heaters Off, Communication Disabled: 0.6 mA | Heater Current Drain – Heaters On, Communication Enabled: 63 mA | Heater Current Drain – Heaters Off, Communication Enabled: 1.5 mA | Weight: 320 g (11.29 oz) with mounting rod and 5 m (16.4 ft) lead wire",
+  "search_text": "SN500SS | CSI_SN500SS | Sensors | Solar Radiation Sensors | Net Radiometer | Net Radiation | Measure Net Radiation | SDI-12 | Sensor Configuration: Two thermopile pyranometers and two pyrgeometers | Operating Temperature Range: -50 to +80 °C | Operating Humidity Range: 0 to 100% | Heater Current Drain – Heaters Off, Communication Disabled: 0.6 mA | Heater Current Drain – Heaters On, Communication Enabled: 63 mA | Heater Current Drain – Heaters Off, Communication Enabled: 1.5 mA | Weight: 320 g (11.29 oz) with mounting rod and 5 m (16.4 ft) lead wire | Cảm biến | Cảm biến bức xạ mặt trời | Cảm biến bức xạ thuần | Bức xạ thuần | Đo bức xạ thuần",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "69a88373009398a74ac233af55467a563bcabe57eaff08c7892d44019bacec93"
+  "content_hash": "be4a865dd71dfb811dc7beaeaa5a399c38174ebc2e990080dc923c8d3ad7cfe6"
 }

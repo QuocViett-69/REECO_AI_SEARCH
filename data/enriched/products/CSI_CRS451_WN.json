@@ -12,7 +12,20 @@
     "device_type": "Water Level Recording Sensor",
     "device_type_key": "water_level_recording_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "water_level",
+      "label_en": "Water Level",
+      "label_vi": "Mực nước",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CRS451 Stainless-Steel Water-Level Recording Sensor"
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [
     {
@@ -56,7 +69,20 @@
       ]
     }
   ],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_water_level",
+      "label_en": "Measure Water Level",
+      "label_vi": "Đo mực nước",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "CRS451 Stainless-Steel Water-Level Recording Sensor"
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "CRS451-WN",
@@ -102,8 +128,11 @@
       "Sensors",
       "Water Level Sensors",
       "Water Level Recording Sensor",
+      "Water Level",
+      "stage",
       "HTTPS",
       "USB",
+      "Measure Water Level",
       "CSI_CRS451_WN"
     ],
     "vi": [
@@ -111,8 +140,10 @@
       "Cảm biến",
       "Cảm biến mực nước",
       "Cảm biến ghi mực nước",
+      "Mực nước",
       "HTTPS",
-      "USB"
+      "USB",
+      "Đo mực nước"
     ]
   }
 }

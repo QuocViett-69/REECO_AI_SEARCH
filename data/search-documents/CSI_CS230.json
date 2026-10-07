@@ -12,9 +12,35 @@
     "device_type": "Temperature Profiler",
     "device_type_key": "temperature_profiler"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "temperature",
+      "label_en": "Temperature",
+      "label_vi": "Nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "SDI-12 Temperature Profiler"
+        }
+      ]
+    }
+  ],
   "applications": [],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_temperature",
+      "label_en": "Measure Temperature",
+      "label_vi": "Đo nhiệt độ",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "SDI-12 Temperature Profiler"
+        }
+      ]
+    }
+  ],
   "supported_protocols": [
     "SDI-12"
   ],
@@ -125,6 +151,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-55° to +85°C",
       "raw_ref": {
         "file": "data/raw/CSI_CS230.json",
         "product_index": 0,
@@ -144,6 +171,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "0.0078°C",
       "raw_ref": {
         "file": "data/raw/CSI_CS230.json",
         "product_index": 0,
@@ -164,6 +192,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "9 to 28 Vdc",
       "raw_ref": {
         "file": "data/raw/CSI_CS230.json",
         "product_index": 0,
@@ -183,6 +212,7 @@
         "unit": "s",
         "qualifier": null
       },
+      "value_raw": "10 s",
       "raw_ref": {
         "file": "data/raw/CSI_CS230.json",
         "product_index": 0,
@@ -206,6 +236,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "2.13 cm (0.84 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_CS230.json",
         "product_index": 0,
@@ -222,7 +253,10 @@
     "Sensors",
     "Temperature Sensors (Air/Soil/Water)",
     "Temperature Profiler",
+    "Temperature",
+    "temperature measurement",
     "SDI-12",
+    "Measure Temperature",
     "CSI_CS230"
   ],
   "search_keywords_vi": [
@@ -230,16 +264,18 @@
     "Cảm biến",
     "Cảm biến nhiệt độ không khí, đất và nước",
     "Cảm biến hồ sơ nhiệt độ",
-    "SDI-12"
+    "Nhiệt độ",
+    "SDI-12",
+    "Đo nhiệt độ"
   ],
-  "search_text_en": "CS230 | SDI-12 Temperature Profiler | CSI_CS230 | CS231 | Sensors | Temperature Sensors (Air/Soil/Water) | Temperature Profiler | SDI-12 | Product Name: SDI-12 Temperature Profiler | Model: CS230 | Typical Accuracy: ±0.2°C (-40° to +85°C) includes lifetime drift | Worst Case Accuracy: ±0.5°C (-55° to -40°C) includes lifetime drift | ±0.4°C (−40° to +85°C) includes lifetime drift | Optional External Probes: 4 (maximum) | Current Consumption: 1.0 mA (max) quiescent current draw per sensor | 20 mA + (# sensors * 1.0 mA) active current draw | Model: CS231 | Item Number: 45287 | Warranty: 1 year | Typical Accuracy: ±0.2°C (at -40° to +85°C) | Worst Case Accuracy: ±0.4°C (at -40° to +85°C) | ±0.5°C (at -55° to -40°C) | Optional External Probes: 4 maximum | Current Consumption: 1.0 mA (maximum per sensor) | 20 mA + (number of sensors * 1.0 mA) | Operating Temperature Range: -55 to 85 °C | Resolution: 0.0078 °C | Supply Voltage: 9 to 28 V DC | Warm-up Time on Power up: 10 s | Probe Diameter: 2.13 cm",
-  "search_text_vi": "CS230 | CSI_CS230 | SDI-12 Temperature Profiler | CS231 | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến hồ sơ nhiệt độ | SDI-12 | Product Name: SDI-12 Temperature Profiler | Model: CS230 | Typical Accuracy: ±0.2°C (-40° to +85°C) includes lifetime drift | Worst Case Accuracy: ±0.5°C (-55° to -40°C) includes lifetime drift | ±0.4°C (−40° to +85°C) includes lifetime drift | Optional External Probes: 4 (maximum) | Current Consumption: 1.0 mA (max) quiescent current draw per sensor | 20 mA + (# sensors * 1.0 mA) active current draw | Model: CS231 | Item Number: 45287 | Warranty: 1 year | Typical Accuracy: ±0.2°C (at -40° to +85°C) | Worst Case Accuracy: ±0.4°C (at -40° to +85°C) | ±0.5°C (at -55° to -40°C) | Optional External Probes: 4 maximum | Current Consumption: 1.0 mA (maximum per sensor) | 20 mA + (number of sensors * 1.0 mA) | Operating Temperature Range: -55 to 85 °C | Resolution: 0.0078 °C | Supply Voltage: 9 to 28 V DC | Warm-up Time on Power up: 10 s | Probe Diameter: 2.13 cm",
-  "search_text": "CS230 | SDI-12 Temperature Profiler | CSI_CS230 | CS231 | Sensors | Temperature Sensors (Air/Soil/Water) | Temperature Profiler | SDI-12 | Product Name: SDI-12 Temperature Profiler | Model: CS230 | Typical Accuracy: ±0.2°C (-40° to +85°C) includes lifetime drift | Worst Case Accuracy: ±0.5°C (-55° to -40°C) includes lifetime drift | ±0.4°C (−40° to +85°C) includes lifetime drift | Optional External Probes: 4 (maximum) | Current Consumption: 1.0 mA (max) quiescent current draw per sensor | 20 mA + (# sensors * 1.0 mA) active current draw | Model: CS231 | Item Number: 45287 | Warranty: 1 year | Typical Accuracy: ±0.2°C (at -40° to +85°C) | Worst Case Accuracy: ±0.4°C (at -40° to +85°C) | ±0.5°C (at -55° to -40°C) | Optional External Probes: 4 maximum | Current Consumption: 1.0 mA (maximum per sensor) | 20 mA + (number of sensors * 1.0 mA) | Operating Temperature Range: -55 to 85 °C | Resolution: 0.0078 °C | Supply Voltage: 9 to 28 V DC | Warm-up Time on Power up: 10 s | Probe Diameter: 2.13 cm | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến hồ sơ nhiệt độ",
+  "search_text_en": "CS230 | SDI-12 Temperature Profiler | CSI_CS230 | CS231 | Sensors | Temperature Sensors (Air/Soil/Water) | Temperature Profiler | Temperature | Measure Temperature | SDI-12 | Product Name: SDI-12 Temperature Profiler | Model: CS230 | Typical Accuracy: ±0.2°C (-40° to +85°C) includes lifetime drift | Worst Case Accuracy: ±0.5°C (-55° to -40°C) includes lifetime drift | ±0.4°C (−40° to +85°C) includes lifetime drift | Optional External Probes: 4 (maximum) | Current Consumption: 1.0 mA (max) quiescent current draw per sensor | 20 mA + (# sensors * 1.0 mA) active current draw | Model: CS231 | Item Number: 45287 | Warranty: 1 year | Typical Accuracy: ±0.2°C (at -40° to +85°C) | Worst Case Accuracy: ±0.4°C (at -40° to +85°C) | ±0.5°C (at -55° to -40°C) | Optional External Probes: 4 maximum | Current Consumption: 1.0 mA (maximum per sensor) | 20 mA + (number of sensors * 1.0 mA) | Operating Temperature Range: -55° to +85°C | Resolution: 0.0078°C | Supply Voltage: 9 to 28 Vdc | Warm-up Time on Power up: 10 s | Probe Diameter: 2.13 cm (0.84 in.) | temperature measurement",
+  "search_text_vi": "CS230 | CSI_CS230 | SDI-12 Temperature Profiler | CS231 | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến hồ sơ nhiệt độ | Nhiệt độ | Đo nhiệt độ | SDI-12 | Product Name: SDI-12 Temperature Profiler | Model: CS230 | Typical Accuracy: ±0.2°C (-40° to +85°C) includes lifetime drift | Worst Case Accuracy: ±0.5°C (-55° to -40°C) includes lifetime drift | ±0.4°C (−40° to +85°C) includes lifetime drift | Optional External Probes: 4 (maximum) | Current Consumption: 1.0 mA (max) quiescent current draw per sensor | 20 mA + (# sensors * 1.0 mA) active current draw | Model: CS231 | Item Number: 45287 | Warranty: 1 year | Typical Accuracy: ±0.2°C (at -40° to +85°C) | Worst Case Accuracy: ±0.4°C (at -40° to +85°C) | ±0.5°C (at -55° to -40°C) | Optional External Probes: 4 maximum | Current Consumption: 1.0 mA (maximum per sensor) | 20 mA + (number of sensors * 1.0 mA) | Operating Temperature Range: -55° to +85°C | Resolution: 0.0078°C | Supply Voltage: 9 to 28 Vdc | Warm-up Time on Power up: 10 s | Probe Diameter: 2.13 cm (0.84 in.)",
+  "search_text": "CS230 | SDI-12 Temperature Profiler | CSI_CS230 | CS231 | Sensors | Temperature Sensors (Air/Soil/Water) | Temperature Profiler | Temperature | Measure Temperature | SDI-12 | Product Name: SDI-12 Temperature Profiler | Model: CS230 | Typical Accuracy: ±0.2°C (-40° to +85°C) includes lifetime drift | Worst Case Accuracy: ±0.5°C (-55° to -40°C) includes lifetime drift | ±0.4°C (−40° to +85°C) includes lifetime drift | Optional External Probes: 4 (maximum) | Current Consumption: 1.0 mA (max) quiescent current draw per sensor | 20 mA + (# sensors * 1.0 mA) active current draw | Model: CS231 | Item Number: 45287 | Warranty: 1 year | Typical Accuracy: ±0.2°C (at -40° to +85°C) | Worst Case Accuracy: ±0.4°C (at -40° to +85°C) | ±0.5°C (at -55° to -40°C) | Optional External Probes: 4 maximum | Current Consumption: 1.0 mA (maximum per sensor) | 20 mA + (number of sensors * 1.0 mA) | Operating Temperature Range: -55° to +85°C | Resolution: 0.0078°C | Supply Voltage: 9 to 28 Vdc | Warm-up Time on Power up: 10 s | Probe Diameter: 2.13 cm (0.84 in.) | temperature measurement | Cảm biến | Cảm biến nhiệt độ không khí, đất và nước | Cảm biến hồ sơ nhiệt độ | Nhiệt độ | Đo nhiệt độ",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "dad9e2cbda120e3711918f4a2e0e7d8fe2eac099efd96582dc4db7f3e3baf2b4"
+  "content_hash": "da9ce80e8d6dd3f365527098fa4d0a568b4544aa164ea6ea3a4d117a35d8fa90"
 }

@@ -14,6 +14,25 @@
   },
   "measurements": [
     {
+      "key": "relative_humidity",
+      "label_en": "Relative Humidity",
+      "label_vi": "Độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_range",
+          "raw_ref": {
+            "file": "data/raw/CS301.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              19
+            ]
+          }
+        }
+      ]
+    },
+    {
       "key": "solar_radiation",
       "label_en": "Solar Radiation",
       "label_vi": "Bức xạ mặt trời",
@@ -41,6 +60,25 @@
   "applications": [],
   "protocols": [],
   "capabilities": [
+    {
+      "key": "measure_relative_humidity",
+      "label_en": "Measure Relative Humidity",
+      "label_vi": "Đo độ ẩm tương đối",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "relative_humidity_range",
+          "raw_ref": {
+            "file": "data/raw/CS301.json",
+            "product_index": 0,
+            "spec_index": 14,
+            "source_rows": [
+              19
+            ]
+          }
+        }
+      ]
+    },
     {
       "key": "measure_solar_radiation",
       "label_en": "Measure Solar Radiation",
@@ -111,8 +149,11 @@
       "Sensors",
       "Solar Radiation Sensors",
       "Solar Radiation Sensor",
+      "Relative Humidity",
+      "RH",
       "Solar Radiation",
       "sun plus sky radiation",
+      "Measure Relative Humidity",
       "Measure Solar Radiation",
       "CSI_CS301"
     ],
@@ -120,7 +161,9 @@
       "CS301",
       "Cảm biến",
       "Cảm biến bức xạ mặt trời",
+      "Độ ẩm tương đối",
       "Bức xạ mặt trời",
+      "Đo độ ẩm tương đối",
       "Đo bức xạ mặt trời"
     ]
   }

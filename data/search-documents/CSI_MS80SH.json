@@ -16,7 +16,33 @@
     {
       "key": "solar_radiation",
       "label_en": "Solar Radiation",
-      "label_vi": "Bức xạ mặt trời"
+      "label_vi": "Bức xạ mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
     }
   ],
   "applications": [],
@@ -24,7 +50,33 @@
     {
       "key": "measure_solar_radiation",
       "label_en": "Measure Solar Radiation",
-      "label_vi": "Đo bức xạ mặt trời"
+      "label_vi": "Đo bức xạ mặt trời",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "product_type",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 1,
+            "source_rows": [
+              3
+            ]
+          }
+        },
+        {
+          "source": "normalized_spec",
+          "canonical_key": "device_classification",
+          "raw_ref": {
+            "file": "data/raw/CSI_MS80SH.json",
+            "product_index": 0,
+            "spec_index": 3,
+            "source_rows": [
+              5
+            ]
+          }
+        }
+      ]
     }
   ],
   "supported_protocols": [
@@ -65,6 +117,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +80 °C",
       "raw_ref": {
         "file": "data/raw/CSI_MS80SH.json",
         "product_index": 0,
@@ -85,6 +138,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "8 to 30 VDC",
       "raw_ref": {
         "file": "data/raw/CSI_MS80SH.json",
         "product_index": 0,
@@ -105,6 +159,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "8 to 32 VDC",
       "raw_ref": {
         "file": "data/raw/CSI_MS80SH.json",
         "product_index": 0,
@@ -128,6 +183,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "7.3 cm (2.9 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_MS80SH.json",
         "product_index": 0,
@@ -151,6 +207,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "1.2 cm (0.5 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_MS80SH.json",
         "product_index": 0,
@@ -174,6 +231,7 @@
           "unit": "in"
         }
       },
+      "value_raw": "1.6 cm (0.6 in.)",
       "raw_ref": {
         "file": "data/raw/CSI_MS80SH.json",
         "product_index": 0,
@@ -197,6 +255,7 @@
           "unit": "lb"
         }
       },
+      "value_raw": "0.41 kg (0.90 lb)",
       "raw_ref": {
         "file": "data/raw/CSI_MS80SH.json",
         "product_index": 0,
@@ -232,14 +291,14 @@
     "SDI-12",
     "Đo bức xạ mặt trời"
   ],
-  "search_text_en": "MS-80SH | CSI_MS80SH | Sensors | Solar Radiation Sensors | Pyranometer | Solar Radiation | Measure Solar Radiation | Modbus | Modbus RTU | RS-485 | SDI-12 | Default RS-485 Configuration: 19200 baud; 8 data bits; even parity; 1 stop bit | Operating Temperature Range: -40 to 80 °C | Supply Voltage: 8 to 30 V DC | Wiring Power Input: 8 to 32 V DC | Body Height: 7.3 cm | Dome Height: 1.2 cm | Leveling Screw Height: 1.6 cm | Weight: 0.41 kg | sun plus sky radiation",
-  "search_text_vi": "MS-80SH | CSI_MS80SH | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ mặt trời | Đo bức xạ mặt trời | Modbus | Modbus RTU | RS-485 | SDI-12 | Default RS-485 Configuration: 19200 baud; 8 data bits; even parity; 1 stop bit | Operating Temperature Range: -40 to 80 °C | Supply Voltage: 8 to 30 V DC | Wiring Power Input: 8 to 32 V DC | Body Height: 7.3 cm | Dome Height: 1.2 cm | Leveling Screw Height: 1.6 cm | Weight: 0.41 kg",
-  "search_text": "MS-80SH | CSI_MS80SH | Sensors | Solar Radiation Sensors | Pyranometer | Solar Radiation | Measure Solar Radiation | Modbus | Modbus RTU | RS-485 | SDI-12 | Default RS-485 Configuration: 19200 baud; 8 data bits; even parity; 1 stop bit | Operating Temperature Range: -40 to 80 °C | Supply Voltage: 8 to 30 V DC | Wiring Power Input: 8 to 32 V DC | Body Height: 7.3 cm | Dome Height: 1.2 cm | Leveling Screw Height: 1.6 cm | Weight: 0.41 kg | sun plus sky radiation | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ mặt trời | Đo bức xạ mặt trời",
+  "search_text_en": "MS-80SH | CSI_MS80SH | Sensors | Solar Radiation Sensors | Pyranometer | Solar Radiation | Measure Solar Radiation | Modbus | Modbus RTU | RS-485 | SDI-12 | Default RS-485 Configuration: 19200 baud; 8 data bits; even parity; 1 stop bit | Operating Temperature Range: -40 to +80 °C | Supply Voltage: 8 to 30 VDC | Wiring Power Input: 8 to 32 VDC | Body Height: 7.3 cm (2.9 in.) | Dome Height: 1.2 cm (0.5 in.) | Leveling Screw Height: 1.6 cm (0.6 in.) | Weight: 0.41 kg (0.90 lb) | sun plus sky radiation",
+  "search_text_vi": "MS-80SH | CSI_MS80SH | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ mặt trời | Đo bức xạ mặt trời | Modbus | Modbus RTU | RS-485 | SDI-12 | Default RS-485 Configuration: 19200 baud; 8 data bits; even parity; 1 stop bit | Operating Temperature Range: -40 to +80 °C | Supply Voltage: 8 to 30 VDC | Wiring Power Input: 8 to 32 VDC | Body Height: 7.3 cm (2.9 in.) | Dome Height: 1.2 cm (0.5 in.) | Leveling Screw Height: 1.6 cm (0.6 in.) | Weight: 0.41 kg (0.90 lb)",
+  "search_text": "MS-80SH | CSI_MS80SH | Sensors | Solar Radiation Sensors | Pyranometer | Solar Radiation | Measure Solar Radiation | Modbus | Modbus RTU | RS-485 | SDI-12 | Default RS-485 Configuration: 19200 baud; 8 data bits; even parity; 1 stop bit | Operating Temperature Range: -40 to +80 °C | Supply Voltage: 8 to 30 VDC | Wiring Power Input: 8 to 32 VDC | Body Height: 7.3 cm (2.9 in.) | Dome Height: 1.2 cm (0.5 in.) | Leveling Screw Height: 1.6 cm (0.6 in.) | Weight: 0.41 kg (0.90 lb) | sun plus sky radiation | Cảm biến | Cảm biến bức xạ mặt trời | Bức xạ mặt trời | Đo bức xạ mặt trời",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "3bb4a9f4cb23ee39db93d81ce7476eee26558adc7258826d27c7ea692c413eb2"
+  "content_hash": "95ae61adad0fe7cc81dfe7640fec10880e122c33d6e1b8acde2551219e6a703f"
 }

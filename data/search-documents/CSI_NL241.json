@@ -17,7 +17,21 @@
     {
       "key": "data_logger_connectivity",
       "label_en": "Data Logger Connectivity",
-      "label_vi": "Kết nối bộ ghi dữ liệu"
+      "label_vi": "Kết nối bộ ghi dữ liệu",
+      "evidence": [
+        {
+          "source": "normalized_spec",
+          "canonical_key": "primary_application",
+          "raw_ref": {
+            "file": "data/raw/NL241.json",
+            "product_index": 0,
+            "spec_index": 2,
+            "source_rows": [
+              6
+            ]
+          }
+        }
+      ]
     }
   ],
   "capabilities": [],
@@ -60,6 +74,7 @@
         "unit": "°C",
         "qualifier": null
       },
+      "value_raw": "-40 to +70 °C",
       "raw_ref": {
         "file": "data/raw/NL241.json",
         "product_index": 0,
@@ -80,6 +95,7 @@
         "unit": "V DC",
         "qualifier": null
       },
+      "value_raw": "9 to 16 VDC",
       "raw_ref": {
         "file": "data/raw/NL241.json",
         "product_index": 0,
@@ -99,6 +115,7 @@
         "unit": "GHz",
         "qualifier": null
       },
+      "value_raw": "2.4 GHz",
       "raw_ref": {
         "file": "data/raw/NL241.json",
         "product_index": 0,
@@ -122,6 +139,7 @@
           "unit": "oz"
         }
       },
+      "value_raw": "180.35 g (6.36 oz)",
       "raw_ref": {
         "file": "data/raw/NL241.json",
         "product_index": 0,
@@ -181,14 +199,14 @@
     "USB",
     "Wi-Fi"
   ],
-  "search_text_en": "NL241 | CSI_NL241 | Communications | Wi-Fi Communications | Wi-Fi Communication Device | Data Logger Connectivity | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to 70 °C | Supply Voltage: 9 to 16 V DC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g",
-  "search_text_vi": "NL241 | CSI_NL241 | Thiết bị truyền thông | Truyền thông Wi-Fi | Thiết bị truyền thông Wi-Fi | Kết nối bộ ghi dữ liệu | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to 70 °C | Supply Voltage: 9 to 16 V DC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g",
-  "search_text": "NL241 | CSI_NL241 | Communications | Wi-Fi Communications | Wi-Fi Communication Device | Data Logger Connectivity | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to 70 °C | Supply Voltage: 9 to 16 V DC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g | Thiết bị truyền thông | Truyền thông Wi-Fi | Thiết bị truyền thông Wi-Fi | Kết nối bộ ghi dữ liệu",
+  "search_text_en": "NL241 | CSI_NL241 | Communications | Wi-Fi Communications | Wi-Fi Communication Device | Data Logger Connectivity | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to +70 °C | Supply Voltage: 9 to 16 VDC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g (6.36 oz)",
+  "search_text_vi": "NL241 | CSI_NL241 | Thiết bị truyền thông | Truyền thông Wi-Fi | Thiết bị truyền thông Wi-Fi | Kết nối bộ ghi dữ liệu | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to +70 °C | Supply Voltage: 9 to 16 VDC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g (6.36 oz)",
+  "search_text": "NL241 | CSI_NL241 | Communications | Wi-Fi Communications | Wi-Fi Communication Device | Data Logger Connectivity | CS I/O | DHCP | DNS | HTTPS | ICMP | IPv4 | IPv6 | Modbus | Modbus TCP | PakBus | RS-232 | SLAAC | TCP/IP | Telnet | TLS | USB | Wi-Fi | Operating Temperature Range: -40 to +70 °C | Supply Voltage: 9 to 16 VDC | WLAN Frequency: 2.4 GHz | Weight: 180.35 g (6.36 oz) | Thiết bị truyền thông | Truyền thông Wi-Fi | Thiết bị truyền thông Wi-Fi | Kết nối bộ ghi dữ liệu",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "7c0c409205785ff1a638637689fa4648596cf378b93d378021bf352181f502c7"
+  "content_hash": "c97ed41040220ca98cc6a962350d73470457baf2ffe6d16e8b54f7a7542a364b"
 }

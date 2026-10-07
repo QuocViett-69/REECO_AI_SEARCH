@@ -10,6 +10,24 @@ const { ExplanationService } = require(path.join(root, 'apps/api/dist/modules/se
 const document = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_CS655.json'), 'utf8'));
 const service = new ExplanationService();
 
+test('structured requirements keep confirmed facts, missing facts and explicit mismatches separate', () => {
+  const unsupported = { ...document, unsupported_protocols: ['Modbus'] };
+  const rawRef = document.important_specifications.find(item => item.canonical_key === 'operating_temperature_range').raw_ref;
+  const explanation = service.explain('đo độ ẩm đất và độ ẩm không khí, Modbus, hoạt động ở 90°C', unsupported, {
+    productId: document.product_id, identityMatch: 'none',
+    protocolMatches: [{ queryProtocol: 'Modbus', result: 'MISMATCH', evidence: [{ source: 'product_document', canonicalProtocol: 'Modbus', relation: 'unsupported' }] }],
+    temperatureMatches: [{ constraint: { kind: 'point', intent: 'operating', valueCelsius: 90, unit: '°C', confidence: 'high' }, result: 'MISMATCH',
+      evidence: [{ source: 'normalized_spec', canonicalKey: 'operating_temperature_range', candidateRange: { minCelsius: -50, maxCelsius: 70, unit: '°C' }, result: 'MISMATCH', rawRef }] }],
+  });
+  assert.ok(explanation.requirements.some(item => item.status === 'confirmed' && item.label === 'độ ẩm đất' && item.evidence.length));
+  assert.ok(explanation.requirements.some(item => item.status === 'unconfirmed' && item.label === 'độ ẩm không khí' && !item.evidence.length));
+  assert.equal(explanation.requirements.find(item => item.label === 'Modbus').status, 'mismatch');
+  const operating = explanation.requirements.find(item => item.label.includes('90°C'));
+  assert.equal(operating.status, 'mismatch');
+  assert.deepEqual(operating.evidence[0].raw_ref, rawRef);
+  require('@reeco/shared').SearchResultSchema.shape.explanation.parse(explanation);
+});
+
 test('short weather queries explain documented measurements rather than only the device category', async () => {
   const weather = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_CLIMAVUE40.json'), 'utf8'));
   const leaf = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_LWS.json'), 'utf8'));
@@ -98,11 +116,15 @@ test('numeric claim cites only a confirmed structured range', () => {
     temperatureMatches: [{
       constraint: { kind: 'point', intent: 'operating', valueCelsius: -40, unit: '°C', confidence: 'high' },
       result: 'MATCH',
-      evidence: [{ source: 'normalized_spec', canonicalKey: 'operating_temperature_range', candidateRange: { minCelsius: -50, maxCelsius: 70, unit: '°C' }, result: 'MATCH', rawRef: { file: 'x', source_rows: [] } }],
+      evidence: [{ source: 'normalized_spec', canonicalKey: 'operating_temperature_range', candidateRange: { minCelsius: -50, maxCelsius: 70, unit: '°C' }, result: 'MATCH', rawRef: { file: 'data/raw/CS616_CS650_CS655.json', product_index: 2, spec_index: 1, source_rows: [4] } }],
     }],
   });
   assert.match(explanation.text, /-50–70°C.*-40°C/u);
-  assert.deepEqual(explanation.evidence, [{ source: 'normalized_spec', field: 'operating_temperature_range', value: '-50–70°C' }]);
+  assert.equal(explanation.evidence.length, 1);
+  assert.equal(explanation.evidence[0].field, 'operating_temperature_range');
+  assert.equal(explanation.evidence[0].value, '-50–70°C');
+  assert.equal(explanation.evidence[0].raw_ref.product_index, 2);
+  assert.equal(explanation.requirements[0].status, 'confirmed');
 });
 
 test('local LLM selects verified wording and falls back on invented model details', async () => {

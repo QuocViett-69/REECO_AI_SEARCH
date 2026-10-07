@@ -12,7 +12,20 @@
     "device_type": "Background Luminance Sensor",
     "device_type_key": "background_luminance_sensor"
   },
-  "measurements": [],
+  "measurements": [
+    {
+      "key": "background_luminance",
+      "label_en": "Background Luminance",
+      "label_vi": "Độ chói nền",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Background Luminance Sensor"
+        }
+      ]
+    }
+  ],
   "applications": [],
   "protocols": [
     {
@@ -54,7 +67,20 @@
       ]
     }
   ],
-  "capabilities": [],
+  "capabilities": [
+    {
+      "key": "measure_background_luminance",
+      "label_en": "Measure Background Luminance",
+      "label_vi": "Đo độ chói nền",
+      "evidence": [
+        {
+          "source": "product_master",
+          "field": "product_name_en",
+          "value": "Background Luminance Sensor"
+        }
+      ]
+    }
+  ],
   "aliases": [
     {
       "value": "CS140",
@@ -99,8 +125,10 @@
       "Background Luminance Sensor",
       "Sensors",
       "Present Weather Sensors",
+      "Background Luminance",
       "RS-232",
       "RS-485",
+      "Measure Background Luminance",
       "CSI_CS140"
     ],
     "vi": [
@@ -108,8 +136,10 @@
       "Cảm biến",
       "Cảm biến thời tiết hiện tại",
       "Cảm biến độ chói nền",
+      "Độ chói nền",
       "RS-232",
-      "RS-485"
+      "RS-485",
+      "Đo độ chói nền"
     ]
   }
 }
