@@ -5,6 +5,24 @@ import { SearchResults } from './SearchResults';
 jest.mock('../commerce/FavoriteButton', () => ({ FavoriteButton: () => null }));
 jest.mock('../commerce/AddToCartButton', () => ({ AddToCartButton: () => null }));
 
+test('ranking and category evidence do not claim that products satisfy the full request', () => {
+  for (const language of ['vi', 'en']) {
+    const text = language === 'vi'
+      ? 'Chưa có dữ liệu xác nhận toàn bộ yêu cầu.'
+      : 'The data does not confirm all requirements.';
+    const results = ['ClimaVue40', 'ClimaVue50G2', 'LWS'].map(model => ({
+      product_id: model, model, name_en: model,
+      explanation: { text, language, source: 'rule', evidence: [{
+        source: 'product_document', field: 'taxonomy.device_type', value: 'Weather Sensor',
+      }] },
+    }));
+    const markup = renderToStaticMarkup(<SearchResults query="Cảm biến khí tượng" results={results} />);
+    expect(markup).not.toMatch(/phù hợp nhất|phù hợp với yêu cầu|fit your request|closest matches|Closest fit|Strong fit|Also meet your main requirement/);
+    expect(markup).toContain(text);
+    expect(markup).toContain(language === 'vi' ? 'Đối chiếu' : 'Compare');
+  }
+});
+
 test('shows system components and clarification even with no products, and hides stale guidance while loading', () => {
   const props = { query: 'system', results: [], guidance: { text: 'Cần phối hợp thiết bị.', language: 'vi',
     components: [{ label: 'Ghi dữ liệu', query: 'data logger', models: ['CR310-NA'] }, { label: 'Nguồn', query: 'power supply', models: [] }] } };

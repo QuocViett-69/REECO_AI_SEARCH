@@ -39,6 +39,16 @@ const makeService = search => new SearchService({ search }, products, new Techni
 const service = makeService(async () => ({ mode: 'hybrid', candidates }));
 const soil = ['HS2-12', 'SoilVue10-5', 'CS616', 'CS650', 'CS655'];
 const soilMulti = ['CS650', 'CS655', 'SoilVue10-5'];
+
+test('weather aliases filter unrelated leaf sensors and retain measurement evidence', async () => {
+  for (const query of ['Cảm biến thời tiết', 'Cảm biến khí tượng', 'Khí tượng thủy văn', 'meteorological sensor']) {
+    const response = await service.search({ query, limit: 30, explain: true });
+    assert.ok(response.results.some(p => p.model === 'ClimaVue40'), query);
+    assert.ok(response.results.every(p => p.model !== 'LWS'), query);
+    const weather = response.results.find(p => p.model === 'ClimaVue40');
+    assert.ok(weather.explanation.evidence.some(item => item.field === 'measurements'));
+  }
+});
 test('bilingual use cases, system components, contextual absence and scoped explanations', async () => {
   for (const query of [
     'Nước hồ ngày càng đục, tôi nên dùng cảm biến nào?',

@@ -27,7 +27,7 @@ const roles: Requirement[] = [
   { key: 'reader', en: 'analyzer', vi: 'thiết bị đọc/phân tích', pattern: /\b(?:reader|analy[sz]er)\b|\binspect and read\b|\bthiet bi doc\b/u },
   { key: 'power', en: 'power supply', vi: 'nguồn cấp', pattern: /^power$|\bpower suppl(?:y|ies)\b|\bnguon (?:cap|dien)\b|\bcap nguon\b/u },
   { key: 'communication', en: 'communication equipment', vi: 'thiết bị truyền dữ liệu', pattern: /\bcommunication\b|\b(?:truyen|gui|nhan) du lieu\b|\btruyen thong\b|\b(?:transmit|send|receive).*data\b|\b(?:xem|kiem tra).*tu xa\b|\bremote data access\b|\baccess.*data remotely\b/u },
-  { key: 'weather', en: 'weather instrument', vi: 'thiết bị thời tiết', pattern: /\bweather\b|\bthoi tiet\b/u },
+  { key: 'weather', en: 'weather instrument', vi: 'thiết bị thời tiết', pattern: /\b(?:weather|meteorolog\w*)\b|\b(?:thoi tiet|khi tuong)\b/u },
   { key: 'water', en: 'water monitoring instrument', vi: 'thiết bị quan trắc nước', pattern: /\bhydrolog(?:y|ical)\b|\bwater sensor\b|\bcam bien nuoc\b/u },
   { key: 'wireless', en: 'wireless communication', vi: 'truyền thông không dây', pattern: /\bwireless\b|\bkhong day\b/u },
   { key: 'waterquality', en: 'water quality measurement', vi: 'đo chất lượng nước', pattern: /\bwater quality\b|\bchat luong nuoc\b/u },
@@ -55,12 +55,12 @@ export function parseSearchIntent(query: string) {
   const airList = /\bkhong khi\b/u.test(text) && /\bnhiet do\b/u.test(text) && /\bdo am\b/u.test(text)
     && !/\b(?:dat|nuoc)\b/u.test(text);
   if (airList && !requested.some(item => item.key === 'relative_humidity')) requested.push(measurements[1]!);
-  const weather = /\bweather\b|\bthoi tiet\b/u.test(text) || /\b(?:temperature|nhiet do)\b/u.test(text)
+  const kinds = roles.filter(item => item.pattern.test(text));
+  const weather = kinds.some(item => item.key === 'weather') || /\b(?:temperature|nhiet do)\b/u.test(text)
     && /\b(?:humidity|do am)\b/u.test(text) && /\b(?:rainfall|luong mua)\b/u.test(text) && !/\b(?:soil|dat|water|nuoc)\b/u.test(text);
   if (weather && /\b(?:humidity|do am)\b/u.test(text) && !requested.some(item => item.key === 'relative_humidity')) requested.push(measurements[1]!);
   if (weather && /\b(?:pressure|ap suat)\b/u.test(text) && !requested.some(item => item.key === 'barometric_pressure')) requested.push(measurements[2]!);
   const medium = target ?? (airList || weather && /\b(?:temperature|nhiet do)\b/u.test(text) ? parseTemperatureTarget('air temperature') : undefined);
-  const kinds = roles.filter(item => item.pattern.test(text));
   if (!requested.length && /\b(?:sensor.*soil|soil.*sensor|cam bien.*dat)\b/u.test(text) && !kinds.some(item => item.key === 'soil')) kinds.push(roles[0]!);
   if (/\b(?:network goes down|internet.*lost|mang.*mat|mat ket noi)\b/u.test(text)) {
     if (!kinds.some(item => item.key === 'logger')) kinds.push(roles[1]!);
@@ -115,7 +115,7 @@ export function buildSearchPlan(query: string): { label: string; query: string; 
   if (intent.target) components.push({ label: vi ? intent.target.vi : intent.target.en, query: `${intent.target.en} sensor` });
   else if (/\b(?:temperature|nhiet do)\b/u.test(text) && !intent.roles.some(item => item.key === 'logger')) components.push({ label: vi ? 'Nhiệt độ — cần xác định môi trường đo' : 'Temperature — specify the medium', query: 'temperature sensor', needs_clarification: true });
   if (/\b(?:water.quality|chat luong nuoc)\b/u.test(text) && !components.length) components.push({ label: vi ? 'Chỉ số nước cần đo' : 'Water measurements', query: 'water quality sensor' });
-  if (/\b(?:weather|thoi tiet|environmental|moi truong)\b/u.test(text) && !components.length) components.push({ label: vi ? 'Đại lượng thời tiết' : 'Weather measurements', query: 'weather sensor' });
+  if ((intent.roles.some(item => item.key === 'weather') || /\b(?:environmental|moi truong)\b/u.test(text)) && !components.length) components.push({ label: vi ? 'Đại lượng thời tiết' : 'Weather measurements', query: 'weather sensor' });
   if (farmEnvironment) components.push({ label: vi ? 'Độ ẩm đất' : 'Soil moisture', query: 'soil moisture sensor' });
   if (/\b(?:soil|dat.*kho)\b/u.test(text) && !components.length) components.push({ label: vi ? 'Độ ẩm đất' : 'Soil moisture', query: 'soil moisture sensor' });
   components.push({ label: vi ? 'Ghi và lưu dữ liệu' : 'Record and store data', query: 'data logger' });

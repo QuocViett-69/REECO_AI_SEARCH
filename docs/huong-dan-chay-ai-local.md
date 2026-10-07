@@ -391,11 +391,14 @@ Preload, `npm install`, tải model và tạo venv chỉ cần khi có nhu cầu
 | UI có fixture dù model không chạy | Kiểm tra `REACT_APP_SEARCH_MOCK` trong `.env`/`.env.local`, tắt mock rồi rebuild staging |
 | UI gọi API 3000 thay vì 3100 | Chạy staging bình thường để rebuild với API URL của staging; không tái dùng build dev sai URL |
 | Health OK nhưng search lỗi | Health chưa kiểm tra Supabase/Ollama; kiểm tra request search và log backend |
+| UI báo không kết nối nhưng API health vẫn OK | Kiểm tra CORS; staging phải truyền `CLIENT_APP_URL=http://127.0.0.1:4173` và `ADMIN_APP_URL=http://127.0.0.1:4174` cho API. Sau cập nhật script, dừng staging cũ và chạy lại |
 | Explanation vẫn source rule | Đọc generation status; kiểm tra flag/model, eligibility, timeout và Ollama |
 | Lần search đầu chậm | Model cold load; có thể preload, theo dõi tài nguyên và timeout |
 | BGE health not_ready | Chờ load/warm model; chỉ bật thử integration khi loaded true |
 | Query trả rỗng | Xem guidance và bằng chứng protocol/nhiệt độ; public filter có thể loại UNKNOWN |
 
 Nếu chỉ muốn debug hoặc sửa code frontend, có thể dùng các terminal dev riêng: `npm run dev:api` (3000), `npm run dev:client` (5173), `npm run dev:admin` (5174). Dùng đúng API URL theo chế độ; hướng dẫn chính ở đây dùng staging 3100/4173/4174.
+
+Khi staging đang chạy, có thể kiểm tra CORS cho cả hai giao diện bằng `node --test scripts/staging/local.test.mjs`. Check này chỉ gửi preflight OPTIONS, không gọi model hoặc ghi database.
 
 Tài liệu tham khảo của dự án: [AI search tổng hợp](ai-search-quy-trinh-tong-hop.md), [Reranker runtime](reranker-runtime.md), [Service Python](../services/reranker/README.md).

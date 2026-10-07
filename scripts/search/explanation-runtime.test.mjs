@@ -10,6 +10,20 @@ const { ExplanationService } = require(path.join(root, 'apps/api/dist/modules/se
 const document = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_CS655.json'), 'utf8'));
 const service = new ExplanationService();
 
+test('short weather queries explain documented measurements rather than only the device category', async () => {
+  const weather = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_CLIMAVUE40.json'), 'utf8'));
+  const leaf = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_LWS.json'), 'utf8'));
+  for (const query of ['Cảm biến thời tiết', 'Cảm biến khí tượng', 'Khí tượng thủy văn', 'meteorological sensor']) {
+    const explanation = service.explain(query, weather);
+    assert.ok(explanation.evidence.some(item => item.field === 'measurements' && /wind speed|tốc độ gió/iu.test(item.value)), query);
+    assert.match(explanation.text, /cấu hình lắp đặt.*chưa|chưa xác nhận cấu hình lắp đặt|installation.*unconfirmed/iu);
+    assert.doesNotMatch(explanation.text, /chưa có bằng chứng cụ thể hơn/u);
+    const incompatible = service.explain(query, leaf);
+    assert.match(incompatible.text, /chưa có dữ liệu xác nhận|does not confirm/iu);
+    assert.equal(incompatible.evidence.length, 0);
+  }
+});
+
 test('use-case explanations distinguish measurements from treatment across water and soil equipment', async () => {
   const load = async model => JSON.parse(await readFile(path.join(root, `data/search-documents/CSI_${model}.json`), 'utf8'));
   const query = 'bây giờ hồ cá tôi đang bị bẩn tôi muốn cải thiện chất lượng nước nên dùng thiết bị gì';

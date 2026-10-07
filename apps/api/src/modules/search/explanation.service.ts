@@ -324,16 +324,15 @@ export class ExplanationService {
 
   private useCaseExplanation(query: string, document: ProductSearchDocument, vi: boolean): { text: string; evidence: Evidence[] } | undefined {
     const text = query.normalize('NFD').replace(/[\u0300-\u036f]/gu, '').replace(/đ/giu, 'd').toLowerCase();
-    if (!/\b(?:muon|can|nen|chon|vi sao|tai sao|lam sao|cai thien|theo doi|giam sat|kiem tra|want|need|improve|monitor|check|which|why|how|should)\b/u.test(text)) return;
     const intent = parseSearchIntent(query);
     const water = /\b(?:ho ca|nuoc|water|pond|aquarium)\b/u.test(text);
     const soil = /\b(?:dat|soil|tuoi|irrigation)\b/u.test(text);
-    const air = /\b(?:khong khi|air|thoi tiet|weather)\b/u.test(text);
+    const air = intent.roles.some(item => item.key === 'weather') || /\b(?:khong khi|air)\b/u.test(text);
     const selected = document.measurements.filter(item =>
       intent.measurements.some(request => request.key === item.key) || intent.target?.key === item.key
       || !intent.measurements.length && !intent.target && (water && /^(?:turbidity|dissolved_oxygen|water_temperature)$/u.test(item.key)
       || soil && /^(?:volumetric_water_content|soil_temperature|soil_electrical_conductivity)$/u.test(item.key)
-      || air && /^(?:air_temperature|relative_humidity|barometric_pressure|wind_speed|wind_direction|precipitation)$/u.test(item.key)));
+      || air && /^(?:air_temperature|relative_humidity|barometric_pressure|wind_speed|wind_direction|precipitation|solar_radiation)$/u.test(item.key)));
     const evidence: Evidence[] = selected.map(item => ({ source: 'product_document', field: 'measurements', value: vi ? item.label_vi : item.label_en }));
     const sentences: string[] = [];
     if (selected.some(item => item.key === 'turbidity') && water) {

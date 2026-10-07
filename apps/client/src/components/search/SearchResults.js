@@ -98,26 +98,11 @@ function summarizeResults(results, query) {
   const vi = top[0].explanation.language
     ? top[0].explanation.language === 'vi'
     : /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(query || '');
-  // Evidence values are often bilingual ("soil moisture / độ ẩm đất"); keep the reader's language.
-  const inLanguage = (value) => {
-    const parts = String(value).split(' / ');
-    return parts.length === 2 ? parts[vi ? 1 : 0] : String(value);
-  };
-  const valueSets = top.map((p) => new Set((p.explanation.evidence || []).map((item) => inLanguage(item.value))));
-  const shared = [...valueSets[0]].filter((value) => valueSets.every((set) => set.has(value))).slice(0, 3);
   const models = joinModels(top.map((p) => p.model), vi);
   const many = top.length > 1;
-  let text;
-  if (shared.length) {
-    const facts = joinModels(shared, vi);
-    text = vi
-      ? `${models} phù hợp với yêu cầu của bạn vì dữ liệu sản phẩm xác nhận ${facts}.`
-      : `${models} ${many ? 'fit' : 'fits'} your request: product data confirms ${facts}.`;
-  } else {
-    text = vi
-      ? `${models} ${many ? 'là các lựa chọn' : 'là lựa chọn'} phù hợp nhất với yêu cầu của bạn.`
-      : `${models} ${many ? 'are the closest matches' : 'is the closest match'} for your request.`;
-  }
+  const text = vi
+    ? `${models} ${many ? 'là các kết quả' : 'là kết quả'} đầu tiên. Đối chiếu đại lượng đo và các yêu cầu chưa được xác nhận trong phần giải thích bên dưới.`
+    : `${models} ${many ? 'are the first results' : 'is the first result'}. Compare documented measurements and unconfirmed requirements in the explanations below.`;
   const reasons = top.map((p) => {
     // Explanations often open with "MODEL: "; the model is already shown beside the reason.
     const reason = p.explanation.text.replace(new RegExp(`^${p.model.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[:\\-–]\\s*`, 'i'), '');
@@ -224,16 +209,16 @@ function ProductPlate({ product, width }) {
   );
 }
 
-// Why one recommended model fits the request, shown right under its row
+// Product evidence for the request, shown right under its row.
 function FitPanel({ id, product, fit, onClose }) {
   const data = fit.data;
   const vi = data?.language === 'vi';
   return (
-    <section className="res-fit" id={id} aria-label={`Why ${product.model} fits`} aria-live="polite">
+    <section className="res-fit" id={id} aria-label={`Evidence for ${product.model}`} aria-live="polite">
       <div className="res-fit__head">
         <span className="res-fit__icon" aria-hidden="true"><ChatCircleText size={16} /></span>
         <p className="res-fit__title">
-          {vi ? `Vì sao ${product.model} phù hợp với nhu cầu của bạn` : `Why ${product.model} fits your request`}
+          {vi ? `Đối chiếu ${product.model} với nhu cầu của bạn` : `Compare ${product.model} with your request`}
         </p>
         <button type="button" className="res-fit__close" onClick={onClose} aria-label="Close explanation">
           <X size={14} />
@@ -300,12 +285,11 @@ function FitPanel({ id, product, fit, onClose }) {
   );
 }
 
-// Recommendations are grouped by how closely they fit: the best match leads as a
-// feature card, the next two are strong alternatives, the rest are related options.
+// Groups show search order; rank alone does not establish suitability.
 const TIERS = [
-  { key: 'best', level: 3, label: 'Best match', meter: 'Closest fit', hint: 'Closest to everything you asked for' },
-  { key: 'strong', level: 2, label: 'Strong alternatives', meter: 'Strong fit', hint: 'Also meet your main requirement' },
-  { key: 'more', level: 1, label: 'Also worth a look', meter: 'Related', hint: 'Related options to compare' },
+  { key: 'best', level: 3, label: 'First result', meter: 'Rank #1', hint: 'Review the documented evidence and remaining requirements' },
+  { key: 'strong', level: 2, label: 'Next results', meter: 'Ranks #2–3', hint: 'Compare measurements and specifications' },
+  { key: 'more', level: 1, label: 'More results', meter: 'Rank #4+', hint: 'Additional results to compare' },
 ];
 
 function tierFor(index) {
@@ -318,7 +302,7 @@ function tierFor(index) {
 function MatchMeter({ level, label }) {
   const name = TIERS.find((tier) => tier.level === level)?.meter;
   return (
-    <span className={`res-meter res-meter--${level}`} role="img" aria-label={`Match level: ${name}`}>
+    <span className={`res-meter res-meter--${level}`} role="img" aria-label={`Search order: ${name}`}>
       <span className="res-meter__bars" aria-hidden="true"><i /><i /><i /></span>
       {label && <span className="res-meter__label">{name}</span>}
     </span>
@@ -338,7 +322,7 @@ function PickCard({ product: p, rank, tier, isBest, fit, fitId, onToggleFit, onV
       <div className="res-row__body">
         <div className="res-row__top">
           {isBest ? (
-            <p className="res-row__flag"><SealCheck size={14} aria-hidden="true" /> Best match</p>
+            <p className="res-row__flag"><SealCheck size={14} aria-hidden="true" /> {tier.label}</p>
           ) : (
             <p className="res-row__rank">#{rank}</p>
           )}
@@ -357,7 +341,7 @@ function PickCard({ product: p, rank, tier, isBest, fit, fitId, onToggleFit, onV
           </p>
         )}
         {reasons.length > 0 && (
-          <ul className="res-reasons" aria-label="Why it matches">
+          <ul className="res-reasons" aria-label="Product evidence">
             {reasons.map((reason, i) => (
               <li key={`${reason.label}-${i}`} className="st-tag" title={reason.title}>
                 <Check size={13} aria-hidden="true" /> {reason.label}
@@ -513,10 +497,10 @@ function ChatTurn({
                   </div>
                 </div>
               ) : (
-                <section className="chat-picks" aria-label="Recommended products">
+                <section className="chat-picks" aria-label="Search results">
                   <div className="chat-picks__head">
                     <p className="chat-picks__title">
-                      Recommended products <span className="st-tab__count">{visible.length}</span>
+                      Search results <span className="st-tab__count">{visible.length}</span>
                     </p>
                     {categories.length > 1 && (
                       <div className="st-tabs" role="group" aria-label="Category">
