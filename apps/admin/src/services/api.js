@@ -111,8 +111,20 @@ export function clearAuthSession() {
 }
 
 export async function loginAdminApi(email, password) {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    const missing = [
+      !SUPABASE_URL && 'REACT_APP_SUPABASE_URL',
+      !SUPABASE_ANON_KEY && 'REACT_APP_SUPABASE_ANON_KEY',
+    ].filter(Boolean);
+    return {
+      success: false,
+      message: `Thiếu cấu hình Supabase: ${missing.join(', ')}. Thêm vào apps/admin/.env.local rồi khởi động lại app.`,
+    };
+  }
+
+  let authRes;
   try {
-    const authRes = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+    authRes = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
       method: 'POST',
       headers: {
         apikey: SUPABASE_ANON_KEY,
@@ -120,22 +132,39 @@ export async function loginAdminApi(email, password) {
       },
       body: JSON.stringify({ email, password }),
     });
-
-    if (authRes.ok) {
-      const data = await authRes.json();
-      if (!data.access_token || data.user?.app_metadata?.role !== 'admin') {
-        return { success: false, message: 'Admin access required.' };
-      }
-      const token = data.access_token;
-      const user = { email: data.user?.email || email, role: 'admin', loggedInAt: new Date().toISOString() };
-      setAuthSession(token, user);
-      return { success: true, token, user };
-    }
   } catch (err) {
     console.warn('Supabase login warning:', err);
+    return { success: false, message: 'Không kết nối được tới Supabase. Kiểm tra mạng và REACT_APP_SUPABASE_URL.' };
   }
 
-  return { success: false, message: 'Email hoặc mật khẩu không hợp lệ.' };
+  const data = await authRes.json().catch(() => ({}));
+
+  if (authRes.ok) {
+    if (!data.access_token || data.user?.app_metadata?.role !== 'admin') {
+      return { success: false, message: 'Tài khoản không có quyền quản trị.' };
+    }
+    const token = data.access_token;
+    const user = { email: data.user?.email || email, role: 'admin', loggedInAt: new Date().toISOString() };
+    setAuthSession(token, user);
+    return { success: true, token, user };
+  }
+
+  const detail = data.error_code || data.msg || data.message || data.error_description || data.error || '';
+  console.warn('Supabase login failed:', authRes.status, detail);
+
+  if (data.error_code === 'invalid_credentials') {
+    return { success: false, message: 'Email hoặc mật khẩu không hợp lệ.' };
+  }
+  if (data.error_code === 'email_not_confirmed') {
+    return { success: false, message: 'Email chưa được xác nhận.' };
+  }
+  if (authRes.status === 401 || /api key/i.test(detail)) {
+    return {
+      success: false,
+      message: 'Supabase từ chối API key. Kiểm tra REACT_APP_SUPABASE_ANON_KEY có đúng project với REACT_APP_SUPABASE_URL.',
+    };
+  }
+  return { success: false, message: `Đăng nhập thất bại (${authRes.status}${detail ? `: ${detail}` : ''}).` };
 }
 
 export function logoutAdminApi() {
