@@ -1,8 +1,8 @@
 import { groupSpecifications } from './specifications';
 import { isSearchMockEnabled, mockSearch } from './mocks/searchMock';
+import { getApiBaseUrl } from './apiFetch';
 
-const API_BASE_URL =
-  process.env.REACT_APP_API_URL || 'http://localhost:3000/api/v1';
+const API_BASE_URL = getApiBaseUrl();
 
 // ─── Normalize a product summary row from backend into UI shape ────────────────
 function normalizeProduct(p) {

@@ -20,60 +20,6 @@ import { sizedImage } from '../../services/images';
 import { explainProductFit } from '../../services/productFitService';
 import '../../styles/studio/discovery.css';
 
-// Readable names for evidence fields, in English and Vietnamese.
-const evidenceLabels = {
-  model: ['Model', 'Model'],
-  measurements: ['Measures', 'Đại lượng đo'],
-  capabilities: ['Capabilities', 'Khả năng'],
-  applications: ['Applications', 'Ứng dụng'],
-  'taxonomy.device_type': ['Device type', 'Loại thiết bị'],
-  'taxonomy.category': ['Category', 'Danh mục'],
-  supported_protocols: ['Supported interface', 'Giao tiếp hỗ trợ'],
-  unsupported_protocols: ['Unsupported interface', 'Giao tiếp không hỗ trợ'],
-  operating_temperature_range: ['Operating range', 'Dải hoạt động'],
-  temperature_measurement_range: ['Measurement range', 'Dải đo'],
-  measurement_temperature_range: ['Measurement range', 'Dải đo'],
-  ingress_protection: ['Environmental protection', 'Bảo vệ môi trường'],
-};
-
-// ─── Parse a matched_feature string into a human-readable chip ────────────────
-function parseFeatureChip(feature) {
-  if (!feature) return null;
-  const parts = feature.split(':');
-  if (parts.length >= 2) {
-    const type = parts[0];
-    const rest = parts.slice(1).join(':');
-    if (type === 'identity') {
-      const subParts = rest.split(':');
-      return subParts.length >= 2 ? `${capitalize(subParts[0])}: ${subParts.slice(1).join(':')}` : rest;
-    }
-    if (type === 'protocol') return rest;
-    if (type === 'operating-temperature') return `Operating temperature ${rest}`;
-    if (type === 'measurement-temperature') return `Measures temperature ${rest}`;
-    return `${capitalize(type)}: ${rest}`;
-  }
-  return feature;
-}
-
-function capitalize(s) {
-  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
-}
-
-// Evidence carries the matched fact; its field becomes a readable label in the result's language.
-function matchReasons(p) {
-  if (p.explanation?.evidence?.length > 0) {
-    const vi = p.explanation.language === 'vi';
-    return p.explanation.evidence.map((item) => {
-      const label = evidenceLabels[item.field]?.[vi ? 1 : 0] || item.field.replaceAll('_', ' ');
-      return {
-        label: `${label}: ${item.value}`,
-        title: item.source ? `${item.field} (${item.source})` : item.field,
-      };
-    });
-  }
-  return (p.matched_features || []).slice(0, 5).map((f) => ({ label: parseFeatureChip(f), title: f }));
-}
-
 function ExplanationSource({ explanation }) {
   if (!explanation?.source) return null;
   const vi = explanation.language === 'vi';
@@ -103,14 +49,7 @@ function summarizeResults(results, query) {
   const text = vi
     ? `${models} ${many ? 'là các kết quả' : 'là kết quả'} đầu tiên. Đối chiếu đại lượng đo và các yêu cầu chưa được xác nhận trong phần giải thích bên dưới.`
     : `${models} ${many ? 'are the first results' : 'is the first result'}. Compare documented measurements and unconfirmed requirements in the explanations below.`;
-  const reasons = top.map((p) => {
-    // Explanations often open with "MODEL: "; the model is already shown beside the reason.
-    const reason = p.explanation.text.replace(new RegExp(`^${p.model.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[:\\-–]\\s*`, 'i'), '');
-    return { model: p.model, text: reason.charAt(0).toUpperCase() + reason.slice(1) };
-  });
-  // Identical reasons would only repeat the summary line.
-  const distinct = new Set(reasons.map((reason) => reason.text)).size > 1;
-  return { text, language: vi ? 'vi' : 'en', derived: true, reasons: distinct ? reasons : [] };
+  return { text, language: vi ? 'vi' : 'en' };
 }
 
 // The AI's overall answer for the request: why these results fit, and which instruments
@@ -120,29 +59,9 @@ function GuidancePanel({ guidance, onViewDetail }) {
   return (
     <section className="res-answer" aria-label={vi ? 'Giải thích nhu cầu' : 'Search guidance'}>
       <p className="res-answer__who">
-        <span className="st-orb st-orb--live" aria-hidden="true" />
-        Campbell AI
-        {guidance.derived && (
-          <span className="res-answer__basis">{vi ? 'Tóm tắt từ dữ liệu sản phẩm' : 'Summarised from product data'}</span>
-        )}
+        <span className="res-answer__basis">{vi ? 'Tóm tắt từ dữ liệu sản phẩm' : 'Summarised from product data'}</span>
       </p>
       <p className="res-answer__text">{guidance.text}</p>
-      {guidance.reasons?.length > 0 && (
-        <ul className="res-answer__parts">
-          {guidance.reasons.map((reason, index) => (
-            <li key={`${reason.model}-${index}`}>
-              <button
-                type="button"
-                className="st-tag res-answer__model res-answer__label-btn"
-                onClick={() => onViewDetail && onViewDetail(reason.model)}
-              >
-                {reason.model}
-              </button>
-              <span className="res-answer__reason">{reason.text}</span>
-            </li>
-          ))}
-        </ul>
-      )}
       {guidance.components?.length > 0 && (
         <ul className="res-answer__parts">
           {guidance.components.map((component) => (
@@ -212,7 +131,7 @@ function ProductPlate({ product, width }) {
 // Product evidence for the request, shown right under its row.
 function FitPanel({ id, product, fit, onClose }) {
   const data = fit.data;
-  const vi = data?.language === 'vi';
+  const vi = (data?.language || product.explanation?.language) === 'vi';
   return (
     <section className="res-fit" id={id} aria-label={`Evidence for ${product.model}`} aria-live="polite">
       <div className="res-fit__head">
@@ -220,7 +139,7 @@ function FitPanel({ id, product, fit, onClose }) {
         <p className="res-fit__title">
           {vi ? `Đối chiếu ${product.model} với nhu cầu của bạn` : `Compare ${product.model} with your request`}
         </p>
-        <button type="button" className="res-fit__close" onClick={onClose} aria-label="Close explanation">
+        <button type="button" className="res-fit__close" onClick={onClose} aria-label={vi ? 'Đóng giải thích' : 'Close explanation'}>
           <X size={14} />
         </button>
       </div>
@@ -241,35 +160,36 @@ function FitPanel({ id, product, fit, onClose }) {
 
       {fit.status === 'done' && data && (
         <>
-          <p className="res-fit__summary">{data.summary}</p>
-          {(data.confirmed.length > 0 || data.unconfirmed.length > 0) && (
-            <div className="res-fit__grid">
-              {data.confirmed.length > 0 && (
-                <div>
-                  <p className="res-fit__label">{vi ? 'Dữ liệu sản phẩm xác nhận' : 'Confirmed by product data'}</p>
-                  <ul className="res-fit__list">
-                    {data.confirmed.map((item, i) => (
-                      <li key={`${item.label}-${i}`}>
-                        <Check size={14} aria-hidden="true" />
-                        <span><strong>{item.label}:</strong> {item.value}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {data.unconfirmed.length > 0 && (
-                <div>
-                  <p className="res-fit__label">{vi ? 'Chưa được xác nhận' : 'Not confirmed yet'}</p>
-                  <ul className="res-fit__list res-fit__list--open">
-                    {data.unconfirmed.map((text, i) => (
-                      <li key={`${text}-${i}`}>
-                        <Warning size={14} aria-hidden="true" />
-                        <span>{text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+          <div className="res-fit__summary">
+            {data.summary.split(/\n+|(?<=[.!?])\s+/u).map((sentence, i) => <p key={i}>{sentence}</p>)}
+          </div>
+          {data.confirmed.length > 0 && (
+            <details className="res-fit__evidence">
+              <summary>{vi ? 'Xem dữ liệu đối chiếu' : 'View supporting product data'} <CaretDown size={14} aria-hidden="true" /></summary>
+              <div className="res-fit__grid">
+                <p className="res-fit__label">{vi ? 'Dữ liệu sản phẩm xác nhận' : 'Confirmed by product data'}</p>
+                <ul className="res-fit__list">
+                  {data.confirmed.map((item, i) => (
+                    <li key={`${item.label}-${i}`}>
+                      <Check size={14} aria-hidden="true" />
+                      <span><strong>{item.label}:</strong> {item.value}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </details>
+          )}
+          {data.unconfirmed.length > 0 && (
+            <div className="res-fit__pending">
+              <p className="res-fit__label">{vi ? 'Chưa được xác nhận' : 'Not confirmed yet'}</p>
+              <ul className="res-fit__list res-fit__list--open">
+                {data.unconfirmed.map((text, i) => (
+                  <li key={`${text}-${i}`}>
+                    <Warning size={14} aria-hidden="true" />
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
           {data.source && (
@@ -299,34 +219,31 @@ function tierFor(index) {
 }
 
 // Three bars, filled up to the tier's level
-function MatchMeter({ level, label }) {
+function MatchMeter({ level }) {
   const name = TIERS.find((tier) => tier.level === level)?.meter;
   return (
     <span className={`res-meter res-meter--${level}`} role="img" aria-label={`Search order: ${name}`}>
       <span className="res-meter__bars" aria-hidden="true"><i /><i /><i /></span>
-      {label && <span className="res-meter__label">{name}</span>}
     </span>
   );
 }
 
-function PickCard({ product: p, rank, tier, isBest, fit, fitId, onToggleFit, onViewDetail, onToggleCompare, isInCompare }) {
+function PickCard({ product: p, rank, tier, isBest, vi, fit, fitId, onToggleFit, onViewDetail, onToggleCompare, isInCompare }) {
   const inCompare = isInCompare ? isInCompare(p.model) : false;
   const price = p.price ?? getProductPrice(p.product_id, p.model);
-  const priceLabel = price != null ? formatPrice(price, p.currency) : 'Price on request';
-  const reasons = matchReasons(p);
+  const priceLabel = price != null ? formatPrice(price, p.currency) : vi ? 'Liên hệ báo giá' : 'Price on request';
   const compact = tier.key === 'more';
 
   return (
-    <li className={`res-row res-row--${tier.key} ${isBest ? 'res-row--best' : ''}`} data-model={p.model}>
+    <li className={`res-row res-row--${tier.key} ${isBest ? 'res-row--best' : ''}`} data-model={p.model} data-rank={rank}>
       <ProductPlate product={p} width={isBest ? 640 : 320} />
       <div className="res-row__body">
         <div className="res-row__top">
           {isBest ? (
-            <p className="res-row__flag"><SealCheck size={14} aria-hidden="true" /> {tier.label}</p>
+            <p className="res-row__flag"><SealCheck size={14} aria-hidden="true" /> {vi ? 'Kết quả đầu tiên' : tier.label}</p>
           ) : (
             <p className="res-row__rank">#{rank}</p>
           )}
-          <MatchMeter level={tier.level} label />
         </div>
         <p className="res-row__path">{p.subcategory || p.deviceType}</p>
         <h2 className="res-row__model">
@@ -334,20 +251,12 @@ function PickCard({ product: p, rank, tier, isBest, fit, fitId, onToggleFit, onV
             {p.model}
           </button>
         </h2>
-        <p className="res-row__name">{p.name}</p>
+        <p className="res-row__name">{p.name || p.name_en || p.name_vi}</p>
         {p.explanation?.text && (
-          <p className="res-row__explain">
-            {p.explanation.text} <ExplanationSource explanation={p.explanation} />
-          </p>
-        )}
-        {reasons.length > 0 && (
-          <ul className="res-reasons" aria-label="Product evidence">
-            {reasons.map((reason, i) => (
-              <li key={`${reason.label}-${i}`} className="st-tag" title={reason.title}>
-                <Check size={13} aria-hidden="true" /> {reason.label}
-              </li>
-            ))}
-          </ul>
+          <div className="res-row__insight">
+            <p className="res-row__explain">{p.explanation.text.split(/(?<=[.!?])\s+/u)[0]}</p>
+            <ExplanationSource explanation={p.explanation} />
+          </div>
         )}
       </div>
       <div className="res-row__buy">
@@ -357,7 +266,7 @@ function PickCard({ product: p, rank, tier, isBest, fit, fitId, onToggleFit, onV
             product={{ ...p, price }}
             className={compact ? 'st-btn--icon st-btn--sm' : isBest ? '' : 'st-btn--sm'}
             showLabel={!compact}
-            label="Add to cart"
+            label={vi ? 'Thêm vào giỏ' : 'Add to cart'}
             size={compact ? 15 : 16}
           />
           {onToggleCompare && (
@@ -385,7 +294,7 @@ function PickCard({ product: p, rank, tier, isBest, fit, fitId, onToggleFit, onV
           }}
         >
           <ChatCircleText size={15} aria-hidden="true" />
-          {fit ? 'Hide explanation' : compact ? 'Why this model?' : 'Explain this model for my needs'}
+          {vi ? (fit ? 'Ẩn giải thích' : 'Giải thích theo nhu cầu') : fit ? 'Hide explanation' : 'Explain this model for my needs'}
           <CaretDown size={13} aria-hidden="true" className="res-explain__caret" />
         </button>
       </div>
@@ -433,6 +342,7 @@ function ChatTurn({
   const categories = Array.from(new Set(results.map((p) => p.category).filter(Boolean)));
   const visible = results.filter((p) => !filterCategory || p.category === filterCategory);
   const answer = loading || turn.error ? null : turn.guidance || summarizeResults(visible, turn.query);
+  const vi = (answer?.language || results[0]?.explanation?.language) === 'vi';
 
   return (
     <li className="chat-turn" ref={turnRef}>
@@ -500,12 +410,12 @@ function ChatTurn({
                 <section className="chat-picks" aria-label="Search results">
                   <div className="chat-picks__head">
                     <p className="chat-picks__title">
-                      Search results <span className="st-tab__count">{visible.length}</span>
+                      {vi ? 'Sản phẩm tìm thấy' : 'Search results'} <span className="st-tab__count">{visible.length}</span>
                     </p>
                     {categories.length > 1 && (
                       <div className="st-tabs" role="group" aria-label="Category">
                         <button type="button" className="st-tab" aria-pressed={!filterCategory} onClick={() => setFilterCategory('')}>
-                          All <span className="st-tab__count">{results.length}</span>
+                          {vi ? 'Tất cả' : 'All'} <span className="st-tab__count">{results.length}</span>
                         </button>
                         {categories.map((cat) => (
                           <button
@@ -532,8 +442,8 @@ function ChatTurn({
                         {tier.key !== 'best' && (
                           <header className="res-tier__head">
                             <MatchMeter level={tier.level} />
-                            <p className="res-tier__title">{tier.label}</p>
-                            <p className="res-tier__hint">{tier.hint}</p>
+                            <p className="res-tier__title">{vi ? (tier.key === 'strong' ? 'Kết quả tiếp theo' : 'Khám phá thêm') : tier.label}</p>
+                            <p className="res-tier__hint">{vi ? 'Mở giải thích để đối chiếu với nhu cầu của bạn' : tier.hint}</p>
                           </header>
                         )}
                         <ol className={`res-list res-list--${tier.key}`} start={picks[0].index + 1}>
@@ -546,6 +456,7 @@ function ChatTurn({
                                 rank={index + 1}
                                 tier={tier}
                                 isBest={tier.key === 'best' && !filterCategory}
+                                vi={vi}
                                 fit={fits[fitKey]}
                                 fitId={`fit-${turn.id}-${fitKey}`.replace(/[^a-zA-Z0-9_-]/g, '-')}
                                 onToggleFit={() => toggleFit(p)}
@@ -601,6 +512,8 @@ export function SearchResults({
         resolvedQuery,
       }];
   const busy = Boolean(isLoading) || turns.some((turn) => turn.status === 'loading');
+  const latest = turns[turns.length - 1];
+  const vi = (latest.guidance?.language || latest.results?.[0]?.explanation?.language) === 'vi';
 
   // Bring each new follow-up into view, like a chat
   const turnCount = turns.length;
@@ -626,7 +539,7 @@ export function SearchResults({
         </p>
         {onEditSearch && (
           <button type="button" className="st-btn st-btn--sm" onClick={onEditSearch}>
-            <PencilSimple size={14} /> New search
+            <PencilSimple size={14} /> {vi ? 'Tìm kiếm mới' : 'New search'}
           </button>
         )}
       </header>
@@ -648,23 +561,23 @@ export function SearchResults({
 
       <form className="chat-composer" onSubmit={submit}>
         <div className="chat-composer__box">
-          <label htmlFor="search-follow-up" className="sr-only">Ask a follow-up question</label>
+          <label htmlFor="search-follow-up" className="sr-only">{vi ? 'Bổ sung nhu cầu tìm kiếm' : 'Ask a follow-up question'}</label>
           <input
             id="search-follow-up"
             type="text"
             value={draft}
             onChange={(event) => setDraft(event.target.value)}
-            placeholder="Ask a follow-up, e.g. and supports Modbus"
+            placeholder={vi ? 'Bổ sung nhu cầu, ví dụ: hỗ trợ Modbus…' : 'Ask a follow-up, e.g. and supports Modbus'}
             maxLength={500}
             disabled={busy}
             autoComplete="off"
           />
-          <button type="submit" disabled={busy || !draft.trim()} aria-label="Send">
+          <button type="submit" disabled={busy || !draft.trim()} aria-label={vi ? 'Gửi' : 'Send'}>
             <ArrowUp size={18} />
           </button>
         </div>
       </form>
-      <p className="chat-composer__hint">Campbell AI answers from Campbell Scientific product data. Check the specifications before ordering.</p>
+      <p className="chat-composer__hint">{vi ? 'Thông tin dựa trên dữ liệu Campbell Scientific. Đối chiếu thông số trước khi đặt hàng.' : 'Campbell AI answers from Campbell Scientific product data. Check the specifications before ordering.'}</p>
     </div>
   );
 }

@@ -357,15 +357,6 @@
   letter-spacing: -0.02em;
 }
 
-/* Match reasons wrap inside narrow rows instead of being cut off */
-.theme-shop .res-reasons .st-tag {
-  max-width: 100%;
-  height: auto;
-  min-height: 30px;
-  white-space: normal;
-  line-height: 1.35;
-}
-
 @media (max-width: 640px) {
   /* The dashboard's decorative orbs would push the figures below the fold */
   .theme-shop .ac-hero__art {
@@ -390,12 +381,9 @@
   box-shadow: var(--st-shadow);
 }
 
-/* ══════════════════════════ AI Search chat ══════════════════════════
-   A café conversation: the question is a sand bubble, Campbell AI answers on a white
-   card with a marigold "from product data" label, picks follow as paper cards, and the
-   composer floats over a cream fade at the bottom of the screen. */
+/* AI Search: a brief overview, compact product cards, and inline explanations. */
 .theme-shop .chat {
-  max-width: 880px;
+  max-width: 1080px;
 }
 
 .theme-shop .chat-head {
@@ -418,7 +406,7 @@
 
 .theme-shop .chat-thread {
   gap: 56px;
-  padding: 36px 0 24px;
+  padding: 24px 0 24px;
 }
 
 .theme-shop .chat-turn {
@@ -459,20 +447,22 @@
 }
 
 .theme-shop .chat .res-answer {
-  padding: 22px 26px 24px;
-  border-radius: 6px 24px 24px 24px;
-  background: var(--st-white);
+  gap: 14px;
+  padding: 24px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  background: linear-gradient(120deg, #ffffff, #f0f8ff);
   box-shadow: var(--st-shadow);
 }
 
 .theme-shop .chat .res-answer__who {
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .theme-shop .chat .res-answer__basis {
-  padding: 5px 12px;
-  background: var(--st-wash);
-  color: var(--st-ink);
+  padding: 0;
+  background: transparent;
+  color: #075985;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -482,14 +472,15 @@
 .theme-shop .chat .res-answer__text {
   font-size: 17px;
   line-height: 1.6;
+  max-width: 78ch;
   letter-spacing: -0.005em;
   color: var(--st-charcoal);
 }
 
 /* Section label above the picks */
 .theme-shop .chat-picks {
-  gap: 14px;
-  margin-top: 8px;
+  gap: 18px;
+  margin-top: 12px;
 }
 
 .theme-shop .chat-picks__title {
@@ -504,7 +495,28 @@
   gap: 14px;
 }
 
-/* Product picks: paper cards; the best match wears a buttercup edge and badge */
+/* Gold, violet, and mint distinguish the first three results in search order. */
+.theme-shop .res-row[data-rank='1'] {
+  --res-rank-wash: #fff7dc;
+  --res-rank-soft: #ffe8a3;
+  --res-rank-line: #d5ad46;
+  --res-rank-ink: #795100;
+}
+
+.theme-shop .res-row[data-rank='2'] {
+  --res-rank-wash: #f7f2ff;
+  --res-rank-soft: #e9ddff;
+  --res-rank-line: #aa8ad6;
+  --res-rank-ink: #654293;
+}
+
+.theme-shop .res-row[data-rank='3'] {
+  --res-rank-wash: #edf9f3;
+  --res-rank-soft: #cceedd;
+  --res-rank-line: #83bba5;
+  --res-rank-ink: #215c46;
+}
+
 .theme-shop .res-row {
   gap: 22px;
   padding: 12px 24px 12px 12px;
@@ -517,14 +529,18 @@
 }
 
 .theme-shop .res-row--best,
-.theme-shop .res-row--best:hover {
-  box-shadow: 0 0 0 2px #f7d046, var(--st-shadow-raised);
+.theme-shop .res-row--best:hover,
+.theme-shop .res-row--best:focus-within,
+.theme-shop .res-row--strong,
+.theme-shop .res-row--strong:hover,
+.theme-shop .res-row--strong:focus-within {
+  box-shadow: 0 0 0 1px var(--res-rank-line), var(--st-shadow);
 }
 
 .theme-shop .res-row__flag {
-  padding: 4px 12px;
-  background: var(--st-marigold);
-  color: var(--st-ink);
+  padding: 6px 12px;
+  background: var(--res-rank-soft);
+  color: var(--res-rank-ink);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -532,16 +548,26 @@
 }
 
 .theme-shop .res-row__rank {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--st-gray-light);
+  color: var(--res-rank-ink, #075985);
+}
+
+.theme-shop .res-row--strong .res-row__rank {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--res-rank-soft);
+}
+
+.theme-shop .res-row__insight {
+  border-color: var(--res-rank-line, #b6daf4);
 }
 
 .theme-shop .res-row__path {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--st-gray);
 }
@@ -567,40 +593,48 @@
 }
 
 .theme-shop .res-row .res-explain {
-  padding: 6px 14px;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px 14px;
   border: 1px solid var(--st-line);
-  border-radius: 9999px;
-  background: var(--st-white);
+  border-radius: 12px;
+  background: var(--res-rank-wash, #f3f8fc);
+  color: var(--res-rank-ink, #075985);
   font-weight: 600;
 }
 
 .theme-shop .res-row .res-explain:hover,
 .theme-shop .res-row .res-explain.is-open {
-  border-color: var(--st-ink);
-  background: var(--st-white);
+  border-color: var(--res-rank-line, #9bc9ea);
+  background: var(--res-rank-soft, #eaf5ff);
 }
 
 .theme-shop .res-fit {
   border-radius: 18px;
-  background: var(--st-canvas);
+  background: var(--res-rank-wash, #f5f9fd);
   outline: 1px solid var(--st-line);
   outline-offset: -1px;
 }
 
 .theme-shop .res-fit__icon {
-  background: var(--st-marigold);
-  color: var(--st-ink);
+  background: var(--res-rank-soft, #e1f1ff);
+  color: var(--res-rank-ink, #075985);
 }
 
-/* Composer: a white pill floating over a cream fade, so cards slide away beneath it */
+.theme-shop .res-fit__evidence summary {
+  color: var(--res-rank-ink, #075985);
+}
+
+/* The floating composer leaves the surrounding content visible and clickable. */
 .theme-shop .chat-composer {
   display: block;
   bottom: 0;
   margin-top: 0;
-  padding: 36px 0 20px;
+  padding: 16px 0 12px;
   border: 0;
   border-radius: 0;
-  background: linear-gradient(to bottom, rgba(250, 248, 240, 0) 0%, var(--st-canvas) 45%);
+  background: transparent;
+  pointer-events: none;
   box-shadow: none;
 }
 
@@ -610,6 +644,7 @@
 
 .theme-shop .chat-composer__box {
   display: flex;
+  pointer-events: auto;
   align-items: center;
   padding: 8px 8px 8px 26px;
   border: 1px solid var(--st-line);
@@ -620,8 +655,8 @@
 }
 
 .theme-shop .chat-composer__box:focus-within {
-  border-color: var(--st-ink);
-  box-shadow: 0 0 0 4px rgba(255, 221, 0, 0.35), var(--st-shadow-raised);
+  border-color: #0098f2;
+  box-shadow: 0 0 0 3px rgba(0, 152, 242, 0.15), var(--st-shadow-raised);
 }
 
 .theme-shop .chat-composer button {
@@ -662,7 +697,7 @@
   }
 
   .theme-shop .chat-composer {
-    padding: 28px 0 12px;
+    padding: 12px 0;
   }
 
   .theme-shop .chat-composer__box {
@@ -674,10 +709,7 @@
   }
 }
 
-/* ══════════════════ AI Search picks, grouped by match level ══════════════════
-   Best match: a wide feature card on a marigold wash. Strong alternatives: two
-   portrait cards side by side. Also worth a look: slim rows. A three-bar meter repeats
-   the level on every card and in each group's header. */
+/* Search order: one featured result, two alternatives, then compact rows. */
 .theme-shop .res-tier {
   display: flex;
   flex-direction: column;
@@ -747,12 +779,6 @@
   background: var(--st-ink);
 }
 
-.theme-shop .res-meter__label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--st-charcoal);
-}
-
 .theme-shop .res-row__top {
   display: flex;
   flex-wrap: wrap;
@@ -768,23 +794,23 @@
 
 /* ── Level 3: the feature card ── */
 .theme-shop .res-row--best {
-  grid-template-columns: 232px minmax(0, 1fr);
+  grid-template-columns: 220px minmax(0, 1fr);
   grid-template-areas: 'plate body' 'plate buy' 'fit fit';
   align-items: start;
-  gap: 18px 28px;
-  padding: 16px 28px 16px 16px;
+  gap: 20px 28px;
+  padding: 24px;
   border-radius: 28px;
-  background: linear-gradient(120deg, #fff8d6 0%, #ffffff 46%);
+  background: linear-gradient(120deg, var(--res-rank-wash) 0%, #ffffff 135%);
 }
 
 .theme-shop .res-row--best .st-plate {
-  width: 232px;
+  width: 220px;
   border-radius: 20px;
   background: var(--st-white);
 }
 
 .theme-shop .res-row--best .res-row__model {
-  font-size: 32px;
+  font-size: clamp(28px, 3vw, 38px);
   letter-spacing: -0.03em;
 }
 
@@ -828,31 +854,32 @@
 
 .theme-shop .res-row--best .res-explain {
   align-self: center;
+  flex-basis: 100%;
 }
 
-/* ── Level 2: portrait cards, two across ── */
+/* Rank 2 and 3: full-width cards in search order. */
 .theme-shop .chat .res-list--strong {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 14px;
 }
 
 .theme-shop .res-row--strong {
-  grid-template-columns: 96px minmax(0, 1fr);
-  /* details take the spare height so both cards' price bars line up */
+  background: var(--res-rank-wash);
+  grid-template-columns: 100px minmax(0, 1fr);
   grid-template-rows: 1fr auto;
   align-items: start;
   gap: 16px 16px;
-  padding: 14px 16px 16px 14px;
+  padding: 20px;
 }
 
 .theme-shop .res-row--strong .st-plate {
-  width: 96px;
+  width: 100px;
   border-radius: 16px;
 }
 
 .theme-shop .res-row--strong .res-row__model {
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .theme-shop .res-row--strong .res-row__name {
@@ -860,16 +887,15 @@
 }
 
 .theme-shop .res-row--strong .res-row__explain {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: block;
 }
 
 .theme-shop .res-row--strong .res-row__buy {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   gap: 10px 12px;
   padding-top: 14px;
@@ -884,6 +910,10 @@
   grid-column: 1 / -1;
   justify-self: stretch;
   justify-content: center;
+}
+
+.theme-shop .res-list--strong:has(.res-fit) {
+  align-items: start;
 }
 
 /* ── Level 1: slim rows ── */
@@ -908,9 +938,7 @@
   margin-bottom: 2px;
 }
 
-.theme-shop .res-row--more .res-row__path,
-.theme-shop .res-row--more .res-row__explain,
-.theme-shop .res-row--more .res-reasons {
+.theme-shop .res-row--more .res-row__path {
   display: none;
 }
 
@@ -957,28 +985,25 @@
     width: 160px;
   }
 
-  .theme-shop .chat .res-list--strong {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 640px) {
   .theme-shop .res-row--best {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'plate' 'body' 'buy' 'fit';
+    grid-template-columns: 88px minmax(0, 1fr);
+    grid-template-areas: 'plate body' 'buy buy' 'fit fit';
     gap: 14px;
-    padding: 12px 14px 16px;
+    padding: 18px;
     border-radius: 24px;
-    background: linear-gradient(180deg, #fff8d6 0%, #ffffff 40%);
+    background: linear-gradient(120deg, var(--res-rank-wash) 0%, #ffffff 135%);
   }
 
   .theme-shop .res-row--best .st-plate {
-    width: 100%;
-    aspect-ratio: 16 / 10;
+    width: 88px;
+    aspect-ratio: 1;
   }
 
   .theme-shop .res-row--best .res-row__model {
-    font-size: 26px;
+    font-size: 25px;
   }
 
   .theme-shop .res-row--best .res-row__price {
@@ -1003,7 +1028,7 @@
   }
 
   .theme-shop .res-row--strong .res-row__price {
-    flex-basis: 100%;
+    font-size: 20px;
   }
 
   /* Answers use the full width; the avatar sits above them */

@@ -306,16 +306,6 @@
   color: var(--st-gray);
 }
 
-.theme-shop .res-answer__label-btn {
-  justify-self: start;
-}
-
-.theme-shop .res-answer__reason {
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--st-ink);
-}
-
 .theme-shop .res-answer__none {
   font-size: 15px;
   color: var(--st-gray);
@@ -369,21 +359,6 @@
 .theme-shop .res-link:focus-visible::after {
   outline: 3px solid var(--st-sky);
   outline-offset: 3px;
-}
-
-.theme-shop .res-reasons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 12px;
-  list-style: none;
-}
-
-.theme-shop .res-reasons li {
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .theme-shop .res-skeleton-plate {
@@ -871,8 +846,24 @@
   line-height: 1.5;
 }
 
-.theme-shop .res-row .res-reasons {
-  margin-top: 10px;
+.theme-shop .res-row__insight {
+  margin-top: 14px;
+  padding-left: 12px;
+  border-left: 2px solid #b6daf4;
+}
+
+.theme-shop .res-row__insight .res-row__explain {
+  margin-top: 0;
+  color: #455b70;
+}
+
+.theme-shop .res-row__insight .res-source {
+  margin: 8px 0 0;
+  font-size: 11px;
+}
+
+.theme-shop .res-row--more .res-row__insight {
+  display: none;
 }
 
 .theme-shop .res-row__buy {
@@ -1016,17 +1007,12 @@
   }
 }
 
-/* In the chat the speaker is already named beside the avatar: the answer card keeps only
-   its "summarised from product data" note, and drops the header when there is none. */
+/* The answer card uses a small source label; the speaker is named beside the avatar. */
 .theme-shop .chat .res-answer__who {
   height: auto;
   padding: 0;
   background: transparent;
   font-size: 0;
-}
-
-.theme-shop .chat .res-answer__who .st-orb {
-  display: none;
 }
 
 .theme-shop .chat .res-answer__basis {
@@ -1035,12 +1021,9 @@
   border-radius: 50px;
 }
 
-.theme-shop .chat .res-answer__who:not(:has(.res-answer__basis)) {
-  display: none;
-}
-
 /* "Explain this model for my needs": opens right under the product row */
 .theme-shop .res-explain__caret {
+  margin-left: auto;
   transition: transform 0.25s var(--st-ease-out);
 }
 
@@ -1105,17 +1088,49 @@
 }
 
 .theme-shop .res-fit__summary {
-  margin-top: 12px;
-  max-width: 70ch;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  max-width: 78ch;
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.7;
   color: var(--st-ink);
 }
 
+.theme-shop .res-fit__evidence {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--st-line);
+}
+
+.theme-shop .res-fit__evidence summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 36px;
+  color: #075985;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.theme-shop .res-fit__evidence summary::-webkit-details-marker {
+  display: none;
+}
+
+.theme-shop .res-fit__evidence[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.theme-shop .res-fit__pending {
+  margin-top: 16px;
+}
+
 .theme-shop .res-fit__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px 24px;
+  display: block;
   margin-top: 14px;
 }
 
@@ -1187,5 +1202,13 @@
     margin: 0;
     padding: 16px;
     border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-shop .chat-bubble,
+  .theme-shop .chat-ai__body,
+  .theme-shop .res-fit {
+    animation: none;
   }
 }
