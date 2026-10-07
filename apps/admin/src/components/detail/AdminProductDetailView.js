@@ -364,8 +364,8 @@ export function AdminProductDetailView({ productId, onBack }) {
         {importantSpecs.length > 0 && (
           <div className="specs-section">
             <h3>Key Specifications</h3>
-            {importantSpecs.map((spec) => (
-              <div key={spec.canonical_key} className="spec-row">
+            {importantSpecs.map((spec, index) => (
+              <div key={`${spec.canonical_key}-${index}`} className="spec-row">
                 <div className="spec-name">{spec.canonical_key.replace(/_/g, ' ')}</div>
                 <div className="spec-value">{formatSpecValue(spec.normalized_value)}</div>
               </div>
@@ -377,8 +377,8 @@ export function AdminProductDetailView({ productId, onBack }) {
         {specifications.length > 0 && (
           <div className="specs-section">
             <h3>Full Specifications</h3>
-            {specifications.map((spec) => (
-              <div key={spec.specification_id || spec.canonical_key} className="spec-row">
+            {specifications.map((spec, index) => (
+              <div key={spec.specification_id || `${spec.canonical_key}-${index}`} className="spec-row">
                 <div className="spec-name">{spec.canonical_key.replace(/_/g, ' ')}</div>
                 <div className="spec-value">{formatSpecValue(spec.normalized_value)}</div>
               </div>
@@ -761,7 +761,7 @@ export function AdminProductDetailView({ productId, onBack }) {
                   ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 10, background: '#f8fafc', padding: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}>
                       {formData.specifications.map((spec, index) => (
-                        <div key={spec.canonical_key || index} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 10, alignItems: 'center' }}>
+                        <div key={index} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 10, alignItems: 'center' }}>
                           <span style={{ fontSize: 13, fontWeight: 500, color: '#334155', wordBreak: 'break-word' }}>
                             {spec.canonical_key.replace(/_/g, ' ')}
                           </span>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { AlertCircle, ChevronLeft, ChevronRight, Eye, RefreshCw, Search } from 'lucide-react';
 import {
@@ -49,19 +49,25 @@ export function OrderListView() {
     return () => clearTimeout(timer);
   }, [searchInput, search, updateParams]);
 
+  // Responses can arrive out of order (e.g. the unfiltered list after a search); only the latest request wins.
+  const latestRequest = useRef(0);
+
   const load = useCallback(async () => {
+    const requestId = ++latestRequest.current;
     setLoading(true);
     setError(null);
     try {
       const result = await listOrders({ search, status, page, pageSize: DEFAULT_PAGE_SIZE });
+      if (requestId !== latestRequest.current) return;
       setOrders(result.items);
       setTotal(result.total);
     } catch (err) {
+      if (requestId !== latestRequest.current) return;
       setError(err.message);
       setOrders([]);
       setTotal(0);
     } finally {
-      setLoading(false);
+      if (requestId === latestRequest.current) setLoading(false);
     }
   }, [search, status, page]);
 

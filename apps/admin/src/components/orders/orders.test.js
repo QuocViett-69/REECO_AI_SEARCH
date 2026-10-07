@@ -83,6 +83,38 @@ describe('OrderListView', () => {
     expect(calls.at(-1).query.get('status')).toBe('SHIPPED');
   });
 
+  test('a slow earlier response does not overwrite the search results', async () => {
+    let releaseFirst;
+    const firstResponse = new Promise((resolve) => {
+      releaseFirst = resolve;
+    });
+    const calls = mockFetch({
+      'GET /admin/orders': async ({ query }) => {
+        if (!query.get('search')) {
+          await firstResponse;
+          return json({ items: [makeOrder(), makeOrder({ id: 'o-2', order_code: 'REECO-1002' })], total: 2 });
+        }
+        return json({ items: [makeOrder()], total: 1 });
+      },
+    });
+    render(
+      <MemoryRouter initialEntries={['/orders']}>
+        <OrderListView />
+      </MemoryRouter>
+    );
+
+    // The unfiltered load is still pending when the search comes back
+    fireEvent.change(screen.getByLabelText('Tìm đơn hàng'), { target: { value: 'REECO-1001' } });
+    await screen.findByRole('link', { name: 'REECO-1001' });
+    expect(calls.map((c) => c.query.get('search'))).toEqual([null, 'REECO-1001']);
+
+    releaseFirst();
+    await act(async () => {});
+
+    expect(screen.queryByRole('link', { name: 'REECO-1002' })).toBeNull();
+    expect(screen.getByText('1–1 / 1 đơn')).toBeInTheDocument();
+  });
+
   test('shows the API error instead of an empty list', async () => {
     mockFetch({ 'GET /admin/orders': () => json({ message: 'Lỗi tải danh sách đơn hàng quản trị' }, 503) });
     render(
