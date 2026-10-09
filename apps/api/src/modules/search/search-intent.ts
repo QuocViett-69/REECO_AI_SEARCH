@@ -83,6 +83,7 @@ export function parseSearchIntent(query: string) {
     && !/\b(?:dat|nuoc)\b/u.test(text);
   if (airList && !requested.some(item => item.key === 'relative_humidity')) requested.push(measurements[1]!);
   const kinds = roles.filter(item => item.pattern.test(text));
+  const sensorOnly = /\bsensors?\b|\bcam bien\b/u.test(text) && !requested.length && !target && !kinds.some(item => ['logger', 'reader', 'power', 'communication', 'cellular'].includes(item.key));
   const weather = kinds.some(item => item.key === 'weather') || /\b(?:temperature|nhiet do)\b/u.test(text)
     && /\b(?:humidity|do am)\b/u.test(text) && /\b(?:rainfall|luong mua)\b/u.test(text) && !/\b(?:soil|dat|water|nuoc)\b/u.test(text);
   if (weather && /\b(?:humidity|do am)\b/u.test(text) && !requested.some(item => item.key === 'relative_humidity')) requested.push(measurements[1]!);
@@ -113,7 +114,7 @@ export function parseSearchIntent(query: string) {
     && (/\b(?:system|he thong|systems?|nhung thiet bi|what equipment|thi can he thong)\b/u.test(text) && (requested.length > 1 || kinds.length > 1)
       || /\b(?:stud(?:y|ying|ies)|nghien cuu|relationship|moi quan he|changes after|sau moi tran mua|thay doi.*(?:sau|mua))\b/u.test(text) && requested.length > 1);
   const effectiveTarget = loggerOnly ? undefined : medium;
-  return { measurements: requested, target: effectiveTarget, roles: kinds, outdoor, specifications, system, comparison,
+  return { measurements: requested, target: effectiveTarget, roles: kinds, outdoor, specifications, system, comparison, sensorOnly,
     constrained: requested.length > 0 || !!effectiveTarget || kinds.length > 0 || outdoor || specifications.length > 0 };
 }
 
@@ -152,6 +153,7 @@ export function buildSearchPlan(query: string): { label: string; query: string; 
 }
 
 export function matchSearchIntent(intent: SearchIntent, document: ProductSearchDocument, specifications: ProductSpecification[] = []): Evidence[] | null {
+  if (intent.sensorOnly && document.taxonomy.category_key !== 'sensors') return null;
   const evidence: Evidence[] = [];
   const literalEvidence = specificationEvidence(intent.specifications, specifications);
   if (!literalEvidence) return null;

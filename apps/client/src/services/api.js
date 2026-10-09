@@ -135,6 +135,8 @@ export async function getProductDetailApi(productIdOrModel) {
 // ─── POST /search ────────────────────────────────────────────────────────────────
 // The API generates explanations from product evidence; the client only displays them.
 export async function searchProductsApi(query, limit = 10, context = null) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 45000);
   try {
     const res = isSearchMockEnabled
       ? await mockSearch(query, limit, context).then(({ status, body }) => ({
@@ -143,6 +145,7 @@ export async function searchProductsApi(query, limit = 10, context = null) {
           json: async () => body,
         }))
       : await fetch(`${API_BASE_URL}/search`, {
+          signal: controller.signal,
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ query, limit, explain: true, ...(context && { context }) }),
@@ -179,8 +182,10 @@ export async function searchProductsApi(query, limit = 10, context = null) {
   } catch (error) {
     console.warn('API Search failed:', error.message);
     return {
-      error: 'network_error',
-      message: 'Could not connect to the search server.',
+      error: controller.signal.aborted ? 'timeout' : 'network_error',
+      message: controller.signal.aborted ? 'Search took too long. Please try again.' : 'Could not connect to the search server.',
     };
+  } finally {
+    clearTimeout(timeout);
   }
 }

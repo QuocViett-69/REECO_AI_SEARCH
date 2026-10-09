@@ -17,7 +17,7 @@
     "build:client": "npm run build --workspace=@reeco/client",
     "test:admin": "npm run build:shared && npm run test --workspace=@reeco/admin -- --watchAll=false --passWithNoTests",
     "test:client": "npm run test --workspace=@reeco/client -- --watchAll=false --passWithNoTests",
-    "test:api": "npm run build:shared && npm run build:api && node --test scripts/security/api-security.test.mjs scripts/payments/vnpay-signing.test.mjs scripts/payments/merge-regression.test.mjs",
+    "test:api": "npm run build:shared && npm run build:api && node --test scripts/security/api-security.test.mjs scripts/payments/vnpay-signing.test.mjs scripts/payments/merge-regression.test.mjs scripts/search/*.test.mjs scripts/create-embeddings/*.test.mjs scripts/search-evaluation/explanation/grounded-explanation.test.mjs",
     "test:commerce:live": "npm run build:shared && npm run build:api && node --env-file=apps/api/.env --test scripts/payments/vnpay.test.mjs scripts/notifications/notifications.test.mjs",
     "build": "npm run build:shared && npm run build:api && npm run build:client && npm run build:admin",
     "demo:seed": "node --env-file=apps/api/.env scripts/demo/seed-demo.mjs",
@@ -43,7 +43,7 @@
     "embeddings:test": "npm run build:api && node --test scripts/create-embeddings/*.test.mjs",
     "embeddings:smoke": "npm run build:api && node scripts/create-embeddings/smoke.mjs",
     "embeddings:backfill": "npm run build:api && node --env-file-if-exists=apps/api/.env scripts/create-embeddings/backfill.mjs",
-    "embeddings:validate": "node scripts/create-embeddings/validate.mjs",
+    "embeddings:validate": "node --env-file-if-exists=apps/api/.env scripts/create-embeddings/validate.mjs",
     "search:semantic:test": "npm run build:api && node --test scripts/search/semantic-search.test.mjs",
     "search:semantic:smoke": "npm run build:api && node --env-file=apps/api/.env scripts/search/semantic-smoke.mjs",
     "search:hybrid:test": "npm run build:api && node --test scripts/search/hybrid-search.test.mjs",
@@ -79,7 +79,9 @@
     "search:conversation:test": "npm run build:shared && npm run build:api && node --test scripts/search/conversation-query.test.mjs",
     "search:intent:test": "npm run build:shared && npm run build:api && node --test scripts/search/intent-search.test.mjs scripts/search/public-search.test.mjs scripts/search/conversation-query.test.mjs scripts/search/technical-match.test.mjs scripts/search/explanation-runtime.test.mjs scripts/search/reranker-runtime.test.mjs",
     "lint": "npm run lint --workspaces --if-present",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "demo:warmup": "npm run build:api && node --env-file-if-exists=apps/api/.env scripts/demo/warmup-search.mjs",
+    "demo:smoke": "node --env-file-if-exists=apps/api/.env scripts/demo/search-smoke.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.8",

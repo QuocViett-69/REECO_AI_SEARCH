@@ -10,7 +10,6 @@ import {
   type ProductMedia,
   type ProductSearchDocument,
   type ProductSpecification,
-  type ProductStatus,
   type ProductSummary,
 } from '@reeco/shared';
 import {
@@ -50,70 +49,6 @@ export class ProductsService {
 
   getAdmin(productId: string): Promise<ProductDetail> {
     return this.getDetail(productId, false);
-  }
-
-  async updateAdmin(
-    productId: string,
-    updates: {
-      product_name_en?: string;
-      name_vi?: string | null;
-      category?: string | null;
-      subcategory?: string | null;
-      device_type?: string | null;
-      status?: ProductStatus;
-      product_url?: string;
-      supported_protocols?: string[];
-      specifications?: Array<{ canonical_key: string; value: string }>;
-    },
-  ): Promise<ProductDetail> {
-    const {
-      name_vi,
-      product_url,
-      supported_protocols,
-      specifications,
-      ...productUpdates
-    } = updates;
-
-    // 1. Update basic product table row
-    let productRow = await this.productsRepository.findByIdOrModel(productId, false);
-    if (!productRow) throw new NotFoundException('Product was not found');
-
-    if (Object.keys(productUpdates).length > 0) {
-      const updated = await this.productsRepository.update(productRow.product_id, productUpdates);
-      if (!updated) throw new NotFoundException('Product update failed');
-      productRow = updated;
-    }
-
-    const targetProductId = productRow.product_id;
-
-    // 2. Update search document (name_vi, supported_protocols, taxonomy)
-    if (
-      name_vi !== undefined ||
-      supported_protocols !== undefined ||
-      productUpdates.category ||
-      productUpdates.subcategory ||
-      productUpdates.device_type
-    ) {
-      await this.productsRepository.updateDocument(targetProductId, {
-        name_vi,
-        supported_protocols,
-        category: productUpdates.category,
-        subcategory: productUpdates.subcategory,
-        device_type: productUpdates.device_type,
-      });
-    }
-
-    // 3. Update CSI site media URL
-    if (product_url !== undefined) {
-      await this.productsRepository.updateMediaUrl(targetProductId, product_url);
-    }
-
-    // 4. Update specifications
-    if (specifications && Array.isArray(specifications)) {
-      await this.productsRepository.updateSpecifications(targetProductId, specifications);
-    }
-
-    return this.getAdmin(targetProductId);
   }
 
   async getPublicSummariesByIds(

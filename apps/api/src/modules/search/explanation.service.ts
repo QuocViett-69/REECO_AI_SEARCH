@@ -165,7 +165,7 @@ export class ExplanationService {
 
     // Reuse the search matcher one requirement at a time. Missing one fact must
     // not hide the independently confirmed requirements or technical limits.
-    const emptyIntent = { ...intent, measurements: [], target: undefined, roles: [], outdoor: false, specifications: [] };
+    const emptyIntent = { ...intent, measurements: [], target: undefined, roles: [], outdoor: false, specifications: [], sensorOnly: false };
     const requirements = [
       ...intent.measurements.map(item => ({ label: vi ? item.vi : item.en, intent: { ...emptyIntent, measurements: [item] } })),
       ...(target ? [{ label: vi ? target.vi : target.en, intent: { ...emptyIntent, target } }] : []),

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Globe, Loader, AlertCircle, Radio, Tag, Folder, Edit3, Save, X, CheckCircle, Sliders } from 'lucide-react';
-import { getAdminProductDetailApi, setAdminProductPriceApi, updateAdminProductApi } from '../../services/api';
+import { ArrowLeft, Globe, Loader, AlertCircle, Radio, Tag, Folder, Edit3, Save, X, CheckCircle } from 'lucide-react';
+import { getAdminProductDetailApi, setAdminProductPriceApi } from '../../services/api';
 import { formatVnd } from '../../services/ordersApi';
 
 // Shows the server's validation message for one field (ZodValidationPipe paths, e.g. "specifications.2.value").
@@ -39,15 +39,6 @@ function formatSpecValue(val) {
   return String(val.value ?? '—');
 }
 
-function getSpecInitialValue(spec) {
-  if (spec.normalized_value) {
-    const val = formatSpecValue(spec.normalized_value);
-    if (val && val !== '—') return val;
-  }
-  if (spec.raw_ref?.raw_value) return String(spec.raw_ref.raw_value);
-  return '';
-}
-
 export function AdminProductDetailView({ productId, onBack }) {
   const [detail, setDetail] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -55,18 +46,7 @@ export function AdminProductDetailView({ productId, onBack }) {
 
   // Edit Modal State
   const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState({
-    product_name_en: '',
-    name_vi: '',
-    product_url: '',
-    category: '',
-    subcategory: '',
-    device_type: '',
-    status: 'active',
-    supported_protocols: '',
-    specifications: [],
-    price_vnd: '',
-  });
+  const [priceInput, setPriceInput] = useState('');
   const [saving, setSaving] = useState(false);
   const [updateError, setUpdateError] = useState(null);
   const [fieldErrors, setFieldErrors] = useState({});
@@ -93,43 +73,18 @@ export function AdminProductDetailView({ productId, onBack }) {
   }, [productId]);
 
   const handleOpenEdit = () => {
-    if (!detail || !detail.product) return;
-    const p = detail.product;
-    const currentUrl = (detail.media || []).find((m) => m.product_url)?.product_url || '';
-    const currentProtocols = (detail.supported_protocols || []).join(', ');
-    const currentSpecs = (detail.specifications || []).map((spec) => ({
-      canonical_key: spec.canonical_key,
-      value: getSpecInitialValue(spec),
-    }));
-
-    setFormData({
-      product_name_en: p.name_en || '',
-      name_vi: p.name_vi || '',
-      product_url: currentUrl,
-      category: p.category || '',
-      subcategory: p.subcategory || '',
-      device_type: p.device_type || '',
-      status: p.status || 'active',
-      supported_protocols: currentProtocols,
-      specifications: currentSpecs,
-      price_vnd: detail.price_vnd ?? '',
-    });
+    if (!detail) return;
+    setPriceInput(detail.price_vnd ?? '');
     setUpdateError(null);
     setFieldErrors({});
     setIsEditing(true);
-  };
-
-  const handleSpecChange = (index, newValue) => {
-    const updatedSpecs = [...formData.specifications];
-    updatedSpecs[index] = { ...updatedSpecs[index], value: newValue };
-    setFormData({ ...formData, specifications: updatedSpecs });
   };
 
   const handleSaveEdit = async (e) => {
     e.preventDefault();
     if (!detail || !detail.product) return;
 
-    const price = parsePriceInput(formData.price_vnd);
+    const price = parsePriceInput(priceInput);
     if (price.error) {
       setFieldErrors({ price_vnd: price.error });
       setUpdateError('Dữ liệu chưa hợp lệ, kiểm tra các ô được đánh dấu.');
@@ -140,26 +95,9 @@ export function AdminProductDetailView({ productId, onBack }) {
     setUpdateError(null);
     setFieldErrors({});
 
-    const payload = {
-      product_name_en: formData.product_name_en,
-      name_vi: formData.name_vi || null,
-      category: formData.category || null,
-      subcategory: formData.subcategory || null,
-      device_type: formData.device_type || null,
-      status: formData.status,
-      product_url: formData.product_url || '',
-      supported_protocols: formData.supported_protocols
-        ? formData.supported_protocols.split(',').map((s) => s.trim()).filter(Boolean)
-        : [],
-      specifications: formData.specifications,
-    };
-
-    const productIdToUpdate = detail.product.product_id;
-    let res = await updateAdminProductApi(productIdToUpdate, payload);
-    // The price lives in product_prices and has its own endpoint; only send it when it changed.
-    if (!res.error && price.value !== null && price.value !== detail.price_vnd) {
-      res = await setAdminProductPriceApi(productIdToUpdate, price.value);
-    }
+    const res = price.value === null || price.value === detail.price_vnd
+      ? detail
+      : await setAdminProductPriceApi(detail.product.product_id, price.value);
 
     setSaving(false);
 
@@ -180,7 +118,7 @@ export function AdminProductDetailView({ productId, onBack }) {
     } else if (res.product) {
       setDetail(res);
       setIsEditing(false);
-      setSuccessMsg('Đã lưu thông tin sản phẩm.');
+      setSuccessMsg('Đã lưu giá sản phẩm.');
       setTimeout(() => setSuccessMsg(null), 4000);
     } else {
       setUpdateError('Có lỗi xảy ra khi lưu dữ liệu.');
@@ -307,7 +245,7 @@ export function AdminProductDetailView({ productId, onBack }) {
                 transition: 'all 0.2s',
               }}
             >
-              <Edit3 size={15} /> Sửa sản phẩm
+              <Edit3 size={15} /> Sửa giá
             </button>
 
             <a
@@ -416,7 +354,7 @@ export function AdminProductDetailView({ productId, onBack }) {
             color: 'var(--text-dark)',
           }}
         >
-          ✏️ Nhấn vào nút <strong>"Sửa sản phẩm"</strong> ở trên để cập nhật tên (EN/VI), danh mục, phân loại, link CSI website, giao thức và thông số kỹ thuật trực tiếp vào Supabase database.
+          Nội dung catalog được khóa trong bản demo. Dùng nút <strong>"Sửa giá"</strong> để cập nhật giá sản phẩm.
         </div>
       </div>
 
@@ -436,6 +374,9 @@ export function AdminProductDetailView({ productId, onBack }) {
           }}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="price-dialog-title"
             style={{
               background: '#ffffff',
               borderRadius: 12,
@@ -459,11 +400,12 @@ export function AdminProductDetailView({ productId, onBack }) {
                 background: '#fafafa',
               }}
             >
-              <h3 style={{ margin: 0, fontSize: 18, fontWeight: 600, color: '#1e293b' }}>
-                Chỉnh sửa toàn bộ thông tin sản phẩm
+              <h3 id="price-dialog-title" style={{ margin: 0, fontSize: 18, fontWeight: 600, color: '#1e293b' }}>
+                Sửa giá sản phẩm
               </h3>
               <button
                 type="button"
+                aria-label="Đóng"
                 onClick={() => setIsEditing(false)}
                 style={{
                   background: 'none',
@@ -504,292 +446,12 @@ export function AdminProductDetailView({ productId, onBack }) {
               )}
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                {/* Section 1: Thông tin cơ bản */}
-                <div>
-                  <h4 style={{ margin: '0 0 12px 0', fontSize: 14, color: '#0f172a', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    1. Thông tin cơ bản
-                  </h4>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 12, marginBottom: 12 }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Model (Mã sản phẩm)
-                      </label>
-                      <input
-                        type="text"
-                        value={p.model}
-                        disabled
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          background: '#f8fafc',
-                          color: '#64748b',
-                          fontSize: 14,
-                          boxSizing: 'border-box',
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Product Name (Tên Tiếng Anh)
-                      </label>
-                      <input
-                        type="text"
-                        id="field-product_name_en"
-                        value={formData.product_name_en}
-                        onChange={(e) => setFormData({ ...formData, product_name_en: e.target.value })}
-                        required
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          fontSize: 14,
-                          boxSizing: 'border-box',
-                          ...invalidBorder(fieldErrors, 'product_name_en'),
-                        }}
-                      />
-                      <FieldError errors={fieldErrors} name="product_name_en" />
-                    </div>
-                  </div>
+                <p role="note">Nội dung catalog được khóa trong bản demo. Bạn có thể sửa giá sản phẩm.</p>
+                <label htmlFor="field-price_vnd">Giá (VND)</label>
+                <input id="field-price_vnd" value={priceInput} onChange={(event) => setPriceInput(event.target.value)}
+                  inputMode="numeric" style={invalidBorder(fieldErrors, 'price_vnd')} />
+                <FieldError errors={fieldErrors} name="price_vnd" />
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 12 }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Tên Tiếng Việt (Name VI)
-                      </label>
-                      <input
-                        type="text"
-                        id="field-name_vi"
-                        value={formData.name_vi}
-                        onChange={(e) => setFormData({ ...formData, name_vi: e.target.value })}
-                        placeholder="Nhập tên tiếng Việt (nếu có)..."
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          fontSize: 14,
-                          boxSizing: 'border-box',
-                          ...invalidBorder(fieldErrors, 'name_vi'),
-                        }}
-                      />
-                      <FieldError errors={fieldErrors} name="name_vi" />
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Trạng thái (Status)
-                      </label>
-                      <select
-                        id="field-status"
-                        value={formData.status}
-                        onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          fontSize: 14,
-                          background: '#fff',
-                          boxSizing: 'border-box',
-                          ...invalidBorder(fieldErrors, 'status'),
-                        }}
-                      >
-                        <option value="active">Active (Hoạt động)</option>
-                        <option value="review">Review (Đang duyệt)</option>
-                      </select>
-                      <FieldError errors={fieldErrors} name="status" />
-                    </div>
-                  </div>
-
-                  <div style={{ marginTop: 12, maxWidth: 260 }}>
-                    <label htmlFor="field-price_vnd" style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                      Giá bán (VND)
-                    </label>
-                    <input
-                      id="field-price_vnd"
-                      type="text"
-                      inputMode="numeric"
-                      value={formData.price_vnd}
-                      onChange={(e) => setFormData({ ...formData, price_vnd: e.target.value })}
-                      placeholder="Ví dụ: 13210000"
-                      style={{
-                        width: '100%',
-                        padding: '8px 12px',
-                        borderRadius: 6,
-                        border: '1px solid #cbd5e1',
-                        fontSize: 14,
-                        boxSizing: 'border-box',
-                        ...invalidBorder(fieldErrors, 'price_vnd'),
-                      }}
-                    />
-                    <FieldError errors={fieldErrors} name="price_vnd" />
-                  </div>
-                </div>
-
-                <hr style={{ border: 'none', borderTop: '1px dashed #e2e8f0', margin: 0 }} />
-
-                {/* Section 2: Phân loại & Liên kết */}
-                <div>
-                  <h4 style={{ margin: '0 0 12px 0', fontSize: 14, color: '#0f172a', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    2. Phân loại & Liên kết Website
-                  </h4>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 12 }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Category
-                      </label>
-                      <input
-                        type="text"
-                        id="field-category"
-                        value={formData.category}
-                        onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          fontSize: 14,
-                          boxSizing: 'border-box',
-                          ...invalidBorder(fieldErrors, 'category'),
-                        }}
-                      />
-                      <FieldError errors={fieldErrors} name="category" />
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Subcategory
-                      </label>
-                      <input
-                        type="text"
-                        id="field-subcategory"
-                        value={formData.subcategory}
-                        onChange={(e) => setFormData({ ...formData, subcategory: e.target.value })}
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          fontSize: 14,
-                          boxSizing: 'border-box',
-                          ...invalidBorder(fieldErrors, 'subcategory'),
-                        }}
-                      />
-                      <FieldError errors={fieldErrors} name="subcategory" />
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Device Type
-                      </label>
-                      <input
-                        type="text"
-                        id="field-device_type"
-                        value={formData.device_type}
-                        onChange={(e) => setFormData({ ...formData, device_type: e.target.value })}
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          fontSize: 14,
-                          boxSizing: 'border-box',
-                          ...invalidBorder(fieldErrors, 'device_type'),
-                        }}
-                      />
-                      <FieldError errors={fieldErrors} name="device_type" />
-                    </div>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Link sản phẩm Campbell Site (URL)
-                      </label>
-                      <input
-                        type="url"
-                        id="field-product_url"
-                        value={formData.product_url}
-                        onChange={(e) => setFormData({ ...formData, product_url: e.target.value })}
-                        placeholder="https://www.campbellsci.com/..."
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          fontSize: 14,
-                          boxSizing: 'border-box',
-                          ...invalidBorder(fieldErrors, 'product_url'),
-                        }}
-                      />
-                      <FieldError errors={fieldErrors} name="product_url" />
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#475569', marginBottom: 6 }}>
-                        Giao thức (Protocols, cách nhau bởi phẩy)
-                      </label>
-                      <input
-                        type="text"
-                        id="field-supported_protocols"
-                        value={formData.supported_protocols}
-                        onChange={(e) => setFormData({ ...formData, supported_protocols: e.target.value })}
-                        placeholder="Ví dụ: SDI-12, RS-485, Modbus"
-                        style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          borderRadius: 6,
-                          border: '1px solid #cbd5e1',
-                          fontSize: 14,
-                          boxSizing: 'border-box',
-                          ...invalidBorder(fieldErrors, 'supported_protocols'),
-                        }}
-                      />
-                      <FieldError errors={fieldErrors} name="supported_protocols" />
-                    </div>
-                  </div>
-                </div>
-
-                <hr style={{ border: 'none', borderTop: '1px dashed #e2e8f0', margin: 0 }} />
-
-                {/* Section 3: Thông số kỹ thuật (Specifications) */}
-                <div>
-                  <h4 style={{ margin: '0 0 12px 0', fontSize: 14, color: '#0f172a', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: 6 }}>
-                    <Sliders size={15} /> 3. Thông số kỹ thuật ({formData.specifications.length})
-                  </h4>
-                  {formData.specifications.length === 0 ? (
-                    <p style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', margin: 0 }}>Sản phẩm này chưa có thông số kỹ thuật nào.</p>
-                  ) : (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10, background: '#f8fafc', padding: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}>
-                      {formData.specifications.map((spec, index) => (
-                        <div key={index} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 10, alignItems: 'center' }}>
-                          <span style={{ fontSize: 13, fontWeight: 500, color: '#334155', wordBreak: 'break-word' }}>
-                            {spec.canonical_key.replace(/_/g, ' ')}
-                          </span>
-                          <div>
-                          <input
-                            id={`field-specifications.${index}.value`}
-                            type="text"
-                            value={spec.value}
-                            onChange={(e) => handleSpecChange(index, e.target.value)}
-                            placeholder="Giá trị thông số..."
-                            style={{
-                              width: '100%',
-                              padding: '6px 10px',
-                              borderRadius: 6,
-                              border: '1px solid #cbd5e1',
-                              fontSize: 13,
-                              background: '#ffffff',
-                              boxSizing: 'border-box',
-                              ...invalidBorder(fieldErrors, `specifications.${index}.value`),
-                            }}
-                          />
-                          <FieldError errors={fieldErrors} name={`specifications.${index}.value`} />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
               </div>
 
               {/* Modal Footer */}
@@ -845,7 +507,7 @@ export function AdminProductDetailView({ productId, onBack }) {
                     </>
                   ) : (
                     <>
-                      <Save size={15} /> Lưu tất cả thay đổi
+                      <Save size={15} /> Lưu giá
                     </>
                   )}
                 </button>

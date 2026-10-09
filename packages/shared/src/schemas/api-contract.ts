@@ -198,21 +198,9 @@ export type SearchScores = z.infer<typeof SearchScoresSchema>;
 export type SearchResult = z.infer<typeof SearchResultSchema>;
 export type SearchResponse = z.infer<typeof SearchResponseSchema>;
 
+// Demo catalog updates run through the offline data pipeline.
 export const AdminProductUpdateSchema = z.object({
-  product_name_en: z.string().optional(),
-  name_vi: z.string().nullable().optional(),
-  category: z.string().nullable().optional(),
-  subcategory: z.string().nullable().optional(),
-  device_type: z.string().nullable().optional(),
-  status: ProductStatusSchema.optional(),
-  product_url: z.string().optional(),
-  supported_protocols: z.array(z.string()).optional(),
-  specifications: z.array(
-    z.object({
-      canonical_key: z.string(),
-      value: z.string(),
-    }).strict()
-  ).optional(),
+  price_vnd: z.number().int().min(0).max(100_000_000_000),
 }).strict();
 
 export type AdminProductUpdate = z.infer<typeof AdminProductUpdateSchema>;

@@ -174,7 +174,7 @@ function harness(resultFactory) {
 
 test('shared SearchResponse contract accepts public modes only', () => {
   const response = {
-    query: 'sensor',
+    query: 'equipment',
     mode: 'hybrid',
     results: [],
   };
@@ -203,7 +203,7 @@ test('maps hybrid candidates and all score slots without fabricating features', 
     candidate('C', { semanticScore: 0.6, rrfScore: 0.01 }),
   ];
   const { service } = harness(() => hybridResult('hybrid', candidates));
-  const response = await service.search({ query: 'sensor', limit: 10 });
+  const response = await service.search({ query: 'equipment', limit: 10 });
 
   assert.equal(response.mode, 'hybrid');
   assert.deepEqual(
@@ -247,7 +247,7 @@ test('maps keyword fallback to public keyword mode and preserves ordering', asyn
   const { service } = harness(() =>
     hybridResult('keyword_fallback', candidates),
   );
-  const response = await service.search({ query: 'sensor', limit: 10 });
+  const response = await service.search({ query: 'equipment', limit: 10 });
 
   assert.equal(response.mode, 'keyword');
   assert.deepEqual(
@@ -270,7 +270,7 @@ test('maps semantic fallback to public semantic mode and preserves ordering', as
   const { service } = harness(() =>
     hybridResult('semantic_fallback', candidates),
   );
-  const response = await service.search({ query: 'sensor', limit: 10 });
+  const response = await service.search({ query: 'equipment', limit: 10 });
 
   assert.equal(response.mode, 'semantic');
   assert.deepEqual(
@@ -327,7 +327,7 @@ test('preserves hybrid order after unordered hydration and drops missing summari
   const response = await createSearchService(
     hybridSearch,
     productsService,
-  ).search({ query: 'sensor', limit: 10 });
+  ).search({ query: 'equipment', limit: 10 });
 
   assert.deepEqual(
     response.results.map((result) => result.product_id),
@@ -370,7 +370,7 @@ test('uses active-only ProductsService hydration as the final review-product def
   const response = await createSearchService(
     hybridSearch,
     productsService,
-  ).search({ query: 'sensor', limit: 10 });
+  ).search({ query: 'equipment', limit: 10 });
 
   assert.equal(calls.length, 1);
   assert.equal(calls[0].activeOnly, true);
@@ -669,7 +669,7 @@ test('returns an empty success without catalog or technical DB work', async () =
     },
   );
 
-  const response = await service.search({ query: 'sensor', limit: 10 });
+  const response = await service.search({ query: 'equipment', limit: 10 });
   assert.deepEqual(response.results, []);
   assert.deepEqual(
     { catalogCalls, parserCalls, matcherCalls },
@@ -699,7 +699,7 @@ test('successful reranking stays schema-compatible and keeps raw logits private'
       },
     },
   );
-  const response = await service.search({ query: 'sensor', limit: 10 });
+  const response = await service.search({ query: 'equipment', limit: 10 });
   assert.deepEqual(
     response.results.map((result) => result.product_id),
     ['B', 'A'],
@@ -721,7 +721,7 @@ test('reranker fallback preserves SearchResponse baseline order', async () => {
     productsService,
     { reranker: { rerank: async (_query, _parsed, ranked) => ranked } },
   );
-  const response = await service.search({ query: 'sensor', limit: 10 });
+  const response = await service.search({ query: 'equipment', limit: 10 });
   assert.deepEqual(
     response.results.map((result) => result.product_id),
     ['A', 'B'],
@@ -810,9 +810,9 @@ test('public HTTP boundary returns fallback 200, both-fail 503, and validation 4
     { query: '', limit: 5 },
     { query: '   ', limit: 5 },
     { query: 'x'.repeat(501), limit: 5 },
-    { query: 'sensor', limit: 0 },
-    { query: 'sensor', limit: 101 },
-    { query: 'sensor', limit: 1.5 },
+    { query: 'equipment', limit: 0 },
+    { query: 'equipment', limit: 101 },
+    { query: 'equipment', limit: 1.5 },
   ]) {
     const invalidResponse = await post(body);
     assert.equal(invalidResponse.status, 400);

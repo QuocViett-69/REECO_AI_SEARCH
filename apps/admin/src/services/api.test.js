@@ -72,28 +72,19 @@ describe('product and import calls', () => {
   test('validation errors come back as { error: "validation", fieldErrors }', async () => {
     mockFetch({
       'PATCH /admin/products/CSI_CS655': () =>
-        json({ message: 'Request validation failed', errors: [{ path: 'product_name_en', message: 'Required' }] }, 400),
+        json({ message: 'Request validation failed', errors: [{ path: 'price_vnd', message: 'Required' }] }, 400),
     });
 
-    const result = await updateAdminProductApi('CSI_CS655', { product_name_en: '' });
+    const result = await updateAdminProductApi('CSI_CS655', {});
 
     expect(result.error).toBe('validation');
-    expect(result.fieldErrors).toEqual({ product_name_en: 'Required' });
+    expect(result.fieldErrors).toEqual({ price_vnd: 'Required' });
   });
 
-  test('import returns the report from the response', async () => {
-    const report = { mode: 'import', import_status: 'completed', validation: { status: 'passed' } };
-    mockFetch({ 'POST /admin/import': () => json({ status: 'completed', report }, 201) });
-
-    await expect(triggerAdminImport()).resolves.toEqual({ success: true, report });
-  });
-
-  test('import already running', async () => {
-    mockFetch({ 'POST /admin/import': () => json({ message: 'A product import is already running' }, 409) });
-
+  test('demo import reports the read-only restriction', async () => {
+    mockFetch({ 'POST /admin/import': () => json({ message: 'Demo catalog is read-only' }, 403) });
     const result = await triggerAdminImport();
-
-    expect(result.error).toBe('conflict');
-    expect(result.message).toMatch(/đang chạy/);
+    expect(result.error).toBe('forbidden');
+    expect(result.success).not.toBe(true);
   });
 });

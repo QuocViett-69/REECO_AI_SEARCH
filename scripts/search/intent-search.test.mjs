@@ -40,6 +40,32 @@ const service = makeService(async () => ({ mode: 'hybrid', candidates }));
 const soil = ['HS2-12', 'SoilVue10-5', 'CS616', 'CS650', 'CS655'];
 const soilMulti = ['CS650', 'CS655', 'SoilVue10-5'];
 
+test('system constraints require component clarification before any retrieval', async () => {
+  const guarded = makeService(async () => { assert.fail('ambiguous constraints must not be discarded'); });
+  for (const constraint of ['with Modbus', 'without SDI-12', 'with 24-bit resolution']) {
+    const response = await guarded.search({ query: `I want a system to monitor soil moisture and rainfall remotely ${constraint}`, limit: 10, explain: true });
+    assert.equal(response.guidance.needs_clarification, true);
+    assert.deepEqual(response.results, []);
+    assert.ok(response.guidance.text.includes(constraint));
+  }
+});
+
+test('new USB requirement is evaluated on the selected product', async () => {
+  const response = await service.search({ query: 'does this product support USB?', limit: 10, explain: true,
+    context: { base_query: 'CS655', previous_query: 'CS655', product_ids: ['CSI_CS655'] } });
+  assert.deepEqual(response.results.map(item => item.model), ['CS655']);
+  assert.equal(response.results[0].explanation.requirements.find(item => item.label === 'USB').status, 'unconfirmed');
+});
+
+test('generic SDI-12 sensor queries exclude data loggers', async () => {
+  for (const query of ['sensor supporting SDI-12', 'cảm biến hỗ trợ SDI-12']) {
+    const response = await service.search({ query, limit: 30, explain: true });
+    assert.ok(response.results.length);
+    assert.ok(response.results.every(item => documents.get(item.product_id).taxonomy.category_key === 'sensors'));
+    assert.ok(response.results.every(item => documents.get(item.product_id).supported_protocols.includes('SDI-12')));
+  }
+});
+
 test('explaining these models retains the selected scope and reports missing protocol evidence', async () => {
   for (const query of ['Vì sao các model này phù hợp?', 'Why are these models suitable?']) {
     const base = 'Tôi cần cảm biến thời tiết hỗ trợ Modbus';

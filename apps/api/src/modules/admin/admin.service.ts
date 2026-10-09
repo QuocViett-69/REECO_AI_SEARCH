@@ -44,13 +44,7 @@ export class AdminService {
     productId: string,
     updates: AdminProductUpdate,
   ): Promise<AdminProductDetail> {
-    const { price_vnd, ...productUpdates } = updates;
-    const detail = await this.productsService.updateAdmin(productId, productUpdates);
-    const targetProductId = detail.product.product_id;
-    if (price_vnd !== undefined) {
-      await this.upsertPrice(targetProductId, price_vnd);
-    }
-    return this.getAdminProductDetail(targetProductId);
+    return this.setProductPrice(productId, updates.price_vnd);
   }
 
   private async upsertPrice(productId: string, priceVnd: number): Promise<void> {

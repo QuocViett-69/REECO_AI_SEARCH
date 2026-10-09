@@ -22,31 +22,18 @@ test('parsePriceInput accepts whole VND amounts with separators', () => {
   expect(parsePriceInput('12abc').error).toBeTruthy();
 });
 
-test('saves the name with PATCH and a changed price with PUT, then shows the saved values', async () => {
-  let saved = detail();
+test('saves only price and offers no catalog inputs', async () => {
   const calls = mockFetch({
-    'GET /admin/products/CSI_CS655': () => json(saved),
-    'PATCH /admin/products/CSI_CS655': ({ body }) => {
-      saved = detail({ product: { ...saved.product, name_en: body.product_name_en }, price_vnd: saved.price_vnd });
-      return json(saved);
-    },
-    'PUT /admin/products/CSI_CS655/price': ({ body }) => {
-      saved = { ...saved, price_vnd: body.price_vnd };
-      return json(saved);
-    },
+    'GET /admin/products/CSI_CS655': () => json(detail()),
+    'PUT /admin/products/CSI_CS655/price': ({ body }) => json(detail({ price_vnd: body.price_vnd })),
   });
   render(<AdminProductDetailView productId="CSI_CS655" onBack={() => {}} />);
-
-  fireEvent.click(await screen.findByRole('button', { name: /Sửa sản phẩm/ }));
-  fireEvent.change(document.getElementById('field-product_name_en'), { target: { value: 'CS655 Reflectometer' } });
+  fireEvent.click(await screen.findByRole('button', { name: /S\u1eeda gi\u00e1/ }));
+  expect(document.getElementById('field-product_name_en')).toBeNull();
   fireEvent.change(document.getElementById('field-price_vnd'), { target: { value: '12.500.000' } });
-  fireEvent.click(screen.getByRole('button', { name: /Lưu tất cả thay đổi/ }));
-
-  expect(await screen.findByText('Đã lưu thông tin sản phẩm.')).toBeInTheDocument();
-  expect(calls.find((c) => c.method === 'PATCH').body.product_name_en).toBe('CS655 Reflectometer');
-  expect(calls.find((c) => c.method === 'PUT').body).toEqual({ price_vnd: 12500000 });
-  expect(screen.getAllByText('CS655 Reflectometer').length).toBeGreaterThan(0);
-  expect(screen.getByText(/12\.500\.000\s₫/)).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: /L\u01b0u gi\u00e1/ }));
+  await screen.findByText('\u0110\u00e3 l\u01b0u gi\u00e1 s\u1ea3n ph\u1ea9m.');
+  expect(calls.filter(c => c.method !== 'GET')).toEqual([expect.objectContaining({ method: 'PUT', body: { price_vnd: 12500000 } })]);
 });
 
 test('an unchanged price is not re-sent', async () => {
@@ -56,50 +43,32 @@ test('an unchanged price is not re-sent', async () => {
   });
   render(<AdminProductDetailView productId="CSI_CS655" onBack={() => {}} />);
 
-  fireEvent.click(await screen.findByRole('button', { name: /Sửa sản phẩm/ }));
-  fireEvent.click(screen.getByRole('button', { name: /Lưu tất cả thay đổi/ }));
+  fireEvent.click(await screen.findByRole('button', { name: /S\u1eeda gi\u00e1/ }));
+  fireEvent.click(screen.getByRole('button', { name: /L\u01b0u gi\u00e1/ }));
 
-  await screen.findByText('Đã lưu thông tin sản phẩm.');
-  expect(calls.some((c) => c.method === 'PUT')).toBe(false);
+  await screen.findByText('\u0110\u00e3 l\u01b0u gi\u00e1 s\u1ea3n ph\u1ea9m.');
+  expect(calls.some((c) => c.method !== 'GET')).toBe(false);
 });
 
-test('server validation errors appear under the matching field', async () => {
+test('price write errors remain visible', async () => {
   mockFetch({
     'GET /admin/products/CSI_CS655': () => json(detail()),
-    'PATCH /admin/products/CSI_CS655': () =>
-      json(
-        {
-          message: 'Request validation failed',
-          errors: [
-            { path: 'product_url', message: 'Only http(s) URLs are allowed' },
-            { path: 'supported_protocols.0', message: 'String must contain at most 60 character(s)' },
-            { path: '', message: "Unrecognized key(s) in object: 'foo'" },
-          ],
-        },
-        400
-      ),
+    'PUT /admin/products/CSI_CS655/price': () => json({ message: 'Request validation failed', errors: [{ path: 'price_vnd', message: 'Price too large' }] }, 400),
   });
   render(<AdminProductDetailView productId="CSI_CS655" onBack={() => {}} />);
-
-  fireEvent.click(await screen.findByRole('button', { name: /Sửa sản phẩm/ }));
-  fireEvent.click(screen.getByRole('button', { name: /Lưu tất cả thay đổi/ }));
-
-  const urlError = await screen.findByText('Only http(s) URLs are allowed');
-  expect(urlError.previousSibling).toBe(document.getElementById('field-product_url'));
-  expect(screen.getByText('String must contain at most 60 character(s)').previousSibling).toBe(
-    document.getElementById('field-supported_protocols')
-  );
-  // An error with no matching input is listed in the banner
-  expect(screen.getByText(/Dữ liệu không hợp lệ: Unrecognized key\(s\) in object: 'foo'/)).toBeInTheDocument();
+  fireEvent.click(await screen.findByRole('button', { name: /S\u1eeda gi\u00e1/ }));
+  fireEvent.change(document.getElementById('field-price_vnd'), { target: { value: '999999999999' } });
+  fireEvent.click(screen.getByRole('button', { name: /L\u01b0u gi\u00e1/ }));
+  expect(await screen.findByText('Price too large')).toBeInTheDocument();
 });
 
 test('an invalid price is caught before any request', async () => {
   const calls = mockFetch({ 'GET /admin/products/CSI_CS655': () => json(detail()) });
   render(<AdminProductDetailView productId="CSI_CS655" onBack={() => {}} />);
 
-  fireEvent.click(await screen.findByRole('button', { name: /Sửa sản phẩm/ }));
+  fireEvent.click(await screen.findByRole('button', { name: /S\u1eeda gi\u00e1/ }));
   fireEvent.change(document.getElementById('field-price_vnd'), { target: { value: '-1' } });
-  fireEvent.click(screen.getByRole('button', { name: /Lưu tất cả thay đổi/ }));
+  fireEvent.click(screen.getByRole('button', { name: /L\u01b0u gi\u00e1/ }));
 
   expect(await screen.findByText('Giá phải là số nguyên VND (không âm).')).toBeInTheDocument();
   await waitFor(() => expect(calls).toHaveLength(1));

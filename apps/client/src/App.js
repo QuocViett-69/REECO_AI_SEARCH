@@ -157,7 +157,7 @@ function NotFoundPage() {
   );
 }
 
-function AppInner() {
+export function AppInner() {
   const location = useLocation();
   const navigate = useNavigate();
   const page = pageForPath(location.pathname);
@@ -167,6 +167,7 @@ function AppInner() {
   const [isSearching, setIsSearching] = useState(false);
   const [searchThread, setSearchThread] = useState([]);
   const autoSearchedQuery = useRef(null);
+  const activeSearch = useRef(0);
 
   const [compareList, setCompareList] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
@@ -208,6 +209,8 @@ function AppInner() {
   }, [page]);
 
   const resetSearch = useCallback(() => {
+    activeSearch.current += 1;
+    setIsSearching(false);
     setConversationTurns([]);
     setSearchThread([]);
     autoSearchedQuery.current = null;
@@ -220,7 +223,9 @@ function AppInner() {
   }, [navigate, page, resetSearch]);
 
   const handleRunSearch = async (query, followUp = false, selectedProductIds = null) => {
+    query = query?.trim();
     if (!query) return;
+    const searchId = ++activeSearch.current;
     const context = followUp && conversationTurns[0]?.product_ids?.length > 0
       ? {
           base_query: conversationTurns[0].resolved_query,
@@ -239,6 +244,7 @@ function AppInner() {
     }
 
     const response = await searchProductsApi(query, 10, context);
+    if (searchId !== activeSearch.current) return;
     const finishTurn = (fields) =>
       setSearchThread((prev) => prev.map((turn) => (turn.id === turnId ? { ...turn, status: 'done', ...fields } : turn)));
     if (response && response.error) {
@@ -271,7 +277,7 @@ function AppInner() {
       navigate('/', { replace: true });
       return;
     }
-    handleRunSearch(urlQuery);
+    if (autoSearchedQuery.current !== urlQuery) handleRunSearch(urlQuery);
   }, [page, urlQuery]);
 
   const handleEditSearch = () => {

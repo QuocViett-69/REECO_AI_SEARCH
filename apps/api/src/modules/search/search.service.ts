@@ -57,7 +57,7 @@ export class SearchService {
         this.productsService.getTechnicalEvidenceByIds(ids), this.productsService.getPublicSummariesByIds(ids),
         this.productsService.getActiveTechnicalIdentityCatalog(),
       ]);
-      const parsed = this.technicalQueryParser.parse(request.context.previous_query, catalog);
+      const parsed = this.technicalQueryParser.parse(query, catalog);
       const matches = await this.technicalMatch.evaluate(parsed, ids);
       const items = ids.flatMap(id => {
         const entry = evidence.get(id);
@@ -72,13 +72,24 @@ export class SearchService {
       });
       return SearchResponseSchema.parse({ query: request.query, resolved_query: request.context.previous_query, context_applied: true, mode: 'hybrid',
         results,
-        guidance: { language: vi ? 'vi' : 'en', text: vi ? 'Giải thích các model trong ngữ cảnh bạn đã chọn theo nhu cầu trước đó. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.' : 'These explanations evaluate the selected models against your previous requirements. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.' },
+        guidance: { language: vi ? 'vi' : 'en', text: vi ? 'Đánh giá các model bạn đã chọn theo nhu cầu trước đó và câu hỏi mới. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.' : 'These explanations evaluate the selected models against your previous requirements and your new question. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.' },
       });
     }
     const plan = request.context ? [] : buildSearchPlan(request.query);
     if (plan.length > 1) {
       const networkAlternatives = plan.every(component => ['Ethernet', 'Wi-Fi', 'cellular'].includes(component.label));
       const technical = this.technicalQueryParser.parse(request.query);
+      const negative = parseNegativeConstraints(request.query);
+      if (technical.protocols.some(protocol => !networkAlternatives || protocol !== 'Wi-Fi')
+        || negative.unsupported || negative.exclusions.protocols.length
+        || negative.exclusions.cellular || negative.exclusions.temperature
+        || parseSearchIntent(request.query).specifications.length
+        || technical.temperatureConstraints.some(item => item.intent !== 'operating' || item.confidence !== 'high' || item.kind === 'upper_bound')) {
+        return SearchResponseSchema.parse({ query: request.query, mode: 'hybrid', results: [], guidance: {
+          language: vi ? 'vi' : 'en', needs_clarification: true,
+          text: vi ? `Với yêu cầu “${request.query}”, điều kiện kỹ thuật hoặc loại trừ áp dụng cho thành phần nào: cảm biến, bộ ghi hay thiết bị truyền thông? Hãy tìm riêng thành phần đó với đầy đủ điều kiện.` : `For “${request.query}”, which component must satisfy the technical requirement or exclusion: sensors, the data logger, or communication equipment? Search that component separately with its complete requirements.`,
+        } });
+      }
       const operating = technical.temperatureConstraints.filter(item => item.intent === 'operating' && item.confidence === 'high' && item.kind !== 'upper_bound');
       const operatingQuery = operating.map(item => `operates at ${item.kind === 'range' ? `${item.minCelsius} to ${item.maxCelsius}` : item.valueCelsius}°C`).join(' ');
       const details = [
@@ -178,7 +189,7 @@ export class SearchService {
     let documents: Map<string, ProductSearchDocument> | undefined;
     let environmentalSpecifications = new Map<string, ProductSpecification[]>();
     const hasExclusions = negative.exclusions.protocols.length > 0 || negative.exclusions.cellular || negative.exclusions.temperature;
-    if ((intent.constrained || hasExclusions) && scopedCandidates.length > 0) {
+    if ((intent.constrained || intent.sensorOnly || hasExclusions) && scopedCandidates.length > 0) {
       const ids = scopedCandidates.map((item) => item.productId);
       [documents, environmentalSpecifications] = await Promise.all([
         this.productsService.getSearchDocumentsByIds(ids),

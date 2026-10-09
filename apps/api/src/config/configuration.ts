@@ -15,6 +15,7 @@ export interface AppConfiguration {
     batchSize: number;
   };
   search: {
+    embeddingTimeoutMs: number;
     retrievalLimit: number;
     rrfK: number;
   };
@@ -74,6 +75,7 @@ export function configuration(): AppConfiguration {
       batchSize: Number(process.env.EMBEDDING_BATCH_SIZE ?? 8),
     },
     search: {
+      embeddingTimeoutMs: positiveInteger('SEARCH_EMBEDDING_TIMEOUT_MS', process.env.SEARCH_EMBEDDING_TIMEOUT_MS ?? '10000'),
       retrievalLimit: Number(process.env.SEARCH_RETRIEVAL_LIMIT ?? 20),
       rrfK: Number(process.env.SEARCH_RRF_K ?? 60),
     },

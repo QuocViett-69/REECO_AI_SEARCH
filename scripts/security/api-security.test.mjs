@@ -44,24 +44,16 @@ test('AdminGuard rejects customers and anonymous requests, admits admins', () =>
   assert.equal(guard.canActivate(contextFor({ user: { id: 'a1', app_metadata: { role: 'admin' } } })), true);
 });
 
-test('admin product updates accept only the editor fields', () => {
-  const valid = AdminProductUpdateSchema.safeParse({
-    product_name_en: 'Water Content Reflectometer',
-    name_vi: null,
-    category: 'Sensors',
-    subcategory: null,
-    device_type: 'Soil Moisture Sensor',
-    status: 'active',
-    product_url: '',
-    supported_protocols: ['SDI-12'],
-    specifications: [{ canonical_key: 'operating_temperature', value: '-50 to +70 °C' }],
-  });
-  assert.equal(valid.success, true);
-  for (const forged of [{ product_id: 'CSI_OTHER' }, { model: 'X' }, { created_at: '2020-01-01' }]) {
-    assert.equal(AdminProductUpdateSchema.safeParse(forged).success, false, JSON.stringify(forged));
+test('demo catalog rejects every catalog update while price remains editable', () => {
+  assert.equal(AdminProductUpdateSchema.safeParse({ price_vnd: 5000 }).success, true);
+  for (const field of ['product_name_en', 'name_vi', 'category', 'subcategory', 'device_type', 'status', 'product_url', 'supported_protocols', 'specifications', 'product_id', 'model']) {
+    assert.equal(AdminProductUpdateSchema.safeParse({ price_vnd: 5000, [field]: 'x' }).success, false, field);
   }
-  assert.equal(AdminProductUpdateSchema.safeParse({ status: 'deleted' }).success, false);
-  assert.equal(AdminProductUpdateSchema.safeParse({ product_url: 'javascript:alert(1)' }).success, false);
+});
+
+test('demo import is blocked before running the data pipeline', async () => {
+  const { ImportsService } = dist('modules/imports/imports.service.js');
+  await assert.rejects(new ImportsService().run(), error => error.getStatus() === 403);
 });
 
 test('admin price updates accept only a non-negative integer price_vnd', () => {
@@ -113,10 +105,10 @@ test('setting a price upserts product_prices by product_id and surfaces write er
   await assert.rejects(failing.setProductPrice('CS655', 1), /giá sản phẩm/);
 });
 
-test('PATCH with price_vnd saves the product fields and the price separately', async () => {
+test('PATCH with price_vnd writes only the price table', async () => {
   const { service, calls } = adminServiceWith({ priceRow: { price_vnd: 7_000_000 } });
-  const detail = await service.updateAdminProduct('CS655', { product_name_en: 'New name', price_vnd: 7_000_000 });
-  assert.deepEqual(calls.find((call) => call.updateAdmin).updateAdmin, { product_name_en: 'New name' });
+  const detail = await service.updateAdminProduct('CS655', { price_vnd: 7_000_000 });
+  assert.equal(calls.some(call => call.updateAdmin), false);
   assert.deepEqual(calls.find((call) => call.row).row, { product_id: 'CSI_CS655', price_vnd: 7_000_000 });
   assert.equal(detail.price_vnd, 7_000_000);
 });

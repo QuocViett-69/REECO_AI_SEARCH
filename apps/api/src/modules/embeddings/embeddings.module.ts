@@ -16,7 +16,7 @@ import { EmbeddingsService } from './embeddings.service';
           model: embedding.model,
           dimensions: embedding.dimensions,
           version: embedding.version,
-          timeoutMs: embedding.timeoutMs,
+          timeoutMs: configuration().search.embeddingTimeoutMs,
         });
       },
     },

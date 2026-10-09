@@ -1,5 +1,21 @@
 jest.mock('./mocks/searchMock', () => ({ isSearchMockEnabled: false }));
 
+test('search aborts a stalled request and reports a retryable timeout', async () => {
+  jest.useFakeTimers();
+  const fetch = jest.spyOn(global, 'fetch').mockImplementation((_url, { signal }) => new Promise((_resolve, reject) => {
+    signal.addEventListener('abort', () => reject(new Error('Aborted')));
+  }));
+  try {
+    const { searchProductsApi } = require('./api');
+    const pending = searchProductsApi('CS655');
+    jest.advanceTimersByTime(45000);
+    expect(await pending).toEqual(expect.objectContaining({ error: 'timeout' }));
+  } finally {
+    fetch.mockRestore();
+    jest.useRealTimers();
+  }
+});
+
 test('search uses the running site API port even when the build defaults to port 3000', async () => {
   const location = Object.getOwnPropertyDescriptor(window, 'location');
   const fetch = jest.spyOn(global, 'fetch');

@@ -55,17 +55,10 @@ Server errors never include Supabase keys, database credentials, or raw database
 (order creation failures return a fixed message and log the database error server-side).
 Unexpected server failures use `500`.
 
-## GET `/health`
+## GET /health
 
-- Auth: none.
-- Query parameters: none.
-- Request body: none.
-- Success: `200 OK`.
-- Errors: standard `500` only if the NestJS process itself fails.
-
-```json
-{ "status": "ok" }
-```
+Returns 200 with status: "ok", check: "liveness" and configured embedding model, dimensions, version and query timeout.
+This only confirms that the API process is responding. Use npm run embeddings:validate and npm run demo:smoke to verify the actual database, models and search behavior.
 
 ## GET `/products`
 
@@ -412,31 +405,12 @@ for Supabase failure.
 
 Errors: `401`, `403`, `404`, or `503` as described above.
 
-## PATCH `/admin/products/:productId`
+## PATCH /admin/products/:productId
 
-- Auth: Bearer token of an admin user.
-- Success: `200 OK` with the updated `ProductDetail`.
-- Body (all fields optional; validated by
-  `apps/api/src/modules/admin/admin-product-update.schema.ts`, strict — any other key is rejected with
-  `400`, so columns such as `product_id` or `model` cannot be written):
-
-| Field                                    | Type                                                                                |
-| ---------------------------------------- | ----------------------------------------------------------------------------------- |
-| `product_name_en`                        | string 1–300                                                                        |
-| `name_vi`                                | string ≤300 or `null`                                                               |
-| `category`, `subcategory`, `device_type` | string ≤200 or `null`                                                               |
-| `status`                                 | `active` or `review`                                                                |
-| `product_url`                            | `""` or an `http(s)://` URL ≤500 (other schemes such as `javascript:` are rejected) |
-| `supported_protocols`                    | array of up to 30 strings                                                           |
-| `specifications`                         | array of up to 200 `{ canonical_key, value }`                                       |
-| `price_vnd`                              | integer 0–100,000,000,000; upserted into `product_prices` (same as the route below) |
-
-- Success body: the updated product in the same shape as `GET /admin/products/:productId` (includes `price_vnd`).
-- `400` body: `{ "message": "Request validation failed", "errors": [{ "path", "message" }] }`; `path` is the
-  field name (for example `product_url` or `specifications.0.value`), so the editor can show the error next
-  to that field.
-
-Errors: `400`, `401`, `403`, `404`, `503`.
+- Demo catalog is frozen. Only { "price_vnd": <integer 0-100,000,000,000> } is accepted.
+- Auth: admin Bearer token. Strict validation rejects catalog fields with 400.
+- Effect and response: same as the dedicated price endpoint below.
+- Names, taxonomy, protocols, media and specifications must be updated through the offline data pipeline, followed by embedding backfill.
 
 ## PUT `/admin/products/:productId/price`
 
@@ -448,28 +422,11 @@ Errors: `400`, `401`, `403`, `404`, `503`.
 
 Errors: `400`, `401`, `403`, `404`, `503` (database write failed).
 
-## POST `/admin/import`
+## POST /admin/import
 
-- Auth: Bearer token of an admin user.
-- Query parameters: none.
-- Request body: none.
-- Success: `201 Created` after the existing transactional import script finishes.
-- Server requirements: `DATABASE_URL`, plus the deployed `scripts/supabase/` and `data/` directories.
-
-```json
-{
-  "status": "completed",
-  "report": {
-    "mode": "import",
-    "source_status": "passed",
-    "import_status": "completed",
-    "validation": { "status": "passed" }
-  }
-}
-```
-
-Errors: `401` for missing/invalid token, `403` for non-admins, `409` if an import is already running,
-and `503` if the script/configuration is absent or the import/validation fails.
+- Demo catalog is frozen: this endpoint always returns 403 after authentication.
+- Missing or invalid tokens return 401. No import process or database write is started.
+- Use the offline import and embedding-backfill pipeline before the demo.
 
 ## Orders
 

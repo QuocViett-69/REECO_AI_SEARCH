@@ -2,6 +2,8 @@
 
 REECO product search application with a React frontend, NestJS API, shared Zod contracts, and a Supabase PostgreSQL data foundation.
 
+For the personal AI-search demo, follow [the demo checklist](./docs/demo-ai-search-checklist.md). The admin catalog is read-only; price editing remains available. Run the live embedding validator, model warmup and search smoke before presenting.
+
 The frozen backend MVP includes public product browsing, hybrid/technical search, authenticated admin
 product access, and an idempotent product import pipeline. See
 [`docs/frontend-handoff.md`](./docs/frontend-handoff.md) for the frontend integration contract.
