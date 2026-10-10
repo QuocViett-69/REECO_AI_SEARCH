@@ -1,6 +1,7 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { findDroppedRawContent } from './lib.mjs';
 
 const scriptsDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptsDirectory, '..', '..');
@@ -151,6 +152,19 @@ for (const family of stagingReport.families) {
     }
     const location = locations[0];
     const document = rawDocuments.get(location.file);
+    const dropped = findDroppedRawContent(
+      document.products[location.product_index],
+      stagedProduct,
+    );
+    if (dropped) {
+      errors.push({
+        product_id: productId,
+        issue: 'staged_product_drops_existing_raw_content',
+        target_file: location.file,
+        ...dropped,
+      });
+      continue;
+    }
     document.schema_version = '1.2';
     document.products[location.product_index] = stagedProduct;
     plans.push({
@@ -179,6 +193,25 @@ for (const family of stagingReport.families) {
       product_id: productId,
       issue: 'new_master_product_raw_location_not_unique',
       locations: existingRawLocations,
+    });
+    continue;
+  }
+  const existingRawLocation =
+    existingRawLocations.length === 1 ? existingRawLocations[0] : null;
+  const droppedFromExisting =
+    existingRawLocation &&
+    findDroppedRawContent(
+      rawDocuments.get(existingRawLocation.file).products[
+        existingRawLocation.product_index
+      ],
+      stagedProduct,
+    );
+  if (droppedFromExisting) {
+    errors.push({
+      product_id: productId,
+      issue: 'staged_product_drops_existing_raw_content',
+      target_file: existingRawLocation.file,
+      ...droppedFromExisting,
     });
     continue;
   }

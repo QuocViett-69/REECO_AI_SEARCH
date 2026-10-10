@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import { useAuth } from './AuthContext';
 import { getProductPrice, enrichProductWithCommercial, parseStoredItems, CURRENCY } from '../services/commercialService';
 
@@ -21,6 +21,8 @@ export function CartProvider({ children }) {
       return [];
     }
   });
+
+  const skipNextSave = useRef(false);
 
   // Load items when user changes (guest vs authenticated) & handle merge
   useEffect(() => {
@@ -61,10 +63,17 @@ export function CartProvider({ children }) {
         setItems([]);
       }
     }
+    // The save effect below runs in this same commit with the previous key's state; skip
+    // that write so it cannot overwrite what was just loaded (StrictMode re-runs this load).
+    skipNextSave.current = true;
   }, [isAuthenticated, user]);
 
   // Save items whenever cart items change
   useEffect(() => {
+    if (skipNextSave.current) {
+      skipNextSave.current = false;
+      return;
+    }
     const key = getStorageKey();
     localStorage.setItem(key, JSON.stringify(items));
   }, [items, getStorageKey]);

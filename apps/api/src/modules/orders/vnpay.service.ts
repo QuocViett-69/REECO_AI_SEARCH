@@ -352,8 +352,21 @@ export class VNPayService {
         order,
         String(transactionNo || `VNP${Date.now()}`),
       );
-      if (!updatedOrder)
-        return this.notAwaitingPayment(order, txnRef, responseCode);
+      if (!updatedOrder) {
+        // Lost the race to the IPN (or vice versa): report the payment, not a refund
+        const current = await this.ordersRepository.findOrderByTxnRef(
+          String(txnRef),
+        );
+        if (current?.payment_status === 'PAID') {
+          return {
+            success: true,
+            is_already_paid: true,
+            message: 'Đơn hàng đã được xác nhận thanh toán thành công trước đó.',
+            order: current,
+          };
+        }
+        return this.notAwaitingPayment(current ?? order, txnRef, responseCode);
+      }
 
       return {
         success: true,
@@ -361,6 +374,16 @@ export class VNPayService {
         order: updatedOrder,
       };
     } else {
+      // Already recorded as failed, or a failure for an older attempt while a newer link may
+      // still be paid: report it without writing duplicate history/notifications.
+      if (this.isRepeatOrStaleFailure(order, String(txnRef))) {
+        return {
+          success: false,
+          code: String(responseCode),
+          message: `Giao dịch thanh toán không thành công (Mã phản hồi VNPay: ${responseCode}).`,
+          order,
+        };
+      }
       // Thanh toán thất bại -> PAYMENT_FAILED / FAILED
       const updatedOrder = await this.ordersRepository.recordPaymentFailure(
         order,
@@ -427,9 +450,13 @@ export class VNPayService {
     }
 
     // 6. Cập nhật kết quả thanh toán
+    const isSuccess =
+      responseCode === '00' && queryParams['vnp_TransactionStatus'] === '00';
+    if (!isSuccess && this.isRepeatOrStaleFailure(order, String(txnRef))) {
+      return { RspCode: '00', Message: 'Confirm Success' };
+    }
     try {
-      const updated =
-        responseCode === '00' && queryParams['vnp_TransactionStatus'] === '00'
+      const updated = isSuccess
           ? await this.ordersRepository.recordPaymentSuccess(
               order,
               String(transactionNo || `VNP${Date.now()}`),
@@ -450,6 +477,17 @@ export class VNPayService {
       );
       return { RspCode: '99', Message: 'Unknown error' };
     }
+  }
+
+  /**
+   * A failure result that must not be written: the order already failed (a repeated IPN,
+   * return or page refresh), or the ref belongs to an older attempt than the current one.
+   */
+  private isRepeatOrStaleFailure(order: OrderRow, txnRef: string): boolean {
+    return (
+      order.status === 'PAYMENT_FAILED' ||
+      (!!order.vnpay_txn_ref && order.vnpay_txn_ref.trim() !== txnRef.trim())
+    );
   }
 
   /**

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import { useAuth } from './AuthContext';
 import { getProductPrice, enrichProductWithCommercial, parseStoredItems, CURRENCY } from '../services/commercialService';
 
@@ -21,6 +21,8 @@ export function FavoriteProvider({ children }) {
       return [];
     }
   });
+
+  const skipNextSave = useRef(false);
 
   // Load and merge favorites on authentication change
   useEffect(() => {
@@ -57,10 +59,17 @@ export function FavoriteProvider({ children }) {
         setFavorites([]);
       }
     }
+    // The save effect below runs in this same commit with the previous key's state; skip
+    // that write so it cannot overwrite what was just loaded (StrictMode re-runs this load).
+    skipNextSave.current = true;
   }, [isAuthenticated, user]);
 
   // Save favorites whenever they change
   useEffect(() => {
+    if (skipNextSave.current) {
+      skipNextSave.current = false;
+      return;
+    }
     const key = getStorageKey();
     localStorage.setItem(key, JSON.stringify(favorites));
   }, [favorites, getStorageKey]);

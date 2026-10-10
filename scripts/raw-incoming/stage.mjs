@@ -1,6 +1,7 @@
 import { mkdir, readFile, readdir, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { findColumnShiftedSpecs } from './lib.mjs';
 
 const scriptsDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptsDirectory, '..', '..');
@@ -312,6 +313,12 @@ for (const documents of groupedDocuments.values()) {
     source_files: documents.map((document) => document.file),
     canonical,
     missing_canonical_fields: missingCanonicalFields,
+    column_shifted_specs: entries.flatMap((entry) =>
+      findColumnShiftedSpecs(entry.product).map((spec) => ({
+        product_id: entry.product.product_id,
+        ...spec,
+      })),
+    ),
   });
 }
 
@@ -353,6 +360,9 @@ const report = {
     families_missing_canonical_fields_count: stagedFamilies.filter(
       (family) => family.missing_canonical_fields.length > 0,
     ).length,
+    families_with_column_shifted_specs_count: stagedFamilies.filter(
+      (family) => family.column_shifted_specs.length > 0,
+    ).length,
   },
   families: stagedFamilies,
 };
@@ -371,5 +381,8 @@ console.log(
 );
 console.log(
   `families_missing_canonical=${report.summary.families_missing_canonical_fields_count}`,
+);
+console.log(
+  `families_with_column_shifted_specs=${report.summary.families_with_column_shifted_specs_count}`,
 );
 console.log(`report=${path.relative(projectRoot, reportPath)}`);

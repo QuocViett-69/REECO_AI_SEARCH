@@ -18,7 +18,8 @@ function normalizeProduct(p) {
     image: p.image_url || null,
     status: p.status,
     // ── Commercial fields (product_commercial join) ──────────────────────────
-    price: p.price ?? null,
+    // price_vnd comes from product_prices, the table the API charges orders from.
+    price: p.price_vnd ?? p.price ?? null,
     currency: p.currency || 'VND',
     availability: p.availability_status || p.availability || 'available_for_order',
     is_purchasable: p.is_purchasable !== false,
@@ -79,7 +80,7 @@ function normalizeProductDetail(data) {
     specifications: data.specifications || [],
     important_specifications: data.important_specifications || [],
     // ── Commercial fields ─────────────────────────────────────────────────────
-    price: p.price ?? data.commercial?.price ?? null,
+    price: p.price_vnd ?? p.price ?? data.commercial?.price ?? null,
     currency: p.currency || data.commercial?.currency || 'VND',
     availability: p.availability_status || data.commercial?.availability_status || 'available_for_order',
     is_purchasable: p.is_purchasable !== false,
@@ -127,8 +128,9 @@ export async function getProductDetailApi(productIdOrModel) {
     const data = await res.json();
     return normalizeProductDetail(data);
   } catch (error) {
+    // Only a 404 means "not found"; server and network failures reach the caller's catch.
     console.warn('API Get product detail failed:', error.message);
-    return null;
+    throw error;
   }
 }
 

@@ -52,7 +52,7 @@ export const SHIPPING_METHODS: Record<ShippingMethod, {
     fee: 250000,
     deliveryDaysMin: 7,
     deliveryDaysMax: 10,
-    description: 'Standard delivery: 7–10 business days',
+    description: 'Standard delivery: 7–10 days',
   },
   express: {
     id: 'express',
@@ -61,7 +61,7 @@ export const SHIPPING_METHODS: Record<ShippingMethod, {
     fee: 500000,
     deliveryDaysMin: 2,
     deliveryDaysMax: 3,
-    description: 'Express air freight: 2–3 business days',
+    description: 'Express air freight: 2–3 days',
   },
 };
 

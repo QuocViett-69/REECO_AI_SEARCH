@@ -5,7 +5,9 @@ import { apiFetch } from './apiFetch.js';
 
 // Kept in the client rather than imported from @reeco/shared: that package pulls in zod,
 // whose CommonJS entry (index.cjs) Create React App bundles as a static file, so the app
-// crashes on load. Keep the fees in step with apps/api/src/modules/orders/orders.constants.ts.
+// crashes on load. Keep the fees and day counts in step with
+// apps/api/src/modules/orders/orders.constants.ts (orders.test.js cross-checks them): the API
+// stores estimated_delivery_from/to from min_days/max_days, which order pages then show.
 export const SHIPPING_METHODS = {
   standard: {
     id: 'standard',
@@ -13,7 +15,7 @@ export const SHIPPING_METHODS = {
     fee: 250000,
     deliveryDaysMin: 7,
     deliveryDaysMax: 10,
-    description: 'Standard delivery: 7–10 business days',
+    description: 'Standard delivery: 7–10 days',
   },
   express: {
     id: 'express',
@@ -21,7 +23,7 @@ export const SHIPPING_METHODS = {
     fee: 500000,
     deliveryDaysMin: 2,
     deliveryDaysMax: 3,
-    description: 'Express air freight: 2–3 business days',
+    description: 'Express air freight: 2–3 days',
   },
 };
 

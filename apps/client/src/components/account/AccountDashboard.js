@@ -56,7 +56,8 @@ export function AccountDashboard({ onNavigate }) {
 
     try {
       const [ordersRes, unreadCount] = await Promise.all([
-        orderService.getMyOrders(),
+        // ponytail: status counts cover the newest 100 orders (API page max); add a stats endpoint if customers exceed that.
+        orderService.getMyOrders(1, 100),
         notificationService.getUnreadCount(),
       ]);
 
@@ -65,7 +66,7 @@ export function AccountDashboard({ onNavigate }) {
       const completed = orders.filter((o) => o.status === 'DELIVERED').length;
 
       setOrderMetrics({
-        total: orders.length,
+        total: typeof ordersRes?.total === 'number' ? ordersRes.total : orders.length,
         pending,
         completed,
       });
@@ -109,7 +110,7 @@ export function AccountDashboard({ onNavigate }) {
 
   const isAdmin = user.role === 'admin';
   const roleLabel = user.role ? user.role.charAt(0).toUpperCase() + user.role.slice(1) : '';
-  const firstName = (user.name || user.username || '').split(/\s+/)[0];
+  const firstName = (user.full_name || '').split(/\s+/)[0];
 
   const figures = [
     { key: 'total', label: 'Orders placed', value: orderMetrics.total, tone: 'lilac' },

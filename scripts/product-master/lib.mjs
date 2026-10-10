@@ -97,6 +97,7 @@ export const rawDirectory = path.join(projectRoot, 'data', 'raw');
 
 const cleanUnicode = (value) =>
   value
+    .replace(/đ/gu, 'd').replace(/Đ/gu, 'D') // NFKD does not decompose đ
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[™®©]/g, '');

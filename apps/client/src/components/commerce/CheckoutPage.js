@@ -51,14 +51,14 @@ export function CheckoutPage({ onNavigate }) {
       if (saved) return JSON.parse(saved);
     } catch {}
     return {
-      fullName: user?.name || '',
+      fullName: user?.full_name || '',
       email: user?.email || '',
-      phone: '+84 908 123 456',
-      address: '128 Nguyễn Văn Thủ, Phường Đa Kao, Quận 1',
-      city: 'Hồ Chí Minh',
-      province: 'Hồ Chí Minh',
+      phone: user?.phone || '',
+      address: '',
+      city: '',
+      province: '',
       country: 'Vietnam',
-      postalCode: '700000',
+      postalCode: '',
       notes: '',
     };
   });
@@ -74,8 +74,9 @@ export function CheckoutPage({ onNavigate }) {
     if (user) {
       setFormData((prev) => ({
         ...prev,
-        fullName: prev.fullName || user.name || '',
+        fullName: prev.fullName || user.full_name || '',
         email: prev.email || user.email || '',
+        phone: prev.phone || user.phone || '',
       }));
     }
   }, [user]);
@@ -233,14 +234,21 @@ export function CheckoutPage({ onNavigate }) {
 
       if (paymentMethod === 'vnpay') {
         // Create the order first, then hand over to VNPay
-        const vnpayRes = await paymentService.createVnpayPaymentUrl(order.id);
+        let paymentUrl = null;
+        try {
+          paymentUrl = (await paymentService.createVnpayPaymentUrl(order.id))?.payment_url || null;
+        } catch {}
+        // The order exists now either way: resubmitting checkout would create a duplicate.
         clearCart();
         clearDraft();
-        if (vnpayRes && vnpayRes.payment_url) {
-          window.location.href = vnpayRes.payment_url;
+        if (paymentUrl) {
+          window.location.href = paymentUrl;
           return;
         }
-        throw new Error('Failed to obtain payment URL from VNPay');
+        // Payment link failed: the order detail page offers "Pay again with VNPay".
+        setIsSubmitting(false);
+        if (onNavigate) onNavigate(`account-order:${order.id}`);
+        return;
       }
 
       clearCart();

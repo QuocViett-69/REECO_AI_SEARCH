@@ -57,9 +57,9 @@ export interface ParsedTechnicalQuery {
 }
 
 const NUMBER_PATTERN = String.raw`[+\-−]?\d+(?:\.\d+)?`;
-const CELSIUS_PATTERN = String.raw`(?:°\s*C|deg(?:rees?)?\s*C|C)`;
+const CELSIUS_PATTERN = String.raw`(?:°\s*C|℃|độ\s*C|deg(?:rees?)?\s*C|C)`;
 const RANGE_PATTERN = new RegExp(
-  String.raw`(${NUMBER_PATTERN})\s*(?:°\s*C|deg(?:rees?)?\s*C)?\s*(?:to|\.\.\.|đến|tới)\s*(${NUMBER_PATTERN})\s*(${CELSIUS_PATTERN})(?![\p{L}\p{N}])`,
+  String.raw`(${NUMBER_PATTERN})\s*(?:°\s*C|℃|độ\s*C|deg(?:rees?)?\s*C)?\s*(?:to|\.\.\.|đến|tới)\s*(${NUMBER_PATTERN})\s*(${CELSIUS_PATTERN})(?![\p{L}\p{N}])`,
   'iu',
 );
 const POINT_PATTERN = new RegExp(
@@ -176,7 +176,13 @@ export class TechnicalQueryParserService {
   }
 
   private parseTemperature(query: string): TemperatureConstraint[] {
-    const range = RANGE_PATTERN.exec(query);
+    // "between X and Y" reads as "X to Y"; a bare "and" is not a range separator ("SDI-12 and 70°C")
+    const range = RANGE_PATTERN.exec(
+      query.replace(
+        new RegExp(String.raw`\bbetween\s+(${NUMBER_PATTERN}\s*(?:°\s*C|℃|độ\s*C|deg(?:rees?)?\s*C)?)\s+and\s+`, 'giu'),
+        '$1 to ',
+      ),
+    );
     if (range) {
       const minCelsius = this.parseNumber(range[1]!);
       const maxCelsius = this.parseNumber(range[2]!);
@@ -235,7 +241,7 @@ export class TechnicalQueryParserService {
     const operating =
       /\boperat(?:e|es|ing)\b/iu.test(normalized) ||
       /\boperating\s+temperature\b/iu.test(normalized) ||
-      /(?:^|[^\p{L}\p{N}])hoạt\s+động\s+(?:ở|tại)(?=$|[^\p{L}\p{N}])/iu.test(
+      /(?:^|[^\p{L}\p{N}])ho(?:ạ|a)t\s+(?:độ|do)ng\s+(?:ở|tại|o|tai)(?=$|[^\p{L}\p{N}])/iu.test(
         normalized,
       ) ||
       /(?:^|[^\p{L}\p{N}])nhiệt\s+độ\s+hoạt\s+động(?=$|[^\p{L}\p{N}])/iu.test(

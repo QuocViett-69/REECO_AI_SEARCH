@@ -222,7 +222,7 @@ export class SearchService {
         ...(request.context && { resolved_query: searchQuery, context_applied: resolution.applied }),
         mode: this.mapMode(hybridResult.mode),
         results: [],
-        guidance: { language: vi ? 'vi' : 'en', text: vi ? 'Chưa tìm thấy sản phẩm có dữ liệu xác nhận đồng thời toàn bộ yêu cầu. Điều này không chứng minh danh mục không có giải pháp. Hãy làm rõ đại lượng, model hoặc cho phép phối hợp nhiều thiết bị; dải nhiệt độ vận hành không xác nhận dải đo hay môi trường nước.' : 'No retrieved product has evidence confirming all requirements together. This does not establish that the catalog has no solution. Clarify measurements, models or whether multiple devices are acceptable; operating temperature does not establish measurement range or a water medium.', needs_clarification: true },
+        guidance: this.noConfirmedMatchGuidance(vi),
       });
     }
 
@@ -280,10 +280,16 @@ export class SearchService {
       ...(request.context && { resolved_query: searchQuery, context_applied: resolution.applied }),
       mode: this.mapMode(hybridResult.mode),
       ...(intent.comparison && { guidance: { language: vi ? 'vi' : 'en', text: comparisonText } }),
+      // Technical policy or identity scoping can remove every candidate: same guidance as above
+      ...(results.length === 0 && !intent.comparison && { guidance: this.noConfirmedMatchGuidance(vi) }),
       results: request.explain
         ? await this.withExplanations(searchQuery, parsedQuery, results, documents, environmentalSpecifications)
         : results,
     });
+  }
+
+  private noConfirmedMatchGuidance(vi: boolean) {
+    return { language: vi ? 'vi' as const : 'en' as const, text: vi ? 'Chưa tìm thấy sản phẩm có dữ liệu xác nhận đồng thời toàn bộ yêu cầu. Điều này không chứng minh danh mục không có giải pháp. Hãy làm rõ đại lượng, model hoặc cho phép phối hợp nhiều thiết bị; dải nhiệt độ vận hành không xác nhận dải đo hay môi trường nước.' : 'No retrieved product has evidence confirming all requirements together. This does not establish that the catalog has no solution. Clarify measurements, models or whether multiple devices are acceptable; operating temperature does not establish measurement range or a water medium.', needs_clarification: true };
   }
 
   private async withExplanations(

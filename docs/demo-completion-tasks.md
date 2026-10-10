@@ -338,7 +338,7 @@ Mỗi lần đổi trạng thái (admin, hủy, thanh toán) phải: cập nhậ
 - **`VnpayReturnPage.js`**: gọi verify, hiển thị theo `order` server trả; bỏ việc tự `markOrderAsPaid` ở client. Nút "Thanh toán lại" khi thất bại.
 - **`OrderList.js`, `OrderDetail.js`, `OrderSuccessPage.js`, `AccountDashboard.js`, `NotificationCenter.js`**: lấy dữ liệu từ API; OrderDetail hiển thị timeline từ `status_history`, nút "Hủy đơn" (có hộp xác nhận) khi đơn còn hủy được, nút "Thanh toán lại" cho VNPay chưa thanh toán.
 - Giá hiển thị ở catalog/detail vẫn đang lấy từ `commercialService.js` — giữ nguyên cho demo (seed giá dùng cùng công thức nên khớp). Tổng tiền trên trang checkout ghi rõ "Tổng tiền cuối cùng do hệ thống xác nhận" và trang success hiển thị số tiền **từ server**.
-- Seed đơn mẫu: thêm hàm vào cuối `scripts/demo/seed-demo.mjs` tạo 3 đơn cho `haitran@example.com` (1 `PROCESSING` COD, 1 `SHIPPED` VNPay đã trả, 1 `PENDING_PAYMENT` VNPay). Chạy lại không tạo trùng (đánh dấu bằng `notes = '[demo-seed]'`, xóa đơn seed cũ rồi tạo lại).
+- Seed đơn mẫu: `seedDemoOrders` trong `scripts/seed-demo.mjs` (chạy bằng `npm run demo:seed:orders`, sau `npm run demo:seed`) tạo 3 đơn cho `haitran@example.com` (1 `PROCESSING` COD, 1 `SHIPPED` VNPay đã trả, 1 `PENDING_PAYMENT` VNPay). Chạy lại không tạo trùng (đánh dấu bằng `notes = '[demo-seed]'`, xóa đơn seed cũ rồi tạo lại).
 
 ### 2.5 Tiêu chí xong Task 2
 

@@ -168,3 +168,33 @@ describe('dashboard', () => {
     expect(screen.getByText('Đang vận chuyển').nextSibling).toHaveTextContent('1 đơn');
   });
 });
+
+test('products list and KPIs cover every page of the catalog, not just the first 100', async () => {
+  storeSession(sessionFor(ADMIN_USER));
+  const item = (n) => ({ product_id: `P${n}`, model: `M${n}`, name_en: `Product ${n}`, status: 'active' });
+  const calls = mockFetch(
+    adminRoutes({
+      'GET /admin/products': ({ query }) =>
+        query.get('page') === '2'
+          ? json({ items: [item(101)], pagination: { page: 2, limit: 100, total: 101, total_pages: 2 } })
+          : json({ items: Array.from({ length: 100 }, (_, i) => item(i + 1)), pagination: { page: 1, limit: 100, total: 101, total_pages: 2 } }),
+    })
+  );
+  renderAt('/dashboard');
+
+  await waitFor(() => expect(calls.filter((c) => c.path === '/admin/products')).toHaveLength(2));
+  expect(await screen.findAllByText('101')).not.toHaveLength(0);
+});
+
+test('reports show an error with retry when stats fail, and no fabricated growth figure', async () => {
+  storeSession(sessionFor(ADMIN_USER));
+  let fail = true;
+  mockFetch(adminRoutes({ 'GET /admin/orders/stats': () => (fail ? json({ message: 'Service Unavailable' }, 503) : json(STATS)) }));
+  renderAt('/reports');
+
+  const retry = await screen.findByRole('button', { name: 'Thử lại' });
+  fail = false;
+  fireEvent.click(retry);
+  expect(await screen.findByText('Tổng doanh thu đã thu')).toBeInTheDocument();
+  expect(screen.queryByText(/so với kỳ trước/)).not.toBeInTheDocument();
+});

@@ -21,6 +21,7 @@
     "test:commerce:live": "npm run build:shared && npm run build:api && node --env-file=apps/api/.env --test scripts/payments/vnpay.test.mjs scripts/notifications/notifications.test.mjs",
     "build": "npm run build:shared && npm run build:api && npm run build:client && npm run build:admin",
     "demo:seed": "node --env-file=apps/api/.env scripts/demo/seed-demo.mjs",
+    "demo:seed:orders": "npm run build:shared && npm run build:api && node --env-file=apps/api/.env scripts/seed-demo.mjs",
     "build:product-master": "node scripts/product-master/build.mjs",
     "resolve:review-products": "node scripts/product-master/resolve-review-decisions.mjs",
     "audit:raw-incoming": "node scripts/raw-incoming/audit.mjs",

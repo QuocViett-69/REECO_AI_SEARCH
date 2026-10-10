@@ -371,11 +371,14 @@ const buildDocument = ({ product, normalized, enriched, ontology }) => {
       .filter((protocol) => protocol.relation === 'supported')
       .map((protocol) => protocol.name),
   );
+  // Supported evidence wins (same rule as filterPositiveKeywords); a protocol
+  // must never be served in both lists.
+  const supportedKeys = new Set(supported.map(caseKey));
   const unsupported = uniqueStrings(
     enriched.protocols
       .filter((protocol) => protocol.relation === 'unsupported')
       .map((protocol) => protocol.name),
-  );
+  ).filter((name) => !supportedKeys.has(caseKey(name)));
   const variants = normalized.variants ?? [];
   const aliases = uniqueStrings([
     ...enriched.aliases.map((alias) => alias.value),
@@ -503,7 +506,17 @@ const unsupportedProtocolViolations = (documents, enrichedById) =>
         protocol: name,
         reason: 'unsupported_promoted_to_positive',
       }));
-    return [...invalidSupported, ...promotedUnsupported];
+    const supportedInDocument = new Set(
+      document.supported_protocols.map(caseKey),
+    );
+    const contradictory = document.unsupported_protocols
+      .filter((name) => supportedInDocument.has(caseKey(name)))
+      .map((name) => ({
+        product_id: document.product_id,
+        protocol: name,
+        reason: 'protocol_both_supported_and_unsupported',
+      }));
+    return [...invalidSupported, ...promotedUnsupported, ...contradictory];
   });
 
 export const createSearchDocumentPlan = async () => {

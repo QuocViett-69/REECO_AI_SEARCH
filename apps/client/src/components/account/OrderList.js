@@ -36,6 +36,9 @@ function formatDeliveryRange(from, to) {
 export function OrderList({ onNavigate, onViewOrder }) {
   const { user, isAuthenticated } = useAuth();
   const [orders, setOrders] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -47,9 +50,10 @@ export function OrderList({ onNavigate, onViewOrder }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await orderService.getMyOrders();
-      const list = res?.items || res?.data || (Array.isArray(res) ? res : []);
-      setOrders(list);
+      const res = await orderService.getMyOrders(1);
+      setOrders(res.items);
+      setTotal(res.total);
+      setPage(1);
     } catch (err) {
       setError(err.message || 'Your orders could not be loaded.');
     } finally {
@@ -60,6 +64,21 @@ export function OrderList({ onNavigate, onViewOrder }) {
   useEffect(() => {
     fetchOrders();
   }, [fetchOrders]);
+
+  // The API pages /orders/me (20 per page); fetch the next page on demand.
+  const loadMore = async () => {
+    setLoadingMore(true);
+    try {
+      const res = await orderService.getMyOrders(page + 1);
+      setOrders((prev) => [...prev, ...res.items.filter((o) => !prev.some((p) => p.id === o.id))]);
+      setTotal(res.total);
+      setPage(page + 1);
+    } catch (err) {
+      setError(err.message || 'More orders could not be loaded.');
+    } finally {
+      setLoadingMore(false);
+    }
+  };
 
   if (!isAuthenticated || !user) {
     return (
@@ -199,6 +218,11 @@ export function OrderList({ onNavigate, onViewOrder }) {
             );
           })}
         </ul>
+      )}
+      {!loading && orders.length > 0 && orders.length < total && (
+        <button type="button" className="st-btn" onClick={loadMore} disabled={loadingMore}>
+          {loadingMore ? 'Loading…' : `Load more orders (${orders.length} of ${total})`}
+        </button>
       )}
     </div>
   );

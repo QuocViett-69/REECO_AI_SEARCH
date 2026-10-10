@@ -40,8 +40,28 @@ async function bootstrap() {
       message: 'Too many searches. Please wait a moment and try again.',
     }),
   );
+  // Password guessing and mass sign-up: every Supabase auth call leaves from this server's IP,
+  // so throttle per client here. One limiter per route keeps their budgets separate.
+  const authLimit = Number(process.env.AUTH_RATE_LIMIT_PER_MINUTE ?? 10);
+  for (const route of ['/api/v1/auth/login', '/api/v1/auth/register']) {
+    app.use(
+      route,
+      createRateLimit({
+        limit: Number.isFinite(authLimit) ? authLimit : 10,
+        windowMs: 60_000,
+        message: 'Too many attempts. Please wait a minute and try again.',
+      }),
+    );
+  }
+  // CORS_ORIGIN (comma-separated) is what staging and the handoff docs set; it adds to the
+  // per-app URLs so an existing deploy that only sets CLIENT_APP_URL/ADMIN_APP_URL keeps working.
+  const corsOrigins = (process.env.CORS_ORIGIN ?? '')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean);
   app.enableCors({
     origin: [
+      ...corsOrigins,
       process.env.CLIENT_APP_URL ?? 'http://localhost:5173',
       process.env.ADMIN_APP_URL ?? 'http://localhost:5174',
     ].filter(Boolean),

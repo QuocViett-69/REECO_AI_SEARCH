@@ -27,7 +27,8 @@ export function LoginPage({ onNavigate, returnTo = 'account' }) {
       } else {
         const params = new URLSearchParams(window.location.search);
         const redirect = params.get('redirect');
-        if (redirect && redirect.startsWith('/')) {
+        // Same-origin paths only: '//host' and '/\\host' are protocol-relative off-site URLs.
+        if (redirect && /^\/(?![/\\])/.test(redirect)) {
           window.location.href = redirect;
         } else if (onNavigate) {
           onNavigate(returnTo || 'account');

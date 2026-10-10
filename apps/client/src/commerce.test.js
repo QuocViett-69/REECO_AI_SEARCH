@@ -117,12 +117,34 @@ describe('REECO Customer Commerce - Commercial, Pricing & Auth Suite', () => {
   // ── 3. AI Recommendations ("You may also need") ─────────────────────────────
   describe('AI Recommendation Integration Point', () => {
     test('returns technical compatibility recommendations with reason badges', async () => {
+      const originalFetch = global.fetch;
+      global.fetch = jest.fn(async (url) => {
+        const model = decodeURIComponent(String(url).split('/products/')[1]);
+        return { ok: true, status: 200, json: async () => ({ product: { product_id: `CSI_${model}`, model } }) };
+      });
       const recs = await recommendationService.getProductRecommendations('CSI_CS655', 'CS655');
       expect(Array.isArray(recs)).toBe(true);
       expect(recs.length > 0).toBe(true);
       expect(recs[0].model).toBeDefined();
       expect(recs[0].reason).toBeDefined();
       expect(recs[0].price).toBeGreaterThan(0);
+      global.fetch = originalFetch;
+    });
+
+    test('resolves recommendations to real catalog product_ids and drops unknown models', async () => {
+      const originalFetch = global.fetch;
+      // Only CS650 exists in the catalog (as CSI_CS650); CR300/CR310 return 404.
+      global.fetch = jest.fn(async (url) =>
+        String(url).endsWith('/products/CS650')
+          ? { ok: true, status: 200, json: async () => ({ product: { product_id: 'CSI_CS650', model: 'CS650', name_en: 'CS650' } }) }
+          : { ok: false, status: 404, json: async () => ({}) }
+      );
+      try {
+        const recs = await recommendationService.getProductRecommendations('CSI_CS655', 'CS655');
+        expect(recs.map((r) => r.product_id)).toEqual(['CSI_CS650']);
+      } finally {
+        global.fetch = originalFetch;
+      }
     });
   });
 });

@@ -2,7 +2,7 @@ import type { SearchRequest } from '@reeco/shared';
 
 const alternative = /^(?:what about|how about|thế còn|còn)(?:\s|$)/iu;
 const continuation = /^(?:and|also|with|only|does it support|do they support|can it|what about|how about|thế còn|còn|và|với|chỉ|thêm|có hỗ trợ|có loại|loại nào|nó|chúng)(?:\s|$)/iu;
-const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?(?:485|232)|USB|CAN[\s-]?bus|CPI|Modbus|Wi[\s‐‑–—-]?Fi)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|deg(?:rees?)?\s*C|C\b)/iu;
+const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?(?:485|232)|USB|CAN[\s-]?bus|CPI|Modbus|Wi[\s‐‑–—-]?Fi)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|℃|độ\s*C|deg(?:rees?)?\s*C|C\b)/iu;
 
 export const hasTechnicalConstraint = (query: string): boolean => shortConstraint.test(query);
 export const isExplanationQuestion = (query: string): boolean => /\b(?:this (?:product|device)|these (?:models|products|devices)|the other one|my (?:application|requirements|query|use case)|recommended this)|(?:(?:các|những) (?:model|sản phẩm|thiết bị) này|sản phẩm này|thiết bị này|sản phẩm còn lại|nhu cầu của tôi|yêu cầu của tôi|câu hỏi của tôi|trường hợp (?:sử dụng )?của tôi)/iu.test(query);
@@ -20,7 +20,8 @@ export function parseNegativeConstraints(query: string): { query: string; exclus
     : /^rs[\s-]?232$/iu.test(value) ? 'RS-232' : /^wi[\s-]?fi$/iu.test(value) ? 'Wi-Fi'
     : /^can[\s-]?bus$/iu.test(value) ? 'CANbus' : /^modbus\s+rtu$/iu.test(value) ? 'Modbus RTU'
     : /^modbus$/iu.test(value) ? 'Modbus' : value.toUpperCase();
-  const negativeProtocol = /(?:without|excluding|exclude|does not support|doesn.t support|no|kh(?:\u00f4ng)\s+(?:co|ho tro|dung|h\u1ed7 tr\u1ee3|d\u00f9ng|c\u00f3))\s+(SDI[\s-]?12|RS[\s-]?232|Wi[\s-]?Fi|USB|CAN[\s-]?bus|CPI|Modbus(?:\s+RTU)?)\b/giu;
+  // \b: 'no' must be its own word (not the tail of Arduino/nano/mono); 'khong' typed without accents counts too.
+  const negativeProtocol = /\b(?:without|excluding|exclude|does not support|doesn.t support|no|kh(?:\u00f4|o)ng\s+(?:co|ho tro|dung|h\u1ed7 tr\u1ee3|d\u00f9ng|c\u00f3))\s+(SDI[\s-]?12|RS[\s-]?232|Wi[\s-]?Fi|USB|CAN[\s-]?bus|CPI|Modbus(?:\s+RTU)?)\b/giu;
   cleaned = cleaned.replace(negativeProtocol, (_match, value: string) => { protocols.add(canonical(value)); return ' '; });
   let cellular = false;
   cleaned = cleaned.replace(/\bnon[-\s]+cellular\b/giu, () => { cellular = true; return ' '; });
@@ -28,7 +29,7 @@ export function parseNegativeConstraints(query: string): { query: string; exclus
   cleaned = cleaned.replace(/\b(?:but\s+not|not)\s+temperature\s+sensor\b/giu, () => { temperature = true; return ' '; });
   cleaned = cleaned.replace(/\s+/gu, ' ').trim();
   cleaned = cleaned.replace(/^(?:and|but|also)\s+|\s+(?:and|but|also)$|^(?:and|but|also)$/giu, '').trim();
-  const marker = /\b(?:without|excluding|exclude|does\s+not\s+support|doesn't\s+support|but\s+not)\b|\bnon[-\s]+\p{L}|\bno\s+(?:modbus|sdi|rs)\b|kh\s*\u00f4ng\s+(?:ho tro|dung|co|h\u1ed7 tr\u1ee3|d\u00f9ng)\b/iu;
+  const marker = /\b(?:without|excluding|exclude|does\s+not\s+support|doesn't\s+support|but\s+not)\b|\bnon[-\s]+\p{L}|\bno\s+(?:modbus|sdi|rs)\b|kh\s*(?:\u00f4|o)ng\s+(?:ho tro|dung|co|h\u1ed7 tr\u1ee3|d\u00f9ng)\b/iu;
   // Contextual absence is a deployment need, not a product exclusion.
   const unsupported = marker.test(cleaned.replace(/\bwithout\s+(?:personnel|visiting|having to visit|staff|an? (?:internet|grid) connection)\b/giu, ''));
   return { query: cleaned, exclusions: { protocols: [...protocols], cellular, temperature }, unsupported };

@@ -155,7 +155,7 @@ export function Navbar({ currentPage, onNavigate, compareCount }) {
                   className={`nav-account-btn ${accountOpen ? 'open' : ''}`}
                   onClick={() => setAccountOpen(v => !v)} aria-label="Account menu" aria-expanded={accountOpen}>
                   {isAdmin ? <Shield size={15} /> : <User size={15} />}
-                  <span className="nav-account-name">{user.name || user.username}</span>
+                  <span className="nav-account-name">{user.full_name || user.email}</span>
                   <CaretDown size={14} />
                 </button>
                 {accountOpen && (

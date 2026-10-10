@@ -1,6 +1,7 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { findColumnShiftedSpecs } from './lib.mjs';
 
 const scriptsDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptsDirectory, '..', '..');
@@ -58,6 +59,7 @@ const incomingById = new Map();
 const canonicalById = new Map();
 const files = [];
 const structuralErrors = [];
+const columnShiftedSpecs = [];
 
 for (const file of await jsonFiles(incomingDirectory)) {
   const outerDocument = await readJson(path.join(incomingDirectory, file));
@@ -86,6 +88,15 @@ for (const file of await jsonFiles(incomingDirectory)) {
         (field === 'specifications' && !Array.isArray(product[field])),
     );
     if (missingFields.length > 0) productsMissingCoreFields += 1;
+    const shifted = findColumnShiftedSpecs(product);
+    if (shifted.length > 0) {
+      columnShiftedSpecs.push({
+        file,
+        product_id: product.product_id,
+        spec_count: shifted.length,
+        examples: shifted.slice(0, 3),
+      });
+    }
     addLocation(incomingById, normalizeProductId(product.product_id), {
       file,
       product_index: productIndex,
@@ -155,6 +166,7 @@ const report = {
     unique_embedded_canonical_id_count: canonicalById.size,
     product_ids_without_embedded_canonical_count: idsWithoutCanonical.length,
     structural_error_count: structuralErrors.length,
+    column_shifted_product_count: columnShiftedSpecs.length,
     products_missing_core_fields_count: files.reduce(
       (sum, file) => sum + file.products_missing_core_fields,
       0,
@@ -162,6 +174,7 @@ const report = {
   },
   checks: {
     structural_errors: structuralErrors,
+    column_shifted_specs: columnShiftedSpecs,
     duplicate_incoming_product_ids: duplicateIncomingIds,
     existing_raw_overlaps: existingRawOverlaps,
     product_ids_without_embedded_canonical: idsWithoutCanonical,
@@ -183,5 +196,8 @@ console.log(
 );
 console.log(
   `ids_without_canonical=${report.summary.product_ids_without_embedded_canonical_count}`,
+);
+console.log(
+  `column_shifted_products=${report.summary.column_shifted_product_count}`,
 );
 console.log(`report=${path.relative(projectRoot, reportPath)}`);

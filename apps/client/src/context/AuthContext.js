@@ -52,6 +52,15 @@ export function AuthProvider({ children }) {
   const logout = useCallback(() => {
     saveSession(null);
     setAuthError(null);
+    // Per-user session data (checkout draft, notification caches, order ids) must not leak
+    // to the next user of this tab. Carts and favorites live in localStorage keyed by user id.
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        Object.keys(sessionStorage)
+          .filter((key) => key.startsWith('reeco_'))
+          .forEach((key) => sessionStorage.removeItem(key));
+      }
+    } catch {}
   }, [saveSession]);
 
   useEffect(() => {
@@ -79,7 +88,18 @@ export function AuthProvider({ children }) {
     return () => clearInterval(intervalId);
   }, [session, saveSession, logout]);
 
-  // Sync state if another tab modifies storage or apiFetch interceptor refreshes it
+  // apiFetch's 401 interceptor rotates the refresh token and writes storage itself; a
+  // 'storage' event never fires in the writing tab, so it notifies this tab directly.
+  // Without this, the interval above would retry the already-rotated token and log out.
+  useEffect(() => {
+    const handleRefreshed = (e) => {
+      if (e.detail) setSession(e.detail);
+    };
+    window.addEventListener('reeco:session-refreshed', handleRefreshed);
+    return () => window.removeEventListener('reeco:session-refreshed', handleRefreshed);
+  }, []);
+
+  // Sync state if another tab modifies storage
   useEffect(() => {
     const handleStorage = (e) => {
       if (e.key === AUTH_STORAGE_KEY) {

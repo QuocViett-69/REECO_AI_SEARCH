@@ -117,6 +117,7 @@ export async function apiFetch(endpoint, options = {}) {
             } else if (sessionStorage.getItem('reeco_auth_session')) {
               sessionStorage.setItem('reeco_auth_session', JSON.stringify(newSession));
             }
+            window.dispatchEvent(new CustomEvent('reeco:session-refreshed', { detail: newSession }));
 
             // Retry original request
             config.headers['Authorization'] = `Bearer ${newSession.access_token}`;

@@ -47,6 +47,7 @@ const writeJsonIfChanged = async (filePath, value) => {
 
 const keyFor = (value) =>
   value
+    .replace(/[đĐ]/gu, 'd') // NFKD does not decompose đ
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/gu, '')
     .toLocaleLowerCase('en-US')

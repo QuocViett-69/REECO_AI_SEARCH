@@ -65,12 +65,15 @@ configurable 180-second default timeout and does not contact Ollama during backe
 All public-schema tables have RLS enabled and explicit Data API grants:
 
 - `anon` can read active product data only and can call the keyword-search RPC.
-- `authenticated` can read all imported product rows, including review rows.
+- `authenticated` gets the same active-only reads as `anon`. JWTs whose `app_metadata.role` is `admin`
+  can read every imported row, including review rows (migration `20261010000000`).
 - Browser code receives only public configuration through `REACT_APP_*` variables.
 - The NestJS API keeps `SUPABASE_SERVICE_ROLE_KEY` server-side and validates Bearer tokens for import routes.
 - `/admin/products` and `/admin/import` are protected React routes; `/login` uses email/password Auth.
 
-Local Auth sign-up is disabled because this is an admin login. Create or invite admin users from the
+Supabase Auth's public sign-up stays disabled. Customers register through the API
+(`POST /api/v1/auth/register`), which creates the user with the service-role key, so `authenticated` is
+no longer admin-only. Admin users carry `app_metadata.role = 'admin'`; create or invite them from the
 Supabase Dashboard. Mirror the local URL and sign-up settings in the hosted project's Auth configuration.
 
 ### RLS auto-enable defense in depth

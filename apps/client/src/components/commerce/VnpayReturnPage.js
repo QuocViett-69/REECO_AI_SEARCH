@@ -50,6 +50,9 @@ export function VnpayReturnPage({ search: returnSearch, onNavigate }) {
             }
           }
         } catch {}
+        // Drop the vnp_* query so a reload shows the saved result instead of verifying again.
+        // Router state is kept; the prop is unchanged, so this effect does not rerun.
+        window.history.replaceState(window.history.state, '', window.location.pathname);
       } catch (err) {
         setError(err.message || 'Payment verification failed.');
       } finally {

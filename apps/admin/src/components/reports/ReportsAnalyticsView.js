@@ -18,17 +18,25 @@ export function ReportsAnalyticsView() {
   const [stats, setStats] = useState(null);
   const [hoveredBar, setHoveredBar] = useState(null);
 
+  const [statsError, setStatsError] = useState(null);
+  const [reloadKey, setReloadKey] = useState(0);
+
   useEffect(() => {
     let mounted = true;
+    setStatsError(null);
     getOrderStats()
       .then((res) => {
-        if (mounted && res) setStats(res);
+        if (!mounted) return;
+        if (res) setStats(res);
+        else setStatsError('Không nhận được dữ liệu báo cáo.');
       })
-      .catch((err) => console.warn('Order stats failed:', err.message));
+      .catch((err) => {
+        if (mounted) setStatsError(err.message || 'Không thể tải dữ liệu báo cáo.');
+      });
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [reloadKey]);
 
   const formatCurrency = (amount) => {
     if (typeof amount !== 'number') return '0 ₫';
@@ -79,7 +87,16 @@ export function ReportsAnalyticsView() {
     return (
       <main className="main-content">
         <div style={{ padding: 40, textAlign: 'center', color: 'var(--text-light)' }}>
-          Đang tải dữ liệu báo cáo doanh thu...
+          {statsError ? (
+            <div role="alert">
+              <div style={{ color: '#991b1b', marginBottom: 12 }}>{statsError}</div>
+              <button type="button" className="btn" onClick={() => setReloadKey((k) => k + 1)}>
+                Thử lại
+              </button>
+            </div>
+          ) : (
+            'Đang tải dữ liệu báo cáo doanh thu...'
+          )}
         </div>
       </main>
     );
@@ -155,9 +172,6 @@ export function ReportsAnalyticsView() {
           </div>
           <div style={{ fontSize: 24, fontWeight: 700, color: '#0f172a', margin: '8px 0 4px', lineHeight: 1.2 }}>
             {formatCurrency(stats.totalRevenue)}
-          </div>
-          <div style={{ fontSize: 12, color: '#10b981', fontWeight: 500 }}>
-            +18.4% so với kỳ trước
           </div>
         </div>
 

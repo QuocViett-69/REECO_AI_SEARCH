@@ -165,7 +165,12 @@ Initialize your local Supabase instance and seed the demo data:
 supabase start
 supabase db reset
 npm run demo:seed
+npm run demo:seed:orders
 ```
+
+`demo:seed:orders` creates the three `[demo-seed]` orders for `haitran@example.com` (rerunning
+replaces them). Run it after `demo:seed`, which creates that customer; it builds `shared` and `api`
+itself.
 
 Configure both frontend apps from their `.env.example` (`REACT_APP_API_URL` is the only required value).
 Neither frontend talks to Supabase directly: they sign in through `POST /api/v1/auth/login`, so no

@@ -55,6 +55,26 @@ describe('Task 2: Orders & Payments API Test Suite', () => {
       expect(SHIPPING_METHODS.express.deliveryDaysMax).toBe(3);
     });
 
+    test('SHIPPING_METHODS fees and day counts match the API orders.constants.ts', () => {
+      const fs = require('fs');
+      const path = require('path');
+      const src = fs.readFileSync(
+        path.join(__dirname, '../../api/src/modules/orders/orders.constants.ts'),
+        'utf8'
+      );
+      for (const key of ['standard', 'express']) {
+        const block = src.match(new RegExp(`${key}:\\s*{([^}]*)}`))[1];
+        const num = (name) => Number(block.match(new RegExp(`${name}:\\s*(\\d+)`))[1]);
+        const m = SHIPPING_METHODS[key];
+        expect([m.fee, m.deliveryDaysMin, m.deliveryDaysMax]).toEqual([
+          num('fee_vnd'),
+          num('min_days'),
+          num('max_days'),
+        ]);
+        expect(m.description).toContain(`${m.deliveryDaysMin}–${m.deliveryDaysMax} `);
+      }
+    });
+
     test('calculateEstimatedDelivery computes from/to dates accurately', () => {
       const base = new Date('2026-09-24T10:00:00Z');
       const standardEst = calculateEstimatedDelivery(base, 'standard');

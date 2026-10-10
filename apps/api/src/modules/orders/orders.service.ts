@@ -191,7 +191,8 @@ export class OrdersService {
    * GET /orders/me?page=&page_size= (Mới nhất trước)
    */
   async getMyOrders(user: User, page = 1, pageSize = 20) {
-    const p = Math.max(1, Number(page) || 1);
+    // Number('1e400') is Infinity; keep the offset a finite integer
+    const p = Math.min(100_000, Math.max(1, Math.floor(Number(page)) || 1));
     const size = Math.min(100, Math.max(1, Number(pageSize) || 20));
     return await this.ordersRepository.findByCustomerId(user.id, p, size);
   }

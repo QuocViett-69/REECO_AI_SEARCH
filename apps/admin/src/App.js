@@ -85,7 +85,14 @@ export function App() {
   const loadProducts = useCallback(async () => {
     setProductsLoading(true);
     setProductsError(null);
+    // The API caps a page at 100, and the list/KPIs filter client-side, so fetch every page.
+    // ponytail: client-side over the full catalog; switch to server-side q/page if it grows to thousands.
     const result = await getAdminProductsApi({ limit: 100 });
+    for (let page = 2; !result.error && page <= (result.pagination.total_pages || 1); page += 1) {
+      const next = await getAdminProductsApi({ limit: 100, page });
+      if (next.error) Object.assign(result, next);
+      else result.items.push(...next.items);
+    }
     if (result.error) {
       setProductsError(result.message || 'Không thể tải sản phẩm.');
     } else {

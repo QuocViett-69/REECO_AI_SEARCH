@@ -272,6 +272,7 @@ export class OrdersRepository {
       .order('created_at', { ascending: false })
       .range(from, to);
 
+    if (error?.code === 'PGRST103') return emptyPageAfterEnd(error);
     if (error) {
       this.logger.error(`Error querying customer orders: ${error.message}`);
       throw new ServiceUnavailableException('Lỗi tải danh sách đơn hàng');
@@ -393,7 +394,10 @@ export class OrdersRepository {
     pageSize?: number;
   }): Promise<{ items: OrderWithItems[]; total: number }> {
     const client = this.supabase.getClient();
-    const page = Math.max(1, Number(params.page) || 1);
+    const page = Math.min(
+      100_000,
+      Math.max(1, Math.floor(Number(params.page)) || 1),
+    );
     const pageSize = Math.min(100, Math.max(1, Number(params.pageSize) || 20));
     const from = (page - 1) * pageSize;
     const to = from + pageSize - 1;
@@ -431,6 +435,7 @@ export class OrdersRepository {
       .order('created_at', { ascending: false })
       .range(from, to);
 
+    if (error?.code === 'PGRST103') return emptyPageAfterEnd(error);
     if (error) {
       this.logger.error(`Error querying admin orders: ${error.message}`);
       throw new ServiceUnavailableException(
@@ -466,19 +471,33 @@ export class OrdersRepository {
     if (isMarkingPaid) {
       updatePayload.payment_status = 'PAID';
       updatePayload.paid_at = nowIso;
+    } else if (newStatus === 'PAYMENT_FAILED') {
+      // Keep payment_status in step with the gateway path (recordPaymentFailure)
+      updatePayload.payment_status = 'FAILED';
+    } else if (newStatus === 'PENDING_PAYMENT') {
+      // Same as updateOrderTxnRef when a failed VNPay order is reopened
+      updatePayload.payment_status = 'PENDING_PAYMENT';
     }
 
     const { data, error } = await client
       .from('orders')
       .update(updatePayload)
       .eq('id', order.id)
+      // The transition was validated against this status; never overwrite a concurrent
+      // change such as a VNPay IPN that marked the order paid meanwhile
+      .eq('status', order.status)
       .select('*, order_items(*)')
-      .single();
+      .maybeSingle();
 
     if (error) {
       this.logger.error(`Error updating order status: ${error.message}`);
       throw new ServiceUnavailableException(
         'Không thể cập nhật trạng thái đơn hàng',
+      );
+    }
+    if (!data) {
+      throw new ConflictException(
+        'Trạng thái đơn hàng vừa thay đổi. Vui lòng tải lại và thử lại.',
       );
     }
 
@@ -538,22 +557,29 @@ export class OrdersRepository {
   async getAdminOrderStats() {
     const client = this.supabase.getClient();
 
-    const { data: orders, error: ordersErr } = await client
-      .from('orders')
-      .select(
-        'id, total, status, payment_status, payment_method, created_at, order_items(product_id, model, product_name, quantity, line_total)',
-      );
+    // PostgREST caps each response (max_rows = 1000), so page through every order.
+    // ponytail: aggregates in Node; move to a SQL view/RPC if order volume makes this slow.
+    const allOrders = [];
+    for (let offset = 0; ; offset += 1000) {
+      const { data: page, error: ordersErr } = await client
+        .from('orders')
+        .select(
+          'id, total, status, payment_status, payment_method, created_at, order_items(product_id, model, product_name, quantity, line_total)',
+        )
+        .order('id', { ascending: true })
+        .range(offset, offset + 999);
 
-    if (ordersErr) {
-      this.logger.error(
-        `Error fetching orders for stats: ${ordersErr.message}`,
-      );
-      throw new ServiceUnavailableException(
-        'Lỗi tải dữ liệu thống kê đơn hàng',
-      );
+      if (ordersErr) {
+        this.logger.error(
+          `Error fetching orders for stats: ${ordersErr.message}`,
+        );
+        throw new ServiceUnavailableException(
+          'Lỗi tải dữ liệu thống kê đơn hàng',
+        );
+      }
+      allOrders.push(...(page || []));
+      if (!page || page.length < 1000) break;
     }
-
-    const allOrders = orders || [];
     let totalRevenue = 0;
     let paidOrdersCount = 0;
     let vnpayRevenue = 0;
@@ -582,7 +608,9 @@ export class OrdersRepository {
     > = {};
 
     for (const ord of allOrders) {
-      const isPaid = ord.payment_status === 'PAID';
+      // A cancelled order is not revenue even if it was paid (it is owed a refund)
+      const isPaid =
+        ord.payment_status === 'PAID' && ord.status !== 'CANCELLED';
       const orderTotal = Number(ord.total) || 0;
 
       if (isPaid) {
@@ -670,10 +698,11 @@ export class OrdersRepository {
    */
   async findOrderByTxnRef(txnRef: string): Promise<OrderWithItems | null> {
     const client = this.supabase.getClient();
+    const ref = txnRef.trim();
     const { data, error } = await client
       .from('orders')
       .select('*, order_items(*), order_status_history(*)')
-      .eq('vnpay_txn_ref', txnRef.trim())
+      .eq('vnpay_txn_ref', ref)
       .maybeSingle();
 
     if (error) {
@@ -682,7 +711,25 @@ export class OrdersRepository {
       );
       return null;
     }
-    return data;
+    if (data) return data;
+
+    // An earlier attempt's link stays payable at VNPay after create-url issued a newer ref.
+    // Refs are `${order_number}${Date.now() (13 digits)}${3 random digits}` (VnpayService), so
+    // the order is still recoverable from the ref. Callers have already checked the signature.
+    const orderNumber = parseOrderNumberFromTxnRef(ref);
+    if (orderNumber === null) return null;
+    const { data: byNumber, error: numberErr } = await client
+      .from('orders')
+      .select('*, order_items(*), order_status_history(*)')
+      .eq('order_number', orderNumber)
+      .maybeSingle();
+    if (numberErr) {
+      this.logger.error(
+        `Error querying order by number from txn ref: ${numberErr.message}`,
+      );
+      return null;
+    }
+    return byNumber;
   }
 
   /**
@@ -711,13 +758,20 @@ export class OrdersRepository {
       .from('orders')
       .update(updatePayload)
       .eq('id', orderId)
+      // Never re-arm an order a concurrent IPN already paid (or that was cancelled)
+      .in('status', AWAITING_PAYMENT_STATUSES)
       .select('*, order_items(*)')
-      .single();
+      .maybeSingle();
 
     if (error) {
       this.logger.error(`Error updating order txn ref: ${error.message}`);
       throw new ServiceUnavailableException(
         'Không thể lưu mã giao dịch VNPay cho đơn hàng',
+      );
+    }
+    if (!data) {
+      throw new ConflictException(
+        'Trạng thái đơn hàng vừa thay đổi. Vui lòng tải lại và thử lại.',
       );
     }
 
@@ -883,4 +937,19 @@ export class OrdersRepository {
 
     return data;
   }
+}
+
+/** Order number encoded in a VNPay txn ref (`${order_number}${13-digit ms}${3 digits}`), or null. */
+export function parseOrderNumberFromTxnRef(txnRef: string): number | null {
+  const match = /^(\d+)\d{16}$/.exec(txnRef);
+  return match ? Number(match[1]) : null;
+}
+
+/**
+ * A page past the end makes PostgREST answer 416 (PGRST103, "... but there are only N rows")
+ * instead of an empty list; turn it back into an empty page with the real total.
+ */
+function emptyPageAfterEnd(error: { details?: string | null }) {
+  const total = Number(/only (\d+) rows?/.exec(error.details ?? '')?.[1] ?? 0);
+  return { items: [], total };
 }

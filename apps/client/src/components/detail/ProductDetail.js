@@ -36,6 +36,8 @@ export function ProductDetail({
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [loadFailed, setLoadFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const [qty, setQty] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
   const { addToCart } = useCart();
@@ -44,6 +46,7 @@ export function ProductDetail({
   useEffect(() => {
     setIsLoading(true);
     setError(null);
+    setLoadFailed(false);
     setProduct(null);
     setActiveTab('overview');
     setQty(1);
@@ -56,9 +59,12 @@ export function ProductDetail({
           setError(`No product with model ${model} was found.`);
         }
       })
-      .catch(() => setError('Could not connect to the product API. Try again in a moment.'))
+      .catch(() => {
+        setLoadFailed(true);
+        setError('Could not connect to the product API. Try again in a moment.');
+      })
       .finally(() => setIsLoading(false));
-  }, [model]);
+  }, [model, attempt]);
 
   if (isLoading) {
     return (
@@ -76,6 +82,11 @@ export function ProductDetail({
         <div className="sd-empty" role="alert">
           <Seal glyph="alert" tone="coral" size={48} />
           <h1>{error || 'Product not found'}</h1>
+          {loadFailed && (
+            <button type="button" className="sd-btn" onClick={() => setAttempt((n) => n + 1)}>
+              Try again
+            </button>
+          )}
           <button type="button" className="sd-btn sd-btn--primary" onClick={onBack}>
             <ArrowLeft size={16} /> Go back
           </button>

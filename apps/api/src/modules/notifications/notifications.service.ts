@@ -1,4 +1,9 @@
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import type { User } from '@supabase/supabase-js';
 import type { NotificationRow } from '../orders/orders.types';
 import {
@@ -67,6 +72,14 @@ export class NotificationsService {
       throw new BadRequestException('ID thông báo không hợp lệ');
     }
 
+    // notifications.id is a uuid; anything else can never be the caller's notification
+    if (
+      !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+        id.trim(),
+      )
+    ) {
+      throw new NotFoundException(`Không tìm thấy thông báo "${id}"`);
+    }
     return await this.notificationsRepository.markAsRead(id.trim(), user.id);
   }
 

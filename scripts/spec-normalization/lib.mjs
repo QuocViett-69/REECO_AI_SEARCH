@@ -378,7 +378,9 @@ const isNegatedProtocolMention = (value, matchIndex, matchLength) => {
   );
 };
 
-const classifyProtocols = (value) => {
+const classifyProtocols = (rawValue) => {
+  // A pasted link ("https://www.campbellsci.com/...") is not a protocol claim.
+  const value = rawValue.replace(/\b(?:https?|ftps?):\/\/\S+/giu, ' ');
   let mentions = PROTOCOL_PATTERNS.flatMap(([protocol, pattern]) => {
     const match = pattern.exec(value);
     return match
@@ -503,6 +505,16 @@ const endpointsSharePhysicalQuantity = (firstUnit, secondUnit) =>
   secondUnit &&
   UNIT_QUANTITY_GROUPS.get(firstUnit) === UNIT_QUANTITY_GROUPS.get(secondUnit);
 
+const isValidLeadingRange = (value) => {
+  const match = value.match(RANGE_PATTERN);
+  if (!match) return false;
+  const range = parseRangeParts(match[2], match[3], match[4], match[5]);
+  if (!range.firstUnit.known || !range.secondUnit.known) return false;
+  return range.compatible
+    ? range.unit !== null && range.minValue <= range.maxValue
+    : endpointsSharePhysicalQuantity(range.firstUnit.unit, range.secondUnit.unit);
+};
+
 const extractSafeRangeContext = (value) => {
   const dependingMatch = value.match(/^(.*?)\s+(depending\s+on\s+.+)$/iu);
   if (dependingMatch) {
@@ -531,11 +543,32 @@ const extractSafeRangeContext = (value) => {
   if (commaNoteMatch) {
     return { value: commaNoteMatch[1], note: commaNoteMatch[2] };
   }
+  // "-25° to +50°C (standard)", "0° to 60°C | WARNING: ...", "-40 to +60 °C
+  // excluding battery": keep the longest leading range, the tail is a note.
+  // A tail with another range is ambiguous (alternate ranges) and stays text.
+  if (!isValidLeadingRange(value) && !DUAL_RANGE_PATTERN.test(value)) {
+    const splits = [
+      ...value.matchAll(/\s*[|;,\n]\s*|\s+(?=\()|\s+(?=[a-z]{3,})/giu),
+    ].reverse();
+    for (const split of splits) {
+      const head = value.slice(0, split.index);
+      const note = value.slice(split.index + split[0].length).trim();
+      if (
+        note &&
+        /\D$/u.test(head) &&
+        !/\d[^\d\s]{0,3}\s*(?:to|through|[-–—])\s*[-+−]?\d/iu.test(note) &&
+        isValidLeadingRange(head)
+      ) {
+        return { value: head, note: note.replace(/^\(([^()]*)\)$/u, '$1') };
+      }
+    }
+  }
   return { value };
 };
 
-const canonicalSlug = (value) =>
+export const canonicalSlug = (value) =>
   value
+    .replace(/[đĐ]/gu, 'd') // NFKD does not decompose đ
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/gu, '')
     .toLocaleLowerCase('en-US')
@@ -585,6 +618,34 @@ const deriveQuantityKind = (nameRaw, section) => {
   return rules.find(([, pattern]) => pattern.test(name))?.[0] ?? null;
 };
 
+// The parsed unit is stronger evidence than name keywords ("Granite Volt 116"
+// in a weight name, "Output Signal Range" in a temperature section).
+const UNIT_QUANTITY_KINDS = new Map([
+  ...UNIT_QUANTITY_GROUPS,
+  ['°C', 'temperature'],
+  ['°F', 'temperature'],
+  ['% RH', 'relative_humidity'],
+  ['Pa', 'pressure'],
+  ['hPa', 'pressure'],
+  ['kPa', 'pressure'],
+  ['psi', 'pressure'],
+  ['psig', 'pressure'],
+  ['bar', 'pressure'],
+  ['mbar', 'pressure'],
+  ['nm', 'length'],
+  ['µm', 'length'],
+  ['m/s', 'speed'],
+  ['km/h', 'speed'],
+  ['dBm', 'power'],
+  ['N·m', 'torque'],
+  ['Ω', 'resistance'],
+  ['kΩ', 'resistance'],
+  ['MΩ', 'resistance'],
+]);
+
+export const unitQuantityKind = (normalized) =>
+  UNIT_QUANTITY_KINDS.get(normalized?.unit ?? normalized?.min?.unit) ?? null;
+
 const assignCanonicalMetadata = (specifications) => {
   const baseEntries = specifications.map((specification) => {
     const nameKey = canonicalSlug(specification.name_raw);
@@ -597,8 +658,23 @@ const assignCanonicalMetadata = (specifications) => {
       specification,
       signature: `${specification.section ?? ''}\u0000${specification.name_raw}`,
       key: needsSection ? `${sectionKey}_${nameKey}` : nameKey,
+      unitKind: unitQuantityKind(specification.normalized),
     };
   });
+  // Same key, different physical quantity (e.g. temperature and humidity
+  // "Measurement Range" under one generic section): qualify by unit kind.
+  const unitKindsByKey = new Map();
+  for (const entry of baseEntries) {
+    if (!entry.key || !entry.unitKind) continue;
+    const kinds = unitKindsByKey.get(entry.key) ?? new Set();
+    kinds.add(entry.unitKind);
+    unitKindsByKey.set(entry.key, kinds);
+  }
+  for (const entry of baseEntries) {
+    if (entry.unitKind && unitKindsByKey.get(entry.key)?.size > 1) {
+      entry.key = `${entry.unitKind}_${entry.key}`;
+    }
+  }
   const signaturesByKey = new Map();
   for (const entry of baseEntries) {
     if (!entry.key) continue;
@@ -607,7 +683,7 @@ const assignCanonicalMetadata = (specifications) => {
     signaturesByKey.set(entry.key, signatures);
   }
 
-  return baseEntries.map(({ specification, signature, key }) => {
+  return baseEntries.map(({ specification, signature, key, unitKind }) => {
     let canonicalKey = key;
     if (canonicalKey && signaturesByKey.get(canonicalKey)?.size > 1) {
       canonicalKey = `${canonicalKey}_${createHash('sha256')
@@ -615,10 +691,9 @@ const assignCanonicalMetadata = (specifications) => {
         .digest('hex')
         .slice(0, 8)}`;
     }
-    const quantityKind = deriveQuantityKind(
-      specification.name_raw,
-      specification.section,
-    );
+    const quantityKind =
+      unitKind ??
+      deriveQuantityKind(specification.name_raw, specification.section);
     return {
       ...specification,
       ...(canonicalKey ? { canonical_key: canonicalKey } : {}),
@@ -1026,6 +1101,7 @@ const collectSemanticDiagnostics = (documents) => {
 
   for (const document of documents) {
     const canonicalSignatures = new Map();
+    const canonicalUnitKinds = new Map();
     for (const specification of document.specifications) {
       const supported = specification.facets?.supported_protocols ?? [];
       const unsupported = specification.facets?.unsupported_protocols ?? [];
@@ -1055,6 +1131,13 @@ const collectSemanticDiagnostics = (documents) => {
           `${specification.section ?? ''}\u0000${specification.name_raw}`,
         );
         canonicalSignatures.set(specification.canonical_key, signatures);
+        const unitKind = unitQuantityKind(specification.normalized);
+        if (unitKind) {
+          const kinds =
+            canonicalUnitKinds.get(specification.canonical_key) ?? new Set();
+          kinds.add(unitKind);
+          canonicalUnitKinds.set(specification.canonical_key, kinds);
+        }
       }
       if (specification.quantity_kind) quantityKindAssigned += 1;
 
@@ -1172,6 +1255,16 @@ const collectSemanticDiagnostics = (documents) => {
           product_id: document.product_id,
           canonical_key: canonicalKey,
           signatures: [...signatures],
+        });
+      }
+    }
+    for (const [canonicalKey, kinds] of canonicalUnitKinds) {
+      if (kinds.size > 1) {
+        diagnostics.canonical_key_conflicts.push({
+          product_id: document.product_id,
+          canonical_key: canonicalKey,
+          reason: 'same_key_for_different_unit_quantities',
+          quantity_kinds: [...kinds],
         });
       }
     }

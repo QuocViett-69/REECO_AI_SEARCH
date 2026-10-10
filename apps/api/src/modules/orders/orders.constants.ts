@@ -3,15 +3,15 @@ export const SHIPPING_METHODS = {
     key: 'standard',
     name: 'Giao hàng tiêu chuẩn',
     fee_vnd: 250000,
-    min_days: 3,
-    max_days: 5,
+    min_days: 7,
+    max_days: 10,
   },
   express: {
     key: 'express',
     name: 'Giao hàng hỏa tốc',
     fee_vnd: 500000,
-    min_days: 1,
-    max_days: 2,
+    min_days: 2,
+    max_days: 3,
   },
 } as const;
 

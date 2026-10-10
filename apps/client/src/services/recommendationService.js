@@ -4,6 +4,7 @@
 // point for `GET /api/v1/products/:id/recommendations` with fallback compatibility mapping.
 
 import { getProductPrice } from './commercialService.js';
+import { getProductDetailApi } from './api.js';
 
 // Pre-defined technical compatibility graph for Campbell scientific products
 const TECHNICAL_COMPATIBILITY_GRAPH = {
@@ -51,37 +52,38 @@ class RecommendationService {
   async getProductRecommendations(productId, model) {
     const cleanModel = model ? String(model).trim() : '';
 
-    // Hydrate fallback from technical compatibility graph
-    const compatibleList = TECHNICAL_COMPATIBILITY_GRAPH[cleanModel] || [];
+    // Hydrate fallback from technical compatibility graph; default to top 3 known products.
+    const candidates =
+      TECHNICAL_COMPATIBILITY_GRAPH[cleanModel] ||
+      Object.keys(TECHNICAL_COMPATIBILITY_GRAPH)
+        .filter((candidate) => candidate.toLowerCase() !== cleanModel.toLowerCase())
+        .slice(0, 3)
+        .map((fallbackModel) => ({
+          model: fallbackModel,
+          reason: 'Complementary instrument for Campbell stations',
+          type: 'complementary',
+        }));
 
-    if (compatibleList.length > 0) {
-      return compatibleList.map((item) => ({
-        product_id: item.model,
-        model: item.model,
-        name: item.model,
-        image: null,
-        price: getProductPrice(item.model, item.model),
-        currency: 'VND',
-        reason: item.reason,
-        type: item.type,
-      }));
-    }
-
-    // Default fallback: Top 3 known compatible products
-    const fallbackProducts = Object.keys(TECHNICAL_COMPATIBILITY_GRAPH)
-      .filter((candidate) => candidate.toLowerCase() !== cleanModel.toLowerCase())
-      .slice(0, 3);
-
-    return fallbackProducts.map((fallbackModel) => ({
-      product_id: fallbackModel,
-      model: fallbackModel,
-      name: fallbackModel,
-      image: null,
-      price: getProductPrice(fallbackModel, fallbackModel),
-      currency: 'VND',
-      reason: 'Complementary instrument for Campbell stations',
-      type: 'complementary',
-    }));
+    // Graph keys are bare model names, not catalog ids (CS650 vs CSI_CS650), and several are
+    // not in the catalog at all. Resolve each through the product API so the cart gets the
+    // real product_id; drop the ones the API does not know.
+    const resolved = await Promise.all(
+      candidates.map(async (item) => {
+        const product = await getProductDetailApi(item.model).catch(() => null);
+        if (!product || !product.product_id) return null;
+        return {
+          product_id: product.product_id,
+          model: product.model,
+          name: product.name || product.model,
+          image: product.image || null,
+          price: product.price ?? getProductPrice(product.product_id, product.model),
+          currency: 'VND',
+          reason: item.reason,
+          type: item.type,
+        };
+      })
+    );
+    return resolved.filter(Boolean);
   }
 
   hydrateRecommendations(rawList) {
