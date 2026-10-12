@@ -12,8 +12,6 @@ export interface AppConfiguration {
     dimensions: number;
     version: string;
     timeoutMs: number;
-    /** Bound on a search-time query embedding; timeoutMs stays sized for backfill cold loads. */
-    queryTimeoutMs: number;
     batchSize: number;
   };
   search: {
@@ -74,7 +72,6 @@ export function configuration(): AppConfiguration {
       version:
         process.env.EMBEDDING_VERSION ?? 'ollama-qwen3-embedding-4b-1536-v1',
       timeoutMs: Number(process.env.OLLAMA_EMBEDDING_TIMEOUT_MS ?? 180000),
-      queryTimeoutMs: Number(process.env.OLLAMA_QUERY_TIMEOUT_MS ?? 10000),
       batchSize: Number(process.env.EMBEDDING_BATCH_SIZE ?? 8),
     },
     search: {

@@ -18,7 +18,6 @@ export interface EmbeddingConfigurationMetadata {
 @Injectable()
 export class EmbeddingsService {
   private readonly batchSize = configuration().embedding.batchSize;
-  private readonly queryTimeoutMs = configuration().embedding.queryTimeoutMs;
 
   constructor(
     @Inject(EMBEDDING_PROVIDER)
@@ -48,25 +47,8 @@ export class EmbeddingsService {
     };
   }
 
-  // A search waits on this (hybrid search awaits both legs), so a hung Ollama must fail fast
-  // into the keyword fallback instead of holding the request for the backfill timeout.
-  async embedQuery(text: string): Promise<number[]> {
-    const limit = this.queryTimeoutMs;
-    if (!Number.isFinite(limit) || limit <= 0) return this.provider.embed(text);
-    let timer: NodeJS.Timeout | undefined;
-    try {
-      return await Promise.race([
-        this.provider.embed(text),
-        new Promise<never>((_resolve, reject) => {
-          timer = setTimeout(
-            () => reject(new Error('Query embedding timed out')),
-            limit,
-          );
-        }),
-      ]);
-    } finally {
-      clearTimeout(timer);
-    }
+  embedQuery(text: string): Promise<number[]> {
+    return this.provider.embed(text);
   }
 
   async embedDocuments(texts: string[]): Promise<number[][]> {
