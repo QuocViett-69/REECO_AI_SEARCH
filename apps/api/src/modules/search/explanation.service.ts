@@ -4,6 +4,10 @@ import { configuration } from '../../config/configuration';
 import type { TechnicalMatchResult } from './technical-match.service';
 import { temperatureTargetEvidence } from './temperature-target';
 import { parseSearchIntent, matchSearchIntent } from './search-intent';
+import { contextualExplanation } from './requirement-explanation';
+import { withSearchDeadline } from './search-deadline';
+import { parseNegativeConstraints } from './conversation-query';
+import { protocolAlternatives } from './query-context';
 
 type Explanation = NonNullable<SearchResponse['results'][number]['explanation']>;
 type Evidence = Explanation['evidence'][number];
@@ -42,10 +46,11 @@ export class ExplanationService {
     const started = performance.now();
     for (const entry of eligible) entry.explanation.generation = { status: 'invalid_response', model: this.config.explanation.model };
     try {
+      const body: unknown = await withSearchDeadline(async signal => {
       const response = await fetch(`${this.config.embedding.baseUrl.replace(/\/$/u, '')}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        signal: AbortSignal.timeout(this.config.explanation.timeoutMs),
+        signal,
         body: JSON.stringify({
           model: this.config.explanation.model,
           stream: false,
@@ -74,7 +79,8 @@ export class ExplanationService {
         }),
       });
       if (!response.ok) throw new Error(`Ollama returned ${response.status}`);
-      const body: unknown = await response.json();
+      return response.json();
+      }, this.config.explanation.timeoutMs);
       const content = (body as { message?: { content?: unknown } })?.message?.content;
       if (typeof content !== 'string') throw new Error('Ollama response has no content');
       const parsed: unknown = JSON.parse(content);
@@ -165,13 +171,15 @@ export class ExplanationService {
 
     // Reuse the search matcher one requirement at a time. Missing one fact must
     // not hide the independently confirmed requirements or technical limits.
-    const emptyIntent = { ...intent, measurements: [], target: undefined, roles: [], outdoor: false, specifications: [], sensorOnly: false };
+    const emptyIntent = { ...intent, measurements: [], target: undefined, roles: [], outdoor: false, specifications: [], sensorOnly: false, features: [], depths: [], transport: undefined };
     const requirements = [
       ...intent.measurements.map(item => ({ label: vi ? item.vi : item.en, intent: { ...emptyIntent, measurements: [item] } })),
       ...(target ? [{ label: vi ? target.vi : target.en, intent: { ...emptyIntent, target } }] : []),
       ...intent.roles.map(item => ({ label: vi ? item.vi : item.en, intent: { ...emptyIntent, roles: [item] } })),
       ...intent.specifications.map(item => ({ label: item, intent: { ...emptyIntent, specifications: [item] } })),
       ...(intent.outdoor ? [{ label: vi ? 'sử dụng ngoài trời khắc nghiệt' : 'harsh outdoor use', intent: { ...emptyIntent, outdoor: true } }] : []),
+      ...intent.features.map(item => ({ label: vi ? item.vi : item.en, intent: { ...emptyIntent, features: [item], depths: intent.depths, measurements: intent.measurements } })),
+      ...(intent.transport ? [{ label: intent.transport, intent: { ...emptyIntent, transport: intent.transport } }] : []),
     ];
     const confirmed: string[] = [];
     const unknown: string[] = [];
@@ -196,6 +204,22 @@ export class ExplanationService {
     }
     if (unknown.length) {
       add(vi ? `Chưa có dữ liệu xác nhận ${unknown.join(', ')}; chưa thể kết luận đáp ứng toàn bộ yêu cầu.` : `Available data does not confirm ${unknown.join(', ')}; suitability for the full request is unconfirmed.`);
+    }
+    for (const protocol of parseNegativeConstraints(query).exclusions.protocols) {
+      const alternatives = protocolAlternatives(protocol, document.supported_protocols);
+      const used = /không dùng|without using/iu.test(query);
+      const explicitlyAbsent = document.unsupported_protocols.includes(protocol);
+      const facts: Evidence[] = alternatives.length && used
+        ? [{ source: 'product_document', field: 'supported_protocols', value: alternatives.join(', ') }]
+        : explicitlyAbsent ? [{ source: 'product_document', field: 'unsupported_protocols', value: protocol }] : [];
+      evaluated.push({ label: vi ? `không dùng ${protocol}` : `without ${protocol}`, status: facts.length ? 'confirmed' : 'unconfirmed', evidence: facts });
+      evidence.push(...facts);
+      if (!facts.length) add(vi ? `Việc không dùng ${protocol} chưa được xác nhận từ dữ liệu; thiếu nhãn hỗ trợ không chứng minh giao thức vắng mặt.` : `Avoiding ${protocol} is unconfirmed; missing support metadata does not establish absence.`);
+    }
+    const contextual = contextualExplanation(query, document, specifications, vi);
+    if (contextual) {
+      add(contextual.text);
+      for (const fact of contextual.evidence) if (!evidence.some(e => e.field === fact.field && e.value === fact.value)) evidence.push(fact);
     }
     const normalized = query.normalize('NFD').replace(/[\u0300-\u036f]/gu, '').replace(/đ/giu, 'd').toLowerCase();
     const specNeeds = [
@@ -285,7 +309,7 @@ export class ExplanationService {
       evaluated.push({ label: `${rangeLabel}: ${request}`, status: temperature.result === 'MATCH' ? 'confirmed' : temperature.result === 'MISMATCH' ? 'mismatch' : 'unconfirmed', evidence: evidence.slice(start) });
     }
 
-    if (context) {
+    if (context && !contextual) {
       add(context.text);
       for (const item of context.evidence) {
         if (!evidence.some(existing => existing.field === item.field && existing.value === item.value)) evidence.push(item);
@@ -295,7 +319,7 @@ export class ExplanationService {
 
     // Use per-model facts already loaded for search. Quoting a specification does
     // not establish that it meets an unevaluated numeric requirement.
-    const broad = allowProfile && !intent.measurements.length && !intent.target && !intent.specifications.length;
+    const broad = allowProfile && !contextual && !intent.measurements.length && !intent.target && !intent.specifications.length;
     if (broad && !match?.protocolMatches.length && document.supported_protocols.length) {
       const interfaces = document.supported_protocols.filter(value => /SDI|Modbus|RS-|Ethernet|Wi-Fi|CPI|CS I\/O|USB|MQTT|HTTP/iu.test(value)).slice(0, 4);
       if (interfaces.length) add(vi ? `Giao tiếp được ghi nhận: ${interfaces.join(', ')}.` : `Documented interfaces: ${interfaces.join(', ')}.`,

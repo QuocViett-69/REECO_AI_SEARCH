@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import { useAuth } from './AuthContext';
-import { getProductPrice, enrichProductWithCommercial, parseStoredItems, CURRENCY } from '../services/commercialService';
+import { getDisplayPrice, enrichProductWithCommercial, parseStoredItems, CURRENCY, PRICE_UPDATED_EVENT, updateProductPrices, notifyCommerce } from '../services/commercialService';
+import { getProductDetailApi } from '../services/api';
 
 const CartContext = createContext(null);
 
@@ -23,6 +24,20 @@ export function CartProvider({ children }) {
   });
 
   const skipNextSave = useRef(false);
+  useEffect(() => {
+    const refresh = () => setItems(prev => prev.map(item => ({ ...item, price: getDisplayPrice(item) })));
+    window.addEventListener(PRICE_UPDATED_EVENT, refresh);
+    return () => window.removeEventListener(PRICE_UPDATED_EVENT, refresh);
+  }, []);
+
+  const refreshPrices = useCallback(async (cartItems) => {
+    const products = await Promise.all(cartItems.map(item => getProductDetailApi(item.product_id)));
+    if (products.some(product => !product || !Number.isFinite(product.price) || product.price <= 0)) {
+      throw new Error('Không thể xác nhận giá hiện tại. Vui lòng thử lại trước khi đặt hàng.');
+    }
+    updateProductPrices(products);
+    return cartItems.map(item => ({ ...item, price: getDisplayPrice(item) }));
+  }, []);
 
   // Load items when user changes (guest vs authenticated) & handle merge
   useEffect(() => {
@@ -103,13 +118,14 @@ export function CartProvider({ children }) {
           category: enriched.category || 'Sensors',
           device_type: enriched.deviceType || enriched.device_type || 'Hardware',
           image: enriched.image || enriched.image_url || null,
-          price: enriched.price || getProductPrice(productId, enriched.model),
+          price: enriched.price,
           currency: enriched.currency || CURRENCY,
           availability_label: enriched.availability_label || 'Available for order',
           quantity: qty,
         },
       ];
     });
+    notifyCommerce({ type: 'success', title: 'Đã thêm vào giỏ hàng', desc: `Đã thêm sản phẩm ${enriched.model || enriched.name} vào giỏ hàng.` });
   };
 
   const removeFromCart = (productId) => {
@@ -147,6 +163,7 @@ export function CartProvider({ children }) {
         removeFromCart,
         updateQuantity,
         clearCart,
+        refreshPrices,
       }}
     >
       {children}

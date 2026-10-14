@@ -4,7 +4,6 @@ import { Sidebar } from './components/layout/Sidebar';
 import { DashboardView } from './components/dashboard/DashboardView';
 import { ProductManagementView } from './components/products/ProductManagementView';
 import { AdminProductDetailView } from './components/detail/AdminProductDetailView';
-import { ProductImportView } from './components/import/ProductImportView';
 import { OrderListView } from './components/orders/OrderListView';
 import { OrderDetailView } from './components/orders/OrderDetailView';
 import { ReportsAnalyticsView } from './components/reports/ReportsAnalyticsView';
@@ -59,7 +58,6 @@ export function App() {
   const [stats, setStats] = useState({ totalProducts: 0, activeProducts: 0 });
 
   // Result of the last POST /admin/import in this browser tab
-  const [lastImportReport, setLastImportReport] = useState(null);
 
   const [toasts, setToasts] = useState([]);
 
@@ -134,14 +132,6 @@ export function App() {
 
   const handleViewDetail = (productId) => navigate(productPath(productId));
 
-  const handleImportComplete = (result) => {
-    setLastImportReport(result);
-    if (result.success) {
-      showToast('success', 'Import hoàn tất! Đang cập nhật danh sách sản phẩm...');
-      loadProducts();
-    }
-  };
-
   return (
     <>
       <Routes>
@@ -158,7 +148,6 @@ export function App() {
             element={
               <DashboardView
                 stats={stats}
-                lastImportReport={lastImportReport}
                 onNavigateToOrders={(status) => navigate(status ? `/orders?status=${status}` : '/orders')}
               />
             }
@@ -178,7 +167,7 @@ export function App() {
           <Route path="products/:productId" element={<ProductDetailRoute />} />
           <Route path="orders" element={<OrderListView />} />
           <Route path="orders/:orderId" element={<OrderDetailView />} />
-          <Route path="import" element={<ProductImportView onImportComplete={handleImportComplete} />} />
+          <Route path="import" element={<Navigate to="/products" replace />} />
           <Route path="reports" element={<ReportsAnalyticsView />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />

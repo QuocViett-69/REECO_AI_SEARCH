@@ -15,6 +15,7 @@ const optionalText = (max: number) =>
 export const CreateOrderItemSchema = z.object({
   product_id: text(100),
   quantity: z.number().int().min(1).max(999),
+  expected_unit_price: z.number().int().nonnegative().optional(),
 });
 
 export const CreateOrderSchema = z.object({

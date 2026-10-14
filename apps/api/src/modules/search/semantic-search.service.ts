@@ -53,6 +53,7 @@ export class SemanticSearchService {
   async search(
     query: unknown,
     limit?: number,
+    signal?: AbortSignal,
   ): Promise<SemanticSearchCandidate[]> {
     const normalizedQuery = this.normalizeQuery(query);
     const retrievalLimit = this.normalizeLimit(limit);
@@ -63,7 +64,7 @@ export class SemanticSearchService {
       ReturnType<ReturnType<SupabaseService['getClient']>['rpc']>
     >;
     try {
-      response = await this.supabase
+      const request = this.supabase
         .getClient()
         .rpc('search_products_semantic', {
           query_embedding: queryEmbedding,
@@ -71,6 +72,7 @@ export class SemanticSearchService {
           required_embedding_version: metadata.version,
           result_limit: retrievalLimit,
         });
+      response = await (signal ? request.abortSignal(signal) : request);
     } catch (cause) {
       throw new SemanticSearchError(
         'SEMANTIC_RPC_FAILED',

@@ -592,7 +592,7 @@
     }
   ],
   "supported_protocols": [
-    "Modbus",
+    "Modbus RTU",
     "RS-485"
   ],
   "unsupported_protocols": [],
@@ -795,7 +795,7 @@
     {
       "canonical_key": "precipitation_resolution",
       "name": "Precipitation Resolution",
-      "quantity_kind": null,
+      "quantity_kind": "length",
       "normalized_value": {
         "type": "number",
         "value": 0.017,
@@ -915,7 +915,7 @@
     {
       "canonical_key": "wind_gust_resolution",
       "name": "Wind Gust Resolution",
-      "quantity_kind": null,
+      "quantity_kind": "speed",
       "normalized_value": {
         "type": "number",
         "value": 0.01,
@@ -987,7 +987,7 @@
     "rainfall",
     "Wind Speed",
     "Wind Direction",
-    "Modbus",
+    "Modbus RTU",
     "RS-485",
     "Measure Air Temperature",
     "Measure Relative Humidity",
@@ -1005,7 +1005,7 @@
     "Lượng mưa",
     "Tốc độ gió",
     "Hướng gió",
-    "Modbus",
+    "Modbus RTU",
     "RS-485",
     "Đo nhiệt độ không khí",
     "Đo độ ẩm tương đối",
@@ -1013,14 +1013,14 @@
     "Đo tốc độ gió",
     "Đo hướng gió"
   ],
-  "search_text_en": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1° | ambient temperature | RH | rainfall",
-  "search_text_vi": "ClimaVue40 | CSI_CLIMAVUE40 | Compact Digital RS-485 Modbus RTU Weather Sensor | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió | Modbus | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1°",
-  "search_text": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1° | ambient temperature | RH | rainfall | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió",
+  "search_text_en": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus RTU | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1° | ambient temperature | RH | rainfall",
+  "search_text_vi": "ClimaVue40 | CSI_CLIMAVUE40 | Compact Digital RS-485 Modbus RTU Weather Sensor | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió | Modbus RTU | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1°",
+  "search_text": "ClimaVue40 | Compact Digital RS-485 Modbus RTU Weather Sensor | CSI_CLIMAVUE40 | Sensors | All-in-One Weather Sensors | All-in-One Weather Sensor | Air Temperature | Relative Humidity | Precipitation | Wind Speed | Wind Direction | Measure Air Temperature | Measure Relative Humidity | Measure Precipitation | Measure Wind Speed | Measure Wind Direction | Modbus RTU | RS-485 | Operating Temperature Range: -50° to +60°C | Relative Humidity Measurement Range: 0 to 100% | Precipitation Range: 0 to 1,500 mm/h | Vapor Pressure Range: 0 to 47 kPa | Air Temperature Range: -50° to +60°C | Barometric Pressure Range: 1 to 120 kPa | Horizontal Wind Speed Range: 0 to 60 m/s | Wind Direction Range: 0° to 359° | Lightning Average Distance Range: 0 to 40 km | Precipitation Resolution: 0.017 mm | Vapor Pressure Resolution: 0.01 kPa | Air Temperature Resolution: 0.1°C | Relative Humidity Resolution: 0.1 | Barometric Pressure Resolution: 0.01 kPa | Horizontal Wind Speed Resolution: 0.01 m/s | Wind Gust Resolution: 0.01 m/s | Wind Direction Resolution: 1° | Tilt Resolution: 0.1° | ambient temperature | RH | rainfall | Cảm biến | Cảm biến thời tiết tích hợp | Nhiệt độ không khí | Độ ẩm tương đối | Lượng mưa | Tốc độ gió | Hướng gió | Đo nhiệt độ không khí | Đo độ ẩm tương đối | Đo lượng mưa | Đo tốc độ gió | Đo hướng gió",
   "source_versions": {
     "product_master": "2.0",
     "technical_normalization": "1.2",
     "semantic_enrichment": "1.0",
     "semantic_vocabulary": "1.0"
   },
-  "content_hash": "0689ff8222542784174338a06145cf82faad1d4556301b12b0182c8384ab9974"
+  "content_hash": "edae234bf59a26d6475607e5935ca4f6e8fb75542e4bdd6f3579ebd174e6e859"
 }

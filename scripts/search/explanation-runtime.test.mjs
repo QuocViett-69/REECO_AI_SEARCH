@@ -63,7 +63,7 @@ test('use-case explanations distinguish measurements from treatment across water
   const logger = { ...document, measurements: [], taxonomy: { ...document.taxonomy, device_type: 'Data Logger' } };
   assert.match(service.explain('tôi cần bộ ghi dữ liệu để theo dõi', logger).text, /không thay thế cảm biến đo/u);
   const modem = { ...logger, taxonomy: { ...logger.taxonomy, device_type: 'Cellular Modem' } };
-  assert.match(service.explain('tôi cần thiết bị truyền dữ liệu qua cellular', modem).text, /giao thức, mạng và thiết bị kết nối/u);
+  assert.match(service.explain('tôi cần thiết bị truyền dữ liệu qua cellular', modem).text, /nhà mạng, băng tần, SIM và vùng phủ/u);
   const air = { ...document, measurements: [{ key: 'relative_humidity', label_en: 'Relative humidity', label_vi: 'Độ ẩm không khí' }] };
   assert.match(service.explain('tôi muốn theo dõi độ ẩm không khí', air).text, /có số liệu để theo dõi/u);
 });

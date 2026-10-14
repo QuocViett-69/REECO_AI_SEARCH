@@ -75,10 +75,13 @@ function adminServiceWith({ priceRow = null, upsertError = null } = {}) {
   const query = {
     select() { return this; },
     eq() { return this; },
+    order() { return this; },
+    limit: async () => ({ data: [], error: null }),
     maybeSingle: async () => ({ data: priceRow, error: null }),
     upsert: async (row, options) => { calls.push({ row, options }); return { error: upsertError }; },
   };
-  const supabase = { getClient: () => ({ from: (table) => { calls.push({ table }); return query; } }) };
+  const supabase = { getClient: () => ({ from: (table) => { calls.push({ table }); return query; },
+    rpc: async (name, args) => { calls.push({ name, args }); return { error: upsertError }; } }) };
   const products = {
     getAdmin: async () => detail,
     updateAdmin: async (_id, updates) => { calls.push({ updateAdmin: updates }); return detail; },
@@ -94,12 +97,12 @@ test('admin product detail exposes the stored price_vnd', async () => {
   assert.equal((await noPrice.getAdminProductDetail('CS655')).price_vnd, null);
 });
 
-test('setting a price upserts product_prices by product_id and surfaces write errors', async () => {
+test('setting a price uses the atomic audit RPC and surfaces write errors', async () => {
   const { service, calls } = adminServiceWith({ priceRow: { price_vnd: 9_000_000 } });
   await service.setProductPrice('CS655', 9_000_000);
-  const upsert = calls.find((call) => call.row);
-  assert.deepEqual(upsert.row, { product_id: 'CSI_CS655', price_vnd: 9_000_000 });
-  assert.deepEqual(upsert.options, { onConflict: 'product_id' });
+  const write = calls.find(call => call.name);
+  assert.equal(write.name, 'set_product_price');
+  assert.deepEqual(write.args, { p_product_id: 'CSI_CS655', p_price_vnd: 9_000_000, p_actor_id: null, p_actor_email: null });
 
   const { service: failing } = adminServiceWith({ upsertError: { message: 'boom' } });
   await assert.rejects(failing.setProductPrice('CS655', 1), /giá sản phẩm/);
@@ -109,7 +112,7 @@ test('PATCH with price_vnd writes only the price table', async () => {
   const { service, calls } = adminServiceWith({ priceRow: { price_vnd: 7_000_000 } });
   const detail = await service.updateAdminProduct('CS655', { price_vnd: 7_000_000 });
   assert.equal(calls.some(call => call.updateAdmin), false);
-  assert.deepEqual(calls.find((call) => call.row).row, { product_id: 'CSI_CS655', price_vnd: 7_000_000 });
+  assert.equal(calls.find(call => call.name).args.p_price_vnd, 7_000_000);
   assert.equal(detail.price_vnd, 7_000_000);
 });
 

@@ -3,7 +3,7 @@ import { act, fireEvent, render, screen, cleanup } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom';
 import { AppInner } from './App';
 import { searchProductsApi } from './services/api';
-jest.mock('./services/api', () => ({ searchProductsApi: jest.fn() }));
+jest.mock('./services/api', () => ({ searchProductsApi: jest.fn(), getProductsApi: jest.fn(async () => ({ items: [] })) }));
 jest.mock('./components/search/SearchHero', () => ({ SearchHero: ({ onSearch }) => <button onClick={() => onSearch('CS655')}>Search</button> }));
 jest.mock('./components/search/SearchResults', () => ({ SearchResults: ({ thread, onEditSearch, onFollowUp, isLoading }) => <div>
   <button onClick={onEditSearch}>Reset</button><button onClick={() => onFollowUp('USB')}>Refine</button>

@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { purchaseQuery } from './query-context';
 import {
   CELSIUS_UNIT,
   SUPPORTED_TECHNICAL_PROTOCOLS,
@@ -73,7 +74,8 @@ export class TechnicalQueryParserService {
     query: string,
     catalog: readonly TechnicalProductIdentity[] = [],
   ): ParsedTechnicalQuery {
-    const originalQuery = query.normalize('NFC').trim();
+    const originalQuery = purchaseQuery(query.normalize('NFC').trim())
+      .replace(/âm\s+(\d+(?:\.\d+)?)\s*(độ\s*C|°\s*C|C\b)/giu, '-$1 $2');
     const identity = this.parseIdentity(originalQuery, catalog);
     const protocols = this.parseProtocols(originalQuery);
     const temperatureConstraints = this.parseTemperature(originalQuery);
@@ -241,6 +243,7 @@ export class TechnicalQueryParserService {
     const operating =
       /\boperat(?:e|es|ing)\b/iu.test(normalized) ||
       /\boperating\s+temperature\b/iu.test(normalized) ||
+      /chịu (?:lạnh|nhiệt)|cold resistant|withstand.*cold/iu.test(normalized) ||
       /(?:^|[^\p{L}\p{N}])ho(?:ạ|a)t\s+(?:độ|do)ng\s+(?:ở|tại|o|tai)(?=$|[^\p{L}\p{N}])/iu.test(
         normalized,
       ) ||

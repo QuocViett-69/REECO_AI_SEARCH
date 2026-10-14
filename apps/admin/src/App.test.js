@@ -100,7 +100,6 @@ describe('routing and auth', () => {
     ['/products/CSI_CS655', 'Products'],
     ['/orders', 'Orders'],
     ['/orders/REECO-1001', 'Orders'],
-    ['/import', 'Import'],
   ])('a reload on %s stays there and highlights %s', async (path, navLabel) => {
     storeSession(sessionFor(ADMIN_USER));
     mockFetch(
@@ -114,6 +113,14 @@ describe('routing and auth', () => {
     const active = await screen.findByRole('link', { name: navLabel });
     expect(active).toHaveClass('active');
     expect(document.querySelectorAll('.nav-item.active')).toHaveLength(1);
+  });
+
+  test('import is hidden and its old URL redirects to products', async () => {
+    storeSession(sessionFor(ADMIN_USER));
+    mockFetch(adminRoutes());
+    renderAt('/import');
+    await waitFor(() => expect(currentLocation.pathname).toBe('/products'));
+    expect(screen.queryByRole('link', { name: 'Import' })).not.toBeInTheDocument();
   });
 
   test('reeco:unauthorized signs out to /login', async () => {

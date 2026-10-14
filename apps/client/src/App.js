@@ -10,7 +10,8 @@ import { ProductDetail } from './components/detail/ProductDetail';
 import { ProductCompare } from './components/compare/ProductCompare';
 import { ProductSelectorModal } from './components/common/ProductSelectorModal';
 import { ToastContainer } from './components/common/Toast';
-import { searchProductsApi } from './services/api';
+import { searchProductsApi, getProductsApi } from './services/api';
+import { updateProductPrices, PRICE_UPDATED_EVENT } from './services/commercialService';
 
 // Auth & Contexts
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -174,12 +175,46 @@ export function AppInner() {
   const [modalSlot, setModalSlot] = useState(0);
 
   const [toasts, setToasts] = useState([]);
+  const [, setPriceVersion] = useState(0);
 
   const showToast = useCallback((type, title, desc) => {
     const id = Date.now() + Math.random();
     setToasts(prev => [...prev, { id, type, title, desc }]);
     setTimeout(() => setToasts(prev => prev.filter(t => t.id !== id)), 3000);
   }, []);
+
+  useEffect(() => {
+    let active = true;
+    let inFlight = false;
+    const refresh = async () => {
+      if (inFlight) return;
+      inFlight = true;
+      try {
+        let page = 1, totalPages = 1;
+        do {
+          const data = await getProductsApi({ limit: 100, page });
+          if (!active || !data?.items) break;
+          updateProductPrices(data.items);
+          totalPages = data.pagination?.total_pages || 1;
+          page++;
+        } while (page <= totalPages);
+      } finally { inFlight = false; }
+    };
+    const changed = () => setPriceVersion(version => version + 1);
+    const notice = event => showToast(event.detail.type, event.detail.title, event.detail.desc);
+    window.addEventListener(PRICE_UPDATED_EVENT, changed);
+    window.addEventListener('reeco:commerce-notice', notice);
+    window.addEventListener('focus', refresh);
+    refresh();
+    const timer = setInterval(refresh, 30000);
+    return () => {
+      active = false;
+      clearInterval(timer);
+      window.removeEventListener(PRICE_UPDATED_EVENT, changed);
+      window.removeEventListener('reeco:commerce-notice', notice);
+      window.removeEventListener('focus', refresh);
+    };
+  }, [showToast]);
 
   useEffect(() => {
     const timer = setTimeout(() => {

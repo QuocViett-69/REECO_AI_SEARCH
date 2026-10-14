@@ -225,6 +225,7 @@ export class ProductsService {
     const primaryMedia = media.find(
       (item) => item.product_id === product.product_id && item.image_url,
     );
+    const price = (Array.isArray(product.product_prices) ? product.product_prices[0] : product.product_prices)?.price_vnd;
     return ProductSummarySchema.parse({
       product_id: product.product_id,
       model: product.model,
@@ -235,6 +236,7 @@ export class ProductsService {
       device_type: product.device_type,
       image_url: primaryMedia?.image_url ?? null,
       status: product.status,
+      price_vnd: product.status === 'active' && price != null ? Number(price) : null,
     });
   }
 

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import { useAuth } from './AuthContext';
-import { getProductPrice, enrichProductWithCommercial, parseStoredItems, CURRENCY } from '../services/commercialService';
+import { getDisplayPrice, enrichProductWithCommercial, parseStoredItems, CURRENCY, PRICE_UPDATED_EVENT, notifyCommerce } from '../services/commercialService';
 
 const FavoriteContext = createContext(null);
 
@@ -23,6 +23,11 @@ export function FavoriteProvider({ children }) {
   });
 
   const skipNextSave = useRef(false);
+  useEffect(() => {
+    const refresh = () => setFavorites(prev => prev.map(item => ({ ...item, price: getDisplayPrice(item) })));
+    window.addEventListener(PRICE_UPDATED_EVENT, refresh);
+    return () => window.removeEventListener(PRICE_UPDATED_EVENT, refresh);
+  }, []);
 
   // Load and merge favorites on authentication change
   useEffect(() => {
@@ -83,6 +88,7 @@ export function FavoriteProvider({ children }) {
     if (!product) return;
     const enriched = enrichProductWithCommercial(product);
     const productId = enriched.product_id || enriched.id;
+    const adding = !favorites.some(item => item.product_id === productId);
 
     setFavorites((prevFavorites) => {
       const exists = prevFavorites.some((item) => item.product_id === productId);
@@ -98,12 +104,13 @@ export function FavoriteProvider({ children }) {
           category: enriched.category || 'Sensors',
           device_type: enriched.deviceType || enriched.device_type || 'Hardware',
           image: enriched.image || enriched.image_url || null,
-          price: enriched.price || getProductPrice(productId, enriched.model),
+          price: enriched.price,
           currency: enriched.currency || CURRENCY,
           availability_label: enriched.availability_label || 'Available for order',
         },
       ];
     });
+    if (adding) notifyCommerce({ type: 'success', title: 'Đã thêm vào mục yêu thích', desc: `Đã thêm sản phẩm ${enriched.model || enriched.name} vào mục yêu thích.` });
   };
 
   const removeFavorite = (productId) => {

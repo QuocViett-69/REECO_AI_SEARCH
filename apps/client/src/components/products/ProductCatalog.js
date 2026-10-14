@@ -10,7 +10,7 @@ import {
 import { getProductsApi } from '../../services/api';
 import { FavoriteButton } from '../commerce/FavoriteButton';
 import { AddToCartButton } from '../commerce/AddToCartButton';
-import { formatPrice } from '../../services/commercialService';
+import { formatPrice, getDisplayPrice } from '../../services/commercialService';
 import { sizedImage } from '../../services/images';
 import '../../styles/studio/discovery.css';
 import '../../styles/studio/products-cafe.css';
@@ -265,7 +265,7 @@ export function ProductCatalog({ onViewDetail, onToggleCompare, isInCompare }) {
                     <div>
                       <dt>Price</dt>
                       <dd className="cat-tile__price">
-                        {p.price != null ? formatPrice(p.price, p.currency) : 'On request'}
+                        {formatPrice(getDisplayPrice(p), p.currency)}
                       </dd>
                     </div>
                   </dl>

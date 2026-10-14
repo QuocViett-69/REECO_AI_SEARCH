@@ -1,6 +1,7 @@
 import { groupSpecifications } from './specifications';
 import { isSearchMockEnabled, mockSearch } from './mocks/searchMock';
 import { getApiBaseUrl } from './apiFetch';
+import { updateProductPrices } from './commercialService';
 
 const API_BASE_URL = getApiBaseUrl();
 
@@ -102,8 +103,10 @@ export async function getProductsApi(params = {}) {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Products API error ${res.status}`);
     const data = await res.json();
+    const items = (data.items || []).map(normalizeProduct);
+    updateProductPrices(items);
     return {
-      items: (data.items || []).map(normalizeProduct),
+      items,
       pagination: data.pagination || {
         page: 1,
         limit: 100,
@@ -126,7 +129,9 @@ export async function getProductDetailApi(productIdOrModel) {
     if (res.status === 404) return null;
     if (!res.ok) throw new Error(`Product Detail API error ${res.status}`);
     const data = await res.json();
-    return normalizeProductDetail(data);
+    const product = normalizeProductDetail(data);
+    updateProductPrices([product]);
+    return product;
   } catch (error) {
     // Only a 404 means "not found"; server and network failures reach the caller's catch.
     console.warn('API Get product detail failed:', error.message);
@@ -137,6 +142,7 @@ export async function getProductDetailApi(productIdOrModel) {
 // ─── POST /search ────────────────────────────────────────────────────────────────
 // The API generates explanations from product evidence; the client only displays them.
 export async function searchProductsApi(query, limit = 10, context = null) {
+  if (!/[\p{L}\p{N}]/u.test(query)) return { error: 'invalid_input', message: 'Nhập từ khóa tìm kiếm.' };
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 45000);
   try {
@@ -168,6 +174,7 @@ export async function searchProductsApi(query, limit = 10, context = null) {
     if (!res.ok)
       throw new Error(`Search API responded with status ${res.status}`);
     const data = await res.json();
+    updateProductPrices((data.results || []).map(normalizeProduct));
     return {
       query: data.query,
       resolved_query: data.resolved_query || data.query,

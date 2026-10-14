@@ -11,7 +11,7 @@ const TECHNICAL_COMPATIBILITY_GRAPH = {
   // Soil & Moisture Sensors -> Compatible Dataloggers & Cables
   CS655: [
     { model: 'CR300', reason: 'Compatible datalogger with SDI-12 support', type: 'compatible' },
-    { model: 'CR310', reason: 'Datalogger with integrated 4G cellular gateway', type: 'compatible' },
+    { model: 'CR310', reason: 'Datalogger candidate; verify the telemetry equipment separately', type: 'compatible' },
     { model: 'CS650', reason: 'Complementary 30cm reflectometer variant', type: 'complementary' },
   ],
   CS650: [

@@ -7,6 +7,7 @@ import { useCart } from '../../context/CartContext';
 import { useFavorite } from '../../context/FavoriteContext';
 import { groupSpecifications } from '../../services/specifications';
 import { sizedImage } from '../../services/images';
+import { getDisplayPrice } from '../../services/commercialService';
 import '../../styles/studio/discovery.css';
 import '../../styles/studio/detail-sky.css';
 
@@ -127,7 +128,7 @@ export function ProductDetail({
     model: product.model,
     name: product.name,
     image: product.image,
-    price: product.price,
+    price: getDisplayPrice(product),
     currency: product.currency,
   };
 

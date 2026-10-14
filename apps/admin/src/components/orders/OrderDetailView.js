@@ -263,7 +263,7 @@ export function OrderDetailView() {
           </section>
 
           <section style={cardStyle}>
-            <h2 style={cardTitleStyle}>Lịch sử trạng thái</h2>
+            <h2 style={cardTitleStyle}>Lịch sử chỉnh sửa đơn hàng</h2>
             {order.history.length === 0 ? (
               <p style={{ fontSize: 13, color: 'var(--text-light)', margin: 0 }}>Chưa có lịch sử.</p>
             ) : (
@@ -275,6 +275,7 @@ export function OrderDetailView() {
                       {statusLabel(entry.status)}
                     </div>
                     <div style={{ color: 'var(--text-light)', fontSize: 12 }}>{formatDateTime(entry.created_at)}</div>
+                    <div style={{ fontSize: 12 }}>Người thực hiện: {entry.changed_by_label || 'Không ghi nhận người thực hiện'}</div>
                     {entry.note && <div style={{ marginTop: 2 }}>{entry.note}</div>}
                   </li>
                 ))}
