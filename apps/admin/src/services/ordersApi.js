@@ -66,6 +66,7 @@ export function normalizeOrder(order) {
       status: entry.to_status,
       note: entry.note || null,
       changed_by: entry.changed_by || null,
+      changed_by_label: entry.changed_by_label || entry.changed_by || null,
       created_at: entry.created_at,
     }))
     .sort((a, b) => new Date(a.created_at) - new Date(b.created_at));

@@ -18,7 +18,7 @@ export function SearchHero({ onSearch, onViewDetail }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim()) {
+    if (/[\p{L}\p{N}]/u.test(query)) {
       onSearch(query.trim());
     }
   };

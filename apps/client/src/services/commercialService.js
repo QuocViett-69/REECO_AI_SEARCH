@@ -55,8 +55,31 @@ function calculateFallbackPrice(identifier) {
 }
 
 export const CURRENCY = 'VND';
+const livePrices = new Map();
+export const PRICE_UPDATED_EVENT = 'reeco:prices-updated';
+
+export function updateProductPrices(products) {
+  let changed = false;
+  for (const product of products) {
+    if (!product?.product_id || !Number.isFinite(product.price)) continue;
+    if (livePrices.get(product.product_id) !== product.price) {
+      livePrices.set(product.product_id, product.price);
+      changed = true;
+    }
+  }
+  if (changed) window.dispatchEvent(new Event(PRICE_UPDATED_EVENT));
+}
+
+export function getDisplayPrice(product) {
+  return livePrices.get(product.product_id || product.id) ?? product.price ?? getProductPrice(product.product_id, product.model);
+}
+
+export function notifyCommerce(message) {
+  window.dispatchEvent(new CustomEvent('reeco:commerce-notice', { detail: message }));
+}
 
 export function getProductPrice(productId, model) {
+  if (livePrices.has(productId)) return livePrices.get(productId);
   if (productId && PRICE_MAP[productId]) {
     return PRICE_MAP[productId];
   }
@@ -94,7 +117,7 @@ export function parseStoredItems(raw) {
   if (!Array.isArray(items)) return [];
   return items.map((item) =>
     item.currency === CURRENCY
-      ? item
+      ? { ...item, price: getDisplayPrice(item) }
       : { ...item, price: getProductPrice(item.product_id, item.model), currency: CURRENCY }
   );
 }
@@ -104,7 +127,7 @@ export function enrichProductWithCommercial(product) {
   const commercial = getCommercialData(product.product_id || product.id, product.model);
   return {
     ...product,
-    price: product.price ?? commercial.price,
+    price: getDisplayPrice(product),
     currency: product.currency ?? commercial.currency,
     availability: product.availability ?? commercial.availability_status,
     availability_label: commercial.availability_label,

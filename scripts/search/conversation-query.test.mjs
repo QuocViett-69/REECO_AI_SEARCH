@@ -22,7 +22,7 @@ test('parses supported exclusions without making them positive requirements', ()
 test('keeps independent searches independent', () => {
   assert.deepEqual(resolveConversationQuery('wind speed sensor', context), { query: 'wind speed sensor', applied: false });
   assert.deepEqual(resolveConversationQuery('105E'), { query: '105E', applied: false });
-  assert.deepEqual(resolveConversationQuery('and without Modbus', context), { query: 'and without Modbus', applied: false });
+  assert.deepEqual(resolveConversationQuery('and without Modbus', context), { query: 'soil moisture sensor SDI-12 and without Modbus', applied: true });
 });
 
 test('adds refinements and replaces alternatives without carrying the previous filter', () => {

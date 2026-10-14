@@ -1,5 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { configuration } from '../../config/configuration';
+import { withSearchDeadline } from './search-deadline';
 import {
   KeywordSearchService,
   type KeywordSearchRow,
@@ -56,6 +57,7 @@ export interface HybridSearchResult {
 
 @Injectable()
 export class HybridSearchService {
+  private readonly logger = new Logger(HybridSearchService.name);
   private readonly defaultRetrievalLimit =
     configuration().search.retrievalLimit;
 
@@ -68,11 +70,16 @@ export class HybridSearchService {
   async search(query: string, limit?: number): Promise<HybridSearchResult> {
     const retrievalLimit = this.normalizeLimit(limit);
     const [keywordResult, semanticResult] = await Promise.allSettled([
-      this.keywordSearch.search(query, retrievalLimit),
-      this.semanticSearch.search(query, retrievalLimit),
+      withSearchDeadline(signal => this.keywordSearch.search(query, retrievalLimit, signal), 15000),
+      withSearchDeadline(signal => this.semanticSearch.search(query, retrievalLimit, signal), 15000),
     ]);
     const keywordSucceeded = keywordResult.status === 'fulfilled';
     const semanticSucceeded = semanticResult.status === 'fulfilled';
+    if (!keywordSucceeded || !semanticSucceeded) {
+      const status = (result: PromiseSettledResult<unknown>) => result.status === 'fulfilled' ? 'success'
+        : result.reason instanceof Error && result.reason.name === 'TimeoutError' ? 'timeout' : 'error';
+      this.logger.warn(JSON.stringify({ event: 'retrieval_degraded', keyword: status(keywordResult), semantic: status(semanticResult) }));
+    }
 
     if (!keywordSucceeded && !semanticSucceeded) {
       throw new HybridSearchError(

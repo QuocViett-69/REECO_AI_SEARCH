@@ -21,6 +21,7 @@ import { RerankerService } from './reranker.service';
 import type { ParsedTechnicalQuery } from './technical-query-parser.service';
 import { TechnicalQueryParserService } from './technical-query-parser.service';
 import { buildSearchPlan, parseSearchIntent, matchSearchIntent } from './search-intent';
+import { purchaseQuery, isCapabilityQuestion, isOutsideCatalog, protocolAlternatives } from './query-context';
 import {
   TechnicalRankingService,
   type TechnicalRankedCandidate,
@@ -43,7 +44,12 @@ export class SearchService {
   ) {}
 
   async search(request: SearchRequest): Promise<SearchResponse> {
+    if (!/[\p{L}\p{N}]/u.test(request.query)) throw new BadRequestException('Enter a search query containing letters or numbers');
     const vi = /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(request.query);
+    if (isOutsideCatalog(request.query)) return SearchResponseSchema.parse({ query: request.query, mode: 'hybrid', results: [], guidance: {
+      language: /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(request.query) ? 'vi' : 'en',
+      text: vi ? 'Danh mục chỉ gồm thiết bị đo đạc và quan trắc môi trường; chưa có sản phẩm cho nhu cầu này.' : 'This catalog covers environmental measurement and monitoring equipment; no product is available for this need.',
+    } });
     if (isExplanationQuestion(request.query) && !request.context) {
       return SearchResponseSchema.parse({ query: request.query, mode: 'hybrid', results: [], guidance: {
         language: vi ? 'vi' : 'en', needs_clarification: true,
@@ -142,22 +148,22 @@ export class SearchService {
   }
 
   private async searchOnce(request: SearchRequest): Promise<SearchResponse> {
-    const negative = parseNegativeConstraints(request.query);
+    const resolution = resolveConversationQuery(purchaseQuery(request.query), request.context);
+    const negative = parseNegativeConstraints(resolution.query);
+    const intent = parseSearchIntent(resolution.query);
     if (negative.unsupported) {
       throw new BadRequestException('Negative search constraints are not supported');
     }
     if (!negative.query && !request.context) {
       throw new BadRequestException('A positive search term is required with exclusions');
     }
-    const resolution = negative.query
-      ? resolveConversationQuery(negative.query, request.context)
-      : { query: request.context?.previous_query ?? '', applied: !!request.context };
     const searchQuery = resolution.query;
-    const intent = parseSearchIntent(searchQuery);
-    const canonical = [...intent.measurements.map(item => `${item.en} sensor`), ...(intent.target ? [`${intent.target.en} sensor`] : []), ...intent.roles.map(item => item.en)];
+    const identityCatalog = await this.productsService.getActiveTechnicalIdentityCatalog();
+    const parsedQuery = this.technicalQueryParser.parse(negative.query, identityCatalog);
+    const canonical = [...intent.measurements.map(item => `${item.en} sensor`), ...(intent.target ? [`${intent.target.en} sensor`] : []), ...intent.roles.map(item => item.en), ...intent.features.map(item => item.en), ...(intent.transport ? [`${intent.transport} communication`] : [])];
     const retrievalQuery = resolution.applied && hasTechnicalConstraint(request.query)
       ? request.context!.base_query
-      : canonical.length && !hasTechnicalConstraint(searchQuery) ? canonical.join(' ') : searchQuery;
+      : parsedQuery.identity ? parsedQuery.identity.model : canonical.length ? canonical.join(' ') : negative.query;
     const retrievalLimit = Math.min(
       100,
       Math.max(1, this.configuredRetrievalLimit, request.limit),
@@ -180,7 +186,7 @@ export class SearchService {
       throw error;
     }
 
-    let scopedCandidates = resolution.applied && request.context
+    let scopedCandidates = resolution.applied && !resolution.broaden && request.context
       ? hybridResult.candidates.filter((candidate) =>
           request.context!.product_ids.includes(candidate.productId),
         )
@@ -193,7 +199,7 @@ export class SearchService {
       const ids = scopedCandidates.map((item) => item.productId);
       [documents, environmentalSpecifications] = await Promise.all([
         this.productsService.getSearchDocumentsByIds(ids),
-        intent.specifications.length > 0
+        intent.specifications.length > 0 || intent.features.length > 0 || intent.depths.length > 0
           ? this.productsService.getTechnicalEvidenceByIds(ids).then(rows => new Map([...rows].map(([id, row]) => [id, row.specifications])))
           : intent.outdoor ? this.productsService.getEnvironmentalSpecificationsByIds(ids) : Promise.resolve(environmentalSpecifications),
       ]);
@@ -207,6 +213,9 @@ export class SearchService {
         const temperature = /temperature/iu.test(document.taxonomy.device_type + ' ' + (document.measurements ?? []).map((item) => item.key).join(' ') + ' ' + (document.capabilities ?? []).map((item) => item.key).join(' '));
         const excludedProtocol = negative.exclusions.protocols.some((protocol) => {
           if (protocol === 'Wi-Fi' && communicationOption && !/^wi[\s-]?fi$/iu.test(communicationOption)) return false;
+          if (protocol === 'Modbus' && /(?:không dùng|without using)\s+Modbus/iu.test(searchQuery)) {
+            return protocolAlternatives(protocol, document.supported_protocols).length === 0;
+          }
           return (document.supported_protocols ?? []).some((supported) => protocol === 'Modbus'
             ? supported === 'Modbus' || supported.startsWith('Modbus ')
             : supported === protocol);
@@ -226,14 +235,8 @@ export class SearchService {
       });
     }
 
-    const identityCatalog =
-      await this.productsService.getActiveTechnicalIdentityCatalog();
-    const parsedQuery = this.technicalQueryParser.parse(
-      searchQuery,
-      identityCatalog,
-    );
     const technicallyRankedCandidates = await this.applyTechnicalPolicy(
-      parsedQuery,
+      isCapabilityQuestion(searchQuery) ? { ...parsedQuery, protocols: [], confidence: { ...parsedQuery.confidence, protocol: 'none' } } : parsedQuery,
       scopedCandidates,
     );
     const rankedCandidates = await this.reranker.rerank(
@@ -263,6 +266,7 @@ export class SearchService {
             category: product.category,
             device_type: product.device_type,
             image_url: product.image_url,
+            ...(product.price_vnd !== undefined && { price_vnd: product.price_vnd }),
             matched_features: ranked.matchedFeatures,
             scores: this.mapScores(candidate, hybridResult.mode),
           },
@@ -283,7 +287,7 @@ export class SearchService {
       // Technical policy or identity scoping can remove every candidate: same guidance as above
       ...(results.length === 0 && !intent.comparison && { guidance: this.noConfirmedMatchGuidance(vi) }),
       results: request.explain
-        ? await this.withExplanations(searchQuery, parsedQuery, results, documents, environmentalSpecifications)
+        ? await this.withExplanations(resolution.applied ? searchQuery : request.query, parsedQuery, results, documents, environmentalSpecifications)
         : results,
     });
   }

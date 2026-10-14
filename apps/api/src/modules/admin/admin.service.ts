@@ -1,11 +1,16 @@
 import { Injectable, Logger, ServiceUnavailableException } from '@nestjs/common';
 import type { ProductDetail } from '@reeco/shared';
+import type { User } from '@supabase/supabase-js';
 import { SupabaseService } from '../../database/supabase/supabase.service';
 import { ProductsService } from '../products/products.service';
 import type { AdminProductUpdate } from './admin-product-update.schema';
 
 /** ProductDetail plus the stored price, which admins see even when the product is not purchasable. */
-export type AdminProductDetail = ProductDetail & { price_vnd: number | null };
+export interface ProductPriceHistory {
+  id: number; old_price_vnd: number | null; new_price_vnd: number;
+  changed_by: string | null; changed_by_email: string | null; created_at: string;
+}
+export type AdminProductDetail = ProductDetail & { price_vnd: number | null; price_history: ProductPriceHistory[] };
 
 @Injectable()
 export class AdminService {
@@ -29,13 +34,17 @@ export class AdminService {
       this.logger.error(`Failed to load price for ${detail.product.product_id}: ${error.message}`);
       throw new ServiceUnavailableException('Không tải được giá sản phẩm');
     }
-    return { ...detail, price_vnd: data ? Number(data.price_vnd) : null };
+    const history = await this.supabase.getClient().from('product_price_history')
+      .select('id,old_price_vnd,new_price_vnd,changed_by,changed_by_email,created_at')
+      .eq('product_id', detail.product.product_id).order('id', { ascending: false }).limit(100);
+    if (history.error) throw new ServiceUnavailableException('Không tải được lịch sử sửa giá');
+    return { ...detail, price_vnd: data ? Number(data.price_vnd) : null, price_history: history.data ?? [] };
   }
 
   // ─── PUT /admin/products/:productId/price ──────────────────────────────────
-  async setProductPrice(productId: string, priceVnd: number): Promise<AdminProductDetail> {
+  async setProductPrice(productId: string, priceVnd: number, user?: User): Promise<AdminProductDetail> {
     const detail = await this.productsService.getAdmin(productId);
-    await this.upsertPrice(detail.product.product_id, priceVnd);
+    await this.upsertPrice(detail.product.product_id, priceVnd, user);
     return this.getAdminProductDetail(detail.product.product_id);
   }
 
@@ -43,15 +52,16 @@ export class AdminService {
   async updateAdminProduct(
     productId: string,
     updates: AdminProductUpdate,
+    user?: User,
   ): Promise<AdminProductDetail> {
-    return this.setProductPrice(productId, updates.price_vnd);
+    return this.setProductPrice(productId, updates.price_vnd, user);
   }
 
-  private async upsertPrice(productId: string, priceVnd: number): Promise<void> {
+  private async upsertPrice(productId: string, priceVnd: number, user?: User): Promise<void> {
     const { error } = await this.supabase
       .getClient()
-      .from('product_prices')
-      .upsert({ product_id: productId, price_vnd: priceVnd }, { onConflict: 'product_id' });
+      .rpc('set_product_price', { p_product_id: productId, p_price_vnd: priceVnd,
+        p_actor_id: user?.id ?? null, p_actor_email: user?.email ?? null });
     if (error) {
       this.logger.error(`Failed to save price for ${productId}: ${error.message}`);
       throw new ServiceUnavailableException('Không lưu được giá sản phẩm');

@@ -21,7 +21,7 @@ export function parseNegativeConstraints(query: string): { query: string; exclus
     : /^can[\s-]?bus$/iu.test(value) ? 'CANbus' : /^modbus\s+rtu$/iu.test(value) ? 'Modbus RTU'
     : /^modbus$/iu.test(value) ? 'Modbus' : value.toUpperCase();
   // \b: 'no' must be its own word (not the tail of Arduino/nano/mono); 'khong' typed without accents counts too.
-  const negativeProtocol = /\b(?:without|excluding|exclude|does not support|doesn.t support|no|kh(?:\u00f4|o)ng\s+(?:co|ho tro|dung|h\u1ed7 tr\u1ee3|d\u00f9ng|c\u00f3))\s+(SDI[\s-]?12|RS[\s-]?232|Wi[\s-]?Fi|USB|CAN[\s-]?bus|CPI|Modbus(?:\s+RTU)?)\b/giu;
+  const negativeProtocol = /\b(?:without(?:\s+using)?|excluding|exclude|does not support|doesn.t support|no|kh(?:\u00f4|o)ng\s+(?:co|ho tro|dung|h\u1ed7 tr\u1ee3|d\u00f9ng|c\u00f3))\s+(SDI[\s-]?12|RS[\s-]?232|Wi[\s-]?Fi|USB|CAN[\s-]?bus|CPI|Modbus(?:\s+RTU)?)\b/giu;
   cleaned = cleaned.replace(negativeProtocol, (_match, value: string) => { protocols.add(canonical(value)); return ' '; });
   let cellular = false;
   cleaned = cleaned.replace(/\bnon[-\s]+cellular\b/giu, () => { cellular = true; return ' '; });
@@ -31,7 +31,10 @@ export function parseNegativeConstraints(query: string): { query: string; exclus
   cleaned = cleaned.replace(/^(?:and|but|also)\s+|\s+(?:and|but|also)$|^(?:and|but|also)$/giu, '').trim();
   const marker = /\b(?:without|excluding|exclude|does\s+not\s+support|doesn't\s+support|but\s+not)\b|\bnon[-\s]+\p{L}|\bno\s+(?:modbus|sdi|rs)\b|kh\s*(?:\u00f4|o)ng\s+(?:ho tro|dung|co|h\u1ed7 tr\u1ee3|d\u00f9ng)\b/iu;
   // Contextual absence is a deployment need, not a product exclusion.
-  const unsupported = marker.test(cleaned.replace(/\bwithout\s+(?:personnel|visiting|having to visit|staff|an? (?:internet|grid) connection)\b/giu, ''));
+  const unsupported = marker.test(cleaned
+    .replace(/\bwithout\s+(?:personnel|visiting|having to visit|staff|an? (?:internet|grid) connection)\b/giu, '')
+    .replace(/\bwithout\s+(?:cellular coverage|submerging|immersing)\b/giu, '')
+    .replace(/không có (?:sóng (?:di động\s*)?(?:4G)?|điện lưới|bất kỳ mạng viễn thông mặt đất nào)/giu, ''));
   return { query: cleaned, exclusions: { protocols: [...protocols], cellular, temperature }, unsupported };
 }
 
@@ -40,11 +43,21 @@ export const hasUnsupportedNegativeConstraint = (query: string): boolean => pars
 export function resolveConversationQuery(
   query: string,
   context?: SearchRequest['context'],
-): { query: string; applied: boolean } {
+): { query: string; applied: boolean; broaden?: boolean } {
   const turn = query.normalize('NFC').trim();
   if (!context) return { query: turn, applied: false };
+  if (/^(?:cái nào|thiết bị nào|sản phẩm nào|which (?:one|device|product)).*(?:phù hợp nhất|best|most suitable)/iu.test(turn)) {
+    return { query: context.previous_query, applied: true };
+  }
+  if (/^(?:chấp nhận|tôi chấp nhận|cho phép|I (?:accept|allow))\s+(?:cảm biến chìm|submersible)/iu.test(turn)) {
+    return { query: context.previous_query.replace(/(?:mà\s+)?không được nhúng.*$/iu, '').replace(/non[ -]contact/giu, ''), applied: true, broaden: true };
+  }
   if (isExplanationQuestion(turn)) return { query: context.previous_query, applied: true };
   const negative = parseNegativeConstraints(turn);
+  if (!negative.unsupported && !negative.query && (negative.exclusions.protocols.length || negative.exclusions.cellular || negative.exclusions.temperature)) {
+    const resolved = `${context.previous_query} ${turn}`;
+    return resolved.length <= 500 ? { query: resolved, applied: true } : { query: turn, applied: false };
+  }
   if (negative.unsupported || negative.exclusions.protocols.length > 0 || negative.exclusions.cellular || negative.exclusions.temperature) {
     return { query: turn, applied: false };
   }

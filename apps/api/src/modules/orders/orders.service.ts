@@ -105,6 +105,13 @@ export class OrdersService {
       }
     }
 
+    // A checkout quote is a comparison only; billing always uses the database price.
+    for (const item of dto.items) {
+      if (item.expected_unit_price !== undefined && item.expected_unit_price !== snapshotsMap.get(item.product_id.trim())!.price_vnd) {
+        throw new ConflictException('Giá sản phẩm đã thay đổi. Vui lòng kiểm tra tổng tiền mới trước khi đặt hàng.');
+      }
+    }
+
     // 4. Tính toán giá từng dòng & subtotal
     const orderItems: Array<{
       product_id: string;
@@ -215,6 +222,11 @@ export class OrdersService {
     // Không phải chủ đơn và không phải admin -> 404 để bảo mật
     if (!isOwner && !isAdmin) {
       throw new NotFoundException(`Không tìm thấy đơn hàng "${orderId}"`);
+    }
+
+    if (isAdmin && order.order_status_history?.length) {
+      const actors = await this.ordersRepository.getActorLabels(order.order_status_history.flatMap(h => h.changed_by ? [h.changed_by] : []));
+      return { ...order, order_status_history: order.order_status_history.map(h => ({ ...h, changed_by_label: h.changed_by ? actors.get(h.changed_by) ?? h.changed_by : null })) };
     }
 
     return order;

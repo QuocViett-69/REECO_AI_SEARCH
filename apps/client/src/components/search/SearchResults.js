@@ -15,7 +15,7 @@ import {
 
 import { FavoriteButton } from '../commerce/FavoriteButton';
 import { AddToCartButton } from '../commerce/AddToCartButton';
-import { formatPrice, getProductPrice } from '../../services/commercialService';
+import { formatPrice, getDisplayPrice } from '../../services/commercialService';
 import { sizedImage } from '../../services/images';
 import { explainProductFit } from '../../services/productFitService';
 import '../../styles/studio/discovery.css';
@@ -234,7 +234,7 @@ function MatchMeter({ level }) {
 
 function PickCard({ product: p, rank, tier, isBest, vi, fit, fitId, onToggleFit, onViewDetail, onToggleCompare, isInCompare }) {
   const inCompare = isInCompare ? isInCompare(p.model) : false;
-  const price = p.price ?? getProductPrice(p.product_id, p.model);
+  const price = getDisplayPrice(p);
   const priceLabel = price != null ? formatPrice(price, p.currency) : vi ? 'Liên hệ báo giá' : 'Price on request';
   const compact = tier.key === 'more';
 

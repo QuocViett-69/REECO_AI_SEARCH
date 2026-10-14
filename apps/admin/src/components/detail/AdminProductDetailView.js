@@ -359,6 +359,24 @@ export function AdminProductDetailView({ productId, onBack }) {
       </div>
 
       {/* ── Modal Edit Product ────────────────────────────────────────────────── */}
+      <section className="content-panel" style={{ padding: 20, marginTop: 20 }}>
+        <h2>Lịch sử chỉnh sửa giá sản phẩm</h2>
+        <p style={{ fontSize: 12, color: 'var(--text-light)' }}>100 thay đổi gần nhất, ghi nhận từ khi bật lịch sử sửa giá.</p>
+        {(detail.price_history || []).length === 0 ? <p>Chưa có thay đổi được ghi nhận.</p> : (
+          <div style={{ overflowX: 'auto' }}><table className="data-table">
+            <thead><tr><th>Thời gian</th><th>Người sửa</th><th>Giá cũ</th><th>Giá mới</th></tr></thead>
+            <tbody>{detail.price_history.map(entry => (
+              <tr key={entry.id}>
+                <td>{new Date(entry.created_at).toLocaleString('vi-VN')}</td>
+                <td>{entry.changed_by_email || entry.changed_by || 'Không ghi nhận người sửa'}</td>
+                <td>{entry.old_price_vnd == null ? 'Chưa có giá' : formatVnd(Number(entry.old_price_vnd))}</td>
+                <td>{formatVnd(Number(entry.new_price_vnd))}</td>
+              </tr>
+            ))}</tbody>
+          </table></div>
+        )}
+      </section>
+
       {isEditing && (
         <div
           style={{

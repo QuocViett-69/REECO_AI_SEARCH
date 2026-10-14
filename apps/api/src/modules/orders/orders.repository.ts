@@ -52,6 +52,15 @@ export interface CreateOrderParams {
 
 @Injectable()
 export class OrdersRepository {
+  async getActorLabels(ids: string[]): Promise<Map<string, string>> {
+    const entries = await Promise.all([...new Set(ids)].map(async id => {
+      try {
+        const { data, error } = await this.supabase.getClient().auth.admin.getUserById(id);
+        return [id, !error && data.user?.email ? data.user.email : id] as const;
+      } catch { return [id, id] as const; }
+    }));
+    return new Map(entries);
+  }
   private readonly logger = new Logger(OrdersRepository.name);
 
   /** Side records (history, notifications) must not fail the order write, but must not vanish silently either. */

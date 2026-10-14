@@ -15,6 +15,8 @@ import {
 } from '@reeco/shared';
 import { SupabaseAuthGuard } from '../../auth/supabase-auth.guard';
 import { AdminGuard } from '../../auth/admin.guard';
+import { CurrentUser } from '../../auth/current-user.decorator';
+import type { User } from '@supabase/supabase-js';
 import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe';
 import { ProductsService } from '../products/products.service';
 import { AdminService, type AdminProductDetail } from './admin.service';
@@ -48,19 +50,21 @@ export class AdminController {
 
   @Patch(':productId')
   update(
+    @CurrentUser() user: User,
     @Param('productId') productId: string,
     @Body(new ZodValidationPipe(AdminProductUpdateSchema))
     updates: AdminProductUpdate,
   ): Promise<AdminProductDetail> {
-    return this.adminService.updateAdminProduct(productId, updates);
+    return this.adminService.updateAdminProduct(productId, updates, user);
   }
 
   @Put(':productId/price')
   setPrice(
+    @CurrentUser() user: User,
     @Param('productId') productId: string,
     @Body(new ZodValidationPipe(AdminProductPriceUpdateSchema))
     body: AdminProductPriceUpdate,
   ): Promise<AdminProductDetail> {
-    return this.adminService.setProductPrice(productId, body.price_vnd);
+    return this.adminService.setProductPrice(productId, body.price_vnd, user);
   }
 }

@@ -24,13 +24,14 @@ export class KeywordSearchService {
 
   constructor(private readonly supabase: SupabaseService, private readonly products: ProductsService) {}
 
-  async search(query: string, limit: number): Promise<KeywordSearchRow[]> {
-    const { data, error } = await this.supabase
+  async search(query: string, limit: number, signal?: AbortSignal): Promise<KeywordSearchRow[]> {
+    const request = this.supabase
       .getClient()
       .rpc('search_products_keyword', {
         query_text: query,
         result_limit: limit,
       });
+    const { data, error } = await (signal ? request.abortSignal(signal) : request);
     if (error) this.throwQueryError(error);
     let rows = (data ?? []) as KeywordSearchRow[];
     if (rows.length < limit) {
@@ -39,9 +40,10 @@ export class KeywordSearchService {
       const expanded = [...new Set(concepts.map(item => `"${item.en}"`))].join(' OR ');
       if (expanded && !concepts.some(item => item.en.toLowerCase() === query.trim().toLowerCase())) {
         // Fill sparse lexical retrieval with canonical concepts; public filters still enforce every requirement.
-        const fallback = await this.supabase.getClient().rpc('search_products_keyword', {
+        const expandedRequest = this.supabase.getClient().rpc('search_products_keyword', {
           query_text: expanded, result_limit: limit,
         });
+        const fallback = await (signal ? expandedRequest.abortSignal(signal) : expandedRequest);
         if (fallback.error && !rows.length) this.throwQueryError(fallback.error);
         const ids = new Set(rows.map(row => row.product_id));
         rows = [...rows, ...((fallback.data ?? []) as KeywordSearchRow[]).filter(row => !ids.has(row.product_id))].slice(0, limit);
@@ -65,10 +67,11 @@ export class KeywordSearchService {
     const literal = terms[0]!.split(' ')[0]!.replace(/[\\%_]/gu, '\\$&');
     const ids = new Set<string>();
     for (let offset = 0; ; offset += 500) {
-      const { data: specs, error: specError } = await this.supabase.getClient()
+      const specRequest = this.supabase.getClient()
         .from('product_specifications').select('product_id')
         .ilike('normalized_value->>value_raw', `%${literal}%`)
         .order('specification_id', { ascending: true }).range(offset, offset + 499);
+      const { data: specs, error: specError } = await (signal ? specRequest.abortSignal(signal) : specRequest);
       if (specError) this.throwQueryError(specError);
       for (const spec of specs ?? []) ids.add(spec.product_id as string);
       if ((specs?.length ?? 0) < 500) break;

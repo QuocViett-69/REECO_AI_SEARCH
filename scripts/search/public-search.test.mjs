@@ -640,7 +640,7 @@ test('requires confirmed numeric evidence before applying the result limit', asy
   assert.equal(response.results.length, 1);
 });
 
-test('returns an empty success without catalog or technical DB work', async () => {
+test('returns an empty success after identity routing without technical matching', async () => {
   let catalogCalls = 0;
   let parserCalls = 0;
   let matcherCalls = 0;
@@ -674,8 +674,8 @@ test('returns an empty success without catalog or technical DB work', async () =
   assert.deepEqual(
     { catalogCalls, parserCalls, matcherCalls },
     {
-      catalogCalls: 0,
-      parserCalls: 0,
+      catalogCalls: 1,
+      parserCalls: 1,
       matcherCalls: 0,
     },
   );

@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Get, Header, Param, Query } from '@nestjs/common';
 import {
   ProductListQuerySchema,
   type ProductDetail,
@@ -13,6 +13,7 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Get()
+  @Header('Cache-Control', 'no-store')
   list(
     @Query(new ZodValidationPipe(ProductListQuerySchema))
     query: ProductListQuery,
@@ -21,6 +22,7 @@ export class ProductsController {
   }
 
   @Get(':productId')
+  @Header('Cache-Control', 'no-store')
   get(@Param('productId') productId: string): Promise<ProductDetail> {
     return this.productsService.getPublic(productId);
   }

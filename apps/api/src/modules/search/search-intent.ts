@@ -1,6 +1,8 @@
 import type { ProductSearchDocument, ProductSpecification, SearchResponse } from '@reeco/shared';
 import { parseTemperatureTarget, temperatureTargetEvidence } from './temperature-target';
 import { specificationTerms, specificationEvidence } from './specification-query';
+import { purchaseQuery, isCapabilityQuestion } from './query-context';
+import { parseNegativeConstraints } from './conversation-query';
 
 type Evidence = NonNullable<SearchResponse['results'][number]['explanation']>['evidence'][number];
 type Requirement = { key: string; en: string; vi: string; pattern: RegExp };
@@ -13,16 +15,16 @@ const measurements: Requirement[] = [
   { key: 'barometric_pressure', en: 'air pressure', vi: 'áp suất không khí', pattern: /\b(?:barometric|atmospheric|air) pressure\b|\bap suat (?:khong khi|khi quyen)\b/u },
   { key: 'turbidity', en: 'turbidity', vi: 'độ đục', pattern: /\b(?:turbidity|turbid|cloudy)\b|\b(?:do duc|nuoc.*duc|duc.*nuoc)\b/u },
   { key: 'soil_electrical_conductivity', en: 'soil electrical conductivity', vi: 'độ dẫn điện đất', pattern: /\b(?:electrical conductivity|do dan dien)\b/u },
-  { key: 'precipitation', en: 'rainfall', vi: 'lượng mưa', pattern: /\brain(?:fall)?\b|\bprecipitation\b|\b(?:luong mua|anh huong cua mua|sau mua|moi tran mua|cam bien mua|mua lon)\b/u },
+  { key: 'precipitation', en: 'rainfall', vi: 'lượng mưa', pattern: /\brain(?:fall)?\b|\bprecipitation\b|\b(?:luong mua|anh huong cua mua|sau mua|moi tran mua|cam bien mua|mua lon|do mua|pheu do mua|gio mua)\b/u },
   { key: 'dissolved_oxygen', en: 'dissolved oxygen', vi: 'oxy hòa tan', pattern: /\bdissolved oxygen\b|\boxy hoa tan\b/u },
-  { key: 'wind_speed', en: 'wind speed', vi: 'tốc độ gió', pattern: /\b(?:wind speed|strong winds|peak wind|toc do.*gio|gio manh|gio cuc dai)\b/u },
+  { key: 'wind_speed', en: 'wind speed', vi: 'tốc độ gió', pattern: /\b(?:wind speed|strong winds|peak wind|toc do.*gio|gio manh|gio cuc dai|gio mua)\b/u },
   { key: 'wind_direction', en: 'wind direction', vi: 'hướng gió', pattern: /\b(?:wind.*direction|huong gio)\b/u },
-  { key: 'solar_radiation', en: 'solar radiation', vi: 'bức xạ mặt trời', pattern: /\b(?:solar radiation|anh sang mat troi|buc xa mat troi)\b/u },
+  { key: 'solar_radiation', en: 'solar radiation', vi: 'bức xạ mặt trời', pattern: /\b(?:solar radiation|anh sang mat troi|buc xa mat troi|quang nang buc xa)\b/u },
   { key: 'leaf_wetness', en: 'leaf wetness', vi: 'độ ướt lá', pattern: /\b(?:leaf wetness|wet leaves|do uot la|la bi uot|la uot)\b/u },
   { key: 'water_level', en: 'water level', vi: 'mực nước', pattern: /\b(?:water level|water stage|muc nuoc)\b/u },
   { key: 'net_radiation', en: 'net radiation', vi: 'bức xạ thuần', pattern: /\b(?:net radiation|net radiometer|buc xa thuan)\b/u },
   { key: 'photosynthetic_photon_flux_density', en: 'photosynthetic photon flux density', vi: 'mật độ thông lượng photon quang hợp', pattern: /\b(?:ppfd|photosynthetic photon flux density|photon quang hop|buc xa quang hop)\b/u },
-  { key: 'soil_heat_flux', en: 'soil heat flux', vi: 'thông lượng nhiệt đất', pattern: /\b(?:soil heat flux|thong luong nhiet dat|dong nhiet dat)\b/u },
+  { key: 'soil_heat_flux', en: 'soil heat flux', vi: 'thông lượng nhiệt đất', pattern: /\b(?:soil heat flux|thong luong nhiet dat|dong nhiet dat|luong nhiet truyen.*dat)\b/u },
   { key: 'fuel_moisture', en: 'fuel moisture', vi: 'độ ẩm vật liệu cháy', pattern: /\b(?:fuel moisture|do am vat lieu chay)\b/u },
   { key: 'background_luminance', en: 'background luminance', vi: 'độ chói nền', pattern: /\b(?:background luminance|do choi nen)\b/u },
   { key: 'cloud_base_height', en: 'cloud base height', vi: 'độ cao chân mây', pattern: /\b(?:cloud base heights?|do cao chan may)\b/u },
@@ -54,7 +56,9 @@ const roles: Requirement[] = [
 ];
 
 export function parseSearchIntent(query: string) {
-  const text = normalize(query);
+  query = purchaseQuery(query);
+  const originalText = normalize(query);
+  const text = normalize(parseNegativeConstraints(query).query);
   const requested = measurements.filter(item => item.pattern.test(text));
   if (requested.some(item => item.key === 'lightning_distance') && !/\b(?:target|muc tieu)\b/u.test(text)) {
     const distance = requested.findIndex(item => item.key === 'distance');
@@ -83,14 +87,33 @@ export function parseSearchIntent(query: string) {
     && !/\b(?:dat|nuoc)\b/u.test(text);
   if (airList && !requested.some(item => item.key === 'relative_humidity')) requested.push(measurements[1]!);
   const kinds = roles.filter(item => item.pattern.test(text));
+  const capabilityQuestion = isCapabilityQuestion(query);
+  const noCellular = /\b(?:khong co (?:song|mang) di dong|no cellular (?:network|coverage)|without cellular coverage|non cellular)\b/u.test(originalText);
+  const satellite = /\b(?:ve tinh|satellite|goes|khong co bat ky mang vien thong mat dat|no terrestrial network)\b/u.test(text);
+  const radio = /\b(?:song vo tuyen|radio)\b/u.test(text);
+  const transport = capabilityQuestion ? undefined : satellite ? 'satellite' : radio ? 'radio' : !noCellular && !/non[ -]cellular/u.test(text) && /\b(?:4g|cellular|mang di dong)\b/u.test(text) ? 'cellular' : undefined;
+  if (noCellular || transport === 'radio' || transport === 'satellite') {
+    for (const key of ['cellular', 'weather', 'logger']) {
+      const index = kinds.findIndex(item => item.key === key);
+      if (index >= 0) kinds.splice(index, 1);
+    }
+  }
+  if (capabilityQuestion) {
+    const wireless = kinds.findIndex(item => item.key === 'wireless');
+    if (wireless >= 0) kinds.splice(wireless, 1);
+  }
+  if (/\b(?:khong dung wifi|without wi fi|no wi fi)\b/u.test(text) && requested.length) {
+    const index = kinds.findIndex(item => item.key === 'logger');
+    if (index >= 0) kinds.splice(index, 1);
+  }
   const sensorOnly = /\bsensors?\b|\bcam bien\b/u.test(text) && !requested.length && !target && !kinds.some(item => ['logger', 'reader', 'power', 'communication', 'cellular'].includes(item.key));
   const weather = kinds.some(item => item.key === 'weather') || /\b(?:temperature|nhiet do)\b/u.test(text)
     && /\b(?:humidity|do am)\b/u.test(text) && /\b(?:rainfall|luong mua)\b/u.test(text) && !/\b(?:soil|dat|water|nuoc)\b/u.test(text);
   if (weather && /\b(?:humidity|do am)\b/u.test(text) && !requested.some(item => item.key === 'relative_humidity')) requested.push(measurements[1]!);
   if (weather && /\b(?:pressure|ap suat)\b/u.test(text) && !requested.some(item => item.key === 'barometric_pressure')) requested.push(measurements[2]!);
   const medium = target ?? (airList || weather && /\b(?:temperature|nhiet do)\b/u.test(text) ? parseTemperatureTarget('air temperature') : undefined);
-  if (!requested.length && /\b(?:sensor.*soil|soil.*sensor|cam bien.*dat)\b/u.test(text) && !kinds.some(item => item.key === 'soil')) kinds.push(roles[0]!);
-  if (/\b(?:network goes down|internet.*lost|mang.*mat|mat ket noi)\b/u.test(text)) {
+  if (!requested.length && !medium && /\b(?:sensor.*soil|soil.*sensor|cam bien.*dat)\b/u.test(text) && !kinds.some(item => item.key === 'soil')) kinds.push(roles[0]!);
+  if (!transport && !requested.length && /\b(?:network goes down|internet.*lost|mang.*mat|mat ket noi)\b/u.test(text)) {
     if (!kinds.some(item => item.key === 'logger')) kinds.push(roles[1]!);
     const cellular = kinds.findIndex(item => item.key === 'cellular');
     if (cellular >= 0) kinds.splice(cellular, 1);
@@ -113,9 +136,22 @@ export function parseSearchIntent(query: string) {
   const system = !/\b(?:one device|mot thiet bi|both analog and digital)\b/u.test(text)
     && (/\b(?:system|he thong|systems?|nhung thiet bi|what equipment|thi can he thong)\b/u.test(text) && (requested.length > 1 || kinds.length > 1)
       || /\b(?:stud(?:y|ying|ies)|nghien cuu|relationship|moi quan he|changes after|sau moi tran mua|thay doi.*(?:sau|mua))\b/u.test(text) && requested.length > 1);
-  const effectiveTarget = loggerOnly ? undefined : medium;
+  const integratedWeather = /\bgio mua nhiet am\b/u.test(text);
+  if (integratedWeather) {
+    if (!requested.some(m => m.key === 'wind_direction')) requested.push(measurements.find(m => m.key === 'wind_direction')!);
+    if (!requested.some(m => m.key === 'relative_humidity')) requested.push(measurements.find(m => m.key === 'relative_humidity')!);
+  }
+  const effectiveTarget = loggerOnly ? undefined : integratedWeather ? parseTemperatureTarget('air temperature') : medium;
+  const features = [
+    { key: 'non_contact', en: 'non-contact water level', vi: 'đo mực nước không tiếp xúc', pattern: /\b(?:khong (?:duoc |muon )?nhung|non contact|without (?:submerging|immersing))\b/u },
+    { key: 'soil_profile', en: 'soil profile', vi: 'profile đất nhiều tầng', pattern: /\b(?:nhieu tang|tung do sau|multi depth|soil profile)\b/u },
+    { key: 'heated_rain', en: 'heated rain gauge', vi: 'đo mưa có sấy', pattern: /\b(?:tuyet roi|dong bang.*pheu|heated rain|snow.*rain)\b/u },
+    { key: 'sonic_wind', en: 'sonic anemometer', vi: 'đo gió siêu âm không rotor', pattern: /\b(?:khong.*canh quat|no moving parts|without.*(?:propeller|rotor))\b/u },
+  ].filter(item => item.pattern.test(text));
+  const depths = [...text.matchAll(/(\d+(?:\.\d+)?)\s*(cm|m)\b/gu)].map(m => Number(m[1]) * (m[2] === 'm' ? 100 : 1));
   return { measurements: requested, target: effectiveTarget, roles: kinds, outdoor, specifications, system, comparison, sensorOnly,
-    constrained: requested.length > 0 || !!effectiveTarget || kinds.length > 0 || outdoor || specifications.length > 0 };
+    features, depths, transport, noCellular, capabilityQuestion,
+    constrained: requested.length > 0 || !!effectiveTarget || kinds.length > 0 || outdoor || specifications.length > 0 || features.length > 0 || !!transport };
 }
 
 export type SearchIntent = ReturnType<typeof parseSearchIntent>;
@@ -128,16 +164,16 @@ export function buildSearchPlan(query: string): { label: string; query: string; 
     return ['Ethernet', 'Wi-Fi', 'cellular'].map(protocol => ({ label: protocol, query: protocol === 'cellular' ? 'cellular communication' : `communication equipment with ${protocol}` }));
   }
   const explicitSystem = /\b(?:system|he thong|system include|station.*off.grid|tram.*khong co dien)\b/u.test(text);
-  const remote = /\b(?:remote(?:ly)?|vung xa|from home|tu xa|tu nha|ve server|to a server|to the internet|ve internet)\b/u.test(text);
+  const remote = /\b(?:remote(?:ly)?|vung xa|from home|tu xa|tu nha|ve server|to a server|to the internet|ve internet|ve van phong|4g)\b/u.test(text);
   const farmEnvironment = /\b(?:overall environmental|toan bo.*moi truong)\b/u.test(text) && /\b(?:farm|trang trai)\b/u.test(text);
   const storeAndSend = /\b(?:store and transmit|luu va truyen)\b/u.test(text);
   const multipleStations = /\b(?:multiple monitoring stations|nhieu tram quan trac)\b/u.test(text);
   const multipleZones = /\b(?:soil zones|soil moisture across|so sanh do am.*khu vuc|khu vuc dat khac nhau)\b/u.test(text);
   const loggerAndCommunication = intent.roles.some(item => item.key === 'logger') && intent.roles.some(item => item.key === 'communication');
   const peakWind = /\b(?:record peak wind|ghi lai.*gio cuc dai)\b/u.test(text);
-  const design = intent.system || storeAndSend || multipleStations || multipleZones || loggerAndCommunication || peakWind || farmEnvironment && remote
+  const design = !intent.transport || intent.transport === 'cellular' ? intent.system || storeAndSend || multipleStations || multipleZones || loggerAndCommunication || peakWind || farmEnvironment && remote
     || intent.comparison && intent.measurements.length > 1
-    || explicitSystem && (remote || /\b(?:alert|canh bao|months|thang|off.grid|khong co dien|nhung thanh phan|without personnel|khong co nguoi)\b/u.test(text));
+    || explicitSystem && (remote || /\b(?:alert|canh bao|months|thang|off.grid|khong co dien|nhung thanh phan|without personnel|khong co nguoi)\b/u.test(text)) : false;
   if (!design) return [];
   const components: { label: string; query: string; needs_clarification?: boolean }[] = intent.measurements.map(item => ({ label: vi ? item.vi : item.en, query: `${item.en} sensor` }));
   if (intent.target) components.push({ label: vi ? intent.target.vi : intent.target.en, query: `${intent.target.en} sensor` });
@@ -147,14 +183,18 @@ export function buildSearchPlan(query: string): { label: string; query: string; 
   if (farmEnvironment) components.push({ label: vi ? 'Độ ẩm đất' : 'Soil moisture', query: 'soil moisture sensor' });
   if (/\b(?:soil|dat.*kho)\b/u.test(text) && !components.length) components.push({ label: vi ? 'Độ ẩm đất' : 'Soil moisture', query: 'soil moisture sensor' });
   components.push({ label: vi ? 'Ghi và lưu dữ liệu' : 'Record and store data', query: 'data logger' });
-  if (remote || storeAndSend || multipleStations || loggerAndCommunication || /\b(?:alert|canh bao|communication|truyen thong)\b/u.test(text)) components.push({ label: vi ? 'Truyền dữ liệu' : 'Transmit data', query: 'communication equipment' });
+  if (remote || storeAndSend || multipleStations || loggerAndCommunication || /\b(?:alert|canh bao|communication|truyen thong)\b/u.test(text)) components.push({ label: vi ? 'Truyền dữ liệu' : 'Transmit data', query: intent.transport === 'cellular' ? 'cellular communication' : 'communication equipment' });
   if (/\b(?:off.grid|khong co dien|six months|sau thang|remote area|vung xa)\b/u.test(text)) components.push({ label: vi ? 'Nguồn cấp' : 'Power supply', query: 'power supply' });
   return [...new Map(components.map(item => [item.query, item])).values()];
 }
 
 export function matchSearchIntent(intent: SearchIntent, document: ProductSearchDocument, specifications: ProductSpecification[] = []): Evidence[] | null {
   if (intent.sensorOnly && document.taxonomy.category_key !== 'sensors') return null;
+  if (intent.noCellular && /cellular|\blte\b/iu.test(document.taxonomy.device_type + ' ' + document.supported_protocols.join(' '))) return null;
   const evidence: Evidence[] = [];
+  const featureSupport = matchIntentFeatures(intent, document, specifications);
+  if (!featureSupport) return null;
+  evidence.push(...featureSupport);
   const literalEvidence = specificationEvidence(intent.specifications, specifications);
   if (!literalEvidence) return null;
   evidence.push(...literalEvidence.map(spec => ({ source: 'normalized_spec' as const, field: spec.canonical_key,
@@ -175,6 +215,14 @@ export function matchSearchIntent(intent: SearchIntent, document: ProductSearchD
   }
   const type = normalize(document.taxonomy.device_type);
   const communicationOption = document.variants?.find(v => v.model === document.model)?.distinguishing_specifications.find(s => s.name_en === 'Communication Option');
+  if (intent.transport) {
+    const transportText = `${type} ${normalize(document.name_en)} ${document.supported_protocols.join(' ')}`;
+    const match = intent.transport === 'satellite' ? /satellite|goes/iu.test(transportText)
+      : intent.transport === 'radio' ? /\bradio\b/iu.test(transportText)
+      : /cellular|\blte\b|\b4g\b/iu.test(transportText);
+    if (!match) return null;
+    evidence.push({ source: 'product_document', field: 'taxonomy.device_type', value: document.taxonomy.device_type });
+  }
   for (const role of intent.roles) {
     const matches = role.key === 'soil' ? /\bsoil\b/u.test(type)
       : role.key === 'logger' ? /\bdata logger\b/u.test(type)
@@ -201,6 +249,34 @@ export function matchSearchIntent(intent: SearchIntent, document: ProductSearchD
       && !/not (?:intended|designed|suitable) for/iu.test(item.text));
     if (!spec) return null;
     evidence.push({ source: 'normalized_spec', field: spec.key, value: spec.text });
+  }
+  return evidence;
+}
+
+export function matchIntentFeatures(intent: SearchIntent, document: ProductSearchDocument, specifications: ProductSpecification[] = []): Evidence[] | null {
+  const facts = specifications.length ? specifications : (document.important_specifications ?? []).map(s => ({ ...s, normalized_value: { ...s.normalized_value, value_raw: s.value_raw } }));
+  const evidence: Evidence[] = [];
+  for (const feature of intent.features) {
+    if (feature.key === 'heated_rain' && !/rain ga[u]?ge/iu.test(document.taxonomy.device_type + ' ' + document.name_en)) return null;
+    const spec = facts.find(s => {
+      const text = s.normalized_value.value_raw ?? (s.normalized_value.type === 'text' ? s.normalized_value.value : '');
+      return feature.key === 'non_contact' ? /^(?:primary_application|measurement_principle|product_type)$/u.test(s.canonical_key) && /non[ -]contact/iu.test(text)
+        : feature.key === 'soil_profile' ? s.canonical_key === 'measurement_depths'
+        : feature.key === 'heated_rain' ? /heater|heated/iu.test(s.canonical_key + ' ' + text)
+        : /^(?:measurement_principle|sensor_type|product_type)$/u.test(s.canonical_key) && /sonic|ultrasonic/iu.test(text);
+    });
+    if (spec) evidence.push({ source: 'normalized_spec', field: spec.canonical_key, value: spec.normalized_value.value_raw ?? '', raw_ref: spec.raw_ref });
+    else if (feature.key === 'sonic_wind' && /\bsonic anemometer\b/iu.test(document.name_en)) evidence.push({ source: 'products', field: 'name_en', value: document.name_en });
+    else if (feature.key === 'heated_rain' && document.capabilities.some(c => c.key === 'heated_precipitation_measurement')) evidence.push({ source: 'product_document', field: 'capabilities', value: 'heated_precipitation_measurement' });
+    else return null;
+  }
+  if (intent.depths.length && intent.measurements.some(m => m.key === 'volumetric_water_content')) {
+    const depth = facts.find(s => s.canonical_key === 'measurement_depths');
+    const raw = depth?.normalized_value.value_raw ?? '';
+    const metric = raw.split('(')[0] ?? '';
+    const values = [...metric.matchAll(/\d+(?:\.\d+)?/gu)].map(m => Number(m[0]) * (/\bcm\b/iu.test(metric) ? 1 : /\bm\b/iu.test(metric) ? 100 : NaN));
+    if (!depth || !intent.depths.every(d => values.includes(d))) return null;
+    evidence.push({ source: 'normalized_spec', field: depth.canonical_key, value: raw, raw_ref: depth.raw_ref });
   }
   return evidence;
 }

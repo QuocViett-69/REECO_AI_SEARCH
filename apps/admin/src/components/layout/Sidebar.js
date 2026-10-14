@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
-  FileUp,
   Package,
   ExternalLink,
   LogOut,
@@ -26,7 +25,6 @@ const NAV_GROUPS = [
     items: [
       { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
       { to: '/products', label: 'Products', icon: Package },
-      { to: '/import', label: 'Import', icon: FileUp },
     ],
   },
   {

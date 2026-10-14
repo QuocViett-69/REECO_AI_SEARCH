@@ -1,5 +1,13 @@
 jest.mock('./mocks/searchMock', () => ({ isSearchMockEnabled: false }));
 
+test.each([' \t\n ', '!@#$%^&*'])('invalid query never sends a search request: %s', async query => {
+  const fetch = jest.spyOn(global, 'fetch');
+  try {
+    expect(await require('./api').searchProductsApi(query)).toEqual(expect.objectContaining({ error: 'invalid_input' }));
+    expect(fetch).not.toHaveBeenCalled();
+  } finally { fetch.mockRestore(); }
+});
+
 test('search aborts a stalled request and reports a retryable timeout', async () => {
   jest.useFakeTimers();
   const fetch = jest.spyOn(global, 'fetch').mockImplementation((_url, { signal }) => new Promise((_resolve, reject) => {

@@ -13,6 +13,7 @@ import type { PostgrestError } from '@supabase/supabase-js';
 import { SupabaseService } from '../../database/supabase/supabase.service';
 
 export interface ProductRow {
+  product_prices?: { price_vnd: number } | { price_vnd: number }[] | null;
   product_id: string;
   model: string;
   product_name_en: string;
@@ -43,7 +44,7 @@ export interface ProductRepositoryFilters {
 }
 
 const productColumns =
-  'product_id,model,product_name_en,category,subcategory,device_type,status';
+  'product_id,model,product_name_en,category,subcategory,device_type,status,product_prices(price_vnd)';
 
 @Injectable()
 export class ProductsRepository {

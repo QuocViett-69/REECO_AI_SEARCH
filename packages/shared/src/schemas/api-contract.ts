@@ -26,6 +26,7 @@ export const ProductSummarySchema = z
     device_type: NullableTextSchema,
     image_url: z.string().url().nullable(),
     status: ProductStatusSchema,
+    price_vnd: z.number().int().nonnegative().nullable().optional(),
   })
   .strict();
 
@@ -108,7 +109,7 @@ export const ProductDetailSchema = z
 
 export const SearchRequestSchema = z
   .object({
-    query: z.string().trim().min(1).max(500),
+    query: z.string().trim().min(1).max(500).regex(/[\p{L}\p{N}]/u, 'Enter a search term'),
     limit: z.number().int().min(1).max(100).default(10),
     explain: z.boolean().optional(),
     context: z
@@ -139,6 +140,7 @@ const ExplanationEvidenceSchema = z.object({
 
 export const SearchResultSchema = z
   .object({
+    price_vnd: z.number().int().nonnegative().nullable().optional(),
     product_id: z.string().min(1),
     model: z.string().min(1),
     name_en: z.string().min(1),

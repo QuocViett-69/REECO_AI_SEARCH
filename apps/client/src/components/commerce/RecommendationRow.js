@@ -75,6 +75,7 @@ export function RecommendationRow({ productId, model, onViewDetail }) {
     <section className="rc" aria-labelledby="rc-title">
       <div className="rc__head">
         <h2 id="rc-title" className="st-heading">You may also need</h2>
+        <p className="st-caption">Related model suggestions. Confirm interfaces, power and accessories before buying.</p>
         <p>Picked by the AI from technical compatibility with {model}.</p>
       </div>
 

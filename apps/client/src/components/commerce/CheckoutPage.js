@@ -41,7 +41,7 @@ function readSession(key) {
 }
 
 export function CheckoutPage({ onNavigate }) {
-  const { items, cartCount, cartSubtotal, clearCart } = useCart();
+  const { items, cartCount, cartSubtotal, clearCart, refreshPrices } = useCart();
   const { user, isAuthenticated } = useAuth();
 
   // Form, shipping and payment choices survive a reload (and the VNPay round trip)
@@ -68,6 +68,19 @@ export function CheckoutPage({ onNavigate }) {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
+  const [checkingPrices, setCheckingPrices] = useState(false);
+  const pricingKey = JSON.stringify(items.map(item => item.product_id));
+
+  useEffect(() => {
+    let active = true;
+    if (!items.length || !refreshPrices) return;
+    setCheckingPrices(true);
+    refreshPrices(items).catch(error => { if (active) setServerError(error.message); })
+      .finally(() => { if (active) setCheckingPrices(false); });
+    return () => { active = false; };
+    // Recheck on checkout entry; price events update the summary independently.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refreshPrices, pricingKey]);
 
   // Sync user defaults when auth loads if not already in session draft
   useEffect(() => {
@@ -171,6 +184,12 @@ export function CheckoutPage({ onNavigate }) {
     if (!formData.city.trim()) errors.city = 'Please enter city / province';
 
     setFormErrors(errors);
+    const first = Object.keys(errors)[0];
+    if (first) {
+      const input = document.getElementById(`checkout-${first}`);
+      input?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      input?.focus({ preventScroll: true });
+    }
     return Object.keys(errors).length === 0;
   };
 
@@ -187,10 +206,17 @@ export function CheckoutPage({ onNavigate }) {
     setIsSubmitting(true);
 
     try {
+      const refreshed = refreshPrices ? await refreshPrices(items) : items;
+      if (refreshed.some((item, index) => item.price !== items[index].price)) {
+        setServerError('Giá sản phẩm đã được cập nhật. Vui lòng kiểm tra tổng tiền mới và bấm Place order để xác nhận.');
+        setIsSubmitting(false);
+        return;
+      }
       const orderPayload = {
-        items: items.map((item) => ({
+        items: refreshed.map((item) => ({
           product_id: item.product_id || item.id,
           quantity: Math.max(1, parseInt(item.quantity, 10) || 1),
+          expected_unit_price: item.price,
         })),
         shipping_method: shippingMethod,
         payment_method: paymentMethod,
@@ -258,6 +284,7 @@ export function CheckoutPage({ onNavigate }) {
         onNavigate(`order-success:${order.id || order.order_code}`);
       }
     } catch (err) {
+      if (refreshPrices) await refreshPrices(items).catch(() => {});
       setIsSubmitting(false);
       setServerError(err.message || 'Unable to place order. Please review your details.');
     }
@@ -487,10 +514,10 @@ export function CheckoutPage({ onNavigate }) {
               <button
                 type="submit"
                 className="st-btn st-btn--primary st-btn--buy st-btn--lg st-btn--block"
-                disabled={isSubmitting}
+                disabled={isSubmitting || checkingPrices}
                 aria-busy={isSubmitting || undefined}
               >
-                {submitLabel}
+                {checkingPrices ? 'Updating prices…' : submitLabel}
               </button>
 
               <ul className="cm-assurances">
