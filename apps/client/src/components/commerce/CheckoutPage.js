@@ -79,7 +79,6 @@ export function CheckoutPage({ onNavigate }) {
       .finally(() => { if (active) setCheckingPrices(false); });
     return () => { active = false; };
     // Recheck on checkout entry; price events update the summary independently.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refreshPrices, pricingKey]);
 
   // Sync user defaults when auth loads if not already in session draft
