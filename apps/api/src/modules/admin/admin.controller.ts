@@ -26,6 +26,7 @@ import {
   type AdminProductPriceUpdate,
   type AdminProductUpdate,
 } from './admin-product-update.schema';
+import { AdminPaymentsQuerySchema, type AdminPaymentsQuery } from './admin-payments-query.schema';
 
 @Controller('admin/products')
 @UseGuards(SupabaseAuthGuard, AdminGuard)
@@ -66,5 +67,29 @@ export class AdminController {
     body: AdminProductPriceUpdate,
   ): Promise<AdminProductDetail> {
     return this.adminService.setProductPrice(productId, body.price_vnd, user);
+  }
+}
+
+@Controller('admin')
+@UseGuards(SupabaseAuthGuard, AdminGuard)
+export class AdminOperationsController {
+  constructor(private readonly adminService: AdminService) {}
+
+  @Get('quality')
+  getQuality() {
+    return this.adminService.getQuality();
+  }
+
+  @Get('clients')
+  getClients() {
+    return this.adminService.getClients();
+  }
+
+  @Get('payments')
+  getPayments(
+    @Query(new ZodValidationPipe(AdminPaymentsQuerySchema))
+    query: AdminPaymentsQuery,
+  ) {
+    return this.adminService.getPayments(query);
   }
 }

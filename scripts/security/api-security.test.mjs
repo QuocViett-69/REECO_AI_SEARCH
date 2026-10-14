@@ -9,7 +9,8 @@ const require = createRequire(import.meta.url);
 const dist = (path) => require(`../../apps/api/dist/${path}`);
 const { AdminGuard } = dist('auth/admin.guard.js');
 const { SupabaseAuthGuard } = dist('auth/supabase-auth.guard.js');
-const { AdminController } = dist('modules/admin/admin.controller.js');
+const { AdminController, AdminOperationsController } = dist('modules/admin/admin.controller.js');
+const { AdminPaymentsQuerySchema } = dist('modules/admin/admin-payments-query.schema.js');
 const { ImportsController } = dist('modules/imports/imports.controller.js');
 const { AdminOrdersController } = dist('modules/orders/admin-orders.controller.js');
 const { AdminProductUpdateSchema, AdminProductPriceUpdateSchema } = dist('modules/admin/admin-product-update.schema.js');
@@ -22,7 +23,7 @@ const { OrdersRepository } = dist('modules/orders/orders.repository.js');
 const contextFor = (request) => ({ switchToHttp: () => ({ getRequest: () => request }) });
 
 test('every admin controller requires both a Supabase session and the admin role', () => {
-  for (const controller of [AdminController, ImportsController, AdminOrdersController]) {
+  for (const controller of [AdminController, AdminOperationsController, ImportsController, AdminOrdersController]) {
     const guards = Reflect.getMetadata('__guards__', controller) ?? [];
     assert.deepEqual(guards, [SupabaseAuthGuard, AdminGuard], controller.name);
   }
@@ -241,4 +242,140 @@ test('admin order search cannot inject PostgREST filter conditions', async () =>
   for (const part of or.split(/,(?=[a-z_]+\.(?:eq|ilike)\.)/)) {
     assert.match(part, /^[a-z_]+\.(?:eq|ilike)\./, `unexpected filter segment: ${part}`);
   }
+});
+
+// ─── Admin operations: data quality, clients, payments ──────────────────────
+
+// In-memory PostgREST stand-in: range() serves slices of `tables`, every other builder call is
+// recorded and chainable, and awaiting a builder directly resolves to a head-count response.
+function fakeSupabase(tables) {
+  const calls = [];
+  const builder = (table) => {
+    const q = {
+      table,
+      select() { return q; },
+      order() { return q; },
+      not() { return q; },
+      eq(column, value) { calls.push({ table, eq: [column, value] }); return q; },
+      match(filters) { calls.push({ table, match: filters }); return q; },
+      in(column, values) { calls.push({ table, in: [column, values] }); return q; },
+      or(expression) { calls.push({ table, or: expression }); return q; },
+      range: async (from, to) => {
+        calls.push({ table, range: [from, to] });
+        return { data: (tables[table] ?? []).slice(from, to + 1), error: null };
+      },
+      then: (resolve, reject) => Promise.resolve({ data: null, count: 0, error: null }).then(resolve, reject),
+    };
+    return q;
+  };
+  return { calls, supabase: { getClient: () => ({ from: builder }) } };
+}
+
+const EMBEDDING = { embedding_model: 'qwen3-embedding:4b', embedding_dimensions: 1536, embedding_version: 'ollama-qwen3-embedding-4b-1536-v1' };
+
+function catalog(size) {
+  const ids = Array.from({ length: size }, (_, i) => `P${String(i).padStart(4, '0')}`);
+  return {
+    products: ids.map((id) => ({ product_id: id, model: id, product_name_en: `Sensor ${id}`, category: 'Sensors', status: 'active', product_specifications: [{ count: 3 }] })),
+    product_prices: ids.map((id) => ({ product_id: id, price_vnd: 1000 })),
+    product_documents: ids.map((id) => ({ product_id: id, content_hash: `h-${id}`, name_vi: `Cảm biến ${id}`, source_versions: { semantic_enrichment: '1.0' }, applications: [{ key: 'x' }], capabilities: [] })),
+    product_media: ids.map((id) => ({ product_id: id })),
+    product_search_index: ids.map((id) => ({ product_id: id, source_content_hash: `h-${id}`, ...EMBEDDING })),
+  };
+}
+
+test('data quality reads every page past PostgREST max_rows (1000)', async () => {
+  const { supabase, calls } = fakeSupabase(catalog(1001));
+  const { stats, products } = await new AdminService(supabase, {}).getQuality();
+  assert.equal(products.length, 1001);
+  assert.equal(stats.totalProducts, 1001);
+  // Product 1001's image, price, name and index row are all on the second page
+  assert.equal(stats.missingImage, 0);
+  assert.equal(stats.missingPrice, 0);
+  assert.equal(stats.missingViName, 0);
+  assert.equal(stats.needsReview, 0);
+  assert.equal(stats.searchIndexHealth.status, 'healthy');
+  assert.ok(calls.some((c) => c.table === 'product_media' && c.range[0] === 1000), 'second media page requested');
+});
+
+test('data quality: needs_review drives the KPI, EN name alone is not a review reason', async () => {
+  const tables = catalog(3);
+  tables.products[0].product_name_en = '';
+  tables.product_documents[1].name_vi = null;
+  tables.products[2].category = null;
+  tables.product_media = [];
+  const { products, stats } = await new AdminService(fakeSupabase(tables).supabase, {}).getQuality();
+  const byId = Object.fromEntries(products.map((p) => [p.product_id, p]));
+  assert.deepEqual(byId.P0000.missing_fields, ['Missing EN Name', 'Missing Image']);
+  assert.equal(byId.P0001.missing_fields.includes('Missing VI Name'), true);
+  assert.equal(byId.P0002.category, null, 'a missing category is reported, not replaced');
+  assert.equal(stats.missingImage, 3);
+  assert.equal(stats.needsReview, products.filter((p) => p.needs_review).length);
+
+  const noImage = catalog(1);
+  noImage.products[0].product_name_en = '';
+  const only = (await new AdminService(fakeSupabase(noImage).supabase, {}).getQuality()).products[0];
+  assert.equal(only.needs_review, false);
+});
+
+test('search index health reports stale documents, stale embeddings and missing enrichment', async () => {
+  const tables = catalog(4);
+  tables.product_search_index[0].source_content_hash = 'h-old';
+  tables.product_search_index[1] = { ...tables.product_search_index[1], embedding_version: 'old-version' };
+  tables.product_documents[2] = { ...tables.product_documents[2], applications: [], capabilities: [] };
+  tables.products[3].status = 'review';
+  tables.product_search_index[3] = { product_id: 'P0003', source_content_hash: 'h-P0003', embedding_model: null, embedding_dimensions: null, embedding_version: null };
+  const { stats } = await new AdminService(fakeSupabase(tables).supabase, {}).getQuality();
+  assert.deepEqual(stats.searchIndexHealth, {
+    staleSearchDocument: 1,
+    staleEmbedding: 1, // the review product is never embedded, so it does not count
+    missingSemanticEnrichment: 1,
+    status: 'degraded',
+  });
+});
+
+test('clients merge emails case-insensitively, page past 1000 orders and keep the latest contact', async () => {
+  const filler = Array.from({ length: 1000 }, (_, i) => ({ customer_id: `f${i}`, customer_email: `f${i}@x.vn`, customer_name: 'F', customer_phone: '1', total: 1, payment_status: 'PAID', status: 'DELIVERED', created_at: '2026-01-01T00:00:00Z' }));
+  const orders = [
+    ...filler,
+    { customer_id: 'u1', customer_email: 'An@Mail.com', customer_name: 'An Old', customer_phone: '0900', total: 100, payment_status: 'PAID', status: 'DELIVERED', created_at: '2026-09-01T00:00:00Z' },
+    { customer_id: 'u1', customer_email: ' an@mail.com ', customer_name: 'An New', customer_phone: '0911', total: 50, payment_status: 'COD_PENDING', status: 'PROCESSING', created_at: '2026-10-01T00:00:00Z' },
+  ];
+  const clients = await new AdminService(fakeSupabase({ orders }).supabase, {}).getClients();
+  assert.equal(clients.length, 1001);
+  const an = clients.find((c) => c.id === 'u1');
+  assert.deepEqual(
+    { name: an.name, phone: an.phone, orders: an.orders_count, spent: an.total_spent, active: an.active_orders_count },
+    { name: 'An New', phone: '0911', orders: 2, spent: 100, active: 1 },
+  );
+});
+
+test('payments query accepts only API enums and bounded paging', () => {
+  assert.deepEqual(AdminPaymentsQuerySchema.parse({}), { page: 1, page_size: 20 });
+  assert.deepEqual(AdminPaymentsQuerySchema.parse({ method: 'vnpay', status: 'COD_PENDING', page: '2', search: '  ' }), {
+    method: 'vnpay', status: 'COD_PENDING', page: 2, page_size: 20, search: undefined,
+  });
+  for (const bad of [{ method: 'VNPAY' }, { method: 'ALL' }, { status: 'PENDING' }, { page: 0 }, { page_size: 500 }, { search: 'x'.repeat(101) }]) {
+    assert.equal(AdminPaymentsQuerySchema.safeParse(bad).success, false, JSON.stringify(bad));
+  }
+});
+
+test('payments: every count uses the table filters, and search cannot inject conditions', async () => {
+  const { supabase, calls } = fakeSupabase({ orders: [] });
+  const result = await new AdminService(supabase, {}).getPayments(
+    AdminPaymentsQuerySchema.parse({ method: 'cod', search: 'x\\",payment_status.eq.PAID' }),
+  );
+  assert.deepEqual(result.items, []);
+  // 1 list query + 5 KPI counts, each with the same method filter and search
+  assert.equal(calls.filter((c) => c.match).length, 6);
+  assert.ok(calls.filter((c) => c.match).every((c) => c.match.payment_method === 'cod'));
+  const ors = calls.filter((c) => c.or).map((c) => c.or);
+  assert.equal(ors.length, 6);
+  for (const or of ors) {
+    assert.equal(or.includes('\\'), false);
+    for (const part of or.split(/,(?=[a-z_]+\.ilike\.)/)) {
+      assert.match(part, /^[a-z_]+\.ilike\."%[^"]*%"$/, `unexpected filter segment: ${part}`);
+    }
+  }
+  assert.deepEqual(calls.find((c) => c.range)?.range, [0, 19]);
 });

@@ -8,6 +8,9 @@ import {
   User,
   ShoppingBag,
   BarChart3,
+  ShieldCheck,
+  CreditCard,
+  Users,
 } from 'lucide-react';
 
 const GROUP_LABEL_STYLE = {
@@ -25,12 +28,15 @@ const NAV_GROUPS = [
     items: [
       { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
       { to: '/products', label: 'Products', icon: Package },
+      { to: '/quality', label: 'Data Quality', icon: ShieldCheck },
     ],
   },
   {
     label: 'COMMERCE',
     items: [
       { to: '/orders', label: 'Orders', icon: ShoppingBag },
+      { to: '/payments', label: 'Payments', icon: CreditCard },
+      { to: '/clients', label: 'Clients', icon: Users },
     ],
   },
   {

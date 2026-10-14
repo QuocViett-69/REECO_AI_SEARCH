@@ -100,6 +100,23 @@ export async function triggerAdminImport() {
   return { success: true, report: data?.report ?? data };
 }
 
+// ─── Data quality / clients / payments ────────────────────────────────────────
+export function getAdminQualityApi() {
+  return call('/admin/quality');
+}
+
+export function getAdminClientsApi() {
+  return call('/admin/clients');
+}
+
+export function getAdminPaymentsApi(params = {}) {
+  const query = new URLSearchParams();
+  for (const key of ['method', 'status', 'search', 'page', 'page_size']) {
+    if (params[key]) query.set(key, params[key]);
+  }
+  return call(`/admin/payments?${query.toString()}`);
+}
+
 // ─── Health ───────────────────────────────────────────────────────────────────
 export async function checkApiHealth() {
   const data = await call('/health', { auth: false });

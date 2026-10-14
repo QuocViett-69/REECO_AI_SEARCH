@@ -6,6 +6,9 @@ import { ProductManagementView } from './components/products/ProductManagementVi
 import { AdminProductDetailView } from './components/detail/AdminProductDetailView';
 import { OrderListView } from './components/orders/OrderListView';
 import { OrderDetailView } from './components/orders/OrderDetailView';
+import { DataQualityView } from './components/quality/DataQualityView';
+import { PaymentOperationsView } from './components/payments/PaymentOperationsView';
+import { ClientOperationsView } from './components/clients/ClientOperationsView';
 import { ReportsAnalyticsView } from './components/reports/ReportsAnalyticsView';
 import { LoginView } from './components/auth/LoginView';
 import { ToastContainer } from './components/common/Toast';
@@ -168,6 +171,9 @@ export function App() {
           <Route path="orders" element={<OrderListView />} />
           <Route path="orders/:orderId" element={<OrderDetailView />} />
           <Route path="import" element={<Navigate to="/products" replace />} />
+          <Route path="quality" element={<DataQualityView onSelectProduct={handleViewDetail} />} />
+          <Route path="payments" element={<PaymentOperationsView />} />
+          <Route path="clients" element={<ClientOperationsView />} />
           <Route path="reports" element={<ReportsAnalyticsView />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
