@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import type { ProductSpecification, ProductSearchDocument } from '@reeco/shared';
 import { ProductsService } from '../products/products.service';
 import { specificationEvidence } from './specification-query';
+import { protocolSatisfies } from './protocol-query';
+import { celsiusValue } from './unit-query';
 import {
   CELSIUS_UNIT,
   MEASUREMENT_TEMPERATURE_KEYS,
@@ -145,7 +147,7 @@ export class TechnicalMatchService {
     }
 
     const supported = document.supported_protocols.find((protocol) =>
-      this.protocolSatisfies(queryProtocol, protocol),
+      protocolSatisfies(queryProtocol, protocol),
     );
     if (supported) {
       return {
@@ -162,7 +164,7 @@ export class TechnicalMatchService {
     }
 
     const unsupported = document.unsupported_protocols.find((protocol) =>
-      this.protocolSatisfies(queryProtocol, protocol),
+      protocolSatisfies(queryProtocol, protocol),
     );
     if (unsupported) {
       return {
@@ -186,18 +188,6 @@ export class TechnicalMatchService {
     }
 
     return { queryProtocol, result: 'UNKNOWN', evidence: [] };
-  }
-
-  private protocolSatisfies(
-    queryProtocol: ParsedTechnicalProtocol,
-    evidenceProtocol: string,
-  ): boolean {
-    if (queryProtocol === 'Modbus') {
-      return (
-        evidenceProtocol === 'Modbus' || evidenceProtocol.startsWith('Modbus ')
-      );
-    }
-    return evidenceProtocol === queryProtocol;
   }
 
   private evaluateTemperature(
@@ -239,7 +229,7 @@ export class TechnicalMatchService {
       normalized.type !== 'range' ||
       normalized.min_value === undefined ||
       normalized.max_value === undefined ||
-      normalized.unit !== CELSIUS_UNIT
+      !normalized.unit || !/^(?:°[CF]|℃|℉|K|Kelvin|Celsius|Fahrenheit)$/iu.test(normalized.unit)
     ) {
       return {
         source: 'normalized_spec',
@@ -251,21 +241,21 @@ export class TechnicalMatchService {
     }
 
     const candidateRange = {
-      minCelsius: normalized.min_value,
-      maxCelsius: normalized.max_value,
+      minCelsius: celsiusValue(String(normalized.min_value), normalized.unit)!,
+      maxCelsius: celsiusValue(String(normalized.max_value), normalized.unit)!,
       unit: CELSIUS_UNIT,
     } as const;
     let matches: boolean;
     if (constraint.kind === 'range') {
       matches =
-        normalized.min_value <= constraint.minCelsius &&
-        normalized.max_value >= constraint.maxCelsius;
+        candidateRange.minCelsius <= constraint.minCelsius &&
+        candidateRange.maxCelsius >= constraint.maxCelsius;
     } else if (constraint.kind === 'upper_bound') {
-      matches = normalized.max_value >= constraint.valueCelsius;
+      matches = candidateRange.minCelsius <= constraint.valueCelsius && candidateRange.maxCelsius >= constraint.valueCelsius;
     } else {
       matches =
-        normalized.min_value <= constraint.valueCelsius &&
-        normalized.max_value >= constraint.valueCelsius;
+        candidateRange.minCelsius <= constraint.valueCelsius &&
+        candidateRange.maxCelsius >= constraint.valueCelsius;
     }
 
     return {

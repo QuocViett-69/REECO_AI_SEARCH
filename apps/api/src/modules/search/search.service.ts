@@ -22,6 +22,7 @@ import type { ParsedTechnicalQuery } from './technical-query-parser.service';
 import { TechnicalQueryParserService } from './technical-query-parser.service';
 import { buildSearchPlan, parseSearchIntent, matchSearchIntent } from './search-intent';
 import { purchaseQuery, isCapabilityQuestion, isOutsideCatalog, protocolAlternatives } from './query-context';
+import { protocolRequirements, protocolSatisfies } from './protocol-query';
 import {
   TechnicalRankingService,
   type TechnicalRankedCandidate,
@@ -86,7 +87,7 @@ export class SearchService {
       const networkAlternatives = plan.every(component => ['Ethernet', 'Wi-Fi', 'cellular'].includes(component.label));
       const technical = this.technicalQueryParser.parse(request.query);
       const negative = parseNegativeConstraints(request.query);
-      if (technical.protocols.some(protocol => !networkAlternatives || protocol !== 'Wi-Fi')
+      if (technical.protocols.some(protocol => !networkAlternatives || !['Wi-Fi', 'Ethernet'].includes(protocol))
         || negative.unsupported || negative.exclusions.protocols.length
         || negative.exclusions.cellular || negative.exclusions.temperature
         || parseSearchIntent(request.query).specifications.length
@@ -213,12 +214,10 @@ export class SearchService {
         const temperature = /temperature/iu.test(document.taxonomy.device_type + ' ' + (document.measurements ?? []).map((item) => item.key).join(' ') + ' ' + (document.capabilities ?? []).map((item) => item.key).join(' '));
         const excludedProtocol = negative.exclusions.protocols.some((protocol) => {
           if (protocol === 'Wi-Fi' && communicationOption && !/^wi[\s-]?fi$/iu.test(communicationOption)) return false;
-          if (protocol === 'Modbus' && /(?:không dùng|without using)\s+Modbus/iu.test(searchQuery)) {
+          if (protocolRequirements(searchQuery).avoided.some(item => item === protocol)) {
             return protocolAlternatives(protocol, document.supported_protocols).length === 0;
           }
-          return (document.supported_protocols ?? []).some((supported) => protocol === 'Modbus'
-            ? supported === 'Modbus' || supported.startsWith('Modbus ')
-            : supported === protocol);
+          return (document.supported_protocols ?? []).some(supported => protocolSatisfies(protocol, supported));
         });
         return !(excludedProtocol || negative.exclusions.cellular && cellular || negative.exclusions.temperature && temperature);
       });

@@ -130,7 +130,7 @@ export function parseSearchIntent(query: string) {
   if (kinds.some(item => item.key === 'logger') && !/\b(?:which sensor|cam bien nao|nhung cam bien|sensor, datalogger|cam bien, datalogger)\b/u.test(text)) {
     requested.length = 0;
   }
-  const specifications = specificationTerms(query);
+  let specifications = specificationTerms(parseNegativeConstraints(query).query);
   const outdoor = /\b(?:harsh|rugged|extreme)\b.*\b(?:outdoor|environment)|\b(?:outdoor|environment).*\b(?:harsh|rugged|extreme)\b|\b(?:moi truong|ngoai troi).*\bkhac nghiet\b/u.test(text);
   const loggerOnly = kinds.some(item => item.key === 'logger') && requested.length === 0;
   const system = !/\b(?:one device|mot thiet bi|both analog and digital)\b/u.test(text)
@@ -149,6 +149,8 @@ export function parseSearchIntent(query: string) {
     { key: 'sonic_wind', en: 'sonic anemometer', vi: 'đo gió siêu âm không rotor', pattern: /\b(?:khong.*canh quat|no moving parts|without.*(?:propeller|rotor))\b/u },
   ].filter(item => item.pattern.test(text));
   const depths = [...text.matchAll(/(\d+(?:\.\d+)?)\s*(cm|m)\b/gu)].map(m => Number(m[1]) * (m[2] === 'm' ? 100 : 1));
+  // Depth lists already have quantity-specific evidence; generic lengths must not reinterpret them.
+  if (depths.length && requested.some(item => item.key === 'volumetric_water_content')) specifications = specifications.filter(term => !/\sm$/u.test(term));
   return { measurements: requested, target: effectiveTarget, roles: kinds, outdoor, specifications, system, comparison, sensorOnly,
     features, depths, transport, noCellular, capabilityQuestion,
     constrained: requested.length > 0 || !!effectiveTarget || kinds.length > 0 || outdoor || specifications.length > 0 || features.length > 0 || !!transport };
