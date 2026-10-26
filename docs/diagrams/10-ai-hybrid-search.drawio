@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="REECO report" version="24.7.17" type="device">
+  <diagram id="10-ai-hybrid-search.drawio-0" name="AI - Search">
+    <mxGraphModel dx="1780" dy="1430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1780" pageHeight="1430" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Hình 10 · AI — Hybrid Search và kiểm chứng kỹ thuật" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=26;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="25" width="1690" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Nhánh search thông thường. MODE phản ánh nhánh retrieval thành công; không phải phần trăm chất lượng." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=14;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="78" width="1690" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="request" value="POST /search&#10;Validate query / limit / context" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="190" width="350" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="parse" value="Resolve context / intent / exclusions&#10;Parse identity / protocol / temperature&#10;Chọn retrieval query" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="520" y="185" width="570" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="request" target="parse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="keyword" value="Keyword retrieval&#10;FTS + mở rộng / literal / model hits" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="400" width="430" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="semantic" value="Query embedding → semantic RPC&#10;Cùng model / version / dimensions" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="950" y="400" width="460" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0.25;exitY=1;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="parse" target="keyword">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0.75;exitY=1;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="parse" target="semantic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rrf" value="Hợp candidate bằng RRF · K=60&#10;Hai nguồn song song / Promise.allSettled" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="550" y="610" width="650" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0.5;exitY=1;entryX=0.2;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="keyword" target="rrf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0.5;exitY=1;entryX=0.8;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="semantic" target="rrf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fallback" value="Cả hai OK → hybrid (kể cả nguồn rỗng).&#10;Một nhánh lỗi → keyword hoặc semantic.&#10;Cả hai lỗi → 503, có một retry giới hạn ở search thường." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;rounded=0;dashed=1;fontSize=13;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="575" width="450" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="technical" value="Scope / intent / exclusions / specification&#10;Protocol + temperature high-confidence cần MATCH&#10;Technical rank; loại hardMismatch" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="550" y="800" width="650" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="rrf" target="technical">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rerank" value="BGE tùy chọn · tối đa Top-5&#10;Giữ bảo vệ identity / tail order&#10;Lỗi → giữ thứ tự trước rerank" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="550" y="1020" width="650" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="technical" target="rerank">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hydrate" value="Hydrate active + giá; scope exact identity; limit&#10;explain=true → evidence / optional LLM&#10;SearchResponse + guidance khi cần" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="550" y="1210" width="650" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="rerank" target="hydrate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="branches" value="NHÁNH RIÊNG:&#10;• Hỏi explanation có context: đọc model đã chọn, không rerun hybrid.&#10;• Nhu cầu nhiều thành phần: chia nhóm / search con hoặc hỏi làm rõ.&#10;Không suy ra tương thích toàn hệ thống." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;rounded=0;dashed=1;fontSize=13;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="790" width="420" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="unknown" value="MATCH / MISMATCH / UNKNOWN là kết quả matcher.&#10;UNKNOWN không thành MATCH; public filter có thể loại.&#10;Explanation model đã chọn có thể giữ yêu cầu chưa xác nhận." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;rounded=0;dashed=1;fontSize=13;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="860" width="440" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="Nguồn: search.service.ts; hybrid-search.service.ts; search-score.service.ts; technical-*.ts; reranker.service.ts.&#10;Phạm vi: Không tiêm sản phẩm ngoài retrieved union. Technical/rerank không viết lại RRF score; scores.rerank public vẫn null." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=12;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="1352" width="1690" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

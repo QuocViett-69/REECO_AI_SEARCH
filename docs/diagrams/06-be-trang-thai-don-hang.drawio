@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="REECO report" version="24.7.17" type="device">
+  <diagram id="06-be-trang-thai-don-hang.drawio-0" name="BE - Trang thai don">
+    <mxGraphModel dx="1760" dy="1450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="1450" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Hình 06 · BE — Trạng thái đơn và thanh toán" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=26;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="25" width="1670" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Đường liền: ORDER_STATUS_TRANSITIONS cho admin · đường tím đứt: VNPay runtime · đơn COD vào PROCESSING." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=14;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="78" width="1670" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="PENDING_PAYMENT" value="PENDING_PAYMENT" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#ecfdf5;strokeColor=#059669;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="310" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="PAID" value="PAID" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#ecfdf5;strokeColor=#059669;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="490" y="310" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="PROCESSING" value="PROCESSING" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#ecfdf5;strokeColor=#059669;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="930" y="310" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="PAYMENT_FAILED" value="PAYMENT_FAILED" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="640" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FORWARDED_TO_MANUFACTURER" value="FORWARDED_TO_MANUFACTURER" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#ecfdf5;strokeColor=#059669;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="930" y="640" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="SHIPPED" value="SHIPPED" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#ecfdf5;strokeColor=#059669;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="640" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="DELIVERED" value="DELIVERED" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#ecfdf5;strokeColor=#059669;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="930" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="CANCELLED" value="CANCELLED" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="490" y="1000" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="new" value="Tạo đơn" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="155" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="VNPay" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0;exitY=0.5;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="new" target="PENDING_PAYMENT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="COD / COD_PENDING" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=1;exitY=0.5;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="new" target="PROCESSING">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#059669;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="PENDING_PAYMENT" target="PAID">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#059669;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="PENDING_PAYMENT" target="PAYMENT_FAILED">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="Hủy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0;exitY=0.5;entryX=0;entryY=0.3;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="PENDING_PAYMENT" target="CANCELLED">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="45" y="355" />
+              <mxPoint x="45" y="1027" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#059669;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="PAID" target="PROCESSING">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="Hủy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="PAID" target="CANCELLED">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="615" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#059669;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="PROCESSING" target="FORWARDED_TO_MANUFACTURER">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#059669;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=1;exitY=0.5;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="PROCESSING" target="SHIPPED">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1540" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" value="Hủy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0;exitY=0.5;entryX=0.75;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="PROCESSING" target="CANCELLED">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="355" />
+              <mxPoint x="860" y="960" />
+              <mxPoint x="677" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#059669;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="FORWARDED_TO_MANUFACTURER" target="SHIPPED">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" value="Hủy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="FORWARDED_TO_MANUFACTURER" target="CANCELLED">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="685" />
+              <mxPoint x="820" y="1045" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#059669;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="SHIPPED" target="DELIVERED">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" value="Hủy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=1;exitY=0.5;entryX=0.5;entryY=1;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="SHIPPED" target="CANCELLED">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1690" y="685" />
+              <mxPoint x="1690" y="1160" />
+              <mxPoint x="615" y="1160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" value="Thử lại" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#059669;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="PAYMENT_FAILED" target="PENDING_PAYMENT">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="685" />
+              <mxPoint x="20" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" value="Hủy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=1;exitY=0.5;entryX=0;entryY=0.7;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="PAYMENT_FAILED" target="CANCELLED">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="685" />
+              <mxPoint x="360" y="1063" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e29" value="Gateway OK → payment_status=PAID" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="PENDING_PAYMENT" target="PROCESSING">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="205" y="260" />
+              <mxPoint x="1055" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e30" value="Gateway OK khi vẫn chờ thanh toán" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=1;exitX=1;exitY=0.8;entryX=1;entryY=0.5;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="PAYMENT_FAILED" target="PROCESSING">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="760" />
+              <mxPoint x="1280" y="760" />
+              <mxPoint x="1280" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pay" value="payment_status là trường riêng:&#10;PENDING_PAYMENT · COD_PENDING · PAID · FAILED&#10;COD chuyển DELIVERED → đánh dấu PAID.&#10;PAID (status) vẫn tồn tại trong luồng admin." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;rounded=0;dashed=1;fontSize=13;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="55" y="1210" width="650" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel" value="Khách chỉ tự hủy khi status thuộc:&#10;PENDING_PAYMENT, PAYMENT_FAILED, PAID, PROCESSING.&#10;Admin có tập transition hủy rộng hơn. Không suy ra hoàn tiền tự động." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;rounded=0;dashed=1;fontSize=13;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1210" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="Nguồn: orders.constants.ts; OrdersService.cancelOrder / updateOrderStatusByAdmin; VNPayService; orders.repository.ts.&#10;Phạm vi: DELIVERED và CANCELLED là trạng thái không có transition tiếp theo trong map admin. Sơ đồ không mô tả refund." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=12;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="1372" width="1670" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

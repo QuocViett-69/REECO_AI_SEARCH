@@ -116,7 +116,7 @@ test('TC-19: actual explanation path times out at 20000 ms, aborts and ignores l
     assert.equal(response.results[0].explanation.source, 'rule');
     assert.equal(signal.aborted, true);
     const snapshot = JSON.stringify(response);
-    release({ ok: true, json: async () => ({ message: { content: '{"explanations":[{"index":0,"option":1}]}' } }) });
+    release({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text: response.results[0].explanation.text }] }) } }) });
     await Promise.resolve(); await Promise.resolve();
     assert.equal(JSON.stringify(response), snapshot);
   } finally {

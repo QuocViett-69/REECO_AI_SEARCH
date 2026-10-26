@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="REECO report" version="24.7.17" type="device">
+  <diagram id="11-ai-giai-thich-co-bang-chung.drawio-0" name="AI - Explanation">
+    <mxGraphModel dx="1640" dy="1440" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1640" pageHeight="1440" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Hình 11 · AI — Giải thích có bằng chứng và kiểm chứng LLM" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=26;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="25" width="1550" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Rule explanation được tạo trước. Qwen hỗ trợ diễn đạt; không tự quyết định thông số hoặc xếp hạng." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=14;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="78" width="1550" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="inputs" value="Query + product document + specifications&#10;Technical match / yêu cầu từng sản phẩm" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="540" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rule" value="Tạo rule explanation&#10;text + evidence + requirements/status" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="385" width="540" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="inputs" target="rule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="enabled" value="explain=true&#10;LLM enabled + model?" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;rhombus;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="790" y="370" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="rule" target="enabled">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="select" value="Chọn tối đa 3 item có evidence&#10;Giới hạn prompt / wording đã review" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="570" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="Có" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=1;exitY=0.5;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="enabled" target="select">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="call" value="Ollama /api/chat&#10;JSON explanations: [{index, text}]&#10;Không thêm facts / số / phủ định" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="780" width="400" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="Còn item đủ điều kiện" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;" edge="1" parent="1" source="select" target="call">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="verify" value="JSON / index hợp lệ&#10;verifiedWording giữ đủ ý?" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;rhombus;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1010" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="call" target="verify">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1330" y="950" />
+              <mxPoint x="930" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="llm" value="Giữ evidence / requirements gốc&#10;source=llm; status=accepted" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1210" width="400" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="Đạt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=1;exitY=0.5;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="verify" target="llm">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1540" y="1085" />
+              <mxPoint x="1540" y="1170" />
+              <mxPoint x="1330" y="1170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fallback" value="Giữ rule text / evidence / requirements&#10;source=rule; generation.status tương ứng" style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1040" width="570" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="Không / disabled" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0;exitY=0.5;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="enabled" target="fallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="440" />
+              <mxPoint x="720" y="970" />
+              <mxPoint x="365" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" value="Không còn item đủ điều kiện" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="select" target="fallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="620" />
+              <mxPoint x="1090" y="720" />
+              <mxPoint x="45" y="720" />
+              <mxPoint x="45" y="1095" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" value="Lỗi / timeout / unavailable" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="call" target="fallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1580" y="840" />
+              <mxPoint x="1580" y="960" />
+              <mxPoint x="365" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" value="Không đạt / invalid_response" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;fontFamily=Arial;fontSize=13;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#334155;labelBackgroundColor=#ffffff;jettySize=18;dashed=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;exitPerimeter=1;entryPerimeter=1;" edge="1" parent="1" source="verify" target="fallback">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="Backend chỉ nhận diễn đạt tương đương đã kiểm chứng.&#10;Một batch có thể có item accepted và item giữ rule.&#10;Việc tạo explanation không thay đổi danh sách / thứ tự kết quả." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;rounded=0;dashed=1;fontSize=13;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1210" width="920" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="Nguồn: explanation.service.ts; explanation-wording.ts; configuration.ts.&#10;Phạm vi: Luồng vẽ cho request có explain=true. Flag off / model thiếu → disabled; đủ điều kiện nhưng không được xử lý → not_applicable." style="rounded=1;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=15;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;spacing=10;text;fillColor=none;strokeColor=none;align=left;fontColor=#334155;fontSize=12;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="1362" width="1550" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

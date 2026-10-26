@@ -1,10 +1,11 @@
 import type { SearchRequest } from '@reeco/shared';
+import { protocolRequirements, requestedProtocols } from './protocol-query';
 
 const alternative = /^(?:what about|how about|thế còn|còn)(?:\s|$)/iu;
 const continuation = /^(?:and|also|with|only|does it support|do they support|can it|what about|how about|thế còn|còn|và|với|chỉ|thêm|có hỗ trợ|có loại|loại nào|nó|chúng)(?:\s|$)/iu;
 const shortConstraint = /\b(?:SDI[\s-]?12|RS[\s-]?(?:485|232)|USB|CAN[\s-]?bus|CPI|Modbus|Wi[\s‐‑–—-]?Fi)\b|[-+]?\d+(?:\.\d+)?\s*(?:°\s*C|℃|độ\s*C|deg(?:rees?)?\s*C|C\b)/iu;
 
-export const hasTechnicalConstraint = (query: string): boolean => shortConstraint.test(query);
+export const hasTechnicalConstraint = (query: string): boolean => shortConstraint.test(query) || requestedProtocols(query).length > 0;
 export const isExplanationQuestion = (query: string): boolean => /\b(?:this (?:product|device)|these (?:models|products|devices)|the other one|my (?:application|requirements|query|use case)|recommended this)|(?:(?:các|những) (?:model|sản phẩm|thiết bị) này|sản phẩm này|thiết bị này|sản phẩm còn lại|nhu cầu của tôi|yêu cầu của tôi|câu hỏi của tôi|trường hợp (?:sử dụng )?của tôi)/iu.test(query);
 
 export interface SearchExclusions {
@@ -14,28 +15,25 @@ export interface SearchExclusions {
 }
 
 export function parseNegativeConstraints(query: string): { query: string; exclusions: SearchExclusions; unsupported: boolean } {
-  let cleaned = query.normalize('NFC');
-  const protocols = new Set<string>();
-  const canonical = (value: string) => /^sdi[\s-]?12$/iu.test(value) ? 'SDI-12'
-    : /^rs[\s-]?232$/iu.test(value) ? 'RS-232' : /^wi[\s-]?fi$/iu.test(value) ? 'Wi-Fi'
-    : /^can[\s-]?bus$/iu.test(value) ? 'CANbus' : /^modbus\s+rtu$/iu.test(value) ? 'Modbus RTU'
-    : /^modbus$/iu.test(value) ? 'Modbus' : value.toUpperCase();
-  // \b: 'no' must be its own word (not the tail of Arduino/nano/mono); 'khong' typed without accents counts too.
-  const negativeProtocol = /\b(?:without(?:\s+using)?|excluding|exclude|does not support|doesn.t support|no|kh(?:\u00f4|o)ng\s+(?:co|ho tro|dung|h\u1ed7 tr\u1ee3|d\u00f9ng|c\u00f3))\s+(SDI[\s-]?12|RS[\s-]?232|Wi[\s-]?Fi|USB|CAN[\s-]?bus|CPI|Modbus(?:\s+RTU)?)\b/giu;
-  cleaned = cleaned.replace(negativeProtocol, (_match, value: string) => { protocols.add(canonical(value)); return ' '; });
+  const protocols = protocolRequirements(query);
+  let cleaned = protocols.query;
   let cellular = false;
   cleaned = cleaned.replace(/\bnon[-\s]+cellular\b/giu, () => { cellular = true; return ' '; });
+  cleaned = cleaned.replace(/(?:\b(?:without|no)\s+(?:cellular|[345]g)(?!\s+coverage)\b|không\s+(?:hỗ trợ|dùng)\s+(?:cellular|[345]g))(?=$|[^\p{L}\p{N}])/giu, () => { cellular = true; return ' '; });
   let temperature = false;
   cleaned = cleaned.replace(/\b(?:but\s+not|not)\s+temperature\s+sensor\b/giu, () => { temperature = true; return ' '; });
+  cleaned = cleaned.replace(/không\s+(?:đo\s+nhiệt\s+độ|phải\s+cảm\s+biến\s+nhiệt\s+độ)(?=$|[^\p{L}\p{N}])/giu, () => { temperature = true; return ' '; });
   cleaned = cleaned.replace(/\s+/gu, ' ').trim();
   cleaned = cleaned.replace(/^(?:and|but|also)\s+|\s+(?:and|but|also)$|^(?:and|but|also)$/giu, '').trim();
-  const marker = /\b(?:without|excluding|exclude|does\s+not\s+support|doesn't\s+support|but\s+not)\b|\bnon[-\s]+\p{L}|\bno\s+(?:modbus|sdi|rs)\b|kh\s*(?:\u00f4|o)ng\s+(?:ho tro|dung|co|h\u1ed7 tr\u1ee3|d\u00f9ng)\b/iu;
+  const marker = /\b(?:without|excluding|exclude|do(?:es)?\s+not\s+(?:support|use|have|need|operate|measure)|do(?:es)?n['’]t\s+(?:support|use|have|need|operate|measure)|not\s+(?:using|supporting|operating|measuring|suitable)|but\s+not)\b|\bnon[-\s]+\p{L}|\bno\s+(?:modbus|sdi|rs)\b|kh[oô]ng\s+(?:ho tro|dung|co|có|hỗ trợ|dùng|được|sử dụng|cần|đo|hoạt động)(?=$|[^\p{L}\p{N}])/iu;
   // Contextual absence is a deployment need, not a product exclusion.
   const unsupported = marker.test(cleaned
     .replace(/\bwithout\s+(?:personnel|visiting|having to visit|staff|an? (?:internet|grid) connection)\b/giu, '')
     .replace(/\bwithout\s+(?:cellular coverage|submerging|immersing)\b/giu, '')
+    .replace(/\b(?:non[-\s]+contact|without\s+(?:a\s+)?(?:propeller|rotor|moving parts))\b/giu, '')
+    .replace(/không\s+được\s+nhúng/giu, '')
     .replace(/không có (?:sóng (?:di động\s*)?(?:4G)?|điện lưới|bất kỳ mạng viễn thông mặt đất nào)/giu, ''));
-  return { query: cleaned, exclusions: { protocols: [...protocols], cellular, temperature }, unsupported };
+  return { query: cleaned, exclusions: { protocols: protocols.excluded, cellular, temperature }, unsupported };
 }
 
 export const hasUnsupportedNegativeConstraint = (query: string): boolean => parseNegativeConstraints(query).unsupported;
@@ -62,7 +60,7 @@ export function resolveConversationQuery(
     return { query: turn, applied: false };
   }
   const words = turn.split(/\s+/u);
-  if (!continuation.test(turn) && !(words.length <= 3 && shortConstraint.test(turn))) {
+  if (!continuation.test(turn) && !(words.length <= 3 && hasTechnicalConstraint(turn))) {
     return { query: turn, applied: false };
   }
 

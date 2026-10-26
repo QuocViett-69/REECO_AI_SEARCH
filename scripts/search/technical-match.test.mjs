@@ -147,7 +147,7 @@ test('canonicalizes only the reviewed protocol forms and preserves Modbus specif
     ['Modbus RTU', ['Modbus RTU']],
     ['sensor with SDI-12', ['SDI-12']],
     ['cảm biến hỗ trợ SDI-12', ['SDI-12']],
-    ['Modbus TCP', []],
+    ['Modbus TCP', ['Modbus TCP']],
   ]);
   for (const [query, expected] of cases) {
     assert.deepEqual(parser.parse(query).protocols, expected);

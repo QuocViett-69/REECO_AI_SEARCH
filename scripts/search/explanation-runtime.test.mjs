@@ -127,7 +127,7 @@ test('numeric claim cites only a confirmed structured range', () => {
   assert.equal(explanation.requirements[0].status, 'confirmed');
 });
 
-test('local LLM selects verified wording and falls back on invented model details', async () => {
+test('local LLM rewrites verified wording and falls back on invented model details', async () => {
   const priorEnabled = process.env.LLM_EXPLANATION_ENABLED;
   const priorModel = process.env.LLM_MODEL;
   const priorFetch = globalThis.fetch;
@@ -140,12 +140,13 @@ test('local LLM selects verified wording and falls back on invented model detail
     let request;
     globalThis.fetch = async (_url, options) => {
       request = JSON.parse(options.body);
-      return { ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, option: 1 }] }) } }) };
+      const item = JSON.parse(request.messages[1].content).items[0];
+      return { ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text: item.examples[0] }] }) } }) };
     };
     const [selected] = await llmService.explainMany('sensor supporting SDI-12', input);
     const offered = JSON.parse(request.messages[1].content);
     assert.equal(offered.query, 'sensor supporting SDI-12');
-    assert.equal(selected.text, offered.items[0].options[1]);
+    assert.equal(selected.text, offered.items[0].examples[0]);
     assert.equal(selected.source, 'llm');
     assert.equal(selected.generation.status, 'accepted');
     assert.ok(selected.generation.latency_ms >= 0);
@@ -228,19 +229,19 @@ test('LLM wording retains all matched facts, numbers and uncertainty, with a thr
       const request = JSON.parse(options.body);
       const { items } = JSON.parse(request.messages[1].content);
       assert.equal(items.length, 3);
-      for (const item of items) for (const text of item.options) {
+      for (const item of items) for (const text of item.examples) {
         assert.match(text, /soil moisture|độ ẩm đất/u);
         assert.match(text, /does not confirm air temperature/u);
         assert.match(text, /-50–70°C.*-40°C/u);
       }
-      return { ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: items.map(item => ({ index: item.index, option: 1 })) }) } }) };
+      return { ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: items.map(item => ({ index: item.index, text: item.examples[0] })) }) } }) };
     };
     const input = Array.from({ length: 4 }, () => ({ document, match }));
     const outputs = await llmService.explainMany('soil moisture and air temperature, operates at -40°C', input);
     assert.deepEqual(outputs.map(item => item.source), ['llm', 'llm', 'llm', 'rule']);
 
-    for (const option of [-1, 99, 0.5, '1']) {
-      globalThis.fetch = async () => ({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, option }] }) } }) });
+    for (const text of [-1, 99, null, '']) {
+      globalThis.fetch = async () => ({ ok: true, json: async () => ({ message: { content: JSON.stringify({ explanations: [{ index: 0, text }] }) } }) });
       const [fallback] = await llmService.explainMany('soil moisture and air temperature, operates at -40°C', input);
       assert.equal(fallback.source, 'rule');
     }
