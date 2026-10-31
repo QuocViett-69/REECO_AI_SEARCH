@@ -6,6 +6,32 @@ import { SearchResults } from './SearchResults';
 jest.mock('../commerce/FavoriteButton', () => ({ FavoriteButton: () => null }));
 jest.mock('../commerce/AddToCartButton', () => ({ AddToCartButton: () => null }));
 
+test('fallback and empty-result messages use the reply language without mixed search prose', () => {
+  const vi = renderToStaticMarkup(<SearchResults query="có cảm biến nào?" mode="keyword" results={[]}
+    guidance={{ language: 'vi', text: 'Chưa có kết quả được xác nhận.' }} />);
+  expect(vi).toContain('Đang tìm bằng từ khóa');
+  expect(vi).toContain('Chưa tìm thấy sản phẩm');
+  expect(vi).not.toMatch(/Matched by|No products match|Describe what|New search/);
+  const en = renderToStaticMarkup(<SearchResults query="Find a sensor" mode="keyword" results={[]}
+    guidance={{ language: 'en', text: 'No confirmed result.' }} />);
+  expect(en).toContain('Matched by keywords only');
+  expect(en).toContain('No products match');
+  expect(en).not.toMatch(/[ăâđêôơư]|[\u1ea0-\u1ef9]/i);
+});
+
+test('loading and errors follow the current question before language metadata arrives', () => {
+  const vi = renderToStaticMarkup(<SearchResults query="có Wi-Fi?" isLoading />);
+  expect(vi).toContain('Đang tìm thiết bị');
+  expect(vi).toContain('Bổ sung nhu cầu');
+  expect(vi).not.toContain('Matching instruments');
+  const en = renderToStaticMarkup(<SearchResults query="Operating temperature -35 to 70°C" isLoading />);
+  expect(en).toContain('Matching instruments');
+  expect(en).not.toMatch(/[ăâđêôơư]|[\u1ea0-\u1ef9]/i);
+  const error = renderToStaticMarkup(<SearchResults query="Tôi cần cảm biến" searchError={{ error: 'unavailable', message: 'Search is unavailable' }} />);
+  expect(error).toContain('Vui lòng thử lại sau');
+  expect(error).not.toContain('Search is unavailable');
+});
+
 test('ranking and category evidence do not claim that products satisfy the full request', () => {
   for (const language of ['vi', 'en']) {
     const text = language === 'vi'

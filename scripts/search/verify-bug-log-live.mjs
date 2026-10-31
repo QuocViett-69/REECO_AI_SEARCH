@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
-import { expected, explanationChecks } from './bug-log-expectations.mjs';
+import { expected, explanationChecks, originalIds, firstExpected } from './bug-log-expectations.mjs';
 
 const path = process.argv[2] ?? 'output/bug-log/after-llm.json';
 const snapshot = JSON.parse(await readFile(path, 'utf8'));
@@ -14,6 +14,7 @@ for (const item of snapshot.report) {
     assert.ok(item.response, item.error);
     if (number >= 22) { assert.deepEqual(item.response.results, []); return; }
     for (const model of expected[item.id]) assert.ok(item.response.results.some(p => p.model === model), `missing ${model}`);
+    if (firstExpected.includes(item.id)) assert.equal(item.response.results[0].model, expected[item.id][0], 'preferred model must rank first');
     if (item.id === 'TC-14') for (const part of ['weather', 'data logger', 'cellular', 'power']) {
       const component = item.response.guidance.components.find(c => c.query.includes(part));
       assert.ok(component?.models.length, `no candidates for ${part}`);
@@ -34,9 +35,15 @@ for (const item of snapshot.report) {
       assert.match(p.explanation.text, explanationChecks[item.id]);
     }
     if (item.id === 'TC-14') assert.match(item.response.guidance.text, /chưa xác nhận tương thích/u);
+    if (['TC-05', 'TC-09'].includes(item.id)) for (const p of item.response.results) {
+      assert.doesNotMatch(p.explanation.text, /full-scale|coordinate system|customized|\bheated\b|Precipitation Amount|measurement uncertainty|\bintensity\b/iu);
+    }
   });
-  outcome.push({ id: item.id, retrieval, explanation });
-  console.log(item.id, retrieval, explanation);
+  const acceptance = item.id === 'TC-14' && !item.response?.results.some(p => p.model === 'CR300')
+    ? 'BLOCKED_CATALOG: CR300 is absent; component-role checks alone do not pass TC42'
+    : retrieval === 'PASS' && ['PASS', 'N/A'].includes(explanation) ? 'PASS' : 'FAIL';
+  outcome.push({ id: item.id, original_id: originalIds[item.id] ?? null, retrieval, explanation, acceptance });
+  console.log(originalIds[item.id] ?? item.id, retrieval, explanation, acceptance);
 }
-await writeFile('output/bug-log/live-verification.json', JSON.stringify({ snapshot: path, generated_at: new Date().toISOString(), outcome }, null, 2));
+await writeFile(process.argv[3] ?? 'output/bug-log/live-verification.json', JSON.stringify({ snapshot: path, generated_at: new Date().toISOString(), outcome }, null, 2));
 assert.ok(outcome.every(x => x.retrieval === 'PASS' && ['PASS','N/A'].includes(x.explanation)), 'Live acceptance failures above');

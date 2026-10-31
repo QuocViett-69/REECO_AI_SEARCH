@@ -175,6 +175,19 @@ test('reorders only top five, keeps exact identity first, and preserves tail', a
   }
 });
 
+test('semantic reranker cannot demote an exact temperature interval below a covering interval', async () => {
+  const exact = JSON.parse(await readFile(path.join(root, 'data/search-documents/CSI_CS655.json'), 'utf8'));
+  const covering = { ...exact, product_id: 'covering', model: 'covering' };
+  const baseline = [ranked(exact.product_id), ranked(covering.product_id)];
+  baseline[0].technical.exactTemperatureRangeCount = 1;
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => response([covering.product_id, exact.product_id]);
+  try {
+    const result = await service([exact, covering]).rerank('operating temperature -35 to 70°C', parsed, baseline);
+    assert.deepEqual(result.map(r => r.candidate.productId), [exact.product_id, covering.product_id]);
+  } finally { globalThis.fetch = originalFetch; }
+});
+
 test('unknown, duplicate, missing, timeout, and unavailable responses fallback', async (t) => {
   const document = JSON.parse(
     await readFile(path.join(root, 'data/search-documents/CSI_CS655.json'), 'utf8'),

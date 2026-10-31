@@ -1,0 +1,259 @@
+{
+  "first": {
+    "query": "Nước thải có tính ăn mòn cao cần đo mực nước bồn chứa mà không được nhúng cảm biến chìm vào chất lỏng",
+    "mode": "keyword",
+    "results": [
+      {
+        "price_vnd": 14750000,
+        "product_id": "CSI_RANGEVUE30",
+        "model": "RangeVue30",
+        "name_en": "RangeVue™30",
+        "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+        "category": "Sensors",
+        "device_type": "Water Level, Stage, and Flow Sensor",
+        "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+        "matched_features": [],
+        "scores": {
+          "keyword": 0.333333,
+          "semantic": null,
+          "hybrid": null,
+          "rerank": null
+        },
+        "explanation": {
+          "text": "RangeVue30: dữ liệu xác nhận mực nước, đo mực nước không tiếp xúc. RangeVue30 đo mực nước không tiếp xúc bằng radar, đáp ứng yêu cầu không nhúng đầu đo vào nước thải ăn mòn. Cần xác minh vị trí lắp phía trên, hình học bồn, vật cản và bề mặt đo; không tiếp xúc không chứng minh kháng mọi hóa chất.",
+          "language": "vi",
+          "source": "rule",
+          "requirements": [
+            {
+              "label": "mực nước",
+              "status": "confirmed",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "water level / mực nước",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "đo mực nước không tiếp xúc",
+              "status": "confirmed",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "primary_application",
+                  "value": "Non-contact monitoring of water level in rivers, lakes, tidal seas, and reservoirs",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 4,
+                    "source_rows": [
+                      7
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "water level / mực nước",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "generation": {
+            "status": "unavailable",
+            "model": "qwen3:4b-instruct-2507-q4_K_M",
+            "latency_ms": 3
+          },
+          "evidence": [
+            {
+              "source": "product_document",
+              "field": "measurements",
+              "value": "water level / mực nước",
+              "raw_ref": {
+                "file": "data/raw/RangeVue15-30.json",
+                "product_index": 1,
+                "spec_index": 0,
+                "source_rows": [
+                  3
+                ]
+              }
+            },
+            {
+              "source": "normalized_spec",
+              "field": "primary_application",
+              "value": "Non-contact monitoring of water level in rivers, lakes, tidal seas, and reservoirs",
+              "raw_ref": {
+                "file": "data/raw/RangeVue15-30.json",
+                "product_index": 1,
+                "spec_index": 4,
+                "source_rows": [
+                  7
+                ]
+              }
+            },
+            {
+              "source": "normalized_spec",
+              "field": "measurement_principle",
+              "value": "Continuous frequency-modulated 80 GHz radar; measures elapsed time between emitted and returned signal",
+              "raw_ref": {
+                "file": "data/raw/RangeVue15-30.json",
+                "product_index": 1,
+                "spec_index": 5,
+                "source_rows": [
+                  8
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "best": {
+    "query": "cái nào phù hợp nhất?",
+    "resolved_query": "Nước thải có tính ăn mòn cao cần đo mực nước bồn chứa mà không được nhúng cảm biến chìm vào chất lỏng",
+    "context_applied": true,
+    "mode": "keyword",
+    "results": [
+      {
+        "price_vnd": 14750000,
+        "product_id": "CSI_RANGEVUE30",
+        "model": "RangeVue30",
+        "name_en": "RangeVue™30",
+        "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+        "category": "Sensors",
+        "device_type": "Water Level, Stage, and Flow Sensor",
+        "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+        "matched_features": [],
+        "scores": {
+          "keyword": 0.333333,
+          "semantic": null,
+          "hybrid": null,
+          "rerank": null
+        },
+        "explanation": {
+          "text": "RangeVue30: dữ liệu xác nhận mực nước, đo mực nước không tiếp xúc. RangeVue30 đo mực nước không tiếp xúc bằng radar, đáp ứng yêu cầu không nhúng đầu đo vào nước thải ăn mòn. Cần xác minh vị trí lắp phía trên, hình học bồn, vật cản và bề mặt đo; không tiếp xúc không chứng minh kháng mọi hóa chất.",
+          "language": "vi",
+          "source": "rule",
+          "requirements": [
+            {
+              "label": "mực nước",
+              "status": "confirmed",
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "water level / mực nước",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "label": "đo mực nước không tiếp xúc",
+              "status": "confirmed",
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "primary_application",
+                  "value": "Non-contact monitoring of water level in rivers, lakes, tidal seas, and reservoirs",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 4,
+                    "source_rows": [
+                      7
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "water level / mực nước",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "generation": {
+            "status": "unavailable",
+            "model": "qwen3:4b-instruct-2507-q4_K_M",
+            "latency_ms": 1
+          },
+          "evidence": [
+            {
+              "source": "product_document",
+              "field": "measurements",
+              "value": "water level / mực nước",
+              "raw_ref": {
+                "file": "data/raw/RangeVue15-30.json",
+                "product_index": 1,
+                "spec_index": 0,
+                "source_rows": [
+                  3
+                ]
+              }
+            },
+            {
+              "source": "normalized_spec",
+              "field": "primary_application",
+              "value": "Non-contact monitoring of water level in rivers, lakes, tidal seas, and reservoirs",
+              "raw_ref": {
+                "file": "data/raw/RangeVue15-30.json",
+                "product_index": 1,
+                "spec_index": 4,
+                "source_rows": [
+                  7
+                ]
+              }
+            },
+            {
+              "source": "normalized_spec",
+              "field": "measurement_principle",
+              "value": "Continuous frequency-modulated 80 GHz radar; measures elapsed time between emitted and returned signal",
+              "raw_ref": {
+                "file": "data/raw/RangeVue15-30.json",
+                "product_index": 1,
+                "spec_index": 5,
+                "source_rows": [
+                  8
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "status": "PASS"
+}

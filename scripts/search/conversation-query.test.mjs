@@ -19,6 +19,14 @@ test('parses supported exclusions without making them positive requirements', ()
   assert.equal(parseNegativeConstraints('soil moisture sensor kh\u00f4ng h\u1ed7 tr\u1ee3 SDI-12').exclusions.protocols[0], 'SDI-12');
 });
 
+test('plain-language instructions do not become product exclusions', () => {
+  const query = 'Hỏi bằng ngôn ngữ đời thường, không dùng từ chuyên môn: Hồ cá của tôi đang bị bẩn và nước ngày càng đục, tôi nên dùng thiết bị gì để theo dõi chất lượng nước?';
+  assert.equal(parseNegativeConstraints(query).unsupported, false);
+  assert.equal(parseNegativeConstraints('cảm biến không dùng PROFINET').unsupported, true);
+  assert.equal(parseNegativeConstraints('trạm vùng xa không có điện, gửi dữ liệu qua mạng di động').unsupported, false);
+  assert.equal(parseNegativeConstraints('thiết bị không có điện áp 12V').unsupported, true);
+});
+
 test('keeps independent searches independent', () => {
   assert.deepEqual(resolveConversationQuery('wind speed sensor', context), { query: 'wind speed sensor', applied: false });
   assert.deepEqual(resolveConversationQuery('105E'), { query: '105E', applied: false });

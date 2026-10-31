@@ -104,7 +104,9 @@ export class RerankerService {
         prefix.length,
       );
       return [
-        ...protectedIds.map((id) => byId.get(id)!),
+        ...protectedIds.map((id) => byId.get(id)!).sort((a, b) =>
+          Number(b.technical.exactIdentity) - Number(a.technical.exactIdentity)
+          || (b.technical.exactTemperatureRangeCount ?? 0) - (a.technical.exactTemperatureRangeCount ?? 0)),
         ...baseline.slice(prefix.length),
       ];
     } catch (error) {

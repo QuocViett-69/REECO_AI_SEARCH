@@ -1,0 +1,3390 @@
+{
+  "generated_at": "2026-10-31T07:29:48.943Z",
+  "report": [
+    {
+      "query": "Dải nhiệt độ hoạt động\t-35 to +70 °C",
+      "parsed": {
+        "parserVersion": "technical-query-v2",
+        "originalQuery": "Dải nhiệt độ hoạt động\t-35 to +70 °C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "range",
+            "intent": "operating",
+            "minCelsius": -35,
+            "maxCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "response": {
+        "query": "Dải nhiệt độ hoạt động\t-35 to +70 °C",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 22000000,
+            "product_id": "CSI_WINDSONIC1",
+            "model": "WindSonic1",
+            "name_en": "WindSonic1",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Ultrasonic Wind Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -35–70°C khớp đúng dải -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-35–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/WindSonic1.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-35–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 67310000,
+            "product_id": "CSI_CR6_NA_ST_CC",
+            "model": "CR6-NA-ST-CC",
+            "name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/11919",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                        "product_index": 0,
+                        "spec_index": 6,
+                        "source_rows": [
+                          9
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                    "product_index": 0,
+                    "spec_index": 6,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 4700000,
+            "product_id": "CSI_109",
+            "model": "109",
+            "name_en": "Temperature Sensor (-50 to +70C)",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/179",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/109.json",
+                        "product_index": 0,
+                        "spec_index": 1,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/109.json",
+                    "product_index": 0,
+                    "spec_index": 1,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 8750000,
+            "product_id": "CSI_CELL205_AT",
+            "model": "CELL205-AT",
+            "name_en": "4G LTE Cat1 Cellular Module for North America (-4",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11178",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/Cell205.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/Cell205.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12000000,
+            "product_id": "CSI_CS301",
+            "model": "CS301",
+            "name_en": "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11307",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS301.json",
+                        "product_index": 0,
+                        "spec_index": 13,
+                        "source_rows": [
+                          18
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 13,
+                    "source_rows": [
+                      18
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12190000,
+            "product_id": "CSI_CS650",
+            "model": "CS650",
+            "name_en": "30CM Water Content Reflectometer plus",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 1,
+                        "spec_index": 7,
+                        "source_rows": [
+                          12
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 1,
+                    "spec_index": 7,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 13210000,
+            "product_id": "CSI_CS655",
+            "model": "CS655",
+            "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 2,
+                        "spec_index": 7,
+                        "source_rows": [
+                          12
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 7,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 8500000,
+            "product_id": "CSI_NL241",
+            "model": "NL241",
+            "name_en": "NL241",
+            "name_vi": "NL241",
+            "category": "Communications",
+            "device_type": "Wi-Fi Communication Device",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/9653",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/NL241.json",
+                        "product_index": 0,
+                        "spec_index": 7,
+                        "source_rows": [
+                          11
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/NL241.json",
+                    "product_index": 0,
+                    "spec_index": 7,
+                    "source_rows": [
+                      11
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 38500000,
+            "product_id": "CSI_NR01",
+            "model": "NR01",
+            "name_en": "4Component Net Radiation Sensor",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/6322",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/NR01.json",
+                        "product_index": 0,
+                        "spec_index": 12,
+                        "source_rows": [
+                          14
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 12,
+                    "source_rows": [
+                      14
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 14750000,
+            "product_id": "CSI_RANGEVUE30",
+            "model": "RangeVue30",
+            "name_en": "RangeVue™30",
+            "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+            "category": "Sensors",
+            "device_type": "Water Level, Stage, and Flow Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/RangeVue15-30.json",
+                        "product_index": 1,
+                        "spec_index": 25,
+                        "source_rows": [
+                          28
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 25,
+                    "source_rows": [
+                      28
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Nhiệt độ vận hành -35 đến +70°C",
+      "parsed": {
+        "parserVersion": "technical-query-v2",
+        "originalQuery": "Nhiệt độ vận hành -35 đến +70°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "range",
+            "intent": "operating",
+            "minCelsius": -35,
+            "maxCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "response": {
+        "query": "Nhiệt độ vận hành -35 đến +70°C",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 22000000,
+            "product_id": "CSI_WINDSONIC1",
+            "model": "WindSonic1",
+            "name_en": "WindSonic1",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Ultrasonic Wind Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -35–70°C khớp đúng dải -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-35–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/WindSonic1.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-35–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 67310000,
+            "product_id": "CSI_CR6_NA_ST_CC",
+            "model": "CR6-NA-ST-CC",
+            "name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/11919",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                        "product_index": 0,
+                        "spec_index": 6,
+                        "source_rows": [
+                          9
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                    "product_index": 0,
+                    "spec_index": 6,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 4700000,
+            "product_id": "CSI_109",
+            "model": "109",
+            "name_en": "Temperature Sensor (-50 to +70C)",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/179",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/109.json",
+                        "product_index": 0,
+                        "spec_index": 1,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/109.json",
+                    "product_index": 0,
+                    "spec_index": 1,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 8750000,
+            "product_id": "CSI_CELL205_AT",
+            "model": "CELL205-AT",
+            "name_en": "4G LTE Cat1 Cellular Module for North America (-4",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11178",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/Cell205.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/Cell205.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12000000,
+            "product_id": "CSI_CS301",
+            "model": "CS301",
+            "name_en": "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11307",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS301.json",
+                        "product_index": 0,
+                        "spec_index": 13,
+                        "source_rows": [
+                          18
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 13,
+                    "source_rows": [
+                      18
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12190000,
+            "product_id": "CSI_CS650",
+            "model": "CS650",
+            "name_en": "30CM Water Content Reflectometer plus",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 1,
+                        "spec_index": 7,
+                        "source_rows": [
+                          12
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 1,
+                    "spec_index": 7,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 13210000,
+            "product_id": "CSI_CS655",
+            "model": "CS655",
+            "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 2,
+                        "spec_index": 7,
+                        "source_rows": [
+                          12
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 7,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 8500000,
+            "product_id": "CSI_NL241",
+            "model": "NL241",
+            "name_en": "NL241",
+            "name_vi": "NL241",
+            "category": "Communications",
+            "device_type": "Wi-Fi Communication Device",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/9653",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/NL241.json",
+                        "product_index": 0,
+                        "spec_index": 7,
+                        "source_rows": [
+                          11
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/NL241.json",
+                    "product_index": 0,
+                    "spec_index": 7,
+                    "source_rows": [
+                      11
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 38500000,
+            "product_id": "CSI_NR01",
+            "model": "NR01",
+            "name_en": "4Component Net Radiation Sensor",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/6322",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/NR01.json",
+                        "product_index": 0,
+                        "spec_index": 12,
+                        "source_rows": [
+                          14
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 12,
+                    "source_rows": [
+                      14
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 14750000,
+            "product_id": "CSI_RANGEVUE30",
+            "model": "RangeVue30",
+            "name_en": "RangeVue™30",
+            "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+            "category": "Sensors",
+            "device_type": "Water Level, Stage, and Flow Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/RangeVue15-30.json",
+                        "product_index": 1,
+                        "spec_index": 25,
+                        "source_rows": [
+                          28
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 25,
+                    "source_rows": [
+                      28
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Nhiệt độ làm việc −35 – +70 °C",
+      "parsed": {
+        "parserVersion": "technical-query-v2",
+        "originalQuery": "Nhiệt độ làm việc −35 - +70 °C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "range",
+            "intent": "operating",
+            "minCelsius": -35,
+            "maxCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "response": {
+        "query": "Nhiệt độ làm việc −35 – +70 °C",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 22000000,
+            "product_id": "CSI_WINDSONIC1",
+            "model": "WindSonic1",
+            "name_en": "WindSonic1",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Ultrasonic Wind Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -35–70°C khớp đúng dải -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-35–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/WindSonic1.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-35–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 67310000,
+            "product_id": "CSI_CR6_NA_ST_CC",
+            "model": "CR6-NA-ST-CC",
+            "name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/11919",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                        "product_index": 0,
+                        "spec_index": 6,
+                        "source_rows": [
+                          9
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                    "product_index": 0,
+                    "spec_index": 6,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 4700000,
+            "product_id": "CSI_109",
+            "model": "109",
+            "name_en": "Temperature Sensor (-50 to +70C)",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/179",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/109.json",
+                        "product_index": 0,
+                        "spec_index": 1,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/109.json",
+                    "product_index": 0,
+                    "spec_index": 1,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 8750000,
+            "product_id": "CSI_CELL205_AT",
+            "model": "CELL205-AT",
+            "name_en": "4G LTE Cat1 Cellular Module for North America (-4",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11178",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/Cell205.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/Cell205.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12000000,
+            "product_id": "CSI_CS301",
+            "model": "CS301",
+            "name_en": "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11307",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS301.json",
+                        "product_index": 0,
+                        "spec_index": 13,
+                        "source_rows": [
+                          18
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 13,
+                    "source_rows": [
+                      18
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12190000,
+            "product_id": "CSI_CS650",
+            "model": "CS650",
+            "name_en": "30CM Water Content Reflectometer plus",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 1,
+                        "spec_index": 7,
+                        "source_rows": [
+                          12
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 1,
+                    "spec_index": 7,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 13210000,
+            "product_id": "CSI_CS655",
+            "model": "CS655",
+            "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 2,
+                        "spec_index": 7,
+                        "source_rows": [
+                          12
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 7,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 8500000,
+            "product_id": "CSI_NL241",
+            "model": "NL241",
+            "name_en": "NL241",
+            "name_vi": "NL241",
+            "category": "Communications",
+            "device_type": "Wi-Fi Communication Device",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/9653",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/NL241.json",
+                        "product_index": 0,
+                        "spec_index": 7,
+                        "source_rows": [
+                          11
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/NL241.json",
+                    "product_index": 0,
+                    "spec_index": 7,
+                    "source_rows": [
+                      11
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 38500000,
+            "product_id": "CSI_NR01",
+            "model": "NR01",
+            "name_en": "4Component Net Radiation Sensor",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/6322",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/NR01.json",
+                        "product_index": 0,
+                        "spec_index": 12,
+                        "source_rows": [
+                          14
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 12,
+                    "source_rows": [
+                      14
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 14750000,
+            "product_id": "CSI_RANGEVUE30",
+            "model": "RangeVue30",
+            "name_en": "RangeVue™30",
+            "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+            "category": "Sensors",
+            "device_type": "Water Level, Stage, and Flow Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải hoạt động -40–80°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/RangeVue15-30.json",
+                        "product_index": 1,
+                        "spec_index": 25,
+                        "source_rows": [
+                          28
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 25,
+                    "source_rows": [
+                      28
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Operating temperature range -31 to 158°F",
+      "parsed": {
+        "parserVersion": "technical-query-v2",
+        "originalQuery": "Operating temperature range -31 to 158°F",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "range",
+            "intent": "operating",
+            "minCelsius": -35,
+            "maxCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "response": {
+        "query": "Operating temperature range -31 to 158°F",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 22000000,
+            "product_id": "CSI_WINDSONIC1",
+            "model": "WindSonic1",
+            "name_en": "WindSonic1",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Ultrasonic Wind Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -35–70°C exactly matches -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-35–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/WindSonic1.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-35–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 67310000,
+            "product_id": "CSI_CR6_NA_ST_CC",
+            "model": "CR6-NA-ST-CC",
+            "name_en": "CR6 Datalogger -NA No Additional Coms -ST -40 t",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Data Logger",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/11919",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -40–70°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                        "product_index": 0,
+                        "spec_index": 6,
+                        "source_rows": [
+                          9
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_CR6_NA_ST_CC.json",
+                    "product_index": 0,
+                    "spec_index": 6,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 4700000,
+            "product_id": "CSI_109",
+            "model": "109",
+            "name_en": "Temperature Sensor (-50 to +70C)",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/179",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -50–70°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/109.json",
+                        "product_index": 0,
+                        "spec_index": 1,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/109.json",
+                    "product_index": 0,
+                    "spec_index": 1,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 8750000,
+            "product_id": "CSI_CELL205_AT",
+            "model": "CELL205-AT",
+            "name_en": "4G LTE Cat1 Cellular Module for North America (-4",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Cellular Modem / Router",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11178",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -40–80°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/Cell205.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/Cell205.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12000000,
+            "product_id": "CSI_CS301",
+            "model": "CS301",
+            "name_en": "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11307",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -40–70°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS301.json",
+                        "product_index": 0,
+                        "spec_index": 13,
+                        "source_rows": [
+                          18
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 13,
+                    "source_rows": [
+                      18
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12190000,
+            "product_id": "CSI_CS650",
+            "model": "CS650",
+            "name_en": "30CM Water Content Reflectometer plus",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -50–70°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 1,
+                        "spec_index": 7,
+                        "source_rows": [
+                          12
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 1,
+                    "spec_index": 7,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 13210000,
+            "product_id": "CSI_CS655",
+            "model": "CS655",
+            "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -50–70°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 2,
+                        "spec_index": 7,
+                        "source_rows": [
+                          12
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 7,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 8500000,
+            "product_id": "CSI_NL241",
+            "model": "NL241",
+            "name_en": "NL241",
+            "name_vi": "NL241",
+            "category": "Communications",
+            "device_type": "Wi-Fi Communication Device",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/9653",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -40–70°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/NL241.json",
+                        "product_index": 0,
+                        "spec_index": 7,
+                        "source_rows": [
+                          11
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/NL241.json",
+                    "product_index": 0,
+                    "spec_index": 7,
+                    "source_rows": [
+                      11
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 38500000,
+            "product_id": "CSI_NR01",
+            "model": "NR01",
+            "name_en": "4Component Net Radiation Sensor",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/6322",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -40–80°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/NR01.json",
+                        "product_index": 0,
+                        "spec_index": 12,
+                        "source_rows": [
+                          14
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 12,
+                    "source_rows": [
+                      14
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 14750000,
+            "product_id": "CSI_RANGEVUE30",
+            "model": "RangeVue30",
+            "name_en": "RangeVue™30",
+            "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+            "category": "Sensors",
+            "device_type": "Water Level, Stage, and Flow Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "The documented operating range -40–80°C covers -35–70°C.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "The documented operating range: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-40–80°C",
+                      "raw_ref": {
+                        "file": "data/raw/RangeVue15-30.json",
+                        "product_index": 1,
+                        "spec_index": 25,
+                        "source_rows": [
+                          28
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-40–80°C",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 25,
+                    "source_rows": [
+                      28
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Cảm biến đo tốc độ gió dải nhiệt độ hoạt động -35 to +70°C",
+      "parsed": {
+        "parserVersion": "technical-query-v2",
+        "originalQuery": "Cảm biến đo tốc độ gió dải nhiệt độ hoạt động -35 to +70°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "range",
+            "intent": "operating",
+            "minCelsius": -35,
+            "maxCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "response": {
+        "query": "Cảm biến đo tốc độ gió dải nhiệt độ hoạt động -35 to +70°C",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 22000000,
+            "product_id": "CSI_WINDSONIC1",
+            "model": "WindSonic1",
+            "name_en": "WindSonic1",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Ultrasonic Wind Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+            "matched_features": [
+              "operating-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "WindSonic1: dữ liệu xác nhận tốc độ gió. Dải hoạt động -35–70°C khớp đúng dải -35–70°C bạn yêu cầu. WindSonic1 đo tốc độ gió, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Số đo gió hỗ trợ đánh giá điều kiện tại điểm lắp đặt. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn. Thông số Wind Speed Resolution: 0.01 m/s. Thông số wind speed accuracy: ±2% @ 12 m/s.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "tốc độ gió",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "wind speed / tốc độ gió",
+                      "raw_ref": {
+                        "file": "data/raw/WindSonic1.json",
+                        "product_index": 0,
+                        "spec_index": 0,
+                        "source_rows": [
+                          2
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "label": "Dải hoạt động: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-35–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/WindSonic1.json",
+                        "product_index": 0,
+                        "spec_index": 8,
+                        "source_rows": [
+                          10
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "label": "cấu hình lắp đặt và tương thích hệ thống",
+                  "status": "unconfirmed",
+                  "evidence": []
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "wind speed / tốc độ gió",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 0,
+                    "source_rows": [
+                      2
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-35–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 8,
+                    "source_rows": [
+                      10
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Tốc độ gió",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 0,
+                    "source_rows": [
+                      2
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "wind_speed_resolution",
+                  "value": "0.01 m/s",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 25,
+                    "source_rows": [
+                      27
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "wind_speed_accuracy",
+                  "value": "±2% @ 12 m/s",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 24,
+                    "source_rows": [
+                      26
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Dải đo nhiệt độ -35 to +70°C",
+      "parsed": {
+        "parserVersion": "technical-query-v2",
+        "originalQuery": "Dải đo nhiệt độ -35 to +70°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "range",
+            "intent": "measurement",
+            "minCelsius": -35,
+            "maxCelsius": 70,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "response": {
+        "query": "Dải đo nhiệt độ -35 to +70°C",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 4700000,
+            "product_id": "CSI_109",
+            "model": "109",
+            "name_en": "Temperature Sensor (-50 to +70C)",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/179",
+            "matched_features": [
+              "measurement-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải đo nhiệt độ -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải đo nhiệt độ: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "temperature_measurement_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/109.json",
+                        "product_index": 0,
+                        "spec_index": 4,
+                        "source_rows": [
+                          6
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "temperature_measurement_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/109.json",
+                    "product_index": 0,
+                    "spec_index": 4,
+                    "source_rows": [
+                      6
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12190000,
+            "product_id": "CSI_CS650",
+            "model": "CS650",
+            "name_en": "30CM Water Content Reflectometer plus",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4884",
+            "matched_features": [
+              "measurement-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải đo nhiệt độ -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải đo nhiệt độ: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "soil_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 1,
+                        "spec_index": 32,
+                        "source_rows": [
+                          59
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "soil_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 1,
+                    "spec_index": 32,
+                    "source_rows": [
+                      59
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 13210000,
+            "product_id": "CSI_CS655",
+            "model": "CS655",
+            "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "matched_features": [
+              "measurement-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải đo nhiệt độ -50–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải đo nhiệt độ: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "soil_temperature_range",
+                      "value": "-50–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 2,
+                        "spec_index": 32,
+                        "source_rows": [
+                          59
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "soil_temperature_range",
+                  "value": "-50–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 32,
+                    "source_rows": [
+                      59
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 9910000,
+            "product_id": "CSI_HYGROVUE10",
+            "model": "HygroVue10",
+            "name_en": "Digital Temperature/RH Sensor w/M12 Connector w/o",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Air Temperature and Relative Humidity Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11956",
+            "matched_features": [
+              "measurement-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải đo nhiệt độ -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải đo nhiệt độ: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "temperature_measurement_operating_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/HygroVue10.json",
+                        "product_index": 0,
+                        "spec_index": 17,
+                        "source_rows": [
+                          26
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "temperature_measurement_operating_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/HygroVue10.json",
+                    "product_index": 0,
+                    "spec_index": 17,
+                    "source_rows": [
+                      26
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 29210000,
+            "product_id": "CSI_METSENS300_D2",
+            "model": "MetSENS300-D2",
+            "name_en": "MetSENS300-D2",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Compact Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11229",
+            "matched_features": [
+              "measurement-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải đo nhiệt độ -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải đo nhiệt độ: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "air_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_METSENS300_D2.json",
+                        "product_index": 0,
+                        "spec_index": 26,
+                        "source_rows": [
+                          31
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "air_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_METSENS300_D2.json",
+                    "product_index": 0,
+                    "spec_index": 26,
+                    "source_rows": [
+                      31
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 41910000,
+            "product_id": "CSI_METSENS500_DS",
+            "model": "MetSENS500-DS",
+            "name_en": "MetSENS500-DS",
+            "name_vi": "MetSENS500-DS",
+            "category": "Sensors",
+            "device_type": "All-in-One Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11230",
+            "matched_features": [
+              "measurement-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải đo nhiệt độ -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải đo nhiệt độ: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "air_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/MetSENS500.json",
+                        "product_index": 2,
+                        "spec_index": 24,
+                        "source_rows": [
+                          27
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "air_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/MetSENS500.json",
+                    "product_index": 2,
+                    "spec_index": 24,
+                    "source_rows": [
+                      27
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 46990000,
+            "product_id": "CSI_METSENS550_D2",
+            "model": "MetSENS550-D2",
+            "name_en": "MetSENS550-D2",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Compact Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11231",
+            "matched_features": [
+              "measurement-temperature:-35..70°C"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "Dải đo nhiệt độ -40–70°C bao phủ mức -35–70°C bạn yêu cầu.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Dải đo nhiệt độ: -35–70°C",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "air_temperature_range",
+                      "value": "-40–70°C",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_METSENS550_D2.json",
+                        "product_index": 0,
+                        "spec_index": 23,
+                        "source_rows": [
+                          27
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "air_temperature_range",
+                  "value": "-40–70°C",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_METSENS550_D2.json",
+                    "product_index": 0,
+                    "spec_index": 23,
+                    "source_rows": [
+                      27
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Dải nhiệt độ hoạt động -200 to +300°C",
+      "parsed": {
+        "parserVersion": "technical-query-v2",
+        "originalQuery": "Dải nhiệt độ hoạt động -200 to +300°C",
+        "identity": null,
+        "protocols": [],
+        "temperatureConstraints": [
+          {
+            "kind": "range",
+            "intent": "operating",
+            "minCelsius": -200,
+            "maxCelsius": 300,
+            "unit": "°C",
+            "confidence": "high"
+          }
+        ],
+        "confidence": {
+          "identity": "none",
+          "protocol": "none",
+          "temperature": "high"
+        }
+      },
+      "response": {
+        "query": "Dải nhiệt độ hoạt động -200 to +300°C",
+        "mode": "keyword",
+        "guidance": {
+          "text": "Chưa tìm thấy sản phẩm có dữ liệu xác nhận đồng thời toàn bộ yêu cầu. Điều này không chứng minh danh mục không có giải pháp. Hãy làm rõ đại lượng, model hoặc cho phép phối hợp nhiều thiết bị; dải nhiệt độ vận hành không xác nhận dải đo hay môi trường nước.",
+          "language": "vi",
+          "needs_clarification": true
+        },
+        "results": []
+      },
+      "status": "PASS"
+    }
+  ]
+}

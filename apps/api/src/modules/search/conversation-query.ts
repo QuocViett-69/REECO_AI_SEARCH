@@ -28,11 +28,12 @@ export function parseNegativeConstraints(query: string): { query: string; exclus
   const marker = /\b(?:without|excluding|exclude|do(?:es)?\s+not\s+(?:support|use|have|need|operate|measure)|do(?:es)?n['’]t\s+(?:support|use|have|need|operate|measure)|not\s+(?:using|supporting|operating|measuring|suitable)|but\s+not)\b|\bnon[-\s]+\p{L}|\bno\s+(?:modbus|sdi|rs)\b|kh[oô]ng\s+(?:ho tro|dung|co|có|hỗ trợ|dùng|được|sử dụng|cần|đo|hoạt động)(?=$|[^\p{L}\p{N}])/iu;
   // Contextual absence is a deployment need, not a product exclusion.
   const unsupported = marker.test(cleaned
+    .replace(/không\s+(?:dùng|sử dụng)\s+(?:từ|thuật ngữ)\s+chuyên môn/giu, '')
     .replace(/\bwithout\s+(?:personnel|visiting|having to visit|staff|an? (?:internet|grid) connection)\b/giu, '')
     .replace(/\bwithout\s+(?:cellular coverage|submerging|immersing)\b/giu, '')
     .replace(/\b(?:non[-\s]+contact|without\s+(?:a\s+)?(?:propeller|rotor|moving parts))\b/giu, '')
     .replace(/không\s+được\s+nhúng/giu, '')
-    .replace(/không có (?:sóng (?:di động\s*)?(?:4G)?|điện lưới|bất kỳ mạng viễn thông mặt đất nào)/giu, ''));
+    .replace(/không có (?:sóng (?:di động\s*)?(?:4G)?|điện(?: lưới)?(?!\s+áp)|bất kỳ mạng viễn thông mặt đất nào)/giu, ''));
   return { query: cleaned, exclusions: { protocols: protocols.excluded, cellular, temperature }, unsupported };
 }
 

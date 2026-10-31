@@ -3,19 +3,18 @@ import type { ProductSearchDocument, ProductSpecification, SearchResponse } from
 import { configuration } from '../../config/configuration';
 import type { TechnicalMatchResult } from './technical-match.service';
 import { temperatureTargetEvidence } from './temperature-target';
-import { parseSearchIntent, matchSearchIntent } from './search-intent';
+import { parseSearchIntent, matchSearchIntent, type SearchIntent } from './search-intent';
 import { contextualExplanation } from './requirement-explanation';
 import { withSearchDeadline } from './search-deadline';
 import { parseNegativeConstraints } from './conversation-query';
 import { protocolAlternatives } from './query-context';
 import { protocolRequirements, protocolSatisfies } from './protocol-query';
 import { verifiedWording } from './explanation-wording';
+import { matchSpecificationConstraints, normalizeSpecificationText, specificationFieldLabel, specificationRequirementLabel } from './specification-query';
+import { searchLanguage, numericSpecificationText, type SearchLanguage } from './search-language';
 
 type Explanation = NonNullable<SearchResponse['results'][number]['explanation']>;
 type Evidence = Explanation['evidence'][number];
-
-const isVietnamese = (query: string): boolean =>
-  /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(query);
 
 @Injectable()
 export class ExplanationService {
@@ -25,8 +24,9 @@ export class ExplanationService {
   async explainMany(
     query: string,
     items: { document: ProductSearchDocument; match?: TechnicalMatchResult; specifications?: ProductSpecification[]; query?: string }[],
+    language: SearchLanguage = searchLanguage(query),
   ): Promise<Explanation[]> {
-    const explanations = items.map(({ document, match, specifications, query: requirement }) => this.explain(requirement ?? query, document, match, specifications));
+    const explanations = items.map(({ document, match, specifications, query: requirement }) => this.explain(requirement ?? query, document, match, specifications, language));
     const enabled = this.config.explanation.llmEnabled && !!this.config.explanation.model;
     for (const explanation of explanations) explanation.generation = { status: enabled ? 'not_applicable' : 'disabled', ...(enabled && { model: this.config.explanation.model }) };
     if (!enabled) return explanations;
@@ -149,8 +149,9 @@ export class ExplanationService {
     document: ProductSearchDocument,
     match?: TechnicalMatchResult,
     specifications: ProductSpecification[] = [],
+    language: SearchLanguage = searchLanguage(query),
   ): Explanation {
-    const vi = isVietnamese(query);
+    const vi = language === 'vi';
     const sentences: string[] = [];
     const evidence: Evidence[] = [];
     const evaluated: NonNullable<Explanation['requirements']> = [];
@@ -173,15 +174,16 @@ export class ExplanationService {
 
     // Reuse the search matcher one requirement at a time. Missing one fact must
     // not hide the independently confirmed requirements or technical limits.
-    const emptyIntent = { ...intent, measurements: [], target: undefined, roles: [], outdoor: false, specifications: [], sensorOnly: false, features: [], depths: [], transport: undefined };
-    const requirements = [
+    const emptyIntent = { ...intent, measurements: [], target: undefined, roles: [], outdoor: false, specifications: [], technicalSpecifications: [], sensorOnly: false, features: [], depths: [], transport: undefined };
+    const requirements: { label: string; intent: SearchIntent }[] = [
       ...intent.measurements.map(item => ({ label: vi ? item.vi : item.en, intent: { ...emptyIntent, measurements: [item] } })),
       ...(target ? [{ label: vi ? target.vi : target.en, intent: { ...emptyIntent, target } }] : []),
       ...intent.roles.map(item => ({ label: vi ? item.vi : item.en, intent: { ...emptyIntent, roles: [item] } })),
-      ...intent.specifications.map(item => ({ label: item, intent: { ...emptyIntent, specifications: [item] } })),
+      ...intent.specifications.map(item => ({ label: vi ? item.replace(/\bto\b/gu, 'đến') : item, intent: { ...emptyIntent, specifications: [item] } })),
+      ...intent.technicalSpecifications.map(item => ({ label: specificationRequirementLabel(item, vi), intent: { ...emptyIntent, technicalSpecifications: [item] } })),
       ...(intent.outdoor ? [{ label: vi ? 'sử dụng ngoài trời khắc nghiệt' : 'harsh outdoor use', intent: { ...emptyIntent, outdoor: true } }] : []),
       ...intent.features.map(item => ({ label: vi ? item.vi : item.en, intent: { ...emptyIntent, features: [item], depths: intent.depths, measurements: intent.measurements } })),
-      ...(intent.transport ? [{ label: intent.transport, intent: { ...emptyIntent, transport: intent.transport } }] : []),
+      ...(intent.transport ? [{ label: vi ? { satellite: 'truyền qua vệ tinh', radio: 'truyền bằng sóng vô tuyến', cellular: 'truyền qua mạng di động' }[intent.transport] : intent.transport, intent: { ...emptyIntent, transport: intent.transport } }] : []),
     ];
     const confirmed: string[] = [];
     const unknown: string[] = [];
@@ -207,6 +209,18 @@ export class ExplanationService {
     if (unknown.length) {
       add(vi ? `Chưa có dữ liệu xác nhận ${unknown.join(', ')}; chưa thể kết luận đáp ứng toàn bộ yêu cầu.` : `Available data does not confirm ${unknown.join(', ')}; suitability for the full request is unconfirmed.`);
     }
+    for (const constraint of intent.technicalSpecifications) {
+      const matched = matchSpecificationConstraints([constraint], specifications)?.[0];
+      if (!matched) continue;
+      const relation = constraint.operator !== 'eq' ? vi ? 'đáp ứng điều kiện so sánh' : 'meets the requested bound'
+        : matched.exact ? vi ? 'khớp đúng giá trị' : 'exact value match' : vi ? 'bao phủ giá trị hoặc dải yêu cầu' : 'covers the requested value or interval';
+      const key = matched.specification.canonical_key;
+      const mode = /idle|quiescent|standby/u.test(key) ? ' (chế độ nghỉ)' : /active/u.test(key) ? ' (chế độ hoạt động)' : /low_power/u.test(key) ? ' (chế độ tiết kiệm điện)' : '';
+      const label = specificationRequirementLabel(constraint, vi);
+      const displayValue = matched.displayValue.replace(/\bto\b/gu, vi ? 'đến' : 'to');
+      add(vi ? `${constraint.field.label}${mode}: ${displayValue}; ${relation} “${label}”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.`
+        : `${label}: ${displayValue}; ${relation}. The original specification conditions still apply.`);
+    }
     for (const protocol of parseNegativeConstraints(query).exclusions.protocols) {
       const alternatives = protocolAlternatives(protocol, document.supported_protocols);
       const used = protocolRequirements(query).avoided.some(item => item === protocol);
@@ -223,10 +237,12 @@ export class ExplanationService {
       add(contextual.text);
       for (const fact of contextual.evidence) if (!evidence.some(e => e.field === fact.field && e.value === fact.value)) evidence.push(fact);
     }
-    const normalized = query.normalize('NFD').replace(/[\u0300-\u036f]/gu, '').replace(/đ/giu, 'd').toLowerCase();
+    const contextualQuery = intent.technicalSpecifications.length
+      ? intent.technicalSpecifications.reduce((text, constraint) => text.replace(constraint.fragment, ' '), normalizeSpecificationText(query)) : query;
+    const normalized = contextualQuery.normalize('NFD').replace(/[\u0300-\u036f]/gu, '').replace(/đ/giu, 'd').toLowerCase();
     const specNeeds = [
       { requested: /\b(?:outdoors?|ngoai troi|buried|chon.*dat)\b/u.test(normalized), vi: 'lắp đặt ngoài trời/chôn đất', en: 'outdoor/buried installation', keys: /operating_temperature|ingress|protection|soil_suitability/u },
-      { requested: /\b(?:memory|bo nho|stored|luu.*du lieu|du lieu.*luu)\b/u.test(normalized), vi: 'lưu dữ liệu', en: 'data storage', keys: /^(?:data_storage_memory|memory_data_storage|data_memory|data_retention)$/u },
+      { requested: /\b(?:stored|luu.*du lieu|du lieu.*luu)\b/u.test(normalized) || /\b(?:memory|bo nho)\b/u.test(normalized) && !intent.technicalSpecifications.some(item => item.field.label === 'Bộ nhớ'), vi: 'lưu dữ liệu', en: 'data storage', keys: /^(?:data_storage_memory|memory_data_storage|data_memory|data_retention)$/u },
       { requested: /\b(?:(?:\d+|two|ten|hai|muoi) (?:sensors?|cam bien)|analog|digital|connect.*sensor|sensor.*connect|ket noi.*cam bien|cam bien.*ket noi)\b/u.test(normalized), vi: 'kết nối cảm biến', en: 'sensor connections', keys: /^(?:analog_measurement_terminals|analog_inputs|analog_input_channels|single_ended_terminals|differential_terminals|digital_io_terminals|sdi_12|input_channels)$/u },
       { requested: /\b(?:average|maximum|trung binh|cuc dai)\b/u.test(normalized), vi: 'tính trung bình/lưu cực đại', en: 'average/maximum processing', keys: /processing|statistical|calculation|programming/u },
       { requested: /\b(?:low power|power consumption|dien thap|tieu thu dien|off.grid|khong co dien)\b/u.test(normalized), vi: 'điện năng/nguồn cấp', en: 'power requirements', keys: /power_consumption|current_drain|power_supply|supply_voltage|quiescent/u },
@@ -241,13 +257,16 @@ export class ExplanationService {
         if (!raw) continue;
         const fact: Evidence = { source: 'normalized_spec', field: spec.canonical_key, value: raw, raw_ref: spec.raw_ref };
         related.push(fact);
-        add(vi ? `Thông số liên quan ${need.vi}: ${raw}.` : `Evidence relevant to ${need.en}: ${raw}.`, fact);
+        // Keep untranslated prose in evidence, not in the Vietnamese explanation.
+        const numeric = numericSpecificationText(spec, language);
+        if (numeric) add(vi ? `Thông số liên quan ${need.vi}: ${numeric}.` : `Evidence relevant to ${need.en}: ${numeric}.`, fact);
+        else evidence.push(fact);
       }
       add(vi ? `Chưa xác nhận đáp ứng đầy đủ yêu cầu ${need.vi}; cần đối chiếu cấu hình thực tế.` : `The full ${need.en} requirement remains unconfirmed; check the actual configuration.`);
       evaluated.push({ label: vi ? need.vi : need.en, status: 'unconfirmed', evidence: related });
     }
     if (/\b(?:\d+|two|ten|hai|muoi) (?:sensors?|cam bien)\b/u.test(normalized)) add(vi ? 'Số cảm biến chưa xác định số kênh cần dùng: cần loại tín hiệu, số dây và cách chia sẻ bus. Chưa đủ căn cứ chọn bộ ghi công suất lớn chỉ từ số lượng cảm biến.' : 'Sensor count alone does not determine required channels: signal types, wiring and bus sharing are needed. The count alone does not establish a need for a high-capacity logger.');
-    if (/\b(?:memory|bo nho)\b/u.test(normalized)) add(vi ? 'Ước tính dung lượng cần bằng số bản ghi nhân kích thước bản ghi; cần biết số đại lượng, định dạng và thời gian lưu. Thông số bộ nhớ riêng lẻ chưa chứng minh lưu đủ vài tháng.' : 'Estimate required storage as record count multiplied by record size; specify variables, format and retention period. Memory size alone does not establish months of retention.');
+    if (/\b(?:memory|bo nho)\b/u.test(normalized) && (!intent.technicalSpecifications.some(item => item.field.label === 'Bộ nhớ') || /\b(?:months?|thang|stored|luu)\b/u.test(normalized))) add(vi ? 'Ước tính dung lượng cần bằng số bản ghi nhân kích thước bản ghi; cần biết số đại lượng, định dạng và thời gian lưu. Thông số bộ nhớ riêng lẻ chưa chứng minh lưu đủ vài tháng.' : 'Estimate required storage as record count multiplied by record size; specify variables, format and retention period. Memory size alone does not establish months of retention.');
     if (/\b(?:internet.*lost|network goes down|mat ket noi|mang.*mat)\b/u.test(normalized)) add(vi ? 'Cần xác nhận dữ liệu được lưu cục bộ và cơ chế gửi lại khi có mạng; mất kết nối không tự chứng minh dữ liệu bị mất hay được bảo toàn.' : 'Confirm local storage and retransmission after connectivity returns; a lost connection alone does not establish data loss or preservation.');
     if (/\b(?:solar radiation|anh sang mat troi)\b/u.test(normalized)) add(vi ? 'Để biết lượng bức xạ theo ngày cần ghi và tích phân số đo theo thời gian; dữ liệu hiện có chưa xác nhận cấu hình tính tổng ngày.' : 'Daily radiation requires recording and integrating readings over time; the daily-total configuration remains unconfirmed.');
     if (/\b(?:remote|remotely|tu xa|from home|tu nha|gui du lieu|nhan du lieu)\b/u.test(normalized) && /modem|communication|radio/iu.test(document.taxonomy.device_type)) add(vi ? 'Truy cập từ xa cần đường truyền và nơi nhận dữ liệu. Chưa xác nhận vùng phủ, hạ tầng hoặc mức tiêu thụ điện của cấu hình triển khai; không có Internet tại trạm chưa đủ để chọn radio hay mạng di động.' : 'Remote access requires a transport link and a data destination. Coverage, infrastructure and deployed power consumption remain unconfirmed; no Internet at the station alone does not establish whether radio or cellular is appropriate.');
@@ -295,7 +314,7 @@ export class ExplanationService {
         if (!support?.candidateRange) continue;
         const range = `${support.candidateRange.minCelsius}–${support.candidateRange.maxCelsius}°C`;
         add(
-          vi ? `${rangeLabel} ${range} bao phủ mức ${request} bạn yêu cầu.` : `${rangeLabel} ${range} covers ${request}.`,
+          vi ? `${rangeLabel} ${range} ${range === request ? 'khớp đúng dải' : 'bao phủ mức'} ${request} bạn yêu cầu.` : `${rangeLabel} ${range} ${range === request ? 'exactly matches' : 'covers'} ${request}.`,
           { source: 'normalized_spec', field: support.canonicalKey, value: range, raw_ref: support.rawRef },
         );
       } else if (temperature.result === 'UNKNOWN') {
@@ -321,7 +340,7 @@ export class ExplanationService {
 
     // Use per-model facts already loaded for search. Quoting a specification does
     // not establish that it meets an unevaluated numeric requirement.
-    const broad = allowProfile && !contextual && !intent.measurements.length && !intent.target && !intent.specifications.length;
+    const broad = allowProfile && !contextual && !intent.measurements.length && !intent.target && !intent.specifications.length && !intent.technicalSpecifications.length;
     if (broad && !match?.protocolMatches.length && document.supported_protocols.length) {
       const interfaces = document.supported_protocols.filter(value => /SDI|Modbus|RS-|Ethernet|Wi-Fi|CPI|CS I\/O|USB|MQTT|HTTP/iu.test(value)).slice(0, 4);
       if (interfaces.length) add(vi ? `Giao tiếp được ghi nhận: ${interfaces.join(', ')}.` : `Documented interfaces: ${interfaces.join(', ')}.`,
@@ -331,8 +350,7 @@ export class ExplanationService {
       const variant = document.variants?.find(item => item.model === document.model);
       for (const spec of (variant?.distinguishing_specifications ?? []).filter(item => /communication option|configuration option|product variant|calibration|accuracy option/iu.test(item.name_en)).slice(0, 2)) {
         const value = `${spec.name_en}: ${spec.value_raw}`;
-        add(vi ? `Cấu hình ${document.model}: ${value}.` : `${document.model} configuration: ${value}.`,
-          { source: 'product_document', field: 'variant_configuration', value });
+        evidence.push({ source: 'product_document', field: 'variant_configuration', value });
       }
     }
     const family = document.taxonomy.category_key;
@@ -352,8 +370,10 @@ export class ExplanationService {
       if (evidence.some(item => item.field === spec.canonical_key)) continue;
       const value = spec.normalized_value.value_raw ?? (spec.normalized_value.type === 'text' ? spec.normalized_value.value : '');
       if (!value) continue;
-      const name = document.important_specifications.find(item => item.canonical_key === spec.canonical_key)?.name ?? spec.canonical_key.replace(/_/gu, ' ');
-      add(vi ? `Thông số ${name}: ${value}.` : `${name}: ${value}.`, { source: 'normalized_spec', field: spec.canonical_key, value, raw_ref: spec.raw_ref });
+      const fact = { source: 'normalized_spec' as const, field: spec.canonical_key, value, raw_ref: spec.raw_ref };
+      const numeric = numericSpecificationText(spec, language);
+      if (numeric) add(`${specificationFieldLabel(spec.canonical_key, vi)}: ${numeric}.`, fact);
+      else evidence.push(fact);
     }
 
     if (sentences.length === 0 || evidence.length === 0 && !intent.constrained) {
@@ -393,7 +413,7 @@ export class ExplanationService {
     if (sentences.length === 0) {
       const type = document.taxonomy.device_type;
       add(
-        vi ? `Danh mục ghi nhận đây là ${type}; chưa có bằng chứng cụ thể hơn cho truy vấn.` : `The catalog classifies this as ${type}; no more specific evidence confirms the query.`,
+        vi ? 'Danh mục ghi nhận đây là thiết bị quan trắc; chưa có bằng chứng cụ thể hơn cho truy vấn.' : 'The catalog lists this monitoring equipment; no more specific evidence confirms the query.',
         { source: 'product_document', field: 'taxonomy.device_type', value: type },
       );
     }
@@ -430,7 +450,7 @@ export class ExplanationService {
       const labels = other.map(item => (vi ? item.label_vi : item.label_en).toLocaleLowerCase()).join(', ');
       const acquisition = /data logger|module|measurement device|analyzer|multiplexer/iu.test(document.taxonomy.device_type);
       sentences.push(acquisition
-        ? vi ? `${document.model} là ${document.taxonomy.device_type}; dữ liệu ghi nhận chức năng/đầu vào đo ${labels}. Cần phân biệt phép đo nội bộ và tín hiệu đầu vào với cảm biến đo trực tiếp môi trường; kiểm tra cảm biến, đấu dây và cấu hình tương ứng.`
+        ? vi ? `${document.model} là thiết bị đo và thu thập dữ liệu; dữ liệu ghi nhận chức năng/đầu vào đo ${labels}. Cần phân biệt phép đo nội bộ và tín hiệu đầu vào với cảm biến đo trực tiếp môi trường; kiểm tra cảm biến, đấu dây và cấu hình tương ứng.`
           : `${document.model} is a ${document.taxonomy.device_type}; the data records measurement functions/inputs for ${labels}. Distinguish internal measurements and input signals from direct environmental sensors; check sensors, wiring and configuration.`
         : vi ? `${document.model} đo ${labels}, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh.` : `${document.model} measures ${labels}, providing readings to monitor conditions before deciding on adjustments.`);
       if (/\b(?:cai thien|tuoi|dieu khien|improve|irrigation|control)\b/u.test(text)) sentences.push(vi ? 'Khả năng đo không xác nhận thiết bị tự xử lý vấn đề hoặc điều khiển hệ thống.' : 'Measurement capability does not establish automatic treatment or system control.');
@@ -451,9 +471,9 @@ export class ExplanationService {
       const type = document.taxonomy.device_type;
       if (/data logger/iu.test(type)) sentences.push(vi ? `${document.model} là bộ ghi dữ liệu, hỗ trợ phần ghi nhận số liệu trong nhu cầu theo dõi của bạn. Cần kiểm tra cảm biến và giao thức tương thích; bộ ghi không thay thế cảm biến đo.` : `${document.model} is a data logger for recording monitoring data. Check compatible sensors and protocols; a logger does not replace a measurement sensor.`);
       else if (/modem|radio|communication/iu.test(type)) sentences.push(vi ? `${document.model} là thiết bị truyền thông, liên quan đến phần truyền dữ liệu của hệ thống. Cần xác nhận giao thức, mạng và thiết bị kết nối phù hợp; khả năng truyền dữ liệu không xác nhận khả năng đo hoặc xử lý vấn đề.` : `${document.model} is communication equipment for the data-transfer part of a system. Confirm compatible protocols, networks and connected devices; communication does not establish measurement or treatment capabilities.`);
-      else if (document.taxonomy.category_key === 'power') sentences.push(vi ? `${document.model} là ${type}, dùng cho phần cấp nguồn. Cần đối chiếu điện áp, dòng điện, pin và tải; chưa xác nhận thời gian hoạt động của hệ thống.` : `${document.model} is a ${type} for system power. Check voltage, current, batteries and load; system runtime is not established.`);
-      else if (allowProfile && !intent.constrained) sentences.push(vi ? `${document.model} được phân loại là ${type}. Cần đối chiếu chức năng, đầu vào/đầu ra và cấu hình được ghi nhận; chưa xác nhận các khả năng không có trong dữ liệu.` : `${document.model} is classified as a ${type}. Check documented functions, inputs/outputs and configuration; undocumented capabilities remain unconfirmed.`);
-      else if (roleMatch) sentences.push(vi ? `${document.model} thuộc loại ${type}, khớp nhóm chức năng bạn yêu cầu. Điều này chưa xác nhận thiết bị đáp ứng mục tiêu cuối cùng; cần đối chiếu thông số và cấu hình hệ thống.` : `${document.model} is a ${type}, matching the requested equipment role. This does not establish that it achieves the end goal; check specifications and system configuration.`);
+      else if (document.taxonomy.category_key === 'power') sentences.push(vi ? `${document.model} là thiết bị dùng cho phần cấp nguồn. Cần đối chiếu điện áp, dòng điện, pin và tải; chưa xác nhận thời gian hoạt động của hệ thống.` : `${document.model} is a ${type} for system power. Check voltage, current, batteries and load; system runtime is not established.`);
+      else if (allowProfile && !intent.constrained) sentences.push(vi ? `${document.model} là thiết bị trong danh mục quan trắc. Cần đối chiếu chức năng, đầu vào/đầu ra và cấu hình được ghi nhận; chưa xác nhận các khả năng không có trong dữ liệu.` : `${document.model} is classified as a ${type}. Check documented functions, inputs/outputs and configuration; undocumented capabilities remain unconfirmed.`);
+      else if (roleMatch) sentences.push(vi ? `${document.model} thuộc nhóm chức năng bạn yêu cầu. Điều này chưa xác nhận thiết bị đáp ứng mục tiêu cuối cùng; cần đối chiếu thông số và cấu hình hệ thống.` : `${document.model} is a ${type}, matching the requested equipment role. This does not establish that it achieves the end goal; check specifications and system configuration.`);
       if (sentences.length) evidence.push({ source: 'product_document', field: 'taxonomy.device_type', value: type });
     }
     if (!sentences.length) return;

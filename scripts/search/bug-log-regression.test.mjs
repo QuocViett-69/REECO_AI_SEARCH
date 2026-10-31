@@ -10,6 +10,7 @@ const { TechnicalQueryParserService } = fromDist('technical-query-parser.service
 const { TechnicalMatchService } = fromDist('technical-match.service');
 const { TechnicalRankingService } = fromDist('technical-ranking.service');
 const { ExplanationService } = fromDist('explanation.service');
+const { OPERATING_TEMPERATURE_KEYS, MEASUREMENT_TEMPERATURE_KEYS } = fromDist('technical-query.constants');
 const root = new URL('../../', import.meta.url);
 const documents = new Map();
 const specifications = new Map();
@@ -37,7 +38,102 @@ const candidates = [...documents.values()].map((d, i) => ({ productId: d.product
 const makeService = search => new SearchService({ search }, products, new TechnicalQueryParserService(), new TechnicalMatchService(products), new TechnicalRankingService(), { rerank: async (_q, _p, rows) => rows }, new ExplanationService());
 const service = makeService(async () => ({ mode: 'hybrid', candidates }));
 const cases = JSON.parse(await readFile(new URL('./bug-log-cases.json', import.meta.url), 'utf8'));
-import { expected, explanationChecks } from './bug-log-expectations.mjs';
+import { expected, explanationChecks, firstExpected } from './bug-log-expectations.mjs';
+
+test('the current follow-up language controls both explanations and guidance across languages', async () => {
+  for (const [query, baseQuery, language] of [
+    ['Explain this product for my requirements', 'Tôi cần cảm biến độ ẩm đất', 'en'],
+    ['Giải thích sản phẩm này', 'I need a soil moisture sensor', 'vi'],
+    ['Does it support SDI-12?', 'Tôi cần cảm biến độ ẩm đất', 'en'],
+  ]) {
+    const response = await service.search({ query, limit: 10, explain: true,
+      context: { base_query: baseQuery, previous_query: baseQuery, product_ids: ['CSI_CS655'] } });
+    assert.ok(response.results.length);
+    if (response.guidance) assert.equal(response.guidance.language, language);
+    for (const result of response.results) {
+      assert.equal(result.explanation.language, language);
+      assert.doesNotMatch(result.explanation.text, language === 'en' ? /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu : /\b(?:operating|supports|measurement|profile|logger|cellular)\b/iu);
+    }
+  }
+});
+
+test('named technical specifications retrieve, rank and explain their own fields', async () => {
+  for (const [query, expectedModel] of [
+    ['Điện áp nguồn 9 to 28 VDC', 'BaroVue10'],
+    ['Dải áp suất 500 to 1100 hPa', 'BaroVue10'],
+    ['Bộ nhớ 80 MB', 'VWANALYZER'],
+    ['Bộ nhớ tối thiểu 64 MB', 'VWANALYZER'],
+    ['Độ chính xác ±0.005%', 'VWANALYZER'],
+    ['Cấp bảo vệ IP68', 'CS655'],
+    ['Dòng tiêu thụ 14 mA', 'CELL210-V'],
+    ['Đầu vào dòng 4 to 20 mA', 'CR310-NA'],
+  ]) {
+    const response = await service.search({ query, limit: 100, explain: true });
+    assert.ok(response.results.some(p => p.model === expectedModel), query);
+    assert.ok(response.results.every(p => p.matched_features.some(f => f.startsWith('specification:'))));
+    for (const result of response.results) {
+      assert.ok(result.explanation.requirements.some(r => r.status === 'confirmed'));
+      assert.ok(result.explanation.evidence.some(e => e.source === 'normalized_spec' && e.raw_ref));
+      assert.doesNotMatch(result.explanation.text, /Operating Temperature Range|Thông số output power|Thông số operating system memory/u);
+    }
+    if (query.startsWith('Dòng tiêu thụ')) assert.match(response.results[0].explanation.text, /chế độ nghỉ/u);
+  }
+  const combined = await service.search({ query: 'Điện áp nguồn 6 to 18 VDC và cấp bảo vệ IP68', limit: 100 });
+  assert.deepEqual(combined.results.map(p => p.model).sort(), ['CS650', 'CS655']);
+  assert.deepEqual((await service.search({ query: 'Bộ nhớ tối thiểu 900 GB', limit: 10 })).results, []);
+});
+
+test('exact specification interval remains first when semantic reranking reverses the candidate list', async () => {
+  const reversed = new SearchService({ search: async () => ({ mode: 'hybrid', candidates }) }, products,
+    new TechnicalQueryParserService(), new TechnicalMatchService(products), new TechnicalRankingService(),
+    { rerank: async (_q, _p, rows) => [...rows].reverse() }, new ExplanationService());
+  const response = await reversed.search({ query: 'Tần số 300 to 6500 Hz', limit: 100, explain: true });
+  assert.equal(response.results[0].model, 'VWANALYZER');
+  assert.match(response.results[0].explanation.text, /khớp đúng giá trị/u);
+  const covering = response.results.find(p => p.model === 'AVW200-ST');
+  assert.match(covering.explanation.text, /bao phủ/u);
+});
+
+test('temperature specification queries rank exact intervals and explain covering alternatives', async () => {
+  for (const query of ['Dải nhiệt độ hoạt động\t-35 to +70 °C', 'Nhiệt độ vận hành −35 – +70°C', 'Operating temperature -31 to 158°F']) {
+    const response = await service.search({ query, limit: 100, explain: true });
+    assert.equal(response.results[0].model, 'WindSonic1');
+    assert.match(response.results[0].explanation.text, /khớp đúng dải|exactly matches/u);
+    assert.ok(response.results.slice(1).some(p => /bao phủ|covers/u.test(p.explanation.text)));
+    assert.ok(response.results.every(p => p.matched_features.includes('operating-temperature:-35..70°C')));
+    assert.ok(response.results.every(p => p.explanation.evidence.some(e => OPERATING_TEMPERATURE_KEYS.includes(e.field) && e.raw_ref)));
+  }
+  const measurement = await service.search({ query: 'Dải đo nhiệt độ -35 to +70°C', limit: 100, explain: true });
+  assert.ok(measurement.results.length);
+  assert.ok(measurement.results.every(p => p.explanation.evidence.some(e => MEASUREMENT_TEMPERATURE_KEYS.includes(e.field) && e.raw_ref)));
+  const empty = await service.search({ query: 'Dải nhiệt độ hoạt động -200 to +300°C', limit: 10, explain: true });
+  assert.deepEqual(empty.results, []);
+});
+
+test('canonical retrieval retains temperature requirements beside the measurement target', async () => {
+  const capture = makeService(async query => {
+    const parsed = new TechnicalQueryParserService().parse(query);
+    assert.equal(parsed.temperatureConstraints[0].intent, 'operating');
+    assert.equal(parsed.temperatureConstraints[0].minCelsius, -35);
+    assert.equal(parsed.temperatureConstraints[0].maxCelsius, 70);
+    return { mode: 'hybrid', candidates };
+  });
+  const response = await capture.search({ query: 'Cảm biến đo tốc độ gió dải nhiệt độ hoạt động -35 to +70°C', limit: 10 });
+  assert.equal(response.results[0].model, 'WindSonic1');
+});
+
+test('TC22/30/63: preferred rain gauge, Vietnamese prose and direct Wi-Fi answer', async () => {
+  const rain = await service.search({ query: cases.find(c => c.id === 'TC-05').query, limit: 10, explain: true });
+  assert.equal(rain.results[0].model, 'RainVue10-MM');
+  assert.doesNotMatch(rain.results[0].explanation.text, /\bheated\b|\brainfall\b|Precipitation Amount|measurement uncertainty|\bintensity\b/iu);
+  const wind = await service.search({ query: cases.find(c => c.id === 'TC-09').query, limit: 10, explain: true });
+  assert.match(wind.results[0].explanation.text, /không có bộ phận quay cơ học/u);
+  assert.doesNotMatch(wind.results[0].explanation.text, /full-scale|coordinate system|customized|rotor/iu);
+  const wifi = await service.search({ query: cases.find(c => c.id === 'TC-18').query, limit: 10, explain: true });
+  assert.match(wifi.results[0].explanation.text, /không kết nối Wi-Fi trực tiếp/u);
+  assert.match(wifi.results[0].explanation.text, /SDI-12 hoặc RS-232/u);
+  assert.doesNotMatch(wifi.results[0].explanation.text, /RS-485/u);
+});
 // The adversarial candidate pool deliberately contains every catalog item. This
 // verifies policy/evidence, not retrieval recall; bug-log-live.mjs tests real retrieval.
 for (const item of cases) test(`${item.id}: catalog policy and grounded explanation`, async () => {
@@ -55,6 +151,7 @@ for (const item of cases) test(`${item.id}: catalog policy and grounded explanat
   }
   const response = await service.search({ query: item.query, limit: 30, explain: true });
   for (const model of expected[item.id]) assert.ok(response.results.some(p => p.model === model), `${item.id}: missing ${model}`);
+  if (firstExpected.includes(item.id)) assert.equal(response.results[0].model, expected[item.id][0]);
   if (['TC-01','TC-02','TC-03','TC-04','TC-06','TC-07','TC-11','TC-12','TC-18'].includes(item.id)) {
     assert.deepEqual(response.results.map(p => p.model).sort(), expected[item.id].sort());
   }
