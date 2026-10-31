@@ -10,6 +10,7 @@ export type TechnicalTemperatureState = TechnicalEvaluation | null;
 
 export interface TechnicalRankingMetadata {
   exactIdentity: boolean;
+  exactTemperatureRangeCount: number;
   satisfiedConstraintCount: number;
   confirmedProtocolMatchCount: number;
   temperatureState: TechnicalTemperatureState;
@@ -52,6 +53,7 @@ export class TechnicalRankingService {
       originalHybridRank: index + 1,
       technical: {
         exactIdentity: false,
+        exactTemperatureRangeCount: 0,
         satisfiedConstraintCount: 0,
         confirmedProtocolMatchCount: 0,
         temperatureState: null,
@@ -72,6 +74,7 @@ export class TechnicalRankingService {
         originalHybridRank,
         technical: {
           exactIdentity: false,
+          exactTemperatureRangeCount: 0,
           satisfiedConstraintCount: 0,
           confirmedProtocolMatchCount: 0,
           temperatureState: null,
@@ -93,6 +96,10 @@ export class TechnicalRankingService {
       originalHybridRank,
       technical: {
         exactIdentity: match.identityMatch === 'exact',
+        exactTemperatureRangeCount: match.temperatureMatches.filter(item => item.result === 'MATCH'
+          && item.constraint.kind === 'range' && item.evidence.some(evidence => evidence.result === 'MATCH'
+            && item.constraint.kind === 'range' && evidence.candidateRange?.minCelsius === item.constraint.minCelsius
+            && evidence.candidateRange.maxCelsius === item.constraint.maxCelsius)).length,
         satisfiedConstraintCount:
           confirmedProtocolMatchCount + confirmedTemperatureMatchCount,
         confirmedProtocolMatchCount,
@@ -125,6 +132,9 @@ export class TechnicalRankingService {
       this.temperatureOrder(left.technical.temperatureState) -
       this.temperatureOrder(right.technical.temperatureState);
     if (temperatureOrder !== 0) return temperatureOrder;
+
+    const exactTemperatureOrder = right.technical.exactTemperatureRangeCount - left.technical.exactTemperatureRangeCount;
+    if (exactTemperatureOrder !== 0) return exactTemperatureOrder;
 
     const originalOrder = left.originalHybridRank - right.originalHybridRank;
     if (originalOrder !== 0) return originalOrder;

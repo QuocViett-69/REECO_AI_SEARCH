@@ -23,6 +23,8 @@ import { TechnicalQueryParserService } from './technical-query-parser.service';
 import { buildSearchPlan, parseSearchIntent, matchSearchIntent } from './search-intent';
 import { purchaseQuery, isCapabilityQuestion, isOutsideCatalog, protocolAlternatives } from './query-context';
 import { protocolRequirements, protocolSatisfies } from './protocol-query';
+import { matchSpecificationConstraints } from './specification-query';
+import { searchLanguage, type SearchLanguage } from './search-language';
 import {
   TechnicalRankingService,
   type TechnicalRankedCandidate,
@@ -46,10 +48,12 @@ export class SearchService {
 
   async search(request: SearchRequest): Promise<SearchResponse> {
     if (!/[\p{L}\p{N}]/u.test(request.query)) throw new BadRequestException('Enter a search query containing letters or numbers');
-    const vi = /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(request.query);
+    const language = searchLanguage(request.query, searchLanguage(request.context?.previous_query ?? ''));
+    const vi = language === 'vi';
     if (isOutsideCatalog(request.query)) return SearchResponseSchema.parse({ query: request.query, mode: 'hybrid', results: [], guidance: {
-      language: /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(request.query) ? 'vi' : 'en',
-      text: vi ? 'Danh mục chỉ gồm thiết bị đo đạc và quan trắc môi trường; chưa có sản phẩm cho nhu cầu này.' : 'This catalog covers environmental measurement and monitoring equipment; no product is available for this need.',
+      language,
+      text: vi ? 'Nhu cầu này nằm ngoài danh mục thiết bị đo đạc và quan trắc môi trường. Nếu bạn cần quan trắc môi trường, hãy nêu đại lượng cần đo và nơi lắp đặt để tìm thiết bị phù hợp.' : 'This need is outside the environmental measurement and monitoring catalog. For environmental monitoring, specify the measurement and installation site to find suitable equipment.',
+      needs_clarification: true,
     } });
     if (isExplanationQuestion(request.query) && !request.context) {
       return SearchResponseSchema.parse({ query: request.query, mode: 'hybrid', results: [], guidance: {
@@ -70,7 +74,7 @@ export class SearchService {
         const entry = evidence.get(id);
         return entry?.document && summaries.has(id) ? [{ document: entry.document, specifications: entry.specifications, match: matches.find(item => item.productId === id) }] : [];
       });
-      const explanations = request.explain ? await this.explanation.explainMany(query, items) : [];
+      const explanations = request.explain ? await this.explanation.explainMany(query, items, language) : [];
       const results = items.slice(0, request.limit).map((item, index) => {
         const product = summaries.get(item.document.product_id)!;
         return { product_id: product.product_id, model: product.model, name_en: product.name_en, name_vi: product.name_vi,
@@ -90,7 +94,7 @@ export class SearchService {
       if (technical.protocols.some(protocol => !networkAlternatives || !['Wi-Fi', 'Ethernet'].includes(protocol))
         || negative.unsupported || negative.exclusions.protocols.length
         || negative.exclusions.cellular || negative.exclusions.temperature
-        || parseSearchIntent(request.query).specifications.length
+        || parseSearchIntent(request.query).specifications.length || parseSearchIntent(request.query).technicalSpecifications.length
         || technical.temperatureConstraints.some(item => item.intent !== 'operating' || item.confidence !== 'high' || item.kind === 'upper_bound')) {
         return SearchResponseSchema.parse({ query: request.query, mode: 'hybrid', results: [], guidance: {
           language: vi ? 'vi' : 'en', needs_clarification: true,
@@ -133,9 +137,9 @@ export class SearchService {
       return SearchResponseSchema.parse({ query: request.query, mode: responses.every(response => response.mode === 'hybrid') ? 'hybrid' : responses[0]!.mode, results,
         guidance: { language: vi ? 'vi' : 'en', needs_clarification: plan.some(component => component.needs_clarification),
           text: networkAlternatives
-            ? vi ? 'Đây là các lựa chọn thay thế, không cần mua cả ba. Ethernet cần mạng có dây; Wi-Fi cần mạng Wi-Fi tại trạm; cellular cần vùng phủ và dịch vụ mạng phù hợp. Chưa xác nhận hạ tầng, tương thích và điện năng cho trường hợp của bạn.' : 'These are alternatives; all three are not required. Ethernet needs a wired network, Wi-Fi needs a local Wi-Fi network, and cellular needs coverage and a compatible network service. Infrastructure, compatibility and power requirements remain unconfirmed.'
+            ? vi ? 'Đây là các lựa chọn thay thế, không cần mua cả ba. Ethernet cần mạng có dây; Wi-Fi cần mạng Wi-Fi tại trạm; mạng di động cần vùng phủ và dịch vụ phù hợp. Chưa xác nhận hạ tầng, tương thích và điện năng cho trường hợp của bạn.' : 'These are alternatives; all three are not required. Ethernet needs a wired network, Wi-Fi needs a local Wi-Fi network, and cellular needs coverage and a compatible network service. Infrastructure, compatibility and power requirements remain unconfirmed.'
             : (vi ? 'Nhu cầu này cần phối hợp các thành phần bên dưới. Cảm biến đo, bộ ghi đọc/lưu dữ liệu, thiết bị truyền thông gửi dữ liệu đi. Đây là các ứng viên theo chức năng; chưa xác nhận tương thích, số kênh, nguồn cấp và điều kiện lắp đặt. Nếu chưa nêu đại lượng cần đo, hãy làm rõ trước khi chọn cảm biến.' : 'This use case requires the components below. Sensors measure, loggers read/store data, and communication equipment transfers it. These are candidates by role; compatibility, channel counts, power and installation conditions remain unconfirmed. Specify measurements before selecting sensors.') + (details ? ` ${details}` : ''),
-          components: plan.map((component, index) => ({ ...component, models: responses[index]!.results.filter(p => results.some(result => result.product_id === p.product_id)).map(p => p.model) })),
+          components: plan.map((component, index) => ({ ...component, label: vi && component.label === 'cellular' ? 'Mạng di động' : component.label, models: responses[index]!.results.filter(p => results.some(result => result.product_id === p.product_id)).map(p => p.model) })),
         } });
     }
     try {
@@ -149,6 +153,7 @@ export class SearchService {
   }
 
   private async searchOnce(request: SearchRequest): Promise<SearchResponse> {
+    const language = searchLanguage(request.query, searchLanguage(request.context?.previous_query ?? ''));
     const resolution = resolveConversationQuery(purchaseQuery(request.query), request.context);
     const negative = parseNegativeConstraints(resolution.query);
     const intent = parseSearchIntent(resolution.query);
@@ -161,7 +166,9 @@ export class SearchService {
     const searchQuery = resolution.query;
     const identityCatalog = await this.productsService.getActiveTechnicalIdentityCatalog();
     const parsedQuery = this.technicalQueryParser.parse(negative.query, identityCatalog);
-    const canonical = [...intent.measurements.map(item => `${item.en} sensor`), ...(intent.target ? [`${intent.target.en} sensor`] : []), ...intent.roles.map(item => item.en), ...intent.features.map(item => item.en), ...(intent.transport ? [`${intent.transport} communication`] : [])];
+    const temperatureTerms = parsedQuery.temperatureConstraints.filter(item => item.confidence === 'high').map(item =>
+      `; ${item.intent === 'operating' ? 'operating temperature' : 'temperature measurement range'} ${item.kind === 'range' ? `${item.minCelsius} to ${item.maxCelsius}` : item.valueCelsius}°C`);
+    const canonical = [...intent.measurements.map(item => `${item.en} sensor`), ...(intent.target ? [`${intent.target.en} sensor`] : []), ...intent.roles.map(item => item.en), ...intent.features.map(item => item.en), ...(intent.transport ? [`${intent.transport} communication`] : []), ...temperatureTerms, ...intent.specifications, ...intent.technicalSpecifications.map(item => item.fragment)];
     const retrievalQuery = resolution.applied && hasTechnicalConstraint(request.query)
       ? request.context!.base_query
       : parsedQuery.identity ? parsedQuery.identity.model : canonical.length ? canonical.join(' ') : negative.query;
@@ -200,7 +207,7 @@ export class SearchService {
       const ids = scopedCandidates.map((item) => item.productId);
       [documents, environmentalSpecifications] = await Promise.all([
         this.productsService.getSearchDocumentsByIds(ids),
-        intent.specifications.length > 0 || intent.features.length > 0 || intent.depths.length > 0
+        intent.specifications.length > 0 || intent.technicalSpecifications.length > 0 || intent.features.length > 0 || intent.depths.length > 0
           ? this.productsService.getTechnicalEvidenceByIds(ids).then(rows => new Map([...rows].map(([id, row]) => [id, row.specifications])))
           : intent.outdoor ? this.productsService.getEnvironmentalSpecificationsByIds(ids) : Promise.resolve(environmentalSpecifications),
       ]);
@@ -224,7 +231,7 @@ export class SearchService {
     }
 
     if (scopedCandidates.length === 0) {
-      const vi = /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(request.query);
+      const vi = language === 'vi';
       return SearchResponseSchema.parse({
         query: request.query,
         ...(request.context && { resolved_query: searchQuery, context_applied: resolution.applied }),
@@ -243,6 +250,23 @@ export class SearchService {
       parsedQuery,
       technicallyRankedCandidates,
     );
+    if (intent.technicalSpecifications.length) {
+      const exact = new Map(scopedCandidates.map(candidate => [candidate.productId,
+        matchSpecificationConstraints(intent.technicalSpecifications, environmentalSpecifications.get(candidate.productId) ?? [])?.filter(match => match.exact).length ?? 0]));
+      rankedCandidates.sort((a, b) => Number(b.technical.exactIdentity) - Number(a.technical.exactIdentity)
+        || (exact.get(b.candidate.productId)! + b.technical.exactTemperatureRangeCount) - (exact.get(a.candidate.productId)! + a.technical.exactTemperatureRangeCount));
+    }
+    // Prefer a dedicated digital rain gauge over a multi-purpose weather station.
+    // All mandatory constraints were enforced above.
+    if (!parsedQuery.identity && !intent.technicalSpecifications.length && intent.measurements.length === 1 && intent.measurements[0]!.key === 'precipitation') {
+      const preference = (id: string) => {
+        const document = documents?.get(id);
+        if (!document) return 0;
+        return (/^(?:precipitation sensor|rain ga[u]?ge)$/iu.test(document.taxonomy.device_type) ? 2 : 0)
+          + (document.supported_protocols.includes('SDI-12') ? 1 : 0);
+      };
+      rankedCandidates.sort((a, b) => preference(b.candidate.productId) - preference(a.candidate.productId));
+    }
 
     const summaries = await this.productsService.getPublicSummariesByIds(
       rankedCandidates.map((ranked) => ranked.candidate.productId),
@@ -266,14 +290,15 @@ export class SearchService {
             device_type: product.device_type,
             image_url: product.image_url,
             ...(product.price_vnd !== undefined && { price_vnd: product.price_vnd }),
-            matched_features: ranked.matchedFeatures,
+            matched_features: [...ranked.matchedFeatures, ...(matchSpecificationConstraints(intent.technicalSpecifications, environmentalSpecifications.get(candidate.productId) ?? []) ?? [])
+              .map(match => `specification:${match.specification.canonical_key}:${match.exact ? 'exact' : 'covers'}`)],
             scores: this.mapScores(candidate, hybridResult.mode),
           },
         ];
       })
       .slice(0, request.limit);
 
-    const vi = /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(request.query);
+    const vi = language === 'vi';
     const comparisonText = intent.measurements.some(item => item.key === 'turbidity')
       ? vi ? 'Cảm biến độ đục đo mức độ đục của nước; cảm biến mực nước đo mức nước, không thay thế phép đo độ đục. Chọn theo đại lượng cần đo, rồi kiểm tra dải đo, giao tiếp và điều kiện lắp đặt.' : 'A turbidity sensor measures water turbidity; a water-level sensor measures level and does not replace turbidity measurement. Choose by the required variable, then check range, interface and installation conditions.'
       : vi ? 'Cảm biến độ ẩm đất cho biết tình trạng nước trong đất, trực tiếp hỗ trợ quyết định tưới. Cảm biến thời tiết đo điều kiện môi trường hoặc lượng mưa, chưa xác nhận lượng nước thực tế trong đất. Nếu cần phân tích quan hệ giữa mưa và ẩm đất, cần cả hai và ghi cùng thời gian.' : 'Soil-moisture sensors measure water in soil, directly informing irrigation decisions. Weather sensors measure environmental conditions or rainfall, which does not establish actual soil water content. Studying rainfall and soil moisture together requires both measurements and synchronized records.';
@@ -286,7 +311,7 @@ export class SearchService {
       // Technical policy or identity scoping can remove every candidate: same guidance as above
       ...(results.length === 0 && !intent.comparison && { guidance: this.noConfirmedMatchGuidance(vi) }),
       results: request.explain
-        ? await this.withExplanations(resolution.applied ? searchQuery : request.query, parsedQuery, results, documents, environmentalSpecifications)
+        ? await this.withExplanations(resolution.applied ? searchQuery : request.query, parsedQuery, results, documents, environmentalSpecifications, language)
         : results,
     });
   }
@@ -301,6 +326,7 @@ export class SearchService {
     results: SearchResponse['results'],
     knownDocuments?: Map<string, ProductSearchDocument>,
     environmentalSpecifications = new Map<string, ProductSpecification[]>(),
+    language: SearchLanguage = searchLanguage(query),
   ): Promise<SearchResponse['results']> {
     if (results.length === 0) return results;
     const ids = results.map((item) => item.product_id);
@@ -317,7 +343,7 @@ export class SearchService {
         const document = documents.get(result.product_id);
         return document ? [{ productId: result.product_id, document, match: matchesById.get(result.product_id), specifications: technicalEvidence.get(result.product_id)?.specifications ?? environmentalSpecifications.get(result.product_id) }] : [];
       });
-      const generated = await this.explanation.explainMany(query, explainable);
+      const generated = await this.explanation.explainMany(query, explainable, language);
       const explanationsById = new Map(explainable.map((item, index) => [item.productId, generated[index]]));
       return results.map((result) => {
         const explanation = explanationsById.get(result.product_id);

@@ -6,8 +6,12 @@ import {
 import type { PostgrestError } from '@supabase/supabase-js';
 import { SupabaseService } from '../../database/supabase/supabase.service';
 import { ProductsService } from '../products/products.service';
-import { specificationTerms, specificationEvidence } from './specification-query';
+import { specificationTerms, specificationEvidence, specificationConstraints, matchSpecificationConstraints } from './specification-query';
 import { suggestModels } from './model-suggestions';
+import type { ProductSpecification } from '@reeco/shared';
+import { TechnicalQueryParserService } from './technical-query-parser.service';
+import { OPERATING_TEMPERATURE_KEYS, MEASUREMENT_TEMPERATURE_KEYS } from './technical-query.constants';
+import { evaluateTemperature } from './technical-match.service';
 import { parseSearchIntent } from './search-intent';
 
 export interface KeywordSearchRow {
@@ -34,11 +38,63 @@ export class KeywordSearchService {
     const { data, error } = await (signal ? request.abortSignal(signal) : request);
     if (error) this.throwQueryError(error);
     let rows = (data ?? []) as KeywordSearchRow[];
+    const temperatures = new TechnicalQueryParserService().parse(query).temperatureConstraints
+      .filter(constraint => constraint.confidence === 'high' && constraint.intent !== 'ambiguous');
+    const constraints = specificationConstraints(query);
+    if (temperatures.length || constraints.length) {
+      const keys = [...new Set(temperatures.flatMap(constraint => constraint.intent === 'operating'
+        ? [...OPERATING_TEMPERATURE_KEYS] : [...MEASUREMENT_TEMPERATURE_KEYS]))];
+      const specifications = new Map<string, ProductSpecification[]>();
+      for (let offset = 0; ; offset += 500) {
+        let request = this.supabase.getClient().from('product_specifications')
+          .select('product_id,specification_id,canonical_key,quantity_kind,normalized_value,raw_ref');
+        if (constraints.length) {
+          const filters = [...new Set(constraints.flatMap(item => item.field.hints))].map(hint => `canonical_key.ilike.%${hint}%`);
+          if (keys.length) filters.push(`canonical_key.in.(${keys.join(',')})`);
+          request = request.or(filters.join(','));
+        } else request = request.in('canonical_key', keys);
+        const pageRequest = request.order('specification_id', { ascending: true }).range(offset, offset + 499);
+        const { data, error } = await (signal ? pageRequest.abortSignal(signal) : pageRequest);
+        if (error) this.throwQueryError(error);
+        const page = (data ?? []) as (ProductSpecification & { product_id: string })[];
+        for (const spec of page) {
+          const group = specifications.get(spec.product_id) ?? [];
+          group.push(spec);
+          specifications.set(spec.product_id, group);
+        }
+        if (page.length < 500) break;
+      }
+      const matches = new Map<string, number>();
+      for (const [id, specs] of specifications) {
+        const evaluated = temperatures.map(constraint => evaluateTemperature(constraint, specs));
+        const technical = matchSpecificationConstraints(constraints, specs);
+        if (!evaluated.every(match => match.result === 'MATCH') || !technical) continue;
+        matches.set(id, evaluated.filter(match => match.constraint.kind === 'range'
+          && match.evidence.some(evidence => match.constraint.kind === 'range'
+            && evidence.candidateRange?.minCelsius === match.constraint.minCelsius
+            && evidence.candidateRange.maxCelsius === match.constraint.maxCelsius)).length + technical.filter(match => match.exact).length);
+      }
+      const summaries = await this.products.getPublicSummariesByIds([...matches.keys()]);
+      const lexicalOrder = new Map(rows.map((row, index) => [row.product_id, index]));
+      const numericRows = [...matches].sort((a, b) => b[1] - a[1]
+        || (lexicalOrder.get(a[0]) ?? Infinity) - (lexicalOrder.get(b[0]) ?? Infinity)).flatMap(([id]) => {
+        const product = summaries.get(id);
+        return product ? [{ product_id: id, model: product.model, product_name_en: product.name_en, search_text: '', rank: 0 }] : [];
+      });
+      const ids = new Set(numericRows.map(row => row.product_id));
+      rows = [...numericRows, ...rows.filter(row => !ids.has(row.product_id))].slice(0, limit);
+    }
     if (rows.length < limit) {
       const intent = parseSearchIntent(query);
-      const concepts = [...intent.measurements, ...intent.roles, ...(intent.target ? [intent.target] : [])];
-      const expanded = [...new Set(concepts.map(item => `"${item.en}"`))].join(' OR ');
-      if (expanded && !concepts.some(item => item.en.toLowerCase() === query.trim().toLowerCase())) {
+      const roleTerms: Record<string, string[]> = {
+        weather: ['weather'], communication: ['communication', 'modem', 'radio', 'transmitter'],
+        cellular: ['cellular'],
+      };
+      const terms = [...intent.measurements.map(item => item.en),
+        ...intent.roles.flatMap(item => roleTerms[item.key] ?? [item.en]),
+        ...(intent.target ? [intent.target.en] : []), ...(intent.transport ? [intent.transport] : [])];
+      const expanded = [...new Set(terms.map(term => `"${term}"`))].join(' OR ');
+      if (expanded && expanded !== `"${query.trim().toLowerCase()}"`) {
         // Fill sparse lexical retrieval with canonical concepts; public filters still enforce every requirement.
         const expandedRequest = this.supabase.getClient().rpc('search_products_keyword', {
           query_text: expanded, result_limit: limit,

@@ -1,5 +1,7 @@
 # AI search: chuẩn bị demo
 
+Đây là checklist kiểm tra trước demo/bàn giao, không phải toàn bộ việc phải lặp lại mỗi lần mở máy. Để khởi động hằng ngày, dùng [phần 11 của hướng dẫn chạy AI local](huong-dan-chay-ai-local.md#11-quy-trình-ngắn-cho-mỗi-lần-sử-dụng).
+
 Catalog đã khóa sửa và import trong admin/API. Admin vẫn sửa được giá; giá không tham gia truy hồi AI. Nếu cần thay dữ liệu, chạy pipeline hiện có, import rồi backfill embedding trước buổi demo. Không thay catalog khi đang trình diễn.
 
 ## Kiểm tra mã nguồn và DB

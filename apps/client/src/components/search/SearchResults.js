@@ -20,6 +20,11 @@ import { sizedImage } from '../../services/images';
 import { explainProductFit } from '../../services/productFitService';
 import '../../styles/studio/discovery.css';
 
+function responseIsVietnamese(query, language) {
+  if (language) return language === 'vi';
+  return /[ăâđêôơưàáảãạèéẻẽẹìíỉĩịòóỏõọùúủũụỳýỷỹỵ]|[\u1ea0-\u1ef9]|\b(?:cam bien|bo ghi|giai thich|toi can)\b/iu.test(query || '');
+}
+
 function ExplanationSource({ explanation }) {
   if (!explanation?.source) return null;
   const vi = explanation.language === 'vi';
@@ -41,9 +46,7 @@ function joinModels(models, vi) {
 function summarizeResults(results, query) {
   const top = results.filter((p) => p.explanation?.text).slice(0, 3);
   if (top.length === 0) return null;
-  const vi = top[0].explanation.language
-    ? top[0].explanation.language === 'vi'
-    : /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(query || '');
+  const vi = responseIsVietnamese(query, top[0].explanation.language);
   const models = joinModels(top.map((p) => p.model), vi);
   const many = top.length > 1;
   const text = vi
@@ -95,14 +98,14 @@ function GuidancePanel({ guidance, onViewDetail }) {
   );
 }
 
-function ModeNote({ mode }) {
+function ModeNote({ mode, vi }) {
   if (!mode || mode === 'hybrid') return null;
   return (
     <p className="st-note res-mode">
       <Warning size={16} aria-hidden="true" />
       {mode === 'keyword'
-        ? 'Matched by keywords only. Meaning-based search is offline, so similar wording may be missed.'
-        : 'Matched by meaning only. Keyword search is offline, so exact model numbers may rank lower.'}
+        ? vi ? 'Đang tìm bằng từ khóa. Tìm kiếm ngữ nghĩa chưa sẵn sàng nên có thể bỏ sót cách diễn đạt tương tự.' : 'Matched by keywords only. Meaning-based search is offline, so similar wording may be missed.'
+        : vi ? 'Đang tìm bằng ngữ nghĩa. Tìm kiếm từ khóa chưa sẵn sàng nên mã model chính xác có thể xếp thấp hơn.' : 'Matched by meaning only. Keyword search is offline, so exact model numbers may rank lower.'}
     </p>
   );
 }
@@ -133,7 +136,7 @@ function FitPanel({ id, product, fit, onClose }) {
   const data = fit.data;
   const vi = (data?.language || product.explanation?.language) === 'vi';
   return (
-    <section className="res-fit" id={id} aria-label={`Evidence for ${product.model}`} aria-live="polite">
+    <section className="res-fit" id={id} aria-label={vi ? `Bằng chứng cho ${product.model}` : `Evidence for ${product.model}`} aria-live="polite">
       <div className="res-fit__head">
         <span className="res-fit__icon" aria-hidden="true"><ChatCircleText size={16} /></span>
         <p className="res-fit__title">
@@ -145,7 +148,7 @@ function FitPanel({ id, product, fit, onClose }) {
       </div>
 
       {fit.status === 'loading' && (
-        <div className="res-fit__loading" role="status" aria-label="Loading explanation">
+        <div className="res-fit__loading" role="status" aria-label={vi ? 'Đang tải giải thích' : 'Loading explanation'}>
           <span className="st-skeleton res-skeleton-line" />
           <span className="st-skeleton res-skeleton-line res-skeleton-line--short" />
         </div>
@@ -165,7 +168,7 @@ function FitPanel({ id, product, fit, onClose }) {
           </div>
           {data.confirmed.length > 0 && (
             <details className="res-fit__evidence">
-              <summary>{vi ? 'Xem dữ liệu đối chiếu' : 'View supporting product data'} <CaretDown size={14} aria-hidden="true" /></summary>
+              <summary>{vi ? 'Xem dữ liệu gốc' : 'View original product data'} <CaretDown size={14} aria-hidden="true" /></summary>
               <div className="res-fit__grid">
                 <p className="res-fit__label">{vi ? 'Dữ liệu sản phẩm xác nhận' : 'Confirmed by product data'}</p>
                 <ul className="res-fit__list">
@@ -265,7 +268,7 @@ function PickCard({ product: p, rank, tier, isBest, vi, fit, fitId, onToggleFit,
       </div>
       <div className="res-row__buy">
         <span className="res-row__price">{priceLabel}</span>
-        <div className="res-actions" role="group" aria-label={`Actions for ${p.model}`}>
+        <div className="res-actions" role="group" aria-label={vi ? `Thao tác với ${p.model}` : `Actions for ${p.model}`}>
           <AddToCartButton
             product={{ ...p, price }}
             className={compact ? 'st-btn--icon st-btn--sm' : isBest ? '' : 'st-btn--sm'}
@@ -279,8 +282,8 @@ function PickCard({ product: p, rank, tier, isBest, vi, fit, fitId, onToggleFit,
               className={`st-btn st-btn--icon st-btn--sm ${inCompare ? 'is-on' : ''}`}
               onClick={() => onToggleCompare(p.model)}
               aria-pressed={inCompare}
-              aria-label={inCompare ? `Remove ${p.model} from compare` : `Add ${p.model} to compare`}
-              title={inCompare ? 'Remove from compare' : 'Add to compare'}
+              aria-label={inCompare ? vi ? `Bỏ ${p.model} khỏi so sánh` : `Remove ${p.model} from compare` : vi ? `Thêm ${p.model} vào so sánh` : `Add ${p.model} to compare`}
+              title={inCompare ? vi ? 'Bỏ khỏi so sánh' : 'Remove from compare' : vi ? 'Thêm vào so sánh' : 'Add to compare'}
             >
               {inCompare ? <Check size={15} /> : <ArrowsLeftRight size={15} />}
             </button>
@@ -346,7 +349,7 @@ function ChatTurn({
   const categories = Array.from(new Set(results.map((p) => p.category).filter(Boolean)));
   const visible = results.filter((p) => !filterCategory || p.category === filterCategory);
   const answer = loading || turn.error ? null : turn.guidance || summarizeResults(visible, turn.query);
-  const vi = (answer?.language || results[0]?.explanation?.language) === 'vi';
+  const vi = responseIsVietnamese(turn.query, answer?.language || results[0]?.explanation?.language);
 
   return (
     <li className="chat-turn" ref={turnRef}>
@@ -362,7 +365,7 @@ function ChatTurn({
           {loading ? (
             <div aria-busy="true">
               <p className="chat-thinking" role="status">
-                Matching instruments to your request
+                {vi ? 'Đang tìm thiết bị theo yêu cầu của bạn' : 'Matching instruments to your request'}
                 <span className="chat-thinking__dots" aria-hidden="true"><i /><i /><i /></span>
               </p>
               <ol className="res-list">
@@ -383,17 +386,17 @@ function ChatTurn({
               {turn.error.error === 'unavailable' ? <WifiSlash size={18} aria-hidden="true" /> : <Warning size={18} aria-hidden="true" />}
               <div>
                 <p className="chat-note__title">
-                  {turn.error.error === 'invalid_input' ? 'This search could not be read' : 'Search is unavailable right now'}
+                  {turn.error.error === 'invalid_input' ? vi ? 'Chưa đọc được yêu cầu tìm kiếm' : 'This search could not be read' : vi ? 'Tìm kiếm hiện chưa sẵn sàng' : 'Search is unavailable right now'}
                 </p>
-                <p>{turn.error.message}</p>
+                <p>{turn.error.error === 'invalid_input' ? vi ? 'Hãy nhập nhu cầu hoặc mã sản phẩm cần tìm.' : 'Describe your requirement or enter a product model.' : vi ? 'Vui lòng thử lại sau.' : 'Please try again later.'}</p>
               </div>
             </div>
           ) : (
             <>
               {turn.resolvedQuery && turn.resolvedQuery !== turn.query && (
-                <p className="res-resolved">Searching for <strong>{turn.resolvedQuery}</strong></p>
+                <p className="res-resolved">{vi ? 'Đang tìm theo' : 'Searching for'} <strong>{turn.resolvedQuery}</strong></p>
               )}
-              <ModeNote mode={turn.mode} />
+              <ModeNote mode={turn.mode} vi={vi} />
 
               {answer && <GuidancePanel guidance={answer} onViewDetail={onViewDetail} />}
 
@@ -401,23 +404,23 @@ function ChatTurn({
                 <div className="chat-note">
                   <MagnifyingGlassMinus size={18} aria-hidden="true" />
                   <div>
-                    <p className="chat-note__title">No products match this request</p>
-                    <p>Describe what you need to measure, or ask for a model number such as CR1000X.</p>
+                    <p className="chat-note__title">{vi ? 'Chưa tìm thấy sản phẩm đáp ứng yêu cầu' : 'No products match this request'}</p>
+                    <p>{vi ? 'Hãy mô tả đại lượng cần đo hoặc nhập mã model, ví dụ CR1000X.' : 'Describe what you need to measure, or ask for a model number such as CR1000X.'}</p>
                     {isLatest && onEditSearch && (
                       <button type="button" className="st-btn st-btn--sm chat-note__action" onClick={onEditSearch}>
-                        <PencilSimple size={14} /> New search
+                        <PencilSimple size={14} /> {vi ? 'Tìm kiếm mới' : 'New search'}
                       </button>
                     )}
                   </div>
                 </div>
               ) : (
-                <section className="chat-picks" aria-label="Search results">
+                <section className="chat-picks" aria-label={vi ? 'Kết quả tìm kiếm' : 'Search results'}>
                   <div className="chat-picks__head">
                     <p className="chat-picks__title">
                       {vi ? 'Sản phẩm tìm thấy' : 'Search results'} <span className="st-tab__count">{visible.length}</span>
                     </p>
                     {categories.length > 1 && (
-                      <div className="st-tabs" role="group" aria-label="Category">
+                      <div className="st-tabs" role="group" aria-label={vi ? 'Danh mục' : 'Category'}>
                         <button type="button" className="st-tab" aria-pressed={!filterCategory} onClick={() => setFilterCategory('')}>
                           {vi ? 'Tất cả' : 'All'} <span className="st-tab__count">{results.length}</span>
                         </button>
@@ -517,7 +520,7 @@ export function SearchResults({
       }];
   const busy = Boolean(isLoading) || turns.some((turn) => turn.status === 'loading');
   const latest = turns[turns.length - 1];
-  const vi = (latest.guidance?.language || latest.results?.[0]?.explanation?.language) === 'vi';
+  const vi = responseIsVietnamese(latest.query, latest.guidance?.language || latest.results?.[0]?.explanation?.language);
 
   // Bring each new follow-up into view, like a chat
   const turnCount = turns.length;
@@ -548,7 +551,7 @@ export function SearchResults({
         )}
       </header>
 
-      <ol className="chat-thread" aria-label="Conversation">
+      <ol className="chat-thread" aria-label={vi ? 'Hội thoại' : 'Conversation'}>
         {turns.map((turn, index) => (
           <ChatTurn
             key={turn.id}

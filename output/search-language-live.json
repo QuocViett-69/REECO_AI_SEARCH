@@ -1,0 +1,3075 @@
+{
+  "generated_at": "2026-10-31T08:13:05.976Z",
+  "report": [
+    {
+      "query": "Memory at least 64 MB",
+      "language": "en",
+      "response": {
+        "query": "Memory at least 64 MB",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 34500000,
+            "product_id": "CSI_VWANALYZER",
+            "model": "VWANALYZER",
+            "name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Vibrating Wire Analyzer",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/8029",
+            "matched_features": [
+              "specification:usb_memory:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "VWANALYZER: product data confirms Memory ≥ 64000000 bytes. Memory ≥ 64000000 bytes: 80000000 byte; meets the requested bound. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Memory ≥ 64000000 bytes",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "usb_memory",
+                      "value": "80 MB",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_VWANALYZER.json",
+                        "product_index": 0,
+                        "spec_index": 27,
+                        "source_rows": [
+                          30
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 3
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "usb_memory",
+                  "value": "80 MB",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_VWANALYZER.json",
+                    "product_index": 0,
+                    "spec_index": 27,
+                    "source_rows": [
+                      30
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Tôi cần memory at least 64 MB",
+      "language": "vi",
+      "response": {
+        "query": "Tôi cần memory at least 64 MB",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 34500000,
+            "product_id": "CSI_VWANALYZER",
+            "model": "VWANALYZER",
+            "name_en": "Vibrating Wire Analyzer (VWAnalyzer)",
+            "name_vi": null,
+            "category": "Measurement Devices",
+            "device_type": "Vibrating Wire Analyzer",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/8029",
+            "matched_features": [
+              "specification:usb_memory:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "VWANALYZER: dữ liệu xác nhận Bộ nhớ ≥ 64000000 byte. Bộ nhớ: 80000000 byte; đáp ứng điều kiện so sánh “Bộ nhớ ≥ 64000000 byte”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Bộ nhớ ≥ 64000000 byte",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "usb_memory",
+                      "value": "80 MB",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_VWANALYZER.json",
+                        "product_index": 0,
+                        "spec_index": 27,
+                        "source_rows": [
+                          30
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 2
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "usb_memory",
+                  "value": "80 MB",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_VWANALYZER.json",
+                    "product_index": 0,
+                    "spec_index": 27,
+                    "source_rows": [
+                      30
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Supply voltage 9 to 28 VDC",
+      "language": "en",
+      "response": {
+        "query": "Supply voltage 9 to 28 VDC",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 22250000,
+            "product_id": "CSI_BAROVUE10",
+            "model": "BaroVue10",
+            "name_en": "Digital Barometer -40 to +60C, 76cm (30 Inch)",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Barometric Pressure Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/13865",
+            "matched_features": [
+              "specification:supply_voltage:exact"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "BaroVue10: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 9–28 VDC; exact value match. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "9 to 28 Vdc",
+                      "raw_ref": {
+                        "file": "data/raw/BaroVue10.json",
+                        "product_index": 0,
+                        "spec_index": 3,
+                        "source_rows": [
+                          5
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 4
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "9 to 28 Vdc",
+                  "raw_ref": {
+                    "file": "data/raw/BaroVue10.json",
+                    "product_index": 0,
+                    "spec_index": 3,
+                    "source_rows": [
+                      5
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 27750000,
+            "product_id": "CSI_CS230",
+            "model": "CS230",
+            "name_en": "SDI-12 Temperature Profiler",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Temperature Profiler",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4415",
+            "matched_features": [
+              "specification:supply_voltage:exact"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CS230: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 9–28 VDC; exact value match. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "9 to 28 Vdc",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_CS230.json",
+                        "product_index": 0,
+                        "spec_index": 10,
+                        "source_rows": [
+                          17
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 4
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "9 to 28 Vdc",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_CS230.json",
+                    "product_index": 0,
+                    "spec_index": 10,
+                    "source_rows": [
+                      17
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 9910000,
+            "product_id": "CSI_HYGROVUE10",
+            "model": "HygroVue10",
+            "name_en": "Digital Temperature/RH Sensor w/M12 Connector w/o",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Air Temperature and Relative Humidity Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11956",
+            "matched_features": [
+              "specification:supply_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "HygroVue10: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 7–28 VDC; covers the requested value or interval. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "7 to 28 VDC",
+                      "raw_ref": {
+                        "file": "data/raw/HygroVue10.json",
+                        "product_index": 0,
+                        "spec_index": 3,
+                        "source_rows": [
+                          9
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 4
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "7 to 28 VDC",
+                  "raw_ref": {
+                    "file": "data/raw/HygroVue10.json",
+                    "product_index": 0,
+                    "spec_index": 3,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 14750000,
+            "product_id": "CSI_RANGEVUE30",
+            "model": "RangeVue30",
+            "name_en": "RangeVue™30",
+            "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+            "category": "Sensors",
+            "device_type": "Water Level, Stage, and Flow Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+            "matched_features": [
+              "specification:input_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "RangeVue30: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 8–32 VDC; covers the requested value or interval. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "input_voltage",
+                      "value": "8 to 32 VDC",
+                      "raw_ref": {
+                        "file": "data/raw/RangeVue15-30.json",
+                        "product_index": 1,
+                        "spec_index": 20,
+                        "source_rows": [
+                          23
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "input_voltage",
+                  "value": "8 to 32 VDC",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 20,
+                    "source_rows": [
+                      23
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 7000000,
+            "product_id": "CSI_HYGROVUE5",
+            "model": "HygroVue5",
+            "name_en": "HygroVue5 Digital Temperature and Relative Humidity Sensor",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Temperature and Relative Humidity Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11622",
+            "matched_features": [
+              "specification:supply_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "HygroVue5: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 7–28 VDC; covers the requested value or interval. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "7 to 28 Vdc",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_HYGROVUE5.json",
+                        "product_index": 0,
+                        "spec_index": 2,
+                        "source_rows": [
+                          5
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "7 to 28 Vdc",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_HYGROVUE5.json",
+                    "product_index": 0,
+                    "spec_index": 2,
+                    "source_rows": [
+                      5
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 36750000,
+            "product_id": "CSI_MS80SH",
+            "model": "MS-80SH",
+            "name_en": "MS-80SH",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Pyranometer",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12144",
+            "matched_features": [
+              "specification:supply_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "MS-80SH: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 8–30 VDC; covers the requested value or interval. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "8 to 30 VDC",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_MS80SH.json",
+                        "product_index": 0,
+                        "spec_index": 28,
+                        "source_rows": [
+                          30
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "8 to 30 VDC",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 28,
+                    "source_rows": [
+                      30
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 40750000,
+            "product_id": "CSI_RF452",
+            "model": "RF452",
+            "name_en": "RF452",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Spread-Spectrum Radio",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14285",
+            "matched_features": [
+              "specification:input_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "RF452: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 7–28 VDC; covers the requested value or interval. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "input_voltage",
+                      "value": "7 to 28 VDC",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_RF452.json",
+                        "product_index": 0,
+                        "spec_index": 44,
+                        "source_rows": [
+                          46
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "input_voltage",
+                  "value": "7 to 28 VDC",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_RF452.json",
+                    "product_index": 0,
+                    "spec_index": 44,
+                    "source_rows": [
+                      46
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 22000000,
+            "product_id": "CSI_WINDSONIC1",
+            "model": "WindSonic1",
+            "name_en": "WindSonic1",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Ultrasonic Wind Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+            "matched_features": [
+              "specification:input_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "WindSonic1: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 9–30 VDC; covers the requested value or interval. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "input_voltage",
+                      "value": "9 to 30 Vdc",
+                      "raw_ref": {
+                        "file": "data/raw/WindSonic1.json",
+                        "product_index": 0,
+                        "spec_index": 5,
+                        "source_rows": [
+                          7
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "input_voltage",
+                  "value": "9 to 30 Vdc",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 5,
+                    "source_rows": [
+                      7
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 14730000,
+            "product_id": "CSI_EE181",
+            "model": "EE181",
+            "name_en": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Air Temperature and Relative Humidity Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/9241",
+            "matched_features": [
+              "specification:supply_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "EE181: product data confirms Supply voltage 9 vdc to 28 vdc. Supply voltage 9 vdc to 28 vdc: 7–30 VDC; covers the requested value or interval. The original specification conditions still apply.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Supply voltage 9 vdc to 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "7 to 30 Vdc | typically powered by the datalogger’s 12 V supply",
+                      "raw_ref": {
+                        "file": "data/raw/EE181.json",
+                        "product_index": 0,
+                        "spec_index": 2,
+                        "source_rows": [
+                          6,
+                          7
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "7 to 30 Vdc | typically powered by the datalogger’s 12 V supply",
+                  "raw_ref": {
+                    "file": "data/raw/EE181.json",
+                    "product_index": 0,
+                    "spec_index": 2,
+                    "source_rows": [
+                      6,
+                      7
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Điện áp nguồn 9 to 28 VDC",
+      "language": "vi",
+      "response": {
+        "query": "Điện áp nguồn 9 to 28 VDC",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 22250000,
+            "product_id": "CSI_BAROVUE10",
+            "model": "BaroVue10",
+            "name_en": "Digital Barometer -40 to +60C, 76cm (30 Inch)",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Barometric Pressure Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/13865",
+            "matched_features": [
+              "specification:supply_voltage:exact"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "BaroVue10: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 9–28 VDC; khớp đúng giá trị “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "9 to 28 Vdc",
+                      "raw_ref": {
+                        "file": "data/raw/BaroVue10.json",
+                        "product_index": 0,
+                        "spec_index": 3,
+                        "source_rows": [
+                          5
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 3
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "9 to 28 Vdc",
+                  "raw_ref": {
+                    "file": "data/raw/BaroVue10.json",
+                    "product_index": 0,
+                    "spec_index": 3,
+                    "source_rows": [
+                      5
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 27750000,
+            "product_id": "CSI_CS230",
+            "model": "CS230",
+            "name_en": "SDI-12 Temperature Profiler",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Temperature Profiler",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4415",
+            "matched_features": [
+              "specification:supply_voltage:exact"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CS230: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 9–28 VDC; khớp đúng giá trị “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "9 to 28 Vdc",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_CS230.json",
+                        "product_index": 0,
+                        "spec_index": 10,
+                        "source_rows": [
+                          17
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 3
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "9 to 28 Vdc",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_CS230.json",
+                    "product_index": 0,
+                    "spec_index": 10,
+                    "source_rows": [
+                      17
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 9910000,
+            "product_id": "CSI_HYGROVUE10",
+            "model": "HygroVue10",
+            "name_en": "Digital Temperature/RH Sensor w/M12 Connector w/o",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Air Temperature and Relative Humidity Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11956",
+            "matched_features": [
+              "specification:supply_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "HygroVue10: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 7–28 VDC; bao phủ giá trị hoặc dải yêu cầu “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "7 to 28 VDC",
+                      "raw_ref": {
+                        "file": "data/raw/HygroVue10.json",
+                        "product_index": 0,
+                        "spec_index": 3,
+                        "source_rows": [
+                          9
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 3
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "7 to 28 VDC",
+                  "raw_ref": {
+                    "file": "data/raw/HygroVue10.json",
+                    "product_index": 0,
+                    "spec_index": 3,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 14750000,
+            "product_id": "CSI_RANGEVUE30",
+            "model": "RangeVue30",
+            "name_en": "RangeVue™30",
+            "name_vi": "Cảm biến radar đo mực nước RangeVue™30",
+            "category": "Sensors",
+            "device_type": "Water Level, Stage, and Flow Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14971",
+            "matched_features": [
+              "specification:input_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "RangeVue30: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 8–32 VDC; bao phủ giá trị hoặc dải yêu cầu “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "input_voltage",
+                      "value": "8 to 32 VDC",
+                      "raw_ref": {
+                        "file": "data/raw/RangeVue15-30.json",
+                        "product_index": 1,
+                        "spec_index": 20,
+                        "source_rows": [
+                          23
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "input_voltage",
+                  "value": "8 to 32 VDC",
+                  "raw_ref": {
+                    "file": "data/raw/RangeVue15-30.json",
+                    "product_index": 1,
+                    "spec_index": 20,
+                    "source_rows": [
+                      23
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 7000000,
+            "product_id": "CSI_HYGROVUE5",
+            "model": "HygroVue5",
+            "name_en": "HygroVue5 Digital Temperature and Relative Humidity Sensor",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Temperature and Relative Humidity Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/11622",
+            "matched_features": [
+              "specification:supply_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "HygroVue5: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 7–28 VDC; bao phủ giá trị hoặc dải yêu cầu “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "7 to 28 Vdc",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_HYGROVUE5.json",
+                        "product_index": 0,
+                        "spec_index": 2,
+                        "source_rows": [
+                          5
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "7 to 28 Vdc",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_HYGROVUE5.json",
+                    "product_index": 0,
+                    "spec_index": 2,
+                    "source_rows": [
+                      5
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 36750000,
+            "product_id": "CSI_MS80SH",
+            "model": "MS-80SH",
+            "name_en": "MS-80SH",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Pyranometer",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12144",
+            "matched_features": [
+              "specification:supply_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "MS-80SH: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 8–30 VDC; bao phủ giá trị hoặc dải yêu cầu “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "8 to 30 VDC",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_MS80SH.json",
+                        "product_index": 0,
+                        "spec_index": 28,
+                        "source_rows": [
+                          30
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "8 to 30 VDC",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 28,
+                    "source_rows": [
+                      30
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 40750000,
+            "product_id": "CSI_RF452",
+            "model": "RF452",
+            "name_en": "RF452",
+            "name_vi": null,
+            "category": "Communications",
+            "device_type": "Spread-Spectrum Radio",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/14285",
+            "matched_features": [
+              "specification:input_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "RF452: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 7–28 VDC; bao phủ giá trị hoặc dải yêu cầu “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "input_voltage",
+                      "value": "7 to 28 VDC",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_RF452.json",
+                        "product_index": 0,
+                        "spec_index": 44,
+                        "source_rows": [
+                          46
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "input_voltage",
+                  "value": "7 to 28 VDC",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_RF452.json",
+                    "product_index": 0,
+                    "spec_index": 44,
+                    "source_rows": [
+                      46
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 22000000,
+            "product_id": "CSI_WINDSONIC1",
+            "model": "WindSonic1",
+            "name_en": "WindSonic1",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Ultrasonic Wind Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/8328",
+            "matched_features": [
+              "specification:input_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "WindSonic1: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 9–30 VDC; bao phủ giá trị hoặc dải yêu cầu “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "input_voltage",
+                      "value": "9 to 30 Vdc",
+                      "raw_ref": {
+                        "file": "data/raw/WindSonic1.json",
+                        "product_index": 0,
+                        "spec_index": 5,
+                        "source_rows": [
+                          7
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "input_voltage",
+                  "value": "9 to 30 Vdc",
+                  "raw_ref": {
+                    "file": "data/raw/WindSonic1.json",
+                    "product_index": 0,
+                    "spec_index": 5,
+                    "source_rows": [
+                      7
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 14730000,
+            "product_id": "CSI_EE181",
+            "model": "EE181",
+            "name_en": "E+E Temperature/RH Sensor (-40 to +60C) w/o Cable",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Air Temperature and Relative Humidity Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/9241",
+            "matched_features": [
+              "specification:supply_voltage:covers"
+            ],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "EE181: dữ liệu xác nhận Điện áp nguồn 9 vdc đến 28 vdc. Điện áp nguồn: 7–30 VDC; bao phủ giá trị hoặc dải yêu cầu “Điện áp nguồn 9 vdc đến 28 vdc”. Cần áp dụng cấu hình, ghi chú và điều kiện trong thông số gốc ở phần bằng chứng.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "Điện áp nguồn 9 vdc đến 28 vdc",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "supply_voltage",
+                      "value": "7 to 30 Vdc | typically powered by the datalogger’s 12 V supply",
+                      "raw_ref": {
+                        "file": "data/raw/EE181.json",
+                        "product_index": 0,
+                        "spec_index": 2,
+                        "source_rows": [
+                          6,
+                          7
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "normalized_spec",
+                  "field": "supply_voltage",
+                  "value": "7 to 30 Vdc | typically powered by the datalogger’s 12 V supply",
+                  "raw_ref": {
+                    "file": "data/raw/EE181.json",
+                    "product_index": 0,
+                    "spec_index": 2,
+                    "source_rows": [
+                      6,
+                      7
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Heated rain gauge for snow",
+      "language": "en",
+      "response": {
+        "query": "Heated rain gauge for snow",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 28000000,
+            "product_id": "CSI_52202",
+            "model": "52202",
+            "name_en": "RM Young Heated Rain Gage w/6.3 Orifice",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Precipitation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/1700",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "52202: product data confirms rainfall, heated rain gauge. 52202's heater supports precipitation measurement in snow/ice; documented limits: 10°C ±3°C. Supply heater power and check operating limits; blockage prevention is not guaranteed at every temperature.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "rainfall",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "rainfall / lượng mưa"
+                    }
+                  ]
+                },
+                {
+                  "label": "heated rain gauge",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-20°C to +50°C, heated",
+                      "raw_ref": {
+                        "file": "data/raw/52202.json",
+                        "product_index": 0,
+                        "spec_index": 4,
+                        "source_rows": [
+                          6
+                        ]
+                      }
+                    },
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "rainfall / lượng mưa"
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 5
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "rainfall / lượng mưa"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-20°C to +50°C, heated",
+                  "raw_ref": {
+                    "file": "data/raw/52202.json",
+                    "product_index": 0,
+                    "spec_index": 4,
+                    "source_rows": [
+                      6
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "power",
+                  "value": "18 W at 24 Vac, for heater only",
+                  "raw_ref": {
+                    "file": "data/raw/52202.json",
+                    "product_index": 0,
+                    "spec_index": 6,
+                    "source_rows": [
+                      8
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "heater_thermostat_set_point",
+                  "value": "10°C ±3°C",
+                  "raw_ref": {
+                    "file": "data/raw/52202.json",
+                    "product_index": 0,
+                    "spec_index": 7,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Đo mưa khi có tuyết rơi",
+      "language": "vi",
+      "response": {
+        "query": "Đo mưa khi có tuyết rơi",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 28000000,
+            "product_id": "CSI_52202",
+            "model": "52202",
+            "name_en": "RM Young Heated Rain Gage w/6.3 Orifice",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Precipitation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/1700",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.0909091,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "52202: dữ liệu xác nhận lượng mưa, đo mưa có sấy. Bộ sấy của 52202 phục vụ đo mưa khi có tuyết/băng; dữ liệu ghi nhận 10°C ±3°C. Cần nguồn cấp cho sấy và kiểm tra dải vận hành; không bảo đảm chống tắc ở mọi mức lạnh.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "lượng mưa",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "rainfall / lượng mưa"
+                    }
+                  ]
+                },
+                {
+                  "label": "đo mưa có sấy",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "normalized_spec",
+                      "field": "operating_temperature_range",
+                      "value": "-20°C to +50°C, heated",
+                      "raw_ref": {
+                        "file": "data/raw/52202.json",
+                        "product_index": 0,
+                        "spec_index": 4,
+                        "source_rows": [
+                          6
+                        ]
+                      }
+                    },
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "rainfall / lượng mưa"
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 5
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "rainfall / lượng mưa"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "operating_temperature_range",
+                  "value": "-20°C to +50°C, heated",
+                  "raw_ref": {
+                    "file": "data/raw/52202.json",
+                    "product_index": 0,
+                    "spec_index": 4,
+                    "source_rows": [
+                      6
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "power",
+                  "value": "18 W at 24 Vac, for heater only",
+                  "raw_ref": {
+                    "file": "data/raw/52202.json",
+                    "product_index": 0,
+                    "spec_index": 6,
+                    "source_rows": [
+                      8
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "heater_thermostat_set_point",
+                  "value": "10°C ±3°C",
+                  "raw_ref": {
+                    "file": "data/raw/52202.json",
+                    "product_index": 0,
+                    "spec_index": 7,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Solar radiation for photovoltaic power",
+      "language": "en",
+      "response": {
+        "query": "Solar radiation for photovoltaic power",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 38500000,
+            "product_id": "CSI_NR01",
+            "model": "NR01",
+            "name_en": "4Component Net Radiation Sensor",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/6322",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.259259,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "NR01: product data confirms solar radiation. NR01 provides solar-radiation measurements for PV monitoring. Specifications: -0.1 to 50 mV; -5 to 5 mV; 10 to 40 µV/(W/m²); 5 to 15 µV/(W/m²). PV efficiency assessment needs irradiance in W/m² together with power/energy and suitable mounting; PAR/photon flux is a different quantity. Daily radiation requires recording and integrating readings over time; the daily-total configuration remains unconfirmed.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "solar radiation",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "solar radiation / bức xạ mặt trời",
+                      "raw_ref": {
+                        "file": "data/raw/NR01.json",
+                        "product_index": 0,
+                        "spec_index": 27,
+                        "source_rows": [
+                          29
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 3
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "solar radiation / bức xạ mặt trời",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 27,
+                    "source_rows": [
+                      29
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Solar Radiation"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyranometer_expected_voltage_output",
+                  "value": "-0.1 to +50 mV",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 26,
+                    "source_rows": [
+                      28
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyranometer_spectral_range",
+                  "value": "305 to 2800 nm",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 28,
+                    "source_rows": [
+                      30
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyrgeometer_expected_voltage_output",
+                  "value": "-5 to +5 mV",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 42,
+                    "source_rows": [
+                      44
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyrgeometer_spectral_range",
+                  "value": "4500 to 50,000 nm",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 44,
+                    "source_rows": [
+                      46
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyranometer_sensitivity",
+                  "value": "10 to 40 µV/(W/m²)",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 25,
+                    "source_rows": [
+                      27
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyrgeometer_sensitivity",
+                  "value": "5 to 15 µV/(W/m²)",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 41,
+                    "source_rows": [
+                      43
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12000000,
+            "product_id": "CSI_CS301",
+            "model": "CS301",
+            "name_en": "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11307",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.142857,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CS301: product data confirms solar radiation. CS301 provides solar-radiation measurements for PV monitoring. Specifications: 0.2 mV/W/m². PV efficiency assessment needs irradiance in W/m² together with power/energy and suitable mounting; PAR/photon flux is a different quantity. Daily radiation requires recording and integrating readings over time; the daily-total configuration remains unconfirmed.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "solar radiation",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "solar radiation / bức xạ mặt trời",
+                      "raw_ref": {
+                        "file": "data/raw/CS301.json",
+                        "product_index": 0,
+                        "spec_index": 1,
+                        "source_rows": [
+                          4
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 3
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "solar radiation / bức xạ mặt trời",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 1,
+                    "source_rows": [
+                      4
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Solar Radiation"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "spectral_range",
+                  "value": "360 to 1120 nm",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 7,
+                    "source_rows": [
+                      11
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "sensitivity",
+                  "value": "0.2 mV/W/m²",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 15,
+                    "source_rows": [
+                      20
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "measurement_range",
+                  "value": "0 to 2000 W/m² | Full sunlight ≈1000 W/m²",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 4,
+                    "source_rows": [
+                      7,
+                      8
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "output_range",
+                  "value": "0 to 400 mV (full scale output)",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 5,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 37000000,
+            "product_id": "CSI_CLIMAVUE50G2",
+            "model": "ClimaVue50G2",
+            "name_en": "G2 Compact Digital SDI-12 Weather Sensor (-50 to",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "All-in-One Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.00662252,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "ClimaVue50G2: product data confirms solar radiation. ClimaVue50G2 provides solar-radiation measurements for PV monitoring. Specifications: 0 to 47 kPa; -50 to 60 °C; 0 to 100 %; 10 to 1200 hPa; 0 to 60 m/s; 0 to 359 °; 0 to 1750 W/m²; 0 to 180 °; 0 to 1,500 mm/h (60 in./h). PV efficiency assessment needs irradiance in W/m² together with power/energy and suitable mounting; PAR/photon flux is a different quantity. Daily radiation requires recording and integrating readings over time; the daily-total configuration remains unconfirmed. Resolution: 1 W/m².",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "solar radiation",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "solar radiation / bức xạ mặt trời",
+                      "raw_ref": {
+                        "file": "data/raw/ClimaVue40&52G2.json",
+                        "product_index": 1,
+                        "spec_index": 0,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 3
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "solar radiation / bức xạ mặt trời",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Solar Radiation"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "output",
+                  "value": "SDI-12",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 1,
+                    "source_rows": [
+                      5
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "vapor_pressure_measurement_range",
+                  "value": "0 to 47 kPa",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 23,
+                    "source_rows": [
+                      37
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "air_temperature_measurement_range",
+                  "value": "-50° to +60°C",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 26,
+                    "source_rows": [
+                      43
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "relative_humidity_measurement_range",
+                  "value": "0 to 100%",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 29,
+                    "source_rows": [
+                      49
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "barometric_pressure_measurement_range",
+                  "value": "10 to 1200 hPa",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 33,
+                    "source_rows": [
+                      56
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "wind_speed_measurement_range",
+                  "value": "0 to 60 m/s (0 to 135 mph)",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 38,
+                    "source_rows": [
+                      68
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "wind_direction_measurement_range",
+                  "value": "0° to 359°",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 41,
+                    "source_rows": [
+                      77
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "solar_radiation_measurement_range",
+                  "value": "0 to 1750 W m⁻²",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 44,
+                    "source_rows": [
+                      82
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "solar_radiation_spectral_range",
+                  "value": "300 to 1150 nm",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 47,
+                    "source_rows": [
+                      85
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "tilt_measurement_range",
+                  "value": "0° to 180°",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 48,
+                    "source_rows": [
+                      88
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "lightning_strike_count_measurement_range",
+                  "value": "0 to 65,535 strikes",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 51,
+                    "source_rows": [
+                      94
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "lightning_average_distance_measurement_range",
+                  "value": "0 to 40 km (0 to 24.9 mi)",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 54,
+                    "source_rows": [
+                      100
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "precipitation_measurement_range",
+                  "value": "0 to 1,500 mm/h (60 in./h)",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 20,
+                    "source_rows": [
+                      31
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "solar_radiation_resolution",
+                  "value": "1 W m⁻²",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 45,
+                    "source_rows": [
+                      83
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 36750000,
+            "product_id": "CSI_MS80SH",
+            "model": "MS-80SH",
+            "name_en": "MS-80SH",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Pyranometer",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12144",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.230769,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "MS-80SH: product data confirms solar radiation. MS-80SH provides solar-radiation measurements for PV monitoring. PV efficiency assessment needs irradiance in W/m² together with power/energy and suitable mounting; PAR/photon flux is a different quantity. Daily radiation requires recording and integrating readings over time; the daily-total configuration remains unconfirmed.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "solar radiation",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "solar radiation / bức xạ mặt trời",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_MS80SH.json",
+                        "product_index": 0,
+                        "spec_index": 1,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "solar radiation / bức xạ mặt trời",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 1,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Solar Radiation"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "output",
+                  "value": "SDI-12 and Modbus RTU over RS-485 (digital)",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 10,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "spectral_range",
+                  "value": "285 to 3000 nm",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 23,
+                    "source_rows": [
+                      25
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "sensitivity",
+                  "value": "~10 µV/(W/m²)",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 14,
+                    "source_rows": [
+                      16
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Đo quang năng bức xạ cho điện mặt trời",
+      "language": "vi",
+      "response": {
+        "query": "Đo quang năng bức xạ cho điện mặt trời",
+        "mode": "keyword",
+        "results": [
+          {
+            "price_vnd": 38500000,
+            "product_id": "CSI_NR01",
+            "model": "NR01",
+            "name_en": "4Component Net Radiation Sensor",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/6322",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.259259,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "NR01: dữ liệu xác nhận bức xạ mặt trời. NR01 cung cấp số đo bức xạ phục vụ theo dõi điện mặt trời. Thông số: -0.1 đến 50 mV; -5 đến 5 mV; 10 đến 40 µV/(W/m²); 5 đến 15 µV/(W/m²). Đánh giá hiệu suất điện mặt trời cần bức xạ theo W/m² cùng dữ liệu công suất/điện năng và bố trí đo phù hợp; thông lượng photon quang hợp không thay thế đại lượng này.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "bức xạ mặt trời",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "solar radiation / bức xạ mặt trời",
+                      "raw_ref": {
+                        "file": "data/raw/NR01.json",
+                        "product_index": 0,
+                        "spec_index": 27,
+                        "source_rows": [
+                          29
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 4
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "solar radiation / bức xạ mặt trời",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 27,
+                    "source_rows": [
+                      29
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Bức xạ mặt trời"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyranometer_expected_voltage_output",
+                  "value": "-0.1 to +50 mV",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 26,
+                    "source_rows": [
+                      28
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyranometer_spectral_range",
+                  "value": "305 to 2800 nm",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 28,
+                    "source_rows": [
+                      30
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyrgeometer_expected_voltage_output",
+                  "value": "-5 to +5 mV",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 42,
+                    "source_rows": [
+                      44
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyrgeometer_spectral_range",
+                  "value": "4500 to 50,000 nm",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 44,
+                    "source_rows": [
+                      46
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyranometer_sensitivity",
+                  "value": "10 to 40 µV/(W/m²)",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 25,
+                    "source_rows": [
+                      27
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "pyrgeometer_sensitivity",
+                  "value": "5 to 15 µV/(W/m²)",
+                  "raw_ref": {
+                    "file": "data/raw/NR01.json",
+                    "product_index": 0,
+                    "spec_index": 41,
+                    "source_rows": [
+                      43
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 12000000,
+            "product_id": "CSI_CS301",
+            "model": "CS301",
+            "name_en": "Apogee SP-110-SS Pyranometer, w/o Cable (-40 to +70C)*",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Solar Radiation Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_460/11307",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.142857,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CS301: dữ liệu xác nhận bức xạ mặt trời. CS301 cung cấp số đo bức xạ phục vụ theo dõi điện mặt trời. Thông số: 0.2 mV/W/m². Đánh giá hiệu suất điện mặt trời cần bức xạ theo W/m² cùng dữ liệu công suất/điện năng và bố trí đo phù hợp; thông lượng photon quang hợp không thay thế đại lượng này.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "bức xạ mặt trời",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "solar radiation / bức xạ mặt trời",
+                      "raw_ref": {
+                        "file": "data/raw/CS301.json",
+                        "product_index": 0,
+                        "spec_index": 1,
+                        "source_rows": [
+                          4
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 4
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "solar radiation / bức xạ mặt trời",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 1,
+                    "source_rows": [
+                      4
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Bức xạ mặt trời"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "spectral_range",
+                  "value": "360 to 1120 nm",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 7,
+                    "source_rows": [
+                      11
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "sensitivity",
+                  "value": "0.2 mV/W/m²",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 15,
+                    "source_rows": [
+                      20
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "measurement_range",
+                  "value": "0 to 2000 W/m² | Full sunlight ≈1000 W/m²",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 4,
+                    "source_rows": [
+                      7,
+                      8
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "output_range",
+                  "value": "0 to 400 mV (full scale output)",
+                  "raw_ref": {
+                    "file": "data/raw/CS301.json",
+                    "product_index": 0,
+                    "spec_index": 5,
+                    "source_rows": [
+                      9
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 37000000,
+            "product_id": "CSI_CLIMAVUE50G2",
+            "model": "ClimaVue50G2",
+            "name_en": "G2 Compact Digital SDI-12 Weather Sensor (-50 to",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "All-in-One Weather Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/15290",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.00662252,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "ClimaVue50G2: dữ liệu xác nhận bức xạ mặt trời. ClimaVue50G2 cung cấp số đo bức xạ phục vụ theo dõi điện mặt trời. Thông số: 0 đến 47 kPa; -50 đến 60 °C; 0 đến 100 %; 10 đến 1200 hPa; 0 đến 60 m/s; 0 đến 359 °; 0 đến 1750 W/m²; 0 đến 180 °; 0 đến 1,500 mm/h (60 in./h). Đánh giá hiệu suất điện mặt trời cần bức xạ theo W/m² cùng dữ liệu công suất/điện năng và bố trí đo phù hợp; thông lượng photon quang hợp không thay thế đại lượng này. Độ phân giải: 1 W/m².",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "bức xạ mặt trời",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "solar radiation / bức xạ mặt trời",
+                      "raw_ref": {
+                        "file": "data/raw/ClimaVue40&52G2.json",
+                        "product_index": 1,
+                        "spec_index": 0,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 4
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "solar radiation / bức xạ mặt trời",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Bức xạ mặt trời"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "output",
+                  "value": "SDI-12",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 1,
+                    "source_rows": [
+                      5
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "vapor_pressure_measurement_range",
+                  "value": "0 to 47 kPa",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 23,
+                    "source_rows": [
+                      37
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "air_temperature_measurement_range",
+                  "value": "-50° to +60°C",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 26,
+                    "source_rows": [
+                      43
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "relative_humidity_measurement_range",
+                  "value": "0 to 100%",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 29,
+                    "source_rows": [
+                      49
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "barometric_pressure_measurement_range",
+                  "value": "10 to 1200 hPa",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 33,
+                    "source_rows": [
+                      56
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "wind_speed_measurement_range",
+                  "value": "0 to 60 m/s (0 to 135 mph)",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 38,
+                    "source_rows": [
+                      68
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "wind_direction_measurement_range",
+                  "value": "0° to 359°",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 41,
+                    "source_rows": [
+                      77
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "solar_radiation_measurement_range",
+                  "value": "0 to 1750 W m⁻²",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 44,
+                    "source_rows": [
+                      82
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "solar_radiation_spectral_range",
+                  "value": "300 to 1150 nm",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 47,
+                    "source_rows": [
+                      85
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "tilt_measurement_range",
+                  "value": "0° to 180°",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 48,
+                    "source_rows": [
+                      88
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "lightning_strike_count_measurement_range",
+                  "value": "0 to 65,535 strikes",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 51,
+                    "source_rows": [
+                      94
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "lightning_average_distance_measurement_range",
+                  "value": "0 to 40 km (0 to 24.9 mi)",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 54,
+                    "source_rows": [
+                      100
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "precipitation_measurement_range",
+                  "value": "0 to 1,500 mm/h (60 in./h)",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 20,
+                    "source_rows": [
+                      31
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "solar_radiation_resolution",
+                  "value": "1 W m⁻²",
+                  "raw_ref": {
+                    "file": "data/raw/ClimaVue40&52G2.json",
+                    "product_index": 1,
+                    "spec_index": 45,
+                    "source_rows": [
+                      83
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "price_vnd": 36750000,
+            "product_id": "CSI_MS80SH",
+            "model": "MS-80SH",
+            "name_en": "MS-80SH",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Pyranometer",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_920/12144",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0.230769,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "MS-80SH: dữ liệu xác nhận bức xạ mặt trời. MS-80SH cung cấp số đo bức xạ phục vụ theo dõi điện mặt trời. Đánh giá hiệu suất điện mặt trời cần bức xạ theo W/m² cùng dữ liệu công suất/điện năng và bố trí đo phù hợp; thông lượng photon quang hợp không thay thế đại lượng này.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "bức xạ mặt trời",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "solar radiation / bức xạ mặt trời",
+                      "raw_ref": {
+                        "file": "data/raw/CSI_MS80SH.json",
+                        "product_index": 0,
+                        "spec_index": 1,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generation": {
+                "status": "not_applicable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M"
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "solar radiation / bức xạ mặt trời",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 1,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Bức xạ mặt trời"
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "output",
+                  "value": "SDI-12 and Modbus RTU over RS-485 (digital)",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 10,
+                    "source_rows": [
+                      12
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "spectral_range",
+                  "value": "285 to 3000 nm",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 23,
+                    "source_rows": [
+                      25
+                    ]
+                  }
+                },
+                {
+                  "source": "normalized_spec",
+                  "field": "sensitivity",
+                  "value": "~10 µV/(W/m²)",
+                  "raw_ref": {
+                    "file": "data/raw/CSI_MS80SH.json",
+                    "product_index": 0,
+                    "spec_index": 14,
+                    "source_rows": [
+                      16
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Bộ nhớ tối thiểu 900 GB",
+      "language": "vi",
+      "response": {
+        "query": "Bộ nhớ tối thiểu 900 GB",
+        "mode": "keyword",
+        "guidance": {
+          "text": "Chưa tìm thấy sản phẩm có dữ liệu xác nhận đồng thời toàn bộ yêu cầu. Điều này không chứng minh danh mục không có giải pháp. Hãy làm rõ đại lượng, model hoặc cho phép phối hợp nhiều thiết bị; dải nhiệt độ vận hành không xác nhận dải đo hay môi trường nước.",
+          "language": "vi",
+          "needs_clarification": true
+        },
+        "results": []
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Memory at least 900 GB",
+      "language": "en",
+      "response": {
+        "query": "Memory at least 900 GB",
+        "mode": "keyword",
+        "guidance": {
+          "text": "No retrieved product has evidence confirming all requirements together. This does not establish that the catalog has no solution. Clarify measurements, models or whether multiple devices are acceptable; operating temperature does not establish measurement range or a water medium.",
+          "language": "en",
+          "needs_clarification": true
+        },
+        "results": []
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Explain this product for my requirements",
+      "language": "en",
+      "response": {
+        "query": "Explain this product for my requirements",
+        "resolved_query": "Tôi cần cảm biến độ ẩm đất",
+        "context_applied": true,
+        "mode": "hybrid",
+        "guidance": {
+          "text": "These explanations evaluate the selected models against your previous requirements and your new question. Unconfirmed requirements are identified separately; choosing a better model requires comparison criteria.",
+          "language": "en"
+        },
+        "results": [
+          {
+            "product_id": "CSI_CS655",
+            "model": "CS655",
+            "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CS655: product data confirms soil moisture. CS655 measures volumetric water content, providing readings to monitor conditions before deciding on adjustments. Water content helps assess dry/wet soil; suitable thresholds depend on crops and soil. Installation suitability for your specific use case remains unconfirmed.",
+              "language": "en",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "soil moisture",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "soil moisture / độ ẩm đất",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 2,
+                        "spec_index": 0,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "label": "installation and system compatibility",
+                  "status": "unconfirmed",
+                  "evidence": []
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "soil moisture / độ ẩm đất",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Volumetric Water Content",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "query": "Giải thích sản phẩm này",
+      "language": "vi",
+      "response": {
+        "query": "Giải thích sản phẩm này",
+        "resolved_query": "I need a soil moisture sensor",
+        "context_applied": true,
+        "mode": "hybrid",
+        "guidance": {
+          "text": "Đánh giá các model bạn đã chọn theo nhu cầu trước đó và câu hỏi mới. Các yêu cầu chưa được chứng minh được nêu riêng; chưa có căn cứ chọn model tốt hơn nếu thiếu tiêu chí so sánh.",
+          "language": "vi"
+        },
+        "results": [
+          {
+            "product_id": "CSI_CS655",
+            "model": "CS655",
+            "name_en": "12cm Water Content Reflectometer Plus (-50 to +70C)**",
+            "name_vi": null,
+            "category": "Sensors",
+            "device_type": "Soil Moisture, Temperature, and EC Sensor",
+            "image_url": "https://res.cloudinary.com/campbellsci/image/upload/f_auto,q_80,w_620/4883",
+            "matched_features": [],
+            "scores": {
+              "keyword": 0,
+              "semantic": null,
+              "hybrid": null,
+              "rerank": null
+            },
+            "explanation": {
+              "text": "CS655: dữ liệu xác nhận độ ẩm đất. CS655 đo hàm lượng nước thể tích, giúp bạn có số liệu để theo dõi và đánh giá tình trạng trước khi quyết định điều chỉnh. Lượng nước trong đất giúp đánh giá đất khô/ướt; ngưỡng phù hợp còn phụ thuộc cây và loại đất. Chưa xác nhận cấu hình lắp đặt phù hợp với trường hợp cụ thể của bạn.",
+              "language": "vi",
+              "source": "rule",
+              "requirements": [
+                {
+                  "label": "độ ẩm đất",
+                  "status": "confirmed",
+                  "evidence": [
+                    {
+                      "source": "product_document",
+                      "field": "measurements",
+                      "value": "soil moisture / độ ẩm đất",
+                      "raw_ref": {
+                        "file": "data/raw/CS616_CS650_CS655.json",
+                        "product_index": 2,
+                        "spec_index": 0,
+                        "source_rows": [
+                          3
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "label": "cấu hình lắp đặt và tương thích hệ thống",
+                  "status": "unconfirmed",
+                  "evidence": []
+                }
+              ],
+              "generation": {
+                "status": "unavailable",
+                "model": "qwen3:4b-instruct-2507-q4_K_M",
+                "latency_ms": 1
+              },
+              "evidence": [
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "soil moisture / độ ẩm đất",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                },
+                {
+                  "source": "product_document",
+                  "field": "measurements",
+                  "value": "Hàm lượng nước thể tích",
+                  "raw_ref": {
+                    "file": "data/raw/CS616_CS650_CS655.json",
+                    "product_index": 2,
+                    "spec_index": 0,
+                    "source_rows": [
+                      3
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": "PASS"
+    }
+  ]
+}

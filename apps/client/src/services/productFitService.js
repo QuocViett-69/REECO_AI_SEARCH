@@ -25,7 +25,7 @@ export async function explainProductFit({ product }) {
   const explanation = product?.explanation;
   const vi = explanation?.language === 'vi';
   const confirmed = (explanation?.evidence || []).map((item) => ({
-    label: FIELD_LABELS[item.field]?.[vi ? 1 : 0] || String(item.field).replaceAll('_', ' '),
+    label: FIELD_LABELS[item.field]?.[vi ? 1 : 0] || (vi ? 'Thông số gốc' : String(item.field).replaceAll('_', ' ')),
     value: String(item.value),
   }));
 

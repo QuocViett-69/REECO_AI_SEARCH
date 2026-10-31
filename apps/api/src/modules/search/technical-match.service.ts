@@ -91,7 +91,7 @@ export class TechnicalMatchService {
       );
       const temperatureMatches = parsedQuery.temperatureConstraints.map(
         (constraint) =>
-          this.evaluateTemperature(constraint, evidence?.specifications ?? []),
+          evaluateTemperature(constraint, evidence?.specifications ?? []),
       );
 
       return {
@@ -190,80 +190,81 @@ export class TechnicalMatchService {
     return { queryProtocol, result: 'UNKNOWN', evidence: [] };
   }
 
-  private evaluateTemperature(
-    constraint: TemperatureConstraint,
-    specifications: ProductSpecification[],
-  ): TemperatureMatchEvaluation {
-    if (constraint.confidence !== 'high' || constraint.intent === 'ambiguous') {
-      return { constraint, result: 'UNKNOWN', evidence: [] };
-    }
+}
 
-    const approvedKeys =
-      constraint.intent === 'operating'
-        ? operatingTemperatureKeys
-        : measurementTemperatureKeys;
-    const relevant = specifications.filter((specification) =>
-      approvedKeys.has(specification.canonical_key),
-    );
-    if (relevant.length === 0) {
-      return { constraint, result: 'UNKNOWN', evidence: [] };
-    }
-
-    const evidence = relevant.map((specification) =>
-      this.evaluateTemperatureSpecification(constraint, specification),
-    );
-    const result = evidence.some((item) => item.result === 'MATCH')
-      ? 'MATCH'
-      : evidence.every((item) => item.result === 'MISMATCH')
-        ? 'MISMATCH'
-        : 'UNKNOWN';
-    return { constraint, result, evidence };
+export function evaluateTemperature(
+  constraint: TemperatureConstraint,
+  specifications: ProductSpecification[],
+): TemperatureMatchEvaluation {
+  if (constraint.confidence !== 'high' || constraint.intent === 'ambiguous') {
+    return { constraint, result: 'UNKNOWN', evidence: [] };
   }
 
-  private evaluateTemperatureSpecification(
-    constraint: TemperatureConstraint,
-    specification: ProductSpecification,
-  ): TemperatureMatchEvidence {
-    const normalized = specification.normalized_value;
-    if (
-      normalized.type !== 'range' ||
-      normalized.min_value === undefined ||
-      normalized.max_value === undefined ||
-      !normalized.unit || !/^(?:°[CF]|℃|℉|K|Kelvin|Celsius|Fahrenheit)$/iu.test(normalized.unit)
-    ) {
-      return {
-        source: 'normalized_spec',
-        canonicalKey: specification.canonical_key,
-        candidateRange: null,
-        result: 'UNKNOWN',
-        rawRef: specification.raw_ref,
-      };
-    }
+  const approvedKeys =
+    constraint.intent === 'operating'
+      ? operatingTemperatureKeys
+      : measurementTemperatureKeys;
+  const relevant = specifications.filter((specification) =>
+    approvedKeys.has(specification.canonical_key),
+  );
+  if (relevant.length === 0) {
+    return { constraint, result: 'UNKNOWN', evidence: [] };
+  }
 
-    const candidateRange = {
-      minCelsius: celsiusValue(String(normalized.min_value), normalized.unit)!,
-      maxCelsius: celsiusValue(String(normalized.max_value), normalized.unit)!,
-      unit: CELSIUS_UNIT,
-    } as const;
-    let matches: boolean;
-    if (constraint.kind === 'range') {
-      matches =
-        candidateRange.minCelsius <= constraint.minCelsius &&
-        candidateRange.maxCelsius >= constraint.maxCelsius;
-    } else if (constraint.kind === 'upper_bound') {
-      matches = candidateRange.minCelsius <= constraint.valueCelsius && candidateRange.maxCelsius >= constraint.valueCelsius;
-    } else {
-      matches =
-        candidateRange.minCelsius <= constraint.valueCelsius &&
-        candidateRange.maxCelsius >= constraint.valueCelsius;
-    }
+  const evidence = relevant.map((specification) =>
+    evaluateTemperatureSpecification(constraint, specification),
+  );
+  const result = evidence.some((item) => item.result === 'MATCH')
+    ? 'MATCH'
+    : evidence.every((item) => item.result === 'MISMATCH')
+      ? 'MISMATCH'
+      : 'UNKNOWN';
+  return { constraint, result, evidence };
+}
 
+function evaluateTemperatureSpecification(
+  constraint: TemperatureConstraint,
+  specification: ProductSpecification,
+): TemperatureMatchEvidence {
+  const normalized = specification.normalized_value;
+  if (
+    normalized.type !== 'range' ||
+    normalized.min_value === undefined ||
+    normalized.max_value === undefined ||
+    !normalized.unit || !/^(?:°[CF]|℃|℉|K|Kelvin|Celsius|Fahrenheit)$/iu.test(normalized.unit)
+  ) {
     return {
       source: 'normalized_spec',
       canonicalKey: specification.canonical_key,
-      candidateRange,
-      result: matches ? 'MATCH' : 'MISMATCH',
+      candidateRange: null,
+      result: 'UNKNOWN',
       rawRef: specification.raw_ref,
     };
   }
+
+  const candidateRange = {
+    minCelsius: celsiusValue(String(normalized.min_value), normalized.unit)!,
+    maxCelsius: celsiusValue(String(normalized.max_value), normalized.unit)!,
+    unit: CELSIUS_UNIT,
+  } as const;
+  let matches: boolean;
+  if (constraint.kind === 'range') {
+    matches =
+      candidateRange.minCelsius <= constraint.minCelsius &&
+      candidateRange.maxCelsius >= constraint.maxCelsius;
+  } else if (constraint.kind === 'upper_bound') {
+    matches = candidateRange.minCelsius <= constraint.valueCelsius && candidateRange.maxCelsius >= constraint.valueCelsius;
+  } else {
+    matches =
+      candidateRange.minCelsius <= constraint.valueCelsius &&
+      candidateRange.maxCelsius >= constraint.valueCelsius;
+  }
+
+  return {
+    source: 'normalized_spec',
+    canonicalKey: specification.canonical_key,
+    candidateRange,
+    result: matches ? 'MATCH' : 'MISMATCH',
+    rawRef: specification.raw_ref,
+  };
 }

@@ -225,7 +225,7 @@ export class TechnicalQueryParserService {
     const normalized = query.normalize('NFC').toLocaleLowerCase('en-US');
     const measurement =
       /\bmeasure(?:s|d|ment|ments|ing)?\s+up\s+to\b/iu.test(normalized) ||
-      /(?:measurement\s+(?:temperature\s+)?range|temperature\s+measurement|dải\s+đo|đo\s+nhiệt\s+độ)/iu.test(normalized) ||
+      /(?:measurement\s+(?:temperature\s+)?range|temperature\s+measurement|dải\s+đo|dải\s+nhiệt\s+độ\s+đo|đo\s+nhiệt\s+độ)/iu.test(normalized) ||
       /(?:^|[^\p{L}\p{N}])đo\s+(?:tới|đến)(?=$|[^\p{L}\p{N}])/iu.test(
         normalized,
       );
@@ -235,6 +235,7 @@ export class TechnicalQueryParserService {
       /\boperat(?:e|es|ing)\b/iu.test(normalized) ||
       /\boperating\s+temperature\b/iu.test(normalized) ||
       /chịu (?:lạnh|nhiệt)|cold resistant|withstand.*cold/iu.test(normalized) ||
+      /(?:nhiệt\s+độ\s+(?:vận\s+hành|làm\s+việc)|dải\s+(?:hoạt\s+động|vận\s+hành))/iu.test(normalized) ||
       /(?:^|[^\p{L}\p{N}])ho(?:ạ|a)t\s+(?:độ|do)ng\s+(?:ở|tại|o|tai)(?=$|[^\p{L}\p{N}])/iu.test(
         normalized,
       ) ||

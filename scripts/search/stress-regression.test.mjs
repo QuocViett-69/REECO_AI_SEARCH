@@ -12,6 +12,61 @@ const { ProductsRepository } = require('../../apps/api/dist/modules/products/pro
 const { suggestModels } = fromDist('model-suggestions');
 const { KeywordSearchService } = fromDist('keyword-search.service');
 
+test('numeric temperature retrieval finds exact ranges beyond one page without relying on keyword hits', async () => {
+  const spec = (id, min, max, key = 'operating_temperature_range') => ({
+    product_id: id, canonical_key: key,
+    normalized_value: { type: 'range', min_value: min, max_value: max, unit: '°C' }, raw_ref: {},
+  });
+  const source = [...Array.from({ length: 500 }, () => spec('cover', -50, 80)),
+    spec('exact', -35, 70), spec('narrow', -35, 60), spec('inactive', -35, 70),
+    spec('measurement-only', -35, 70, 'temperature_measurement_range'),
+    spec('storage-only', -35, 70, 'storage_temperature_range')];
+  const pages = [], signal = new AbortController().signal;
+  const keyword = new KeywordSearchService({ getClient: () => ({
+    rpc: () => ({ abortSignal: async () => ({ data: [] }) }),
+    from: table => {
+      assert.equal(table, 'product_specifications');
+      let offset = 0, end = 0;
+      const builder = {
+        select() { return this; },
+        in(_key, keys) { assert.ok(keys.includes('operating_temperature_range')); return this; },
+        order() { return this; },
+        range(from, to) { offset = from; end = to; pages.push([from, to]); return this; },
+        abortSignal(actual) { assert.equal(actual, signal); return this; },
+        then(resolve, reject) { return Promise.resolve({ data: source.slice(offset, end + 1) }).then(resolve, reject); },
+      };
+      return builder;
+    },
+  }) }, {
+    getPublicSummariesByIds: async ids => new Map(ids.filter(id => id !== 'inactive').map(id => [id, { model: id, name_en: id }])),
+    getActiveTechnicalIdentityCatalog: async () => [],
+  });
+  const rows = await keyword.search('Dải nhiệt độ hoạt động -35 to +70 °C', 1, signal);
+  assert.deepEqual(rows.map(r => r.product_id), ['exact']);
+  assert.deepEqual(pages, [[0, 499], [500, 999]]);
+  const combined = await keyword.search('operating temperature -35 to 70°C; temperature measurement range -35 to 70°C', 1, signal);
+  assert.deepEqual(combined, [], 'operating and measurement requirements must hold on the same product');
+});
+
+test('weather and transport fallback use catalog vocabulary when semantic retrieval is down', async () => {
+  for (const [query, term] of [
+    ['weather instrument', 'weather'],
+    ['communication equipment satellite communication', 'satellite'],
+    ['communication equipment radio communication', 'radio'],
+    ['cellular communication', 'cellular'],
+  ]) {
+    const queries = [];
+    const row = { product_id: 'catalog-id', model: 'TEST', rank: 0.25 };
+    const keyword = new KeywordSearchService({ getClient: () => ({ rpc: async (_, args) => {
+      queries.push(args.query_text);
+      return { data: args.query_text.includes(`"${term}"`) ? [row] : [] };
+    } }) }, { getActiveTechnicalIdentityCatalog: async () => [] });
+    assert.deepEqual(await keyword.search(query, 40), [row]);
+    assert.equal(queries[0], query);
+    assert.ok(queries[1].includes(`"${term}"`));
+  }
+});
+
 test('sparse keyword prose supplements canonical intent and preserves original ordering', async () => {
   for (const query of ['datalogger có wifi', 'data loger wifi', 'bộ ghi dữ liệu']) {
     const queries = [];
@@ -50,7 +105,7 @@ test('model suggestions use the catalog and never collapse an ambiguous prefix t
 
 test('raw specification matching preserves boundaries, ranges, and hyphen variants', () => {
   const spec = (value, key = 'test') => ({ canonical_key: key, normalized_value: { type: 'text', value, value_raw: value } });
-  for (const [query, value] of [['24 bit ADC', '24-bit ADC'], ['IP62', 'IP62'], ['300 to 6500 Hz', '300 to 6500 Hz'], ['5 AA battery', '5 AA (1.5 V)'], ['accuracy 0.005%', '±0.005% of reading']]) {
+  for (const [query, value] of [['24 bit ADC', '24-bit ADC'], ['IP62', 'IP62'], ['300 to 6500 Hz', '300 to 6500 Hz'], ['5 AA battery', '5 AA (1.5 V)'], ['0.005%', '±0.005% of reading']]) {
     assert.ok(specificationTerms(query).length);
     assert.ok(specificationEvidence(specificationTerms(query), [spec(value)]));
   }

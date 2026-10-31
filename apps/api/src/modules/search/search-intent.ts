@@ -1,8 +1,9 @@
 import type { ProductSearchDocument, ProductSpecification, SearchResponse } from '@reeco/shared';
 import { parseTemperatureTarget, temperatureTargetEvidence } from './temperature-target';
-import { specificationTerms, specificationEvidence } from './specification-query';
+import { specificationTerms, specificationEvidence, specificationConstraints, matchSpecificationConstraints, normalizeSpecificationText } from './specification-query';
 import { purchaseQuery, isCapabilityQuestion } from './query-context';
 import { parseNegativeConstraints } from './conversation-query';
+import { searchLanguage } from './search-language';
 
 type Evidence = NonNullable<SearchResponse['results'][number]['explanation']>['evidence'][number];
 type Requirement = { key: string; en: string; vi: string; pattern: RegExp };
@@ -43,8 +44,8 @@ const measurements: Requirement[] = [
 const roles: Requirement[] = [
   { key: 'soil', en: 'soil sensor', vi: 'cảm biến đất', pattern: /\bsoil sensors?\b|\bcam bien dat\b/u },
   { key: 'logger', en: 'data logger', vi: 'bộ ghi dữ liệu', pattern: /\bdata\s*log{1,2}ers?\b|\bbo ghi du lieu\b|\bthu thap du lieu\b|\bcollect.*data automatically\b|\b(?:data.*stored|luu.*du lieu|du lieu.*luu)\b/u },
-  { key: 'cellular', en: 'cellular communication', vi: 'truyền thông cellular', pattern: /\bcellular\b|\bmobile network\b|\b(?:song|mang) di dong\b|\btruyen (?:thong|du lieu) (?:qua mang )?di dong\b/u },
-  { key: 'vibrating', en: 'vibrating wire reader', vi: 'thiết bị đọc vibrating wire', pattern: /\bvibrating wire\b|\bday rung\b/u },
+  { key: 'cellular', en: 'cellular communication', vi: 'truyền thông qua mạng di động', pattern: /\bcellular\b|\bmobile network\b|\b(?:song|mang) di dong\b|\btruyen (?:thong|du lieu) (?:qua mang )?di dong\b/u },
+  { key: 'vibrating', en: 'vibrating wire reader', vi: 'thiết bị đọc dây rung', pattern: /\bvibrating wire\b|\bday rung\b/u },
   { key: 'reader', en: 'analyzer', vi: 'thiết bị đọc/phân tích', pattern: /\b(?:reader|analy[sz]er)\b|\binspect and read\b|\bthiet bi doc\b/u },
   { key: 'power', en: 'power supply', vi: 'nguồn cấp', pattern: /^power$|\bpower suppl(?:y|ies)\b|\bnguon (?:cap|dien)\b|\bcap nguon\b/u },
   { key: 'communication', en: 'communication equipment', vi: 'thiết bị truyền dữ liệu', pattern: /\bcommunication\b|\b(?:truyen|gui|nhan) du lieu\b|\btruyen thong\b|\b(?:transmit|send|receive).*data\b|\b(?:xem|kiem tra).*tu xa\b|\bremote data access\b|\baccess.*data remotely\b/u },
@@ -58,7 +59,11 @@ const roles: Requirement[] = [
 export function parseSearchIntent(query: string) {
   query = purchaseQuery(query);
   const originalText = normalize(query);
-  const text = normalize(parseNegativeConstraints(query).query);
+  const positiveQuery = parseNegativeConstraints(query).query;
+  const technicalSpecifications = specificationConstraints(positiveQuery);
+  const text = normalize(technicalSpecifications.length
+    ? technicalSpecifications.reduce((text, constraint) => text.replace(constraint.fragment, ' '), normalizeSpecificationText(positiveQuery))
+    : positiveQuery);
   const requested = measurements.filter(item => item.pattern.test(text));
   if (requested.some(item => item.key === 'lightning_distance') && !/\b(?:target|muc tieu)\b/u.test(text)) {
     const distance = requested.findIndex(item => item.key === 'distance');
@@ -91,7 +96,7 @@ export function parseSearchIntent(query: string) {
   const noCellular = /\b(?:khong co (?:song|mang) di dong|no cellular (?:network|coverage)|without cellular coverage|non cellular)\b/u.test(originalText);
   const satellite = /\b(?:ve tinh|satellite|goes|khong co bat ky mang vien thong mat dat|no terrestrial network)\b/u.test(text);
   const radio = /\b(?:song vo tuyen|radio)\b/u.test(text);
-  const transport = capabilityQuestion ? undefined : satellite ? 'satellite' : radio ? 'radio' : !noCellular && !/non[ -]cellular/u.test(text) && /\b(?:4g|cellular|mang di dong)\b/u.test(text) ? 'cellular' : undefined;
+  const transport: 'satellite' | 'radio' | 'cellular' | undefined = capabilityQuestion ? undefined : satellite ? 'satellite' : radio ? 'radio' : !noCellular && !/non[ -]cellular/u.test(text) && /\b(?:4g|cellular|mang di dong)\b/u.test(text) ? 'cellular' : undefined;
   if (noCellular || transport === 'radio' || transport === 'satellite') {
     for (const key of ['cellular', 'weather', 'logger']) {
       const index = kinds.findIndex(item => item.key === key);
@@ -144,23 +149,23 @@ export function parseSearchIntent(query: string) {
   const effectiveTarget = loggerOnly ? undefined : integratedWeather ? parseTemperatureTarget('air temperature') : medium;
   const features = [
     { key: 'non_contact', en: 'non-contact water level', vi: 'đo mực nước không tiếp xúc', pattern: /\b(?:khong (?:duoc |muon )?nhung|non contact|without (?:submerging|immersing))\b/u },
-    { key: 'soil_profile', en: 'soil profile', vi: 'profile đất nhiều tầng', pattern: /\b(?:nhieu tang|tung do sau|multi depth|soil profile)\b/u },
+    { key: 'soil_profile', en: 'soil profile', vi: 'đầu đo đất nhiều tầng', pattern: /\b(?:nhieu tang|tung do sau|multi depth|soil profile)\b/u },
     { key: 'heated_rain', en: 'heated rain gauge', vi: 'đo mưa có sấy', pattern: /\b(?:tuyet roi|dong bang.*pheu|heated rain|snow.*rain)\b/u },
-    { key: 'sonic_wind', en: 'sonic anemometer', vi: 'đo gió siêu âm không rotor', pattern: /\b(?:khong.*canh quat|no moving parts|without.*(?:propeller|rotor))\b/u },
+    { key: 'sonic_wind', en: 'sonic anemometer', vi: 'đo gió siêu âm không có cánh quạt quay', pattern: /\b(?:khong.*canh quat|no moving parts|without.*(?:propeller|rotor))\b/u },
   ].filter(item => item.pattern.test(text));
   const depths = [...text.matchAll(/(\d+(?:\.\d+)?)\s*(cm|m)\b/gu)].map(m => Number(m[1]) * (m[2] === 'm' ? 100 : 1));
   // Depth lists already have quantity-specific evidence; generic lengths must not reinterpret them.
   if (depths.length && requested.some(item => item.key === 'volumetric_water_content')) specifications = specifications.filter(term => !/\sm$/u.test(term));
   return { measurements: requested, target: effectiveTarget, roles: kinds, outdoor, specifications, system, comparison, sensorOnly,
-    features, depths, transport, noCellular, capabilityQuestion,
-    constrained: requested.length > 0 || !!effectiveTarget || kinds.length > 0 || outdoor || specifications.length > 0 || features.length > 0 || !!transport };
+    features, depths, transport, noCellular, capabilityQuestion, technicalSpecifications,
+    constrained: requested.length > 0 || !!effectiveTarget || kinds.length > 0 || outdoor || specifications.length > 0 || technicalSpecifications.length > 0 || features.length > 0 || !!transport };
 }
 
 export type SearchIntent = ReturnType<typeof parseSearchIntent>;
 
 export function buildSearchPlan(query: string): { label: string; query: string; needs_clarification?: boolean }[] {
   const text = normalize(query);
-  const vi = /[ăâđêôơư]|[\u1ea0-\u1ef9]/iu.test(query);
+  const vi = searchLanguage(query) === 'vi';
   const intent = parseSearchIntent(query);
   if (/\bethernet\b/u.test(text) && /\bwi.fi\b/u.test(text) && /\b(?:cellular|di dong)\b/u.test(text) && /\b(?:or|hay)\b/u.test(text)) {
     return ['Ethernet', 'Wi-Fi', 'cellular'].map(protocol => ({ label: protocol, query: protocol === 'cellular' ? 'cellular communication' : `communication equipment with ${protocol}` }));
@@ -194,6 +199,9 @@ export function matchSearchIntent(intent: SearchIntent, document: ProductSearchD
   if (intent.sensorOnly && document.taxonomy.category_key !== 'sensors') return null;
   if (intent.noCellular && /cellular|\blte\b/iu.test(document.taxonomy.device_type + ' ' + document.supported_protocols.join(' '))) return null;
   const evidence: Evidence[] = [];
+  const technical = matchSpecificationConstraints(intent.technicalSpecifications, specifications);
+  if (!technical) return null;
+  evidence.push(...technical.map(match => ({ source: 'normalized_spec' as const, field: match.specification.canonical_key, value: match.value, raw_ref: match.specification.raw_ref })));
   const featureSupport = matchIntentFeatures(intent, document, specifications);
   if (!featureSupport) return null;
   evidence.push(...featureSupport);
